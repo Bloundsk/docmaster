@@ -1,9 +1,13 @@
-name: Veille hebdomadaire DocMaster
+name: Veille quotidienne DocMaster
 
 on:
   schedule:
-    - cron: "0 8 * * *"
-    - cron: "0 18 * * *"
+    # Les minutes ne sont pas choisies au hasard. GitHub previent que
+    # l evenement schedule est retarde en periode de forte charge, et que
+    # "high load times include the start of every hour" : a la minute 0, les
+    # executions sont retardees, voire abandonnees. D ou ces minutes decalees.
+    - cron: "23 7 * * *"    # 07h23 UTC
+    - cron: "23 17 * * *"   # 17h23 UTC
   workflow_dispatch:
 
 permissions:

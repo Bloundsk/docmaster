@@ -92,12 +92,15 @@ async function creerIssue(contenu) {
     const repo = process.env.GITHUB_REPOSITORY;
     const token = process.env.GITHUB_TOKEN;
     const date = new Date().toLocaleDateString("fr-FR");
+    // La veille tourne deux fois par jour : sans l'heure, les deux Issues du
+    // jour porteraient exactement le même titre et seraient indistinguables.
+    const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
     const reponse = await fetch(`https://api.github.com/repos/${repo}/issues`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
         body: JSON.stringify({
-            title: `📰 Veille — ${date}`,
+            title: `📰 Veille — ${date} à ${heure}`,
             body: contenu,
             labels: ["veille"],
         }),
