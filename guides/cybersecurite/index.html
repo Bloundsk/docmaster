@@ -96,39 +96,176 @@
 
         <section>
             <h2 id="introduction">Introduction</h2>
-            <p>La cybersécurité regroupe les pratiques permettant de protéger les systèmes, réseaux et données contre les attaques numériques. Comprendre les bases de la cybersécurité n'est plus réservé aux experts — c'est une compétence essentielle pour tout utilisateur d'internet.</p>
+            <p>On imagine volontiers la cybersécurité comme une affaire d'experts face à des pirates surdoués. La réalité est bien plus banale : l'écrasante majorité des compromissions n'exploite aucune faille technique. Elles reposent sur un mot de passe réutilisé, un courriel bien imité, ou un logiciel qu'on n'a pas mis à jour.</p>
+            <p>Bonne nouvelle : cela signifie que quelques habitudes simples éliminent la plus grande partie du risque. Il ne s'agit pas de devenir invulnérable — cela n'existe pas — mais de cesser d'être une cible facile.</p>
+            <p>Ce guide couvre les quatre sujets qui protègent le plus : l'authentification, la reconnaissance des tentatives de manipulation, les outils de protection et leurs limites réelles, et le chiffrement.</p>
         </section>
 
         <section>
             <h2 id="bases">Les bases à connaître</h2>
-            <article>
-                <h3 id="mots-de-passe-authentification">🔑 Mots de passe & authentification</h3>
-                <p>Le mot de passe reste la première ligne de défense de la plupart des comptes en ligne.</p>
-                <p>Créer un mot de passe robuste : privilégier la longueur (12 caractères minimum), éviter les informations personnelles évidentes.</p>
-                <p>L'authentification à deux facteurs (2FA) ajoute une couche de sécurité supplémentaire.</p>
-                <p>Les gestionnaires de mots de passe permettent de générer et stocker des mots de passe uniques.</p>
-                <p>💡 À retenir : active la 2FA sur tous tes comptes importants.</p>
+
+            <article class="lecon">
+                <h3 id="mots-de-passe-authentification">🔑 Mots de passe &amp; authentification</h3>
+                <p>Le mot de passe protège l'accès à tout le reste. Et le problème principal n'est pas sa complexité — c'est sa <strong>réutilisation</strong>.</p>
+
+                <h4>Pourquoi la réutilisation est le vrai danger</h4>
+                <p>Des sites se font pirater régulièrement, y compris de grandes plateformes. Les listes d'identifiants qui en sortent circulent ensuite librement. Des programmes les rejouent automatiquement sur des centaines d'autres services : c'est le <em>credential stuffing</em>.</p>
+                <div class="exemple">
+                    <span class="titre">Le scénario réel</span>
+                    <p>Vous créez un compte sur un petit forum en 2019 avec votre adresse habituelle et votre mot de passe habituel. Le forum ferme, sa base fuite.</p>
+                    <p>Aujourd'hui, un programme essaie ce couple sur votre messagerie, votre banque, vos réseaux sociaux, vos boutiques en ligne. Aucun piratage sophistiqué : une simple liste et un script.</p>
+                    <p>Si votre messagerie tombe, tout le reste suit — c'est par elle que passent les réinitialisations de mot de passe.</p>
+                </div>
+                <p>Le site <strong>haveibeenpwned.com</strong> permet de vérifier gratuitement si votre adresse figure dans des fuites connues. La réponse est souvent oui, et c'est instructif.</p>
+
+                <h4>Ce qui fait un bon mot de passe</h4>
+                <p>La <strong>longueur</strong> compte davantage que les caractères exotiques. Une phrase de quatre mots sans lien entre eux résiste mieux qu'un mot court truffé de symboles, tout en restant mémorisable.</p>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Exemple</th><th>Solidité</th><th>Pourquoi</th></tr>
+                    <tr><td><code>P@ssw0rd!</code></td><td>Très faible</td><td>Les substitutions classiques sont dans tous les dictionnaires d'attaque</td></tr>
+                    <tr><td><code>Marseille1987</code></td><td>Faible</td><td>Ville et année de naissance : trouvables sur vos réseaux sociaux</td></tr>
+                    <tr><td><code>tortue-agrafe-nuage-vinaigre</code></td><td>Solide</td><td>Longueur importante, aucune logique prévisible</td></tr>
+                </table>
+                </div>
+
+                <h4>La double authentification</h4>
+                <p>La <strong>2FA</strong> ajoute une seconde preuve : un code temporaire, une clé physique. Même avec votre mot de passe, un attaquant est bloqué. C'est la mesure au meilleur rapport effort/protection.</p>
+                <p>Toutes les méthodes ne se valent pas :</p>
+                <ul>
+                    <li><strong>Clé physique</strong> (YubiKey, Titan) — le plus sûr, résiste même au phishing.</li>
+                    <li><strong>Application d'authentification</strong> (Authy, Google Authenticator) — excellent compromis, gratuit.</li>
+                    <li><strong>SMS</strong> — mieux que rien, mais vulnérable au <em>SIM swapping</em> : un escroc convainc l'opérateur de transférer votre numéro sur sa carte SIM.</li>
+                </ul>
+                <p>Priorité absolue : la messagerie principale, puis la banque, puis les comptes contenant des moyens de paiement.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le changement périodique imposé</span>
+                    <p>Obliger à changer de mot de passe tous les 90 jours produit l'effet inverse : les gens passent de <code>Ete2026!</code> à <code>Ete2026!!</code>. Les organismes de sécurité, dont l'ANSSI, ne recommandent plus cette pratique.</p>
+                    <p>Un mot de passe long, unique, changé <strong>uniquement en cas de fuite</strong>, protège mieux.</p>
+                </div>
+
+                <p class="retenir">💡 Un gestionnaire de mots de passe et la double authentification sur votre messagerie : ces deux mesures, en une soirée, éliminent l'essentiel du risque personnel.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="le-phishing">🎣 Le phishing</h3>
-                <p>Le phishing consiste à se faire passer pour une entité de confiance afin de voler des informations personnelles.</p>
-                <p>Les signaux d'alerte : urgence artificielle, fautes d'orthographe, adresse email suspecte.</p>
-                <p>Le bon réflexe : ne jamais cliquer directement sur un lien douteux, se rendre manuellement sur le site officiel.</p>
-                <p>💡 À retenir : aucune banque ne demande de mot de passe par email.</p>
+                <p>Le <strong>phishing</strong> (hameçonnage) n'attaque pas la machine : il attaque la personne. On imite un organisme de confiance pour obtenir un mot de passe, un numéro de carte ou un virement.</p>
+
+                <h4>Le mécanisme est toujours le même</h4>
+                <p>Trois ingrédients, systématiquement :</p>
+                <ol>
+                    <li><strong>Une autorité</strong> : votre banque, l'administration fiscale, un livreur, votre direction.</li>
+                    <li><strong>Une urgence</strong> : compte suspendu, colis bloqué, amende à régler sous 48 h.</li>
+                    <li><strong>Une action immédiate</strong> : cliquer, saisir, payer.</li>
+                </ol>
+                <p>L'urgence n'est pas un détail : elle sert précisément à empêcher la vérification. Toute pression temporelle dans un message est en soi le signal d'alerte principal.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce qu'on ne remarque pas</span>
+                    <p>Les fautes d'orthographe sont devenues rares — les outils de rédaction automatique ont supprimé ce signal. Regardez plutôt le <strong>domaine</strong>, à droite du <code>@</code> et avant le premier <code>/</code> :</p>
+                    <ul>
+                        <li><code>secure-banque.fr</code> — ce n'est pas <code>banque.fr</code></li>
+                        <li><code>banque.fr.verification-compte.net</code> — le vrai domaine est <code>verification-compte.net</code></li>
+                        <li><code>bnnque.fr</code> — une lettre modifiée, invisible en lecture rapide</li>
+                    </ul>
+                    <p>Le cadenas HTTPS ne prouve rien : n'importe qui obtient un certificat gratuit en cinq minutes. Il garantit que la connexion est chiffrée, pas que le site est honnête.</p>
+                </div>
+
+                <h4>Les variantes</h4>
+                <ul>
+                    <li><strong>Spear phishing</strong> — message personnalisé avec votre nom, votre poste, un projet en cours. Bien plus efficace.</li>
+                    <li><strong>Fraude au président</strong> — un « dirigeant » demande un virement urgent et confidentiel. Ce type de fraude coûte des sommes considérables aux entreprises chaque année.</li>
+                    <li><strong>Smishing</strong> — par SMS. Colis, amende, compte bancaire.</li>
+                    <li><strong>Vishing</strong> — par téléphone, souvent en se faisant passer pour le service anti-fraude de votre banque.</li>
+                </ul>
+
+                <h4>Le réflexe unique</h4>
+                <p>Ne jamais utiliser le lien fourni. Ouvrez vous-même l'application ou tapez l'adresse que vous connaissez. Si le message était authentique, l'information vous attendra dans votre espace client.</p>
+                <p>Au téléphone : raccrochez et rappelez le numéro figurant au dos de votre carte. Un vrai conseiller le comprendra parfaitement ; un escroc essaiera de vous en dissuader.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire qu'on ne se fera pas avoir</span>
+                    <p>Les campagnes de test en entreprise montrent des taux de clic élevés, y compris chez des profils techniques. Le facteur déterminant n'est pas la compétence : c'est la fatigue, la charge de travail, ou le fait que le message arrive au moment où l'on attendait justement un colis.</p>
+                    <p>C'est pourquoi la parade doit être une <strong>habitude systématique</strong>, pas une vigilance ponctuelle. Une habitude tient même quand l'attention baisse.</p>
+                </div>
+
+                <p class="retenir">💡 Aucun organisme légitime ne demande un mot de passe ni un code de validation, par aucun canal. Cette règle n'a pas d'exception.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="les-pare-feux-et-antivirus">🛡️ Les pare-feux et antivirus</h3>
-                <p>Ces outils constituent une protection de base contre les menaces automatisées.</p>
-                <p>Le pare-feu filtre le trafic entrant et sortant d'un ordinateur ou réseau.</p>
-                <p>L'antivirus détecte et neutralise les logiciels malveillants.</p>
-                <p>💡 À retenir : ces outils ne remplacent pas la vigilance humaine.</p>
+                <p>Ces outils sont utiles et largement suffisants pour un usage personnel — à condition de comprendre ce qu'ils font, et surtout ce qu'ils ne font pas.</p>
+
+                <h4>Ce que chacun protège</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Outil</th><th>Rôle</th><th>Ne protège pas contre</th></tr>
+                    <tr><td><strong>Pare-feu</strong></td><td>Filtre les connexions entrantes et sortantes</td><td>Ce que vous installez volontairement</td></tr>
+                    <tr><td><strong>Antivirus</strong></td><td>Détecte les logiciels malveillants connus</td><td>Le phishing, un mot de passe volé</td></tr>
+                    <tr><td><strong>Mises à jour</strong></td><td>Corrigent les failles publiées</td><td>Rien — c'est la mesure la plus efficace</td></tr>
+                </table>
+                </div>
+                <p>Sur Windows, <strong>Defender</strong> est intégré, gratuit, et figure régulièrement en tête des tests indépendants. Payer pour une suite tierce n'apporte généralement pas de gain de sécurité mesurable.</p>
+
+                <h4>La mesure la plus efficace est la plus ennuyeuse</h4>
+                <p>Installer les mises à jour. Une faille rendue publique est exploitée par des robots en quelques jours. Le correctif existe presque toujours <strong>avant</strong> l'attaque — c'est le délai d'installation qui crée la vulnérabilité.</p>
+                <p>Cela vaut pour le système, mais aussi pour le navigateur, les extensions, le téléphone, et la box internet, qu'on oublie systématiquement.</p>
+
+                <h4>Les rançongiciels</h4>
+                <p>Un <em>ransomware</em> chiffre vos fichiers et réclame un paiement. Aucun antivirus ne garantit une protection. La seule parade réellement fiable est la <strong>sauvegarde</strong>.</p>
+                <div class="exemple">
+                    <span class="titre">La règle 3-2-1</span>
+                    <ul>
+                        <li><strong>3</strong> copies de vos données importantes</li>
+                        <li><strong>2</strong> supports différents (disque interne + disque externe)</li>
+                        <li><strong>1</strong> copie hors du lieu, ou déconnectée</li>
+                    </ul>
+                    <p>Le point critique est le dernier : un disque externe branché en permanence est chiffré en même temps que le reste. Une sauvegarde débranchée est une sauvegarde.</p>
+                    <p>Et une sauvegarde jamais testée n'en est pas une : essayez de restaurer un fichier au hasard, une fois par an.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la fausse sécurité</span>
+                    <p>« J'ai un antivirus, je suis protégé » conduit à baisser la garde. Or l'antivirus ne voit rien quand vous saisissez volontairement votre mot de passe sur un faux site — et c'est de loin le scénario le plus fréquent.</p>
+                </div>
+
+                <p class="retenir">💡 Mises à jour automatiques activées et sauvegarde déconnectée : deux réglages qui protègent davantage que n'importe quel logiciel payant.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="le-chiffrement-des-données">🔐 Le chiffrement des données</h3>
-                <p>Le chiffrement transforme des données lisibles en données illisibles sans une clé spécifique.</p>
-                <p>Le HTTPS (cadenas dans la barre d'adresse) chiffre les échanges entre un site et son visiteur.</p>
-                <p>Le chiffrement de bout en bout garantit que seuls l'expéditeur et le destinataire peuvent lire un message.</p>
-                <p>💡 À retenir : vérifie toujours la présence du cadenas avant un paiement en ligne.</p>
+                <p>Chiffrer, c'est rendre une information illisible pour qui ne détient pas la clé. C'est la technologie qui permet de saisir un numéro de carte sur un réseau que l'on ne contrôle pas.</p>
+
+                <h4>Chiffrement en transit et au repos</h4>
+                <ul>
+                    <li><strong>En transit</strong> : pendant le trajet. C'est le rôle de HTTPS — le cadenas dans la barre d'adresse.</li>
+                    <li><strong>Au repos</strong> : sur le disque. BitLocker sous Windows, FileVault sur Mac. Essentiel sur un ordinateur portable : en cas de vol, le disque reste illisible.</li>
+                </ul>
+
+                <h4>Ce que le cadenas signifie — et ne signifie pas</h4>
+                <div class="exemple">
+                    <span class="titre">Une confusion très répandue</span>
+                    <p>HTTPS garantit <strong>une seule chose</strong> : personne ne peut lire ni modifier les échanges entre votre navigateur et ce site.</p>
+                    <p>Il ne dit rien sur l'honnêteté du site. Un site frauduleux dispose d'un cadenas parfaitement valide — les certificats sont gratuits. Votre numéro de carte arrive alors chez l'escroc, parfaitement chiffré.</p>
+                    <p>Le cadenas protège la <em>route</em>, pas la <em>destination</em>. Vérifiez toujours le nom de domaine.</p>
+                </div>
+
+                <h4>Le chiffrement de bout en bout</h4>
+                <p>Avec le chiffrement <strong>de bout en bout</strong>, seuls l'expéditeur et le destinataire peuvent lire le contenu — le fournisseur du service lui-même en est incapable.</p>
+                <p>Signal et WhatsApp l'appliquent par défaut aux messages. Beaucoup de services de messagerie électronique classiques, non : vos courriels y sont lisibles par l'hébergeur.</p>
+                <p>Attention aux <strong>métadonnées</strong> : même chiffré, un échange révèle qui a parlé à qui, quand et combien de temps. Ces informations sont souvent aussi parlantes que le contenu.</p>
+
+                <h4>Le Wi-Fi public</h4>
+                <p>Le risque y est moins grand qu'autrefois, puisque la quasi-totalité des sites utilisent HTTPS. Il reste néanmoins deux précautions : ne jamais rejoindre un réseau ouvert au nom trop accueillant sans vérifier son nom exact auprès de l'établissement, et éviter les opérations sensibles depuis un réseau inconnu. Un partage de connexion depuis son téléphone est plus sûr.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le VPN présenté comme une protection universelle</span>
+                    <p>Un VPN chiffre le trajet jusqu'à son fournisseur. Il ne protège ni du phishing, ni des virus, ni d'un mot de passe faible. Il déplace simplement la confiance de votre opérateur vers le fournisseur du VPN — lequel voit alors tout votre trafic.</p>
+                    <p>Utile pour contourner une restriction géographique ou sur un réseau vraiment douteux. Ce n'est pas un bouclier de sécurité, contrairement à ce que suggère leur publicité.</p>
+                </div>
+
+                <p class="retenir">💡 Le cadenas certifie que la route est sûre, jamais que la destination est honnête. Lisez le nom de domaine avant de faire confiance à l'icône.</p>
             </article>
         </section>
 
@@ -145,8 +282,15 @@
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
-            <article>
-                <p>Cybermalveillance.gouv.fr — ressources officielles et assistance en cas d'attaque. ANSSI — recommandations officielles de sécurité. Have I Been Pwned — vérifier une éventuelle fuite de données.</p>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Cybermalveillance.gouv.fr</strong> — le dispositif officiel français. Diagnostic en ligne, fiches réflexes, et mise en relation avec des prestataires si vous êtes victime.</li>
+                    <li><strong>ANSSI</strong> — l'agence nationale. Ses guides d'hygiène informatique sont la référence, y compris pour les très petites structures.</li>
+                    <li><strong>Have I Been Pwned</strong> — vérifier gratuitement si votre adresse figure dans une fuite connue, et être alerté des prochaines.</li>
+                    <li><strong>CNIL</strong> — vos droits sur vos données, et la marche à suivre en cas de fuite vous concernant.</li>
+                    <li><strong>Signal-arnaques</strong> et <strong>Phishing Initiative</strong> — pour signaler un site frauduleux et le faire fermer.</li>
+                </ul>
+                <p><strong>En cas de problème avéré :</strong> changez d'abord le mot de passe de votre messagerie principale depuis un appareil sain, activez-y la double authentification, puis traitez les autres comptes. Déposez plainte — c'est indispensable pour toute démarche auprès de votre banque ou de votre assurance.</p>
             </article>
         </section>
 

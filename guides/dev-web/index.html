@@ -97,38 +97,159 @@
 
         <section>
             <h2 id="introduction">Introduction</h2>
-            <p>Le développement web regroupe toutes les compétences nécessaires pour créer un site ou une application accessible sur internet. C'est un domaine accessible aux débutants, avec une courbe d'apprentissage progressive. Ce guide te présente les fondations essentielles pour bien démarrer.</p>
+            <p>Le développement web a une particularité rare : on peut afficher un résultat visible en dix minutes, sans rien installer, avec un simple éditeur de texte et un navigateur. Cette barrière d'entrée très basse explique qu'on puisse y progresser en autodidacte.</p>
+            <p>Elle explique aussi la principale difficulté : l'écosystème est immense et bruyant. On y croise en permanence des outils présentés comme indispensables et qui ne le sont pas. Or les fondations, elles, n'ont pas bougé depuis vingt ans — <strong>HTML, CSS, JavaScript</strong>. Tous les frameworks du monde finissent par produire ces trois choses-là.</p>
+            <p>Ce guide s'en tient à ce qui reste vrai dans dix ans : la structure d'une page, sa mise en forme, son interactivité, la séparation entre ce qui tourne chez le visiteur et ce qui tourne sur un serveur, et l'adaptation aux écrans.</p>
         </section>
 
         <section>
             <h2 id="bases">Les bases à connaître</h2>
-            <article>
-                <h3 id="html-css">🏗️ HTML & CSS</h3>
-                <p>HTML et CSS forment les fondations de toute page web : le premier structure le contenu, le second définit son apparence visuelle.</p>
-                <p>HTML décrit les éléments d'une page à l'aide de balises (titre, paragraphe, image, lien).</p>
-                <p>CSS permet de définir couleurs, espacements, polices, disposition (Flexbox, Grid) et animations.</p>
-                <p>💡 À retenir : HTML répond à "quel contenu ?", CSS répond à "à quoi ça ressemble ?"</p>
+
+            <article class="lecon">
+                <h3 id="html-css">🏗️ HTML &amp; CSS</h3>
+                <p><strong>HTML</strong> décrit ce qu'<em>est</em> un contenu. <strong>CSS</strong> décrit à quoi il <em>ressemble</em>. Cette séparation est le premier principe du métier, et le premier qu'on enfreint quand on débute.</p>
+
+                <h4>HTML : le sens avant l'apparence</h4>
+                <p>Une balise porte une signification, pas un style. <code>&lt;h1&gt;</code> ne veut pas dire « gros texte » mais « titre principal de cette page ». La distinction n'est pas théorique : elle détermine ce que comprennent Google et les lecteurs d'écran.</p>
+                <div class="exemple">
+                    <span class="titre">Deux écritures, un même rendu visuel</span>
+                    <p><code>&lt;div class="titre-gros"&gt;Nos tarifs&lt;/div&gt;</code><br>
+                    Pour un logiciel : un bloc quelconque contenant du texte.</p>
+                    <p><code>&lt;h2&gt;Nos tarifs&lt;/h2&gt;</code><br>
+                    Pour un logiciel : un titre de section. Un utilisateur aveugle peut y naviguer directement, un moteur de recherche sait de quoi parle la page.</p>
+                    <p>Visuellement identiques après quelques lignes de CSS. Fonctionnellement, sans commune mesure.</p>
+                </div>
+                <p>Les balises structurantes à connaître : <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>. Une page qui les utilise correctement est accessible presque sans effort supplémentaire.</p>
+
+                <h4>CSS : la cascade et les sélecteurs</h4>
+                <p>Quand deux règles s'appliquent au même élément, celle dont le sélecteur est le plus <strong>spécifique</strong> l'emporte — pas celle écrite en dernier. Un identifiant bat une classe, qui bat une balise. La plupart des « ce CSS ne marche pas » viennent de là.</p>
+                <p>Pour la mise en page, deux outils suffisent aujourd'hui : <strong>Flexbox</strong> pour aligner sur une ligne ou une colonne, <strong>Grid</strong> pour une grille à deux dimensions.</p>
+                <p>Enfin, les <strong>variables CSS</strong> centralisent les valeurs répétées :</p>
+                <div class="exemple">
+                    <span class="titre">Variables CSS</span>
+                    <p><code>:root { --primary: #2563eb; }</code><br>
+                    puis <code>color: var(--primary);</code> partout où la couleur sert.</p>
+                    <p>Changer la charte du site revient alors à modifier une seule ligne, au lieu de chercher un code hexadécimal dans quarante fichiers.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — écrire le style dans le HTML</span>
+                    <p><code>&lt;p style="color:red"&gt;</code> fonctionne, et devient ingérable dès la dixième page : chaque modification impose de rouvrir tous les fichiers.</p>
+                    <p>Le style va dans un fichier <code>.css</code> séparé. Cette discipline coûte cinq minutes au début et fait gagner des journées ensuite.</p>
+                </div>
+
+                <p class="retenir">💡 HTML répond à « qu'est-ce que c'est ? », CSS à « à quoi ça ressemble ? ». Tant que la réponse est claire, le code reste maintenable.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="javascript">⚡ JavaScript</h3>
-                <p>JavaScript rend une page web interactive : il réagit aux actions de l'utilisateur et modifie dynamiquement le contenu.</p>
-                <p>Exemples d'usages : afficher/masquer un menu, valider un formulaire, charger des données sans recharger la page.</p>
-                <p>Le DOM est la représentation de la page HTML que JavaScript peut lire et modifier.</p>
-                <p>💡 À retenir : sans JavaScript, un site reste statique.</p>
+                <p>HTML et CSS produisent une page figée. <strong>JavaScript</strong> la rend vivante : il réagit aux actions, modifie le contenu et communique avec des serveurs, sans recharger la page.</p>
+
+                <h4>Le DOM</h4>
+                <p>Quand le navigateur lit le HTML, il en construit une représentation en mémoire : le <strong>DOM</strong> (<em>Document Object Model</em>). C'est cette structure que JavaScript manipule — jamais le fichier d'origine.</p>
+                <p>Conséquence pratique : le fichier HTML sur le disque ne change pas. Actualiser la page annule tout. C'est pourquoi une information à conserver doit être enregistrée quelque part — <code>localStorage</code> dans le navigateur, ou un serveur.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le schéma de base : sélectionner, écouter, agir</span>
+                    <p><code>const bouton = document.getElementById('menu');</code><br>
+                    <code>bouton.addEventListener('click', () =&gt; {</code><br>
+                    <code>&nbsp;&nbsp;menu.classList.toggle('ouvert');</code><br>
+                    <code>});</code></p>
+                    <p>Trois lignes qui résument 80 % du JavaScript d'un site : on récupère un élément, on écoute un événement, on modifie une classe. Le style reste dans le CSS — JavaScript se contente d'ajouter ou retirer la classe.</p>
+                </div>
+
+                <h4>Synchrone et asynchrone</h4>
+                <p>Certaines opérations prennent du temps : interroger un serveur, lire un fichier. JavaScript ne s'arrête pas à les attendre — il continue et traite la réponse à son arrivée. C'est ce qu'on appelle l'<strong>asynchrone</strong>.</p>
+                <p>D'où le mot-clé <code>await</code>, qui signifie « attends le résultat avant de poursuivre cette fonction ». Sans lui, on manipule une réponse qui n'est pas encore arrivée — une des causes les plus fréquentes de bugs incompréhensibles chez les débutants.</p>
+
+                <h4>Les outils du navigateur</h4>
+                <p>La touche <strong>F12</strong> ouvre les outils de développement. Trois onglets valent tous les tutoriels :</p>
+                <ul>
+                    <li><strong>Console</strong> : les erreurs JavaScript s'y affichent, avec le numéro de ligne.</li>
+                    <li><strong>Réseau</strong> : chaque fichier chargé, avec son code de retour. Un 404 en rouge s'y repère immédiatement.</li>
+                    <li><strong>Éléments</strong> : le DOM réel, et le CSS effectivement appliqué à chaque élément.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le script exécuté trop tôt</span>
+                    <p>Un script placé dans le <code>&lt;head&gt;</code> s'exécute avant que le HTML n'existe. <code>getElementById</code> renvoie alors <code>null</code>, et tout s'arrête.</p>
+                    <p>Deux solutions : placer le script juste avant <code>&lt;/body&gt;</code>, ou ajouter l'attribut <code>defer</code>. C'est l'erreur numéro un des premiers projets.</p>
+                </div>
+
+                <p class="retenir">💡 Avant de chercher pourquoi « ça ne marche pas », ouvrez la console. L'erreur y est presque toujours écrite, avec sa ligne exacte.</p>
             </article>
-            <article>
-                <h3 id="frontend-vs-backend">🔗 Frontend vs Backend</h3>
-                <p>Un site complet repose sur deux parties : le frontend (ce que voit l'utilisateur) et le backend (la logique côté serveur).</p>
-                <p>Le frontend est construit avec HTML, CSS, JavaScript, souvent via des frameworks comme React ou Vue.</p>
-                <p>Le backend gère le stockage des données, l'authentification, les paiements.</p>
-                <p>💡 À retenir : un développeur fullstack maîtrise les deux.</p>
+
+            <article class="lecon">
+                <h3 id="frontend-vs-backend">🔗 Frontend et Backend</h3>
+                <p>La question qui départage les deux : <strong>ce code s'exécute-t-il sur la machine du visiteur, ou sur un serveur que vous contrôlez ?</strong></p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>Frontend</th><th>Backend</th></tr>
+                    <tr><td>S'exécute</td><td>Dans le navigateur du visiteur</td><td>Sur un serveur</td></tr>
+                    <tr><td>Langages</td><td>HTML, CSS, JavaScript</td><td>Node.js, Python, PHP, Java…</td></tr>
+                    <tr><td>Rôle</td><td>Affichage, interactions</td><td>Données, comptes, paiements</td></tr>
+                    <tr><td>Visible par le visiteur</td><td><strong>Entièrement</strong></td><td>Jamais</td></tr>
+                </table>
+                </div>
+
+                <h4>La conséquence la plus importante</h4>
+                <p>Tout ce qui part vers le navigateur est lisible : code, commentaires, clés d'accès. Un simple clic droit suffit.</p>
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — et coûteuse</span>
+                    <p>Placer une clé d'API, un mot de passe de base de données ou une vérification d'accès dans le JavaScript revient à les publier. Des robots parcourent en permanence les sites et les dépôts publics à la recherche de ces clés ; le délai entre publication et exploitation se compte souvent en minutes.</p>
+                    <p>Toute vérification qui compte — droits, paiement, quota — se fait <strong>côté serveur</strong>. Le contrôle côté navigateur n'est là que pour le confort d'usage : il se contourne en quelques secondes.</p>
+                </div>
+
+                <h4>Les sites statiques</h4>
+                <p>Tous les projets n'ont pas besoin d'un serveur. Un site de contenu — documentation, portfolio, blog — peut être constitué de fichiers HTML servis tels quels. C'est plus rapide, gratuit à héberger, et pratiquement inattaquable : il n'y a pas de base de données à pirater.</p>
+                <p>Le backend devient nécessaire dès qu'il faut des comptes utilisateurs, des données modifiables, des paiements ou des envois de courriels.</p>
+
+                <h4>Les frameworks</h4>
+                <p>React, Vue, Angular résolvent un problème précis : synchroniser une interface complexe avec des données qui changent sans arrêt. Sur une application de gestion, ils font gagner beaucoup. Sur un site de dix pages, ils ajoutent surtout de la complexité et du poids.</p>
+                <p>Le bon ordre d'apprentissage est celui du besoin : maîtriser JavaScript, rencontrer la limite, puis choisir l'outil qui la résout.</p>
+
+                <p class="retenir">💡 Tout ce qui arrive dans le navigateur est public. La sécurité ne s'écrit jamais côté frontend.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="responsive-design">📱 Responsive Design</h3>
-                <p>Le responsive design consiste à concevoir un site pour qu'il s'affiche correctement sur tous types d'écrans.</p>
-                <p>Les media queries CSS permettent d'appliquer des styles différents selon la largeur de l'écran.</p>
-                <p>L'approche mobile-first consiste à concevoir d'abord la version mobile, puis à l'adapter pour des écrans plus larges.</p>
-                <p>💡 À retenir : tester systématiquement l'affichage mobile est aujourd'hui indispensable.</p>
+                <p>La majorité du trafic web se fait aujourd'hui sur mobile. Un site qui n'est pas utilisable sur un écran de 6 pouces est un site qui ne fonctionne pas — quelle que soit son allure sur l'écran du développeur.</p>
+
+                <h4>Les trois ingrédients</h4>
+                <ol>
+                    <li><strong>La balise viewport</strong> dans le <code>&lt;head&gt;</code> :<br>
+                    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><br>
+                    Sans elle, le mobile affiche une version miniature du site en 980 px. C'est la première chose à vérifier.</li>
+                    <li><strong>Des unités souples</strong> : <code>%</code>, <code>rem</code>, <code>fr</code>, <code>max-width</code>. Une largeur fixe en pixels déborde forcément sur un écran plus étroit.</li>
+                    <li><strong>Les media queries</strong> : des règles CSS conditionnées à la taille de l'écran.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">L'approche mobile-first</span>
+                    <p>On écrit d'abord le style pour petit écran, puis on <em>ajoute</em> pour les grands :</p>
+                    <p><code>.grille { display: block; }</code><br>
+                    <code>@media (min-width: 768px) {</code><br>
+                    <code>&nbsp;&nbsp;.grille { display: grid; grid-template-columns: 1fr 1fr; }</code><br>
+                    <code>}</code></p>
+                    <p>Pourquoi commencer par le mobile ? Parce qu'un écran étroit oblige à hiérarchiser : il n'y a de place que pour l'essentiel. Faire l'inverse conduit à entasser puis à masquer — et à charger des éléments invisibles.</p>
+                </div>
+
+                <h4>Ce qu'on oublie souvent</h4>
+                <ul>
+                    <li><strong>Les zones tactiles.</strong> Un doigt n'est pas un curseur : comptez au moins 44 pixels de côté pour tout élément cliquable.</li>
+                    <li><strong>Le survol n'existe pas.</strong> Un menu qui s'ouvre au passage de la souris est inaccessible au tactile.</li>
+                    <li><strong>Les images.</strong> Une photo de 4 000 px envoyée sur mobile consomme des données et ralentit tout. <code>max-width: 100%</code> évite au moins le débordement.</li>
+                    <li><strong>Les tableaux.</strong> Ils débordent presque toujours : placez-les dans un conteneur en <code>overflow-x: auto</code>.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — tester en réduisant la fenêtre</span>
+                    <p>Rétrécir son navigateur donne une idée de la mise en page, mais ne reproduit ni le tactile, ni la densité de pixels, ni la lenteur du réseau mobile.</p>
+                    <p>Le mode appareil mobile des outils de développement (F12) est plus fidèle. Et un test sur un vrai téléphone, au moins une fois avant publication, révèle presque toujours quelque chose.</p>
+                </div>
+
+                <p class="retenir">💡 Concevez d'abord pour l'écran le plus contraint. Ce qui survit à cette contrainte est l'essentiel ; le reste était probablement superflu.</p>
             </article>
         </section>
 
@@ -145,8 +266,15 @@
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
-            <article>
-                <p>MDN Web Docs — documentation de référence officielle. web.dev (Google) — bonnes pratiques du web moderne. Can I Use — compatibilité des fonctionnalités avec les navigateurs.</p>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>MDN Web Docs</strong> — la documentation de référence, en français, maintenue par Mozilla. En cas de doute sur une balise ou une propriété, c'est ici et nulle part ailleurs.</li>
+                    <li><strong>web.dev</strong> (Google) — bonnes pratiques de performance et d'accessibilité, avec des cas mesurés plutôt que des opinions.</li>
+                    <li><strong>Can I Use</strong> — quelle fonctionnalité marche dans quel navigateur, et depuis quelle version.</li>
+                    <li><strong>Flexbox Froggy</strong> et <strong>Grid Garden</strong> — deux jeux gratuits qui font assimiler Flexbox et Grid en une heure chacun. Le meilleur rapport temps/résultat du domaine.</li>
+                    <li><strong>Lighthouse</strong> — intégré aux outils de développement (F12, onglet Lighthouse). Il note votre page sur la performance, l'accessibilité et le référencement, et liste ce qu'il faut corriger.</li>
+                </ul>
+                <p><strong>Conseil de méthode :</strong> la meilleure progression vient d'un projet qui vous tient à cœur, pas d'un tutoriel supplémentaire. Un site réel confronte à des problèmes réels — et c'est en cherchant à les résoudre qu'on retient.</p>
             </article>
         </section>
 
