@@ -56,5 +56,13 @@ const searchIndex = [
     { title: "UX vs UI", description: "Comprendre la distinction entre expérience utilisateur et interface visuelle.", url: "guides/design/index.html", keywords: "ux ui expérience utilisateur interface différence" },
     { title: "Le wireframing", description: "Créer des maquettes simples pour structurer une interface.", url: "guides/design/index.html", keywords: "wireframe maquette structure interface mockup fidélité" },
     { title: "Les principes de design visuel", description: "Découvrir hiérarchie visuelle, couleurs et typographie.", url: "guides/design/index.html", keywords: "design visuel couleurs typographie hiérarchie espace blanc" },
-    { title: "Les tests utilisateurs", description: "Comprendre pourquoi et comment tester une interface auprès d'utilisateurs.", url: "guides/design/index.html", keywords: "tests utilisateurs ux research usabilité" }
+    { title: "Les tests utilisateurs", description: "Comprendre pourquoi et comment tester une interface auprès d'utilisateurs.", url: "guides/design/index.html", keywords: "tests utilisateurs ux research usabilité" },
+
+    { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
+    { title: "Le site est-il gratuit ?", description: "Pas d'inscription, pas d'abonnement, pas de publicité.", url: "faq.html", keywords: "gratuit prix payant abonnement inscription compte publicité" },
+    { title: "Cookies et données personnelles", description: "Ce que le site collecte, et ce qu'il ne collecte pas.", url: "faq.html", keywords: "cookies données personnelles vie privée rgpd statistiques traceur" },
+    { title: "Mode sombre", description: "Activer le thème sombre et le conserver d'une visite à l'autre.", url: "faq.html", keywords: "mode sombre dark theme nuit affichage" },
+    { title: "Progression de lecture", description: "À quoi sert la case « J'ai lu et compris ce guide ».", url: "faq.html", keywords: "progression lecture marquer lu terminé sauvegarde appareil" },
+    { title: "Imprimer un guide", description: "Imprimer ou enregistrer un guide en PDF pour le lire hors ligne.", url: "faq.html", keywords: "imprimer impression pdf hors ligne papier" },
+    { title: "Signaler une erreur", description: "Comment remonter une erreur ou proposer une correction.", url: "faq.html", keywords: "erreur correction signaler bug contact github issue" }
 ];

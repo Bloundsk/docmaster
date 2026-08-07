@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DocMaster</title>
+    <meta name="description" content="Questions fréquentes sur DocMaster : contenu des guides, mode sombre, progression de lecture, confidentialité et données collectées.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <meta property="og:title" content="FAQ - DocMaster">
+    <meta property="og:description" content="Les réponses aux questions les plus fréquentes sur DocMaster.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .faq-group { margin-bottom: 34px; }
+        .faq-group > h2 { margin-bottom: 16px; }
+
+        .faq-item {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            padding: 18px 22px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        /* Masque la flèche native pour la remplacer par notre chevron */
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        .faq-item summary::after {
+            content: "▾";
+            font-size: 1.1rem;
+            line-height: 1;
+            color: var(--muted);
+            flex-shrink: 0;
+            transition: transform .25s;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        /* Respecte le réglage système « réduire les animations » */
+        @media (prefers-reduced-motion: reduce) {
+            .faq-item summary::after { transition: none; }
+        }
+
+        .faq-item summary:hover { color: var(--secondary); }
+
+        .faq-item .answer {
+            padding: 0 22px 20px;
+            color: var(--text);
+        }
+
+        .faq-item .answer p { margin-bottom: 10px; }
+        .faq-item .answer p:last-child { margin-bottom: 0; }
+        .faq-item .answer ul { margin: 10px 0 0 20px; }
+        .faq-item .answer li { margin-bottom: 6px; }
+
+        .faq-empty {
+            text-align: center;
+            color: var(--muted);
+            padding: 30px;
+        }
+
+        kbd {
+            background: var(--background);
+            border: 1px solid var(--muted);
+            border-radius: 5px;
+            padding: 1px 7px;
+            font-family: monospace;
+            font-size: .9em;
+        }
+    </style>
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "";</script>
+    <script src="assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a> &gt; <span aria-current="page">FAQ</span>
+    </nav>
+
+    <header>
+        <h1>❓ Questions fréquentes</h1>
+        <p>Tout ce qu'il faut savoir sur DocMaster, en réponses courtes.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="faq-search" placeholder="🔍 Filtrer les questions..." autocomplete="off" aria-label="Filtrer les questions fréquentes" style="width:100%;padding:16px 20px;border:none;border-radius:var(--radius);box-shadow:var(--shadow);font-family:'Inter',sans-serif;font-size:1rem;background:var(--surface);color:var(--text);outline:none;">
+    </div>
+
+    <main id="main-content">
+
+        <div class="faq-group">
+            <h2>Le site</h2>
+
+            <details class="faq-item">
+                <summary>Qu'est-ce que DocMaster ?</summary>
+                <div class="answer">
+                    <p>Une bibliothèque de guides pédagogiques gratuits couvrant 9 domaines : finance, intelligence artificielle, développement web, marketing digital, cybersécurité, entrepreneuriat, productivité, data &amp; analytics et design UX/UI.</p>
+                    <p>Chaque guide part de zéro et va à l'essentiel : les notions clés, des exemples concrets, et un quiz pour vérifier que tu as compris.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Le site est-il vraiment gratuit ?</summary>
+                <div class="answer">
+                    <p>Oui, entièrement. Pas d'inscription, pas d'abonnement, pas de version payante, pas de publicité. Rien n'est réservé à des membres.</p>
+                    <p>Le site est hébergé gratuitement par GitHub Pages, ce qui permet de ne rien facturer.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>À qui s'adresse DocMaster ?</summary>
+                <div class="answer">
+                    <p>Aux débutants et aux curieux. Aucun prérequis n'est nécessaire : les guides expliquent le vocabulaire au fur et à mesure, et le glossaire reprend tous les termes techniques.</p>
+                    <p>Si tu es déjà expert d'un domaine, le guide correspondant te paraîtra sans doute trop simple — mais les 8 autres peuvent t'intéresser.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Faut-il créer un compte ?</summary>
+                <div class="answer">
+                    <p>Non, et ce n'est même pas possible. Le site ne gère aucun compte utilisateur.</p>
+                    <p>Ta progression de lecture et ton choix de thème sont enregistrés directement dans ton navigateur, sans passer par un serveur.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>Le contenu</h2>
+
+            <details class="faq-item">
+                <summary>Dans quel ordre lire les guides ?</summary>
+                <div class="answer">
+                    <p>Dans l'ordre que tu veux : chaque guide est autonome et ne suppose pas d'avoir lu les autres.</p>
+                    <p>Si tu hésites, chaque guide propose en bas de page des « guides similaires » ainsi que des liens « précédent / suivant » qui suggèrent un parcours cohérent.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Les guides sont-ils à jour ?</summary>
+                <div class="answer">
+                    <p>Les guides couvrent des notions de fond, qui évoluent lentement. Une veille automatique tourne par ailleurs chaque jour et recense les actualités marquantes de chaque domaine, ce qui permet de repérer ce qui mérite une mise à jour.</p>
+                    <p>Cela dit, pour tout ce qui touche aux chiffres, aux taux, aux prix ou à la réglementation, vérifie toujours l'information à sa source d'origine.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Puis-je suivre les conseils financiers du guide Finance ?</summary>
+                <div class="answer">
+                    <p>Le guide Finance est un contenu <strong>pédagogique</strong>. Il explique comment fonctionnent l'épargne, les ETF, la diversification ou le risque — il ne recommande aucun placement en particulier.</p>
+                    <p>Ce n'est pas un conseil en investissement personnalisé, et ça ne remplace pas un conseiller agréé. Aucun placement n'est sans risque, et les performances passées ne présagent pas des performances futures.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>J'ai trouvé une erreur, comment la signaler ?</summary>
+                <div class="answer">
+                    <p>Le site est ouvert : tu peux signaler une erreur ou proposer une correction depuis le dépôt du projet, dans l'onglet « Issues ».</p>
+                    <p><a href="https://github.com/Bloundsk/docmaster/issues" rel="noopener">Signaler une erreur sur GitHub →</a></p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Puis-je réutiliser le contenu ?</summary>
+                <div class="answer">
+                    <p>Pour un usage personnel ou pédagogique — réviser, citer une définition, t'appuyer sur un guide pour expliquer une notion à quelqu'un — sans problème.</p>
+                    <p>Pour une republication intégrale ou un usage commercial, passe plutôt par le dépôt GitHub pour en discuter.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>Utiliser le site</h2>
+
+            <details class="faq-item">
+                <summary>Comment chercher rapidement dans les guides ?</summary>
+                <div class="answer">
+                    <p>Appuie sur la touche <kbd>/</kbd> depuis n'importe quelle page : le curseur se place directement dans la barre de recherche.</p>
+                    <p>La recherche tolère les fautes de frappe — taper « financ » ou « cybersécurité » sans accent trouve quand même les bons résultats.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Comment passer le site en mode sombre ?</summary>
+                <div class="answer">
+                    <p>Clique sur l'icône 🌙 en haut à droite, dans la barre de navigation. Un second clic revient au mode clair.</p>
+                    <p>Ton choix est mémorisé : tu le retrouveras à ta prochaine visite sur le même navigateur.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>À quoi sert la case « J'ai lu et compris ce guide » ?</summary>
+                <div class="answer">
+                    <p>À suivre ta progression. Une fois cochée, le guide est marqué comme terminé et le reste lors de tes prochaines visites.</p>
+                    <p>C'est une aide-mémoire personnelle : personne d'autre ne voit cette information, et elle n'est envoyée nulle part.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Je retrouve ma progression sur un autre appareil ?</summary>
+                <div class="answer">
+                    <p>Non. La progression est stockée dans le navigateur que tu utilises, sur cet appareil précisément.</p>
+                    <p>Si tu changes d'ordinateur, de téléphone, de navigateur, ou si tu effaces les données de navigation, la progression repart de zéro. C'est la contrepartie du choix de ne créer aucun compte utilisateur.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Les quiz sont-ils notés ?</summary>
+                <div class="answer">
+                    <p>Non, et aucun résultat n'est enregistré. Le quiz sert uniquement à te faire réfléchir : tu vois immédiatement si ta réponse est juste ou fausse.</p>
+                    <p>Tu peux le refaire autant de fois que tu veux.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Puis-je imprimer ou lire un guide hors ligne ?</summary>
+                <div class="answer">
+                    <p>Oui. Fais <kbd>Ctrl</kbd> + <kbd>P</kbd> : une mise en page spécifique à l'impression retire la navigation, les boutons et les éléments interactifs pour ne garder que le texte.</p>
+                    <p>Tu peux aussi choisir « Enregistrer au format PDF » plutôt qu'une imprimante.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Le site fonctionne-t-il sur téléphone ?</summary>
+                <div class="answer">
+                    <p>Oui, la mise en page s'adapte aux écrans de téléphone et de tablette : la navigation se réorganise et le texte reste lisible sans zoomer.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>Données et confidentialité</h2>
+
+            <details class="faq-item">
+                <summary>Le site utilise-t-il des cookies ?</summary>
+                <div class="answer">
+                    <p>Aucun. C'est pour cela que tu n'as jamais vu de bandeau « accepter les cookies » en arrivant.</p>
+                    <p>Le mode sombre et la progression de lecture utilisent le stockage local du navigateur (<em>localStorage</em>), qui reste sur ton appareil et n'est transmis à aucun serveur.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Quelles données sont collectées ?</summary>
+                <div class="answer">
+                    <p>Uniquement des statistiques de fréquentation agrégées, via un outil respectueux de la vie privée : pages consultées, site d'où vient le visiteur, pays et type de navigateur.</p>
+                    <p>Aucune adresse IP n'est conservée, aucun identifiant ne permet de te reconnaître d'une visite à l'autre ni de te suivre sur d'autres sites.</p>
+                    <p>Le détail figure dans les <a href="mentions-legales.html">mentions légales</a>.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Y a-t-il de la publicité ou du contenu sponsorisé ?</summary>
+                <div class="answer">
+                    <p>Non. Aucune publicité, aucun lien affilié, aucun partenariat rémunéré. Le site ne poursuit aucun but lucratif, ce qui garantit que rien n'est mis en avant pour des raisons commerciales.</p>
+                </div>
+            </details>
+        </div>
+
+        <p class="faq-empty" id="faq-empty" hidden>Aucune question ne correspond à ta recherche.</p>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/enhance.js"></script>
+    <script>
+        // Filtre les questions au fil de la frappe, et déplie automatiquement
+        // celles qui correspondent pour que la réponse soit visible tout de suite.
+        const faqSearch = document.getElementById("faq-search");
+        const faqEmpty = document.getElementById("faq-empty");
+
+        faqSearch.addEventListener("input", (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            let visibles = 0;
+
+            document.querySelectorAll(".faq-item").forEach(item => {
+                const match = q === "" || item.textContent.toLowerCase().includes(q);
+                item.hidden = !match;
+                item.open = q !== "" && match;
+                if (match) visibles++;
+            });
+
+            // Masque un groupe entier si aucune de ses questions ne correspond
+            document.querySelectorAll(".faq-group").forEach(group => {
+                const reste = group.querySelectorAll(".faq-item:not([hidden])").length;
+                group.hidden = reste === 0;
+            });
+
+            faqEmpty.hidden = visibles > 0;
+        });
+    </script>
+</body>
+</html>

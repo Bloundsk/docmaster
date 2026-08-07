@@ -1,5 +1,15 @@
 # Changelog — DocMaster
 
+## 2026-08-07 — Passage en gestion Git
+- Nouvelle page **FAQ** : 19 questions réparties en 4 thèmes, dépliables, avec filtre de recherche
+- Le site est renommé « DocMaster » (au lieu de « DocMaster AI »)
+- Statistiques d'audience GoatCounter activées sur toutes les pages, sans cookie
+- Éditeur du site renseigné dans les mentions légales
+- Correction d'un déploiement incomplet : `layout.js`, `enhance.js`, `quiz.js` et le favicon
+  étaient référencés par les pages sans avoir été publiés, ce qui supprimait la barre de
+  navigation et le pied de page du site en ligne
+- Le projet est désormais versionné avec Git et publié par `git push`
+
 ## 2026-08-07 — Mise à jour majeure
 - Refonte de la maintenabilité : navbar et footer désormais uniques (`assets/js/layout.js`), fini le copier-coller sur chaque page
 - Ajout du favicon et des balises Open Graph (partage réseaux sociaux)
