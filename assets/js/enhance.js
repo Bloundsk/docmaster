@@ -61,4 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem(storageKey, markReadCheckbox.checked);
         });
     }
+
+    // --- Adresse de contact, protégée des robots collecteurs ---
+    // L'adresse n'apparaît jamais en clair dans le code source : elle est
+    // reconstituée ici depuis deux attributs séparés. Les aspirateurs
+    // d'adresses cherchent un motif "texte@texte" dans le HTML, qu'ils ne
+    // trouveront pas. Sans JavaScript, le HTML affiche une version lisible
+    // par un humain ("nom [arobase] domaine") : l'information reste donc
+    // accessible en toutes circonstances, ce qu'impose son caractère légal.
+    document.querySelectorAll(".courriel").forEach(el => {
+        const nom = el.dataset.nom;
+        const domaine = el.dataset.domaine;
+        if (!nom || !domaine) return;
+
+        const adresse = nom + String.fromCharCode(64) + domaine;
+        const lien = document.createElement("a");
+        lien.href = "mailto:" + adresse;
+        lien.textContent = adresse;
+        el.replaceWith(lien);
+    });
 });
