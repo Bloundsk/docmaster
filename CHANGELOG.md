@@ -1,5 +1,19 @@
 # Changelog — DocMaster
 
+## 2026-08-07 — Enrichissement des 9 guides
+- Contenu multiplié par 4 : les guides passent de 420–750 mots à **1 650–2 240 mots**
+- Chaque notion s'accompagne désormais d'un **exemple chiffré** et d'une **erreur fréquente**
+- Ajout de tableaux comparatifs, de sous-sections et de ressources commentées
+- Guide Finance : avertissement explicite sur son caractère pédagogique et non prescriptif
+- Nouveaux styles pour le contenu long : encadrés exemple/piège/à-retenir, tableaux, extraits de code
+- Suppression de l'effet de survol sur les blocs de cours, gênant sur des textes longs
+
+## 2026-08-07 — Correction de l'aperçu de partage
+- Image de partage 1200×630 (`assets/img/og-image.png`) : `og:image` pointait vers un favicon SVG
+  en chemin relatif, que les réseaux sociaux ne savent pas afficher
+- Balises Open Graph et Twitter Card complètes et absolues sur les 16 pages
+- Ajout de `canonical`, `og:url`, `og:locale` ; balises étendues aux 4 pages qui n'en avaient aucune
+
 ## 2026-08-07 — Passage en gestion Git
 - Nouvelle page **FAQ** : 19 questions réparties en 4 thèmes, dépliables, avec filtre de recherche
 - Le site est renommé « DocMaster » (au lieu de « DocMaster AI »)
