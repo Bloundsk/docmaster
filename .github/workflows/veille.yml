@@ -1,0 +1,23 @@
+name: Veille hebdomadaire DocMaster
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Exécuter le script de veille
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/veille.js

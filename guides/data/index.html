@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data & Analytics - DocMaster AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Accueil</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Data & Analytics</h1>
+                <p>Apprendre à collecter, analyser et interpréter des données.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140">
+                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+                    <circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+                    <g class="illu-icon">
+                        <g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="42,85 58,68 72,78 98,50"/>
+                            <polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/>
+                        </g>
+                    </g>
+                    <circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+                    <circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+                    <circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                La data et l'analytics permettent de comprendre des comportements, mesurer des performances
+                et prendre des décisions basées sur des faits plutôt que sur des impressions. Cette discipline
+                est devenue centrale dans presque tous les secteurs, du marketing à la santé en passant par
+                la finance. Ce guide t'en présente les bases essentielles pour commencer à raisonner avec des
+                données, même sans compétences techniques préalables.
+            </p>
+        </section>
+
+        <section>
+            <h2>Les bases à connaître</h2>
+
+            <article>
+                <h3>📈 Les KPI (indicateurs clés)</h3>
+                <p>
+                    Un KPI (Key Performance Indicator, ou indicateur clé de performance) est une mesure
+                    quantifiable permettant d'évaluer si un objectif est atteint.
+                </p>
+                <p>
+                    <strong>Choisir les bons indicateurs</strong> : un bon KPI doit être directement lié à un
+                    objectif précis, mesurable de façon fiable, et actionnable (permettre de prendre une
+                    décision concrète). Par exemple, pour un site e-commerce, le "taux de conversion"
+                    (pourcentage de visiteurs qui achètent) est plus actionnable que le simple "nombre de
+                    visiteurs", qui ne dit rien sur l'efficacité réelle du site.
+                </p>
+                <p>
+                    <strong>Le piège de la vanité métrique</strong> : certains indicateurs semblent
+                    impressionnants (nombre de likes, de followers) mais n'ont pas toujours de lien direct
+                    avec les objectifs réels d'un projet ou d'une entreprise. Il est important de distinguer
+                    les métriques qui "font plaisir à voir" de celles qui reflètent une vraie performance.
+                </p>
+                <p>
+                    💡 <strong>À retenir</strong> : avant de choisir un indicateur, demande-toi toujours
+                    "si ce chiffre change, quelle décision cela m'amène-t-il à prendre ?" — si la réponse est
+                    "aucune", ce n'est probablement pas le bon indicateur à suivre.
+                </p>
+            </article>
+
+            <article>
+                <h3>🗂️ La collecte de données</h3>
+                <p>
+                    Avant toute analyse, il faut d'abord recueillir des données fiables et pertinentes,
+                    provenant de sources variées selon le contexte.
+                </p>
+                <p>
+                    <strong>Les données quantitatives</strong> (chiffres mesurables : ventes, trafic web,
+                    temps passé) permettent des analyses statistiques précises. <strong>Les données
+                    qualitatives</strong> (avis clients, retours d'entretiens) apportent du contexte et des
+                    explications que les seuls chiffres ne révèlent pas.
+                </p>
+                <p>
+                    <strong>La qualité prime sur la quantité</strong> : des données mal collectées (biaisées,
+                    incomplètes, dupliquées) peuvent mener à des conclusions erronées, même avec un volume
+                    important. Un petit échantillon de données fiables vaut souvent mieux qu'un grand volume
+                    de données douteuses.
+                </p>
+                <p>
+                    💡 <strong>À retenir</strong> : avant d'analyser des données, vérifie toujours leur
+                    source et leur fiabilité — une analyse, aussi sophistiquée soit-elle, ne peut pas corriger
+                    des données de mauvaise qualité au départ.
+                </p>
+            </article>
+
+            <article>
+                <h3>📉 La visualisation de données</h3>
+                <p>
+                    Représenter des données sous forme graphique permet de rendre des informations complexes
+                    plus rapidement compréhensibles et de faciliter la prise de décision.
+                </p>
+                <p>
+                    <strong>Choisir le bon type de graphique</strong> : un graphique en courbes convient pour
+                    montrer une évolution dans le temps, un graphique en barres pour comparer des catégories
+                    distinctes, un graphique circulaire (camembert) pour montrer des proportions d'un tout
+                    (à utiliser avec modération, car souvent moins lisible qu'on ne le pense au-delà de 4-5
+                    catégories).
+                </p>
+                <p>
+                    <strong>Éviter les biais visuels</strong> : un axe tronqué (qui ne part pas de zéro) peut
+                    exagérer artificiellement une différence entre deux valeurs, donnant une impression
+                    trompeuse. Bien construire ses graphiques, c'est aussi une question d'honnêteté dans la
+                    représentation des données.
+                </p>
+                <p>
+                    💡 <strong>À retenir</strong> : un bon graphique doit permettre de comprendre l'essentiel
+                    en quelques secondes, sans avoir besoin d'explication supplémentaire.
+                </p>
+            </article>
+
+            <article>
+                <h3>🧮 Les bases des statistiques</h3>
+                <p>
+                    Quelques notions statistiques simples permettent déjà d'interpréter correctement la
+                    plupart des données rencontrées au quotidien.
+                </p>
+                <p>
+                    <strong>La moyenne</strong> représente la valeur centrale d'un ensemble de données, mais
+                    peut être fortement influencée par des valeurs extrêmes. <strong>La médiane</strong>
+                    (la valeur du milieu quand les données sont triées) est souvent plus représentative en
+                    présence de valeurs atypiques — par exemple, pour les salaires, où quelques très hauts
+                    salaires peuvent fausser la moyenne sans refléter la situation typique.
+                </p>
+                <p>
+                    <strong>La tendance</strong> observe l'évolution d'une donnée dans le temps (hausse,
+                    baisse, stabilité), tandis que la <strong>corrélation</strong> mesure si deux variables
+                    évoluent ensemble — attention cependant : une corrélation ne signifie pas automatiquement
+                    qu'une variable cause l'autre.
+                </p>
+                <p>
+                    💡 <strong>À retenir</strong> : "corrélation n'est pas causalité" — deux phénomènes qui
+                    évoluent ensemble ne sont pas nécessairement liés par une relation de cause à effet, un
+                    facteur externe peut expliquer les deux.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article>
+                <p>
+                    Pour approfondir l'analyse de données :
+                </p>
+                <p>
+                    • <strong>Google Analytics Academy</strong> — formations gratuites sur l'analyse de
+                    données web<br>
+                    • <strong>Kaggle</strong> — plateforme pour pratiquer l'analyse de données sur des jeux
+                    de données réels<br>
+                    • <strong>Our World in Data</strong> — excellents exemples de visualisation de données
+                    sur des sujets mondiaux
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© DocMaster AI</p>
+    </footer>
+
+    <script src="../../assets/js/theme.js"></script>
+
+</body>
+</html>

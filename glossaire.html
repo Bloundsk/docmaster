@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossaire - DocMaster AI</title>
+    <meta name="description" content="Glossaire des termes techniques utilisés dans les guides DocMaster AI.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .glossary-item { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 22px; margin-bottom: 14px; }
+        .glossary-item dt { font-weight: 700; color: var(--primary); font-family: 'Poppins', sans-serif; margin-bottom: 6px; }
+        .glossary-item dd { margin: 0; }
+        .glossary-item .cat { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    </style>
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "";</script>
+    <script src="assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a> &gt; <span aria-current="page">Glossaire</span>
+    </nav>
+
+    <header>
+        <h1>📖 Glossaire</h1>
+        <p>Les termes techniques expliqués simplement, tous domaines confondus.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="glossary-search" placeholder="🔍 Filtrer le glossaire..." autocomplete="off" style="width:100%;padding:16px 20px;border:none;border-radius:var(--radius);box-shadow:var(--shadow);font-family:'Inter',sans-serif;font-size:1rem;background:var(--surface);color:var(--text);outline:none;">
+    </div>
+
+    <main id="main-content">
+        <dl id="glossary-list">
+
+            <div class="glossary-item" data-term="etf tracker finance">
+                <span class="cat">💰 Finance</span>
+                <dt>ETF (tracker)</dt>
+                <dd>Fonds qui réplique la performance d'un indice boursier entier, permettant une diversification automatique à faible coût.</dd>
+            </div>
+            <div class="glossary-item" data-term="intérêt composé finance">
+                <span class="cat">💰 Finance</span>
+                <dt>Intérêt composé</dt>
+                <dd>Mécanisme par lequel les gains d'un placement génèrent eux-mêmes des gains avec le temps.</dd>
+            </div>
+            <div class="glossary-item" data-term="pea assurance vie finance">
+                <span class="cat">💰 Finance</span>
+                <dt>PEA</dt>
+                <dd>Plan d'Épargne en Actions : enveloppe permettant d'investir en actions avec une fiscalité allégée après 5 ans.</dd>
+            </div>
+
+            <div class="glossary-item" data-term="llm ia intelligence artificielle">
+                <span class="cat">🤖 IA</span>
+                <dt>LLM (Large Language Model)</dt>
+                <dd>Grand modèle de langage entraîné sur d'immenses quantités de texte pour comprendre et générer du langage humain.</dd>
+            </div>
+            <div class="glossary-item" data-term="hallucination ia">
+                <span class="cat">🤖 IA</span>
+                <dt>Hallucination</dt>
+                <dd>Information fausse générée par une IA avec un ton confiant, comme si elle était vraie.</dd>
+            </div>
+            <div class="glossary-item" data-term="prompt engineering ia">
+                <span class="cat">🤖 IA</span>
+                <dt>Prompt engineering</dt>
+                <dd>Art de formuler des instructions claires et précises à une IA pour obtenir de meilleurs résultats.</dd>
+            </div>
+
+            <div class="glossary-item" data-term="dom javascript web">
+                <span class="cat">💻 Développement Web</span>
+                <dt>DOM</dt>
+                <dd>Représentation de la page HTML que JavaScript peut lire et modifier dynamiquement.</dd>
+            </div>
+            <div class="glossary-item" data-term="responsive design mobile web">
+                <span class="cat">💻 Développement Web</span>
+                <dt>Responsive design</dt>
+                <dd>Conception d'un site pour qu'il s'affiche correctement sur tous types d'écrans.</dd>
+            </div>
+
+            <div class="glossary-item" data-term="seo referencement marketing">
+                <span class="cat">📢 Marketing</span>
+                <dt>SEO</dt>
+                <dd>Search Engine Optimization : techniques pour améliorer la position d'un site dans les résultats de recherche gratuits.</dd>
+            </div>
+            <div class="glossary-item" data-term="sea publicite marketing cpc">
+                <span class="cat">📢 Marketing</span>
+                <dt>SEA / CPC</dt>
+                <dd>Publicité payante sur les moteurs de recherche, généralement facturée au clic (Coût Par Clic).</dd>
+            </div>
+
+            <div class="glossary-item" data-term="phishing hameçonnage cybersecurite">
+                <span class="cat">🔒 Cybersécurité</span>
+                <dt>Phishing</dt>
+                <dd>Technique d'arnaque consistant à se faire passer pour une entité de confiance afin de voler des informations.</dd>
+            </div>
+            <div class="glossary-item" data-term="2fa authentification cybersecurite">
+                <span class="cat">🔒 Cybersécurité</span>
+                <dt>2FA</dt>
+                <dd>Authentification à deux facteurs : couche de sécurité supplémentaire en plus du mot de passe.</dd>
+            </div>
+
+            <div class="glossary-item" data-term="business plan entrepreneuriat">
+                <span class="cat">🚀 Entrepreneuriat</span>
+                <dt>Business plan</dt>
+                <dd>Document structurant un projet d'entreprise : offre, marché, stratégie et prévisions financières.</dd>
+            </div>
+            <div class="glossary-item" data-term="sasu sarl statut juridique entrepreneuriat">
+                <span class="cat">🚀 Entrepreneuriat</span>
+                <dt>SASU / SARL</dt>
+                <dd>Statuts juridiques d'entreprise déterminant le cadre légal, fiscal et social du projet.</dd>
+            </div>
+
+            <div class="glossary-item" data-term="pomodoro productivite">
+                <span class="cat">⏱️ Productivité</span>
+                <dt>Méthode Pomodoro</dt>
+                <dd>Méthode de travail par sessions de 25 minutes concentrées, entrecoupées de pauses courtes.</dd>
+            </div>
+            <div class="glossary-item" data-term="gtd productivite">
+                <span class="cat">⏱️ Productivité</span>
+                <dt>GTD</dt>
+                <dd>Getting Things Done : méthode consistant à capturer toutes ses tâches dans un système externe fiable.</dd>
+            </div>
+
+            <div class="glossary-item" data-term="kpi data analytics">
+                <span class="cat">📊 Data</span>
+                <dt>KPI</dt>
+                <dd>Key Performance Indicator : indicateur clé mesurant si un objectif est atteint.</dd>
+            </div>
+            <div class="glossary-item" data-term="correlation causalite data">
+                <span class="cat">📊 Data</span>
+                <dt>Corrélation vs causalité</dt>
+                <dd>Deux phénomènes qui évoluent ensemble ne sont pas nécessairement liés par une relation de cause à effet.</dd>
+            </div>
+
+            <div class="glossary-item" data-term="ux ui design">
+                <span class="cat">🎨 Design</span>
+                <dt>UX vs UI</dt>
+                <dd>L'UX concerne l'expérience globale d'utilisation, l'UI concerne l'apparence visuelle concrète.</dd>
+            </div>
+            <div class="glossary-item" data-term="wireframe design">
+                <span class="cat">🎨 Design</span>
+                <dt>Wireframe</dt>
+                <dd>Maquette simple et schématique d'une interface, réalisée avant le design visuel final.</dd>
+            </div>
+
+        </dl>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/enhance.js"></script>
+    <script>
+        document.getElementById("glossary-search").addEventListener("input", (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            document.querySelectorAll(".glossary-item").forEach(item => {
+                const match = item.dataset.term.includes(q) || item.textContent.toLowerCase().includes(q);
+                item.style.display = match ? "" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
