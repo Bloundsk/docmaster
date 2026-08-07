@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design UX/UI - DocMaster AI</title>
+    <meta name="description" content="Guide gratuit sur l'UX, l'UI, le wireframing, les principes de design visuel et les tests utilisateurs.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <meta property="og:title" content="Design UX/UI - DocMaster AI">
+    <meta property="og:description" content="Guide gratuit sur l'UX, l'UI, le wireframing, les principes de design visuel et les tests utilisateurs.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../assets/img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Accueil</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt; <span aria-current="page">🎨 Design UX/UI</span>
     </nav>
 
     <header>
@@ -29,173 +33,122 @@
             </div>
             <div class="header-illustration">
                 <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
-                    <circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
-                    <g class="illu-icon">
-                        <g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="70" cy="70" r="24"/>
-                            <circle cx="70" cy="70" r="9" stroke-opacity="0.6"/>
-                        </g>
-                        <circle cx="70" cy="70" r="3.5" fill="white"/>
-                    </g>
-                    <circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
-                    <circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
-                    <circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/>
-                </svg>
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="70" cy="70" r="24"/><circle cx="70" cy="70" r="9" stroke-opacity="0.6"/></g><circle cx="70" cy="70" r="3.5" fill="white"/></g>
+<circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
             </div>
         </div>
     </header>
 
-    <main>
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 7 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#ux-vs-ui-quelle-différence">🧭 UX vs UI, quelle différence ?</a></li>
+                <li><a href="#le-wireframing">🖊️ Le wireframing</a></li>
+                <li><a href="#les-principes-de-design-visuel">🎨 Les principes de design visuel</a></li>
+                <li><a href="#les-tests-utilisateurs">🧪 Les tests utilisateurs</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>L'UX concerne l'expérience globale, l'UI concerne l'apparence visuelle.</li>
+                <li>Le wireframing structure une interface avant de passer au design visuel.</li>
+                <li>La hiérarchie visuelle guide l'œil vers ce qui compte le plus.</li>
+                <li>L'espace blanc n'est pas un espace perdu, il aère la mise en page.</li>
+                <li>Tester tôt, même avec une maquette simple, coûte moins cher que corriger après développement.</li>
+            </ul>
+        </div>
+
         <section>
-            <h2>Introduction</h2>
-            <p>
-                Le design UX/UI vise à créer des interfaces à la fois esthétiques (UI) et agréables à
-                utiliser (UX). Une bonne interface ne se remarque presque pas — elle guide naturellement
-                l'utilisateur vers son objectif, sans friction ni confusion. Ce guide te présente les
-                notions essentielles du domaine, utiles autant pour concevoir des interfaces que pour mieux
-                comprendre pourquoi certains produits numériques sont plus agréables à utiliser que d'autres.
-            </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le design UX/UI vise à créer des interfaces à la fois esthétiques (UI) et agréables à utiliser (UX). Une bonne interface ne se remarque presque pas — elle guide naturellement l'utilisateur vers son objectif. Ce guide te présente les notions essentielles du domaine.</p>
         </section>
 
         <section>
-            <h2>Les bases à connaître</h2>
-
+            <h2 id="bases">Les bases à connaître</h2>
             <article>
-                <h3>🧭 UX vs UI, quelle différence ?</h3>
-                <p>
-                    Ces deux termes sont souvent confondus, mais désignent des aspects distincts et
-                    complémentaires de la conception d'un produit numérique.
-                </p>
-                <p>
-                    <strong>L'UX (User Experience)</strong> concerne l'expérience globale de l'utilisateur :
-                    est-ce que le produit répond à son besoin, est-il facile à comprendre et à utiliser,
-                    l'utilisateur atteint-il son objectif sans frustration ? L'UX s'intéresse au parcours et
-                    au ressenti dans son ensemble.
-                </p>
-                <p>
-                    <strong>L'UI (User Interface)</strong> concerne l'apparence visuelle concrète : les
-                    couleurs, la typographie, les boutons, l'agencement des éléments à l'écran. C'est la
-                    partie "visible" et esthétique de l'interface.
-                </p>
-                <p>
-                    <strong>Un exemple pour bien distinguer les deux</strong> : un formulaire peut être
-                    visuellement magnifique (bonne UI) mais demander 15 champs inutiles et confus (mauvaise
-                    UX) — inversement, un formulaire simple et efficace (bonne UX) peut avoir un design
-                    visuellement quelconque (UI perfectible).
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : une belle interface ne garantit pas une bonne expérience
-                    utilisateur — les deux dimensions doivent être travaillées ensemble, mais restent
-                    distinctes.
-                </p>
+                <h3 id="ux-vs-ui-quelle-différence">🧭 UX vs UI, quelle différence ?</h3>
+                <p>Ces deux termes sont souvent confondus, mais désignent des aspects distincts et complémentaires.</p>
+                <p>L'UX concerne l'expérience globale : le produit répond-il au besoin, est-il facile à utiliser ?</p>
+                <p>L'UI concerne l'apparence visuelle concrète : couleurs, typographie, boutons.</p>
+                <p>💡 À retenir : une belle interface ne garantit pas une bonne expérience utilisateur.</p>
             </article>
-
             <article>
-                <h3>🖊️ Le wireframing</h3>
-                <p>
-                    Le wireframing consiste à créer des maquettes simples et schématiques d'une interface,
-                    avant de passer au design visuel final — un peu comme un plan d'architecte avant la
-                    construction.
-                </p>
-                <p>
-                    <strong>Pourquoi commencer par un wireframe</strong> : cela permet de se concentrer sur
-                    la structure et la logique de navigation, sans se laisser distraire par les couleurs ou
-                    les détails visuels. C'est aussi un moyen rapide et économique de tester plusieurs
-                    dispositions avant d'investir du temps dans un design abouti.
-                </p>
-                <p>
-                    <strong>Les niveaux de fidélité</strong> : un wireframe "basse fidélité" utilise des
-                    formes très simples (rectangles, lignes) pour représenter les éléments, tandis qu'un
-                    wireframe "haute fidélité" (parfois appelé maquette ou mockup) se rapproche déjà du
-                    rendu final, avec de vraies couleurs et typographies.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : ne pas sauter l'étape du wireframe fait souvent perdre du
-                    temps sur le long terme — corriger la structure d'une interface après un design abouti
-                    est bien plus coûteux que de l'ajuster sur un simple croquis.
-                </p>
+                <h3 id="le-wireframing">🖊️ Le wireframing</h3>
+                <p>Le wireframing consiste à créer des maquettes simples d'une interface, avant le design visuel final.</p>
+                <p>Pourquoi commencer par un wireframe : se concentrer sur la structure sans se laisser distraire par les détails visuels.</p>
+                <p>Les niveaux de fidélité : basse fidélité (formes simples) vs haute fidélité (proche du rendu final).</p>
+                <p>💡 À retenir : corriger la structure après un design abouti est bien plus coûteux.</p>
             </article>
-
             <article>
-                <h3>🎨 Les principes de design visuel</h3>
-                <p>
-                    Certains principes fondamentaux structurent un design visuel efficace, indépendamment du
-                    style ou de la marque.
-                </p>
-                <p>
-                    <strong>La hiérarchie visuelle</strong> guide l'œil de l'utilisateur vers ce qui compte
-                    le plus, en jouant sur la taille, la couleur, et l'espacement des éléments. Un titre plus
-                    grand, un bouton d'action plus contrasté : ces choix ne sont pas esthétiques par hasard,
-                    ils orientent l'attention.
-                </p>
-                <p>
-                    <strong>La cohérence</strong> consiste à utiliser les mêmes codes visuels (couleurs,
-                    espacements, styles de boutons) à travers toute une interface, ce qui rend le produit
-                    plus prévisible et plus simple à utiliser pour l'utilisateur.
-                </p>
-                <p>
-                    <strong>L'espace blanc (ou "espace négatif")</strong> — les zones vides autour des
-                    éléments — n'est pas un espace perdu : il aère la mise en page, réduit la charge
-                    cognitive, et met en valeur les éléments importants en leur laissant de la place pour
-                    "respirer".
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : un design chargé n'est pas nécessairement plus riche ou
-                    plus professionnel — la simplicité et la cohérence sont souvent plus efficaces qu'une
-                    accumulation d'éléments visuels.
-                </p>
+                <h3 id="les-principes-de-design-visuel">🎨 Les principes de design visuel</h3>
+                <p>Certains principes fondamentaux structurent un design visuel efficace.</p>
+                <p>La hiérarchie visuelle guide l'œil vers ce qui compte le plus.</p>
+                <p>La cohérence rend le produit plus prévisible et simple à utiliser.</p>
+                <p>L'espace blanc aère la mise en page et réduit la charge cognitive.</p>
+                <p>💡 À retenir : la simplicité est souvent plus efficace qu'une accumulation d'éléments visuels.</p>
             </article>
-
             <article>
-                <h3>🧪 Les tests utilisateurs</h3>
-                <p>
-                    Tester une interface auprès de vrais utilisateurs, avant son déploiement final, permet
-                    d'identifier des problèmes souvent invisibles pour l'équipe qui l'a conçue.
-                </p>
-                <p>
-                    <strong>Pourquoi c'est indispensable</strong> : les concepteurs connaissent trop bien
-                    leur propre produit pour repérer les points de confusion qu'un nouvel utilisateur
-                    rencontrera immédiatement. Ce qui paraît évident pour l'équipe de conception ne l'est pas
-                    toujours pour l'utilisateur final.
-                </p>
-                <p>
-                    <strong>Une méthode simple</strong> : observer 5 utilisateurs représentatifs de la cible
-                    essayer d'accomplir une tâche précise sur l'interface (par exemple "trouve et achète ce
-                    produit"), sans les aider, et noter où ils hésitent ou se trompent. Cette méthode suffit
-                    généralement à révéler la majorité des problèmes majeurs d'utilisabilité.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : il vaut mieux tester tôt, même avec une maquette simple,
-                    que de découvrir un problème d'utilisabilité majeur après le développement complet du
-                    produit — corriger devient alors beaucoup plus coûteux.
-                </p>
+                <h3 id="les-tests-utilisateurs">🧪 Les tests utilisateurs</h3>
+                <p>Tester une interface auprès de vrais utilisateurs permet d'identifier des problèmes invisibles pour l'équipe qui l'a conçue.</p>
+                <p>Une méthode simple : observer 5 utilisateurs essayer d'accomplir une tâche précise.</p>
+                <p>💡 À retenir : il vaut mieux tester tôt que de découvrir un problème après développement complet.</p>
             </article>
         </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <div id="quiz-container"></div>
+            <p class="quiz-score" id="quiz-score"></p>
+        </div>
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
             <article>
-                <p>
-                    Pour approfondir le design UX/UI :
-                </p>
-                <p>
-                    • <strong>Nielsen Norman Group</strong> — référence mondiale en recherche UX, articles
-                    gratuits et rigoureux<br>
-                    • <strong>Laws of UX</strong> — principes psychologiques appliqués au design
-                    d'interfaces<br>
-                    • <strong>Figma Community</strong> — explorer des designs réels et des systèmes de
-                    composants pour s'inspirer
-                </p>
+                <p>Nielsen Norman Group — référence mondiale en recherche UX. Laws of UX — principes psychologiques appliqués au design. Figma Community — designs réels pour s'inspirer.</p>
             </article>
         </section>
+
+        <div class="guide-nav">
+            <a href="../data/index.html"><span class="label">← Guide précédent</span>📊 Data & Analytics</a>
+            <a href="../finance/index.html" class="next"><span class="label">Guide suivant →</span>💰 Finance</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+                <a href="../entrepreneuriat/index.html">🚀 Entrepreneuriat</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>© DocMaster AI</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        const quizData = [{"q": "Que concerne l'UX ?", "options": ["Uniquement les couleurs", "L'expérience globale de l'utilisateur", "Le code source du site"], "a": 1}, {"q": "Pourquoi commencer par un wireframe ?", "options": ["Pour choisir les couleurs finales", "Pour se concentrer sur la structure sans distraction visuelle", "Ce n'est jamais utile"], "a": 1}, {"q": "Combien d'utilisateurs suffisent souvent pour un test simple ?", "options": ["Environ 5", "Au moins 500", "1 seul"], "a": 0}];
+    </script>
+    <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
-
+    <script src="../../assets/js/enhance.js"></script>
 </body>
 </html>

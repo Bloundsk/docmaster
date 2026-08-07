@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligence Artificielle - DocMaster AI</title>
+    <meta name="description" content="Guide gratuit pour comprendre les LLM, les agents IA, le prompt engineering et les limites de l'intelligence artificielle.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <meta property="og:title" content="Intelligence Artificielle - DocMaster AI">
+    <meta property="og:description" content="Guide gratuit pour comprendre les LLM, les agents IA, le prompt engineering et les limites de l'intelligence artificielle.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../assets/img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Accueil</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt; <span aria-current="page">🤖 Intelligence Artificielle</span>
     </nav>
 
     <header>
@@ -29,181 +33,123 @@
             </div>
             <div class="header-illustration">
                 <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
-                    <circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
-                    <g class="illu-icon">
-                        <g stroke="white" stroke-width="2" fill="none" stroke-linecap="round">
-                            <line x1="70" y1="70" x2="45" y2="50"/>
-                            <line x1="70" y1="70" x2="95" y2="50"/>
-                            <line x1="70" y1="70" x2="45" y2="90"/>
-                            <line x1="70" y1="70" x2="95" y2="90"/>
-                            <line x1="70" y1="70" x2="70" y2="40"/>
-                        </g>
-                        <circle cx="70" cy="70" r="6" fill="white"/>
-                        <circle cx="45" cy="50" r="4" fill="white"/>
-                        <circle cx="95" cy="50" r="4" fill="white"/>
-                        <circle cx="45" cy="90" r="4" fill="white"/>
-                        <circle cx="95" cy="90" r="4" fill="white"/>
-                        <circle cx="70" cy="40" r="4" fill="white"/>
-                    </g>
-                    <circle class="illu-twinkle" cx="110" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
-                    <circle class="illu-twinkle" cx="30" cy="70" r="2.5" fill="white" style="animation-delay:1s"/>
-                </svg>
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2" fill="none" stroke-linecap="round">
+<line x1="70" y1="70" x2="45" y2="50"/><line x1="70" y1="70" x2="95" y2="50"/><line x1="70" y1="70" x2="45" y2="90"/><line x1="70" y1="70" x2="95" y2="90"/><line x1="70" y1="70" x2="70" y2="40"/></g>
+<circle cx="70" cy="70" r="6" fill="white"/><circle cx="45" cy="50" r="4" fill="white"/><circle cx="95" cy="50" r="4" fill="white"/><circle cx="45" cy="90" r="4" fill="white"/><circle cx="95" cy="90" r="4" fill="white"/><circle cx="70" cy="40" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="110" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
             </div>
         </div>
     </header>
 
-    <main>
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 7 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#quest-ce-quun-llm">🧠 Qu'est-ce qu'un LLM ?</a></li>
+                <li><a href="#les-agents-ia">⚙️ Les agents IA</a></li>
+                <li><a href="#le-prompt-engineering">✍️ Le prompt engineering</a></li>
+                <li><a href="#les-limites-et-risques-de-lia">⚠️ Les limites et risques de l'IA</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Un LLM prédit du texte statistiquement probable, pas nécessairement toujours vrai.</li>
+                <li>Les agents IA enchaînent plusieurs étapes de façon autonome, contrairement à un simple chatbot.</li>
+                <li>Un bon prompt est précis, contextuel, et précise le format attendu.</li>
+                <li>Les hallucinations et les biais sont des limites réelles à garder en tête.</li>
+                <li>Ne partage jamais d'informations sensibles avec une IA en ligne.</li>
+            </ul>
+        </div>
+
         <section>
-            <h2>Introduction</h2>
-            <p>
-                L'intelligence artificielle transforme la façon dont on travaille, crée et communique.
-                Longtemps réservée aux laboratoires de recherche, elle est aujourd'hui accessible à tous via
-                des outils comme les chatbots ou les générateurs d'images. Ce guide te donne les bases pour
-                comprendre comment ces technologies fonctionnent, leurs usages concrets, et leurs limites —
-                sans avoir besoin de compétences techniques préalables.
-            </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>L'intelligence artificielle transforme la façon dont on travaille, crée et communique. Longtemps réservée aux laboratoires de recherche, elle est aujourd'hui accessible à tous via des outils comme les chatbots. Ce guide te donne les bases pour comprendre comment ces technologies fonctionnent, leurs usages concrets, et leurs limites.</p>
         </section>
 
         <section>
-            <h2>Les bases à connaître</h2>
-
+            <h2 id="bases">Les bases à connaître</h2>
             <article>
-                <h3>🧠 Qu'est-ce qu'un LLM ?</h3>
-                <p>
-                    Un LLM (Large Language Model, ou "grand modèle de langage") est un type d'intelligence
-                    artificielle entraîné sur d'immenses quantités de texte pour apprendre à comprendre et
-                    générer du langage humain.
-                </p>
-                <p>
-                    <strong>Comment ça fonctionne concrètement ?</strong> Un LLM ne "comprend" pas le langage
-                    comme un humain. Il fonctionne en prédisant, mot après mot, la suite la plus probable
-                    d'un texte, en s'appuyant sur des milliards d'exemples vus pendant son entraînement. C'est
-                    cette capacité de prédiction statistique, à très grande échelle, qui lui permet de
-                    répondre à des questions, rédiger du texte, ou traduire des langues.
-                </p>
-                <p>
-                    <strong>D'où vient sa "connaissance" ?</strong> Le modèle est entraîné sur un corpus
-                    massif de textes existants (livres, articles, sites web) jusqu'à une date donnée, appelée
-                    "date de coupure" (knowledge cutoff). Il n'a donc pas accès en temps réel à ce qui se
-                    passe après cette date, sauf s'il est connecté à des outils de recherche externes.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : un LLM génère du texte statistiquement probable, pas
-                    nécessairement toujours vrai — il peut se tromper avec assurance (on appelle ça une
-                    "hallucination"). Vérifier les informations importantes reste essentiel.
-                </p>
+                <h3 id="quest-ce-quun-llm">🧠 Qu'est-ce qu'un LLM ?</h3>
+                <p>Un LLM (Large Language Model) est une IA entraînée sur d'immenses quantités de texte pour comprendre et générer du langage humain.</p>
+                <p>Comment ça fonctionne : un LLM prédit, mot après mot, la suite la plus probable d'un texte, en s'appuyant sur des milliards d'exemples vus pendant son entraînement.</p>
+                <p>D'où vient sa connaissance ? Le modèle est entraîné sur un corpus de textes jusqu'à une date donnée (knowledge cutoff), sans accès en temps réel à l'actualité sauf outils externes.</p>
+                <p>💡 À retenir : un LLM peut se tromper avec assurance (hallucination) — vérifier les informations importantes reste essentiel.</p>
             </article>
-
             <article>
-                <h3>⚙️ Les agents IA</h3>
-                <p>
-                    Un agent IA est un système capable d'exécuter des tâches de façon autonome, en
-                    enchaînant plusieurs étapes (recherche d'information, raisonnement, action) sans
-                    intervention humaine à chaque étape.
-                </p>
-                <p>
-                    <strong>La différence avec un simple chatbot</strong> : un chatbot classique répond
-                    généralement à une question en une seule fois. Un agent, lui, peut décomposer une tâche
-                    complexe en sous-étapes, utiliser des outils externes (recherche web, calculatrice,
-                    exécution de code), et ajuster sa stratégie en fonction des résultats obtenus à chaque
-                    étape.
-                </p>
-                <p>
-                    <strong>Exemple concret</strong> : demander à un agent de "trouver un vol pour Paris la
-                    semaine prochaine et réserver le moins cher" implique plusieurs étapes autonomes :
-                    rechercher les vols disponibles, comparer les prix, vérifier les dates, puis effectuer
-                    la réservation — le tout sans que l'utilisateur ait à valider chaque étape individuellement.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : les agents IA représentent une évolution majeure par
-                    rapport aux simples chatbots, mais ils nécessitent une supervision, notamment pour les
-                    actions ayant des conséquences réelles (paiements, envois d'emails, etc.).
-                </p>
+                <h3 id="les-agents-ia">⚙️ Les agents IA</h3>
+                <p>Un agent IA exécute des tâches de façon autonome, en enchaînant plusieurs étapes sans intervention humaine à chaque étape.</p>
+                <p>La différence avec un chatbot : un agent peut décomposer une tâche complexe, utiliser des outils externes, et ajuster sa stratégie selon les résultats obtenus.</p>
+                <p>Exemple : demander à un agent de réserver un vol implique recherche, comparaison, vérification et réservation, en autonomie.</p>
+                <p>💡 À retenir : les agents nécessitent une supervision, notamment pour les actions à conséquences réelles.</p>
             </article>
-
             <article>
-                <h3>✍️ Le prompt engineering</h3>
-                <p>
-                    Le prompt engineering est l'art de formuler des instructions claires et précises à une
-                    IA pour obtenir les meilleurs résultats possibles.
-                </p>
-                <p>
-                    <strong>Être précis et contextuel</strong> : plus une demande est vague, plus la réponse
-                    risque d'être générique. Préciser le contexte, le format attendu, le ton souhaité, ou
-                    donner des exemples améliore significativement la qualité de la réponse.
-                </p>
-                <p>
-                    <strong>Exemple comparatif</strong> :<br>
-                    ❌ Vague : "Écris-moi un texte sur le café"<br>
-                    ✅ Précis : "Écris un paragraphe de 100 mots, ton humoristique, expliquant pourquoi le
-                    café du matin est indispensable pour les développeurs"
-                </p>
-                <p>
-                    <strong>Le raisonnement étape par étape</strong> : pour des tâches complexes (calculs,
-                    logique, analyse), demander explicitement à l'IA de "réfléchir étape par étape" avant de
-                    donner sa réponse finale améliore souvent la fiabilité du résultat.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : un bon prompt, c'est comme une bonne consigne donnée à un
-                    collègue — plus le contexte et l'objectif sont clairs, meilleur sera le résultat.
-                </p>
+                <h3 id="le-prompt-engineering">✍️ Le prompt engineering</h3>
+                <p>Le prompt engineering est l'art de formuler des instructions claires pour obtenir les meilleurs résultats d'une IA.</p>
+                <p>Être précis et contextuel améliore significativement la qualité de la réponse, comparé à une demande vague.</p>
+                <p>Demander un raisonnement étape par étape améliore souvent la fiabilité sur des tâches complexes.</p>
+                <p>💡 À retenir : un bon prompt, c'est comme une bonne consigne donnée à un collègue.</p>
             </article>
-
             <article>
-                <h3>⚠️ Les limites et risques de l'IA</h3>
-                <p>
-                    Comprendre les limites de l'IA est aussi important que comprendre ses capacités, pour
-                    l'utiliser de façon responsable et éclairée.
-                </p>
-                <p>
-                    <strong>Les hallucinations</strong> : une IA peut générer des informations fausses avec
-                    un ton parfaitement confiant — dates inventées, sources inexistantes, citations
-                    fabriquées. Ce risque est plus élevé sur des sujets pointus ou récents.
-                </p>
-                <p>
-                    <strong>Les biais</strong> : les modèles d'IA apprennent à partir de données existantes,
-                    qui peuvent elles-mêmes contenir des biais culturels, sociaux ou historiques. L'IA peut
-                    donc reproduire, parfois de façon subtile, ces biais dans ses réponses.
-                </p>
-                <p>
-                    <strong>La confidentialité des données</strong> : les informations partagées avec une IA
-                    en ligne peuvent, selon les outils utilisés, être stockées ou utilisées pour entraîner de
-                    futurs modèles — il est recommandé d'éviter de partager des données sensibles (mots de
-                    passe, informations médicales, données confidentielles d'entreprise).
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : traite les réponses d'une IA comme celles d'un assistant
-                    compétent mais faillible — vérifie les informations critiques, et garde ton esprit
-                    critique, surtout sur des sujets sensibles ou à fort enjeu.
-                </p>
+                <h3 id="les-limites-et-risques-de-lia">⚠️ Les limites et risques de l'IA</h3>
+                <p>Comprendre les limites de l'IA est aussi important que comprendre ses capacités.</p>
+                <p>Les hallucinations : une IA peut générer des informations fausses avec un ton confiant.</p>
+                <p>Les biais : les modèles apprennent à partir de données qui peuvent contenir des biais culturels ou sociaux.</p>
+                <p>La confidentialité : éviter de partager des données sensibles avec une IA en ligne.</p>
+                <p>💡 À retenir : traite les réponses d'une IA comme celles d'un assistant compétent mais faillible.</p>
             </article>
         </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <div id="quiz-container"></div>
+            <p class="quiz-score" id="quiz-score"></p>
+        </div>
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
             <article>
-                <p>
-                    Le domaine de l'IA évolue extrêmement vite. Pour suivre les nouveautés au-delà de ce
-                    guide, voici des sources fiables à consulter :
-                </p>
-                <p>
-                    • <strong>Blogs officiels des laboratoires d'IA</strong> (Anthropic, OpenAI, Google
-                    DeepMind) — annonces de nouveaux modèles et fonctionnalités<br>
-                    • <strong>Hugging Face</strong> — plateforme de référence pour explorer des modèles
-                    open-source et leurs usages<br>
-                    • Newsletters spécialisées (comme "The Batch" de DeepLearning.AI) pour une veille
-                    hebdomadaire accessible
-                </p>
+                <p>Blogs officiels des laboratoires d'IA (Anthropic, OpenAI, Google DeepMind). Hugging Face — modèles open-source. Newsletters spécialisées pour une veille hebdomadaire accessible.</p>
             </article>
         </section>
+
+        <div class="guide-nav">
+            <a href="../finance/index.html"><span class="label">← Guide précédent</span>💰 Finance</a>
+            <a href="../dev-web/index.html" class="next"><span class="label">Guide suivant →</span>💻 Développement Web</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+                <a href="../entrepreneuriat/index.html">🚀 Entrepreneuriat</a>
+                <a href="../data/index.html">📊 Data & Analytics</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>© DocMaster AI</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        const quizData = [{"q": "Comment un LLM génère-t-il du texte ?", "options": ["En copiant des textes existants mot pour mot", "En prédisant statistiquement le mot suivant le plus probable", "En interrogeant Google en temps réel"], "a": 1}, {"q": "Qu'est-ce qu'une \"hallucination\" en IA ?", "options": ["Un bug d'affichage", "Une information fausse générée avec assurance", "Un mode de fonctionnement hors-ligne"], "a": 1}, {"q": "Qu'est-ce qui distingue un agent IA d'un simple chatbot ?", "options": ["Le prix", "Sa capacité à enchaîner des étapes de façon autonome", "La couleur de l'interface"], "a": 1}];
+    </script>
+    <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
-
+    <script src="../../assets/js/enhance.js"></script>
 </body>
 </html>

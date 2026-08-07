@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data & Analytics - DocMaster AI</title>
+    <meta name="description" content="Guide gratuit sur les KPI, la collecte de données, la visualisation et les bases des statistiques.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <meta property="og:title" content="Data & Analytics - DocMaster AI">
+    <meta property="og:description" content="Guide gratuit sur les KPI, la collecte de données, la visualisation et les bases des statistiques.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../assets/img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Accueil</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt; <span aria-current="page">📊 Data & Analytics</span>
     </nav>
 
     <header>
@@ -29,163 +33,122 @@
             </div>
             <div class="header-illustration">
                 <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
-                    <circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
-                    <g class="illu-icon">
-                        <g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="42,85 58,68 72,78 98,50"/>
-                            <polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/>
-                        </g>
-                    </g>
-                    <circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
-                    <circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
-                    <circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/>
-                </svg>
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
             </div>
         </div>
     </header>
 
-    <main>
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 7 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#les-kpi">📈 Les KPI</a></li>
+                <li><a href="#la-collecte-de-données">🗂️ La collecte de données</a></li>
+                <li><a href="#la-visualisation-de-données">📉 La visualisation de données</a></li>
+                <li><a href="#les-bases-des-statistiques">🧮 Les bases des statistiques</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Un bon KPI est mesurable, lié à un objectif précis, et actionnable.</li>
+                <li>La qualité des données prime sur leur quantité.</li>
+                <li>Le choix du type de graphique dépend du message à transmettre.</li>
+                <li>La médiane est souvent plus représentative que la moyenne en présence de valeurs extrêmes.</li>
+                <li>Corrélation n'est pas causalité.</li>
+            </ul>
+        </div>
+
         <section>
-            <h2>Introduction</h2>
-            <p>
-                La data et l'analytics permettent de comprendre des comportements, mesurer des performances
-                et prendre des décisions basées sur des faits plutôt que sur des impressions. Cette discipline
-                est devenue centrale dans presque tous les secteurs, du marketing à la santé en passant par
-                la finance. Ce guide t'en présente les bases essentielles pour commencer à raisonner avec des
-                données, même sans compétences techniques préalables.
-            </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>La data et l'analytics permettent de comprendre des comportements, mesurer des performances et prendre des décisions basées sur des faits plutôt que sur des impressions. Ce guide t'en présente les bases essentielles.</p>
         </section>
 
         <section>
-            <h2>Les bases à connaître</h2>
-
+            <h2 id="bases">Les bases à connaître</h2>
             <article>
-                <h3>📈 Les KPI (indicateurs clés)</h3>
-                <p>
-                    Un KPI (Key Performance Indicator, ou indicateur clé de performance) est une mesure
-                    quantifiable permettant d'évaluer si un objectif est atteint.
-                </p>
-                <p>
-                    <strong>Choisir les bons indicateurs</strong> : un bon KPI doit être directement lié à un
-                    objectif précis, mesurable de façon fiable, et actionnable (permettre de prendre une
-                    décision concrète). Par exemple, pour un site e-commerce, le "taux de conversion"
-                    (pourcentage de visiteurs qui achètent) est plus actionnable que le simple "nombre de
-                    visiteurs", qui ne dit rien sur l'efficacité réelle du site.
-                </p>
-                <p>
-                    <strong>Le piège de la vanité métrique</strong> : certains indicateurs semblent
-                    impressionnants (nombre de likes, de followers) mais n'ont pas toujours de lien direct
-                    avec les objectifs réels d'un projet ou d'une entreprise. Il est important de distinguer
-                    les métriques qui "font plaisir à voir" de celles qui reflètent une vraie performance.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : avant de choisir un indicateur, demande-toi toujours
-                    "si ce chiffre change, quelle décision cela m'amène-t-il à prendre ?" — si la réponse est
-                    "aucune", ce n'est probablement pas le bon indicateur à suivre.
-                </p>
+                <h3 id="les-kpi">📈 Les KPI</h3>
+                <p>Un KPI est une mesure quantifiable permettant d'évaluer si un objectif est atteint.</p>
+                <p>Choisir les bons indicateurs : liés à un objectif précis, mesurables, et actionnables.</p>
+                <p>Le piège de la vanité métrique : certains indicateurs impressionnent sans lien réel avec les objectifs.</p>
+                <p>💡 À retenir : si un chiffre qui change ne mène à aucune décision, ce n'est probablement pas le bon indicateur.</p>
             </article>
-
             <article>
-                <h3>🗂️ La collecte de données</h3>
-                <p>
-                    Avant toute analyse, il faut d'abord recueillir des données fiables et pertinentes,
-                    provenant de sources variées selon le contexte.
-                </p>
-                <p>
-                    <strong>Les données quantitatives</strong> (chiffres mesurables : ventes, trafic web,
-                    temps passé) permettent des analyses statistiques précises. <strong>Les données
-                    qualitatives</strong> (avis clients, retours d'entretiens) apportent du contexte et des
-                    explications que les seuls chiffres ne révèlent pas.
-                </p>
-                <p>
-                    <strong>La qualité prime sur la quantité</strong> : des données mal collectées (biaisées,
-                    incomplètes, dupliquées) peuvent mener à des conclusions erronées, même avec un volume
-                    important. Un petit échantillon de données fiables vaut souvent mieux qu'un grand volume
-                    de données douteuses.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : avant d'analyser des données, vérifie toujours leur
-                    source et leur fiabilité — une analyse, aussi sophistiquée soit-elle, ne peut pas corriger
-                    des données de mauvaise qualité au départ.
-                </p>
+                <h3 id="la-collecte-de-données">🗂️ La collecte de données</h3>
+                <p>Avant toute analyse, il faut recueillir des données fiables et pertinentes.</p>
+                <p>Les données quantitatives permettent des analyses statistiques précises, les qualitatives apportent du contexte.</p>
+                <p>La qualité prime sur la quantité : des données mal collectées mènent à des conclusions erronées.</p>
+                <p>💡 À retenir : vérifie toujours la source et la fiabilité des données avant analyse.</p>
             </article>
-
             <article>
-                <h3>📉 La visualisation de données</h3>
-                <p>
-                    Représenter des données sous forme graphique permet de rendre des informations complexes
-                    plus rapidement compréhensibles et de faciliter la prise de décision.
-                </p>
-                <p>
-                    <strong>Choisir le bon type de graphique</strong> : un graphique en courbes convient pour
-                    montrer une évolution dans le temps, un graphique en barres pour comparer des catégories
-                    distinctes, un graphique circulaire (camembert) pour montrer des proportions d'un tout
-                    (à utiliser avec modération, car souvent moins lisible qu'on ne le pense au-delà de 4-5
-                    catégories).
-                </p>
-                <p>
-                    <strong>Éviter les biais visuels</strong> : un axe tronqué (qui ne part pas de zéro) peut
-                    exagérer artificiellement une différence entre deux valeurs, donnant une impression
-                    trompeuse. Bien construire ses graphiques, c'est aussi une question d'honnêteté dans la
-                    représentation des données.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : un bon graphique doit permettre de comprendre l'essentiel
-                    en quelques secondes, sans avoir besoin d'explication supplémentaire.
-                </p>
+                <h3 id="la-visualisation-de-données">📉 La visualisation de données</h3>
+                <p>Représenter des données sous forme graphique facilite la prise de décision.</p>
+                <p>Choisir le bon type de graphique : courbes pour l'évolution, barres pour comparer, camembert pour des proportions.</p>
+                <p>Éviter les biais visuels : un axe tronqué peut exagérer artificiellement une différence.</p>
+                <p>💡 À retenir : un bon graphique se comprend en quelques secondes.</p>
             </article>
-
             <article>
-                <h3>🧮 Les bases des statistiques</h3>
-                <p>
-                    Quelques notions statistiques simples permettent déjà d'interpréter correctement la
-                    plupart des données rencontrées au quotidien.
-                </p>
-                <p>
-                    <strong>La moyenne</strong> représente la valeur centrale d'un ensemble de données, mais
-                    peut être fortement influencée par des valeurs extrêmes. <strong>La médiane</strong>
-                    (la valeur du milieu quand les données sont triées) est souvent plus représentative en
-                    présence de valeurs atypiques — par exemple, pour les salaires, où quelques très hauts
-                    salaires peuvent fausser la moyenne sans refléter la situation typique.
-                </p>
-                <p>
-                    <strong>La tendance</strong> observe l'évolution d'une donnée dans le temps (hausse,
-                    baisse, stabilité), tandis que la <strong>corrélation</strong> mesure si deux variables
-                    évoluent ensemble — attention cependant : une corrélation ne signifie pas automatiquement
-                    qu'une variable cause l'autre.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : "corrélation n'est pas causalité" — deux phénomènes qui
-                    évoluent ensemble ne sont pas nécessairement liés par une relation de cause à effet, un
-                    facteur externe peut expliquer les deux.
-                </p>
+                <h3 id="les-bases-des-statistiques">🧮 Les bases des statistiques</h3>
+                <p>Quelques notions statistiques simples permettent d'interpréter correctement la plupart des données.</p>
+                <p>La moyenne peut être influencée par des valeurs extrêmes ; la médiane est souvent plus représentative.</p>
+                <p>La corrélation mesure si deux variables évoluent ensemble, sans impliquer de causalité.</p>
+                <p>💡 À retenir : corrélation n'est pas causalité.</p>
             </article>
         </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <div id="quiz-container"></div>
+            <p class="quiz-score" id="quiz-score"></p>
+        </div>
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
             <article>
-                <p>
-                    Pour approfondir l'analyse de données :
-                </p>
-                <p>
-                    • <strong>Google Analytics Academy</strong> — formations gratuites sur l'analyse de
-                    données web<br>
-                    • <strong>Kaggle</strong> — plateforme pour pratiquer l'analyse de données sur des jeux
-                    de données réels<br>
-                    • <strong>Our World in Data</strong> — excellents exemples de visualisation de données
-                    sur des sujets mondiaux
-                </p>
+                <p>Google Analytics Academy — formations gratuites sur l'analyse de données web. Kaggle — pratiquer l'analyse sur des jeux de données réels. Our World in Data — exemples de visualisation sur des sujets mondiaux.</p>
             </article>
         </section>
+
+        <div class="guide-nav">
+            <a href="../productivite/index.html"><span class="label">← Guide précédent</span>⏱️ Productivité & Organisation</a>
+            <a href="../design/index.html" class="next"><span class="label">Guide suivant →</span>🎨 Design UX/UI</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../finance/index.html">💰 Finance</a>
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>© DocMaster AI</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        const quizData = [{"q": "Qu'est-ce qu'un bon KPI ?", "options": ["Un chiffre impressionnant", "Un indicateur mesurable, lié à un objectif et actionnable", "Le nombre total de likes"], "a": 1}, {"q": "Pourquoi la médiane est-elle parfois préférée à la moyenne ?", "options": ["Elle est plus facile à calculer", "Elle est moins influencée par des valeurs extrêmes", "Elle est toujours plus élevée"], "a": 1}, {"q": "Que signifie \"corrélation n'est pas causalité\" ?", "options": ["Deux variables liées s'influencent forcément", "Deux phénomènes liés n'impliquent pas qu'un cause l'autre", "Les statistiques sont toujours fausses"], "a": 1}];
+    </script>
+    <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
-
+    <script src="../../assets/js/enhance.js"></script>
 </body>
 </html>

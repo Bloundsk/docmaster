@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersécurité - DocMaster AI</title>
+    <meta name="description" content="Guide gratuit sur les mots de passe, le phishing, les pare-feux et le chiffrement des données.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <meta property="og:title" content="Cybersécurité - DocMaster AI">
+    <meta property="og:description" content="Guide gratuit sur les mots de passe, le phishing, les pare-feux et le chiffrement des données.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../assets/img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Accueil</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt; <span aria-current="page">🔒 Cybersécurité</span>
     </nav>
 
     <header>
@@ -29,165 +33,122 @@
             </div>
             <div class="header-illustration">
                 <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
-                    <circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
-                    <g class="illu-icon">
-                        <g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="52" y="65" width="36" height="28" rx="4"/>
-                            <path d="M58 65 L58 53 a12 12 0 0 1 24 0 L82 65"/>
-                        </g>
-                        <circle cx="70" cy="79" r="4" fill="white"/>
-                    </g>
-                    <circle class="illu-twinkle" cx="105" cy="60" r="2.5" fill="white" style="animation-delay:.3s"/>
-                    <circle class="illu-twinkle" cx="35" cy="95" r="2.5" fill="white" style="animation-delay:1.1s"/>
-                </svg>
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="52" y="65" width="36" height="28" rx="4"/><path d="M58 65 L58 53 a12 12 0 0 1 24 0 L82 65"/></g><circle cx="70" cy="79" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="105" cy="60" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="95" r="2.5" fill="white" style="animation-delay:1.1s"/></svg>
             </div>
         </div>
     </header>
 
-    <main>
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 7 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#mots-de-passe-authentification">🔑 Mots de passe & authentification</a></li>
+                <li><a href="#le-phishing">🎣 Le phishing</a></li>
+                <li><a href="#les-pare-feux-et-antivirus">🛡️ Les pare-feux et antivirus</a></li>
+                <li><a href="#le-chiffrement-des-données">🔐 Le chiffrement des données</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Active la double authentification (2FA) sur tous tes comptes importants.</li>
+                <li>Ne clique jamais directement sur un lien reçu par email en cas de doute.</li>
+                <li>Un antivirus ne remplace pas la vigilance humaine.</li>
+                <li>Vérifie toujours la présence du cadenas (HTTPS) avant de saisir des informations sensibles.</li>
+                <li>N'utilise jamais le même mot de passe sur plusieurs services.</li>
+            </ul>
+        </div>
+
         <section>
-            <h2>Introduction</h2>
-            <p>
-                La cybersécurité regroupe les pratiques permettant de protéger les systèmes, réseaux et
-                données contre les attaques numériques. À l'heure où nos vies personnelles et professionnelles
-                dépendent largement d'outils connectés, comprendre les bases de la cybersécurité n'est plus
-                réservé aux experts techniques — c'est une compétence essentielle pour tout utilisateur
-                d'internet. Ce guide te présente les notions et réflexes fondamentaux à connaître.
-            </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>La cybersécurité regroupe les pratiques permettant de protéger les systèmes, réseaux et données contre les attaques numériques. Comprendre les bases de la cybersécurité n'est plus réservé aux experts — c'est une compétence essentielle pour tout utilisateur d'internet.</p>
         </section>
 
         <section>
-            <h2>Les bases à connaître</h2>
-
+            <h2 id="bases">Les bases à connaître</h2>
             <article>
-                <h3>🔑 Mots de passe & authentification</h3>
-                <p>
-                    Le mot de passe reste la première ligne de défense de la plupart des comptes en ligne —
-                    et paradoxalement l'une des plus négligées.
-                </p>
-                <p>
-                    <strong>Créer un mot de passe robuste</strong> : privilégier la longueur (12 caractères
-                    minimum) plutôt que la seule complexité, éviter les informations personnelles évidentes
-                    (date de naissance, prénom), et ne jamais réutiliser le même mot de passe sur plusieurs
-                    services — car si l'un est compromis, tous les comptes utilisant ce mot de passe le
-                    deviennent aussi.
-                </p>
-                <p>
-                    <strong>L'authentification à deux facteurs (2FA)</strong> ajoute une couche de sécurité
-                    supplémentaire : en plus du mot de passe, un second élément est requis pour se connecter
-                    (code envoyé par SMS, application d'authentification, clé physique). Même si un mot de
-                    passe est volé, le compte reste protégé sans ce second facteur.
-                </p>
-                <p>
-                    <strong>Les gestionnaires de mots de passe</strong> (comme Bitwarden ou 1Password)
-                    permettent de générer et stocker des mots de passe uniques et complexes pour chaque
-                    service, sans avoir à tous les mémoriser.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : active la 2FA sur tous tes comptes importants (email,
-                    banque, réseaux sociaux) — c'est l'une des mesures de sécurité les plus efficaces et les
-                    plus simples à mettre en place.
-                </p>
+                <h3 id="mots-de-passe-authentification">🔑 Mots de passe & authentification</h3>
+                <p>Le mot de passe reste la première ligne de défense de la plupart des comptes en ligne.</p>
+                <p>Créer un mot de passe robuste : privilégier la longueur (12 caractères minimum), éviter les informations personnelles évidentes.</p>
+                <p>L'authentification à deux facteurs (2FA) ajoute une couche de sécurité supplémentaire.</p>
+                <p>Les gestionnaires de mots de passe permettent de générer et stocker des mots de passe uniques.</p>
+                <p>💡 À retenir : active la 2FA sur tous tes comptes importants.</p>
             </article>
-
             <article>
-                <h3>🎣 Le phishing</h3>
-                <p>
-                    Le phishing (hameçonnage) est une technique d'arnaque consistant à se faire passer pour
-                    une entité de confiance (banque, administration, entreprise) afin de voler des
-                    informations personnelles ou bancaires.
-                </p>
-                <p>
-                    <strong>Les signaux d'alerte courants</strong> : un sentiment d'urgence artificiel
-                    ("votre compte sera bloqué dans 24h"), des fautes d'orthographe ou une mise en forme
-                    approximative, une adresse email expéditeur qui ne correspond pas exactement à
-                    l'organisme mentionné, ou une demande de saisir un mot de passe via un lien reçu par
-                    email.
-                </p>
-                <p>
-                    <strong>Le bon réflexe</strong> : en cas de doute sur un email ou message, ne jamais
-                    cliquer directement sur le lien fourni. Se rendre plutôt manuellement sur le site
-                    officiel de l'organisme concerné, en tapant l'adresse soi-même dans le navigateur, pour
-                    vérifier l'information.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : aucune banque ou administration sérieuse ne demande de
-                    mot de passe ou de code de carte bancaire par email — ce type de demande est
-                    systématiquement suspect.
-                </p>
+                <h3 id="le-phishing">🎣 Le phishing</h3>
+                <p>Le phishing consiste à se faire passer pour une entité de confiance afin de voler des informations personnelles.</p>
+                <p>Les signaux d'alerte : urgence artificielle, fautes d'orthographe, adresse email suspecte.</p>
+                <p>Le bon réflexe : ne jamais cliquer directement sur un lien douteux, se rendre manuellement sur le site officiel.</p>
+                <p>💡 À retenir : aucune banque ne demande de mot de passe par email.</p>
             </article>
-
             <article>
-                <h3>🛡️ Les pare-feux et antivirus</h3>
-                <p>
-                    Ces outils constituent une protection de base contre les menaces automatisées, en
-                    complément des bons réflexes personnels.
-                </p>
-                <p>
-                    <strong>Le pare-feu (firewall)</strong> filtre le trafic entrant et sortant d'un
-                    ordinateur ou d'un réseau, en bloquant les connexions suspectes ou non autorisées. La
-                    plupart des systèmes d'exploitation modernes (Windows, macOS) en intègrent un par défaut.
-                </p>
-                <p>
-                    <strong>L'antivirus</strong> détecte et neutralise les logiciels malveillants (virus,
-                    chevaux de Troie, ransomwares) présents sur un appareil, souvent grâce à des bases de
-                    données de menaces connues, mises à jour régulièrement.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : ces outils ne remplacent pas la vigilance humaine — un
-                    antivirus ne peut pas empêcher quelqu'un de communiquer volontairement son mot de passe
-                    suite à un email de phishing convaincant.
-                </p>
+                <h3 id="les-pare-feux-et-antivirus">🛡️ Les pare-feux et antivirus</h3>
+                <p>Ces outils constituent une protection de base contre les menaces automatisées.</p>
+                <p>Le pare-feu filtre le trafic entrant et sortant d'un ordinateur ou réseau.</p>
+                <p>L'antivirus détecte et neutralise les logiciels malveillants.</p>
+                <p>💡 À retenir : ces outils ne remplacent pas la vigilance humaine.</p>
             </article>
-
             <article>
-                <h3>🔐 Le chiffrement des données</h3>
-                <p>
-                    Le chiffrement transforme des données lisibles en données illisibles sans une clé
-                    spécifique, protégeant ainsi les informations en cas d'interception.
-                </p>
-                <p>
-                    <strong>Le HTTPS</strong> (visible via le cadenas dans la barre d'adresse du navigateur)
-                    chiffre les échanges entre un site web et son visiteur, empêchant un tiers d'intercepter
-                    des informations comme un mot de passe saisi sur ce site.
-                </p>
-                <p>
-                    <strong>Le chiffrement de bout en bout</strong>, utilisé par certaines messageries
-                    (comme Signal ou WhatsApp), garantit que seuls l'expéditeur et le destinataire peuvent
-                    lire un message — même le fournisseur du service technique ne peut pas y accéder.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : vérifie toujours la présence du cadenas (HTTPS) avant de
-                    saisir des informations sensibles sur un site, en particulier pour des paiements en
-                    ligne.
-                </p>
+                <h3 id="le-chiffrement-des-données">🔐 Le chiffrement des données</h3>
+                <p>Le chiffrement transforme des données lisibles en données illisibles sans une clé spécifique.</p>
+                <p>Le HTTPS (cadenas dans la barre d'adresse) chiffre les échanges entre un site et son visiteur.</p>
+                <p>Le chiffrement de bout en bout garantit que seuls l'expéditeur et le destinataire peuvent lire un message.</p>
+                <p>💡 À retenir : vérifie toujours la présence du cadenas avant un paiement en ligne.</p>
             </article>
         </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <div id="quiz-container"></div>
+            <p class="quiz-score" id="quiz-score"></p>
+        </div>
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
             <article>
-                <p>
-                    Les menaces évoluent constamment. Pour rester informé des dernières recommandations :
-                </p>
-                <p>
-                    • <strong>Cybermalveillance.gouv.fr</strong> — ressources officielles françaises, alertes
-                    et assistance en cas d'attaque<br>
-                    • <strong>ANSSI</strong> (Agence nationale de la sécurité des systèmes d'information) —
-                    recommandations officielles de sécurité<br>
-                    • <strong>Have I Been Pwned</strong> — vérifier si tes données ont été exposées lors
-                    d'une fuite de données connue
-                </p>
+                <p>Cybermalveillance.gouv.fr — ressources officielles et assistance en cas d'attaque. ANSSI — recommandations officielles de sécurité. Have I Been Pwned — vérifier une éventuelle fuite de données.</p>
             </article>
         </section>
+
+        <div class="guide-nav">
+            <a href="../marketing/index.html"><span class="label">← Guide précédent</span>📢 Marketing Digital</a>
+            <a href="../entrepreneuriat/index.html" class="next"><span class="label">Guide suivant →</span>🚀 Entrepreneuriat</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../productivite/index.html">⏱️ Productivité & Organisation</a>
+                <a href="../design/index.html">🎨 Design UX/UI</a>
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>© DocMaster AI</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        const quizData = [{"q": "Que permet la 2FA (authentification à deux facteurs) ?", "options": ["De se connecter plus vite", "D'ajouter une couche de sécurité supplémentaire", "De changer de mot de passe automatiquement"], "a": 1}, {"q": "Face à un email suspect demandant un mot de passe, il faut...", "options": ["Cliquer pour vérifier", "Ne jamais cliquer et se rendre manuellement sur le site officiel", "Répondre pour confirmer son identité"], "a": 1}, {"q": "Que garantit le HTTPS (cadenas) ?", "options": ["Le site est gratuit", "Les échanges sont chiffrés entre le site et le visiteur", "Le site n'a pas de publicité"], "a": 1}];
+    </script>
+    <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
-
+    <script src="../../assets/js/enhance.js"></script>
 </body>
 </html>

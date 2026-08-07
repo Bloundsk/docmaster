@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance - DocMaster AI</title>
+    <meta name="description" content="Guide gratuit sur l'épargne, l'investissement, les ETF, la gestion du risque et la fiscalité de l'épargne.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <meta property="og:title" content="Finance - DocMaster AI">
+    <meta property="og:description" content="Guide gratuit sur l'épargne, l'investissement, les ETF, la gestion du risque et la fiscalité de l'épargne.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../assets/img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Accueil</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt; <span aria-current="page">💰 Finance</span>
     </nav>
 
     <header>
@@ -29,229 +33,136 @@
             </div>
             <div class="header-illustration">
                 <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
-                    <circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
-                    <g class="illu-icon">
-                        <g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="45" y1="85" x2="45" y2="60"/>
-                            <line x1="60" y1="85" x2="60" y2="50"/>
-                            <line x1="75" y1="85" x2="75" y2="65"/>
-                            <line x1="90" y1="85" x2="90" y2="45"/>
-                            <path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/>
-                        </g>
-                    </g>
-                    <circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
-                    <circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
-                    <circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/>
-                </svg>
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
             </div>
         </div>
     </header>
 
-    <main>
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 7 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#lépargne">📊 L'épargne</a></li>
+                <li><a href="#linvestissement">📈 L'investissement</a></li>
+                <li><a href="#les-etf">📦 Les ETF</a></li>
+                <li><a href="#la-gestion-du-risque">⚖️ La gestion du risque</a></li>
+                <li><a href="#la-fiscalité-de-lépargne">🧾 La fiscalité de l'épargne</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Constitue toujours une épargne de précaution (3 à 6 mois de dépenses) avant d'investir.</li>
+                <li>L'intérêt composé récompense fortement les investissements commencés tôt.</li>
+                <li>Les ETF permettent de diversifier facilement avec des frais faibles.</li>
+                <li>Le niveau de risque acceptable dépend surtout de ton horizon de placement.</li>
+                <li>Le choix de l'enveloppe fiscale (PEA, assurance-vie...) a un impact réel sur le rendement net.</li>
+            </ul>
+        </div>
+
         <section>
-            <h2>Introduction</h2>
-            <p>
-                La finance personnelle et l'investissement sont des compétences essentielles pour construire
-                son avenir. Comprendre comment fonctionne l'argent — comment l'épargner, le protéger et le
-                faire fructifier — te donne les moyens de prendre des décisions éclairées plutôt que subies.
-                Ce guide te présente les notions clés, du premier livret d'épargne jusqu'aux principes
-                d'investissement de base, expliquées simplement et sans jargon inutile.
-            </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>La finance personnelle et l'investissement sont des compétences essentielles pour construire son avenir. Comprendre comment fonctionne l'argent — comment l'épargner, le protéger et le faire fructifier — te donne les moyens de prendre des décisions éclairées plutôt que subies. Ce guide te présente les notions clés, du premier livret d'épargne jusqu'aux principes d'investissement de base.</p>
         </section>
 
         <section>
-            <h2>Les bases à connaître</h2>
-
+            <h2 id="bases">Les bases à connaître</h2>
             <article>
-                <h3>📊 L'épargne</h3>
-                <p>
-                    L'épargne est la première étape de toute stratégie financière saine. Elle consiste à
-                    mettre de côté une partie de ses revenus plutôt que de tout dépenser, afin de se
-                    constituer une réserve disponible pour l'avenir.
-                </p>
-                <p>
-                    <strong>Pourquoi épargner ?</strong> Épargner permet de se protéger contre les imprévus
-                    (perte d'emploi, réparation urgente, problème de santé) et de financer des projets futurs
-                    (achat immobilier, voyage, retraite) sans avoir à s'endetter dans l'urgence. Par exemple,
-                    une personne qui épargne 100€ par mois pendant 5 ans se constitue une réserve de 6 000€,
-                    hors intérêts, qui peut absorber un imprévu majeur sans recourir au crédit.
-                </p>
-                <p>
-                    <strong>L'épargne de précaution</strong> est le premier objectif à atteindre avant tout
-                    autre projet financier. Elle correspond généralement à 3 à 6 mois de dépenses courantes,
-                    placés sur un compte facilement accessible (comme un livret A en France). Son rôle est la
-                    disponibilité immédiate en cas de besoin, pas la performance financière.
-                </p>
-                <p>
-                    <strong>La régularité plutôt que le montant</strong> : un des principes clés de l'épargne
-                    efficace est la régularité. Épargner une petite somme chaque mois, de façon automatisée
-                    (virement automatique dès réception du salaire), est souvent plus efficace que d'essayer
-                    d'épargner de gros montants ponctuellement. Cette approche s'appelle parfois "se payer en
-                    premier" : on épargne avant de dépenser, plutôt que d'épargner ce qu'il reste à la fin du mois.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : L'épargne de précaution doit être ta priorité avant tout
-                    investissement. Automatise un petit virement mensuel plutôt que d'attendre d'avoir
-                    "un peu plus d'argent de côté".
-                </p>
+                <h3 id="lépargne">📊 L'épargne</h3>
+                <p>L'épargne est la première étape de toute stratégie financière saine. Elle consiste à mettre de côté une partie de ses revenus plutôt que de tout dépenser, afin de se constituer une réserve disponible pour l'avenir.</p>
+                <p>Pourquoi épargner ? Épargner permet de se protéger contre les imprévus (perte d'emploi, réparation urgente, problème de santé) et de financer des projets futurs sans avoir à s'endetter dans l'urgence. Par exemple, une personne qui épargne 100€ par mois pendant 5 ans se constitue une réserve de 6 000€, hors intérêts.</p>
+                <p>L'épargne de précaution est le premier objectif à atteindre avant tout autre projet financier. Elle correspond généralement à 3 à 6 mois de dépenses courantes, placés sur un compte facilement accessible.</p>
+                <p>La régularité plutôt que le montant : épargner une petite somme chaque mois, de façon automatisée, est souvent plus efficace que d'essayer d'épargner de gros montants ponctuellement.</p>
+                <p>💡 À retenir : L'épargne de précaution doit être ta priorité avant tout investissement.</p>
             </article>
-
             <article>
-                <h3>📈 L'investissement</h3>
-                <p>
-                    Une fois l'épargne de précaution constituée, l'étape suivante consiste à faire fructifier
-                    le surplus d'argent en l'investissant, plutôt que de le laisser dormir sur un compte peu
-                    rémunéré.
-                </p>
-                <p>
-                    <strong>Les actions</strong> représentent une part de propriété dans une entreprise. En
-                    achetant une action, on devient copropriétaire de la société et on peut potentiellement
-                    profiter de sa croissance (hausse du cours) et de ses bénéfices (dividendes). C'est un
-                    placement au potentiel de rendement élevé, mais avec un risque de perte en capital.
-                </p>
-                <p>
-                    <strong>Les obligations</strong> sont des prêts que l'on accorde à une entreprise ou un
-                    État, en échange d'intérêts versés régulièrement. Elles sont généralement considérées
-                    comme moins risquées que les actions, mais offrent en contrepartie un rendement plus
-                    modéré.
-                </p>
-                <p>
-                    <strong>L'immobilier</strong> consiste à investir dans des biens physiques (appartement,
-                    maison) ou via des parts de sociétés spécialisées (SCPI), pour percevoir des loyers et/ou
-                    profiter d'une éventuelle plus-value à la revente.
-                </p>
-                <p>
-                    <strong>Le principe de l'intérêt composé</strong> est sans doute le concept le plus
-                    puissant en investissement : les gains générés par un placement génèrent eux-mêmes des
-                    gains avec le temps. Par exemple, 1 000€ investis à 7% par an deviennent environ 1 967€
-                    après 10 ans — non pas parce qu'on a ajouté de l'argent, mais parce que les intérêts
-                    s'accumulent sur les intérêts précédents. Plus l'horizon de placement est long, plus cet
-                    effet est puissant.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : Il n'existe pas de placement "meilleur" dans l'absolu —
-                    seulement des placements plus ou moins adaptés à ton horizon de temps et à ta tolérance
-                    au risque. Plus tu investis tôt, plus l'intérêt composé joue en ta faveur.
-                </p>
+                <h3 id="linvestissement">📈 L'investissement</h3>
+                <p>Une fois l'épargne de précaution constituée, l'étape suivante consiste à faire fructifier le surplus d'argent en l'investissant.</p>
+                <p>Les actions représentent une part de propriété dans une entreprise, avec un potentiel de rendement élevé mais un risque de perte en capital.</p>
+                <p>Les obligations sont des prêts accordés à une entreprise ou un État, en échange d'intérêts réguliers — généralement moins risquées que les actions.</p>
+                <p>L'immobilier permet de percevoir des loyers et/ou de profiter d'une plus-value à la revente.</p>
+                <p>Le principe de l'intérêt composé : 1 000€ investis à 7% par an deviennent environ 1 967€ après 10 ans, sans ajout d'argent supplémentaire.</p>
+                <p>💡 À retenir : plus tu investis tôt, plus l'intérêt composé joue en ta faveur.</p>
             </article>
-
             <article>
-                <h3>📦 Les ETF</h3>
-                <p>
-                    Un ETF (Exchange Traded Fund), aussi appelé "tracker", est un fonds d'investissement qui
-                    réplique la performance d'un indice boursier (comme le CAC 40 ou le S&P 500), plutôt que
-                    de miser sur une seule entreprise.
-                </p>
-                <p>
-                    <strong>Comment ça fonctionne ?</strong> Quand tu achètes une part d'un ETF suivant le
-                    S&P 500 par exemple, tu investis en réalité dans un panier regroupant les 500 plus
-                    grandes entreprises américaines cotées en une seule opération. Cela permet une
-                    diversification automatique, sans avoir à sélectionner et gérer soi-même des dizaines
-                    d'actions individuelles.
-                </p>
-                <p>
-                    <strong>Pourquoi les ETF sont-ils populaires ?</strong> Ils présentent trois avantages
-                    principaux : des frais de gestion généralement très faibles (comparés aux fonds gérés
-                    activement par des professionnels), une grande diversification qui réduit le risque lié
-                    à une seule entreprise, et une accessibilité simple pour les particuliers, y compris avec
-                    de petits montants.
-                </p>
-                <p>
-                    <strong>Une limite à connaître</strong> : un ETF suit un indice à la hausse comme à la
-                    baisse. Si le marché global chute, la valeur de l'ETF chute aussi — il n'offre aucune
-                    protection automatique contre les baisses de marché.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : les ETF sont souvent recommandés aux débutants en
-                    investissement pour leur simplicité et leur faible coût, mais ils restent soumis aux
-                    fluctuations des marchés — un investissement long terme, pas une solution sans risque.
-                </p>
+                <h3 id="les-etf">📦 Les ETF</h3>
+                <p>Un ETF (Exchange Traded Fund), ou tracker, réplique la performance d'un indice boursier plutôt que de miser sur une seule entreprise.</p>
+                <p>Quand tu achètes une part d'un ETF suivant le S&P 500, tu investis dans un panier de 500 grandes entreprises américaines en une seule opération.</p>
+                <p>Les ETF offrent des frais de gestion faibles, une grande diversification, et une accessibilité simple, même avec de petits montants.</p>
+                <p>Une limite : un ETF suit un indice à la hausse comme à la baisse, sans protection automatique contre les baisses de marché.</p>
+                <p>💡 À retenir : les ETF restent un investissement long terme, pas une solution sans risque.</p>
             </article>
-
             <article>
-                <h3>⚖️ La gestion du risque</h3>
-                <p>
-                    Investir implique toujours un compromis entre le rendement espéré et le niveau de risque
-                    accepté. Comprendre ce compromis est essentiel pour construire une stratégie adaptée à sa
-                    situation personnelle.
-                </p>
-                <p>
-                    <strong>La règle générale</strong> : plus le rendement potentiel d'un placement est
-                    élevé, plus le risque de perte l'est aussi. Un placement garanti sans risque (comme un
-                    livret d'épargne) offre un rendement faible ; un placement à fort potentiel (comme des
-                    actions individuelles ou des cryptomonnaies) peut aussi entraîner des pertes importantes.
-                </p>
-                <p>
-                    <strong>La diversification</strong> consiste à répartir son argent entre plusieurs types
-                    de placements (actions, obligations, immobilier) plutôt que de tout concentrer sur un
-                    seul actif. Cela permet de limiter l'impact si l'un des placements se porte mal, car les
-                    autres peuvent compenser.
-                </p>
-                <p>
-                    <strong>L'horizon de placement</strong> influence directement le niveau de risque
-                    acceptable : un objectif à court terme (moins de 3 ans) doit privilégier la sécurité,
-                    tandis qu'un objectif à long terme (10 ans ou plus, comme la retraite) peut supporter
-                    davantage de volatilité, le temps permettant généralement d'absorber les baisses
-                    temporaires du marché.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : avant d'investir, demande-toi toujours "dans combien de
-                    temps aurai-je besoin de cet argent ?" — la réponse détermine largement le niveau de
-                    risque que tu peux raisonnablement prendre.
-                </p>
+                <h3 id="la-gestion-du-risque">⚖️ La gestion du risque</h3>
+                <p>Investir implique toujours un compromis entre rendement espéré et niveau de risque accepté.</p>
+                <p>La règle générale : plus le rendement potentiel est élevé, plus le risque de perte l'est aussi.</p>
+                <p>La diversification consiste à répartir son argent entre plusieurs types de placements plutôt que de tout concentrer sur un seul actif.</p>
+                <p>L'horizon de placement influence le niveau de risque acceptable : un objectif à court terme doit privilégier la sécurité, un objectif long terme peut supporter davantage de volatilité.</p>
+                <p>💡 À retenir : demande-toi toujours "dans combien de temps aurai-je besoin de cet argent ?"</p>
             </article>
-
             <article>
-                <h3>🧾 La fiscalité de l'épargne</h3>
-                <p>
-                    Les gains issus de l'épargne et des investissements sont généralement soumis à
-                    l'imposition, mais certaines enveloppes bénéficient d'avantages fiscaux spécifiques
-                    qu'il est utile de connaître.
-                </p>
-                <p>
-                    <strong>Les livrets réglementés</strong> (comme le Livret A ou le LDDS en France) sont
-                    exonérés d'impôt sur les intérêts perçus, ce qui en fait un support intéressant pour
-                    l'épargne de précaution, malgré un rendement limité.
-                </p>
-                <p>
-                    <strong>Le PEA (Plan d'Épargne en Actions)</strong> et l'<strong>assurance-vie</strong>
-                    sont des enveloppes qui permettent d'investir en actions ou en fonds tout en bénéficiant
-                    d'une fiscalité allégée après une certaine durée de détention (5 ans pour le PEA, 8 ans
-                    pour l'assurance-vie en France).
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : le choix de l'enveloppe fiscale (livret, PEA,
-                    assurance-vie, compte-titres) a un impact direct sur le rendement net de tes
-                    investissements — se renseigner sur ces dispositifs avant d'investir permet souvent
-                    d'économiser une part significative d'impôts sur le long terme.
-                </p>
+                <h3 id="la-fiscalité-de-lépargne">🧾 La fiscalité de l'épargne</h3>
+                <p>Les gains issus de l'épargne sont généralement imposables, mais certaines enveloppes bénéficient d'avantages fiscaux.</p>
+                <p>Les livrets réglementés (Livret A, LDDS) sont exonérés d'impôt sur les intérêts.</p>
+                <p>Le PEA et l'assurance-vie permettent d'investir en actions ou fonds avec une fiscalité allégée après une certaine durée de détention.</p>
+                <p>💡 À retenir : le choix de l'enveloppe fiscale a un impact direct sur le rendement net de tes investissements.</p>
             </article>
         </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <div id="quiz-container"></div>
+            <p class="quiz-score" id="quiz-score"></p>
+        </div>
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
             <article>
-                <p>
-                    La finance est un domaine en évolution constante (taux d'intérêt, réglementation,
-                    nouveaux produits financiers). Pour rester à jour au-delà de ce guide, voici des sources
-                    fiables à consulter régulièrement :
-                </p>
-                <p>
-                    • <strong>Autorité des marchés financiers (AMF)</strong> — informations officielles et
-                    pédagogiques sur l'investissement en France<br>
-                    • <strong>Banque de France</strong> — données économiques et taux d'intérêt actualisés<br>
-                    • Presse économique généraliste (Les Échos, La Tribune) pour suivre l'actualité des marchés
-                </p>
+                <p>Autorité des marchés financiers (AMF) — informations officielles et pédagogiques. Banque de France — données économiques et taux actualisés. Presse économique (Les Échos, La Tribune) pour l'actualité des marchés.</p>
             </article>
         </section>
+
+        <div class="guide-nav">
+            <a href="../design/index.html"><span class="label">← Guide précédent</span>🎨 Design UX/UI</a>
+            <a href="../ia/index.html" class="next"><span class="label">Guide suivant →</span>🤖 Intelligence Artificielle</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+                <a href="../productivite/index.html">⏱️ Productivité & Organisation</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>© DocMaster AI</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        const quizData = [{"q": "Que faut-il constituer avant de commencer à investir ?", "options": ["Un portefeuille d'actions", "Une épargne de précaution de 3 à 6 mois de dépenses", "Un compte crypto"], "a": 1}, {"q": "Qu'est-ce qu'un ETF ?", "options": ["Une action individuelle très risquée", "Un fonds qui réplique un indice boursier entier", "Un type de compte bancaire"], "a": 1}, {"q": "L'intérêt composé désigne...", "options": ["Un impôt sur les gains financiers", "Le fait que les gains génèrent eux-mêmes des gains", "Un type d'obligation d'État"], "a": 1}];
+    </script>
+    <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
-
+    <script src="../../assets/js/enhance.js"></script>
 </body>
 </html>

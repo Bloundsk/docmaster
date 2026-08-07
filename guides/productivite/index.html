@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productivité & Organisation - DocMaster AI</title>
+    <meta name="description" content="Guide gratuit sur la méthode Pomodoro, GTD, la matrice d'Eisenhower et les outils de gestion de tâches.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <meta property="og:title" content="Productivité & Organisation - DocMaster AI">
+    <meta property="og:description" content="Guide gratuit sur la méthode Pomodoro, GTD, la matrice d'Eisenhower et les outils de gestion de tâches.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../assets/img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Accueil</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt; <span aria-current="page">⏱️ Productivité & Organisation</span>
     </nav>
 
     <header>
@@ -29,164 +33,123 @@
             </div>
             <div class="header-illustration">
                 <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
-                    <circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
-                    <g class="illu-ring">
-                        <line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                    </g>
-                    <g class="illu-icon">
-                        <line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                    </g>
-                    <circle cx="70" cy="70" r="3.5" fill="white"/>
-                    <circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
-                    <circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/>
-                </svg>
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
             </div>
         </div>
     </header>
 
-    <main>
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 7 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#la-méthode-pomodoro">🍅 La méthode Pomodoro</a></li>
+                <li><a href="#la-méthode-gtd">✅ La méthode GTD</a></li>
+                <li><a href="#la-matrice-deisenhower">🎯 La matrice d'Eisenhower</a></li>
+                <li><a href="#les-outils-de-gestion-de-tâches">🛠️ Les outils de gestion de tâches</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>La méthode Pomodoro alterne 25 minutes de travail concentré et 5 minutes de pause.</li>
+                <li>GTD consiste à capturer toutes les tâches dans un système externe fiable.</li>
+                <li>La matrice d'Eisenhower distingue urgence et importance.</li>
+                <li>Réserve du temps chaque semaine pour les tâches importantes mais non urgentes.</li>
+                <li>Le meilleur outil est celui que tu utilises réellement au quotidien.</li>
+            </ul>
+        </div>
+
         <section>
-            <h2>Introduction</h2>
-            <p>
-                La productivité, ce n'est pas travailler plus, mais travailler mieux. Elle repose sur des
-                méthodes éprouvées permettant de mieux gérer son temps, ses priorités et son énergie. Ce
-                guide te présente plusieurs approches complémentaires, à adapter selon ta façon de
-                fonctionner — il n'existe pas de méthode universelle, seulement des outils à tester et
-                ajuster.
-            </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>La productivité, ce n'est pas travailler plus, mais travailler mieux. Elle repose sur des méthodes éprouvées permettant de mieux gérer son temps, ses priorités et son énergie. Ce guide te présente plusieurs approches complémentaires, à adapter selon ta façon de fonctionner.</p>
         </section>
 
         <section>
-            <h2>Les bases à connaître</h2>
-
+            <h2 id="bases">Les bases à connaître</h2>
             <article>
-                <h3>🍅 La méthode Pomodoro</h3>
-                <p>
-                    Développée par Francesco Cirillo, cette méthode consiste à travailler par sessions
-                    courtes et concentrées, entrecoupées de pauses régulières, pour maintenir un niveau de
-                    concentration élevé sur la durée.
-                </p>
-                <p>
-                    <strong>Le principe concret</strong> : travailler 25 minutes sans interruption (un
-                    "pomodoro"), puis prendre une pause de 5 minutes. Après 4 pomodoros, une pause plus
-                    longue de 15 à 30 minutes est recommandée.
-                </p>
-                <p>
-                    <strong>Pourquoi ça fonctionne</strong> : le cerveau humain a une capacité de
-                    concentration soutenue limitée dans le temps. Découper le travail en blocs courts avec
-                    des pauses régulières aide à maintenir l'attention et à éviter l'épuisement mental
-                    progressif.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : pendant un pomodoro, toute interruption (notification,
-                    message) doit être reportée à la pause suivante — c'est cette discipline qui rend la
-                    méthode efficace.
-                </p>
+                <h3 id="la-méthode-pomodoro">🍅 La méthode Pomodoro</h3>
+                <p>Cette méthode consiste à travailler par sessions courtes et concentrées, entrecoupées de pauses régulières.</p>
+                <p>Le principe concret : travailler 25 minutes sans interruption, puis prendre une pause de 5 minutes.</p>
+                <p>Pourquoi ça fonctionne : découper le travail en blocs courts aide à maintenir l'attention.</p>
+                <p>💡 À retenir : toute interruption doit être reportée à la pause suivante.</p>
             </article>
-
             <article>
-                <h3>✅ La méthode GTD (Getting Things Done)</h3>
-                <p>
-                    Créée par David Allen, la méthode GTD vise à libérer l'esprit du poids mental des tâches
-                    à faire, en les capturant et organisant dans un système fiable externe.
-                </p>
-                <p>
-                    <strong>Les 5 étapes de la méthode</strong> : collecter (noter toutes les tâches et idées
-                    dès qu'elles apparaissent, sans essayer de les retenir mentalement), clarifier (déterminer
-                    l'action concrète nécessaire pour chaque tâche), organiser (classer les tâches par
-                    contexte ou projet), réviser (faire régulièrement le point sur son système), et agir
-                    (exécuter les tâches selon les priorités et le contexte).
-                </p>
-                <p>
-                    <strong>Le principe clé</strong> : garder son esprit "vide" en faisant confiance à un
-                    système externe (liste, application) pour ne rien oublier, plutôt que d'essayer de tout
-                    mémoriser mentalement — ce qui génère du stress et de la charge cognitive inutile.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : dès qu'une tâche ou une idée te vient à l'esprit,
-                    note-la immédiatement plutôt que d'essayer de t'en souvenir — c'est la base de la
-                    méthode GTD.
-                </p>
+                <h3 id="la-méthode-gtd">✅ La méthode GTD</h3>
+                <p>La méthode GTD vise à libérer l'esprit du poids mental des tâches à faire.</p>
+                <p>Les 5 étapes : collecter, clarifier, organiser, réviser, agir.</p>
+                <p>Le principe clé : garder son esprit "vide" en faisant confiance à un système externe.</p>
+                <p>💡 À retenir : note immédiatement toute tâche ou idée dès qu'elle te vient à l'esprit.</p>
             </article>
-
             <article>
-                <h3>🎯 La matrice d'Eisenhower</h3>
-                <p>
-                    Cet outil de priorisation classe les tâches selon deux critères : leur urgence et leur
-                    importance, permettant de distinguer ce qui mérite réellement une attention immédiate.
-                </p>
-                <p>
-                    <strong>Les 4 quadrants</strong> : urgent et important (à faire immédiatement soi-même),
-                    important mais non urgent (à planifier — c'est souvent ici que se trouvent les tâches à
-                    fort impact sur le long terme), urgent mais peu important (à déléguer si possible), ni
-                    urgent ni important (à éliminer ou reporter).
-                </p>
-                <p>
-                    <strong>Le piège courant</strong> : passer trop de temps dans le quadrant "urgent" au
-                    détriment du quadrant "important mais non urgent" (formation, planification stratégique,
-                    prévention) — ce qui mène souvent à un cercle vicieux où l'on gère perpétuellement des
-                    urgences évitables.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : réserver du temps chaque semaine pour les tâches
-                    importantes mais non urgentes est ce qui distingue le plus souvent une organisation
-                    efficace d'une organisation en mode "pompier".
-                </p>
+                <h3 id="la-matrice-deisenhower">🎯 La matrice d'Eisenhower</h3>
+                <p>Cet outil classe les tâches selon leur urgence et leur importance.</p>
+                <p>Les 4 quadrants : urgent/important, important/non urgent, urgent/peu important, ni l'un ni l'autre.</p>
+                <p>Le piège courant : passer trop de temps dans l'urgent au détriment de l'important non urgent.</p>
+                <p>💡 À retenir : réserve du temps chaque semaine pour les tâches importantes mais non urgentes.</p>
             </article>
-
             <article>
-                <h3>🛠️ Les outils de gestion de tâches</h3>
-                <p>
-                    Différents outils numériques permettent de mettre en pratique ces méthodes, selon les
-                    préférences et besoins de chacun.
-                </p>
-                <p>
-                    <strong>Notion</strong> est un outil flexible combinant prise de notes, gestion de
-                    projets et bases de données personnalisables — adapté à ceux qui veulent un système sur
-                    mesure, au prix d'une prise en main un peu plus longue.
-                </p>
-                <p>
-                    <strong>Trello</strong> utilise le principe des tableaux Kanban (colonnes et cartes
-                    déplaçables) pour visualiser l'avancement des tâches — simple et visuel, adapté à la
-                    gestion de projets collaboratifs.
-                </p>
-                <p>
-                    <strong>Todoist</strong> se concentre sur la gestion de listes de tâches avec des
-                    fonctionnalités de priorisation et de rappels — idéal pour une gestion personnelle simple
-                    et rapide.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : le meilleur outil est celui que tu utilises réellement de
-                    façon régulière — mieux vaut un outil simple utilisé quotidiennement qu'un système
-                    complexe abandonné après deux semaines.
-                </p>
+                <h3 id="les-outils-de-gestion-de-tâches">🛠️ Les outils de gestion de tâches</h3>
+                <p>Différents outils numériques permettent de mettre en pratique ces méthodes.</p>
+                <p>Notion combine prise de notes et gestion de projets personnalisables.</p>
+                <p>Trello utilise le principe des tableaux Kanban, simple et visuel.</p>
+                <p>Todoist se concentre sur la gestion de listes de tâches avec rappels.</p>
+                <p>💡 À retenir : le meilleur outil est celui que tu utilises réellement.</p>
             </article>
         </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <div id="quiz-container"></div>
+            <p class="quiz-score" id="quiz-score"></p>
+        </div>
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
             <article>
-                <p>
-                    Pour approfondir les méthodes de productivité :
-                </p>
-                <p>
-                    • <strong>"Getting Things Done" de David Allen</strong> — l'ouvrage de référence sur la
-                    méthode GTD<br>
-                    • <strong>Blog de Todoist</strong> — articles réguliers sur la productivité et la gestion
-                    du temps<br>
-                    • <strong>Ali Abdaal (YouTube)</strong> — contenu accessible sur productivité et méthodes
-                    de travail
-                </p>
+                <p>"Getting Things Done" de David Allen — ouvrage de référence. Blog de Todoist — articles réguliers sur la productivité. Ali Abdaal (YouTube) — contenu accessible sur les méthodes de travail.</p>
             </article>
         </section>
+
+        <div class="guide-nav">
+            <a href="../entrepreneuriat/index.html"><span class="label">← Guide précédent</span>🚀 Entrepreneuriat</a>
+            <a href="../data/index.html" class="next"><span class="label">Guide suivant →</span>📊 Data & Analytics</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../design/index.html">🎨 Design UX/UI</a>
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>© DocMaster AI</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        const quizData = [{"q": "Combien de temps dure une session de travail dans la méthode Pomodoro ?", "options": ["10 minutes", "25 minutes", "1 heure"], "a": 1}, {"q": "Dans la matrice d'Eisenhower, où faut-il réserver plus de temps ?", "options": ["Uniquement l'urgent", "L'important mais non urgent", "Le peu important"], "a": 1}, {"q": "Quel est le principe central de la méthode GTD ?", "options": ["Tout mémoriser mentalement", "Capturer les tâches dans un système externe fiable", "Travailler sans interruption"], "a": 1}];
+    </script>
+    <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
-
+    <script src="../../assets/js/enhance.js"></script>
 </body>
 </html>

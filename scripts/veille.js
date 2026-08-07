@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER AI - SCRIPT DE VEILLE HEBDOMADAIRE
+// DOCMASTER AI - SCRIPT DE VEILLE (v2 : déduplication + nettoyage)
 // ===================================
 
 const categories = [
@@ -14,14 +14,15 @@ const categories = [
     { nom: "🎨 Design UX/UI", requete: "design UX UI interface tendances" },
 ];
 
-// Récupère les articles récents pour une catégorie via Google Actualités
+const NB_JOURS_AVANT_FERMETURE = 14; // ferme automatiquement les anciennes veilles
+
 async function recupererArticles(requete) {
     const url = `https://news.google.com/rss/search?q=${encodeURIComponent(requete)}&hl=fr&gl=FR&ceid=FR:fr`;
     const reponse = await fetch(url);
     const xml = await reponse.text();
 
     const articles = [];
-    const items = xml.split("<item>").slice(1, 4); // les 3 premiers résultats
+    const items = xml.split("<item>").slice(1, 5); // un peu de marge pour la déduplication
 
     for (const item of items) {
         const titreMatch = item.match(/<title>(.*?)<\/title>/s);
@@ -38,26 +39,44 @@ async function recupererArticles(requete) {
     return articles;
 }
 
-// Construit le contenu de l'Issue GitHub
-async function construireRapport() {
-    const date = new Date().toLocaleDateString("fr-FR", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-    });
+// Récupère les liens déjà proposés dans les 20 dernières Issues de veille
+async function recupererLiensDejaProposes(repo, token) {
+    const reponse = await fetch(
+        `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=20`,
+        { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } }
+    );
+    if (!reponse.ok) return new Set();
 
-    let rapport = `# 📰 Veille DocMaster AI — ${date}\n\n`;
-    rapport += `Voici les articles récents trouvés pour chaque catégorie. Passe en revue ceux qui semblent pertinents pour enrichir les guides.\n\n---\n\n`;
+    const issues = await reponse.json();
+    const liens = new Set();
+    for (const issue of issues) {
+        const matches = (issue.body || "").matchAll(/\((https?:\/\/[^\)]+)\)/g);
+        for (const m of matches) liens.add(m[1]);
+    }
+    return liens;
+}
+
+async function construireRapport(liensDejaProposes) {
+    const date = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+
+    let rapport = `# 📰 Veille DocMaster AI — ${date} (${heure})\n\n`;
+    rapport += `Voici les articles récents trouvés pour chaque catégorie (les articles déjà proposés récemment sont automatiquement filtrés).\n\n---\n\n`;
+
+    let totalArticles = 0;
 
     for (const categorie of categories) {
         rapport += `## ${categorie.nom}\n\n`;
         try {
             const articles = await recupererArticles(categorie.requete);
-            if (articles.length === 0) {
-                rapport += `_Aucun article trouvé cette semaine._\n\n`;
+            const nouveaux = articles.filter(a => !liensDejaProposes.has(a.lien));
+
+            if (nouveaux.length === 0) {
+                rapport += `_Rien de nouveau par rapport à la dernière veille._\n\n`;
             } else {
-                for (const article of articles) {
+                for (const article of nouveaux.slice(0, 3)) {
                     rapport += `- [${article.titre}](${article.lien})\n`;
+                    totalArticles++;
                 }
                 rapport += `\n`;
             }
@@ -66,43 +85,67 @@ async function construireRapport() {
         }
     }
 
-    return rapport;
+    return { rapport, totalArticles };
 }
 
-// Crée l'Issue sur GitHub via l'API
 async function creerIssue(contenu) {
-    const repo = process.env.GITHUB_REPOSITORY; // format: "utilisateur/docmaster"
+    const repo = process.env.GITHUB_REPOSITORY;
     const token = process.env.GITHUB_TOKEN;
-
     const date = new Date().toLocaleDateString("fr-FR");
 
     const reponse = await fetch(`https://api.github.com/repos/${repo}/issues`, {
         method: "POST",
-        headers: {
-            Authorization: `Bearer ${token}`,
-            Accept: "application/vnd.github+json",
-            "Content-Type": "application/json",
-        },
+        headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
         body: JSON.stringify({
-            title: `📰 Veille hebdomadaire — ${date}`,
+            title: `📰 Veille — ${date}`,
             body: contenu,
             labels: ["veille"],
         }),
     });
 
-    if (!reponse.ok) {
-        const erreur = await reponse.text();
-        throw new Error(`Erreur création Issue : ${erreur}`);
-    }
-
+    if (!reponse.ok) throw new Error(`Erreur création Issue : ${await reponse.text()}`);
     console.log("Issue créée avec succès !");
 }
 
-// Exécution principale
+// Ferme automatiquement les Issues de veille de plus de NB_JOURS_AVANT_FERMETURE jours
+async function fermerAnciennesIssues(repo, token) {
+    const reponse = await fetch(
+        `https://api.github.com/repos/${repo}/issues?labels=veille&state=open&per_page=50`,
+        { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } }
+    );
+    if (!reponse.ok) return;
+
+    const issues = await reponse.json();
+    const maintenant = Date.now();
+
+    for (const issue of issues) {
+        const age = (maintenant - new Date(issue.created_at).getTime()) / (1000 * 60 * 60 * 24);
+        if (age > NB_JOURS_AVANT_FERMETURE) {
+            await fetch(`https://api.github.com/repos/${repo}/issues/${issue.number}`, {
+                method: "PATCH",
+                headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+                body: JSON.stringify({ state: "closed" }),
+            });
+            console.log(`Issue #${issue.number} fermée automatiquement (${Math.round(age)} jours).`);
+        }
+    }
+}
+
 (async () => {
     try {
-        const rapport = await construireRapport();
-        await creerIssue(rapport);
+        const repo = process.env.GITHUB_REPOSITORY;
+        const token = process.env.GITHUB_TOKEN;
+
+        const liensDejaProposes = await recupererLiensDejaProposes(repo, token);
+        const { rapport, totalArticles } = await construireRapport(liensDejaProposes);
+
+        if (totalArticles > 0) {
+            await creerIssue(rapport);
+        } else {
+            console.log("Aucun article nouveau — pas d'Issue créée cette fois.");
+        }
+
+        await fermerAnciennesIssues(repo, token);
     } catch (erreur) {
         console.error("Erreur :", erreur);
         process.exit(1);

@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Développement Web - DocMaster AI</title>
+    <meta name="description" content="Guide gratuit sur HTML, CSS, JavaScript, le frontend, le backend et le responsive design.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <meta property="og:title" content="Développement Web - DocMaster AI">
+    <meta property="og:description" content="Guide gratuit sur HTML, CSS, JavaScript, le frontend, le backend et le responsive design.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../../assets/img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../../index.html" class="logo">Doc<span>Master</span> AI</a>
-            <ul class="nav-links">
-                <li><a href="../../index.html">Accueil</a></li>
-            </ul>
-            <button id="theme-toggle" class="theme-toggle">🌙</button>
-        </div>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt; <span aria-current="page">💻 Développement Web</span>
     </nav>
 
     <header>
@@ -29,166 +33,122 @@
             </div>
             <div class="header-illustration">
                 <svg width="140" height="140" viewBox="0 0 140 140">
-                    <circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
-                    <circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
-                    <g class="illu-icon">
-                        <g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="55,50 40,70 55,90"/>
-                            <polyline points="85,50 100,70 85,90"/>
-                            <line x1="75" y1="45" x2="65" y2="95"/>
-                        </g>
-                    </g>
-                    <circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
-                    <circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
-                    <circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/>
-                </svg>
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
             </div>
         </div>
     </header>
 
-    <main>
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 7 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#html-css">🏗️ HTML & CSS</a></li>
+                <li><a href="#javascript">⚡ JavaScript</a></li>
+                <li><a href="#frontend-vs-backend">🔗 Frontend vs Backend</a></li>
+                <li><a href="#responsive-design">📱 Responsive Design</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>HTML structure le contenu, CSS définit son apparence visuelle.</li>
+                <li>JavaScript rend une page interactive en réagissant aux actions de l'utilisateur.</li>
+                <li>Le frontend est ce que l'utilisateur voit, le backend gère la logique invisible côté serveur.</li>
+                <li>Le responsive design garantit un bon affichage sur tous les écrans.</li>
+                <li>L'approche mobile-first est de plus en plus recommandée.</li>
+            </ul>
+        </div>
+
         <section>
-            <h2>Introduction</h2>
-            <p>
-                Le développement web regroupe toutes les compétences nécessaires pour créer un site ou une
-                application accessible sur internet. C'est un domaine accessible aux débutants, avec une
-                courbe d'apprentissage progressive : on peut créer sa première page en quelques heures, puis
-                approfondir année après année. Ce guide te présente les fondations essentielles pour bien
-                démarrer.
-            </p>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le développement web regroupe toutes les compétences nécessaires pour créer un site ou une application accessible sur internet. C'est un domaine accessible aux débutants, avec une courbe d'apprentissage progressive. Ce guide te présente les fondations essentielles pour bien démarrer.</p>
         </section>
 
         <section>
-            <h2>Les bases à connaître</h2>
-
+            <h2 id="bases">Les bases à connaître</h2>
             <article>
-                <h3>🏗️ HTML & CSS</h3>
-                <p>
-                    HTML (HyperText Markup Language) et CSS (Cascading Style Sheets) forment les fondations
-                    de toute page web : le premier structure le contenu, le second définit son apparence
-                    visuelle.
-                </p>
-                <p>
-                    <strong>HTML</strong> décrit les éléments d'une page à l'aide de balises : un titre
-                    (`&lt;h1&gt;`), un paragraphe (`&lt;p&gt;`), une image (`&lt;img&gt;`), un lien
-                    (`&lt;a&gt;`). Sans CSS, une page HTML s'affiche avec une mise en forme brute, sans
-                    couleurs ni mise en page élaborée.
-                </p>
-                <p>
-                    <strong>CSS</strong> permet de définir les couleurs, les espacements, les polices, la
-                    disposition des éléments (grâce à des techniques comme Flexbox ou Grid), et les
-                    animations. C'est ce qui transforme une structure brute en interface soignée.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : HTML répond à la question "quel contenu ?", CSS répond à
-                    la question "à quoi ça ressemble ?" — les deux sont indissociables pour créer une page
-                    web complète.
-                </p>
+                <h3 id="html-css">🏗️ HTML & CSS</h3>
+                <p>HTML et CSS forment les fondations de toute page web : le premier structure le contenu, le second définit son apparence visuelle.</p>
+                <p>HTML décrit les éléments d'une page à l'aide de balises (titre, paragraphe, image, lien).</p>
+                <p>CSS permet de définir couleurs, espacements, polices, disposition (Flexbox, Grid) et animations.</p>
+                <p>💡 À retenir : HTML répond à "quel contenu ?", CSS répond à "à quoi ça ressemble ?"</p>
             </article>
-
             <article>
-                <h3>⚡ JavaScript</h3>
-                <p>
-                    JavaScript est le langage qui rend une page web interactive : il permet de réagir aux
-                    actions de l'utilisateur (clics, saisie de texte) et de modifier dynamiquement le contenu
-                    d'une page sans avoir à la recharger entièrement.
-                </p>
-                <p>
-                    <strong>Exemples d'usages courants</strong> : afficher/masquer un menu au clic, valider
-                    un formulaire avant envoi, charger de nouvelles données sans recharger la page (comme sur
-                    les réseaux sociaux), ou créer des animations interactives.
-                </p>
-                <p>
-                    <strong>Le DOM (Document Object Model)</strong> est la représentation de la page HTML que
-                    JavaScript peut lire et modifier. C'est grâce au DOM que JavaScript peut, par exemple,
-                    changer le texte d'un bouton ou ajouter une nouvelle image sur la page en réponse à une
-                    action utilisateur.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : sans JavaScript, un site reste statique (comme une page
-                    de brochure). Avec JavaScript, il devient une véritable application interactive.
-                </p>
+                <h3 id="javascript">⚡ JavaScript</h3>
+                <p>JavaScript rend une page web interactive : il réagit aux actions de l'utilisateur et modifie dynamiquement le contenu.</p>
+                <p>Exemples d'usages : afficher/masquer un menu, valider un formulaire, charger des données sans recharger la page.</p>
+                <p>Le DOM est la représentation de la page HTML que JavaScript peut lire et modifier.</p>
+                <p>💡 À retenir : sans JavaScript, un site reste statique.</p>
             </article>
-
             <article>
-                <h3>🔗 Frontend vs Backend</h3>
-                <p>
-                    Un site web complet repose généralement sur deux parties distinctes qui communiquent
-                    entre elles : le frontend et le backend.
-                </p>
-                <p>
-                    <strong>Le frontend</strong> ("côté client") regroupe tout ce que l'utilisateur voit et
-                    manipule directement dans son navigateur : la mise en page, les couleurs, les
-                    interactions. Il est construit avec HTML, CSS et JavaScript (souvent via des frameworks
-                    comme React ou Vue).
-                </p>
-                <p>
-                    <strong>Le backend</strong> ("côté serveur") gère la logique invisible : stockage des
-                    données (bases de données), authentification des utilisateurs, traitement des paiements,
-                    ou envoi d'emails. Il tourne sur un serveur distant, pas dans le navigateur de
-                    l'utilisateur.
-                </p>
-                <p>
-                    <strong>Exemple concret</strong> : sur un site e-commerce, le frontend affiche joliment
-                    les produits et le panier ; le backend vérifie le stock disponible, calcule le prix final,
-                    et enregistre la commande en base de données.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : un développeur "frontend" se concentre sur l'interface
-                    visible, un développeur "backend" sur la logique serveur — un développeur "fullstack"
-                    maîtrise les deux.
-                </p>
+                <h3 id="frontend-vs-backend">🔗 Frontend vs Backend</h3>
+                <p>Un site complet repose sur deux parties : le frontend (ce que voit l'utilisateur) et le backend (la logique côté serveur).</p>
+                <p>Le frontend est construit avec HTML, CSS, JavaScript, souvent via des frameworks comme React ou Vue.</p>
+                <p>Le backend gère le stockage des données, l'authentification, les paiements.</p>
+                <p>💡 À retenir : un développeur fullstack maîtrise les deux.</p>
             </article>
-
             <article>
-                <h3>📱 Responsive Design</h3>
-                <p>
-                    Le responsive design consiste à concevoir un site pour qu'il s'affiche correctement sur
-                    tous types d'écrans : ordinateur, tablette, smartphone — chacun ayant des tailles et
-                    proportions différentes.
-                </p>
-                <p>
-                    <strong>Les media queries CSS</strong> permettent d'appliquer des styles différents selon
-                    la largeur de l'écran. Par exemple, une navigation qui s'affiche horizontalement sur
-                    ordinateur peut s'empiler verticalement sur mobile pour rester lisible et utilisable.
-                </p>
-                <p>
-                    <strong>L'approche "mobile-first"</strong> consiste à concevoir d'abord la version mobile
-                    d'un site, puis à l'adapter progressivement pour des écrans plus larges — plutôt que
-                    l'inverse. Cette approche est de plus en plus recommandée, la majorité du trafic web
-                    mondial provenant désormais des smartphones.
-                </p>
-                <p>
-                    💡 <strong>À retenir</strong> : un site non responsive perd une grande partie de ses
-                    visiteurs potentiels — tester systématiquement l'affichage mobile est aujourd'hui
-                    indispensable, pas optionnel.
-                </p>
+                <h3 id="responsive-design">📱 Responsive Design</h3>
+                <p>Le responsive design consiste à concevoir un site pour qu'il s'affiche correctement sur tous types d'écrans.</p>
+                <p>Les media queries CSS permettent d'appliquer des styles différents selon la largeur de l'écran.</p>
+                <p>L'approche mobile-first consiste à concevoir d'abord la version mobile, puis à l'adapter pour des écrans plus larges.</p>
+                <p>💡 À retenir : tester systématiquement l'affichage mobile est aujourd'hui indispensable.</p>
             </article>
         </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <div id="quiz-container"></div>
+            <p class="quiz-score" id="quiz-score"></p>
+        </div>
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
             <article>
-                <p>
-                    Le développement web évolue rapidement (nouveaux frameworks, standards, outils). Pour
-                    rester à jour :
-                </p>
-                <p>
-                    • <strong>MDN Web Docs</strong> — documentation de référence officielle sur HTML, CSS et
-                    JavaScript<br>
-                    • <strong>web.dev</strong> (Google) — bonnes pratiques et nouveautés du web moderne<br>
-                    • <strong>Can I Use</strong> — vérifier la compatibilité des fonctionnalités avec les
-                    navigateurs
-                </p>
+                <p>MDN Web Docs — documentation de référence officielle. web.dev (Google) — bonnes pratiques du web moderne. Can I Use — compatibilité des fonctionnalités avec les navigateurs.</p>
             </article>
         </section>
+
+        <div class="guide-nav">
+            <a href="../ia/index.html"><span class="label">← Guide précédent</span>🤖 Intelligence Artificielle</a>
+            <a href="../marketing/index.html" class="next"><span class="label">Guide suivant →</span>📢 Marketing Digital</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+                <a href="../productivite/index.html">⏱️ Productivité & Organisation</a>
+                <a href="../design/index.html">🎨 Design UX/UI</a>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>© DocMaster AI</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        const quizData = [{"q": "Que fait CSS sur une page web ?", "options": ["Il structure le contenu", "Il définit l'apparence visuelle", "Il stocke les données"], "a": 1}, {"q": "Le backend s'exécute...", "options": ["Dans le navigateur de l'utilisateur", "Sur un serveur distant", "Uniquement sur mobile"], "a": 1}, {"q": "Qu'est-ce que l'approche \"mobile-first\" ?", "options": ["Concevoir d'abord la version mobile", "Interdire l'accès depuis un ordinateur", "Une police d'écriture"], "a": 0}];
+    </script>
+    <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
-
+    <script src="../../assets/js/enhance.js"></script>
 </body>
 </html>
