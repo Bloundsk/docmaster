@@ -11,6 +11,7 @@
     --muted: #64748b;
     --radius: 16px;
     --shadow: 0 10px 25px rgba(0,0,0,0.08);
+    color-scheme: light;
 }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -188,16 +189,25 @@ article:nth-child(3) { animation-delay: .3s; }
 footer { text-align: center; padding: 30px; color: var(--muted); }
 footer a { color: var(--muted); margin: 0 8px; }
 
-/* Mode sombre */
-body.dark-mode {
+/* Mode sombre
+   La classe est portée par <html> et non par <body> : un script inline placé
+   dans le <head> peut ainsi l'appliquer avant le premier affichage, ce qui
+   supprime le flash blanc au chargement. <body> n'existe pas encore à ce
+   moment-là, d'où le choix de <html>. */
+html.dark-mode {
     --background: #0f172a;
     --surface: #1e293b;
     --text: #f1f5f9;
     --muted: #94a3b8;
     --shadow: 0 10px 25px rgba(0,0,0,0.4);
+    color-scheme: dark;
 }
-body.dark-mode header { background: linear-gradient(135deg, #1e3a8a, #4c1d95); }
-body.dark-mode .theme-toggle { border-color: var(--muted); color: var(--text); }
+html.dark-mode header { background: linear-gradient(135deg, #1e3a8a, #4c1d95); }
+html.dark-mode .theme-toggle { border-color: var(--muted); color: var(--text); }
+
+/* Le fond est aussi posé sur <html> : sans cela, le navigateur peint la
+   couleur par défaut (blanche) sur la zone hors <body> pendant le chargement. */
+html { background: var(--background); }
 
 /* Responsive */
 @media (max-width: 700px) {
