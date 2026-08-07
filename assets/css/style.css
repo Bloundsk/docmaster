@@ -170,11 +170,21 @@ html.dark-mode .piege .titre { color: #fbbf24; }
 /* A retenir : la phrase que le lecteur doit garder */
 .retenir { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border-radius: 10px; padding: 14px 20px; margin: 18px 0 0; font-weight: 500; }
 
-/* Tableaux comparatifs */
-article.lecon table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .94rem; }
-article.lecon th, article.lecon td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--background); vertical-align: top; }
-article.lecon th { font-family: 'Poppins', sans-serif; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+/* Tableaux comparatifs.
+   Le selecteur couvre aussi les tableaux hors blocs de cours (mentions
+   legales par exemple), des lors qu'ils sont dans un conteneur .table-scroll. */
+article.lecon table, .table-scroll table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .94rem; }
+article.lecon th, article.lecon td,
+.table-scroll th, .table-scroll td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--background); vertical-align: top; }
+article.lecon th, .table-scroll th { font-family: 'Poppins', sans-serif; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+/* Tableaux en deux colonnes libelle/valeur : le libelle ne doit pas s'etirer */
+.table-scroll th { white-space: nowrap; }
 .table-scroll { overflow-x: auto; }
+
+/* Sous-titres hors blocs de cours (sections des pages legales) */
+main section h3 { color: var(--primary); font-family: 'Poppins', sans-serif; font-size: 1.05rem; margin: 22px 0 10px; }
+main section ul { margin: 12px 0 12px 22px; }
+main section li { margin-bottom: 8px; }
 
 /* Ressources en fin de guide */
 .ressources li { margin-bottom: 10px; }
