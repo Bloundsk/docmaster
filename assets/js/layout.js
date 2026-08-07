@@ -41,4 +41,16 @@
             footerPlaceholder.outerHTML = footerHTML;
         }
     });
+
+    // Statistiques d'audience (GoatCounter) : aucun cookie, aucune donnée personnelle.
+    // Placé ici plutôt que dans chaque page : toutes les pages chargent ce script.
+    // count.js cherche un script[data-goatcounter] dans le DOM pour trouver son adresse.
+    // Inutile en local (file://) : on ne compte que le site en ligne.
+    if (location.protocol.startsWith("http")) {
+        const analytics = document.createElement("script");
+        analytics.async = true;
+        analytics.src = "https://gc.zgo.at/count.js";
+        analytics.setAttribute("data-goatcounter", "https://bloundsk.goatcounter.com/count");
+        document.head.appendChild(analytics);
+    }
 })();
