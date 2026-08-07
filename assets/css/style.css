@@ -147,6 +147,38 @@ article:nth-child(2) { animation-delay: .2s; }
 article:nth-child(3) { animation-delay: .3s; }
 
 /* Bouton copier le lien + dernière mise à jour */
+/* Blocs de cours : contrairement aux cartes de l'accueil, ils contiennent de
+   longs textes. L'effet de soulevement au survol y devient genant (le bloc
+   saute pendant la lecture), on le neutralise. */
+article.lecon { animation: none; }
+article.lecon:hover { transform: none; box-shadow: var(--shadow); }
+article.lecon p { margin-bottom: 14px; }
+article.lecon p:last-child { margin-bottom: 0; }
+article.lecon ul, article.lecon ol { margin: 0 0 14px 22px; }
+article.lecon li { margin-bottom: 7px; }
+article.lecon h4 { margin: 22px 0 10px; font-family: 'Poppins', sans-serif; font-size: 1.02rem; }
+
+/* Exemple chiffre : le passage du concept au concret */
+.exemple { background: var(--background); border-left: 4px solid var(--secondary); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+.exemple .titre { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--secondary); margin-bottom: 8px; }
+
+/* Erreur frequente */
+.piege { background: var(--background); border-left: 4px solid #f59e0b; border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+.piege .titre { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: #d97706; margin-bottom: 8px; }
+html.dark-mode .piege .titre { color: #fbbf24; }
+
+/* A retenir : la phrase que le lecteur doit garder */
+.retenir { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border-radius: 10px; padding: 14px 20px; margin: 18px 0 0; font-weight: 500; }
+
+/* Tableaux comparatifs */
+article.lecon table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .94rem; }
+article.lecon th, article.lecon td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--background); vertical-align: top; }
+article.lecon th { font-family: 'Poppins', sans-serif; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.table-scroll { overflow-x: auto; }
+
+/* Ressources en fin de guide */
+.ressources li { margin-bottom: 10px; }
+
 .guide-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; max-width: 1100px; margin: 20px auto 0; padding: 0 20px; font-size: .85rem; color: var(--muted); }
 .copy-link-btn { background: var(--surface); border: 1px solid var(--muted); color: var(--text); border-radius: 8px; padding: 6px 14px; font-size: .85rem; cursor: pointer; transition: border-color .2s; }
 .copy-link-btn:hover { border-color: var(--primary); color: var(--primary); }

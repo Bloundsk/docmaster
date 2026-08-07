@@ -97,38 +97,159 @@
 
         <section>
             <h2 id="introduction">Introduction</h2>
-            <p>La data et l'analytics permettent de comprendre des comportements, mesurer des performances et prendre des décisions basées sur des faits plutôt que sur des impressions. Ce guide t'en présente les bases essentielles.</p>
+            <p>« On a l'impression que ça marche mieux depuis qu'on a changé la page d'accueil. » Cette phrase, on l'entend dans toutes les organisations. Elle est peut-être vraie. Le problème, c'est qu'elle est invérifiable — et qu'on va prendre des décisions coûteuses en se fondant dessus.</p>
+            <p>La data ne sert pas à produire des tableaux de bord impressionnants. Elle sert à répondre à une question précise avec un degré de certitude connu. C'est une nuance importante : une donnée mal collectée ou mal interprétée est <strong>pire</strong> qu'une absence de donnée, parce qu'elle donne une fausse confiance.</p>
+            <p>Ce guide couvre quatre choses : choisir ce qu'on mesure, récupérer des données auxquelles on peut se fier, les représenter sans mentir, et les interpréter sans se tromper. Aucune connaissance en mathématiques n'est nécessaire — les quatre notions statistiques utiles au quotidien tiennent en une page.</p>
         </section>
 
         <section>
             <h2 id="bases">Les bases à connaître</h2>
-            <article>
+
+            <article class="lecon">
                 <h3 id="les-kpi">📈 Les KPI</h3>
-                <p>Un KPI est une mesure quantifiable permettant d'évaluer si un objectif est atteint.</p>
-                <p>Choisir les bons indicateurs : liés à un objectif précis, mesurables, et actionnables.</p>
-                <p>Le piège de la vanité métrique : certains indicateurs impressionnent sans lien réel avec les objectifs.</p>
-                <p>💡 À retenir : si un chiffre qui change ne mène à aucune décision, ce n'est probablement pas le bon indicateur.</p>
+                <p>Un <strong>KPI</strong> (<em>Key Performance Indicator</em>, indicateur clé de performance) est un chiffre choisi pour répondre à une question de décision. Le mot important est <em>choisi</em> : on peut mesurer des milliers de choses, et la difficulté n'est pas de collecter, c'est de trier.</p>
+
+                <h4>Ce qui distingue un bon indicateur</h4>
+                <p>Un indicateur mérite d'être suivi s'il réunit trois conditions :</p>
+                <ul>
+                    <li><strong>Il est lié à un objectif précis.</strong> Pas « améliorer le site », mais « augmenter la part de visiteurs qui achètent ».</li>
+                    <li><strong>Il est mesurable de la même façon dans le temps.</strong> Si la définition change en cours de route, la comparaison ne veut plus rien dire.</li>
+                    <li><strong>Il est actionnable.</strong> Sa variation doit déclencher une décision. C'est le critère le plus discriminant, et le plus souvent oublié.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Une boutique en ligne reçoit <strong>100 000 visiteurs</strong> par mois et réalise <strong>1 200 ventes</strong>. Le mois suivant, une campagne publicitaire fait passer le trafic à <strong>180 000 visiteurs</strong>, pour <strong>1 300 ventes</strong>.</p>
+                    <p>Vu par le trafic : <strong>+80 %</strong>. Le rapport mensuel est flatteur.</p>
+                    <p>Vu par le taux de conversion : on passe de <strong>1,20 %</strong> à <strong>0,72 %</strong>, soit une chute de <strong>40 %</strong>. La campagne a fait venir 80 000 personnes dont presque aucune n'était intéressée.</p>
+                    <p>Les deux chiffres sont exacts. Un seul mène à une décision : revoir le ciblage de la campagne.</p>
+                </div>
+
+                <h4>Indicateurs de résultat et indicateurs avancés</h4>
+                <p>Le chiffre d'affaires est un <strong>indicateur de résultat</strong> : il constate ce qui s'est passé, trop tard pour agir. Le nombre de devis envoyés cette semaine est un <strong>indicateur avancé</strong> : il annonce le chiffre d'affaires du mois prochain, quand il est encore temps de réagir. Un tableau de bord utile contient les deux.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la métrique de vanité</span>
+                    <p>Nombre d'abonnés, de vues, de téléchargements, de likes : ces chiffres montent presque toujours, ne redescendent jamais, et sont agréables à présenter. Ils sont rarement liés à une décision.</p>
+                    <p>Le test à appliquer : « si ce chiffre baissait de 20 % demain, que ferais-je différemment ? » Si la réponse est « rien », ce n'est pas un KPI, c'est une décoration.</p>
+                </div>
+
+                <p class="retenir">💡 Un indicateur qui ne change aucune décision n'est pas un indicateur. Avant d'en suivre un, écris la décision qu'il servira à prendre.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="la-collecte-de-données">🗂️ La collecte de données</h3>
-                <p>Avant toute analyse, il faut recueillir des données fiables et pertinentes.</p>
-                <p>Les données quantitatives permettent des analyses statistiques précises, les qualitatives apportent du contexte.</p>
-                <p>La qualité prime sur la quantité : des données mal collectées mènent à des conclusions erronées.</p>
-                <p>💡 À retenir : vérifie toujours la source et la fiabilité des données avant analyse.</p>
+                <p>Toute analyse hérite des défauts de sa collecte. Un calcul impeccable sur des données biaisées produit un résultat faux — mais présenté avec assurance, ce qui le rend plus dangereux qu'une intuition assumée.</p>
+
+                <h4>Quantitatif et qualitatif</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Type</th><th>Répond à</th><th>Limite</th></tr>
+                    <tr><td><strong>Quantitatif</strong><br>chiffres, mesures, comptages</td><td><em>Combien ? Où ? Quand ?</em><br>« 68 % abandonnent au paiement »</td><td>Ne dit jamais <em>pourquoi</em></td></tr>
+                    <tr><td><strong>Qualitatif</strong><br>entretiens, verbatims, observations</td><td><em>Pourquoi ? Comment ?</em><br>« Je ne voyais pas les frais de port »</td><td>Ne dit pas si c'est représentatif</td></tr>
+                </table>
+                </div>
+                <p>Les deux se complètent et ne se remplacent pas. Le quantitatif localise le problème, le qualitatif l'explique. Chercher la cause d'un abandon de panier dans un tableau de chiffres est une perte de temps : il faut parler à cinq personnes.</p>
+
+                <h4>Le biais de sélection</h4>
+                <p>C'est le défaut de collecte le plus courant, et le plus difficile à voir : les personnes qui répondent ne ressemblent pas à celles qui ne répondent pas.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Un service envoie un questionnaire de satisfaction à ses <strong>5 000 clients</strong>. <strong>200 réponses</strong> arrivent, avec une note moyenne de <strong>4,3 / 5</strong>. Conclusion apparente : les clients sont satisfaits.</p>
+                    <p>Mais qui prend cinq minutes pour répondre à un questionnaire ? Les très contents et les très mécontents. Les 4 800 silencieux — dont ceux qui sont partis à la concurrence — ne sont pas dans le calcul.</p>
+                    <p>Ce 4,3 mesure la satisfaction <strong>des personnes qui ont répondu</strong>, pas celle des clients. La nuance change tout.</p>
+                </div>
+
+                <h4>Trois questions avant d'exploiter un chiffre</h4>
+                <ol>
+                    <li><strong>Qui a été mesuré, et qui a été oublié ?</strong> Les absents sont souvent le vrai sujet.</li>
+                    <li><strong>Comment la mesure a-t-elle été faite ?</strong> Un formulaire déclaratif et un relevé automatique ne se valent pas.</li>
+                    <li><strong>Sur quelle période ?</strong> Une semaine de vacances scolaires ne prédit pas une semaine ordinaire.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — accumuler avant de savoir quoi chercher</span>
+                    <p>« Collectons tout, on verra plus tard » produit des bases énormes, coûteuses à maintenir, dans lesquelles on ne trouve rien. Et sur un grand volume de données, on finit toujours par dénicher une corrélation spectaculaire due au seul hasard.</p>
+                    <p>La question précède la collecte, jamais l'inverse.</p>
+                </div>
+
+                <p class="retenir">💡 Avant de faire confiance à un chiffre, demande qui n'a pas été compté. C'est presque toujours là que se cache l'erreur.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="la-visualisation-de-données">📉 La visualisation de données</h3>
-                <p>Représenter des données sous forme graphique facilite la prise de décision.</p>
-                <p>Choisir le bon type de graphique : courbes pour l'évolution, barres pour comparer, camembert pour des proportions.</p>
-                <p>Éviter les biais visuels : un axe tronqué peut exagérer artificiellement une différence.</p>
-                <p>💡 À retenir : un bon graphique se comprend en quelques secondes.</p>
+                <p>Un graphique n'est pas une décoration posée sur un tableau : c'est un argument. Il oriente la lecture, met une chose en avant et en relègue une autre. D'où une responsabilité — la même donnée peut, selon sa mise en forme, mener à deux décisions opposées.</p>
+
+                <h4>Choisir la forme selon la question</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Question posée</th><th>Forme adaptée</th><th>À éviter</th></tr>
+                    <tr><td>Comment ça évolue dans le temps ?</td><td>Courbe</td><td>Barres (illisible au-delà de 12 points)</td></tr>
+                    <tr><td>Qui est le plus grand ?</td><td>Barres horizontales, triées</td><td>Camembert (l'œil compare mal des angles)</td></tr>
+                    <tr><td>Quelle part du total ?</td><td>Camembert, <strong>3 parts maximum</strong></td><td>Camembert à 8 parts</td></tr>
+                    <tr><td>Y a-t-il un lien entre A et B ?</td><td>Nuage de points</td><td>Deux courbes à échelles différentes</td></tr>
+                    <tr><td>Un seul chiffre à retenir ?</td><td>Le chiffre écrit en grand</td><td>Une jauge, un compteur</td></tr>
+                </table>
+                </div>
+
+                <h4>L'axe tronqué</h4>
+                <p>C'est la manipulation visuelle la plus répandue, souvent involontaire — beaucoup d'outils la produisent par défaut.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Deux produits : <strong>A = 51 ventes</strong>, <strong>B = 49 ventes</strong>. Un écart de 4 %.</p>
+                    <p>Avec un axe partant de <strong>0</strong>, les deux barres paraissent identiques — ce qui est fidèle.</p>
+                    <p>Avec un axe partant de <strong>48</strong>, la barre de A devient <strong>trois fois</strong> plus haute que celle de B. Le lecteur en conclut que A écrase B.</p>
+                    <p>Aucun chiffre n'a été falsifié. Seule l'échelle a changé.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le graphique qui demande une notice</span>
+                    <p>Si le lecteur doit consulter la légende pour comprendre, le graphique a raté son office. Un bon visuel se lit en trois secondes : un titre qui énonce la conclusion (« Les ventes ont doublé en 6 mois », pas « Ventes 2026 »), des axes nommés avec leur unité, et une seule idée par graphique.</p>
+                </div>
+
+                <p class="retenir">💡 Regarde toujours d'où part l'axe vertical. C'est le premier réflexe à acquérir, et il vous évitera de vous faire abuser — y compris par vos propres graphiques.</p>
             </article>
-            <article>
+
+            <article class="lecon">
                 <h3 id="les-bases-des-statistiques">🧮 Les bases des statistiques</h3>
-                <p>Quelques notions statistiques simples permettent d'interpréter correctement la plupart des données.</p>
-                <p>La moyenne peut être influencée par des valeurs extrêmes ; la médiane est souvent plus représentative.</p>
-                <p>La corrélation mesure si deux variables évoluent ensemble, sans impliquer de causalité.</p>
-                <p>💡 À retenir : corrélation n'est pas causalité.</p>
+                <p>Quatre notions suffisent à éviter la grande majorité des erreurs d'interprétation. Aucune ne demande de calcul compliqué.</p>
+
+                <h4>1. Moyenne ou médiane</h4>
+                <p>La <strong>moyenne</strong> additionne tout et divise par l'effectif. La <strong>médiane</strong> est la valeur qui coupe la population en deux moitiés égales.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Dix salaires dans une petite entreprise : neuf personnes à <strong>2 000 €</strong> et un dirigeant à <strong>20 000 €</strong>.</p>
+                    <p><strong>Moyenne</strong> = (9 × 2 000 + 20 000) / 10 = <strong>3 800 €</strong></p>
+                    <p><strong>Médiane</strong> = <strong>2 000 €</strong></p>
+                    <p>« Le salaire moyen est de 3 800 € » est exact, et ne décrit la réalité d'aucun des dix salariés. La médiane, elle, décrit celle de neuf d'entre eux.</p>
+                </div>
+                <p>Règle pratique : dès qu'une distribution comporte des valeurs extrêmes — salaires, prix immobiliers, temps de réponse, chiffre d'affaires par client — la médiane est plus honnête. Publier les deux est encore mieux : leur écart révèle à lui seul l'inégalité de la distribution.</p>
+
+                <h4>2. Corrélation et causalité</h4>
+                <p>Deux variables sont <strong>corrélées</strong> quand elles évoluent ensemble. Cela n'implique rien sur le fait que l'une provoque l'autre.</p>
+                <p>Trois explications restent possibles : A cause B, B cause A, ou <strong>C cause les deux</strong>. Ce troisième cas est le plus fréquent et le plus oublié.</p>
+                <div class="exemple">
+                    <span class="titre">Exemple</span>
+                    <p>Les ventes de glaces et les noyades augmentent en même temps. Les glaces ne noient personne : c'est la chaleur qui provoque les deux.</p>
+                    <p>Version professionnelle, moins évidente à repérer : « les clients qui utilisent notre application mobile achètent 3 fois plus ». Peut-être l'application déclenche-t-elle l'achat. Ou peut-être les clients déjà les plus fidèles sont-ils simplement ceux qui installent l'application. Décider d'investir des millions dans l'application sur cette base est un pari, pas une déduction.</p>
+                </div>
+
+                <h4>3. La taille de l'échantillon</h4>
+                <p>Sur 10 visiteurs, 6 clics font « 60 % ». Sur 10 autres visiteurs, le même dispositif donnera peut-être 30 %. En dessous de quelques centaines d'observations, un écart de quelques points ne signifie rien : c'est du bruit.</p>
+                <p>Ordre de grandeur utile : pour comparer deux versions d'une page, il faut en général <strong>plusieurs centaines de conversions par version</strong> — pas de visiteurs, de conversions — avant de conclure quoi que ce soit.</p>
+
+                <h4>4. Le pourcentage de pourcentage</h4>
+                <p>Passer de <strong>2 % à 3 %</strong>, c'est <strong>+1 point</strong> ou <strong>+50 %</strong>. Les deux formulations sont exactes ; la seconde est spectaculaire et souvent choisie pour cette raison. Quand un chiffre vous impressionne, cherchez la valeur absolue derrière.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — conclure avant la fin du test</span>
+                    <p>Regarder les résultats d'un test tous les matins et l'arrêter le jour où l'écart est favorable garantit de trouver un gagnant, même entre deux versions strictement identiques. La durée du test se fixe <strong>avant</strong> de le lancer.</p>
+                </div>
+
+                <p class="retenir">💡 Devant tout chiffre : quelle est la taille de l'échantillon, et l'écart pourrait-il s'expliquer par le hasard ? Ces deux questions filtrent la majorité des conclusions hâtives.</p>
             </article>
         </section>
 
@@ -145,8 +266,14 @@
 
         <section>
             <h2>📚 Pour aller plus loin</h2>
-            <article>
-                <p>Google Analytics Academy — formations gratuites sur l'analyse de données web. Kaggle — pratiquer l'analyse sur des jeux de données réels. Our World in Data — exemples de visualisation sur des sujets mondiaux.</p>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Google Analytics Academy</strong> — formations gratuites sur l'analyse de données web, avec certification à la clé.</li>
+                    <li><strong>Kaggle</strong> — jeux de données réels et exercices commentés pour pratiquer sans monter d'infrastructure.</li>
+                    <li><strong>Our World in Data</strong> — la référence en visualisation honnête : sources citées, méthodes expliquées, axes non tronqués.</li>
+                    <li><strong>« How to Lie with Statistics »</strong>, Darrell Huff — court, écrit en 1954, et toujours le meilleur entraînement à repérer les graphiques trompeurs.</li>
+                    <li><strong>INSEE</strong> — données publiques françaises, utiles pour s'exercer sur des chiffres qui concernent votre quotidien.</li>
+                </ul>
             </article>
         </section>
 
