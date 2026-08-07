@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boîte à idées - DocMaster</title>
+    <meta name="description" content="Proposez une nouvelle catégorie ou un sujet à traiter sur DocMaster. Les suggestions des visiteurs orientent les prochains guides.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <meta property="og:title" content="Boîte à idées - DocMaster">
+    <meta property="og:description" content="Quel sujet aimeriez-vous voir traité sur DocMaster ? Proposez-le.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .idea-intro {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .covered {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .covered li {
+            background: var(--background);
+            border: 1px solid var(--muted);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: .9rem;
+        }
+
+        .shortlist {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px;
+            margin-bottom: 30px;
+        }
+
+        .shortlist ul { margin: 14px 0 0 20px; }
+        .shortlist li { margin-bottom: 8px; }
+
+        /* Zone du formulaire : rien n'est chargé tant que le visiteur n'a pas cliqué */
+        .form-zone {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .privacy-note {
+            color: var(--muted);
+            font-size: .9rem;
+            max-width: 620px;
+            margin: 0 auto 22px;
+            line-height: 1.55;
+        }
+
+        .load-form-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            border-radius: var(--radius);
+            padding: 15px 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .load-form-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(37, 99, 235, .35);
+        }
+
+        .form-frame {
+            width: 100%;
+            min-height: 900px;
+            border: none;
+            border-radius: var(--radius);
+        }
+
+        .form-fallback {
+            color: var(--muted);
+            font-size: .9rem;
+            margin-top: 16px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .load-form-btn { transition: none; }
+        }
+    </style>
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "";</script>
+    <script src="assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a> &gt; <span aria-current="page">Boîte à idées</span>
+    </nav>
+
+    <header>
+        <h1>💡 Boîte à idées</h1>
+        <p>Quel sujet aimeriez-vous voir traité ? C'est vous qui orientez les prochains guides.</p>
+    </header>
+
+    <main id="main-content">
+
+        <section>
+            <div class="idea-intro">
+                <h2>Comment ça marche</h2>
+                <p>
+                    DocMaster couvre aujourd'hui 9 domaines. La suite dépend de ce qui vous manque :
+                    proposez un thème entier ou simplement un sujet précis à ajouter dans un guide existant.
+                    Les suggestions les plus demandées sont traitées en priorité.
+                </p>
+                <p style="margin-top:14px;"><strong>Déjà couvert :</strong></p>
+                <ul class="covered">
+                    <li>💰 Finance</li>
+                    <li>🤖 Intelligence artificielle</li>
+                    <li>💻 Développement web</li>
+                    <li>📢 Marketing digital</li>
+                    <li>🔒 Cybersécurité</li>
+                    <li>🚀 Entrepreneuriat</li>
+                    <li>⏱️ Productivité</li>
+                    <li>📊 Data &amp; Analytics</li>
+                    <li>🎨 Design UX/UI</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="shortlist">
+                <h2>Pistes déjà envisagées</h2>
+                <p>
+                    Ces thèmes sont dans les cartons. Si l'un d'eux vous intéresse particulièrement,
+                    dites-le dans le formulaire : ça aide à décider par lequel commencer.
+                </p>
+                <ul>
+                    <li><strong>Droit &amp; démarches administratives</strong> — statuts, contrats, obligations de base</li>
+                    <li><strong>Santé &amp; bien-être au travail</strong> — sommeil, charge mentale, ergonomie</li>
+                    <li><strong>Langues &amp; méthodes d'apprentissage</strong> — mémorisation, répétition espacée</li>
+                    <li><strong>Écologie &amp; sobriété numérique</strong> — empreinte du numérique, gestes concrets</li>
+                    <li><strong>Négociation &amp; communication</strong> — argumenter, présenter, convaincre</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Proposer une idée</h2>
+            <div class="form-zone" id="form-zone">
+                <p class="privacy-note">
+                    Le formulaire est hébergé par <strong>Google Forms</strong>. En l'affichant, Google
+                    est susceptible de déposer des cookies sur votre appareil et de collecter des données
+                    selon sa propre politique de confidentialité.
+                    <br><br>
+                    <strong>Rien n'est chargé tant que vous n'avez pas cliqué</strong> : si vous ne
+                    souhaitez pas être concerné, il suffit de ne pas utiliser ce formulaire — le reste
+                    du site ne dépose aucun cookie.
+                </p>
+                <button type="button" class="load-form-btn" id="load-form">
+                    Afficher le formulaire de suggestion
+                </button>
+                <p class="form-fallback" id="form-fallback"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/enhance.js"></script>
+    <script>
+        // ===================================
+        // Formulaire de suggestion (Google Forms)
+        // ===================================
+        // Pour changer de formulaire, remplacer uniquement la ligne ci-dessous par
+        // l'adresse fournie par Google Forms (bouton « Envoyer » → onglet « < > »).
+        // Elle doit se terminer par ?embedded=true
+
+        const FORM_URL = "https://docs.google.com/forms/d/e/REMPLACER-PAR-TON-CODE/viewform?embedded=true";
+
+        const zone = document.getElementById("form-zone");
+        const bouton = document.getElementById("load-form");
+        const secours = document.getElementById("form-fallback");
+
+        // Tant que l'adresse n'a pas été renseignée, on n'affiche pas un formulaire cassé.
+        if (FORM_URL.includes("REMPLACER-PAR-TON-CODE")) {
+            bouton.disabled = true;
+            bouton.style.opacity = ".5";
+            bouton.style.cursor = "not-allowed";
+            secours.textContent = "Le formulaire est en cours d'installation, il sera disponible très bientôt.";
+        }
+
+        bouton.addEventListener("click", () => {
+            const cadre = document.createElement("iframe");
+            cadre.src = FORM_URL;
+            cadre.className = "form-frame";
+            cadre.title = "Formulaire de suggestion d'une nouvelle catégorie";
+            cadre.loading = "lazy";
+
+            // Le formulaire remplace le bouton et l'avertissement une fois accepté.
+            zone.innerHTML = "";
+            zone.appendChild(cadre);
+
+            const lien = document.createElement("p");
+            lien.className = "form-fallback";
+            lien.innerHTML = 'Le formulaire ne s\'affiche pas ? <a href="' +
+                FORM_URL.replace("?embedded=true", "") +
+                '" target="_blank" rel="noopener">L\'ouvrir dans un nouvel onglet →</a>';
+            zone.appendChild(lien);
+        });
+    </script>
+</body>
+</html>

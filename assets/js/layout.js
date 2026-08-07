@@ -17,6 +17,7 @@
                     <li><a href="${base}index.html">Accueil</a></li>
                     <li><a href="${base}glossaire.html">Glossaire</a></li>
                     <li><a href="${base}faq.html">FAQ</a></li>
+                    <li><a href="${base}idees.html">Boîte à idées</a></li>
                     <li><a href="${base}a-propos.html">À propos</a></li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Activer ou désactiver le mode sombre">🌙</button>
@@ -29,6 +30,7 @@
             <nav aria-label="Liens de pied de page">
                 <a href="${base}a-propos.html">À propos</a>·
                 <a href="${base}faq.html">FAQ</a>·
+                <a href="${base}idees.html">Boîte à idées</a>·
                 <a href="${base}mentions-legales.html">Mentions légales</a>·
                 <a href="${base}glossaire.html">Glossaire</a>
             </nav>

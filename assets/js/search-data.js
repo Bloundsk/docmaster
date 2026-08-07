@@ -64,5 +64,8 @@ const searchIndex = [
     { title: "Mode sombre", description: "Activer le thème sombre et le conserver d'une visite à l'autre.", url: "faq.html", keywords: "mode sombre dark theme nuit affichage" },
     { title: "Progression de lecture", description: "À quoi sert la case « J'ai lu et compris ce guide ».", url: "faq.html", keywords: "progression lecture marquer lu terminé sauvegarde appareil" },
     { title: "Imprimer un guide", description: "Imprimer ou enregistrer un guide en PDF pour le lire hors ligne.", url: "faq.html", keywords: "imprimer impression pdf hors ligne papier" },
-    { title: "Signaler une erreur", description: "Comment remonter une erreur ou proposer une correction.", url: "faq.html", keywords: "erreur correction signaler bug contact github issue" }
+    { title: "Signaler une erreur", description: "Comment remonter une erreur ou proposer une correction.", url: "faq.html", keywords: "erreur correction signaler bug contact github issue" },
+
+    { title: "Boîte à idées", description: "Proposer une nouvelle catégorie ou un sujet à traiter.", url: "idees.html", keywords: "idée idées suggestion proposer catégorie sujet thème demande boîte" },
+    { title: "Proposer une catégorie", description: "Suggérer un domaine entier qui manque encore sur le site.", url: "idees.html", keywords: "nouvelle catégorie domaine thème manquant proposition vote" }
 ];
