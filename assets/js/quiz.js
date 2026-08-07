@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER AI - QUIZ INTERACTIF
+// DOCMASTER - QUIZ INTERACTIF
 // ===================================
 
 document.addEventListener("DOMContentLoaded", () => {

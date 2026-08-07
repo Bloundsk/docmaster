@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER AI - MOTEUR DE RECHERCHE
+// DOCMASTER - MOTEUR DE RECHERCHE
 // ===================================
 
 document.addEventListener("DOMContentLoaded", () => {

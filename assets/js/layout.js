@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER AI - MISE EN PAGE PARTAGÉE
+// DOCMASTER - MISE EN PAGE PARTAGÉE
 // (navbar + footer uniques, plus besoin de dupliquer le HTML dans chaque page)
 // ===================================
 
@@ -12,7 +12,7 @@
     const navbarHTML = `
         <nav class="navbar">
             <div class="nav-container">
-                <a href="${base}index.html" class="logo">Doc<span>Master</span> AI</a>
+                <a href="${base}index.html" class="logo">Doc<span>Master</span></a>
                 <ul class="nav-links">
                     <li><a href="${base}index.html">Accueil</a></li>
                     <li><a href="${base}glossaire.html">Glossaire</a></li>
@@ -24,7 +24,7 @@
 
     const footerHTML = `
         <footer>
-            <p>© DocMaster AI</p>
+            <p>© DocMaster</p>
             <nav aria-label="Liens de pied de page">
                 <a href="${base}a-propos.html">À propos</a>·
                 <a href="${base}mentions-legales.html">Mentions légales</a>·

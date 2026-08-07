@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER AI - DONNÉES DE RECHERCHE
+// DOCMASTER - DONNÉES DE RECHERCHE
 // ===================================
 
 const searchIndex = [

@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER AI - GESTION DU THÈME
+// DOCMASTER - GESTION DU THÈME
 // ===================================
 
 document.addEventListener("DOMContentLoaded", () => {

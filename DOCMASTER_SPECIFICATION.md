@@ -1,4 +1,4 @@
-# DOCMASTER AI
+# DOCMASTER
 ## Cahier des charges du projet
 
 Version : 1.0
@@ -7,7 +7,7 @@ Version : 1.0
 
 # 1. Présentation du projet
 
-DocMaster AI est une plateforme de documentation en ligne.
+DocMaster est une plateforme de documentation en ligne.
 
 Son objectif est de créer une bibliothèque de guides pédagogiques sur différents sujets.
 

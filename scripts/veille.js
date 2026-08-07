@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER AI - SCRIPT DE VEILLE (v2 : déduplication + nettoyage)
+// DOCMASTER - SCRIPT DE VEILLE (v2 : déduplication + nettoyage)
 // ===================================
 
 const categories = [
@@ -60,7 +60,7 @@ async function construireRapport(liensDejaProposes) {
     const date = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
     const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
-    let rapport = `# 📰 Veille DocMaster AI — ${date} (${heure})\n\n`;
+    let rapport = `# 📰 Veille DocMaster — ${date} (${heure})\n\n`;
     rapport += `Voici les articles récents trouvés pour chaque catégorie (les articles déjà proposés récemment sont automatiquement filtrés).\n\n---\n\n`;
 
     let totalArticles = 0;

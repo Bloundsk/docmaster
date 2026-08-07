@@ -1,4 +1,4 @@
-# Changelog — DocMaster AI
+# Changelog — DocMaster
 
 ## 2026-08-07 — Mise à jour majeure
 - Refonte de la maintenabilité : navbar et footer désormais uniques (`assets/js/layout.js`), fini le copier-coller sur chaque page
