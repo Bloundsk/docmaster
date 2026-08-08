@@ -312,6 +312,41 @@ code {
 .quiz-option.incorrect { border-color: #ef4444; background: rgba(239,68,68,0.12); }
 .quiz-score { font-weight: 600; margin-top: 10px; }
 
+/* Quiz place au bas d'une sous-section : plus discret que celui de synthese,
+   pour ne pas concurrencer visuellement le contenu du cours. */
+.lecon-corps .quiz-bloc {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 2px dashed var(--background);
+}
+.quiz-titre {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+.quiz-intro { color: var(--muted); font-size: .92rem; margin-bottom: 18px; }
+.quiz-rotation { color: var(--muted); font-size: .85rem; margin-top: 14px; font-style: italic; }
+
+/* Un bouton deja repondu ne doit plus reagir au survol : le curseur laisserait
+   croire qu'un second essai est possible. */
+.quiz-option:disabled { cursor: default; opacity: 1; }
+.quiz-option:disabled:hover { border-color: transparent; }
+.quiz-option.correct:disabled:hover { border-color: #22c55e; }
+.quiz-option.incorrect:disabled:hover { border-color: #ef4444; }
+
+/* Explication revelee apres la reponse */
+.quiz-explication {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: var(--background);
+    border-left: 3px solid var(--primary);
+    border-radius: 6px;
+    font-size: .92rem;
+    font-weight: 400 !important;
+}
+
 /* Navigation précédent/suivant + guides similaires */
 .guide-nav { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin: 40px 0; }
 .guide-nav a { flex: 1; min-width: 200px; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; text-decoration: none; color: var(--text); transition: transform .2s; }
