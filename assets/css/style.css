@@ -264,9 +264,9 @@ article.lecon th, .table-scroll th { font-family: 'Poppins', sans-serif; font-si
 main [id] { scroll-margin-top: var(--decalage-ancre); }
 .lecon { scroll-margin-top: var(--decalage-ancre); }
 
-/* Sur mobile la navbar passe en colonne et devient nettement plus haute */
+/* Sur mobile la navbar tient sur deux rangees, donc environ 91px */
 @media (max-width: 700px) {
-    :root { --decalage-ancre: 150px; }
+    :root { --decalage-ancre: 105px; }
 }
 
 /* Sous-titres hors blocs de cours (sections des pages legales) */
@@ -360,9 +360,32 @@ html { background: var(--background); }
     header p { font-size: 1rem; }
     main { padding: 15px; }
     h2 { font-size: 1.5rem; }
-    .nav-container { flex-direction: column; align-items: center; padding: 15px; gap: 12px; }
-    .nav-links { flex-direction: column; align-items: center; gap: 10px; text-align: center; }
-    .theme-toggle { margin-top: 5px; }
+    /* Navbar mobile en deux rangees.
+       Auparavant tout etait empile en colonne, liens compris : la navbar
+       occupait 305 px, soit 38 % de la hauteur d'un ecran de telephone, avant
+       meme d'avoir affiche une ligne de contenu.
+       Rangee 1 : le logo et le bouton de theme, aux deux extremites.
+       Rangee 2 : les liens sur une seule ligne, qui defile horizontalement
+       si l'ecran est trop etroit plutot que de repousser le contenu vers le bas. */
+    .nav-container { flex-direction: row; padding: 10px 16px; gap: 8px; align-items: center; }
+    .logo { font-size: 1.25rem; }
+    .theme-toggle { width: 34px; height: 34px; font-size: .95rem; }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 18px;
+        overflow-x: auto;
+        font-size: .92rem;
+        /* La barre de defilement est masquee : elle ferait un trait disgracieux
+           sous les liens, et le geste tactile suffit a faire defiler. */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links li { flex-shrink: 0; }
     article { padding: 20px; }
     .guide-nav .next { text-align: left; }
 }
