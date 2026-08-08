@@ -50,11 +50,20 @@
 
     // --- Rendu d'un quiz --------------------------------------------------
 
-    function construireQuiz(questions, conteneur, titre) {
+    function construireQuiz(questions, conteneur, titre, surtitre) {
         if (!questions.length) return;
 
         const bloc = document.createElement("div");
         bloc.className = "quiz-bloc";
+
+        // Surtitre : marque nettement le passage du cours à l'exercice. Une
+        // simple bordure ne suffisait pas à signaler la rupture.
+        if (surtitre) {
+            const s = document.createElement("p");
+            s.className = "quiz-surtitre";
+            s.textContent = surtitre;
+            bloc.appendChild(s);
+        }
 
         if (titre) {
             const h = document.createElement("p");
@@ -149,7 +158,7 @@
             const banque = (window.QUIZ.sections || {})[titreH3.id];
             if (!banque) return;
 
-            construireQuiz(selectionner(banque), corps, "🧠 Vérifiez votre compréhension");
+            construireQuiz(selectionner(banque), corps, "🧠 Vérifiez votre compréhension", "On passe au test");
         });
 
         // 2. Le quiz de synthèse, en bas de page

@@ -312,19 +312,34 @@ code {
 .quiz-option.incorrect { border-color: #ef4444; background: rgba(239,68,68,0.12); }
 .quiz-score { font-weight: 600; margin-top: 10px; }
 
-/* Quiz place au bas d'une sous-section : plus discret que celui de synthese,
-   pour ne pas concurrencer visuellement le contenu du cours. */
+/* Quiz place au bas d'une sous-section.
+   La separation doit etre franche : le lecteur passe du cours a l'exercice.
+   La bordure utilisait auparavant var(--background), soit la couleur de fond
+   de la page — invisible sur la carte blanche qui la porte. Elle s'appuie
+   desormais sur var(--muted), concue pour rester lisible dans les deux
+   themes, et le surtitre annonce explicitement la rupture. */
 .lecon-corps .quiz-bloc {
-    margin-top: 26px;
-    padding-top: 20px;
-    border-top: 2px dashed var(--background);
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 3px dashed var(--muted);
 }
+
+.quiz-surtitre {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+    letter-spacing: -.01em;
+}
+html.dark-mode .quiz-surtitre { color: #7aa5ff; }
+
 .quiz-titre {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: .95rem;
     color: var(--muted);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 .quiz-intro { color: var(--muted); font-size: .92rem; margin-bottom: 18px; }
 .quiz-rotation { color: var(--muted); font-size: .85rem; margin-top: 14px; font-style: italic; }
