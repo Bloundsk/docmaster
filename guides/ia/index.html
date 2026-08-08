@@ -262,9 +262,10 @@
         </div>
 
         <div class="quiz-box">
-            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du guide. Elles sont différentes de celles des sections.</p>
             <div id="quiz-container"></div>
-            <p class="quiz-score" id="quiz-score"></p>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
         </div>
 
         <section>
@@ -298,9 +299,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
-        const quizData = [{"q": "Comment un LLM génère-t-il du texte ?", "options": ["En copiant des textes existants mot pour mot", "En prédisant statistiquement le mot suivant le plus probable", "En interrogeant Google en temps réel"], "a": 1}, {"q": "Qu'est-ce qu'une \"hallucination\" en IA ?", "options": ["Un bug d'affichage", "Une information fausse générée avec assurance", "Un mode de fonctionnement hors-ligne"], "a": 1}, {"q": "Qu'est-ce qui distingue un agent IA d'un simple chatbot ?", "options": ["Le prix", "Sa capacité à enchaîner des étapes de façon autonome", "La couleur de l'interface"], "a": 1}];
-    </script>
+    <script src="../../assets/js/quiz/ia.js"></script>
     <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
     <script src="../../assets/js/enhance.js"></script>
