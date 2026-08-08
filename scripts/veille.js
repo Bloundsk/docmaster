@@ -53,6 +53,18 @@ function nettoyer(texte) {
         .trim();
 }
 
+// Les titres viennent du HTML : "&amp;" doit redevenir "&" avant d'etre
+// affiche dans le rapport, sinon on lit "Mots de passe &amp; authentification".
+function decoder(texte) {
+    return texte
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;|&apos;/g, "'")
+        .replace(/&nbsp;/g, " ");
+}
+
 function construireRequete(categorie, sousSection) {
     const mots = (nettoyer(categorie) + " " + nettoyer(sousSection))
         .split(" ")
@@ -74,13 +86,13 @@ function lireGuides() {
         const sousSections = [...html.matchAll(/<summary><h3 id="([^"]+)">([\s\S]*?)<\/h3>/g)]
             .map(m => ({
                 ancre: m[1],
-                titre: m[2].replace(/<[^>]+>/g, "").trim(),
+                titre: decoder(m[2].replace(/<[^>]+>/g, "").trim()),
                 requete: construireRequete(titreBrut, m[2]),
             }))
             .filter(s => s.requete.length > 3);
 
         if (sousSections.length) {
-            guides.push({ dossier, titre: titreBrut.trim(), sousSections });
+            guides.push({ dossier, titre: decoder(titreBrut.trim()), sousSections });
         }
     }
     return guides;
