@@ -22,7 +22,7 @@ const SITE = "https://bloundsk.github.io/docmaster/";
 
 const NB_JOURS_AVANT_FERMETURE = 14; // ferme automatiquement les anciennes veilles
 const TAILLE_POOL = 10;              // articles lus par recherche, avant deduplication
-const NB_ARTICLES_RETENUS = 2;       // articles conserves par sous-section
+const NB_ARTICLES_RETENUS = 1;       // articles conserves par sous-section
 const PAUSE_ENTRE_REQUETES = 250;    // ms, pour ne pas marteler Google News
 
 // Mots sans valeur de recherche. Sans ce filtre, "Le phishing" chercherait
