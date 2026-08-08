@@ -1,5 +1,15 @@
 # Changelog — DocMaster
 
+## 2026-08-08 — La veille suit le contenu des guides
+- Les recherches ne sont plus écrites en dur : le script **lit les guides** et construit
+  une recherche par sous-section. Ajouter une section à un guide suffit désormais à la
+  faire entrer dans la veille
+- **37 recherches au lieu de 9** — les mots-clés figés ne couvraient qu'un tiers des
+  sous-sections réelles ; le guide Cybersécurité traitait du phishing et du chiffrement
+  pendant que la veille ne cherchait que « vulnérabilité » et « piratage »
+- Le rapport est désormais classé par guide puis par sous-section, avec un lien direct
+  vers la section concernée du site
+
 ## 2026-08-08 — Lecture et navigation
 - Les **37 sections de cours** des 9 guides sont désormais **repliées** : avec 1 700 à
   2 200 mots par guide, tout afficher d'un coup présentait un mur de texte. Sur le guide
