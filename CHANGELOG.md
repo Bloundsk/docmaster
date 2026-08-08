@@ -1,5 +1,17 @@
 # Changelog — DocMaster
 
+## 2026-08-08 — Lecture et navigation
+- Les **37 sections de cours** des 9 guides sont désormais **repliées** : avec 1 700 à
+  2 200 mots par guide, tout afficher d'un coup présentait un mur de texte. Sur le guide
+  Data, la page passe de 9 521 à 3 794 pixels de haut
+- Bouton « Tout déplier / Tout replier », et ouverture automatique de la section visée
+  par un lien du sommaire ou un résultat de recherche
+- Correction du décalage d'ancre : la barre de navigation masquait 90 pixels du contenu,
+  dont le titre de la section visée
+- **Barre de navigation mobile resserrée** : de 305 à 91 pixels, soit 11 % de l'écran
+  au lieu de 38 %. Les liens tiennent sur une ligne et défilent horizontalement
+- L'impression d'un guide reste complète malgré les sections repliées
+
 ## 2026-08-08 — Accessibilité des illustrations
 - Les 9 illustrations SVG sont déclarées **décoratives** (`aria-hidden`, `role="presentation"`,
   `focusable="false"`) : elles n'apportent aucune information que le titre ne donne déjà,
