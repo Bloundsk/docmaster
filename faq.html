@@ -11,16 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <script>
-        /* Applique le theme AVANT le premier affichage : evite le flash blanc
-           quand un visiteur en mode sombre ouvre une page. Doit rester inline
-           (un fichier externe imposerait un aller-retour reseau, pendant lequel
-           le fond clair serait deja peint). */
+        /* Applique le theme AVANT le premier affichage.
+           Le mode sombre etant le theme par defaut, sans ce script la page
+           apparaitrait en clair une fraction de seconde avant de basculer.
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel le fond clair serait deja peint. */
         (function () {
             try {
-                if (localStorage.getItem('theme') === 'dark') {
+                // Mode sombre par defaut : le theme clair ne s'applique que si
+                // le visiteur l'a explicitement demande via le bouton.
+                if (localStorage.getItem('theme') !== 'light') {
                     document.documentElement.classList.add('dark-mode');
                 }
-            } catch (e) {}
+            } catch (e) {
+                // Stockage refuse : on applique quand meme le theme par defaut.
+                document.documentElement.classList.add('dark-mode');
+            }
         })();
     </script>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -232,9 +238,9 @@
             </details>
 
             <details class="faq-item">
-                <summary>Comment passer le site en mode sombre ?</summary>
+                <summary>Comment changer de thème, clair ou sombre ?</summary>
                 <div class="answer">
-                    <p>Clique sur l'icône 🌙 en haut à droite, dans la barre de navigation. Un second clic revient au mode clair.</p>
+                    <p>Le site s'ouvre en <strong>mode sombre</strong> par défaut, plus reposant pour lire de longs textes. Pour passer en clair, clique sur l'icône ☀️ en haut à droite, dans la barre de navigation. Un second clic revient au sombre.</p>
                     <p>Ton choix est mémorisé : tu le retrouveras à ta prochaine visite sur le même navigateur.</p>
                 </div>
             </details>
