@@ -286,9 +286,10 @@
         </div>
 
         <div class="quiz-box">
-            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du guide. Elles sont différentes de celles des sections.</p>
             <div id="quiz-container"></div>
-            <p class="quiz-score" id="quiz-score"></p>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
         </div>
 
         <section>
@@ -322,9 +323,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
-        const quizData = [{"q": "Que permet la 2FA (authentification à deux facteurs) ?", "options": ["De se connecter plus vite", "D'ajouter une couche de sécurité supplémentaire", "De changer de mot de passe automatiquement"], "a": 1}, {"q": "Face à un email suspect demandant un mot de passe, il faut...", "options": ["Cliquer pour vérifier", "Ne jamais cliquer et se rendre manuellement sur le site officiel", "Répondre pour confirmer son identité"], "a": 1}, {"q": "Que garantit le HTTPS (cadenas) ?", "options": ["Le site est gratuit", "Les échanges sont chiffrés entre le site et le visiteur", "Le site n'a pas de publicité"], "a": 1}];
-    </script>
+    <script src="../../assets/js/quiz/cybersecurite.js"></script>
     <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
     <script src="../../assets/js/enhance.js"></script>
