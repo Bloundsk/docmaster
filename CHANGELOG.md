@@ -1,5 +1,15 @@
 # Changelog — DocMaster
 
+## 2026-08-08 — Accessibilité des illustrations
+- Les 9 illustrations SVG sont déclarées **décoratives** (`aria-hidden`, `role="presentation"`,
+  `focusable="false"`) : elles n'apportent aucune information que le titre ne donne déjà,
+  et sont d'ailleurs masquées sur mobile
+- Ajout du respect de `prefers-reduced-motion` : les quatre animations en boucle infinie
+  (rotation, rebond, scintillement, pulsation) se figent quand le système signale que
+  l'utilisateur souhaite réduire les animations
+- Veille : le vivier d'articles lus passe de 4 à 15 par catégorie ; la déduplication vidait
+  les rapports au bout de quelques jours
+
 ## 2026-08-07 — Enrichissement des 9 guides
 - Contenu multiplié par 4 : les guides passent de 420–750 mots à **1 650–2 240 mots**
 - Chaque notion s'accompagne désormais d'un **exemple chiffré** et d'une **erreur fréquente**

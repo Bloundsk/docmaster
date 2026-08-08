@@ -28,6 +28,25 @@
 @keyframes circPulse { 0%, 100% { opacity: 0.12; } 50% { opacity: 0.22; } }
 @keyframes drawIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
 
+/* Respect du reglage systeme "reduire les animations".
+   Les illustrations tournent, pulsent et scintillent en boucle infinie : c'est
+   agreable pour la plupart des gens, mais un mouvement permanent provoque
+   nausees et vertiges chez les personnes souffrant de troubles vestibulaires.
+   Quand le systeme signale cette preference, on fige tout : les animations
+   d'apparition sont ramenees a une duree nulle, celles qui bouclent sont
+   arretees sur leur premiere image plutot que supprimees, pour que les
+   illustrations restent visibles. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .illu-ring, .illu-icon, .illu-twinkle, .illu-circ-1 { animation: none !important; }
+    .illu-twinkle { opacity: .8; }
+}
+
 /* Skip link (accessibilité) */
 .skip-link {
     position: absolute;
