@@ -62,6 +62,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- Sections de cours dépliables ---
+    const lecons = document.querySelectorAll("details.lecon");
+
+    if (lecons.length) {
+        // Une ancre pointant vers une section repliée doit l'ouvrir, sinon le
+        // lien du sommaire — ou un résultat de recherche — mène à du vide.
+        const ouvrirCible = () => {
+            if (!location.hash) return;
+            const cible = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (!cible) return;
+            const section = cible.closest("details.lecon");
+            if (section && !section.open) {
+                section.open = true;
+                // Le navigateur a déjà tenté de défiler alors que la section
+                // était fermée : on repositionne une fois le contenu déplié.
+                requestAnimationFrame(() => cible.scrollIntoView({ block: "start" }));
+            }
+        };
+        ouvrirCible();
+        window.addEventListener("hashchange", ouvrirCible);
+
+        // Bouton tout déplier / tout replier
+        const bouton = document.getElementById("tout-deplier");
+        if (bouton) {
+            const majBouton = () => {
+                const toutOuvert = [...lecons].every(d => d.open);
+                bouton.textContent = toutOuvert ? "Tout replier" : "Tout déplier";
+                bouton.setAttribute("aria-expanded", String(toutOuvert));
+            };
+            bouton.addEventListener("click", () => {
+                const toutOuvert = [...lecons].every(d => d.open);
+                lecons.forEach(d => { d.open = !toutOuvert; });
+                majBouton();
+            });
+            lecons.forEach(d => d.addEventListener("toggle", majBouton));
+            majBouton();
+        }
+
+        // Impression : un guide imprimé doit être complet, pas réduit aux
+        // titres des sections qui se trouvaient ouvertes.
+        window.addEventListener("beforeprint", () => lecons.forEach(d => { d.open = true; }));
+    }
+
     // --- Adresse de contact, protégée des robots collecteurs ---
     // L'adresse n'apparaît jamais en clair dans le code source : elle est
     // reconstituée ici depuis deux attributs séparés. Les aspirateurs

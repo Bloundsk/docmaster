@@ -165,17 +165,72 @@ article:nth-child(1) { animation-delay: .1s; }
 article:nth-child(2) { animation-delay: .2s; }
 article:nth-child(3) { animation-delay: .3s; }
 
-/* Bouton copier le lien + dernière mise à jour */
-/* Blocs de cours : contrairement aux cartes de l'accueil, ils contiennent de
-   longs textes. L'effet de soulevement au survol y devient genant (le bloc
-   saute pendant la lecture), on le neutralise. */
-article.lecon { animation: none; }
-article.lecon:hover { transform: none; box-shadow: var(--shadow); }
-article.lecon p { margin-bottom: 14px; }
-article.lecon p:last-child { margin-bottom: 0; }
-article.lecon ul, article.lecon ol { margin: 0 0 14px 22px; }
-article.lecon li { margin-bottom: 7px; }
-article.lecon h4 { margin: 22px 0 10px; font-family: 'Poppins', sans-serif; font-size: 1.02rem; }
+/* ---------------------------------------------------------------
+   Blocs de cours des guides : sections depliables.
+   Les guides faisant 1700 a 2200 mots, tout afficher d'un coup
+   decourage. Chaque notion est donc repliee, et le lecteur ouvre
+   ce qui l'interesse. On utilise <details>/<summary> natifs :
+   accessibles au clavier et annonces par les lecteurs d'ecran
+   sans une ligne de JavaScript.
+   --------------------------------------------------------------- */
+.lecon {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.lecon > summary {
+    cursor: pointer;
+    padding: 20px 25px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.lecon > summary::-webkit-details-marker { display: none; }
+
+/* Le titre reste un h3 : la structure du document est conservee */
+.lecon > summary h3 { color: var(--primary); margin: 0; font-size: 1.15rem; }
+.lecon > summary:hover h3 { color: var(--secondary); }
+
+.lecon > summary::after {
+    content: "▾";
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: transform .25s;
+}
+.lecon[open] > summary::after { transform: rotate(180deg); }
+
+/* Trait de separation une fois la section ouverte */
+.lecon[open] > summary { border-bottom: 1px solid var(--background); }
+
+.lecon-corps { padding: 20px 25px 25px; }
+.lecon-corps p { margin-bottom: 14px; }
+.lecon-corps p:last-child { margin-bottom: 0; }
+.lecon-corps ul, .lecon-corps ol { margin: 0 0 14px 22px; }
+.lecon-corps li { margin-bottom: 7px; }
+.lecon-corps h4 { margin: 22px 0 10px; font-family: 'Poppins', sans-serif; font-size: 1.02rem; }
+.lecon-corps > *:first-child { margin-top: 0; }
+
+/* Commande "tout deplier" */
+.lecon-controles { display: flex; justify-content: flex-end; margin-bottom: 14px; }
+.lecon-controles button {
+    background: none;
+    border: 1px solid var(--muted);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: .85rem;
+    cursor: pointer;
+    transition: color .2s, border-color .2s;
+}
+.lecon-controles button:hover { color: var(--primary); border-color: var(--primary); }
 
 /* Exemple chiffre : le passage du concept au concret */
 .exemple { background: var(--background); border-left: 4px solid var(--secondary); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
@@ -301,8 +356,18 @@ html { background: var(--background); }
 /* Impression */
 @media print {
     .navbar, .search-container, #back-to-top, .theme-toggle, .quiz-box, .mark-read-box,
-    .guide-nav, .related-guides, #reading-progress, .copy-link-btn, footer nav { display: none !important; }
+    .guide-nav, .related-guides, #reading-progress, .copy-link-btn, footer nav,
+    .lecon-controles { display: none !important; }
     body { background: white; color: black; }
     header { background: none !important; color: black; padding: 20px 0; }
-    article, .toc, .recap-box { box-shadow: none; border: 1px solid #ccc; }
+    article, .toc, .recap-box, .lecon { box-shadow: none; border: 1px solid #ccc; }
+
+    /* Une section repliee ne s'imprimerait pas. On force l'affichage du
+       contenu : imprimer un guide doit donner le guide entier, pas seulement
+       les titres des sections qui se trouvaient ouvertes a l'ecran.
+       Le JavaScript ouvre aussi les <details> avant impression ; cette regle
+       sert de filet si le script n'a pas pu s'executer. */
+    .lecon > summary::after { display: none; }
+    .lecon-corps { display: block !important; }
+    .lecon { break-inside: avoid; }
 }

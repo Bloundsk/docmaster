@@ -104,9 +104,13 @@
 
         <section>
             <h2 id="bases">Les bases à connaître</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
 
-            <article class="lecon">
-                <h3 id="quest-ce-quun-llm">🧠 Qu'est-ce qu'un LLM ?</h3>
+            <details class="lecon">
+                <summary><h3 id="quest-ce-quun-llm">🧠 Qu'est-ce qu'un LLM ?</h3></summary>
+                <div class="lecon-corps">
                 <p>Un <strong>LLM</strong> (<em>Large Language Model</em>, grand modèle de langage) est un système entraîné sur d'énormes volumes de texte, dont la fonction est de <strong>prédire la suite la plus probable</strong> d'une séquence.</p>
 
                 <h4>Le mécanisme, sans jargon</h4>
@@ -132,10 +136,12 @@
                 </div>
 
                 <p class="retenir">💡 Un LLM ne distingue pas ce qu'il sait de ce qu'il invente : dans les deux cas, il complète. C'est à vous d'introduire cette distinction, en vérifiant.</p>
-            </article>
+                </div>
+            </details>
 
-            <article class="lecon">
-                <h3 id="les-agents-ia">⚙️ Les agents IA</h3>
+            <details class="lecon">
+                <summary><h3 id="les-agents-ia">⚙️ Les agents IA</h3></summary>
+                <div class="lecon-corps">
                 <p>Un <strong>agent</strong> est un LLM auquel on a donné deux choses : des <strong>outils</strong> (chercher sur le web, lire un fichier, envoyer un message, exécuter du code) et une <strong>boucle</strong> — il agit, observe le résultat, décide de la suite, recommence jusqu'à ce que l'objectif soit atteint.</p>
 
                 <h4>La différence avec un chatbot</h4>
@@ -168,10 +174,12 @@
                 </div>
 
                 <p class="retenir">💡 Plus un système agit sur le monde réel, plus la question « que se passe-t-il s'il se trompe ? » prend le pas sur « quelle est sa performance ? ».</p>
-            </article>
+                </div>
+            </details>
 
-            <article class="lecon">
-                <h3 id="le-prompt-engineering">✍️ Le prompt engineering</h3>
+            <details class="lecon">
+                <summary><h3 id="le-prompt-engineering">✍️ Le prompt engineering</h3></summary>
+                <div class="lecon-corps">
                 <p>Formuler une demande efficace ne relève pas de formules magiques. Le principe est simple : <strong>tout ce que vous n'avez pas précisé, le modèle le comblera par ce qui est statistiquement le plus courant</strong> — c'est-à-dire par du générique.</p>
 
                 <h4>Les quatre éléments d'une bonne consigne</h4>
@@ -205,10 +213,12 @@
                 </div>
 
                 <p class="retenir">💡 Écrivez votre consigne comme pour un collègue compétent qui arrive à l'instant : il ne connaît ni votre contexte, ni vos habitudes, ni ce que vous jugez évident.</p>
-            </article>
+                </div>
+            </details>
 
-            <article class="lecon">
-                <h3 id="les-limites-et-risques-de-lia">⚠️ Les limites et risques de l'IA</h3>
+            <details class="lecon">
+                <summary><h3 id="les-limites-et-risques-de-lia">⚠️ Les limites et risques de l'IA</h3></summary>
+                <div class="lecon-corps">
                 <p>Ces limites ne sont pas des défauts de jeunesse en voie de disparition. Plusieurs découlent directement du mécanisme de prédiction, et se gèrent plutôt qu'elles ne se corrigent.</p>
 
                 <h4>Les hallucinations</h4>
@@ -242,7 +252,8 @@
                 </div>
 
                 <p class="retenir">💡 Utilisez l'IA sur ce que vous savez évaluer. Sur un sujet que vous maîtrisez, vous repérez l'erreur en un instant ; sur un sujet inconnu, vous n'avez aucun moyen de la voir.</p>
-            </article>
+                </div>
+            </details>
         </section>
 
         <div class="mark-read-box">

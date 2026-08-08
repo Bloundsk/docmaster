@@ -104,9 +104,13 @@
 
         <section>
             <h2 id="bases">Les bases à connaître</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
 
-            <article class="lecon">
-                <h3 id="html-css">🏗️ HTML &amp; CSS</h3>
+            <details class="lecon">
+                <summary><h3 id="html-css">🏗️ HTML &amp; CSS</h3></summary>
+                <div class="lecon-corps">
                 <p><strong>HTML</strong> décrit ce qu'<em>est</em> un contenu. <strong>CSS</strong> décrit à quoi il <em>ressemble</em>. Cette séparation est le premier principe du métier, et le premier qu'on enfreint quand on débute.</p>
 
                 <h4>HTML : le sens avant l'apparence</h4>
@@ -139,10 +143,12 @@
                 </div>
 
                 <p class="retenir">💡 HTML répond à « qu'est-ce que c'est ? », CSS à « à quoi ça ressemble ? ». Tant que la réponse est claire, le code reste maintenable.</p>
-            </article>
+                </div>
+            </details>
 
-            <article class="lecon">
-                <h3 id="javascript">⚡ JavaScript</h3>
+            <details class="lecon">
+                <summary><h3 id="javascript">⚡ JavaScript</h3></summary>
+                <div class="lecon-corps">
                 <p>HTML et CSS produisent une page figée. <strong>JavaScript</strong> la rend vivante : il réagit aux actions, modifie le contenu et communique avec des serveurs, sans recharger la page.</p>
 
                 <h4>Le DOM</h4>
@@ -177,10 +183,12 @@
                 </div>
 
                 <p class="retenir">💡 Avant de chercher pourquoi « ça ne marche pas », ouvrez la console. L'erreur y est presque toujours écrite, avec sa ligne exacte.</p>
-            </article>
+                </div>
+            </details>
 
-            <article class="lecon">
-                <h3 id="frontend-vs-backend">🔗 Frontend et Backend</h3>
+            <details class="lecon">
+                <summary><h3 id="frontend-vs-backend">🔗 Frontend et Backend</h3></summary>
+                <div class="lecon-corps">
                 <p>La question qui départage les deux : <strong>ce code s'exécute-t-il sur la machine du visiteur, ou sur un serveur que vous contrôlez ?</strong></p>
 
                 <div class="table-scroll">
@@ -210,10 +218,12 @@
                 <p>Le bon ordre d'apprentissage est celui du besoin : maîtriser JavaScript, rencontrer la limite, puis choisir l'outil qui la résout.</p>
 
                 <p class="retenir">💡 Tout ce qui arrive dans le navigateur est public. La sécurité ne s'écrit jamais côté frontend.</p>
-            </article>
+                </div>
+            </details>
 
-            <article class="lecon">
-                <h3 id="responsive-design">📱 Responsive Design</h3>
+            <details class="lecon">
+                <summary><h3 id="responsive-design">📱 Responsive Design</h3></summary>
+                <div class="lecon-corps">
                 <p>La majorité du trafic web se fait aujourd'hui sur mobile. Un site qui n'est pas utilisable sur un écran de 6 pouces est un site qui ne fonctionne pas — quelle que soit son allure sur l'écran du développeur.</p>
 
                 <h4>Les trois ingrédients</h4>
@@ -250,7 +260,8 @@
                 </div>
 
                 <p class="retenir">💡 Concevez d'abord pour l'écran le plus contraint. Ce qui survit à cette contrainte est l'essentiel ; le reste était probablement superflu.</p>
-            </article>
+                </div>
+            </details>
         </section>
 
         <div class="mark-read-box">
