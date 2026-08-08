@@ -11,22 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <script>
-        /* Applique le theme AVANT le premier affichage.
-           Le mode sombre etant le theme par defaut, sans ce script la page
-           apparaitrait en clair une fraction de seconde avant de basculer.
-           Doit rester inline : un fichier externe imposerait un aller-retour
-           reseau, pendant lequel le fond clair serait deja peint. */
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
         (function () {
-            try {
-                // Mode sombre par defaut : le theme clair ne s'applique que si
-                // le visiteur l'a explicitement demande via le bouton.
-                if (localStorage.getItem('theme') !== 'light') {
-                    document.documentElement.classList.add('dark-mode');
-                }
-            } catch (e) {
-                // Stockage refuse : on applique quand meme le theme par defaut.
-                document.documentElement.classList.add('dark-mode');
-            }
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
         })();
     </script>
     <link rel="stylesheet" href="assets/css/style.css">

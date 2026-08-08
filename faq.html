@@ -11,22 +11,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <script>
-        /* Applique le theme AVANT le premier affichage.
-           Le mode sombre etant le theme par defaut, sans ce script la page
-           apparaitrait en clair une fraction de seconde avant de basculer.
-           Doit rester inline : un fichier externe imposerait un aller-retour
-           reseau, pendant lequel le fond clair serait deja peint. */
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
         (function () {
-            try {
-                // Mode sombre par defaut : le theme clair ne s'applique que si
-                // le visiteur l'a explicitement demande via le bouton.
-                if (localStorage.getItem('theme') !== 'light') {
-                    document.documentElement.classList.add('dark-mode');
-                }
-            } catch (e) {
-                // Stockage refuse : on applique quand meme le theme par defaut.
-                document.documentElement.classList.add('dark-mode');
-            }
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
         })();
     </script>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -240,8 +240,9 @@
             <details class="faq-item">
                 <summary>Comment changer de thème, clair ou sombre ?</summary>
                 <div class="answer">
-                    <p>Le site s'ouvre en <strong>mode sombre</strong> par défaut, plus reposant pour lire de longs textes. Pour passer en clair, clique sur l'icône ☀️ en haut à droite, dans la barre de navigation. Un second clic revient au sombre.</p>
-                    <p>Ton choix est mémorisé : tu le retrouveras à ta prochaine visite sur le même navigateur.</p>
+                    <p>Par défaut, le site <strong>suit le réglage de ton appareil</strong> : si ton téléphone ou ton ordinateur est en mode sombre, le site l'est aussi. Tu n'as rien à faire.</p>
+                    <p>Pour forcer un thème, clique sur l'icône 🌙 ou ☀️ en haut à droite. Ton choix devient alors prioritaire sur le réglage système, et il est mémorisé pour tes prochaines visites sur ce navigateur.</p>
+                    <p>Pour revenir au suivi automatique, efface les données du site dans les réglages de ton navigateur.</p>
                 </div>
             </details>
 
