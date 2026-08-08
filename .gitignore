@@ -1,0 +1,14 @@
+# Configuration locale de Claude Code : specifique a la machine, et surtout
+# elle contient des chemins absolus revelant le nom d'utilisateur Windows.
+# Le depot etant public et le site publie sous pseudonyme, elle n'a rien a
+# y faire.
+.claude/
+
+# Fichiers systeme
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Dependances et journaux, si le projet en accueille un jour
+node_modules/
+*.log
