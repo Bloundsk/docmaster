@@ -15,6 +15,8 @@ const categories = [
 ];
 
 const NB_JOURS_AVANT_FERMETURE = 14; // ferme automatiquement les anciennes veilles
+const TAILLE_POOL = 15;              // articles lus par catégorie, avant déduplication
+const NB_ARTICLES_RETENUS = 3;       // articles conservés par catégorie dans le rapport
 
 async function recupererArticles(requete) {
     const url = `https://news.google.com/rss/search?q=${encodeURIComponent(requete)}&hl=fr&gl=FR&ceid=FR:fr`;
@@ -22,7 +24,11 @@ async function recupererArticles(requete) {
     const xml = await reponse.text();
 
     const articles = [];
-    const items = xml.split("<item>").slice(1, 5); // un peu de marge pour la déduplication
+    // On puise largement dans le flux : la déduplication écarte ensuite les
+    // articles déjà proposés, et il faut qu'il en reste. Avec seulement 4
+    // articles récupérés, les rapports se vidaient au bout de quelques jours,
+    // la quasi-totalité ayant déjà été vue. Le flux en contient 20 à 50.
+    const items = xml.split("<item>").slice(1, TAILLE_POOL + 1);
 
     for (const item of items) {
         const titreMatch = item.match(/<title>(.*?)<\/title>/s);
@@ -74,7 +80,7 @@ async function construireRapport(liensDejaProposes) {
             if (nouveaux.length === 0) {
                 rapport += `_Rien de nouveau par rapport à la dernière veille._\n\n`;
             } else {
-                for (const article of nouveaux.slice(0, 3)) {
+                for (const article of nouveaux.slice(0, NB_ARTICLES_RETENUS)) {
                     rapport += `- [${article.titre}](${article.lien})\n`;
                     totalArticles++;
                 }
