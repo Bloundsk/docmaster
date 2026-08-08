@@ -112,7 +112,9 @@ async function recupererArticles(requete) {
         const lien = item.match(/<link>(.*?)<\/link>/s);
         if (titre && lien) {
             articles.push({
-                titre: titre[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim(),
+                // Les titres du flux RSS sont echappes en HTML : sans decodage,
+                // le rapport affiche "Spend Analytics &amp; data" au lieu de "&".
+                titre: decoder(titre[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim()),
                 lien: lien[1].trim(),
             });
         }
