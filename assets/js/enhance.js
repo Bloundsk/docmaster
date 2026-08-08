@@ -73,12 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const cible = document.getElementById(decodeURIComponent(location.hash.slice(1)));
             if (!cible) return;
             const section = cible.closest("details.lecon");
-            if (section && !section.open) {
-                section.open = true;
-                // Le navigateur a déjà tenté de défiler alors que la section
-                // était fermée : on repositionne une fois le contenu déplié.
-                requestAnimationFrame(() => cible.scrollIntoView({ block: "start" }));
-            }
+            if (!section) return;
+            if (!section.open) section.open = true;
+            // On repositionne sur le <details> et non sur le titre : c'est le
+            // haut de la carte qui doit apparaître, en-tête compris. Le
+            // navigateur a par ailleurs déjà tenté de défiler alors que la
+            // section était fermée, donc sa position est fausse.
+            requestAnimationFrame(() => section.scrollIntoView({ block: "start" }));
         };
         ouvrirCible();
         window.addEventListener("hashchange", ouvrirCible);

@@ -255,6 +255,20 @@ article.lecon th, .table-scroll th { font-family: 'Poppins', sans-serif; font-si
 .table-scroll th { white-space: nowrap; }
 .table-scroll { overflow-x: auto; }
 
+/* Compensation de la barre de navigation collee en haut.
+   Sans cela, cliquer une ancre du sommaire amene le titre vise SOUS la
+   navbar : on atterrit au bon endroit mais on ne voit pas l'en-tete de la
+   section. scroll-margin-top indique au navigateur de s'arreter plus haut.
+   La valeur suit la hauteur reelle de la navbar, plus une marge de confort. */
+:root { --decalage-ancre: 84px; }
+main [id] { scroll-margin-top: var(--decalage-ancre); }
+.lecon { scroll-margin-top: var(--decalage-ancre); }
+
+/* Sur mobile la navbar passe en colonne et devient nettement plus haute */
+@media (max-width: 700px) {
+    :root { --decalage-ancre: 150px; }
+}
+
 /* Sous-titres hors blocs de cours (sections des pages legales) */
 main section h3 { color: var(--primary); font-family: 'Poppins', sans-serif; font-size: 1.05rem; margin: 22px 0 10px; }
 main section ul { margin: 12px 0 12px 22px; }
