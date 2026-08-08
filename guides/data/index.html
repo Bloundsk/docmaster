@@ -270,9 +270,10 @@
         </div>
 
         <div class="quiz-box">
-            <h2>🧠 Quiz : as-tu bien suivi ?</h2>
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du guide. Elles sont différentes de celles des sections.</p>
             <div id="quiz-container"></div>
-            <p class="quiz-score" id="quiz-score"></p>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
         </div>
 
         <section>
@@ -305,9 +306,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
-        const quizData = [{"q": "Qu'est-ce qu'un bon KPI ?", "options": ["Un chiffre impressionnant", "Un indicateur mesurable, lié à un objectif et actionnable", "Le nombre total de likes"], "a": 1}, {"q": "Pourquoi la médiane est-elle parfois préférée à la moyenne ?", "options": ["Elle est plus facile à calculer", "Elle est moins influencée par des valeurs extrêmes", "Elle est toujours plus élevée"], "a": 1}, {"q": "Que signifie \"corrélation n'est pas causalité\" ?", "options": ["Deux variables liées s'influencent forcément", "Deux phénomènes liés n'impliquent pas qu'un cause l'autre", "Les statistiques sont toujours fausses"], "a": 1}];
-    </script>
+    <script src="../../assets/js/quiz/data.js"></script>
     <script src="../../assets/js/quiz.js"></script>
     <script src="../../assets/js/theme.js"></script>
     <script src="../../assets/js/enhance.js"></script>
