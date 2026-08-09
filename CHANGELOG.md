@@ -1,5 +1,20 @@
 # Changelog — DocMaster
 
+## 2026-08-09 — Savoir ce qui est lu à l'intérieur des guides
+- Les statistiques comptaient les **pages** vues, donc les guides les plus consultés.
+  Elles ne pouvaient rien dire de ce qui se passe **dans** un guide : les sous-sections
+  sont des blocs dépliables d'une même page, pas des pages
+- Trois gestes sont désormais comptés, par guide **et par sous-section** : ouvrir une
+  section, ajouter un favori, marquer un guide comme lu. De quoi savoir quel sujet
+  retient vraiment l'attention, et lequel est ouvert puis abandonné
+- Seul le nom du geste est transmis. Aucun identifiant, aucun cookie, et **le contenu
+  des favoris ne quitte pas le navigateur** : on compte qu'une section a été mise en
+  favori, jamais par qui ni avec quoi d'autre
+- Rouvrir une section ne la recompte pas — sans quoi un lecteur qui replie et déplie
+  passerait pour dix
+- Mentions légales et FAQ décrivent cette mesure, faute de quoi elles auraient cessé
+  d'être exactes
+
 ## 2026-08-09 — La date de mise à jour dit enfin la vérité
 - **Les 9 guides annonçaient le 7 août alors qu'ils avaient changé six fois depuis** —
   sections repliées, quiz par sous-section, boutons favori. La date était écrite à la
