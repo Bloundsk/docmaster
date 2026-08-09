@@ -81,11 +81,14 @@ async function verifierCle(token) {
     }
 
     const moi = await reponse.json();
-    const droits = (moi.token && moi.token.permissions) || {};
-    const sites = (moi.token && moi.token.sites) || [];
+    const jeton = moi.token || {};
+    // « permissions » est un masque de bits, pas une liste : on ne cherche pas a
+    // le traduire, GoatCounter ne documente pas ses valeurs. Les vraies reponses
+    // aux questions de droits sont les codes 403 et 404 traites plus bas.
+    const sites = Array.isArray(jeton.sites) ? jeton.sites : (jeton.sites ? [jeton.sites] : []);
 
-    console.log("Cle valide. Droits : " + (Object.keys(droits).filter(k => droits[k]).join(", ") || "aucun"));
-    console.log("Sites autorises : " + (sites.length ? sites.join(", ") : "tous, ou aucun (voir ci-dessous)"));
+    console.log(`Cle « ${jeton.name || "sans nom"} » acceptee.`);
+    console.log("Sites accessibles : " + (sites.length ? sites.join(", ") : "aucun site rattache"));
 
     return moi;
 }
