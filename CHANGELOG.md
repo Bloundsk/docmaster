@@ -1,5 +1,19 @@
 # Changelog — DocMaster
 
+## 2026-08-09 — Vérification complète : trois correctifs
+- **Recherche insensible aux accents.** « securite » ou « cybersecurite » ne renvoyaient
+  rien : le moteur ne faisait que passer le texte en minuscules. La tolérance aux fautes
+  de frappe rattrapait un accent manquant, mais pas deux. Sur un site en français dont la
+  moitié des titres portent des accents, alors que personne n'en saisit dans une barre de
+  recherche. Le mot reste affiché correctement accentué dans les résultats
+- **Titre de section à nouveau masqué entre 700 et 840 px de large.** La barre de
+  navigation passe sur deux lignes dès qu'elle manque de place, bien avant le seuil
+  mobile : elle mesurait 123 px pendant que la compensation en valait 84, laissant 40 px
+  du titre cachés. Une tablette en portrait était concernée. La hauteur est désormais
+  mesurée, plus devinée
+- L'historique de recherche était réinséré dans la page comme du balisage. C'est une
+  saisie libre : il est maintenant posé comme du texte
+
 ## 2026-08-08 — Boîte à idées : envoi direct, et plus aucun cookie
 - La suggestion **part directement depuis la page**, sans quitter le site et sans logiciel
   de messagerie. Un seul bouton, aucune adresse demandée au visiteur
