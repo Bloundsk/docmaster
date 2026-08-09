@@ -1,0 +1,28 @@
+name: Rapport d'usage DocMaster
+
+on:
+  schedule:
+    # Une fois par semaine, le lundi. Comme pour la veille, la minute est
+    # decalee : GitHub previent que les taches planifiees a la minute 0 sont
+    # retardees, voire abandonnees, aux heures de forte charge.
+    - cron: "37 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  rapport:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      - name: Produire le rapport d'usage
+        env:
+          # Cle creee dans GoatCounter (Mon compte -> API), puis ajoutee aux
+          # secrets du depot. Sans elle, le script s arrete avec un message clair.
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/rapport-usage.js
