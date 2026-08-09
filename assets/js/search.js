@@ -22,9 +22,34 @@ document.addEventListener("DOMContentLoaded", () => {
         return dp[a.length][b.length];
     }
 
+    // Replie les accents : "Cybersécurité" devient "cybersecurite".
+    // Sans cela, chercher "securite" ne renvoyait rien. La tolérance aux fautes
+    // rattrapait un accent manquant (« epargne »), mais pas deux : deux accents
+    // font deux différences, soit une de plus que la limite. Or personne ne
+    // saisit les accents dans une barre de recherche.
+    //
+    // Le repli se fait caractère par caractère pour conserver la longueur du
+    // texte : les positions trouvées dans la version repliée désignent alors
+    // exactement les mêmes caractères dans le texte d'origine, ce dont le
+    // surlignage a besoin pour réafficher le mot correctement accentué.
+    // U+0300 a U+036F : les marques d'accentuation que NFD detache de leur
+    // lettre. La plage est construite par code plutot qu'ecrite en clair, ou
+    // elle apparaitrait comme des accents flottants illisibles dans le fichier.
+    const MARQUES_ACCENT = new RegExp(
+        "[" + String.fromCharCode(0x300) + "-" + String.fromCharCode(0x36f) + "]", "g");
+
+    function plier(texte) {
+        let out = "";
+        for (const c of texte) {
+            const sansAccent = c.normalize("NFD").replace(MARQUES_ACCENT, "");
+            out += sansAccent.length === c.length ? sansAccent : c;
+        }
+        return out.toLowerCase();
+    }
+
     function fuzzyIncludes(text, query) {
-        text = text.toLowerCase();
-        query = query.toLowerCase();
+        text = plier(text);
+        query = plier(query);
         if (text.includes(query)) return true;
         // Tolère 1 faute de frappe pour les mots de 5+ lettres
         if (query.length < 5) return false;
@@ -33,10 +58,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function highlight(text, query) {
-        const q = query.trim();
+        const q = plier(query.trim());
         if (!q) return text;
-        const regex = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
-        return text.replace(regex, "<mark>$1</mark>");
+        // On cherche dans la version repliée, on découpe dans l'originale.
+        const base = plier(text);
+        let out = "", i = 0, p;
+        while ((p = base.indexOf(q, i)) !== -1) {
+            out += text.slice(i, p) + "<mark>" + text.slice(p, p + q.length) + "</mark>";
+            i = p + q.length;
+        }
+        return out + text.slice(i);
     }
 
     function saveHistory(query) {
@@ -50,8 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderHistory() {
         const history = JSON.parse(localStorage.getItem("docmaster-search-history") || "[]");
         if (history.length === 0) return;
-        searchResults.innerHTML = '<p class="no-results">Recherches récentes :</p>' +
-            history.map(h => `<a href="#" class="search-result-item history-item">${h}</a>`).join("");
+        // Le texte est posé avec textContent, jamais concaténé dans du HTML :
+        // une recherche passée est une saisie libre, et « <img onerror=...> »
+        // aurait été réinterprété comme du balisage au retour sur la page.
+        searchResults.innerHTML = '<p class="no-results">Recherches récentes :</p>';
+        history.forEach(h => {
+            const lien = document.createElement("a");
+            lien.href = "#";
+            lien.className = "search-result-item history-item";
+            lien.textContent = h;
+            searchResults.appendChild(lien);
+        });
         searchResults.classList.add("active");
 
         searchResults.querySelectorAll(".history-item").forEach(el => {
