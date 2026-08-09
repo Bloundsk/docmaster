@@ -1,5 +1,16 @@
 # Changelog — DocMaster
 
+## 2026-08-09 — Copie de sauvegarde vérifiée sur clé USB
+- Un script dépose la sauvegarde sur la clé, la **date** au lieu de l'écraser, et
+  **compare les empreintes** pour confirmer que la copie est fidèle
+- La vérification n'est pas du zèle : une copie interrompue — clé retirée trop tôt —
+  produit un fichier de taille plausible et parfaitement illisible. Rien ne le signale,
+  sauf le jour où l'on en a besoin
+- Le script refuse de copier une sauvegarde qui ne passerait pas le contrôle de git,
+  pour ne pas laisser deux exemplaires inutilisables au lieu d'un
+- Copie du 9 août vérifiée par restauration **depuis la clé** : 63 commits, arbre des
+  fichiers identique au dépôt
+
 ## 2026-08-09 — Un rapport d'usage lisible, chaque lundi
 - Le tableau de bord affichait les gestes mesurés en vrac, mêlés aux pages et sous leur
   nom technique : `section/finance/les-etf` ne se lit pas. Un rapport hebdomadaire est
@@ -108,6 +119,21 @@
 - Aucun compte, aucun mot de passe, aucune adresse : tout reste dans le navigateur du
   visiteur, comme le thème ou la progression de lecture
 - Bouton « Tout effacer » pour reprendre la main sur ces données
+
+## 2026-08-08 — Sauvegarde automatique du dépôt
+- Après **chaque commit**, le dépôt entier — site et historique — est enregistré dans un
+  fichier unique, hors du dossier du projet. Rien à lancer à la main
+- La sauvegarde n'est remplacée que si elle passe **trois contrôles** : le fichier se
+  crée, git le juge intègre, et le dernier commit s'y trouve réellement. Sinon la
+  précédente est conservée — une sauvegarde corrompue est pire que pas de sauvegarde
+- Le troisième contrôle vient d'une mésaventure du jour même : une sauvegarde jugée
+  « valide » par git s'est révélée **impossible à restaurer**. La commande de
+  vérification contrôle la cohérence de ce que le fichier contient, pas ce qui aurait dû
+  s'y trouver
+- La leçon dépasse ce projet : **une sauvegarde ne vaut que si on l'a restaurée au moins
+  une fois**
+
+> Ce mécanisme vit hors du dépôt public : il contient un chemin local.
 
 ## 2026-08-08 — Le thème suit l'appareil du visiteur
 - Le site s'affiche en sombre si l'appareil est en sombre, en clair sinon
