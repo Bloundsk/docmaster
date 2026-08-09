@@ -62,14 +62,50 @@ function lireGuides() {
 
 // --- Appel de l API --------------------------------------------------------
 
+function entetes(token) {
+    return { "Authorization": "Bearer " + token, "Content-Type": "application/json" };
+}
+
+// Verifie la cle avant de s en servir. Sans ce controle, une cle sans droit sur
+// le site produit un « 404 not found » sur les statistiques, message qui laisse
+// croire a une mauvaise adresse alors que le probleme est ailleurs.
+async function verifierCle(token) {
+    const reponse = await fetch(`${SITE}/api/v0/me`, { headers: entetes(token) });
+
+    if (reponse.status === 401) {
+        throw new Error("Cle refusee (401). Verifier que l adresse electronique du compte "
+            + "GoatCounter a bien ete confirmee, et que la cle a ete recopiee en entier.");
+    }
+    if (!reponse.ok) {
+        throw new Error(`Verification de la cle : GoatCounter a repondu ${reponse.status}.`);
+    }
+
+    const moi = await reponse.json();
+    const droits = (moi.token && moi.token.permissions) || {};
+    const sites = (moi.token && moi.token.sites) || [];
+
+    console.log("Cle valide. Droits : " + (Object.keys(droits).filter(k => droits[k]).join(", ") || "aucun"));
+    console.log("Sites autorises : " + (sites.length ? sites.join(", ") : "tous, ou aucun (voir ci-dessous)"));
+
+    return moi;
+}
+
 async function recupererHits(token, debut, fin) {
     const url = `${SITE}/api/v0/stats/hits`
         + `?start=${encodeURIComponent(debut)}&end=${encodeURIComponent(fin)}&limit=${LIMITE}`;
 
-    const reponse = await fetch(url, {
-        headers: { "Authorization": "Bearer " + token, "Content-Type": "application/json" }
-    });
+    const reponse = await fetch(url, { headers: entetes(token) });
 
+    if (reponse.status === 404) {
+        throw new Error(
+            "GoatCounter repond « not found » sur les statistiques. La cle est valide, mais elle "
+            + "n a acces a aucun site : dans GoatCounter, section API, la case « All sites » a "
+            + "probablement ete decochee sans que « bloundsk.goatcounter.com » soit coche a la place. "
+            + "Il faut recreer la cle avec l un des deux coche.");
+    }
+    if (reponse.status === 403) {
+        throw new Error("Acces refuse (403) : la cle n a pas la permission « Read statistics ».");
+    }
     if (!reponse.ok) {
         const corps = await reponse.text().catch(() => "");
         throw new Error(`GoatCounter a repondu ${reponse.status} : ${corps.slice(0, 200)}`);
@@ -272,6 +308,8 @@ async function principal() {
     const fin = new Date(); fin.setMinutes(0, 0, 0);
     const debut = new Date(fin.getTime() - JOURS_ANALYSES * 24 * 60 * 60 * 1000);
     const iso = d => d.toISOString().replace(/\.\d+Z$/, "Z");
+
+    await verifierCle(token);
 
     const donnees = await recupererHits(token, iso(debut), iso(fin));
     if (donnees.more) {
