@@ -82,5 +82,13 @@
         analytics.src = "https://gc.zgo.at/count.js";
         analytics.setAttribute("data-goatcounter", "https://bloundsk.goatcounter.com/count");
         document.head.appendChild(analytics);
+
+        // Mesure d'usage a l'interieur des guides : sous-sections ouvertes,
+        // favoris, guides termines. Charge ici plutot que page par page, pour
+        // la meme raison que le comptage lui-meme : une seule ligne a maintenir.
+        const mesure = document.createElement("script");
+        mesure.src = base + "assets/js/mesure.js";
+        mesure.defer = true;
+        document.head.appendChild(mesure);
     }
 })();
