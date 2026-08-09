@@ -68,56 +68,89 @@
         .shortlist ul { margin: 14px 0 0 20px; }
         .shortlist li { margin-bottom: 8px; }
 
-        /* Zone du formulaire : rien n'est chargé tant que le visiteur n'a pas cliqué */
+        /* Formulaire de suggestion.
+           Il n'envoie rien tout seul : le site est statique et n'a pas de
+           serveur. Il assemble un message et ouvre le logiciel de messagerie
+           du visiteur, qui garde la main sur ce qu'il envoie. Aucun service
+           tiers, aucun cookie. */
         .form-zone {
             background: var(--surface);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             padding: 30px;
-            text-align: center;
         }
 
-        .privacy-note {
-            color: var(--muted);
-            font-size: .9rem;
-            max-width: 620px;
-            margin: 0 auto 22px;
-            line-height: 1.55;
+        .champ { margin-bottom: 20px; }
+        .champ label {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: .95rem;
+            margin-bottom: 7px;
         }
+        .champ .aide { display: block; font-weight: 400; font-size: .85rem; color: var(--muted); margin-top: 3px; }
 
-        .load-form-btn {
+        .champ input[type="text"],
+        .champ textarea,
+        .champ select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid var(--quiz-case);
+            border-radius: 10px;
+            background: var(--quiz-case);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: .97rem;
+            transition: border-color .2s;
+        }
+        .champ input:focus, .champ textarea:focus, .champ select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--surface);
+        }
+        .champ textarea { min-height: 110px; resize: vertical; }
+
+        .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+        .btn-envoyer {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: #fff;
             border: none;
             border-radius: var(--radius);
-            padding: 15px 30px;
+            padding: 14px 26px;
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: transform .2s, box-shadow .2s;
         }
+        .btn-envoyer:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37,99,235,.35); }
 
-        .load-form-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(37, 99, 235, .35);
-        }
-
-        .form-frame {
-            width: 100%;
-            min-height: 900px;
-            border: none;
+        .btn-copier {
+            background: none;
+            border: 1px solid var(--muted);
+            color: var(--text);
             border-radius: var(--radius);
+            padding: 14px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: .95rem;
+            cursor: pointer;
+            transition: border-color .2s, color .2s;
         }
+        .btn-copier:hover { border-color: var(--primary); color: var(--primary); }
 
-        .form-fallback {
+        .form-note {
             color: var(--muted);
             font-size: .9rem;
-            margin-top: 16px;
+            line-height: 1.55;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid var(--background);
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .load-form-btn { transition: none; }
+            .btn-envoyer { transition: none; }
+            .btn-envoyer:hover { transform: none; }
         }
     </style>
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/idees.html">
@@ -193,20 +226,53 @@
 
         <section>
             <h2>Proposer une idée</h2>
-            <div class="form-zone" id="form-zone">
-                <p class="privacy-note">
-                    Le formulaire est hébergé par <strong>Google Forms</strong>. En l'affichant, Google
-                    est susceptible de déposer des cookies sur votre appareil et de collecter des données
-                    selon sa propre politique de confidentialité.
+            <div class="form-zone">
+                <form id="form-idee" novalidate>
+                    <div class="champ">
+                        <label for="idee-sujet">Quel sujet ou quelle catégorie aimeriez-vous voir traité ?
+                            <span class="aide">Obligatoire</span>
+                        </label>
+                        <input type="text" id="idee-sujet" name="sujet" required
+                               placeholder="Par exemple : les démarches pour créer une association">
+                    </div>
+
+                    <div class="champ">
+                        <label for="idee-pourquoi">Pourquoi ce sujet vous intéresse-t-il ?
+                            <span class="aide">Facultatif, mais c'est ce qui aide le plus à trancher</span>
+                        </label>
+                        <textarea id="idee-pourquoi" name="pourquoi"
+                                  placeholder="Ce que vous cherchiez sans le trouver, ce qui vous bloque…"></textarea>
+                    </div>
+
+                    <div class="champ">
+                        <label for="idee-piste">Parmi les pistes envisagées, laquelle vous intéresse le plus ?
+                            <span class="aide">Facultatif</span>
+                        </label>
+                        <select id="idee-piste" name="piste">
+                            <option value="">— Aucune en particulier —</option>
+                            <option>Droit &amp; démarches administratives</option>
+                            <option>Santé &amp; bien-être au travail</option>
+                            <option>Langues &amp; méthodes d'apprentissage</option>
+                            <option>Écologie &amp; sobriété numérique</option>
+                            <option>Négociation &amp; communication</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-envoyer">✉️ Ouvrir ma messagerie</button>
+                        <button type="button" class="btn-copier" id="idee-copier">📋 Copier le message</button>
+                    </div>
+                </form>
+
+                <p class="form-note" id="idee-note">
+                    Ce formulaire <strong>n'envoie rien tout seul</strong> : il prépare un message et
+                    ouvre votre logiciel de messagerie, où vous relisez et décidez d'envoyer. Aucun
+                    service tiers n'est sollicité, aucun cookie n'est déposé.
                     <br><br>
-                    <strong>Rien n'est chargé tant que vous n'avez pas cliqué</strong> : si vous ne
-                    souhaitez pas être concerné, il suffit de ne pas utiliser ce formulaire — le reste
-                    du site ne dépose aucun cookie.
+                    Si votre appareil n'a pas de logiciel de messagerie configuré, utilisez
+                    « Copier le message » puis collez-le dans un courriel adressé à
+                    <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span>.
                 </p>
-                <button type="button" class="load-form-btn" id="load-form">
-                    Afficher le formulaire de suggestion
-                </button>
-                <p class="form-fallback" id="form-fallback"></p>
             </div>
         </section>
 
@@ -218,44 +284,84 @@
     <script src="assets/js/enhance.js"></script>
     <script>
         // ===================================
-        // Formulaire de suggestion (Google Forms)
+        // Formulaire de suggestion — par courriel
         // ===================================
-        // Pour changer de formulaire, remplacer uniquement la ligne ci-dessous par
-        // l'adresse fournie par Google Forms (bouton « Envoyer » → onglet « < > »).
-        // Elle doit se terminer par ?embedded=true
+        // Le site est statique : il ne peut rien envoyer lui-meme. Le formulaire
+        // assemble un message et ouvre le logiciel de messagerie du visiteur, qui
+        // relit et decide. Aucun service tiers, aucun cookie.
+        //
+        // L'adresse n'apparait jamais en clair dans le code source : elle est
+        // reassemblee ici, comme ailleurs sur le site, pour ne pas etre moissonnee
+        // par les robots collecteurs.
 
-        const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScaLDVjCc3cYaBTO5jkmrzt_0suQWANDOJzmDmEF-JveFys5w/viewform?embedded=true";
+        (function () {
+            const NOM = "docmaster.contact";
+            const DOMAINE = "proton.me";
+            const adresse = () => NOM + String.fromCharCode(64) + DOMAINE;
 
-        const zone = document.getElementById("form-zone");
-        const bouton = document.getElementById("load-form");
-        const secours = document.getElementById("form-fallback");
+            const form = document.getElementById("form-idee");
+            const note = document.getElementById("idee-note");
 
-        // Tant que l'adresse n'a pas été renseignée, on n'affiche pas un formulaire cassé.
-        if (FORM_URL.includes("REMPLACER-PAR-TON-CODE")) {
-            bouton.disabled = true;
-            bouton.style.opacity = ".5";
-            bouton.style.cursor = "not-allowed";
-            secours.textContent = "Le formulaire est en cours d'installation, il sera disponible très bientôt.";
-        }
+            function composer() {
+                const sujet = document.getElementById("idee-sujet").value.trim();
+                const pourquoi = document.getElementById("idee-pourquoi").value.trim();
+                const piste = document.getElementById("idee-piste").value;
 
-        bouton.addEventListener("click", () => {
-            const cadre = document.createElement("iframe");
-            cadre.src = FORM_URL;
-            cadre.className = "form-frame";
-            cadre.title = "Formulaire de suggestion d'une nouvelle catégorie";
-            cadre.loading = "lazy";
+                if (!sujet) {
+                    document.getElementById("idee-sujet").focus();
+                    return null;
+                }
 
-            // Le formulaire remplace le bouton et l'avertissement une fois accepté.
-            zone.innerHTML = "";
-            zone.appendChild(cadre);
+                let corps = "Sujet proposé :\n" + sujet + "\n";
+                if (pourquoi) corps += "\nPourquoi ce sujet m'intéresse :\n" + pourquoi + "\n";
+                if (piste) corps += "\nPiste envisagée qui m'intéresse le plus :\n" + piste + "\n";
+                corps += "\n— Envoyé depuis la boîte à idées de DocMaster";
 
-            const lien = document.createElement("p");
-            lien.className = "form-fallback";
-            lien.innerHTML = 'Le formulaire ne s\'affiche pas ? <a href="' +
-                FORM_URL.replace("?embedded=true", "") +
-                '" target="_blank" rel="noopener">L\'ouvrir dans un nouvel onglet →</a>';
-            zone.appendChild(lien);
-        });
+                return {
+                    objet: "Boîte à idées — " + sujet.slice(0, 70),
+                    corps: corps
+                };
+            }
+
+            function message(texte) {
+                note.insertAdjacentHTML("afterbegin",
+                    '<strong id="idee-retour" style="display:block;color:var(--primary);margin-bottom:10px;">'
+                    + texte + "</strong>");
+                setTimeout(() => {
+                    const el = document.getElementById("idee-retour");
+                    if (el) el.remove();
+                }, 5000);
+            }
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const m = composer();
+                if (!m) { message("Merci d'indiquer au moins le sujet proposé."); return; }
+                window.location.href = "mailto:" + adresse()
+                    + "?subject=" + encodeURIComponent(m.objet)
+                    + "&body=" + encodeURIComponent(m.corps);
+            });
+
+            document.getElementById("idee-copier").addEventListener("click", async () => {
+                const m = composer();
+                if (!m) { message("Merci d'indiquer au moins le sujet proposé."); return; }
+                const texte = "À : " + adresse() + "\nObjet : " + m.objet + "\n\n" + m.corps;
+                try {
+                    await navigator.clipboard.writeText(texte);
+                    message("Message copié. Collez-le dans un courriel adressé à " + adresse());
+                } catch (err) {
+                    // Le presse-papiers est refuse hors HTTPS ou sans geste utilisateur :
+                    // on affiche le texte pour que le visiteur puisse le selectionner.
+                    message("Copie automatique impossible — sélectionnez le texte ci-dessous :");
+                    const zone = document.createElement("textarea");
+                    zone.value = texte;
+                    zone.rows = 10;
+                    zone.style.cssText = "width:100%;margin-top:12px;padding:12px;border-radius:10px;font-family:inherit;";
+                    note.appendChild(zone);
+                    zone.select();
+                }
+            });
+        })();
     </script>
 </body>
 </html>
