@@ -1,5 +1,25 @@
 # Changelog — DocMaster
 
+## 2026-08-09 — Un rapport d'usage lisible, chaque lundi
+- Le tableau de bord affichait les gestes mesurés en vrac, mêlés aux pages et sous leur
+  nom technique : `section/finance/les-etf` ne se lit pas. Un rapport hebdomadaire est
+  désormais publié automatiquement, comme la veille
+- Trois classements — guides, sous-sections ouvertes, sous-sections gardées — et surtout
+  **un croisement** : le rapport entre « mise en favori » et « ouverte » dit si une
+  section tient sa promesse. Très ouverte et jamais gardée, le sujet attire mais le texte
+  déçoit ; c'est celle-là qu'il faut réécrire
+- Les titres sont lus dans les guides eux-mêmes : ajouter une section suffit à la faire
+  apparaître, sans toucher au rapport
+- Deux garde-fous contre les fausses évidences : une section ouverte moins de trois fois
+  n'entre pas dans le croisement, et les deux listes ne se recouvrent jamais — sur cinq
+  sections, un « top 5 » et un « flop 5 » auraient affiché deux fois les mêmes lignes en
+  ordre inverse, donnant l'illusion d'une analyse
+- Le script vérifie la clé d'accès avant de s'en servir, et nomme la cause exacte en cas
+  d'échec plutôt que de renvoyer un code d'erreur opaque
+
+> Ce rapport ne concerne que l'éditeur du site : il n'apparaît nulle part pour les
+> visiteurs, et ne contient aucune donnée permettant d'identifier qui que ce soit.
+
 ## 2026-08-09 — Savoir ce qui est lu à l'intérieur des guides
 - Les statistiques comptaient les **pages** vues, donc les guides les plus consultés.
   Elles ne pouvaient rien dire de ce qui se passe **dans** un guide : les sous-sections
