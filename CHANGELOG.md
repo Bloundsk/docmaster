@@ -1,5 +1,22 @@
 # Changelog — DocMaster
 
+## 2026-08-09 — La date de mise à jour dit enfin la vérité
+- **Les 9 guides annonçaient le 7 août alors qu'ils avaient changé six fois depuis** —
+  sections repliées, quiz par sous-section, boutons favori. La date était écrite à la
+  main dans chaque page : rien ne pouvait la faire bouger. Une date de mise à jour
+  fausse est pire qu'absente, puisque c'est justement ce que le lecteur vient y vérifier
+- Elle est désormais **posée automatiquement** à chaque modification d'un guide.
+  Modifier la feuille de style ne fait pas mentir les neuf pages : seuls les guides
+  réellement touchés sont datés
+
+## 2026-08-09 — Un seul canal de contact
+- Le site ne renvoie plus vers l'espace **Issues du dépôt**, ni depuis les mentions
+  légales ni depuis la FAQ. L'adresse électronique devient le point de contact unique,
+  ce que la LCEN et le RGPD acceptent sans réserve : ils exigent un moyen de contact,
+  pas celui-là en particulier
+- La FAQ gagne en échange un conseil utile — indiquer le guide et la section concernés,
+  c'est ce qui permet de corriger le plus vite
+
 ## 2026-08-09 — Mentions légales : hébergeur vérifié, conservation annoncée
 - **Durée de conservation des suggestions portée à la connaissance du visiteur.** Les
   24 mois étaient fixés dans les mentions légales, et nulle part ailleurs. L'article 13
