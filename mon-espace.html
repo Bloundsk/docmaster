@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon espace - DocMaster</title>
+    <meta name="description" content="Retrouvez vos favoris, vos guides terminés et votre progression sur DocMaster. Tout reste dans votre navigateur, sans compte ni inscription.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/mon-espace.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Mon espace - DocMaster">
+    <meta property="og:description" content="Vos favoris, vos guides terminés et votre progression, sans compte ni inscription.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/mon-espace.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mon espace - DocMaster">
+    <meta name="twitter:description" content="Vos favoris, vos guides terminés et votre progression, sans compte ni inscription.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "";</script>
+    <script src="assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a> &gt; <span aria-current="page">Mon espace</span>
+    </nav>
+
+    <header>
+        <h1>⭐ Mon espace</h1>
+        <p>Vos favoris et votre progression, sans compte ni inscription.</p>
+    </header>
+
+    <main id="main-content">
+
+        <div class="espace-stats" id="espace-stats"></div>
+
+        <section>
+            <h2>Mes favoris</h2>
+            <div id="espace-favoris"></div>
+        </section>
+
+        <section>
+            <h2>Mes guides terminés</h2>
+            <div id="espace-lus"></div>
+        </section>
+
+        <div class="espace-note">
+            <p><strong>Où sont enregistrées ces informations ?</strong></p>
+            <p>
+                Uniquement dans ce navigateur, sur cet appareil. Elles ne sont transmises
+                à aucun serveur — le site n'en possède pas. C'est pourquoi aucune inscription
+                n'est demandée : ni adresse électronique, ni mot de passe.
+            </p>
+            <p>
+                En contrepartie, vous ne les retrouverez pas sur un autre appareil, et elles
+                disparaîtront si vous effacez les données de navigation.
+            </p>
+            <p style="margin-top:14px;">
+                <button type="button" id="espace-effacer" class="espace-retirer" style="border:1px solid var(--muted);border-radius:999px;padding:7px 16px;font-size:.9rem;font-family:'Inter',sans-serif;">
+                    Tout effacer
+                </button>
+            </p>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/favoris.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/enhance.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const NB_GUIDES = 9;
+
+            // --- Guides termines : releves depuis les cles posees par enhance.js
+            function guidesLus() {
+                const lus = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const cle = localStorage.key(i);
+                    if (!cle || !cle.startsWith("docmaster-read-")) continue;
+                    if (localStorage.getItem(cle) !== "true") continue;
+                    // La cle contient le chemin complet de la page au moment du clic
+                    const chemin = cle.replace("docmaster-read-", "");
+                    const m = chemin.match(/guides\/([^/]+)\//);
+                    if (m) lus.push({ dossier: m[1], chemin: "guides/" + m[1] + "/index.html" });
+                }
+                return lus;
+            }
+
+            const NOMS = {
+                finance: "💰 Finance", ia: "🤖 Intelligence Artificielle",
+                "dev-web": "💻 Développement Web", marketing: "📢 Marketing Digital",
+                cybersecurite: "🔒 Cybersécurité", entrepreneuriat: "🚀 Entrepreneuriat",
+                productivite: "⏱️ Productivité & Organisation", data: "📊 Data & Analytics",
+                design: "🎨 Design UX/UI"
+            };
+
+            function rendre() {
+                const favoris = window.DocMasterFavoris.lire();
+                const lus = guidesLus();
+
+                // --- Chiffres
+                document.getElementById("espace-stats").innerHTML = `
+                    <div class="espace-stat"><span class="nombre">${favoris.length}</span><span class="libelle">favori${favoris.length > 1 ? "s" : ""}</span></div>
+                    <div class="espace-stat"><span class="nombre">${lus.length}/${NB_GUIDES}</span><span class="libelle">guides terminés</span></div>
+                    <div class="espace-stat"><span class="nombre">${Math.round(lus.length / NB_GUIDES * 100)}%</span><span class="libelle">de progression</span></div>`;
+
+                // --- Favoris, regroupes par guide
+                const zone = document.getElementById("espace-favoris");
+                if (!favoris.length) {
+                    zone.innerHTML = `<div class="espace-vide">
+                        <p><strong>Aucun favori pour l'instant.</strong></p>
+                        <p>Cliquez sur l'étoile ☆ à côté d'un guide ou d'une section pour la retrouver ici.</p>
+                    </div>`;
+                } else {
+                    const groupes = {};
+                    for (const f of favoris) (groupes[f.guide || "Autres"] ||= []).push(f);
+                    zone.innerHTML = Object.entries(groupes).map(([guide, liste]) => `
+                        <div class="espace-groupe">
+                            <h3>${guide}</h3>
+                            <ul class="espace-liste">
+                                ${liste.sort((a, b) => a.date - b.date).map(f => `
+                                    <li>
+                                        <a href="${f.chemin}${f.ancre ? "#" + encodeURIComponent(f.ancre) : ""}">${f.titre}</a>
+                                        <button type="button" class="espace-retirer" data-id="${f.id}"
+                                                aria-label="Retirer des favoris : ${f.titre}" title="Retirer">✕</button>
+                                    </li>`).join("")}
+                            </ul>
+                        </div>`).join("");
+                }
+
+                // --- Guides termines
+                const zoneLus = document.getElementById("espace-lus");
+                if (!lus.length) {
+                    zoneLus.innerHTML = `<div class="espace-vide">
+                        <p><strong>Aucun guide terminé.</strong></p>
+                        <p>Cochez « J'ai lu et compris ce guide » en bas d'un guide pour le marquer ici.</p>
+                    </div>`;
+                } else {
+                    zoneLus.innerHTML = `<div class="espace-groupe"><ul class="espace-liste">
+                        ${lus.map(g => `<li><a href="${g.chemin}">${NOMS[g.dossier] || g.dossier}</a></li>`).join("")}
+                    </ul></div>`;
+                }
+
+                // Retrait d'un favori depuis cette page
+                zone.querySelectorAll(".espace-retirer").forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        const restants = window.DocMasterFavoris.lire().filter(f => f.id !== btn.dataset.id);
+                        window.DocMasterFavoris.ecrire(restants);
+                        rendre();
+                    });
+                });
+            }
+
+            rendre();
+
+            document.getElementById("espace-effacer").addEventListener("click", () => {
+                if (!confirm("Effacer vos favoris et votre progression ? Cette action est définitive.")) return;
+                window.DocMasterFavoris.ecrire([]);
+                const aSupprimer = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const c = localStorage.key(i);
+                    if (c && c.startsWith("docmaster-read-")) aSupprimer.push(c);
+                }
+                aSupprimer.forEach(c => localStorage.removeItem(c));
+                rendre();
+            });
+        });
+    </script>
+</body>
+</html>

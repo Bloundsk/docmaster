@@ -67,5 +67,8 @@ const searchIndex = [
     { title: "Signaler une erreur", description: "Comment remonter une erreur ou proposer une correction.", url: "faq.html", keywords: "erreur correction signaler bug contact github issue" },
 
     { title: "Boîte à idées", description: "Proposer une nouvelle catégorie ou un sujet à traiter.", url: "idees.html", keywords: "idée idées suggestion proposer catégorie sujet thème demande boîte" },
-    { title: "Proposer une catégorie", description: "Suggérer un domaine entier qui manque encore sur le site.", url: "idees.html", keywords: "nouvelle catégorie domaine thème manquant proposition vote" }
+    { title: "Proposer une catégorie", description: "Suggérer un domaine entier qui manque encore sur le site.", url: "idees.html", keywords: "nouvelle catégorie domaine thème manquant proposition vote" },
+
+    { title: "Mon espace", description: "Vos favoris, vos guides terminés et votre progression.", url: "mon-espace.html", keywords: "mon espace favoris progression compte connexion inscription profil" },
+    { title: "Mes favoris", description: "Retrouver les guides et sections mis en favori.", url: "mon-espace.html", keywords: "favoris étoile marque-page enregistrer sauvegarder retrouver" }
 ];

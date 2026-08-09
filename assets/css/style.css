@@ -277,6 +277,125 @@ main section li { margin-bottom: 8px; }
 /* Ressources en fin de guide */
 .ressources li { margin-bottom: 10px; }
 
+/* ---------------------------------------------------------------
+   Favoris
+   --------------------------------------------------------------- */
+.btn-favori {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--muted);
+    padding: 4px 6px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    transition: color .2s, transform .15s;
+}
+.btn-favori:hover { color: #f59e0b; transform: scale(1.15); }
+.btn-favori.actif { color: #f59e0b; }
+
+/* Dans un summary, le bouton se place avant le chevron (pseudo-element
+   ::after), d'ou l'ordre : titre, bouton, chevron. */
+.lecon > summary .btn-favori { margin-left: auto; }
+
+/* Sur la barre de meta d'un guide et sur les cartes de l'accueil, le bouton
+   porte un libelle : il doit ressembler aux autres boutons du site. */
+.btn-favori-guide,
+.btn-favori-carte {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 1rem;
+    border: 1px solid var(--muted);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+}
+.btn-favori-guide:hover,
+.btn-favori-carte:hover { border-color: #f59e0b; transform: none; }
+.btn-favori-guide.actif,
+.btn-favori-carte.actif { border-color: #f59e0b; }
+.btn-favori-carte { margin-top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-favori { transition: none; }
+    .btn-favori:hover { transform: none; }
+}
+
+/* ---------------------------------------------------------------
+   Page Mon espace
+   --------------------------------------------------------------- */
+.espace-stats { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 34px; }
+.espace-stat {
+    flex: 1 1 160px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px 22px;
+    text-align: center;
+}
+.espace-stat .nombre {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+}
+html.dark-mode .espace-stat .nombre { color: #7aa5ff; }
+.espace-stat .libelle { font-size: .88rem; color: var(--muted); }
+
+.espace-groupe {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+}
+.espace-groupe h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 12px; }
+.espace-liste { list-style: none; margin: 0; }
+.espace-liste li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--background);
+}
+.espace-liste li:last-child { border-bottom: none; }
+.espace-liste a { color: var(--text); text-decoration: none; flex: 1; }
+.espace-liste a:hover { color: var(--primary); text-decoration: underline; }
+.espace-retirer {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 2px 6px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+.espace-retirer:hover { color: #ef4444; }
+
+.espace-vide {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 34px 28px;
+    text-align: center;
+    color: var(--muted);
+}
+.espace-vide strong { color: var(--text); }
+
+.espace-note {
+    background: var(--background);
+    border-left: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-top: 30px;
+    font-size: .92rem;
+}
+
 /* Extraits de code dans les guides */
 code {
     font-family: Consolas, Monaco, 'Courier New', monospace;
