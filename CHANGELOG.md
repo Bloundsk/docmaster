@@ -1,5 +1,40 @@
 # Changelog — DocMaster
 
+## 2026-08-08 — Boîte à idées : envoi direct, et plus aucun cookie
+- La suggestion **part directement depuis la page**, sans quitter le site et sans logiciel
+  de messagerie. Un seul bouton, aucune adresse demandée au visiteur
+- Google Forms est abandonné au profit d'un relai vers la boîte de l'éditeur. **Le site ne
+  dépose désormais aucun cookie, sans exception** — c'était la dernière entorse
+- Le système de vérification du relai est volontairement désactivé : il aurait rechargé
+  Google. Un champ piège invisible le remplace, sans aucun script tiers
+- L'adresse de destination n'apparaît nulle part dans la page, remplacée par un identifiant
+- Mentions légales et FAQ mises à jour : plus de transfert hors UE, plus de cookie tiers
+
+> Une première version passait par le logiciel de messagerie du visiteur. Abandonnée :
+> sur ordinateur, beaucoup n'en ont aucun de configuré, et le clic ne produisait rien.
+
+## 2026-08-08 — Mon espace et favoris
+- **Bouton favori** sur les 9 catégories et les 37 sous-sections
+- Nouvelle page **Mon espace** : favoris regroupés par guide, guides terminés, progression
+- Aucun compte, aucun mot de passe, aucune adresse : tout reste dans le navigateur du
+  visiteur, comme le thème ou la progression de lecture
+- Bouton « Tout effacer » pour reprendre la main sur ces données
+
+## 2026-08-08 — Le thème suit l'appareil du visiteur
+- Le site s'affiche en sombre si l'appareil est en sombre, en clair sinon
+- Le choix fait via le bouton reste prioritaire et n'est jamais écrasé
+- Suivi en direct : basculer son système pendant la lecture fait suivre la page
+
+## 2026-08-08 — Un quiz par sous-section, renouvelé tous les 15 jours
+- **276 questions** réparties sur 37 quiz de sous-section et 9 quiz de synthèse
+- Chaque banque contient 6 questions dont 3 affichées : les 3 autres prennent le relais
+  toutes les deux semaines, automatiquement
+- Aucun doublon sur l'ensemble du site, et aucun chevauchement entre un quiz de synthèse
+  et ceux de ses sections
+- Chaque question porte une **explication**, révélée seulement après la réponse
+- Séparation visuelle nette entre le cours et l'exercice, et cases de réponse lisibles
+  dans les deux thèmes
+
 ## 2026-08-08 — La veille suit le contenu des guides
 - Les recherches ne sont plus écrites en dur : le script **lit les guides** et construit
   une recherche par sous-section. Ajouter une section à un guide suffit désormais à la
@@ -21,6 +56,14 @@
 - **Barre de navigation mobile resserrée** : de 305 à 91 pixels, soit 11 % de l'écran
   au lieu de 38 %. Les liens tiennent sur une ligne et défilent horizontalement
 - L'impression d'un guide reste complète malgré les sections repliées
+
+## 2026-08-08 — Divers
+- L'accroche de la page d'accueil devient « pour apprendre **et comprendre** les
+  **compétences** de demain » — le mot « technologies » ne décrivait ni la finance,
+  ni le marketing, ni l'entrepreneuriat
+- Retrait du dépôt public d'un fichier de configuration local qui exposait le nom
+  d'utilisateur Windows de l'éditeur, alors que le site est publié sous pseudonyme.
+  Historique nettoyé et `.gitignore` ajouté pour éviter que cela se reproduise
 
 ## 2026-08-08 — Accessibilité des illustrations
 - Les 9 illustrations SVG sont déclarées **décoratives** (`aria-hidden`, `role="presentation"`,
