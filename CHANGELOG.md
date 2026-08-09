@@ -58,6 +58,10 @@
   favori, jamais par qui ni avec quoi d'autre
 - Rouvrir une section ne la recompte pas — sans quoi un lecteur qui replie et déplie
   passerait pour dix
+- **Les ouvertures en masse ne comptent pas non plus.** « Tout déplier » et l'impression
+  ouvrent les cinq sections d'un coup : les compter aurait enregistré un intérêt pour
+  chacune alors que le lecteur n'en a désigné aucune. Un seul clic aurait fait paraître
+  toutes les sections également lues, et le classement n'aurait plus rien voulu dire
 - Mentions légales et FAQ décrivent cette mesure, faute de quoi elles auraient cessé
   d'être exactes
 
