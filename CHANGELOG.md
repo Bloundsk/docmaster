@@ -1,5 +1,19 @@
 # Changelog — DocMaster
 
+## 2026-08-09 — Mentions légales : hébergeur vérifié, conservation annoncée
+- **Durée de conservation des suggestions portée à la connaissance du visiteur.** Les
+  24 mois étaient fixés dans les mentions légales, et nulle part ailleurs. L'article 13
+  du RGPD veut que la personne soit informée au moment où ses données sont recueillies,
+  pas sur une page qu'elle devra penser à ouvrir : la mention figure désormais **sous le
+  formulaire lui-même**, et dans la FAQ
+- La question « Quelles données sont collectées ? » ne parlait que des statistiques
+  agrégées et laissait croire que rien d'autre n'était conservé. L'exception est nommée
+- **Coordonnées de l'hébergeur vérifiées aux sources de GitHub.** Adresse et numéro sont
+  exacts ; la graphie de l'adresse est alignée sur celle de la déclaration officielle
+- GitHub ne publie plus ce numéro dans sa documentation courante et traite ses demandes
+  par écrit. Le numéro reste mentionné — l'article 6 III de la LCEN l'exige — mais le
+  lien vers le portail d'assistance est ajouté, car c'est la voie réellement ouverte
+
 ## 2026-08-09 — Vérification complète : trois correctifs
 - **Recherche insensible aux accents.** « securite » ou « cybersecurite » ne renvoyaient
   rien : le moteur ne faisait que passer le texte en minuscules. La tolérance aux fautes
@@ -14,7 +28,16 @@
 - L'historique de recherche était réinséré dans la page comme du balisage. C'est une
   saisie libre : il est maintenant posé comme du texte
 
-## 2026-08-08 — Boîte à idées : envoi direct, et plus aucun cookie
+## 2026-08-09 — Les pages d'information décrivent enfin le site réel
+- **FAQ** : deux comportements n'étaient expliqués nulle part alors qu'ils surprennent au
+  premier abord — pourquoi les sections des guides sont repliées, et pourquoi les
+  questions des quiz changent toutes les deux semaines sans que recharger la page n'y
+  fasse rien. 24 questions désormais
+- **À propos** : la page décrivait un site qui n'existait plus. Elle expose maintenant la
+  trame commune des guides, la veille et la rotation des quiz, et l'absence de compte,
+  de cookie et de publicité
+
+## 2026-08-09 — Boîte à idées : envoi direct, et plus aucun cookie
 - La suggestion **part directement depuis la page**, sans quitter le site et sans logiciel
   de messagerie. Un seul bouton, aucune adresse demandée au visiteur
 - Google Forms est abandonné au profit d'un relai vers la boîte de l'éditeur. **Le site ne
@@ -27,7 +50,7 @@
 > Une première version passait par le logiciel de messagerie du visiteur. Abandonnée :
 > sur ordinateur, beaucoup n'en ont aucun de configuré, et le clic ne produisait rien.
 
-## 2026-08-08 — Mon espace et favoris
+## 2026-08-09 — Mon espace et favoris
 - **Bouton favori** sur les 9 catégories et les 37 sous-sections
 - Nouvelle page **Mon espace** : favoris regroupés par guide, guides terminés, progression
 - Aucun compte, aucun mot de passe, aucune adresse : tout reste dans le navigateur du
