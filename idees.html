@@ -317,18 +317,16 @@
         //    joue ce role sans script tiers
         //  - l'adresse reste hors du code source, comme partout ailleurs
         //
-        // ETAPE RESTANTE : apres la premiere soumission, FormSubmit envoie un
-        // courriel de confirmation contenant un identifiant aleatoire. Remplacer
-        // alors DESTINATAIRE par cet identifiant : l'adresse disparaitra
-        // completement, meme reassemblee.
-
         (function () {
+            // Identifiant aleatoire fourni par FormSubmit apres confirmation de
+            // la boite de reception. Il remplace l'adresse dans le point d'envoi :
+            // celle-ci n'apparait donc plus du tout, pas meme reassemblee.
+            const ENDPOINT = "https://formsubmit.co/ajax/ea4b9d9834431e70c724007b4804a789";
+
+            // Conserves uniquement pour le message de secours affiche si l'envoi
+            // echoue : le visiteur doit alors pouvoir ecrire directement.
             const NOM = "docmaster.contact";
             const DOMAINE = "proton.me";
-
-            // Tant que l'alias n'est pas connu, on vise l'adresse reassemblee.
-            const DESTINATAIRE = NOM + String.fromCharCode(64) + DOMAINE;
-            const ENDPOINT = "https://formsubmit.co/ajax/" + DESTINATAIRE;
 
             const form = document.getElementById("form-idee");
             const bouton = document.getElementById("idee-envoyer");
