@@ -95,11 +95,30 @@
         const guide = guideCourant();
 
         // --- 1. Ouverture d'une sous-section ------------------------------
-        // L'evenement "toggle" ne remonte pas dans l'arbre : il faut ecouter
+        //
+        // Deux gestes ouvrent toutes les sections d'un coup : le bouton « Tout
+        // deplier », et l'impression. Les compter reviendrait a enregistrer un
+        // interet pour chaque section alors que le visiteur n'en a designe
+        // aucune — un seul clic ferait paraitre les cinq sections egalement
+        // lues, et le classement ne voudrait plus rien dire.
+        //
+        // « toggle » est emis de façon asynchrone : le drapeau doit rester leve
+        // un court instant apres le geste, le temps que les evenements arrivent.
+        let enMasse = false;
+        const ignorerUnInstant = () => {
+            enMasse = true;
+            setTimeout(() => { enMasse = false; }, 300);
+        };
+
+        const boutonDeplier = document.getElementById("tout-deplier");
+        if (boutonDeplier) boutonDeplier.addEventListener("click", ignorerUnInstant, true);
+        window.addEventListener("beforeprint", ignorerUnInstant);
+
+        // L'evenement « toggle » ne remonte pas dans l'arbre : il faut ecouter
         // chaque bloc, un ecouteur sur le document ne verrait rien.
         document.querySelectorAll("details.lecon").forEach(bloc => {
             bloc.addEventListener("toggle", () => {
-                if (!bloc.open) return;
+                if (!bloc.open || enMasse) return;
                 const h3 = bloc.querySelector("summary h3");
                 if (!h3 || !h3.id) return;
                 mesurer("section/" + guide + "/" + h3.id,
