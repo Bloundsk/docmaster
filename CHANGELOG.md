@@ -1,5 +1,20 @@
 # Changelog — DocMaster
 
+## 2026-08-09 — Navigation réordonnée, en haut comme en bas
+- Nouvel ordre : **Accueil · Glossaire · Boîte à idées · FAQ · À propos · Mon espace**
+- Le **pied de page** suivait son propre ordre : un lien ne se cherchait pas au même
+  endroit selon qu'on regardait le haut ou le bas de la page. Il reprend désormais celui
+  de la barre de navigation. Deux différences assumées — « Accueil » n'y figure pas, le
+  logo y mène déjà, et les mentions légales ferment la liste comme il est d'usage
+- **Correction d'une régression du correctif de la veille.** La hauteur de la barre était
+  mesurée trop tôt, avant que la feuille de style ne soit appliquée : 126 px au lieu de
+  70, et le titre de section visé descendait d'autant. Les visiteurs sans le CSS en
+  cache — donc au premier passage — étaient concernés
+- Les deux garde-fous prévus n'avaient rien rattrapé : `document.fonts.ready` se résout
+  trop tôt, et le `ResizeObserver` **ne se déclenche pas du tout** sur certains
+  navigateurs. La mesure se fait maintenant aussi au chargement complet de la page,
+  et c'est celle-là qui fait foi
+
 ## 2026-08-09 — Copie de sauvegarde vérifiée sur clé USB
 - Un script dépose la sauvegarde sur la clé, la **date** au lieu de l'écraser, et
   **compare les empreintes** pour confirmer que la copie est fidèle
