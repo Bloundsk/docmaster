@@ -28,13 +28,17 @@
     const footerHTML = `
         <footer>
             <p>© DocMaster</p>
+            <!-- Même ordre que la barre de navigation, pour qu'un lien se cherche
+                 au même endroit en haut et en bas. « Accueil » n'y figure pas :
+                 le logo y mène déjà. Les mentions légales ferment la liste,
+                 comme il est d'usage. -->
             <nav aria-label="Liens de pied de page">
-                <a href="${base}a-propos.html">À propos</a>·
-                <a href="${base}faq.html">FAQ</a>·
+                <a href="${base}glossaire.html">Glossaire</a>·
                 <a href="${base}idees.html">Boîte à idées</a>·
+                <a href="${base}faq.html">FAQ</a>·
+                <a href="${base}a-propos.html">À propos</a>·
                 <a href="${base}mon-espace.html">Mon espace</a>·
-                <a href="${base}mentions-legales.html">Mentions légales</a>·
-                <a href="${base}glossaire.html">Glossaire</a>
+                <a href="${base}mentions-legales.html">Mentions légales</a>
             </nav>
         </footer>`;
 
