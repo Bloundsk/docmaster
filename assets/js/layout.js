@@ -16,10 +16,10 @@
                 <ul class="nav-links">
                     <li><a href="${base}index.html">Accueil</a></li>
                     <li><a href="${base}glossaire.html">Glossaire</a></li>
-                    <li><a href="${base}faq.html">FAQ</a></li>
                     <li><a href="${base}idees.html">Boîte à idées</a></li>
-                    <li><a href="${base}mon-espace.html">⭐ Mon espace</a></li>
+                    <li><a href="${base}faq.html">FAQ</a></li>
                     <li><a href="${base}a-propos.html">À propos</a></li>
+                    <li><a href="${base}mon-espace.html">⭐ Mon espace</a></li>
                 </ul>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Activer ou désactiver le mode sombre">🌙</button>
             </div>
@@ -65,11 +65,25 @@
             }
         };
         appliquer();
-        // Redimensionnement, rotation de l'écran, ou polices chargées après coup :
-        // autant d'occasions pour la navbar de changer de hauteur.
+
+        // « load » est la mesure qui compte : à DOMContentLoaded, la feuille de
+        // style peut n'être pas encore appliquée, et la navbar est alors mesurée
+        // dans sa forme brute — les liens empilés, 126 px au lieu de 70. La
+        // valeur restait figée sur cette mesure fausse chez tout visiteur
+        // arrivant sans le CSS en cache, c'est-à-dire au premier passage.
+        window.addEventListener("load", appliquer);
+
+        // Redimensionnement et rotation de l'écran.
         window.addEventListener("resize", appliquer);
+
+        // Les polices arrivent souvent après le reste et modifient la hauteur.
         if (document.fonts && document.fonts.ready) document.fonts.ready.then(appliquer);
-        if (window.ResizeObserver) new ResizeObserver(appliquer).observe(navbar);
+
+        // Filet supplémentaire là où il fonctionne. À ne pas considérer comme
+        // acquis : sur certains navigateurs, il ne se déclenche jamais.
+        if (window.ResizeObserver) {
+            try { new ResizeObserver(appliquer).observe(navbar); } catch (e) {}
+        }
     }
 
     // Statistiques d'audience (GoatCounter) : aucun cookie, aucune donnée personnelle.
