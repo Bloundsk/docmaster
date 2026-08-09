@@ -46,7 +46,31 @@
         if (footerPlaceholder) {
             footerPlaceholder.outerHTML = footerHTML;
         }
+        mesurerNavbar();
     });
+
+    // La navbar est collante : sans compensation, elle recouvre le titre de la
+    // section visée par un lien d'ancre. Le CSS pose une valeur de repli, mais
+    // une constante ne peut pas suivre une navbar dont la hauteur dépend de la
+    // largeur de l'écran : entre 700 px et ~840 px les liens passent sur une
+    // deuxième ligne, la navbar atteint 123 px, et 40 px du titre restaient
+    // cachés. On mesure donc la hauteur réelle plutôt que de la deviner.
+    function mesurerNavbar() {
+        const navbar = document.querySelector(".navbar");
+        if (!navbar) return;
+        const appliquer = () => {
+            const h = Math.round(navbar.getBoundingClientRect().height);
+            if (h > 0) {
+                document.documentElement.style.setProperty("--decalage-ancre", (h + 12) + "px");
+            }
+        };
+        appliquer();
+        // Redimensionnement, rotation de l'écran, ou polices chargées après coup :
+        // autant d'occasions pour la navbar de changer de hauteur.
+        window.addEventListener("resize", appliquer);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(appliquer);
+        if (window.ResizeObserver) new ResizeObserver(appliquer).observe(navbar);
+    }
 
     // Statistiques d'audience (GoatCounter) : aucun cookie, aucune donnée personnelle.
     // Placé ici plutôt que dans chaque page : toutes les pages chargent ce script.
