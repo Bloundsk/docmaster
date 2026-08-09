@@ -148,6 +148,19 @@
             border-top: 1px solid var(--background);
         }
 
+        /* Retour apres envoi : succes ou echec, annonce aussi aux lecteurs
+           d'ecran via role="status" sur le conteneur. */
+        .form-retour {
+            margin-top: 20px;
+            padding: 16px 20px;
+            border-radius: 10px;
+            line-height: 1.5;
+        }
+        .form-retour.succes { background: rgba(34,197,94,.12); border-left: 4px solid #22c55e; }
+        .form-retour.erreur { background: rgba(239,68,68,.12); border-left: 4px solid #ef4444; }
+
+        .btn-envoyer:disabled { opacity: .6; cursor: wait; transform: none; box-shadow: none; }
+
         @media (prefers-reduced-motion: reduce) {
             .btn-envoyer { transition: none; }
             .btn-envoyer:hover { transform: none; }
@@ -258,19 +271,25 @@
                         </select>
                     </div>
 
+                    <!-- Champ piege : invisible pour un humain, rempli par les robots.
+                         Toute soumission qui le renseigne est ignoree en silence.
+                         C'est ce qui permet de se passer d'un captcha, et donc de
+                         Google et de ses cookies. -->
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+                           aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;">
+
                     <div class="form-actions">
-                        <button type="submit" class="btn-envoyer">✉️ Ouvrir ma messagerie</button>
-                        <button type="button" class="btn-copier" id="idee-copier">📋 Copier le message</button>
+                        <button type="submit" class="btn-envoyer" id="idee-envoyer">Envoyer ma suggestion</button>
                     </div>
                 </form>
 
-                <p class="form-note" id="idee-note">
-                    Ce formulaire <strong>n'envoie rien tout seul</strong> : il prépare un message et
-                    ouvre votre logiciel de messagerie, où vous relisez et décidez d'envoyer. Aucun
-                    service tiers n'est sollicité, aucun cookie n'est déposé.
+                <div id="idee-retour" role="status" aria-live="polite"></div>
+
+                <p class="form-note">
+                    Votre suggestion part directement d'ici, sans quitter la page et sans logiciel de
+                    messagerie. Vous n'avez rien d'autre à faire.
                     <br><br>
-                    Si votre appareil n'a pas de logiciel de messagerie configuré, utilisez
-                    « Copier le message » puis collez-le dans un courriel adressé à
+                    Aucune adresse ne vous est demandée. Si vous souhaitez une réponse, écrivez plutôt à
                     <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span>.
                 </p>
             </div>
@@ -284,81 +303,97 @@
     <script src="assets/js/enhance.js"></script>
     <script>
         // ===================================
-        // Formulaire de suggestion — par courriel
+        // Formulaire de suggestion — envoi direct
         // ===================================
-        // Le site est statique : il ne peut rien envoyer lui-meme. Le formulaire
-        // assemble un message et ouvre le logiciel de messagerie du visiteur, qui
-        // relit et decide. Aucun service tiers, aucun cookie.
+        // Le site est statique et ne peut rien envoyer lui-meme. Le formulaire
+        // poste donc vers FormSubmit, un relai gratuit et sans inscription qui
+        // transmet le message a la boite de l'editeur.
         //
-        // L'adresse n'apparait jamais en clair dans le code source : elle est
-        // reassemblee ici, comme ailleurs sur le site, pour ne pas etre moissonnee
-        // par les robots collecteurs.
+        // Choix retenus :
+        //  - envoi en AJAX : le visiteur reste sur la page et voit une
+        //    confirmation, au lieu d'etre redirige vers un site inconnu
+        //  - _captcha desactive : le reCAPTCHA de FormSubmit chargerait Google
+        //    et ses cookies, ce que le site s'interdit. Le champ piege _honey
+        //    joue ce role sans script tiers
+        //  - l'adresse reste hors du code source, comme partout ailleurs
+        //
+        // ETAPE RESTANTE : apres la premiere soumission, FormSubmit envoie un
+        // courriel de confirmation contenant un identifiant aleatoire. Remplacer
+        // alors DESTINATAIRE par cet identifiant : l'adresse disparaitra
+        // completement, meme reassemblee.
 
         (function () {
             const NOM = "docmaster.contact";
             const DOMAINE = "proton.me";
-            const adresse = () => NOM + String.fromCharCode(64) + DOMAINE;
+
+            // Tant que l'alias n'est pas connu, on vise l'adresse reassemblee.
+            const DESTINATAIRE = NOM + String.fromCharCode(64) + DOMAINE;
+            const ENDPOINT = "https://formsubmit.co/ajax/" + DESTINATAIRE;
 
             const form = document.getElementById("form-idee");
-            const note = document.getElementById("idee-note");
+            const bouton = document.getElementById("idee-envoyer");
+            const retour = document.getElementById("idee-retour");
 
-            function composer() {
+            const afficher = (texte, type) => {
+                retour.innerHTML = '<p class="form-retour ' + type + '">' + texte + "</p>";
+            };
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
                 const sujet = document.getElementById("idee-sujet").value.trim();
                 const pourquoi = document.getElementById("idee-pourquoi").value.trim();
                 const piste = document.getElementById("idee-piste").value;
+                const piege = form.querySelector('[name="_honey"]').value;
 
                 if (!sujet) {
+                    afficher("Merci d'indiquer au moins le sujet que vous proposez.", "erreur");
                     document.getElementById("idee-sujet").focus();
-                    return null;
+                    return;
                 }
 
-                let corps = "Sujet proposé :\n" + sujet + "\n";
-                if (pourquoi) corps += "\nPourquoi ce sujet m'intéresse :\n" + pourquoi + "\n";
-                if (piste) corps += "\nPiste envisagée qui m'intéresse le plus :\n" + piste + "\n";
-                corps += "\n— Envoyé depuis la boîte à idées de DocMaster";
+                // Robot : on fait comme si tout allait bien, sans rien envoyer.
+                if (piege) { afficher("Merci, votre suggestion a bien été envoyée.", "succes"); form.reset(); return; }
 
-                return {
-                    objet: "Boîte à idées — " + sujet.slice(0, 70),
-                    corps: corps
-                };
-            }
+                bouton.disabled = true;
+                const libelle = bouton.textContent;
+                bouton.textContent = "Envoi en cours…";
+                afficher("", "");
 
-            function message(texte) {
-                note.insertAdjacentHTML("afterbegin",
-                    '<strong id="idee-retour" style="display:block;color:var(--primary);margin-bottom:10px;">'
-                    + texte + "</strong>");
-                setTimeout(() => {
-                    const el = document.getElementById("idee-retour");
-                    if (el) el.remove();
-                }, 5000);
-            }
-
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
-                const m = composer();
-                if (!m) { message("Merci d'indiquer au moins le sujet proposé."); return; }
-                window.location.href = "mailto:" + adresse()
-                    + "?subject=" + encodeURIComponent(m.objet)
-                    + "&body=" + encodeURIComponent(m.corps);
-            });
-
-            document.getElementById("idee-copier").addEventListener("click", async () => {
-                const m = composer();
-                if (!m) { message("Merci d'indiquer au moins le sujet proposé."); return; }
-                const texte = "À : " + adresse() + "\nObjet : " + m.objet + "\n\n" + m.corps;
                 try {
-                    await navigator.clipboard.writeText(texte);
-                    message("Message copié. Collez-le dans un courriel adressé à " + adresse());
+                    const reponse = await fetch(ENDPOINT, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", Accept: "application/json" },
+                        body: JSON.stringify({
+                            "Sujet proposé": sujet,
+                            "Pourquoi ce sujet": pourquoi || "(non précisé)",
+                            "Piste envisagée": piste || "(aucune en particulier)",
+                            _subject: "Boîte à idées — " + sujet.slice(0, 70),
+                            _template: "table",
+                            _captcha: "false"
+                        })
+                    });
+
+                    if (!reponse.ok) throw new Error("HTTP " + reponse.status);
+
+                    afficher(
+                        "<strong>Merci, votre suggestion est bien partie.</strong><br>" +
+                        "Elle sera lue et pourra orienter les prochains guides.",
+                        "succes"
+                    );
+                    form.reset();
                 } catch (err) {
-                    // Le presse-papiers est refuse hors HTTPS ou sans geste utilisateur :
-                    // on affiche le texte pour que le visiteur puisse le selectionner.
-                    message("Copie automatique impossible — sélectionnez le texte ci-dessous :");
-                    const zone = document.createElement("textarea");
-                    zone.value = texte;
-                    zone.rows = 10;
-                    zone.style.cssText = "width:100%;margin-top:12px;padding:12px;border-radius:10px;font-family:inherit;";
-                    note.appendChild(zone);
-                    zone.select();
+                    // Panne du relai, coupure reseau, bloqueur de publicite :
+                    // on donne une porte de sortie plutot qu'un echec sec.
+                    afficher(
+                        "<strong>L'envoi n'a pas abouti.</strong><br>" +
+                        "Vous pouvez réessayer, ou écrire directement à " +
+                        NOM + String.fromCharCode(64) + DOMAINE + ".",
+                        "erreur"
+                    );
+                } finally {
+                    bouton.disabled = false;
+                    bouton.textContent = libelle;
                 }
             });
         })();
