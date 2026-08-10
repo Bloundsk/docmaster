@@ -17,7 +17,7 @@ window.DOCMASTER_PARCOURS = {
     ia:              { titre: "🤖 Intelligence Artificielle",   niveaux: [] },
     "dev-web":       { titre: "💻 Développement Web",           niveaux: [] },
     marketing:       { titre: "📢 Marketing Digital",           niveaux: [] },
-    cybersecurite:   { titre: "🔒 Cybersécurité",               niveaux: [] },
+    cybersecurite:   { titre: "🔒 Cybersécurité",               niveaux: ["debutant", "intermediaire", "avance"] },
     entrepreneuriat: { titre: "🚀 Entrepreneuriat",             niveaux: [] },
     productivite:    { titre: "⏱️ Productivité & Organisation", niveaux: [] },
     data:            { titre: "📊 Data & Analytics",            niveaux: [] },

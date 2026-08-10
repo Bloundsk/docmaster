@@ -531,6 +531,26 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
 
 .pratique-lecon { margin: 14px 0 0; font-size: .92rem; font-style: italic; color: var(--muted); }
 
+/* Exercice de vérification : une liste de points à cocher.
+   La case précède le texte et lui est liée par son <label>, si bien qu'un clic
+   n'importe où sur la ligne la coche — y compris sur un écran tactile, où viser
+   une case de 16 pixels n'est pas raisonnable. */
+.pratique-controle { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; gap: 12px; }
+.pratique-controle li { display: grid; grid-template-columns: auto 1fr; gap: 4px 11px; align-items: start; }
+.pratique-controle input { width: 19px; height: 19px; margin: 2px 0 0; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
+.pratique-controle label { cursor: pointer; line-height: 1.45; }
+.pratique-controle input:checked + label { color: var(--muted); }
+.pratique-aide { grid-column: 2; font-size: .85rem; color: var(--muted); font-style: italic; }
+
+/* Le verdict change de couleur selon ce qui est coché : le regard doit trouver
+   l'état sans lire la phrase. */
+.pratique-ligne.ton-bon .pratique-valeur { color: #059669; }
+.pratique-ligne.ton-moyen .pratique-valeur { color: var(--primary); }
+.pratique-ligne.ton-alerte .pratique-valeur { color: #dc2626; }
+.pratique-ligne.ton-bon .pratique-libelle,
+.pratique-ligne.ton-moyen .pratique-libelle,
+.pratique-ligne.ton-alerte .pratique-libelle { color: var(--text); font-weight: 500; }
+
 @media (max-width: 700px) {
     .pratique { padding: 18px; }
     .pratique-champs { grid-template-columns: 1fr; }

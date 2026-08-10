@@ -11,12 +11,22 @@
 // a la main, ce serait treize occasions de diverger sur l accessibilite, le
 // formatage des nombres ou la gestion des saisies vides.
 //
-// Chaque simulateur declare :
+// Deux types d exercice, parce que toutes les competences ne se chiffrent pas.
+// En finance, la pratique est un calcul ; en cybersecurite, c est une
+// verification. Forcer la seconde dans le moule de la premiere aurait donne
+// des simulateurs artificiels.
+//
+// Type « calcul » (par defaut) :
 //   titre     ce qu on y fait
 //   intro     la question a laquelle il repond          (facultatif)
 //   champs    [{ id, libelle, unite, defaut, min, max, pas }]
 //   calculer  (valeurs) -> [{ libelle, valeur, fort }]  la ou les lignes de resultat
 //   lecon     phrase affichee sous le resultat, qui relie au cours (facultatif)
+//
+// Type « controle » :
+//   type      "controle"
+//   points    [{ texte, aide }]   ce qu il faut verifier, un par case
+//   verdict   (coches, total) -> { texte, ton }   ton : "bon" | "moyen" | "alerte"
 
 (function () {
 
@@ -324,6 +334,265 @@
                 ];
             },
             lecon: "Ce sont les dernières années qui portent les intérêts les plus lourds — et ce sont elles qu'un report supprime."
+        },
+
+        // ================= CYBERSÉCURITÉ =================
+
+        // ---------- Niveau débutant ----------
+
+        "force-mot-de-passe": {
+            titre: "Mesurez la solidité d'un mot de passe",
+            intro: "La longueur pèse bien plus lourd que la complexité. Ce calcul le montre.",
+            champs: [
+                { id: "longueur", libelle: "Nombre de caractères", unite: "car.", defaut: 12, min: 4, max: 40, pas: 1 },
+                { id: "jeu", libelle: "Caractères différents utilisés (26 = minuscules, 62 = + majuscules et chiffres, 95 = + symboles)", unite: "", defaut: 62, min: 10, max: 95, pas: 1 },
+                { id: "vitesse", libelle: "Essais par seconde de l'attaquant", unite: "milliards", defaut: 100, min: 1, max: 10000, pas: 10 }
+            ],
+            calculer: ({ longueur, jeu, vitesse }) => {
+                // Math.pow deborde vite : on raisonne en logarithmes.
+                const log10Combinaisons = longueur * Math.log10(jeu);
+                const log10Secondes = log10Combinaisons - Math.log10(vitesse * 1e9) - Math.log10(2);
+                const log10Annees = log10Secondes - Math.log10(3.15e7);
+
+                let duree;
+                if (log10Secondes < 0) duree = "moins d'une seconde";
+                else if (log10Secondes < 1.78) duree = "quelques secondes";
+                else if (log10Secondes < 3.56) duree = "moins d'une heure";
+                else if (log10Secondes < 4.94) duree = "quelques heures";
+                else if (log10Annees < 0) duree = "moins d'un an";
+                else if (log10Annees < 6) duree = nf(Math.pow(10, log10Annees)) + " ans";
+                else duree = "10^" + Math.round(log10Annees) + " ans";
+
+                return [
+                    { libelle: "Combinaisons possibles", valeur: "10^" + Math.round(log10Combinaisons) },
+                    { libelle: "Temps de recherche exhaustive", valeur: duree, fort: true }
+                ];
+            },
+            lecon: "Ajoutez deux caractères plutôt qu'un symbole : l'effet sur le temps de recherche est sans commune mesure."
+        },
+
+        "signaux-phishing": {
+            type: "controle",
+            titre: "Passez un message suspect au crible",
+            intro: "Cochez ce que vous constatez sur le message que vous avez sous les yeux.",
+            points: [
+                { texte: "Il crée l'urgence : compte bloqué, dernier avertissement, délai de 24 h" },
+                { texte: "L'adresse de l'expéditeur ne correspond pas exactement au domaine officiel", aide: "survolez-la, ne lisez pas seulement le nom affiché" },
+                { texte: "Le lien pointe ailleurs que ce qu'il annonce", aide: "survolez sans cliquer et lisez l'adresse réelle" },
+                { texte: "On me demande un mot de passe, un code ou des coordonnées bancaires" },
+                { texte: "Le message est inattendu, ou concerne un service que je n'utilise pas" },
+                { texte: "La formule d'appel est générique — « Cher client » plutôt que mon nom" },
+                { texte: "Une pièce jointe m'est envoyée sans que je l'aie demandée" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Aucun signal relevé. Vérifiez tout de même en passant par le site officiel, jamais par le lien du message.", ton: "bon" };
+                if (n <= 2) return { texte: "Signaux relevés. Ne cliquez pas : rendez-vous sur le site officiel par vos propres moyens.", ton: "moyen" };
+                return { texte: "Faisceau clair d'indices. Supprimez le message et signalez-le.", ton: "alerte" };
+            },
+            lecon: "Un seul signal suffit à justifier la méfiance. Aucun ne suffit à garantir l'authenticité."
+        },
+
+        "protections-de-base": {
+            type: "controle",
+            titre: "Vérifiez vos protections de base",
+            intro: "Les quatre premières lignes coûtent zéro euro et couvrent l'essentiel du risque courant.",
+            points: [
+                { texte: "Les mises à jour de mon système sont installées automatiquement" },
+                { texte: "Les mises à jour de mon navigateur le sont aussi", aide: "c'est lui qui affronte le web en première ligne" },
+                { texte: "Le pare-feu de mon système est actif" },
+                { texte: "Un antivirus est actif et à jour", aide: "celui intégré au système suffit dans la plupart des cas" },
+                { texte: "Je n'installe de logiciels que depuis leur site officiel ou une boutique d'applications" },
+                { texte: "Ma session est protégée par un mot de passe ou une biométrie" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Base saine. C'est le socle sur lequel tout le reste s'appuie.", ton: "bon" };
+                if (n >= total - 2) return { texte: "Presque. Les points restants sont ceux qui demandent le moins d'effort.", ton: "moyen" };
+                return { texte: "Plusieurs protections élémentaires manquent — commencez par les mises à jour automatiques.", ton: "alerte" };
+            },
+            lecon: "La grande majorité des compromissions exploitent une faille déjà corrigée par une mise à jour disponible."
+        },
+
+        "ou-est-le-chiffrement": {
+            type: "controle",
+            titre: "Repérez où vos données sont chiffrées",
+            intro: "Le chiffrement ne protège que là où il est effectivement appliqué.",
+            points: [
+                { texte: "Le disque de mon ordinateur est chiffré", aide: "BitLocker sous Windows, FileVault sous macOS" },
+                { texte: "Mon téléphone est chiffré et verrouillé par code" },
+                { texte: "Les sites que j'utilise affichent bien « https » " },
+                { texte: "Mes sauvegardes sont chiffrées, pas seulement copiées" },
+                { texte: "Ma messagerie sensible utilise un chiffrement de bout en bout" },
+                { texte: "Ma clé USB, si j'en utilise une, est chiffrée", aide: "c'est l'objet le plus facile à perdre" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Vos données sont protégées au repos comme en transit.", ton: "bon" };
+                if (n >= 3) return { texte: "L'essentiel est couvert. Les points restants concernent surtout la perte ou le vol.", ton: "moyen" };
+                return { texte: "Un appareil perdu livrerait aujourd'hui son contenu à qui le trouve.", ton: "alerte" };
+            },
+            lecon: "Le chiffrement du disque ne coûte rien et ne se remarque pas — jusqu'au jour où l'appareil disparaît."
+        },
+
+        // ---------- Niveau intermédiaire ----------
+
+        "propagation-fuite": {
+            titre: "Mesurez la propagation d'une fuite",
+            intro: "Un mot de passe réutilisé transforme une fuite unique en compromission générale.",
+            champs: [
+                { id: "comptes", libelle: "Nombre de comptes en ligne que vous possédez", unite: "comptes", defaut: 80, min: 1, max: 500, pas: 5 },
+                { id: "reutilisation", libelle: "Part de ces comptes partageant le même mot de passe", unite: "%", defaut: 60, min: 0, max: 100, pas: 5 }
+            ],
+            calculer: ({ comptes, reutilisation }) => {
+                const exposes = Math.round(comptes * reutilisation / 100);
+                return [
+                    { libelle: "Comptes utilisant ce mot de passe", valeur: nf(exposes) },
+                    { libelle: "Comptes accessibles après UNE seule fuite", valeur: nf(exposes), fort: true },
+                    { libelle: "Comptes restés hors d'atteinte", valeur: nf(comptes - exposes) }
+                ];
+            },
+            lecon: "Les listes issues de fuites sont rejouées automatiquement sur des centaines d'autres services. Aucun attaquant humain n'intervient."
+        },
+
+        "robustesse-2fa": {
+            type: "controle",
+            titre: "Classez vos comptes par exposition",
+            intro: "Tous les comptes ne se valent pas : certains servent à récupérer tous les autres.",
+            points: [
+                { texte: "Ma boîte mail principale a une double authentification", aide: "c'est la clé de tout le reste : elle réinitialise les autres comptes" },
+                { texte: "Mes comptes bancaires en ont une" },
+                { texte: "Mon gestionnaire de mots de passe en a une" },
+                { texte: "Mes réseaux sociaux en ont une" },
+                { texte: "J'utilise une application ou une clé physique plutôt que le SMS", aide: "le SMS est interceptable par détournement de carte SIM" },
+                { texte: "J'ai conservé mes codes de secours ailleurs que sur le téléphone concerné" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Vos comptes critiques sont protégés, y compris en cas de perte du téléphone.", ton: "bon" };
+                if (n >= 3) return { texte: "Bonne base. Traitez la boîte mail en priorité si elle n'est pas encore couverte.", ton: "moyen" };
+                return { texte: "Un mot de passe volé suffirait aujourd'hui à entrer.", ton: "alerte" };
+            },
+            lecon: "Protéger sa boîte mail avant tout le reste : c'est elle qui permet de réinitialiser les autres comptes."
+        },
+
+        "regle-3-2-1": {
+            type: "controle",
+            titre: "Confrontez vos sauvegardes à la règle 3-2-1",
+            intro: "Trois copies, sur deux supports différents, dont une hors ligne.",
+            points: [
+                { texte: "Mes données existent en au moins trois exemplaires" },
+                { texte: "Elles sont sur au moins deux supports de nature différente", aide: "disque interne et disque externe, par exemple" },
+                { texte: "Une copie est hors du logement", aide: "un incendie ou un vol emporte tout ce qui est au même endroit" },
+                { texte: "Une copie est déconnectée en permanence", aide: "un rançongiciel chiffre tout ce qui est accessible, y compris le disque branché" },
+                { texte: "J'ai déjà restauré un fichier depuis cette sauvegarde", aide: "une sauvegarde jamais restaurée n'est qu'une hypothèse" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Vous survivriez à un rançongiciel comme à une panne matérielle.", ton: "bon" };
+                if (n >= 3) return { texte: "Il manque l'essentiel : la copie déconnectée, ou le test de restauration.", ton: "moyen" };
+                return { texte: "Une seule mauvaise journée suffirait à tout perdre.", ton: "alerte" };
+            },
+            lecon: "Une sauvegarde branchée en permanence est chiffrée en même temps que l'original. Elle ne compte pas."
+        },
+
+        "ce-que-protege-un-vpn": {
+            type: "controle",
+            titre: "Cochez ce qu'un VPN protège réellement",
+            intro: "Cochez uniquement les affirmations exactes. Certaines sont fausses.",
+            points: [
+                { texte: "Il masque mon adresse IP au site que je visite", aide: "exact" },
+                { texte: "Il empêche le gestionnaire du wifi public de voir les sites visités", aide: "exact" },
+                { texte: "Il me rend anonyme sur les sites où je suis connecté", aide: "faux : un compte connecté vous identifie, VPN ou non" },
+                { texte: "Il protège contre le phishing et les logiciels malveillants", aide: "faux : il transporte le trafic, il ne l'inspecte pas" },
+                { texte: "Il remplace le HTTPS", aide: "faux : HTTPS chiffre jusqu'au site, le VPN seulement jusqu'à son propre serveur" },
+                { texte: "Il déplace ma confiance du fournisseur d'accès vers le fournisseur de VPN", aide: "exact, et c'est le point le plus important" }
+            ],
+            verdict: (n, total) => {
+                if (n === 3) return { texte: "Trois affirmations sont exactes. Si vous en avez coché exactement trois, vérifiez lesquelles.", ton: "moyen" };
+                if (n > 3) return { texte: "Plus de trois cases cochées : certaines affirmations sont fausses. Lisez les indications.", ton: "alerte" };
+                return { texte: "Trois de ces affirmations sont exactes. Les indications vous disent lesquelles.", ton: "moyen" };
+            },
+            lecon: "Un VPN déplace la confiance, il ne la supprime pas. La question devient : ce fournisseur mérite-t-il plus de confiance que le précédent ?"
+        },
+
+        // ---------- Niveau avancé ----------
+
+        "reflexes-apres-fuite": {
+            type: "controle",
+            titre: "Établissez votre conduite après une fuite",
+            intro: "L'ordre compte : certains gestes rendent les suivants inutiles s'ils sont faits trop tard.",
+            points: [
+                { texte: "Changer d'abord le mot de passe de la boîte mail de secours", aide: "sans elle, l'attaquant reprend tout le reste" },
+                { texte: "Changer ensuite le mot de passe du service concerné" },
+                { texte: "Changer partout où ce mot de passe avait été réutilisé" },
+                { texte: "Vérifier les règles de redirection automatique de la messagerie", aide: "une règle de transfert survit à un changement de mot de passe" },
+                { texte: "Déconnecter toutes les sessions actives depuis les réglages du compte" },
+                { texte: "Vérifier les appareils et applications autorisés" },
+                { texte: "Activer la double authentification si elle ne l'était pas" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Conduite complète, y compris les points que la plupart oublient.", ton: "bon" };
+                if (n >= 4) return { texte: "L'essentiel y est. Les règles de redirection sont le point le plus souvent négligé.", ton: "moyen" };
+                return { texte: "Changer le mot de passe ne suffit pas à reprendre le contrôle.", ton: "alerte" };
+            },
+            lecon: "Une règle de transfert automatique posée par un attaquant continue de fonctionner après le changement de mot de passe."
+        },
+
+        "signaux-spear-phishing": {
+            type: "controle",
+            titre: "Reconnaissez une attaque ciblée",
+            intro: "Le hameçonnage ciblé ne présente aucun des signaux grossiers du hameçonnage de masse.",
+            points: [
+                { texte: "Le message me connaît : mon nom, mon poste, un projet en cours" },
+                { texte: "Il semble venir d'un collègue ou d'un supérieur" },
+                { texte: "Il demande une action inhabituelle mais plausible", aide: "un virement urgent, un changement de coordonnées bancaires" },
+                { texte: "Il insiste sur la discrétion ou l'urgence" },
+                { texte: "Il arrive à un moment opportun — veille de congés, clôture comptable" },
+                { texte: "Il évite le téléphone et privilégie l'écrit" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Aucun signal. La vérification par un autre canal reste la seule certitude.", ton: "bon" };
+                if (n <= 2) return { texte: "Vérifiez par un canal différent — appelez un numéro que vous connaissez déjà.", ton: "moyen" };
+                return { texte: "Profil typique d'une attaque ciblée. N'agissez pas avant vérification directe.", ton: "alerte" };
+            },
+            lecon: "Contre une attaque ciblée, la parade n'est pas de mieux lire le message : c'est de vérifier par un autre canal."
+        },
+
+        "metadonnees-visibles": {
+            type: "controle",
+            titre: "Distinguez le contenu des métadonnées",
+            intro: "Cochez ce qui reste visible malgré un chiffrement de bout en bout.",
+            points: [
+                { texte: "Le texte de mes messages", aide: "non : c'est précisément ce que le chiffrement protège" },
+                { texte: "L'identité de mes correspondants", aide: "oui, dans la plupart des messageries" },
+                { texte: "La date et l'heure de chaque échange", aide: "oui" },
+                { texte: "La fréquence et le volume de mes échanges", aide: "oui" },
+                { texte: "Mon adresse IP, donc une localisation approximative", aide: "oui, sauf protection spécifique" },
+                { texte: "Le fait même que je sois inscrit sur ce service", aide: "oui" }
+            ],
+            verdict: (n) => {
+                if (n === 5) return { texte: "Cinq de ces éléments restent visibles. Si vous avez coché les cinq derniers, c'est exact.", ton: "bon" };
+                if (n >= 6) return { texte: "Le contenu, lui, est bien protégé : c'est le seul élément à ne pas cocher.", ton: "alerte" };
+                return { texte: "Cinq de ces six éléments restent visibles. Les indications précisent lesquels.", ton: "moyen" };
+            },
+            lecon: "Qui parle à qui, quand et à quelle fréquence : ces données seules suffisent souvent à reconstituer une situation."
+        },
+
+        "score-exposition": {
+            titre: "Chiffrez votre surface d'attaque",
+            intro: "Le nombre de comptes compte moins que la proportion de ceux qui sont mal protégés.",
+            champs: [
+                { id: "comptes", libelle: "Comptes en ligne possédés", unite: "comptes", defaut: 80, min: 1, max: 500, pas: 5 },
+                { id: "uniques", libelle: "Part avec un mot de passe unique", unite: "%", defaut: 40, min: 0, max: 100, pas: 5 },
+                { id: "avec2fa", libelle: "Part avec double authentification", unite: "%", defaut: 20, min: 0, max: 100, pas: 5 }
+            ],
+            calculer: ({ comptes, uniques, avec2fa }) => {
+                const fragiles = Math.round(comptes * (100 - uniques) / 100);
+                const sansSecond = Math.round(comptes * (100 - avec2fa) / 100);
+                const score = Math.round((uniques * 0.6 + avec2fa * 0.4));
+                return [
+                    { libelle: "Comptes à mot de passe partagé", valeur: nf(fragiles) },
+                    { libelle: "Comptes sans second facteur", valeur: nf(sansSecond) },
+                    { libelle: "Indice de protection", valeur: score + " / 100", fort: true }
+                ];
+            },
+            lecon: "Aucun de ces deux chiffres ne descend tout seul. Les faire baisser demande une séance, une fois — pas une vigilance permanente."
         }
     };
 
@@ -339,6 +608,8 @@
             "<h4>" + simulateur.titre + "</h4>" +
             (simulateur.intro ? "<p class=\"pratique-intro\">" + simulateur.intro + "</p>" : "");
         bloc.appendChild(entete);
+
+        if (simulateur.type === "controle") { construireControle(bloc, simulateur, nom); return; }
 
         const form = document.createElement("div");
         form.className = "pratique-champs";
@@ -426,6 +697,71 @@
             input.addEventListener("input", recalculer);
         }
         recalculer();
+    }
+
+    // --- Exercice de verification ----------------------------------------
+    // Une liste de points a cocher et un verdict qui evolue a mesure. Le
+    // verdict est deliberement formule sans culpabiliser : l objectif est
+    // qu on aille cocher les cases manquantes, pas qu on referme la page.
+
+    function construireControle(bloc, simulateur, nom) {
+        const liste = document.createElement("ul");
+        liste.className = "pratique-controle";
+
+        const cases = [];
+        simulateur.points.forEach((point, i) => {
+            const id = "pratique-" + nom + "-" + i;
+            const li = document.createElement("li");
+
+            const input = document.createElement("input");
+            input.type = "checkbox";
+            input.id = id;
+
+            const label = document.createElement("label");
+            label.setAttribute("for", id);
+            label.textContent = point.texte;
+
+            li.appendChild(input);
+            li.appendChild(label);
+
+            if (point.aide) {
+                const aide = document.createElement("span");
+                aide.className = "pratique-aide";
+                aide.textContent = point.aide;
+                li.appendChild(aide);
+            }
+
+            liste.appendChild(li);
+            cases.push(input);
+        });
+        bloc.appendChild(liste);
+
+        const resultat = document.createElement("div");
+        resultat.className = "pratique-resultat";
+        resultat.setAttribute("role", "status");
+        resultat.setAttribute("aria-live", "polite");
+        bloc.appendChild(resultat);
+
+        if (simulateur.lecon) {
+            const lecon = document.createElement("p");
+            lecon.className = "pratique-lecon";
+            lecon.textContent = simulateur.lecon;
+            bloc.appendChild(lecon);
+        }
+
+        function evaluer() {
+            const coches = cases.filter(c => c.checked).length;
+            const total = cases.length;
+            const v = simulateur.verdict(coches, total);
+            resultat.innerHTML =
+                '<div class="pratique-ligne fort ton-' + (v.ton || "moyen") + '">' +
+                '<span class="pratique-libelle">' + v.texte + "</span>" +
+                '<span class="pratique-valeur">' + coches + " / " + total + "</span>" +
+                "</div>";
+        }
+
+        cases.forEach(c => c.addEventListener("change", evaluer));
+        evaluer();
     }
 
     function demarrer() {
