@@ -593,6 +593,265 @@
                 ];
             },
             lecon: "Aucun de ces deux chiffres ne descend tout seul. Les faire baisser demande une séance, une fois — pas une vigilance permanente."
+        },
+
+        // ================= INTELLIGENCE ARTIFICIELLE =================
+
+        // ---------- Niveau débutant ----------
+
+        "anatomie-llm": {
+            type: "controle",
+            titre: "Ce qu'un modèle de langage fait, et ne fait pas",
+            intro: "Cochez uniquement les affirmations exactes. Trois le sont.",
+            points: [
+                { texte: "Il prédit le fragment de texte suivant, encore et encore", aide: "exact : c'est tout son fonctionnement" },
+                { texte: "Il consulte une base de connaissances à chaque réponse", aide: "faux : sauf si on lui en branche une explicitement" },
+                { texte: "Il peut produire une affirmation fausse avec une parfaite assurance", aide: "exact : rien dans son fonctionnement ne distingue vrai et plausible" },
+                { texte: "Il comprend le sens comme un humain le comprend", aide: "faux, et la question reste débattue" },
+                { texte: "Il n'a aucune mémoire entre deux conversations", aide: "exact : l'historique lui est renvoyé, il ne le retient pas" },
+                { texte: "Il calcule ses réponses à partir de règles écrites par des humains", aide: "faux : les règles ne sont écrites nulle part, elles sont apprises" }
+            ],
+            verdict: (n) => {
+                if (n === 3) return { texte: "Trois affirmations sont exactes. Vérifiez avec les indications que ce sont bien les vôtres.", ton: "bon" };
+                if (n > 3) return { texte: "Plus de trois cases cochées : certaines affirmations sont fausses.", ton: "alerte" };
+                return { texte: "Trois de ces affirmations sont exactes. Les indications vous disent lesquelles.", ton: "moyen" };
+            },
+            lecon: "Un modèle produit du texte plausible. Le vrai et le plausible coïncident souvent — pas toujours."
+        },
+
+        "anatomie-agent": {
+            type: "controle",
+            titre: "Distinguez un agent d'un assistant",
+            intro: "Cochez ce qui caractérise un agent, par opposition à un simple assistant conversationnel.",
+            points: [
+                { texte: "Il peut appeler des outils extérieurs" },
+                { texte: "Il enchaîne plusieurs étapes sans qu'on les lui dicte une par une" },
+                { texte: "Il observe le résultat d'une action avant de décider de la suivante" },
+                { texte: "Il poursuit un objectif plutôt que de répondre à une question" },
+                { texte: "Il peut produire des effets réels : envoyer, écrire, supprimer", aide: "c'est ce qui rend le périmètre de ses outils décisif" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Les cinq caractéristiques sont exactes. Un agent, c'est bien tout cela réuni.", ton: "bon" };
+                if (n >= 3) return { texte: "Bonne base. Les points restants sont également exacts.", ton: "moyen" };
+                return { texte: "Ces cinq points sont tous caractéristiques d'un agent.", ton: "moyen" };
+            },
+            lecon: "Ce n'est pas l'intelligence qui fait l'agent, c'est la capacité d'agir — et donc de se tromper avec conséquence."
+        },
+
+        "qualite-consigne": {
+            type: "controle",
+            titre: "Passez votre consigne au crible",
+            intro: "Reprenez une consigne que vous avez écrite, et cochez ce qui y figure vraiment.",
+            points: [
+                { texte: "Le rôle ou le point de vue attendu est précisé" },
+                { texte: "La tâche est décrite en une phrase claire" },
+                { texte: "Le format de sortie est imposé", aide: "liste, tableau, longueur maximale, langue" },
+                { texte: "Un ou deux exemples de ce qui est attendu sont fournis", aide: "l'ajout le plus efficace, presque toujours" },
+                { texte: "Ce qu'il ne faut PAS faire est indiqué" },
+                { texte: "La conduite à tenir en cas d'information manquante est prévue", aide: "sans quoi le modèle comblera le vide" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Consigne complète. C'est déjà mieux que la plupart.", ton: "bon" };
+                if (n >= 4) return { texte: "Solide. Les exemples et le cas « information manquante » sont les ajouts les plus rentables.", ton: "moyen" };
+                return { texte: "Plusieurs éléments manquent : le modèle devra deviner, et il devinera.", ton: "alerte" };
+            },
+            lecon: "Un modèle ne demande jamais de précision. Ce que la consigne ne dit pas, il le comble tout seul."
+        },
+
+        "signaux-hallucination": {
+            type: "controle",
+            titre: "Repérez une réponse à vérifier",
+            intro: "Cochez ce que présente la réponse que vous avez sous les yeux.",
+            points: [
+                { texte: "Elle cite une source précise — référence, article, page" },
+                { texte: "Elle donne des chiffres exacts sans indiquer d'où ils viennent" },
+                { texte: "Elle porte sur un fait récent ou daté" },
+                { texte: "Elle porte sur un sujet de niche, peu documenté" },
+                { texte: "Elle est affirmée sans la moindre nuance" },
+                { texte: "Elle concerne une personne, un lieu ou une entreprise nommément" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Aucun signal. La vérification reste utile pour tout ce qui vous engage.", ton: "bon" };
+                if (n <= 2) return { texte: "Quelques signaux. Vérifiez les éléments chiffrés et les noms propres.", ton: "moyen" };
+                return { texte: "Réponse à vérifier avant tout usage : plusieurs facteurs de risque sont réunis.", ton: "alerte" };
+            },
+            lecon: "Les inventions les plus dangereuses sont les plus plausibles : une référence bien formée qui n'existe pas."
+        },
+
+        // ---------- Niveau intermédiaire ----------
+
+        "cout-en-tokens": {
+            titre: "Mesurez le coût réel d'une conversation",
+            intro: "L'historique est relu à chaque tour. Ce n'est pas le dernier message qui coûte, c'est leur somme.",
+            champs: [
+                // 333 mots font 500 jetons : la valeur par defaut reproduit
+                // exactement l exemple du cours, sans quoi le lecteur verrait
+                // deux nombres differents pour la meme situation.
+                { id: "mots", libelle: "Mots par échange (question et réponse)", unite: "mots", defaut: 333, min: 10, max: 20000, pas: 10 },
+                { id: "tours", libelle: "Nombre d'échanges dans la conversation", unite: "tours", defaut: 10, min: 1, max: 200, pas: 1 },
+                { id: "prix", libelle: "Prix d'entrée du modèle", unite: "€/M jetons", defaut: 3, min: 0, max: 100, pas: 0.5 }
+            ],
+            calculer: ({ mots, tours, prix }) => {
+                // Environ trois jetons pour deux mots en francais.
+                const parTour = Math.round(mots * 1.5);
+                // Au tour n, le modele relit n fois le poids d un tour : n(n+1)/2 au total.
+                const cumul = parTour * tours * (tours + 1) / 2;
+                return [
+                    { libelle: "Jetons par échange", valeur: nf(parTour) },
+                    { libelle: "Total réellement lu sur la conversation", valeur: nf(cumul) + " jetons", fort: true },
+                    { libelle: "Coût de la conversation", valeur: nf(cumul / 1e6 * prix, 3) + " €" }
+                ];
+            },
+            lecon: "Doublez le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire."
+        },
+
+        "dimensionner-un-rag": {
+            titre: "Dimensionnez une base documentaire",
+            intro: "Avant de choisir un outil, mesurez ce que vous avez réellement à indexer.",
+            champs: [
+                { id: "documents", libelle: "Nombre de documents", unite: "doc.", defaut: 200, min: 1, max: 100000, pas: 10 },
+                { id: "pages", libelle: "Pages par document en moyenne", unite: "pages", defaut: 8, min: 1, max: 2000, pas: 1 },
+                { id: "fragment", libelle: "Taille d'un fragment", unite: "jetons", defaut: 500, min: 100, max: 4000, pas: 50 }
+            ],
+            calculer: ({ documents, pages, fragment }) => {
+                // Environ 500 mots par page, soit 750 jetons.
+                const jetons = documents * pages * 750;
+                const fragments = Math.ceil(jetons / fragment);
+                return [
+                    { libelle: "Volume total", valeur: nf(jetons) + " jetons" },
+                    { libelle: "Fragments à indexer", valeur: nf(fragments), fort: true },
+                    { libelle: "Si tout était envoyé au modèle d'un coup", valeur: nf(Math.round(jetons / 1000)) + " k jetons — bien au-delà de toute fenêtre" }
+                ];
+            },
+            lecon: "C'est précisément parce que ce volume ne tient dans aucune fenêtre que la récupération existe."
+        },
+
+        "perimetre-outils": {
+            type: "controle",
+            titre: "Délimitez le périmètre de votre agent",
+            intro: "Cochez ce qui est vrai de l'agent que vous concevez.",
+            points: [
+                { texte: "Chaque outil fait une chose précise et nommée", aide: "plutôt qu'un outil général du type « exécute cette requête »" },
+                { texte: "Les outils qui lisent sont séparés de ceux qui écrivent" },
+                { texte: "Toute action irréversible passe par une confirmation humaine", aide: "envoyer, supprimer, payer" },
+                { texte: "Mon code vérifie les paramètres avant d'exécuter un appel", aide: "le modèle propose, votre code dispose" },
+                { texte: "Un agent qui lit du contenu extérieur n'a pas d'outil d'envoi", aide: "cloisonnement : c'est la parade à l'injection de consigne" },
+                { texte: "Les appels d'outils sont journalisés" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Périmètre maîtrisé : même détourné, l'agent ne peut pas faire grand-chose.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne architecture. La confirmation humaine et le cloisonnement sont les deux points à ne pas lâcher.", ton: "moyen" };
+                return { texte: "L'agent peut aujourd'hui produire des effets que vous n'avez pas prévus.", ton: "alerte" };
+            },
+            lecon: "Ce qu'un agent peut casser est exactement ce que ses outils permettent. Rien de plus, rien de moins."
+        },
+
+        "arbitrage-modele": {
+            titre: "Comparez le coût mensuel de deux modèles",
+            intro: "Un écart minime par requête devient structurant à l'échelle du mois.",
+            champs: [
+                { id: "requetes", libelle: "Requêtes par mois", unite: "req.", defaut: 10000, min: 1, max: 10000000, pas: 100 },
+                { id: "entree", libelle: "Jetons d'entrée par requête", unite: "jetons", defaut: 2000, min: 1, max: 200000, pas: 100 },
+                { id: "sortie", libelle: "Jetons de sortie par requête", unite: "jetons", defaut: 500, min: 1, max: 50000, pas: 50 },
+                { id: "prixA", libelle: "Modèle A — prix entrée / sortie (€/M)", unite: "€", defaut: 3, min: 0, max: 200, pas: 0.5 },
+                { id: "prixB", libelle: "Modèle B — prix entrée / sortie (€/M)", unite: "€", defaut: 0.3, min: 0, max: 200, pas: 0.1 }
+            ],
+            calculer: ({ requetes, entree, sortie, prixA, prixB }) => {
+                // La sortie est facturee environ trois fois l entree chez la plupart
+                // des fournisseurs : l approximation evite deux champs de plus.
+                const jetonsE = requetes * entree / 1e6;
+                const jetonsS = requetes * sortie / 1e6;
+                const coutA = jetonsE * prixA + jetonsS * prixA * 3;
+                const coutB = jetonsE * prixB + jetonsS * prixB * 3;
+                return [
+                    { libelle: "Modèle A par mois", valeur: nf(coutA, 2) + " €" },
+                    { libelle: "Modèle B par mois", valeur: nf(coutB, 2) + " €" },
+                    { libelle: "Écart annuel", valeur: nf(Math.abs(coutA - coutB) * 12, 2) + " €", fort: true }
+                ];
+            },
+            lecon: "La sortie coûte environ trois fois l'entrée : réduire la longueur des réponses est souvent le levier le plus rentable."
+        },
+
+        // ---------- Niveau avancé ----------
+
+        "reglage-temperature": {
+            type: "controle",
+            titre: "Choisissez votre température",
+            intro: "Cochez les tâches qui appellent une température BASSE.",
+            points: [
+                { texte: "Extraire des informations d'un document", aide: "oui : on veut la même réponse à chaque fois" },
+                { texte: "Classer des messages par catégorie", aide: "oui" },
+                { texte: "Proposer dix idées de titres", aide: "non : la variété est justement ce qu'on cherche" },
+                { texte: "Générer du code", aide: "oui" },
+                { texte: "Reformuler un texte avec plus de style", aide: "non" },
+                { texte: "Répondre à une question factuelle", aide: "oui" }
+            ],
+            verdict: (n) => {
+                if (n === 4) return { texte: "Quatre tâches appellent une température basse. Vérifiez que ce sont bien celles-là.", ton: "bon" };
+                if (n > 4) return { texte: "Plus de quatre : deux de ces tâches gagnent au contraire à la variété.", ton: "alerte" };
+                return { texte: "Quatre de ces six tâches appellent une température basse.", ton: "moyen" };
+            },
+            lecon: "Le réglage par défaut est intermédiaire. Il convient donc mal aux deux extrémités — dont l'extraction."
+        },
+
+        "jeu-de-test": {
+            type: "controle",
+            titre: "Évaluez votre méthode d'évaluation",
+            intro: "Cochez ce qui est vrai de votre manière de mesurer.",
+            points: [
+                { texte: "J'ai au moins vingt cas de test écrits avec leur réponse attendue" },
+                { texte: "Le jeu contient des cas limites, pas seulement des cas faciles" },
+                { texte: "Il contient des cas où la bonne réponse est « je ne sais pas »", aide: "les plus révélateurs : un système qui invente échoue là" },
+                { texte: "Un second jeu, jamais consulté pendant les réglages, sert de contrôle final" },
+                { texte: "Je regarde le détail des cas, pas seulement le score global", aide: "un score qui monte peut cacher des régressions" },
+                { texte: "Si j'utilise un modèle-juge, j'inverse l'ordre des candidats", aide: "un juge favorise ce qui est présenté en premier" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Méthode solide : vos améliorations sont mesurées, pas ressenties.", ton: "bon" };
+                if (n >= 3) return { texte: "Base correcte. Le jeu de contrôle mis à part et le détail des cas font la différence.", ton: "moyen" };
+                return { texte: "Sans mesure, une amélioration ressentie sur trois essais peut être une dégradation sur cent.", ton: "alerte" };
+            },
+            lecon: "Le jeu de test est ce qui transforme une opinion sur un système en information sur un système."
+        },
+
+        "surface-injection": {
+            type: "controle",
+            titre: "Mesurez votre exposition à l'injection",
+            intro: "Cochez ce qui s'applique à votre système.",
+            points: [
+                { texte: "L'agent lit des contenus que je ne maîtrise pas", aide: "pages web, courriels reçus, documents envoyés par des tiers" },
+                { texte: "Il dispose d'outils capables d'envoyer ou de publier" },
+                { texte: "Il peut supprimer ou modifier des données" },
+                { texte: "Il accède à des informations confidentielles" },
+                { texte: "Il agit sans validation humaine sur les actions irréversibles" },
+                { texte: "Sa seule protection contre l'injection est une phrase dans la consigne", aide: "cela aide un peu, et se contourne" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Exposition faible. Reconsidérez à chaque nouvel outil ajouté.", ton: "bon" };
+                if (n <= 2) return { texte: "Exposition limitée. Le cloisonnement lecture / écriture reste la précaution clé.", ton: "moyen" };
+                return { texte: "Un texte placé dans un contenu lu par l'agent pourrait déclencher des actions non voulues.", ton: "alerte" };
+            },
+            lecon: "On ne referme pas l'injection de consigne. On réduit ce qu'elle permet d'obtenir."
+        },
+
+        "entrainer-ou-recuperer": {
+            type: "controle",
+            titre: "Faut-il entraîner, ou récupérer ?",
+            intro: "Cochez les situations qui relèvent de la RÉCUPÉRATION plutôt que de l'entraînement.",
+            points: [
+                { texte: "Le modèle ignore nos procédures internes", aide: "récupération : mettez le document sous ses yeux" },
+                { texte: "Le modèle ignore nos tarifs, qui changent chaque mois", aide: "récupération : des poids figés vieilliraient aussitôt" },
+                { texte: "Les réponses ne respectent pas notre charte de ton", aide: "entraînement possible — après avoir essayé la consigne et des exemples" },
+                { texte: "Le modèle ne connaît pas les événements récents", aide: "récupération" },
+                { texte: "Le format de sortie doit suivre une structure très particulière", aide: "entraînement possible, en dernier recours" },
+                { texte: "Le modèle doit citer ses sources", aide: "récupération : un modèle affiné ne peut pas citer ce qu'il a dilué" }
+            ],
+            verdict: (n) => {
+                if (n === 4) return { texte: "Quatre situations relèvent de la récupération. Les deux autres, d'une question de forme.", ton: "bon" };
+                if (n > 4) return { texte: "Plus de quatre : deux de ces situations concernent la forme, pas la connaissance.", ton: "alerte" };
+                return { texte: "Quatre de ces six situations relèvent de la récupération.", ton: "moyen" };
+            },
+            lecon: "« Le modèle ne sait pas » appelle la récupération. « Le modèle répond mal » appelle d'abord la consigne."
         }
     };
 

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Artificielle — Intermédiaire - DocMaster</title>
+    <meta name="description" content="Niveau intermédiaire du parcours IA : fenêtre de contexte et jetons, RAG, appel d'outils, et comment choisir un modèle selon le coût et la latence.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Intelligence Artificielle — Intermédiaire - DocMaster">
+    <meta property="og:description" content="Niveau intermédiaire du parcours IA : fenêtre de contexte et jetons, RAG, appel d'outils, et comment choisir un modèle selon le coût et la latence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelligence Artificielle — Intermédiaire - DocMaster">
+    <meta name="twitter:description" content="Niveau intermédiaire du parcours IA : fenêtre de contexte et jetons, RAG, appel d'outils, et comment choisir un modèle selon le coût et la latence.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🤖 Intelligence Artificielle</a> &gt;
+        <span aria-current="page">Intermédiaire</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤖 Intelligence Artificielle — Intermédiaire</h1>
+                <p>Ce qu'il faut comprendre pour construire quelque chose qui tienne.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2" fill="none" stroke-linecap="round">
+<line x1="70" y1="70" x2="45" y2="50"/><line x1="70" y1="70" x2="95" y2="50"/><line x1="70" y1="70" x2="45" y2="90"/><line x1="70" y1="70" x2="95" y2="90"/><line x1="70" y1="70" x2="70" y2="40"/></g>
+<circle cx="70" cy="70" r="6" fill="white"/><circle cx="45" cy="50" r="4" fill="white"/><circle cx="95" cy="50" r="4" fill="white"/><circle cx="45" cy="90" r="4" fill="white"/><circle cx="95" cy="90" r="4" fill="white"/><circle cx="70" cy="40" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="110" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#contexte-et-jetons">🧩 Le contexte et les jetons</a></li>
+                <li><a href="#le-rag">📚 Donner ses documents au modèle</a></li>
+                <li><a href="#outils-et-fonctions">🔧 Les outils, ou comment un agent agit</a></li>
+                <li><a href="#choisir-un-modele">⚖️ Choisir un modèle</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Un modèle ne « se souvient » de rien : tout ce qu'il sait de la conversation est renvoyé à chaque tour.</li>
+                <li>Le RAG ne rend pas le modèle plus intelligent : il lui met les bons documents sous les yeux.</li>
+                <li>Un agent n'agit que par les outils qu'on lui donne — c'est là que se décide ce qu'il peut casser.</li>
+                <li>Le modèle le plus performant est rarement le bon choix pour une tâche simple et répétée.</li>
+                <li>Le coût se calcule par million de jetons, pas par requête : le contexte pèse plus que la réponse.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau débutant expliquait ce qu'est un modèle de langage, ce qu'est un agent, comment formuler une consigne et où sont les limites. De quoi se servir des outils existants avec discernement.</p>
+            <p>Ce niveau-ci s'adresse à qui veut <strong>construire</strong> : brancher un modèle sur ses propres documents, lui donner des outils, et faire des choix qui engagent un budget. Les quatre notions qui suivent expliquent l'essentiel des échecs de projets — non pas parce qu'elles sont difficiles, mais parce qu'elles sont rarement comprises avant d'avoir coûté cher.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong> et volontairement indépendant des fournisseurs. Les ordres de grandeur cités — tailles de contexte, prix par million de jetons — évoluent vite : vérifiez-les à la source avant de dimensionner un projet.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Les notions à maîtriser</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="contexte-et-jetons">🧩 Le contexte et les jetons</h3></summary>
+                <div class="lecon-corps">
+                <p>Un modèle ne traite pas des mots mais des <strong>jetons</strong> : des fragments de texte, souvent une syllabe ou un mot court. En français, comptez environ <strong>trois jetons pour deux mots</strong>. Un roman de 80 000 mots pèse donc quelque 120 000 jetons.</p>
+
+                <h4>La fenêtre de contexte est un plafond, pas une mémoire</h4>
+                <p>La fenêtre de contexte est la quantité de texte que le modèle peut lire en une fois : la consigne, les documents fournis, l'historique de la conversation et la réponse à produire, le tout additionné.</p>
+                <p>Le point important, et le plus mal compris : <strong>le modèle ne se souvient de rien entre deux appels</strong>. Ce qui donne l'illusion d'une mémoire, c'est que l'historique complet lui est renvoyé à chaque tour. Une conversation de trente messages coûte donc bien plus cher au trentième qu'au premier, puisqu'on relit tout à chaque fois.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Une conversation où chaque échange fait <strong>500 jetons</strong>. Au dixième échange, l'historique pèse 5 000 jetons.</p>
+                    <p>Sur dix tours, le total lu par le modèle n'est pas 5 000 jetons mais <strong>environ 27 500</strong> — la somme des historiques successifs. C'est ce total qui est facturé.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-en-tokens"></div>
+
+                <h4>Ce qui se passe quand la fenêtre déborde</h4>
+                <p>Deux comportements existent selon les outils : soit l'appel échoue, soit le début de la conversation est silencieusement tronqué. Le second cas est plus perfide — le modèle continue de répondre, mais a « oublié » les consignes du départ.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire qu'une grande fenêtre règle tout</span>
+                    <p>Une fenêtre de 200 000 jetons permet d'envoyer un livre entier. Cela ne signifie pas que le modèle en exploitera bien le contenu : la qualité de l'attention se dégrade sur les très longs textes, surtout au milieu.</p>
+                    <p>Envoyer les trois pages pertinentes donne presque toujours de meilleurs résultats — et coûte cent fois moins.</p>
+                </div>
+
+                <p class="retenir">💡 Le modèle ne se souvient pas : on lui relit tout, à chaque fois, et on paie cette relecture.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-rag">📚 Donner ses documents au modèle</h3></summary>
+                <div class="lecon-corps">
+                <p>Un modèle ne connaît pas vos documents internes, vos procédures, vos tarifs. La méthode qui règle ce problème s'appelle le <strong>RAG</strong> — génération augmentée par récupération. Le principe tient en une phrase : <em>chercher d'abord les passages pertinents, puis les donner au modèle avec la question</em>.</p>
+
+                <h4>Comment ça marche, sans jargon</h4>
+                <p>Les documents sont découpés en fragments de quelques centaines de jetons. Chaque fragment est transformé en une liste de nombres qui représente son sens — un <strong>plongement</strong>. La question de l'utilisateur subit le même traitement, puis on cherche les fragments dont les nombres sont les plus proches.</p>
+                <p>Ces fragments-là sont insérés dans la consigne. Le modèle répond en s'appuyant dessus, et non sur sa mémoire d'entraînement.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce que le RAG change</span>
+                    <p><strong>Sans RAG</strong> : « Quel est notre délai de rétractation ? » → le modèle répond avec le droit général, ou invente.</p>
+                    <p><strong>Avec RAG</strong> : la question va d'abord chercher l'article 7 de vos conditions générales, puis le modèle répond en le citant.</p>
+                    <p>La différence n'est pas l'intelligence du modèle. C'est qu'il a le bon document sous les yeux.</p>
+                </div>
+
+                <div class="pratique" data-pratique="dimensionner-un-rag"></div>
+
+                <h4>Le découpage est la vraie difficulté</h4>
+                <p>Des fragments trop petits perdent leur contexte : « ce délai est de quatorze jours » ne dit pas de quel délai il s'agit. Trop grands, ils diluent l'information pertinente au milieu du bruit et coûtent plus cher.</p>
+                <p>La plupart des RAG décevants ne souffrent pas du modèle, mais d'un découpage fait sans réfléchir à la structure des documents.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire que le RAG supprime les inventions</span>
+                    <p>Si la recherche ne remonte aucun fragment pertinent, le modèle répond quand même — avec ce qu'il a. Le RAG réduit les inventions, il ne les élimine pas.</p>
+                    <p>La parade consiste à instruire explicitement le modèle de répondre « je ne trouve pas cette information dans les documents fournis », et à afficher les sources utilisées pour que l'utilisateur puisse vérifier.</p>
+                </div>
+
+                <p class="retenir">💡 Le RAG ne rend pas le modèle plus savant. Il lui évite d'avoir à deviner.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="outils-et-fonctions">🔧 Les outils, ou comment un agent agit</h3></summary>
+                <div class="lecon-corps">
+                <p>Un modèle seul ne fait que produire du texte. Ce qui transforme un assistant en <strong>agent</strong>, c'est la capacité d'appeler des outils : consulter une base, envoyer un message, créer un fichier.</p>
+
+                <h4>Le mécanisme réel</h4>
+                <p>On décrit au modèle les outils disponibles : leur nom, ce qu'ils font, les paramètres attendus. Quand il juge qu'un outil est utile, il ne l'exécute pas lui-même — <strong>il produit une demande d'appel</strong>, sous forme structurée. Votre programme reçoit cette demande, décide de l'exécuter ou non, et lui renvoie le résultat.</p>
+                <p>Cette distinction est fondamentale : <strong>le modèle propose, votre code dispose</strong>. C'est là que se place toute la sécurité d'un agent.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le déroulé d'un échange avec outil</span>
+                    <p>1. L'utilisateur demande : « Combien de commandes en attente ? »</p>
+                    <p>2. Le modèle renvoie une demande d'appel : <code>compter_commandes(statut: "en_attente")</code>.</p>
+                    <p>3. Votre programme vérifie que l'appel est légitime, l'exécute, obtient <code>47</code>.</p>
+                    <p>4. Le résultat est renvoyé au modèle, qui rédige la réponse.</p>
+                    <p>Quatre étapes, dont une seule est faite par le modèle : celle du milieu vous appartient entièrement.</p>
+                </div>
+
+                <div class="pratique" data-pratique="perimetre-outils"></div>
+
+                <h4>Le principe du moindre privilège</h4>
+                <p>Un agent ne peut faire que ce que ses outils permettent. Donner un outil « exécuter une requête SQL quelconque » revient à confier les clés de la base à un système qui peut être manipulé par le texte qu'il lit.</p>
+                <p>Des outils <strong>étroits et nommés</strong> — <code>compter_commandes</code>, <code>lire_facture</code> — plutôt qu'un outil général : la différence entre un agent utile et un incident.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — l'action irréversible sans confirmation</span>
+                    <p>Un agent qui peut supprimer, envoyer ou payer sans validation humaine finira par le faire à tort. Pas nécessairement par malveillance : une consigne ambiguë suffit.</p>
+                    <p>Séparez les outils qui lisent de ceux qui écrivent. Les seconds passent par une confirmation.</p>
+                </div>
+
+                <p class="retenir">💡 Le modèle ne fait rien tout seul. Ce qu'il peut casser est exactement ce que vous lui avez donné.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="choisir-un-modele">⚖️ Choisir un modèle</h3></summary>
+                <div class="lecon-corps">
+                <p>Le réflexe est de prendre le modèle le plus performant. C'est rarement le bon choix : sur une tâche simple et répétée, un modèle plus petit répond aussi bien, dix fois plus vite et pour une fraction du prix.</p>
+
+                <h4>Quatre critères, dans cet ordre</h4>
+                <p><strong>La qualité sur votre tâche</strong> — pas la qualité en général. Un modèle excellent en raisonnement mathématique n'est pas forcément meilleur pour classer des courriels.</p>
+                <p><strong>La latence.</strong> Deux secondes contre dix, ce n'est pas un détail dans une interface où quelqu'un attend.</p>
+                <p><strong>Le coût</strong>, facturé par million de jetons, en distinguant l'entrée et la sortie — la sortie est généralement plusieurs fois plus chère.</p>
+                <p><strong>Où tournent les données.</strong> Un modèle ouvert hébergé chez vous ne fait sortir aucune donnée ; un service distant, si. Cette question précède parfois toutes les autres.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Un service traite <strong>10 000 requêtes par mois</strong>, chacune avec 2 000 jetons d'entrée et 500 de sortie.</p>
+                    <p>Volume mensuel : <strong>20 millions</strong> de jetons d'entrée, <strong>5 millions</strong> de sortie.</p>
+                    <p>Un écart de prix qui semble anodin sur une requête devient, à ce volume, la différence entre un service viable et un service à l'arrêt.</p>
+                </div>
+
+                <div class="pratique" data-pratique="arbitrage-modele"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — juger un modèle sur les classements</span>
+                    <p>Les classements publics mesurent des capacités générales sur des jeux de tests standardisés. Ils ne disent rien de votre cas particulier, et les modèles finissent par être optimisés pour ces tests.</p>
+                    <p>Constituez vingt exemples représentatifs de votre tâche réelle et faites-les passer aux candidats. Une demi-journée de travail, et une réponse qui vous concerne.</p>
+                </div>
+
+                <p class="retenir">💡 Le bon modèle est le plus petit qui réussit votre tâche — pas le plus grand disponible.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Documentations officielles des fournisseurs</strong> : les seules sources fiables pour les tailles de contexte et les tarifs, qui changent plusieurs fois par an.</li>
+                    <li><strong>Compteurs de jetons en ligne</strong> : coller un texte et voir son poids réel évite bien des surprises de facturation.</li>
+                    <li><strong>CNIL — recommandations sur l'IA</strong> : les obligations qui s'appliquent dès qu'un traitement porte sur des données personnelles.</li>
+                    <li><strong>Règlement européen sur l'IA</strong> : les catégories de risque et les obligations associées, utile avant de déployer un système auprès du public.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> avant de choisir un modèle, écrivez vos vingt cas de test. Ils serviront ensuite à chaque changement de version — et il y en aura.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Niveau précédent</span>IA — Débutant</a>
+            <a href="avance.html" class="next"><span class="label">Niveau suivant →</span>IA — Avancé</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/ia-intermediaire.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>
