@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data &amp; Analytics — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Data : marge d'erreur et intervalle de confiance, tests A/B et puissance statistique, paradoxe de Simpson, qualité de la chaîne de données.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/data/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Data &amp; Analytics — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Data : marge d'erreur et intervalle de confiance, tests A/B et puissance statistique, paradoxe de Simpson, qualité de la chaîne de données.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/data/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data &amp; Analytics — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Data : marge d'erreur et intervalle de confiance, tests A/B et puissance statistique, paradoxe de Simpson, qualité de la chaîne de données.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">📊 Data &amp; Analytics</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Data &amp; Analytics — Avancé</h1>
+                <p>Savoir ce qu'un chiffre ne dit pas, et combien il faudrait d'observations pour le savoir.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#incertitude-dune-mesure">🎲 L'incertitude d'une mesure</a></li>
+                <li><a href="#tests-ab">🧪 Les tests A/B</a></li>
+                <li><a href="#pieges-dinterpretation">⚠️ Les pièges d'interprétation</a></li>
+                <li><a href="#chaine-de-donnees">🏗️ La chaîne de données</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Tout chiffre issu d'un échantillon porte une incertitude, qu'on l'affiche ou non.</li>
+                <li>Diviser la marge d'erreur par deux demande quatre fois plus d'observations.</li>
+                <li>Regarder un test A/B tous les jours jusqu'à ce qu'il soit favorable garantit de le trouver favorable.</li>
+                <li>Une tendance peut s'inverser une fois les données regroupées : c'est le paradoxe de Simpson.</li>
+                <li>Une donnée fausse en amont produit un tableau de bord parfaitement présenté et parfaitement faux.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau intermédiaire portait sur le traitement des données et sur les erreurs de raisonnement les plus courantes. De quoi produire une analyse honnête.</p>
+            <p>Ce niveau porte sur la question que presque personne ne pose : <strong>quelle confiance accorder au chiffre obtenu ?</strong> Un écart de 2 % entre deux versions d'une page est-il un résultat ou du bruit ? Combien de visiteurs faudrait-il pour trancher ? Et que faire quand la réponse change selon la manière de regrouper les données ?</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les formules données sont des approximations usuelles, suffisantes pour dimensionner un test ou juger d'un ordre de grandeur — pas pour une publication scientifique.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ce qu'un chiffre ne dit pas</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="incertitude-dune-mesure">🎲 L'incertitude d'une mesure</h3></summary>
+                <div class="lecon-corps">
+                <p>« 42 % des utilisateurs préfèrent la version B. » Cette phrase est incomplète. Sur combien de personnes ? Interrogées comment ? Sans ces informations, le chiffre n'est pas faux — il est invérifiable.</p>
+
+                <h4>Pourquoi un échantillon suffit, et jusqu'où</h4>
+                <p>Mesurer sur une partie de la population donne une estimation entourée d'une <strong>marge d'erreur</strong>. Le point contre-intuitif : cette marge dépend presque uniquement de la <em>taille de l'échantillon</em>, pas de la taille de la population.</p>
+                <p>Interroger 1 000 personnes donne à peu près la même précision pour une ville de 50 000 habitants que pour un pays de 60 millions. C'est ce qui rend les sondages possibles.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Sur <strong>400 observations</strong>, une proportion mesurée à 50 % porte une marge d'erreur d'environ <strong>± 5 points</strong>. La valeur réelle se situe donc entre 45 % et 55 %.</p>
+                    <p>Pour descendre à <strong>± 2,5 points</strong>, il ne faut pas 800 observations mais <strong>1 600</strong> : diviser la marge par deux exige de multiplier l'effectif par quatre.</p>
+                    <p>C'est pourquoi les sondages nationaux s'arrêtent autour de 1 000 personnes. Aller plus loin coûte beaucoup pour gagner très peu.</p>
+                </div>
+
+                <div class="pratique" data-pratique="marge-erreur"></div>
+
+                <h4>Ce que la marge d'erreur ne couvre pas</h4>
+                <p>Elle mesure uniquement le hasard de l'échantillonnage. Elle ne dit rien d'un questionnaire mal formulé, d'une population mal choisie, ou du fait que seuls les mécontents répondent. Ces biais-là ne se réduisent pas en interrogeant davantage de monde — ils s'amplifient.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — comparer deux chiffres dont les marges se chevauchent</span>
+                    <p>Version A : 42 %. Version B : 45 %. Avec une marge de ± 5 points sur chacune, l'écart de 3 points ne permet aucune conclusion.</p>
+                    <p>Annoncer que B l'emporte serait présenter du bruit comme un résultat.</p>
+                </div>
+
+                <p class="retenir">💡 Un pourcentage sans effectif n'est pas une information, c'est une impression chiffrée.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="tests-ab">🧪 Les tests A/B</h3></summary>
+                <div class="lecon-corps">
+                <p>Le test A/B est la seule méthode courante qui établisse une <strong>causalité</strong> : deux groupes tirés au hasard, une seule différence, et la comparaison des résultats. Bien mené, il tranche. Mal mené, il produit des certitudes fausses avec l'apparence de la rigueur.</p>
+
+                <h4>Dimensionner avant de lancer</h4>
+                <p>La question à trancher <em>avant</em> le test : combien d'observations faut-il pour détecter l'effet recherché ? Elle dépend du taux de départ et de l'ampleur de l'amélioration visée.</p>
+                <p>Plus l'effet attendu est faible, plus il faut d'observations — et la relation est brutale : <strong>détecter un effet deux fois plus petit demande quatre fois plus de trafic</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Taux de conversion actuel : <strong>3 %</strong>. Amélioration visée : <strong>+ 20 % relatif</strong>, soit passer à 3,6 %.</p>
+                    <p>Il faut environ <strong>14 000 visiteurs par groupe</strong> pour conclure avec les seuils usuels.</p>
+                    <p>Si le site reçoit 1 000 visiteurs par jour, cela représente <strong>quatre semaines</strong> de test. Le savoir avant de lancer évite d'arrêter au bout de trois jours en croyant avoir une réponse.</p>
+                </div>
+
+                <div class="pratique" data-pratique="taille-test-ab"></div>
+
+                <h4>Le regard répété, ou pourquoi on trouve toujours ce qu'on cherche</h4>
+                <p>Consulter les résultats chaque jour et arrêter dès que l'écart devient favorable est la faute la plus commune. À force de regarder, l'écart finit par franchir le seuil <strong>par hasard</strong> — puis il repart.</p>
+                <p>La règle est simple : fixer la durée et l'effectif à l'avance, et ne conclure qu'à la fin. Un test qu'on arrête quand il donne raison ne teste plus rien.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — tester plusieurs choses à la fois</span>
+                    <p>Changer le titre, la couleur du bouton et l'image en une seule version B répond à la question « l'ensemble est-il meilleur ? » et à aucune autre.</p>
+                    <p>Si le résultat est positif, vous ne saurez pas quel élément a joué — ni s'il n'y en a pas un qui dégrade, compensé par les autres.</p>
+                </div>
+
+                <p class="retenir">💡 Un test A/B se dimensionne avant d'être lancé. Après, il est trop tard pour se demander s'il pouvait conclure.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="pieges-dinterpretation">⚠️ Les pièges d'interprétation</h3></summary>
+                <div class="lecon-corps">
+                <p>Trois phénomènes produisent des conclusions inverses de la réalité, à partir de données parfaitement exactes. Les connaître ne coûte rien ; les ignorer coûte cher.</p>
+
+                <h4>Le paradoxe de Simpson</h4>
+                <p>Une tendance présente dans chaque groupe peut <strong>s'inverser</strong> quand les groupes sont réunis. Ce n'est pas une curiosité mathématique : cela se produit dès que les groupes ont des tailles très différentes.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Version A : <strong>8 %</strong> sur mobile (800 visiteurs), <strong>20 %</strong> sur ordinateur (200 visiteurs) → moyenne <strong>10,4 %</strong>.</p>
+                    <p>Version B : <strong>10 %</strong> sur mobile (200 visiteurs), <strong>22 %</strong> sur ordinateur (800 visiteurs) → moyenne <strong>19,6 %</strong>.</p>
+                    <p>B gagne largement au total. Mais A et B ne différaient pas : B a simplement reçu plus de visiteurs d'ordinateur, qui convertissent mieux. B est meilleure dans chaque groupe <em>aussi</em>, mais l'écart global — presque dix points — est presque entièrement dû à la répartition.</p>
+                </div>
+
+                <h4>Le biais du survivant</h4>
+                <p>Analyser les clients actuels pour comprendre pourquoi les gens restent, c'est n'interroger que ceux qui sont restés. Les partis, qui détiennent la réponse, ont disparu du fichier.</p>
+
+                <h4>La régression vers la moyenne</h4>
+                <p>Un mois exceptionnellement mauvais est généralement suivi d'un mois meilleur, même sans intervention. Toute action prise après un point bas paraîtra donc efficace. C'est l'illusion la plus fréquente dans les bilans d'actions correctives.</p>
+
+                <div class="pratique" data-pratique="pieges-interpretation"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — conclure sans regarder les sous-groupes</span>
+                    <p>Le paradoxe de Simpson ne se détecte qu'en segmentant. Un résultat global qui contredit chaque segment est le signal d'un déséquilibre de répartition, pas d'une découverte.</p>
+                    <p>Le réflexe : vérifier que les groupes comparés ont des compositions semblables. Sinon, la comparaison globale ne veut rien dire.</p>
+                </div>
+
+                <p class="retenir">💡 Quand le total dit l'inverse de chaque partie, ce n'est pas le total qu'il faut croire.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="chaine-de-donnees">🏗️ La chaîne de données</h3></summary>
+                <div class="lecon-corps">
+                <p>Un tableau de bord est le dernier maillon d'une chaîne : collecte, transport, stockage, transformation, affichage. Une erreur à n'importe quel maillon produit un résultat impeccablement présenté et faux.</p>
+
+                <h4>Les quatre propriétés à surveiller</h4>
+                <p><strong>La fraîcheur.</strong> De quand datent les données affichées ? Un tableau de bord qui ne le dit pas laisse croire au temps réel. Une donnée figée depuis trois jours à cause d'un traitement en échec est plus dangereuse qu'une absence de donnée : personne ne remarque qu'elle ne bouge plus.</p>
+                <p><strong>La complétude.</strong> Un chiffre inférieur aux attentes signale-t-il une baisse réelle, ou une source qui n'a pas remonté ? La distinction demande de compter aussi ce qui manque.</p>
+                <p><strong>La cohérence.</strong> Deux tableaux de bord affichant deux chiffres différents pour « le nombre de clients » détruisent la confiance dans les deux. Le problème vient presque toujours de définitions divergentes, jamais écrites.</p>
+                <p><strong>La traçabilité.</strong> Pour tout chiffre affiché, peut-on remonter à sa source et à la transformation qui l'a produit ? Sans cela, une anomalie ne peut pas être diagnostiquée.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le contrôle qui coûte le moins cher</span>
+                    <p>Un simple test automatique sur le volume : si le nombre de lignes reçues aujourd'hui s'écarte de plus de 30 % de la moyenne des sept derniers jours, une alerte est levée.</p>
+                    <p>Ce contrôle trivial détecte la majorité des incidents réels — source coupée, doublons massifs, changement de format en amont — bien avant qu'une décision soit prise sur des données fausses.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sante-chaine-donnees"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — l'absence d'alerte prise pour un bon signe</span>
+                    <p>Un traitement qui échoue en silence laisse le tableau de bord afficher les dernières valeurs connues. Tout paraît normal, les chiffres sont plausibles, et ils sont périmés.</p>
+                    <p>Affichez systématiquement la date de dernière mise à jour à côté des chiffres. C'est la protection la moins coûteuse contre la plus fréquente des pannes silencieuses.</p>
+                </div>
+
+                <p class="retenir">💡 La qualité d'une analyse est plafonnée par celle de son maillon le plus faible, qui est rarement l'analyse.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>INSEE — méthodologie des enquêtes</strong> : comment sont construits les échantillons publics et quelles marges d'erreur sont publiées avec les résultats.</li>
+                    <li><strong>Calculateurs de taille d'échantillon</strong> : à utiliser avant tout test, en notant les hypothèses retenues. Le chiffre obtenu dépend entièrement d'elles.</li>
+                    <li><strong>« Thinking, Fast and Slow »</strong>, Daniel Kahneman : le chapitre sur la régression vers la moyenne explique pourquoi tant d'actions correctives paraissent efficaces.</li>
+                    <li><strong>Travaux sur le paradoxe de Simpson</strong> : les cas historiques, notamment en admissions universitaires et en essais cliniques, sont plus parlants que la démonstration.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> avant de lancer un test, écrivez la durée et l'effectif prévus, ainsi que le seuil de décision. Ce document vous protègera de vous-même au bout de trois jours.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Data &amp; Analytics — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Parcours →</span>Retour au sommaire Data</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+                <a href="../finance/index.html">💰 Finance</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/data-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

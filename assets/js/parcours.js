@@ -20,7 +20,7 @@ window.DOCMASTER_PARCOURS = {
     cybersecurite:   { titre: "🔒 Cybersécurité",               niveaux: ["debutant", "intermediaire", "avance"] },
     entrepreneuriat: { titre: "🚀 Entrepreneuriat",             niveaux: [] },
     productivite:    { titre: "⏱️ Productivité & Organisation", niveaux: [] },
-    data:            { titre: "📊 Data & Analytics",            niveaux: [] },
+    data:            { titre: "📊 Data & Analytics",            niveaux: ["debutant", "intermediaire", "avance"] },
     design:          { titre: "🎨 Design UX/UI",                niveaux: [] }
 };
 

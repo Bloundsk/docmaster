@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data &amp; Analytics — Intermédiaire - DocMaster</title>
+    <meta name="description" content="Niveau intermédiaire du parcours Data : nettoyer des données, segmenter et comparer, distinguer corrélation et causalité, construire un tableau de bord qui sert.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/data/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Data &amp; Analytics — Intermédiaire - DocMaster">
+    <meta property="og:description" content="Niveau intermédiaire du parcours Data : nettoyer des données, segmenter et comparer, distinguer corrélation et causalité, construire un tableau de bord qui sert.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/data/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data &amp; Analytics — Intermédiaire - DocMaster">
+    <meta name="twitter:description" content="Niveau intermédiaire du parcours Data : nettoyer des données, segmenter et comparer, distinguer corrélation et causalité, construire un tableau de bord qui sert.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">📊 Data &amp; Analytics</a> &gt;
+        <span aria-current="page">Intermédiaire</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Data &amp; Analytics — Intermédiaire</h1>
+                <p>Passer du chiffre affiché au chiffre sur lequel on peut décider.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#nettoyer-les-donnees">🧹 Nettoyer les données</a></li>
+                <li><a href="#segmenter-et-comparer">📐 Segmenter et comparer</a></li>
+                <li><a href="#correlation-et-causalite">🔗 Corrélation et causalité</a></li>
+                <li><a href="#tableau-de-bord">📊 Le tableau de bord qui sert</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Le nettoyage occupe l'essentiel du temps d'une analyse, et détermine sa validité.</li>
+                <li>Une moyenne globale cache presque toujours des comportements opposés.</li>
+                <li>Deux courbes qui montent ensemble ont le plus souvent une cause commune, non un lien direct.</li>
+                <li>Un segment trop petit produit des pourcentages spectaculaires et vides de sens.</li>
+                <li>Un indicateur qui ne peut déclencher aucune décision n'a rien à faire sur un tableau de bord.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau débutant apprenait à lire un chiffre : ce qu'est un indicateur, d'où viennent les données, comment les représenter sans mentir, et les notions statistiques de base.</p>
+            <p>Ce niveau-ci porte sur le travail réel de l'analyse, celui dont on parle rarement : <strong>ce qu'il faut faire aux données avant de pouvoir les croire</strong>, et les quatre erreurs de raisonnement qui transforment un chiffre juste en conclusion fausse. C'est là que se perdent la plupart des analyses, pas dans les calculs.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les exemples chiffrés servent à faire comprendre un mécanisme, pas à établir un résultat sur un secteur donné.</p>
+                <p>Dès qu'une analyse porte sur des personnes identifiables, les obligations du RGPD s'appliquent — y compris à un simple fichier de travail.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Le travail réel de l'analyse</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="nettoyer-les-donnees">🧹 Nettoyer les données</h3></summary>
+                <div class="lecon-corps">
+                <p>Les tutoriels commencent par des tableaux propres. La réalité commence par un fichier où les dates sont écrites de quatre manières, où le même client apparaît trois fois, et où une colonne sur cinq est vide.</p>
+                <p>Le nettoyage occupe couramment <strong>la majeure partie du temps d'une analyse</strong>. Ce n'est pas une corvée préalable : c'est là que se décide si le résultat voudra dire quelque chose.</p>
+
+                <h4>Les quatre problèmes qui reviennent toujours</h4>
+                <p><strong>Les doublons.</strong> Le même enregistrement compté deux fois gonfle les totaux. Un client inscrit avec deux adresses différentes n'est pas un doublon évident : il faut décider ce qui définit l'unicité.</p>
+                <p><strong>Les valeurs manquantes.</strong> Trois conduites possibles : supprimer la ligne, remplacer par une valeur estimée, ou traiter l'absence comme une information. Le choix change le résultat, et doit être écrit.</p>
+                <p><strong>Les formats incohérents.</strong> « 01/02/2026 » se lit différemment selon le pays. « 1 200,50 » et « 1200.50 » représentent le même nombre pour un humain, pas pour un tableur.</p>
+                <p><strong>Les valeurs aberrantes.</strong> Une commande à 4 millions d'euros dans un fichier de commandes à 80 euros est soit une erreur de saisie, soit le client le plus important de l'entreprise. La distinction n'est pas technique.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Un fichier de <strong>50 000 lignes</strong>. Après contrôle : <strong>8 %</strong> de doublons, et <strong>12 %</strong> des lignes restantes ont une valeur manquante sur une colonne indispensable.</p>
+                    <p>Il reste <strong>40 480 lignes</strong> exploitables, soit 81 % du fichier de départ.</p>
+                    <p>Ce n'est pas un problème en soi. Le problème serait de présenter un résultat calculé sur 40 480 lignes en laissant croire qu'il porte sur 50 000.</p>
+                </div>
+
+                <div class="pratique" data-pratique="impact-du-nettoyage"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — supprimer les lignes incomplètes sans regarder lesquelles</span>
+                    <p>Si les valeurs manquantes se répartissent au hasard, les supprimer réduit la taille sans fausser le résultat. Mais elles se répartissent rarement au hasard.</p>
+                    <p>Un formulaire dont le champ « revenus » est facultatif sera surtout rempli par ceux que la question ne gêne pas. Supprimer les autres, c'est analyser une population qui n'existe pas.</p>
+                </div>
+
+                <p class="retenir">💡 Un nettoyage non documenté rend une analyse invérifiable, même par son auteur trois mois plus tard.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="segmenter-et-comparer">📐 Segmenter et comparer</h3></summary>
+                <div class="lecon-corps">
+                <p>Une moyenne écrase. Le chiffre d'affaires moyen par client, le temps moyen passé sur le site, le panier moyen : chacun mélange des populations qui n'ont rien à voir, et le résultat ne décrit personne.</p>
+
+                <h4>Segmenter, c'est chercher où le comportement change</h4>
+                <p>Découper par ancienneté, par canal d'acquisition, par appareil, par région. L'objectif n'est pas de produire des tableaux plus grands, mais de trouver <strong>les endroits où deux groupes se comportent différemment</strong> — c'est là que se cachent les décisions.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Taux de conversion global : <strong>3 %</strong>. Stable depuis six mois, rien à signaler.</p>
+                    <p>Segmenté par appareil : <strong>5,2 %</strong> sur ordinateur, <strong>1,4 %</strong> sur mobile.</p>
+                    <p>Le chiffre global n'était pas faux — il était inutile. Il masquait un problème mobile qui représente les deux tiers du trafic.</p>
+                </div>
+
+                <div class="pratique" data-pratique="taille-des-segments"></div>
+
+                <h4>La limite : le segment trop petit</h4>
+                <p>Découper indéfiniment finit par produire des groupes de quinze personnes où un cas particulier fait bouger le pourcentage de sept points. On croit avoir trouvé un signal, on a trouvé du bruit.</p>
+                <p>Une règle de prudence courante consiste à ne pas commenter un segment de moins de <strong>quelques dizaines d'observations</strong>, et à toujours afficher l'effectif à côté du pourcentage.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — comparer sans période de référence</span>
+                    <p>« Les ventes ont augmenté de 12 % après la refonte du site. » Comparé à quoi ? Au mois précédent, qui contenait deux jours fériés ? À la même période l'an dernier ?</p>
+                    <p>Sans groupe de comparaison ou sans historique long, une variation ne se distingue pas d'une fluctuation ordinaire.</p>
+                </div>
+
+                <p class="retenir">💡 Affichez toujours l'effectif à côté du pourcentage. « 40 % » sur cinq personnes, ce sont deux personnes.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="correlation-et-causalite">🔗 Corrélation et causalité</h3></summary>
+                <div class="lecon-corps">
+                <p>Deux variables qui évoluent ensemble sont <strong>corrélées</strong>. Cela ne dit rien de la raison. Confondre les deux est l'erreur la plus répandue, et la plus coûteuse : elle conduit à agir sur un levier qui n'en est pas un.</p>
+
+                <h4>Quatre explications possibles pour une même corrélation</h4>
+                <p><strong>A cause B.</strong> C'est l'hypothèse qu'on retient spontanément — et souvent à tort.</p>
+                <p><strong>B cause A.</strong> Le sens inverse est fréquemment aussi plausible.</p>
+                <p><strong>Une troisième variable cause les deux.</strong> C'est le cas le plus courant. On l'appelle variable confondante.</p>
+                <p><strong>Le hasard.</strong> Sur des centaines d'indicateurs comparés, certains coïncident sans aucun lien.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple — la variable confondante</span>
+                    <p>Constat : les clients qui utilisent l'application mobile ont un panier <strong>deux fois plus élevé</strong>. Conclusion tentante : pousser l'application augmentera les paniers.</p>
+                    <p>Explication plus probable : ce sont les <strong>clients les plus fidèles</strong> qui installent l'application. Leur panier était déjà élevé avant. La fidélité cause l'installation <em>et</em> le panier élevé.</p>
+                    <p>Pousser l'application auprès de clients occasionnels ne reproduira pas l'effet — mais dépensera le budget.</p>
+                </div>
+
+                <div class="pratique" data-pratique="correlation-causalite"></div>
+
+                <h4>Ce qui permet de conclure</h4>
+                <p>Une seule méthode établit vraiment la causalité : <strong>l'expérimentation</strong>. Deux groupes comparables, un seul traitement qui diffère, une attribution aléatoire. Tout le reste — même une corrélation très forte, même un raisonnement convaincant — reste une hypothèse.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — l'histoire plausible</span>
+                    <p>Le danger n'est pas de trouver une corrélation absurde : celles-là se repèrent. Il est de trouver une corrélation à laquelle on peut donner une explication crédible.</p>
+                    <p>Une explication crédible n'est pas une preuve. Elle rend simplement plus difficile d'envisager les trois autres possibilités.</p>
+                </div>
+
+                <p class="retenir">💡 Avant de conclure « A cause B », cherchez sérieusement quelle troisième variable causerait les deux.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="tableau-de-bord">📊 Le tableau de bord qui sert</h3></summary>
+                <div class="lecon-corps">
+                <p>La plupart des tableaux de bord sont consultés deux semaines, puis plus jamais. Non parce qu'ils sont mal faits techniquement, mais parce qu'ils répondent à la question « que peut-on afficher ? » au lieu de « quelle décision doit être prise ? ».</p>
+
+                <h4>Le test de l'indicateur inutile</h4>
+                <p>Pour chaque chiffre affiché, posez la question : <strong>si ce nombre doublait demain, que ferais-je différemment ?</strong> Si la réponse est « rien », l'indicateur n'a rien à faire là. Il occupe de la place, dilue l'attention et donne l'illusion du pilotage.</p>
+                <p>Le nombre de pages vues appartient presque toujours à cette catégorie.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce qui distingue un bon indicateur</span>
+                    <p><strong>Il est actionnable</strong> : on sait quoi faire quand il bouge.</p>
+                    <p><strong>Il a un point de comparaison</strong> : période précédente, objectif, ou groupe témoin. Un chiffre seul ne dit rien.</p>
+                    <p><strong>Il est stable dans sa définition</strong> : si la formule change en cours de route, la série devient inexploitable.</p>
+                    <p><strong>Sa fréquence correspond à sa vitesse d'évolution</strong> : surveiller quotidiennement une donnée qui bouge par trimestre ne produit que du bruit.</p>
+                </div>
+
+                <div class="pratique" data-pratique="tableau-de-bord-utile"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la moyenne comme seul chiffre</span>
+                    <p>Afficher « temps de réponse moyen : 1,2 s » cache que 5 % des utilisateurs attendent huit secondes. Ce sont pourtant eux qui partent.</p>
+                    <p>Sur toute mesure de qualité de service, une valeur extrême — le neuvième décile, par exemple — en dit plus que la moyenne.</p>
+                </div>
+
+                <p class="retenir">💡 Un tableau de bord se juge au nombre de décisions qu'il a déclenchées, pas au nombre de graphiques qu'il contient.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>INSEE</strong> : méthodologie des enquêtes et définitions officielles des indicateurs. La référence pour savoir comment un chiffre public est construit.</li>
+                    <li><strong>CNIL</strong> : ce qui est permis en matière de collecte et de conservation, y compris pour un fichier de travail interne.</li>
+                    <li><strong>« Factfulness »</strong>, Hans Rosling : sur les biais de lecture des données, avec des exemples tirés de statistiques mondiales.</li>
+                    <li><strong>Documentation de votre outil de visualisation</strong> : les chapitres sur les jointures et les valeurs manquantes, rarement lus et pourtant décisifs.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> notez vos décisions de nettoyage dans un fichier à part, au fur et à mesure. Vous ne vous en souviendrez pas, et quelqu'un vous demandera.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Niveau précédent</span>Data &amp; Analytics — Débutant</a>
+            <a href="avance.html" class="next"><span class="label">Niveau suivant →</span>Data &amp; Analytics — Avancé</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+                <a href="../finance/index.html">💰 Finance</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/data-intermediaire.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

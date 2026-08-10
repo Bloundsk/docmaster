@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data & Analytics — Débutant - DocMaster</title>
+    <meta name="description" content="Guide gratuit sur les KPI, la collecte de données, la visualisation et les bases des statistiques.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/data/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Data & Analytics — Débutant - DocMaster">
+    <meta property="og:description" content="Guide gratuit sur les KPI, la collecte de données, la visualisation et les bases des statistiques.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/data/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data & Analytics — Débutant - DocMaster">
+    <meta name="twitter:description" content="Guide gratuit sur les KPI, la collecte de données, la visualisation et les bases des statistiques.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">📊 Data & Analytics</a> &gt;
+        <span aria-current="page">Débutant</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Data & Analytics — Débutant</h1>
+                <p>Lire un chiffre sans se faire avoir. Aucun prérequis en statistiques.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#les-kpi">📈 Les KPI</a></li>
+                <li><a href="#la-collecte-de-données">🗂️ La collecte de données</a></li>
+                <li><a href="#la-visualisation-de-données">📉 La visualisation de données</a></li>
+                <li><a href="#les-bases-des-statistiques">🧮 Les bases des statistiques</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Un bon KPI est mesurable, lié à un objectif précis, et actionnable.</li>
+                <li>La qualité des données prime sur leur quantité.</li>
+                <li>Le choix du type de graphique dépend du message à transmettre.</li>
+                <li>La médiane est souvent plus représentative que la moyenne en présence de valeurs extrêmes.</li>
+                <li>Corrélation n'est pas causalité.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>« On a l'impression que ça marche mieux depuis qu'on a changé la page d'accueil. » Cette phrase, on l'entend dans toutes les organisations. Elle est peut-être vraie. Le problème, c'est qu'elle est invérifiable — et qu'on va prendre des décisions coûteuses en se fondant dessus.</p>
+            <p>La data ne sert pas à produire des tableaux de bord impressionnants. Elle sert à répondre à une question précise avec un degré de certitude connu. C'est une nuance importante : une donnée mal collectée ou mal interprétée est <strong>pire</strong> qu'une absence de donnée, parce qu'elle donne une fausse confiance.</p>
+            <p>Ce guide couvre quatre choses : choisir ce qu'on mesure, récupérer des données auxquelles on peut se fier, les représenter sans mentir, et les interpréter sans se tromper. Aucune connaissance en mathématiques n'est nécessaire — les quatre notions statistiques utiles au quotidien tiennent en une page.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Les bases à connaître</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="les-kpi">📈 Les KPI</h3></summary>
+                <div class="lecon-corps">
+                <p>Un <strong>KPI</strong> (<em>Key Performance Indicator</em>, indicateur clé de performance) est un chiffre choisi pour répondre à une question de décision. Le mot important est <em>choisi</em> : on peut mesurer des milliers de choses, et la difficulté n'est pas de collecter, c'est de trier.</p>
+
+                <h4>Ce qui distingue un bon indicateur</h4>
+                <p>Un indicateur mérite d'être suivi s'il réunit trois conditions :</p>
+                <ul>
+                    <li><strong>Il est lié à un objectif précis.</strong> Pas « améliorer le site », mais « augmenter la part de visiteurs qui achètent ».</li>
+                    <li><strong>Il est mesurable de la même façon dans le temps.</strong> Si la définition change en cours de route, la comparaison ne veut plus rien dire.</li>
+                    <li><strong>Il est actionnable.</strong> Sa variation doit déclencher une décision. C'est le critère le plus discriminant, et le plus souvent oublié.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Une boutique en ligne reçoit <strong>100 000 visiteurs</strong> par mois et réalise <strong>1 200 ventes</strong>. Le mois suivant, une campagne publicitaire fait passer le trafic à <strong>180 000 visiteurs</strong>, pour <strong>1 300 ventes</strong>.</p>
+                    <p>Vu par le trafic : <strong>+80 %</strong>. Le rapport mensuel est flatteur.</p>
+                    <p>Vu par le taux de conversion : on passe de <strong>1,20 %</strong> à <strong>0,72 %</strong>, soit une chute de <strong>40 %</strong>. La campagne a fait venir 80 000 personnes dont presque aucune n'était intéressée.</p>
+                    <p>Les deux chiffres sont exacts. Un seul mène à une décision : revoir le ciblage de la campagne.</p>
+                </div>
+
+                <h4>Indicateurs de résultat et indicateurs avancés</h4>
+                <p>Le chiffre d'affaires est un <strong>indicateur de résultat</strong> : il constate ce qui s'est passé, trop tard pour agir. Le nombre de devis envoyés cette semaine est un <strong>indicateur avancé</strong> : il annonce le chiffre d'affaires du mois prochain, quand il est encore temps de réagir. Un tableau de bord utile contient les deux.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la métrique de vanité</span>
+                    <p>Nombre d'abonnés, de vues, de téléchargements, de likes : ces chiffres montent presque toujours, ne redescendent jamais, et sont agréables à présenter. Ils sont rarement liés à une décision.</p>
+                    <p>Le test à appliquer : « si ce chiffre baissait de 20 % demain, que ferais-je différemment ? » Si la réponse est « rien », ce n'est pas un KPI, c'est une décoration.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-kpi"></div>
+
+                <p class="retenir">💡 Un indicateur qui ne change aucune décision n'est pas un indicateur. Avant d'en suivre un, écris la décision qu'il servira à prendre.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-collecte-de-données">🗂️ La collecte de données</h3></summary>
+                <div class="lecon-corps">
+                <p>Toute analyse hérite des défauts de sa collecte. Un calcul impeccable sur des données biaisées produit un résultat faux — mais présenté avec assurance, ce qui le rend plus dangereux qu'une intuition assumée.</p>
+
+                <h4>Quantitatif et qualitatif</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Type</th><th>Répond à</th><th>Limite</th></tr>
+                    <tr><td><strong>Quantitatif</strong><br>chiffres, mesures, comptages</td><td><em>Combien ? Où ? Quand ?</em><br>« 68 % abandonnent au paiement »</td><td>Ne dit jamais <em>pourquoi</em></td></tr>
+                    <tr><td><strong>Qualitatif</strong><br>entretiens, verbatims, observations</td><td><em>Pourquoi ? Comment ?</em><br>« Je ne voyais pas les frais de port »</td><td>Ne dit pas si c'est représentatif</td></tr>
+                </table>
+                </div>
+                <p>Les deux se complètent et ne se remplacent pas. Le quantitatif localise le problème, le qualitatif l'explique. Chercher la cause d'un abandon de panier dans un tableau de chiffres est une perte de temps : il faut parler à cinq personnes.</p>
+
+                <h4>Le biais de sélection</h4>
+                <p>C'est le défaut de collecte le plus courant, et le plus difficile à voir : les personnes qui répondent ne ressemblent pas à celles qui ne répondent pas.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Un service envoie un questionnaire de satisfaction à ses <strong>5 000 clients</strong>. <strong>200 réponses</strong> arrivent, avec une note moyenne de <strong>4,3 / 5</strong>. Conclusion apparente : les clients sont satisfaits.</p>
+                    <p>Mais qui prend cinq minutes pour répondre à un questionnaire ? Les très contents et les très mécontents. Les 4 800 silencieux — dont ceux qui sont partis à la concurrence — ne sont pas dans le calcul.</p>
+                    <p>Ce 4,3 mesure la satisfaction <strong>des personnes qui ont répondu</strong>, pas celle des clients. La nuance change tout.</p>
+                </div>
+
+                <h4>Trois questions avant d'exploiter un chiffre</h4>
+                <ol>
+                    <li><strong>Qui a été mesuré, et qui a été oublié ?</strong> Les absents sont souvent le vrai sujet.</li>
+                    <li><strong>Comment la mesure a-t-elle été faite ?</strong> Un formulaire déclaratif et un relevé automatique ne se valent pas.</li>
+                    <li><strong>Sur quelle période ?</strong> Une semaine de vacances scolaires ne prédit pas une semaine ordinaire.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — accumuler avant de savoir quoi chercher</span>
+                    <p>« Collectons tout, on verra plus tard » produit des bases énormes, coûteuses à maintenir, dans lesquelles on ne trouve rien. Et sur un grand volume de données, on finit toujours par dénicher une corrélation spectaculaire due au seul hasard.</p>
+                    <p>La question précède la collecte, jamais l'inverse.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-collecte"></div>
+
+                <p class="retenir">💡 Avant de faire confiance à un chiffre, demande qui n'a pas été compté. C'est presque toujours là que se cache l'erreur.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-visualisation-de-données">📉 La visualisation de données</h3></summary>
+                <div class="lecon-corps">
+                <p>Un graphique n'est pas une décoration posée sur un tableau : c'est un argument. Il oriente la lecture, met une chose en avant et en relègue une autre. D'où une responsabilité — la même donnée peut, selon sa mise en forme, mener à deux décisions opposées.</p>
+
+                <h4>Choisir la forme selon la question</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Question posée</th><th>Forme adaptée</th><th>À éviter</th></tr>
+                    <tr><td>Comment ça évolue dans le temps ?</td><td>Courbe</td><td>Barres (illisible au-delà de 12 points)</td></tr>
+                    <tr><td>Qui est le plus grand ?</td><td>Barres horizontales, triées</td><td>Camembert (l'œil compare mal des angles)</td></tr>
+                    <tr><td>Quelle part du total ?</td><td>Camembert, <strong>3 parts maximum</strong></td><td>Camembert à 8 parts</td></tr>
+                    <tr><td>Y a-t-il un lien entre A et B ?</td><td>Nuage de points</td><td>Deux courbes à échelles différentes</td></tr>
+                    <tr><td>Un seul chiffre à retenir ?</td><td>Le chiffre écrit en grand</td><td>Une jauge, un compteur</td></tr>
+                </table>
+                </div>
+
+                <h4>L'axe tronqué</h4>
+                <p>C'est la manipulation visuelle la plus répandue, souvent involontaire — beaucoup d'outils la produisent par défaut.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Deux produits : <strong>A = 51 ventes</strong>, <strong>B = 49 ventes</strong>. Un écart de 4 %.</p>
+                    <p>Avec un axe partant de <strong>0</strong>, les deux barres paraissent identiques — ce qui est fidèle.</p>
+                    <p>Avec un axe partant de <strong>48</strong>, la barre de A devient <strong>trois fois</strong> plus haute que celle de B. Le lecteur en conclut que A écrase B.</p>
+                    <p>Aucun chiffre n'a été falsifié. Seule l'échelle a changé.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le graphique qui demande une notice</span>
+                    <p>Si le lecteur doit consulter la légende pour comprendre, le graphique a raté son office. Un bon visuel se lit en trois secondes : un titre qui énonce la conclusion (« Les ventes ont doublé en 6 mois », pas « Ventes 2026 »), des axes nommés avec leur unité, et une seule idée par graphique.</p>
+                </div>
+
+                <div class="pratique" data-pratique="choisir-son-graphique"></div>
+
+                <p class="retenir">💡 Regarde toujours d'où part l'axe vertical. C'est le premier réflexe à acquérir, et il vous évitera de vous faire abuser — y compris par vos propres graphiques.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-bases-des-statistiques">🧮 Les bases des statistiques</h3></summary>
+                <div class="lecon-corps">
+                <p>Quatre notions suffisent à éviter la grande majorité des erreurs d'interprétation. Aucune ne demande de calcul compliqué.</p>
+
+                <h4>1. Moyenne ou médiane</h4>
+                <p>La <strong>moyenne</strong> additionne tout et divise par l'effectif. La <strong>médiane</strong> est la valeur qui coupe la population en deux moitiés égales.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Dix salaires dans une petite entreprise : neuf personnes à <strong>2 000 €</strong> et un dirigeant à <strong>20 000 €</strong>.</p>
+                    <p><strong>Moyenne</strong> = (9 × 2 000 + 20 000) / 10 = <strong>3 800 €</strong></p>
+                    <p><strong>Médiane</strong> = <strong>2 000 €</strong></p>
+                    <p>« Le salaire moyen est de 3 800 € » est exact, et ne décrit la réalité d'aucun des dix salariés. La médiane, elle, décrit celle de neuf d'entre eux.</p>
+                </div>
+                <p>Règle pratique : dès qu'une distribution comporte des valeurs extrêmes — salaires, prix immobiliers, temps de réponse, chiffre d'affaires par client — la médiane est plus honnête. Publier les deux est encore mieux : leur écart révèle à lui seul l'inégalité de la distribution.</p>
+
+                <h4>2. Corrélation et causalité</h4>
+                <p>Deux variables sont <strong>corrélées</strong> quand elles évoluent ensemble. Cela n'implique rien sur le fait que l'une provoque l'autre.</p>
+                <p>Trois explications restent possibles : A cause B, B cause A, ou <strong>C cause les deux</strong>. Ce troisième cas est le plus fréquent et le plus oublié.</p>
+                <div class="exemple">
+                    <span class="titre">Exemple</span>
+                    <p>Les ventes de glaces et les noyades augmentent en même temps. Les glaces ne noient personne : c'est la chaleur qui provoque les deux.</p>
+                    <p>Version professionnelle, moins évidente à repérer : « les clients qui utilisent notre application mobile achètent 3 fois plus ». Peut-être l'application déclenche-t-elle l'achat. Ou peut-être les clients déjà les plus fidèles sont-ils simplement ceux qui installent l'application. Décider d'investir des millions dans l'application sur cette base est un pari, pas une déduction.</p>
+                </div>
+
+                <h4>3. La taille de l'échantillon</h4>
+                <p>Sur 10 visiteurs, 6 clics font « 60 % ». Sur 10 autres visiteurs, le même dispositif donnera peut-être 30 %. En dessous de quelques centaines d'observations, un écart de quelques points ne signifie rien : c'est du bruit.</p>
+                <p>Ordre de grandeur utile : pour comparer deux versions d'une page, il faut en général <strong>plusieurs centaines de conversions par version</strong> — pas de visiteurs, de conversions — avant de conclure quoi que ce soit.</p>
+
+                <h4>4. Le pourcentage de pourcentage</h4>
+                <p>Passer de <strong>2 % à 3 %</strong>, c'est <strong>+1 point</strong> ou <strong>+50 %</strong>. Les deux formulations sont exactes ; la seconde est spectaculaire et souvent choisie pour cette raison. Quand un chiffre vous impressionne, cherchez la valeur absolue derrière.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — conclure avant la fin du test</span>
+                    <p>Regarder les résultats d'un test tous les matins et l'arrêter le jour où l'écart est favorable garantit de trouver un gagnant, même entre deux versions strictement identiques. La durée du test se fixe <strong>avant</strong> de le lancer.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-valeur-extreme"></div>
+
+                <p class="retenir">💡 Devant tout chiffre : quelle est la taille de l'échantillon, et l'écart pourrait-il s'expliquer par le hasard ? Ces deux questions filtrent la majorité des conclusions hâtives.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du guide. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Google Analytics Academy</strong> — formations gratuites sur l'analyse de données web, avec certification à la clé.</li>
+                    <li><strong>Kaggle</strong> — jeux de données réels et exercices commentés pour pratiquer sans monter d'infrastructure.</li>
+                    <li><strong>Our World in Data</strong> — la référence en visualisation honnête : sources citées, méthodes expliquées, axes non tronqués.</li>
+                    <li><strong>« How to Lie with Statistics »</strong>, Darrell Huff — court, écrit en 1954, et toujours le meilleur entraînement à repérer les graphiques trompeurs.</li>
+                    <li><strong>INSEE</strong> — données publiques françaises, utiles pour s'exercer sur des chiffres qui concernent votre quotidien.</li>
+                </ul>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Retour</span>Parcours Data & Analytics</a>
+            <a href="intermediaire.html" class="next"><span class="label">Niveau suivant →</span>Data & Analytics — Intermédiaire</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../finance/index.html">💰 Finance</a>
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/data-debutant.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>
