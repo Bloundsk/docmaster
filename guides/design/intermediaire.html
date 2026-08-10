@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design UX/UI — Intermédiaire - DocMaster</title>
+    <meta name="description" content="Niveau intermédiaire du parcours Design : accessibilité, architecture de l'information, conception mobile d'abord et système de design.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/design/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Design UX/UI — Intermédiaire - DocMaster">
+    <meta property="og:description" content="Niveau intermédiaire du parcours Design : accessibilité, architecture de l'information, conception mobile d'abord et système de design.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/design/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Design UX/UI — Intermédiaire - DocMaster">
+    <meta name="twitter:description" content="Niveau intermédiaire du parcours Design : accessibilité, architecture de l'information, conception mobile d'abord et système de design.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🎨 Design UX/UI</a> &gt;
+        <span aria-current="page">Intermédiaire</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎨 Design UX/UI — Intermédiaire</h1>
+                <p>Concevoir pour tout le monde, sur tous les écrans, sans tout refaire à chaque page.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="70" cy="70" r="24"/><circle cx="70" cy="70" r="9" stroke-opacity="0.6"/></g><circle cx="70" cy="70" r="3.5" fill="white"/></g>
+<circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#accessibilite">♿ L'accessibilité</a></li>
+                <li><a href="#architecture-information">🧭 L'architecture de l'information</a></li>
+                <li><a href="#mobile-dabord">📱 Concevoir mobile d'abord</a></li>
+                <li><a href="#systeme-de-design">🧱 Le système de design</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>L'accessibilité n'est pas une option pour une minorité : elle profite d'abord à tout le monde.</li>
+                <li>Un menu bien rangé selon votre organigramme reste incompréhensible pour vos visiteurs.</li>
+                <li>Concevoir d'abord pour le petit écran force à hiérarchiser ; l'inverse conduit à amputer.</li>
+                <li>Une cible tactile de moins de 9 millimètres produit des erreurs de manipulation.</li>
+                <li>Un système de design n'est pas une bibliothèque de composants, c'est un accord sur les décisions.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau débutant distinguait l'UX de l'UI, présentait le wireframe, les principes visuels et les tests utilisateurs. De quoi concevoir un écran qui tient debout.</p>
+            <p>Ce niveau porte sur ce qui apparaît dès qu'un projet grandit : <strong>des utilisateurs qui ne vous ressemblent pas</strong>, <strong>des dizaines d'écrans à faire tenir ensemble</strong>, et <strong>des tailles d'écran qui vont du téléphone au moniteur</strong>. Trois problèmes qui ne se posent pas sur une maquette isolée, et qui décident de tout sur un produit réel.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les seuils cités — contrastes, tailles de cible — proviennent des recommandations d'accessibilité en vigueur, mais celles-ci évoluent : vérifiez la version applicable à votre projet.</p>
+                <p>En France, l'accessibilité numérique est une <strong>obligation légale</strong> pour les services publics et pour les entreprises dépassant certains seuils.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ce qui apparaît quand le projet grandit</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="accessibilite">♿ L'accessibilité</h3></summary>
+                <div class="lecon-corps">
+                <p>L'accessibilité consiste à concevoir des interfaces utilisables par des personnes dont la vue, l'audition, la motricité ou l'attention diffèrent de la moyenne. On l'imagine réservée à une petite minorité. C'est faux à deux titres.</p>
+
+                <h4>Le handicap est souvent temporaire ou situationnel</h4>
+                <p>Une personne qui tient un enfant d'un bras utilise l'écran d'une seule main. Quelqu'un dans un train en plein soleil ne distingue plus les contrastes faibles. Un bras plâtré, une otite, un téléphone en mode économie d'énergie : toutes ces situations placent temporairement dans la position que l'accessibilité prend en compte.</p>
+                <p>À cela s'ajoute le vieillissement : la presbytie touche l'immense majorité des plus de cinquante ans.</p>
+
+                <h4>Les quatre points qui règlent l'essentiel</h4>
+                <p><strong>Le contraste.</strong> Un texte doit se détacher nettement de son fond. Le seuil courant est un rapport de <strong>4,5 pour 1</strong> pour le texte normal, <strong>3 pour 1</strong> pour les grands titres. Le gris clair sur blanc, très à la mode, échoue systématiquement.</p>
+                <p><strong>La taille des cibles.</strong> Un bouton tactile doit mesurer au moins <strong>44 pixels CSS</strong> de côté, soit environ 9 millimètres — la largeur d'un doigt.</p>
+                <p><strong>Le clavier.</strong> Toute action possible à la souris doit l'être au clavier, et l'élément actif doit être <strong>visible</strong>. Supprimer le contour de focus parce qu'il est jugé disgracieux rend le site inutilisable pour qui ne peut pas viser.</p>
+                <p><strong>Les alternatives textuelles.</strong> Une image qui porte de l'information a besoin d'une description ; une image purement décorative doit être explicitement marquée comme telle, pour ne pas être lue inutilement.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce que l'accessibilité apporte à tout le monde</span>
+                    <p>Les <strong>sous-titres</strong> ont été conçus pour les personnes sourdes. Ils sont aujourd'hui utilisés majoritairement par des gens qui regardent une vidéo sans le son, dans les transports ou en réunion.</p>
+                    <p>Les <strong>bateaux de trottoir</strong> ont été imposés pour les fauteuils roulants. Ils servent surtout aux poussettes, aux valises et aux livreurs.</p>
+                    <p>Concevoir pour les cas difficiles produit une interface meilleure pour les cas ordinaires. L'inverse n'est jamais vrai.</p>
+                </div>
+
+                <div class="pratique" data-pratique="audit-accessibilite"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — traiter l'accessibilité en fin de projet</span>
+                    <p>Reprise à la fin, elle devient une refonte : le contraste impose de revoir la charte, la navigation clavier de restructurer le balisage.</p>
+                    <p>Prise en compte dès les maquettes, elle ne coûte quasiment rien — il s'agit surtout de choisir les bonnes couleurs et les bonnes tailles dès le départ.</p>
+                </div>
+
+                <p class="retenir">💡 Concevoir pour les situations difficiles améliore l'usage ordinaire. La réciproque est fausse.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="architecture-information">🧭 L'architecture de l'information</h3></summary>
+                <div class="lecon-corps">
+                <p>C'est la façon dont les contenus sont organisés, nommés et reliés. Invisible quand elle est bonne, elle explique l'essentiel des « je ne trouve pas » lorsqu'elle est mauvaise — et aucun travail graphique ne la rattrape.</p>
+
+                <h4>Le piège de l'organigramme</h4>
+                <p>La tentation est de calquer la navigation sur la structure interne de l'organisation : un menu par direction, un onglet par service. C'est parfaitement logique de l'intérieur, et parfaitement opaque de l'extérieur.</p>
+                <p>Un visiteur ne cherche pas « le service des adhésions » : il cherche « comment m'inscrire ». La navigation doit suivre <strong>les tâches des utilisateurs</strong>, pas la hiérarchie de la maison.</p>
+
+                <h4>Le tri par cartes</h4>
+                <p>La méthode la plus simple pour trancher : écrire chaque contenu sur une carte, demander à cinq ou dix personnes de les regrouper comme cela leur semble naturel, puis de nommer chaque groupe.</p>
+                <p>Les regroupements qui reviennent chez la plupart des participants indiquent la structure attendue. Les cartes que chacun place ailleurs signalent un contenu mal nommé, ou qui n'a pas de place évidente.</p>
+
+                <div class="exemple">
+                    <span class="titre">Les libellés comptent autant que la structure</span>
+                    <p><strong>« Nos solutions »</strong> ne dit rien. <strong>« Tarifs »</strong> dit tout.</p>
+                    <p><strong>« Espace client »</strong> et <strong>« Mon compte »</strong> sur le même site créent une hésitation à chaque visite : le visiteur doit deviner lequel des deux le concerne.</p>
+                    <p>Un libellé se juge à une seule chose : quelqu'un qui découvre le site sait-il ce qu'il trouvera derrière ? Le vocabulaire interne échoue presque toujours à ce test.</p>
+                </div>
+
+                <div class="pratique" data-pratique="test-des-cartes"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — ajouter une entrée de menu à chaque demande</span>
+                    <p>Un menu grandit d'une entrée à chaque nouveau besoin exprimé, jusqu'à en compter quinze. Chacune ajoutée pour de bonnes raisons ; l'ensemble devenu illisible.</p>
+                    <p>Au-delà de sept entrées environ, il faut regrouper — et le regroupement doit venir des utilisateurs, pas d'un arbitrage interne.</p>
+                </div>
+
+                <p class="retenir">💡 Une navigation se conçoit à partir des tâches des visiteurs, jamais à partir de l'organigramme.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="mobile-dabord">📱 Concevoir mobile d'abord</h3></summary>
+                <div class="lecon-corps">
+                <p>La majorité du trafic web se fait aujourd'hui sur téléphone. Pourtant beaucoup de projets conçoivent encore la version grand écran d'abord, puis « adaptent ». L'ordre n'est pas neutre.</p>
+
+                <h4>Pourquoi commencer par le petit écran</h4>
+                <p>Un écran de téléphone impose de <strong>choisir</strong>. Il n'y a pas de place pour trois colonnes, un bandeau, une barre latérale et six appels à l'action. Concevoir d'abord pour cette contrainte force à identifier ce qui compte vraiment.</p>
+                <p>Élargir ensuite est facile : on dispose de plus d'espace pour ce qui a déjà été jugé essentiel. L'inverse — partir du grand écran puis retrancher — conduit à des arbitrages faits dans l'urgence, et à des versions mobiles amputées.</p>
+
+                <div class="exemple">
+                    <span class="titre">La règle des cibles tactiles</span>
+                    <p>Un doigt couvre environ <strong>9 millimètres</strong>. Les recommandations fixent la taille minimale d'une cible à <strong>44 pixels CSS</strong>, avec un espacement suffisant entre deux cibles voisines.</p>
+                    <p>Un lien de 24 pixels dans un pied de page, entouré d'autres liens serrés, garantit des erreurs de manipulation — et l'utilisateur croira s'être trompé lui-même.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cible-tactile"></div>
+
+                <h4>Les points de rupture suivent le contenu</h4>
+                <p>L'erreur classique consiste à définir les points de rupture d'après les modèles de téléphones du moment. Ils changent chaque année, et il en existe des centaines.</p>
+                <p>La bonne méthode : élargir progressivement la fenêtre et placer un point de rupture <strong>là où la mise en page commence à mal vieillir</strong> — une ligne de texte trop longue, un espace vide disgracieux. Le contenu dicte, pas le catalogue.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — masquer au lieu de hiérarchiser</span>
+                    <p>Cacher la moitié des éléments derrière un menu sur mobile n'est pas de la conception adaptative : c'est repousser la décision.</p>
+                    <p>Si un contenu ne mérite pas sa place sur téléphone, la vraie question est de savoir s'il la mérite sur grand écran.</p>
+                </div>
+
+                <p class="retenir">💡 Le petit écran ne réduit pas votre interface : il révèle ce qui n'y avait pas sa place.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="systeme-de-design">🧱 Le système de design</h3></summary>
+                <div class="lecon-corps">
+                <p>Passé une vingtaine d'écrans, un produit conçu page par page dérive : sept nuances de bleu, quatre styles de bouton, trois façons d'afficher une erreur. Personne ne l'a décidé — chaque écran a simplement été fait séparément.</p>
+
+                <h4>Ce qu'est réellement un système de design</h4>
+                <p>Ce n'est pas une bibliothèque de composants. C'est <strong>un ensemble de décisions prises une fois</strong> : la palette, l'échelle typographique, les espacements, les états d'un bouton, la manière de signaler une erreur. Les composants ne sont que la matérialisation de ces décisions.</p>
+                <p>Un système est utile précisément parce qu'il <strong>ferme des questions</strong>. Chaque fois qu'un designer se demande « quelle taille pour ce titre ? », le système doit avoir répondu avant.</p>
+
+                <div class="exemple">
+                    <span class="titre">Une échelle plutôt que des valeurs libres</span>
+                    <p><strong>Sans système</strong> : les espacements valent 12, 15, 18, 20, 24, 25, 30 pixels selon l'écran et le jour. Rien n'est franchement faux, l'ensemble paraît bâclé.</p>
+                    <p><strong>Avec une échelle</strong> — 4, 8, 16, 24, 32, 48 — le choix se réduit à quelques options, et la cohérence devient automatique.</p>
+                    <p>La contrainte fait gagner du temps : moins de décisions à prendre, et un résultat plus régulier.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sante-systeme"></div>
+
+                <h4>La dette de design</h4>
+                <p>Comme la dette technique, elle s'accumule par petites exceptions : « juste pour cet écran », « le client voulait un bouton différent ». Chacune paraît anodine ; leur somme rend le système inutilisable, puisqu'il ne décrit plus le produit réel.</p>
+                <p>Une exception acceptée doit être <strong>soit intégrée au système</strong>, soit corrigée. La laisser vivre à côté est le début de la fin.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le système sans propriétaire</span>
+                    <p>Un système que personne ne maintient devient faux en quelques mois : la documentation décrit une version, le produit en affiche une autre, et les équipes cessent de la consulter.</p>
+                    <p>Un système de design est un produit à part entière. Sans quelqu'un pour l'arbitrer, il ne survit pas.</p>
+                </div>
+
+                <p class="retenir">💡 Un système de design ne sert pas à faire joli : il sert à ne plus reprendre les mêmes décisions.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>RGAA</strong> — le référentiel français d'accessibilité, avec ses critères et ses tests. C'est le document opposable en cas de contrôle.</li>
+                    <li><strong>WCAG</strong> — la norme internationale dont le RGAA découle. Les niveaux A, AA et AAA y sont définis.</li>
+                    <li><strong>Vérificateurs de contraste en ligne</strong> : deux couleurs, un rapport, un verdict. À utiliser au moment de choisir la palette, pas après.</li>
+                    <li><strong>Systèmes de design publics</strong> — celui de l'État français, ceux des grandes plateformes : ils montrent le niveau de détail attendu, et sont librement consultables.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> naviguez sur votre propre site au clavier seul, sans souris. Cinq minutes suffisent à révéler l'essentiel des problèmes d'accessibilité.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Niveau précédent</span>Design UX/UI — Débutant</a>
+            <a href="avance.html" class="next"><span class="label">Niveau suivant →</span>Design UX/UI — Avancé</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/design-intermediaire.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

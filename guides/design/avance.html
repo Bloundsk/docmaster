@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design UX/UI — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Design : performance perçue, charge cognitive et lois de Hick et Fitts, schémas sombres et éthique, mesure du design.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/design/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Design UX/UI — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Design : performance perçue, charge cognitive et lois de Hick et Fitts, schémas sombres et éthique, mesure du design.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/design/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Design UX/UI — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Design : performance perçue, charge cognitive et lois de Hick et Fitts, schémas sombres et éthique, mesure du design.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🎨 Design UX/UI</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎨 Design UX/UI — Avancé</h1>
+                <p>Ce qui se joue dans la tête de l'utilisateur, et ce qu'on en fait.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="70" cy="70" r="24"/><circle cx="70" cy="70" r="9" stroke-opacity="0.6"/></g><circle cx="70" cy="70" r="3.5" fill="white"/></g>
+<circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#performance-percue">⏱️ La performance perçue</a></li>
+                <li><a href="#charge-cognitive">🧠 La charge cognitive</a></li>
+                <li><a href="#schemas-sombres">🎯 Les schémas sombres</a></li>
+                <li><a href="#mesurer-le-design">📐 Mesurer le design</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Une attente occupée paraît plus courte qu'une attente vide de même durée.</li>
+                <li>Le temps de décision croît avec le logarithme du nombre d'options, pas linéairement.</li>
+                <li>Une cible lointaine et petite est bien plus lente à atteindre qu'une cible proche et large.</li>
+                <li>Un schéma sombre produit une conversion immédiate et une méfiance durable.</li>
+                <li>Un design qui n'est pas mesuré ne s'améliore pas : il change.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Les deux premiers niveaux portaient sur ce qu'on dessine : des écrans, une navigation, un système. Celui-ci porte sur <strong>ce qui se passe chez la personne en face</strong> — combien de temps elle croit attendre, combien d'options son attention supporte, et ce qui la fait renoncer.</p>
+            <p>Ces mécanismes sont mesurables et connus depuis des décennies. Ils permettent de justifier une décision de conception autrement que par le goût, et ils posent une question à laquelle personne n'échappe : <strong>utiliser ces connaissances pour aider, ou pour manipuler ?</strong></p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les lois citées sont des modèles simplifiés, utiles pour raisonner sur des ordres de grandeur — pas pour prédire un comportement individuel.</p>
+                <p>Les pratiques trompeuses décrites dans la section sur les schémas sombres sont présentées pour être <strong>identifiées et évitées</strong>. Plusieurs sont sanctionnées par le droit européen.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ce qui se joue chez l'utilisateur</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="performance-percue">⏱️ La performance perçue</h3></summary>
+                <div class="lecon-corps">
+                <p>Le temps mesuré et le temps ressenti sont deux choses différentes. Une page qui charge en deux secondes peut sembler plus lente qu'une autre qui met trois secondes — tout dépend de ce qui se passe pendant l'attente.</p>
+
+                <h4>Les seuils de perception</h4>
+                <p>Trois valeurs structurent tout ce domaine :</p>
+                <p><strong>0,1 seconde</strong> — la réaction paraît instantanée. En deçà, l'utilisateur a l'impression de manipuler directement l'objet.</p>
+                <p><strong>1 seconde</strong> — le fil de la pensée n'est pas rompu, mais le délai est perçu. Aucun retour visuel n'est nécessaire.</p>
+                <p><strong>10 secondes</strong> — limite de l'attention. Au-delà, la personne passe à autre chose, et il faut lui indiquer une progression pour espérer la garder.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Une page de <strong>2 500 Ko</strong> sur une connexion mobile à <strong>10 Mb/s</strong> demande environ <strong>2 secondes</strong> de transfert — auxquelles s'ajoutent la latence et le temps d'affichage.</p>
+                    <p>La même page réduite à <strong>800 Ko</strong> descend sous la seconde. Le gain ne vient pas d'un serveur plus rapide, mais du poids retiré : images non compressées, polices inutilisées, scripts jamais exécutés.</p>
+                </div>
+
+                <div class="pratique" data-pratique="budget-performance"></div>
+
+                <h4>Occuper l'attente</h4>
+                <p>Une attente vide paraît environ deux fois plus longue qu'une attente occupée de même durée. D'où trois techniques efficaces :</p>
+                <p>Les <strong>squelettes de contenu</strong> — ces formes grises qui préfigurent la mise en page — donnent l'impression que le chargement a commencé.</p>
+                <p>Le <strong>retour immédiat</strong> : un bouton qui change d'état dès le clic évite le doute et le second clic.</p>
+                <p>L'<strong>affichage optimiste</strong> : montrer le résultat attendu avant confirmation du serveur, quitte à corriger en cas d'échec. C'est ce qui rend les messageries modernes si fluides.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le tourniquet infini</span>
+                    <p>Une animation de chargement sans indication de progression n'informe de rien. Elle dit seulement « quelque chose se passe peut-être », et paraît d'autant plus longue qu'elle est indéterminée.</p>
+                    <p>Une barre de progression, même approximative, est mieux supportée. Et sur une opération courte, un squelette vaut mieux qu'un tourniquet.</p>
+                </div>
+
+                <p class="retenir">💡 Réduire le poids améliore le temps réel. Occuper l'attente améliore le temps ressenti. Les deux comptent.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="charge-cognitive">🧠 La charge cognitive</h3></summary>
+                <div class="lecon-corps">
+                <p>Toute interface demande un effort mental : comprendre, choisir, mémoriser. Cet effort est limité, et il se dépense. Une interface qui en consomme trop fatigue, puis fait abandonner — souvent sans que la personne sache dire pourquoi.</p>
+
+                <h4>La loi de Hick : le coût du choix</h4>
+                <p>Le temps nécessaire pour décider croît avec le <strong>logarithme</strong> du nombre d'options. Concrètement : passer de 2 à 4 choix coûte autant que passer de 4 à 8.</p>
+                <p>Une précision s'impose, car elle est presque toujours omise : cette loi décrit le choix entre des options <strong>déjà connues</strong>. Appliquée telle quelle, elle conclut même qu'une liste plate bat une navigation à deux étages — puisque cette dernière fait décider deux fois.</p>
+                <p>Ce qui rend le regroupement gagnant est autre chose : le <strong>balayage visuel</strong>. Un visiteur qui découvre un menu ne choisit pas, il cherche — et ce parcours-là coûte à peu près linéairement. Vingt entrées à parcourir, contre quatre familles puis cinq entrées : l'écart devient net.</p>
+
+                <div class="pratique" data-pratique="loi-de-hick"></div>
+
+                <h4>La loi de Fitts : le coût du geste</h4>
+                <p>Le temps pour atteindre une cible dépend de sa <strong>distance</strong> et de sa <strong>taille</strong>. Une petite cible éloignée est lente à viser ; une grande cible proche est immédiate.</p>
+                <p>D'où plusieurs conséquences bien établies : les bords et les coins de l'écran sont des zones privilégiées, parce que le curseur s'y arrête tout seul. Sur téléphone, le bas de l'écran est plus accessible au pouce que le haut — ce qui explique le déplacement des barres de navigation vers le bas.</p>
+                <p>Et l'action principale d'un formulaire doit être <strong>grande et proche du dernier champ rempli</strong>, pas reléguée dans un coin.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le nombre d'éléments retenus simultanément</span>
+                    <p>La mémoire de travail retient quelques éléments à la fois — l'ordre de grandeur communément retenu se situe autour de <strong>quatre</strong>, et non des sept longtemps cités.</p>
+                    <p>C'est pourquoi un numéro se lit par groupes, pourquoi un formulaire long gagne à être découpé en étapes, et pourquoi demander de retenir une information d'un écran à l'autre est une mauvaise idée : il faut la réafficher.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — confondre simple et minimal</span>
+                    <p>Retirer des libellés, masquer les options derrière des icônes obscures, supprimer les explications : l'écran paraît épuré, la charge mentale augmente.</p>
+                    <p>L'utilisateur doit désormais deviner. Une interface simple n'est pas celle qui montre le moins, c'est celle qui demande le moins d'efforts pour être comprise.</p>
+                </div>
+
+                <p class="retenir">💡 Le nombre d'options ne fatigue pas autant que l'absence de structure pour les parcourir.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="schemas-sombres">🎯 Les schémas sombres</h3></summary>
+                <div class="lecon-corps">
+                <p>Un schéma sombre est une interface conçue pour obtenir de l'utilisateur ce qu'il n'aurait pas choisi en connaissance de cause. Ce ne sont pas des maladresses : ce sont des décisions de conception délibérées, souvent testées et optimisées.</p>
+
+                <h4>Les formes les plus répandues</h4>
+                <p><strong>Le consentement déséquilibré.</strong> « Tout accepter » en gros bouton coloré, « paramétrer » en petit lien gris. Techniquement, le choix existe ; en pratique, il est orienté.</p>
+                <p><strong>L'abonnement en un clic, la résiliation en dix.</strong> S'inscrire prend trente secondes ; se désinscrire suppose de trouver une page cachée, puis de justifier son départ.</p>
+                <p><strong>Les frais révélés à la fin.</strong> Le prix affiché n'est pas le prix payé. Les suppléments apparaissent après l'investissement de temps dans le tunnel.</p>
+                <p><strong>La honte du refus.</strong> « Non merci, je préfère payer plus cher. » Le libellé du refus est rédigé pour être désagréable à cliquer.</p>
+                <p><strong>La fausse urgence.</strong> Un compte à rebours qui se réinitialise, « 3 personnes regardent cet article » sans aucun fondement.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce que dit le droit européen</span>
+                    <p>Plusieurs de ces pratiques ne sont pas seulement discutables : elles sont <strong>illégales</strong>.</p>
+                    <p>Le consentement doit être <strong>aussi facile à refuser qu'à accepter</strong> — un bandeau sans bouton « tout refuser » au même niveau que « tout accepter » est non conforme.</p>
+                    <p>La résiliation doit pouvoir se faire par un moyen aussi simple que la souscription. Et les autorités de protection des consommateurs sanctionnent l'affichage de prix trompeur.</p>
+                </div>
+
+                <div class="pratique" data-pratique="schemas-sombres"></div>
+
+                <h4>Pourquoi c'est un mauvais calcul</h4>
+                <p>Ces techniques fonctionnent : elles augmentent réellement les conversions à court terme. C'est ce qui les rend tentantes, et ce qui les fait paraître efficaces dans un tableau de bord.</p>
+                <p>Ce que le tableau de bord ne montre pas : les résiliations ultérieures, les demandes de remboursement, les avis négatifs, et la méfiance qui s'installe. Le gain est immédiat et mesuré ; le coût est différé et diffus.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le schéma sombre involontaire</span>
+                    <p>Une case pré-cochée « par simplicité », un bouton de refus moins visible « pour l'esthétique » : personne n'a voulu tromper, et le résultat est le même pour l'utilisateur.</p>
+                    <p>Le test est simple : <strong>si l'utilisateur découvrait ce mécanisme, se sentirait-il floué ?</strong> Si oui, l'intention ne change rien.</p>
+                </div>
+
+                <p class="retenir">💡 Une interface qui obtient un consentement que personne n'aurait donné en comprenant n'a pas convaincu : elle a piégé.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="mesurer-le-design">📐 Mesurer le design</h3></summary>
+                <div class="lecon-corps">
+                <p>« C'est plus joli » n'est pas un argument recevable, et « le client préfère » encore moins. Le design se mesure — imparfaitement, mais suffisamment pour arbitrer.</p>
+
+                <h4>Les trois mesures de base d'un test d'utilisabilité</h4>
+                <p><strong>Le taux de réussite</strong> : quelle proportion des participants termine la tâche sans aide. C'est la mesure la plus importante, et la plus souvent oubliée.</p>
+                <p><strong>Le temps de tâche</strong> : combien de temps il leur faut. À interpréter avec prudence — plus rapide n'est pas toujours mieux, notamment sur une décision importante.</p>
+                <p><strong>Le nombre d'erreurs</strong> : combien de fois ils se trompent, reviennent en arrière, ou hésitent visiblement.</p>
+                <p>S'y ajoute un questionnaire de satisfaction standardisé, dont le principal mérite est d'être comparable d'une version à l'autre et d'un produit à l'autre.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le calcul qui convainc une direction</span>
+                    <p>Une amélioration fait gagner <strong>5 secondes</strong> sur une tâche effectuée <strong>3 fois par jour</strong> par <strong>200 personnes</strong>, 220 jours par an.</p>
+                    <p>Soit 5 × 3 × 200 × 220 = 660 000 secondes, environ <strong>183 heures par an</strong>.</p>
+                    <p>Ce calcul transforme un argument esthétique en argument budgétaire. C'est souvent le seul qui soit entendu.</p>
+                </div>
+
+                <div class="pratique" data-pratique="gain-de-temps-utilisateur"></div>
+
+                <h4>Ce que les mesures ne disent pas</h4>
+                <p>Un test d'utilisabilité montre <strong>où</strong> les gens échouent, rarement <strong>pourquoi</strong>. La réponse vient de l'observation et des questions posées après coup, pas du tableau de résultats.</p>
+                <p>Et un chiffre isolé ne vaut rien : c'est la comparaison — avant et après, version A et version B — qui produit l'information.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — mesurer ce qui est facile à mesurer</span>
+                    <p>Le temps passé sur une page est facile à collecter. Il est aussi parfaitement ambigu : est-ce de l'intérêt, ou de la confusion ?</p>
+                    <p>Un indicateur commode mais ininterprétable est pire qu'une absence de mesure : il donne l'impression de savoir.</p>
+                </div>
+
+                <p class="retenir">💡 Sans mesure, un design ne s'améliore pas — il change, et l'on croit l'avoir amélioré.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>CNIL — recommandations sur les interfaces trompeuses</strong> : ce qui est exigé d'un bandeau de consentement, et ce qui est sanctionné.</li>
+                    <li><strong>DGCCRF</strong> : les règles sur l'affichage des prix et la résiliation, opposables à tout site marchand français.</li>
+                    <li><strong>Travaux de Nielsen Norman Group</strong> : les seuils de perception du temps de réponse et les protocoles de test d'utilisabilité, documentés depuis les années 1990.</li>
+                    <li><strong>Outils d'audit de performance</strong> : ils donnent le poids réel d'une page et le détail de ce qui la ralentit. La liste est presque toujours dominée par les images.</li>
+                    <li><strong>Littérature sur la charge cognitive</strong> : les travaux de Miller et Cowan sur la mémoire de travail, à l'origine des règles de regroupement.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> avant de défendre une amélioration, chiffrez-la en heures gagnées par an. L'argument esthétique se discute, le calcul beaucoup moins.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Design UX/UI — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Parcours →</span>Retour au sommaire Design</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/design-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

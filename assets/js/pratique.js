@@ -1111,6 +1111,273 @@
                 return { texte: "Un incident en amont produirait aujourd'hui un tableau de bord faux et crédible.", ton: "alerte" };
             },
             lecon: "Une donnée figée depuis trois jours est plus dangereuse qu'une donnée absente : personne ne remarque qu'elle ne bouge plus."
+        },
+
+        // ================= DESIGN UX/UI =================
+
+        // ---------- Niveau débutant ----------
+
+        "ux-ou-ui": {
+            type: "controle",
+            titre: "UX ou UI ?",
+            intro: "Cochez les décisions qui relèvent de l'UX plutôt que de l'UI. Quatre le sont.",
+            points: [
+                { texte: "Décider de l'ordre des étapes d'une inscription", aide: "UX : c'est le parcours" },
+                { texte: "Choisir la couleur du bouton principal", aide: "UI : c'est l'apparence" },
+                { texte: "Déterminer quelles informations demander, et lesquelles supprimer", aide: "UX" },
+                { texte: "Définir l'échelle typographique", aide: "UI" },
+                { texte: "Comprendre pourquoi les gens abandonnent au paiement", aide: "UX" },
+                { texte: "Décider qu'une erreur s'affiche sous le champ concerné plutôt qu'en haut", aide: "UX : cela change la capacité à corriger" }
+            ],
+            verdict: (n) => {
+                if (n === 4) return { texte: "Quatre décisions relèvent de l'UX. Vérifiez avec les indications que ce sont les vôtres.", ton: "bon" };
+                if (n > 4) return { texte: "Plus de quatre : deux de ces décisions portent sur l'apparence, pas sur le parcours.", ton: "alerte" };
+                return { texte: "Quatre de ces six décisions relèvent de l'UX.", ton: "moyen" };
+            },
+            lecon: "L'UI se voit, l'UX se vit. Une interface superbe sur un parcours absurde reste inutilisable."
+        },
+
+        "qualite-wireframe": {
+            type: "controle",
+            titre: "Votre wireframe est-il utile ?",
+            intro: "Cochez ce qui est vrai de la maquette fil de fer que vous avez sous les yeux.",
+            points: [
+                { texte: "Il est en niveaux de gris, sans couleur ni image finale", aide: "sinon la discussion glisse vers l'esthétique" },
+                { texte: "Le contenu est réaliste, pas du faux texte", aide: "un titre réel fait trois lignes, le faux texte en fait une" },
+                { texte: "La hiérarchie des éléments est visible sans explication" },
+                { texte: "Les états vides, en cours de chargement et en erreur sont prévus" },
+                { texte: "Il montre un parcours, pas un écran isolé" },
+                { texte: "Il est assez grossier pour qu'on ose le critiquer", aide: "trop léché, il paraît définitif et n'est plus discuté" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Wireframe efficace : il fait parler de structure, pas de couleurs.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Les états d'erreur et de chargement sont les grands oubliés.", ton: "moyen" };
+                return { texte: "Cette maquette va produire des retours sur l'apparence, pas sur le fond.", ton: "alerte" };
+            },
+            lecon: "Un wireframe trop soigné ne reçoit plus de critiques de structure : il paraît déjà décidé."
+        },
+
+        "hierarchie-visuelle": {
+            type: "controle",
+            titre: "Testez votre hiérarchie visuelle",
+            intro: "Plissez les yeux devant votre écran jusqu'à le voir flou, puis cochez.",
+            points: [
+                { texte: "Je distingue encore l'élément le plus important" },
+                { texte: "L'action principale se repère sans lire" },
+                { texte: "Les zones se détachent les unes des autres" },
+                { texte: "Rien ne rivalise avec l'élément principal", aide: "deux éléments également saillants s'annulent" },
+                { texte: "Le regard suit un ordre naturel du haut vers le bas" },
+                { texte: "Les espaces séparent ce qui doit l'être et rapprochent ce qui va ensemble" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Hiérarchie lisible : l'écran se comprend avant d'être lu.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. Vérifiez surtout qu'un seul élément domine.", ton: "moyen" };
+                return { texte: "L'écran demande d'être lu entièrement pour être compris.", ton: "alerte" };
+            },
+            lecon: "Si tout est mis en avant, plus rien ne l'est. Une hiérarchie suppose d'accepter que certaines choses passent au second plan."
+        },
+
+        "combien-de-testeurs": {
+            titre: "Combien de testeurs faut-il ?",
+            intro: "La réponse surprend : bien moins qu'on ne croit, et les premiers rapportent presque tout.",
+            champs: [
+                { id: "testeurs", libelle: "Nombre de participants", unite: "pers.", defaut: 5, min: 1, max: 40, pas: 1 },
+                { id: "detection", libelle: "Part des problèmes qu'un participant révèle en moyenne", unite: "%", defaut: 31, min: 5, max: 60, pas: 1 }
+            ],
+            calculer: ({ testeurs, detection }) => {
+                const l = detection / 100;
+                const part = (1 - Math.pow(1 - l, testeurs)) * 100;
+                const avecUnDeplus = (1 - Math.pow(1 - l, testeurs + 1)) * 100;
+                return [
+                    { libelle: "Problèmes détectés", valeur: pourcent(part, 0), fort: true },
+                    { libelle: "Apport du participant suivant", valeur: "+ " + pourcent(avecUnDeplus - part, 1) },
+                    { libelle: "Problèmes encore invisibles", valeur: pourcent(100 - part, 0) }
+                ];
+            },
+            lecon: "Mieux vaut trois séries de cinq tests à trois moments du projet qu'une seule série de quinze à la fin."
+        },
+
+        // ---------- Niveau intermédiaire ----------
+
+        "audit-accessibilite": {
+            type: "controle",
+            titre: "Audit d'accessibilité en dix minutes",
+            intro: "Ces vérifications ne demandent aucun outil spécialisé.",
+            points: [
+                { texte: "Le contraste du texte atteint 4,5 pour 1 sur fond uni", aide: "3 pour 1 suffit pour les grands titres" },
+                { texte: "Je peux parcourir tout le site au clavier seul, sans souris" },
+                { texte: "L'élément actif au clavier est visible en permanence", aide: "ne jamais supprimer le contour de focus" },
+                { texte: "Les images porteuses d'information ont une description" },
+                { texte: "Les images décoratives sont marquées comme telles" },
+                { texte: "Les boutons tactiles font au moins 44 pixels de côté" },
+                { texte: "L'information n'est jamais portée par la couleur seule", aide: "un champ en erreur doit aussi porter un texte" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Base solide : l'essentiel des obstacles courants est levé.", ton: "bon" };
+                if (n >= 5) return { texte: "Bon niveau. Le parcours au clavier est le test le plus révélateur s'il manque.", ton: "moyen" };
+                return { texte: "Plusieurs obstacles bloquants subsistent, y compris pour des usages ordinaires.", ton: "alerte" };
+            },
+            lecon: "Cinq minutes de navigation au clavier révèlent l'essentiel des problèmes, sans aucun outil."
+        },
+
+        "test-des-cartes": {
+            type: "controle",
+            titre: "Votre navigation tient-elle debout ?",
+            intro: "Cochez ce qui est vrai du menu que vous avez sous les yeux.",
+            points: [
+                { texte: "Les entrées correspondent à des tâches, pas à l'organigramme" },
+                { texte: "Un visiteur découvrant le site devinerait ce qu'il y a derrière chaque libellé" },
+                { texte: "Aucun libellé n'utilise de vocabulaire interne à la maison" },
+                { texte: "Il y a moins de huit entrées de premier niveau", aide: "au-delà, il faut regrouper" },
+                { texte: "Deux entrées ne peuvent pas être confondues", aide: "« Espace client » et « Mon compte » sur le même site" },
+                { texte: "L'organisation a été vérifiée auprès de personnes extérieures" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Navigation construite du point de vue du visiteur. C'est rare.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. Le test auprès d'extérieurs est celui qui révèle le plus.", ton: "moyen" };
+                return { texte: "Cette navigation est probablement claire pour vous seul.", ton: "alerte" };
+            },
+            lecon: "Un menu construit sur l'organigramme est parfaitement logique de l'intérieur, et opaque de l'extérieur."
+        },
+
+        "cible-tactile": {
+            titre: "Vos cibles tactiles sont-elles assez grandes ?",
+            intro: "Un doigt couvre environ 9 millimètres. Les pixels CSS, eux, ne se voient pas.",
+            champs: [
+                { id: "taille", libelle: "Taille de la cible", unite: "px CSS", defaut: 32, min: 8, max: 200, pas: 2 },
+                { id: "espacement", libelle: "Espacement avec la cible voisine", unite: "px CSS", defaut: 4, min: 0, max: 60, pas: 2 }
+            ],
+            calculer: ({ taille, espacement }) => {
+                // 1 pixel CSS vaut 1/96 de pouce, soit environ 0,2646 mm.
+                const mm = taille * 25.4 / 96;
+                const zone = (taille + espacement) * 25.4 / 96;
+                const verdict = taille >= 44 ? "conforme" : (taille >= 32 ? "limite" : "trop petite");
+                return [
+                    { libelle: "Taille réelle sur l'écran", valeur: nf(mm, 1) + " mm", fort: true },
+                    { libelle: "Zone atteignable avec l'espacement", valeur: nf(zone, 1) + " mm" },
+                    { libelle: "Recommandation (44 px, soit 11,6 mm)", valeur: verdict }
+                ];
+            },
+            lecon: "Une cible trop petite ne produit pas une erreur du concepteur : elle produit un utilisateur qui croit s'être trompé."
+        },
+
+        "sante-systeme": {
+            type: "controle",
+            titre: "Votre système de design tient-il ?",
+            intro: "Cochez ce qui est vrai aujourd'hui, pas ce qui était prévu.",
+            points: [
+                { texte: "Les espacements suivent une échelle définie, pas des valeurs libres" },
+                { texte: "Il existe une seule façon d'afficher une erreur" },
+                { texte: "Les couleurs sont nommées par leur rôle, pas par leur teinte", aide: "« couleur de danger » plutôt que « rouge »" },
+                { texte: "La documentation décrit le produit réel, pas une version passée" },
+                { texte: "Quelqu'un est responsable d'arbitrer les exceptions" },
+                { texte: "Une exception acceptée est soit intégrée, soit corrigée", aide: "jamais laissée vivre à côté" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Système vivant : il ferme réellement des questions.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. L'absence de propriétaire est ce qui tue les systèmes en quelques mois.", ton: "moyen" };
+                return { texte: "Ce système décrit probablement déjà un produit qui n'existe plus.", ton: "alerte" };
+            },
+            lecon: "Un système de design est un produit à part entière. Sans quelqu'un pour l'arbitrer, il ne survit pas."
+        },
+
+        // ---------- Niveau avancé ----------
+
+        "budget-performance": {
+            titre: "Calculez votre budget de performance",
+            intro: "Le poids d'une page se traduit directement en secondes d'attente.",
+            champs: [
+                { id: "poids", libelle: "Poids total de la page", unite: "Ko", defaut: 2500, min: 50, max: 50000, pas: 100 },
+                { id: "debit", libelle: "Débit de la connexion", unite: "Mb/s", defaut: 10, min: 0.5, max: 200, pas: 0.5 },
+                { id: "latence", libelle: "Latence aller-retour", unite: "ms", defaut: 150, min: 5, max: 1000, pas: 10 }
+            ],
+            calculer: ({ poids, debit, latence }) => {
+                // Un octet vaut 8 bits : 2 500 Ko font 20 000 Kb, soit 20 Mb.
+                const secondes = (poids * 8 / 1000) / debit + latence / 1000;
+                let seuil;
+                if (secondes < 1) seuil = "sous la seconde : le fil de la pensée n'est pas rompu";
+                else if (secondes < 3) seuil = "perceptible, mais acceptable";
+                else if (secondes < 10) seuil = "un retour de progression devient nécessaire";
+                else seuil = "au-delà de la limite d'attention : la plupart abandonnent";
+                return [
+                    { libelle: "Temps de chargement estimé", valeur: nf(secondes, 1) + " s", fort: true },
+                    { libelle: "Poids à retirer pour passer sous 1 s", valeur: nf(Math.max(0, Math.round(poids - (1 - latence / 1000) * debit * 1000 / 8))) + " Ko" },
+                    { libelle: "Perception", valeur: seuil }
+                ];
+            },
+            lecon: "La liste des éléments à alléger est presque toujours dominée par les images non compressées."
+        },
+
+        "loi-de-hick": {
+            titre: "Décider, ou chercher : deux coûts différents",
+            intro: "La loi de Hick décrit le choix entre des options <strong>déjà connues</strong>. Trouver une option inconnue relève du balayage visuel, dont le coût est tout autre.",
+            champs: [
+                { id: "options", libelle: "Nombre d'options présentées", unite: "options", defaut: 20, min: 2, max: 100, pas: 1 },
+                { id: "groupes", libelle: "Nombre de familles si vous les regroupez", unite: "familles", defaut: 4, min: 1, max: 20, pas: 1 }
+            ],
+            calculer: ({ options, groupes }) => {
+                // Hick : T = a + b log2(n+1). Le terme constant represente le temps
+                // qui n est pas de la decision ; une navigation en deux etapes le
+                // paie donc deux fois, ce qui la desavantage sur de courtes listes.
+                const hick = (n) => 0.2 + 0.15 * Math.log2(n + 1);
+                const parFamille = Math.max(1, Math.round(options / groupes));
+                const decisionPlate = hick(options);
+                const decisionGroupee = hick(groupes) + hick(parFamille);
+
+                // Balayage visuel d une liste inconnue : le cout est proche du
+                // lineaire, environ un dixieme de seconde par element parcouru.
+                const balayagePlat = 0.1 * options;
+                const balayageGroupe = 0.1 * (groupes + parFamille);
+
+                return [
+                    { libelle: "Décider (Hick) — liste plate", valeur: nf(decisionPlate, 2) + " s" },
+                    { libelle: `Décider (Hick) — ${groupes} familles`, valeur: nf(decisionGroupee, 2) + " s" },
+                    { libelle: "Chercher — liste plate", valeur: nf(balayagePlat, 2) + " s" },
+                    { libelle: `Chercher — ${groupes} familles`, valeur: nf(balayageGroupe, 2) + " s", fort: balayageGroupe < balayagePlat }
+                ];
+            },
+            lecon: "Sur une option déjà connue, regrouper fait perdre un peu de temps. Sur une option qu'il faut trouver, le gain est considérable — et c'est le cas d'un visiteur qui découvre le site."
+        },
+
+        "schemas-sombres": {
+            type: "controle",
+            titre: "Repérez les schémas sombres",
+            intro: "Cochez ce que présente l'interface que vous examinez.",
+            points: [
+                { texte: "« Tout accepter » est plus visible que le refus", aide: "non conforme : le refus doit être aussi facile" },
+                { texte: "La résiliation est nettement plus longue que la souscription", aide: "non conforme au droit français" },
+                { texte: "Des frais apparaissent seulement à la fin du tunnel" },
+                { texte: "Le libellé du refus est rédigé pour être désagréable", aide: "« Non merci, je préfère payer plus cher »" },
+                { texte: "Un compte à rebours ou une rareté sont affichés sans fondement" },
+                { texte: "Une case est pré-cochée en faveur du site" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Aucun schéma repéré. Refaites le test après chaque évolution du tunnel.", ton: "bon" };
+                if (n <= 2) return { texte: "Des pratiques à corriger, dont certaines exposent juridiquement.", ton: "moyen" };
+                return { texte: "Faisceau de pratiques trompeuses : plusieurs sont sanctionnées en droit européen.", ton: "alerte" };
+            },
+            lecon: "Le test qui tranche : si l'utilisateur découvrait ce mécanisme, se sentirait-il floué ? L'intention ne change rien."
+        },
+
+        "gain-de-temps-utilisateur": {
+            titre: "Chiffrez votre amélioration en heures",
+            intro: "L'argument esthétique se discute. Le calcul beaucoup moins.",
+            champs: [
+                { id: "secondes", libelle: "Secondes gagnées par tâche", unite: "s", defaut: 5, min: 0.5, max: 600, pas: 0.5 },
+                { id: "frequence", libelle: "Fois par jour et par personne", unite: "fois", defaut: 3, min: 0.1, max: 200, pas: 0.5 },
+                { id: "personnes", libelle: "Personnes concernées", unite: "pers.", defaut: 200, min: 1, max: 1000000, pas: 10 },
+                { id: "jours", libelle: "Jours d'usage par an", unite: "jours", defaut: 220, min: 1, max: 365, pas: 5 }
+            ],
+            calculer: ({ secondes, frequence, personnes, jours }) => {
+                const total = secondes * frequence * personnes * jours;
+                const heures = total / 3600;
+                return [
+                    { libelle: "Temps gagné par an", valeur: nf(heures, 0) + " heures", fort: true },
+                    { libelle: "Soit en journées de travail", valeur: nf(heures / 7, 0) + " jours" },
+                    { libelle: "Par personne et par an", valeur: nf(total / personnes / 60, 0) + " minutes" }
+                ];
+            },
+            lecon: "Cinq secondes ne se défendent pas en réunion. Cent quatre-vingts heures par an, si."
         }
     };
 

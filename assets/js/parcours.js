@@ -21,7 +21,7 @@ window.DOCMASTER_PARCOURS = {
     entrepreneuriat: { titre: "🚀 Entrepreneuriat",             niveaux: [] },
     productivite:    { titre: "⏱️ Productivité & Organisation", niveaux: [] },
     data:            { titre: "📊 Data & Analytics",            niveaux: ["debutant", "intermediaire", "avance"] },
-    design:          { titre: "🎨 Design UX/UI",                niveaux: [] }
+    design:          { titre: "🎨 Design UX/UI",                niveaux: ["debutant", "intermediaire", "avance"] }
 };
 
 window.DOCMASTER_NIVEAUX = {
