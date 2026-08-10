@@ -503,6 +503,47 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
 .related-list a { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 18px; text-decoration: none; color: var(--text); font-weight: 500; transition: transform .2s; }
 .related-list a:hover { transform: translateY(-4px); color: var(--primary); }
 
+/* Exercices et simulateurs.
+   Le bloc doit se distinguer nettement du cours qui l'entoure : c'est un
+   changement de posture, on passe de la lecture à l'action. D'où le surtitre,
+   le fond distinct et la bordure, sur le modèle du bloc de quiz. */
+.pratique { background: var(--quiz-case); border: 2px solid var(--primary); border-radius: var(--radius); padding: 22px 24px; margin: 26px 0; }
+.pratique-surtitre { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); margin-bottom: 4px; }
+.pratique-entete h4 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin: 0 0 6px; }
+.pratique-intro { margin: 0 0 16px; color: var(--muted); font-size: .95rem; }
+
+.pratique-champs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px 20px; margin-bottom: 18px; }
+.pratique-champ { display: flex; flex-direction: column; gap: 5px; }
+.pratique-champ label { font-size: .88rem; font-weight: 500; }
+.pratique-saisie { display: flex; align-items: center; gap: 8px; }
+.pratique-saisie input { flex: 1; min-width: 0; padding: 9px 12px; border: 2px solid transparent; border-radius: 8px; background: var(--surface); color: var(--text); font-family: inherit; font-size: 1rem; }
+.pratique-saisie input:focus { outline: none; border-color: var(--primary); }
+.pratique-unite { color: var(--muted); font-size: .9rem; flex-shrink: 0; }
+
+.pratique-resultat { background: var(--surface); border-radius: 10px; padding: 4px 16px; }
+.pratique-ligne { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 11px 0; border-bottom: 1px solid rgba(128,128,128,.18); }
+.pratique-ligne:last-child { border-bottom: none; }
+.pratique-libelle { color: var(--muted); font-size: .92rem; }
+.pratique-valeur { font-weight: 600; text-align: right; white-space: nowrap; }
+.pratique-ligne.fort .pratique-valeur { color: var(--primary); font-size: 1.25rem; font-weight: 700; }
+.pratique-ligne.fort .pratique-libelle { color: var(--text); font-weight: 500; }
+.pratique-invalide { color: var(--muted); margin: 12px 0; font-size: .92rem; }
+
+.pratique-lecon { margin: 14px 0 0; font-size: .92rem; font-style: italic; color: var(--muted); }
+
+@media (max-width: 700px) {
+    .pratique { padding: 18px; }
+    .pratique-champs { grid-template-columns: 1fr; }
+    /* La valeur passe sous son libellé : côte à côte, les montants longs
+       débordaient de l'écran ou écrasaient le texte. */
+    .pratique-ligne { flex-direction: column; gap: 2px; align-items: flex-start; }
+    .pratique-valeur { text-align: left; }
+}
+
+/* Les simulateurs n'ont aucun sens sur une feuille imprimée : sans saisie
+   possible, ils n'afficheraient que des valeurs par défaut trompeuses. */
+@media print { .pratique { display: none; } }
+
 /* Parcours en niveaux — page sommaire d'un sujet.
    Une liste ordonnee plutot qu'une grille de cartes : l'ordre a un sens,
    chaque niveau suppose le precedent acquis, et un lecteur d'ecran doit
