@@ -94,12 +94,18 @@
     </main>
 
     <div id="footer-placeholder"></div>
+    <script src="assets/js/parcours.js"></script>
     <script src="assets/js/favoris.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/enhance.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const NB_GUIDES = 9;
+            // Le total se déduit de la structure déclarée dans parcours.js.
+            // Écrit en dur, il deviendrait faux dès qu'un sujet se décompose en
+            // niveaux — sans cesser pour autant de paraître crédible, ce qui est
+            // la pire forme d'erreur : personne ne la remarque.
+            const PAGES = window.DOCMASTER_PAGES || [];
+            const NB_GUIDES = PAGES.length || 9;
 
             // --- Guides termines : releves depuis les cles posees par enhance.js
             function guidesLus() {
@@ -110,8 +116,15 @@
                     if (localStorage.getItem(cle) !== "true") continue;
                     // La cle contient le chemin complet de la page au moment du clic
                     const chemin = cle.replace("docmaster-read-", "");
-                    const m = chemin.match(/guides\/([^/]+)\//);
-                    if (m) lus.push({ dossier: m[1], chemin: "guides/" + m[1] + "/index.html" });
+                    // La clé porte le chemin complet : « guides/finance/debutant.html »
+                    // pour un sujet découpé en niveaux, « guides/ia/index.html » sinon.
+                    const m = chemin.match(/guides\/([^/]+)\/([^/.]+)\.html/);
+                    if (!m) continue;
+                    lus.push({
+                        dossier: m[1],
+                        niveau: m[2] === "index" ? "" : m[2],
+                        chemin: "guides/" + m[1] + "/" + m[2] + ".html"
+                    });
                 }
                 return lus;
             }
@@ -124,6 +137,14 @@
                 design: "🎨 Design UX/UI"
             };
 
+            // « 💰 Finance — Débutant » pour un sujet à niveaux, « 🤖 IA » sinon.
+            function nomComplet(page) {
+                const nom = NOMS[page.dossier] || page.dossier;
+                if (!page.niveau) return nom;
+                const niveaux = window.DOCMASTER_NIVEAUX || {};
+                return nom + " — " + (niveaux[page.niveau] || page.niveau);
+            }
+
             function rendre() {
                 const favoris = window.DocMasterFavoris.lire();
                 const lus = guidesLus();
@@ -131,7 +152,7 @@
                 // --- Chiffres
                 document.getElementById("espace-stats").innerHTML = `
                     <div class="espace-stat"><span class="nombre">${favoris.length}</span><span class="libelle">favori${favoris.length > 1 ? "s" : ""}</span></div>
-                    <div class="espace-stat"><span class="nombre">${lus.length}/${NB_GUIDES}</span><span class="libelle">guides terminés</span></div>
+                    <div class="espace-stat"><span class="nombre">${lus.length}/${NB_GUIDES}</span><span class="libelle">pages terminées</span></div>
                     <div class="espace-stat"><span class="nombre">${Math.round(lus.length / NB_GUIDES * 100)}%</span><span class="libelle">de progression</span></div>`;
 
                 // --- Favoris, regroupes par guide
@@ -167,7 +188,7 @@
                     </div>`;
                 } else {
                     zoneLus.innerHTML = `<div class="espace-groupe"><ul class="espace-liste">
-                        ${lus.map(g => `<li><a href="${g.chemin}">${NOMS[g.dossier] || g.dossier}</a></li>`).join("")}
+                        ${lus.map(g => `<li><a href="${g.chemin}">${nomComplet(g)}</a></li>`).join("")}
                     </ul></div>`;
                 }
 

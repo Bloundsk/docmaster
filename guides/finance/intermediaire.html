@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance — Intermédiaire - DocMaster</title>
+    <meta name="description" content="Niveau intermédiaire du parcours Finance : construire une allocation, mesurer l'effet des frais, choisir entre PEA, CTO et assurance-vie, investir régulièrement.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/finance/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Finance — Intermédiaire - DocMaster">
+    <meta property="og:description" content="Niveau intermédiaire du parcours Finance : construire une allocation, mesurer l'effet des frais, choisir entre PEA, CTO et assurance-vie, investir régulièrement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/finance/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finance — Intermédiaire - DocMaster">
+    <meta name="twitter:description" content="Niveau intermédiaire du parcours Finance : construire une allocation, mesurer l'effet des frais, choisir entre PEA, CTO et assurance-vie, investir régulièrement.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">💰 Finance</a> &gt;
+        <span aria-current="page">Intermédiaire</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Finance — Intermédiaire</h1>
+                <p>Passer des principes aux décisions : combien, où, à quels frais.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#construire-son-allocation">🧭 Construire son allocation</a></li>
+                <li><a href="#les-frais">💸 Les frais, l'ennemi silencieux</a></li>
+                <li><a href="#choisir-son-enveloppe">🏦 Choisir son enveloppe</a></li>
+                <li><a href="#investir-dans-la-duree">🔁 Investir dans la durée</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>L'allocation entre actions et obligations se déduit de l'horizon, pas de l'humeur du moment.</li>
+                <li>Un point de frais annuel coûte environ un cinquième du capital final sur trente ans.</li>
+                <li>Le PEA n'est pas « meilleur » que l'assurance-vie : ils ne répondent pas à la même question.</li>
+                <li>Investir par versements réguliers ne rapporte pas plus en moyenne — cela rend l'attente tenable.</li>
+                <li>Le rééquilibrage annuel est ce qui fait tenir une allocation dans le temps.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau débutant répondait à une question simple : dans quel ordre faire les choses. Se constituer une réserve, comprendre ce qu'est un placement, ne pas confondre épargne et investissement.</p>
+            <p>Ce niveau-ci répond aux questions qui viennent juste après, et qui sont beaucoup plus concrètes : <strong>quelle part de mon argent placer en actions</strong>, <strong>combien me coûte réellement mon intermédiaire</strong>, <strong>quel type de compte ouvrir</strong>, et <strong>à quel rythme investir</strong>. Ce sont les quatre décisions qui déterminent l'essentiel du résultat, bien avant le choix de tel ou tel fonds.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong> : il explique des mécanismes, il ne recommande aucun placement. Il ne constitue pas un conseil en investissement personnalisé et ne remplace pas un professionnel agréé. Aucun placement n'est sans risque, et les performances passées ne présagent pas des performances futures.</p>
+                <p>Les taux, plafonds et règles fiscales cités évoluent : vérifiez-les toujours à leur source officielle avant d'agir.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Les décisions à prendre</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="construire-son-allocation">🧭 Construire son allocation</h3></summary>
+                <div class="lecon-corps">
+                <p>L'allocation, c'est la répartition de votre capital entre des placements risqués — principalement des actions — et des placements stables — principalement des obligations et des fonds en euros. C'est <strong>la décision la plus structurante</strong> : elle explique la majeure partie de la variation de vos résultats, bien davantage que le choix des supports eux-mêmes.</p>
+
+                <h4>L'horizon commande, pas le tempérament</h4>
+                <p>La question à se poser n'est pas « suis-je prudent ou audacieux ? » mais <strong>« dans combien de temps aurai-je besoin de cet argent ? »</strong>. Un tempérament ne change pas le fait qu'un marché actions peut mettre plusieurs années à se remettre d'une chute.</p>
+                <p>La logique est mécanique : plus l'horizon est long, plus une baisse a le temps d'être effacée. Sur un an, une allocation à 100 % en actions peut perdre le tiers de sa valeur. Sur vingt ans, le risque n'est pas nul, mais il change de nature.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Trois projets, trois allocations différentes pour la même personne :</p>
+                    <p><strong>Achat d'un véhicule dans 2 ans</strong> — 0 % d'actions. Le besoin est proche et le montant doit être certain. Livret ou fonds en euros.</p>
+                    <p><strong>Apport immobilier dans 8 ans</strong> — environ 40 % d'actions. Une baisse a le temps d'être en partie effacée, mais pas totalement.</p>
+                    <p><strong>Retraite dans 25 ans</strong> — 80 % ou plus. L'horizon absorbe plusieurs cycles complets de marché.</p>
+                    <p>Remarquez qu'il ne s'agit pas de trois profils de personnes, mais de <strong>trois poches d'une même personne</strong>, chacune avec son échéance.</p>
+                </div>
+
+                <h4>La règle des « 100 moins l'âge » et ce qu'elle vaut</h4>
+                <p>Une règle ancienne propose de détenir en actions un pourcentage égal à <strong>100 moins son âge</strong> : 70 % à trente ans, 40 % à soixante ans. Elle a le mérite d'exister et de faire baisser le risque en approchant du besoin.</p>
+                <p>Sa limite est qu'elle confond l'âge et l'horizon. Une personne de soixante ans qui n'entamera son capital qu'à quatre-vingts ans dispose encore de vingt ans, et non de zéro. À l'inverse, quelqu'un de trente ans qui achète un logement dans deux ans n'a aucune raison d'être exposé à 70 %.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — choisir son allocation en regardant les marchés</span>
+                    <p>Décider d'augmenter sa part d'actions parce que la bourse monte depuis deux ans, c'est acheter cher. La réduire après une chute, c'est vendre bas et transformer une baisse temporaire en perte définitive.</p>
+                    <p>L'allocation se fixe <strong>à froid</strong>, en fonction d'échéances connues, et ne se révise que lorsque ces échéances changent — pas lorsque l'actualité s'agite.</p>
+                </div>
+
+                <p class="retenir">💡 Une allocation se déduit d'une date, pas d'une opinion sur les marchés.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-frais">💸 Les frais, l'ennemi silencieux</h3></summary>
+                <div class="lecon-corps">
+                <p>Les frais sont la seule composante de votre rendement qui soit <strong>connue à l'avance et absolument certaine</strong>. La performance est incertaine ; les frais, eux, seront prélevés quoi qu'il arrive, les bonnes comme les mauvaises années.</p>
+
+                <h4>Où ils se cachent</h4>
+                <p>Ils se superposent, et c'est ce qui les rend difficiles à voir :</p>
+                <ul>
+                    <li><strong>Frais de gestion du support</strong> (le « TER » d'un fonds ou d'un ETF) : prélevés chaque année sur l'encours, jamais facturés séparément. Ils se déduisent silencieusement de la performance affichée.</li>
+                    <li><strong>Frais d'enveloppe</strong> : les contrats d'assurance-vie prélèvent en plus des frais annuels sur les unités de compte.</li>
+                    <li><strong>Frais de courtage</strong> : à chaque ordre passé.</li>
+                    <li><strong>Frais d'entrée</strong> : prélevés sur chaque versement par certains contrats.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — ce que coûte un point de frais</span>
+                    <p>Un capital de <strong>20 000 €</strong>, placé pendant <strong>30 ans</strong>, sur un support qui rapporte <strong>6 % par an avant frais</strong>.</p>
+                    <p>Avec <strong>0,2 % de frais</strong> (ETF indiciel courant), le rendement net est de 5,8 % : le capital atteint environ <strong>108 000 €</strong>.</p>
+                    <p>Avec <strong>1,2 % de frais</strong> (fonds géré activement), le rendement net tombe à 4,8 % : le capital atteint environ <strong>81 000 €</strong>.</p>
+                    <p>Un seul point de frais annuel a coûté <strong>27 000 €</strong>, soit un quart du résultat — sans que rien n'apparaisse jamais sur un relevé.</p>
+                </div>
+
+                <h4>Pourquoi l'écart est si violent</h4>
+                <p>Parce que les frais s'appliquent au capital <em>entier</em> chaque année, y compris aux gains accumulés. Ils ne rognent pas seulement le rendement : ils privent aussi des intérêts que ce rendement aurait produits les années suivantes. C'est l'intérêt composé fonctionnant à rebours.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — juger un fonds sur sa performance passée</span>
+                    <p>Un fonds affichant une belle année attire naturellement. Mais la performance passée ne se reproduit pas de façon fiable, tandis que les frais, eux, se reproduisent à l'identique chaque année.</p>
+                    <p>Comparer deux supports en regardant d'abord leurs frais, c'est comparer sur la seule donnée dont on soit certain.</p>
+                </div>
+
+                <p class="retenir">💡 La performance est une hypothèse, les frais sont une certitude. Commencez par comparer ce qui est certain.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="choisir-son-enveloppe">🏦 Choisir son enveloppe</h3></summary>
+                <div class="lecon-corps">
+                <p>L'enveloppe est le contenant : PEA, compte-titres ordinaire, assurance-vie. Le contenu — les actions, les ETF — peut souvent être le même. Ce qui change, c'est la <strong>fiscalité</strong> et les <strong>conditions de sortie</strong>.</p>
+                <p>Beaucoup cherchent « la meilleure ». La question est mal posée : elles ne répondent pas à la même question.</p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>PEA</th><th>Compte-titres</th><th>Assurance-vie</th></tr>
+                    <tr><th>Ce qu'on peut y loger</th><td>Actions et fonds européens</td><td>Tout, sans restriction géographique</td><td>Les supports proposés par le contrat</td></tr>
+                    <tr><th>Avantage principal</th><td>Gains exonérés d'impôt sur le revenu après 5 ans</td><td>Aucune contrainte</td><td>Abattement annuel après 8 ans, et transmission</td></tr>
+                    <tr><th>Contrainte</th><td>Un seul par personne, plafond de versement</td><td>Fiscalité pleine dès le premier euro de gain</td><td>Frais du contrat, choix de supports limité</td></tr>
+                    <tr><th>Retrait avant l'échéance</th><td>Possible, mais ferme le plan avant 5 ans</td><td>Libre</td><td>Libre, fiscalité moins favorable avant 8 ans</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — ce que change l'enveloppe</span>
+                    <p>Un même investissement produit <strong>10 000 € de gain</strong>. Au moment du retrait :</p>
+                    <p><strong>Sur un compte-titres</strong> : imposition au taux forfaitaire de 30 % (impôt et prélèvements sociaux réunis), soit <strong>3 000 €</strong>. Il reste 7 000 €.</p>
+                    <p><strong>Sur un PEA de plus de cinq ans</strong> : seuls les prélèvements sociaux s'appliquent, soit 17,2 % — environ <strong>1 720 €</strong>. Il reste 8 280 €.</p>
+                    <p>Même support, même performance, même durée : <strong>1 280 € d'écart</strong>, uniquement dû au contenant.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — ouvrir tard son PEA</span>
+                    <p>Le compteur des cinq ans démarre à l'<strong>ouverture</strong> du plan, pas au premier versement important. Ouvrir un PEA avec une somme modeste, même sans projet immédiat, fait courir l'horloge.</p>
+                    <p>Beaucoup attendent « d'avoir assez » pour l'ouvrir, et se privent de plusieurs années d'antériorité qui ne coûtaient rien à acquérir.</p>
+                </div>
+
+                <p class="retenir">💡 On ne choisit pas la meilleure enveloppe, on choisit celle qui correspond à l'échéance et au contenu visés.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="investir-dans-la-duree">🔁 Investir dans la durée</h3></summary>
+                <div class="lecon-corps">
+                <p>Une allocation choisie est une chose ; la tenir pendant vingt ans en est une autre. C'est là que la plupart des plans échouent, non par erreur de calcul mais par abandon.</p>
+
+                <h4>Les versements programmés</h4>
+                <p>Investir une somme fixe à intervalle régulier, quel que soit le niveau du marché, revient à acheter mécaniquement plus de parts quand les prix sont bas et moins quand ils sont hauts.</p>
+                <p>Il faut être honnête sur ce que cela apporte : <strong>en moyenne, cela ne rapporte pas davantage</strong> qu'investir tout d'un coup — historiquement, cela rapporte même légèrement moins, puisque l'argent reste moins longtemps investi. Le bénéfice est ailleurs, et il est décisif : la méthode <strong>supprime la question du moment d'entrée</strong>, qui paralyse et fait reporter indéfiniment.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p><strong>200 € par mois pendant 20 ans</strong>, soit 48 000 € versés, à 6 % annuel : environ <strong>92 000 €</strong>. Les intérêts dépassent les versements.</p>
+                    <p>La même somme mensuelle pendant <strong>10 ans seulement</strong> (24 000 € versés) : environ <strong>33 000 €</strong>.</p>
+                    <p>Le double de durée ne produit pas le double de capital, mais près du triple. C'est la durée, plus que le montant, qui fait le résultat.</p>
+                </div>
+
+                <h4>Le rééquilibrage</h4>
+                <p>Avec le temps, la poche qui a le plus progressé prend une place croissante. Une allocation prévue à 60 % d'actions peut dériver à 75 % après quelques bonnes années — le risque a augmenté sans qu'aucune décision n'ait été prise.</p>
+                <p>Rééquilibrer consiste à revenir à la cible <strong>une fois par an</strong>, en versant sur la poche en retard plutôt qu'en vendant, quand c'est possible. L'opération est contre-intuitive — elle demande de renforcer ce qui a le moins bien marché — mais c'est précisément ce qui maintient le niveau de risque choisi.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — surveiller son portefeuille chaque jour</span>
+                    <p>Une consultation quotidienne multiplie les occasions de voir du rouge, et donc les tentations d'agir. Chaque intervention non prévue est une décision prise sous le coup de l'émotion.</p>
+                    <p>Un rendez-vous annuel, noté à l'avance dans un agenda, suffit à un portefeuille de long terme — et évite la plupart des erreurs coûteuses.</p>
+                </div>
+
+                <p class="retenir">💡 Le plus difficile n'est pas de choisir une allocation, c'est de ne pas en changer quand elle est mise à l'épreuve.</p>
+                </div>
+            </details>
+
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>AMF — Autorité des marchés financiers</strong> : ses simulateurs et fiches sur les frais permettent de chiffrer un contrat réel plutôt qu'un exemple théorique.</li>
+                    <li><strong>Service-Public.fr</strong> : plafonds du PEA, fiscalité de l'assurance-vie, taux des prélèvements sociaux. À vérifier à la source, ces valeurs changent.</li>
+                    <li><strong>Documents d'information clé (DIC)</strong> : chaque fonds doit en publier un, mentionnant ses frais réels. C'est le document à lire avant toute souscription, et il tient en trois pages.</li>
+                    <li><strong>Études SPIVA</strong> (S&amp;P Dow Jones Indices) : la comparaison annuelle entre fonds actifs et indices. Elle éclaire directement la question des frais.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> demandez systématiquement le total des frais annuels — support et enveloppe réunis. Un intermédiaire qui peine à répondre à cette question donne déjà une réponse.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Niveau précédent</span>Finance — Débutant</a>
+            <a href="avance.html" class="next"><span class="label">Niveau suivant →</span>Finance — Avancé</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Entrepreneuriat</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../productivite/index.html">⏱️ Productivité &amp; Organisation</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/finance-intermediaire.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

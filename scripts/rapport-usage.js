@@ -39,23 +39,34 @@ function decoder(texte) {
         .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n));
 }
 
+// Les evenements sont nommes « sujet » ou « sujet/niveau » selon que le sujet
+// est decoupe en niveaux. Les titres sont donc indexes sous la meme cle, en
+// lisant chaque page d un sujet plutot que le seul index.html — qui n est plus
+// qu un sommaire pour les sujets deja decoupes.
 function lireGuides() {
     const guides = {};
     if (!fs.existsSync(DOSSIER_GUIDES)) return guides;
 
     for (const dossier of fs.readdirSync(DOSSIER_GUIDES)) {
-        const fichier = path.join(DOSSIER_GUIDES, dossier, "index.html");
-        if (!fs.existsSync(fichier)) continue;
-        const html = fs.readFileSync(fichier, "utf8");
+        const chemin = path.join(DOSSIER_GUIDES, dossier);
+        if (!fs.statSync(chemin).isDirectory()) continue;
 
-        const titre = decoder((html.match(/<header>[\s\S]*?<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || dossier)
-            .replace(/<[^>]+>/g, "").trim();
+        for (const nom of fs.readdirSync(chemin)) {
+            if (!nom.endsWith(".html")) continue;
+            const html = fs.readFileSync(path.join(chemin, nom), "utf8");
 
-        const sections = {};
-        for (const m of html.matchAll(/<summary>\s*<h3 id="([^"]+)"[^>]*>([\s\S]*?)<\/h3>/g)) {
-            sections[m[1]] = decoder(m[2]).replace(/<[^>]+>/g, "").trim();
+            const titre = decoder((html.match(/<header>[\s\S]*?<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || dossier)
+                .replace(/<[^>]+>/g, "").trim();
+
+            const sections = {};
+            for (const m of html.matchAll(/<summary>\s*<h3 id="([^"]+)"[^>]*>([\s\S]*?)<\/h3>/g)) {
+                sections[m[1]] = decoder(m[2]).replace(/<[^>]+>/g, "").trim();
+            }
+
+            const niveau = nom.replace(/\.html$/, "");
+            const cle = niveau === "index" ? dossier : dossier + "/" + niveau;
+            guides[cle] = { titre, sections };
         }
-        guides[dossier] = { titre, sections };
     }
     return guides;
 }
@@ -128,27 +139,44 @@ function classer(donnees, guides) {
         const compte = hit.count || 0;
 
         if (!hit.event) {
-            // Les pages gardent leur "/" initial ; seuls les guides nous interessent.
-            const m = (hit.path || "").match(/guides\/([^/]+)\//);
-            if (m) pages.push({ guide: m[1], compte });
+            // Les pages gardent leur "/" initial ; seuls les guides nous
+            // interessent. La cle inclut le niveau, pour rester comparable aux
+            // evenements : sans cela, les vues seraient comptees par sujet et
+            // les lectures terminees par niveau, sur deux lignes distinctes.
+            const m = (hit.path || "").match(/guides\/([^/]+)\/([^/.]+)\.html/);
+            if (m) pages.push({ guide: m[2] === "index" ? m[1] : m[1] + "/" + m[2], compte });
             continue;
         }
 
-        const parts = (hit.path || "").split("/");
-        const [type, guide, ancre] = parts;
+        // Un evenement vaut « type/sujet/ancre » ou « type/sujet/niveau/ancre »
+        // selon que le sujet est decoupe en niveaux. Le nombre de segments
+        // varie donc : on lit l ancre en dernier et le reste forme la cle.
+        const parts = (hit.path || "").split("/").filter(Boolean);
+        const type = parts[0];
 
-        if (type === "section" && guide && ancre) {
-            const cle = guide + "/" + ancre;
-            (sections[cle] ||= { ouvertures: 0, favoris: 0 }).ouvertures += compte;
-        } else if (type === "favori" && guide) {
-            if (ancre && ancre !== "guide") {
-                const cle = guide + "/" + ancre;
-                (sections[cle] ||= { ouvertures: 0, favoris: 0 }).favoris += compte;
+        if (type === "lu" && parts.length >= 2) {
+            const cle = parts.slice(1).join("/");
+            lus[cle] = (lus[cle] || 0) + compte;
+            continue;
+        }
+
+        if (parts.length < 3) continue;
+        const ancre = parts[parts.length - 1];
+        const cle = parts.slice(1, -1).join("/");
+
+        // La cle du sujet contient parfois un « / » (« finance/debutant ») :
+        // sujet et ancre sont donc conserves separement plutot que concatenes,
+        // ce qui evite d avoir a les redecouper ensuite — un separateur textuel
+        // s etait deja corrompu silencieusement a l ecriture.
+        if (type === "section" || type === "favori") {
+            const identifiant = cle + "#" + ancre;
+            if (type === "favori" && ancre === "guide") {
+                favorisGuide[cle] = (favorisGuide[cle] || 0) + compte;
             } else {
-                favorisGuide[guide] = (favorisGuide[guide] || 0) + compte;
+                const entree = (sections[identifiant] ||= { cle, ancre, ouvertures: 0, favoris: 0 });
+                if (type === "section") entree.ouvertures += compte;
+                else entree.favoris += compte;
             }
-        } else if (type === "lu" && guide) {
-            lus[guide] = (lus[guide] || 0) + compte;
         }
     }
 
@@ -169,9 +197,9 @@ function classer(donnees, guides) {
         }))
         .sort((a, b) => b.vues - a.vues);
 
-    const tableauSections = Object.entries(sections)
-        .map(([cle, v]) => {
-            const [g, a] = cle.split("/");
+    const tableauSections = Object.values(sections)
+        .map(v => {
+            const g = v.cle, a = v.ancre;
             return {
                 guide: nomGuide(g), section: nomSection(g, a),
                 ouvertures: v.ouvertures, favoris: v.favoris,

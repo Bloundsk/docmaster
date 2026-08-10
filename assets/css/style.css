@@ -503,6 +503,34 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
 .related-list a { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 18px; text-decoration: none; color: var(--text); font-weight: 500; transition: transform .2s; }
 .related-list a:hover { transform: translateY(-4px); color: var(--primary); }
 
+/* Parcours en niveaux — page sommaire d'un sujet.
+   Une liste ordonnee plutot qu'une grille de cartes : l'ordre a un sens,
+   chaque niveau suppose le precedent acquis, et un lecteur d'ecran doit
+   l'entendre. Le numero visible vient de <ol>, pas d'un texte decoratif. */
+.parcours { list-style: none; counter-reset: etape; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 20px; }
+.parcours .etape { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 24px; border-left: 5px solid var(--primary); }
+.parcours .etape-lien { display: block; text-decoration: none; color: inherit; }
+.parcours .etape-lien:hover .etape-titre { color: var(--primary); text-decoration: underline; }
+.parcours .etape-rang { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; }
+.parcours .etape-titre { display: block; font-family: 'Poppins', sans-serif; font-size: 1.45rem; font-weight: 700; margin-bottom: 6px; }
+.parcours .etape-resume { display: block; color: var(--muted); margin-bottom: 14px; }
+.parcours .etape-contenu { margin: 0 0 14px; padding-left: 22px; }
+.parcours .etape-contenu li { margin-bottom: 5px; }
+.parcours .etape-duree { margin: 0; font-size: .88rem; color: var(--muted); }
+
+/* La bordure de gauche marque la progression : elle fonce d'un niveau a l'autre. */
+.parcours .etape:nth-child(2) { border-left-color: var(--secondary); }
+.parcours .etape:nth-child(2) .etape-rang { color: var(--secondary); }
+.parcours .etape:nth-child(2) .etape-lien:hover .etape-titre { color: var(--secondary); }
+.parcours .etape:nth-child(3) { border-left-color: #059669; }
+.parcours .etape:nth-child(3) .etape-rang { color: #059669; }
+.parcours .etape:nth-child(3) .etape-lien:hover .etape-titre { color: #059669; }
+
+@media (max-width: 700px) {
+    .parcours .etape { padding: 18px; }
+    .parcours .etape-titre { font-size: 1.25rem; }
+}
+
 /* Bouton retour en haut */
 #back-to-top { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--primary); color: white; border: none; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 90; }
 #back-to-top.visible { display: flex; }

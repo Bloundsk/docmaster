@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Finance : ordre de retrait et fiscalité, sensibilité des obligations aux taux, diversification réelle, coût des décisions comportementales.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/finance/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Finance — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Finance : ordre de retrait et fiscalité, sensibilité des obligations aux taux, diversification réelle, coût des décisions comportementales.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/finance/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finance — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Finance : ordre de retrait et fiscalité, sensibilité des obligations aux taux, diversification réelle, coût des décisions comportementales.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">💰 Finance</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Finance — Avancé</h1>
+                <p>Les mécanismes que l'on ne voit qu'en regardant de près.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#ordre-de-retrait">🧾 L'ordre de retrait</a></li>
+                <li><a href="#obligations-et-taux">📉 Obligations et taux d'intérêt</a></li>
+                <li><a href="#diversification-reelle">🌍 La diversification réelle</a></li>
+                <li><a href="#facteur-comportemental">🧠 Le facteur comportemental</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>L'ordre dans lequel on retire son argent change le montant net perçu, à capital identique.</li>
+                <li>Une obligation perd de la valeur quand les taux montent : la mécanique est arithmétique, pas conjoncturelle.</li>
+                <li>Détenir vingt lignes du même marché n'est pas de la diversification.</li>
+                <li>L'écart entre la performance d'un fonds et celle de ses porteurs se compte en points par an.</li>
+                <li>Manquer les meilleures séances coûte davantage qu'éviter les pires ne rapporte.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Les deux premiers niveaux traitaient de ce qu'il faut faire et dans quel ordre. Celui-ci porte sur des mécanismes moins visibles, qui ne se manifestent qu'à certains moments — au retrait, lors d'une remontée des taux, ou pendant une chute de marché.</p>
+            <p>Ils ont un point commun : <strong>ils sont contre-intuitifs</strong>. Une obligation qui baisse quand les taux montent, un portefeuille très fourni qui ne diversifie rien, un investisseur qui gagne moins que le fonds qu'il détient — chacune de ces situations paraît absurde avant d'être expliquée, et évidente ensuite.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong> : il explique des mécanismes, il ne recommande aucun placement. Il ne constitue pas un conseil en investissement personnalisé et ne remplace pas un professionnel agréé. Aucun placement n'est sans risque, et les performances passées ne présagent pas des performances futures.</p>
+                <p>Les taux, plafonds et règles fiscales cités évoluent : vérifiez-les toujours à leur source officielle avant d'agir.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Les mécanismes à maîtriser</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="ordre-de-retrait">🧾 L'ordre de retrait</h3></summary>
+                <div class="lecon-corps">
+                <p>On réfléchit beaucoup à la façon de placer, rarement à la façon de retirer. C'est pourtant au retrait que la fiscalité se matérialise, et l'ordre dans lequel on pioche dans ses enveloppes modifie le montant net perçu — <strong>à capital et performance strictement identiques</strong>.</p>
+
+                <h4>Chaque enveloppe se vide différemment</h4>
+                <p>Un retrait de compte-titres est imposé sur la <em>plus-value réalisée</em> à ce moment-là. Un retrait de PEA de plus de cinq ans échappe à l'impôt sur le revenu, mais pas aux prélèvements sociaux. Un rachat d'assurance-vie de plus de huit ans bénéficie d'un abattement annuel sur les gains — abattement qui se renouvelle chaque année, et qui est <strong>perdu s'il n'est pas utilisé</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — le même besoin, deux montants nets</span>
+                    <p>Besoin : <strong>20 000 €</strong>. Disponibles : un compte-titres et une assurance-vie de plus de huit ans, tous deux composés à moitié de gains.</p>
+                    <p><strong>Tout retirer du compte-titres</strong> : 10 000 € de gains, imposés à 30 %, soit 3 000 € de prélèvement.</p>
+                    <p><strong>Étaler sur l'assurance-vie</strong> en restant sous l'abattement annuel : les gains rachetés échappent à l'impôt sur le revenu, seuls les prélèvements sociaux de 17,2 % s'appliquent — soit environ 1 720 €.</p>
+                    <p><strong>Écart : plus de 1 200 €</strong>, pour le même besoin couvert, uniquement en choisissant où puiser.</p>
+                </div>
+
+                <h4>Un retrait n'est pas imposé sur son montant</h4>
+                <p>C'est le point le plus mal compris. Retirer 20 000 € ne signifie pas être imposé sur 20 000 €. Le retrait est réputé composé d'une part de capital versé — jamais imposée — et d'une part de gains — seule imposée. Un contrat contenant 20 % de gains ne déclenche donc l'impôt que sur un cinquième du montant retiré.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — vider une enveloppe pour « faire simple »</span>
+                    <p>Solder un contrat en une fois concentre la totalité des gains sur une seule année fiscale. Les abattements annuels étant, par définition, annuels, tout ce qui dépasse est imposé plein tarif — et l'abattement des années suivantes est définitivement perdu.</p>
+                    <p>Étaler un même retrait sur deux années civiles suffit parfois à effacer une part notable de l'imposition.</p>
+                </div>
+
+                <p class="retenir">💡 Ce n'est pas seulement ce qu'on retire qui compte, c'est d'où et quand.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="obligations-et-taux">📉 Obligations et taux d'intérêt</h3></summary>
+                <div class="lecon-corps">
+                <p>Les obligations passent pour la partie sûre d'un portefeuille. Elles peuvent pourtant perdre de la valeur, et beaucoup l'ont découvert lors des remontées de taux. Le mécanisme n'a rien de mystérieux : il est arithmétique.</p>
+
+                <h4>Pourquoi une obligation baisse quand les taux montent</h4>
+                <p>Une obligation est un prêt à taux fixe. Si vous détenez un titre versant <strong>1 % par an</strong> et que de nouvelles obligations équivalentes sont émises à <strong>3 %</strong>, plus personne ne rachètera la vôtre à son prix d'origine : elle rapporte moins pour le même risque.</p>
+                <p>Son prix baisse donc mécaniquement jusqu'au point où son rendement pour un acheteur redevient comparable à 3 %. Aucun défaut de l'emprunteur, aucune panique : une simple mise à niveau par le prix.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — l'effet de la duration</span>
+                    <p>La <strong>duration</strong> mesure la sensibilité d'une obligation aux taux. Règle d'approximation : une hausse des taux de <strong>1 point</strong> fait baisser le prix d'environ <strong>1 % par année de duration</strong>.</p>
+                    <p>Obligation de duration <strong>2 ans</strong>, taux +1 point → prix ≈ <strong>−2 %</strong>.</p>
+                    <p>Obligation de duration <strong>10 ans</strong>, taux +1 point → prix ≈ <strong>−10 %</strong>.</p>
+                    <p>Deux placements « sans risque de défaut », mais un rapport de un à cinq dans la baisse subie. La duration est l'information à regarder avant le rendement affiché.</p>
+                </div>
+
+                <h4>Ce qui est perdu, et ce qui ne l'est pas</h4>
+                <p>Une obligation détenue jusqu'à son échéance rembourse sa valeur nominale : la baisse constatée en cours de route s'efface. En revanche, un <em>fonds</em> obligataire n'a pas d'échéance — il renouvelle continuellement ses titres. La baisse y est bien réelle, compensée ensuite par des coupons plus élevés, mais sur une durée voisine de la duration du fonds.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire « obligation » synonyme de « sans risque »</span>
+                    <p>La sécurité d'une obligation porte sur le <strong>risque de défaut</strong> de l'emprunteur, pas sur la stabilité de son prix. Un fonds d'obligations d'État à longue duration peut perdre plus de 15 % en une année sans qu'aucun État n'ait fait défaut.</p>
+                    <p>Une poche destinée à être utilisée dans deux ans n'a donc rien à faire sur des obligations longues.</p>
+                </div>
+
+                <p class="retenir">💡 Prix et taux évoluent en sens inverse, et la duration dit avec quelle amplitude.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="diversification-reelle">🌍 La diversification réelle</h3></summary>
+                <div class="lecon-corps">
+                <p>Diversifier ne consiste pas à multiplier les lignes, mais à détenir des choses qui <strong>ne baissent pas en même temps</strong>. Un portefeuille de vingt actions du même pays et du même secteur n'est pas diversifié : c'est une seule position, découpée en vingt morceaux.</p>
+
+                <h4>La corrélation, seule mesure qui compte</h4>
+                <p>Deux placements sont d'autant plus complémentaires que leurs mouvements sont indépendants. Additionner des supports fortement corrélés donne l'illusion de la prudence sans en produire l'effet.</p>
+                <p>Il faut savoir aussi que les corrélations <strong>augmentent dans les crises</strong> : au moment précis où l'on compte sur la diversification, des actifs habituellement indépendants tendent à baisser ensemble. La diversification atténue, elle ne protège pas.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — le biais domestique</span>
+                    <p>Les marchés actions français pèsent environ <strong>3 %</strong> de la capitalisation boursière mondiale. Pourtant, les épargnants français détiennent typiquement <strong>plus de la moitié</strong> de leur poche actions en titres nationaux.</p>
+                    <p>Concrètement : sur 10 000 € d'actions, une répartition mondiale placerait environ <strong>300 €</strong> en France. Une allocation à 50 % en met <strong>5 000 €</strong>, soit une surexposition d'un facteur seize à une seule économie — celle où se trouvent déjà l'emploi et souvent le logement de l'épargnant.</p>
+                </div>
+
+                <h4>Le risque de change</h4>
+                <p>Investir hors zone euro ajoute une variable : la monnaie. Un indice américain peut gagner 10 % en dollars et ne rien rapporter en euros si le dollar s'est déprécié d'autant. Sur de longues durées, cet effet tend à s'atténuer ; sur quelques années, il peut dominer le résultat.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — empiler des fonds qui se recouvrent</span>
+                    <p>Détenir un fonds « monde », un fonds « Amérique du Nord » et un fonds « technologie » donne le sentiment d'une allocation étoffée. En réalité, les mêmes grandes valeurs y figurent trois fois : le portefeuille est concentré sans que son détenteur le sache.</p>
+                    <p>Le seul moyen de le vérifier est de regarder les principales lignes de chaque fonds. Leur recouvrement est souvent spectaculaire.</p>
+                </div>
+
+                <p class="retenir">💡 Le nombre de lignes ne mesure rien. Ce qui compte, c'est ce qui baisse en même temps.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="facteur-comportemental">🧠 Le facteur comportemental</h3></summary>
+                <div class="lecon-corps">
+                <p>Un fait dérangeant est bien documenté : <strong>les porteurs d'un fonds obtiennent en moyenne moins que le fonds lui-même</strong>. La performance publiée suppose d'être resté investi du début à la fin. Or les versements arrivent après les hausses et les retraits après les baisses.</p>
+
+                <h4>Le coût de l'absence</h4>
+                <p>Les fortes hausses se concentrent sur un très petit nombre de séances, et celles-ci surviennent le plus souvent <strong>à proximité immédiate des pires</strong>, en pleine tourmente. Sortir pour « attendre que ça se calme » revient presque toujours à manquer le rebond.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — manquer les meilleures séances</span>
+                    <p>Sur une longue période, un placement resté investi en permanence transforme <strong>10 000 €</strong> en environ <strong>60 000 €</strong>.</p>
+                    <p>Le même placement, dont on aurait manqué les <strong>10 meilleures séances</strong> : environ <strong>28 000 €</strong>.</p>
+                    <p>En manquant les <strong>20 meilleures</strong> : environ <strong>18 000 €</strong>.</p>
+                    <p>Une vingtaine de journées, sur des milliers, expliquent les deux tiers du résultat. Personne ne sait les identifier à l'avance — seule la présence continue les garantit.</p>
+                </div>
+
+                <h4>L'aversion à la perte</h4>
+                <p>La douleur d'une perte est ressentie environ deux fois plus fortement que le plaisir d'un gain équivalent. Cette asymétrie explique pourquoi une baisse de 20 % pousse à vendre alors qu'une hausse de 20 % ne pousse pas à acheter, et pourquoi tant de plans construits à froid ne survivent pas à leur première épreuve.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire qu'on saura tenir</span>
+                    <p>Chacun s'estime capable de supporter une chute de 40 %, tant qu'elle est hypothétique. L'épreuve réelle s'accompagne d'un contexte : titres alarmistes, entourage inquiet, parfois un emploi menacé.</p>
+                    <p>Le remède n'est pas la force de caractère mais la <strong>décision écrite à l'avance</strong> : consigner son allocation, sa raison et la conduite prévue en cas de chute. Un document rédigé à froid tient mieux qu'une résolution prise à chaud.</p>
+                </div>
+
+                <p class="retenir">💡 L'écart entre le rendement d'un fonds et celui de ses porteurs porte un nom : les décisions prises entre-temps.</p>
+                </div>
+            </details>
+
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Études SPIVA</strong> (S&amp;P Dow Jones Indices) : la part des fonds actifs battus par leur indice, sur 1, 5 et 10 ans. Chiffres bruts, publiés deux fois par an.</li>
+                    <li><strong>Analyses « Mind the Gap » de Morningstar</strong> : la mesure de l'écart entre performance des fonds et performance réellement obtenue par leurs porteurs.</li>
+                    <li><strong>Banque de France et BCE</strong> : séries de taux directeurs et de taux souverains, pour observer soi-même la relation entre taux et prix des obligations.</li>
+                    <li><strong>« Thinking, Fast and Slow »</strong>, Daniel Kahneman : l'ouvrage de référence sur l'aversion à la perte, par le chercheur qui l'a mise en évidence.</li>
+                    <li><strong>Documents d'information clé (DIC)</strong> : y figurent la duration des fonds obligataires et leurs principales lignes — de quoi vérifier les recouvrements évoqués plus haut.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> avant d'ajouter un fonds, comparez ses dix premières lignes à celles que vous détenez déjà. Si elles se recouvrent largement, vous concentrez au lieu de diversifier.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Finance — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Parcours →</span>Retour au sommaire Finance</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../entrepreneuriat/index.html">🚀 Entrepreneuriat</a>
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/finance-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

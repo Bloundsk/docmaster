@@ -76,11 +76,30 @@
         return m ? m[1] : "";
     }
 
+    // Un sujet se decompose en niveaux : guides/finance/debutant.html. Le nom
+    // du fichier donne le niveau ; « index » designe le sommaire du parcours,
+    // qui ne porte pas de lecon et n'a donc pas de niveau propre.
+    function niveauCourant() {
+        const m = location.pathname.match(/\/guides\/[^/]+\/([^/.]+)\.html?$/);
+        return m && m[1] !== "index" ? m[1] : "";
+    }
+
+    // « finance/debutant » ou « finance » selon le cas. Sans ce prefixe commun,
+    // deux niveaux partageant un identifiant de section seraient confondus.
+    function prefixe(guide, niveau) {
+        return niveau ? guide + "/" + niveau : guide;
+    }
+
     // Pour les cartes de la page d'accueil, le guide se lit dans la cible du
     // lien plutot que dans l'adresse de la page.
     function guideDepuisChemin(chemin) {
         const m = String(chemin).match(/guides\/([^/]+)\//);
         return m ? m[1] : "";
+    }
+
+    function niveauDepuisChemin(chemin) {
+        const m = String(chemin).match(/guides\/[^/]+\/([^/.#]+)\.html/);
+        return m && m[1] !== "index" ? m[1] : "";
     }
 
     // Ce fichier est injecte par layout.js, donc charge en asynchrone : il peut
@@ -93,6 +112,8 @@
 
     auChargement(() => {
         const guide = guideCourant();
+        const niveau = niveauCourant();
+        const cle = prefixe(guide, niveau);
 
         // --- 1. Ouverture d'une sous-section ------------------------------
         //
@@ -121,7 +142,7 @@
                 if (!bloc.open || enMasse) return;
                 const h3 = bloc.querySelector("summary h3");
                 if (!h3 || !h3.id) return;
-                mesurer("section/" + guide + "/" + h3.id,
+                mesurer("section/" + cle + "/" + h3.id,
                         "Section ouverte : " + h3.textContent.trim());
             });
         });
@@ -142,9 +163,13 @@
                     if (!btn.classList || !btn.classList.contains("btn-favori")) return;
                     if (btn.getAttribute("aria-pressed") !== "true") return;   // retrait
                     const id = btn.dataset.id || "";
+                    // Le favori peut viser une autre page que la page courante —
+                    // les cartes de l'accueil, par exemple. Guide et niveau se
+                    // lisent alors dans la cible du bouton, pas dans l'adresse.
                     const g = guideDepuisChemin(id) || guide;
+                    const n = niveauDepuisChemin(id) || (g === guide ? niveau : "");
                     const ancre = id.includes("#") ? id.split("#")[1] : "guide";
-                    mesurer("favori/" + g + "/" + ancre,
+                    mesurer("favori/" + prefixe(g, n) + "/" + ancre,
                             "Favori : " + (btn.getAttribute("aria-label") || "").replace(/^[^:]*:\s*/, ""));
                 });
             }).observe(document.body, {
@@ -158,7 +183,7 @@
             case_lu.addEventListener("change", () => {
                 if (!case_lu.checked) return;
                 const titre = document.querySelector("header h1");
-                mesurer("lu/" + guide, "Guide terminé : " + (titre ? titre.textContent.trim() : guide));
+                mesurer("lu/" + cle, "Guide terminé : " + (titre ? titre.textContent.trim() : guide));
             });
         }
 

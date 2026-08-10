@@ -43,11 +43,21 @@ function dateDuDernierCommit(fichier) {
     }
 }
 
+// Toutes les pages d un sujet, sommaire et niveaux confondus : un sujet se
+// decompose en debutant.html, intermediaire.html, avance.html, qui portent le
+// contenu et donc la date. Ne lister que index.html laisserait les niveaux
+// afficher une date figee — exactement le defaut que ce script corrige.
 function listerGuides() {
     const dossier = path.join(RACINE, "guides");
-    return fs.readdirSync(dossier)
-        .filter(d => fs.existsSync(path.join(dossier, d, "index.html")))
-        .map(d => `guides/${d}/index.html`);
+    const pages = [];
+    for (const sujet of fs.readdirSync(dossier)) {
+        const chemin = path.join(dossier, sujet);
+        if (!fs.statSync(chemin).isDirectory()) continue;
+        for (const fichier of fs.readdirSync(chemin)) {
+            if (fichier.endsWith(".html")) pages.push(`guides/${sujet}/${fichier}`);
+        }
+    }
+    return pages;
 }
 
 function dater(relatif, date) {

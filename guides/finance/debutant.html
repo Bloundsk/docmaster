@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance — Débutant - DocMaster</title>
+    <meta name="description" content="Niveau débutant du parcours Finance : l'épargne de précaution, l'investissement, les ETF, le risque et la fiscalité, expliqués depuis zéro.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/finance/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Finance — Débutant - DocMaster">
+    <meta property="og:description" content="Niveau débutant du parcours Finance : l'épargne de précaution, l'investissement, les ETF, le risque et la fiscalité, expliqués depuis zéro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/finance/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finance — Débutant - DocMaster">
+    <meta name="twitter:description" content="Niveau débutant du parcours Finance : l'épargne de précaution, l'investissement, les ETF, le risque et la fiscalité, expliqués depuis zéro.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">💰 Finance</a> &gt;
+        <span aria-current="page">Débutant</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Finance — Débutant</h1>
+                <p>Se protéger d'abord, faire travailler son argent ensuite. Aucun prérequis.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 10 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#lépargne">📊 L'épargne</a></li>
+                <li><a href="#linvestissement">📈 L'investissement</a></li>
+                <li><a href="#les-etf">📦 Les ETF</a></li>
+                <li><a href="#la-gestion-du-risque">⚖️ La gestion du risque</a></li>
+                <li><a href="#la-fiscalité-de-lépargne">🧾 La fiscalité de l'épargne</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Constitue toujours une épargne de précaution (3 à 6 mois de dépenses) avant d'investir.</li>
+                <li>L'intérêt composé récompense fortement les investissements commencés tôt.</li>
+                <li>Les ETF permettent de diversifier facilement avec des frais faibles.</li>
+                <li>Le niveau de risque acceptable dépend surtout de ton horizon de placement.</li>
+                <li>Le choix de l'enveloppe fiscale (PEA, assurance-vie...) a un impact réel sur le rendement net.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>La finance personnelle souffre d'un malentendu : on croit qu'elle demande des compétences en mathématiques ou un capital de départ. En réalité, l'essentiel tient en quelques principes, et le facteur le plus déterminant n'est ni le talent ni le montant — c'est le <strong>temps</strong>.</p>
+            <p>Ce guide suit l'ordre dans lequel les choses doivent être faites : d'abord se protéger des imprévus, ensuite seulement faire travailler le surplus. Cet ordre n'est pas un détail de présentation. Investir sans réserve de sécurité conduit à devoir vendre au pire moment, celui où l'on a besoin d'argent — et c'est très souvent celui où les marchés ont baissé.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong> : il explique des mécanismes, il ne recommande aucun placement. Il ne constitue pas un conseil en investissement personnalisé et ne remplace pas un professionnel agréé. Aucun placement n'est sans risque, et les performances passées ne présagent pas des performances futures.</p>
+                <p>Les taux, plafonds et règles fiscales cités évoluent : vérifiez-les toujours à leur source officielle avant d'agir.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Les bases à connaître</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+            <details class="lecon">
+                <summary><h3 id="lépargne">📊 L'épargne</h3></summary>
+                <div class="lecon-corps">
+                <p>Épargner, c'est décider à l'avance de ne pas dépenser une partie de ses revenus. La difficulté n'est pas de comprendre le principe — elle est de le rendre automatique, parce que la volonté seule ne tient pas sur dix ans.</p>
+
+                <h4>L'épargne de précaution passe avant tout</h4>
+                <p>Avant tout projet, tout placement, toute action en bourse, il faut une réserve immédiatement disponible couvrant <strong>3 à 6 mois de dépenses courantes</strong>. Pas de revenus : de <em>dépenses</em>. La nuance représente souvent 30 % d'écart.</p>
+                <p>Cette réserve sert à absorber un imprévu — un véhicule à réparer, un logement à quitter, une perte d'emploi — sans recourir au crédit à la consommation, dont les taux sont sans commune mesure avec ce que rapporte n'importe quel placement.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Dépenses mensuelles : <strong>1 600 €</strong> (loyer, courses, transports, factures, assurances).</p>
+                    <p>Objectif de précaution : entre <strong>4 800 €</strong> (3 mois) et <strong>9 600 €</strong> (6 mois).</p>
+                    <p>En mettant <strong>250 € par mois</strong> de côté, la borne basse est atteinte en <strong>19 mois</strong>. Ce n'est ni rapide ni spectaculaire — mais à partir de ce moment, un imprévu cesse d'être une catastrophe financière.</p>
+                </div>
+
+                <h4>Où la placer</h4>
+                <p>Sur un support <strong>disponible sous 48 heures et sans risque de perte en capital</strong> : livret réglementé (Livret A, LDDS) ou livret bancaire. Le rendement importe peu ici — ce n'est pas de l'investissement, c'est de l'assurance. Chercher à optimiser cette poche est une erreur de raisonnement : ce qu'on y gagne est négligeable, ce qu'on risque d'y perdre ne l'est pas.</p>
+
+                <h4>La régularité bat le montant</h4>
+                <p>Un virement automatique programmé <strong>le lendemain de la réception du salaire</strong> est plus efficace que la résolution d'épargner « ce qui restera à la fin du mois ». Il ne reste jamais rien : les dépenses s'ajustent naturellement au disponible.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — investir avant d'avoir sa réserve</span>
+                    <p>Placer ses économies en bourse sans matelas de sécurité paraît rentable. Jusqu'au premier imprévu : il faut alors vendre, et statistiquement, les imprévus financiers arrivent souvent quand l'économie va mal — c'est-à-dire quand les marchés sont bas.</p>
+                    <p>On transforme ainsi une baisse temporaire, qui n'était qu'une ligne rouge sur un écran, en perte définitive et bien réelle.</p>
+                </div>
+
+                <p class="retenir">💡 La réserve de précaution n'est pas un placement médiocre : c'est ce qui vous permet de ne jamais vendre au mauvais moment.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="linvestissement">📈 L'investissement</h3></summary>
+                <div class="lecon-corps">
+                <p>Investir, c'est accepter un risque de perte en échange d'un rendement espéré. Cette phrase mérite d'être relue : le risque n'est pas un effet secondaire regrettable, c'est <strong>la contrepartie</strong> du rendement. Un placement qui promet un rendement élevé sans risque n'existe pas — c'est la définition même d'une arnaque.</p>
+
+                <h4>Les grandes familles</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Support</th><th>Nature</th><th>Risque</th><th>Horizon minimal</th></tr>
+                    <tr><td><strong>Actions</strong></td><td>Une part de propriété d'une entreprise</td><td>Élevé, très variable à court terme</td><td>8 ans et plus</td></tr>
+                    <tr><td><strong>Obligations</strong></td><td>Un prêt à une entreprise ou un État</td><td>Modéré ; dépend de l'emprunteur</td><td>3 à 5 ans</td></tr>
+                    <tr><td><strong>Immobilier</strong></td><td>Un bien loué ou revendu</td><td>Modéré ; peu liquide, frais élevés</td><td>10 ans et plus</td></tr>
+                    <tr><td><strong>Fonds euros</strong></td><td>Capital garanti par l'assureur</td><td>Faible</td><td>Court terme possible</td></tr>
+                </table>
+                </div>
+
+                <h4>L'intérêt composé, le seul vrai levier</h4>
+                <p>L'intérêt composé, c'est le rendement qui produit à son tour du rendement. Sur quelques années, l'effet est discret. Sur plusieurs décennies, il devient l'élément dominant — bien plus que le montant épargné.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — le coût de dix ans d'attente</span>
+                    <p>Deux personnes versent <strong>200 € par mois</strong> jusqu'à 65 ans, avec un rendement annuel moyen de <strong>5 %</strong>.</p>
+                    <ul>
+                        <li><strong>Amélie commence à 25 ans.</strong> Elle verse 96 000 € en 40 ans, et obtient environ <strong>305 000 €</strong>.</li>
+                        <li><strong>Bruno commence à 35 ans.</strong> Il verse 72 000 € en 30 ans, et obtient environ <strong>166 000 €</strong>.</li>
+                    </ul>
+                    <p>Bruno a versé <strong>24 000 € de moins</strong>. Il termine avec <strong>139 000 € de moins</strong>. L'écart de résultat représente près de six fois l'écart d'effort.</p>
+                    <p>Ces dix années ne sont pas rattrapables par un effort plus important ensuite — c'est le temps, pas le montant, qui fait la différence.</p>
+                </div>
+
+                <h4>Les frais, l'ennemi silencieux</h4>
+                <p>Un écart de frais paraît anodin. Appliqué chaque année pendant vingt-cinq ans, il devient l'un des facteurs les plus lourds du résultat final.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p><strong>10 000 €</strong> placés pendant <strong>25 ans</strong>, avec un rendement brut de <strong>6 %</strong> par an :</p>
+                    <ul>
+                        <li>Avec <strong>0,2 %</strong> de frais annuels : environ <strong>40 900 €</strong></li>
+                        <li>Avec <strong>2 %</strong> de frais annuels : environ <strong>26 700 €</strong></li>
+                    </ul>
+                    <p>Différence : <strong>14 200 €</strong>, soit davantage que le capital investi au départ. Les frais sont la seule variable que vous maîtrisez totalement — le rendement, lui, ne se commande pas.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — vouloir choisir le bon moment</span>
+                    <p>Attendre « que ça baisse pour entrer » ou « que ça remonte pour sortir » suppose de prévoir les marchés. Personne n'y parvient de façon fiable, y compris les professionnels rémunérés pour cela.</p>
+                    <p>L'investissement programmé — un montant fixe, à date fixe, quoi qu'il arrive — supprime la question. On achète mécaniquement plus de parts quand les prix baissent, moins quand ils montent.</p>
+                </div>
+
+                <p class="retenir">💡 Le temps passé investi compte davantage que le moment choisi pour investir. Commencer modestement et tôt bat largement commencer fort et tard.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-etf">📦 Les ETF</h3></summary>
+                <div class="lecon-corps">
+                <p>Un <strong>ETF</strong> (<em>Exchange Traded Fund</em>), ou tracker, est un fonds coté en bourse qui se contente de reproduire un indice. Il n'essaie pas de battre le marché : il le suit, ce qui lui permet de coûter très peu.</p>
+
+                <h4>Ce que vous achetez concrètement</h4>
+                <p>Une part d'ETF répliquant le MSCI World, c'est une fraction de plus de 1 500 entreprises réparties dans 23 pays développés — en une seule opération, avec quelques dizaines d'euros. Reconstituer cette répartition ligne par ligne serait hors de portée d'un particulier, ne serait-ce qu'en frais de courtage.</p>
+
+                <h4>Gestion passive et gestion active</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>ETF (passif)</th><th>Fonds actif</th></tr>
+                    <tr><td>Objectif</td><td>Suivre l'indice</td><td>Faire mieux que l'indice</td></tr>
+                    <tr><td>Frais annuels courants</td><td>0,05 % à 0,40 %</td><td>1,5 % à 2,5 %</td></tr>
+                    <tr><td>Résultat sur 10 ans</td><td colspan="2">La majorité des fonds actifs font moins bien que leur indice de référence, une fois les frais déduits</td></tr>
+                </table>
+                </div>
+                <p>Ce constat est régulièrement mesuré, notamment par les études SPIVA publiées chaque année. Il ne signifie pas qu'aucun gérant ne bat le marché — mais qu'identifier <em>à l'avance</em> lesquels y parviendront est une autre affaire.</p>
+
+                <h4>Points d'attention avant d'en choisir un</h4>
+                <ul>
+                    <li><strong>Les frais courants</strong> (souvent notés TER) : le premier critère, et le seul connu d'avance.</li>
+                    <li><strong>Capitalisant ou distribuant</strong> : le premier réinvestit automatiquement les dividendes — pratique pour l'intérêt composé ; le second les verse sur le compte.</li>
+                    <li><strong>L'éligibilité au PEA</strong> : certains ETF mondiaux y sont accessibles via un montage particulier, ce qui change fortement la fiscalité.</li>
+                    <li><strong>La taille de l'encours</strong> : un fonds trop petit peut être fermé, ce qui force une vente au moment choisi par l'émetteur.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire qu'un ETF protège du risque</span>
+                    <p>La diversification protège du risque lié à <strong>une</strong> entreprise : si l'une des 1 500 fait faillite, l'effet est marginal. Elle ne protège en rien d'une baisse générale des marchés.</p>
+                    <p>Un ETF actions mondiales a perdu plus de 30 % lors de crises passées. C'est le fonctionnement normal du produit, pas un dysfonctionnement — et c'est précisément pourquoi il ne convient pas à un horizon court.</p>
+                </div>
+
+                <p class="retenir">💡 Un ETF simplifie la diversification et réduit les frais. Il ne supprime pas le risque de marché, et ne transforme pas un placement long terme en placement sûr à court terme.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-gestion-du-risque">⚖️ La gestion du risque</h3></summary>
+                <div class="lecon-corps">
+                <p>« Risque » ne veut pas dire « probabilité de tout perdre ». En finance, le risque désigne l'<strong>ampleur des variations</strong> : plus un placement peut monter fort, plus il peut descendre bas. Les deux vont ensemble, toujours.</p>
+
+                <h4>L'horizon détermine tout</h4>
+                <p>La question la plus utile n'est pas « quel rendement je vise ? » mais <strong>« dans combien de temps aurai-je besoin de cet argent ? »</strong>. C'est elle qui commande le niveau de risque acceptable.</p>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Besoin de l'argent</th><th>Exemples</th><th>Orientation</th></tr>
+                    <tr><td>Moins de 2 ans</td><td>Imprévus, voyage, permis</td><td>Aucun risque en capital</td></tr>
+                    <tr><td>2 à 5 ans</td><td>Apport immobilier, véhicule</td><td>Prudent, majoritairement sécurisé</td></tr>
+                    <tr><td>5 à 10 ans</td><td>Projet moyen terme</td><td>Équilibré</td></tr>
+                    <tr><td>Plus de 10 ans</td><td>Retraite, transmission</td><td>Le temps absorbe la volatilité</td></tr>
+                </table>
+                </div>
+                <p>Un placement en actions pour un besoin à 18 mois n'est pas audacieux, il est mal conçu : la durée ne laisse aucune marge pour se remettre d'une baisse.</p>
+
+                <h4>Diversifier, au bon niveau</h4>
+                <p>Détenir dix actions du même secteur n'est pas de la diversification. Une répartition réelle joue sur plusieurs axes : classes d'actifs, zones géographiques, secteurs, et moments d'entrée.</p>
+
+                <h4>Le vrai risque est comportemental</h4>
+                <p>Les études sur le comportement des épargnants montrent régulièrement le même schéma : le rendement obtenu par les particuliers est inférieur à celui des fonds qu'ils détiennent. L'explication tient en une phrase — ils achètent après les hausses et vendent après les baisses.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le test à faire avant d'investir</span>
+                    <p>Regardez votre montant et posez-vous la question sans complaisance : <em>« si ce capital perdait 35 % l'an prochain, est-ce que je tiendrais sans vendre ? »</em></p>
+                    <p>Si la réponse est non, la répartition est trop risquée — indépendamment de ce que dit n'importe quel questionnaire de profil. Le bon niveau de risque est celui qui vous laisse dormir <strong>et</strong> tenir votre stratégie dans la tempête.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — confondre volatilité et perte</span>
+                    <p>Tant qu'on ne vend pas, une baisse reste virtuelle. Elle ne devient une perte réelle qu'au moment de la vente. C'est pourquoi l'épargne de précaution et l'horizon de placement comptent plus que le choix du support : ce sont eux qui permettent de ne pas être contraint de vendre.</p>
+                </div>
+
+                <p class="retenir">💡 Le niveau de risque ne se choisit pas selon le rendement espéré, mais selon la date à laquelle vous aurez besoin de l'argent.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-fiscalité-de-lépargne">🧾 La fiscalité de l'épargne</h3></summary>
+                <div class="lecon-corps">
+                <p>Deux placements au rendement identique peuvent laisser des sommes très différentes une fois l'impôt payé. L'<strong>enveloppe</strong> — le contenant fiscal dans lequel on loge ses placements — mérite donc autant d'attention que le choix des placements eux-mêmes.</p>
+
+                <h4>Les principales enveloppes en France</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Enveloppe</th><th>Ce qu'on y loge</th><th>Fiscalité des gains</th><th>Disponibilité</th></tr>
+                    <tr><td><strong>Livret A / LDDS</strong></td><td>Uniquement des espèces</td><td>Exonérés d'impôt et de prélèvements sociaux</td><td>Immédiate</td></tr>
+                    <tr><td><strong>PEA</strong></td><td>Actions et fonds européens</td><td>Après 5 ans : exonération d'impôt sur le revenu, prélèvements sociaux dus</td><td>Un retrait avant 5 ans entraîne la clôture</td></tr>
+                    <tr><td><strong>Assurance-vie</strong></td><td>Fonds euros et unités de compte</td><td>Après 8 ans : abattement annuel sur les gains retirés</td><td>Disponible à tout moment</td></tr>
+                    <tr><td><strong>Compte-titres</strong></td><td>Tout, sans restriction</td><td>Prélèvement forfaitaire unique de 30 % (dont 17,2 % de prélèvements sociaux)</td><td>Immédiate</td></tr>
+                </table>
+                </div>
+
+                <h4>Ce que change l'antériorité fiscale</h4>
+                <p>Le compteur des 5 ans du PEA et des 8 ans de l'assurance-vie démarre à l'<strong>ouverture</strong>, pas au premier versement important. Ouvrir un contrat avec une somme modeste, même sans projet immédiat, fait courir l'horloge. C'est l'une des rares décisions financières qui ne coûte pratiquement rien et ne peut pas se rattraper plus tard.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p><strong>10 000 €</strong> de plus-value, retirés d'un PEA de plus de 5 ans plutôt que d'un compte-titres ordinaire :</p>
+                    <ul>
+                        <li>Compte-titres : 30 % de prélèvement forfaitaire → <strong>3 000 €</strong> d'impôt, il reste 7 000 €</li>
+                        <li>PEA de plus de 5 ans : seuls les prélèvements sociaux de 17,2 % → <strong>1 720 €</strong>, il reste 8 280 €</li>
+                    </ul>
+                    <p>Écart : <strong>1 280 €</strong>, pour exactement les mêmes placements. Seul le contenant diffère.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — choisir un placement pour sa fiscalité seule</span>
+                    <p>Un avantage fiscal ne compense jamais des frais élevés ou un placement inadapté. Certains produits mettent en avant une réduction d'impôt immédiate tout en imposant plusieurs années de blocage et des frais lourds.</p>
+                    <p>L'ordre de raisonnement est : le besoin, puis l'horizon, puis le placement — et l'enveloppe fiscale <strong>en dernier</strong>.</p>
+                </div>
+
+                <p class="retenir">💡 Ouvrir tôt un PEA ou une assurance-vie, même avec une somme symbolique, démarre un compteur fiscal qui ne se rattrape pas. C'est un geste gratuit aux effets durables.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du guide. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>AMF — Autorité des marchés financiers</strong> : le régulateur français. Ses guides pédagogiques sont gratuits et sans intérêt commercial. Sa <em>liste noire</em> des sites non autorisés est à consulter avant tout versement à un acteur inconnu.</li>
+                    <li><strong>Service-Public.fr</strong> : la source officielle pour les plafonds, taux réglementés et règles fiscales à jour. À privilégier sur tout article de blog, y compris celui-ci.</li>
+                    <li><strong>Banque de France</strong> : données économiques, taux d'usure, et un service gratuit d'information sur le surendettement.</li>
+                    <li><strong>Études SPIVA</strong> (S&amp;P Dow Jones Indices) : la comparaison annuelle entre fonds actifs et indices de référence. Chiffres bruts, sans commentaire commercial.</li>
+                    <li><strong>« L'Investisseur intelligent »</strong>, Benjamin Graham : l'ouvrage de référence sur le comportement de l'investisseur. Exigeant, mais les chapitres sur la psychologie restent inégalés.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> avant de confier de l'argent à un intermédiaire, vérifiez qu'il est enregistré auprès de l'ORIAS ou de l'ACPR. C'est gratuit, cela prend deux minutes, et cela élimine l'essentiel des escroqueries.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Retour</span>Parcours Finance</a>
+            <a href="intermediaire.html" class="next"><span class="label">Niveau suivant →</span>Finance — Intermédiaire</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+                <a href="../productivite/index.html">⏱️ Productivité & Organisation</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/finance-debutant.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

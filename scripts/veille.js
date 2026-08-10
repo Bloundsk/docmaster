@@ -73,26 +73,41 @@ function construireRequete(categorie, sousSection) {
     return [...new Set(mots)].join(" ");
 }
 
+// Un sujet peut se decomposer en niveaux : debutant.html, intermediaire.html,
+// avance.html. Les sections de cours vivent alors dans ces pages, et non plus
+// dans index.html qui n est qu un sommaire. Ne lire que index.html reviendrait
+// a ne plus rien surveiller pour les sujets deja decoupes en niveaux.
 function lireGuides() {
     const guides = [];
     for (const dossier of fs.readdirSync(DOSSIER_GUIDES)) {
-        const fichier = path.join(DOSSIER_GUIDES, dossier, "index.html");
-        if (!fs.existsSync(fichier)) continue;
+        const chemin = path.join(DOSSIER_GUIDES, dossier);
+        if (!fs.statSync(chemin).isDirectory()) continue;
 
-        const html = fs.readFileSync(fichier, "utf8");
-        const titreBrut = (html.match(/<h1>([\s\S]*?)<\/h1>/) || [])[1];
-        if (!titreBrut) continue;
+        for (const nom of fs.readdirSync(chemin)) {
+            if (!nom.endsWith(".html")) continue;
+            const html = fs.readFileSync(path.join(chemin, nom), "utf8");
 
-        const sousSections = [...html.matchAll(/<summary><h3 id="([^"]+)">([\s\S]*?)<\/h3>/g)]
-            .map(m => ({
-                ancre: m[1],
-                titre: decoder(m[2].replace(/<[^>]+>/g, "").trim()),
-                requete: construireRequete(titreBrut, m[2]),
-            }))
-            .filter(s => s.requete.length > 3);
+            const titreBrut = (html.match(/<h1>([\s\S]*?)<\/h1>/) || [])[1];
+            if (!titreBrut) continue;
 
-        if (sousSections.length) {
-            guides.push({ dossier, titre: decoder(titreBrut.trim()), sousSections });
+            const sousSections = [...html.matchAll(/<summary><h3 id="([^"]+)">([\s\S]*?)<\/h3>/g)]
+                .map(m => ({
+                    ancre: m[1],
+                    titre: decoder(m[2].replace(/<[^>]+>/g, "").trim()),
+                    requete: construireRequete(titreBrut, m[2]),
+                }))
+                .filter(s => s.requete.length > 3);
+
+            // Une page sans section de cours — un sommaire de parcours — n a
+            // rien a surveiller : on ne la fait pas entrer dans la veille.
+            if (sousSections.length) {
+                guides.push({
+                    dossier,
+                    page: nom,
+                    titre: decoder(titreBrut.trim()),
+                    sousSections
+                });
+            }
         }
     }
     return guides;
@@ -170,7 +185,7 @@ async function construireRapport(guides, dejaProposes) {
             if (!nouveaux.length) continue;
 
             // Lien direct vers la section concernee du guide
-            const lienSection = `${SITE}guides/${guide.dossier}/index.html#${encodeURIComponent(s.ancre)}`;
+            const lienSection = `${SITE}guides/${guide.dossier}/${guide.page}#${encodeURIComponent(s.ancre)}`;
             rapport += `### [${s.titre}](${lienSection})\n`;
             rapport += `<sub>recherche : \`${s.requete}\`</sub>\n\n`;
             for (const a of nouveaux) {
