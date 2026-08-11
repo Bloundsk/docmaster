@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développement Web — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Développement Web : performance et cache, sécurité applicative, tests automatisés, et gestion de la dette technique.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Développement Web — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Développement Web : performance et cache, sécurité applicative, tests automatisés, et gestion de la dette technique.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Développement Web — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Développement Web : performance et cache, sécurité applicative, tests automatisés, et gestion de la dette technique.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">💻 Développement Web</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💻 Développement Web — Avancé</h1>
+                <p>Ce qui distingue un site qui fonctionne d'un site qui tient.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 11 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#performance-et-cache">⚡ La performance et le cache</a></li>
+                <li><a href="#securite-applicative">🔐 La sécurité applicative</a></li>
+                <li><a href="#tests-automatises">🧪 Les tests automatisés</a></li>
+                <li><a href="#dette-technique">🏗️ La dette technique</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Le cache est le seul levier qui améliore la performance sans rien alléger.</li>
+                <li>Toute donnée venant de l'extérieur est hostile jusqu'à preuve du contraire.</li>
+                <li>Un test qui échoue au hasard est pire qu'un test absent : il apprend à ignorer les alertes.</li>
+                <li>La dette technique n'est pas un défaut moral, c'est un emprunt — le problème sont les intérêts.</li>
+                <li>Une réécriture complète échoue plus souvent qu'elle ne réussit.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau intermédiaire portait sur la construction : faire communiquer les morceaux, stocker les données, mettre en ligne, travailler à plusieurs. De quoi livrer une application qui fonctionne.</p>
+            <p>Ce niveau porte sur ce qui décide de sa <strong>durée de vie</strong> : tenir la charge, résister aux attaques, pouvoir être modifié sans peur, et vieillir sans devenir illisible. Quatre sujets qui ne se voient pas le jour de la mise en ligne, et qui décident de tout ensuite.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les vulnérabilités décrites le sont pour être comprises et évitées lors de la conception. Les ordres de grandeur de performance dépendent fortement du contexte : mesurez chez vous plutôt que de vous fier à un chiffre lu quelque part.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ce qui décide de la durée de vie</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="performance-et-cache">⚡ La performance et le cache</h3></summary>
+                <div class="lecon-corps">
+                <p>Optimiser sans mesurer, c'est deviner. La première étape est toujours la même : ouvrir les outils du navigateur, regarder ce qui prend du temps, et s'attaquer à la plus grosse barre — pas à la plus intéressante.</p>
+
+                <h4>Le cache, seul levier gratuit</h4>
+                <p>Alléger un fichier demande du travail. Le mettre en cache demande une ligne de configuration, et supprime entièrement son téléchargement pour les visiteurs qui reviennent.</p>
+                <p>Le mécanisme : le serveur indique combien de temps un fichier reste valide. Tant que ce délai court, le navigateur ne redemande rien — pas même pour vérifier.</p>
+                <p>D'où une contrainte : un fichier fortement mis en cache ne peut plus être modifié en place. La solution universelle est le <strong>nom versionné</strong> : <code>style.a3f9.css</code>. Une modification change le nom, donc l'adresse, donc le cache est contourné naturellement.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — l'effet du cache</span>
+                    <p>Une page de <strong>1 800 Ko</strong>, dont <strong>1 500 Ko</strong> de fichiers statiques — scripts, styles, polices, images.</p>
+                    <p>Si <strong>60 %</strong> des visites sont des retours, ces visiteurs ne téléchargent que 300 Ko.</p>
+                    <p>Volume moyen par visite : <strong>900 Ko</strong> au lieu de 1 800. Moitié moins, sans avoir allégé quoi que ce soit.</p>
+                </div>
+
+                <div class="pratique" data-pratique="impact-du-cache"></div>
+
+                <h4>Ce qui pèse, dans l'ordre</h4>
+                <p>Dans l'immense majorité des cas : <strong>les images</strong> d'abord — mal dimensionnées, dans un format ancien —, puis <strong>les scripts tiers</strong> — statistiques, widgets, bandeaux —, puis le code de l'application.</p>
+                <p>Commencer par optimiser son propre code alors qu'une image de 4 Mo attend en haut de page est une erreur de priorité fréquente.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la page qui bouge pendant le chargement</span>
+                    <p>Une image sans dimensions déclarées, une police qui remplace une autre, un bandeau qui s'insère : le contenu se décale sous les doigts, et l'utilisateur clique à côté.</p>
+                    <p>Déclarer les dimensions des images et réserver la place des éléments différés supprime ce défaut, sans rien accélérer.</p>
+                </div>
+
+                <p class="retenir">💡 Mesurez d'abord. La cause d'une lenteur est presque jamais celle qu'on imagine.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="securite-applicative">🔐 La sécurité applicative</h3></summary>
+                <div class="lecon-corps">
+                <p>Un principe unique règle l'essentiel : <strong>toute donnée venant de l'extérieur est hostile jusqu'à preuve du contraire</strong>. Formulaire, adresse, en-tête, fichier envoyé, réponse d'une API tierce.</p>
+
+                <h4>Les trois attaques à connaître</h4>
+                <p><strong>L'injection SQL</strong> : une requête construite par concaténation permet à l'utilisateur d'écrire une partie de la requête. Parade : requêtes préparées, systématiquement.</p>
+                <p><strong>Le script injecté</strong> — souvent appelé XSS : du contenu utilisateur affiché tel quel dans la page peut contenir du code, qui s'exécutera chez les autres visiteurs. Parade : échapper à l'affichage, et poser une politique de sécurité de contenu.</p>
+                <p><strong>La requête forgée</strong> — CSRF : un site tiers déclenche une action sur le vôtre en profitant de la session ouverte du visiteur. Parade : un jeton unique par formulaire, et des cookies configurés pour ne pas partir vers d'autres sites.</p>
+
+                <div class="exemple">
+                    <span class="titre">Les défenses qui coûtent le moins</span>
+                    <p><strong>Valider en entrée, échapper en sortie.</strong> Deux gestes distincts : le premier refuse ce qui n'a pas la forme attendue, le second neutralise ce qui est affiché.</p>
+                    <p><strong>Ne jamais faire confiance au navigateur.</strong> Une vérification côté client améliore le confort ; elle se contourne en trois secondes. La vérification qui compte est celle du serveur.</p>
+                    <p><strong>Mettre à jour ses dépendances.</strong> La majorité des compromissions passent par une bibliothèque connue et non mise à jour, pas par une faille inédite.</p>
+                </div>
+
+                <div class="pratique" data-pratique="audit-securite-web"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — les messages d'erreur trop bavards</span>
+                    <p>Une page d'erreur qui affiche la requête SQL, le chemin des fichiers ou la version du serveur offre à un attaquant une cartographie gratuite.</p>
+                    <p>En production : un message générique pour le visiteur, le détail complet dans les journaux. Les deux, jamais l'inverse.</p>
+                </div>
+
+                <p class="retenir">💡 La sécurité ne s'ajoute pas à la fin. Elle consiste à ne jamais faire confiance, dès la première ligne.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="tests-automatises">🧪 Les tests automatisés</h3></summary>
+                <div class="lecon-corps">
+                <p>Les tests ne servent pas à prouver que le code est correct : ils servent à <strong>pouvoir le modifier sans peur</strong>. Un projet sans tests devient un projet qu'on n'ose plus toucher, et c'est ainsi qu'il meurt.</p>
+
+                <h4>Trois niveaux, trois usages</h4>
+                <p>Les tests <strong>unitaires</strong> vérifient une fonction isolée. Rapides — quelques millisecondes —, ils disent précisément ce qui casse.</p>
+                <p>Les tests <strong>d'intégration</strong> vérifient que plusieurs morceaux fonctionnent ensemble, base de données comprise. Plus lents, plus proches du réel.</p>
+                <p>Les tests <strong>de bout en bout</strong> pilotent un vrai navigateur sur un parcours complet. Les plus lents et les plus fragiles, mais les seuls qui vérifient ce que vit l'utilisateur.</p>
+                <p>La proportion classique : beaucoup d'unitaires, quelques intégrations, très peu de bout en bout. L'inverse produit une suite lente que plus personne n'attend.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — la durée d'une suite</span>
+                    <p><strong>400 tests unitaires</strong> à 5 ms : 2 secondes.</p>
+                    <p><strong>60 tests d'intégration</strong> à 200 ms : 12 secondes.</p>
+                    <p><strong>12 tests de bout en bout</strong> à 8 s : 96 secondes.</p>
+                    <p>Total : <strong>110 secondes</strong>, dont 87 % pour 2,5 % des tests. C'est cette poignée de tests lents qui décide si la suite est lancée à chaque modification, ou une fois par semaine.</p>
+                </div>
+
+                <div class="pratique" data-pratique="pyramide-des-tests"></div>
+
+                <h4>Ce qu'il faut tester en priorité</h4>
+                <p>La logique métier — calculs, règles, cas limites — et les parcours critiques : inscription, paiement, envoi. Le reste peut attendre.</p>
+                <p>Ce qui ne mérite pas de test : les getters triviaux, le code des bibliothèques, et l'apparence exacte d'un écran, qui changera de toute façon.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le test instable</span>
+                    <p>Un test qui échoue une fois sur dix sans raison apprend à l'équipe à relancer sans regarder. Le jour où il détecte un vrai problème, personne ne le croit.</p>
+                    <p>Un test instable doit être réparé ou supprimé — jamais toléré.</p>
+                </div>
+
+                <p class="retenir">💡 Les tests n'existent pas pour attraper des bugs : ils existent pour rendre le changement possible.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="dette-technique">🏗️ La dette technique</h3></summary>
+                <div class="lecon-corps">
+                <p>La métaphore est exacte : on emprunte du temps aujourd'hui — en simplifiant, en contournant — et on le rembourse plus tard, avec des intérêts. Le problème n'est pas d'emprunter, c'est de ne jamais rembourser.</p>
+
+                <h4>Dette choisie et dette subie</h4>
+                <p>Une dette <strong>choisie</strong> est assumée : « on livre vite pour valider, on reprendra ce module ensuite ». Elle est documentée et datée.</p>
+                <p>Une dette <strong>subie</strong> vient de l'ignorance ou de la précipitation. Personne ne sait qu'elle existe avant de tomber dessus.</p>
+                <p>La première se gère. La seconde s'accumule silencieusement, jusqu'à ce que le moindre changement devienne long et risqué.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — les intérêts</span>
+                    <p>Une architecture bancale fait perdre <strong>3 heures par semaine</strong> en contournements et en corrections.</p>
+                    <p>Sur un an : <strong>144 heures</strong>, soit près de <strong>quatre semaines</strong> de travail.</p>
+                    <p>Si la corriger demande 40 heures, l'opération est remboursée en moins de quatre mois. Formulé ainsi, l'arbitrage n'est plus une question de goût.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-de-la-dette"></div>
+
+                <h4>Réécrire, rarement</h4>
+                <p>La tentation de tout recommencer est forte devant un code ancien. Elle échoue le plus souvent, pour une raison précise : le code existant contient des <strong>années de corrections de cas particuliers</strong> que personne ne se rappelle, et que la réécriture perdra.</p>
+                <p>La refonte progressive — remplacer un morceau à la fois, en gardant le reste fonctionnel — est moins gratifiante et bien plus sûre.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la dette invisible des dépendances</span>
+                    <p>Une bibliothèque non mise à jour pendant deux ans devient très difficile à faire évoluer : les versions intermédiaires ont introduit des ruptures qu'il faut désormais franchir toutes en même temps.</p>
+                    <p>Mettre à jour régulièrement, par petits pas, coûte beaucoup moins qu'un grand saut tous les trois ans — et ferme au passage les failles connues.</p>
+                </div>
+
+                <p class="retenir">💡 Chiffrez la dette en heures perdues par semaine. C'est le seul langage qui obtient du temps pour la corriger.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>OWASP Top 10</strong> : les dix vulnérabilités les plus répandues, avec des exemples de code vulnérable et corrigé. La référence du domaine.</li>
+                    <li><strong>MDN — en-têtes HTTP de cache</strong> : la documentation qui explique réellement la différence entre les directives, souvent mal comprises.</li>
+                    <li><strong>Outils d'audit intégrés au navigateur</strong> : ils donnent les métriques de performance et une liste de recommandations classées par gain.</li>
+                    <li><strong>« Working Effectively with Legacy Code »</strong>, Michael Feathers : comment ajouter des tests à un code qui n'en a pas, sans tout casser.</li>
+                    <li><strong>Bases de données de vulnérabilités</strong> : elles permettent de vérifier si une dépendance utilisée est concernée par une faille connue.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> avant de proposer une refonte, mesurez le temps perdu chaque semaine à cause du code actuel. Le chiffre change la conversation.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Développement Web — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Parcours →</span>Retour au sommaire Développement Web</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+                <a href="../design/index.html">🎨 Design UX/UI</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/dev-web-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

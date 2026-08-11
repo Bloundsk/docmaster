@@ -1645,6 +1645,272 @@
                 return { texte: "Plusieurs risques majeurs reposent aujourd'hui sur la bonne entente.", ton: "alerte" };
             },
             lecon: "Ce qui coûte cher n'est pas le contrat qu'on rédige, c'est celui qu'on n'a pas rédigé."
+        },
+
+        // ================= DÉVELOPPEMENT WEB =================
+
+        // ---------- Niveau débutant ----------
+
+        "semantique-html": {
+            type: "controle",
+            titre: "Votre HTML a-t-il du sens ?",
+            intro: "Cochez ce qui est vrai de la page que vous avez sous les yeux.",
+            points: [
+                { texte: "Un seul titre de niveau 1 par page" },
+                { texte: "Les niveaux de titre se suivent sans sauter de rang", aide: "pas de h4 juste après un h2" },
+                { texte: "La navigation est dans un élément dédié, pas dans une division quelconque" },
+                { texte: "Les boutons qui déclenchent une action sont des boutons, pas des liens" },
+                { texte: "Chaque champ de formulaire a une étiquette qui lui est liée" },
+                { texte: "Les images informatives ont un texte de remplacement" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Structure saine : lisible par un lecteur d'écran comme par un moteur de recherche.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Les étiquettes de formulaire sont le manque le plus fréquent.", ton: "moyen" };
+                return { texte: "Cette page se comprend visuellement, mais pas structurellement.", ton: "alerte" };
+            },
+            lecon: "Le bon élément HTML apporte gratuitement l'accessibilité et le comportement clavier. Une division n'apporte rien."
+        },
+
+        "js-ou-css": {
+            type: "controle",
+            titre: "CSS ou JavaScript ?",
+            intro: "Cochez ce qui se fait aujourd'hui en CSS seul. Quatre réponses.",
+            points: [
+                { texte: "Afficher ou masquer un menu déroulant au survol", aide: "CSS suffit" },
+                { texte: "Animer une transition de couleur ou de taille", aide: "CSS, et c'est plus fluide" },
+                { texte: "Adapter la mise en page à la largeur de l'écran", aide: "CSS" },
+                { texte: "Envoyer un formulaire sans recharger la page", aide: "JavaScript nécessaire" },
+                { texte: "Coller un en-tête en haut de l'écran au défilement", aide: "CSS" },
+                { texte: "Calculer un total à partir de champs saisis", aide: "JavaScript nécessaire" }
+            ],
+            verdict: (n) => {
+                if (n === 4) return { texte: "Quatre réponses en CSS. Vérifiez avec les indications que ce sont bien celles-là.", ton: "bon" };
+                if (n > 4) return { texte: "Plus de quatre : deux de ces tâches demandent réellement du JavaScript.", ton: "alerte" };
+                return { texte: "Quatre de ces six tâches se font en CSS seul.", ton: "moyen" };
+            },
+            lecon: "Ce qui se fait en CSS fonctionne même si le JavaScript échoue à charger. C'est une robustesse gratuite."
+        },
+
+        "ou-placer-la-logique": {
+            type: "controle",
+            titre: "Navigateur ou serveur ?",
+            intro: "Cochez ce qui DOIT être fait côté serveur, sans exception.",
+            points: [
+                { texte: "Vérifier qu'un utilisateur a le droit d'accéder à une donnée", aide: "toujours côté serveur" },
+                { texte: "Vérifier qu'un champ est bien rempli avant envoi", aide: "côté navigateur pour le confort — mais le serveur doit revérifier" },
+                { texte: "Calculer le prix final d'une commande", aide: "serveur : sinon le prix se modifie depuis la console" },
+                { texte: "Afficher une infobulle au survol", aide: "navigateur" },
+                { texte: "Décider si un compte peut être supprimé", aide: "serveur" },
+                { texte: "Masquer un bouton réservé aux administrateurs", aide: "masquer ne protège pas : l'action doit être refusée côté serveur" }
+            ],
+            verdict: (n) => {
+                if (n === 4) return { texte: "Quatre traitements relèvent obligatoirement du serveur.", ton: "bon" };
+                if (n > 4) return { texte: "Plus de quatre : deux de ces éléments relèvent du confort d'affichage.", ton: "alerte" };
+                return { texte: "Quatre de ces six doivent impérativement être traités côté serveur.", ton: "moyen" };
+            },
+            lecon: "Tout ce qui protège quelque chose se vérifie côté serveur. Le navigateur appartient à l'utilisateur."
+        },
+
+        "largeur-de-ligne": {
+            titre: "Trouvez la bonne largeur de texte",
+            intro: "Une ligne trop longue fatigue l'œil, qui perd le début de la ligne suivante.",
+            champs: [
+                { id: "police", libelle: "Taille de police", unite: "px", defaut: 17, min: 10, max: 40, pas: 1 },
+                { id: "caracteres", libelle: "Caractères par ligne visés", unite: "car.", defaut: 68, min: 30, max: 140, pas: 1 }
+            ],
+            calculer: ({ police, caracteres }) => {
+                // Un caractere occupe en moyenne environ la moitie de la taille
+                // de police dans une fonte proportionnelle courante.
+                const largeur = Math.round(police * 0.5 * caracteres);
+                let verdict;
+                if (caracteres < 45) verdict = "trop court : le regard revient trop souvent à la ligne";
+                else if (caracteres <= 75) verdict = "dans la zone confortable";
+                else verdict = "trop long : l'œil perd le début de la ligne suivante";
+                return [
+                    { libelle: "Largeur de bloc recommandée", valeur: nf(largeur) + " px", fort: true },
+                    { libelle: "En unités relatives", valeur: nf(caracteres * 0.5, 1) + " em" },
+                    { libelle: "Confort de lecture", valeur: verdict }
+                ];
+            },
+            lecon: "La zone confortable se situe entre 45 et 75 caractères par ligne, quelle que soit la taille de l'écran."
+        },
+
+        // ---------- Niveau intermédiaire ----------
+
+        "cout-des-appels": {
+            titre: "Séquentiel ou parallèle ?",
+            intro: "Le temps d'une page dépend surtout du nombre d'allers-retours.",
+            champs: [
+                { id: "appels", libelle: "Nombre d'appels d'API", unite: "appels", defaut: 8, min: 1, max: 200, pas: 1 },
+                { id: "latence", libelle: "Latence réseau par appel", unite: "ms", defaut: 120, min: 1, max: 2000, pas: 10 },
+                { id: "traitement", libelle: "Traitement serveur par appel", unite: "ms", defaut: 30, min: 0, max: 5000, pas: 5 }
+            ],
+            calculer: ({ appels, latence, traitement }) => {
+                const unAppel = latence + traitement;
+                const sequentiel = appels * unAppel;
+                // En parallele, la duree est celle de l appel le plus long.
+                const parallele = unAppel;
+                return [
+                    { libelle: "En séquence", valeur: nf(sequentiel) + " ms" },
+                    { libelle: "En parallèle", valeur: nf(parallele) + " ms", fort: true },
+                    { libelle: "Temps économisé", valeur: nf(sequentiel - parallele) + " ms" }
+                ];
+            },
+            lecon: "Le serveur n'est pas plus rapide dans le second cas. C'est l'organisation des appels qui change tout."
+        },
+
+        "probleme-n-plus-1": {
+            titre: "Mesurez le coût d'une requête en boucle",
+            intro: "Le défaut de performance le plus courant, et le plus invisible à la lecture du code.",
+            champs: [
+                { id: "lignes", libelle: "Éléments à afficher", unite: "lignes", defaut: 50, min: 1, max: 10000, pas: 10 },
+                { id: "duree", libelle: "Durée d'une requête simple", unite: "ms", defaut: 4, min: 0.1, max: 500, pas: 0.5 },
+                { id: "jointure", libelle: "Durée de la requête avec jointure", unite: "ms", defaut: 6, min: 0.1, max: 5000, pas: 1 }
+            ],
+            calculer: ({ lignes, duree, jointure }) => {
+                const enBoucle = (lignes + 1) * duree;
+                const rapport = jointure > 0 ? enBoucle / jointure : 0;
+                return [
+                    { libelle: `Une requête par élément (${nf(lignes + 1)} requêtes)`, valeur: nf(enBoucle, 0) + " ms" },
+                    { libelle: "Une seule requête avec jointure", valeur: nf(jointure, 0) + " ms" },
+                    { libelle: "Rapport", valeur: nf(rapport, 0) + " fois plus lent", fort: rapport > 5 }
+                ];
+            },
+            lecon: "Le code paraît identique dans les deux cas. Seul le compteur de requêtes révèle la différence."
+        },
+
+        "checklist-mise-en-ligne": {
+            type: "controle",
+            titre: "Prêt à mettre en ligne ?",
+            intro: "Cochez ce qui est vérifié. Ces points expliquent la quasi-totalité des premières mises en ligne ratées.",
+            points: [
+                { texte: "Aucun secret ne figure dans le code envoyé", aide: "clés d'API, mots de passe, jetons" },
+                { texte: "La casse des noms de fichiers est exacte", aide: "le serveur distingue Image.png de image.png, pas Windows" },
+                { texte: "Les chemins fonctionnent depuis la racine du site" },
+                { texte: "Le HTTPS est actif et la redirection en place" },
+                { texte: "Une page d'erreur personnalisée existe" },
+                { texte: "Le déploiement envoie l'ensemble des fichiers, pas une sélection" },
+                { texte: "J'ai ouvert le site dans une fenêtre privée après déploiement", aide: "pour contourner le cache et voir ce que voient les autres" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Prêt. Ces sept points couvrent l'essentiel des incidents de première mise en ligne.", ton: "bon" };
+                if (n >= 5) return { texte: "Presque. La casse des fichiers et les secrets sont les deux à ne pas manquer.", ton: "moyen" };
+                return { texte: "Plusieurs points bloquants risquent d'apparaître après le déploiement.", ton: "alerte" };
+            },
+            lecon: "« Ça marche chez moi » et « c'est en ligne » diffèrent par quelques points précis, tous vérifiables d'avance."
+        },
+
+        "hygiene-git": {
+            type: "controle",
+            titre: "Votre historique est-il utilisable ?",
+            intro: "Cochez ce qui décrit vos habitudes réelles.",
+            points: [
+                { texte: "Un commit correspond à une seule intention" },
+                { texte: "Les messages expliquent le pourquoi, pas seulement le quoi", aide: "« fix » n'apprend rien à personne" },
+                { texte: "Un fichier d'exclusion existe depuis le premier jour" },
+                { texte: "Aucun secret n'a jamais été commité", aide: "un secret poussé reste dans l'historique, même supprimé ensuite" },
+                { texte: "La branche principale reste toujours fonctionnelle" },
+                { texte: "Les branches vivent quelques jours, pas quelques semaines" },
+                { texte: "Je relis mon propre changement avant de le fusionner" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Historique exploitable : vous pourrez revenir en arrière proprement.", ton: "bon" };
+                if (n >= 5) return { texte: "Bonnes habitudes. Les branches longues sont la cause principale des conflits.", ton: "moyen" };
+                return { texte: "Cet historique servira difficilement le jour où il faudra défaire quelque chose.", ton: "alerte" };
+            },
+            lecon: "Un commit fourre-tout ne peut pas être annulé proprement : on ne peut pas en retirer une partie."
+        },
+
+        // ---------- Niveau avancé ----------
+
+        "impact-du-cache": {
+            titre: "Ce que le cache économise",
+            intro: "Le seul levier qui améliore la performance sans rien alléger.",
+            champs: [
+                { id: "poids", libelle: "Poids total d'une page", unite: "Ko", defaut: 1800, min: 10, max: 100000, pas: 50 },
+                { id: "statique", libelle: "Dont fichiers statiques cachables", unite: "Ko", defaut: 1500, min: 0, max: 100000, pas: 50 },
+                { id: "retours", libelle: "Part de visites avec cache déjà rempli", unite: "%", defaut: 60, min: 0, max: 100, pas: 5 }
+            ],
+            calculer: ({ poids, statique, retours }) => {
+                const cachable = Math.min(statique, poids);
+                const visiteRetour = poids - cachable;
+                const moyenne = poids * (1 - retours / 100) + visiteRetour * (retours / 100);
+                return [
+                    { libelle: "Première visite", valeur: nf(poids) + " Ko" },
+                    { libelle: "Visite avec cache", valeur: nf(visiteRetour) + " Ko" },
+                    { libelle: "Volume moyen par visite", valeur: nf(Math.round(moyenne)) + " Ko", fort: true }
+                ];
+            },
+            lecon: "Un fichier fortement mis en cache ne peut plus changer en place : versionnez son nom, et le problème disparaît."
+        },
+
+        "audit-securite-web": {
+            type: "controle",
+            titre: "Audit de sécurité applicative",
+            intro: "Cochez ce qui est en place dans votre application.",
+            points: [
+                { texte: "Toutes les requêtes de base de données sont préparées", aide: "aucune concaténation de valeurs saisies" },
+                { texte: "Le contenu utilisateur est échappé à l'affichage" },
+                { texte: "Une politique de sécurité de contenu est déclarée" },
+                { texte: "Les formulaires sensibles portent un jeton anti-rejeu" },
+                { texte: "Toute autorisation est vérifiée côté serveur", aide: "masquer un bouton ne protège rien" },
+                { texte: "Les dépendances sont mises à jour régulièrement", aide: "la majorité des compromissions passent par là" },
+                { texte: "Les messages d'erreur en production ne révèlent rien du système" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Les vulnérabilités les plus répandues sont couvertes.", ton: "bon" };
+                if (n >= 5) return { texte: "Bon niveau. Les dépendances non mises à jour restent le vecteur le plus exploité.", ton: "moyen" };
+                return { texte: "Plusieurs vulnérabilités classiques sont probablement exploitables.", ton: "alerte" };
+            },
+            lecon: "Toute donnée venant de l'extérieur est hostile jusqu'à preuve du contraire. C'est le principe qui règle l'essentiel."
+        },
+
+        "pyramide-des-tests": {
+            titre: "Combien de temps dure votre suite de tests ?",
+            intro: "Si elle dépasse quelques minutes, elle ne sera plus lancée à chaque modification.",
+            champs: [
+                { id: "unitaires", libelle: "Tests unitaires", unite: "tests", defaut: 400, min: 0, max: 100000, pas: 10 },
+                { id: "integration", libelle: "Tests d'intégration", unite: "tests", defaut: 60, min: 0, max: 10000, pas: 5 },
+                { id: "boutEnBout", libelle: "Tests de bout en bout", unite: "tests", defaut: 12, min: 0, max: 1000, pas: 1 },
+                { id: "dureeE2E", libelle: "Durée d'un test de bout en bout", unite: "s", defaut: 8, min: 0.5, max: 300, pas: 0.5 }
+            ],
+            calculer: ({ unitaires, integration, boutEnBout, dureeE2E }) => {
+                // Ordres de grandeur usuels : 5 ms et 200 ms.
+                const tU = unitaires * 0.005;
+                const tI = integration * 0.2;
+                const tE = boutEnBout * dureeE2E;
+                const total = tU + tI + tE;
+                const nb = unitaires + integration + boutEnBout;
+                const partTemps = total > 0 ? tE / total * 100 : 0;
+                const partNombre = nb > 0 ? boutEnBout / nb * 100 : 0;
+                return [
+                    { libelle: "Durée totale de la suite", valeur: nf(total, 0) + " s", fort: true },
+                    { libelle: "Part des tests de bout en bout", valeur: pourcent(partNombre, 1) + " des tests" },
+                    { libelle: "Mais ils occupent", valeur: pourcent(partTemps, 0) + " du temps" }
+                ];
+            },
+            lecon: "C'est cette poignée de tests lents qui décide si la suite tourne à chaque modification, ou une fois par semaine."
+        },
+
+        "cout-de-la-dette": {
+            titre: "Chiffrez votre dette technique",
+            intro: "Le seul langage qui obtient du temps pour la corriger.",
+            champs: [
+                { id: "heures", libelle: "Heures perdues par semaine", unite: "h", defaut: 3, min: 0.5, max: 40, pas: 0.5 },
+                { id: "semaines", libelle: "Semaines travaillées par an", unite: "sem.", defaut: 48, min: 1, max: 52, pas: 1 },
+                { id: "correction", libelle: "Heures estimées pour corriger", unite: "h", defaut: 40, min: 1, max: 5000, pas: 5 },
+                { id: "taux", libelle: "Coût horaire chargé", unite: "€/h", defaut: 55, min: 0, max: 500, pas: 5 }
+            ],
+            calculer: ({ heures, semaines, correction, taux }) => {
+                const perduAn = heures * semaines;
+                const retour = heures > 0 ? correction / heures : 0;
+                return [
+                    { libelle: "Temps perdu par an", valeur: nf(perduAn, 0) + " heures (" + nf(perduAn / 35, 1) + " semaines)" },
+                    { libelle: "Coût annuel", valeur: euros(perduAn * taux), fort: true },
+                    { libelle: "La correction est remboursée en", valeur: nf(retour, 0) + " semaines" }
+                ];
+            },
+            lecon: "Formulé ainsi, l'arbitrage n'est plus une question de goût mais de délai de retour."
         }
     };
 

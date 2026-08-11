@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développement Web — Intermédiaire - DocMaster</title>
+    <meta name="description" content="Niveau intermédiaire du parcours Développement Web : API et JSON, bases de données, mise en ligne, et travail à plusieurs avec Git.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Développement Web — Intermédiaire - DocMaster">
+    <meta property="og:description" content="Niveau intermédiaire du parcours Développement Web : API et JSON, bases de données, mise en ligne, et travail à plusieurs avec Git.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Développement Web — Intermédiaire - DocMaster">
+    <meta name="twitter:description" content="Niveau intermédiaire du parcours Développement Web : API et JSON, bases de données, mise en ligne, et travail à plusieurs avec Git.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">💻 Développement Web</a> &gt;
+        <span aria-current="page">Intermédiaire</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💻 Développement Web — Intermédiaire</h1>
+                <p>Faire communiquer les morceaux, stocker les données, et mettre en ligne.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 11 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#api-et-json">🔌 Les API et le JSON</a></li>
+                <li><a href="#bases-de-donnees">🗄️ Les bases de données</a></li>
+                <li><a href="#mettre-en-ligne">🚀 Mettre en ligne</a></li>
+                <li><a href="#travail-a-plusieurs">🧰 Travailler à plusieurs</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Une API est un contrat : ce qu'on envoie, ce qu'on reçoit, ce qui se passe en cas d'erreur.</li>
+                <li>Le temps d'une page dépend souvent du nombre d'allers-retours, pas de la vitesse du serveur.</li>
+                <li>Une requête dans une boucle transforme une page rapide en page inutilisable.</li>
+                <li>Un secret placé dans le code du navigateur n'est plus un secret.</li>
+                <li>Git ne sert pas à sauvegarder : il sert à pouvoir revenir en arrière et à travailler à plusieurs.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau débutant décrivait les briques : HTML, CSS, JavaScript, la différence entre ce qui tourne dans le navigateur et ce qui tourne sur un serveur, et l'adaptation aux écrans.</p>
+            <p>Ce niveau porte sur ce qui transforme une page en <strong>application</strong> : comment les morceaux se parlent, où les données vivent, comment tout cela arrive chez les visiteurs, et comment travailler à plusieurs sans se marcher dessus. Ce sont les quatre sujets sur lesquels un projet personnel devient un projet réel.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong> et indépendant des technologies à la mode. Les principes exposés valent quel que soit le langage ou le cadriciel ; les outils changent, les mécanismes beaucoup moins.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ce qui fait une application</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="api-et-json">🔌 Les API et le JSON</h3></summary>
+                <div class="lecon-corps">
+                <p>Une <strong>API</strong> est le point de contact entre deux programmes. Sur le web, elle prend presque toujours la même forme : le navigateur envoie une requête à une adresse, le serveur renvoie des données structurées — le plus souvent au format <strong>JSON</strong>.</p>
+
+                <h4>Un contrat, pas seulement une adresse</h4>
+                <p>Une API bien conçue définit quatre choses : <strong>l'adresse</strong> et la méthode, <strong>ce qu'on envoie</strong>, <strong>ce qu'on reçoit</strong>, et <strong>ce qui se passe quand ça échoue</strong>. Le dernier point est celui qu'on oublie, et c'est celui qui fait tomber les applications en production.</p>
+                <p>Les codes de retour ont un sens précis : <strong>200</strong> tout va bien, <strong>400</strong> la demande est mal formée, <strong>401</strong> il faut s'identifier, <strong>404</strong> la ressource n'existe pas, <strong>500</strong> le serveur a échoué. Renvoyer 200 avec un message d'erreur dans le corps oblige chaque client à deviner.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — le coût des allers-retours</span>
+                    <p>Une page qui enchaîne <strong>8 appels d'API</strong>, chacun avec <strong>120 ms</strong> de latence réseau et <strong>30 ms</strong> de traitement serveur.</p>
+                    <p>En séquence : <strong>1 200 ms</strong>. En parallèle, quand les appels ne dépendent pas les uns des autres : environ <strong>150 ms</strong>.</p>
+                    <p>Le serveur n'est pas plus rapide dans le second cas. C'est l'organisation des appels qui change tout.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-des-appels"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la clé d'API dans le code du navigateur</span>
+                    <p>Tout ce que le navigateur reçoit est lisible : le code JavaScript, les variables, les en-têtes. Une clé secrète placée là est publique, même « minifiée ».</p>
+                    <p>Les appels qui nécessitent un secret doivent passer par votre propre serveur, qui détient la clé et relaie la demande.</p>
+                </div>
+
+                <p class="retenir">💡 Le temps d'une page dépend surtout du nombre d'allers-retours, rarement de la vitesse du serveur.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="bases-de-donnees">🗄️ Les bases de données</h3></summary>
+                <div class="lecon-corps">
+                <p>Dès qu'une application conserve quelque chose entre deux visites, elle a besoin d'une base de données. Le choix du type compte moins qu'on ne le dit ; la façon de l'interroger compte énormément.</p>
+
+                <h4>Relationnel ou documents</h4>
+                <p>Une base <strong>relationnelle</strong> range les données en tables liées entre elles, avec un schéma défini à l'avance. Elle garantit la cohérence : impossible d'enregistrer une commande sans client existant.</p>
+                <p>Une base <strong>documentaire</strong> stocke des objets complets, sans schéma imposé. Elle est plus souple au démarrage, et déplace la responsabilité de la cohérence dans le code.</p>
+                <p>Pour la grande majorité des projets, le relationnel reste le choix par défaut raisonnable : les données finissent presque toujours par avoir des relations, et il vaut mieux que la base les fasse respecter.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — le problème des requêtes en boucle</span>
+                    <p>Afficher 50 articles avec le nom de leur auteur.</p>
+                    <p><strong>Une requête par auteur</strong> : 1 requête pour les articles, puis 50 requêtes. À 4 ms chacune, cela fait <strong>204 ms</strong>.</p>
+                    <p><strong>Une seule requête avec jointure</strong> : environ <strong>6 ms</strong>.</p>
+                    <p>Le rapport est de 34 pour 1. Sur 500 articles, il devient catastrophique — alors que le code paraît identique.</p>
+                </div>
+
+                <div class="pratique" data-pratique="probleme-n-plus-1"></div>
+
+                <h4>Les index, et leur prix</h4>
+                <p>Un index accélère la recherche sur une colonne, comme l'index d'un livre. Sans lui, la base parcourt toutes les lignes. Avec, elle va directement au bon endroit.</p>
+                <p>Le prix : chaque index ralentit un peu les écritures et occupe de l'espace. Indexer les colonnes utilisées dans les filtres et les jointures, pas toutes.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — construire une requête en collant du texte</span>
+                    <p>Assembler une requête en concaténant ce que l'utilisateur a saisi ouvre la porte à l'injection SQL — l'une des vulnérabilités les plus anciennes et les plus exploitées.</p>
+                    <p>La parade est simple et systématique : les <strong>requêtes préparées</strong>, où les valeurs sont transmises séparément du texte de la requête. Aucune raison de faire autrement, jamais.</p>
+                </div>
+
+                <p class="retenir">💡 Une requête dans une boucle est le défaut de performance le plus courant, et le plus invisible à la lecture.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="mettre-en-ligne">🚀 Mettre en ligne</h3></summary>
+                <div class="lecon-corps">
+                <p>Un site qui fonctionne sur votre machine ne fonctionne pas encore. La mise en ligne ajoute des contraintes que le développement local masque entièrement.</p>
+
+                <h4>Les quatre éléments</h4>
+                <p><strong>Un nom de domaine</strong>, loué à l'année. <strong>Un hébergement</strong>, qui exécute votre code et sert vos fichiers. <strong>Un certificat</strong>, qui active le HTTPS — aujourd'hui gratuit et automatique chez la plupart des hébergeurs. <strong>Un moyen de déployer</strong>, c'est-à-dire d'envoyer une nouvelle version sans casser la précédente.</p>
+                <p>Pour un site sans code serveur, l'hébergement statique suffit : il est souvent gratuit, très rapide, et n'a presque rien à maintenir.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce qui change entre local et production</span>
+                    <p><strong>Les chemins</strong> ne sont pas les mêmes. Un lien qui fonctionne en local peut pointer nulle part une fois en ligne.</p>
+                    <p><strong>La casse compte.</strong> Windows ne distingue pas <code>Image.png</code> de <code>image.png</code> ; le serveur, si. C'est la panne la plus fréquente d'une première mise en ligne.</p>
+                    <p><strong>Les secrets</strong> ne peuvent plus être dans le code : ils passent par des variables d'environnement.</p>
+                    <p><strong>Le cache</strong> apparaît. Une modification peut sembler absente alors qu'elle est déployée.</p>
+                </div>
+
+                <div class="pratique" data-pratique="checklist-mise-en-ligne"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — déployer en copiant quelques fichiers</span>
+                    <p>Envoyer manuellement « les fichiers modifiés » conduit tôt ou tard à en oublier un. Le site référence alors un script absent, et casse pour tout le monde.</p>
+                    <p>Déployez toujours l'ensemble, depuis une source unique — idéalement automatiquement, à partir du dépôt de code.</p>
+                </div>
+
+                <p class="retenir">💡 La différence entre « ça marche chez moi » et « c'est en ligne » tient dans quatre points, tous vérifiables en une fois.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="travail-a-plusieurs">🧰 Travailler à plusieurs</h3></summary>
+                <div class="lecon-corps">
+                <p>Git est présenté comme un outil de sauvegarde. C'est inexact et cela conduit à mal s'en servir. Git sert à <strong>revenir en arrière</strong> et à <strong>travailler à plusieurs sur le même code</strong> sans se marcher dessus.</p>
+
+                <h4>Ce qu'un bon historique permet</h4>
+                <p>Un historique lisible répond à des questions concrètes : quand cette ligne a-t-elle changé, pourquoi, et quoi d'autre a bougé en même temps. Cela suppose des commits <strong>petits</strong>, <strong>cohérents</strong>, et accompagnés d'un message qui explique le <em>pourquoi</em> plutôt que le <em>quoi</em>.</p>
+                <p>« Correction du calcul de TVA sur les remboursements partiels » vaut infiniment mieux que « fix ». Le second oblige à lire le code pour comprendre.</p>
+
+                <h4>Les branches</h4>
+                <p>Une branche isole un travail en cours. Le principe : la branche principale reste <strong>toujours fonctionnelle</strong>, et chaque chantier vit à côté jusqu'à être prêt.</p>
+                <p>Une branche qui vit trois semaines devient très difficile à réintégrer : le reste a bougé pendant ce temps. Des branches courtes, fusionnées souvent, évitent l'essentiel des conflits.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce qui protège vraiment</span>
+                    <p><strong>Ne jamais commiter de secrets.</strong> Un mot de passe poussé une fois reste dans l'historique, même supprimé ensuite. Il faut le considérer comme compromis et le changer.</p>
+                    <p><strong>Un fichier d'exclusion</strong> dès le premier jour : dépendances, fichiers de configuration locale, journaux.</p>
+                    <p><strong>Relire avant de fusionner.</strong> Même seul : relire son propre changement une heure après l'avoir écrit fait apparaître ce qu'on ne voyait plus.</p>
+                </div>
+
+                <div class="pratique" data-pratique="hygiene-git"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le commit fourre-tout</span>
+                    <p>Un commit qui mélange une correction, une nouvelle fonctionnalité et une remise en forme du code est impossible à annuler proprement : on ne peut pas retirer l'un sans les autres.</p>
+                    <p>Un commit, une intention. C'est ce qui rend l'historique utilisable le jour où il faut défaire quelque chose.</p>
+                </div>
+
+                <p class="retenir">💡 Git ne vous protège pas de la perte de fichiers. Il vous protège de l'impossibilité de revenir en arrière.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>MDN Web Docs</strong> : la référence sur HTTP, les codes de retour et les API du navigateur. Gratuite, sans publicité, et maintenue par la communauté.</li>
+                    <li><strong>Documentation officielle de Git</strong> : le chapitre sur les branches et la fusion, plus clair que la plupart des tutoriels.</li>
+                    <li><strong>OWASP</strong> : la liste des vulnérabilités les plus répandues, dont l'injection SQL. À lire avant d'écrire une requête, pas après.</li>
+                    <li><strong>Documentation de votre hébergeur</strong> : les variables d'environnement et le déploiement automatique depuis un dépôt. Deux heures qui font gagner des mois.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> dès qu'une page semble lente, comptez le nombre de requêtes qu'elle déclenche avant d'optimiser quoi que ce soit d'autre.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Niveau précédent</span>Développement Web — Débutant</a>
+            <a href="avance.html" class="next"><span class="label">Niveau suivant →</span>Développement Web — Avancé</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../design/index.html">🎨 Design UX/UI</a>
+                <a href="../cybersecurite/index.html">🔒 Cybersécurité</a>
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/dev-web-intermediaire.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>
