@@ -22,14 +22,14 @@ window.QUIZ = {
                 explication: "En deçà, l'utilisateur a l'impression de manipuler directement l'objet."
             },
             {
-                q: "À partir de quelle durée l'attention décroche-t-elle ?",
+                q: "À partir de quel délai faut-il indiquer une progression ?",
                 options: [
-                    "3 secondes",
-                    "10 secondes",
+                    "1 seconde",
+                    "10 secondes, limite de l'attention",
                     "30 secondes"
                 ],
                 a: 1,
-                explication: "Au-delà, il faut indiquer une progression pour espérer garder la personne."
+                explication: "Au-delà, la personne passe à autre chose."
             },
             {
                 q: "Une attente vide paraît, par rapport à une attente occupée de même durée :",
@@ -43,34 +43,34 @@ window.QUIZ = {
             },
             // Série 2
             {
-                q: "Qu'est-ce qu'un affichage optimiste ?",
+                q: "Qu'est-ce que l'affichage optimiste ?",
                 options: [
-                    "Afficher une estimation du temps restant",
-                    "Montrer le résultat attendu avant confirmation du serveur",
-                    "Précharger la page suivante"
+                    "Afficher le résultat attendu avant confirmation du serveur",
+                    "Masquer les erreurs à l'utilisateur",
+                    "Précharger toutes les pages du site"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Quitte à corriger en cas d'échec. C'est ce qui rend les messageries modernes si fluides."
             },
             {
-                q: "Quel est le problème d'un tourniquet de chargement sans progression ?",
+                q: "Que reprocher à une animation de chargement sans progression ?",
                 options: [
-                    "Il consomme des ressources",
-                    "Il n'informe de rien et paraît d'autant plus long qu'il est indéterminé",
-                    "Il n'est pas accessible"
+                    "Elle consomme de la batterie",
+                    "Elle n'informe de rien et paraît d'autant plus longue qu'elle est indéterminée",
+                    "Elle n'est pas accessible"
                 ],
                 a: 1,
-                explication: "Une barre de progression, même approximative, est mieux supportée."
+                explication: "Sur une opération courte, un squelette vaut mieux qu'un tourniquet."
             },
             {
                 q: "Une page de 2 500 Ko sur une connexion à 10 Mb/s demande environ :",
                 options: [
-                    "0,2 seconde",
+                    "0,2 seconde de transfert",
                     "2 secondes de transfert",
-                    "20 secondes"
+                    "20 secondes de transfert"
                 ],
                 a: 1,
-                explication: "Auxquelles s'ajoutent la latence et le temps d'affichage. Réduite à 800 Ko, elle passe sous la seconde."
+                explication: "Auxquelles s'ajoutent la latence et le temps d'affichage."
             }
         ],
 
@@ -78,65 +78,65 @@ window.QUIZ = {
         "charge-cognitive": [
             // Série 1
             {
-                q: "Comment le temps de décision évolue-t-il avec le nombre d'options ?",
+                q: "Comment croît le temps de décision selon la loi de Hick ?",
                 options: [
-                    "Linéairement",
+                    "Linéairement avec le nombre d'options",
                     "Avec le logarithme du nombre d'options",
-                    "Il est constant"
+                    "De façon exponentielle"
                 ],
                 a: 1,
-                explication: "Passer de 2 à 4 choix coûte autant que passer de 4 à 8."
+                explication: "Passer de 2 à 4 choix coûte autant que passer de 4 à 8. Ajouter des options à une liste déjà longue ne coûte presque rien."
             },
             {
-                q: "La loi de Hick décrit le choix entre des options :",
+                q: "Appliquée telle quelle, que conclut la loi de Hick sur les sous-menus ?",
                 options: [
-                    "Déjà connues de la personne",
-                    "Découvertes à l'instant",
-                    "Présentées visuellement"
+                    "Qu'ils accélèrent toujours la navigation",
+                    "Qu'une liste plate bat une navigation à deux étages, puisqu'elle fait décider une seule fois",
+                    "Qu'ils sont sans effet"
+                ],
+                a: 1,
+                explication: "C'est le contre-pied de ce qu'on lit habituellement — et c'est ce que dit la formule."
+            },
+            {
+                q: "Qu'est-ce qui rend alors le regroupement gagnant ?",
+                options: [
+                    "Le balayage visuel : trouver sans lire",
+                    "La loi de Hick",
+                    "L'habitude des utilisateurs"
                 ],
                 a: 0,
-                explication: "C'est la nuance presque toujours omise. Appliquée telle quelle, elle favorise même la liste plate."
-            },
-            {
-                q: "Qu'est-ce qui rend réellement le regroupement gagnant dans un menu ?",
-                options: [
-                    "La loi de Hick",
-                    "Le balayage visuel, dont le coût est proche du linéaire",
-                    "La mémoire de travail"
-                ],
-                a: 1,
-                explication: "Un visiteur qui découvre un menu ne choisit pas : il cherche."
+                explication: "Un visiteur qui découvre un menu ne choisit pas, il cherche — et ce parcours coûte à peu près linéairement."
             },
             // Série 2
             {
                 q: "De quoi dépend le temps pour atteindre une cible, selon la loi de Fitts ?",
                 options: [
-                    "De sa couleur et de sa forme",
+                    "De sa couleur et de son contraste",
                     "De sa distance et de sa taille",
-                    "Du nombre d'éléments autour"
+                    "Du nombre d'éléments à l'écran"
                 ],
                 a: 1,
-                explication: "D'où l'intérêt des bords et des coins d'écran, où le curseur s'arrête tout seul."
+                explication: "D'où l'intérêt des bords et des coins : le curseur s'y arrête tout seul."
             },
             {
                 q: "Combien d'éléments la mémoire de travail retient-elle simultanément ?",
                 options: [
                     "Autour de quatre",
-                    "Autour de sept",
-                    "Une douzaine"
+                    "Exactement sept",
+                    "Une quinzaine"
                 ],
                 a: 0,
                 explication: "L'ordre de grandeur communément retenu aujourd'hui, et non les sept longtemps cités."
             },
             {
-                q: "Quelle confusion produit des interfaces épurées mais fatigantes ?",
+                q: "Quelle erreur consiste à confondre simple et minimal ?",
                 options: [
-                    "Confondre simple et minimal",
-                    "Confondre UX et UI",
-                    "Confondre contraste et lisibilité"
+                    "Ajouter trop d'explications",
+                    "Retirer libellés et repères : l'écran s'épure, la charge mentale augmente",
+                    "Utiliser trop de couleurs"
                 ],
-                a: 0,
-                explication: "Retirer les libellés allège l'écran et alourdit la charge mentale : l'utilisateur doit deviner."
+                a: 1,
+                explication: "Une interface simple n'est pas celle qui montre le moins, c'est celle qui demande le moins d'efforts."
             }
         ],
 
@@ -146,7 +146,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qu'un schéma sombre ?",
                 options: [
-                    "Une interface en mode sombre",
+                    "Une interface en mode nuit",
                     "Une interface conçue pour obtenir ce que l'utilisateur n'aurait pas choisi en connaissance de cause",
                     "Une erreur d'ergonomie"
                 ],
@@ -157,21 +157,21 @@ window.QUIZ = {
                 q: "Que dit le droit européen sur le consentement ?",
                 options: [
                     "Il doit être aussi facile à refuser qu'à accepter",
-                    "Il doit être renouvelé chaque année",
-                    "Il peut être présumé si l'utilisateur poursuit sa navigation"
+                    "Il suffit qu'un lien de refus existe quelque part",
+                    "Il n'est pas encadré sur ce point"
                 ],
                 a: 0,
                 explication: "Un bandeau sans bouton « tout refuser » au même niveau que « tout accepter » est non conforme."
             },
             {
-                q: "Quel test permet d'identifier un schéma sombre ?",
+                q: "Qu'exige le droit français en matière de résiliation ?",
                 options: [
-                    "Mesurer le taux de conversion",
-                    "Se demander si l'utilisateur se sentirait floué en découvrant le mécanisme",
-                    "Vérifier la conformité technique"
+                    "Un préavis de trente jours",
+                    "Un moyen aussi simple que celui de la souscription",
+                    "Une confirmation par courrier"
                 ],
                 a: 1,
-                explication: "Si oui, l'intention ne change rien : le résultat est le même pour l'utilisateur."
+                explication: "S'inscrire en trente secondes et devoir chercher une page cachée pour partir n'est pas conforme."
             },
             // Série 2
             {
@@ -182,27 +182,27 @@ window.QUIZ = {
                     "Ils sont techniquement complexes"
                 ],
                 a: 1,
-                explication: "Résiliations, remboursements, avis négatifs et méfiance n'apparaissent pas dans le tableau de bord."
+                explication: "Résiliations, remboursements, avis négatifs et méfiance n'apparaissent pas dans le tableau de bord des conversions."
             },
             {
-                q: "Que dit le droit français sur la résiliation ?",
+                q: "Quel test permet d'identifier un schéma sombre involontaire ?",
                 options: [
-                    "Elle doit se faire par courrier recommandé",
-                    "Elle doit pouvoir se faire par un moyen aussi simple que la souscription",
-                    "Elle peut exiger un préavis de trois mois"
+                    "Vérifier la conformité juridique",
+                    "Si l'utilisateur découvrait ce mécanisme, se sentirait-il floué ?",
+                    "Demander l'avis de l'équipe commerciale"
                 ],
                 a: 1,
-                explication: "S'inscrire en trente secondes et résilier en dix étapes n'est pas conforme."
+                explication: "L'intention ne change rien au résultat pour l'utilisateur."
             },
             {
-                q: "Qu'est-ce qu'un schéma sombre involontaire ?",
+                q: "« Non merci, je préfère payer plus cher » relève de :",
                 options: [
-                    "Une case pré-cochée « par simplicité », un refus moins visible « pour l'esthétique »",
-                    "Un bug d'affichage",
-                    "Une erreur de traduction"
+                    "Un ton de marque assumé",
+                    "La honte du refus : un libellé rédigé pour être désagréable à cliquer",
+                    "Une clarification utile"
                 ],
-                a: 0,
-                explication: "Personne n'a voulu tromper, et le résultat est identique pour l'utilisateur."
+                a: 1,
+                explication: "C'est l'un des schémas sombres les plus répandus, et les plus faciles à corriger."
             }
         ],
 
@@ -213,42 +213,42 @@ window.QUIZ = {
                 q: "Quelle est la mesure la plus importante d'un test d'utilisabilité ?",
                 options: [
                     "Le temps de tâche",
-                    "Le taux de réussite sans aide",
+                    "Le taux de réussite",
                     "La satisfaction déclarée"
                 ],
                 a: 1,
                 explication: "C'est aussi la plus souvent oubliée."
             },
             {
-                q: "Pourquoi le temps de tâche est-il à interpréter avec prudence ?",
+                q: "Pourquoi le temps de tâche s'interprète-t-il avec prudence ?",
                 options: [
                     "Il est difficile à mesurer",
                     "Plus rapide n'est pas toujours mieux, notamment sur une décision importante",
-                    "Il varie trop d'une personne à l'autre"
+                    "Il varie trop d'un participant à l'autre"
                 ],
                 a: 1,
-                explication: "Sur un achat engageant, prendre le temps de comprendre est plutôt bon signe."
+                explication: "Sur un achat engageant, un temps plus long peut signaler une lecture attentive."
             },
             {
-                q: "Cinq secondes gagnées, trois fois par jour, pour 200 personnes, 220 jours : combien par an ?",
+                q: "Un test d'utilisabilité montre surtout :",
                 options: [
-                    "Environ 18 heures",
-                    "Environ 183 heures",
-                    "Environ 1 830 heures"
+                    "Où les gens échouent, rarement pourquoi",
+                    "Pourquoi les gens échouent",
+                    "Ce que les gens préfèrent"
                 ],
-                a: 1,
-                explication: "Ce calcul transforme un argument esthétique en argument budgétaire. C'est souvent le seul entendu."
+                a: 0,
+                explication: "Le pourquoi vient de l'observation et des questions posées après coup."
             },
             // Série 2
             {
-                q: "Que montre un test d'utilisabilité, et que ne montre-t-il pas ?",
+                q: "Que vaut un chiffre isolé en matière de design ?",
                 options: [
-                    "Il montre où les gens échouent, rarement pourquoi",
-                    "Il montre pourquoi, rarement où",
-                    "Il montre les deux également"
+                    "Rien : c'est la comparaison qui produit l'information",
+                    "Il suffit s'il est mesuré rigoureusement",
+                    "Il vaut mieux que rien"
                 ],
                 a: 0,
-                explication: "Le « pourquoi » vient de l'observation et des questions posées après coup."
+                explication: "Avant et après, version A et version B : sans référence, un score ne dit rien."
             },
             {
                 q: "Pourquoi le temps passé sur une page est-il un mauvais indicateur ?",
@@ -261,14 +261,14 @@ window.QUIZ = {
                 explication: "Un indicateur commode mais ininterprétable est pire qu'une absence de mesure : il donne l'impression de savoir."
             },
             {
-                q: "Que vaut un chiffre isolé en design ?",
+                q: "Comment convertir une amélioration en argument budgétaire ?",
                 options: [
-                    "Il suffit s'il est précis",
-                    "Rien : c'est la comparaison qui produit l'information",
-                    "Il vaut mieux qu'une opinion"
+                    "En comptant les heures gagnées par an sur l'ensemble des utilisateurs",
+                    "En citant les bonnes pratiques du secteur",
+                    "En montrant des maquettes avant-après"
                 ],
-                a: 1,
-                explication: "Avant et après, version A et version B : sans point de comparaison, la mesure ne dit rien."
+                a: 0,
+                explication: "Cinq secondes sur trois tâches quotidiennes pour deux cents personnes font environ 183 heures par an."
             }
         ]
     },
@@ -281,63 +281,63 @@ window.QUIZ = {
         {
             q: "Sur quoi porte ce niveau, par rapport aux précédents ?",
             options: [
-                "Sur les outils de maquettage",
                 "Sur ce qui se passe chez la personne en face",
-                "Sur la gestion de projet"
+                "Sur les outils de conception",
+                "Sur la technique d'intégration"
             ],
-            a: 1,
+            a: 0,
             explication: "Combien de temps elle croit attendre, combien d'options son attention supporte, et ce qui la fait renoncer."
         },
         {
-            q: "Quelle question posent les connaissances de ce niveau ?",
+            q: "Quelle question éthique ce niveau pose-t-il ?",
             options: [
-                "Faut-il les utiliser pour aider, ou pour manipuler ?",
-                "Faut-il les enseigner ?",
-                "Sont-elles encore valables ?"
+                "Faut-il utiliser ces connaissances pour aider, ou pour manipuler ?",
+                "Faut-il mesurer le comportement des utilisateurs ?",
+                "Faut-il informer les utilisateurs des lois psychologiques ?"
             ],
             a: 0,
-            explication: "Les mêmes mécanismes servent à réduire un effort ou à obtenir un consentement non éclairé."
+            explication: "Les mêmes mécanismes servent à fluidifier un parcours ou à piéger un consentement."
         },
         {
-            q: "Deux leviers agissent sur l'attente. Lesquels ?",
+            q: "Deux leviers agissent sur l'attente perçue. Lesquels ?",
             options: [
-                "Réduire le poids et occuper l'attente",
-                "Augmenter le débit et le cache",
-                "Simplifier le code et l'interface"
+                "Réduire le poids, et occuper l'attente",
+                "Augmenter le débit, et masquer les erreurs",
+                "Précharger, et compresser"
             ],
             a: 0,
-            explication: "L'un agit sur le temps réel, l'autre sur le temps ressenti. Les deux comptent."
+            explication: "Le premier joue sur le temps réel, le second sur le temps ressenti. Les deux comptent."
         },
         // Série 2
         {
-            q: "Une amélioration fait gagner cinq secondes. Comment la défendre ?",
+            q: "Pourquoi ce niveau insiste-t-il sur la mesure ?",
             options: [
-                "En montrant des maquettes avant et après",
-                "En chiffrant le gain cumulé en heures par an",
-                "En citant les bonnes pratiques"
-            ],
-            a: 1,
-            explication: "Cinq secondes ne se défendent pas en réunion. Cent quatre-vingts heures par an, si."
-        },
-        {
-            q: "Qu'ont en commun la loi de Hick et le temps passé sur une page ?",
-            options: [
-                "Les deux sont souvent invoqués sans leurs conditions de validité",
-                "Les deux mesurent la satisfaction",
-                "Les deux sont obsolètes"
+                "Parce que sans mesure, un design ne s'améliore pas : il change",
+                "Parce que la réglementation l'exige",
+                "Parce que les outils la rendent facile"
             ],
             a: 0,
-            explication: "Hick suppose des options connues ; le temps passé n'est interprétable qu'avec un contexte. Cités hors cadre, ils trompent."
+            explication: "« C'est plus joli » n'est pas un argument recevable, et « le client préfère » encore moins."
         },
         {
-            q: "Que devient un design qui n'est pas mesuré ?",
+            q: "Qu'est-ce qui distingue une interface simple d'une interface minimale ?",
             options: [
-                "Il s'améliore lentement",
-                "Il change, et l'on croit l'avoir amélioré",
-                "Il reste stable"
+                "La simple demande peu d'efforts, la minimale montre peu de choses",
+                "Rien, ce sont deux mots pour la même chose",
+                "La minimale est plus accessible"
             ],
-            a: 1,
-            explication: "Sans comparaison avant-après, rien ne distingue une amélioration d'une simple modification."
+            a: 0,
+            explication: "Retirer les repères épure l'écran et augmente la charge mentale : l'utilisateur doit deviner."
+        },
+        {
+            q: "Un compte à rebours qui se réinitialise à chaque visite relève de :",
+            options: [
+                "Une fausse urgence, donc un schéma sombre",
+                "Une technique de conversion admise",
+                "Un défaut technique"
+            ],
+            a: 0,
+            explication: "Comme « 3 personnes regardent cet article » sans aucun fondement."
         }
     ]
 };
