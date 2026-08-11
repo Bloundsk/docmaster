@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrepreneuriat — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Entrepreneuriat : unit economics et coût d'acquisition, lever des fonds ou non, coût réel d'un salarié, risques juridiques et fiscaux.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/entrepreneuriat/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Entrepreneuriat — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Entrepreneuriat : unit economics et coût d'acquisition, lever des fonds ou non, coût réel d'un salarié, risques juridiques et fiscaux.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/entrepreneuriat/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Entrepreneuriat — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Entrepreneuriat : unit economics et coût d'acquisition, lever des fonds ou non, coût réel d'un salarié, risques juridiques et fiscaux.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🚀 Entrepreneuriat</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🚀 Entrepreneuriat — Avancé</h1>
+                <p>Les décisions qui engagent : la croissance, l'argent des autres, et les gens.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 45 L80 75 L70 70 L60 75 Z"/><path d="M62 75 L55 90 L65 85 M78 75 L85 90 L75 85" stroke-opacity="0.6"/></g><circle cx="70" cy="55" r="3" fill="white"/></g>
+<circle class="illu-twinkle" cx="100" cy="50" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="40" cy="60" r="2.5" fill="white" style="animation-delay:1.2s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 11 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#unit-economics">📊 Les unit economics</a></li>
+                <li><a href="#lever-des-fonds">🤝 Lever des fonds, ou non</a></li>
+                <li><a href="#recruter-et-deleguer">👥 Recruter et déléguer</a></li>
+                <li><a href="#risques-juridiques">⚖️ Les risques juridiques</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Croître avec des unit economics négatifs revient à accélérer vers le mur.</li>
+                <li>Un client doit rapporter nettement plus qu'il n'a coûté à acquérir — et assez vite.</li>
+                <li>Lever des fonds n'est pas une réussite : c'est un engagement de croissance rapide.</li>
+                <li>Un salarié coûte environ 1,45 fois son salaire brut, et bien plus en temps d'encadrement.</li>
+                <li>Les risques juridiques les plus coûteux naissent de ce qui n'a pas été écrit.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau intermédiaire portait sur la viabilité : un besoin réel, une marge, des clients, de la trésorerie. Une fois ces quatre points acquis, l'entreprise fonctionne.</p>
+            <p>Ce niveau porte sur les décisions qui <strong>engagent durablement</strong> : accélérer ou non, avec quel argent, avec qui, et sous quelles contraintes. Chacune est difficile à défaire — et chacune se prend beaucoup plus sereinement avec les bons chiffres sous les yeux.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Il n'est ni un conseil juridique, ni un conseil fiscal, ni un conseil en investissement. Les taux et seuils cités sont des ordres de grandeur qui évoluent.</p>
+                <p>Pour une levée de fonds, un recrutement ou un contrat important, l'accompagnement par un professionnel coûte toujours moins cher que l'erreur qu'il évite.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Les décisions qui engagent</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="unit-economics">📊 Les unit economics</h3></summary>
+                <div class="lecon-corps">
+                <p>Les unit economics répondent à une question que la croissance masque facilement : <strong>gagne-t-on de l'argent sur chaque client, une fois tout compté ?</strong> Tant que la réponse est non, chaque nouveau client aggrave la situation.</p>
+
+                <h4>Les deux chiffres, et leur rapport</h4>
+                <p>Le <strong>coût d'acquisition</strong> est ce qu'il faut dépenser en moyenne pour obtenir un client payant : publicité, temps commercial, remises d'entrée, tout compris.</p>
+                <p>La <strong>valeur vie</strong> est la marge totale qu'un client rapportera avant de partir. Elle se calcule sur la <em>marge</em>, jamais sur le chiffre d'affaires — sinon elle est fantaisiste.</p>
+                <p>Le rapport entre les deux est l'indicateur central. Un ratio inférieur à 1 signifie qu'on paie pour perdre de l'argent. Un ratio de 3 est généralement considéré comme sain ; nettement au-dessus, c'est souvent qu'on n'investit pas assez en acquisition.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Marge mensuelle par client : <strong>38 €</strong>. Durée de vie moyenne : <strong>14 mois</strong>. Valeur vie : <strong>532 €</strong>.</p>
+                    <p>Coût d'acquisition : <strong>145 €</strong>. Ratio : <strong>3,7</strong> — sain.</p>
+                    <p>Période de récupération : 145 / 38 ≈ <strong>3,8 mois</strong>. C'est le délai avant que le client ait remboursé son coût d'acquisition, et il détermine directement le besoin de trésorerie.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cac-ltv"></div>
+
+                <h4>Pourquoi la durée de rétention domine tout</h4>
+                <p>Faire passer la durée de vie de 14 à 20 mois augmente la valeur vie de 43 % — sans dépenser un euro de plus en acquisition. Aucune optimisation publicitaire ne produit un tel effet.</p>
+                <p>C'est pourquoi le travail sur la rétention est presque toujours plus rentable que le travail sur l'acquisition, et presque toujours moins fait : il est moins visible.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croître pour masquer un modèle qui ne tient pas</span>
+                    <p>Avec des unit economics négatifs, la croissance ne résout rien : elle amplifie la perte, tout en donnant l'apparence du succès. Le chiffre d'affaires monte, la trésorerie descend plus vite.</p>
+                    <p>Tant que le ratio n'est pas franchement supérieur à 1, accélérer revient à appuyer sur l'accélérateur en direction du mur.</p>
+                </div>
+
+                <p class="retenir">💡 On ne corrige pas des unit economics par le volume. On les corrige par le prix, la marge ou la rétention.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="lever-des-fonds">🤝 Lever des fonds, ou non</h3></summary>
+                <div class="lecon-corps">
+                <p>La levée de fonds est présentée comme une consécration. C'est en réalité un <strong>choix de modèle</strong>, qui convient à une minorité de projets et engage bien au-delà de l'argent reçu.</p>
+
+                <h4>Ce qu'on vend réellement</h4>
+                <p>On ne vend pas des parts : on vend une <strong>promesse de croissance rapide</strong>. Un investisseur en capital cherche une revente ou une introduction en bourse dans un horizon de cinq à dix ans, avec un multiple important. Cela suppose un marché très grand et une trajectoire agressive.</p>
+                <p>Une entreprise rentable qui croît de 15 % par an est une excellente affaire pour son fondateur, et un mauvais investissement pour un fonds. Les deux logiques ne se rejoignent pas.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — la dilution</span>
+                    <p>Levée de <strong>300 000 €</strong> sur une valorisation avant opération de <strong>1 200 000 €</strong>.</p>
+                    <p>Valorisation après : 1 500 000 €. L'investisseur détient <strong>20 %</strong>.</p>
+                    <p>Un fondateur qui possédait 100 % en détient désormais 80 %. Après deux tours supplémentaires de dilution comparable, il passe sous les <strong>52 %</strong> — et perd le contrôle des décisions qui requièrent une majorité.</p>
+                </div>
+
+                <div class="pratique" data-pratique="dilution"></div>
+
+                <h4>Les alternatives, trop peu envisagées</h4>
+                <p>Le <strong>financement par les clients</strong> — acomptes, prévente, abonnements annuels payés d'avance — ne dilue rien et valide la demande en même temps.</p>
+                <p>Le <strong>prêt bancaire</strong>, souvent accessible avec une garantie publique, coûte des intérêts mais aucune part ni aucun siège au conseil.</p>
+                <p>Les <strong>subventions et concours</strong> demandent du temps administratif et rapportent parfois autant qu'un petit tour, sans contrepartie au capital.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — lever pour trouver un modèle</span>
+                    <p>L'argent extérieur accélère ce qui existe. Il ne remplace pas un modèle économique qui ne fonctionne pas encore.</p>
+                    <p>Lever avant d'avoir des unit economics viables revient à financer une perte plus longtemps, avec une pression de croissance en plus. Beaucoup d'échecs ressemblent à cela.</p>
+                </div>
+
+                <p class="retenir">💡 Lever des fonds n'est pas gagner de l'argent : c'est prendre un engagement de croissance devant des gens qui attendent une sortie.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="recruter-et-deleguer">👥 Recruter et déléguer</h3></summary>
+                <div class="lecon-corps">
+                <p>Le premier recrutement est le moment où l'entreprise cesse d'être une activité individuelle. C'est aussi la décision la plus souvent mal chiffrée.</p>
+
+                <h4>Le coût réel d'un salarié</h4>
+                <p>Un salaire brut n'est pas le coût. S'y ajoutent les cotisations patronales — de l'ordre de <strong>40 à 45 %</strong> du brut dans le cas général —, puis l'équipement, la formation, l'assurance, et une part de vos propres heures pour encadrer.</p>
+                <p>Retenez un ordre de grandeur simple : <strong>un salarié coûte environ 1,45 fois son brut</strong>, sans compter le temps d'encadrement des premiers mois, qui est loin d'être négligeable.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Salaire brut mensuel : <strong>2 600 €</strong>. Coût employeur : environ <strong>3 770 €</strong>, soit <strong>45 240 €</strong> par an.</p>
+                    <p>Avec une marge de 60 %, il faut générer environ <strong>75 400 €</strong> de chiffre d'affaires supplémentaire par an pour que ce recrutement s'équilibre.</p>
+                    <p>Formulé ainsi, la question devient concrète : cette personne apportera-t-elle 75 000 € de chiffre d'affaires en plus, ou libérera-t-elle assez de votre temps pour que vous le fassiez ?</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-reel-salarie"></div>
+
+                <h4>Déléguer une tâche, pas un problème</h4>
+                <p>Une délégation réussie suppose que la tâche soit <strong>définie, documentée et mesurable</strong>. Confier un problème flou — « occupe-toi du marketing » — produit surtout de la frustration des deux côtés.</p>
+                <p>Le test préalable est simple : sauriez-vous expliquer en dix minutes ce qu'il faut faire, et à quoi ressemble un bon résultat ? Si non, la tâche n'est pas prête à être déléguée.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — recruter pour se soulager</span>
+                    <p>Être débordé n'est pas un motif de recrutement. Si l'activité ne dégage pas la marge correspondante, un salarié transforme une surcharge en difficulté de trésorerie.</p>
+                    <p>Envisagez d'abord la prestation ponctuelle, l'alternance ou le temps partiel : ces formes sont réversibles, ce qu'un contrat à durée indéterminée n'est pas.</p>
+                </div>
+
+                <p class="retenir">💡 Un recrutement se décide sur un chiffre d'affaires supplémentaire identifié, pas sur un sentiment de surcharge.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="risques-juridiques">⚖️ Les risques juridiques</h3></summary>
+                <div class="lecon-corps">
+                <p>Les difficultés juridiques d'une jeune entreprise viennent rarement d'une réglementation obscure. Elles viennent presque toujours de <strong>ce qui n'a pas été écrit</strong>, à un moment où tout le monde s'entendait bien.</p>
+
+                <h4>Les quatre points à sécuriser tôt</h4>
+                <p><strong>L'accord entre associés.</strong> Qui décide quoi, que se passe-t-il si l'un part, comment sont valorisées les parts, quelle répartition en cas de désaccord. Ces questions sont faciles à trancher au départ et deviennent des conflits ensuite.</p>
+                <p><strong>La propriété intellectuelle.</strong> Ce qu'un prestataire produit ne vous appartient pas automatiquement : il faut une cession écrite. Sans elle, le logo, le code ou les textes restent à leur auteur.</p>
+                <p><strong>Les conditions de vente.</strong> Délais de paiement, pénalités de retard, limites de responsabilité, conditions de résiliation. Rédigées après un litige, elles ne servent plus à rien.</p>
+                <p><strong>Les données personnelles.</strong> Dès le premier fichier de clients, le RGPD s'applique : registre des traitements, information des personnes, durée de conservation.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le calcul qui décide</span>
+                    <p>Faire rédiger des statuts avec un pacte d'associés : de l'ordre de <strong>1 500 à 3 000 €</strong>.</p>
+                    <p>Un conflit entre associés sans pacte : plusieurs dizaines de milliers d'euros, deux ans de procédure, et une entreprise paralysée pendant ce temps.</p>
+                    <p>C'est l'une des rares dépenses dont le rendement se mesure en multiples.</p>
+                </div>
+
+                <div class="pratique" data-pratique="risques-juridiques"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — l'associé sans écrit</span>
+                    <p>« On est amis, on verra plus tard. » C'est l'origine de la majorité des conflits qui tuent une jeune entreprise — pas la concurrence, pas le marché.</p>
+                    <p>Un désaccord sur l'implication de chacun, deux ans plus tard, sans rien d'écrit, ne se résout pas à l'amiable. Et il bloque toute décision, y compris une vente.</p>
+                </div>
+
+                <p class="retenir">💡 Ce qui coûte cher n'est pas le contrat qu'on rédige, c'est celui qu'on n'a pas rédigé.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Bpifrance</strong> : garanties de prêt, aides à l'innovation, et documentation sur les mécanismes de financement en fonds propres.</li>
+                    <li><strong>URSSAF — simulateur de coût employeur</strong> : le calcul officiel, à jour des taux en vigueur, bien plus fiable qu'un ratio approximatif.</li>
+                    <li><strong>CNIL — guide du responsable de traitement</strong> : ce qu'il faut mettre en place dès le premier fichier de clients.</li>
+                    <li><strong>INPI</strong> : dépôt de marque, protection des créations, et la base de recherche d'antériorité — gratuite et à consulter avant de choisir un nom.</li>
+                    <li><strong>Réseaux d'accompagnement</strong> — Initiative France, Réseau Entreprendre, incubateurs locaux : prêts d'honneur et mentorat, souvent décisifs au premier recrutement.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> avant toute décision engageante, écrivez le scénario où elle tourne mal. S'il est supportable, avancez. Sinon, réduisez l'engagement.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Entrepreneuriat — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Parcours →</span>Retour au sommaire Entrepreneuriat</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../finance/index.html">💰 Finance</a>
+                <a href="../marketing/index.html">📢 Marketing Digital</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/entrepreneuriat-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

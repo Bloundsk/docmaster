@@ -1378,6 +1378,273 @@
                 ];
             },
             lecon: "Cinq secondes ne se défendent pas en réunion. Cent quatre-vingts heures par an, si."
+        },
+
+        // ================= ENTREPRENEURIAT =================
+
+        // ---------- Niveau débutant ----------
+
+        "qualite-business-plan": {
+            type: "controle",
+            titre: "Votre business plan tient-il debout ?",
+            intro: "Cochez ce qui figure réellement dans votre document, pas ce que vous avez en tête.",
+            points: [
+                { texte: "Le problème résolu est décrit avant la solution" },
+                { texte: "Les clients visés sont nommés précisément", aide: "« les PME » n'est pas une cible, c'est une catégorie" },
+                { texte: "Les hypothèses chiffrées sont justifiées, pas posées", aide: "d'où vient le taux de conversion retenu ?" },
+                { texte: "La rémunération du fondateur figure dans les charges" },
+                { texte: "Un scénario dégradé est prévu, pas seulement le scénario prévu" },
+                { texte: "Le besoin de trésorerie du démarrage est calculé, pas estimé" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Document solide : il servira à décider, pas seulement à convaincre.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Le scénario dégradé et la rémunération sont les oublis les plus fréquents.", ton: "moyen" };
+                return { texte: "Ce plan décrit une intention, pas encore un projet vérifiable.", ton: "alerte" };
+            },
+            lecon: "Un business plan sert d'abord à vous : c'est l'exercice qui révèle les hypothèses que vous n'aviez pas vues."
+        },
+
+        "taille-de-marche": {
+            titre: "Estimez votre marché de façon honnête",
+            intro: "Trois cercles concentriques, du plus large au plus atteignable.",
+            champs: [
+                { id: "total", libelle: "Clients potentiels au total", unite: "clients", defaut: 200000, min: 10, max: 100000000, pas: 1000 },
+                { id: "accessible", libelle: "Part réellement accessible (zone, langue, segment)", unite: "%", defaut: 8, min: 0.1, max: 100, pas: 0.5 },
+                { id: "part", libelle: "Part de marché visée à 3 ans", unite: "%", defaut: 3, min: 0.1, max: 100, pas: 0.5 },
+                { id: "panier", libelle: "Chiffre d'affaires annuel par client", unite: "€", defaut: 590, min: 1, max: 1000000, pas: 10 }
+            ],
+            calculer: ({ total, accessible, part, panier }) => {
+                const marcheAccessible = total * accessible / 100;
+                const clients = marcheAccessible * part / 100;
+                return [
+                    { libelle: "Marché accessible", valeur: nf(Math.round(marcheAccessible)) + " clients" },
+                    { libelle: "Clients visés à 3 ans", valeur: nf(Math.round(clients)), fort: true },
+                    { libelle: "Chiffre d'affaires correspondant", valeur: euros(clients * panier) + " par an" }
+                ];
+            },
+            lecon: "Si le résultat paraît trop beau, c'est la part accessible qui est optimiste — presque jamais le panier."
+        },
+
+        "choisir-statut": {
+            type: "controle",
+            titre: "Quel statut vous correspond ?",
+            intro: "Cochez ce qui décrit votre situation. Les réponses orientent, elles ne décident pas.",
+            points: [
+                { texte: "Je démarre seul, sans investissement initial important" },
+                { texte: "Mon chiffre d'affaires restera sous les seuils de la micro-entreprise" },
+                { texte: "Je n'ai pas besoin de déduire de charges importantes", aide: "en micro, l'abattement est forfaitaire" },
+                { texte: "Je souhaite protéger mon patrimoine personnel" },
+                { texte: "J'envisage d'accueillir des associés ou des investisseurs" },
+                { texte: "Je vais recruter dans les douze mois" }
+            ],
+            verdict: (n) => {
+                if (n <= 2) return { texte: "Situation à préciser : listez vos charges prévisionnelles avant de trancher.", ton: "moyen" };
+                if (n === 3) return { texte: "Profil orienté micro-entreprise. Vérifiez les seuils et l'absence de charges lourdes.", ton: "bon" };
+                return { texte: "Les trois derniers points orientent vers une société. Faites-vous accompagner.", ton: "moyen" };
+            },
+            lecon: "Le statut se change, mais rarement sans coût. Mieux vaut anticiper douze mois que reprendre dans six."
+        },
+
+        "besoin-de-financement": {
+            titre: "Chiffrez votre besoin de démarrage",
+            intro: "Le poste le plus souvent oublié n'est pas l'investissement : c'est la trésorerie d'attente.",
+            champs: [
+                { id: "investissement", libelle: "Matériel, aménagement, développement", unite: "€", defaut: 12000, min: 0, max: 5000000, pas: 500 },
+                { id: "chargesMensuelles", libelle: "Charges mensuelles hors investissement", unite: "€", defaut: 3200, min: 0, max: 500000, pas: 100 },
+                { id: "moisAvantRevenu", libelle: "Mois avant les premiers encaissements", unite: "mois", defaut: 6, min: 1, max: 48, pas: 1 },
+                { id: "apport", libelle: "Apport personnel disponible", unite: "€", defaut: 15000, min: 0, max: 5000000, pas: 500 }
+            ],
+            calculer: ({ investissement, chargesMensuelles, moisAvantRevenu, apport }) => {
+                const tresorerie = chargesMensuelles * moisAvantRevenu;
+                const besoin = investissement + tresorerie;
+                const aTrouver = Math.max(0, besoin - apport);
+                return [
+                    { libelle: "Trésorerie d'attente nécessaire", valeur: euros(tresorerie) },
+                    { libelle: "Besoin total de démarrage", valeur: euros(besoin), fort: true },
+                    { libelle: "Reste à financer après apport", valeur: euros(aTrouver) }
+                ];
+            },
+            lecon: "Un plan qui ne finance que l'investissement conduit à manquer d'argent au troisième mois, alors que tout se passe bien."
+        },
+
+        // ---------- Niveau intermédiaire ----------
+
+        "test-de-validation": {
+            type: "controle",
+            titre: "Votre besoin est-il vraiment validé ?",
+            intro: "Cochez ce que vous avez constaté, pas ce qu'on vous a dit.",
+            points: [
+                { texte: "J'ai interrogé des inconnus, pas seulement mes proches" },
+                { texte: "Mes questions portaient sur le passé, pas sur des intentions", aide: "« la dernière fois que... » et non « utiliseriez-vous... »" },
+                { texte: "Des personnes ont déjà bricolé une solution de leur côté", aide: "signal fort : le problème est assez douloureux" },
+                { texte: "Certaines ont déjà dépensé de l'argent pour ce problème" },
+                { texte: "On m'a demandé spontanément quand ce serait disponible" },
+                { texte: "Au moins une personne a proposé de payer maintenant", aide: "cela vaut cinquante entretiens polis" }
+            ],
+            verdict: (n, total) => {
+                if (n >= 5) return { texte: "Besoin réel, confirmé par des comportements et non par des paroles.", ton: "bon" };
+                if (n >= 3) return { texte: "Signaux encourageants. Cherchez maintenant une preuve de paiement.", ton: "moyen" };
+                return { texte: "Vous avez de l'encouragement, pas encore de validation.", ton: "alerte" };
+            },
+            lecon: "Un compliment poli ne vaut rien. Un « je peux payer maintenant ? » vaut cinquante entretiens."
+        },
+
+        "marge-et-prix": {
+            titre: "Calculez votre marge et votre équilibre",
+            intro: "Le nombre de clients à atteindre se calcule sur la marge, jamais sur le prix affiché.",
+            champs: [
+                { id: "prix", libelle: "Prix de vente mensuel", unite: "€", defaut: 49, min: 1, max: 100000, pas: 1 },
+                { id: "variable", libelle: "Coût variable par client", unite: "€", defaut: 11, min: 0, max: 100000, pas: 1 },
+                { id: "fixes", libelle: "Charges fixes mensuelles, rémunération comprise", unite: "€", defaut: 4000, min: 0, max: 1000000, pas: 100 }
+            ],
+            calculer: ({ prix, variable, fixes }) => {
+                const marge = prix - variable;
+                const taux = prix > 0 ? marge / prix * 100 : 0;
+                const clients = marge > 0 ? Math.ceil(fixes / marge) : 0;
+                const naif = prix > 0 ? Math.ceil(fixes / prix) : 0;
+                return [
+                    { libelle: "Marge unitaire", valeur: euros(marge) + " (" + pourcent(taux, 0) + ")" },
+                    { libelle: "Clients pour atteindre l'équilibre", valeur: marge > 0 ? nf(clients) : "jamais", fort: true },
+                    { libelle: "Le calcul sur le prix affiché donnerait", valeur: nf(naif) + " — c'est faux" }
+                ];
+            },
+            lecon: "Une vente sans marge n'est pas un client gagné : c'est une perte qui grandit avec le volume."
+        },
+
+        "cout-acquisition": {
+            titre: "Combien vous coûte un client ?",
+            intro: "Le chiffre n'a de sens que comparé à ce que le client rapporte.",
+            champs: [
+                { id: "budget", libelle: "Budget d'acquisition mensuel", unite: "€", defaut: 800, min: 0, max: 1000000, pas: 50 },
+                { id: "visiteurs", libelle: "Visiteurs générés", unite: "vis.", defaut: 1600, min: 1, max: 10000000, pas: 100 },
+                { id: "conversion", libelle: "Taux de conversion en client", unite: "%", defaut: 1.5, min: 0.01, max: 100, pas: 0.1 },
+                { id: "marge", libelle: "Marge mensuelle par client", unite: "€", defaut: 38, min: 0, max: 100000, pas: 1 }
+            ],
+            calculer: ({ budget, visiteurs, conversion, marge }) => {
+                const clients = visiteurs * conversion / 100;
+                const cout = clients > 0 ? budget / clients : 0;
+                const mois = marge > 0 ? cout / marge : 0;
+                return [
+                    { libelle: "Clients gagnés par mois", valeur: nf(Math.round(clients)) },
+                    { libelle: "Coût d'acquisition par client", valeur: euros(cout), fort: true },
+                    { libelle: "Mois avant remboursement", valeur: marge > 0 ? nf(mois, 1) + " mois" : "jamais" }
+                ];
+            },
+            lecon: "Un coût d'acquisition n'est ni bon ni mauvais dans l'absolu. Il l'est par rapport à la marge et à la durée de vie."
+        },
+
+        "seuil-de-rentabilite": {
+            titre: "Combien de mois d'autonomie ?",
+            intro: "Le chiffre le plus important de tous : combien de temps il reste pour atteindre l'équilibre.",
+            champs: [
+                { id: "tresorerie", libelle: "Trésorerie disponible", unite: "€", defaut: 18000, min: 0, max: 10000000, pas: 500 },
+                { id: "depenses", libelle: "Décaissements mensuels", unite: "€", defaut: 5200, min: 0, max: 1000000, pas: 100 },
+                { id: "encaissements", libelle: "Encaissements mensuels", unite: "€", defaut: 3100, min: 0, max: 1000000, pas: 100 }
+            ],
+            calculer: ({ tresorerie, depenses, encaissements }) => {
+                const perte = depenses - encaissements;
+                const mois = perte > 0 ? tresorerie / perte : Infinity;
+                return [
+                    { libelle: perte > 0 ? "Perte de trésorerie mensuelle" : "Excédent mensuel", valeur: euros(Math.abs(perte)) },
+                    { libelle: "Autonomie", valeur: perte > 0 ? nf(mois, 1) + " mois" : "à l'équilibre ou positif", fort: true },
+                    { libelle: "Encaissements nécessaires pour l'équilibre", valeur: euros(depenses) + " par mois" }
+                ];
+            },
+            lecon: "Surveillez votre autonomie en mois, pas votre chiffre d'affaires. C'est elle qui dit combien de temps il reste."
+        },
+
+        // ---------- Niveau avancé ----------
+
+        "cac-ltv": {
+            titre: "Vos unit economics tiennent-elles ?",
+            intro: "La valeur vie se calcule sur la marge, jamais sur le chiffre d'affaires.",
+            champs: [
+                { id: "marge", libelle: "Marge mensuelle par client", unite: "€", defaut: 38, min: 0.1, max: 100000, pas: 1 },
+                { id: "duree", libelle: "Durée de vie moyenne d'un client", unite: "mois", defaut: 14, min: 1, max: 240, pas: 1 },
+                { id: "cac", libelle: "Coût d'acquisition d'un client", unite: "€", defaut: 145, min: 0, max: 1000000, pas: 5 }
+            ],
+            calculer: ({ marge, duree, cac }) => {
+                const ltv = marge * duree;
+                const ratio = cac > 0 ? ltv / cac : Infinity;
+                const payback = marge > 0 ? cac / marge : 0;
+                let verdict;
+                if (ratio < 1) verdict = "chaque client fait perdre de l'argent";
+                else if (ratio < 3) verdict = "fragile : peu de marge pour investir";
+                else if (ratio <= 5) verdict = "sain";
+                else verdict = "très élevé : vous n'investissez peut-être pas assez en acquisition";
+                return [
+                    { libelle: "Valeur vie du client", valeur: euros(ltv) },
+                    { libelle: "Ratio valeur vie / coût d'acquisition", valeur: nf(ratio, 1) + " — " + verdict, fort: true },
+                    { libelle: "Période de récupération", valeur: nf(payback, 1) + " mois" }
+                ];
+            },
+            lecon: "Augmenter la durée de vie de 14 à 20 mois fait gagner 43 % de valeur vie, sans un euro d'acquisition en plus."
+        },
+
+        "dilution": {
+            titre: "Mesurez votre dilution",
+            intro: "Ce qu'on cède en capital ne se récupère pas.",
+            champs: [
+                { id: "montant", libelle: "Montant levé", unite: "€", defaut: 300000, min: 1000, max: 100000000, pas: 10000 },
+                { id: "valorisation", libelle: "Valorisation avant opération", unite: "€", defaut: 1200000, min: 1000, max: 1000000000, pas: 50000 },
+                { id: "part", libelle: "Votre part actuelle du capital", unite: "%", defaut: 100, min: 1, max: 100, pas: 1 },
+                { id: "tours", libelle: "Tours de table supplémentaires envisagés", unite: "tours", defaut: 2, min: 0, max: 8, pas: 1 }
+            ],
+            calculer: ({ montant, valorisation, part, tours }) => {
+                const apres = valorisation + montant;
+                const cede = montant / apres;
+                const partApres = part * (1 - cede);
+                // Les tours suivants sont supposes diluer dans les memes proportions.
+                const partFinale = partApres * Math.pow(1 - cede, tours);
+                return [
+                    { libelle: "Part cédée à l'investisseur", valeur: pourcent(cede * 100, 1) },
+                    { libelle: "Votre part après cette levée", valeur: pourcent(partApres, 1), fort: true },
+                    { libelle: `Après ${tours} tour(s) comparable(s)`, valeur: pourcent(partFinale, 1) + (partFinale < 50 ? " — sous la majorité" : "") }
+                ];
+            },
+            lecon: "Lever n'est pas gagner de l'argent : c'est prendre un engagement de croissance devant des gens qui attendent une sortie."
+        },
+
+        "cout-reel-salarie": {
+            titre: "Combien coûte réellement un salarié ?",
+            intro: "Le salaire brut n'est qu'une partie de l'addition.",
+            champs: [
+                { id: "brut", libelle: "Salaire brut mensuel", unite: "€", defaut: 2600, min: 500, max: 50000, pas: 100 },
+                { id: "coefficient", libelle: "Coefficient de charges patronales", unite: "×", defaut: 1.45, min: 1, max: 2, pas: 0.05 },
+                { id: "margeTaux", libelle: "Taux de marge de l'activité", unite: "%", defaut: 60, min: 1, max: 100, pas: 5 }
+            ],
+            calculer: ({ brut, coefficient, margeTaux }) => {
+                const mensuel = brut * coefficient;
+                const annuel = mensuel * 12;
+                const caNecessaire = annuel / (margeTaux / 100);
+                return [
+                    { libelle: "Coût employeur mensuel", valeur: euros(mensuel) },
+                    { libelle: "Coût annuel", valeur: euros(annuel), fort: true },
+                    { libelle: "Chiffre d'affaires supplémentaire nécessaire", valeur: euros(caNecessaire) + " par an" }
+                ];
+            },
+            lecon: "La question devient concrète : cette personne apportera-t-elle ce chiffre d'affaires, ou libérera-t-elle assez de votre temps pour que vous le fassiez ?"
+        },
+
+        "risques-juridiques": {
+            type: "controle",
+            titre: "Ce qui est écrit, et ce qui ne l'est pas",
+            intro: "Cochez ce qui existe aujourd'hui, sous forme écrite et signée.",
+            points: [
+                { texte: "Un accord entre associés prévoit le départ de l'un d'eux", aide: "la première cause de conflit mortel pour une jeune entreprise" },
+                { texte: "Les prestataires ont signé une cession de droits", aide: "sans elle, le logo et le code restent à leur auteur" },
+                { texte: "Des conditions de vente encadrent délais, pénalités et responsabilité" },
+                { texte: "Un registre des traitements de données personnelles existe" },
+                { texte: "Les personnes dont je détiens les données sont informées" },
+                { texte: "La marque a fait l'objet d'une recherche d'antériorité", aide: "gratuite sur la base de l'INPI" },
+                { texte: "Les contrats importants ont été relus par un professionnel" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Base juridique saine : les conflits les plus coûteux sont anticipés.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. L'accord entre associés est celui à ne pas repousser.", ton: "moyen" };
+                return { texte: "Plusieurs risques majeurs reposent aujourd'hui sur la bonne entente.", ton: "alerte" };
+            },
+            lecon: "Ce qui coûte cher n'est pas le contrat qu'on rédige, c'est celui qu'on n'a pas rédigé."
         }
     };
 

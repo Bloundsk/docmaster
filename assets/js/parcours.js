@@ -18,7 +18,7 @@ window.DOCMASTER_PARCOURS = {
     "dev-web":       { titre: "💻 Développement Web",           niveaux: [] },
     marketing:       { titre: "📢 Marketing Digital",           niveaux: [] },
     cybersecurite:   { titre: "🔒 Cybersécurité",               niveaux: ["debutant", "intermediaire", "avance"] },
-    entrepreneuriat: { titre: "🚀 Entrepreneuriat",             niveaux: [] },
+    entrepreneuriat: { titre: "🚀 Entrepreneuriat",             niveaux: ["debutant", "intermediaire", "avance"] },
     productivite:    { titre: "⏱️ Productivité & Organisation", niveaux: [] },
     data:            { titre: "📊 Data & Analytics",            niveaux: ["debutant", "intermediaire", "avance"] },
     design:          { titre: "🎨 Design UX/UI",                niveaux: ["debutant", "intermediaire", "avance"] }
