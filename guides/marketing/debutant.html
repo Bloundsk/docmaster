@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Digital — Débutant - DocMaster</title>
+    <meta name="description" content="Guide gratuit sur le SEO, la publicité en ligne, les réseaux sociaux et l'email marketing.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/marketing/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Marketing Digital — Débutant - DocMaster">
+    <meta property="og:description" content="Guide gratuit sur le SEO, la publicité en ligne, les réseaux sociaux et l'email marketing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/marketing/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marketing Digital — Débutant - DocMaster">
+    <meta name="twitter:description" content="Guide gratuit sur le SEO, la publicité en ligne, les réseaux sociaux et l'email marketing.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">📢 Marketing Digital</a> &gt;
+        <span aria-current="page">Débutant</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📢 Marketing Digital — Débutant</h1>
+                <p>Comprendre les quatre leviers de base. Aucun prérequis.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M45 65 L45 80 L58 80 L75 92 L75 53 L58 65 Z" stroke-linejoin="round"/><path d="M85 60 Q92 70 85 80" stroke-opacity="0.6"/><path d="M92 53 Q104 70 92 87" stroke-opacity="0.4"/></g></g>
+<circle class="illu-twinkle" cx="45" cy="72" r="3" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="105" cy="45" r="2.5" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="35" cy="100" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 13 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#seo-référencement-naturel">🔍 SEO (référencement naturel)</a></li>
+                <li><a href="#publicité-en-ligne-sea">💰 Publicité en ligne (SEA)</a></li>
+                <li><a href="#réseaux-sociaux">📱 Réseaux sociaux</a></li>
+                <li><a href="#email-marketing">✉️ Email marketing</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Le SEO est gratuit mais lent, le SEA est payant mais immédiat.</li>
+                <li>Choisir la bonne plateforme sociale plutôt que d'être partout sans stratégie.</li>
+                <li>Une liste email t'appartient, contrairement à une audience sur les réseaux sociaux.</li>
+                <li>Le respect du consentement (RGPD) préserve la confiance de la marque.</li>
+                <li>Le SEO repose sur trois piliers : contenu, technique, popularité.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le marketing digital a une réputation ambiguë, en partie méritée : c'est un domaine où l'on peut dépenser beaucoup et très vite, sans résultat, tout en produisant des rapports rassurants.</p>
+            <p>Sa vraie particularité est ailleurs : contrairement à l'affichage ou à la radio, presque tout y est mesurable. On peut savoir combien coûte un client acquis, et le comparer à ce qu'il rapporte. Cette comparaison est le seul juge valable — et paradoxalement, celle que beaucoup évitent de faire.</p>
+            <p>Ce guide traite des quatre leviers principaux, avec pour chacun ce qu'il coûte réellement, le temps qu'il demande, et les situations où il ne convient pas.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Les bases à connaître</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="seo-référencement-naturel">🔍 SEO (référencement naturel)</h3></summary>
+                <div class="lecon-corps">
+                <p>Le <strong>SEO</strong> vise à apparaître dans les résultats non payants d'un moteur de recherche. Sa force : le trafic obtenu ne s'arrête pas quand on cesse de payer. Sa faiblesse : il faut des mois avant d'en voir la couleur.</p>
+
+                <h4>Les trois piliers</h4>
+                <ol>
+                    <li><strong>Le contenu</strong> — répondre réellement à la question posée. C'est 70 % du travail.</li>
+                    <li><strong>La technique</strong> — un site rapide, lisible sur mobile, en HTTPS, sans page morte.</li>
+                    <li><strong>La popularité</strong> — les liens pointant vers vous depuis d'autres sites, qui servent de recommandations.</li>
+                </ol>
+
+                <h4>L'intention de recherche</h4>
+                <p>C'est la notion la plus utile, et la plus ignorée. Derrière chaque requête se cache une attente différente :</p>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Requête</th><th>Intention</th><th>Contenu attendu</th></tr>
+                    <tr><td>« qu'est-ce qu'un ETF »</td><td>Comprendre</td><td>Un article pédagogique</td></tr>
+                    <tr><td>« meilleur ETF PEA »</td><td>Comparer</td><td>Un comparatif argumenté</td></tr>
+                    <tr><td>« ouvrir PEA Boursorama »</td><td>Agir</td><td>Une page de souscription</td></tr>
+                </table>
+                </div>
+                <p>Proposer une page de vente à quelqu'un qui veut comprendre le fait fuir. Google mesure ce départ et en tire les conséquences.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le calcul qui oriente les efforts</span>
+                    <p>Deux mots-clés visés par un site naissant :</p>
+                    <ul>
+                        <li>« assurance auto » — 100 000 recherches par mois, mais un secteur où les acteurs installés investissent des millions. Probabilité d'apparaître : quasi nulle.</li>
+                        <li>« assurance auto jeune conducteur malussé Toulouse » — 90 recherches par mois, presque aucune concurrence, et des visiteurs très près de souscrire.</li>
+                    </ul>
+                    <p>90 visiteurs qualifiés valent infiniment mieux que 0 visiteur sur un mot-clé inaccessible. Les requêtes longues et précises — la « longue traîne » — sont la seule porte d'entrée réaliste au début.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — écrire pour l'algorithme</span>
+                    <p>Répéter un mot-clé, allonger artificiellement un texte, produire dix articles qui se ressemblent : ces techniques ont fonctionné il y a quinze ans. Elles sont aujourd'hui détectées et pénalisées.</p>
+                    <p>Le critère qui reste : le visiteur trouve-t-il sa réponse et repart-il satisfait ? Tout le reste en découle.</p>
+                </div>
+
+                <div class="pratique" data-pratique="bases-seo"></div>
+
+                <p class="retenir">💡 Comptez 6 à 12 mois avant des résultats sérieux. Si un prestataire promet la première place en trois semaines, la question est réglée.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="publicité-en-ligne-sea">💰 Publicité en ligne (SEA)</h3></summary>
+                <div class="lecon-corps">
+                <p>La publicité en ligne achète de la visibilité immédiate. Elle est l'exact complément du SEO : instantanée, mesurable, et qui s'arrête net dès que le budget est épuisé.</p>
+
+                <h4>Le fonctionnement par enchères</h4>
+                <p>Contrairement à une idée reçue, ce n'est pas le plus offrant qui gagne. Les plateformes combinent le montant de l'enchère et un <strong>score de qualité</strong> : pertinence de l'annonce, qualité de la page d'arrivée, taux de clic attendu.</p>
+                <p>Conséquence : une annonce bien conçue coûte moins cher qu'une annonce médiocre, à position égale. La plateforme a intérêt à afficher ce sur quoi les gens cliquent.</p>
+
+                <h4>Les deux chiffres qui décident de tout</h4>
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Budget : <strong>1 000 €</strong>. Coût par clic : <strong>1,20 €</strong> → environ <strong>833 visiteurs</strong>.</p>
+                    <p>Taux de conversion du site : <strong>2 %</strong> → <strong>17 clients</strong>.</p>
+                    <p><strong>Coût d'acquisition = 1 000 / 17 ≈ 59 € par client.</strong></p>
+                    <p>Rentable si un client rapporte plus de 59 € sur sa durée de vie. Ruineux s'il en rapporte 40 — et dans ce cas, augmenter le budget ne fait qu'accélérer les pertes.</p>
+                    <p>Le levier le plus efficace n'est d'ailleurs pas le coût par clic, mais le taux de conversion : le faire passer de 2 % à 3 % ramène le coût d'acquisition à 39 €, sans dépenser un euro de plus en publicité.</p>
+                </div>
+
+                <h4>Où investir selon la situation</h4>
+                <ul>
+                    <li><strong>Recherche</strong> (Google Ads) — la personne exprime déjà un besoin. Meilleure conversion, coût plus élevé.</li>
+                    <li><strong>Réseaux sociaux</strong> (Meta, TikTok, LinkedIn) — on interrompt quelqu'un qui ne cherchait rien. Moins cher, plus long à convaincre.</li>
+                    <li><strong>Reciblage</strong> — réafficher une annonce à un visiteur déjà venu. Le meilleur rendement, mais vite agaçant : limitez la fréquence.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — envoyer la publicité vers la page d'accueil</span>
+                    <p>Une annonce sur « chaussures de trail femme » qui aboutit à l'accueil du site oblige le visiteur à chercher. La plupart repartent.</p>
+                    <p>Chaque annonce doit mener à une page qui tient exactement sa promesse. C'est la correction la moins coûteuse et la plus rentable en publicité en ligne.</p>
+                </div>
+
+                <div class="pratique" data-pratique="budget-sea"></div>
+
+                <p class="retenir">💡 Avant de lancer une campagne, sachez ce que vaut un client. Sans ce chiffre, vous ne pilotez rien : vous dépensez.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="réseaux-sociaux">📱 Réseaux sociaux</h3></summary>
+                <div class="lecon-corps">
+                <p>Les réseaux sociaux permettent de construire une audience et une relation. Ils imposent en contrepartie une dépendance : la plateforme décide qui voit vos publications, et peut changer ses règles du jour au lendemain.</p>
+
+                <h4>Choisir plutôt que se disperser</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Plateforme</th><th>Pertinente pour</th><th>Format dominant</th></tr>
+                    <tr><td><strong>LinkedIn</strong></td><td>Vente aux entreprises, recrutement, expertise</td><td>Texte, retours d'expérience</td></tr>
+                    <tr><td><strong>Instagram</strong></td><td>Produits visuels, lieux, artisanat</td><td>Photo, vidéo courte</td></tr>
+                    <tr><td><strong>TikTok</strong></td><td>Grand public, forte portée organique</td><td>Vidéo verticale</td></tr>
+                    <tr><td><strong>YouTube</strong></td><td>Sujets complexes, contenu durable</td><td>Vidéo longue</td></tr>
+                </table>
+                </div>
+                <p>Être présent partout avec le même contenu recyclé donne une présence médiocre partout. Une seule plateforme bien tenue produit davantage.</p>
+
+                <h4>La portée organique diminue</h4>
+                <p>Toutes les plateformes suivent la même trajectoire : forte visibilité gratuite au lancement pour attirer les créateurs, puis réduction progressive pour vendre de la publicité. Une page qui atteignait la moitié de ses abonnés il y a dix ans en touche aujourd'hui une petite fraction.</p>
+                <p>La conséquence stratégique est nette : <strong>convertissez votre audience en canal que vous possédez</strong> — une liste de courriels, un site. Un compte peut être suspendu, une portée peut s'effondrer ; une liste d'abonnés reste.</p>
+
+                <h4>Ce qui fonctionne réellement</h4>
+                <ul>
+                    <li><strong>La régularité</strong> — deux publications par semaine tenues six mois valent mieux que dix en une semaine puis plus rien.</li>
+                    <li><strong>Répondre aux commentaires</strong> — les plateformes valorisent les échanges, et c'est ce qui crée une communauté.</li>
+                    <li><strong>Montrer les coulisses</strong> — les échecs et le processus intéressent davantage que les annonces polies.</li>
+                    <li><strong>Une idée par publication</strong> — un message clair circule mieux qu'un message complet.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — courir après les abonnés</span>
+                    <p>Un compte de 50 000 abonnés inactifs vaut moins qu'un compte de 800 abonnés engagés. Les jeux-concours attirent massivement des profils venus pour le lot, qui ne réagiront plus jamais — et qui, en faisant chuter votre taux d'engagement, réduisent la portée de vos publications suivantes.</p>
+                </div>
+
+                <div class="pratique" data-pratique="choisir-reseau"></div>
+
+                <p class="retenir">💡 Vous louez votre audience à la plateforme. Le seul actif réellement à vous est la liste de contacts que vous en extrayez.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="email-marketing">✉️ Email marketing</h3></summary>
+                <div class="lecon-corps">
+                <p>Considéré comme dépassé, le courriel reste pourtant le canal au meilleur rendement — pour une raison simple : <strong>la liste vous appartient</strong>. Aucun algorithme ne s'interpose entre vous et vos abonnés.</p>
+
+                <h4>Construire une liste honnête</h4>
+                <p>Le consentement doit être explicite : une case cochée volontairement, jamais pré-remplie. C'est une obligation légale (RGPD), et surtout la condition d'efficacité — une liste achetée génère des signalements en masse et ruine durablement votre réputation d'expéditeur.</p>
+                <p>Un abonné se gagne par un échange clair : un contenu utile contre une adresse, avec une annonce précise de ce qu'il recevra et à quelle fréquence.</p>
+
+                <h4>Les indicateurs qui comptent</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Indicateur</th><th>Ce qu'il révèle</th></tr>
+                    <tr><td>Taux d'ouverture</td><td>La qualité de l'objet et la confiance envers l'expéditeur</td></tr>
+                    <tr><td>Taux de clic</td><td>La pertinence réelle du contenu — l'indicateur le plus fiable</td></tr>
+                    <tr><td>Désabonnements</td><td>Un signal utile : trop d'envois, ou promesse non tenue</td></tr>
+                    <tr><td>Signalements en spam</td><td>Le plus grave : quelques-uns suffisent à dégrader la délivrabilité de tous vos envois</td></tr>
+                </table>
+                </div>
+                <p>Le taux d'ouverture est devenu peu fiable depuis que certains services préchargent les images. Le taux de clic reste la mesure de référence.</p>
+
+                <h4>La segmentation</h4>
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Une liste de <strong>5 000 abonnés</strong> reçoit le même message. Taux de clic : <strong>1,8 %</strong>, soit 90 clics.</p>
+                    <p>La même liste segmentée en trois groupes — nouveaux inscrits, clients récents, inactifs depuis six mois — avec un message adapté à chacun : taux de clic autour de <strong>4 %</strong>, soit 200 clics.</p>
+                    <p>Même liste, même produit, un peu plus de travail de rédaction : le résultat double.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — écrire à tout le monde comme à personne</span>
+                    <p>« Chers clients, nous avons le plaisir de vous annoncer… » : un message qui pourrait s'adresser à n'importe qui n'intéresse personne. Écrivez à une personne précise, avec un besoin précis. Les autres se reconnaîtront ou non — et c'est très bien ainsi.</p>
+                    <p>Autre point : un lien de désabonnement visible et fonctionnel vaut mieux qu'un lien caché. Quelqu'un qui ne trouve pas le lien clique sur « spam », ce qui vous coûte bien plus cher qu'un désabonnement.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-email"></div>
+
+                <p class="retenir">💡 Une liste de 500 personnes qui vous ont volontairement donné leur adresse a plus de valeur commerciale que 50 000 abonnés sur un réseau social.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du guide. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Google Search Console</strong> — gratuit, et indispensable : les requêtes réelles qui amènent des visiteurs chez vous, vos positions, et les erreurs à corriger. À installer avant toute autre chose.</li>
+                    <li><strong>Google Search Central</strong> — la documentation officielle du référencement. En cas de contradiction avec un blog, elle a raison.</li>
+                    <li><strong>Blog du Modérateur</strong> — actualité marketing et numérique en français, avec des chiffres sourcés.</li>
+                    <li><strong>CNIL — guide sur la prospection</strong> — ce que le RGPD autorise réellement en matière de courriels commerciaux. Évite des erreurs coûteuses.</li>
+                    <li><strong>« Building a StoryBrand »</strong>, Donald Miller — sur la façon de formuler une offre pour qu'elle soit comprise en cinq secondes. Court et directement applicable.</li>
+                </ul>
+                <p><strong>Conseil de méthode :</strong> avant tout budget publicitaire, mesurez votre taux de conversion actuel. Doubler ce taux coûte souvent moins cher que doubler le trafic — et profite ensuite à tous vos autres canaux.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Retour</span>Parcours Marketing Digital</a>
+            <a href="intermediaire.html" class="next"><span class="label">Niveau suivant →</span>Marketing Digital — Intermédiaire</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Entrepreneuriat</a>
+                <a href="../data/index.html">📊 Data & Analytics</a>
+                <a href="../finance/index.html">💰 Finance</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/marketing-debutant.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

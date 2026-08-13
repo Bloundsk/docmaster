@@ -1911,6 +1911,273 @@
                 ];
             },
             lecon: "Formulé ainsi, l'arbitrage n'est plus une question de goût mais de délai de retour."
+        },
+
+        // ================= MARKETING DIGITAL =================
+
+        // ---------- Niveau débutant ----------
+
+        "bases-seo": {
+            type: "controle",
+            titre: "Les fondations du référencement",
+            intro: "Cochez ce qui est vrai de la page que vous voulez positionner.",
+            points: [
+                { texte: "Le titre de la page décrit son contenu et contient les mots recherchés" },
+                { texte: "Un seul titre de niveau 1, qui annonce le sujet" },
+                { texte: "La page répond réellement à la question posée dans la recherche" },
+                { texte: "Elle se charge en moins de trois secondes sur mobile" },
+                { texte: "Les images ont un texte de remplacement descriptif" },
+                { texte: "D'autres pages du site pointent vers elle" },
+                { texte: "L'adresse est lisible : pas de suite de chiffres" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Fondations en place. Le reste dépend surtout du contenu et du temps.", ton: "bon" };
+                if (n >= 5) return { texte: "Bonne base. Les liens internes sont le point le plus souvent négligé.", ton: "moyen" };
+                return { texte: "Plusieurs fondamentaux manquent : aucun effort de contenu ne les compensera.", ton: "alerte" };
+            },
+            lecon: "Le référencement récompense d'abord une page qui répond vraiment. Le reste n'est que de la mise en forme."
+        },
+
+        "budget-sea": {
+            titre: "Que rapporte votre budget publicitaire ?",
+            intro: "Trois chiffres suffisent à savoir si une campagne peut être rentable.",
+            champs: [
+                { id: "budget", libelle: "Budget mensuel", unite: "€", defaut: 600, min: 10, max: 1000000, pas: 50 },
+                { id: "cpc", libelle: "Coût par clic", unite: "€", defaut: 0.9, min: 0.01, max: 100, pas: 0.1 },
+                { id: "conversion", libelle: "Taux de conversion de la page", unite: "%", defaut: 2.5, min: 0.1, max: 100, pas: 0.1 },
+                { id: "marge", libelle: "Marge par vente", unite: "€", defaut: 35, min: 0, max: 100000, pas: 5 }
+            ],
+            calculer: ({ budget, cpc, conversion, marge }) => {
+                const clics = budget / cpc;
+                const ventes = clics * conversion / 100;
+                const cout = ventes > 0 ? budget / ventes : 0;
+                const resultat = ventes * marge - budget;
+                return [
+                    { libelle: "Clics obtenus", valeur: nf(Math.round(clics)) },
+                    { libelle: "Ventes attendues", valeur: nf(Math.round(ventes)) + " (coût : " + euros(cout) + " par vente)", fort: true },
+                    { libelle: "Résultat net", valeur: (resultat >= 0 ? "+ " : "− ") + euros(Math.abs(resultat)) }
+                ];
+            },
+            lecon: "Si le coût par vente dépasse la marge, aucun volume ne rendra la campagne rentable."
+        },
+
+        "choisir-reseau": {
+            type: "controle",
+            titre: "Faut-il être sur ce réseau ?",
+            intro: "Cochez ce qui est vrai pour le réseau que vous envisagez.",
+            points: [
+                { texte: "Mes clients y sont réellement présents", aide: "pas « des gens comme eux » : eux" },
+                { texte: "Je peux y publier au format attendu sans me forcer", aide: "vidéo, photo, texte long : ce n'est pas interchangeable" },
+                { texte: "Je peux tenir un rythme régulier pendant six mois" },
+                { texte: "J'ai un objectif clair : notoriété, trafic, ou vente" },
+                { texte: "Je sais comment j'y mesurerai le résultat" },
+                { texte: "Je préfère un seul réseau tenu qu'à trois à moitié" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Choix fondé. Tenez-le six mois avant d'en juger.", ton: "bon" };
+                if (n >= 4) return { texte: "Plausible. La régularité est ce qui manque le plus souvent, pas la créativité.", ton: "moyen" };
+                return { texte: "Ce réseau risque de consommer du temps sans rien rapporter.", ton: "alerte" };
+            },
+            lecon: "Un compte abandonné après trois mois nuit plus qu'un compte inexistant : il signale une activité arrêtée."
+        },
+
+        "qualite-email": {
+            type: "controle",
+            titre: "Votre message a-t-il une chance ?",
+            intro: "Cochez ce qui est vrai du courriel que vous vous apprêtez à envoyer.",
+            points: [
+                { texte: "L'objet dit ce que contient le message, sans promesse excessive" },
+                { texte: "Le nom d'expéditeur est reconnaissable" },
+                { texte: "Il y a une seule action attendue, clairement visible" },
+                { texte: "Le message est lisible sans images" },
+                { texte: "Il se comprend sur un écran de téléphone" },
+                { texte: "Le lien de désinscription est visible et fonctionne" },
+                { texte: "Chaque destinataire a demandé à le recevoir" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Message prêt : lisible, honnête, et conforme.", ton: "bon" };
+                if (n >= 5) return { texte: "Presque. L'objet et l'action unique font l'essentiel du résultat.", ton: "moyen" };
+                return { texte: "Ce message risque d'être ignoré, ou signalé.", ton: "alerte" };
+            },
+            lecon: "L'objet décide de l'ouverture, l'action unique décide du clic. Le reste compte beaucoup moins."
+        },
+
+        // ---------- Niveau intermédiaire ----------
+
+        "points-de-fuite": {
+            titre: "Où partent vos visiteurs ?",
+            intro: "Les taux se multiplient : c'est ce que l'intuition rate systématiquement.",
+            champs: [
+                { id: "visiteurs", libelle: "Visiteurs", unite: "vis.", defaut: 1000, min: 1, max: 10000000, pas: 100 },
+                { id: "etape1", libelle: "Voient la page produit", unite: "%", defaut: 40, min: 0.1, max: 100, pas: 1 },
+                { id: "etape2", libelle: "Ajoutent au panier", unite: "%", defaut: 25, min: 0.1, max: 100, pas: 1 },
+                { id: "etape3", libelle: "Commencent la commande", unite: "%", defaut: 60, min: 0.1, max: 100, pas: 1 },
+                { id: "etape4", libelle: "Finalisent le paiement", unite: "%", defaut: 50, min: 0.1, max: 100, pas: 1 }
+            ],
+            calculer: ({ visiteurs, etape1, etape2, etape3, etape4 }) => {
+                const taux = [etape1, etape2, etape3, etape4];
+                const commandes = visiteurs * taux.reduce((a, t) => a * t / 100, 1);
+                const global = visiteurs > 0 ? commandes / visiteurs * 100 : 0;
+                // L etape la plus faible est celle qui plafonne tout le reste.
+                const pire = taux.indexOf(Math.min(...taux));
+                const noms = ["page produit", "ajout au panier", "début de commande", "paiement"];
+                return [
+                    { libelle: "Commandes", valeur: nf(Math.round(commandes)), fort: true },
+                    { libelle: "Conversion globale", valeur: pourcent(global, 2) },
+                    { libelle: "Étape la plus fuyante", valeur: noms[pire] + " (" + pourcent(taux[pire], 0) + ")" }
+                ];
+            },
+            lecon: "Quatre étapes à 50 % ne laissent pas la moitié à l'arrivée, mais 6,25 %. La perte se compose."
+        },
+
+        "intention-de-recherche": {
+            type: "controle",
+            titre: "Votre contenu répond-il à l'intention ?",
+            intro: "Cochez ce que vous avez vérifié avant d'écrire.",
+            points: [
+                { texte: "J'ai tapé la recherche visée et regardé les dix premiers résultats", aide: "le test le plus rapide et le plus fiable" },
+                { texte: "Mon format correspond à ce qui est déjà classé", aide: "guide, comparatif, page produit : le moteur a déjà tranché" },
+                { texte: "La recherche est assez précise pour que l'intention soit claire" },
+                { texte: "Ma page traite une seule intention, pas trois à la fois" },
+                { texte: "Je réponds à la question dès le début, sans introduction inutile" },
+                { texte: "La page suivante logique est proposée", aide: "un guide qui informe renvoie vers la page qui vend" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Contenu aligné sur l'intention. C'est la moitié du travail de référencement.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Vérifier les résultats existants reste le geste le plus rentable.", ton: "moyen" };
+                return { texte: "Ce contenu risque de ne jamais se placer, quelle que soit sa qualité.", ton: "alerte" };
+            },
+            lecon: "Si les dix premiers résultats sont des articles, une page produit n'a aucune chance : le moteur a compris ce que les gens veulent."
+        },
+
+        "vanity-metrics": {
+            type: "controle",
+            titre: "Ce chiffre sert-il à quelque chose ?",
+            intro: "Cochez les indicateurs qui peuvent réellement changer une décision. Trois le peuvent.",
+            points: [
+                { texte: "Nombre d'impressions", aide: "monte avec le budget, ne dit rien du résultat" },
+                { texte: "Coût par client acquis", aide: "décisionnel : il se compare à la marge" },
+                { texte: "Nombre d'abonnés", aide: "l'audience n'est pas la clientèle" },
+                { texte: "Taux de conversion par étape du parcours", aide: "décisionnel : il désigne où agir" },
+                { texte: "Portée d'une publication", aide: "sans action associée, elle ne décide de rien" },
+                { texte: "Part de nouveaux clients dans le chiffre d'affaires", aide: "décisionnel : il arbitre acquisition et rétention" }
+            ],
+            verdict: (n) => {
+                if (n === 3) return { texte: "Trois indicateurs sont décisionnels. Vérifiez que ce sont bien ceux-là.", ton: "bon" };
+                if (n > 3) return { texte: "Plus de trois : certains de ces chiffres ne changent aucune décision.", ton: "alerte" };
+                return { texte: "Trois de ces six indicateurs peuvent réellement changer une décision.", ton: "moyen" };
+            },
+            lecon: "Le taux mesure l'efficacité, le volume mesure l'apport. Un indicateur sans l'autre induit en erreur."
+        },
+
+        "impact-taux-ouverture": {
+            titre: "Ce que rapporte un envoi",
+            intro: "L'e-mail est un entonnoir : trois taux successifs se multiplient.",
+            champs: [
+                { id: "liste", libelle: "Personnes dans la liste", unite: "pers.", defaut: 4000, min: 1, max: 10000000, pas: 100 },
+                { id: "ouverture", libelle: "Taux d'ouverture", unite: "%", defaut: 32, min: 0.1, max: 100, pas: 1 },
+                { id: "clic", libelle: "Taux de clic sur les ouvertures", unite: "%", defaut: 12, min: 0.1, max: 100, pas: 0.5 },
+                { id: "conversion", libelle: "Conversion des clics", unite: "%", defaut: 6, min: 0.1, max: 100, pas: 0.5 },
+                { id: "panier", libelle: "Marge par vente", unite: "€", defaut: 28, min: 0, max: 100000, pas: 2 }
+            ],
+            calculer: ({ liste, ouverture, clic, conversion, panier }) => {
+                const ouvrent = liste * ouverture / 100;
+                const cliquent = ouvrent * clic / 100;
+                const ventes = cliquent * conversion / 100;
+                return [
+                    { libelle: "Ouvertures", valeur: nf(Math.round(ouvrent)) + " · clics : " + nf(Math.round(cliquent)) },
+                    { libelle: "Ventes par envoi", valeur: nf(Math.round(ventes)), fort: true },
+                    { libelle: "Marge dégagée", valeur: euros(ventes * panier) }
+                ];
+            },
+            lecon: "Le premier taux pèse le plus lourd : c'est l'objet du message, pas son contenu, qui décide de la suite."
+        },
+
+        // ---------- Niveau avancé ----------
+
+        "attribution-comparee": {
+            titre: "À qui revient la vente ?",
+            intro: "Le même parcours, trois modèles, trois décisions budgétaires opposées.",
+            champs: [
+                { id: "ventes", libelle: "Ventes sur la période", unite: "ventes", defaut: 200, min: 1, max: 1000000, pas: 10 },
+                { id: "contacts", libelle: "Points de contact avant achat", unite: "contacts", defaut: 4, min: 1, max: 20, pas: 1 },
+                { id: "budget", libelle: "Budget du canal de découverte", unite: "€", defaut: 2000, min: 0, max: 10000000, pas: 100 }
+            ],
+            calculer: ({ ventes, contacts, budget }) => {
+                const reparti = ventes / contacts;
+                const coutDernierClic = "0 vente attribuée";
+                const coutReparti = reparti > 0 ? budget / reparti : 0;
+                return [
+                    { libelle: "Dernier clic — canal de découverte", valeur: coutDernierClic },
+                    { libelle: "Attribution répartie — canal de découverte", valeur: nf(reparti, 1) + " ventes", fort: true },
+                    { libelle: "Coût par vente selon le modèle réparti", valeur: euros(coutReparti) }
+                ];
+            },
+            lecon: "En dernier clic, le canal de découverte affiche toujours zéro. Le couper fait baisser, quelques semaines plus tard, ceux qui semblaient performer."
+        },
+
+        "effet-retention": {
+            titre: "Ce que vaut un point de fidélité",
+            intro: "La durée moyenne d'une relation se déduit du taux de perte mensuel.",
+            champs: [
+                { id: "perte", libelle: "Clients perdus par mois", unite: "%", defaut: 12, min: 0.5, max: 90, pas: 0.5 },
+                { id: "amelioration", libelle: "Réduction visée de cette perte", unite: "points", defaut: 4, min: 0.5, max: 50, pas: 0.5 },
+                { id: "marge", libelle: "Marge mensuelle par client", unite: "€", defaut: 28, min: 0, max: 100000, pas: 2 }
+            ],
+            calculer: ({ perte, amelioration, marge }) => {
+                const dureeAvant = 100 / perte;
+                const perteApres = Math.max(0.5, perte - amelioration);
+                const dureeApres = 100 / perteApres;
+                const gain = (dureeApres / dureeAvant - 1) * 100;
+                return [
+                    { libelle: "Durée de vie actuelle", valeur: nf(dureeAvant, 1) + " mois (" + euros(dureeAvant * marge) + ")" },
+                    { libelle: `Avec ${nf(amelioration, 1)} points de moins`, valeur: nf(dureeApres, 1) + " mois (" + euros(dureeApres * marge) + ")", fort: true },
+                    { libelle: "Gain de valeur par client", valeur: "+ " + pourcent(gain, 0) }
+                ];
+            },
+            lecon: "Aucune optimisation publicitaire ne produit un effet de cette ampleur — et personne n'en parle en réunion."
+        },
+
+        "persuasion-ethique": {
+            type: "controle",
+            titre: "Persuasion ou manipulation ?",
+            intro: "Cochez les pratiques légitimes. Trois le sont.",
+            points: [
+                { texte: "Afficher « 2 400 clients » quand c'est le nombre réel", aide: "légitime : information vraie et vérifiable" },
+                { texte: "Afficher « plus que 3 en stock » avec 400 unités disponibles", aide: "tromperie" },
+                { texte: "Annoncer une échéance réelle et la rappeler", aide: "légitime" },
+                { texte: "Un compte à rebours qui se réinitialise à chaque visite", aide: "tromperie" },
+                { texte: "Offrir un contenu qui a une valeur réelle", aide: "légitime" },
+                { texte: "Citer une certification qu'on ne détient pas", aide: "tromperie, et souvent une infraction" }
+            ],
+            verdict: (n) => {
+                if (n === 3) return { texte: "Trois pratiques sont légitimes. Vérifiez que ce sont bien celles-là.", ton: "bon" };
+                if (n > 3) return { texte: "Plus de trois : certaines de ces pratiques reposent sur une information fausse.", ton: "alerte" };
+                return { texte: "Trois de ces six pratiques sont légitimes. Le critère est la véracité.", ton: "moyen" };
+            },
+            lecon: "Le texte peut être identique. Ce qui change, c'est que l'information soit vraie — et que le client l'accepterait s'il le savait."
+        },
+
+        "conformite-prospection": {
+            type: "controle",
+            titre: "Votre prospection est-elle conforme ?",
+            intro: "Cochez ce qui est en place aujourd'hui.",
+            points: [
+                { texte: "Chaque adresse de particulier provient d'un consentement libre et spécifique", aide: "pas une case pré-cochée" },
+                { texte: "Le lien de désinscription est visible et effectif rapidement" },
+                { texte: "L'identité de l'expéditeur est claire et l'objet non trompeur" },
+                { texte: "Un registre des traitements existe", aide: "premier document demandé lors d'un contrôle" },
+                { texte: "Une durée de conservation est fixée et appliquée" },
+                { texte: "Le bandeau de cookies permet de refuser aussi facilement que d'accepter" },
+                { texte: "Les partenariats rémunérés sont identifiés comme tels" },
+                { texte: "Je peux prouver l'origine de chaque adresse de ma liste" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Conforme sur les points les plus contrôlés.", ton: "bon" };
+                if (n >= 6) return { texte: "Bon niveau. Le registre et la durée de conservation sont les oublis les plus fréquents.", ton: "moyen" };
+                return { texte: "Plusieurs manquements exposent l'entreprise, pas le prestataire qui a exécuté.", ton: "alerte" };
+            },
+            lecon: "En cas de plainte, c'est à vous de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté."
         }
     };
 
