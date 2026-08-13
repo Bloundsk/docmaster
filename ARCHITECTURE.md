@@ -110,3 +110,28 @@ Pilote retenu : **Finance**. C'est le guide le plus fourni (2 252 mots, cinq
 sections) et le plus consulté selon la mesure d'usage.
 
 Chaque étape est validée par les audits existants avant publication.
+
+**Chantier terminé le 13 août 2026.** Les neuf sujets sont découpés : 27 pages de
+cours, 109 sections, 109 exercices, 816 questions. Le pari du pilote a tenu — après
+Finance, chaque sujet n'a demandé que trois lignes de déclaration dans `parcours.js`.
+
+---
+
+## 6. Contrôles automatiques
+
+Les deux hooks vivent dans `.git/hooks/`, qui **n'est pas versionné** : recréés à la
+main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le dépôt.
+
+| Hook | Script | Effet |
+|---|---|---|
+| `pre-commit` | `scripts/valider-js.js` | **Bloque** le commit si `search-data.js`, `parcours.js` ou une banque de questions ne se charge plus, ou renvoie vers un fichier absent |
+| `pre-commit` | `scripts/dater-guides.js` | Date les pages de `guides/` réellement commitées |
+| `post-commit` | — | Met à jour la sauvegarde `.bundle` |
+
+Le premier bloque, le second non. La différence est délibérée : une date figée est
+gênante, un index de recherche invalide supprime la recherche de **toutes** les pages
+sans que rien ne le signale.
+
+**Confronter chaque exemple chiffré d'un cours au simulateur de sa section** est
+l'étape qui a le meilleur rendement : elle a révélé quatre erreurs sur neuf sujets,
+dont une où c'était le cours qui avait tort et le simulateur raison.

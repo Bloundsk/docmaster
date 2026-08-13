@@ -1,5 +1,46 @@
 # Changelog — DocMaster
 
+## 2026-08-13 — Les neuf guides deviennent neuf parcours en trois niveaux
+Fin du premier des quatre chantiers. Le site proposait **neuf pages de survol** ;
+il propose désormais **vingt-sept pages de cours** organisées en progression.
+
+- Chaque sujet se décompose en **Débutant · Intermédiaire · Avancé**, avec une page
+  d'accueil qui annonce le contenu de chaque niveau, sa durée et ses prérequis.
+  Un niveau se lit seul, mais suppose acquis ce qui précède
+- **109 exercices interactifs** répartis sur les vingt-sept pages : 53 simulateurs
+  de calcul et 56 contrôles à cocher. Ce ne sont pas des illustrations — on y saisit
+  ses propres chiffres, et le résultat change
+- **816 questions** de quiz, renouvelées par moitié toutes les deux semaines
+- La structure a été **fixée avant d'écrire la moindre ligne** (`ARCHITECTURE.md`).
+  Dix mécanismes du site dépendaient de l'ancien découpage ; les avoir adaptés une
+  fois sur le sujet pilote a suffi — les huit suivants n'ont demandé que trois lignes
+  de déclaration chacun
+- Un fichier unique, `parcours.js`, décrit qui a quels niveaux. Sans lui, le compteur
+  de « Mon espace » aurait été figé dans le code et serait devenu faux au premier
+  sujet découpé — **sans cesser de paraître plausible**
+
+**Confronter chaque exemple du cours à son simulateur a révélé quatre erreurs**
+qu'aucune relecture n'aurait attrapées :
+- En **Finance**, deux exemples de la même page ne capitalisaient pas de la même
+  façon — annuellement d'un côté, mensuellement de l'autre. Les deux chiffres étaient
+  défendables séparément ; ensemble, ils se contredisaient
+- En **Design**, le cours affirmait que regrouper vingt éléments en quatre familles
+  accélère le choix. La formule dit l'inverse : deux décisions coûtent deux temps de
+  réaction. **C'était le simulateur qui avait raison**, le cours a été corrigé
+- En **Productivité**, quarante-cinq messages traités au fil de l'eau donnaient
+  4 h 08 et non 3 h 45
+- Et une division posée de tête donnait « 19 mois » là où le quotient valait 20
+
+Un détail attrapé juste avant publication : une **virgule manquante** dans l'index de
+recherche aurait rendu le fichier invalide et **supprimé la recherche du site entier**.
+Rien ne l'aurait signalé — les pages se seraient affichées normalement.
+
+`scripts/valider-js.js` **charge désormais réellement** l'index de recherche, le fichier
+des parcours et les vingt-sept banques de questions avant chaque commit, et vérifie au
+passage que chaque entrée pointe vers un fichier qui existe. Contrairement au contrôle
+des dates, **celui-ci interrompt le commit** : une date figée est gênante, une fonction
+du site cassée pour tous les visiteurs l'est davantage.
+
 ## 2026-08-09 — Navigation réordonnée, en haut comme en bas
 - Nouvel ordre : **Accueil · Glossaire · Boîte à idées · FAQ · À propos · Mon espace**
 - Le **pied de page** suivait son propre ordre : un lien ne se cherchait pas au même
