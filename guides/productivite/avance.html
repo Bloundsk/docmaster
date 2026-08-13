@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivité &amp; Organisation — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Productivité : gérer son énergie plutôt que son temps, bâtir des systèmes plutôt que compter sur la volonté, productivité collective, revue régulière.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/productivite/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Productivité &amp; Organisation — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Productivité : gérer son énergie plutôt que son temps, bâtir des systèmes plutôt que compter sur la volonté, productivité collective, revue régulière.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/productivite/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Productivité &amp; Organisation — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Productivité : gérer son énergie plutôt que son temps, bâtir des systèmes plutôt que compter sur la volonté, productivité collective, revue régulière.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">⏱️ Productivité &amp; Organisation</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⏱️ Productivité &amp; Organisation — Avancé</h1>
+                <p>Ce qui tient sur des années, et ne dépend pas de la motivation.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 13 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#energie-plutot-que-temps">⚡ L'énergie plutôt que le temps</a></li>
+                <li><a href="#systemes-plutot-que-volonte">🔁 Les systèmes plutôt que la volonté</a></li>
+                <li><a href="#productivite-collective">👥 La productivité collective</a></li>
+                <li><a href="#recul-regulier">🧭 Le recul régulier</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Deux heures au bon moment valent quatre heures au mauvais.</li>
+                <li>La volonté est une ressource qui s'épuise ; l'environnement, lui, agit sans effort.</li>
+                <li>Réduire la friction d'un geste souhaité fait plus que toute résolution.</li>
+                <li>Une réunion d'une heure à huit personnes consomme une journée de travail.</li>
+                <li>Sans revue régulière, un système d'organisation dérive et finit par être abandonné.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau intermédiaire portait sur la protection de l'attention : coût des interruptions, blocage du temps, traitement des flux, priorisation réelle. De quoi tenir une semaine chargée.</p>
+            <p>Ce niveau porte sur ce qui tient <strong>sur des années</strong>. Les méthodes échouent rarement parce qu'elles sont mauvaises : elles échouent parce qu'elles reposent sur une motivation qui, par définition, fluctue. Ce qui subsiste ne dépend pas de la volonté — c'est le rythme du corps, la disposition de l'environnement, les règles collectives, et un moment régulier pour arrêter ce qui ne sert plus.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les rythmes biologiques varient fortement d'une personne à l'autre : les repères donnés sont des moyennes, à confronter à votre propre observation.</p>
+                <p>Une fatigue persistante, des troubles du sommeil ou un épuisement ne relèvent pas de l'organisation. Ils justifient un avis médical, que ce guide ne remplace pas.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ce qui tient dans la durée</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="energie-plutot-que-temps">⚡ L'énergie plutôt que le temps</h3></summary>
+                <div class="lecon-corps">
+                <p>Le temps est uniforme : une heure vaut une heure. L'attention ne l'est pas du tout. Une heure à son meilleur moment produit ce que trois heures en fin de journée ne produiront pas — et aucun agenda ne montre cette différence.</p>
+
+                <h4>Le rythme de la journée</h4>
+                <p>La plupart des personnes connaissent un <strong>pic d'attention en matinée</strong>, un <strong>creux en début d'après-midi</strong>, et une <strong>remontée partielle</strong> en fin de journée. La position exacte de ces phases varie beaucoup, mais leur existence est constante.</p>
+                <p>La conséquence pratique est simple et rarement appliquée : le travail qui demande le plus de réflexion doit occuper le pic, pas les tâches administratives. Or le pic est très souvent consacré aux messages et aux réunions.</p>
+
+                <div class="exemple">
+                    <span class="titre">Comment repérer son propre rythme</span>
+                    <p>Pendant deux semaines, notez trois fois par jour un chiffre de 1 à 5 : votre niveau de concentration ressenti, avec l'heure.</p>
+                    <p>Le motif apparaît en général au bout de dix jours. Il ne correspond pas toujours à ce qu'on croyait — beaucoup de gens découvrent que leur meilleur créneau est celui qu'ils consacraient aux courriels.</p>
+                    <p>Une fois le motif connu, une seule décision suffit : <strong>déplacer le travail de fond dans le pic</strong>, et les tâches mécaniques dans le creux.</p>
+                </div>
+
+                <div class="pratique" data-pratique="rythme-energie"></div>
+
+                <h4>La récupération n'est pas du temps perdu</h4>
+                <p>L'attention se consomme et se reconstitue. Travailler sans pause produit une baisse progressive de rendement qu'on ne perçoit pas soi-même — on continue d'être occupé, on produit moins.</p>
+                <p>Les pauses efficaces ont un point commun : elles <strong>changent de registre</strong>. Marcher, regarder au loin, ne rien faire. Consulter son téléphone n'est pas une pause pour l'attention : c'est la même ressource, sollicitée autrement.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — allonger la journée quand le travail déborde</span>
+                    <p>Ajouter deux heures le soir à une journée déjà pleine ajoute des heures de faible rendement, et dégrade le lendemain — qui aurait pu être bon.</p>
+                    <p>Sur une semaine, le total produit baisse. C'est l'un des rares cas où travailler moins produit davantage, et il est massivement documenté.</p>
+                </div>
+
+                <p class="retenir">💡 Placez la tâche difficile dans votre meilleur créneau. C'est la seule optimisation qui ne coûte rien.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="systemes-plutot-que-volonte">🔁 Les systèmes plutôt que la volonté</h3></summary>
+                <div class="lecon-corps">
+                <p>Toute méthode qui suppose d'y penser chaque jour finit par céder. Non par faiblesse : parce que la volonté est une ressource limitée, et qu'elle est déjà largement consommée par le reste de la journée.</p>
+
+                <h4>La friction décide de presque tout</h4>
+                <p>Un comportement se produit d'autant plus qu'il est facile. Cela paraît trivial et c'est le levier le plus puissant du domaine : <strong>ajouter vingt secondes d'effort à un geste réduit fortement sa fréquence</strong>, et en retirer vingt l'augmente d'autant.</p>
+                <p>D'où deux directions symétriques : <strong>retirer de la friction</strong> devant ce qu'on veut faire — préparer la veille, laisser l'outil ouvert, réduire la première étape à quelque chose de ridiculement petit ; et <strong>en ajouter</strong> devant ce qu'on veut éviter — déconnecter le compte, retirer l'application, mettre l'appareil dans une autre pièce.</p>
+
+                <div class="exemple">
+                    <span class="titre">Trois mécanismes qui fonctionnent sans motivation</span>
+                    <p><strong>L'ancrage.</strong> Rattacher une nouvelle habitude à une action déjà automatique : « après avoir posé ma tasse, j'ouvre le document ». Le déclencheur existe déjà, il n'y a rien à retenir.</p>
+                    <p><strong>La version minimale.</strong> Définir la version la plus petite possible — « écrire une phrase », « ouvrir le fichier ». L'objectif n'est pas le résultat, c'est de ne jamais rompre la série.</p>
+                    <p><strong>La décision prise d'avance.</strong> « Le mardi matin, je travaille sur X. » Décidée une fois à froid, elle n'a plus à être reprise chaque semaine.</p>
+                </div>
+
+                <div class="pratique" data-pratique="friction-habitude"></div>
+
+                <h4>Prévoir l'échec plutôt que l'exclure</h4>
+                <p>Une série sera rompue : maladie, imprévu, déplacement. Ce qui distingue une habitude durable d'une tentative avortée n'est pas l'absence de rupture, c'est <strong>la règle de reprise</strong>.</p>
+                <p>La formulation la plus efficace est aussi la plus simple : <em>ne jamais manquer deux fois de suite</em>. Une journée manquée est un accident ; deux, c'est le début d'un abandon.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — tout changer d'un coup</span>
+                    <p>Cinq nouvelles habitudes le même lundi épuisent la réserve de volonté en une semaine, et échouent ensemble. L'échec est alors attribué au manque de discipline, et il découragera la tentative suivante.</p>
+                    <p>Une habitude à la fois, installée jusqu'à devenir automatique — six à huit semaines en général — puis la suivante.</p>
+                </div>
+
+                <p class="retenir">💡 Ne comptez pas sur votre volonté future. Aménagez plutôt l'environnement qui rendra le bon geste facile.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="productivite-collective">👥 La productivité collective</h3></summary>
+                <div class="lecon-corps">
+                <p>L'organisation personnelle atteint vite sa limite : la plupart des interruptions viennent des autres, et la plupart du temps perdu est perdu collectivement. Une équipe mal organisée annule l'organisation de chacun.</p>
+
+                <h4>Le coût réel d'une réunion</h4>
+                <p>Une réunion ne coûte pas sa durée : elle coûte sa durée <strong>multipliée par le nombre de participants</strong>, plus la fragmentation qu'elle provoque dans leurs journées.</p>
+                <p>Une heure à huit personnes, c'est une journée de travail entière. Formulé ainsi, la question « faut-il vraiment y convier tout le monde ? » se pose différemment.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Réunion hebdomadaire d'<strong>1 h 30</strong>, <strong>7 participants</strong>, coût horaire chargé moyen de <strong>45 €</strong>.</p>
+                    <p>Coût direct : <strong>473 €</strong> par séance, soit environ <strong>22 700 €</strong> par an.</p>
+                    <p>À quoi s'ajoutent 10 h 30 hebdomadaires soustraites au travail de fond — et la fragmentation des journées de sept personnes.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-reunion"></div>
+
+                <h4>Ce qui rend une réunion utile</h4>
+                <p>Trois conditions, cumulatives : <strong>un objet de décision</strong> — une réunion d'information peut être un message ; <strong>les seules personnes qui décident ou dont l'avis change la décision</strong> ; et <strong>une préparation lue en amont</strong>, ce qui suppose de l'envoyer assez tôt.</p>
+                <p>Une réunion qui se termine sans décision ni action attribuée n'a pas eu lieu : elle a occupé du temps.</p>
+
+                <h4>L'asynchrone comme réglage par défaut</h4>
+                <p>Écrire coûte plus cher à l'émetteur et beaucoup moins cher aux destinataires : chacun lit quand il le peut, sans fragmenter sa journée. Un écrit reste consultable, se corrige, et n'oblige personne à être disponible en même temps.</p>
+                <p>Le synchrone garde sa valeur pour ce qui se négocie, se décide à plusieurs, ou demande de la nuance relationnelle. Le reste gagne à être écrit.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — l'attente de réponse immédiate</span>
+                    <p>Une culture où chaque message appelle une réponse en quelques minutes rend le travail de fond impossible pour tout le monde, simultanément.</p>
+                    <p>Convenir explicitement des délais — « les messages sont traités dans la demi-journée, l'urgence passe par téléphone » — libère l'ensemble de l'équipe d'un coup.</p>
+                </div>
+
+                <p class="retenir">💡 Votre organisation personnelle plafonne au niveau de celle de votre équipe. Au-delà, c'est un sujet collectif.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="recul-regulier">🧭 Le recul régulier</h3></summary>
+                <div class="lecon-corps">
+                <p>Tout système d'organisation dérive. Des projets s'accumulent, des engagements pris il y a six mois n'ont plus de sens, des tâches restent sans que personne ne décide de les abandonner. Sans moment de recul, la dérive s'accumule jusqu'à ce que le système soit abandonné en bloc.</p>
+
+                <h4>Trois rythmes, trois questions</h4>
+                <p><strong>Chaque semaine</strong>, trente minutes : vider les boîtes, revoir les projets en cours, planifier la semaine suivante. C'est la revue qui empêche l'accumulation.</p>
+                <p><strong>Chaque mois</strong>, une heure : qu'est-ce qui n'a pas avancé, et pourquoi ? Quels engagements dois-je abandonner ou renégocier ?</p>
+                <p><strong>Chaque trimestre</strong>, une demi-journée : est-ce que je travaille sur ce qui compte, ou seulement sur ce qui arrive ?</p>
+
+                <div class="exemple">
+                    <span class="titre">La question qui fait le plus de bien</span>
+                    <p>Devant chaque projet en cours : <strong>« si cela n'existait pas encore, est-ce que je le commencerais aujourd'hui ? »</strong></p>
+                    <p>Si la réponse est non, le projet ne survit que par inertie et par la gêne de l'arrêter. Ce coût déjà engagé ne reviendra pas, quoi qu'on fasse ensuite.</p>
+                    <p>L'arrêter libère du temps, de l'attention, et souvent une culpabilité de fond qu'on ne s'avouait pas.</p>
+                </div>
+
+                <div class="pratique" data-pratique="revue-reguliere"></div>
+
+                <h4>Arrêter est une compétence</h4>
+                <p>Ajouter est facile et gratifiant. Arrêter demande d'assumer un renoncement devant les autres et devant soi. C'est pourtant ce qui distingue une organisation qui tient d'une organisation qui gonfle jusqu'à s'effondrer.</p>
+                <p>Une règle utile : <strong>rien de nouveau sans retirer quelque chose</strong>. Elle force l'arbitrage au moment de l'ajout, plutôt que six mois plus tard dans l'urgence.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — changer de méthode plutôt que faire la revue</span>
+                    <p>Quand un système se dérègle, la tentation est d'en adopter un nouveau. Le nouveau fonctionne quelques semaines — parce qu'on vient de tout remettre à plat — puis dérive à son tour.</p>
+                    <p>Ce n'était pas la méthode qui manquait, c'était la revue. Changer d'outil reporte simplement le problème d'un trimestre.</p>
+                </div>
+
+                <p class="retenir">💡 Sans moment régulier pour arrêter des choses, tout système finit par s'écrouler sous son propre poids.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>« Atomic Habits »</strong>, James Clear : sur la friction et l'ancrage. C'est le livre le plus opérationnel sur la formation des habitudes.</li>
+                    <li><strong>« When »</strong>, Daniel Pink : la synthèse des travaux sur les rythmes journaliers et le creux de l'après-midi.</li>
+                    <li><strong>INRS — organisation du travail</strong> : les repères officiels sur les horaires, les pauses et la charge mentale.</li>
+                    <li><strong>Travaux sur le coût des réunions</strong> : les estimations sectorielles du temps passé en réunion et de sa part jugée improductive par les participants eux-mêmes.</li>
+                    <li><strong>« Getting Things Done »</strong>, David Allen : le chapitre sur la revue hebdomadaire, qui est la partie la plus souvent négligée de la méthode.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> mettez la revue hebdomadaire dans l'agenda comme un rendez-vous, à heure fixe. C'est la seule façon qu'elle survive au troisième mois.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Productivité — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Parcours →</span>Retour au sommaire Productivité</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Entrepreneuriat</a>
+                <a href="../design/index.html">🎨 Design UX/UI</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/productivite-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

@@ -43,6 +43,17 @@
     const euros = (n) => nf(Math.round(n)) + " €";
     const pourcent = (n, d = 1) => nf(n, d) + " %";
 
+    // Une duree en minutes s affiche en heures et minutes : « 247 » ne parle
+    // pas, « 4 h 08 min » si. Les minutes sont completees a deux chiffres des
+    // qu il y a des heures, faute de quoi « 4 h 8 min » se lit mal.
+    const heuresMinutes = (minutes) => {
+        const total = Math.round(minutes);
+        const h = Math.floor(total / 60);
+        const m = total % 60;
+        if (h === 0) return nf(m) + " min";
+        return nf(h) + " h " + String(m).padStart(2, "0") + " min";
+    };
+
     // Valeur future d un capital et de versements mensuels, interets composes
     // mensuellement. Formule classique de l annuite : le versement du mois m
     // travaille pendant (total - m) mois.
@@ -2178,6 +2189,263 @@
                 return { texte: "Plusieurs manquements exposent l'entreprise, pas le prestataire qui a exécuté.", ton: "alerte" };
             },
             lecon: "En cas de plainte, c'est à vous de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté."
+        },
+
+        // ================= PRODUCTIVITÉ & ORGANISATION =================
+
+        // ---------- Niveau débutant ----------
+
+        "rythme-pomodoro": {
+            titre: "Que produit une journée en Pomodoro ?",
+            intro: "Le total surprend : le temps réellement concentré est bien inférieur aux heures passées.",
+            champs: [
+                { id: "session", libelle: "Durée d'une session", unite: "min", defaut: 25, min: 5, max: 120, pas: 5 },
+                { id: "pause", libelle: "Pause entre deux sessions", unite: "min", defaut: 5, min: 1, max: 60, pas: 1 },
+                { id: "heures", libelle: "Heures consacrées au travail de fond", unite: "h", defaut: 4, min: 0.5, max: 12, pas: 0.5 }
+            ],
+            calculer: ({ session, pause, heures }) => {
+                const cycle = session + pause;
+                const cycles = Math.floor(heures * 60 / cycle);
+                const concentre = cycles * session;
+                return [
+                    { libelle: "Sessions dans la plage", valeur: nf(cycles) },
+                    { libelle: "Temps réellement concentré", valeur: heuresMinutes(concentre), fort: true },
+                    { libelle: "Part de la plage", valeur: pourcent(concentre / (heures * 60) * 100, 0) }
+                ];
+            },
+            lecon: "Quatre heures de présence donnent environ trois heures de concentration réelle. C'est déjà beaucoup."
+        },
+
+        "sante-gtd": {
+            type: "controle",
+            titre: "Votre système tient-il debout ?",
+            intro: "Cochez ce qui est vrai aujourd'hui, pas ce que vous aviez prévu.",
+            points: [
+                { texte: "Tout ce que j'ai à faire est noté quelque part, hors de ma tête" },
+                { texte: "Il existe un seul endroit pour capturer, pas cinq" },
+                { texte: "Chaque tâche commence par un verbe d'action", aide: "« appeler le comptable » et non « comptable »" },
+                { texte: "Les tâches de plus d'une étape sont identifiées comme projets" },
+                { texte: "Je vide mes boîtes de capture au moins une fois par semaine" },
+                { texte: "Je fais confiance à mon système : je n'ai pas de liste parallèle mentale" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Système fiable : votre tête n'a plus à servir de mémoire.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. La revue hebdomadaire est ce qui manque le plus souvent.", ton: "moyen" };
+                return { texte: "Votre mémoire porte encore une partie du système, et elle le porte mal.", ton: "alerte" };
+            },
+            lecon: "Un système auquel on ne fait pas confiance est doublé d'une liste mentale — et c'est elle qui fatigue."
+        },
+
+        "matrice-eisenhower": {
+            type: "controle",
+            titre: "Votre matrice sert-elle à quelque chose ?",
+            intro: "Cochez ce qui est vrai de votre usage réel, pas de vos intentions.",
+            points: [
+                { texte: "J'ai classé les tâches de ma semaine dans les quatre cases" },
+                { texte: "Le quadrant 4 n'est pas vide", aide: "s'il l'est, c'est que rien n'a été renoncé" },
+                { texte: "Un créneau récurrent est réservé au quadrant 2 dans mon agenda", aide: "important mais non urgent" },
+                { texte: "Devant une tâche urgente, je me demande « urgent pour qui ? »" },
+                { texte: "Les tâches du quadrant 3 sont déléguées ou expédiées, pas soignées" },
+                { texte: "Je refais l'exercice au moins une fois par mois" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "La matrice arbitre réellement. C'est tout ce qu'on lui demande.", ton: "bon" };
+                if (n >= 4) return { texte: "Bon usage. Le créneau réservé au quadrant 2 est ce qui manque le plus souvent.", ton: "moyen" };
+                return { texte: "L'exercice a été fait, mais rien n'a changé dans l'agenda : il n'a rien arbitré.", ton: "alerte" };
+            },
+            lecon: "L'urgent se signale de lui-même. L'important reste silencieux : il faut lui réserver du temps, ou il n'arrivera jamais."
+        },
+
+        "choisir-outil": {
+            type: "controle",
+            titre: "Cet outil vous convient-il ?",
+            intro: "Cochez ce qui est vrai de l'outil que vous utilisez ou envisagez.",
+            points: [
+                { texte: "Capturer une tâche prend moins de cinq secondes", aide: "au-delà, on ne capture plus" },
+                { texte: "Il est accessible partout où les idées surviennent" },
+                { texte: "Je n'ai pas passé plus d'une heure à le configurer" },
+                { texte: "Je l'utilise encore trois mois après l'avoir adopté" },
+                { texte: "Il ne me demande pas de renseigner des champs dont je ne me sers pas" },
+                { texte: "Je peux en sortir mes données si je change d'avis" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Outil adapté : il sert le système au lieu de le remplacer.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. La vraie question reste : l'utiliserez-vous dans trois mois ?", ton: "moyen" };
+                return { texte: "Cet outil consomme probablement plus d'énergie qu'il n'en fait gagner.", ton: "alerte" };
+            },
+            lecon: "Le meilleur outil est celui qu'on utilise encore dans six mois. Tous les autres critères passent après."
+        },
+
+        // ---------- Niveau intermédiaire ----------
+
+        "cout-changement-tache": {
+            titre: "Ce que coûtent vos interruptions",
+            intro: "Le temps perdu n'est pas la durée de l'interruption, c'est le temps de reprise.",
+            champs: [
+                { id: "nombre", libelle: "Interruptions par jour", unite: "fois", defaut: 9, min: 0, max: 100, pas: 1 },
+                { id: "duree", libelle: "Durée moyenne d'une interruption", unite: "min", defaut: 3, min: 0.5, max: 120, pas: 0.5 },
+                { id: "reprise", libelle: "Temps de reprise après coupure", unite: "min", defaut: 12, min: 0, max: 60, pas: 1 },
+                { id: "journee", libelle: "Durée de la journée de travail", unite: "h", defaut: 8, min: 1, max: 16, pas: 0.5 }
+            ],
+            calculer: ({ nombre, duree, reprise, journee }) => {
+                const interruptions = nombre * duree;
+                const rattrapage = nombre * reprise;
+                const total = interruptions + rattrapage;
+                return [
+                    { libelle: "Temps des interruptions", valeur: heuresMinutes(interruptions) },
+                    { libelle: "Temps de reprise", valeur: heuresMinutes(rattrapage) },
+                    { libelle: "Total perdu", valeur: heuresMinutes(total) + " (" + pourcent(total / (journee * 60) * 100, 0) + " de la journée)", fort: true }
+                ];
+            },
+            lecon: "Une coupure de deux minutes en coûte vingt. C'est pourquoi le total surprend toujours."
+        },
+
+        "blocage-de-temps": {
+            titre: "Combien de temps vous reste-t-il vraiment ?",
+            intro: "Planifier plus que le disponible garantit d'échouer — par arithmétique, pas par manque de discipline.",
+            champs: [
+                { id: "journee", libelle: "Durée de la journée", unite: "h", defaut: 8, min: 1, max: 16, pas: 0.5 },
+                { id: "reunions", libelle: "Réunions", unite: "h", defaut: 2.5, min: 0, max: 12, pas: 0.5 },
+                { id: "messages", libelle: "Traitement des messages", unite: "h", defaut: 1.25, min: 0, max: 8, pas: 0.25 },
+                { id: "imprevus", libelle: "Imprévus et transitions", unite: "h", defaut: 1, min: 0, max: 8, pas: 0.25 }
+            ],
+            calculer: ({ journee, reunions, messages, imprevus }) => {
+                const restant = journee - reunions - messages - imprevus;
+                const heures = Math.max(0, restant);
+                // Une planification a 70 % survit aux aleas ; a 100 % elle casse.
+                const raisonnable = heures * 0.7;
+                return [
+                    { libelle: "Temps disponible pour le travail de fond", valeur: heuresMinutes(heures * 60), fort: true },
+                    { libelle: "Part de la journée", valeur: pourcent(heures / journee * 100, 0) },
+                    { libelle: "À planifier raisonnablement (70 %)", valeur: heuresMinutes(raisonnable * 60) }
+                ];
+            },
+            lecon: "Une planification à 70 % tient. Une planification à 100 % casse à la première urgence."
+        },
+
+        "flux-entrant": {
+            titre: "Au fil de l'eau, ou par lots ?",
+            intro: "Le travail est le même. Ce sont les transitions qui coûtent.",
+            champs: [
+                { id: "messages", libelle: "Messages par jour", unite: "msg", defaut: 45, min: 1, max: 500, pas: 5 },
+                { id: "traitement", libelle: "Temps de traitement par message", unite: "min", defaut: 1.5, min: 0.1, max: 30, pas: 0.5 },
+                { id: "reprise", libelle: "Reprise après chaque interruption", unite: "min", defaut: 4, min: 0, max: 30, pas: 1 },
+                { id: "lots", libelle: "Nombre de passages par jour si traité par lots", unite: "fois", defaut: 2, min: 1, max: 20, pas: 1 }
+            ],
+            calculer: ({ messages, traitement, reprise, lots }) => {
+                const pur = messages * traitement;
+                const auFilDeLeau = pur + messages * reprise;
+                const parLots = pur + lots * reprise;
+                return [
+                    { libelle: "Au fil de l'eau", valeur: heuresMinutes(auFilDeLeau) },
+                    { libelle: "En " + nf(lots) + " passage(s) groupé(s)", valeur: heuresMinutes(parLots), fort: true },
+                    { libelle: "Économie", valeur: heuresMinutes(auFilDeLeau - parLots) + " par jour" }
+                ];
+            },
+            lecon: "Ce n'est pas le nombre de messages qui coûte cher, c'est le nombre de fois qu'on les regarde."
+        },
+
+        "cout-opportunite": {
+            type: "controle",
+            titre: "Faut-il dire oui ?",
+            intro: "Cochez ce que vous avez vérifié avant d'accepter cette demande.",
+            points: [
+                { texte: "Je sais précisément ce que je ne ferai pas si j'accepte" },
+                { texte: "Cette chose abandonnée est moins importante que la demande" },
+                { texte: "J'ai estimé la durée réelle, pas la durée annoncée" },
+                { texte: "J'ai vérifié qu'elle rentre dans mon temps disponible, pas dans ma journée théorique" },
+                { texte: "Si je dois refuser, j'ai une formulation qui rend le coût visible", aide: "report daté, arbitrage explicite, version réduite" },
+                { texte: "La personne qui demande sait ce que cela décale" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Décision instruite : c'est un vrai oui, ou un refus argumenté.", ton: "bon" };
+                if (n >= 3) return { texte: "Il manque l'essentiel : nommer ce qui sera abandonné.", ton: "moyen" };
+                return { texte: "Accepter ici, c'est refuser autre chose sans l'avoir décidé.", ton: "alerte" };
+            },
+            lecon: "Personne ne vient réclamer le travail qui n'a pas été fait. C'est ce qui rend ce coût invisible."
+        },
+
+        // ---------- Niveau avancé ----------
+
+        "rythme-energie": {
+            type: "controle",
+            titre: "Travaillez-vous au bon moment ?",
+            intro: "Cochez ce qui décrit votre journée réelle.",
+            points: [
+                { texte: "Je connais mon meilleur créneau de concentration", aide: "observé, pas supposé" },
+                { texte: "Le travail de fond y est effectivement placé" },
+                { texte: "Les tâches mécaniques occupent le creux d'après-midi" },
+                { texte: "Je ne consacre pas ma première heure aux messages" },
+                { texte: "Je prends des pauses qui changent de registre", aide: "consulter son téléphone n'est pas une pause pour l'attention" },
+                { texte: "Je n'allonge pas la journée quand le travail déborde", aide: "le total produit sur la semaine baisse" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Vos heures les plus productives servent ce qui compte le plus.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Protéger la première heure est le changement le plus rentable.", ton: "moyen" };
+                return { texte: "Votre meilleur créneau est probablement consacré aux priorités des autres.", ton: "alerte" };
+            },
+            lecon: "Deux heures au bon moment valent quatre heures au mauvais. C'est l'optimisation qui ne coûte rien."
+        },
+
+        "friction-habitude": {
+            type: "controle",
+            titre: "Votre habitude peut-elle tenir ?",
+            intro: "Cochez ce qui est vrai de l'habitude que vous voulez installer.",
+            points: [
+                { texte: "Elle est rattachée à une action déjà automatique", aide: "le déclencheur existe, rien à retenir" },
+                { texte: "Sa version minimale est ridiculement petite", aide: "« écrire une phrase », « ouvrir le fichier »" },
+                { texte: "J'ai retiré de la friction devant elle", aide: "préparé la veille, outil déjà ouvert" },
+                { texte: "J'ai ajouté de la friction devant ce qui la concurrence" },
+                { texte: "J'ai une règle de reprise après une rupture", aide: "ne jamais manquer deux fois de suite" },
+                { texte: "Je n'installe qu'une seule habitude à la fois" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Cette habitude ne dépend pas de votre motivation. Elle a une vraie chance.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne conception. La règle de reprise est ce qui décide au deuxième mois.", ton: "moyen" };
+                return { texte: "Cette habitude repose encore sur la volonté, qui fluctue par nature.", ton: "alerte" };
+            },
+            lecon: "Ajouter vingt secondes d'effort réduit fortement la fréquence d'un geste. En retirer vingt l'augmente d'autant."
+        },
+
+        "cout-reunion": {
+            titre: "Combien coûte cette réunion ?",
+            intro: "Une réunion coûte sa durée multipliée par le nombre de participants.",
+            champs: [
+                { id: "duree", libelle: "Durée", unite: "h", defaut: 1.5, min: 0.25, max: 8, pas: 0.25 },
+                { id: "participants", libelle: "Participants", unite: "pers.", defaut: 7, min: 1, max: 200, pas: 1 },
+                { id: "taux", libelle: "Coût horaire chargé moyen", unite: "€/h", defaut: 45, min: 0, max: 500, pas: 5 },
+                { id: "frequence", libelle: "Occurrences par an", unite: "fois", defaut: 48, min: 1, max: 365, pas: 1 }
+            ],
+            calculer: ({ duree, participants, taux, frequence }) => {
+                const heuresSeance = duree * participants;
+                const coutSeance = heuresSeance * taux;
+                return [
+                    { libelle: "Heures de travail par séance", valeur: nf(heuresSeance, 1) + " h" },
+                    { libelle: "Coût par séance", valeur: euros(coutSeance) },
+                    { libelle: "Coût annuel", valeur: euros(coutSeance * frequence), fort: true }
+                ];
+            },
+            lecon: "Une heure à huit personnes, c'est une journée de travail. La question « faut-il convier tout le monde ? » se pose alors autrement."
+        },
+
+        "revue-reguliere": {
+            type: "controle",
+            titre: "Votre système résiste-t-il à la dérive ?",
+            intro: "Cochez ce qui a effectivement lieu, à intervalle régulier.",
+            points: [
+                { texte: "Une revue hebdomadaire de trente minutes, à heure fixe dans l'agenda" },
+                { texte: "Un point mensuel sur ce qui n'a pas avancé, et pourquoi" },
+                { texte: "Un recul trimestriel sur ce qui compte vraiment" },
+                { texte: "Je pose devant chaque projet : « si cela n'existait pas, est-ce que je le commencerais ? »" },
+                { texte: "J'ai arrêté au moins un engagement au cours des six derniers mois" },
+                { texte: "Rien de nouveau n'entre sans que quelque chose sorte" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "Votre système se corrige tout seul. C'est ce qui le fera durer.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne discipline. Arrêter des choses reste la partie la plus difficile.", ton: "moyen" };
+                return { texte: "Sans revue, ce système dérivera jusqu'à être abandonné en bloc.", ton: "alerte" };
+            },
+            lecon: "Quand un système se dérègle, changer d'outil reporte le problème d'un trimestre. Ce qui manquait, c'était la revue."
         }
     };
 

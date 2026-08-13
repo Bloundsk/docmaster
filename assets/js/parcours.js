@@ -19,7 +19,7 @@ window.DOCMASTER_PARCOURS = {
     marketing:       { titre: "📢 Marketing Digital",           niveaux: ["debutant", "intermediaire", "avance"] },
     cybersecurite:   { titre: "🔒 Cybersécurité",               niveaux: ["debutant", "intermediaire", "avance"] },
     entrepreneuriat: { titre: "🚀 Entrepreneuriat",             niveaux: ["debutant", "intermediaire", "avance"] },
-    productivite:    { titre: "⏱️ Productivité & Organisation", niveaux: [] },
+    productivite:    { titre: "⏱️ Productivité & Organisation", niveaux: ["debutant", "intermediaire", "avance"] },
     data:            { titre: "📊 Data & Analytics",            niveaux: ["debutant", "intermediaire", "avance"] },
     design:          { titre: "🎨 Design UX/UI",                niveaux: ["debutant", "intermediaire", "avance"] }
 };

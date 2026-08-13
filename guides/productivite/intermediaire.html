@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivité &amp; Organisation — Intermédiaire - DocMaster</title>
+    <meta name="description" content="Niveau intermédiaire du parcours Productivité : le coût du changement de tâche, le blocage de temps, le traitement des flux entrants, et prioriser vraiment.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/productivite/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Productivité &amp; Organisation — Intermédiaire - DocMaster">
+    <meta property="og:description" content="Niveau intermédiaire du parcours Productivité : le coût du changement de tâche, le blocage de temps, le traitement des flux entrants, et prioriser vraiment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/productivite/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Productivité &amp; Organisation — Intermédiaire - DocMaster">
+    <meta name="twitter:description" content="Niveau intermédiaire du parcours Productivité : le coût du changement de tâche, le blocage de temps, le traitement des flux entrants, et prioriser vraiment.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">⏱️ Productivité &amp; Organisation</a> &gt;
+        <span aria-current="page">Intermédiaire</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⏱️ Productivité &amp; Organisation — Intermédiaire</h1>
+                <p>Protéger son attention plutôt que remplir son agenda.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 13 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#cout-du-changement">🧠 Le coût du changement de tâche</a></li>
+                <li><a href="#blocage-de-temps">📅 Le blocage de temps</a></li>
+                <li><a href="#traiter-les-flux">📥 Traiter les flux entrants</a></li>
+                <li><a href="#prioriser-vraiment">🎯 Prioriser vraiment</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Une interruption coûte bien plus que sa durée : la reprise se compte en minutes.</li>
+                <li>Une tâche occupe le temps qu'on lui accorde — d'où l'intérêt de le fixer d'avance.</li>
+                <li>Un agenda plein n'est pas un agenda productif : le travail de fond a besoin de blocs.</li>
+                <li>Traiter les messages par lots coûte moins cher que de les traiter au fil de l'eau.</li>
+                <li>Dire oui à quelque chose, c'est dire non à tout le reste — même sans le formuler.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau débutant présentait quatre méthodes éprouvées : Pomodoro, GTD, la matrice d'Eisenhower, et le choix d'un outil. De quoi organiser ses tâches.</p>
+            <p>Ce niveau porte sur ce que ces méthodes supposent sans le dire : <strong>de l'attention disponible</strong>. Or l'attention est la ressource rare, pas le temps. Une journée de huit heures découpée en fragments de dix minutes ne vaut pas trois heures de travail continu — et aucun système de tâches ne corrige cela.</p>
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les durées citées sont des ordres de grandeur issus de travaux sur l'attention : elles varient selon les personnes, la nature de la tâche et le contexte.</p>
+                <p>Une difficulté persistante de concentration peut relever d'autre chose qu'une question d'organisation. Ce guide ne remplace pas un avis médical.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Protéger la ressource rare</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="cout-du-changement">🧠 Le coût du changement de tâche</h3></summary>
+                <div class="lecon-corps">
+                <p>Passer d'une tâche à une autre n'est pas gratuit. Le cerveau doit décharger le contexte en cours, charger le nouveau, et retrouver ensuite le fil abandonné. Ce coût est invisible sur un agenda, et considérable dans une journée.</p>
+
+                <h4>Ce que coûte une interruption de deux minutes</h4>
+                <p>Les travaux sur le sujet convergent : après une interruption, le retour à la concentration antérieure prend de l'ordre de <strong>quinze à vingt minutes</strong> sur une tâche exigeante. La coupure de deux minutes en coûte donc vingt.</p>
+                <p>Le calcul devient brutal quand on le multiplie. Six interruptions dans une matinée ne prennent pas douze minutes : elles peuvent en consommer plus de cent.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré</span>
+                    <p>Une journée avec <strong>9 interruptions</strong>, chacune de 3 minutes, sur des tâches demandant <strong>12 minutes</strong> de reprise.</p>
+                    <p>Temps des interruptions : 27 minutes. Temps de reprise : <strong>108 minutes</strong>.</p>
+                    <p>Total : <strong>2 h 15</strong> perdues sur une journée de 8 heures — près de 28 %, dont l'essentiel n'apparaît nulle part.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-changement-tache"></div>
+
+                <h4>Ce qui protège réellement</h4>
+                <p>Couper les notifications ne suffit pas si l'on va vérifier soi-même toutes les dix minutes. Trois mesures fonctionnent ensemble : <strong>rendre l'interruption impossible</strong> — appareil hors de portée, messagerie fermée ; <strong>annoncer une plage d'indisponibilité</strong>, pour que les autres n'aient pas à interrompre ; et <strong>noter où l'on en était</strong> avant de s'arrêter, ce qui raccourcit nettement la reprise.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire qu'on fait deux choses à la fois</span>
+                    <p>Le cerveau ne traite pas deux tâches exigeantes simultanément : il alterne rapidement, en payant le coût de bascule à chaque aller-retour.</p>
+                    <p>Ce qui ressemble à du travail parallèle est du travail séquentiel avec des frais de transition — et une qualité inférieure sur les deux tâches.</p>
+                </div>
+
+                <p class="retenir">💡 Le temps perdu n'est pas la durée de l'interruption, c'est le temps qu'il faut ensuite pour revenir.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="blocage-de-temps">📅 Le blocage de temps</h3></summary>
+                <div class="lecon-corps">
+                <p>Une liste de tâches dit <em>quoi</em> faire. Elle ne dit pas <em>quand</em>, et c'est précisément ce qui manque : une liste de vingt éléments face à un agenda vide produit surtout de la culpabilité.</p>
+
+                <h4>Réserver le temps comme on réserve une réunion</h4>
+                <p>Le principe est simple : chaque tâche importante reçoit un créneau dans l'agenda, au même titre qu'un rendez-vous. La différence est psychologique autant que pratique — un créneau se défend, une intention ne se défend pas.</p>
+                <p>Cela oblige aussi à une confrontation utile : si les tâches ne rentrent pas, c'est qu'il y en a trop. La liste le cachait ; l'agenda le montre.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — ce qu'il reste vraiment</span>
+                    <p>Journée de <strong>8 heures</strong>. Réunions : <strong>2 h 30</strong>. Traitement des messages : <strong>1 h 15</strong>. Imprévus et transitions : <strong>1 h</strong>.</p>
+                    <p>Temps réellement disponible pour le travail de fond : <strong>3 h 15</strong>.</p>
+                    <p>Planifier six heures de production sur cette journée garantit d'échouer — non par manque de discipline, mais par arithmétique.</p>
+                </div>
+
+                <div class="pratique" data-pratique="blocage-de-temps"></div>
+
+                <h4>La loi de Parkinson, et son usage</h4>
+                <p>Une tâche tend à occuper tout le temps qu'on lui alloue. Une note qui prendrait quarante minutes en prendra trois heures si l'après-midi est libre.</p>
+                <p>D'où l'intérêt de fixer une <strong>durée avant de commencer</strong>, même arbitrairement. Ce n'est pas une contrainte : c'est ce qui empêche la tâche de s'étaler par capillarité.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — remplir l'agenda à 100 %</span>
+                    <p>Un agenda sans espace vide ne survit pas à la première urgence : tout le reste se décale, et la journée devient une course au rattrapage.</p>
+                    <p>Prévoir des blocs vides n'est pas du temps gaspillé, c'est ce qui rend le plan robuste. Une planification à 70 % tient ; une planification à 100 % casse.</p>
+                </div>
+
+                <p class="retenir">💡 Une liste de tâches sans créneaux est une liste de vœux. L'agenda est ce qui la confronte au réel.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="traiter-les-flux">📥 Traiter les flux entrants</h3></summary>
+                <div class="lecon-corps">
+                <p>Messages, notifications, demandes, documents : le flux entrant est continu et ne s'arrête jamais. La question n'est pas de le vider, mais d'éviter qu'il dicte l'ordre de la journée.</p>
+
+                <h4>Par lots, jamais au fil de l'eau</h4>
+                <p>Traiter les messages dès leur arrivée revient à s'interrompre à chaque fois — avec le coût de reprise vu plus haut. Les traiter en deux ou trois passages dédiés coûte le même temps de traitement, sans les frais de bascule.</p>
+                <p>Deux créneaux par jour suffisent dans la plupart des métiers. La crainte de « rater quelque chose d'urgent » se règle en convenant d'un canal réservé aux vraies urgences — téléphone, généralement.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — le poids du flux</span>
+                    <p><strong>45 messages</strong> par jour, <strong>1,5 minute</strong> chacun en moyenne : 68 minutes de traitement pur.</p>
+                    <p>Traités au fil de l'eau, avec <strong>4 minutes</strong> de reprise à chaque fois : <strong>4 h 08</strong>.</p>
+                    <p>Traités en deux lots : <strong>1 h 16</strong>. Le travail est le même ; ce sont les transitions qui coûtaient près de trois heures.</p>
+                </div>
+
+                <div class="pratique" data-pratique="flux-entrant"></div>
+
+                <h4>Une décision par élément</h4>
+                <p>Le principe qui vide réellement une boîte : ne toucher chaque élément qu'une fois, et décider immédiatement. <strong>Répondre</strong> si cela prend moins de deux minutes, <strong>planifier</strong> si c'est une tâche, <strong>déléguer</strong>, <strong>archiver</strong>, ou <strong>supprimer</strong>.</p>
+                <p>Ce qui fait déborder une boîte n'est pas le volume : c'est le fait de lire des messages sans rien en faire, puis de les relire.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — commencer la journée par ses messages</span>
+                    <p>La première heure est généralement celle où l'attention est la plus disponible. La consacrer au flux entrant revient à donner son meilleur créneau aux priorités des autres.</p>
+                    <p>Une heure de travail de fond avant d'ouvrir sa messagerie change la journée entière — et rien d'important ne se perd en soixante minutes.</p>
+                </div>
+
+                <p class="retenir">💡 Ce n'est pas le nombre de messages qui coûte cher, c'est le nombre de fois qu'on les regarde.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="prioriser-vraiment">🎯 Prioriser vraiment</h3></summary>
+                <div class="lecon-corps">
+                <p>Prioriser ne consiste pas à ranger des tâches par ordre d'importance. Cela consiste à <strong>en abandonner</strong>. Tant qu'aucune tâche n'est écartée, il n'y a pas eu de priorisation, seulement un tri.</p>
+
+                <h4>Le coût d'opportunité, appliqué au temps</h4>
+                <p>Accepter une demande d'une demi-journée, c'est refuser tout ce qu'on aurait pu faire pendant cette demi-journée. Ce refus est réel, il est simplement invisible : personne ne vient réclamer le travail qui n'a pas été fait.</p>
+                <p>D'où une question utile avant d'accepter : <strong>qu'est-ce que je ne ferai pas si je dis oui ?</strong> Si la réponse est « rien d'important », c'est un vrai oui. Si elle nomme quelque chose, la décision mérite d'être pesée.</p>
+
+                <div class="exemple">
+                    <span class="titre">Trois formulations pour refuser sans se fermer</span>
+                    <p><strong>Le report daté.</strong> « Je ne peux pas cette semaine. Je peux m'y mettre le 24, est-ce que cela convient ? »</p>
+                    <p><strong>L'arbitrage explicite.</strong> « Je peux le faire, mais cela décale le projet X d'une semaine. Que préférez-vous ? » — la décision revient à qui la demande.</p>
+                    <p><strong>La version réduite.</strong> « Je ne peux pas tout faire, mais je peux faire cette partie-là d'ici jeudi. »</p>
+                    <p>Aucune de ces réponses n'est un refus sec. Toutes rendent visible le coût, ce que « oui » masquait.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-opportunite"></div>
+
+                <h4>Distinguer l'important de l'urgent, concrètement</h4>
+                <p>L'urgent se signale de lui-même : il crie, il a une échéance, quelqu'un attend. L'important reste silencieux — se former, réfléchir, prévenir un problème, entretenir une relation.</p>
+                <p>C'est pourquoi l'important n'arrive jamais spontanément dans la journée : il faut lui réserver du temps, sans quoi l'urgent le remplit intégralement.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la liste qui ne rétrécit jamais</span>
+                    <p>Une liste de tâches qui s'allonge depuis six mois contient des choses qui ne seront jamais faites. Elles y restent, occupent l'attention à chaque relecture, et entretiennent un sentiment d'échec permanent.</p>
+                    <p>Une revue mensuelle avec une seule question — « est-ce que je ferai vraiment cela ? » — et une suppression assumée vaut mieux qu'un report indéfini.</p>
+                </div>
+
+                <p class="retenir">💡 Une priorisation qui n'abandonne rien n'est pas une priorisation. C'est un classement.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>« Deep Work »</strong>, Cal Newport : sur la valeur du travail concentré et les conditions qui le rendent possible. Le livre de référence sur le sujet.</li>
+                    <li><strong>Travaux de Gloria Mark</strong> sur les interruptions au travail : les mesures de temps de reprise citées dans ce guide en proviennent.</li>
+                    <li><strong>« Getting Things Done »</strong>, David Allen : la méthode complète dont le niveau débutant présente les principes.</li>
+                    <li><strong>INRS — charge mentale au travail</strong> : les repères officiels sur les facteurs organisationnels et leurs effets.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> notez pendant trois jours chaque interruption et l'heure. Le total surprend, et il rend la discussion possible avec votre entourage professionnel.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Niveau précédent</span>Productivité — Débutant</a>
+            <a href="avance.html" class="next"><span class="label">Niveau suivant →</span>Productivité — Avancé</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Entrepreneuriat</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../design/index.html">🎨 Design UX/UI</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/productivite-intermediaire.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>
