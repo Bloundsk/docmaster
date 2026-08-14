@@ -51,6 +51,7 @@
         const h = Math.floor(total / 60);
         const m = total % 60;
         if (h === 0) return nf(m) + " min";
+        if (m === 0) return nf(h) + " h";
         return nf(h) + " h " + String(m).padStart(2, "0") + " min";
     };
 
@@ -64,6 +65,43 @@
         const facteur = Math.pow(1 + i, m);
         return capital * facteur + mensuel * (facteur - 1) / i;
     }
+
+    // --- Memoire et apprentissage -----------------------------------------
+    //
+    // Les constantes qui suivent viennent de travaux publies. Elles sont
+    // regroupees ici plutot que dispersees dans les simulateurs : une valeur
+    // ecrite en clair a un seul endroit se verifie, une valeur recopiee dans
+    // trois formules diverge tot ou tard.
+
+    // Oubli sans revision. La decroissance suit une loi de puissance et non une
+    // exponentielle : elle est brutale les premiers jours puis s aplatit. Une
+    // exponentielle ferait tomber la retention a zero en une semaine, ce que
+    // personne n observe.
+    const PENTE_OUBLI = 0.75;
+    const retenu = (jours) => 100 * Math.pow(1 + Math.max(0, jours), -PENTE_OUBLI);
+
+    // Intervalles d espacement usuels, en jours. Chaque revision reussie
+    // repousse la suivante d environ trois fois plus loin.
+    const INTERVALLES = [1, 3, 7, 21, 60, 180];
+
+    // Roediger & Karpicke (2006) : a une semaine, pour un temps de travail
+    // identique, la relecture laisse environ 40 % du materiel et le rappel
+    // actif environ 61 %.
+    const RELECTURE = 40;
+    const RAPPEL = 61;
+
+    // Rohrer & Taylor : au test differe, la pratique groupee par type donne
+    // environ 20 % de reussite, la pratique entrelacee environ 63 %.
+    const BLOC = 20;
+    const ENTRELACE = 63;
+
+    // Couverture d un texte selon le nombre de mots connus. Ajustement
+    // logarithmique sur les reperes usuels des etudes de frequence lexicale :
+    // 1 000 mots couvrent environ 80 % d un texte courant, 2 000 environ 85 %,
+    // 5 000 environ 92 %, 10 000 environ 98 %. Plafonne a 99 : les noms
+    // propres et les termes rares ne disparaissent jamais completement.
+    const couvertureLexicale = (mots) =>
+        Math.min(99, 26.84 + 7.696 * Math.log(Math.max(1, mots)));
 
     // --- Les simulateurs --------------------------------------------------
 
@@ -2446,6 +2484,263 @@
                 return { texte: "Sans revue, ce système dérivera jusqu'à être abandonné en bloc.", ton: "alerte" };
             },
             lecon: "Quand un système se dérègle, changer d'outil reporte le problème d'un trimestre. Ce qui manquait, c'était la revue."
+        },
+
+        // =====================================================================
+        // APPRENDRE A APPRENDRE
+        // =====================================================================
+
+        "courbe-oubli": {
+            titre: "Que reste-t-il dans une semaine ?",
+            intro: "Sans révision, l'oubli suit une courbe : très rapide au début, puis de plus en plus lente.",
+            champs: [
+                { id: "elements", libelle: "Éléments appris", unite: "", defaut: 40, min: 1, max: 500, pas: 1 },
+                { id: "jours", libelle: "Jours écoulés", unite: "j", defaut: 7, min: 0, max: 365, pas: 1 }
+            ],
+            calculer: ({ elements, jours }) => {
+                const retention = retenu(jours);
+                const restants = elements * retention / 100;
+                return [
+                    { libelle: "Part encore su", valeur: pourcent(retention, 0) },
+                    { libelle: "Éléments encore su", valeur: nf(Math.round(restants)) + " sur " + nf(elements), fort: true },
+                    { libelle: "Éléments à réapprendre", valeur: nf(Math.round(elements - restants)) }
+                ];
+            },
+            lecon: "L'essentiel de la perte a lieu dans les deux premiers jours. C'est là qu'une révision coûte le moins et rapporte le plus."
+        },
+
+        "repetition-espacee": {
+            titre: "Combien coûte vraiment une révision espacée ?",
+            intro: "Comparé à tout relire chaque semaine, pour la même échéance.",
+            champs: [
+                { id: "elements", libelle: "Éléments à retenir", unite: "", defaut: 60, min: 1, max: 2000, pas: 10 },
+                { id: "secondes", libelle: "Temps par élément et par passage", unite: "s", defaut: 8, min: 1, max: 120, pas: 1 },
+                { id: "mois", libelle: "Horizon", unite: "mois", defaut: 6, min: 1, max: 60, pas: 1 }
+            ],
+            calculer: ({ elements, secondes, mois }) => {
+                const horizon = mois * 30;
+                // Intervalles classiques : chaque revision reussie multiplie le
+                // suivant. On ne compte que les passages qui tombent avant
+                // l echeance — reviser apres ne sert plus a rien.
+                const passages = INTERVALLES.filter((j) => j <= horizon).length;
+                const coutEspace = passages * elements * secondes;
+                const coutHebdo = Math.floor(horizon / 7) * elements * secondes;
+                return [
+                    { libelle: "Passages de révision", valeur: nf(passages) },
+                    { libelle: "Temps total, en espacé", valeur: heuresMinutes(coutEspace / 60), fort: true },
+                    { libelle: "Temps total, en relisant chaque semaine", valeur: heuresMinutes(coutHebdo / 60) },
+                    { libelle: "Rapport", valeur: coutEspace > 0 ? "× " + nf(coutHebdo / coutEspace, 1) + " moins de temps" : "—" }
+                ];
+            },
+            lecon: "L'espacement ne demande pas plus de travail : il en demande beaucoup moins, au prix d'un calendrier à tenir."
+        },
+
+        "effet-test": {
+            titre: "Relire, ou se tester ?",
+            intro: "À temps de travail égal, réglez la part consacrée à vous interroger plutôt qu'à relire.",
+            champs: [
+                { id: "elements", libelle: "Éléments à retenir", unite: "", defaut: 100, min: 1, max: 500, pas: 10 },
+                { id: "part", libelle: "Part du temps passée à se tester", unite: "%", defaut: 50, min: 0, max: 100, pas: 5 }
+            ],
+            calculer: ({ elements, part }) => {
+                // Roediger & Karpicke : a une semaine, la relecture laisse
+                // environ 40 % et le rappel actif environ 61 %, pour un temps
+                // de travail identique. On interpole entre les deux.
+                const retention = RELECTURE + (RAPPEL - RELECTURE) * (part / 100);
+                const retenus = Math.round(elements * retention / 100);
+                const parRelecture = Math.round(elements * RELECTURE / 100);
+                return [
+                    { libelle: "Rétention à une semaine", valeur: pourcent(retention, 0) },
+                    { libelle: "Éléments encore su", valeur: nf(retenus) + " sur " + nf(elements), fort: true },
+                    { libelle: "Écart avec la relecture seule", valeur: (retenus >= parRelecture ? "+ " : "− ") + nf(Math.abs(retenus - parRelecture)) + " éléments" }
+                ];
+            },
+            lecon: "Se tester n'est pas une façon de vérifier qu'on a appris : c'est la façon d'apprendre. Le contrôle est l'exercice."
+        },
+
+        "illusion-maitrise": {
+            type: "controle",
+            titre: "Le savez-vous vraiment ?",
+            intro: "Cochez ce qui est vrai d'un sujet que vous pensez maîtriser.",
+            points: [
+                { texte: "Je peux le réexpliquer sans regarder mes notes" },
+                { texte: "Je peux l'expliquer à quelqu'un qui n'y connaît rien" },
+                { texte: "Je sais donner un exemple qui n'était pas dans le cours" },
+                { texte: "Je sais dire dans quels cas cela ne s'applique pas" },
+                { texte: "Je m'en suis souvenu au moins une fois après plusieurs jours" },
+                { texte: "Je peux le retrouver sans le reconnaître d'abord", aide: "reconnaître un texte n'est pas savoir le produire" }
+            ],
+            verdict: (n, total) => {
+                if (n === total) return { texte: "C'est acquis. Rien de tout cela ne s'obtient en relisant.", ton: "bon" };
+                if (n >= 4) return { texte: "Solide, mais incomplet : les cases restantes sont précisément celles que la relecture ne coche jamais.", ton: "moyen" };
+                return { texte: "Sentiment de maîtrise sans les preuves. C'est le piège habituel de la relecture : le texte devient familier, pas connu.", ton: "alerte" };
+            },
+            lecon: "La familiarité se confond avec la connaissance. Un texte relu quatre fois paraît évident — et reste introuvable une semaine plus tard."
+        },
+
+        "entrelacement": {
+            titre: "En blocs ou entrelacé ?",
+            intro: "Réglez la part d'exercices mélangés plutôt que groupés par type.",
+            champs: [
+                { id: "exercices", libelle: "Exercices au total", unite: "", defaut: 48, min: 4, max: 500, pas: 4 },
+                { id: "part", libelle: "Part d'exercices entrelacés", unite: "%", defaut: 50, min: 0, max: 100, pas: 10 }
+            ],
+            calculer: ({ exercices, part }) => {
+                // Rohrer & Taylor : au test differe, la pratique groupee laisse
+                // environ 20 % de reussite, l entrelacee environ 63 %.
+                const differe = BLOC + (ENTRELACE - BLOC) * (part / 100);
+                return [
+                    { libelle: "Réussite au test différé", valeur: pourcent(differe, 0), fort: true },
+                    { libelle: "Exercices réussis", valeur: nf(Math.round(exercices * differe / 100)) + " sur " + nf(exercices) },
+                    { libelle: "Écart avec la pratique groupée", valeur: "+ " + nf(Math.round(exercices * (differe - BLOC) / 100)) + " exercices" }
+                ];
+            },
+            lecon: "Grouper par type donne l'impression d'avancer plus vite : on applique la même méthode sans avoir à la choisir. Le test, lui, ne prévient pas du type."
+        },
+
+        "elaboration": {
+            type: "controle",
+            titre: "Traitez-vous vraiment ce que vous lisez ?",
+            intro: "Cochez ce que vous faites réellement pendant une séance de travail.",
+            points: [
+                { texte: "Je me demande « pourquoi est-ce vrai ? » avant de passer à la suite" },
+                { texte: "Je relie la notion à quelque chose que je connais déjà" },
+                { texte: "Je reformule avec mes propres mots, pas ceux du cours" },
+                { texte: "Je cherche un contre-exemple ou un cas limite" },
+                { texte: "Je pose par écrit une question à laquelle le cours ne répond pas" },
+                { texte: "Je m'arrête pour anticiper la suite avant de la lire" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Vous traitez le contenu au lieu de le parcourir. C'est ce qui laisse une trace.", ton: "bon" };
+                if (n >= 3) return { texte: "Bon départ. Les questions « pourquoi » et les contre-exemples sont ce qui rapporte le plus.", ton: "moyen" };
+                return { texte: "Lecture passive : le texte défile et rien ne s'y accroche. Une seule question posée à voix haute change déjà le résultat.", ton: "alerte" };
+            },
+            lecon: "Une notion isolée s'oublie ; une notion rattachée à dix autres se retrouve par dix chemins."
+        },
+
+        "pratique-deliberee": {
+            titre: "Où passe votre temps de travail ?",
+            intro: "Le temps passé sur ce qu'on réussit déjà entretient ; il ne fait pas progresser.",
+            champs: [
+                { id: "heures", libelle: "Heures de travail par semaine", unite: "h", defaut: 5, min: 0.5, max: 60, pas: 0.5 },
+                { id: "part", libelle: "Part passée sur ce que vous ratez", unite: "%", defaut: 20, min: 0, max: 100, pas: 5 },
+                { id: "semaines", libelle: "Sur combien de semaines", unite: "sem.", defaut: 12, min: 1, max: 104, pas: 1 }
+            ],
+            calculer: ({ heures, part, semaines }) => {
+                const utiles = heures * part / 100;
+                return [
+                    { libelle: "Heures utiles par semaine", valeur: heuresMinutes(utiles * 60), fort: true },
+                    { libelle: "Heures de confort par semaine", valeur: heuresMinutes((heures - utiles) * 60) },
+                    { libelle: "Heures utiles sur la période", valeur: heuresMinutes(utiles * semaines * 60) },
+                    { libelle: "À 60 %, la même période donnerait", valeur: heuresMinutes(heures * 0.6 * semaines * 60) }
+                ];
+            },
+            lecon: "Refaire ce qu'on réussit est agréable et mesurable. Travailler ce qu'on rate est désagréable et c'est la seule chose qui déplace le niveau."
+        },
+
+        "sommeil-consolidation": {
+            type: "controle",
+            titre: "Votre nuit fait-elle son travail ?",
+            intro: "La mémoire se consolide pendant le sommeil, pas pendant la révision.",
+            points: [
+                { texte: "Je dors au moins sept heures la nuit qui suit un apprentissage" },
+                { texte: "Je révise le soir plutôt que de tout repousser au matin de l'examen" },
+                { texte: "Je ne remplace pas une nuit par une nuit blanche de révision" },
+                { texte: "Mes horaires de coucher varient de moins d'une heure d'un jour à l'autre" },
+                { texte: "Je fais des pauses réelles pendant l'apprentissage, sans écran" },
+                { texte: "Je n'attends pas d'un rattrapage le week-end qu'il annule la semaine" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Vos nuits travaillent pour vous. C'est l'heure de révision la moins chère qui existe.", ton: "bon" };
+                if (n >= 3) return { texte: "Correct. La nuit qui suit l'apprentissage est celle qui compte le plus.", ton: "moyen" };
+                return { texte: "Une nuit blanche avant un examen échange la consolidation contre quelques heures de relecture. Le change est mauvais.", ton: "alerte" };
+            },
+            lecon: "Réviser tard puis dormir bat réviser tard puis veiller. Ce n'est pas une question de discipline, c'est le moment où le cerveau range."
+        },
+
+        "couverture-vocabulaire": {
+            titre: "Combien de mots faut-il pour lire ?",
+            intro: "Les mots les plus fréquents couvrent une part énorme d'un texte — et les suivants rapportent de moins en moins.",
+            champs: [
+                { id: "mots", libelle: "Mots connus", unite: "mots", defaut: 2000, min: 100, max: 20000, pas: 100 },
+                { id: "longueur", libelle: "Mots par page", unite: "mots", defaut: 250, min: 50, max: 1000, pas: 50 }
+            ],
+            calculer: ({ mots, longueur }) => {
+                const couverture = couvertureLexicale(mots);
+                const inconnus = longueur * (100 - couverture) / 100;
+                let verdict;
+                if (couverture >= 98) verdict = "lecture fluide";
+                else if (couverture >= 95) verdict = "lecture possible, dictionnaire à portée";
+                else if (couverture >= 90) verdict = "lecture laborieuse";
+                else verdict = "lecture impossible sans traduction";
+                return [
+                    { libelle: "Couverture du texte", valeur: pourcent(couverture, 1), fort: true },
+                    { libelle: "Mots inconnus par page", valeur: nf(Math.round(inconnus)) },
+                    { libelle: "Soit un mot inconnu tous les", valeur: inconnus >= 1 ? nf(Math.round(longueur / inconnus)) + " mots" : "plus d'une page" },
+                    { libelle: "Verdict", valeur: verdict }
+                ];
+            },
+            lecon: "Les mille premiers mots font le gros du travail. Les mille suivants en font dix fois moins — d'où l'intérêt de les apprendre dans l'ordre de leur fréquence."
+        },
+
+        "transfert": {
+            type: "controle",
+            titre: "Ce que vous apprenez servira-t-il ailleurs ?",
+            intro: "Cochez ce qui est vrai de votre façon d'apprendre ce sujet.",
+            points: [
+                { texte: "Je m'entraîne sur des cas variés, pas toujours le même format" },
+                { texte: "Je m'entraîne dans les conditions où je devrai m'en servir" },
+                { texte: "Je sais énoncer le principe, pas seulement la recette" },
+                { texte: "J'ai déjà appliqué la notion à un cas qu'on ne m'avait pas montré" },
+                { texte: "Je m'entraîne sans les indices qui seront absents le jour venu" },
+                { texte: "Je ne compte pas sur un exercice de logique pour améliorer autre chose", aide: "les jeux d'entraînement cérébral améliorent surtout ces jeux" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Ce que vous apprenez a une chance de sortir de la salle de classe.", ton: "bon" };
+                if (n >= 3) return { texte: "Partiel. La variété des cas est le levier le plus fort, et le plus négligé.", ton: "moyen" };
+                return { texte: "Apprentissage collé à son contexte : il fonctionnera sur les exercices du cours, et nulle part ailleurs.", ton: "alerte" };
+            },
+            lecon: "Le transfert ne va pas de soi : il se prépare. Ce qu'on apprend dans un seul décor reste attaché à ce décor."
+        },
+
+        "evaluer-methode": {
+            type: "controle",
+            titre: "Cette méthode vaut-elle votre temps ?",
+            intro: "Cochez ce qui est vrai de la méthode d'apprentissage qu'on vous propose.",
+            points: [
+                { texte: "Elle a été comparée à une autre méthode, pas seulement à rien" },
+                { texte: "Elle a été mesurée après plusieurs jours, pas juste après la séance" },
+                { texte: "Elle mesure ce qu'on retient, pas ce qu'on a ressenti" },
+                { texte: "Elle ne repose pas sur les « styles d'apprentissage »", aide: "visuel, auditif, kinesthésique : hypothèse non confirmée par les études" },
+                { texte: "Elle n'invoque pas de pourcentages du type « on retient 10 % de ce qu'on lit »", aide: "cette pyramide n'a aucune source" },
+                { texte: "Elle ne promet pas un résultat sans effort" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Méthode défendable. Elle mérite qu'on lui consacre quelques semaines.", ton: "bon" };
+                if (n >= 4) return { texte: "À creuser. Vérifiez surtout le délai du test : c'est là que la plupart des méthodes s'effondrent.", ton: "moyen" };
+                return { texte: "Beaucoup de promesses, peu de mesures. Le domaine en est plein.", ton: "alerte" };
+            },
+            lecon: "Une méthode qui rend l'apprentissage agréable sur le moment est souvent celle qui laisse le moins de traces. La difficulté utile n'a pas bonne presse."
+        },
+
+        "systeme-apprentissage": {
+            type: "controle",
+            titre: "Votre système tiendra-t-il six mois ?",
+            intro: "Cochez ce qui existe déjà, pas ce que vous comptez mettre en place.",
+            points: [
+                { texte: "Un endroit unique où atterrit ce que je veux retenir" },
+                { texte: "Un moment fixe pour réviser, dans l'agenda" },
+                { texte: "Des questions écrites, pas seulement des notes à relire" },
+                { texte: "Un calendrier d'espacement, même approximatif" },
+                { texte: "Une trace de ce que je rate régulièrement" },
+                { texte: "Une séance ramenée à cinq minutes les jours chargés", aide: "ce qui évite de rompre la série" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Un système, et non une bonne intention. C'est ce qui survit aux semaines difficiles.", ton: "bon" };
+                if (n >= 4) return { texte: "Presque. Le créneau fixe et la version courte sont ce qui fait tenir les autres.", ton: "moyen" };
+                return { texte: "Rien de tout cela ne demande de motivation une fois posé — c'est précisément pour cela qu'il faut le poser.", ton: "alerte" };
+            },
+            lecon: "Ce qui dure ne dépend pas de l'envie du jour. Un créneau et une version de cinq minutes valent mieux qu'un plan ambitieux."
         }
     };
 

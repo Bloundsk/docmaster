@@ -157,6 +157,23 @@ const searchIndex = [
     { title: "Les principes de design visuel", description: "Découvrir hiérarchie visuelle, couleurs et typographie.", url: "guides/design/debutant.html", keywords: "design visuel couleurs typographie hiérarchie espace blanc" },
     { title: "Les tests utilisateurs", description: "Comprendre pourquoi et comment tester une interface auprès d'utilisateurs.", url: "guides/design/debutant.html", keywords: "tests utilisateurs ux research usabilité" },
 
+    { title: "Apprendre à apprendre", description: "La compétence qui sert à toutes les autres.", url: "guides/apprendre/index.html", keywords: "apprendre apprentissage mémoire mémorisation études révision méthode" },
+    { title: "Apprendre — Débutant", description: "Ce qui fait qu'on retient. Aucun prérequis.", url: "guides/apprendre/debutant.html", keywords: "apprendre débutant niveau 1 oubli espacement test illusion" },
+    { title: "La courbe de l'oubli", description: "40 termes appris aujourd'hui, 8 dans une semaine.", url: "guides/apprendre/debutant.html", keywords: "courbe oubli ebbinghaus mémoire rétention bachotage" },
+    { title: "La répétition espacée", description: "Six révisions bien placées battent vingt-six relectures.", url: "guides/apprendre/debutant.html", keywords: "répétition espacée anki intervalles cartes mémoire flashcards révision" },
+    { title: "Se tester plutôt que relire", description: "Le contrôle n'est pas la vérification, c'est l'apprentissage.", url: "guides/apprendre/debutant.html", keywords: "effet test rappel actif récupération relecture surlignage roediger" },
+    { title: "Les illusions de maîtrise", description: "Un texte relu quatre fois devient familier, pas connu.", url: "guides/apprendre/debutant.html", keywords: "illusion maîtrise fluidité familiarité difficulté désirable métacognition" },
+    { title: "Apprendre — Intermédiaire", description: "Organiser son travail, et laisser la nuit finir le travail.", url: "guides/apprendre/intermediaire.html", keywords: "apprendre intermédiaire niveau 2 entrelacement élaboration pratique sommeil" },
+    { title: "L'entrelacement", description: "Grouper entraîne à appliquer, mélanger entraîne à choisir.", url: "guides/apprendre/intermediaire.html", keywords: "entrelacement interleaving blocs exercices mélange rohrer" },
+    { title: "L'élaboration", description: "Pourquoi est-ce vrai ? La question qui laisse une trace.", url: "guides/apprendre/intermediaire.html", keywords: "élaboration reformuler expliquer questions fiches notes traitement" },
+    { title: "La pratique délibérée", description: "Le temps passé sur ce qu'on réussit déjà ne fait pas progresser.", url: "guides/apprendre/intermediaire.html", keywords: "pratique délibérée ericsson points faibles retour difficulté progression" },
+    { title: "Le sommeil et la consolidation", description: "La révision la moins chère se fait les yeux fermés.", url: "guides/apprendre/intermediaire.html", keywords: "sommeil consolidation nuit blanche pause mémoire récupération" },
+    { title: "Apprendre — Avancé", description: "Ce qui transfère, ce qui se démontre, et ce qui tient.", url: "guides/apprendre/avance.html", keywords: "apprendre avancé niveau 3 fréquence transfert méthode système" },
+    { title: "La fréquence lexicale", description: "Mille mots couvrent 80 % d'un texte ; les mille suivants, cinq points.", url: "guides/apprendre/avance.html", keywords: "fréquence vocabulaire langue couverture lexicale lecture mots nation" },
+    { title: "Le transfert", description: "Ce qu'on apprend dans un seul décor reste attaché à ce décor.", url: "guides/apprendre/avance.html", keywords: "transfert généralisation contexte entraînement cérébral brain training" },
+    { title: "Évaluer une méthode d'apprentissage", description: "Mesuré combien de temps après ? La question qui trie tout.", url: "guides/apprendre/avance.html", keywords: "évaluer méthode styles apprentissage mozart pyramide preuves mythes" },
+    { title: "Construire son système d'apprentissage", description: "Un créneau fixe et une version de cinq minutes.", url: "guides/apprendre/avance.html", keywords: "système apprentissage habitude créneau revue calendrier questions" },
+
     { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
 
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
