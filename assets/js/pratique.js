@@ -3660,6 +3660,286 @@
                 return { texte: "Gain probablement absorbé. L'efficacité par unité progresse et le total augmente : c'est la trajectoire du numérique depuis vingt ans.", ton: "alerte" };
             },
             lecon: "Un pourcentage d'amélioration ne dit rien tant qu'on ne connaît pas l'évolution du total. C'est la seule question qui vaille, et c'est celle qu'on évite."
+        },
+
+        // =====================================================================
+        // NEGOCIATION ET COMMUNICATION
+        // =====================================================================
+
+        "preparer-echange": {
+            type: "controle",
+            titre: "Êtes-vous prêt pour cet échange ?",
+            intro: "Cochez ce que vous savez déjà, avant d'entrer dans la conversation.",
+            points: [
+                { texte: "Je sais ce que je veux obtenir, en une phrase" },
+                { texte: "Je sais à quoi je renonce si j'obtiens gain de cause" },
+                { texte: "Je sais ce que l'autre cherche, ou j'ai prévu de le lui demander" },
+                { texte: "Je sais ce que je fais si nous n'arrivons à rien" },
+                { texte: "J'ai choisi le moment et le canal, plutôt que de les subir" },
+                { texte: "Je sais ce qui, dans mon dossier, est le plus faible", aide: "l'autre le trouvera de toute façon" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Préparation solide. L'essentiel d'une négociation se joue avant qu'elle ne commence.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Savoir ce qu'on fait en cas d'échec est ce qui manque le plus souvent — et ce qui change le plus.", ton: "moyen" };
+                return { texte: "Entrer sans préparation revient à improviser face à quelqu'un qui, peut-être, ne l'a pas fait.", ton: "alerte" };
+            },
+            lecon: "La question la plus négligée n'est pas « qu'est-ce que je veux ? » mais « qu'est-ce que je fais si je ne l'obtiens pas ? ». C'est elle qui détermine la position réelle."
+        },
+
+        "ecoute-active": {
+            type: "controle",
+            titre: "Écoutez-vous, ou attendez-vous votre tour ?",
+            intro: "Cochez ce que vous faites réellement pendant que l'autre parle.",
+            points: [
+                { texte: "Je ne prépare pas ma réponse pendant qu'il parle" },
+                { texte: "Je reformule pour vérifier, avant de répondre", aide: "« si je comprends bien, … »" },
+                { texte: "Je pose des questions ouvertes plutôt que des questions fermées" },
+                { texte: "Je laisse un silence après sa réponse", aide: "c'est souvent là que vient l'essentiel" },
+                { texte: "Je demande « pourquoi est-ce important pour vous ? »" },
+                { texte: "Je note ce qu'il dit, pas ce que je compte répondre" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Vous écoutez vraiment. C'est le levier le moins coûteux et le plus rare.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne écoute. Le silence après une réponse est ce qui rapporte le plus, et ce qu'on supporte le moins.", ton: "moyen" };
+                return { texte: "Attendre son tour n'est pas écouter. La plupart des informations utiles se perdent là.", ton: "alerte" };
+            },
+            lecon: "Reformuler n'est pas une politesse : c'est le seul moyen de vérifier qu'on a compris, et cela révèle très souvent qu'on avait compris autre chose."
+        },
+
+        "longueur-message": {
+            titre: "Ce message sera-t-il lu ?",
+            intro: "Un message coûte le temps de tous ses destinataires, pas seulement celui de son auteur.",
+            champs: [
+                { id: "mots", libelle: "Longueur du message", unite: "mots", defaut: 400, min: 10, max: 5000, pas: 10 },
+                { id: "destinataires", libelle: "Destinataires", unite: "", defaut: 8, min: 1, max: 500, pas: 1 }
+            ],
+            calculer: ({ mots, destinataires }) => {
+                // 250 mots par minute : rythme de lecture courant sur ecran.
+                const minutes = mots / 250;
+                const total = minutes * destinataires;
+                // heuresMinutes arrondit a la minute : sous dix minutes, il
+                // afficherait « 1 min » aussi bien pour le total que pour sa
+                // moitie, et la comparaison disparaitrait.
+                const duree = (m) => (m < 10 ? nf(m, 1) + " min" : heuresMinutes(m));
+                return [
+                    { libelle: "Temps de lecture", valeur: nf(minutes, 1) + " min" },
+                    { libelle: "Temps mobilisé au total", valeur: duree(total), fort: true },
+                    { libelle: "En divisant la longueur par deux", valeur: duree(total / 2) },
+                    { libelle: "À garder en tête", valeur: mots > 150 ? "au-delà de 150 mots, la plupart des lecteurs parcourent au lieu de lire" : "longueur qui se lit vraiment" }
+                ];
+            },
+            lecon: "Écrire court prend plus de temps à l'auteur et en fait gagner à tous les autres. C'est l'arbitrage, et il est presque toujours tranché dans le mauvais sens."
+        },
+
+        "courriel-lu": {
+            type: "controle",
+            titre: "Ce courriel a-t-il une chance d'aboutir ?",
+            intro: "Cochez ce que contient réellement le message que vous vous apprêtez à envoyer.",
+            points: [
+                { texte: "L'objet dit ce dont il s'agit ET ce qui est attendu" },
+                { texte: "La demande est dans les deux premières lignes" },
+                { texte: "Une seule demande, ou une liste numérotée s'il y en a plusieurs" },
+                { texte: "Une échéance est donnée" },
+                { texte: "Le destinataire principal est seul en « À », les autres en copie" },
+                { texte: "Le contexte vient après la demande, pas avant" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Message traitable. Il obtiendra une réponse parce qu'il est facile d'y répondre.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. La demande en tête et l'échéance écrite sont les deux qui changent le taux de réponse.", ton: "moyen" };
+                return { texte: "Message qui raconte avant de demander. Il sera lu en diagonale, et la demande passera inaperçue.", ton: "alerte" };
+            },
+            lecon: "Le lecteur cherche deux choses : ce qu'on lui demande et pour quand. Tout ce qui les précède retarde la réponse."
+        },
+
+        "mesore": {
+            titre: "Faut-il accepter cette offre ?",
+            intro: "Votre MESORE — meilleure solution de rechange — est ce que vous obtenez si vous partez. Elle fixe votre point de rupture.",
+            champs: [
+                { id: "mesore", libelle: "Valeur de votre solution de rechange", unite: "€", defaut: 28000, min: 0, max: 10000000, pas: 500 },
+                { id: "offre", libelle: "Offre actuellement sur la table", unite: "€", defaut: 30000, min: 0, max: 10000000, pas: 500 },
+                { id: "cout", libelle: "Coût estimé de la poursuite", unite: "€", defaut: 500, min: 0, max: 1000000, pas: 100 }
+            ],
+            calculer: ({ mesore, offre, cout }) => {
+                const gain = offre - mesore;
+                return [
+                    { libelle: "Point de rupture", valeur: euros(mesore) },
+                    { libelle: "Gain par rapport à partir", valeur: (gain >= 0 ? "+ " : "− ") + euros(Math.abs(gain)), fort: true },
+                    { libelle: "Il faut gagner au moins", valeur: euros(cout) + " de plus pour que continuer se justifie" },
+                    {
+                        libelle: "Verdict",
+                        valeur: gain < 0
+                            ? "cette offre est moins bonne que votre solution de rechange"
+                            : (gain < cout ? "acceptable, mais continuer coûterait plus que ce que cela rapporterait" : "vous avez de la marge pour continuer")
+                    }
+                ];
+            },
+            lecon: "Sans solution de rechange chiffrée, on négocie à l'aveugle : impossible de savoir si une offre est bonne, seulement si elle est agréable."
+        },
+
+        "zopa": {
+            titre: "Y a-t-il une zone d'accord ?",
+            intro: "Le maximum que vous acceptez de payer, et le minimum estimé de l'autre. Entre les deux se trouve — ou non — un accord possible.",
+            champs: [
+                { id: "maxAcheteur", libelle: "Votre maximum", unite: "€", defaut: 32000, min: 0, max: 10000000, pas: 500 },
+                { id: "minVendeur", libelle: "Minimum estimé de l'autre", unite: "€", defaut: 27000, min: 0, max: 10000000, pas: 500 }
+            ],
+            calculer: ({ maxAcheteur, minVendeur }) => {
+                const largeur = maxAcheteur - minVendeur;
+                if (largeur < 0) {
+                    return [
+                        { libelle: "Zone d'accord", valeur: "aucune", fort: true },
+                        { libelle: "Écart à combler", valeur: euros(-largeur) },
+                        { libelle: "Ce que cela signifie", valeur: "aucun prix ne convient aux deux en l'état" },
+                        { libelle: "La suite utile", valeur: "élargir la discussion à autre chose que le prix" }
+                    ];
+                }
+                // Largeur nulle : les deux limites se touchent. Il existe un
+                // accord et un seul, et « le partage de ces 0 € » se lit mal.
+                if (largeur === 0) {
+                    return [
+                        { libelle: "Zone d'accord", valeur: "un seul prix possible : " + euros(maxAcheteur), fort: true },
+                        { libelle: "Largeur", valeur: "nulle" },
+                        { libelle: "Ce que cela signifie", valeur: "l'accord tient, mais aucune marge de part et d'autre" },
+                        { libelle: "La suite utile", valeur: "vérifier vos estimations avant de vous y engager" }
+                    ];
+                }
+                return [
+                    { libelle: "Zone d'accord", valeur: euros(minVendeur) + " à " + euros(maxAcheteur), fort: true },
+                    { libelle: "Largeur", valeur: euros(largeur) },
+                    { libelle: "Point médian", valeur: euros(minVendeur + largeur / 2) },
+                    { libelle: "Ce qui se joue", valeur: "le partage de ces " + euros(largeur) + ", pas l'accord lui-même" }
+                ];
+            },
+            lecon: "Quand il n'y a pas de zone d'accord sur le prix, insister ne sert à rien. Ce qui débloque, c'est d'ajouter une variable : délai, volume, garantie, services."
+        },
+
+        "ancrage": {
+            titre: "Quelle première offre annoncer ?",
+            intro: "Le premier chiffre énoncé pèse sur tout ce qui suit — y compris quand chacun sait qu'il est négociable.",
+            champs: [
+                { id: "objectif", libelle: "Résultat que vous visez", unite: "€", defaut: 29000, min: 0, max: 10000000, pas: 500 },
+                { id: "attendue", libelle: "Offre que vous attendez de l'autre", unite: "€", defaut: 27000, min: 0, max: 10000000, pas: 500 }
+            ],
+            calculer: ({ objectif, attendue }) => {
+                // Le point median entre deux offres tombe sur l objectif si la
+                // premiere offre est symetrique de celle de l autre.
+                const ancre = 2 * objectif - attendue;
+                const ecart = ancre - objectif;
+                return [
+                    { libelle: "Pour que le milieu tombe sur votre objectif", valeur: euros(ancre), fort: true },
+                    { libelle: "Écart avec votre objectif", valeur: (ecart >= 0 ? "+ " : "− ") + euros(Math.abs(ecart)) },
+                    { libelle: "Point médian obtenu", valeur: euros((ancre + attendue) / 2) },
+                    { libelle: "Limite", valeur: "une ancre invraisemblable fait perdre la crédibilité, et parfois la négociation" }
+                ];
+            },
+            lecon: "Le « coupons la poire en deux » paraît équitable et dépend entièrement du premier chiffre annoncé. C'est pour cela qu'il vaut mieux l'annoncer, en restant plausible."
+        },
+
+        "interets-positions": {
+            type: "controle",
+            titre: "Position ou intérêt ?",
+            intro: "Une position est ce qu'on demande. Un intérêt est la raison pour laquelle on le demande. Cochez ce que vous connaissez.",
+            points: [
+                { texte: "Je sais ce que l'autre demande" },
+                { texte: "Je sais pourquoi il le demande" },
+                { texte: "Je connais au moins deux façons de satisfaire cette raison" },
+                { texte: "Je sais ce qui, pour lui, ne se négocie pas" },
+                { texte: "J'ai identifié un point qui me coûte peu et lui rapporte beaucoup" },
+                { texte: "Je sais ce que je peux échanger contre ce qui compte pour moi" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Vous négociez sur les intérêts. C'est là que se trouvent les accords que personne n'avait prévus.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne lecture. Le point qui coûte peu à l'un et rapporte à l'autre est ce qui débloque le plus souvent.", ton: "moyen" };
+                return { texte: "Négociation sur les positions : chacun campe, et le seul résultat possible est de couper la différence.", ton: "alerte" };
+            },
+            lecon: "Deux personnes qui veulent la même orange peuvent toutes deux être satisfaites : l'une voulait le jus, l'autre l'écorce. Encore fallait-il demander pourquoi."
+        },
+
+        "conversation-difficile": {
+            type: "controle",
+            titre: "Cette conversation est-elle préparée ?",
+            intro: "Un désaccord, un reproche à formuler, une nouvelle à annoncer. Cochez ce qui est prêt.",
+            points: [
+                { texte: "Je décris des faits observables, pas une interprétation", aide: "« tu es arrivé après 10 h trois fois » et non « tu ne prends rien au sérieux »" },
+                { texte: "Je sais dire l'effet que cela produit, sans accuser" },
+                { texte: "J'ai une demande précise, pas seulement un reproche" },
+                { texte: "J'ai prévu du temps pour la réponse de l'autre" },
+                { texte: "Je le fais en tête-à-tête, et pas devant d'autres" },
+                { texte: "Je distingue ce qui est négociable de ce qui ne l'est pas" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Conversation préparée. Elle sera désagréable et elle produira quelque chose.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. S'en tenir aux faits observables est ce qui évite que la discussion parte sur l'intention.", ton: "moyen" };
+                return { texte: "Sans faits datés ni demande précise, la conversation portera sur les intentions supposées — c'est-à-dire nulle part.", ton: "alerte" };
+            },
+            lecon: "Ce n'est pas le reproche qui bloque, c'est l'interprétation. Un fait se discute, une intention prêtée ne se discute pas : elle se nie."
+        },
+
+        "biais-negociation": {
+            type: "controle",
+            titre: "Quels biais jouent contre vous ?",
+            intro: "Cochez ce que vous reconnaissez dans votre façon de négocier.",
+            points: [
+                { texte: "Je me sens engagé par le temps déjà passé", aide: "coût irrécupérable : il ne devrait rien changer" },
+                { texte: "Je suppose que ce que je gagne, l'autre le perd", aide: "vrai sur le prix seul, faux dès qu'il y a plusieurs variables" },
+                { texte: "Je m'accroche à mon premier chiffre par cohérence" },
+                { texte: "Je cherche surtout ce qui confirme ma lecture de la situation" },
+                { texte: "Je surestime ce que l'autre sait de mes contraintes" },
+                { texte: "Je juge l'accord à ce que j'ai obtenu, pas à mon point de rupture" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Aucun reconnu. À vérifier après coup : ces biais se voient beaucoup mieux sur les autres.", ton: "bon" };
+                if (n <= 2) return { texte: "Deux repères utiles : le temps passé ne doit rien changer, et tout n'est pas à somme nulle.", ton: "moyen" };
+                return { texte: "Plusieurs biais actifs. Le plus coûteux est de croire que ce que l'un gagne, l'autre le perd : il ferme les accords créatifs.", ton: "alerte" };
+            },
+            lecon: "Un accord se juge par rapport à sa solution de rechange, jamais par rapport à ce qu'on espérait au départ. C'est la seule comparaison qui ait un sens."
+        },
+
+        "manipulation": {
+            type: "controle",
+            titre: "Reconnaissez-vous ces procédés ?",
+            intro: "Cochez ceux que vous avez rencontrés dans cette négociation.",
+            points: [
+                { texte: "Une urgence artificielle", aide: "« l'offre expire ce soir »" },
+                { texte: "Une concession minuscule présentée comme un effort majeur" },
+                { texte: "Une demande supplémentaire une fois l'accord presque conclu" },
+                { texte: "Un « mon supérieur refuse » invérifiable" },
+                { texte: "Un chiffre annoncé sans source, présenté comme une évidence" },
+                { texte: "Une mise en cause personnelle plutôt que du fond" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Rien de tout cela. La négociation porte sur le fond.", ton: "bon" };
+                if (n <= 2) return { texte: "Procédés repérés. Les nommer à voix haute, calmement, suffit le plus souvent à les faire cesser.", ton: "moyen" };
+                return { texte: "Beaucoup de procédés. Votre meilleure réponse reste votre solution de rechange : c'est elle qui rend le départ crédible.", ton: "alerte" };
+            },
+            lecon: "La réponse à un procédé n'est ni de le subir ni d'en user : c'est de le nommer. « Je note que le délai est très court — est-il négociable ? » désamorce sans affronter."
+        },
+
+        "cout-du-desaccord": {
+            titre: "Combien coûte de ne pas conclure ?",
+            intro: "Un désaccord qui dure a un prix, rarement calculé et souvent supérieur à l'écart qui reste à combler.",
+            champs: [
+                { id: "ecart", libelle: "Écart restant à combler", unite: "€", defaut: 1500, min: 0, max: 1000000, pas: 100 },
+                { id: "semaines", libelle: "Semaines de blocage prévisibles", unite: "sem.", defaut: 6, min: 0, max: 200, pas: 1 },
+                { id: "heures", libelle: "Heures par semaine consacrées au sujet", unite: "h", defaut: 3, min: 0, max: 40, pas: 0.5 },
+                { id: "taux", libelle: "Coût horaire chargé", unite: "€/h", defaut: 45, min: 0, max: 500, pas: 5 }
+            ],
+            calculer: ({ ecart, semaines, heures, taux }) => {
+                const temps = semaines * heures;
+                const cout = temps * taux;
+                return [
+                    { libelle: "Temps consacré", valeur: heuresMinutes(temps * 60) },
+                    { libelle: "Coût de ce temps", valeur: euros(cout), fort: true },
+                    { libelle: "Comparé à l'écart restant", valeur: ecart > 0 ? pourcent(cout / ecart * 100, 0) + " de l'écart" : "—" },
+                    {
+                        libelle: "Verdict",
+                        valeur: cout >= ecart
+                            ? "le blocage coûte plus cher que ce qui reste à négocier"
+                            : "l'écart justifie encore de discuter"
+                    }
+                ];
+            },
+            lecon: "Beaucoup de négociations continuent bien après le moment où elles coûtent plus qu'elles ne rapportent. Personne ne fait ce calcul, parce qu'il donne tort aux deux camps."
         }
     };
 

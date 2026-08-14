@@ -225,6 +225,23 @@ const searchIndex = [
     { title: "Le cadre réglementaire du numérique", description: "Le recyclage est la dernière étape, pas la première.", url: "guides/ecologie/avance.html", keywords: "reen deee indice durabilité reprise obsolescence programmée collecte recyclage" },
     { title: "L'effet rebond", description: "Un pourcentage d'amélioration ne dit rien sur le total.", url: "guides/ecologie/avance.html", keywords: "effet rebond efficacité total intensité numérique vert greenwashing" },
 
+    { title: "Négociation & communication", description: "Se faire comprendre, et savoir ce qui se calcule.", url: "guides/negociation/index.html", keywords: "négociation communication convaincre accord discussion échange" },
+    { title: "Négociation — Débutant", description: "Se faire comprendre. Aucun prérequis.", url: "guides/negociation/debutant.html", keywords: "négociation débutant niveau 1 préparer écouter structurer écrire" },
+    { title: "Préparer avant de parler", description: "Que fais-je si je ne l'obtiens pas ? La question négligée.", url: "guides/negociation/debutant.html", keywords: "préparation objectif contrepartie point faible cadre moment canal" },
+    { title: "Écouter vraiment", description: "Reformuler révèle souvent qu'on avait compris autre chose.", url: "guides/negociation/debutant.html", keywords: "écoute active reformulation silence questions ouvertes notes" },
+    { title: "Structurer un message", description: "La conclusion au début — et ce que dit vraiment Mehrabian.", url: "guides/negociation/debutant.html", keywords: "structure pyramide minto conclusion non verbal mehrabian 93 % mythe" },
+    { title: "Écrire pour être lu", description: "L'objet et les deux premières lignes décident du reste.", url: "guides/negociation/debutant.html", keywords: "courriel email objet demande échéance destinataires longueur lecture" },
+    { title: "Négociation — Intermédiaire", description: "Ce qui se calcule avant de s'asseoir à la table.", url: "guides/negociation/intermediaire.html", keywords: "négociation intermédiaire niveau 2 mesore batna zone accord ancrage intérêts" },
+    { title: "La solution de rechange", description: "Votre pouvoir vient de ce que vous obtenez si vous partez.", url: "guides/negociation/intermediaire.html", keywords: "mesore batna solution rechange point de rupture pouvoir alternative" },
+    { title: "La zone d'accord", description: "Sans zone d'accord sur le prix, insister ne sert à rien.", url: "guides/negociation/intermediaire.html", keywords: "zopa zone accord possible limite réserve variable prix marge" },
+    { title: "L'ancrage", description: "« Coupons la poire en deux » dépend du premier chiffre.", url: "guides/negociation/intermediaire.html", keywords: "ancrage première offre chiffre biais kahneman tversky point médian" },
+    { title: "Positions et intérêts", description: "Pourquoi est-ce important pour vous ? La question la plus rentable.", url: "guides/negociation/intermediaire.html", keywords: "positions intérêts harvard fisher ury orange échange asymétrique somme nulle" },
+    { title: "Négociation — Avancé", description: "Les conversations difficiles, et savoir quand s'arrêter.", url: "guides/negociation/avance.html", keywords: "négociation avancé niveau 3 conflit biais manipulation arrêter" },
+    { title: "Les conversations difficiles", description: "Décrivez ce qu'une caméra aurait enregistré.", url: "guides/negociation/avance.html", keywords: "conversation difficile feedback reproche fait intention désaccord critique" },
+    { title: "Les biais en négociation", description: "Le temps déjà investi ne devrait rien changer — et change tout.", url: "guides/negociation/avance.html", keywords: "biais coût irrécupérable somme nulle cohérence kahneman point de rupture" },
+    { title: "Reconnaître la manipulation", description: "Un procédé nommé cesse de fonctionner.", url: "guides/negociation/avance.html", keywords: "manipulation urgence artificielle grignotage autorité absente procédé cialdini" },
+    { title: "Savoir s'arrêter", description: "Un blocage coûte souvent plus que l'écart à combler.", url: "guides/negociation/avance.html", keywords: "arrêter partir quitter table coût désaccord blocage fatigue accord" },
+
     { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
 
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },

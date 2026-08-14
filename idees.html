@@ -175,7 +175,7 @@
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 13 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Boîte à idées - DocMaster">
@@ -201,7 +201,7 @@
             <div class="idea-intro">
                 <h2>Comment ça marche</h2>
                 <p>
-                    DocMaster couvre aujourd'hui 13 domaines. La suite dépend de ce qui vous manque :
+                    DocMaster couvre aujourd'hui 14 domaines. La suite dépend de ce qui vous manque :
                     proposez un thème entier ou simplement un sujet précis à ajouter dans un guide existant.
                     Les suggestions les plus demandées sont traitées en priorité.
                 </p>
@@ -220,20 +220,23 @@
                     <li>⚖️ Droit &amp; démarches</li>
                     <li>🩺 Santé au travail</li>
                     <li>🌱 Sobriété numérique</li>
+                    <li>🤝 Négociation &amp; communication</li>
                 </ul>
             </div>
         </section>
 
         <section>
             <div class="shortlist">
-                <h2>Pistes déjà envisagées</h2>
+                <h2>Les pistes annoncées sont toutes publiées</h2>
                 <p>
-                    Ces thèmes sont dans les cartons. Si l'un d'eux vous intéresse particulièrement,
-                    dites-le dans le formulaire : ça aide à décider par lequel commencer.
+                    Les cinq thèmes qui figuraient ici — droit et démarches, santé au travail,
+                    apprentissage, sobriété numérique, négociation et communication — sont
+                    désormais en ligne, chacun découpé en trois niveaux.
                 </p>
-                <ul>
-                                                                                                    <li><strong>Négociation &amp; communication</strong> — argumenter, présenter, convaincre</li>
-                </ul>
+                <p style="margin-top:14px;">
+                    La suite dépend entièrement de vos propositions. Le formulaire ci-dessous
+                    est le seul endroit d'où viendront les prochains sujets.
+                </p>
             </div>
         </section>
 
@@ -255,16 +258,6 @@
                         </label>
                         <textarea id="idee-pourquoi" name="pourquoi"
                                   placeholder="Ce que vous cherchiez sans le trouver, ce qui vous bloque…"></textarea>
-                    </div>
-
-                    <div class="champ">
-                        <label for="idee-piste">Parmi les pistes envisagées, laquelle vous intéresse le plus ?
-                            <span class="aide">Facultatif</span>
-                        </label>
-                        <select id="idee-piste" name="piste">
-                            <option value="">— Aucune en particulier —</option>
-                            <option>Négociation &amp; communication</option>
-                        </select>
                     </div>
 
                     <!-- Champ piege : invisible pour un humain, rempli par les robots.
@@ -340,7 +333,6 @@
 
                 const sujet = document.getElementById("idee-sujet").value.trim();
                 const pourquoi = document.getElementById("idee-pourquoi").value.trim();
-                const piste = document.getElementById("idee-piste").value;
                 const piege = form.querySelector('[name="_honey"]').value;
 
                 if (!sujet) {
@@ -364,7 +356,6 @@
                         body: JSON.stringify({
                             "Sujet proposé": sujet,
                             "Pourquoi ce sujet": pourquoi || "(non précisé)",
-                            "Piste envisagée": piste || "(aucune en particulier)",
                             _subject: "Boîte à idées — " + sujet.slice(0, 70),
                             _template: "table",
                             _captcha: "false"

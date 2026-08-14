@@ -25,6 +25,7 @@ window.DOCMASTER_PARCOURS = {
     droit:           { titre: "⚖️ Droit & démarches",         niveaux: ["debutant", "intermediaire", "avance"] },
     sante:           { titre: "🩺 Santé au travail",           niveaux: ["debutant", "intermediaire", "avance"] },
     ecologie:        { titre: "🌱 Sobriété numérique",        niveaux: ["debutant", "intermediaire", "avance"] },
+    negociation:     { titre: "🤝 Négociation & communication", niveaux: ["debutant", "intermediaire", "avance"] },
     design:          { titre: "🎨 Design UX/UI",                niveaux: ["debutant", "intermediaire", "avance"] }
 };
 
