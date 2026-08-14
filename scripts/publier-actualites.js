@@ -252,13 +252,22 @@ function injecter(fichier, contenu) {
         const { coches, decoches } = depouiller(issues);
         console.log(`${issues.length} Issue(s) lue(s) : ${coches.size} article(s) coché(s).`);
 
-        const articles = fusionner(lireEtat().articles, coches, decoches);
+        const avant = lireEtat().articles;
+        const articles = fusionner(avant, coches, decoches);
+
+        // « maj » ne date pas le passage du script mais le dernier changement
+        // de la liste. Sans cette distinction, chaque exécution réécrivait
+        // l horodatage, produisait un commit et relançait la publication du
+        // site — deux fois par jour, pour rien.
+        const identique = JSON.stringify(avant) === JSON.stringify(articles);
 
         fs.mkdirSync(path.dirname(ETAT), { recursive: true });
-        fs.writeFileSync(
-            ETAT,
-            JSON.stringify({ maj: new Date().toISOString(), articles }, null, 2) + "\n"
-        );
+        if (!fs.existsSync(ETAT) || !identique) {
+            const maj = identique && fs.existsSync(ETAT)
+                ? JSON.parse(fs.readFileSync(ETAT, "utf8")).maj
+                : new Date().toISOString();
+            fs.writeFileSync(ETAT, JSON.stringify({ maj, articles }, null, 2) + "\n");
+        }
 
         const modifies = [
             injecter("actualites.html", rendreListe(articles, "")) ? "actualites.html" : null,
