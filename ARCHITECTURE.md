@@ -128,6 +128,21 @@ Les simulateurs d'abord, le cours ensuite, et les chiffres du cours **recopiés 
 la sortie des simulateurs**. Écrire le cours en premier puis ajuster le simulateur
 a produit quatre erreurs sur neuf sujets ; l'ordre inverse les rend impossibles.
 
+### Sujets où le contenu vieillit
+
+Certains domaines datent plus vite que d'autres. Règle appliquée depuis *Droit &
+démarches* : **ne citer que ce qui est stable**, et renvoyer à la source officielle
+pour le reste.
+
+| À écrire dans le guide | À ne jamais écrire |
+|---|---|
+| Un délai inscrit dans la loi depuis des années | Un seuil ou un plafond révisé chaque année |
+| Un mécanisme, une règle de raisonnement | Un taux, un barème, un montant |
+| Le nom de la source où vérifier | Une valeur recopiée d'un article |
+
+Le test : *si cette phrase est fausse dans dix-huit mois, le lecteur le verra-t-il ?*
+Si non, elle n'a rien à faire dans le guide.
+
 ---
 
 ## 6. Contrôles automatiques

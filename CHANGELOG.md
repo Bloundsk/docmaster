@@ -1,5 +1,42 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — Un onzième parcours : Droit &amp; démarches administratives
+Deuxième sujet du chantier « élargir », et le plus délicat : le droit vieillit vite,
+et ce qui paraît sur le site engage son éditeur.
+
+- **Débutant** — où trouver le droit applicable, les délais qui comptent, écrire pour
+  que ça compte, conserver ses documents
+- **Intermédiaire** — louer un logement, donner congé, le contrat de travail,
+  déclarer une activité
+- **Avancé** — lire un contrat, la prescription, régler sans juge, vos données
+  personnelles
+
+12 simulateurs et 90 questions. Le site passe à **52 pages, 133 sections,
+132 exercices et 996 questions**.
+
+### Deux règles de prudence, tenues d'un bout à l'autre
+
+**Aucun montant, seuil ni plafond n'est cité.** Seuils de la micro-entreprise,
+plafonds de l'aide juridictionnelle, SMIC : ces valeurs sont révisées chaque année.
+Un chiffre périmé dans un guide juridique est pire qu'une absence de chiffre — le
+guide renvoie chaque fois à la source officielle.
+
+**Seuls figurent des délais inscrits dans la loi et stables depuis des années** :
+14 jours de rétractation, 2 ans de garantie légale, 10 % de majoration sur un dépôt
+de garantie rendu en retard, délais de prévenance, prescriptions de principe.
+
+Les avertissements le disent explicitement, sur chaque page : droit français,
+contenu pédagogique, pas un conseil juridique — et les points-justice donnent des
+consultations gratuites.
+
+### Et un défaut du robot, corrigé au passage
+
+La publication des actualités a produit ce matin un commit dont le seul contenu était
+un horodatage : `maj` datait le passage du script, pas le dernier changement de la
+liste. Chaque exécution réécrivait donc le fichier, commitait, et relançait la
+publication du site — **deux fois par jour, pour rien**. `maj` date désormais le
+dernier changement réel, et un test couvre le cas.
+
 ## 2026-08-14 — Un dixième parcours : Apprendre à apprendre
 Premier sujet du chantier « élargir ». Choisi parmi les cinq pistes annoncées dans
 la boîte à idées parce que c'est le seul qui **compose avec les neuf autres** : il
