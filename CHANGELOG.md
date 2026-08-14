@@ -1,5 +1,44 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — Un quatorzième parcours : Négociation &amp; communication
+**Dernier des cinq thèmes annoncés dans la boîte à idées.** Ils sont désormais tous
+publiés.
+
+- **Débutant** — préparer avant de parler, écouter vraiment, structurer un message,
+  écrire pour être lu
+- **Intermédiaire** — la solution de rechange, la zone d'accord, l'ancrage, positions
+  et intérêts
+- **Avancé** — les conversations difficiles, les biais, reconnaître la manipulation,
+  savoir s'arrêter
+
+12 simulateurs et 90 questions. Le site passe à **64 pages, 169 sections,
+168 exercices et 1 266 questions**.
+
+**Un domaine saturé de mythes.** Le plus tenace — « 93 % de la communication est non
+verbale » — est corrigé explicitement : l'étude de Mehrabian portait sur des **mots
+isolés dont le ton contredisait le sens**, et mesurait la perception d'une *attitude*,
+pas la transmission d'une information. La conséquence pratique est l'inverse de celle
+qu'on en tire habituellement : le contenu compte.
+
+Le niveau intermédiaire se calcule entièrement. MESORE, zone d'accord et ancrage se
+traduisent en arithmétique vérifiable, et les exemples du cours sont recopiés de la
+sortie des simulateurs.
+
+Les procédés du niveau avancé sont décrits **pour être reconnus, pas employés**, et le
+guide renvoie vers *Santé au travail* pour ce qui ne relève pas de la négociation mais
+du recours — harcèlement, discrimination, pressions.
+
+Deux cas limites corrigés : une zone d'accord de largeur nulle affichait « le partage
+de ces 0 € », et l'arrondi à la minute rendait identiques un temps de lecture et sa
+moitié.
+
+### La boîte à idées repart de zéro
+
+Les cinq pistes annoncées étant toutes publiées, la page ne montrait plus qu'une
+**liste vide** et un menu déroulant à une seule entrée. La section dit maintenant ce
+qu'elle est, le menu est retiré, et la suite dépend entièrement des propositions
+reçues.
+
 ## 2026-08-14 — Un treizième parcours : Écologie &amp; sobriété numérique
 Quatrième sujet du chantier « élargir ». Piège propre au domaine : **les chiffres qui
 circulent sont massivement faux**. « Un mail = 10 g » et « une heure de streaming =

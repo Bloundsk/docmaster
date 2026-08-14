@@ -122,6 +122,11 @@ guides gratuits » dans le texte alternatif de l'image de partage. Leçon à ret
 pour le prochain sujet : un nombre écrit en toutes lettres dans une page est une
 donnée dupliquée comme une autre.
 
+**Chantier « élargir » terminé le 14 août 2026.** Cinq sujets ajoutés dans la journée
+— apprentissage, droit, santé au travail, sobriété numérique, négociation — portant
+le site de 9 à **14 parcours**. Les cinq pistes annoncées dans la boîte à idées sont
+toutes publiées ; la suite dépend désormais des propositions reçues.
+
 ### Ordre d'écriture d'un sujet
 
 Les simulateurs d'abord, le cours ensuite, et les chiffres du cours **recopiés de
