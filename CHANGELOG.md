@@ -1,5 +1,43 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — Un douzième parcours : Santé &amp; bien-être au travail
+Troisième sujet du chantier « élargir », et le plus sensible : il touche à la santé,
+et une page web n'a aucune légitimité à évaluer celle de qui que ce soit.
+
+- **Débutant** — régler son poste, la sédentarité, la fatigue visuelle, les pauses
+  qui récupèrent
+- **Intermédiaire** — stress aigu et chronique, exigence et latitude, la
+  récupération, la déconnexion
+- **Avancé** — la médecine du travail, les obligations de l'employeur, l'épuisement
+  professionnel, les situations graves
+
+12 simulateurs et 90 questions. Le site passe à **56 pages, 145 sections,
+144 exercices et 1 086 questions**.
+
+### La règle tenue partout : aucun exercice n'évalue un état de santé
+
+Les questionnaires portent sur des **conditions de travail** et sur des **démarches**
+— jamais sur des symptômes totalisés en un score. Le contrôle sur l'épuisement le dit
+explicitement, ne rend aucun résultat, et oriente vers un médecin.
+
+Un score de santé mentale rendu par une page web peut rassurer à tort quelqu'un qui
+va mal, ou inquiéter durablement quelqu'un qui va bien. Aucune des deux erreurs n'est
+acceptable. Le **3114** — numéro national de prévention du suicide, gratuit et
+disponible 24 h sur 24 — figure sur le parcours et sur le niveau avancé.
+
+Les quatre calculs s'appuient sur des références publiques et stables : 150 minutes
+d'activité hebdomadaire (OMS), 11 heures et 35 heures de repos et 20 minutes de pause
+(code du travail), et le modèle de Karasek pour l'exigence et la latitude.
+
+L'écart avec le guide Productivité est assumé et rappelé sur le parcours : **l'un
+organise le travail, l'autre évite de s'y abîmer.**
+
+### Une duplication supprimée plutôt que recopiée
+
+La phrase qui énumérait les domaines dans « À propos » et dans la FAQ a dû être
+corrigée à la main à chaque nouveau guide — et s'est trouvée fausse entre-temps.
+Elle renvoie désormais à la page d'accueil, seul endroit où la liste est tenue à jour.
+
 ## 2026-08-14 — Un onzième parcours : Droit &amp; démarches administratives
 Deuxième sujet du chantier « élargir », et le plus délicat : le droit vieillit vite,
 et ce qui paraît sur le site engage son éditeur.

@@ -143,6 +143,33 @@ pour le reste.
 Le test : *si cette phrase est fausse dans dix-huit mois, le lecteur le verra-t-il ?*
 Si non, elle n'a rien à faire dans le guide.
 
+### Sujets touchant à la santé
+
+Règle appliquée depuis *Santé & bien-être au travail* : **aucun exercice n'évalue un
+état de santé.** Les contrôles portent sur des conditions de travail et sur des
+démarches, jamais sur des symptômes totalisés en un score.
+
+Un score rendu par une page web peut rassurer à tort quelqu'un qui va mal, ou
+inquiéter durablement quelqu'un qui va bien. Des questionnaires validés existent —
+ils s'emploient dans un cadre, avec un entretien et une interprétation.
+
+Tout parcours touchant à la santé porte les coordonnées d'aide réelles : médecin
+traitant, médecin du travail, et le **3114**.
+
+### Ce qui compte les sujets
+
+Un nombre écrit en toutes lettres dans une page est une donnée dupliquée. Trois
+ajouts de sujet l'ont prouvé trois fois :
+
+| Endroit | Traitement |
+|---|---|
+| `og:image:alt` de chaque page | Balayage automatique à chaque ajout — inévitable |
+| Énumération des domaines en prose | **Supprimée** : « À propos » et la FAQ renvoient à l'accueil |
+| Compteur de *Mon espace* | Dérivé de `parcours.js` — n'a jamais eu à être touché |
+
+La troisième ligne est le modèle : ce qui est dérivé d'une source unique ne ment
+jamais. Les deux premières ont menti.
+
 ---
 
 ## 6. Contrôles automatiques
