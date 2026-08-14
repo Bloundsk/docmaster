@@ -1,5 +1,52 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — Un simulateur en écrasait un autre, en silence
+Vérification complète du site après la fin des quatre chantiers. Elle a trouvé un
+défaut, et il était **invisible par construction**.
+
+Le simulateur `choisir-statut`, écrit pour *Entrepreneuriat*, portait la même clé que
+celui écrit des semaines plus tard pour *Droit & démarches*. JavaScript accepte deux
+clés identiques dans un objet : **la seconde écrase la première, sans un mot**.
+
+Depuis l'ajout du guide Droit, la section « Choisir son statut » d'Entrepreneuriat
+affichait donc le questionnaire du Droit. Rien ne le signalait — un bloc était bien
+présent, il répondait, il était simplement le mauvais. Ni `node --check`, ni
+l'exécution, ni l'affichage ne peuvent attraper cela : **seule la lecture du texte
+source le peut.**
+
+Celui du Droit devient `micro-entreprise`. Les deux existent à nouveau.
+
+### Deux garde-fous, parce qu'un seul n'aurait pas suffi
+
+**`scripts/valider-js.js`** détecte désormais les clés répétées dans `pratique.js`,
+contrôle que chaque simulateur est complet, et le fichier entre dans le hook
+`pre-commit`. Vérifié en recréant le défaut : le commit est bien interrompu.
+
+**`scripts/audit-coherence.mjs`** est un nouvel audit. Les deux existants portaient
+sur la structure et sur la mise en ligne ; celui-ci porte sur la **cohérence interne
+du contenu** :
+
+| Contrôle | Ce qu'il attrape |
+|---|---|
+| Simulateurs | Défini et jamais posé, posé sans exister, posé deux fois |
+| Structure | Niveau déclaré et absent, sections sans exercice |
+| Anneau de navigation | Boucle courte, lien non réciproque, sujet hors de l'anneau |
+| Index de recherche | Page de cours introuvable, titre en double |
+| Chiffres annoncés | Un « 13 guides » resté quelque part |
+| Dates | Date future, ou antérieure au projet |
+| Accessibilité | Langue, titre unique, lien d'évitement, `rel="noopener"` |
+
+C'est ce dernier audit qui a trouvé le défaut. Il tourne désormais avec les autres.
+
+### Le reste de la vérification
+
+0 anomalie partout ailleurs : 76 fichiers identiques en ligne, 70/70 liens externes
+valides, 1 266 questions dans 42 banques, 45 fichiers JS de données tous chargeables
+— `pratique.js` compris, désormais — et les trois suites de tests au vert.
+
+Affichage vérifié en mode sombre sur 375 px : aucun débordement horizontal, contraste
+du texte à 16,3:1. Sauvegarde vérifiée : historique complet, 101 commits.
+
 ## 2026-08-14 — Les quatre chantiers sont terminés
 Récapitulatif. Les sept entrées qui suivent décrivent chacune une addition ; celle-ci
 dit où en est le site, et ce que la feuille de route a réellement produit.
