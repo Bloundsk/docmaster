@@ -223,9 +223,16 @@ function injecter(fichier, contenu) {
         throw new Error(`${fichier} : marqueurs ACTUALITES absents ou inversés`);
     }
 
+    // L indentation qui precede le marqueur de fin fait partie de la ligne
+    // qu on remplace : sans la reprendre, le marqueur se retrouve colle a la
+    // marge a la premiere publication, et y reste.
+    const debutLigneFin = avant.lastIndexOf("\n", fin) + 1;
+    const indentation = avant.slice(debutLigneFin, fin);
+
     const apres =
         avant.slice(0, debut + MARQUE_DEBUT.length) +
         (contenu ? "\n" + contenu + "\n" : "\n") +
+        indentation +
         avant.slice(fin);
 
     if (apres === avant) return false;

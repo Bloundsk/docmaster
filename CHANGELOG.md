@@ -1,5 +1,40 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — La veille paraît sur le site, après validation à la main
+Le site ne bougeait pas entre deux ajouts de contenu, alors qu'une veille tournait
+déjà deux fois par jour et trouvait des articles pertinents — qui finissaient dans
+un rapport que personne d'autre ne voyait.
+
+- Nouvelle page **[Actualités](actualites.html)**, et un aperçu des trois derniers
+  articles sur la page d'accueil
+- Chaque article est **rattaché à la section de guide qu'il prolonge** : c'est ce qui
+  ramène le lecteur vers le fond après l'actualité, plutôt que de l'envoyer ailleurs
+- La page est **générée en HTML statique**, pas chargée en JavaScript : elle reste
+  lisible sans script, et indexable
+
+**Rien ne paraît sans un geste explicite.** Chaque article proposé par la veille est
+désormais une case à cocher dans le rapport. Cocher publie l'article dans la minute
+qui suit ; décocher le retire.
+
+Ce n'est pas de la prudence excessive : une recherche automatique remonte aussi des
+articles promotionnels, des contenus payants et parfois des contre-vérités. Les faire
+paraître sans les lire engagerait l'éditeur du site sur des textes que personne n'a
+ouverts. La case à cocher coûte un clic.
+
+**Un bug de tout le site, révélé par le septième lien de navigation.** Tant que la
+police de secours est appliquée, les liens sont plus larges : à sept entrées, ils
+passaient sur deux lignes et la barre montait à 126 px avant de retomber à 70 quand
+Poppins arrivait. Or `load` se déclenche **avant** ce basculement et
+`document.fonts.ready` se résout trop tôt — les deux garde-fous posés en août.
+Le décalage d'ancre restait figé à 138 px pour une barre de 70, soit **56 px de titre
+cachés sur toutes les pages**. Une surveillance de trois secondes, qui s'arrête dès
+que la hauteur ne bouge plus, corrige le cas.
+
+Deux affirmations de la FAQ étaient devenues fausses : elle renvoyait les demandes de
+réutilisation vers le dépôt GitHub — que les visiteurs ne doivent pas pouvoir écrire —
+et annonçait des guides de 1 700 à 2 200 mots, alors que la fourchette réelle est de
+1 400 à 2 200 depuis le découpage en niveaux.
+
 ## 2026-08-13 — Les neuf guides deviennent neuf parcours en trois niveaux
 Fin du premier des quatre chantiers. Le site proposait **neuf pages de survol** ;
 il propose désormais **vingt-sept pages de cours** organisées en progression.
