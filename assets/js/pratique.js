@@ -2993,7 +2993,7 @@
             lecon: "Le renouvellement ne se présume jamais : sans clause au contrat et sans accord écrit, la période d'essai s'arrête à sa durée initiale."
         },
 
-        "choisir-statut": {
+        "micro-entreprise": {
             type: "controle",
             titre: "La micro-entreprise vous convient-elle ?",
             intro: "Cochez ce qui correspond à votre situation réelle.",

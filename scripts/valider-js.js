@@ -32,6 +32,27 @@ const SONDES = {
     "assets/js/search-data.js": ";window.__index = typeof searchIndex !== 'undefined' ? searchIndex : undefined;"
 };
 
+// Cles repetees dans un litteral d objet.
+//
+// JavaScript accepte { "a": 1, "a": 2 } sans broncher : la seconde ecrase la
+// premiere, en silence. C est arrive une fois — un simulateur ecrit pour le
+// guide Droit portait la meme cle qu un simulateur d Entrepreneuriat ecrit des
+// semaines plus tot, et celui-ci a disparu de son cours en laissant un bloc a
+// l ecran. Ni « node --check », ni l execution, ni l affichage ne le signalent :
+// seule la lecture du texte source peut l attraper.
+function clesEnDouble(source) {
+    const vues = new Map();
+    const doubles = [];
+    // Les cles des simulateurs sont a huit espaces d indentation, entre
+    // guillemets, suivies de deux-points et d une accolade.
+    for (const m of source.matchAll(/^ {8}"([^"]+)":\s*\{/gm)) {
+        const ligne = source.slice(0, m.index).split("\n").length;
+        if (vues.has(m[1])) doubles.push(`« ${m[1]} » défini ligne ${vues.get(m[1])} puis ligne ${ligne}`);
+        else vues.set(m[1], ligne);
+    }
+    return doubles;
+}
+
 const ATTENDUS = {
     "assets/js/search-data.js": (bac) => {
         const idx = bac.window.__index;
@@ -44,6 +65,23 @@ const ATTENDUS = {
             }
             const cible = path.join(RACINE, e.url.split("#")[0]);
             if (!fs.existsSync(cible)) return `entree ${i} : « ${e.url} » ne correspond a aucun fichier`;
+        }
+        return null;
+    },
+    "assets/js/pratique.js": (bac, fichier, source) => {
+        const doubles = clesEnDouble(source);
+        if (doubles.length) return doubles.join(" ; ");
+        const s = bac.module.exports && bac.module.exports.SIMULATEURS;
+        if (!s || Object.keys(s).length === 0) return "aucun simulateur exporte";
+        for (const [nom, sim] of Object.entries(s)) {
+            if (!sim.titre) return `${nom} : titre manquant`;
+            if (sim.type === "controle") {
+                if (!Array.isArray(sim.points) || !sim.points.length) return `${nom} : aucun point a cocher`;
+                if (typeof sim.verdict !== "function") return `${nom} : verdict manquant`;
+            } else {
+                if (!Array.isArray(sim.champs) || !sim.champs.length) return `${nom} : aucun champ`;
+                if (typeof sim.calculer !== "function") return `${nom} : calculer manquant`;
+            }
         }
         return null;
     },
@@ -94,10 +132,15 @@ for (const fichier of fichiers) {
     const bac = { window: {}, document: undefined, module: { exports: {} } };
     vm.createContext(bac);
 
+    // La source est passee aux controles : certains defauts — une cle repetee
+    // dans un litteral d objet — ne survivent pas a l execution et ne se voient
+    // que dans le texte.
+    const source = fs.readFileSync(chemin, "utf8");
+
     let souci = null;
     try {
-        vm.runInContext(fs.readFileSync(chemin, "utf8") + (SONDES[cle] || ""), bac, { filename: fichier });
-        souci = controle(bac, fichier);
+        vm.runInContext(source + (SONDES[cle] || ""), bac, { filename: fichier });
+        souci = controle(bac, fichier, source);
     } catch (e) {
         souci = e.message;
     }
