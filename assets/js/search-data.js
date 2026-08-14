@@ -174,6 +174,23 @@ const searchIndex = [
     { title: "Évaluer une méthode d'apprentissage", description: "Mesuré combien de temps après ? La question qui trie tout.", url: "guides/apprendre/avance.html", keywords: "évaluer méthode styles apprentissage mozart pyramide preuves mythes" },
     { title: "Construire son système d'apprentissage", description: "Un créneau fixe et une version de cinq minutes.", url: "guides/apprendre/avance.html", keywords: "système apprentissage habitude créneau revue calendrier questions" },
 
+    { title: "Droit & démarches", description: "Savoir où regarder, combien de temps il reste, et quoi écrire.", url: "guides/droit/index.html", keywords: "droit démarches administratif juridique loi justice france" },
+    { title: "Droit — Débutant", description: "Se repérer, et écrire ce qui compte. Aucun prérequis.", url: "guides/droit/debutant.html", keywords: "droit débutant niveau 1 sources délais courrier documents" },
+    { title: "Où trouver le droit applicable", description: "Une règle sans date ni article cité est une opinion bien formulée.", url: "guides/droit/debutant.html", keywords: "service-public legifrance source officielle vérifier loi cnil dgccrf" },
+    { title: "Rétractation et garantie légale", description: "14 jours à distance, 2 ans partout : deux droits distincts.", url: "guides/droit/debutant.html", keywords: "rétractation garantie légale conformité 14 jours 2 ans vice caché consommation" },
+    { title: "La mise en demeure", description: "Daté, chiffré, fondé, prouvable — le reste est décoratif.", url: "guides/droit/debutant.html", keywords: "mise en demeure courrier recommandé accusé réception réclamation lettre" },
+    { title: "Conserver ses documents", description: "Combien de temps garder bulletins de paie, factures et quittances.", url: "guides/droit/debutant.html", keywords: "conservation documents archives durée bulletins paie factures quittances preuve" },
+    { title: "Droit — Intermédiaire", description: "Le logement, le travail, l'activité : ce qui se joue au moment de signer.", url: "guides/droit/intermediaire.html", keywords: "droit intermédiaire niveau 2 bail travail statut micro-entreprise" },
+    { title: "Le bail et le dépôt de garantie", description: "Un dépôt rendu en retard se majore de 10 % du loyer par mois.", url: "guides/droit/intermediaire.html", keywords: "bail location dépôt garantie état des lieux vétusté retenue bailleur locataire" },
+    { title: "Donner congé à son bailleur", description: "Un préavis réduit sans motif écrit reste un préavis de trois mois.", url: "guides/droit/intermediaire.html", keywords: "congé préavis logement zone tendue meublé état des lieux sortie déménagement" },
+    { title: "Le contrat de travail", description: "CDI, CDD, période d'essai et convention collective.", url: "guides/droit/intermediaire.html", keywords: "contrat travail cdi cdd période essai prévenance convention collective non-concurrence" },
+    { title: "Déclarer une activité", description: "En micro-entreprise, on est imposé sur ce qu'on encaisse.", url: "guides/droit/intermediaire.html", keywords: "micro-entreprise auto-entrepreneur statut eurl sasu urssaf déclaration activité" },
+    { title: "Droit — Avancé", description: "Faire valoir ses droits, et savoir quand cela en vaut la peine.", url: "guides/droit/avance.html", keywords: "droit avancé niveau 3 contrat prescription conciliation rgpd" },
+    { title: "Les clauses abusives", description: "Réputée non écrite : elle ne s'applique pas, même signée.", url: "guides/droit/avance.html", keywords: "clause abusive contrat conditions générales déséquilibre résiliation signature" },
+    { title: "La prescription", description: "Une mise en demeure ne l'interrompt pas ; une assignation, si.", url: "guides/droit/avance.html", keywords: "prescription délai action justice interruption suspension 5 ans forclusion" },
+    { title: "Régler un litige sans juge", description: "Le conciliateur de justice est gratuit, et largement ignoré.", url: "guides/droit/avance.html", keywords: "conciliateur médiateur amiable litige tribunal aide juridictionnelle frais procès" },
+    { title: "Vos droits sur vos données", description: "Un courriel, aucun motif, un mois pour répondre.", url: "guides/droit/avance.html", keywords: "rgpd données personnelles cnil accès effacement portabilité opposition plainte" },
+
     { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
 
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },

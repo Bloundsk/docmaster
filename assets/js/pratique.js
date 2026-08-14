@@ -103,6 +103,33 @@
     const couvertureLexicale = (mots) =>
         Math.min(99, 26.84 + 7.696 * Math.log(Math.max(1, mots)));
 
+    // --- Delais juridiques ------------------------------------------------
+    //
+    // Droit francais. Seuls figurent ici des delais inscrits dans la loi et
+    // stables depuis des annees. Tout ce qui est revise chaque annee — seuils
+    // de la micro-entreprise, plafonds de l aide juridictionnelle, SMIC — est
+    // volontairement absent : un chiffre perime dans un guide juridique est
+    // pire qu une absence de chiffre.
+
+    const JOURS_RETRACTATION = 14;      // vente a distance, art. L221-18 conso
+    const MOIS_CONFORMITE = 24;         // garantie legale, art. L217-3 conso
+    const JOURS_PAR_MOIS = 30.44;       // moyenne, pour convertir sans calendrier
+
+    // Restitution du depot de garantie, loi n° 89-462 art. 22 : un mois si
+    // l etat des lieux de sortie est conforme a celui d entree, deux sinon.
+    // Passe ce delai, la somme due est majoree de 10 % du loyer mensuel hors
+    // charges par mois de retard commence.
+    const MAJORATION_DEPOT = 10;
+
+    // Delai de prevenance en periode d essai, art. L1221-25 code du travail.
+    // Il est a la charge de l employeur et croit avec l anciennete.
+    function delaiDePrevenance(joursPresence) {
+        if (joursPresence < 8) return "24 heures";
+        if (joursPresence < 31) return "48 heures";
+        if (joursPresence < 91) return "2 semaines";
+        return "1 mois";
+    }
+
     // --- Les simulateurs --------------------------------------------------
 
     const SIMULATEURS = {
@@ -2741,6 +2768,287 @@
                 return { texte: "Rien de tout cela ne demande de motivation une fois posé — c'est précisément pour cela qu'il faut le poser.", ton: "alerte" };
             },
             lecon: "Ce qui dure ne dépend pas de l'envie du jour. Un créneau et une version de cinq minutes valent mieux qu'un plan ambitieux."
+        },
+
+        // =====================================================================
+        // DROIT ET DEMARCHES ADMINISTRATIVES
+        // =====================================================================
+
+        "source-fiable": {
+            type: "controle",
+            titre: "Cette réponse juridique vaut-elle quelque chose ?",
+            intro: "Cochez ce qui est vrai de la source où vous venez de lire une règle.",
+            points: [
+                { texte: "Elle vient d'un site officiel", aide: "service-public.fr, Légifrance, un site en .gouv.fr" },
+                { texte: "Elle cite un article de loi ou de code que je peux aller vérifier" },
+                { texte: "Elle porte une date, et cette date est récente" },
+                { texte: "Elle concerne bien le droit français", aide: "beaucoup de réponses en ligne sont belges, suisses ou canadiennes" },
+                { texte: "Elle distingue ce qui est obligatoire de ce qui est d'usage" },
+                { texte: "Ce n'est pas un message de forum ni une réponse d'IA prise telle quelle" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Source solide. Vous pouvez vous en servir, et la citer si besoin.", ton: "bon" };
+                if (n >= 4) return { texte: "Probablement juste, mais vérifiez la date et l'article cité avant d'agir.", ton: "moyen" };
+                return { texte: "À ne pas utiliser pour décider. Le droit change, et une réponse plausible peut être périmée ou étrangère.", ton: "alerte" };
+            },
+            lecon: "La plupart des erreurs juridiques du quotidien ne viennent pas d'une règle mal comprise, mais d'une règle qui n'existe plus, ou qui n'a jamais existé en France."
+        },
+
+        "delais-consommateur": {
+            titre: "Que vous reste-t-il comme recours ?",
+            intro: "Pour un achat auprès d'un professionnel. Comptez à partir du jour où vous avez reçu le bien.",
+            champs: [
+                { id: "jours", libelle: "Jours depuis la réception", unite: "j", defaut: 20, min: 0, max: 1500, pas: 1 },
+                { id: "presomption", libelle: "Présomption : 24 (neuf) ou 12 (occasion)", unite: "mois", defaut: 24, min: 12, max: 24, pas: 12 }
+            ],
+            calculer: ({ jours, presomption }) => {
+                const resteRetractation = JOURS_RETRACTATION - jours;
+                const resteConformite = MOIS_CONFORMITE * JOURS_PAR_MOIS - jours;
+                const restePresomption = presomption * JOURS_PAR_MOIS - jours;
+                return [
+                    {
+                        libelle: "Rétractation (achat à distance)",
+                        valeur: resteRetractation > 0 ? "encore " + nf(resteRetractation) + " jour(s)" : "délai expiré"
+                    },
+                    {
+                        libelle: "Garantie légale de conformité",
+                        valeur: resteConformite > 0 ? "encore " + nf(Math.floor(resteConformite / JOURS_PAR_MOIS)) + " mois" : "délai expiré",
+                        fort: true
+                    },
+                    {
+                        libelle: "C'est au vendeur de prouver que le bien était conforme",
+                        valeur: restePresomption > 0 ? "encore " + nf(Math.floor(restePresomption / JOURS_PAR_MOIS)) + " mois" : "terminé : la preuve vous revient"
+                    },
+                    { libelle: "Vice caché", valeur: "2 ans à compter de la découverte" }
+                ];
+            },
+            lecon: "La rétractation ne dure que quatorze jours et ne vaut qu'à distance ; la garantie de conformité dure deux ans et vaut partout. Ce sont deux droits distincts, souvent confondus."
+        },
+
+        "lettre-efficace": {
+            type: "controle",
+            titre: "Votre courrier vaudra-t-il preuve ?",
+            intro: "Cochez ce que contient réellement le courrier que vous vous apprêtez à envoyer.",
+            points: [
+                { texte: "Vos coordonnées complètes et la référence du dossier ou du contrat" },
+                { texte: "Les faits, datés, sans commentaire ni reproche" },
+                { texte: "Ce que vous demandez, précisément", aide: "« le remboursement de 149 € », pas « un geste »" },
+                { texte: "Un délai de réponse, raisonnable et écrit" },
+                { texte: "Le fondement invoqué", aide: "un article de loi, ou à défaut la clause du contrat" },
+                { texte: "Un envoi qui laisse une trace", aide: "recommandé avec accusé de réception, ou courriel conservé" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Courrier utilisable. S'il reste sans réponse, il servira de point de départ à la suite.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. La demande chiffrée et le délai écrit sont ce qui manque le plus souvent.", ton: "moyen" };
+                return { texte: "Ce courrier exprime un mécontentement. Il ne constitue pas une mise en demeure et ne fera courir aucun délai.", ton: "alerte" };
+            },
+            lecon: "Un courrier de réclamation n'a pas à être bien tourné. Il doit être daté, chiffré, fondé et prouvable — le reste est décoratif."
+        },
+
+        "conserver-papiers": {
+            type: "controle",
+            titre: "Gardez-vous ce qu'il faut, aussi longtemps qu'il faut ?",
+            intro: "Cochez ce qui est vrai de vos archives personnelles.",
+            points: [
+                { texte: "Je garde mes bulletins de paie sans limite de durée", aide: "ils servent au calcul de la retraite" },
+                { texte: "Je garde mes avis d'imposition au moins trois ans" },
+                { texte: "Je garde mes quittances de loyer au moins trois ans après le départ" },
+                { texte: "Je garde les factures de travaux dix ans", aide: "durée de la garantie décennale" },
+                { texte: "J'ai une copie numérique de mes papiers d'identité, stockée à part" },
+                { texte: "Quelqu'un d'autre saurait où les trouver en cas de besoin" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Archives solides. C'est ce qui rend une contestation possible plutôt que théorique.", ton: "bon" };
+                if (n >= 4) return { texte: "Bon ensemble. Les bulletins de paie et les factures de travaux sont ceux qu'on jette le plus vite, et qu'on regrette le plus.", ton: "moyen" };
+                return { texte: "Sans document, un droit reste un droit — mais il n'est pas défendable. La charge de la preuve pèse sur celui qui réclame.", ton: "alerte" };
+            },
+            lecon: "Un litige se gagne rarement sur le fond et souvent sur la pièce qu'on peut produire. Jeter trop tôt coûte plus cher que classer."
+        },
+
+        "depot-de-garantie": {
+            titre: "Votre dépôt de garantie vous revient-il ?",
+            intro: "Location vide ou meublée, après la remise des clés.",
+            champs: [
+                { id: "depot", libelle: "Dépôt de garantie versé", unite: "€", defaut: 700, min: 0, max: 20000, pas: 50 },
+                { id: "loyer", libelle: "Loyer mensuel hors charges", unite: "€", defaut: 700, min: 0, max: 10000, pas: 50 },
+                { id: "retenues", libelle: "Retenues justifiées par le bailleur", unite: "€", defaut: 0, min: 0, max: 20000, pas: 50 },
+                { id: "retard", libelle: "Mois de retard entamés", unite: "mois", defaut: 3, min: 0, max: 36, pas: 1 }
+            ],
+            calculer: ({ depot, loyer, retenues, retard }) => {
+                const du = Math.max(0, depot - retenues);
+                const majoration = retard * loyer * MAJORATION_DEPOT / 100;
+                return [
+                    { libelle: "Somme qui vous revient", valeur: euros(du) },
+                    { libelle: "Délai légal de restitution", valeur: "1 mois si l'état des lieux est conforme, 2 mois sinon" },
+                    { libelle: "Majoration de retard", valeur: euros(majoration) + " (" + nf(MAJORATION_DEPOT) + " % du loyer par mois entamé)" },
+                    { libelle: "Total réclamable", valeur: euros(du + majoration), fort: true }
+                ];
+            },
+            lecon: "La majoration n'est pas une faveur à demander : elle est due de plein droit. Encore faut-il la réclamer — personne ne la verse spontanément."
+        },
+
+        "preavis-bail": {
+            type: "controle",
+            titre: "Votre congé est-il valable ?",
+            intro: "Cochez ce qui est vrai du congé que vous donnez à votre bailleur.",
+            points: [
+                { texte: "Il est donné par écrit", aide: "recommandé avec accusé de réception, acte d'huissier ou remise en main propre contre signature" },
+                { texte: "Je connais la durée de mon préavis", aide: "3 mois en location vide, 1 mois en meublé ou en zone tendue" },
+                { texte: "Je sais que le préavis court à compter de la réception, pas de l'envoi" },
+                { texte: "Si j'invoque un préavis réduit, j'en donne le motif dans la lettre", aide: "sans motif écrit, le préavis reste de trois mois" },
+                { texte: "J'ai gardé l'état des lieux d'entrée pour le comparer à celui de sortie" },
+                { texte: "J'ai relevé les compteurs et gardé une photo datée du logement" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Congé en règle. Les deux dernières cases sont ce qui protège le dépôt de garantie.", ton: "bon" };
+                if (n >= 4) return { texte: "L'essentiel y est. Attention au motif écrit : c'est lui qui justifie un préavis réduit.", ton: "moyen" };
+                return { texte: "Congé fragile. Un préavis mal donné se prolonge, et un mois de loyer supplémentaire coûte plus cher qu'un recommandé.", ton: "alerte" };
+            },
+            lecon: "Le point de départ du préavis est la réception, jamais l'envoi. Deux jours de courrier peuvent décaler la sortie d'un mois entier."
+        },
+
+        "periode-essai": {
+            titre: "Où en êtes-vous de votre période d'essai ?",
+            intro: "Contrat à durée indéterminée. La durée initiale dépend de la catégorie : 2 mois employé, 3 mois agent de maîtrise, 4 mois cadre.",
+            champs: [
+                { id: "duree", libelle: "Durée initiale prévue", unite: "mois", defaut: 4, min: 1, max: 4, pas: 1 },
+                { id: "jours", libelle: "Jours depuis l'embauche", unite: "j", defaut: 45, min: 0, max: 400, pas: 1 }
+            ],
+            calculer: ({ duree, jours }) => {
+                const total = duree * JOURS_PAR_MOIS;
+                const reste = total - jours;
+                return [
+                    {
+                        libelle: "Fin de la période d'essai",
+                        valeur: reste > 0 ? "dans " + nf(Math.round(reste)) + " jour(s)" : "dépassée depuis " + nf(Math.round(-reste)) + " jour(s)",
+                        fort: true
+                    },
+                    { libelle: "Durée maximale avec renouvellement", valeur: nf(duree * 2) + " mois" },
+                    { libelle: "Délai de prévenance applicable aujourd'hui", valeur: delaiDePrevenance(jours) },
+                    { libelle: "Renouvellement", valeur: "possible seulement si le contrat le prévoit et avec votre accord écrit" }
+                ];
+            },
+            lecon: "Le renouvellement ne se présume jamais : sans clause au contrat et sans accord écrit, la période d'essai s'arrête à sa durée initiale."
+        },
+
+        "choisir-statut": {
+            type: "controle",
+            titre: "La micro-entreprise vous convient-elle ?",
+            intro: "Cochez ce qui correspond à votre situation réelle.",
+            points: [
+                { texte: "Mon chiffre d'affaires reste sous les seuils du régime", aide: "seuils révisés régulièrement : à vérifier sur service-public.fr" },
+                { texte: "Mes charges réelles sont faibles", aide: "en micro, elles ne sont pas déductibles : l'abattement est forfaitaire" },
+                { texte: "Je n'ai pas besoin de récupérer la TVA sur mes achats" },
+                { texte: "Je n'ai pas d'associé et n'envisage pas d'en prendre" },
+                { texte: "Je n'ai pas besoin de protéger un patrimoine important" },
+                { texte: "J'ai vérifié que mon activité est éligible", aide: "certaines professions en sont exclues" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "La micro-entreprise est probablement adaptée. C'est le régime le plus simple à ouvrir et à fermer.", ton: "bon" };
+                if (n >= 4) return { texte: "Possible, mais regardez de près les cases non cochées : ce sont elles qui coûtent cher en cours de route.", ton: "moyen" };
+                return { texte: "Plusieurs signaux pointent vers une autre forme. Un rendez-vous gratuit en chambre consulaire vaut mieux qu'un choix par défaut.", ton: "alerte" };
+            },
+            lecon: "En micro-entreprise, les charges ne se déduisent pas : l'abattement est forfaitaire. Une activité à fortes dépenses y est fiscalement pénalisée, quel que soit son chiffre d'affaires."
+        },
+
+        "clauses-abusives": {
+            type: "controle",
+            titre: "Ce contrat contient-il des clauses à écarter ?",
+            intro: "Contrat entre un professionnel et un particulier. Cochez ce que vous y trouvez.",
+            points: [
+                { texte: "Une clause qui supprime ou réduit le droit à réparation en cas de faute du professionnel" },
+                { texte: "Une clause qui autorise le professionnel à modifier le contrat seul, sans motif prévu" },
+                { texte: "Une clause qui impose une preuve impossible à apporter" },
+                { texte: "Une clause qui prive de la garantie légale de conformité" },
+                { texte: "Une clause qui impose de renoncer à saisir un juge" },
+                { texte: "Une clause qui engage sans durée ni possibilité de résilier" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Rien de manifestement abusif dans cette liste. Cela ne dispense pas de lire les conditions de résiliation.", ton: "bon" };
+                if (n <= 2) return { texte: "Une clause abusive est réputée non écrite : elle ne s'applique pas, même signée. Le reste du contrat, lui, reste valable.", ton: "moyen" };
+                return { texte: "Beaucoup de clauses déséquilibrées. Signer n'y change rien — mais mieux vaut le savoir avant qu'après.", ton: "alerte" };
+            },
+            lecon: "Une clause abusive est réputée non écrite. Signer un contrat qui en contient ne la rend pas valable : ce que le contrat retire à la loi, la loi le reprend."
+        },
+
+        "prescription": {
+            titre: "Est-il encore temps d'agir ?",
+            intro: "Délai de droit commun : 5 ans. Certains délais sont plus courts — 2 ans pour un professionnel réclamant à un particulier, 3 ans pour les salaires ou les loyers.",
+            champs: [
+                { id: "ecoules", libelle: "Mois écoulés depuis les faits", unite: "mois", defaut: 36, min: 0, max: 240, pas: 1 },
+                { id: "delai", libelle: "Délai applicable", unite: "ans", defaut: 5, min: 1, max: 30, pas: 1 }
+            ],
+            calculer: ({ ecoules, delai }) => {
+                const total = delai * 12;
+                const reste = total - ecoules;
+                const annees = Math.floor(Math.abs(reste) / 12);
+                const mois = Math.abs(reste) % 12;
+                // « 2 an(s) 0 mois » se lit mal : on n affiche que ce qui existe.
+                const enClair = [
+                    annees ? nf(annees) + " an" + (annees > 1 ? "s" : "") : "",
+                    mois ? nf(mois) + " mois" : ""
+                ].filter(Boolean).join(" ") || "0 mois";
+                return [
+                    { libelle: "Délai total", valeur: nf(delai) + " ans" },
+                    { libelle: "Déjà écoulé", valeur: nf(ecoules) + " mois" },
+                    {
+                        libelle: reste > 0 ? "Il vous reste" : "Prescrit depuis",
+                        valeur: enClair,
+                        fort: true
+                    },
+                    { libelle: "Verdict", valeur: reste > 0 ? "l'action est encore ouverte" : "l'action n'est plus recevable" }
+                ];
+            },
+            lecon: "La prescription s'apprécie à la date où l'on saisit le juge, pas à celle où l'on commence à s'en occuper. Une mise en demeure ne l'interrompt pas ; une assignation, si."
+        },
+
+        "cout-litige": {
+            titre: "Le procès en vaut-il la peine ?",
+            intro: "Une estimation honnête avant de saisir un juge — pour comparer avec un règlement amiable.",
+            champs: [
+                { id: "montant", libelle: "Somme réclamée", unite: "€", defaut: 1500, min: 0, max: 200000, pas: 100 },
+                { id: "honoraires", libelle: "Frais estimés", unite: "€", defaut: 1200, min: 0, max: 50000, pas: 100 },
+                { id: "chances", libelle: "Chances de gagner, à votre estime", unite: "%", defaut: 60, min: 0, max: 100, pas: 5 }
+            ],
+            calculer: ({ montant, honoraires, chances }) => {
+                const p = chances / 100;
+                const siGagne = montant - honoraires;
+                const esperance = p * siGagne - (1 - p) * honoraires;
+                return [
+                    { libelle: "Si vous gagnez", valeur: euros(siGagne) },
+                    // Le conciliateur de justice est gratuit : des frais nuls
+                    // sont un cas reel, et « − 0 € » se lit mal.
+                    { libelle: "Si vous perdez", valeur: honoraires > 0 ? "− " + euros(honoraires) : "0 €" },
+                    { libelle: "Résultat moyen attendu", valeur: (esperance >= 0 ? "" : "− ") + euros(Math.abs(esperance)), fort: true },
+                    {
+                        libelle: "Verdict",
+                        valeur: esperance >= 0
+                            ? "l'action se défend, sans compter le temps qu'elle prendra"
+                            : "un accord amiable, même partiel, rapporterait davantage"
+                    }
+                ];
+            },
+            lecon: "Sous 5 000 €, l'avocat n'est pas obligatoire et le conciliateur de justice est gratuit. Beaucoup de litiges du quotidien ne valent économiquement pas le procès qu'ils méritent moralement."
+        },
+
+        "droits-rgpd": {
+            type: "controle",
+            titre: "Savez-vous ce que vous pouvez exiger ?",
+            intro: "Cochez les droits que vous savez pouvoir exercer auprès de n'importe quelle entreprise détenant vos données.",
+            points: [
+                { texte: "Obtenir la copie de toutes les données détenues sur moi" },
+                { texte: "Faire corriger une information inexacte" },
+                { texte: "Faire effacer mes données, hors obligation légale de conservation" },
+                { texte: "M'opposer à la prospection commerciale, sans avoir à me justifier" },
+                { texte: "Récupérer mes données dans un format réutilisable" },
+                { texte: "Saisir la CNIL gratuitement si l'entreprise ne répond pas sous un mois" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Vous connaissez vos droits. Ils s'exercent par un simple courriel, sans motif à donner.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Le droit à la portabilité et le délai d'un mois sont les moins connus, et les plus utiles.", ton: "moyen" };
+                return { texte: "Ces droits existent depuis 2018 et ne coûtent rien à exercer. Ils sont surtout inutilisés.", ton: "alerte" };
+            },
+            lecon: "Une demande d'accès se fait par courriel, sans justification, et l'entreprise a un mois pour répondre. Le silence est lui-même un motif de plainte."
         }
     };
 
