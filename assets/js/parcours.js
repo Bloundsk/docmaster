@@ -24,6 +24,7 @@ window.DOCMASTER_PARCOURS = {
     apprendre:       { titre: "🎓 Apprendre à apprendre",     niveaux: ["debutant", "intermediaire", "avance"] },
     droit:           { titre: "⚖️ Droit & démarches",         niveaux: ["debutant", "intermediaire", "avance"] },
     sante:           { titre: "🩺 Santé au travail",           niveaux: ["debutant", "intermediaire", "avance"] },
+    ecologie:        { titre: "🌱 Sobriété numérique",        niveaux: ["debutant", "intermediaire", "avance"] },
     design:          { titre: "🎨 Design UX/UI",                niveaux: ["debutant", "intermediaire", "avance"] }
 };
 

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobriété numérique — Intermédiaire - DocMaster</title>
+    <meta name="description" content="Niveau intermédiaire du parcours Écologie &amp; sobriété numérique : lire un chiffre d'impact, le streaming, la répartition terminaux-réseau-serveurs, et le déplacement évité.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/ecologie/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Sobriété numérique — Intermédiaire - DocMaster">
+    <meta property="og:description" content="Niveau intermédiaire du parcours Écologie &amp; sobriété numérique : lire un chiffre d'impact, le streaming, la répartition terminaux-réseau-serveurs, et le déplacement évité.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/ecologie/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 13 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sobriété numérique — Intermédiaire - DocMaster">
+    <meta name="twitter:description" content="Niveau intermédiaire du parcours Écologie &amp; sobriété numérique : lire un chiffre d'impact, le streaming, la répartition terminaux-réseau-serveurs, et le déplacement évité.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🌱 Sobriété numérique</a> &gt;
+        <span aria-current="page">Intermédiaire</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🌱 Sobriété numérique — Intermédiaire</h1>
+                <p>Lire les chiffres, et savoir lesquels tiennent.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 102 L70 62"/>
+<path d="M70 66 Q52 62 48 44 Q66 42 70 62"/>
+<path d="M70 74 Q88 70 92 52 Q74 50 70 70"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="92" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="102" cy="88" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 14 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#lire-un-chiffre-dimpact">📊 Lire un chiffre d'impact</a></li>
+                <li><a href="#le-cas-du-streaming">🎥 Le cas du streaming</a></li>
+                <li><a href="#qui-pese-quoi">☁️ Terminaux, réseau, serveurs</a></li>
+                <li><a href="#le-deplacement-evite">🚄 Le déplacement évité</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Un chiffre d'impact sans périmètre ni pays ne veut rien dire.</li>
+                <li>Pour une vidéo, l'écran choisi pèse bien plus que la résolution sélectionnée.</li>
+                <li>Le réseau consomme surtout parce qu'il est allumé, pas parce qu'il transporte.</li>
+                <li>Les terminaux dominent l'impact du numérique en France, loin devant les centres de données.</li>
+                <li>Un déplacement évité est le seul cas où le numérique gagne d'un facteur mille.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Le niveau débutant établissait où se trouve l'impact. Celui-ci apprend à <strong>lire les chiffres du domaine</strong> — à commencer par les plus célèbres, qui se sont révélés faux.</p>
+            <p>C'est un niveau plus méthodologique que pratique, et c'est voulu : dans ce domaine, savoir écarter un mauvais chiffre vaut mieux que connaître dix bons gestes.</p>
+
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les calculs supposent l'<strong>électricité française</strong> et des ordres de grandeur modifiables.</p>
+                <p>Une partie des valeurs de ce domaine — notamment l'énergie par gigaoctet transféré — varie d'un facteur dix selon les études et diminue rapidement. Elles sont donc traitées comme des <strong>entrées</strong>, jamais comme des constantes.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Mesurer, et savoir ce qu'on mesure</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="lire-un-chiffre-dimpact">📊 Lire un chiffre d'impact</h3></summary>
+                <div class="lecon-corps">
+                <p>Ce domaine a produit des chiffres faux à grande échelle, repris par des institutions sérieuses et pendant des années. Comprendre comment cela s'est produit vaut mieux que mémoriser les valeurs corrigées.</p>
+
+                <h4>Les cinq questions à poser</h4>
+                <ol>
+                    <li><strong>Quel périmètre ?</strong> Fabrication comprise, ou usage seul ? C'est là que se cachent les facteurs dix.</li>
+                    <li><strong>Quel pays ?</strong> L'électricité française émet cinq à dix fois moins que la moyenne européenne. Le même calcul change complètement de résultat.</li>
+                    <li><strong>Quelle unité ?</strong> Grammes de CO₂e, kilowattheures, litres d'eau, kilos de matières : ce ne sont pas des équivalents interchangeables.</li>
+                    <li><strong>Quelle source, quelle date ?</strong> Les intensités énergétiques du numérique baissent vite ; un chiffre de 2015 est souvent périmé.</li>
+                    <li><strong>Quelle incertitude ?</strong> Un chiffre sans fourchette, dans un domaine aussi variable, doit alerter.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">Comment un chiffre faux s'installe</span>
+                    <p>Une estimation ancienne est publiée avec ses hypothèses. Un article la reprend sans les hypothèses. Un deuxième cite le premier. Un rapport cite le deuxième. Une campagne institutionnelle cite le rapport.</p>
+                    <p>À la cinquième reprise, la source d'origine a disparu, les hypothèses aussi, et le chiffre est devenu une évidence. C'est exactement le trajet du « 3,2 kg par heure de vidéo », corrigé plus tard d'un facteur voisin de huit.</p>
+                    <p>Le remède n'est pas de se méfier de tout : c'est de <strong>remonter d'un cran</strong>. Un chiffre qui ne peut pas être remonté à sa source ne se relaie pas.</p>
+                </div>
+
+                <div class="pratique" data-pratique="lire-un-chiffre"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — corriger un chiffre faux par un autre chiffre faux</span>
+                    <p>La réaction au « 3,2 kg » a produit des affirmations inverses tout aussi tranchées : « le streaming ne consomme rien ». Ce n'est pas plus exact.</p>
+                    <p>La bonne réponse est souvent un ordre de grandeur assorti d'une incertitude, ce qui se relaie mal — et c'est précisément pour cela que les chiffres faux circulent mieux.</p>
+                </div>
+
+                <p class="retenir">💡 Un chiffre qui ne peut pas être remonté à sa source ne se relaie pas, même s'il va dans le bon sens.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-cas-du-streaming">🎥 Le cas du streaming</h3></summary>
+                <div class="lecon-corps">
+                <p>C'est l'exemple le plus instructif du domaine, parce qu'on peut en calculer soi-même la partie principale — et découvrir que ce n'est pas celle dont tout le monde parle.</p>
+
+                <h4>Ce qui se calcule avec certitude</h4>
+                <p>La consommation de l'appareil sur lequel on regarde : sa puissance multipliée par la durée. Un téléviseur consomme de l'ordre de 100 watts, un ordinateur portable 30, un téléphone 3.</p>
+                <p>Multipliée par l'intensité carbone de l'électricité, cette consommation donne un résultat solide — et il est dominé par un seul choix : <strong>sur quel écran on regarde</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — deux heures de vidéo par jour</span>
+                    <p><strong>Sur un téléviseur de 100 W :</strong> 73 kWh par an, soit <strong>4,4 kg CO₂e</strong> en électricité française.</p>
+                    <p><strong>Sur un téléphone de 3 W :</strong> <strong>0,13 kg CO₂e</strong> par an.</p>
+                    <p><strong>Un facteur 33</strong> entre les deux, pour exactement le même contenu et la même durée.</p>
+                    <p>À côté, passer de la haute définition à la définition standard change une part bien plus petite — et sur le poste le plus incertain de tous.</p>
+                </div>
+
+                <div class="pratique" data-pratique="streaming"></div>
+
+                <h4>Pourquoi le réseau compte moins qu'on ne croit</h4>
+                <p>L'intuition naturelle est qu'un fichier deux fois plus lourd consomme deux fois plus. C'est faux pour l'essentiel : un réseau consomme surtout <strong>parce qu'il est allumé</strong>, pas parce qu'il transporte. Les équipements tournent que le trafic soit fort ou faible.</p>
+                <p>La consommation par gigaoctet baisse en conséquence à mesure que le trafic augmente, ce qui rend les calculs « par gigaoctet » particulièrement trompeurs — et explique une partie des erreurs passées.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — arbitrer sur la résolution</span>
+                    <p>Baisser la qualité vidéo est le conseil le plus répandu sur ce sujet. Son effet existe, mais il porte sur la part la plus petite et la plus incertaine.</p>
+                    <p>Regarder sur un téléphone plutôt que sur un téléviseur a un effet vingt fois plus grand — ce qui n'est pas non plus une recommandation : c'est une indication de l'endroit où se trouve le levier.</p>
+                </div>
+
+                <p class="retenir">💡 L'écran choisi décide, pas la résolution. Et le réseau consomme parce qu'il est allumé, pas parce qu'il transporte.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="qui-pese-quoi">☁️ Terminaux, réseau, serveurs</h3></summary>
+                <div class="lecon-corps">
+                <p>L'impact du numérique se répartit sur trois postes. Leur hiérarchie est bien établie en France, et elle contredit l'image dominante — celle des centres de données géants.</p>
+
+                <h4>La hiérarchie</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Poste</th><th>Poids</th><th>Ce qui domine</th></tr>
+                    <tr><td><strong>Terminaux</strong></td><td>De loin le premier</td><td>La fabrication des appareils des utilisateurs</td></tr>
+                    <tr><td><strong>Réseaux</strong></td><td>Intermédiaire</td><td>Les équipements allumés en permanence</td></tr>
+                    <tr><td><strong>Centres de données</strong></td><td>Le plus visible, pas le plus lourd</td><td>L'électricité, et le matériel serveur</td></tr>
+                </table>
+                </div>
+                <p>Cette hiérarchie est spécifique à la France et à des usages ordinaires : l'électricité y est peu carbonée, ce qui allège tout ce qui relève de la consommation et laisse la fabrication dominer.</p>
+
+                <div class="exemple">
+                    <span class="titre">Pourquoi les centres de données occupent toute la place</span>
+                    <p>Ils sont visibles, concentrés, photogéniques, et appartiennent à des entreprises qu'on peut nommer. Les terminaux, eux, sont chez tout le monde, en petites quantités.</p>
+                    <p>Or l'addition de milliards de petits objets fabriqués et remplacés dépasse largement quelques milliers de bâtiments — même très consommateurs.</p>
+                    <p>C'est le même biais qu'ailleurs : ce qui est facile à désigner passe pour le principal responsable.</p>
+                </div>
+
+                <div class="pratique" data-pratique="parc-du-foyer"></div>
+
+                <h4>Ce que cela implique</h4>
+                <p>Un service « hébergé dans un centre de données vert » traite le poste le plus petit. Ce n'est pas rien, et cela ne change pas la hiérarchie.</p>
+                <p>Un service qui reste utilisable sur un appareil de cinq ans agit, lui, sur le poste dominant — en repoussant un renouvellement. C'est l'objet du niveau avancé.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — transposer les chiffres d'un pays à l'autre</span>
+                    <p>La part des centres de données et celle des réseaux montent nettement dans les pays où l'électricité est plus carbonée. Une étude allemande et une étude française ne décrivent pas la même répartition.</p>
+                    <p>C'est la deuxième des cinq questions de la section précédente, et la plus souvent oubliée quand on cite une source étrangère.</p>
+                </div>
+
+                <p class="retenir">💡 Ce qui pèse le plus est chez vous, pas dans un hangar photographié en illustration d'article.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-deplacement-evite">🚄 Le déplacement évité</h3></summary>
+                <div class="lecon-corps">
+                <p>Il existe un cas où le numérique change l'ordre de grandeur au lieu de le grignoter : quand il remplace un déplacement physique. C'est le seul arbitrage du domaine où le rapport se compte en milliers.</p>
+
+                <h4>Les ordres de grandeur</h4>
+                <p>Par passager et par kilomètre : le train français émet quelques grammes, une voiture thermique avec un seul occupant de l'ordre de cent, un avion court-courrier davantage encore.</p>
+                <p>En face, deux heures de visioconférence sur un ordinateur portable consomment quelques grammes de CO₂e <strong>au total</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — une réunion à 400 km, aller-retour</span>
+                    <p><strong>En train : 2,4 kg CO₂e.</strong></p>
+                    <p><strong>En voiture, seul : 96 kg.</strong></p>
+                    <p><strong>En avion : 184 kg.</strong></p>
+                    <p><strong>En visioconférence : 3,6 grammes.</strong></p>
+                    <p>Le rapport avec l'avion dépasse 50 000. Aucun autre arbitrage de ce guide n'approche cet écart — et c'est pourquoi il mérite d'être connu avant tous les autres.</p>
+                </div>
+
+                <div class="pratique" data-pratique="visio-vs-deplacement"></div>
+
+                <h4>Les limites de l'argument</h4>
+                <p>Encore faut-il que le déplacement soit <strong>réellement évité</strong>. Une visioconférence qui s'ajoute à des réunions physiques inchangées n'évite rien : elle ajoute.</p>
+                <p>Et le télétravail déplace des consommations plutôt qu'il ne les supprime : chauffage du domicile, équipements dédoublés, parfois déménagement plus loin. Le bilan reste favorable dans la plupart des études, mais il est bien plus serré que le calcul ci-dessus.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — compter un gain qui n'a pas eu lieu</span>
+                    <p>C'est la faiblesse classique des bilans « d'évitement » : ils comparent à un scénario hypothétique que personne ne vérifie.</p>
+                    <p>La question honnête est celle du total : le nombre de déplacements a-t-il effectivement baissé, ou seulement le nombre de déplacements par réunion ?</p>
+                </div>
+
+                <p class="retenir">💡 Un déplacement évité pèse mille fois ce que coûte la visioconférence qui l'a remplacé — à condition qu'il ait vraiment été évité.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>ADEME et Arcep</strong> — l'étude de référence sur l'empreinte environnementale du numérique en France, et sa répartition entre terminaux, réseaux et centres de données.</li>
+                    <li><strong>Agence internationale de l'énergie</strong> — analyses sur la consommation des réseaux et des centres de données, et sur les erreurs de méthode fréquentes.</li>
+                    <li><strong>Base Empreinte de l'ADEME</strong> — les facteurs d'émission publics, pour vérifier soi-même un ordre de grandeur.</li>
+                    <li><strong>Base Carbone — transports</strong> : les valeurs par passager et par kilomètre utilisées dans ce guide.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> la prochaine fois qu'un chiffre d'impact numérique vous frappe, cherchez sa source d'origine. Dans la moitié des cas, elle n'existe pas, ou elle dit autre chose.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Niveau précédent</span>Sobriété — Débutant</a>
+            <a href="avance.html" class="next"><span class="label">Niveau suivant →</span>Sobriété — Avancé</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/ecologie-intermediaire.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

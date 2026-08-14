@@ -208,6 +208,23 @@ const searchIndex = [
     { title: "L'épuisement professionnel", description: "Trois dimensions pour nommer — aucun test en ligne pour conclure.", url: "guides/sante/avance.html", keywords: "épuisement burn-out burnout fatigue distance efficacité travail" },
     { title: "Harcèlement et situations graves", description: "Écrire les faits, datés, avant tout le reste.", url: "guides/sante/avance.html", keywords: "harcèlement moral sexuel discrimination preuve alerte défenseur droits témoin" },
 
+    { title: "Sobriété numérique", description: "Où est vraiment l'impact du numérique, et quels chiffres tiennent.", url: "guides/ecologie/index.html", keywords: "écologie sobriété numérique impact environnement carbone empreinte" },
+    { title: "Sobriété — Débutant", description: "Où est vraiment l'impact. Aucun prérequis.", url: "guides/ecologie/debutant.html", keywords: "sobriété débutant niveau 1 fabrication durée de vie gestes achat" },
+    { title: "L'impact est dans la fabrication", description: "L'essentiel est payé quand vous allumez l'appareil pour la première fois.", url: "guides/ecologie/debutant.html", keywords: "fabrication empreinte terminal amortissement extraction métaux cycle de vie" },
+    { title: "Allonger la durée de vie", description: "Un appareil dans un tiroir a la même empreinte qu'un appareil utilisé.", url: "guides/ecologie/debutant.html", keywords: "durée de vie batterie casse réparation mises à jour revente obsolescence" },
+    { title: "Les gestes symboliques", description: "Le mail à 10 g a circulé dix ans avant d'être corrigé.", url: "guides/ecologie/debutant.html", keywords: "mail courriel cache gestes symboliques inutiles tri boîte de réception" },
+    { title: "Bien acheter un appareil", description: "Garder, réparer, reconditionner — l'achat neuf en dernier.", url: "guides/ecologie/debutant.html", keywords: "reconditionné achat indice réparabilité durabilité pièces détachées neuf" },
+    { title: "Sobriété — Intermédiaire", description: "Lire les chiffres, et savoir lesquels tiennent.", url: "guides/ecologie/intermediaire.html", keywords: "sobriété intermédiaire niveau 2 chiffres streaming réseau déplacement" },
+    { title: "Lire un chiffre d'impact", description: "Périmètre, pays, unité, source, incertitude : cinq questions.", url: "guides/ecologie/intermediaire.html", keywords: "chiffre impact périmètre source incertitude méthode ademe vérifier" },
+    { title: "Le cas du streaming", description: "L'écran choisi pèse trente fois plus que la résolution.", url: "guides/ecologie/intermediaire.html", keywords: "streaming vidéo écran résolution watts téléviseur réseau gigaoctet" },
+    { title: "Terminaux, réseau, serveurs", description: "Ce qui pèse le plus est chez vous, pas dans un hangar.", url: "guides/ecologie/intermediaire.html", keywords: "terminaux réseau centres de données datacenter répartition france arcep" },
+    { title: "Le déplacement évité", description: "Une réunion à 400 km : 184 kg en avion, 3,6 g en visio.", url: "guides/ecologie/intermediaire.html", keywords: "visioconférence déplacement train avion voiture télétravail évitement" },
+    { title: "Sobriété — Avancé", description: "Concevoir, décider, et se méfier des gains annoncés.", url: "guides/ecologie/avance.html", keywords: "sobriété avancé niveau 3 écoconception parc réglementation rebond" },
+    { title: "L'écoconception", description: "Le pire effet d'un service lourd est de rendre un appareil obsolète.", url: "guides/ecologie/avance.html", keywords: "écoconception rgesn poids page défilement infini accessibilité performance" },
+    { title: "Le parc en entreprise", description: "Deux ans de plus sur cent postes battent toutes les consignes.", url: "guides/ecologie/avance.html", keywords: "parc entreprise renouvellement postes amortissement reconditionnement interne" },
+    { title: "Le cadre réglementaire du numérique", description: "Le recyclage est la dernière étape, pas la première.", url: "guides/ecologie/avance.html", keywords: "reen deee indice durabilité reprise obsolescence programmée collecte recyclage" },
+    { title: "L'effet rebond", description: "Un pourcentage d'amélioration ne dit rien sur le total.", url: "guides/ecologie/avance.html", keywords: "effet rebond efficacité total intensité numérique vert greenwashing" },
+
     { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
 
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },

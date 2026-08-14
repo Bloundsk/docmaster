@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobriété numérique — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Écologie &amp; sobriété numérique : écoconception, le parc en entreprise, le cadre réglementaire, et l'effet rebond.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/ecologie/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Sobriété numérique — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Écologie &amp; sobriété numérique : écoconception, le parc en entreprise, le cadre réglementaire, et l'effet rebond.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/ecologie/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 13 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sobriété numérique — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Écologie &amp; sobriété numérique : écoconception, le parc en entreprise, le cadre réglementaire, et l'effet rebond.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🌱 Sobriété numérique</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🌱 Sobriété numérique — Avancé</h1>
+                <p>Concevoir, décider, et se méfier des gains annoncés.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 102 L70 62"/>
+<path d="M70 66 Q52 62 48 44 Q66 42 70 62"/>
+<path d="M70 74 Q88 70 92 52 Q74 50 70 70"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="92" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="102" cy="88" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 14 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#lecoconception">🪶 L'écoconception</a></li>
+                <li><a href="#le-parc-en-entreprise">🏢 Le parc en entreprise</a></li>
+                <li><a href="#le-cadre-reglementaire">📜 Le cadre réglementaire</a></li>
+                <li><a href="#leffet-rebond">🔄 L'effet rebond</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Le pire effet d'un service lourd n'est pas sa consommation : c'est de rendre obsolète un appareil qui marchait.</li>
+                <li>Deux ans de plus sur cent postes pèsent davantage que toutes les consignes envoyées aux salariés.</li>
+                <li>Un déchet électronique non collecté est une matière perdue autant qu'une pollution.</li>
+                <li>Un gain annoncé en pourcentage ne dit rien tant qu'on ignore l'évolution du total.</li>
+                <li>L'efficacité par unité progresse depuis vingt ans, et le total augmente quand même.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Les deux premiers niveaux s'adressaient à un utilisateur. Celui-ci s'adresse à ceux qui <strong>décident</strong> : concevoir un service, gérer un parc, arbitrer un investissement.</p>
+            <p>C'est là que les leviers changent d'échelle — et là que les raisonnements faux coûtent le plus cher, parce qu'ils sont appliqués à des milliers d'appareils.</p>
+
+            <div class="piege">
+                <span class="titre">Avertissement</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Les valeurs par défaut sont des ordres de grandeur modifiables, et les calculs supposent l'<strong>électricité française</strong>.</p>
+                <p>Les obligations réglementaires citées évoluent : vérifiez leur état actuel auprès des sources officielles avant de vous en prévaloir.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Concevoir et décider</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="lecoconception">🪶 L'écoconception</h3></summary>
+                <div class="lecon-corps">
+                <p>Écoconcevoir un service numérique est généralement présenté comme une affaire de kilo-octets économisés. C'est la partie visible, et la moins importante.</p>
+
+                <h4>Le vrai enjeu : ne pas pousser au renouvellement</h4>
+                <p>Un service qui exige un appareil récent rend obsolète du matériel qui fonctionne. Comme la fabrication domine l'impact, <strong>un renouvellement provoqué coûte plus cher que des années de transfert de données</strong>.</p>
+                <p>La question de conception n'est donc pas « combien pèse ma page » mais « à partir de quel âge d'appareil devient-elle inutilisable ». Les deux sont liées, mais la seconde est celle qui compte.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — un site à 3 Mo par page</span>
+                    <p>10 000 visites par mois, à 0,06 kWh par gigaoctet transféré.</p>
+                    <p><strong>Transféré par an : 351,6 Go.</strong> Émissions estimées : <strong>1,3 kg CO₂e par an</strong>. En divisant le poids par deux : 0,6 kg.</p>
+                    <p>Autrement dit : alléger de moitié tout un site économise moins qu'un dixième d'un téléphone fabriqué. <strong>Cela ne rend pas l'allègement inutile</strong> — mais sa justification est ailleurs : rapidité, accessibilité, et surtout compatibilité avec les appareils anciens.</p>
+                </div>
+
+                <div class="pratique" data-pratique="poids-page"></div>
+
+                <h4>Ce qui rend un service sobre</h4>
+                <ul>
+                    <li><strong>Il fonctionne sur un appareil de cinq ans</strong> et sur une connexion lente.</li>
+                    <li><strong>Il ne lance rien tout seul</strong> — vidéos, animations, rafraîchissements permanents.</li>
+                    <li><strong>Il ne cherche pas à allonger le temps passé.</strong> Défilement infini, notifications, relances : ces mécanismes augmentent l'usage sans rien apporter à l'utilisateur.</li>
+                    <li><strong>Il fait ce qu'on attend de lui</strong>, sans fonctions ajoutées par habitude.</li>
+                </ul>
+                <p>Ces critères recoupent presque entièrement ceux de l'accessibilité et de la performance. C'est une bonne nouvelle : ils se défendent en réunion sans invoquer l'écologie.</p>
+
+                <div class="pratique" data-pratique="ecoconception"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — l'hébergement vert comme réponse</span>
+                    <p>Annoncer un hébergement « décarboné » traite le poste le plus petit des trois, et permet de ne rien changer au reste.</p>
+                    <p>Ce n'est pas inutile. C'est simplement insuffisant pour qualifier un service de sobre, et c'est souvent tout ce qui est fait.</p>
+                </div>
+
+                <p class="retenir">💡 Le pire effet d'un service lourd n'est pas sa consommation : c'est de rendre inutilisable un appareil qui marchait encore.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-parc-en-entreprise">🏢 Le parc en entreprise</h3></summary>
+                <div class="lecon-corps">
+                <p>Dans une organisation, la même hiérarchie s'applique : le parc d'appareils domine tout le reste. Et c'est un levier bien plus simple à actionner qu'un changement de comportement.</p>
+
+                <h4>La décision qui pèse</h4>
+                <p>La durée de renouvellement des postes de travail est une décision unique, prise par quelques personnes, qui s'applique à tout le parc. Aucune campagne de sensibilisation n'a ce rapport effort-résultat.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — 100 postes, renouvellement de 3 à 5 ans</span>
+                    <p>Fabrication d'un poste : 200 kg CO₂e.</p>
+                    <p><strong>Aujourd'hui, à 3 ans : 6 667 kg CO₂e par an.</strong></p>
+                    <p><strong>À 5 ans : 4 000 kg par an.</strong> Économie : <strong>2 667 kg CO₂e chaque année</strong>, soit l'équivalent d'environ <strong>22 200 km en voiture</strong>.</p>
+                    <p>Une décision, une fois, sans rien demander à personne — et un effet reconduit tous les ans.</p>
+                </div>
+
+                <div class="pratique" data-pratique="parc-entreprise"></div>
+
+                <h4>Ce qui rend l'allongement possible</h4>
+                <ol>
+                    <li><strong>Acheter du matériel réparable</strong>, avec des pièces disponibles et une batterie remplaçable.</li>
+                    <li><strong>Choisir des logiciels qui n'imposent pas le renouvellement.</strong> C'est souvent le vrai déclencheur, pas la panne.</li>
+                    <li><strong>Prévoir le reconditionnement interne</strong> : un poste rendu par un utilisateur exigeant sert très bien à un autre usage.</li>
+                    <li><strong>Sortir le parc du cycle comptable automatique.</strong> Un amortissement sur trois ans n'est pas une obligation de remplacer au bout de trois ans.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — la campagne de sensibilisation à la place de la décision</span>
+                    <p>Demander aux salariés de trier leurs courriels est visible, peu coûteux, et sans effet mesurable. Allonger le renouvellement du parc est invisible et décisif.</p>
+                    <p>Quand une organisation fait la première sans la seconde, la question n'est plus environnementale : elle est de communication.</p>
+                </div>
+
+                <p class="retenir">💡 Une décision sur le parc pèse plus que dix mille gestes individuels — et elle ne demande rien à personne.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-cadre-reglementaire">📜 Le cadre réglementaire</h3></summary>
+                <div class="lecon-corps">
+                <p>Le sujet est passé en quelques années de la sensibilisation à la règle. Connaître ce cadre permet de s'appuyer sur des obligations plutôt que sur des convictions.</p>
+
+                <h4>Les grands mécanismes</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Mécanisme</th><th>Ce qu'il fait</th></tr>
+                    <tr><td><strong>Indice de durabilité</strong></td><td>Affiché à la vente, il note la réparabilité et la fiabilité. Il a succédé à l'indice de réparabilité sur plusieurs catégories.</td></tr>
+                    <tr><td><strong>Disponibilité des pièces</strong></td><td>Le fabricant doit informer de la durée pendant laquelle les pièces détachées restent disponibles.</td></tr>
+                    <tr><td><strong>Filière DEEE</strong></td><td>Reprise et traitement des déchets d'équipements électriques et électroniques, financés par une contribution incluse au prix.</td></tr>
+                    <tr><td><strong>Reprise à l'achat</strong></td><td>Un distributeur doit reprendre l'ancien appareil lors de la vente d'un équivalent — souvent sans le rappeler.</td></tr>
+                    <tr><td><strong>Obsolescence programmée</strong></td><td>Délit en droit français : le fait de réduire délibérément la durée de vie d'un produit pour en accroître le remplacement.</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">Le maillon faible : la collecte</span>
+                    <p>Une part importante des appareils en fin de vie n'entre jamais dans une filière de traitement. Ils restent dans des tiroirs, partent avec les ordures ordinaires, ou sont exportés.</p>
+                    <p>Or ces appareils contiennent des métaux dont l'extraction est le poste le plus lourd de la fabrication. Ne pas les récupérer, c'est perdre deux fois : la pollution du déchet, et l'extraction à recommencer.</p>
+                    <p>Le geste utile est banal — déposer en déchetterie, en magasin, ou dans un point de collecte — et c'est celui qui manque le plus.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — confondre recyclage et solution</span>
+                    <p>Le recyclage récupère une partie des matières, jamais la totalité, et il consomme lui-même de l'énergie. Il arrive en dernier dans la hiérarchie, après réduire, réemployer et réparer.</p>
+                    <p>Un discours qui met le recyclage en avant déplace l'attention de l'achat vers la fin de vie — c'est-à-dire de l'endroit où tout se décide vers celui où il ne reste presque rien à sauver.</p>
+                </div>
+
+                <p class="retenir">💡 Le recyclage est la dernière étape de la hiérarchie, pas la première. Elle commence à l'achat.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="leffet-rebond">🔄 L'effet rebond</h3></summary>
+                <div class="lecon-corps">
+                <p>C'est le mécanisme qui explique pourquoi vingt ans de progrès techniques n'ont pas fait baisser l'empreinte du numérique : <strong>l'efficacité par unité s'améliore, et le nombre d'unités augmente davantage</strong>.</p>
+
+                <h4>Le mécanisme</h4>
+                <p>Un gain d'efficacité réduit le coût d'un usage. Un usage moins cher est plus employé. Le gain unitaire est réel, et le total monte quand même.</p>
+                <p>Les exemples sont partout : le stockage devient bon marché, donc on garde tout ; les réseaux accélèrent, donc les contenus s'alourdissent ; les appareils consomment moins, donc il y en a davantage par foyer.</p>
+
+                <div class="exemple">
+                    <span class="titre">La question qui tranche</span>
+                    <p>Un gain est presque toujours annoncé <strong>en pourcentage et par unité</strong> : « 40 % plus efficace », « deux fois moins de consommation par requête ».</p>
+                    <p>La seule question qui compte est ailleurs : <strong>le total a-t-il baissé ?</strong></p>
+                    <p>Elle est rarement posée, parce qu'elle est difficile à mesurer et que la réponse est souvent non. Un modèle deux fois plus efficace utilisé dix fois plus souvent consomme cinq fois plus.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-rebond"></div>
+
+                <h4>Ce que cela n'implique pas</h4>
+                <p>L'effet rebond ne dit pas que l'efficacité est inutile : sans elle, la croissance des usages coûterait bien davantage. Il dit qu'elle ne suffit pas, et qu'un gain d'efficacité annoncé seul n'est pas une preuve de réduction.</p>
+                <p>La conséquence pratique est modeste et exigeante : <strong>mesurer les totaux, pas les ratios</strong>. Un tableau de bord qui ne suit que des intensités progressera indéfiniment pendant que la consommation absolue augmente.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — traiter « numérique vert » comme un aboutissement</span>
+                    <p>Un service peut être efficace par requête, hébergé dans un centre de données décarboné, et faire croître l'empreinte totale — parce qu'il a multiplié les usages ou accéléré le renouvellement du matériel.</p>
+                    <p>Aucune de ces qualités n'est fausse. Elles répondent simplement à une autre question que celle qui est posée.</p>
+                </div>
+
+                <p class="retenir">💡 Un pourcentage d'amélioration ne dit rien tant qu'on ignore le total. C'est la question qu'on évite, et la seule qui compte.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Référentiel général d'écoconception de services numériques (RGESN)</strong> — le référentiel public, critère par critère.</li>
+                    <li><strong>ADEME — écoconception et numérique responsable</strong> : guides pratiques pour les organisations.</li>
+                    <li><strong>Longue vie aux objets</strong> — annuaire public de la réparation, du don et des points de collecte.</li>
+                    <li><strong>Loi REEN</strong> — le cadre français de réduction de l'empreinte environnementale du numérique, et les obligations qui en découlent pour les collectivités.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> devant toute annonce d'amélioration environnementale, cherchez le total plutôt que le pourcentage. S'il n'est pas donné, c'est en général qu'il ne va pas dans le bon sens.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Sobriété — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Retour au parcours →</span>🌱 Sobriété numérique</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Développement Web</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../ia/index.html">🤖 Intelligence Artificielle</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/ecologie-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

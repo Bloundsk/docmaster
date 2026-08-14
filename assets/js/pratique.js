@@ -164,6 +164,34 @@
         return "passif";
     }
 
+    // --- Empreinte du numerique -------------------------------------------
+    //
+    // Domaine ou circulent des chiffres massivement faux — « un mail = 10 g »,
+    // « une heure de streaming = 3,2 kg » — repris pendant des annees avant
+    // d etre corriges d un facteur dix. La regle suivie ici : ne calculer que
+    // ce qui se calcule, et laisser en entree ce qui est incertain.
+    //
+    // Ce qui est solide : la consommation d un appareil (watts x heures) et
+    // l intensite carbone de l electricite. Ce qui l est beaucoup moins :
+    // l energie par gigaoctet transfere, qui varie d un facteur dix selon les
+    // etudes et diminue vite. Elle est donc un champ, jamais une constante
+    // cachee dans une formule.
+
+    // Electricite francaise, ordre de grandeur. Tres bas comparativement,
+    // grace au nucleaire et a l hydraulique : le meme calcul en Pologne ou en
+    // Allemagne donnerait cinq a dix fois plus.
+    const G_PAR_KWH_FR = 60;
+
+    // Facteurs d emission par passager et par kilometre, ordres de grandeur
+    // issus des bases publiques. Le train francais est bas pour la meme
+    // raison que l electricite.
+    const G_PAR_KM = { train: 3, voiture: 120, avion: 230 };
+
+    // Un appareil ne coute pas que son electricite : sa fabrication est
+    // amortie sur sa duree de vie. C est le poste dominant pour un terminal,
+    // et c est ce que la plupart des raisonnements oublient.
+    const annualiser = (fabrication, annees) => fabrication / Math.max(0.25, annees);
+
     // --- Les simulateurs --------------------------------------------------
 
     const SIMULATEURS = {
@@ -3355,6 +3383,283 @@
                 return { texte: "Commencez par écrire les faits, datés. C'est la première chose que demanderont tous les interlocuteurs — et la plus difficile à reconstituer après coup.", ton: "alerte" };
             },
             lecon: "L'employeur informé par écrit d'une situation de harcèlement a l'obligation de réagir. Ne rien écrire le dispense de fait, quelle que soit la gravité des faits."
+        },
+
+        // =====================================================================
+        // ECOLOGIE ET SOBRIETE NUMERIQUE
+        // =====================================================================
+
+        "empreinte-appareil": {
+            titre: "Ce que change la durée de garde",
+            intro: "La fabrication est payée une fois. Plus l'appareil sert longtemps, plus elle se dilue.",
+            champs: [
+                { id: "fabrication", libelle: "Fabrication de l'appareil", unite: "kg CO₂e", defaut: 60, min: 5, max: 500, pas: 5 },
+                { id: "usage", libelle: "Électricité consommée par an", unite: "kg CO₂e", defaut: 5, min: 0, max: 200, pas: 1 },
+                { id: "annees", libelle: "Durée de garde", unite: "ans", defaut: 2.5, min: 0.5, max: 15, pas: 0.5 }
+            ],
+            calculer: ({ fabrication, usage, annees }) => {
+                const amortie = annualiser(fabrication, annees);
+                const total = amortie + usage;
+                const plusLong = annualiser(fabrication, annees + 2) + usage;
+                const gain = total > 0 ? (total - plusLong) / total * 100 : 0;
+                return [
+                    { libelle: "Fabrication, ramenée à l'année", valeur: nf(amortie, 1) + " kg CO₂e" },
+                    { libelle: "Total par an", valeur: nf(total, 1) + " kg CO₂e", fort: true },
+                    { libelle: "Part de la fabrication", valeur: total > 0 ? pourcent(amortie / total * 100, 0) : "—" },
+                    // « soit 37 % de moins » plutot que « − 37 % » : le signe
+                    // moins colle mal a un pourcentage deja formate en francais.
+                    { libelle: "En le gardant 2 ans de plus", valeur: nf(plusLong, 1) + " kg CO₂e par an, soit " + pourcent(gain, 0) + " de moins" }
+                ];
+            },
+            lecon: "Pour un terminal, l'essentiel de l'impact est déjà payé quand vous l'allumez. Le seul levier vraiment puissant est la durée pendant laquelle il servira."
+        },
+
+        "parc-du-foyer": {
+            titre: "L'empreinte du parc, pas de l'usage",
+            intro: "Comptez tout ce qui est branché : téléphones, ordinateurs, téléviseur, tablette, box, console, montre.",
+            champs: [
+                { id: "appareils", libelle: "Appareils dans le foyer", unite: "", defaut: 8, min: 1, max: 60, pas: 1 },
+                { id: "fabrication", libelle: "Fabrication moyenne par appareil", unite: "kg CO₂e", defaut: 60, min: 5, max: 500, pas: 5 },
+                { id: "duree", libelle: "Durée de vie moyenne", unite: "ans", defaut: 4, min: 1, max: 20, pas: 1 }
+            ],
+            calculer: ({ appareils, fabrication, duree }) => {
+                const totale = appareils * fabrication;
+                const parAn = annualiser(totale, duree);
+                return [
+                    { libelle: "Fabrication de tout le parc", valeur: nf(Math.round(totale)) + " kg CO₂e" },
+                    { libelle: "Ramenée à l'année", valeur: nf(Math.round(parAn)) + " kg CO₂e", fort: true },
+                    { libelle: "Soit, en voiture", valeur: "environ " + nf(Math.round(parAn * 1000 / G_PAR_KM.voiture)) + " km" },
+                    { libelle: "Un appareil de moins ferait", valeur: "− " + nf(Math.round(annualiser(fabrication, duree))) + " kg CO₂e par an" }
+                ];
+            },
+            lecon: "La question utile n'est pas « comment mieux utiliser mes appareils » mais « combien en ai-je, et combien de temps les garderai-je »."
+        },
+
+        "duree-de-vie": {
+            type: "controle",
+            titre: "Faites-vous durer vos appareils ?",
+            intro: "Cochez ce que vous faites réellement.",
+            points: [
+                { texte: "Je garde mon téléphone au moins quatre ans" },
+                { texte: "J'utilise une coque et une protection d'écran", aide: "la casse est la première cause de remplacement" },
+                { texte: "Je fais remplacer la batterie plutôt que l'appareil" },
+                { texte: "Je continue les mises à jour de sécurité tant qu'elles existent" },
+                { texte: "Je fais réparer avant de remplacer, au moins pour comparer le devis" },
+                { texte: "Je revends ou je donne au lieu de garder l'ancien dans un tiroir" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "C'est l'essentiel de ce qui est en votre pouvoir sur le sujet.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. Le remplacement de batterie est le geste au meilleur rapport, et le plus souvent écarté.", ton: "moyen" };
+                return { texte: "Chaque année gagnée sur la durée de vie fait plus que tous les gestes d'usage réunis.", ton: "alerte" };
+            },
+            lecon: "Un appareil rangé dans un tiroir a la même empreinte de fabrication qu'un appareil utilisé. Le revendre, c'est éviter la fabrication de celui qui aurait été acheté à sa place."
+        },
+
+        "gestes-symboliques": {
+            type: "controle",
+            titre: "Ces gestes servent-ils à quelque chose ?",
+            intro: "Cochez ceux qui ont un effet mesurable sur l'empreinte du numérique.",
+            points: [
+                { texte: "Garder son téléphone deux ans de plus", aide: "effet réel et important" },
+                { texte: "Supprimer ses vieux courriels", aide: "effet réel mais très faible : quelques grammes" },
+                { texte: "Acheter reconditionné plutôt que neuf", aide: "effet réel et important" },
+                { texte: "Vider le cache de son navigateur", aide: "aucun effet, voire négatif" },
+                { texte: "Réduire la résolution vidéo sur un téléphone", aide: "effet marginal comparé au choix de l'écran" },
+                { texte: "Réparer au lieu de remplacer", aide: "effet réel et important" }
+            ],
+            verdict: (n) => {
+                if (n === 3) return { texte: "Trois gestes ont un effet important : garder, acheter reconditionné, réparer. Si ce sont ceux-là, c'est exact.", ton: "bon" };
+                if (n < 3) return { texte: "Trois gestes de cette liste comptent vraiment, et ils portent tous sur le matériel, jamais sur l'usage.", ton: "moyen" };
+                return { texte: "Trois seulement pèsent réellement. Les autres occupent l'attention et déplacent l'effort là où il ne change presque rien.", ton: "alerte" };
+            },
+            lecon: "Les gestes qui circulent le plus — vider sa boîte mail, supprimer des photos — portent sur l'usage, où presque rien ne se joue. Le matériel décide."
+        },
+
+        "streaming": {
+            titre: "Regarder une vidéo : ce qui pèse",
+            intro: "Le calcul certain est celui de l'appareil : sa puissance multipliée par la durée. Le reste — réseau, serveurs — est plus petit et beaucoup plus incertain.",
+            champs: [
+                { id: "heures", libelle: "Heures de vidéo par jour", unite: "h", defaut: 2, min: 0, max: 16, pas: 0.5 },
+                { id: "puissance", libelle: "Puissance de l'écran utilisé", unite: "W", defaut: 100, min: 1, max: 500, pas: 1 },
+                { id: "comparee", libelle: "Puissance d'un autre écran, pour comparer", unite: "W", defaut: 3, min: 1, max: 500, pas: 1 }
+            ],
+            calculer: ({ heures, puissance, comparee }) => {
+                const kwhAn = heures * 365 * puissance / 1000;
+                const kgAn = kwhAn * G_PAR_KWH_FR / 1000;
+                const kgCompare = heures * 365 * comparee / 1000 * G_PAR_KWH_FR / 1000;
+                return [
+                    { libelle: "Consommation annuelle de l'écran", valeur: nf(kwhAn, 1) + " kWh" },
+                    { libelle: "Émissions, électricité française", valeur: nf(kgAn, 1) + " kg CO₂e par an", fort: true },
+                    { libelle: "Sur l'autre écran, ce serait", valeur: nf(kgCompare, 2) + " kg CO₂e par an" },
+                    {
+                        // Le rapport doit se lire dans les deux sens : compare a
+                        // un ecran plus gourmand, « x 0,2 » n a aucun sens et
+                        // s arrondissait a « x 0 ».
+                        libelle: "Écart",
+                        valeur: (() => {
+                            if (kgAn === 0 || kgCompare === 0) return "—";
+                            const r = kgAn / kgCompare;
+                            return r >= 1
+                                ? "× " + nf(r, r < 10 ? 1 : 0) + " de plus"
+                                : "× " + nf(1 / r, 1 / r < 10 ? 1 : 0) + " de moins";
+                        })()
+                    }
+                ];
+            },
+            lecon: "L'écran choisi pèse bien plus que la qualité vidéo sélectionnée. Regarder sur un téléviseur ou sur un téléphone n'est pas le même geste, d'un facteur considérable."
+        },
+
+        "visio-vs-deplacement": {
+            titre: "Se déplacer, ou pas",
+            intro: "Une réunion, comparée selon la façon de s'y rendre. Aller-retour compris.",
+            champs: [
+                { id: "distance", libelle: "Distance aller", unite: "km", defaut: 400, min: 1, max: 20000, pas: 10 },
+                { id: "duree", libelle: "Durée de la réunion en visio", unite: "h", defaut: 2, min: 0.5, max: 12, pas: 0.5 },
+                { id: "puissance", libelle: "Puissance de votre appareil", unite: "W", defaut: 30, min: 1, max: 500, pas: 1 }
+            ],
+            calculer: ({ distance, duree, puissance }) => {
+                const ar = distance * 2;
+                const enVisio = duree * puissance / 1000 * G_PAR_KWH_FR;
+                return [
+                    { libelle: "En train", valeur: nf(ar * G_PAR_KM.train / 1000, 1) + " kg CO₂e" },
+                    { libelle: "En voiture, seul", valeur: nf(ar * G_PAR_KM.voiture / 1000, 1) + " kg CO₂e" },
+                    { libelle: "En avion", valeur: nf(ar * G_PAR_KM.avion / 1000, 1) + " kg CO₂e", fort: true },
+                    { libelle: "En visioconférence", valeur: nf(enVisio, 1) + " g CO₂e" }
+                ];
+            },
+            lecon: "C'est le seul endroit du numérique où l'ordre de grandeur bascule : un déplacement évité pèse mille fois ce que coûte la visioconférence qui l'a remplacé."
+        },
+
+        "lire-un-chiffre": {
+            type: "controle",
+            titre: "Ce chiffre d'impact tient-il ?",
+            intro: "Cochez ce qui est vrai du chiffre qu'on vous présente.",
+            points: [
+                { texte: "Son périmètre est précisé", aide: "fabrication comprise, ou usage seul ?" },
+                { texte: "Le pays est indiqué", aide: "l'électricité française émet cinq à dix fois moins que la moyenne européenne" },
+                { texte: "La source est identifiable et datée" },
+                { texte: "L'unité est explicite", aide: "grammes de CO₂e, kWh, litres d'eau : ce ne sont pas des équivalents" },
+                { texte: "Il n'est pas repris d'un article qui le reprend d'un autre" },
+                { texte: "Une incertitude est donnée, ou au moins mentionnée" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Chiffre exploitable. Il est rare qu'un chiffre médiatique coche tout cela.", ton: "bon" };
+                if (n >= 4) return { texte: "Utilisable avec prudence. Vérifiez surtout le périmètre : c'est là que se cachent les facteurs dix.", ton: "moyen" };
+                return { texte: "À ne pas relayer. Ce domaine a diffusé pendant des années des chiffres faux d'un facteur dix, repris de bonne foi.", ton: "alerte" };
+            },
+            lecon: "« Un mail = 10 g » et « une heure de streaming = 3,2 kg » ont circulé des années avant d'être corrigés d'un facteur dix. Les deux venaient d'estimations reprises sans vérification."
+        },
+
+        "achat-responsable": {
+            type: "controle",
+            titre: "Avant d'acheter un appareil",
+            intro: "Cochez ce que vous avez réellement vérifié.",
+            points: [
+                { texte: "J'ai vérifié que l'ancien n'était pas réparable" },
+                { texte: "J'ai regardé le reconditionné", aide: "il évite la quasi-totalité de la fabrication" },
+                { texte: "J'ai comparé les indices de réparabilité ou de durabilité" },
+                { texte: "J'ai vérifié la durée de disponibilité des pièces détachées" },
+                { texte: "J'ai vérifié combien d'années de mises à jour sont garanties" },
+                { texte: "J'ai choisi la taille et la puissance dont j'ai besoin, pas au-dessus" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Achat réfléchi. La durée de mise à jour est le critère le plus décisif et le moins regardé.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne démarche. Le reconditionné reste le levier le plus fort quand il est possible.", ton: "moyen" };
+                return { texte: "L'achat est le moment où tout se joue : c'est là que la fabrication est décidée, et elle représente l'essentiel de l'impact.", ton: "alerte" };
+            },
+            lecon: "Un appareil qui cesse de recevoir des mises à jour de sécurité devient difficile à garder, quel que soit son état matériel. C'est un critère d'achat, pas un détail."
+        },
+
+        "poids-page": {
+            titre: "Le poids d'une page, à l'échelle du site",
+            intro: "Le volume transféré est certain. L'énergie par gigaoctet l'est beaucoup moins : elle varie d'un facteur dix selon les études, et diminue vite.",
+            champs: [
+                { id: "poids", libelle: "Poids d'une page", unite: "Mo", defaut: 3, min: 0.05, max: 100, pas: 0.5 },
+                { id: "visites", libelle: "Visites par mois", unite: "", defaut: 10000, min: 1, max: 10000000, pas: 1000 },
+                { id: "intensite", libelle: "Énergie par gigaoctet transféré", unite: "kWh/Go", defaut: 0.06, min: 0.005, max: 1, pas: 0.005 }
+            ],
+            calculer: ({ poids, visites, intensite }) => {
+                const goParAn = poids * visites * 12 / 1024;
+                const kgParAn = goParAn * intensite * G_PAR_KWH_FR / 1000;
+                const moitie = kgParAn / 2;
+                return [
+                    { libelle: "Transféré par an", valeur: nf(goParAn, 1) + " Go" },
+                    { libelle: "Émissions estimées", valeur: nf(kgParAn, 1) + " kg CO₂e par an", fort: true },
+                    { libelle: "En divisant le poids par deux", valeur: nf(moitie, 1) + " kg CO₂e par an" },
+                    { libelle: "À garder en tête", valeur: "l'effet le plus net d'une page légère est sur les vieux appareils et les connexions lentes" }
+                ];
+            },
+            lecon: "Alléger une page se justifie d'abord parce qu'elle devient utilisable sur un appareil ancien — donc gardé plus longtemps. Le gain carbone direct, lui, est modeste."
+        },
+
+        "ecoconception": {
+            type: "controle",
+            titre: "Ce service est-il sobre ?",
+            intro: "Cochez ce qui est vrai du site ou de l'application que vous concevez ou utilisez.",
+            points: [
+                { texte: "Il reste utilisable sur un appareil de cinq ans" },
+                { texte: "Il fonctionne sur une connexion lente" },
+                { texte: "Les vidéos ne se lancent pas automatiquement" },
+                { texte: "Il n'y a pas de défilement infini", aide: "un mécanisme conçu pour allonger le temps passé" },
+                { texte: "Les images sont dimensionnées pour leur affichage réel" },
+                { texte: "Le service fait ce qu'on attend de lui sans fonctions ajoutées par habitude" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Service sobre. Il sera aussi plus rapide et plus accessible — les trois vont ensemble.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne direction. La compatibilité avec les appareils anciens est le critère qui compte le plus.", ton: "moyen" };
+                return { texte: "L'écoconception n'est pas d'abord une affaire de kilo-octets : c'est de ne pas rendre obsolète un appareil qui fonctionne.", ton: "alerte" };
+            },
+            lecon: "Le pire effet d'un service lourd n'est pas sa consommation : c'est de pousser au renouvellement d'un appareil qui marchait encore."
+        },
+
+        "parc-entreprise": {
+            titre: "Allonger le renouvellement d'un parc",
+            intro: "Le calcul qui décide, dans une entreprise, avant toute campagne de sensibilisation.",
+            champs: [
+                { id: "postes", libelle: "Postes de travail", unite: "", defaut: 100, min: 1, max: 100000, pas: 10 },
+                { id: "fabrication", libelle: "Fabrication d'un poste", unite: "kg CO₂e", defaut: 200, min: 20, max: 2000, pas: 10 },
+                { id: "actuel", libelle: "Renouvellement actuel", unite: "ans", defaut: 3, min: 1, max: 15, pas: 1 },
+                { id: "vise", libelle: "Renouvellement visé", unite: "ans", defaut: 5, min: 1, max: 15, pas: 1 }
+            ],
+            calculer: ({ postes, fabrication, actuel, vise }) => {
+                const avant = postes * annualiser(fabrication, actuel);
+                const apres = postes * annualiser(fabrication, vise);
+                const gain = avant - apres;
+                return [
+                    { libelle: "Aujourd'hui", valeur: nf(Math.round(avant)) + " kg CO₂e par an" },
+                    { libelle: "Après allongement", valeur: nf(Math.round(apres)) + " kg CO₂e par an" },
+                    // Raccourcir le renouvellement est un cas valide, et il
+                    // coute au lieu de rapporter : le libelle doit suivre, sans
+                    // quoi on lit « economie : − 2 667 kg ».
+                    {
+                        libelle: gain >= 0 ? "Économie annuelle" : "Surcoût annuel",
+                        valeur: nf(Math.round(Math.abs(gain))) + " kg CO₂e",
+                        fort: true
+                    },
+                    { libelle: "Soit, en voiture", valeur: "environ " + nf(Math.round(Math.abs(gain) * 1000 / G_PAR_KM.voiture)) + " km" }
+                ];
+            },
+            lecon: "Deux ans de plus sur un parc de cent postes pèsent davantage que toutes les consignes d'usage envoyées aux salariés — et ne demandent rien à personne."
+        },
+
+        "effet-rebond": {
+            type: "controle",
+            titre: "Ce gain va-t-il tenir ?",
+            intro: "Une amélioration technique est souvent absorbée par un usage accru. Cochez ce que vous reconnaissez.",
+            points: [
+                { texte: "Les appareils consomment moins, et il y en a davantage" },
+                { texte: "Le stockage coûte moins cher, et on garde tout" },
+                { texte: "Les réseaux vont plus vite, et les contenus sont plus lourds" },
+                { texte: "Un modèle plus efficace est utilisé bien plus souvent" },
+                { texte: "Le gain est annoncé en pourcentage, jamais en total" },
+                { texte: "Personne ne mesure ce que le service remplace vraiment" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Un gain d'efficacité sans report d'usage : c'est rare, et cela mérite d'être vérifié dans le temps.", ton: "bon" };
+                if (n <= 3) return { texte: "Effet rebond partiel. La question à poser reste la même : le total a-t-il baissé ?", ton: "moyen" };
+                return { texte: "Gain probablement absorbé. L'efficacité par unité progresse et le total augmente : c'est la trajectoire du numérique depuis vingt ans.", ton: "alerte" };
+            },
+            lecon: "Un pourcentage d'amélioration ne dit rien tant qu'on ne connaît pas l'évolution du total. C'est la seule question qui vaille, et c'est celle qu'on évite."
         }
     };
 
