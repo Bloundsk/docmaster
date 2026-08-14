@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santé au travail — Débutant - DocMaster</title>
+    <meta name="description" content="Niveau débutant du parcours Santé au travail : régler son poste, la sédentarité, la fatigue visuelle, et les pauses qui récupèrent vraiment.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/sante/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Santé au travail — Débutant - DocMaster">
+    <meta property="og:description" content="Niveau débutant du parcours Santé au travail : régler son poste, la sédentarité, la fatigue visuelle, et les pauses qui récupèrent vraiment.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/sante/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 12 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Santé au travail — Débutant - DocMaster">
+    <meta name="twitter:description" content="Niveau débutant du parcours Santé au travail : régler son poste, la sédentarité, la fatigue visuelle, et les pauses qui récupèrent vraiment.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🩺 Santé au travail</a> &gt;
+        <span aria-current="page">Débutant</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🩺 Santé au travail — Débutant</h1>
+                <p>Le corps au travail. Aucun prérequis.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M38 76 L54 76 L60 60 L70 92 L80 68 L86 76 L102 76"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="46" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="100" cy="100" r="2.5" fill="white" style="animation-delay:1.2s"/>
+<circle class="illu-twinkle" cx="104" cy="44" r="3" fill="white" style="animation-delay:1.8s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 14 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#regler-son-poste">🪑 Régler son poste</a></li>
+                <li><a href="#la-sedentarite">🚶 La sédentarité</a></li>
+                <li><a href="#la-fatigue-visuelle">👀 La fatigue visuelle</a></li>
+                <li><a href="#les-pauses">😌 Les pauses qui récupèrent</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Un portable posé sur un bureau place forcément soit l'écran trop bas, soit les mains trop haut.</li>
+                <li>Neuf heures assises par jour font 2 025 heures par an — et le sport du samedi n'annule pas la position.</li>
+                <li>Regarder au loin quelques secondes relâche le muscle qui accommode. C'est gratuit et efficace.</li>
+                <li>Vingt minutes de pause sont dues au-delà de six heures. C'est un plancher, pas un objectif.</li>
+                <li>Une gêne quotidienne qu'on s'habitue à ignorer finit par devenir une douleur installée.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Ce parcours ne porte pas sur la performance. Le guide <a href="../productivite/index.html">Productivité</a> traite d'organiser son travail ; celui-ci traite d'une autre question : <strong>ne pas s'y abîmer</strong>.</p>
+            <p>Ce niveau commence par le plus concret — le corps, la position, les yeux, les pauses. Ce sont des réglages sans mystère, qui tiennent des mois une fois faits, et que presque personne ne fait.</p>
+
+            <div class="piege">
+                <span class="titre">Avertissement — à lire</span>
+                <p>Ce guide est <strong>pédagogique</strong>. Il ne pose aucun diagnostic et ne remplace ni votre médecin traitant, ni le médecin du travail.</p>
+                <p>Une douleur qui s'installe, une gêne visuelle qui persiste, une fatigue qui ne cède pas au repos : ce sont des motifs de consultation, pas des choses à corriger par un réglage de chaise.</p>
+                <p>Le <strong>service de prévention et de santé au travail</strong> est joignable à votre demande, sans passer par votre employeur, et il est tenu au secret médical.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Le corps au travail</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="regler-son-poste">🪑 Régler son poste</h3></summary>
+                <div class="lecon-corps">
+                <p>La plupart des troubles liés au travail sur écran viennent de positions maintenues des heures, pas d'efforts violents. Ce qui les provoque est donc réglable — et le réglage tient longtemps.</p>
+
+                <h4>Les quatre repères</h4>
+                <ol>
+                    <li><strong>Le haut de l'écran à hauteur des yeux</strong>, ou juste en dessous. Un écran trop bas fait pencher la tête en avant pendant sept heures.</li>
+                    <li><strong>L'écran à une longueur de bras.</strong> Trop près, l'œil accommode en permanence ; trop loin, on avance le buste.</li>
+                    <li><strong>Les avant-bras horizontaux</strong>, épaules relâchées. Si les épaules montent, le plan de travail est trop haut.</li>
+                    <li><strong>Les pieds à plat</strong>, cuisses horizontales. Un repose-pieds coûte moins cher qu'une séance de kiné.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">La contradiction de l'ordinateur portable</span>
+                    <p>Un portable a l'écran solidaire du clavier. Posé sur un bureau, il n'existe aucune position correcte : soit l'écran est à la bonne hauteur et les mains sont trop hautes, soit les mains sont bien placées et la tête penche.</p>
+                    <p><strong>Un support et un clavier séparé résolvent une contradiction, pas un inconfort.</strong> C'est la raison pour laquelle ils reviennent dans toutes les recommandations, y compris pour un usage occasionnel prolongé.</p>
+                </div>
+
+                <div class="pratique" data-pratique="poste-de-travail"></div>
+
+                <h4>La lumière</h4>
+                <p>L'écran perpendiculaire à la fenêtre : face à elle, on travaille contre un contre-jour ; dos à elle, l'écran renvoie des reflets. Dans les deux cas, l'œil compense en permanence.</p>
+                <p>L'éclairage d'appoint éclaire le document, pas l'écran. Et un écran allumé dans une pièce sombre impose un contraste que l'œil supporte mal sur la durée.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — attendre d'avoir mal</span>
+                    <p>Une mauvaise position ne fait pas mal le premier jour, ni le premier mois. Elle se signale d'abord par une gêne en fin de journée, qu'on s'habitue à ignorer.</p>
+                    <p>C'est précisément parce que le signal est faible qu'il faut régler le poste avant d'en avoir besoin. Vingt minutes, une fois.</p>
+                </div>
+
+                <p class="retenir">💡 Ce n'est pas l'effort qui abîme sur un poste de bureau, c'est la position maintenue. Elle, elle se règle.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-sedentarite">🚶 La sédentarité</h3></summary>
+                <div class="lecon-corps">
+                <p>Rester assis longtemps est aujourd'hui identifié comme un facteur de risque à part entière — distinct du manque d'activité physique. On peut être sportif <em>et</em> sédentaire : ce sont deux choses différentes.</p>
+
+                <h4>Deux notions qu'on confond</h4>
+                <p>L'<strong>activité physique</strong> se mesure en minutes d'effort. La <strong>sédentarité</strong> se mesure en heures passées assis. Faire une heure de sport le samedi améliore la première sans rien changer à la seconde.</p>
+                <p>C'est pour cela que les recommandations distinguent deux objectifs : bouger suffisamment <em>et</em> interrompre régulièrement la position assise.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — 9 heures assises, 5 jours par semaine</span>
+                    <p><strong>45 heures par semaine</strong>, soit <strong>2 025 heures</strong> sur une année de travail.</p>
+                    <p>Le repère de l'Organisation mondiale de la santé pour un adulte est de <strong>150 minutes d'activité modérée par semaine</strong>. À 60 minutes, <strong>il en manque 90</strong>.</p>
+                    <p>Et même en atteignant ce repère, les 2 025 heures assises restent. C'est le second levier, indépendant du premier.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sedentarite"></div>
+
+                <h4>Ce qui fonctionne, concrètement</h4>
+                <ul>
+                    <li><strong>Se lever toutes les heures</strong>, même deux minutes. C'est l'interruption qui compte, pas sa durée.</li>
+                    <li><strong>Téléphoner debout ou en marchant.</strong> Sans effort d'organisation, cela déplace plusieurs heures par semaine.</li>
+                    <li><strong>Déplacer les objets utiles hors de portée</strong> — imprimante, bouteille d'eau. La contrainte fait le travail à votre place.</li>
+                    <li><strong>Un bureau assis-debout</strong> si c'est possible : l'alternance vaut mieux que l'une ou l'autre position tenue toute la journée.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire compenser par le sport</span>
+                    <p>« Je cours trois fois par semaine, ça compense » : cela améliore réellement l'activité physique, et ne réduit pas la durée passée assise.</p>
+                    <p>Les deux comptent, et le second est plus facile : personne n'a besoin de motivation pour se lever deux minutes.</p>
+                </div>
+
+                <p class="retenir">💡 On peut être sportif et sédentaire. Ce sont deux mesures distinctes, et deux leviers distincts.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-fatigue-visuelle">👀 La fatigue visuelle</h3></summary>
+                <div class="lecon-corps">
+                <p>Fixer un plan rapproché pendant des heures fatigue le muscle qui règle la mise au point, et réduit fortement le clignement. D'où les yeux secs, les maux de tête, la vision trouble en fin de journée.</p>
+
+                <h4>Le geste qui coûte le moins</h4>
+                <p>Regarder au loin quelques secondes, régulièrement. La formulation la plus répandue tient en trois vingt : <strong>toutes les 20 minutes, regarder à environ 20 pieds (6 mètres) pendant 20 secondes</strong>.</p>
+                <p>Les chiffres exacts importent peu — ce qui compte est le principe : rendre au muscle un moment de relâchement plusieurs fois par heure.</p>
+
+                <div class="exemple">
+                    <span class="titre">Le clignement, l'oublié</span>
+                    <p>Le clignement étale le film lacrymal sur l'œil. Devant un écran, sa fréquence chute nettement, et le film s'évapore plus vite qu'il n'est renouvelé.</p>
+                    <p>C'est ce mécanisme, plus que la lumière de l'écran, qui explique la sensation d'yeux secs et granuleux en fin de journée.</p>
+                    <p>La correction est du même ordre : y penser, et faire des pauses regard qui rétablissent le réflexe naturellement.</p>
+                </div>
+
+                <div class="pratique" data-pratique="fatigue-visuelle"></div>
+
+                <h4>Sur la « lumière bleue »</h4>
+                <p>Les preuves d'un effet nocif de la lumière bleue des écrans sur l'œil sont faibles, et les filtres vendus à cet effet n'ont pas démontré grand-chose sur la fatigue visuelle.</p>
+                <p>Ce qui est mieux établi concerne le <strong>sommeil</strong> : la lumière, quelle que soit sa couleur, retarde l'endormissement. Le levier utile est donc l'heure à laquelle on s'arrête, plus que le filtre appliqué à l'écran.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — traiter une gêne qui dure par un réglage</span>
+                    <p>Une fatigue visuelle passagère se corrige par des pauses. Une gêne qui persiste des jours, des maux de tête récurrents ou une vision durablement trouble relèvent d'un examen.</p>
+                    <p>Une correction visuelle inadaptée est une cause fréquente, et elle ne se règle par aucun paramètre d'affichage.</p>
+                </div>
+
+                <p class="retenir">💡 L'œil qui fixe de près ne se repose jamais. Regarder au loin quelques secondes est le geste le plus simple du guide.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-pauses">😌 Les pauses qui récupèrent</h3></summary>
+                <div class="lecon-corps">
+                <p>La pause n'est pas une récompense ni une perte de temps : c'est ce qui permet à la journée entière de tenir. Encore faut-il qu'elle en soit une.</p>
+
+                <h4>Le minimum, et le reste</h4>
+                <p>La loi impose <strong>vingt minutes de pause au-delà de six heures de travail</strong>. C'est un plancher, et il est souvent lu comme un objectif — alors qu'il ne dit rien de la répartition.</p>
+                <p>Or c'est la répartition qui compte : plusieurs coupures courtes protègent mieux qu'un seul bloc. Un repère ergonomique usuel sur écran est d'environ cinq minutes par heure travaillée, réparties dans la journée.</p>
+
+                <div class="exemple">
+                    <span class="titre">Exemple chiffré — une journée de 8 heures</span>
+                    <p><strong>Pause légale minimale : 20 minutes.</strong> Pauses réellement prises : 15 minutes.</p>
+                    <p><strong>Écart au minimum légal : − 5 minutes</strong> — le plancher n'est même pas atteint.</p>
+                    <p><strong>Repère ergonomique sur écran : environ 40 minutes</strong>, réparties dans la journée. L'écart avec la pratique courante est considérable, et il ne se voit nulle part.</p>
+                </div>
+
+                <div class="pratique" data-pratique="pauses-legales"></div>
+
+                <h4>Ce qui distingue une vraie pause</h4>
+                <p>Une pause qui récupère <strong>change de registre</strong>. Se lever, bouger, regarder ailleurs, parler d'autre chose. Faire défiler un fil d'actualité sur son téléphone occupe exactement la même ressource que le travail : attention soutenue, plan rapproché, écran.</p>
+                <p>Le déjeuner pris devant l'écran suit la même logique : il dure une heure et ne coupe rien.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — supprimer les pauses quand la charge monte</span>
+                    <p>C'est le réflexe le plus répandu et le plus contre-productif : c'est précisément quand la journée est chargée que le rendement décroche sans pauses.</p>
+                    <p>Le temps « gagné » se paie en erreurs, en relectures et en fin de journée improductive — sans que rien ne le rende visible.</p>
+                </div>
+
+                <p class="retenir">💡 Vingt minutes d'un bloc satisfont la loi. Cinq minutes toutes les heures protègent la personne. Ce n'est pas la même chose.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>INRS</strong> — Institut national de recherche et de sécurité : fiches gratuites sur le travail sur écran, les troubles musculo-squelettiques et l'aménagement des postes.</li>
+                    <li><strong>Recommandations de l'OMS sur l'activité physique</strong> : les 150 minutes hebdomadaires citées ici, et la distinction entre activité et sédentarité.</li>
+                    <li><strong>ANACT</strong> — agence pour l'amélioration des conditions de travail : ressources sur l'organisation et la prévention.</li>
+                    <li><strong>Votre service de prévention et de santé au travail</strong> — la visite est de droit, à votre demande, et confidentielle.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> réglez la hauteur de votre écran maintenant, avant de lire la suite. C'est le seul geste de ce guide qui prend deux minutes et tient des mois.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Retour au parcours</span>🩺 Santé au travail</a>
+            <a href="intermediaire.html" class="next"><span class="label">Niveau suivant →</span>Santé — Intermédiaire</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../productivite/index.html">⏱️ Productivité &amp; Organisation</a>
+                <a href="../droit/index.html">⚖️ Droit &amp; démarches</a>
+                <a href="../apprendre/index.html">🎓 Apprendre à apprendre</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/sante-debutant.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

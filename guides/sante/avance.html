@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santé au travail — Avancé - DocMaster</title>
+    <meta name="description" content="Niveau avancé du parcours Santé au travail : la médecine du travail, les obligations de l'employeur, l'épuisement professionnel, et les situations graves.">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/sante/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Santé au travail — Avancé - DocMaster">
+    <meta property="og:description" content="Niveau avancé du parcours Santé au travail : la médecine du travail, les obligations de l'employeur, l'épuisement professionnel, et les situations graves.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/sante/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 12 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Santé au travail — Avancé - DocMaster">
+    <meta name="twitter:description" content="Niveau avancé du parcours Santé au travail : la médecine du travail, les obligations de l'employeur, l'épuisement professionnel, et les situations graves.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="../../index.html">Accueil</a> &gt;
+        <a href="index.html">🩺 Santé au travail</a> &gt;
+        <span aria-current="page">Avancé</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🩺 Santé au travail — Avancé</h1>
+                <p>Les acteurs, les obligations, et quoi faire quand ça va mal.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M38 76 L54 76 L60 60 L70 92 L80 68 L86 76 L102 76"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="46" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="100" cy="100" r="2.5" fill="white" style="animation-delay:1.2s"/>
+<circle class="illu-twinkle" cx="104" cy="44" r="3" fill="white" style="animation-delay:1.8s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Dernière mise à jour : 14 août 2026</span>
+        <button class="copy-link-btn">🔗 Copier le lien</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Sommaire</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#la-medecine-du-travail">🏥 La médecine du travail</a></li>
+                <li><a href="#les-obligations-de-lemployeur">🛡️ Les obligations de l'employeur</a></li>
+                <li><a href="#lepuisement-professionnel">🔥 L'épuisement professionnel</a></li>
+                <li><a href="#les-situations-graves">🚨 Les situations graves</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Points clés à retenir</h2>
+            <ul>
+                <li>Le médecin du travail n'est pas le médecin de l'employeur : il est tenu au secret médical.</li>
+                <li>La visite à votre demande est un droit, confidentielle, et sur le temps de travail.</li>
+                <li>L'obligation de sécurité de l'employeur porte sur la prévention, pas sur la réparation.</li>
+                <li>L'épuisement professionnel ne se diagnostique pas soi-même, et surtout pas par un questionnaire en ligne.</li>
+                <li>Face à une situation grave : écrire les faits, datés, avant tout le reste.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Les deux premiers niveaux relevaient de ce que chacun peut faire seul. Celui-ci porte sur ce qui ne se règle pas seul : <strong>les acteurs à connaître</strong>, <strong>ce que l'employeur doit</strong>, et <strong>quoi faire, dans quel ordre</strong>, quand la situation dépasse les réglages.</p>
+            <p>C'est le niveau le plus utile à lire <em>avant</em> d'en avoir besoin. Ces mécanismes se découvrent mal en situation.</p>
+
+            <div class="piege">
+                <span class="titre">Avertissement — à lire</span>
+                <p>Ce guide est <strong>pédagogique</strong> et porte sur le <strong>droit français</strong>. Il ne pose aucun diagnostic et ne remplace ni un médecin, ni un avocat, ni un représentant du personnel.</p>
+                <p>Les exercices de cette page portent sur des <strong>démarches</strong> et des <strong>connaissances</strong> — jamais sur votre état de santé. Aucun ne rend de score, et aucun ne conclut quoi que ce soit sur vous.</p>
+                <p><strong>Si vous allez mal :</strong> parlez-en à votre médecin traitant ou au médecin du travail. En cas de détresse, le <strong>3114</strong> répond gratuitement, 24 heures sur 24, partout en France.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Les acteurs et les recours</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Tout déplier</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="la-medecine-du-travail">🏥 La médecine du travail</h3></summary>
+                <div class="lecon-corps">
+                <p>C'est le levier le plus puissant du domaine, et l'un des plus mal compris. La confusion la plus répandue : croire que le médecin du travail travaille pour l'employeur.</p>
+
+                <h4>Ce qu'il est, et ce qu'il n'est pas</h4>
+                <p>Le médecin du travail est un <strong>médecin</strong>, soumis au secret médical comme tout autre. L'employeur qui le rémunère n'a accès ni à ce que vous dites, ni à votre dossier — seulement aux <strong>conclusions</strong> sur votre aptitude au poste.</p>
+                <p>Son rôle est exclusivement préventif : il ne soigne pas, il évite que le travail n'altère la santé.</p>
+
+                <h4>La visite à votre demande</h4>
+                <p>C'est le point le plus ignoré : <strong>tout salarié peut demander une visite, à tout moment, sans passer par son employeur et sans avoir à se justifier</strong>. L'employeur ne peut pas s'y opposer, et ne peut pas en connaître le motif.</p>
+                <p>Pendant un arrêt de travail long, une <strong>visite de préreprise</strong> peut être demandée : elle sert à préparer le retour — aménagement, temps partiel thérapeutique, reclassement — avant que la reprise n'ait lieu.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce qu'il peut obtenir</span>
+                    <p><strong>Un aménagement de poste.</strong> Ses propositions s'imposent à l'employeur, qui ne peut les écarter qu'en justifiant d'une impossibilité.</p>
+                    <p><strong>Une étude du poste</strong> et des conditions de travail, sur place.</p>
+                    <p><strong>Une alerte sur un collectif</strong> : s'il constate un risque pour plusieurs salariés, il peut le signaler par écrit à l'employeur, qui doit y répondre.</p>
+                    <p>Aucune de ces actions ne suppose que vous soyez malade. Elles supposent seulement que quelque chose au travail pose problème.</p>
+                </div>
+
+                <div class="pratique" data-pratique="medecine-travail"></div>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — attendre la visite périodique</span>
+                    <p>Les visites périodiques sont espacées de plusieurs années dans de nombreuses situations. Attendre la prochaine pour évoquer un problème revient souvent à attendre trop longtemps.</p>
+                    <p>La visite à la demande existe exactement pour cela, et elle ne coûte rien — ni au salarié, ni en jours de congé : elle a lieu sur le temps de travail.</p>
+                </div>
+
+                <p class="retenir">💡 Une visite à votre demande, confidentielle, sans motif à donner, sur le temps de travail. C'est un droit, et il est très peu utilisé.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-obligations-de-lemployeur">🛡️ Les obligations de l'employeur</h3></summary>
+                <div class="lecon-corps">
+                <p>La santé au travail n'est pas une politique interne facultative : c'est une obligation légale, dont la portée est plus large qu'on ne le croit généralement.</p>
+
+                <h4>Une obligation de prévention</h4>
+                <p>L'employeur doit prendre les mesures nécessaires pour assurer la sécurité et protéger la santé <strong>physique et mentale</strong> des travailleurs. La mention de la santé mentale est explicite dans le code du travail.</p>
+                <p>Cette obligation porte sur la <strong>prévention</strong> : évaluer les risques, les éviter à la source, adapter le travail à l'homme. Réparer une fois le dommage survenu ne suffit pas à s'en acquitter.</p>
+
+                <h4>Le document unique</h4>
+                <p>Le <strong>DUERP</strong> — document unique d'évaluation des risques professionnels — est obligatoire dès le premier salarié. Il recense les risques par unité de travail, et doit inclure les <strong>risques psychosociaux</strong>, pas seulement les risques physiques.</p>
+                <p>Il est accessible aux salariés. Le demander est légitime, et l'absence de réponse est en soi une information.</p>
+
+                <div class="exemple">
+                    <span class="titre">Les interlocuteurs, dans l'ordre</span>
+                    <p><strong>Le CSE</strong> — comité social et économique — dans les entreprises d'au moins onze salariés. Ses membres peuvent alerter, enquêter, et disposent d'un droit d'alerte en cas de danger grave et imminent.</p>
+                    <p><strong>Le service de prévention et de santé au travail</strong>, joignable directement.</p>
+                    <p><strong>L'inspection du travail</strong>, quand rien ne bouge. La saisine est gratuite et peut rester confidentielle sur demande.</p>
+                </div>
+
+                <div class="pratique" data-pratique="duerp"></div>
+
+                <h4>Le droit de retrait</h4>
+                <p>Face à un <strong>danger grave et imminent</strong>, tout salarié peut se retirer de la situation, après en avoir alerté l'employeur. Aucune sanction ni retenue de salaire ne peut être appliquée pour ce seul motif.</p>
+                <p>Deux conditions comptent : le danger doit être <strong>grave</strong> et <strong>imminent</strong>, et le retrait ne doit pas créer un danger pour d'autres. Le motif s'apprécie à partir de ce qu'on pouvait raisonnablement croire au moment des faits.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — croire que rien n'est dû sans CSE</span>
+                    <p>L'obligation de sécurité et le document unique existent quelle que soit la taille de l'entreprise, y compris sans représentants du personnel.</p>
+                    <p>En leur absence, le service de santé au travail et l'inspection du travail restent joignables directement.</p>
+                </div>
+
+                <p class="retenir">💡 L'obligation porte sur la prévention. Un employeur qui répare après coup n'a pas fait ce que la loi lui demande.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="lepuisement-professionnel">🔥 L'épuisement professionnel</h3></summary>
+                <div class="lecon-corps">
+                <p>Le mot est passé dans le langage courant, ce qui l'a rendu à la fois familier et flou. Il désigne quelque chose de précis, et il n'est pas un synonyme de fatigue ni de surmenage.</p>
+
+                <h4>Les trois dimensions décrites</h4>
+                <p>La littérature en distingue trois, qui se combinent :</p>
+                <ol>
+                    <li><strong>L'épuisement</strong> — une fatigue qui ne cède plus au repos, physique autant que mentale.</li>
+                    <li><strong>La distance</strong> — un détachement, parfois du cynisme, vis-à-vis du travail et des personnes.</li>
+                    <li><strong>La perte du sentiment d'efficacité</strong> — l'impression de ne plus rien réussir, indépendamment des résultats réels.</li>
+                </ol>
+                <p>Ce n'est pas un diagnostic médical au sens strict, et il ne figure pas comme maladie autonome dans les classifications internationales : il y est décrit comme un <strong>phénomène lié au travail</strong>. Ce qui n'enlève rien à sa réalité ni à sa gravité.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ce qui le distingue d'une période difficile</span>
+                    <p><strong>La durée.</strong> Plusieurs semaines, sans amélioration entre les périodes.</p>
+                    <p><strong>L'absence de récupération.</strong> Le week-end, puis les congés, ne suffisent plus.</p>
+                    <p><strong>L'installation.</strong> Ce n'est plus une réaction à un événement, c'est devenu l'état de base.</p>
+                    <p>Un signe revient constamment dans les témoignages : <strong>l'entourage l'a remarqué avant la personne concernée</strong>. L'adaptation progressive efface les points de comparaison.</p>
+                </div>
+
+                <div class="pratique" data-pratique="epuisement"></div>
+
+                <h4>Pourquoi aucun test en ligne ne convient</h4>
+                <p>Des questionnaires validés existent, et ils sont utilisés par des professionnels — dans un cadre, avec un entretien, et avec une interprétation. Sortis de ce cadre, ils produisent des chiffres sans signification.</p>
+                <p>Un score rendu par une page web peut rassurer à tort quelqu'un qui va mal, ou inquiéter durablement quelqu'un qui va bien. Aucune des deux erreurs n'est acceptable, et c'est pourquoi cette page n'en propose pas.</p>
+                <p><strong>La suite utile est toujours la même :</strong> en parler à son médecin traitant ou au médecin du travail. Tous deux sont tenus au secret.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — le lire comme une faiblesse individuelle</span>
+                    <p>Les facteurs organisationnels — surcharge durable, absence de marge, manque de reconnaissance, conflits de valeurs — sont documentés et déterminants.</p>
+                    <p>Traiter la question comme un défaut de résistance personnelle laisse la cause en place, et fait porter à la personne ce qui relève de l'organisation.</p>
+                </div>
+
+                <p class="retenir">💡 Ces trois dimensions servent à nommer, pas à conclure. Nommer permet d'en parler — c'est déjà beaucoup.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-situations-graves">🚨 Les situations graves</h3></summary>
+                <div class="lecon-corps">
+                <p>Harcèlement moral ou sexuel, discrimination, violence : ce sont des situations où l'ordre des démarches compte autant que leur contenu. Et où ce qui n'a pas été écrit sur le moment est très difficile à établir après.</p>
+
+                <h4>Ce que la loi qualifie</h4>
+                <p>Le <strong>harcèlement moral</strong> se caractérise par des agissements répétés ayant pour objet ou pour effet une dégradation des conditions de travail susceptible de porter atteinte aux droits, à la dignité, à la santé ou à l'avenir professionnel.</p>
+                <p>Deux points souvent ignorés : <strong>l'intention n'est pas nécessaire</strong> — l'effet suffit ; et <strong>le lien hiérarchique non plus</strong> — le harcèlement entre collègues est constitué de la même façon.</p>
+                <p>Le <strong>harcèlement sexuel</strong> obéit à une définition distincte, et un fait unique suffit dans certains cas.</p>
+
+                <div class="exemple">
+                    <span class="titre">L'ordre qui compte</span>
+                    <p><strong>1. Écrire.</strong> Les faits, datés, au fur et à mesure. C'est la première chose que demanderont tous les interlocuteurs, et la plus difficile à reconstituer six mois plus tard.</p>
+                    <p><strong>2. Conserver.</strong> Messages, courriels, documents, plannings — tout ce qui matérialise les faits.</p>
+                    <p><strong>3. Alerter par écrit</strong> l'employeur ou les ressources humaines. C'est cette alerte qui déclenche son obligation d'agir : un employeur informé qui ne fait rien engage sa responsabilité.</p>
+                    <p><strong>4. Saisir les relais</strong> — représentants du personnel, référent harcèlement, médecin du travail, inspection du travail, Défenseur des droits.</p>
+                </div>
+
+                <div class="pratique" data-pratique="situation-grave"></div>
+
+                <h4>Les protections</h4>
+                <p>Le salarié qui témoigne ou relate des faits de harcèlement <strong>ne peut pas être sanctionné pour ce motif</strong>. Un licenciement fondé là-dessus est nul.</p>
+                <p>En matière de harcèlement et de discrimination, la charge de la preuve est <strong>aménagée</strong> : le salarié présente des éléments laissant supposer les faits, et il revient à l'employeur de démontrer qu'ils s'expliquent autrement. C'est une différence considérable avec le régime ordinaire — et une raison de plus de constituer un dossier.</p>
+
+                <div class="piege">
+                    <span class="titre">Erreur fréquente — attendre d'être certain de la qualification</span>
+                    <p>Beaucoup hésitent à alerter parce qu'ils ne savent pas si la situation « compte comme » du harcèlement. Ce n'est pas au salarié de la qualifier.</p>
+                    <p>Décrire des faits datés à un interlocuteur compétent est la démarche utile. La qualification juridique viendra ensuite, et elle relève d'autres.</p>
+                </div>
+
+                <p class="retenir">💡 Écrire les faits, datés, dès le début. C'est ce qui rend toutes les suites possibles, et rien ne le remplace après coup.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">J'ai lu et compris ce niveau</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Quiz de synthèse</h2>
+            <p class="quiz-intro">Ces questions couvrent l'ensemble du niveau. Elles sont différentes de celles des sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Pour aller plus loin</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>3114</strong> — numéro national de prévention du suicide. Gratuit, confidentiel, 24 h sur 24, partout en France.</li>
+                    <li><strong>Votre service de prévention et de santé au travail</strong> — la visite à votre demande est un droit, confidentielle et sur le temps de travail.</li>
+                    <li><strong>INRS</strong> — dossiers sur le harcèlement, les risques psychosociaux et l'obligation de prévention.</li>
+                    <li><strong>Défenseur des droits</strong> — saisine gratuite en ligne pour les discriminations et le harcèlement.</li>
+                    <li><strong>Inspection du travail</strong> — saisine gratuite, confidentielle sur demande, y compris sans représentants du personnel.</li>
+                </ul>
+                <p><strong>Un réflexe utile :</strong> notez dès aujourd'hui les coordonnées de votre service de santé au travail. Ce n'est pas au moment où l'on en a besoin qu'on a l'énergie de les chercher.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Niveau précédent</span>Santé — Intermédiaire</a>
+            <a href="index.html" class="next"><span class="label">Retour au parcours →</span>🩺 Santé au travail</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Guides similaires</h2>
+            <div class="related-list">
+                <a href="../productivite/index.html">⏱️ Productivité &amp; Organisation</a>
+                <a href="../droit/index.html">⚖️ Droit &amp; démarches</a>
+                <a href="../apprendre/index.html">🎓 Apprendre à apprendre</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/quiz/sante-avance.js"></script>
+    <script src="../../assets/js/quiz.js"></script>
+    <script src="../../assets/js/pratique.js"></script>
+    <script src="../../assets/js/favoris.js"></script>
+    <script src="../../assets/js/theme.js"></script>
+    <script src="../../assets/js/enhance.js"></script>
+</body>
+</html>

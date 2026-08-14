@@ -46,6 +46,9 @@
     // Une duree en minutes s affiche en heures et minutes : « 247 » ne parle
     // pas, « 4 h 08 min » si. Les minutes sont completees a deux chiffres des
     // qu il y a des heures, faute de quoi « 4 h 8 min » se lit mal.
+    // Un nombre saisi au demi : « 10,5 » garde sa decimale, « 10,0 » la perd.
+    const souple = (n) => nf(n, Number.isInteger(n) ? 0 : 1);
+
     const heuresMinutes = (minutes) => {
         const total = Math.round(minutes);
         const h = Math.floor(total / 60);
@@ -128,6 +131,37 @@
         if (joursPresence < 31) return "48 heures";
         if (joursPresence < 91) return "2 semaines";
         return "1 mois";
+    }
+
+    // --- Sante au travail -------------------------------------------------
+    //
+    // Meme prudence que pour le droit : seules figurent ici des references
+    // stables et publiques. Rien de ce qui suit ne permet d evaluer l etat de
+    // sante de qui que ce soit — ce sont des reperes, pas des mesures.
+
+    // Recommandation de l Organisation mondiale de la sante pour un adulte :
+    // 150 a 300 minutes d activite d intensite moderee par semaine.
+    const ACTIVITE_OMS = 150;
+
+    // Repos minimaux, code du travail. Stables et opposables :
+    // 11 heures consecutives entre deux journees (art. L3131-1),
+    // 35 heures consecutives par semaine (art. L3132-2),
+    // 20 minutes de pause au-dela de 6 heures de travail (art. L3121-16).
+    const REPOS_QUOTIDIEN = 11;
+    const REPOS_HEBDOMADAIRE = 35;
+    const PAUSE_LEGALE = 20;
+    const SEUIL_PAUSE = 6;
+
+    // Modele de Karasek, utilise en sante au travail depuis les annees 1980.
+    // Il croise l exigence du poste et la latitude laissee pour y repondre ;
+    // le soutien social, ajoute ensuite, en module l effet. La combinaison
+    // « forte demande, faible latitude » est celle associee au risque le plus
+    // eleve — d autant plus si le soutien manque.
+    function quadrantKarasek(demande, latitude) {
+        if (demande >= 5 && latitude >= 5) return "actif";
+        if (demande >= 5) return "tendu";
+        if (latitude >= 5) return "détendu";
+        return "passif";
     }
 
     // --- Les simulateurs --------------------------------------------------
@@ -3049,6 +3083,278 @@
                 return { texte: "Ces droits existent depuis 2018 et ne coûtent rien à exercer. Ils sont surtout inutilisés.", ton: "alerte" };
             },
             lecon: "Une demande d'accès se fait par courriel, sans justification, et l'entreprise a un mois pour répondre. Le silence est lui-même un motif de plainte."
+        },
+
+        // =====================================================================
+        // SANTE ET BIEN-ETRE AU TRAVAIL
+        //
+        // Aucun de ces outils n evalue un etat de sante. Les controles portent
+        // sur des conditions de travail et sur des demarches — jamais sur des
+        // symptomes notes puis totalises. Un score de sante mentale rendu par
+        // une page web serait a la fois faux et dangereux.
+        // =====================================================================
+
+        "poste-de-travail": {
+            type: "controle",
+            titre: "Votre poste est-il correctement réglé ?",
+            intro: "Installez-vous comme d'habitude, puis cochez ce qui est vrai.",
+            points: [
+                { texte: "Le haut de l'écran est à hauteur des yeux, ou juste en dessous" },
+                { texte: "L'écran est à environ une longueur de bras" },
+                { texte: "Mes avant-bras sont horizontaux, épaules relâchées" },
+                { texte: "Mes pieds reposent à plat, cuisses horizontales" },
+                { texte: "L'écran est perpendiculaire à la fenêtre", aide: "ni face à la lumière, ni dos à elle" },
+                { texte: "Sur portable, j'utilise un support et un clavier séparé", aide: "sinon l'écran et les mains ne peuvent pas être bien placés en même temps" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Poste correctement réglé. Le réglage tient des mois : c'est du temps très bien placé.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. La hauteur d'écran et la position des avant-bras sont les deux réglages qui pèsent le plus.", ton: "moyen" };
+                return { texte: "Plusieurs réglages à reprendre. Une gêne quotidienne finit par devenir une douleur installée.", ton: "alerte" };
+            },
+            lecon: "Un portable posé sur un bureau place forcément soit l'écran trop bas, soit les mains trop haut. Le support et le clavier séparé règlent une contradiction, pas un confort."
+        },
+
+        "sedentarite": {
+            titre: "Combien de temps passez-vous assis ?",
+            intro: "Et ce que l'activité physique en compense réellement.",
+            champs: [
+                { id: "heures", libelle: "Heures assis par jour", unite: "h", defaut: 9, min: 0, max: 20, pas: 0.5 },
+                { id: "jours", libelle: "Jours par semaine", unite: "j", defaut: 5, min: 1, max: 7, pas: 1 },
+                { id: "activite", libelle: "Minutes d'activité modérée par semaine", unite: "min", defaut: 60, min: 0, max: 1000, pas: 10 }
+            ],
+            calculer: ({ heures, jours, activite }) => {
+                const parSemaine = heures * jours;
+                const manque = Math.max(0, ACTIVITE_OMS - activite);
+                return [
+                    { libelle: "Heures assis par semaine", valeur: souple(parSemaine) + " h" },
+                    { libelle: "Soit, sur une année de travail", valeur: nf(Math.round(parSemaine * 45)) + " h", fort: true },
+                    { libelle: "Repère de l'OMS", valeur: nf(ACTIVITE_OMS) + " min d'activité modérée par semaine" },
+                    {
+                        libelle: manque > 0 ? "Il vous manque" : "Repère atteint",
+                        valeur: manque > 0
+                            ? nf(manque) + " min par semaine"
+                            : (activite > ACTIVITE_OMS ? "+ " + nf(activite - ACTIVITE_OMS) + " min au-delà" : "tout juste")
+                    }
+                ];
+            },
+            lecon: "Couper la position assise toutes les heures compte autant que la durée totale. Se lever deux minutes n'a l'air de rien et ne se remplace pas par une séance de sport le samedi."
+        },
+
+        "pauses-legales": {
+            titre: "Vos pauses sont-elles à la hauteur ?",
+            intro: "Au-delà de six heures de travail, vingt minutes de pause sont dues. C'est un plancher, pas un objectif.",
+            champs: [
+                { id: "travail", libelle: "Heures travaillées dans la journée", unite: "h", defaut: 8, min: 1, max: 16, pas: 0.5 },
+                { id: "pauses", libelle: "Minutes de pause réellement prises", unite: "min", defaut: 15, min: 0, max: 240, pas: 5 }
+            ],
+            calculer: ({ travail, pauses }) => {
+                const due = travail > SEUIL_PAUSE ? PAUSE_LEGALE : 0;
+                // Repere ergonomique usuel : une courte coupure par heure de
+                // travail sur ecran, distincte du minimum legal.
+                const conseillees = Math.round(travail) * 5;
+                return [
+                    { libelle: "Pause légale minimale", valeur: due > 0 ? nf(due) + " min" : "aucune en dessous de 6 h" },
+                    { libelle: "Pauses réellement prises", valeur: nf(pauses) + " min" },
+                    { libelle: "Écart au minimum légal", valeur: pauses >= due ? "respecté" : "− " + nf(due - pauses) + " min", fort: true },
+                    { libelle: "Repère ergonomique sur écran", valeur: "environ " + nf(conseillees) + " min, réparties dans la journée" }
+                ];
+            },
+            lecon: "Le minimum légal est de vingt minutes d'un bloc. Ce qui protège vraiment, ce sont des coupures courtes et fréquentes — l'un n'est pas la version réduite de l'autre."
+        },
+
+        "fatigue-visuelle": {
+            type: "controle",
+            titre: "Ménagez-vous vos yeux ?",
+            intro: "Cochez ce que vous faites réellement au cours d'une journée d'écran.",
+            points: [
+                { texte: "Je regarde au loin quelques secondes toutes les vingt minutes environ" },
+                { texte: "Je pense à cligner des yeux quand je fixe longtemps", aide: "la fréquence de clignement chute nettement devant un écran" },
+                { texte: "La luminosité de l'écran est proche de celle de la pièce" },
+                { texte: "Je ne travaille pas dans le noir avec un écran allumé" },
+                { texte: "Ma correction visuelle est à jour" },
+                { texte: "Je consulte si la gêne persiste plusieurs jours", aide: "maux de tête, vision floue en fin de journée" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Bonnes habitudes. La fatigue visuelle est réversible quand on la prend tôt.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. Regarder au loin régulièrement est le geste le plus simple et le plus efficace.", ton: "moyen" };
+                return { texte: "Plusieurs habitudes à reprendre. Une gêne qui dure ne se traite pas par un filtre logiciel.", ton: "alerte" };
+            },
+            lecon: "L'œil qui fixe un plan rapproché pendant des heures ne se repose jamais. Regarder au loin quelques secondes suffit à relâcher le muscle qui accommode."
+        },
+
+        "charge-recuperation": {
+            titre: "Votre semaine laisse-t-elle place à la récupération ?",
+            intro: "Les repos minimaux du code du travail servent de repère : 11 heures entre deux journées, 35 heures consécutives par semaine.",
+            champs: [
+                { id: "heures", libelle: "Heures travaillées par semaine", unite: "h", defaut: 45, min: 0, max: 100, pas: 1 },
+                { id: "coupure", libelle: "Coupure la plus courte entre deux journées", unite: "h", defaut: 10, min: 0, max: 24, pas: 0.5 },
+                { id: "weekend", libelle: "Heures consécutives de repos en fin de semaine", unite: "h", defaut: 40, min: 0, max: 100, pas: 1 }
+            ],
+            calculer: ({ heures, coupure, weekend }) => {
+                const alertes = [];
+                if (coupure < REPOS_QUOTIDIEN) alertes.push("repos quotidien");
+                if (weekend < REPOS_HEBDOMADAIRE) alertes.push("repos hebdomadaire");
+                return [
+                    { libelle: "Repos quotidien minimal", valeur: nf(REPOS_QUOTIDIEN) + " h — le vôtre : " + souple(coupure) + " h" },
+                    { libelle: "Repos hebdomadaire minimal", valeur: nf(REPOS_HEBDOMADAIRE) + " h — le vôtre : " + nf(weekend) + " h" },
+                    { libelle: "Heures travaillées", valeur: nf(heures) + " h par semaine" },
+                    {
+                        libelle: "Constat",
+                        valeur: alertes.length === 0
+                            ? "les deux repos minimaux sont respectés"
+                            : "en dessous du minimum : " + alertes.join(" et "),
+                        fort: true
+                    }
+                ];
+            },
+            lecon: "Ces durées ne sont pas des recommandations de confort : ce sont des minimums opposables. Passer en dessous régulièrement se signale au service de santé au travail."
+        },
+
+        "karasek": {
+            titre: "Où se situe votre poste ?",
+            intro: "Trois curseurs, de 0 à 10, selon le modèle utilisé en santé au travail depuis les années 1980. Notez ce que vous ressentez de votre poste, pas ce qu'il devrait être.",
+            champs: [
+                { id: "demande", libelle: "Exigence du poste", unite: "/10", defaut: 7, min: 0, max: 10, pas: 1 },
+                { id: "latitude", libelle: "Latitude : marge de décision et d'organisation", unite: "/10", defaut: 3, min: 0, max: 10, pas: 1 },
+                { id: "soutien", libelle: "Soutien des collègues et de la hiérarchie", unite: "/10", defaut: 4, min: 0, max: 10, pas: 1 }
+            ],
+            calculer: ({ demande, latitude, soutien }) => {
+                const quadrant = quadrantKarasek(demande, latitude);
+                const isole = soutien < 5;
+                const lecture = {
+                    actif: "exigeant mais tenable : la marge de manœuvre compense l'exigence",
+                    tendu: "forte exigence, peu de marge — c'est la combinaison la plus associée au risque",
+                    "détendu": "peu exigeant, avec de la marge",
+                    passif: "peu exigeant et peu de marge : usure par l'ennui plutôt que par la charge"
+                };
+                return [
+                    { libelle: "Situation décrite", valeur: quadrant, fort: true },
+                    { libelle: "Lecture", valeur: lecture[quadrant] },
+                    { libelle: "Soutien", valeur: isole ? "faible — il aggrave chacune des situations ci-dessus" : "présent — il amortit l'exigence" },
+                    { libelle: "À retenir", valeur: quadrant === "tendu" && isole ? "situation à évoquer avec le service de santé au travail" : "repère à relire dans quelques mois" }
+                ];
+            },
+            lecon: "Ce n'est pas l'exigence seule qui use, c'est l'exigence sans marge de manœuvre. Deux postes également chargés n'ont pas le même effet selon ce qu'ils laissent décider."
+        },
+
+        "stress-chronique": {
+            type: "controle",
+            titre: "Aigu ou installé ?",
+            intro: "Cochez ce qui décrit votre situation de travail depuis plusieurs semaines.",
+            points: [
+                { texte: "La pression ne retombe pas entre deux périodes chargées" },
+                { texte: "Le week-end ne suffit plus à récupérer" },
+                { texte: "Je pense au travail à des moments où je n'y pensais pas avant" },
+                { texte: "Mon sommeil a changé depuis plusieurs semaines" },
+                { texte: "J'ai réduit ce qui me faisait du bien en dehors du travail" },
+                { texte: "Mon entourage me l'a fait remarquer" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Aucun de ces signaux. Un stress qui retombe entre deux pics est le fonctionnement normal.", ton: "bon" };
+                if (n <= 2) return { texte: "Quelques signaux. Ils méritent d'être observés sur les prochaines semaines plutôt qu'écartés.", ton: "moyen" };
+                return { texte: "Plusieurs signaux installés. Ce n'est pas un diagnostic — c'est une raison d'en parler à un médecin ou au service de santé au travail, qui sont tenus au secret.", ton: "alerte" };
+            },
+            lecon: "Le stress aigu monte puis retombe : c'est une réponse normale. Ce qui abîme, c'est l'absence de retour à la normale — et cela se remarque bien plus tôt de l'extérieur que de l'intérieur."
+        },
+
+        "deconnexion": {
+            type: "controle",
+            titre: "Vos frontières tiennent-elles ?",
+            intro: "Cochez ce qui est vrai d'une semaine ordinaire.",
+            points: [
+                { texte: "Je ne consulte pas mes messages professionnels le soir" },
+                { texte: "Les notifications professionnelles sont coupées en dehors des heures" },
+                { texte: "Je ne réponds pas le week-end, sauf urgence réelle" },
+                { texte: "Mon équipe sait que je ne réponds pas en soirée" },
+                { texte: "Je n'envoie pas de messages tard, ou j'en diffère l'envoi", aide: "un message envoyé à 23 h met les autres sous pression" },
+                { texte: "Mes congés sont réellement sans travail" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Frontières nettes. C'est ce qui permet à la récupération d'avoir lieu.", ton: "bon" };
+                if (n >= 4) return { texte: "Correct. Différer l'envoi des messages tardifs coûte un clic et change les attentes de toute l'équipe.", ton: "moyen" };
+                return { texte: "Le travail déborde largement. Le droit à la déconnexion existe précisément parce que la frontière ne tient pas toute seule.", ton: "alerte" };
+            },
+            lecon: "La déconnexion n'est pas qu'une affaire individuelle : ce qu'on envoie le soir fixe ce que les autres croient devoir faire."
+        },
+
+        "medecine-travail": {
+            type: "controle",
+            titre: "Savez-vous ce que le médecin du travail peut faire ?",
+            intro: "Cochez ce que vous saviez déjà.",
+            points: [
+                { texte: "Je peux le consulter à ma demande, sans passer par mon employeur" },
+                { texte: "Il est tenu au secret médical : mon employeur n'apprend pas ce que je dis" },
+                { texte: "Il peut proposer un aménagement de poste, qui s'impose à l'employeur sauf impossibilité" },
+                { texte: "Il peut demander une étude du poste et des conditions de travail" },
+                { texte: "Une visite de préreprise existe pendant un arrêt long, à ma demande" },
+                { texte: "Je sais comment joindre mon service de prévention et de santé au travail" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Vous connaissez ce levier. C'est l'un des plus efficaces et des moins utilisés.", ton: "bon" };
+                if (n >= 4) return { texte: "Bonne base. La visite à la demande du salarié et le secret médical sont les deux points les plus souvent ignorés.", ton: "moyen" };
+                return { texte: "Le médecin du travail n'est pas le médecin de l'employeur. La visite est de droit, confidentielle, et sur le temps de travail.", ton: "alerte" };
+            },
+            lecon: "La visite à la demande du salarié est un droit, elle est confidentielle, et l'employeur ne peut pas en connaître le contenu — seulement les conclusions d'aptitude."
+        },
+
+        "duerp": {
+            type: "controle",
+            titre: "Votre employeur tient-il ses obligations ?",
+            intro: "Cochez ce dont vous avez connaissance dans votre entreprise.",
+            points: [
+                { texte: "Un document unique d'évaluation des risques existe et est accessible" },
+                { texte: "Les risques psychosociaux y figurent, pas seulement les risques physiques" },
+                { texte: "Il est mis à jour, et pas seulement archivé" },
+                { texte: "Des représentants du personnel ou un CSE existent et sont identifiables" },
+                { texte: "Une procédure est prévue pour signaler une situation dangereuse" },
+                { texte: "Je sais que je peux me retirer d'une situation de danger grave et imminent", aide: "droit de retrait, sans sanction possible pour ce seul motif" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Cadre en place. Il rend les demandes beaucoup plus simples à formuler.", ton: "bon" };
+                if (n >= 4) return { texte: "Partiel. Le document unique est obligatoire dès le premier salarié, et doit couvrir les risques psychosociaux.", ton: "moyen" };
+                return { texte: "L'employeur a une obligation de sécurité, qui ne dépend pas de votre demande. Le CSE et l'inspection du travail sont les interlocuteurs quand rien ne bouge.", ton: "alerte" };
+            },
+            lecon: "L'obligation de sécurité de l'employeur est une obligation de moyens renforcée : elle porte sur la prévention, pas seulement sur la réparation une fois le dommage survenu."
+        },
+
+        "epuisement": {
+            type: "controle",
+            titre: "Les trois dimensions décrites dans la littérature",
+            intro: "Cochez ce que vous reconnaissez. Ceci n'est pas un test et ne rend aucun résultat : c'est une aide à mettre des mots avant d'en parler.",
+            points: [
+                { texte: "Épuisement : la fatigue ne cède plus au repos" },
+                { texte: "Distance : je me suis mis à distance des gens ou du sens de mon travail" },
+                { texte: "Efficacité : j'ai le sentiment de ne plus rien réussir" },
+                { texte: "Cela dure depuis plusieurs semaines" },
+                { texte: "Mon entourage l'a remarqué avant moi" },
+                { texte: "Je n'en ai encore parlé à aucun professionnel" }
+            ],
+            verdict: (n) => {
+                if (n === 0) return { texte: "Rien de reconnu ici. Cette section reste utile pour reconnaître la situation chez quelqu'un d'autre.", ton: "bon" };
+                if (n <= 2) return { texte: "Ce que vous reconnaissez mérite d'être dit à un médecin. Aucun outil en ligne, celui-ci compris, ne peut aller plus loin.", ton: "moyen" };
+                return { texte: "Parlez-en à votre médecin traitant ou au médecin du travail — c'est la seule suite utile à cet exercice. En cas de détresse, le 3114 répond gratuitement, 24 h sur 24.", ton: "alerte" };
+            },
+            lecon: "L'épuisement professionnel n'est pas un diagnostic qu'on pose soi-même, et surtout pas au moyen d'un questionnaire en ligne. Ces trois dimensions servent à nommer, pas à conclure."
+        },
+
+        "situation-grave": {
+            type: "controle",
+            titre: "Face à une situation grave, dans l'ordre",
+            intro: "Harcèlement, discrimination, danger : cochez ce qui est déjà fait.",
+            points: [
+                { texte: "J'ai noté les faits par écrit, datés, au fur et à mesure" },
+                { texte: "J'ai conservé les messages, courriels et documents" },
+                { texte: "J'ai identifié d'éventuels témoins" },
+                { texte: "J'ai alerté par écrit l'employeur ou le service des ressources humaines" },
+                { texte: "J'ai contacté un représentant du personnel ou le CSE" },
+                { texte: "J'ai consulté le médecin du travail, l'inspection du travail ou un défenseur des droits" }
+            ],
+            verdict: (n, total) => {
+                if (n >= total - 1) return { texte: "Démarche complète. Les écrits datés sont ce qui rendra la suite possible, quelle qu'elle soit.", ton: "bon" };
+                if (n >= 3) return { texte: "En cours. L'alerte écrite à l'employeur est l'étape qui déclenche son obligation d'agir.", ton: "moyen" };
+                return { texte: "Commencez par écrire les faits, datés. C'est la première chose que demanderont tous les interlocuteurs — et la plus difficile à reconstituer après coup.", ton: "alerte" };
+            },
+            lecon: "L'employeur informé par écrit d'une situation de harcèlement a l'obligation de réagir. Ne rien écrire le dispense de fait, quelle que soit la gravité des faits."
         }
     };
 

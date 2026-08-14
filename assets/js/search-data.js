@@ -191,6 +191,23 @@ const searchIndex = [
     { title: "Régler un litige sans juge", description: "Le conciliateur de justice est gratuit, et largement ignoré.", url: "guides/droit/avance.html", keywords: "conciliateur médiateur amiable litige tribunal aide juridictionnelle frais procès" },
     { title: "Vos droits sur vos données", description: "Un courriel, aucun motif, un mois pour répondre.", url: "guides/droit/avance.html", keywords: "rgpd données personnelles cnil accès effacement portabilité opposition plainte" },
 
+    { title: "Santé au travail", description: "Ne pas s'abîmer au travail : le corps, la charge, et les recours.", url: "guides/sante/index.html", keywords: "santé travail bien-être ergonomie stress prévention risques" },
+    { title: "Santé — Débutant", description: "Le corps au travail. Aucun prérequis.", url: "guides/sante/debutant.html", keywords: "santé débutant niveau 1 poste sédentarité écrans pauses" },
+    { title: "Régler son poste de travail", description: "Un portable posé sur un bureau ne peut pas être bien placé.", url: "guides/sante/debutant.html", keywords: "ergonomie poste écran hauteur siège avant-bras portable support tms" },
+    { title: "La sédentarité", description: "On peut être sportif et sédentaire : ce sont deux leviers.", url: "guides/sante/debutant.html", keywords: "sédentarité assis activité physique oms bouger debout marche" },
+    { title: "La fatigue visuelle", description: "Regarder au loin quelques secondes relâche le muscle qui accommode.", url: "guides/sante/debutant.html", keywords: "yeux fatigue visuelle écran clignement lumière bleue 20-20-20 sécheresse" },
+    { title: "Les pauses qui récupèrent", description: "Vingt minutes d'un bloc satisfont la loi ; cinq par heure protègent.", url: "guides/sante/debutant.html", keywords: "pause récupération coupure déjeuner écran repos travail" },
+    { title: "Santé — Intermédiaire", description: "La charge mentale, et ce qui la rend tenable ou non.", url: "guides/sante/intermediaire.html", keywords: "santé intermédiaire niveau 2 stress charge latitude déconnexion" },
+    { title: "Stress aigu et stress chronique", description: "Le repère n'est pas l'intensité, c'est le retour à la normale.", url: "guides/sante/intermediaire.html", keywords: "stress aigu chronique récupération signaux adaptation rps" },
+    { title: "Exigence et latitude", description: "Ce n'est pas l'exigence qui use, c'est l'exigence sans marge.", url: "guides/sante/intermediaire.html", keywords: "karasek exigence latitude autonomie soutien tendu actif passif modèle" },
+    { title: "La récupération", description: "11 heures entre deux journées, 35 heures par semaine : des minimums.", url: "guides/sante/intermediaire.html", keywords: "récupération repos quotidien hebdomadaire détachement congés fatigue" },
+    { title: "Le droit à la déconnexion", description: "Ce qu'on envoie le soir fixe ce que les autres croient devoir faire.", url: "guides/sante/intermediaire.html", keywords: "déconnexion messages soir télétravail frontières notifications charte" },
+    { title: "Santé — Avancé", description: "Les acteurs, les obligations, et quoi faire quand ça va mal.", url: "guides/sante/avance.html", keywords: "santé avancé niveau 3 médecine travail employeur épuisement harcèlement" },
+    { title: "La médecine du travail", description: "Une visite à votre demande, confidentielle, sans passer par l'employeur.", url: "guides/sante/avance.html", keywords: "médecine travail visite secret médical aménagement préreprise aptitude spst" },
+    { title: "Les obligations de l'employeur", description: "L'obligation porte sur la prévention, pas sur la réparation.", url: "guides/sante/avance.html", keywords: "duerp document unique cse droit de retrait inspection travail prévention sécurité" },
+    { title: "L'épuisement professionnel", description: "Trois dimensions pour nommer — aucun test en ligne pour conclure.", url: "guides/sante/avance.html", keywords: "épuisement burn-out burnout fatigue distance efficacité travail" },
+    { title: "Harcèlement et situations graves", description: "Écrire les faits, datés, avant tout le reste.", url: "guides/sante/avance.html", keywords: "harcèlement moral sexuel discrimination preuve alerte défenseur droits témoin" },
+
     { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
 
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
