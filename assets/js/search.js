@@ -57,6 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
         return words.some(word => distance(word, query) <= 1);
     }
 
+    // Vrai seulement pour une correspondance exacte, sans tolerance aux fautes.
+    const contient = (text, query) => plier(text).includes(plier(query));
+
+    /* Pertinence d une entree pour une recherche.
+     *
+     * Sans elle, les resultats sortaient dans l ordre du fichier de donnees :
+     * chercher « mesore » — un mot-cle exact du guide Negociation — remontait
+     * d abord deux pages ou la tolerance aux fautes avait rapproche le mot de
+     * « mesure ». La tolerance doit rattraper une faute de frappe, jamais
+     * passer devant une saisie correcte.
+     *
+     * Le titre prime sur les mots-cles, qui priment sur la description ; toute
+     * correspondance exacte prime sur toute correspondance approchee. */
+    function pertinence(item, query) {
+        if (contient(item.title, query)) return 4;
+        if (contient(item.keywords, query)) return 3;
+        if (contient(item.description, query)) return 2;
+        return 1;   // rattrape par la tolerance aux fautes
+    }
+
     function highlight(text, query) {
         const q = plier(query.trim());
         if (!q) return text;
@@ -116,11 +136,16 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const matches = searchIndex.filter(item =>
-            fuzzyIncludes(item.title, query) ||
-            fuzzyIncludes(item.keywords, query) ||
-            fuzzyIncludes(item.description, query)
-        );
+        const matches = searchIndex
+            .filter(item =>
+                fuzzyIncludes(item.title, query) ||
+                fuzzyIncludes(item.keywords, query) ||
+                fuzzyIncludes(item.description, query)
+            )
+            // Le tri est stable depuis ES2019 : a pertinence egale, l ordre du
+            // fichier de donnees est conserve — sujet par sujet, niveau par
+            // niveau, ce qui reste le classement le plus lisible.
+            .sort((a, b) => pertinence(b, query) - pertinence(a, query));
 
         if (matches.length === 0) {
             searchResults.innerHTML = '<p class="no-results">Aucun résultat trouvé.</p>';
