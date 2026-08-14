@@ -1,5 +1,51 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — Les quatre chantiers sont terminés
+Récapitulatif. Les sept entrées qui suivent décrivent chacune une addition ; celle-ci
+dit où en est le site, et ce que la feuille de route a réellement produit.
+
+| | Avant | Aujourd'hui |
+|---|---|---|
+| Parcours | 9 | **14** |
+| Pages de cours | 9 | **42** |
+| Sections | 37 | **169** |
+| Exercices interactifs | 0 | **168** |
+| Questions de quiz | 276 | **1 266** |
+
+<sub>Les pages de cours sont les niveaux eux-mêmes. En ajoutant les 14 sommaires de
+parcours et les 8 pages du site, le total publié est de 64 pages.</sub>
+
+**Chantier 1 — approfondir.** Chaque sujet passe d'une page de survol à trois niveaux
+(débutant, intermédiaire, avancé) avec une page d'accueil qui annonce contenu, durée
+et prérequis.
+
+**Chantier 2 — faire pratiquer.** 168 exercices : **79 simulateurs de calcul** où l'on
+saisit ses propres chiffres, et **89 contrôles à cocher**. Ce ne sont pas des
+illustrations — le résultat change.
+
+**Chantier 3 — rendre vivant.** La veille, qui tournait déjà deux fois par jour sans
+que personne ne la voie, paraît maintenant sur le site — **après validation à la
+main**, une case à cocher par article.
+
+**Chantier 4 — élargir.** Cinq sujets ajoutés : apprentissage, droit et démarches,
+santé au travail, sobriété numérique, négociation et communication. Les cinq pistes
+annoncées dans la boîte à idées sont toutes publiées.
+
+### Ce qui a réellement coûté
+
+Le découpage lui-même s'est révélé bon marché : après le sujet pilote, chaque parcours
+n'a demandé que **trois lignes de déclaration** dans `parcours.js`. Ce qui a coûté,
+c'est tout ce qui comptait les sujets ailleurs — le texte alternatif de l'image de
+partage sur chaque page, deux énumérations en prose, trois compteurs d'Issues.
+
+**Une méthode a émergé et tient :** écrire les simulateurs d'abord, exécuter, puis
+recopier leurs sorties dans le cours. L'ordre inverse avait produit quatre erreurs sur
+les neuf premiers sujets ; l'ordre correct les rend impossibles.
+
+**Trois règles de prudence** ont été posées et documentées dans `ARCHITECTURE.md` :
+ne citer aucune valeur révisée chaque année (droit), n'évaluer aucun état de santé
+(santé au travail), et ne calculer que ce qui se calcule (sobriété numérique).
+
 ## 2026-08-14 — Un quatorzième parcours : Négociation &amp; communication
 **Dernier des cinq thèmes annoncés dans la boîte à idées.** Ils sont désormais tous
 publiés.
