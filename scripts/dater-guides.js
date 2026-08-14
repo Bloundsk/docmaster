@@ -60,6 +60,35 @@ function listerGuides() {
     return pages;
 }
 
+// Seul le contenu compte. Une retouche du <head> — texte alternatif de l image
+// de partage, description — modifie le fichier sans rien changer pour le
+// lecteur. Sans ce filtre, corriger une balise commune a fait passer les 36
+// pages au jour meme : trente-six dates fausses d un coup, ce que ce script
+// est justement charge d empecher.
+function corpsSeul(html) {
+    const debut = html.indexOf("<main");
+    const fin = html.lastIndexOf("</main>");
+    return debut === -1 || fin === -1 ? html : html.slice(debut, fin);
+}
+
+// Version du fichier telle qu elle est actuellement enregistree dans le depot.
+// Renvoie null si le fichier est nouveau — il faut alors le dater.
+function versionCommitee(relatif) {
+    try {
+        return execFileSync("git", ["show", "HEAD:" + relatif],
+                            { cwd: RACINE, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
+    } catch (e) {
+        return null;
+    }
+}
+
+function contenuInchange(relatif) {
+    const precedent = versionCommitee(relatif);
+    if (precedent === null) return false;
+    const actuel = fs.readFileSync(path.join(RACINE, relatif), "utf8");
+    return corpsSeul(precedent) === corpsSeul(actuel);
+}
+
 function dater(relatif, date) {
     const complet = path.join(RACINE, relatif);
     const avant = fs.readFileSync(complet, "utf8");
@@ -83,12 +112,20 @@ const cibles = demandes.length ? demandes : listerGuides();
 const aujourdhui = new Date();
 
 let modifies = 0;
+let ignores = 0;
 for (const cible of cibles) {
-    // Fichier passe par le hook : il change maintenant, donc c est aujourd hui.
+    // Fichier passe par le hook : il change maintenant, donc c est aujourd hui —
+    // a condition que ce soit son contenu qui change, et non son en-tete.
     // Rattrapage global : on s en remet a l historique.
+    if (demandes.length && contenuInchange(cible)) {
+        ignores++;
+        continue;
+    }
     const date = demandes.length ? aujourdhui : (dateDuDernierCommit(cible) || aujourdhui);
     if (dater(cible, date)) modifies++;
 }
+
+if (ignores) console.log(`  ${ignores} page(s) inchangée(s) sur le fond, date conservée.`);
 
 if (!modifies) console.log("Dates déjà à jour.");
 process.exit(0);
