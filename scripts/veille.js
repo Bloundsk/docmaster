@@ -23,6 +23,11 @@ const SITE = "https://bloundsk.github.io/docmaster/";
 const NB_JOURS_AVANT_FERMETURE = 14; // ferme automatiquement les anciennes veilles
 const TAILLE_POOL = 10;              // articles lus par recherche, avant deduplication
 const NB_ARTICLES_RETENUS = 1;       // articles conserves par sous-section
+
+// Une Issue GitHub refuse un corps de plus de 65 536 caracteres. On decoupe
+// bien en dessous : l en-tete, le pied et la charge utile s ajoutent ensuite,
+// et un guide entier doit pouvoir tenir dans ce qui reste.
+const TAILLE_MAX_ISSUE = 55000;
 const PAUSE_ENTRE_REQUETES = 250;    // ms, pour ne pas marteler Google News
 
 // Mots sans valeur de recherche. Sans ce filtre, "Le phishing" chercherait
@@ -162,10 +167,16 @@ async function recupererArticles(requete) {
     return articles;
 }
 
-// Liens deja proposes dans les 20 dernieres Issues, pour ne rien reproposer
+// Liens deja proposes recemment, pour ne rien reproposer.
+//
+// Le nombre d Issues lues compte : depuis que le rapport se decoupe, un
+// passage en produit plusieurs au lieu d une. A vingt Issues, la memoire ne
+// couvrait plus que deux jours et demi — les memes articles revenaient. Cent
+// ramene la fenetre a une douzaine de jours, soit l ordre de grandeur du delai
+// de fermeture automatique.
 async function recupererLiensDejaProposes(repo, token) {
     const reponse = await fetch(
-        `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=20`,
+        `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=100`,
         { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } }
     );
     if (!reponse.ok) return new Set();
@@ -183,26 +194,32 @@ async function construireRapport(guides, dejaProposes) {
     const date = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
     const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
-    let rapport = `# 📰 Veille DocMaster — ${date} (${heure})\n\n`;
-    rapport += `Articles récents, classés par **sous-section de guide**. Les recherches sont `;
-    rapport += `déduites automatiquement du contenu des guides, et les articles déjà proposés `;
-    rapport += `récemment sont écartés.\n\n`;
-    rapport += `> **Cochez une case pour publier l'article** dans les actualités du site.\n`;
-    rapport += `> Décochez-la pour l'en retirer. La publication se fait dans la minute qui suit.\n`;
-    rapport += `> Rien n'est publié tant que rien n'est coché.\n\n---\n\n`;
+    const entete =
+        `# 📰 Veille DocMaster — ${date} (${heure})\n\n` +
+        `Articles récents, classés par **sous-section de guide**. Les recherches sont ` +
+        `déduites automatiquement du contenu des guides, et les articles déjà proposés ` +
+        `récemment sont écartés.\n\n` +
+        `> **Cochez une case pour publier l'article** dans les actualités du site.\n` +
+        `> Décochez-la pour l'en retirer. La publication se fait dans la minute qui suit.\n` +
+        `> Rien n'est publié tant que rien n'est coché.\n\n---\n\n`;
 
     let total = 0;
     let recherches = 0;
 
-    // Metadonnees des articles proposes, deposees en fin d Issue dans un
-    // commentaire HTML : invisible a la lecture, mais lisible par le script de
-    // publication. Sans elles, il faudrait redeviner a quelle section rattacher
-    // un article a partir du seul texte de l Issue.
-    const donnees = {};
+    // Un bloc par guide, avec ses metadonnees. Le rapport n est plus assemble
+    // en une seule chaine : au-dela de treize sujets il depassait la limite de
+    // 65 536 caracteres d une Issue GitHub, et la creation echouait en bloc.
+    const blocs = [];
 
     for (const guide of guides) {
-        rapport += `## ${guide.titre}\n\n`;
+        let texte = `## ${guide.titre}\n\n`;
         let trouveDansGuide = 0;
+
+        // Metadonnees des articles proposes, deposees en fin d Issue dans un
+        // commentaire HTML : invisible a la lecture, mais lisible par le script
+        // de publication. Sans elles, il faudrait redeviner a quelle section
+        // rattacher un article a partir du seul texte de l Issue.
+        const donnees = {};
 
         for (const s of guide.sousSections) {
             recherches++;
@@ -211,7 +228,7 @@ async function construireRapport(guides, dejaProposes) {
                 const articles = await recupererArticles(s.requete);
                 nouveaux = articles.filter(a => !dejaProposes.has(a.lien)).slice(0, NB_ARTICLES_RETENUS);
             } catch (e) {
-                rapport += `### ${s.titre}\n_Erreur de récupération._\n\n`;
+                texte += `### ${s.titre}\n_Erreur de récupération._\n\n`;
                 continue;
             }
             await attendre(PAUSE_ENTRE_REQUETES);
@@ -220,11 +237,11 @@ async function construireRapport(guides, dejaProposes) {
 
             // Lien direct vers la section concernee du guide
             const lienSection = `${SITE}guides/${guide.dossier}/${guide.page}#${encodeURIComponent(s.ancre)}`;
-            rapport += `### [${s.titre}](${lienSection})\n`;
-            rapport += `<sub>recherche : \`${s.requete}\`</sub>\n\n`;
+            texte += `### [${s.titre}](${lienSection})\n`;
+            texte += `<sub>recherche : \`${s.requete}\`</sub>\n\n`;
             for (const a of nouveaux) {
                 const legende = [a.source, a.date ? enFrancais(a.date) : ""].filter(Boolean).join(" · ");
-                rapport += `- [ ] [${a.titre}](${a.lien})${legende ? ` — <sub>${legende}</sub>` : ""}\n`;
+                texte += `- [ ] [${a.titre}](${a.lien})${legende ? ` — <sub>${legende}</sub>` : ""}\n`;
                 donnees[a.lien] = {
                     titre: a.titre,
                     source: a.source,
@@ -238,32 +255,51 @@ async function construireRapport(guides, dejaProposes) {
                 total++;
                 trouveDansGuide++;
             }
-            rapport += `\n`;
+            texte += `\n`;
         }
 
-        if (!trouveDansGuide) rapport += `_Rien de nouveau sur ce guide._\n\n`;
+        if (!trouveDansGuide) texte += `_Rien de nouveau sur ce guide._\n\n`;
+        blocs.push({ texte, donnees });
     }
 
-    rapport += `---\n\n`;
-    rapport += `<sub>${recherches} recherches effectuées, ${total} articles retenus.</sub>\n`;
+    return { rapports: assembler(entete, blocs, recherches, total), total };
+}
 
-    // Charge utile pour scripts/publier-actualites.js. Un commentaire HTML
-    // n apparait pas dans l Issue rendue : le rapport reste lisible.
-    //
-    // Deposee sous forme de donnees plutot que redevinee a la lecture : sans
-    // elle, il faudrait retrouver a quelle section rattacher un article en
-    // analysant les titres markdown au-dessus de lui, ce qui casserait au
-    // premier changement de mise en forme du rapport.
-    rapport += `\n<!-- ACTUALITES\n${JSON.stringify(donnees)}\n-->\n`;
+// Regroupe les blocs en autant d Issues que necessaire, sans jamais couper un
+// guide en deux. La marge sous la limite de GitHub couvre l en-tete, le pied
+// et la charge utile ajoutes ensuite.
+function assembler(entete, blocs, recherches, total) {
+    const pied = (n, sur) =>
+        `---\n\n<sub>${recherches} recherches effectuées, ${total} articles retenus` +
+        (sur > 1 ? ` — partie ${n} sur ${sur}` : "") + `.</sub>\n`;
 
-    return { rapport, total };
+    const groupes = [];
+    let courant = { textes: [], donnees: {}, taille: entete.length };
+
+    for (const bloc of blocs) {
+        const cout = bloc.texte.length + JSON.stringify(bloc.donnees).length;
+        if (courant.textes.length && courant.taille + cout > TAILLE_MAX_ISSUE) {
+            groupes.push(courant);
+            courant = { textes: [], donnees: {}, taille: entete.length };
+        }
+        courant.textes.push(bloc.texte);
+        Object.assign(courant.donnees, bloc.donnees);
+        courant.taille += cout;
+    }
+    if (courant.textes.length) groupes.push(courant);
+
+    return groupes.map((g, i) =>
+        entete + g.textes.join("") + pied(i + 1, groupes.length) +
+        `\n<!-- ACTUALITES\n${JSON.stringify(g.donnees)}\n-->\n`
+    );
 }
 
 // --- Issues ----------------------------------------------------------------
 
-async function creerIssue(repo, token, contenu) {
+async function creerIssue(repo, token, contenu, numero, sur) {
     const date = new Date().toLocaleDateString("fr-FR");
     const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    const suffixe = sur > 1 ? ` (${numero}/${sur})` : "";
 
     const reponse = await fetch(`https://api.github.com/repos/${repo}/issues`, {
         method: "POST",
@@ -273,19 +309,19 @@ async function creerIssue(repo, token, contenu) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            title: `📰 Veille — ${date} à ${heure}`,
+            title: `📰 Veille — ${date} à ${heure}${suffixe}`,
             body: contenu,
             labels: ["veille"],
         }),
     });
 
     if (!reponse.ok) throw new Error(`Erreur création Issue : ${await reponse.text()}`);
-    console.log("Issue créée.");
+    console.log(`Issue créée${suffixe} — ${contenu.length} caractères.`);
 }
 
 async function fermerAnciennesIssues(repo, token) {
     const reponse = await fetch(
-        `https://api.github.com/repos/${repo}/issues?labels=veille&state=open&per_page=50`,
+        `https://api.github.com/repos/${repo}/issues?labels=veille&state=open&per_page=100`,
         { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } }
     );
     if (!reponse.ok) return;
@@ -322,10 +358,12 @@ async function fermerAnciennesIssues(repo, token) {
         console.log(`${guides.length} guides, ${nbSections} sous-sections surveillées.`);
 
         const dejaProposes = await recupererLiensDejaProposes(repo, token);
-        const { rapport, total } = await construireRapport(guides, dejaProposes);
+        const { rapports, total } = await construireRapport(guides, dejaProposes);
 
         if (total > 0) {
-            await creerIssue(repo, token, rapport);
+            for (let i = 0; i < rapports.length; i++) {
+                await creerIssue(repo, token, rapports[i], i + 1, rapports.length);
+            }
         } else {
             console.log("Aucun article nouveau — pas d'Issue créée.");
         }

@@ -41,9 +41,12 @@ const MARQUE_FIN = "<!-- ACTUALITES:FIN -->";
 
 // --- Lecture des Issues -----------------------------------------------------
 
+// Cent Issues, et non trente : un passage de veille en produit desormais
+// plusieurs. A trente, une case cochee sur un rapport de quatre jours ne
+// serait plus vue, et l article ne paraitrait jamais.
 async function recupererIssues(repo, token) {
     const reponse = await fetch(
-        `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=30`,
+        `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=100`,
         {
             headers: {
                 Authorization: `Bearer ${token}`,
