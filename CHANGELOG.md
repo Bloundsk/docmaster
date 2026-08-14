@@ -1,5 +1,42 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — Un dixième parcours : Apprendre à apprendre
+Premier sujet du chantier « élargir ». Choisi parmi les cinq pistes annoncées dans
+la boîte à idées parce que c'est le seul qui **compose avec les neuf autres** : il
+sert à mieux lire tout le reste du site.
+
+- **Débutant** — la courbe de l'oubli, la répétition espacée, l'effet test, les
+  illusions de maîtrise
+- **Intermédiaire** — l'entrelacement, l'élaboration, la pratique délibérée, le
+  sommeil et la consolidation
+- **Avancé** — la fréquence lexicale, le transfert, évaluer une méthode, construire
+  son système
+
+12 simulateurs et 90 questions supplémentaires. Le site passe à **48 pages, 121
+sections, 121 exercices et 906 questions**.
+
+**Méthode inversée cette fois.** Les simulateurs ont été écrits et exécutés *avant*
+le cours, et les chiffres du cours recopiés de leur sortie. C'est la réponse directe
+aux quatre erreurs trouvées pendant le chantier précédent en procédant dans l'autre
+sens. Les constantes de mémoire — pente de l'oubli, intervalles d'espacement, écarts
+mesurés — sont regroupées en tête de `pratique.js` avec leur source, plutôt que
+recopiées dans chaque formule.
+
+**Le passage de neuf à dix sujets touchait 45 pages** : le texte alternatif de
+l'image de partage annonçait « 9 guides gratuits » partout, et trois pages
+énuméraient les domaines en clair.
+
+### Et un défaut que ce changement a révélé
+
+Ce même passage a fait basculer les **36 pages de guide au 14 août**, parce qu'il
+touchait une balise commune de leur `<head>`. Rien n'avait bougé pour le lecteur,
+et trente-six pages annonçaient une mise à jour du jour — précisément le mensonge
+que le datage automatique existe pour empêcher.
+
+`scripts/dater-guides.js` compare désormais le contenu entre `<main>` et `</main>`
+avec la version enregistrée dans le dépôt, et laisse la date en place si rien n'a
+changé sur le fond. Les 36 dates faussées ont été rétablies.
+
 ## 2026-08-14 — La veille paraît sur le site, après validation à la main
 Le site ne bougeait pas entre deux ajouts de contenu, alors qu'une veille tournait
 déjà deux fois par jour et trouvait des articles pertinents — qui finissaient dans

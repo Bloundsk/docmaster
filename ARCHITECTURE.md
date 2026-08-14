@@ -115,6 +115,19 @@ Chaque étape est validée par les audits existants avant publication.
 cours, 109 sections, 109 exercices, 816 questions. Le pari du pilote a tenu — après
 Finance, chaque sujet n'a demandé que trois lignes de déclaration dans `parcours.js`.
 
+**Vérifié le 14 août** en ajoutant un dixième sujet, *Apprendre à apprendre* : le
+parcours lui-même n'a coûté qu'une ligne dans `parcours.js`. Ce qui a réellement
+coûté, c'est ce qui comptait les sujets **en prose** — 45 pages annonçaient « 9
+guides gratuits » dans le texte alternatif de l'image de partage. Leçon à retenir
+pour le prochain sujet : un nombre écrit en toutes lettres dans une page est une
+donnée dupliquée comme une autre.
+
+### Ordre d'écriture d'un sujet
+
+Les simulateurs d'abord, le cours ensuite, et les chiffres du cours **recopiés de
+la sortie des simulateurs**. Écrire le cours en premier puis ajuster le simulateur
+a produit quatre erreurs sur neuf sujets ; l'ordre inverse les rend impossibles.
+
 ---
 
 ## 6. Contrôles automatiques
