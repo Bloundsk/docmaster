@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités - DocMaster</title>
+    <meta name="description" content="Des lectures en rapport avec les guides DocMaster, choisies à la main : une sélection d'articles rattachés à la section qu'ils prolongent.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/actualites.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Actualités - DocMaster">
+    <meta property="og:description" content="Des lectures en rapport avec les guides DocMaster, choisies à la main.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/actualites.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 9 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Actualités - DocMaster">
+    <meta name="twitter:description" content="Des lectures en rapport avec les guides DocMaster, choisies à la main.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "";</script>
+    <script src="assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a> &gt; <span aria-current="page">Actualités</span>
+    </nav>
+
+    <header>
+        <h1>📰 Actualités</h1>
+        <p>Des lectures qui prolongent les guides, rattachées à la section qu'elles concernent.</p>
+    </header>
+
+    <main id="main-content">
+        <section>
+            <h2 id="lectures">À lire ailleurs</h2>
+
+            <!-- Cette liste est produite par scripts/publier-actualites.js à
+                 partir des articles cochés dans les rapports de veille. Elle est
+                 réécrite à chaque publication : toute modification faite ici à la
+                 main serait perdue au passage suivant. -->
+            <!-- ACTUALITES:DEBUT -->
+                <p class="actu-vide">Aucune actualité retenue pour le moment. Cette page se remplit au fil des lectures.</p>
+            <!-- ACTUALITES:FIN -->
+        </section>
+
+        <section>
+            <h2 id="methode">Comment cette page est faite</h2>
+            <p>Deux fois par jour, une recherche automatique parcourt la presse en ligne pour chaque section de chaque guide. Elle ne publie rien : elle propose.</p>
+            <p><strong>Chaque article de cette page a été lu et retenu à la main.</strong> Une sélection automatique remonterait aussi des contenus promotionnels et des articles approximatifs — le tri est ce qui fait la différence entre une revue de presse et un fil d'actualité.</p>
+
+            <div class="piege">
+                <span class="titre">À propos des liens</span>
+                <p>Ces articles sont publiés par des sites tiers. Les citer ici signifie qu'ils ont paru dignes d'intérêt, non que DocMaster en approuve chaque ligne ou en garantit l'exactitude.</p>
+                <p>Certains peuvent devenir payants, se déplacer ou disparaître : DocMaster n'a aucune prise sur leur contenu.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/favoris.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/enhance.js"></script>
+</body>
+</html>

@@ -15,6 +15,7 @@
                 <a href="${base}index.html" class="logo">Doc<span>Master</span></a>
                 <ul class="nav-links">
                     <li><a href="${base}index.html">Accueil</a></li>
+                    <li><a href="${base}actualites.html">Actualités</a></li>
                     <li><a href="${base}glossaire.html">Glossaire</a></li>
                     <li><a href="${base}idees.html">Boîte à idées</a></li>
                     <li><a href="${base}faq.html">FAQ</a></li>
@@ -33,6 +34,7 @@
                  le logo y mène déjà. Les mentions légales ferment la liste,
                  comme il est d'usage. -->
             <nav aria-label="Liens de pied de page">
+                <a href="${base}actualites.html">Actualités</a>·
                 <a href="${base}glossaire.html">Glossaire</a>·
                 <a href="${base}idees.html">Boîte à idées</a>·
                 <a href="${base}faq.html">FAQ</a>·
@@ -88,6 +90,34 @@
         if (window.ResizeObserver) {
             try { new ResizeObserver(appliquer).observe(navbar); } catch (e) {}
         }
+
+        // Et une surveillance courte, parce que les deux filets ci-dessus ont
+        // déjà laissé passer le cas ensemble.
+        //
+        // Tant que la police de secours est appliquée, les liens sont plus
+        // larges : à sept entrées, ils passent sur deux lignes et la navbar
+        // fait 126 px. Quand Poppins arrive, ils reviennent sur une ligne et
+        // elle retombe à 70. Or « load » se déclenche AVANT ce basculement,
+        // et `document.fonts.ready` se résout trop tôt : la valeur restait
+        // figée à 138 px, soit 56 px de titre cachés sur tout le site.
+        //
+        // On remesure donc pendant trois secondes, et on s'arrête dès que la
+        // hauteur ne bouge plus. Le coût est d'une lecture par image : rien.
+        let derniere = -1;
+        let stables = 0;
+        const debut = Date.now();
+        const surveiller = () => {
+            const h = Math.round(navbar.getBoundingClientRect().height);
+            if (h !== derniere) {
+                derniere = h;
+                stables = 0;
+                appliquer();
+            } else if (++stables > 20) {
+                return;   // dix bonnes images sans changement : c'est fini
+            }
+            if (Date.now() - debut < 3000) requestAnimationFrame(surveiller);
+        };
+        requestAnimationFrame(surveiller);
     }
 
     // Statistiques d'audience (GoatCounter) : aucun cookie, aucune donnée personnelle.

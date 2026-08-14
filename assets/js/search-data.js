@@ -157,6 +157,8 @@ const searchIndex = [
     { title: "Les principes de design visuel", description: "Découvrir hiérarchie visuelle, couleurs et typographie.", url: "guides/design/debutant.html", keywords: "design visuel couleurs typographie hiérarchie espace blanc" },
     { title: "Les tests utilisateurs", description: "Comprendre pourquoi et comment tester une interface auprès d'utilisateurs.", url: "guides/design/debutant.html", keywords: "tests utilisateurs ux research usabilité" },
 
+    { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
+
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
     { title: "Le site est-il gratuit ?", description: "Pas d'inscription, pas d'abonnement, pas de publicité.", url: "faq.html", keywords: "gratuit prix payant abonnement inscription compte publicité" },
     { title: "Cookies et données personnelles", description: "Ce que le site collecte, et ce qu'il ne collecte pas.", url: "faq.html", keywords: "cookies données personnelles vie privée rgpd statistiques traceur" },

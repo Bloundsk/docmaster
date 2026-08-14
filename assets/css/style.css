@@ -657,6 +657,44 @@ html { background: var(--background); }
     .guide-nav .next { text-align: left; }
 }
 
+/* Actualites — liens externes rattaches a une section de guide.
+   La liste est produite par scripts/publier-actualites.js. */
+.actu-liste { list-style: none; padding: 0; margin: 0; }
+.actu {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    /* Un liseré sur la tranche : il distingue d'un coup d'œil un lien qui
+       sort du site des liens internes, sans ajouter de pictogramme. */
+    border-left: 3px solid var(--primary);
+}
+.actu-titre {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    line-height: 1.4;
+}
+.actu-titre:hover { color: var(--primary); text-decoration: underline; }
+/* Le lien sort du site : la fleche le dit sans occuper de place, et reste
+   decorative — le contexte est deja porte par « À lire ailleurs ». */
+.actu-titre::after { content: " ↗"; font-size: .8em; color: var(--muted); }
+.actu-source { font-size: .82rem; color: var(--muted); margin: 6px 0 0; }
+.actu-lien-guide { font-size: .85rem; margin: 8px 0 0; color: var(--muted); }
+.actu-lien-guide a { color: var(--primary); text-decoration: none; }
+.actu-lien-guide a:hover { text-decoration: underline; }
+.actu-vide { color: var(--muted); font-style: italic; }
+
+/* Le bleu de --primary ne change pas en mode sombre : sur la carte #1e293b,
+   il ne donne que 2,8:1, sous le minimum de 4,5:1 exige pour du texte. Le
+   bleu clair du reste du site en mode sombre monte a 6:1. */
+html.dark-mode .actu-lien-guide a,
+html.dark-mode .actu-titre:hover { color: #7aa5ff; }
+html.dark-mode .actu { border-left-color: #7aa5ff; }
+
 /* Impression */
 @media print {
     .navbar, .search-container, #back-to-top, .theme-toggle, .quiz-box, .mark-read-box,

@@ -1,0 +1,61 @@
+name: Publication des actualités DocMaster
+
+# Publie sur le site les articles COCHES dans les rapports de veille.
+#
+# Cocher une case dans une Issue en modifie le corps, ce qui declenche
+# l evenement « issues: edited » : l article parait dans la minute. C est ce
+# qui rend la validation supportable — sans cela, il faudrait attendre le
+# passage suivant de la veille pour voir le resultat d un clic.
+on:
+  issues:
+    types: [edited]
+  workflow_dispatch:
+  schedule:
+    # Filet quotidien, au cas ou un evenement se serait perdu. Minute decalee :
+    # GitHub retarde, voire abandonne, les taches planifiees a la minute 0.
+    - cron: "41 5 * * *"
+
+# Le travail consiste a ecrire dans le depot : sans « contents: write », le
+# commit final echoue avec une erreur d authentification peu parlante.
+permissions:
+  contents: write
+  issues: read
+
+# Cocher trois cases d affilee declenche trois executions. Sans ce garde-fou,
+# elles se marchent dessus sur le meme fichier et l une des trois echoue au
+# moment de pousser.
+concurrency:
+  group: actualites
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+
+    # Les Issues de rapport d usage declenchent le meme evenement : inutile de
+    # demarrer une machine pour elles.
+    if: >-
+      github.event_name != 'issues' ||
+      contains(join(github.event.issue.labels.*.name, ','), 'veille')
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      - name: Construire les pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/publier-actualites.js
+
+      - name: Publier si quelque chose a changé
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Rien à publier."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/actualites.json actualites.html index.html
+          git commit -m "Publie les actualites retenues"
+          git push

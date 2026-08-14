@@ -39,6 +39,17 @@ const MOTS_VIDES = new Set([
 
 const attendre = ms => new Promise(r => setTimeout(r, ms));
 
+// « 2026-08-12 » -> « 12 août ». L annee n est ajoutee que si elle differe de
+// l annee en cours : sur une page d actualites, « 12 août 2026 » en plein
+// mois d aout 2026 est du bruit.
+function enFrancais(iso) {
+    const d = new Date(iso + "T12:00:00Z");
+    if (isNaN(d)) return "";
+    const options = { day: "numeric", month: "long", timeZone: "UTC" };
+    if (d.getUTCFullYear() !== new Date().getUTCFullYear()) options.year = "numeric";
+    return d.toLocaleDateString("fr-FR", options);
+}
+
 // --- Lecture des guides -----------------------------------------------------
 
 function nettoyer(texte) {
@@ -126,11 +137,25 @@ async function recupererArticles(requete) {
         const titre = item.match(/<title>(.*?)<\/title>/s);
         const lien = item.match(/<link>(.*?)<\/link>/s);
         if (titre && lien) {
+            // Google News nomme la publication dans <source>, et repete ce nom
+            // a la fin du titre : « … - itdaily.fr ». Une fois la source
+            // affichee a part, le suffixe fait doublon.
+            const source = decoder(((item.match(/<source[^>]*>(.*?)<\/source>/s) || [])[1] || "").trim());
+            let texte = decoder(titre[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim());
+            if (source && texte.endsWith(" - " + source)) {
+                texte = texte.slice(0, -(source.length + 3)).trim();
+            }
+
+            const pub = (item.match(/<pubDate>(.*?)<\/pubDate>/s) || [])[1];
+            const date = pub && !isNaN(Date.parse(pub)) ? new Date(pub).toISOString().slice(0, 10) : "";
+
             articles.push({
                 // Les titres du flux RSS sont echappes en HTML : sans decodage,
                 // le rapport affiche "Spend Analytics &amp; data" au lieu de "&".
-                titre: decoder(titre[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim()),
+                titre: texte,
                 lien: lien[1].trim(),
+                source,
+                date,
             });
         }
     }
@@ -161,10 +186,19 @@ async function construireRapport(guides, dejaProposes) {
     let rapport = `# 📰 Veille DocMaster — ${date} (${heure})\n\n`;
     rapport += `Articles récents, classés par **sous-section de guide**. Les recherches sont `;
     rapport += `déduites automatiquement du contenu des guides, et les articles déjà proposés `;
-    rapport += `récemment sont écartés.\n\n---\n\n`;
+    rapport += `récemment sont écartés.\n\n`;
+    rapport += `> **Cochez une case pour publier l'article** dans les actualités du site.\n`;
+    rapport += `> Décochez-la pour l'en retirer. La publication se fait dans la minute qui suit.\n`;
+    rapport += `> Rien n'est publié tant que rien n'est coché.\n\n---\n\n`;
 
     let total = 0;
     let recherches = 0;
+
+    // Metadonnees des articles proposes, deposees en fin d Issue dans un
+    // commentaire HTML : invisible a la lecture, mais lisible par le script de
+    // publication. Sans elles, il faudrait redeviner a quelle section rattacher
+    // un article a partir du seul texte de l Issue.
+    const donnees = {};
 
     for (const guide of guides) {
         rapport += `## ${guide.titre}\n\n`;
@@ -189,7 +223,18 @@ async function construireRapport(guides, dejaProposes) {
             rapport += `### [${s.titre}](${lienSection})\n`;
             rapport += `<sub>recherche : \`${s.requete}\`</sub>\n\n`;
             for (const a of nouveaux) {
-                rapport += `- [${a.titre}](${a.lien})\n`;
+                const legende = [a.source, a.date ? enFrancais(a.date) : ""].filter(Boolean).join(" · ");
+                rapport += `- [ ] [${a.titre}](${a.lien})${legende ? ` — <sub>${legende}</sub>` : ""}\n`;
+                donnees[a.lien] = {
+                    titre: a.titre,
+                    source: a.source,
+                    date: a.date,
+                    guide: guide.dossier,
+                    page: guide.page,
+                    ancre: s.ancre,
+                    section: s.titre,
+                    sujet: guide.titre,
+                };
                 total++;
                 trouveDansGuide++;
             }
@@ -201,6 +246,15 @@ async function construireRapport(guides, dejaProposes) {
 
     rapport += `---\n\n`;
     rapport += `<sub>${recherches} recherches effectuées, ${total} articles retenus.</sub>\n`;
+
+    // Charge utile pour scripts/publier-actualites.js. Un commentaire HTML
+    // n apparait pas dans l Issue rendue : le rapport reste lisible.
+    //
+    // Deposee sous forme de donnees plutot que redevinee a la lecture : sans
+    // elle, il faudrait retrouver a quelle section rattacher un article en
+    // analysant les titres markdown au-dessus de lui, ce qui casserait au
+    // premier changement de mise en forme du rapport.
+    rapport += `\n<!-- ACTUALITES\n${JSON.stringify(donnees)}\n-->\n`;
 
     return { rapport, total };
 }
