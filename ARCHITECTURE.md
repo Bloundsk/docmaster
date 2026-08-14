@@ -191,9 +191,15 @@ main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le d�
 | `actualites.yml` | à chaque case cochée | Publie les articles retenus, commite les pages |
 | `rapport-usage.yml` | lundi 06h37 UTC | Classements d'usage, en Issue |
 
-La veille couvre 109 sous-sections et prend environ **13 minutes** — elle en couvrait
-la moitié avant le découpage en niveaux. La pause de 250 ms entre deux requêtes est
-délibérée : elle évite de marteler Google News, et rien ne dépend de la rapidité.
+La veille couvre 157 sous-sections et prend une quinzaine de minutes. La pause de
+250 ms entre deux requêtes est délibérée : elle évite de marteler Google News, et
+rien ne dépend de la rapidité.
+
+**Le rapport se découpe en plusieurs Issues** depuis qu'il a dépassé les 65 536
+caractères qu'accepte GitHub. Conséquence à retenir pour toute évolution : **plus
+rien ne doit compter en Issues.** Trois compteurs le faisaient — déduplication,
+fermeture automatique, publication — et sont devenus faux le jour du découpage. Ils
+lisent tous 100 Issues, le maximum de l'API.
 
 Le premier bloque, le second non. La différence est délibérée : une date figée est
 gênante, un index de recherche invalide supprime la recherche de **toutes** les pages

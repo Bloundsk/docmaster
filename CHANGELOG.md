@@ -1,5 +1,58 @@
 # Changelog — DocMaster
 
+## 2026-08-14 — Un treizième parcours : Écologie &amp; sobriété numérique
+Quatrième sujet du chantier « élargir ». Piège propre au domaine : **les chiffres qui
+circulent sont massivement faux**. « Un mail = 10 g » et « une heure de streaming =
+3,2 kg » ont été repris pendant des années par des sources sérieuses avant d'être
+corrigés d'un facteur dix.
+
+Le parcours prend donc le problème à l'envers : il établit d'abord **où** se trouve
+l'impact — la fabrication des terminaux, ce qui est solidement documenté — avant de
+parler de gestes. Et il consacre une section entière à savoir écarter un mauvais
+chiffre.
+
+- **Débutant** — la fabrication, allonger la durée de vie, les gestes symboliques,
+  bien acheter
+- **Intermédiaire** — lire un chiffre d'impact, le streaming, qui pèse quoi, le
+  déplacement évité
+- **Avancé** — l'écoconception, le parc en entreprise, le cadre réglementaire,
+  l'effet rebond
+
+12 simulateurs et 90 questions. Le site passe à **60 pages, 157 sections,
+156 exercices et 1 176 questions**.
+
+**Règle des calculs : ne calculer que ce qui se calcule.** La consommation d'un
+appareil (watts × heures) et l'intensité carbone de l'électricité sont solides ;
+l'énergie par gigaoctet transféré varie d'un facteur dix selon les études et diminue
+vite — elle est donc un **champ de saisie**, jamais une constante cachée dans une
+formule.
+
+Deux défauts trouvés aux cas limites et corrigés : un écart affiché « × 0 » quand
+l'écran comparé est plus gourmand, et une « économie » négative quand on raccourcit
+un renouvellement au lieu de l'allonger.
+
+## 2026-08-14 — La veille dépassait la limite d'une Issue GitHub
+La veille du soir a échoué : avec treize sujets et 157 sous-sections, le rapport
+atteignait plus de **65 536 caractères**, la limite d'un corps d'Issue. Le passage
+entier tombait — aucun article proposé.
+
+Le rapport se découpe désormais en autant d'Issues que nécessaire, **sans jamais
+couper un guide en deux**, chaque partie portant sa propre charge utile. Sur l'état
+actuel du site : deux Issues, 76 articles proposés.
+
+**Trois compteurs devenaient faux du même coup**, parce qu'ils comptaient en Issues
+et qu'un passage n'en produit plus une seule :
+
+| Compteur | Avant | Conséquence si rien n'était fait |
+|---|---|---|
+| Déduplication | 20 Issues | Mémoire réduite à 2 jours et demi : les mêmes articles revenaient |
+| Fermeture automatique | 50 Issues | Moins que ce qu'une période de 14 jours produit |
+| Publication | 30 Issues | Une case cochée sur un rapport de plus de 4 jours n'aurait jamais été vue |
+
+Les trois passent à 100, le maximum de l'API. Un test rejoue la chaîne complète hors
+ligne et vérifie qu'aucune Issue ne dépasse la limite — **c'est ce test qui manquait**,
+le rapport ayant grossi sujet après sujet sans que rien ne le signale avant l'échec.
+
 ## 2026-08-14 — Un douzième parcours : Santé &amp; bien-être au travail
 Troisième sujet du chantier « élargir », et le plus sensible : il touche à la santé,
 et une page web n'a aucune légitimité à évaluer celle de qui que ce soit.
