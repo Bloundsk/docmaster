@@ -220,6 +220,19 @@ rien ne doit compter en Issues.** Trois compteurs le faisaient — déduplicatio
 fermeture automatique, publication — et sont devenus faux le jour du découpage. Ils
 lisent tous 100 Issues, le maximum de l'API.
 
+**`AGE_MAX_JOURS` vaut 120 dans `veille.js` comme dans `publier-actualites.js`, et
+les deux valeurs doivent rester identiques.** Si la veille proposait plus vieux que
+ce que le site accepte, l'auteur cocherait des articles qui ne paraîtraient jamais —
+c'est arrivé, et sept cases cochées ont donné deux articles publiés.
+
+Deux règles en découlent, apprises au même moment :
+
+- **Un site qui annonce « les compétences de demain » ne peut pas afficher un article
+  de 2021.** La règle d'âge n'est pas négociable ; ne pas la contourner sous prétexte
+  qu'une case a été cochée.
+- **Ce qu'un script écarte, il doit le dire.** Le défaut n'était pas la règle mais son
+  application silencieuse. Toute mise à l'écart se nomme, avec son motif.
+
 Le premier bloque, le second non. La différence est délibérée : une date figée est
 gênante, un index de recherche invalide supprime la recherche de **toutes** les pages
 sans que rien ne le signale.

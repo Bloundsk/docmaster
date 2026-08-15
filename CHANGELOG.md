@@ -1,5 +1,48 @@
 # Changelog — DocMaster
 
+## 2026-08-15 — Sept cases cochées, deux articles publiés
+Signalé par l'auteur : sept articles retenus dans le rapport de veille du matin, deux
+seulement parus sur le site. Les cinq manquants avaient **tous plus de 120 jours** —
+2021, 2023, 2024, janvier 2026 — et une règle de péremption les écartait.
+
+**Le défaut n'était pas la règle, c'était le silence.** Le système acceptait la
+consigne, la jetait, et n'en disait rien : il fallait remonter jusqu'au code pour
+comprendre où étaient passés cinq clics.
+
+### Ce qui change
+
+**La veille ne propose plus rien de plus de 120 jours.** C'est la cause racine :
+Google News remonte volontiers de vieux articles quand une requête est peu couverte,
+et rien ne les distinguait des nouveautés sans lire chaque date une par une. Un
+article de 2021 n'aurait jamais dû figurer dans un rapport de veille.
+
+**Le publieur nomme ce qu'il écarte**, avec la date et l'âge :
+
+```
+5 article(s) coché(s) mais écarté(s) — plus de 120 jours :
+  · 2026-01-06 (222 j) — 3,15%* : la MACSF augmente le bon rendement…
+  · 2021-04-06 (1958 j) — Ces chaînes YouTube à suivre en tant qu'entrepreneur
+```
+
+**Les deux scripts portent la même valeur**, et un commentaire dans chacun rappelle
+qu'elle doit le rester : si la veille proposait plus vieux que ce que le site accepte,
+l'auteur cocherait des articles qui ne paraîtraient jamais. C'est précisément ce qui
+s'était produit.
+
+### Une décision reprise
+
+Première correction : supprimer la règle d'âge, au motif qu'une case cochée est une
+décision éditoriale explicite. Les sept articles ont paru, dont un de 2021.
+
+L'auteur a tranché, et l'argument est décisif : **un site qui annonce « les compétences
+de demain » ne peut pas afficher un article de 2021 — la page se contredirait
+elle-même.** La règle est rétablie ; seule la part réellement fautive, le silence, a
+été corrigée. Les cinq articles périmés ont quitté le site au passage suivant.
+
+Le test couvre désormais les deux moitiés de la règle : l'article périmé n'entre pas,
+**et** l'écart est annoncé avec son titre et son âge. `scripts/test-actualites.mjs`
+entre dans le dépôt à cette occasion.
+
 ## 2026-08-15 — Le script de copie sur clé n'avait jamais pu fonctionner
 Mise à jour de la sauvegarde sur clé USB. Elle a échoué, et pour une raison qui
 méritait d'être creusée : **le contrôle de santé du script refusait exactement ce
