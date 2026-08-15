@@ -33,7 +33,6 @@ const RACINE = path.join(__dirname, "..");
 const ETAT = path.join(RACINE, "data", "actualites.json");
 
 const MAX_ARTICLES = 24;   // au-dela, la page devient un mur
-const MAX_JOURS = 120;     // une « actualite » de quatre mois n en est plus une
 const NB_SUR_ACCUEIL = 3;
 
 const MARQUE_DEBUT = "<!-- ACTUALITES:DEBUT -->";
@@ -146,12 +145,15 @@ function fusionner(existants, coches, decoches) {
         });
     }
 
-    const limite = Date.now() - MAX_JOURS * 86400000;
+    // Aucun filtre sur l age : une case cochee est une decision editoriale
+    // explicite, et elle doit etre respectee.
+    //
+    // Une regle de peremption a existe ici — 120 jours — et elle ecartait en
+    // silence les articles plus anciens. Sept cases cochees ont donne deux
+    // articles publies, sans un mot d explication : le systeme acceptait la
+    // consigne et la jetait. Ce qui protege la page du vieillissement, c est
+    // MAX_ARTICLES : les plus recents chassent les plus anciens.
     return [...parLien.values()]
-        .filter((a) => {
-            const reference = Date.parse(a.date || a.publie);
-            return isNaN(reference) || reference >= limite;
-        })
         .sort((a, b) => (b.date || b.publie).localeCompare(a.date || a.publie))
         .slice(0, MAX_ARTICLES);
 }

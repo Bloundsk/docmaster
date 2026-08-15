@@ -24,6 +24,13 @@ const NB_JOURS_AVANT_FERMETURE = 14; // ferme automatiquement les anciennes veil
 const TAILLE_POOL = 10;              // articles lus par recherche, avant deduplication
 const NB_ARTICLES_RETENUS = 1;       // articles conserves par sous-section
 
+// Age maximal d un article propose. Google News remonte volontiers de vieux
+// articles quand une requete est peu couverte : un rapport de veille a deja
+// propose des textes de 2021 et 2023, melanges aux nouveautes et impossibles
+// a distinguer sans lire chaque date. Une veille propose ce qui est recent ;
+// le reste est du fond de tiroir.
+const AGE_MAX_JOURS = 90;
+
 // Une Issue GitHub refuse un corps de plus de 65 536 caracteres. On decoupe
 // bien en dessous : l en-tete, le pied et la charge utile s ajoutent ensuite,
 // et un guide entier doit pouvoir tenir dans ce qui reste.
@@ -43,6 +50,15 @@ const MOTS_VIDES = new Set([
 ]);
 
 const attendre = ms => new Promise(r => setTimeout(r, ms));
+
+// Un article sans date est garde : mieux vaut le proposer et laisser juger que
+// l ecarter sur une information absente.
+function assezRecent(iso) {
+    if (!iso) return true;
+    const t = Date.parse(iso);
+    if (isNaN(t)) return true;
+    return (Date.now() - t) / 86400000 <= AGE_MAX_JOURS;
+}
 
 // « 2026-08-12 » -> « 12 août ». L annee n est ajoutee que si elle differe de
 // l annee en cours : sur une page d actualites, « 12 août 2026 » en plein
@@ -226,7 +242,10 @@ async function construireRapport(guides, dejaProposes) {
             let nouveaux = [];
             try {
                 const articles = await recupererArticles(s.requete);
-                nouveaux = articles.filter(a => !dejaProposes.has(a.lien)).slice(0, NB_ARTICLES_RETENUS);
+                nouveaux = articles
+                    .filter(a => !dejaProposes.has(a.lien))
+                    .filter(a => assezRecent(a.date))
+                    .slice(0, NB_ARTICLES_RETENUS);
             } catch (e) {
                 texte += `### ${s.titre}\n_Erreur de récupération._\n\n`;
                 continue;
