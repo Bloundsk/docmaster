@@ -202,6 +202,63 @@ for (const page of toutes) {
 }
 console.log(`  ${toutes.length} pages contrôlées`);
 
+// --- 8. Couleurs -----------------------------------------------------------
+//
+// Toute couleur doit vivre dans la palette, en tete de style.css, et nulle part
+// ailleurs. La regle vient d un defaut precis : --primary etait illisible en
+// mode sombre, et plutot que de corriger le jeton, trois endroits avaient recu
+// un #7aa5ff ecrit a la main. Les quinze autres, faute d avoir ete remarques,
+// sont restes illisibles des mois.
+//
+// Une couleur ecrite en dur hors de la palette est donc traitee comme une
+// anomalie : c est le signe qu on rustine un symptome au lieu de soigner la
+// cause. Les commentaires sont ignores — ils citent souvent les valeurs
+// d origine pour expliquer pourquoi elles ont change.
+console.log("\n=== 8. COULEURS ===");
+
+const css = lire(path.join(RACINE, "assets/css/style.css"));
+const finPalette = css.indexOf("@keyframes");
+const palette = css.slice(0, finPalette);
+const sansCommentaires = css.slice(finPalette).replace(/\/\*[\s\S]*?\*\//g, "");
+
+// Le bloc html.dark-mode redefinit les memes jetons : il fait partie de la palette.
+const blocSombre = sansCommentaires.match(/html\.dark-mode\s*\{[\s\S]*?\}/);
+let corps = blocSombre ? sansCommentaires.replace(blocSombre[0], "") : sansCommentaires;
+
+// Les styles d impression sortent du systeme de themes : le papier est blanc
+// dans les deux cas, et un gris de bordure n y suit aucun jeton.
+// Il y en a plusieurs dans le fichier, d'ou la boucle : n'en retirer qu'un
+// laissait passer le gris de bordure du second.
+let debutPrint;
+while ((debutPrint = corps.indexOf("@media print")) !== -1) {
+    let i = corps.indexOf("{", debutPrint), niveau = 0;
+    for (; i < corps.length; i++) {
+        if (corps[i] === "{") niveau++;
+        else if (corps[i] === "}" && --niveau === 0) break;
+    }
+    corps = corps.slice(0, debutPrint) + corps.slice(i + 1);
+}
+
+const enDur = new Set();
+for (const m of corps.matchAll(/#[0-9a-fA-F]{3,8}\b/g)) enDur.add(m[0]);
+for (const c of enDur) {
+    signaler("COULEURS", `${c} écrit en dur hors de la palette — il lui faut un jeton`);
+}
+
+const jetons = [...palette.matchAll(/(--[a-z-]+):/g)].map((m) => m[1]);
+// Un jeton de couleur defini en clair doit l etre aussi en sombre, sans quoi il
+// garde sa valeur claire sur fond sombre — exactement le defaut d origine.
+const JETONS_NEUTRES = ["--radius", "--shadow", "--shadow-fort", "--decalage-ancre"];
+if (blocSombre) {
+    for (const j of jetons) {
+        if (JETONS_NEUTRES.includes(j)) continue;
+        if (!blocSombre[0].includes(j + ":")) {
+            signaler("COULEURS", `${j} n'est pas redéfini en mode sombre`);
+        }
+    }
+}
+console.log(`  ${jetons.length} jetons de palette, ${enDur.size} couleur(s) en dur hors palette`);
+
 // --- Resultat --------------------------------------------------------------
 console.log("\n=== RESULTAT ===\n");
 if (!anomalies.length) {

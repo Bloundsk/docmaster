@@ -2,15 +2,61 @@
    DOCMASTER - STYLE PRINCIPAL
    =================================== */
 
+/* ---------------------------------------------------------------------------
+   PALETTE
+
+   Deux familles de bleu, et la distinction est la clef du mode sombre.
+
+   --primary sert a ECRIRE : titres de cartes, liens, chiffres mis en avant.
+   --primary-fond sert d APLAT, avec du texte blanc pose dessus : degrade de
+   l en-tete, bouton de retour en haut, barre de progression.
+
+   Les deux valaient #2563eb, ce qui allait en mode clair et cassait en mode
+   sombre : sur une carte #1e293b, ce bleu ne donne que 2,83:1, la ou un texte
+   exige 4,5:1. Trois endroits avaient ete rattrapes un par un — le compteur de
+   Mon espace, le surtitre de quiz, les actualites — et une quinzaine d autres
+   restaient illisibles, faute d avoir ete remarques.
+
+   Separer les deux roles corrige tout d un coup et rend le defaut impossible a
+   reproduire : en mode sombre --primary devient clair, donc tout ce qui s ecrit
+   avec devient lisible, y compris ce qui sera ajoute plus tard. Les aplats, eux,
+   gardent le bleu franc dont le texte blanc a besoin.
+   --------------------------------------------------------------------------- */
 :root {
     --primary: #2563eb;
+    --primary-fond: #2563eb;
     --secondary: #7c3aed;
+    --secondary-fond: #7c3aed;
+    /* Le degrade de banniere. Il s assombrit en mode sombre — un bandeau vif
+       en haut d une page sombre eblouit. */
+    --hero-de: #2563eb;
+    --hero-a: #7c3aed;
+
+    /* Couleurs de statut. Les valeurs d origine — #059669, #d97706 — tombaient
+       a 3,8:1 et 3,2:1 sur fond blanc : elles sont assombries ici, et eclaircies
+       en mode sombre. */
+    --succes: #047857;
+    --alerte: #b91c1c;
+    --attention: #a94e08;
+    /* L or des favoris. #f59e0b ne donnait que 2,15:1 sur du blanc : une etoile
+       pleine qu on distinguait mal d une etoile vide. */
+    --favori: #d97706;
+
     --background: #f8fafc;
     --surface: #ffffff;
+    /* Fond legerement teinte, pose SUR une carte : encadres d exemple, pieges,
+       cases de quiz, blocs d exercice. --background n y convenait pas — #f8fafc
+       sur du blanc, c est 1,05 de rapport, soit une bordure sans boite. */
+    --teinte: #eef2f7;
     --text: #1e293b;
-    --muted: #64748b;
+    /* Assombri : sur la teinte des encadres, #64748b tombait a 4,23:1.
+       Cette valeur tient 4,83:1 sur la teinte et 5,43:1 sur une carte. */
+    --muted: #5c6b80;
+
     --radius: 16px;
     --shadow: 0 10px 25px rgba(0,0,0,0.08);
+    /* Une ombre plus franche, pour ce qui doit se detacher au survol. */
+    --shadow-fort: 0 18px 40px rgba(15,23,42,0.14);
     color-scheme: light;
 }
 
@@ -52,7 +98,7 @@
     position: absolute;
     left: -999px;
     top: 0;
-    background: var(--primary);
+    background: var(--primary-fond);
     color: white;
     padding: 12px 20px;
     border-radius: 0 0 8px 0;
@@ -79,7 +125,7 @@ input:focus-visible {
     left: 0;
     height: 4px;
     width: 0%;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: linear-gradient(90deg, var(--primary-fond), var(--secondary-fond));
     z-index: 200;
     transition: width .1s ease-out;
 }
@@ -128,7 +174,7 @@ h1, h2, h3, .logo { font-family: 'Poppins', Arial, sans-serif; }
 .header-illustration { flex-shrink: 0; }
 @media (max-width: 700px) { .header-illustration { display: none; } }
 
-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; }
+header { background: linear-gradient(135deg, var(--hero-de), var(--hero-a)); color: white; padding: 60px 20px; text-align: center; }
 header h1 { font-size: 3rem; margin-bottom: 15px; }
 header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
 .header-text header p { margin: 0; }
@@ -143,6 +189,57 @@ header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
 main { max-width: 1100px; margin: 40px auto; padding: 20px; }
 section { margin-bottom: 50px; }
 h2 { margin-bottom: 20px; font-size: 2rem; }
+
+/* ---------------------------------------------------------------
+   Largeur de lecture.
+
+   Le texte courant s'etirait sur 1060 px, soit environ 130 signes par
+   ligne. L'oeil perd sa ligne au retour bien avant : la typographie
+   place l'optimum entre 60 et 75 signes. Sur un site dont le produit
+   est un cours de 2400 mots, ce n'est pas un detail d'esthetique.
+
+   Les pages de cours resserrent donc leur colonne. :has() reste ici
+   sans danger : un navigateur qui l'ignore garde la mise en page
+   actuelle, il ne casse rien.
+   --------------------------------------------------------------- */
+main:has(.lecon) { max-width: 780px; }
+
+/* Les tableaux et les simulateurs gardent la largeur de la carte : ils se
+   lisent en colonnes, pas en lignes de texte. */
+.lecon-corps > p,
+.lecon-corps > ul,
+.lecon-corps > ol,
+.lecon-corps > h4,
+.lecon-corps > .exemple,
+.lecon-corps > .piege,
+.lecon-corps > .retenir,
+main > section > p,
+main > section > ul,
+main > section > ol { max-width: 62ch; }
+
+/* ---------------------------------------------------------------
+   Liens dans le texte courant.
+
+   Vingt-neuf liens du site s'affichaient dans le bleu par defaut du
+   navigateur, #0000EE souligne — dont les quatorze « Voir le guide »
+   de l'accueil, qui sont les appels a l'action les plus importants du
+   site. Ils sont maintenant a la couleur de la maison.
+
+   Le soulignement est conserve : dans un paragraphe, la couleur seule
+   ne suffit pas a signaler un lien a qui distingue mal les teintes.
+   --------------------------------------------------------------- */
+main > section p a:not([class]),
+main > section li a:not([class]),
+.lecon-corps a:not([class]) {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: .18em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-thickness .15s;
+}
+main > section p a:not([class]):hover,
+main > section li a:not([class]):hover,
+.lecon-corps a:not([class]):hover { text-decoration-thickness: 2px; }
 
 /* Sommaire (table des matières) */
 .toc { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 25px; margin-bottom: 40px; }
@@ -159,11 +256,93 @@ h2 { margin-bottom: 20px; font-size: 2rem; }
 
 /* Cartes */
 article { background: var(--surface); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 20px; transition: transform .3s, box-shadow .3s; animation: fadeUp .6s ease backwards; }
-article:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+article:hover { transform: translateY(-8px); box-shadow: var(--shadow-fort); }
 article h3 { color: var(--primary); margin-bottom: 10px; }
-article:nth-child(1) { animation-delay: .1s; }
-article:nth-child(2) { animation-delay: .2s; }
-article:nth-child(3) { animation-delay: .3s; }
+
+/* ---------------------------------------------------------------
+   Les categories de l'accueil, en grille.
+
+   Elles etaient empilees sur toute la largeur : quatorze cartes de
+   1060 px l'une sous l'autre, soit une page de 3985 px. Il fallait
+   cinq ecrans de defilement pour decouvrir le catalogue, et rien ne
+   se comparait puisque rien n'etait jamais visible en meme temps.
+
+   En grille, l'offre tient en un coup d'oeil. auto-fill plutot qu'un
+   nombre fixe de colonnes : la grille se recompose seule selon la
+   largeur, et tombe a une colonne sur telephone sans regle dediee.
+   --------------------------------------------------------------- */
+#categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 22px;
+}
+#categories > article {
+    margin-bottom: 0;
+    padding: 24px 24px 20px;
+    /* La colonne interne permet de coller l'appel a l'action en bas :
+       sans cela, les cartes d'une meme rangee ont des descriptions de
+       longueurs differentes et leurs liens ne s'alignent pas. */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#categories > article h3 { font-size: 1.15rem; margin-bottom: 8px; }
+#categories > article > p { color: var(--muted); font-size: .93rem; flex: 1; margin-bottom: 14px; }
+
+/* La pastille d'icone : l'emoji seul flottait devant le titre. Isole dans
+   un carre teinte, il donne a chaque carte un point d'entree pour le regard. */
+.carte-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--teinte);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    transition: transform .3s;
+}
+#categories > article:hover .carte-icone { transform: scale(1.08); }
+
+/* L'appel a l'action, et la carte entiere comme zone cliquable.
+   Le lien s'etire par un pseudo-element sur toute la carte : la cible passe
+   de quelques dizaines de pixels a la carte complete, ce qui compte surtout
+   au doigt. Un seul element reste focalisable, donc rien ne change au clavier
+   ni pour un lecteur d'ecran. */
+#categories > article > a {
+    align-self: flex-start;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: .92rem;
+    text-decoration: none;
+}
+#categories > article > a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+#categories > article:hover > a { text-decoration: underline; }
+
+/* Le bouton « favori » est pose sur la carte, donc sous la nappe du lien.
+   Il doit repasser au-dessus, sans quoi le clic ouvrirait le guide. */
+#categories .btn-favori-carte { position: relative; z-index: 1; align-self: flex-start; }
+
+/* Apparition en cascade. Elle s'arretait a la troisieme carte — regles
+   nth-child(1) a (3) heritees du temps ou l'accueil en comptait trois : les
+   onze suivantes surgissaient donc toutes ensemble, ce qui se voyait.
+   Le pas est court (40 ms) : sur quatorze cartes, un pas plus long ferait
+   attendre la derniere plus d'une seconde. */
+#categories > article:nth-child(1)  { animation-delay: .04s; }
+#categories > article:nth-child(2)  { animation-delay: .08s; }
+#categories > article:nth-child(3)  { animation-delay: .12s; }
+#categories > article:nth-child(4)  { animation-delay: .16s; }
+#categories > article:nth-child(5)  { animation-delay: .20s; }
+#categories > article:nth-child(6)  { animation-delay: .24s; }
+#categories > article:nth-child(7)  { animation-delay: .28s; }
+#categories > article:nth-child(8)  { animation-delay: .32s; }
+#categories > article:nth-child(9)  { animation-delay: .36s; }
+#categories > article:nth-child(10) { animation-delay: .40s; }
+#categories > article:nth-child(11) { animation-delay: .44s; }
+#categories > article:nth-child(12) { animation-delay: .48s; }
+#categories > article:nth-child(13) { animation-delay: .52s; }
+#categories > article:nth-child(14) { animation-delay: .56s; }
 
 /* ---------------------------------------------------------------
    Blocs de cours des guides : sections depliables.
@@ -233,16 +412,15 @@ article:nth-child(3) { animation-delay: .3s; }
 .lecon-controles button:hover { color: var(--primary); border-color: var(--primary); }
 
 /* Exemple chiffre : le passage du concept au concret */
-.exemple { background: var(--background); border-left: 4px solid var(--secondary); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+.exemple { background: var(--teinte); border-left: 4px solid var(--secondary); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
 .exemple .titre { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--secondary); margin-bottom: 8px; }
 
 /* Erreur frequente */
-.piege { background: var(--background); border-left: 4px solid #f59e0b; border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
-.piege .titre { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: #d97706; margin-bottom: 8px; }
-html.dark-mode .piege .titre { color: #fbbf24; }
+.piege { background: var(--teinte); border-left: 4px solid var(--attention); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+.piege .titre { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--attention); margin-bottom: 8px; }
 
 /* A retenir : la phrase que le lecteur doit garder */
-.retenir { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border-radius: 10px; padding: 14px 20px; margin: 18px 0 0; font-weight: 500; }
+.retenir { background: linear-gradient(135deg, var(--primary-fond), var(--secondary-fond)); color: white; border-radius: 10px; padding: 14px 20px; margin: 18px 0 0; font-weight: 500; }
 
 /* Tableaux comparatifs.
    Le selecteur couvre aussi les tableaux hors blocs de cours (mentions
@@ -292,8 +470,8 @@ main section li { margin-bottom: 8px; }
     flex-shrink: 0;
     transition: color .2s, transform .15s;
 }
-.btn-favori:hover { color: #f59e0b; transform: scale(1.15); }
-.btn-favori.actif { color: #f59e0b; }
+.btn-favori:hover { color: var(--favori); transform: scale(1.15); }
+.btn-favori.actif { color: var(--favori); }
 
 /* Dans un summary, le bouton se place avant le chevron (pseudo-element
    ::after), d'ou l'ordre : titre, bouton, chevron. */
@@ -313,9 +491,9 @@ main section li { margin-bottom: 8px; }
     font-family: 'Inter', sans-serif;
 }
 .btn-favori-guide:hover,
-.btn-favori-carte:hover { border-color: #f59e0b; transform: none; }
+.btn-favori-carte:hover { border-color: var(--favori); transform: none; }
 .btn-favori-guide.actif,
-.btn-favori-carte.actif { border-color: #f59e0b; }
+.btn-favori-carte.actif { border-color: var(--favori); }
 .btn-favori-carte { margin-top: 12px; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -343,7 +521,6 @@ main section li { margin-bottom: 8px; }
     color: var(--primary);
     line-height: 1.1;
 }
-html.dark-mode .espace-stat .nombre { color: #7aa5ff; }
 .espace-stat .libelle { font-size: .88rem; color: var(--muted); }
 
 .espace-groupe {
@@ -375,7 +552,7 @@ html.dark-mode .espace-stat .nombre { color: #7aa5ff; }
     border-radius: 6px;
     flex-shrink: 0;
 }
-.espace-retirer:hover { color: #ef4444; }
+.espace-retirer:hover { color: var(--alerte); }
 
 .espace-vide {
     background: var(--surface);
@@ -388,7 +565,7 @@ html.dark-mode .espace-stat .nombre { color: #7aa5ff; }
 .espace-vide strong { color: var(--text); }
 
 .espace-note {
-    background: var(--background);
+    background: var(--teinte);
     border-left: 4px solid var(--primary);
     border-radius: 10px;
     padding: 16px 20px;
@@ -416,7 +593,7 @@ code {
 
 /* Marquer comme lu */
 .mark-read-box { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 25px; margin: 40px 0; display: flex; align-items: center; gap: 12px; }
-.mark-read-box input { width: 20px; height: 20px; accent-color: var(--primary); cursor: pointer; }
+.mark-read-box input { width: 20px; height: 20px; accent-color: var(--primary-fond); cursor: pointer; }
 .mark-read-box label { cursor: pointer; font-weight: 500; }
 
 /* Quiz */
@@ -430,14 +607,23 @@ code {
    blanche, soit un ecart quasi nul — les cases ne se lisaient pas comme des
    boutons. On leur donne un gris dedie, plus marque. En mode sombre le
    contraste fonctionnait deja, la valeur y est conservee. */
-:root { --quiz-case: #e6ecf5; }
-html.dark-mode { --quiz-case: #0f172a; }
-
-.quiz-option { text-align: left; background: var(--quiz-case); border: 2px solid transparent; border-radius: 8px; padding: 11px 15px; cursor: pointer; font-family: inherit; font-size: .95rem; color: var(--text); transition: border-color .2s, background .2s; }
+.quiz-option { text-align: left; background: var(--teinte); border: 2px solid transparent; border-radius: 8px; padding: 11px 15px; cursor: pointer; font-family: inherit; font-size: .95rem; color: var(--text); transition: border-color .2s, background .2s; }
 .quiz-option:hover { background: var(--surface); }
 .quiz-option:hover { border-color: var(--primary); }
-.quiz-option.correct { border-color: #22c55e; background: rgba(34,197,94,0.12); }
-.quiz-option.incorrect { border-color: #ef4444; background: rgba(239,68,68,0.12); }
+/* Juste ou faux ne doit pas se lire qu'a la couleur.
+   La reponse n'etait signalee que par une bordure verte ou rouge : pour une
+   personne daltonienne — environ un homme sur douze — les deux etats sont
+   alors indistinguables, et le quiz ne dit plus rien. Un signe s'ajoute donc
+   a la couleur, ce qui aide au passage tout le monde a relire ses reponses.
+   Le symbole est pousse a droite, hors du flux du libelle. */
+.quiz-option.correct,
+.quiz-option.incorrect { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.quiz-option.correct::after,
+.quiz-option.incorrect::after { font-weight: 700; flex-shrink: 0; }
+.quiz-option.correct { border-color: var(--succes); background: rgba(34,197,94,0.12); }
+.quiz-option.correct::after { content: "✓"; color: var(--succes); }
+.quiz-option.incorrect { border-color: var(--alerte); background: rgba(239,68,68,0.12); }
+.quiz-option.incorrect::after { content: "✗"; color: var(--alerte); }
 .quiz-score { font-weight: 600; margin-top: 10px; }
 
 /* Quiz place au bas d'une sous-section.
@@ -460,7 +646,6 @@ html.dark-mode { --quiz-case: #0f172a; }
     margin-bottom: 4px;
     letter-spacing: -.01em;
 }
-html.dark-mode .quiz-surtitre { color: #7aa5ff; }
 
 .quiz-titre {
     font-family: 'Poppins', sans-serif;
@@ -476,14 +661,14 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
    croire qu'un second essai est possible. */
 .quiz-option:disabled { cursor: default; opacity: 1; }
 .quiz-option:disabled:hover { border-color: transparent; }
-.quiz-option.correct:disabled:hover { border-color: #22c55e; }
-.quiz-option.incorrect:disabled:hover { border-color: #ef4444; }
+.quiz-option.correct:disabled:hover { border-color: var(--succes); }
+.quiz-option.incorrect:disabled:hover { border-color: var(--alerte); }
 
 /* Explication revelee apres la reponse */
 .quiz-explication {
     margin-top: 10px;
     padding: 10px 14px;
-    background: var(--background);
+    background: var(--teinte);
     border-left: 3px solid var(--primary);
     border-radius: 6px;
     font-size: .92rem;
@@ -507,7 +692,7 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
    Le bloc doit se distinguer nettement du cours qui l'entoure : c'est un
    changement de posture, on passe de la lecture à l'action. D'où le surtitre,
    le fond distinct et la bordure, sur le modèle du bloc de quiz. */
-.pratique { background: var(--quiz-case); border: 2px solid var(--primary); border-radius: var(--radius); padding: 22px 24px; margin: 26px 0; }
+.pratique { background: var(--teinte); border: 2px solid var(--primary); border-radius: var(--radius); padding: 22px 24px; margin: 26px 0; }
 .pratique-surtitre { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); margin-bottom: 4px; }
 .pratique-entete h4 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin: 0 0 6px; }
 .pratique-intro { margin: 0 0 16px; color: var(--muted); font-size: .95rem; }
@@ -537,16 +722,16 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
    une case de 16 pixels n'est pas raisonnable. */
 .pratique-controle { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; gap: 12px; }
 .pratique-controle li { display: grid; grid-template-columns: auto 1fr; gap: 4px 11px; align-items: start; }
-.pratique-controle input { width: 19px; height: 19px; margin: 2px 0 0; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
+.pratique-controle input { width: 19px; height: 19px; margin: 2px 0 0; accent-color: var(--primary-fond); cursor: pointer; flex-shrink: 0; }
 .pratique-controle label { cursor: pointer; line-height: 1.45; }
 .pratique-controle input:checked + label { color: var(--muted); }
 .pratique-aide { grid-column: 2; font-size: .85rem; color: var(--muted); font-style: italic; }
 
 /* Le verdict change de couleur selon ce qui est coché : le regard doit trouver
    l'état sans lire la phrase. */
-.pratique-ligne.ton-bon .pratique-valeur { color: #059669; }
+.pratique-ligne.ton-bon .pratique-valeur { color: var(--succes); }
 .pratique-ligne.ton-moyen .pratique-valeur { color: var(--primary); }
-.pratique-ligne.ton-alerte .pratique-valeur { color: #dc2626; }
+.pratique-ligne.ton-alerte .pratique-valeur { color: var(--alerte); }
 .pratique-ligne.ton-bon .pratique-libelle,
 .pratique-ligne.ton-moyen .pratique-libelle,
 .pratique-ligne.ton-alerte .pratique-libelle { color: var(--text); font-weight: 500; }
@@ -583,9 +768,9 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
 .parcours .etape:nth-child(2) { border-left-color: var(--secondary); }
 .parcours .etape:nth-child(2) .etape-rang { color: var(--secondary); }
 .parcours .etape:nth-child(2) .etape-lien:hover .etape-titre { color: var(--secondary); }
-.parcours .etape:nth-child(3) { border-left-color: #059669; }
-.parcours .etape:nth-child(3) .etape-rang { color: #059669; }
-.parcours .etape:nth-child(3) .etape-lien:hover .etape-titre { color: #059669; }
+.parcours .etape:nth-child(3) { border-left-color: var(--succes); }
+.parcours .etape:nth-child(3) .etape-rang { color: var(--succes); }
+.parcours .etape:nth-child(3) .etape-lien:hover .etape-titre { color: var(--succes); }
 
 @media (max-width: 700px) {
     .parcours .etape { padding: 18px; }
@@ -593,7 +778,7 @@ html.dark-mode .quiz-surtitre { color: #7aa5ff; }
 }
 
 /* Bouton retour en haut */
-#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--primary); color: white; border: none; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 90; }
+#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--primary-fond); color: white; border: none; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 90; }
 #back-to-top.visible { display: flex; }
 
 /* Footer */
@@ -606,14 +791,29 @@ footer a { color: var(--muted); margin: 0 8px; }
    supprime le flash blanc au chargement. <body> n'existe pas encore à ce
    moment-là, d'où le choix de <html>. */
 html.dark-mode {
+    /* Ce qui s ecrit s eclaircit ; ce qui sert d aplat garde le bleu franc,
+       parce qu il porte du texte blanc. Voir la note de la palette en tete. */
+    --primary: #8ab4ff;          /* 7,0:1 sur une carte — etait 2,83:1 */
+    --primary-fond: #2563eb;
+    --secondary: #c4b5fd;        /* 7,9:1 sur une carte — etait 2,57:1 */
+    --secondary-fond: #7c3aed;
+
+    --succes: #34d399;
+    --alerte: #f87171;
+    --attention: #fbbf24;
+    --favori: #fbbf24;
+
     --background: #0f172a;
     --surface: #1e293b;
+    --teinte: #0f172a;           /* sur une carte claire, le creux se fait par le sombre */
     --text: #f1f5f9;
     --muted: #94a3b8;
     --shadow: 0 10px 25px rgba(0,0,0,0.4);
+    --hero-de: #1e3a8a;
+    --hero-a: #4c1d95;
+    --shadow-fort: 0 18px 40px rgba(0,0,0,0.55);
     color-scheme: dark;
 }
-html.dark-mode header { background: linear-gradient(135deg, #1e3a8a, #4c1d95); }
 html.dark-mode .theme-toggle { border-color: var(--muted); color: var(--text); }
 
 /* Le fond est aussi posé sur <html> : sans cela, le navigateur peint la
@@ -688,12 +888,8 @@ html { background: var(--background); }
 .actu-lien-guide a:hover { text-decoration: underline; }
 .actu-vide { color: var(--muted); font-style: italic; }
 
-/* Le bleu de --primary ne change pas en mode sombre : sur la carte #1e293b,
-   il ne donne que 2,8:1, sous le minimum de 4,5:1 exige pour du texte. Le
-   bleu clair du reste du site en mode sombre monte a 6:1. */
-html.dark-mode .actu-lien-guide a,
-html.dark-mode .actu-titre:hover { color: #7aa5ff; }
-html.dark-mode .actu { border-left-color: #7aa5ff; }
+/* Plus de rattrapage local ici : --primary s eclaircit de lui-meme en mode
+   sombre, voir la note de la palette en tete de fichier. */
 
 /* Impression */
 @media print {

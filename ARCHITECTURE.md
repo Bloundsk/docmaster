@@ -177,7 +177,59 @@ jamais. Les deux premières ont menti.
 
 ---
 
-## 6. Contrôles automatiques
+### Largeur de lecture
+
+**Le texte courant reste sous 75 signes par ligne.** Il s'étirait sur 1060 px,
+soit environ 130 signes : l'œil perd sa ligne au retour bien avant. Les pages de
+cours resserrent donc leur colonne — `main:has(.lecon)` — et le texte est
+plafonné en `ch`, ce qui suit la police et non une largeur en pixels.
+
+Tableaux et simulateurs sont exclus du plafond : ils se lisent en colonnes, pas
+en lignes de texte. `:has()` est sans danger ici, un navigateur qui l'ignore
+retombe sur la mise en page large sans rien casser.
+
+## 6. La palette
+
+**Toute couleur vit dans `:root` et `html.dark-mode`, en tête de `style.css`, et
+nulle part ailleurs.** `audit-coherence.mjs` le vérifie et bloque : une couleur
+écrite en dur ailleurs est traitée comme une anomalie, et tout jeton défini en
+clair doit l'être en sombre.
+
+La règle vient d'un défaut précis. `--primary` valait le même bleu dans les deux
+thèmes ; sur une carte sombre il ne donne que 2,83:1, sous le 4,5:1 qu'exige un
+texte. Trois endroits avaient reçu un `#7aa5ff` écrit à la main — et **une
+quinzaine d'autres sont restés illisibles**, faute d'avoir été remarqués. Rustiner
+un symptôme laisse tous ses jumeaux en place.
+
+Deux familles de bleu, et c'est la clef :
+
+| Jeton | Rôle | Clair | Sombre |
+|---|---|---|---|
+| `--primary` | ce qui s'**écrit** : liens, titres de cartes, chiffres | `#2563eb` | `#8ab4ff` |
+| `--primary-fond` | les **aplats**, qui portent du texte blanc | `#2563eb` | `#2563eb` |
+| `--hero-de` / `--hero-a` | le dégradé de bannière | bleu → violet | bleus assombris |
+| `--teinte` | fond posé **sur** une carte : exemples, pièges, quiz | `#eef2f7` | `#0f172a` |
+| `--succes` `--alerte` `--attention` `--favori` | les statuts | foncés | éclaircis |
+
+Ce qui s'écrit s'éclaircit en mode sombre, donc tout texte devient lisible d'un
+coup — **y compris ce qui sera ajouté plus tard**. Les aplats gardent le bleu
+franc dont le texte blanc a besoin.
+
+Trois pièges à ne pas rouvrir :
+
+- **`--background` ne convient pas comme fond d'encadré.** Sur une carte blanche,
+  `#f8fafc` donne 1,05 : une bordure sans boîte. C'est à cela que sert `--teinte`.
+- **Un fond teinté coûte du contraste au texte gris.** `--muted` a dû être
+  assombri quand `--teinte` est apparue, sinon les légendes tombaient à 4,23:1.
+- **Une couleur ne doit jamais porter seule une information.** Les quiz ne
+  signalaient juste et faux que par du vert et du rouge ; un ✓ et un ✗ doublent
+  désormais le signal.
+
+La vérification se fait sur le DOM réel, dans un navigateur, les deux thèmes et
+quiz répondus : le calcul statique ne voit ni les fonds hérités, ni les voiles
+semi-transparents, ni les états produits par le JavaScript.
+
+## 7. Contrôles automatiques
 
 Les deux hooks vivent dans `.git/hooks/`, qui **n'est pas versionné** : recréés à la
 main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le dépôt.

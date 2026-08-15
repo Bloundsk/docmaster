@@ -1,5 +1,68 @@
 # Changelog — DocMaster
 
+## 2026-08-15 — Passe visuelle : couleurs, lisibilité, page d'accueil
+Le site fonctionnait ; il ne se donnait pas à lire. Trois défauts de fond, tous
+mesurés avant d'être corrigés.
+
+### La page d'accueil ne montrait pas son catalogue
+
+Quatorze cartes de 1060 px empilées l'une sous l'autre, soit **3 985 px de haut**.
+Il fallait cinq écrans pour découvrir l'offre, et rien ne se comparait puisque
+rien n'était jamais visible en même temps.
+
+Elles passent en grille : **2 741 px, trois colonnes, une seule sur téléphone**,
+sans règle dédiée — la grille se recompose selon la largeur disponible.
+
+La carte entière devient cliquable, et non plus le seul lien « Voir le guide » :
+la cible passe de quelques dizaines de pixels à la carte complète, ce qui compte
+surtout au doigt. Chaque emoji est isolé dans une pastille teintée, qui donne au
+regard un point d'entrée par carte.
+
+### Le texte s'étirait sur 130 signes par ligne
+
+Sur un site dont le produit est un cours de 2 400 mots, ce n'est pas un détail
+d'esthétique : l'œil perd sa ligne au retour bien avant. Les pages de cours
+resserrent leur colonne, le texte courant est plafonné — **74 signes par ligne**,
+dans l'optimum typographique de 60 à 75. Tableaux et simulateurs gardent la
+largeur de la carte : ils se lisent en colonnes, pas en lignes.
+
+### Le mode sombre était illisible par endroits
+
+`--primary` valait le même bleu dans les deux thèmes. Sur une carte sombre, ce
+bleu donne **2,83:1** là où un texte exige 4,5:1. Trois endroits avaient été
+rattrapés un par un ; **une quinzaine d'autres étaient restés illisibles**, faute
+d'avoir été remarqués.
+
+La correction ne rattrape pas le seizième : elle sépare les deux rôles du bleu.
+`--primary` sert à écrire et s'éclaircit en mode sombre ; `--primary-fond` sert
+d'aplat et garde le bleu franc dont le texte blanc a besoin. Tout ce qui s'écrit
+devient lisible d'un coup, **y compris ce qui sera ajouté plus tard**.
+
+Dans la foulée : le violet passait à 2,57:1, le vert et l'orange tombaient sous
+le seuil sur fond clair, et les encadrés d'exemple étaient à 1,05 de leur carte
+— une bordure sans boîte. Tous ont désormais un jeton, clair et sombre.
+
+**Vérification** : audit de contraste sur le DOM réel, 13 pages, les deux thèmes,
+quiz répondus compris — **zéro échec**. Le texte le plus juste tient 4,83:1.
+
+### Juste ou faux ne se lisait qu'à la couleur
+
+Dans les quiz, la bonne et la mauvaise réponse ne se distinguaient que par une
+bordure verte ou rouge. Pour une personne daltonienne — environ un homme sur
+douze — les deux états étaient indistinguables, et le quiz ne disait plus rien.
+Un ✓ et un ✗ s'ajoutent à la couleur.
+
+L'étoile des favoris, elle, ne donnait que 2,15:1 sur du blanc : on distinguait
+mal l'étoile pleine de l'étoile vide.
+
+### Le garde-fou
+
+`audit-coherence.mjs` gagne un huitième contrôle : **toute couleur écrite en dur
+hors de la palette est une anomalie**, et tout jeton défini en clair doit l'être
+en sombre. C'est exactement le défaut d'origine qui est visé — rustiner un
+symptôme au lieu de soigner la cause. Contrôle éprouvé en réinjectant les deux
+régressions : les deux sont attrapées.
+
 ## 2026-08-15 — Sept cases cochées, deux articles publiés
 Signalé par l'auteur : sept articles retenus dans le rapport de veille du matin, deux
 seulement parus sur le site. Les cinq manquants avaient **tous plus de 120 jours** —
