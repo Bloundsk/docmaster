@@ -1,5 +1,44 @@
 # Changelog — DocMaster
 
+## 2026-08-15 — La recherche affichait ses résultats dans l'ordre du fichier
+Contrôle de la mise en ligne après la vérification complète. Tout était bien déployé —
+76 fichiers identiques octet pour octet, les 64 pages en réponse — et un défaut est
+apparu en cherchant un mot au hasard.
+
+Chercher **« mesore »**, un mot-clé exact du guide Négociation, remontait d'abord deux
+pages sans rapport : la tolérance aux fautes de frappe avait rapproché le mot de
+« mesure », et rien ne départageait ensuite.
+
+La cause : les résultats n'étaient **pas classés du tout**. Un `filter` sans tri, donc
+l'ordre du fichier de données. À quarante entrées cela ne se voyait pas ; à
+**deux cent trente-sept**, si.
+
+La tolérance aux fautes doit rattraper une saisie approximative, **jamais passer
+devant une saisie correcte**. Les résultats sont désormais classés :
+
+| Rang | Ce qui le déclenche |
+|---|---|
+| 4 | Le mot exact figure dans le **titre** |
+| 3 | Le mot exact figure dans les **mots-clés** |
+| 2 | Le mot exact figure dans la **description** |
+| 1 | Rattrapé par la tolérance aux fautes |
+
+À pertinence égale, l'ordre du fichier est conservé — le tri de JavaScript est stable
+depuis ES2019, et cet ordre suit les sujets puis les niveaux, ce qui reste le
+classement le plus lisible.
+
+`scripts/test-recherche.mjs` entre dans le dépôt. Il couvrait déjà le repliage des
+accents et le surlignage ; il vérifie maintenant que les pertinences sortent bien
+décroissantes, et que « phising » trouve toujours « Le phishing ».
+
+### Une fausse alerte, pour mémoire
+
+Après déploiement, le navigateur de test affichait encore l'ancien ordre. Ce n'était
+pas le site : le fichier servi est identique au local, et rejoué avec un paramètre
+anti-cache il classe correctement. C'était le cache du navigateur, qui se résorbe en
+dix minutes (`max-age=600`). Vérifier le fichier servi plutôt que la page affichée
+évite de corriger un problème qui n'existe pas.
+
 ## 2026-08-14 — Un simulateur en écrasait un autre, en silence
 Vérification complète du site après la fin des quatre chantiers. Elle a trouvé un
 défaut, et il était **invisible par construction**.
