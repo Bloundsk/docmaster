@@ -1,5 +1,19 @@
 # Changelog — DocMaster
 
+## 2026-08-15 — Un nom d'utilisateur Windows publié dans le dépôt
+`audit-coherence.mjs` ouvrait sur un chemin absolu écrit en dur, contenant le
+nom de session Windows de l'auteur. Le site paraît sous pseudonyme et le dépôt
+est public : cette ligne le contredisait, discrètement, à chaque consultation.
+
+La racine se déduit désormais de l'emplacement du script. Deux effets : le nom
+disparaît, et l'audit tourne depuis n'importe quel dossier de travail — ce qui a
+été vérifié en le lançant depuis ailleurs que le dépôt.
+
+C'est la seconde fois qu'un nom d'utilisateur passe dans ce dépôt public : un
+`git add -A` y avait déjà envoyé `.claude/settings.local.json` le 8 août. Le
+point commun n'est pas le fichier, c'est le chemin absolu — **sur ce dépôt, un
+chemin en dur est un risque, pas une commodité**.
+
 ## 2026-08-15 — Passe visuelle : couleurs, lisibilité, page d'accueil
 Le site fonctionnait ; il ne se donnait pas à lire. Trois défauts de fond, tous
 mesurés avant d'être corrigés.

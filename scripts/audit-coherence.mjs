@@ -8,7 +8,11 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 
-const RACINE = "C:/Users/veylu/Desktop/DocMaster";
+// La racine se deduit de l emplacement du script, elle n est pas ecrite en dur.
+// Le chemin absolu contenait le nom d utilisateur Windows de l auteur, publie
+// tel quel dans un depot public alors que le site parait sous pseudonyme.
+// slice(1) retire la barre oblique que Windows place devant la lettre de lecteur.
+const RACINE = path.join(path.dirname(new URL(import.meta.url).pathname.slice(1)), "..");
 const GUIDES = path.join(RACINE, "guides");
 
 const anomalies = [];
