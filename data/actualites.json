@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-15T19:30:52.976Z",
+  "maj": "2026-08-15T19:31:27.607Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQQXBucDA3RmJRYjVVcWpKb2xxQTNaSVc3RnBpejJJaEZUZnZVX1M4dzNNenFnMS1fY25Waml0TFFzSEFWMTBZVkI0Vms0ZUsxTGdpbG5IOWhwdk52X3NKUTVSTVY2YmFEVDRtUVR5WmY4NkJwMDNZT19MYWdsZFJLVUp5WXNpTklqMWRXWDFFbklTSloyVVE?oc=5",
@@ -35,6 +35,18 @@
       "ancre": "vos-donnees-personnelles",
       "section": "🔐 Vos données personnelles",
       "sujet": "⚖️ Droit & démarches — Avancé",
+      "publie": "2026-08-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNakprcERoNXcwSk43WTh4OUZoT1RHcHdDVkVkUWhqRFdkRExHemJaZVpzOUthdGhTbVd5MV9wdG1EY3U1MzRCdFNiNkZISTh0QW5PSFhEcXNqREtKQjd5aXBLWm9JYmxLb1o5NXlIbGNfUEFyVWFCUnZxRG03MEYyNkRSb05fM3JETTNkZW9pS3h2aVlKUzB5bEduc2xEWFNEREVOdHRrR3VpOHB3NGtmWWROOFlvdTAwa04zN3l0am1ROU0wLUhOMUNDYWJvOElkeGJ1RmszTGVWX25xQ2d3c001aV9zRzJUbDV4LXJzSml1UE40djBDWVBlZw?oc=5",
+      "titre": "Levée de fonds : « le sens est clair, ce qui est flou, c'est la manière dont il faut procéder »",
+      "source": "Les Echos",
+      "date": "2026-05-29",
+      "guide": "entrepreneuriat",
+      "page": "avance.html",
+      "ancre": "lever-des-fonds",
+      "section": "🤝 Lever des fonds, ou non",
+      "sujet": "🚀 Entrepreneuriat — Avancé",
       "publie": "2026-08-15"
     }
   ]
