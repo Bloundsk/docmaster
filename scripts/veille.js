@@ -25,11 +25,14 @@ const TAILLE_POOL = 10;              // articles lus par recherche, avant dedupl
 const NB_ARTICLES_RETENUS = 1;       // articles conserves par sous-section
 
 // Age maximal d un article propose. Google News remonte volontiers de vieux
-// articles quand une requete est peu couverte : un rapport de veille a deja
-// propose des textes de 2021 et 2023, melanges aux nouveautes et impossibles
-// a distinguer sans lire chaque date. Une veille propose ce qui est recent ;
-// le reste est du fond de tiroir.
-const AGE_MAX_JOURS = 90;
+// articles quand une requete est peu couverte : un rapport a deja propose des
+// textes de 2021 et 2023, melanges aux nouveautes et impossibles a distinguer
+// sans lire chaque date.
+//
+// La valeur doit rester identique a celle de scripts/publier-actualites.js.
+// Si la veille proposait plus vieux que ce que le site accepte, l auteur
+// cocherait des articles qui ne paraitraient jamais.
+const AGE_MAX_JOURS = 120;
 
 // Une Issue GitHub refuse un corps de plus de 65 536 caracteres. On decoupe
 // bien en dessous : l en-tete, le pied et la charge utile s ajoutent ensuite,

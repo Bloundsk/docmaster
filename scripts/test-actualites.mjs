@@ -142,27 +142,29 @@ verifier("le script le dit", /inchang/.test(sortie6), sortie6.trim());
 // une republication du site deux fois par jour, pour rien.
 verifier("l'horodatage ne bouge pas non plus", lireEtat().maj === horodatageAvant, lireEtat().maj);
 
-// --- 7. Une case cochee est respectee, quel que soit l age -----------------
+// --- 7. Un article perime est ecarte, et l ecart est annonce ---------------
 //
-// Ce controle testait l inverse : un article de plus de 120 jours n entrait
-// pas. La regle etait mauvaise et l a prouve en production — sept cases
-// cochees, deux articles publies, cinq ecartes en silence parce qu ils
-// dataient de 2021, 2023, 2024. Une case cochee est une decision editoriale
-// explicite ; le script n a pas a la juger.
-console.log("\n=== 7. UN ARTICLE ANCIEN, MAIS COCHE ===");
+// Un site qui annonce « les competences de demain » ne peut pas afficher un
+// article de 2021 : la regle des 120 jours est donc juste.
+//
+// Ce qui ne l etait pas, c est de l appliquer en silence. Sept cases cochees
+// ont donne deux articles publies, sans un mot d explication, et il a fallu
+// remonter jusqu au code pour comprendre. Le controle porte donc sur les deux :
+// l article est bien ecarte, ET le script le dit.
+console.log("\n=== 7. UN ARTICLE PERIME ===");
 const ancien = { ...METAS["https://news.google.com/b"], titre: "Un article de 2021", date: "2021-04-06" };
 etatIssues = [{
     number: 1,
     body: `- [x] [ancien](https://news.google.com/ancien)\n\n<!-- ACTUALITES\n${JSON.stringify({ "https://news.google.com/ancien": ancien })}\n-->\n`
 }];
-lancer();
+const sortie7 = lancer();
 const e7 = lireEtat().articles;
-verifier("il est publié malgré son âge", e7.some((a) => a.lien.endsWith("/ancien")),
+verifier("il n'entre pas dans la page", !e7.some((a) => a.lien.endsWith("/ancien")),
     JSON.stringify(e7.map((a) => a.date)));
-verifier("les articles déjà en place restent", e7.length === 2, `${e7.length}`);
-// Il doit passer APRES les articles recents, sans les chasser.
-verifier("il est classé en dernier", e7[e7.length - 1].lien.endsWith("/ancien"),
-    e7.map((a) => a.date).join(" > "));
+verifier("les articles récents restent", e7.length === 1, `${e7.length}`);
+verifier("l'écart est annoncé", /écarté/.test(sortie7), sortie7.trim());
+verifier("avec le titre et l'âge", /Un article de 2021/.test(sortie7) && /\d+ j\)/.test(sortie7),
+    sortie7.trim());
 
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

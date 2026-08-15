@@ -33,6 +33,14 @@ const RACINE = path.join(__dirname, "..");
 const ETAT = path.join(RACINE, "data", "actualites.json");
 
 const MAX_ARTICLES = 24;   // au-dela, la page devient un mur
+
+// Un site qui annonce « les competences de demain » ne peut pas afficher un
+// article de 2021 : la page se contredirait elle-meme.
+//
+// La valeur doit rester identique a celle de scripts/veille.js, qui ne propose
+// donc jamais rien de plus ancien. Ce qui est ecarte ici est signale nom par
+// nom — la regle est bonne, c est de l appliquer en silence qui ne l etait pas.
+const AGE_MAX_JOURS = 120;
 const NB_SUR_ACCUEIL = 3;
 
 const MARQUE_DEBUT = "<!-- ACTUALITES:DEBUT -->";
@@ -145,15 +153,30 @@ function fusionner(existants, coches, decoches) {
         });
     }
 
-    // Aucun filtre sur l age : une case cochee est une decision editoriale
-    // explicite, et elle doit etre respectee.
+    // La regle d age s applique, mais elle s explique.
     //
-    // Une regle de peremption a existe ici — 120 jours — et elle ecartait en
-    // silence les articles plus anciens. Sept cases cochees ont donne deux
-    // articles publies, sans un mot d explication : le systeme acceptait la
-    // consigne et la jetait. Ce qui protege la page du vieillissement, c est
-    // MAX_ARTICLES : les plus recents chassent les plus anciens.
-    return [...parLien.values()]
+    // Elle a deja ecarte cinq articles coches sans un mot : l auteur a vu sept
+    // cases cochees donner deux articles, et n avait aucun moyen de savoir
+    // pourquoi. La regle etait bonne — c est le silence qui ne l etait pas.
+    const limite = Date.now() - AGE_MAX_JOURS * 86400000;
+    const ecartes = [];
+
+    const retenus = [...parLien.values()].filter((a) => {
+        const reference = Date.parse(a.date || a.publie);
+        if (isNaN(reference) || reference >= limite) return true;
+        ecartes.push(a);
+        return false;
+    });
+
+    if (ecartes.length) {
+        console.warn(`${ecartes.length} article(s) coché(s) mais écarté(s) — plus de ${AGE_MAX_JOURS} jours :`);
+        for (const a of ecartes) {
+            const jours = Math.round((Date.now() - Date.parse(a.date)) / 86400000);
+            console.warn(`  · ${a.date} (${jours} j) — ${a.titre}`);
+        }
+    }
+
+    return retenus
         .sort((a, b) => (b.date || b.publie).localeCompare(a.date || a.publie))
         .slice(0, MAX_ARTICLES);
 }
