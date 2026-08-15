@@ -1,5 +1,27 @@
 # Changelog — DocMaster
 
+## 2026-08-15 — Les premières actualités paraissent
+La chaîne mise en place la veille a fonctionné de bout en bout, sans intervention :
+deux cases cochées dans un rapport de veille, et les deux articles ont paru sur le
+site dans la minute.
+
+- **« Transformers en déclin : l'IA cherche des solutions innovantes »** — rattaché à
+  *Qu'est-ce qu'un LLM ?*
+- **« Investir en private equity : les meilleures plateformes en 2026 »** — rattaché à
+  *Investir dans la durée*
+
+Le robot a écrit `data/actualites.json`, régénéré la page **Actualités** et le bloc de
+l'accueil, commité et poussé. Les deux liens « en rapport avec » pointent vers des
+ancres qui existent, vérifié.
+
+C'est le premier contenu du site qui change **sans qu'une ligne de code soit écrite**.
+La rubrique de l'accueil, restée invisible tant que rien n'était retenu, est
+apparue d'elle-même.
+
+Corrigé au passage : une espace avant une virgule dans la description de la page
+d'accueil, présente en trois exemplaires — elle datait de l'ajout du treizième
+parcours.
+
 ## 2026-08-15 — La recherche affichait ses résultats dans l'ordre du fichier
 Contrôle de la mise en ligne après la vérification complète. Tout était bien déployé —
 76 fichiers identiques octet pour octet, les 64 pages en réponse — et un défaut est
