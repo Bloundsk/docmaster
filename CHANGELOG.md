@@ -1,5 +1,50 @@
 # Changelog — DocMaster
 
+## 2026-08-15 — Le script de copie sur clé n'avait jamais pu fonctionner
+Mise à jour de la sauvegarde sur clé USB. Elle a échoué, et pour une raison qui
+méritait d'être creusée : **le contrôle de santé du script refusait exactement ce
+qu'il devait laisser passer.**
+
+Deux défauts se cumulaient :
+
+1. **`git bundle verify` exige d'être dans un dépôt.** Lancé par double-clic depuis
+   le dossier de sauvegardes — l'usage prévu — il n'y en a aucun. La commande
+   échouait quel que soit l'état du bundle. Elle s'exécute désormais dans un dépôt
+   vide temporaire, ce qui ne dépend ni de l'emplacement du script, ni de la présence
+   du projet.
+2. **La commande écrit son compte rendu sur la sortie d'erreur même quand tout va
+   bien** — « … is okay ». PowerShell 5.1 en fait des enregistrements d'erreur, et
+   `$ErrorActionPreference = "Stop"` interrompait le script. Seul le code de retour
+   fait foi maintenant.
+
+C'est ce qui explique la copie faite à la main le 9 août : le script ne pouvait pas
+aboutir.
+
+Les invites « Appuie sur Entrée » bloquaient par ailleurs tout appel non interactif.
+Elles ne se posent plus que si quelqu'un peut y répondre — le double-clic garde son
+comportement.
+
+### Le script n'était versionné nulle part
+
+Il vivait sur le Bureau et sur la clé. Le correctif aurait disparu à la première
+mésaventure, et rien n'aurait signalé sa perte. Il entre dans `scripts/`, et cherche
+la sauvegarde aussi bien à côté de lui que depuis le dépôt — une seule copie sert
+aux deux usages. Vérifié depuis les deux emplacements.
+
+### Ce que portait la clé
+
+| Emplacement | Avant | Après |
+|---|---|---|
+| `DocMaster-sauvegardes\` | rien | copie datée, **108 commits** |
+| `Sauvegardes-DocMaster\` | bundle du 14/08, **85 commits** | remis à niveau |
+
+L'ancien dossier portait **23 commits de retard** sous le nom le plus évident, et une
+version du script d'avant le correctif : deux pièges pour le jour où l'on en aurait
+eu besoin. Les deux sont à jour, rien n'a été supprimé.
+
+La copie est vérifiée par empreinte SHA-256, puis par **restauration réelle** depuis
+la clé : 108 commits, arbre de fichiers identique au projet.
+
 ## 2026-08-15 — Les premières actualités paraissent
 La chaîne mise en place la veille a fonctionné de bout en bout, sans intervention :
 deux cases cochées dans un rapport de veille, et les deux articles ont paru sur le

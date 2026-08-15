@@ -184,9 +184,23 @@ main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le d�
 
 | Hook | Script | Effet |
 |---|---|---|
-| `pre-commit` | `scripts/valider-js.js` | **Bloque** le commit si `search-data.js`, `parcours.js` ou une banque de questions ne se charge plus, ou renvoie vers un fichier absent |
+| `pre-commit` | `scripts/valider-js.js` | **Bloque** le commit si `search-data.js`, `parcours.js`, `pratique.js` ou une banque de questions ne se charge plus, contient une clé répétée, ou renvoie vers un fichier absent |
 | `pre-commit` | `scripts/dater-guides.js` | Date les pages de `guides/` réellement commitées |
 | `post-commit` | — | Met à jour la sauvegarde `.bundle` |
+
+### Sauvegardes
+
+Le `.bundle` se régénère à chaque commit dans `Desktop\Sauvegardes-DocMaster\`. La
+copie sur clé se fait avec `scripts/copier-sur-cle.ps1`, qui vérifie la sauvegarde
+avant de la copier, puis compare les empreintes après.
+
+Deux pièges de ce script, corrigés le 15 août et à ne pas réintroduire :
+`git bundle verify` **exige d'être dans un dépôt** (il s'exécute donc dans un dépôt
+vide temporaire), et il écrit son compte rendu sur la **sortie d'erreur** même en cas
+de succès — sous PowerShell 5.1, seul le code de retour est fiable.
+
+Une copie ne vaut que testée : `git clone <bundle>` puis comparaison de
+`rev-parse HEAD^{tree}` avec le projet.
 
 ### Workflows
 
