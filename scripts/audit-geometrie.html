@@ -68,6 +68,7 @@ const PAGES = [
     { url: "../en/guides/negociation/debutant.html",   nom: "cours traduit 4 (en)" },
     { url: "../en/guides/productivite/avance.html",    nom: "cours traduit 5 (en)" },
     { url: "../en/guides/data/avance.html",            nom: "cours traduit 6 (en)" },
+    { url: "../en/guides/ia/intermediaire.html",       nom: "cours traduit 7 (en)" },
 ];
 
 const LARGEURS = [1400, 1000, 700, 375];
@@ -171,10 +172,57 @@ function controler(d, w, largeur, nomPage) {
             else ok("texte sous 85 signes par ligne", `${signes} signes`);
         }
     }
+
+    /* 7. La langue déclarée est celle du texte affiché.
+       Défaut vécu : « lang » suivait la PRÉFÉRENCE du visiteur et non le
+       contenu. Après un passage par le drapeau anglais, une page française
+       s'annonçait « lang="en" » — prononciation fausse au lecteur d'écran, et
+       mauvais signal aux moteurs. Il ne se voyait qu'après avoir choisi une
+       langue : aucune lecture de fichier ne pouvait l'attraper.
+
+       Ce contrôle ne coûte rien à chaque largeur, mais la préférence doit être
+       posée pour que le cas dépareillé soit réellement exercé — c'est fait
+       dans « lancer ». */
+    const attenduLang = /\/en\/guides\//.test(d.location.pathname) ? "en" : "fr";
+    const vuLang = d.documentElement.getAttribute("lang");
+    if (vuLang !== attenduLang) ko("langue déclarée = langue du texte", `lang="${vuLang}", attendu "${attenduLang}"`);
+    else ok("langue déclarée = langue du texte", `lang="${vuLang}"`);
+
+    /* 8. Les nombres suivent la langue du texte, pas la préférence.
+       Même épisode : « 27 500 jetons » devenait « 27,500 jetons » sur la page
+       française — séparateur anglais collé à un mot français. On regarde le
+       séparateur de milliers réellement affiché. */
+    const valeurs = [...d.querySelectorAll(".pratique-valeur")]
+        .map((e) => e.textContent)
+        .filter((t) => /\d[\s ,.]\d{3}\b/.test(t));
+    if (valeurs.length) {
+        const anglais = valeurs.filter((t) => /\d,\d{3}\b/.test(t)).length;
+        const francais = valeurs.filter((t) => /\d[\s ]\d{3}\b/.test(t)).length;
+        const coherent = attenduLang === "en" ? francais === 0 : anglais === 0;
+        if (!coherent) ko("séparateur des milliers = langue du texte",
+                          `${anglais} en anglais, ${francais} en français, page ${attenduLang}`);
+        else ok("séparateur des milliers = langue du texte", `${valeurs.length} valeur(s)`);
+    }
 }
 
 async function lancer() {
     const cadre = document.getElementById("cadre");
+
+    /* On pose délibérément une préférence de langue DIFFÉRENTE du français
+       avant de mesurer. Sans cela, les contrôles 7 et 8 passeraient sur les
+       pages françaises sans rien exercer : le défaut qu'ils cherchent
+       n'apparaît que chez un visiteur ayant déjà choisi une autre langue. Un
+       contrôle qui ne met pas le système dans l'état à risque ne contrôle
+       rien.
+
+       La préférence d'origine est remise en place à la fin : un outil de
+       contrôle n'a pas à changer les réglages de celui qui le lance. */
+    let langueAvant = null;
+    try {
+        langueAvant = localStorage.getItem("langue");
+        localStorage.setItem("langue", "en");
+    } catch (e) {}
+
     for (const page of PAGES) {
         for (const largeur of LARGEURS) {
             cadre.style.width = largeur + "px";
@@ -188,6 +236,11 @@ async function lancer() {
             controler(d, cadre.contentWindow, largeur, page.nom);
         }
     }
+
+    try {
+        if (langueAvant === null) localStorage.removeItem("langue");
+        else localStorage.setItem("langue", langueAvant);
+    } catch (e) {}
 
     const echecs = resultats.filter((r) => r.etat === "ko");
     const corps = document.getElementById("resultats");

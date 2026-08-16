@@ -1,5 +1,66 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Intelligence Artificielle traduite, et la langue enfin cohérente
+Quatre pages anglaises, trois banques de questions, 176 textes de simulateurs —
+le plus gros sujet traduit jusqu'ici, et **176 sur 176 dès la première passe**.
+`ia` est déclaré dans `CONTENU_TRADUIT`.
+
+**Sept sujets sur quatorze**, soit 28 pages et 630 questions. La moitié.
+
+### Le défaut le plus sérieux : « lang » suivait la préférence, pas le texte
+
+Un visiteur qui avait choisi l'anglais une fois, puis ouvrait une page
+**française**, obtenait :
+
+- `lang="en"` sur une page dont chaque phrase est en français — prononciation
+  fausse au lecteur d'écran, mauvais signal aux moteurs de recherche ;
+- des nombres au format anglais collés à des mots français : **« 27,500 jetons »**,
+  séparateur anglais, mot français.
+
+La cause est une confusion entre deux notions qui existaient pourtant déjà côte
+à côte dans `langues.js` : `langueChoisie()` — ce que le visiteur préfère — et
+`langueDeLaPage()` — la langue dans laquelle le texte est réellement écrit.
+L'attribut `lang` et le formatage des nombres décrivent le **texte**. Ils
+suivent désormais `langueDeLaPage()`.
+
+Sur une page de `en/`, les deux fonctions renvoient la même chose : seul le cas
+dépareillé change. Ce qui explique pourquoi le défaut a survécu — il n'apparaît
+qu'après avoir cliqué sur un drapeau.
+
+### Un helper qui ne couvrait pas tous les cas se faisait contourner
+
+`euros()` place le symbole selon la langue — « 1 600 € » en français, « €1,600 »
+en anglais — mais arrondissait à l'unité. Quatre montants au jeton avaient donc
+besoin de décimales, et se construisaient à la main en `nf(x, 2) + " €"`.
+
+Résultat sur la page anglaise : **« €1,600 » à un endroit et « 105.00 € » à
+l'autre**. `euros()` accepte maintenant un nombre de décimales, et les quatre
+contournements ont disparu. Le commentaire qui prévenait du danger était déjà
+dans le fichier, deux lignes au-dessus.
+
+### Deux contrôles de plus dans l'audit de géométrie
+
+Ces deux défauts n'étaient visibles ni dans un fichier ni dans un rendu par
+défaut : il fallait avoir choisi une langue. L'audit navigateur **pose donc
+délibérément une préférence anglaise** avant de mesurer, puis vérifie que la
+langue déclarée et le séparateur des milliers suivent le texte de la page. La
+préférence d'origine est remise en place à la fin.
+
+Un contrôle qui ne met pas le système dans l'état à risque ne contrôle rien.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 7 sujets | 138, 157, 166, 166, **176**, 148, 156 — rien ne manque |
+| Défauts réinjectés | les 2 nouveaux sont signalés, 28 lignes en échec |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 490 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 12 sections, 0 orpheline |
+| `audit-geometrie.html` | 238 mesures, 13 gabarits, 0 anomalie |
+| Rendu navigateur | pages FR et EN, préférence anglaise posée |
+
 ## 2026-08-16 — Data & Analytics traduit, et huit défauts trouvés en le vérifiant
 Les quatre pages anglaises de Data et les trois banques de questions sont
 écrites. `data` est maintenant déclaré dans `CONTENU_TRADUIT` : le drapeau

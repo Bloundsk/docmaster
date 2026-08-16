@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Artificial Intelligence - DocMaster</title>
+    <meta name="description" content="AI in three levels: from what a language model really is, through context, retrieval and tools, to evaluation and the security of a system in production. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/ia/index.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/ia/index.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/ia/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/ia/index.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Artificial Intelligence - DocMaster">
+    <meta property="og:description" content="AI in three levels: from what a language model really is, through context, retrieval and tools, to evaluation and the security of a system in production. Free, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/ia/index.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Artificial Intelligence - DocMaster">
+    <meta name="twitter:description" content="AI in three levels: from what a language model really is, through context, retrieval and tools, to evaluation and the security of a system in production. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt; <span aria-current="page">🤖 Artificial Intelligence</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤖 Artificial Intelligence</h1>
+                <p>Exploring AI technologies and learning to build intelligent agents.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2" fill="none" stroke-linecap="round">
+<line x1="70" y1="70" x2="45" y2="50"/><line x1="70" y1="70" x2="95" y2="50"/><line x1="70" y1="70" x2="45" y2="90"/><line x1="70" y1="70" x2="95" y2="90"/><line x1="70" y1="70" x2="70" y2="40"/></g>
+<circle cx="70" cy="70" r="6" fill="white"/><circle cx="45" cy="50" r="4" fill="white"/><circle cx="95" cy="50" r="4" fill="white"/><circle cx="45" cy="90" r="4" fill="white"/><circle cx="95" cy="90" r="4" fill="white"/><circle cx="70" cy="40" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="110" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <section>
+            <h2 id="the-path">The path</h2>
+            <p>Three levels, to be followed in order or picked up wherever you stand. Each reads on its own, but each assumes what came before.</p>
+
+            <ol class="parcours">
+                <li class="etape">
+                    <a class="etape-lien" href="debutant.html">
+                        <span class="etape-rang">Level 1</span>
+                        <span class="etape-titre">Beginner</span>
+                        <span class="etape-resume">Understanding what a language model really is, and what it does not do.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>What a language model is, without the mystery</li>
+                        <li>What separates an agent from an assistant</li>
+                        <li>Writing a prompt that gets what you want</li>
+                        <li>The limits and the risks, legal ones included</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 10 minutes · no prior knowledge needed</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="intermediaire.html">
+                        <span class="etape-rang">Level 2</span>
+                        <span class="etape-titre">Intermediate</span>
+                        <span class="etape-resume">What you need to understand to build something that holds up.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Tokens and the context window: the limit and the bill</li>
+                        <li>Plugging a model into your own documents</li>
+                        <li>Tools: what an agent can do, and break</li>
+                        <li>Choosing a model on cost, latency and data</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 12 minutes · assumes level 1</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="avance.html">
+                        <span class="etape-rang">Level 3</span>
+                        <span class="etape-titre">Advanced</span>
+                        <span class="etape-resume">Measuring, securing, and knowing when not to train.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Why the same question gives different answers</li>
+                        <li>Evaluating a system instead of sensing it</li>
+                        <li>Prompt injection, the hole you do not close</li>
+                        <li>Train or retrieve: the decision rule</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 13 minutes · assumes levels 1 and 2</p>
+                </li>
+            </ol>
+        </section>
+
+        <div class="recap-box">
+            <h2>⚡ What you will know by the end</h2>
+            <ul>
+                <li>Why a model produces plausible text, and what that implies.</li>
+                <li>What a conversation really costs, and why the cost climbs with the turns.</li>
+                <li>When to hand the model documents rather than train it.</li>
+                <li>What decides how much an agent can break.</li>
+                <li>How to tell whether a change improves a system, or merely moves it.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="warning">Before you start</h2>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This path is <strong>educational</strong> and deliberately independent of any vendor. The orders of magnitude quoted — context sizes, prices per million tokens — move fast: check them at the source before sizing a project.</p>
+                <p>As soon as processing involves personal data, data protection obligations apply — the GDPR in Europe, equivalent rules elsewhere — whatever the technology used.</p>
+            </div>
+        </section>
+
+        <div class="guide-nav">
+            <a href="../../../guides/finance/index.html"><span class="label">← Previous guide</span>💰 Finance</a>
+            <a href="../dev-web/index.html" class="next"><span class="label">Next guide →</span>💻 Web Development</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../../../guides/cybersecurite/index.html">🔒 Cybersecurity</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

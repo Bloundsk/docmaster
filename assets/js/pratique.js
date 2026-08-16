@@ -45,9 +45,14 @@
        verifications existantes ne bougent pas. */
     const LOCALES = { fr: "fr-FR", en: "en-GB", es: "es-ES", de: "de-DE", it: "it-IT", zh: "zh-CN", ru: "ru-RU" };
 
+    // « langueDeLaPage » et non « langueChoisie » : un nombre se lit avec le
+    // texte qui l entoure. Les libelles d un simulateur viennent du fichier
+    // charge par la page ; sur une page francaise ils restent francais, meme
+    // si le visiteur a choisi l anglais. Formater les nombres sur sa
+    // preference donnait « 27,500 jetons » — separateur anglais, mot francais.
     const langueActive = () => {
         const L = typeof window !== "undefined" && window.DOCMASTER_LANGUES;
-        return L ? L.langueChoisie() : "fr";
+        return L ? L.langueDeLaPage() : "fr";
     };
     const locale = () => LOCALES[langueActive()] || "fr-FR";
 
@@ -59,9 +64,20 @@
 
     // Intl place le symbole selon la langue : « 1 600 € » en francais,
     // « €1,600 » en anglais. Le faire a la main donnerait l un des deux partout.
-    const euros = (n) =>
-        new Intl.NumberFormat(locale(), { style: "currency", currency: "EUR", maximumFractionDigits: 0 })
-            .format(Math.round(n));
+    //
+    // Le parametre « decimales » existe parce que quatre montants — des couts
+    // au jeton — se construisaient a la main en « nf(x, 2) + " €" », faute
+    // d une variante decimale ici. Resultat : la page anglaise affichait
+    // « €1,600 » a un endroit et « 105.00 € » a un autre. Un helper qui ne
+    // couvre pas tous les cas se fait contourner, et le contournement ne se
+    // voit pas dans la langue ou il a ete ecrit.
+    const euros = (n, decimales = 0) =>
+        new Intl.NumberFormat(locale(), {
+            style: "currency",
+            currency: "EUR",
+            minimumFractionDigits: decimales,
+            maximumFractionDigits: decimales
+        }).format(decimales ? n : Math.round(n));
 
     // L espace avant le signe est une regle typographique francaise, que
     // l anglais et le chinois ne suivent pas.
@@ -863,7 +879,7 @@
                 return [
                     { libelle: "Jetons par échange", valeur: nf(parTour) },
                     { libelle: "Total réellement lu sur la conversation", valeur: nf(cumul) + " jetons", fort: true },
-                    { libelle: "Coût de la conversation", valeur: nf(cumul / 1e6 * prix, 3) + " €" }
+                    { libelle: "Coût de la conversation", valeur: euros(cumul / 1e6 * prix, 3) }
                 ];
             },
             lecon: "Doublez le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire."
@@ -928,9 +944,9 @@
                 const coutA = jetonsE * prixA + jetonsS * prixA * 3;
                 const coutB = jetonsE * prixB + jetonsS * prixB * 3;
                 return [
-                    { libelle: "Modèle A par mois", valeur: nf(coutA, 2) + " €" },
-                    { libelle: "Modèle B par mois", valeur: nf(coutB, 2) + " €" },
-                    { libelle: "Écart annuel", valeur: nf(Math.abs(coutA - coutB) * 12, 2) + " €", fort: true }
+                    { libelle: "Modèle A par mois", valeur: euros(coutA, 2) },
+                    { libelle: "Modèle B par mois", valeur: euros(coutB, 2) },
+                    { libelle: "Écart annuel", valeur: euros(Math.abs(coutA - coutB) * 12, 2), fort: true }
                 ];
             },
             lecon: "La sortie coûte environ trois fois l'entrée : réduire la longueur des réponses est souvent le levier le plus rentable."

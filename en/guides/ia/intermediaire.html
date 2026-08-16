@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Artificial Intelligence — Intermediate - DocMaster</title>
+    <meta name="description" content="Intermediate level of the AI path: context window and tokens, RAG, tool calling, and how to choose a model on cost and latency.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/ia/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/ia/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Artificial Intelligence — Intermediate - DocMaster">
+    <meta property="og:description" content="Intermediate level of the AI path: context window and tokens, RAG, tool calling, and how to choose a model on cost and latency.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/ia/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Artificial Intelligence — Intermediate - DocMaster">
+    <meta name="twitter:description" content="Intermediate level of the AI path: context window and tokens, RAG, tool calling, and how to choose a model on cost and latency.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">🤖 Artificial Intelligence</a> &gt;
+        <span aria-current="page">Intermediate</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤖 Artificial Intelligence — Intermediate</h1>
+                <p>What you need to understand to build something that holds up.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2" fill="none" stroke-linecap="round">
+<line x1="70" y1="70" x2="45" y2="50"/><line x1="70" y1="70" x2="95" y2="50"/><line x1="70" y1="70" x2="45" y2="90"/><line x1="70" y1="70" x2="95" y2="90"/><line x1="70" y1="70" x2="70" y2="40"/></g>
+<circle cx="70" cy="70" r="6" fill="white"/><circle cx="45" cy="50" r="4" fill="white"/><circle cx="95" cy="50" r="4" fill="white"/><circle cx="45" cy="90" r="4" fill="white"/><circle cx="95" cy="90" r="4" fill="white"/><circle cx="70" cy="40" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="110" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#context-and-tokens">🧩 Context and tokens</a></li>
+                <li><a href="#retrieval">📚 Giving the model your documents</a></li>
+                <li><a href="#tools-and-functions">🔧 Tools, or how an agent acts</a></li>
+                <li><a href="#choosing-a-model">⚖️ Choosing a model</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points to remember</h2>
+            <ul>
+                <li>A model “remembers” nothing: everything it knows of the conversation is sent back on every turn.</li>
+                <li>RAG does not make the model cleverer: it puts the right documents in front of it.</li>
+                <li>An agent only acts through the tools you give it — that is where what it can break is decided.</li>
+                <li>The best-performing model is rarely the right choice for a simple, repeated task.</li>
+                <li>Cost is worked out per million tokens, not per request: the context weighs more than the answer.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The beginner level explained what a language model is, what an agent is, how to phrase a prompt and where the limits sit. Enough to use the existing tools with judgement.</p>
+            <p>This level is for anyone who wants to <strong>build</strong>: plug a model into their own documents, give it tools, and make choices that commit a budget. The four notions that follow explain most project failures — not because they are difficult, but because they are rarely understood before they have cost money.</p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong> and deliberately independent of any vendor. The orders of magnitude quoted — context sizes, prices per million tokens — move fast: check them at the source before sizing a project.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">The notions to master</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="context-and-tokens">🧩 Context and tokens</h3></summary>
+                <div class="lecon-corps">
+                <p>A model does not process words but <strong>tokens</strong>: fragments of text, often a syllable or a short word. As a rule of thumb, count about <strong>three tokens for every two words</strong> — the exact ratio depends on the language and the tokeniser. An 80,000-word novel therefore weighs some 120,000 tokens.</p>
+
+                <h4>The context window is a ceiling, not a memory</h4>
+                <p>The context window is the amount of text the model can read in one go: the prompt, the documents supplied, the conversation history and the answer to be produced, all added together.</p>
+                <p>The important point, and the most misunderstood: <strong>the model remembers nothing between two calls</strong>. What creates the illusion of memory is that the full history is sent back to it on every turn. A thirty-message conversation therefore costs far more at the thirtieth turn than at the first, since everything is re-read each time.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>A conversation where each exchange is <strong>500 tokens</strong>. At the tenth exchange, the history weighs 5,000 tokens.</p>
+                    <p>Over ten turns, the total read by the model is not 5,000 tokens but <strong>about 27,500</strong> — the sum of the successive histories. It is that total that gets billed.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-en-tokens"></div>
+
+                <h4>What happens when the window overflows</h4>
+                <p>Two behaviours exist depending on the tool: either the call fails, or the start of the conversation is silently truncated. The second is the more treacherous — the model carries on answering, but has “forgotten” the instructions it was given at the outset.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — thinking a large window settles everything</span>
+                    <p>A 200,000-token window lets you send an entire book. That does not mean the model will make good use of it: the quality of attention degrades over very long texts, especially in the middle.</p>
+                    <p>Sending the three relevant pages almost always gives better results — and costs a hundred times less.</p>
+                </div>
+
+                <p class="retenir">💡 The model does not remember: everything is read back to it, every time, and you pay for that re-reading.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="retrieval">📚 Giving the model your documents</h3></summary>
+                <div class="lecon-corps">
+                <p>A model does not know your internal documents, your procedures, your prices. The method that solves this is called <strong>RAG</strong> — retrieval-augmented generation. The principle fits in one sentence: <em>find the relevant passages first, then hand them to the model along with the question</em>.</p>
+
+                <h4>How it works, without the jargon</h4>
+                <p>Documents are cut into chunks of a few hundred tokens. Each chunk is turned into a list of numbers representing its meaning — an <strong>embedding</strong>. The user's question goes through the same treatment, then you look for the chunks whose numbers are closest.</p>
+                <p>Those chunks are inserted into the prompt. The model answers on the strength of them, not on its training memory.</p>
+
+                <div class="exemple">
+                    <span class="titre">What RAG changes</span>
+                    <p><strong>Without RAG</strong>: “What is our cooling-off period?” → the model answers with general law, or invents.</p>
+                    <p><strong>With RAG</strong>: the question first goes and fetches clause 7 of your terms and conditions, then the model answers quoting it.</p>
+                    <p>The difference is not the model's intelligence. It is that it has the right document in front of it.</p>
+                </div>
+
+                <div class="pratique" data-pratique="dimensionner-un-rag"></div>
+
+                <h4>Chunking is the real difficulty</h4>
+                <p>Chunks that are too small lose their context: “this period is fourteen days” does not say which period. Too large, they dilute the relevant information in noise and cost more.</p>
+                <p>Most disappointing RAG systems do not suffer from the model, but from chunking done without thinking about the structure of the documents.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — thinking RAG removes invention</span>
+                    <p>If the search brings back no relevant chunk, the model answers anyway — with what it has. RAG reduces invention, it does not eliminate it.</p>
+                    <p>The defence is to instruct the model explicitly to answer “I cannot find that information in the documents supplied”, and to show the sources used so the user can check.</p>
+                </div>
+
+                <p class="retenir">💡 RAG does not make the model more knowledgeable. It saves it from having to guess.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="tools-and-functions">🔧 Tools, or how an agent acts</h3></summary>
+                <div class="lecon-corps">
+                <p>A model on its own only produces text. What turns an assistant into an <strong>agent</strong> is the ability to call tools: query a database, send a message, create a file.</p>
+
+                <h4>The actual mechanism</h4>
+                <p>You describe the available tools to the model: their name, what they do, the parameters expected. When it judges a tool useful, it does not run it itself — <strong>it produces a call request</strong>, in structured form. Your program receives that request, decides whether to run it, and sends the result back.</p>
+                <p>This distinction is fundamental: <strong>the model proposes, your code disposes</strong>. That is where the whole security of an agent sits.</p>
+
+                <div class="exemple">
+                    <span class="titre">How an exchange with a tool unfolds</span>
+                    <p>1. The user asks: “How many orders are pending?”</p>
+                    <p>2. The model returns a call request: <code>count_orders(status: "pending")</code>.</p>
+                    <p>3. Your program checks the call is legitimate, runs it, gets <code>47</code>.</p>
+                    <p>4. The result goes back to the model, which writes the answer.</p>
+                    <p>Four steps, only one of them done by the model: the middle one belongs entirely to you.</p>
+                </div>
+
+                <div class="pratique" data-pratique="perimetre-outils"></div>
+
+                <h4>The principle of least privilege</h4>
+                <p>An agent can only do what its tools allow. Giving it a “run any SQL query” tool amounts to handing the keys to the database to a system that can be manipulated by the text it reads.</p>
+                <p><strong>Narrow, named</strong> tools — <code>count_orders</code>, <code>read_invoice</code> — rather than a general one: that is the difference between a useful agent and an incident.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the irreversible action with no confirmation</span>
+                    <p>An agent that can delete, send or pay without human approval will eventually do so wrongly. Not necessarily out of malice: an ambiguous instruction is enough.</p>
+                    <p>Separate the tools that read from the ones that write. The latter go through a confirmation.</p>
+                </div>
+
+                <p class="retenir">💡 The model does nothing on its own. What it can break is exactly what you have given it.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="choosing-a-model">⚖️ Choosing a model</h3></summary>
+                <div class="lecon-corps">
+                <p>The reflex is to take the best-performing model. That is rarely the right choice: on a simple, repeated task, a smaller model answers just as well, ten times faster and for a fraction of the price.</p>
+
+                <h4>Four criteria, in this order</h4>
+                <p><strong>Quality on your task</strong> — not quality in general. A model that excels at mathematical reasoning is not necessarily better at sorting emails.</p>
+                <p><strong>Latency.</strong> Two seconds against ten is not a detail in an interface where somebody is waiting.</p>
+                <p><strong>Cost</strong>, billed per million tokens, separating input from output — output is generally several times more expensive.</p>
+                <p><strong>Where the data runs.</strong> An open model hosted by you sends no data out; a remote service does. That question sometimes comes before all the others.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>A service handles <strong>10,000 requests a month</strong>, each with 2,000 input tokens and 500 output.</p>
+                    <p>Monthly volume: <strong>20 million</strong> input tokens, <strong>5 million</strong> output.</p>
+                    <p>A price gap that looks trivial on one request becomes, at that volume, the difference between a viable service and one that gets shut down.</p>
+                </div>
+
+                <div class="pratique" data-pratique="arbitrage-modele"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — judging a model on leaderboards</span>
+                    <p>Public leaderboards measure general capabilities on standardised test sets. They say nothing about your particular case, and models end up being optimised for those tests.</p>
+                    <p>Put together twenty examples representative of your real task and run them past the candidates. Half a day's work, and an answer that actually concerns you.</p>
+                </div>
+
+                <p class="retenir">💡 The right model is the smallest one that succeeds at your task — not the largest available.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They differ from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>The vendors' own documentation</strong>: the only reliable sources for context sizes and prices, which change several times a year.</li>
+                    <li><strong>Online token counters</strong>: pasting a text and seeing its real weight avoids a lot of billing surprises.</li>
+                    <li><strong>Your national data protection authority</strong>: the obligations that apply as soon as processing involves personal data.</li>
+                    <li><strong>The European AI Act</strong>: the risk categories and the obligations attached to them, useful before deploying a system to the public.</li>
+                </ul>
+                <p><strong>One useful habit:</strong> before choosing a model, write your twenty test cases. They will then serve at every version change — and there will be some.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Previous level</span>AI — Beginner</a>
+            <a href="avance.html" class="next"><span class="label">Next level →</span>AI — Advanced</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../../../guides/cybersecurite/index.html">🔒 Cybersecurity</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/ia-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

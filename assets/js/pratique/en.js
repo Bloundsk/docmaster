@@ -30,6 +30,9 @@ window.PRATIQUE_TEXTES = {
         " jour": " day",          // « par jour » et « de la journée », plus longs, passent avant
         " lignes": " rows",
         " Ko": " kB",
+        // Le plus long d'abord : il contient « jetons », qui suit juste après.
+        " k jetons — bien au-delà de toute fenêtre": " k tokens — far beyond any window",
+        " jetons": " tokens",
         "% et ": "% and ",        // « 45.1% et 54.9% », les deux bornes d'un intervalle
 
         " sur ": " of ",
@@ -1598,5 +1601,304 @@ window.PRATIQUE_TEXTES = {
             "A usable dashboard: it serves decisions, not reassurance.",
         "Un tableau de bord se juge au nombre de décisions qu'il a déclenchées, pas au nombre de graphiques.":
             "A dashboard is judged by the number of decisions it has triggered, not the number of charts.",
+
+        // =====================================================================
+        // INTELLIGENCE ARTIFICIELLE
+        // =====================================================================
+
+        // --- anatomie-llm ------------------------------------------------------------------
+        "Ce qu'un modèle de langage fait, et ne fait pas": "What a language model does, and does not do",
+        "Cochez uniquement les affirmations exactes. Trois le sont.":
+            "Tick only the accurate statements. Three of them are.",
+        "Il prédit le fragment de texte suivant, encore et encore":
+            "It predicts the next piece of text, over and over",
+        "exact : c'est tout son fonctionnement": "correct: that is the whole of how it works",
+        "Il consulte une base de connaissances à chaque réponse":
+            "It consults a knowledge base for every answer",
+        "faux : sauf si on lui en branche une explicitement":
+            "false: unless one is explicitly plugged into it",
+        "Il peut produire une affirmation fausse avec une parfaite assurance":
+            "It can produce a false statement with perfect confidence",
+        "exact : rien dans son fonctionnement ne distingue vrai et plausible":
+            "correct: nothing in how it works separates true from plausible",
+        "Il comprend le sens comme un humain le comprend":
+            "It understands meaning the way a human understands it",
+        "faux, et la question reste débattue": "false, and the question remains debated",
+        "Il n'a aucune mémoire entre deux conversations":
+            "It has no memory between two conversations",
+        "exact : l'historique lui est renvoyé, il ne le retient pas":
+            "correct: the history is sent back to it, it does not retain it",
+        "Il calcule ses réponses à partir de règles écrites par des humains":
+            "It works out its answers from rules written by humans",
+        "faux : les règles ne sont écrites nulle part, elles sont apprises":
+            "false: the rules are written nowhere, they are learnt",
+        "Trois de ces affirmations sont exactes. Les indications vous disent lesquelles.":
+            "Three of these statements are accurate. The hints tell you which.",
+        "Trois affirmations sont exactes. Vérifiez avec les indications que ce sont bien les vôtres.":
+            "Three statements are accurate. Check against the hints that they are the ones you picked.",
+        "Plus de trois cases cochées : certaines affirmations sont fausses.":
+            "More than three boxes ticked: some of the statements are false.",
+        "Un modèle produit du texte plausible. Le vrai et le plausible coïncident souvent — pas toujours.":
+            "A model produces plausible text. True and plausible often coincide — not always.",
+
+        // --- anatomie-agent ----------------------------------------------------------------
+        "Distinguez un agent d'un assistant": "Tell an agent from an assistant",
+        "Cochez ce qui caractérise un agent, par opposition à un simple assistant conversationnel.":
+            "Tick what characterises an agent, as opposed to a plain conversational assistant.",
+        "Il peut appeler des outils extérieurs": "It can call external tools",
+        "Il enchaîne plusieurs étapes sans qu'on les lui dicte une par une":
+            "It chains several steps without being told them one by one",
+        "Il observe le résultat d'une action avant de décider de la suivante":
+            "It observes the result of an action before deciding on the next",
+        "Il poursuit un objectif plutôt que de répondre à une question":
+            "It pursues a goal rather than answering a question",
+        "Il peut produire des effets réels : envoyer, écrire, supprimer":
+            "It can produce real effects: sending, writing, deleting",
+        "c'est ce qui rend le périmètre de ses outils décisif":
+            "which is what makes the scope of its tools decisive",
+        "Ces cinq points sont tous caractéristiques d'un agent.":
+            "All five of these points characterise an agent.",
+        "Bonne base. Les points restants sont également exacts.":
+            "Good start. The remaining points are accurate too.",
+        "Les cinq caractéristiques sont exactes. Un agent, c'est bien tout cela réuni.":
+            "All five characteristics are accurate. An agent is indeed all of that together.",
+        "Ce n'est pas l'intelligence qui fait l'agent, c'est la capacité d'agir — et donc de se tromper avec conséquence.":
+            "It is not intelligence that makes an agent, it is the ability to act — and therefore to be wrong with consequences.",
+
+        // --- qualite-consigne --------------------------------------------------------------
+        "Passez votre consigne au crible": "Put your prompt through the sieve",
+        "Reprenez une consigne que vous avez écrite, et cochez ce qui y figure vraiment.":
+            "Take a prompt you have written, and tick what is actually in it.",
+        "Le rôle ou le point de vue attendu est précisé":
+            "The expected role or point of view is stated",
+        "La tâche est décrite en une phrase claire": "The task is described in one clear sentence",
+        "Le format de sortie est imposé": "The output format is imposed",
+        "liste, tableau, longueur maximale, langue": "list, table, maximum length, language",
+        "Un ou deux exemples de ce qui est attendu sont fournis":
+            "One or two examples of what is expected are given",
+        "l'ajout le plus efficace, presque toujours": "the most effective addition, almost always",
+        "Ce qu'il ne faut PAS faire est indiqué": "What NOT to do is stated",
+        "La conduite à tenir en cas d'information manquante est prévue":
+            "What to do when information is missing is planned for",
+        "sans quoi le modèle comblera le vide": "otherwise the model will fill the gap itself",
+        "Plusieurs éléments manquent : le modèle devra deviner, et il devinera.":
+            "Several elements are missing: the model will have to guess, and it will.",
+        "Solide. Les exemples et le cas « information manquante » sont les ajouts les plus rentables.":
+            "Solid. Examples and the “missing information” case are the most profitable additions.",
+        "Consigne complète. C'est déjà mieux que la plupart.":
+            "A complete prompt. That is already better than most.",
+        "Un modèle ne demande jamais de précision. Ce que la consigne ne dit pas, il le comble tout seul.":
+            "A model never asks for clarification. What the prompt does not say, it fills in on its own.",
+
+        // --- signaux-hallucination ---------------------------------------------------------
+        "Repérez une réponse à vérifier": "Spot an answer worth checking",
+        "Cochez ce que présente la réponse que vous avez sous les yeux.":
+            "Tick what the answer in front of you shows.",
+        "Elle cite une source précise — référence, article, page":
+            "It cites a precise source — a reference, an article, a page",
+        "Elle donne des chiffres exacts sans indiquer d'où ils viennent":
+            "It gives exact figures without saying where they come from",
+        "Elle porte sur un fait récent ou daté": "It concerns a recent or dated fact",
+        "Elle porte sur un sujet de niche, peu documenté":
+            "It concerns a niche subject with little documentation",
+        "Elle est affirmée sans la moindre nuance": "It is stated without the slightest qualification",
+        "Elle concerne une personne, un lieu ou une entreprise nommément":
+            "It names a specific person, place or company",
+        "Aucun signal. La vérification reste utile pour tout ce qui vous engage.":
+            "No warning signs. Checking is still worthwhile for anything that commits you.",
+        "Quelques signaux. Vérifiez les éléments chiffrés et les noms propres.":
+            "A few warning signs. Check the figures and the proper nouns.",
+        "Réponse à vérifier avant tout usage : plusieurs facteurs de risque sont réunis.":
+            "An answer to check before any use: several risk factors are present at once.",
+        "Les inventions les plus dangereuses sont les plus plausibles : une référence bien formée qui n'existe pas.":
+            "The most dangerous inventions are the most plausible ones: a well-formed reference that does not exist.",
+
+        // --- cout-en-tokens ----------------------------------------------------------------
+        "Mesurez le coût réel d'une conversation": "Work out what a conversation really costs",
+        "L'historique est relu à chaque tour. Ce n'est pas le dernier message qui coûte, c'est leur somme.":
+            "The history is re-read on every turn. It is not the last message that costs, it is their sum.",
+        "Mots par échange (question et réponse)": "Words per exchange (question and answer)",
+        "Nombre d'échanges dans la conversation": "Number of exchanges in the conversation",
+        "tours": "turns",
+        "Prix d'entrée du modèle": "Model input price",
+        "€/M jetons": "€/M tokens",
+        "Jetons par échange": "Tokens per exchange",
+        "Total réellement lu sur la conversation": "Total actually read over the conversation",
+        "Coût de la conversation": "Cost of the conversation",
+        "Doublez le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire.":
+            "Double the number of turns and the total read roughly quadruples: the growth is not linear.",
+
+        // --- dimensionner-un-rag -----------------------------------------------------------
+        "Dimensionnez une base documentaire": "Size a document base",
+        "Avant de choisir un outil, mesurez ce que vous avez réellement à indexer.":
+            "Before choosing a tool, measure what you actually have to index.",
+        "Nombre de documents": "Number of documents",
+        "doc.": "docs",
+        "Pages par document en moyenne": "Pages per document on average",
+        "pages": "pages",
+        "Taille d'un fragment": "Chunk size",
+        "jetons": "tokens",
+        "Volume total": "Total volume",
+        "Fragments à indexer": "Chunks to index",
+        "Si tout était envoyé au modèle d'un coup": "If everything were sent to the model at once",
+        "C'est précisément parce que ce volume ne tient dans aucune fenêtre que la récupération existe.":
+            "It is precisely because that volume fits in no window that retrieval exists.",
+
+        // --- perimetre-outils --------------------------------------------------------------
+        "Délimitez le périmètre de votre agent": "Draw the boundary around your agent",
+        "Cochez ce qui est vrai de l'agent que vous concevez.":
+            "Tick what is true of the agent you are designing.",
+        "Chaque outil fait une chose précise et nommée": "Each tool does one precise, named thing",
+        "plutôt qu'un outil général du type « exécute cette requête »":
+            "rather than a general tool of the “run this query” kind",
+        "Les outils qui lisent sont séparés de ceux qui écrivent":
+            "The tools that read are separate from the ones that write",
+        "Toute action irréversible passe par une confirmation humaine":
+            "Every irreversible action goes through a human confirmation",
+        "envoyer, supprimer, payer": "sending, deleting, paying",
+        "Mon code vérifie les paramètres avant d'exécuter un appel":
+            "My code checks the parameters before running a call",
+        "le modèle propose, votre code dispose": "the model proposes, your code disposes",
+        "Un agent qui lit du contenu extérieur n'a pas d'outil d'envoi":
+            "An agent that reads outside content has no sending tool",
+        "cloisonnement : c'est la parade à l'injection de consigne":
+            "compartmenting: that is the answer to prompt injection",
+        "Les appels d'outils sont journalisés": "Tool calls are logged",
+        "L'agent peut aujourd'hui produire des effets que vous n'avez pas prévus.":
+            "As it stands, the agent can produce effects you have not planned for.",
+        "Bonne architecture. La confirmation humaine et le cloisonnement sont les deux points à ne pas lâcher.":
+            "Good architecture. Human confirmation and compartmenting are the two points not to let go of.",
+        "Périmètre maîtrisé : même détourné, l'agent ne peut pas faire grand-chose.":
+            "A controlled boundary: even hijacked, the agent cannot do much.",
+        "Ce qu'un agent peut casser est exactement ce que ses outils permettent. Rien de plus, rien de moins.":
+            "What an agent can break is exactly what its tools allow. Nothing more, nothing less.",
+
+        // --- arbitrage-modele --------------------------------------------------------------
+        "Comparez le coût mensuel de deux modèles": "Compare the monthly cost of two models",
+        "Un écart minime par requête devient structurant à l'échelle du mois.":
+            "A tiny gap per request becomes decisive over a month.",
+        "Requêtes par mois": "Requests per month",
+        "req.": "req.",
+        "Jetons d'entrée par requête": "Input tokens per request",
+        "Jetons de sortie par requête": "Output tokens per request",
+        "Modèle A — prix entrée / sortie (€/M)": "Model A — input / output price (€/M)",
+        "Modèle B — prix entrée / sortie (€/M)": "Model B — input / output price (€/M)",
+        "Modèle A par mois": "Model A per month",
+        "Modèle B par mois": "Model B per month",
+        "Écart annuel": "Yearly gap",
+        "La sortie coûte environ trois fois l'entrée : réduire la longueur des réponses est souvent le levier le plus rentable.":
+            "Output costs about three times input: shortening the answers is often the most profitable lever.",
+
+        // --- reglage-temperature -----------------------------------------------------------
+        "Choisissez votre température": "Choose your temperature",
+        "Cochez les tâches qui appellent une température BASSE.":
+            "Tick the tasks that call for a LOW temperature.",
+        "Extraire des informations d'un document": "Extracting information from a document",
+        "oui : on veut la même réponse à chaque fois": "yes: you want the same answer every time",
+        "Classer des messages par catégorie": "Sorting messages into categories",
+        "oui": "yes",
+        "Proposer dix idées de titres": "Suggesting ten headline ideas",
+        "non : la variété est justement ce qu'on cherche": "no: variety is exactly what you are after",
+        "Générer du code": "Generating code",
+        "Reformuler un texte avec plus de style": "Rewriting a text with more flair",
+        "non": "no",
+        "Répondre à une question factuelle": "Answering a factual question",
+        "Quatre de ces six tâches appellent une température basse.":
+            "Four of these six tasks call for a low temperature.",
+        "Quatre tâches appellent une température basse. Vérifiez que ce sont bien celles-là.":
+            "Four tasks call for a low temperature. Check that they are the ones you picked.",
+        "Plus de quatre : deux de ces tâches gagnent au contraire à la variété.":
+            "More than four: two of these tasks gain from variety instead.",
+        "Le réglage par défaut est intermédiaire. Il convient donc mal aux deux extrémités — dont l'extraction.":
+            "The default setting sits in the middle. It therefore suits neither end well — extraction included.",
+
+        // --- jeu-de-test -------------------------------------------------------------------
+        "Évaluez votre méthode d'évaluation": "Evaluate the way you evaluate",
+        "Cochez ce qui est vrai de votre manière de mesurer.":
+            "Tick what is true of the way you measure.",
+        "J'ai au moins vingt cas de test écrits avec leur réponse attendue":
+            "I have at least twenty test cases written down with their expected answer",
+        "Le jeu contient des cas limites, pas seulement des cas faciles":
+            "The set contains edge cases, not just easy ones",
+        "Il contient des cas où la bonne réponse est « je ne sais pas »":
+            "It contains cases where the right answer is “I do not know”",
+        "les plus révélateurs : un système qui invente échoue là":
+            "the most revealing ones: a system that invents fails there",
+        "Un second jeu, jamais consulté pendant les réglages, sert de contrôle final":
+            "A second set, never looked at while tuning, serves as the final check",
+        "Je regarde le détail des cas, pas seulement le score global":
+            "I look at the individual cases, not just the overall score",
+        "un score qui monte peut cacher des régressions":
+            "a rising score can hide regressions",
+        "Si j'utilise un modèle-juge, j'inverse l'ordre des candidats":
+            "If I use a model as judge, I swap the order of the candidates",
+        "un juge favorise ce qui est présenté en premier":
+            "a judge favours whatever is presented first",
+        "Sans mesure, une amélioration ressentie sur trois essais peut être une dégradation sur cent.":
+            "Without measurement, an improvement felt over three tries can be a decline over a hundred.",
+        "Base correcte. Le jeu de contrôle mis à part et le détail des cas font la différence.":
+            "A decent base. The held-out set and the individual cases are what make the difference.",
+        "Méthode solide : vos améliorations sont mesurées, pas ressenties.":
+            "A solid method: your improvements are measured, not felt.",
+        "Le jeu de test est ce qui transforme une opinion sur un système en information sur un système.":
+            "A test set is what turns an opinion about a system into information about a system.",
+
+        // --- surface-injection -------------------------------------------------------------
+        "Mesurez votre exposition à l'injection": "Measure your exposure to injection",
+        "Cochez ce qui s'applique à votre système.": "Tick what applies to your system.",
+        "L'agent lit des contenus que je ne maîtrise pas":
+            "The agent reads content I do not control",
+        "pages web, courriels reçus, documents envoyés par des tiers":
+            "web pages, incoming email, documents sent by third parties",
+        "Il dispose d'outils capables d'envoyer ou de publier":
+            "It has tools able to send or publish",
+        "Il peut supprimer ou modifier des données": "It can delete or modify data",
+        "Il accède à des informations confidentielles": "It has access to confidential information",
+        "Il agit sans validation humaine sur les actions irréversibles":
+            "It acts without human approval on irreversible actions",
+        "Sa seule protection contre l'injection est une phrase dans la consigne":
+            "Its only protection against injection is a sentence in the prompt",
+        "cela aide un peu, et se contourne": "that helps a little, and can be worked around",
+        "Exposition faible. Reconsidérez à chaque nouvel outil ajouté.":
+            "Low exposure. Reconsider each time a new tool is added.",
+        "Exposition limitée. Le cloisonnement lecture / écriture reste la précaution clé.":
+            "Limited exposure. Separating reading from writing remains the key precaution.",
+        "Un texte placé dans un contenu lu par l'agent pourrait déclencher des actions non voulues.":
+            "Text placed in content the agent reads could trigger unwanted actions.",
+        "On ne referme pas l'injection de consigne. On réduit ce qu'elle permet d'obtenir.":
+            "You do not close prompt injection. You reduce what it can obtain.",
+
+        // --- entrainer-ou-recuperer --------------------------------------------------------
+        "Faut-il entraîner, ou récupérer ?": "Train, or retrieve?",
+        "Cochez les situations qui relèvent de la RÉCUPÉRATION plutôt que de l'entraînement.":
+            "Tick the situations that call for RETRIEVAL rather than training.",
+        "Le modèle ignore nos procédures internes": "The model does not know our internal procedures",
+        "récupération : mettez le document sous ses yeux":
+            "retrieval: put the document in front of it",
+        "Le modèle ignore nos tarifs, qui changent chaque mois":
+            "The model does not know our prices, which change every month",
+        "récupération : des poids figés vieilliraient aussitôt":
+            "retrieval: frozen weights would go stale immediately",
+        "Les réponses ne respectent pas notre charte de ton":
+            "The answers do not follow our tone of voice",
+        "entraînement possible — après avoir essayé la consigne et des exemples":
+            "training is an option — after trying the prompt and some examples",
+        "Le modèle ne connaît pas les événements récents":
+            "The model does not know about recent events",
+        "récupération": "retrieval",
+        "Le format de sortie doit suivre une structure très particulière":
+            "The output format has to follow a very particular structure",
+        "entraînement possible, en dernier recours": "training is an option, as a last resort",
+        "Le modèle doit citer ses sources": "The model must cite its sources",
+        "récupération : un modèle affiné ne peut pas citer ce qu'il a dilué":
+            "retrieval: a fine-tuned model cannot cite what it has dissolved",
+        "Quatre de ces six situations relèvent de la récupération.":
+            "Four of these six situations call for retrieval.",
+        "Quatre situations relèvent de la récupération. Les deux autres, d'une question de forme.":
+            "Four situations call for retrieval. The other two are a matter of form.",
+        "Plus de quatre : deux de ces situations concernent la forme, pas la connaissance.":
+            "More than four: two of these situations are about form, not knowledge.",
+        "« Le modèle ne sait pas » appelle la récupération. « Le modèle répond mal » appelle d'abord la consigne.":
+            "“The model does not know” calls for retrieval. “The model answers badly” calls for the prompt first.",
     },
 };

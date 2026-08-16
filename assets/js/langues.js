@@ -54,7 +54,7 @@
        C'est de cette liste que dépendent deux comportements : le sélecteur mène
        vers la page traduite quand elle existe, et le bandeau « les cours sont
        en français » ne s'affiche plus sur les sujets traduits. */
-    const CONTENU_TRADUIT = { en: ["apprendre", "data", "design", "dev-web", "negociation", "productivite"], es: [], de: [], it: [], zh: [], ru: [] };
+    const CONTENU_TRADUIT = { en: ["apprendre", "data", "design", "dev-web", "ia", "negociation", "productivite"], es: [], de: [], it: [], zh: [], ru: [] };
 
     // Les correspondances d'adresses entre versions. La version francaise est a
     // la racine, les autres sous « <langue>/ » : c'est le francais qui existait
@@ -212,7 +212,14 @@
         locale: LOCALE,
     };
 
-    // Posé avant le premier affichage : un lecteur d'écran doit connaître la
-    // langue de la page dès le départ, pas après le chargement des scripts.
-    document.documentElement.setAttribute("lang", langueChoisie());
+    /* Posé avant le premier affichage : un lecteur d'écran doit connaître la
+       langue de la page dès le départ, pas après le chargement des scripts.
+
+       « langueDeLaPage » et non « langueChoisie » : cet attribut décrit le
+       TEXTE de la page, pas la préférence du visiteur. Un lecteur ayant choisi
+       l'anglais puis ouvert une page française voyait « lang="en" » sur du
+       texte français — une prononciation fausse au lecteur d'écran, et un
+       mauvais signal aux moteurs de recherche. Sur une page de « en/ », les
+       deux fonctions renvoient la même chose : seul le cas dépareillé change. */
+    document.documentElement.setAttribute("lang", langueDeLaPage());
 })();
