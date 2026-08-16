@@ -34,6 +34,21 @@ window.PRATIQUE_TEXTES = {
         " k jetons — bien au-delà de toute fenêtre": " k tokens — far beyond any window",
         " jetons": " tokens",
         " ans": " years",         // « 512 ans », « 10^58 ans » : durées de recherche exhaustive
+
+        // --- Marketing : morceaux soudés à un nombre ou à un nom d'étape -----
+        " (coût : ": " (cost: ",
+        " par vente)": " per sale)",   // plus long que « vente », il passe avant
+        " · clics : ": " · clicks: ",
+        " mois (": " months (",
+        " ventes": " sales",
+        "début de commande": "checkout started",
+        "ajout au panier": "add to basket",
+        "page produit": "product page",
+        "paiement": "payment",
+        // « Avec 4,0 points de moins » : le nombre vient de la saisie, donc
+        // aucune entrée exacte ne peut couvrir ce libellé.
+        " points de moins": " points less",
+        "Avec ": "With ",
         "% et ": "% and ",        // « 45.1% et 54.9% », les deux bornes d'un intervalle
 
         " sur ": " of ",
@@ -2196,5 +2211,272 @@ window.PRATIQUE_TEXTES = {
         "Indice de protection": "Protection index",
         "Aucun de ces deux chiffres ne descend tout seul. Les faire baisser demande une séance, une fois — pas une vigilance permanente.":
             "Neither of those two figures comes down on its own. Bringing them down takes one sitting, once — not permanent vigilance.",
+
+        // =====================================================================
+        // MARKETING DIGITAL
+        // =====================================================================
+
+        // --- bases-seo ---------------------------------------------------------------------
+        "Les fondations du référencement": "The foundations of search ranking",
+        "Cochez ce qui est vrai de la page que vous voulez positionner.":
+            "Tick what is true of the page you want to rank.",
+        "Le titre de la page décrit son contenu et contient les mots recherchés":
+            "The page title describes its content and contains the words being searched",
+        "Un seul titre de niveau 1, qui annonce le sujet":
+            "One single level-1 heading, announcing the subject",
+        "La page répond réellement à la question posée dans la recherche":
+            "The page genuinely answers the question asked in the search",
+        "Elle se charge en moins de trois secondes sur mobile":
+            "It loads in under three seconds on mobile",
+        "Les images ont un texte de remplacement descriptif":
+            "The images have descriptive alternative text",
+        "D'autres pages du site pointent vers elle": "Other pages on the site link to it",
+        "L'adresse est lisible : pas de suite de chiffres":
+            "The address is readable: no string of digits",
+        "Plusieurs fondamentaux manquent : aucun effort de contenu ne les compensera.":
+            "Several fundamentals are missing: no amount of content work will make up for them.",
+        "Bonne base. Les liens internes sont le point le plus souvent négligé.":
+            "A good base. Internal links are the most often overlooked point.",
+        "Fondations en place. Le reste dépend surtout du contenu et du temps.":
+            "Foundations in place. The rest mostly depends on content and time.",
+        "Le référencement récompense d'abord une page qui répond vraiment. Le reste n'est que de la mise en forme.":
+            "Search ranking rewards a page that genuinely answers, first of all. The rest is only presentation.",
+
+        // --- budget-sea --------------------------------------------------------------------
+        "Que rapporte votre budget publicitaire ?": "What does your advertising budget bring in?",
+        "Trois chiffres suffisent à savoir si une campagne peut être rentable.":
+            "Three figures are enough to know whether a campaign can be profitable.",
+        "Budget mensuel": "Monthly budget",
+        "Coût par clic": "Cost per click",
+        "Taux de conversion de la page": "Conversion rate of the page",
+        "Marge par vente": "Margin per sale",
+        "Clics obtenus": "Clicks obtained",
+        "Ventes attendues": "Sales expected",
+        "Résultat net": "Net result",
+        "Si le coût par vente dépasse la marge, aucun volume ne rendra la campagne rentable.":
+            "If the cost per sale exceeds the margin, no volume will make the campaign profitable.",
+
+        // --- choisir-reseau ----------------------------------------------------------------
+        "Faut-il être sur ce réseau ?": "Should you be on this network?",
+        "Cochez ce qui est vrai pour le réseau que vous envisagez.":
+            "Tick what is true of the network you are considering.",
+        "Mes clients y sont réellement présents": "My customers are genuinely there",
+        "pas « des gens comme eux » : eux": "not “people like them”: them",
+        "Je peux y publier au format attendu sans me forcer":
+            "I can post there in the expected format without forcing myself",
+        "vidéo, photo, texte long : ce n'est pas interchangeable":
+            "video, photo, long text: they are not interchangeable",
+        "Je peux tenir un rythme régulier pendant six mois":
+            "I can keep up a regular rhythm for six months",
+        "J'ai un objectif clair : notoriété, trafic, ou vente":
+            "I have a clear goal: awareness, traffic, or sales",
+        "Je sais comment j'y mesurerai le résultat": "I know how I will measure the result there",
+        "Je préfère un seul réseau tenu qu'à trois à moitié":
+            "I would rather keep one network up properly than three half-heartedly",
+        "Ce réseau risque de consommer du temps sans rien rapporter.":
+            "This network is liable to eat time and return nothing.",
+        "Plausible. La régularité est ce qui manque le plus souvent, pas la créativité.":
+            "Plausible. Regularity is what is most often missing, not creativity.",
+        "Choix fondé. Tenez-le six mois avant d'en juger.":
+            "A sound choice. Stick with it for six months before judging.",
+        "Un compte abandonné après trois mois nuit plus qu'un compte inexistant : il signale une activité arrêtée.":
+            "An account abandoned after three months does more harm than no account at all: it signals a business that stopped.",
+
+        // --- qualite-email -----------------------------------------------------------------
+        "Votre message a-t-il une chance ?": "Does your message stand a chance?",
+        "Cochez ce qui est vrai du courriel que vous vous apprêtez à envoyer.":
+            "Tick what is true of the email you are about to send.",
+        "L'objet dit ce que contient le message, sans promesse excessive":
+            "The subject line says what the message contains, with no excessive promise",
+        "Le nom d'expéditeur est reconnaissable": "The sender name is recognisable",
+        "Il y a une seule action attendue, clairement visible":
+            "There is one single expected action, clearly visible",
+        "Le message est lisible sans images": "The message reads without images",
+        "Il se comprend sur un écran de téléphone": "It makes sense on a phone screen",
+        "Le lien de désinscription est visible et fonctionne":
+            "The unsubscribe link is visible and works",
+        "Chaque destinataire a demandé à le recevoir": "Every recipient asked to receive it",
+        "Ce message risque d'être ignoré, ou signalé.":
+            "This message is liable to be ignored, or reported.",
+        "Presque. L'objet et l'action unique font l'essentiel du résultat.":
+            "Almost. The subject line and the single action account for most of the result.",
+        "Message prêt : lisible, honnête, et conforme.":
+            "Message ready: readable, honest, and compliant.",
+        "L'objet décide de l'ouverture, l'action unique décide du clic. Le reste compte beaucoup moins.":
+            "The subject line decides the open, the single action decides the click. The rest counts for far less.",
+
+        // --- points-de-fuite ---------------------------------------------------------------
+        "Où partent vos visiteurs ?": "Where do your visitors go?",
+        "Les taux se multiplient : c'est ce que l'intuition rate systématiquement.":
+            "The rates multiply: that is what intuition misses every time.",
+        "Visiteurs": "Visitors",
+        "vis.": "vis.",
+        "Voient la page produit": "Reach the product page",
+        "Ajoutent au panier": "Add to basket",
+        "Commencent la commande": "Start the checkout",
+        "Finalisent le paiement": "Complete the payment",
+        "Commandes": "Orders",
+        "Conversion globale": "Overall conversion",
+        "Étape la plus fuyante": "Leakiest step",
+        "Quatre étapes à 50 % ne laissent pas la moitié à l'arrivée, mais 6,25 %. La perte se compose.":
+            "Four steps at 50% do not leave half at the end, but 6.25%. The loss compounds.",
+
+        // --- intention-de-recherche --------------------------------------------------------
+        "Votre contenu répond-il à l'intention ?": "Does your content match the intent?",
+        "Cochez ce que vous avez vérifié avant d'écrire.":
+            "Tick what you checked before writing.",
+        "J'ai tapé la recherche visée et regardé les dix premiers résultats":
+            "I typed the target search and looked at the first ten results",
+        "le test le plus rapide et le plus fiable": "the fastest and most reliable test",
+        "Mon format correspond à ce qui est déjà classé":
+            "My format matches what is already ranking",
+        "guide, comparatif, page produit : le moteur a déjà tranché":
+            "guide, comparison, product page: the engine has already decided",
+        "La recherche est assez précise pour que l'intention soit claire":
+            "The search is specific enough for the intent to be clear",
+        "Ma page traite une seule intention, pas trois à la fois":
+            "My page handles one intent, not three at once",
+        "Je réponds à la question dès le début, sans introduction inutile":
+            "I answer the question right at the start, with no pointless introduction",
+        "La page suivante logique est proposée": "The logical next page is offered",
+        "un guide qui informe renvoie vers la page qui vend":
+            "a guide that informs links to the page that sells",
+        "Ce contenu risque de ne jamais se placer, quelle que soit sa qualité.":
+            "This content may never rank, however good it is.",
+        "Bonne base. Vérifier les résultats existants reste le geste le plus rentable.":
+            "A good base. Checking the existing results remains the most profitable step.",
+        "Contenu aligné sur l'intention. C'est la moitié du travail de référencement.":
+            "Content aligned with intent. That is half the ranking work.",
+        "Si les dix premiers résultats sont des articles, une page produit n'a aucune chance : le moteur a compris ce que les gens veulent.":
+            "If the first ten results are articles, a product page has no chance: the engine has worked out what people want.",
+
+        // --- vanity-metrics ----------------------------------------------------------------
+        "Ce chiffre sert-il à quelque chose ?": "Is that figure any use?",
+        "Cochez les indicateurs qui peuvent réellement changer une décision. Trois le peuvent.":
+            "Tick the metrics that can genuinely change a decision. Three of them can.",
+        "Nombre d'impressions": "Number of impressions",
+        "monte avec le budget, ne dit rien du résultat":
+            "rises with the budget, says nothing about the result",
+        "Coût par client acquis": "Cost per customer acquired",
+        "décisionnel : il se compare à la marge": "decision-grade: it compares against the margin",
+        "Nombre d'abonnés": "Number of followers",
+        "l'audience n'est pas la clientèle": "an audience is not a customer base",
+        "Taux de conversion par étape du parcours": "Conversion rate at each step of the journey",
+        "décisionnel : il désigne où agir": "decision-grade: it points to where to act",
+        "Portée d'une publication": "Reach of a post",
+        "sans action associée, elle ne décide de rien":
+            "with no action attached, it decides nothing",
+        "Part de nouveaux clients dans le chiffre d'affaires":
+            "Share of new customers in revenue",
+        "décisionnel : il arbitre acquisition et rétention":
+            "decision-grade: it weighs acquisition against retention",
+        "Trois de ces six indicateurs peuvent réellement changer une décision.":
+            "Three of these six metrics can genuinely change a decision.",
+        "Trois indicateurs sont décisionnels. Vérifiez que ce sont bien ceux-là.":
+            "Three metrics are decision-grade. Check they are the ones you picked.",
+        "Plus de trois : certains de ces chiffres ne changent aucune décision.":
+            "More than three: some of those figures change no decision at all.",
+        "Le taux mesure l'efficacité, le volume mesure l'apport. Un indicateur sans l'autre induit en erreur.":
+            "The rate measures effectiveness, the volume measures contribution. Either one without the other misleads.",
+
+        // --- impact-taux-ouverture ---------------------------------------------------------
+        "Ce que rapporte un envoi": "What one send brings in",
+        "L'e-mail est un entonnoir : trois taux successifs se multiplient.":
+            "Email is a funnel: three successive rates multiply together.",
+        "Personnes dans la liste": "People on the list",
+        "Taux d'ouverture": "Open rate",
+        "Taux de clic sur les ouvertures": "Click rate on opens",
+        "Conversion des clics": "Conversion of clicks",
+        "Ouvertures": "Opens",
+        "Ventes par envoi": "Sales per send",
+        "Marge dégagée": "Margin produced",
+        "Le premier taux pèse le plus lourd : c'est l'objet du message, pas son contenu, qui décide de la suite.":
+            "The first rate weighs the most: it is the subject line, not the content, that decides the rest.",
+
+        // --- attribution-comparee ----------------------------------------------------------
+        "À qui revient la vente ?": "Who gets credit for the sale?",
+        "Le même parcours, trois modèles, trois décisions budgétaires opposées.":
+            "The same journey, three models, three opposite budget decisions.",
+        "Ventes sur la période": "Sales over the period",
+        "ventes": "sales",
+        "Points de contact avant achat": "Touchpoints before purchase",
+        "contacts": "touchpoints",
+        "Budget du canal de découverte": "Budget of the discovery channel",
+        "Dernier clic — canal de découverte": "Last click — discovery channel",
+        "0 vente attribuée": "0 sales attributed",
+        "Attribution répartie — canal de découverte": "Distributed attribution — discovery channel",
+        "Coût par vente selon le modèle réparti": "Cost per sale under the distributed model",
+        "En dernier clic, le canal de découverte affiche toujours zéro. Le couper fait baisser, quelques semaines plus tard, ceux qui semblaient performer.":
+            "Under last click, the discovery channel always shows zero. Cutting it brings down, a few weeks later, the ones that looked like they were performing.",
+
+        // --- effet-retention ---------------------------------------------------------------
+        "Ce que vaut un point de fidélité": "What one point of retention is worth",
+        "La durée moyenne d'une relation se déduit du taux de perte mensuel.":
+            "The average length of a relationship follows from the monthly churn rate.",
+        "Clients perdus par mois": "Customers lost per month",
+        "Réduction visée de cette perte": "Targeted reduction of that loss",
+        "points": "points",
+        "Marge mensuelle par client": "Monthly margin per customer",
+        "Durée de vie actuelle": "Current lifetime",
+        "Gain de valeur par client": "Gain in value per customer",
+        "Aucune optimisation publicitaire ne produit un effet de cette ampleur — et personne n'en parle en réunion.":
+            "No advertising optimisation produces an effect of that size — and nobody brings it up in meetings.",
+
+        // --- persuasion-ethique ------------------------------------------------------------
+        "Persuasion ou manipulation ?": "Persuasion or manipulation?",
+        "Cochez les pratiques légitimes. Trois le sont.":
+            "Tick the legitimate practices. Three of them are.",
+        "Afficher « 2 400 clients » quand c'est le nombre réel":
+            "Displaying “2,400 customers” when that is the real number",
+        "légitime : information vraie et vérifiable":
+            "legitimate: true and verifiable information",
+        "Afficher « plus que 3 en stock » avec 400 unités disponibles":
+            "Displaying “only 3 left in stock” with 400 units available",
+        "tromperie": "deception",
+        "Annoncer une échéance réelle et la rappeler": "Announcing a real deadline and repeating it",
+        "légitime": "legitimate",
+        "Un compte à rebours qui se réinitialise à chaque visite":
+            "A countdown that resets on every visit",
+        "Offrir un contenu qui a une valeur réelle": "Offering content that has real value",
+        "Citer une certification qu'on ne détient pas":
+            "Citing a certification you do not hold",
+        "tromperie, et souvent une infraction": "deception, and often an offence",
+        "Trois de ces six pratiques sont légitimes. Le critère est la véracité.":
+            "Three of these six practices are legitimate. The criterion is truthfulness.",
+        "Trois pratiques sont légitimes. Vérifiez que ce sont bien celles-là.":
+            "Three practices are legitimate. Check they are the ones you picked.",
+        "Plus de trois : certaines de ces pratiques reposent sur une information fausse.":
+            "More than three: some of these practices rest on false information.",
+        "Le texte peut être identique. Ce qui change, c'est que l'information soit vraie — et que le client l'accepterait s'il le savait.":
+            "The wording can be identical. What changes is whether the information is true — and whether the customer would accept it knowing so.",
+
+        // --- conformite-prospection --------------------------------------------------------
+        "Votre prospection est-elle conforme ?": "Is your outreach compliant?",
+        "Chaque adresse de particulier provient d'un consentement libre et spécifique":
+            "Every private individual's address comes from freely given, specific consent",
+        "pas une case pré-cochée": "not a pre-ticked box",
+        "Le lien de désinscription est visible et effectif rapidement":
+            "The unsubscribe link is visible and takes effect quickly",
+        "L'identité de l'expéditeur est claire et l'objet non trompeur":
+            "The sender's identity is clear and the subject line not misleading",
+        "Un registre des traitements existe": "A record of processing activities exists",
+        "premier document demandé lors d'un contrôle":
+            "the first document asked for in an inspection",
+        "Une durée de conservation est fixée et appliquée":
+            "A retention period is set and applied",
+        "Le bandeau de cookies permet de refuser aussi facilement que d'accepter":
+            "The cookie banner makes refusing as easy as accepting",
+        "Les partenariats rémunérés sont identifiés comme tels":
+            "Paid partnerships are identified as such",
+        "Je peux prouver l'origine de chaque adresse de ma liste":
+            "I can prove where every address on my list came from",
+        "Plusieurs manquements exposent l'entreprise, pas le prestataire qui a exécuté.":
+            "Several failings expose the business, not the contractor who carried the work out.",
+        "Bon niveau. Le registre et la durée de conservation sont les oublis les plus fréquents.":
+            "A good level. The record and the retention period are the most frequent omissions.",
+        "Conforme sur les points les plus contrôlés.":
+            "Compliant on the most frequently inspected points.",
+        "En cas de plainte, c'est à vous de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté.":
+            "If a complaint is made, it is for you to prove consent — not for the person to prove they never agreed.",
     },
 };

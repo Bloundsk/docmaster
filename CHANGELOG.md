@@ -1,5 +1,57 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Marketing Digital traduit : neuf sujets sur quatorze
+Quatre pages, trois banques de questions, 166 textes de simulateurs. Troisième
+sujet consécutif sans français résiduel à la vérification. `marketing` est
+déclaré dans `CONTENU_TRADUIT`.
+
+**Neuf sujets sur quatorze**, soit 36 pages et 810 questions.
+
+### Les exemples localisés, pas seulement traduits
+
+Le niveau débutant illustrait l'intention de recherche avec « meilleur ETF
+PEA » et « ouvrir PEA Boursorama » — un dispositif fiscal français et une
+banque française. La longue traîne était montrée avec « assurance auto jeune
+conducteur malussé Toulouse ».
+
+Traduits mot à mot, ces exemples n'auraient rien illustré du tout pour un
+lecteur anglophone. Ils sont donc **transposés** : l'ISA remplace le PEA,
+Leeds remplace Toulouse. Le mécanisme enseigné est identique ; seul le décor
+change. Une traduction qui garde un exemple incompréhensible traduit les mots
+et perd la leçon.
+
+### Le cadre juridique : européen, et dit comme tel
+
+La section « cadre juridique » énonce des règles de RGPD et d'ePrivacy —
+européennes, non françaises. Elles restent donc dans la version anglaise, mais
+avec **une phrase de cadrage ajoutée** : le texte précise que la description
+suit le cadre européen et invite à vérifier le régime applicable.
+
+Le bandeau `SUJETS_DROIT_FRANCAIS` ne se justifie pas ici, pour la même raison
+que dans Cybersécurité : ce sont des règles européennes largement transposées,
+pas des articles de droit français. Les renvois vers la CNIL, la DGCCRF et
+l'ARPP sont en revanche formulés par leur fonction.
+
+### Nouveaux fragments
+
+Neuf morceaux soudés à un nombre ou à un nom d'étape : `" ventes"`,
+`" mois ("`, `" (coût : "`, `" par vente)"`, `" · clics : "`, plus les quatre
+noms d'étapes du tunnel (« page produit », « ajout au panier »…). L'ordre du
+plus long au plus court fait que `" par vente)"` passe avant `" ventes"`, ce
+qui évite « par sale) » à moitié traduit.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 9 sujets | tous complets, **166/166** pour marketing |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 630 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 12 sections, 0 orpheline |
+| `audit-geometrie.html` | 266 mesures, 15 gabarits, 0 anomalie |
+| Rendu navigateur | 3 pages, curseurs et cases poussés aux extrêmes |
+
 ## 2026-08-16 — Cybersécurité traduite : huit sujets sur quatorze
 Quatre pages, trois banques de questions, 165 textes de simulateurs —
 **165 sur 165 dès la première passe**, comme pour l'IA. `cybersecurite` est
