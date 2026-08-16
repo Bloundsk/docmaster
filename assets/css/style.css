@@ -822,9 +822,6 @@ html { background: var(--background); }
 
 /* Responsive */
 @media (max-width: 700px) {
-    header { padding: 40px 15px; }
-    header h1 { font-size: 2rem; }
-    header p { font-size: 1rem; }
     main { padding: 15px; }
     h2 { font-size: 1.5rem; }
     /* Navbar mobile en deux rangees.
@@ -853,6 +850,27 @@ html { background: var(--background); }
     }
     .nav-links::-webkit-scrollbar { display: none; }
     .nav-links li { flex-shrink: 0; }
+
+    /* L'indice qu'il reste des liens hors de l'écran.
+       Le masque estompe les liens eux-mêmes, ce qu'un dégradé de fond ne
+       saurait faire : posé derrière le texte, il ne l'atténuerait pas.
+       L'attribut vient de layout.js et suit la position du doigt, si bien que
+       le côté déjà parcouru cesse d'être estompé. */
+    .nav-links[data-defile] {
+        -webkit-mask-image: var(--masque-nav);
+        mask-image: var(--masque-nav);
+    }
+    .nav-links[data-defile="droite"] { --masque-nav: linear-gradient(to right, #000 calc(100% - 38px), transparent); }
+    .nav-links[data-defile="gauche"] { --masque-nav: linear-gradient(to left,  #000 calc(100% - 38px), transparent); }
+    .nav-links[data-defile="deux"]   { --masque-nav: linear-gradient(to right, transparent, #000 38px, #000 calc(100% - 38px), transparent); }
+
+    /* Bannière resserrée.
+       Elle occupait 223 px sur un écran de 812, et 373 px s'écoulaient avant la
+       première ligne de contenu — 46 % de l'écran. Sur ordinateur elle reste
+       telle quelle : la place ne manque pas. */
+    header { padding: 26px 15px; }
+    header h1 { font-size: 1.7rem; margin-bottom: 8px; }
+    header p { font-size: .95rem; line-height: 1.45; }
     article { padding: 20px; }
     .guide-nav .next { text-align: left; }
 }

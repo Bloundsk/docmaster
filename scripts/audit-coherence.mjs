@@ -243,6 +243,14 @@ while ((debutPrint = corps.indexOf("@media print")) !== -1) {
     corps = corps.slice(0, debutPrint) + corps.slice(i + 1);
 }
 
+// Un masque n est pas une couleur : il ne retient que la transparence de ce
+// qu on lui donne, la teinte n a aucun effet. Le #000 d un degrade de masque
+// veut dire « opaque », et lui donner un jeton de palette n aurait pas de sens
+// — il changerait de valeur selon le theme sans rien changer au rendu.
+// mas[kq] couvre les deux orthographes : la propriete CSS s ecrit « mask-image »,
+// la propriete personnalisee qui l alimente « --masque-nav ».
+corps = corps.replace(/[^;{}]*mas[kq][^;{}]*:[^;}]*/gi, "");
+
 const enDur = new Set();
 for (const m of corps.matchAll(/#[0-9a-fA-F]{3,8}\b/g)) enDur.add(m[0]);
 for (const c of enDur) {

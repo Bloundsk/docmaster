@@ -1,5 +1,50 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Quatre entrées du menu invisibles sur téléphone
+Signalé par l'auteur, qui décrivait l'en-tête vu sur son téléphone. La barre de
+navigation n'était pas cassée — à toutes les largeurs testées, de 320 à 500 px,
+elle tient sur une seule rangée. Mais la mesure a montré autre chose.
+
+### Le menu débordait sans le dire
+
+| largeur d'écran | menu hors de l'écran |
+|---|---|
+| 320 px | **304 px** |
+| 375 px | 249 px |
+| 414 px | 210 px |
+
+La barre de défilement est masquée volontairement — elle ferait un trait
+disgracieux sous les liens. Conséquence non voulue : **rien n'indiquait qu'il y
+avait une suite.** « Boîte à idées », « FAQ », « À propos » et « Mon espace »
+n'existaient pas pour un visiteur sur téléphone.
+
+Un dégradé estompe désormais le côté où il reste des liens. Il suit le doigt :
+celui de droite disparaît une fois arrivé au bout, celui de gauche apparaît dès
+qu'on a fait glisser. Une valeur figée aurait estompé le dernier lien en fin de
+course, ce qui aurait été faux.
+
+C'est un **masque** et non un dégradé de fond : posé derrière le texte, un fond
+n'atténuerait pas les liens eux-mêmes.
+
+### 46 % de l'écran avant la première ligne
+
+Navigation 86 px, bannière 223 px, recherche 51 px : **373 px** s'écoulaient
+avant le moindre contenu, sur un écran de 812. La bannière est resserrée sur
+téléphone — 223 → 170 px — et le champ de recherche apparaît dès le premier
+écran. Sur ordinateur, elle ne bouge pas : la place ne manque pas.
+
+L'ordre de la page est laissé tel quel, sur décision de l'auteur.
+
+### Le garde-fou des couleurs a signalé sa propre correction
+
+Le `#000` du masque a été relevé comme couleur en dur. À juste titre au vu de la
+règle, mais **un masque n'est pas une couleur** : il ne retient que la
+transparence, et la teinte n'a aucun effet. Lui donner un jeton de palette
+l'aurait fait changer de valeur selon le thème sans rien changer au rendu.
+
+L'exemption est étroite et vérifiée : le contrôle attrape toujours une vraie
+rustine réinjectée à côté.
+
 ## 2026-08-15 — Un nom d'utilisateur Windows publié dans le dépôt
 `audit-coherence.mjs` ouvrait sur un chemin absolu écrit en dur, contenant le
 nom de session Windows de l'auteur. Le site paraît sous pseudonyme et le dépôt

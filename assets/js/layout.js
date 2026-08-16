@@ -53,7 +53,39 @@
             footerPlaceholder.outerHTML = footerHTML;
         }
         mesurerNavbar();
+        marquerDefilementNav();
     });
+
+    // Sur téléphone, la rangée de liens ne tient pas dans la largeur : entre
+    // 210 px (écran de 414) et 304 px (écran de 320) sortent de l'écran. La
+    // barre de défilement est volontairement masquée — elle ferait un trait
+    // disgracieux — si bien que RIEN n'indiquait qu'il y avait une suite.
+    // « Boîte à idées », « FAQ », « À propos » et « Mon espace » étaient donc
+    // invisibles pour un visiteur sur téléphone, et le resteraient.
+    //
+    // On marque ici les côtés où il reste quelque chose à voir ; le CSS y pose
+    // un dégradé. L'attribut suit le doigt : le dégradé de droite disparaît une
+    // fois arrivé au bout, celui de gauche apparaît dès qu'on a fait glisser.
+    // Une valeur figée en CSS aurait estompé le dernier lien en fin de course.
+    function marquerDefilementNav() {
+        const nav = document.querySelector(".nav-links");
+        if (!nav) return;
+
+        const marquer = () => {
+            // Marge d'un pixel : les navigateurs renvoient parfois des valeurs
+            // fractionnaires, et un test strict clignoterait en fin de course.
+            const reste = nav.scrollWidth - nav.clientWidth;
+            if (reste <= 1) { nav.removeAttribute("data-defile"); return; }
+            const x = nav.scrollLeft;
+            nav.setAttribute("data-defile",
+                x <= 1 ? "droite" : x >= reste - 1 ? "gauche" : "deux");
+        };
+
+        marquer();
+        window.addEventListener("load", marquer);
+        window.addEventListener("resize", marquer);
+        nav.addEventListener("scroll", marquer, { passive: true });
+    }
 
     // La navbar est collante : sans compensation, elle recouvre le titre de la
     // section visée par un lien d'ancre. Le CSS pose une valeur de repli, mais
