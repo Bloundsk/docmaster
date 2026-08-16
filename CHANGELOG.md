@@ -1,5 +1,58 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Premier sujet traduit : « Apprendre à apprendre » en anglais
+Sujet pilote choisi par l'auteur. Il ne touche pas au droit français, ce qui
+permettait d'éprouver le modèle sur un cas simple avant les guides sensibles.
+
+**Les quatre pages sont traduites**, et avec elles tout ce qui vit dedans :
+12 simulateurs, 90 questions de quiz, les fils d'Ariane, les métadonnées et les
+liens entre versions.
+
+### Ce qui a demandé une décision d'architecture
+
+Un cours doit rester **lisible sans JavaScript et indexable** : les pages
+traduites sont donc de vrais fichiers, sous `en/guides/apprendre/`. C'est
+l'inverse du choix fait pour l'interface, traduite par le navigateur — là, il
+s'agissait d'éviter 455 fichiers au contenu identique.
+
+**Les 169 simulateurs ne sont pas dupliqués.** Deux copies d'une formule
+finissent par diverger, et une formule fausse ne se voit pas à l'écran : elle
+produit un nombre plausible. Seuls les *textes* passent par un dictionnaire,
+`assets/js/pratique/en.js`. La logique reste unique.
+
+**Le formatage des nombres suit la langue.** Il était figé en `fr-FR` :
+« 1 600,5 » affiché dans une page anglaise s'y lit « mille six cents virgule
+cinq » au mieux, et faux au pire — une virgule décimale y passe pour un
+séparateur de milliers. Corrigé à la source, pas dans le dictionnaire. L'anglais
+écrit désormais « 21% » sans espace, le français garde la sienne.
+
+**Les ancres des sections sont traduites**, et les banques de questions s'y
+accrochent : `quiz.js` apparie une banque au `id` du titre. Une clef restée
+française aurait laissé la section sans quiz, en silence.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| Textes de simulateurs couverts | **138 / 138** |
+| Français restant dans les valeurs calculées | **0** sur 57 valeurs |
+| Questions de quiz | 90, sur 12 sections aux ancres anglaises |
+| Liens internes des 4 pages | **aucun cassé** |
+| Géométrie | 102 mesures, 7 gabarits, aucune anomalie |
+
+Le script `scripts/verifier-traduction.mjs` entre dans le dépôt : il exécute les
+simulateurs d'un sujet pour relever ce qui s'affichera réellement, puis liste ce
+que le dictionnaire ne couvre pas. Une lecture du code ne suffisait pas — les
+libellés de résultat vivent dans le corps des fonctions de calcul.
+
+### Le passage d'une version à l'autre
+
+Le sélecteur mène désormais à la page traduite quand elle existe, et reste sur
+place sinon — avec le bandeau qui explique. Une adresse fausse donnerait une
+erreur 404, ce qui est bien pire que de rester avec une explication.
+
+**Reste à traduire : 13 sujets**, et six langues.
+
 ## 2026-08-16 — Sept langues : l'ossature et l'interface
 Demandé par l'auteur : un choix de langue avec drapeaux — anglais, espagnol,
 allemand, italien, chinois, russe.

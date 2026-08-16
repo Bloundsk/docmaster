@@ -4,6 +4,13 @@
 // ===================================
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Les libelles viennent de langues.js. Sans lui — page isolee, script non
+    // charge — on retombe sur le texte francais plutot que sur rien.
+    const T = (clef, repli) => {
+        const L = window.DOCMASTER_LANGUES;
+        return L ? L.t(clef) : repli;
+    };
+
 
     // --- Barre de progression de lecture ---
     const progressBar = document.createElement("div");
@@ -22,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Bouton retour en haut ---
     const backToTop = document.createElement("button");
     backToTop.id = "back-to-top";
-    backToTop.setAttribute("aria-label", "Retour en haut de la page");
+    backToTop.setAttribute("aria-label", T("retourHaut", "Retour en haut de la page"));
     backToTop.textContent = "↑";
     document.body.appendChild(backToTop);
 
@@ -44,10 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 await navigator.clipboard.writeText(window.location.href);
                 const original = copyBtn.textContent;
-                copyBtn.textContent = "✅ Lien copié !";
+                copyBtn.textContent = T("lienCopieCourt", "✅ Lien copié !");
                 setTimeout(() => { copyBtn.textContent = original; }, 2000);
             } catch (e) {
-                alert("Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse.");
+                alert(T("copieImpossible", "Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse."));
             }
         });
     }

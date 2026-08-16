@@ -21,6 +21,13 @@
 // les questions jusqu'à tomber sur celles qu'on connaît.
 
 (function () {
+    // Les libelles viennent de langues.js. Sans lui — page isolee, script non
+    // charge — on retombe sur le texte francais plutot que sur rien.
+    const T = (clef, repli) => {
+        const L = window.DOCMASTER_LANGUES;
+        return L ? L.t(clef) : repli;
+    };
+
     const DUREE_CYCLE = 14 * 24 * 60 * 60 * 1000;   // deux semaines
     const EPOQUE = Date.UTC(2026, 0, 5);            // lundi de référence
     const QUESTIONS_AFFICHEES = 3;
@@ -112,7 +119,8 @@
                     }
 
                     repondues++;
-                    score.textContent = `${justes} bonne(s) réponse(s) sur ${repondues} question(s) répondue(s)`;
+                    score.textContent = T("quizScore", "{j} bonne(s) réponse(s) sur {r} question(s) répondue(s)")
+                        .replace("{j}", justes).replace("{r}", repondues);
 
                     // L'explication n'apparaît qu'après la réponse : la donner
                     // avant reviendrait à donner la solution.
@@ -158,7 +166,7 @@
             const banque = (window.QUIZ.sections || {})[titreH3.id];
             if (!banque) return;
 
-            construireQuiz(selectionner(banque), corps, "🧠 Vérifiez votre compréhension", "On passe au test");
+            construireQuiz(selectionner(banque), corps, T("quizTitre", "🧠 Vérifiez votre compréhension"), T("quizSurtitre", "On passe au test"));
         });
 
         // 2. Le quiz de synthèse, en bas de page
@@ -169,9 +177,10 @@
             const info = document.getElementById("quiz-rotation");
             if (info) {
                 const d = prochaineBascule();
-                info.textContent = "Les questions changent le "
-                    + d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })
-                    + ".";
+                const L = window.DOCMASTER_LANGUES;
+                info.textContent = T("quizRotation", "Les questions changent le ")
+                    + d.toLocaleDateString(L ? L.locale() : "fr-FR", { day: "numeric", month: "long", year: "numeric" })
+                    + T("quizRotationFin", ".");
             }
         }
     });

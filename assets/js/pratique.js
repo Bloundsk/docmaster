@@ -34,14 +34,40 @@
     // Les nombres sont formates en francais : espace insecable comme separateur
     // de milliers, virgule decimale. « 108000 » ne se lit pas, « 108 000 € » si.
 
+    /* Le format suit la langue du visiteur. « 1 600,5 » se lit en francais,
+       « 1,600.5 » en anglais, « 1.600,5 » en allemand : afficher un nombre
+       francais dans une page anglaise le rend au mieux etrange, au pire faux —
+       une virgule decimale y passe pour un separateur de milliers.
+
+       Un seul point de decision, ici, plutot qu un dictionnaire qui tenterait
+       de rattraper les chaines apres coup. Hors navigateur — c est le cas des
+       tests — il n y a pas de langue choisie, on reste en francais et les
+       verifications existantes ne bougent pas. */
+    const LOCALES = { fr: "fr-FR", en: "en-GB", es: "es-ES", de: "de-DE", it: "it-IT", zh: "zh-CN", ru: "ru-RU" };
+
+    const langueActive = () => {
+        const L = typeof window !== "undefined" && window.DOCMASTER_LANGUES;
+        return L ? L.langueChoisie() : "fr";
+    };
+    const locale = () => LOCALES[langueActive()] || "fr-FR";
+
     const nf = (n, decimales = 0) =>
-        new Intl.NumberFormat("fr-FR", {
+        new Intl.NumberFormat(locale(), {
             minimumFractionDigits: decimales,
             maximumFractionDigits: decimales
         }).format(n);
 
-    const euros = (n) => nf(Math.round(n)) + " €";
-    const pourcent = (n, d = 1) => nf(n, d) + " %";
+    // Intl place le symbole selon la langue : « 1 600 € » en francais,
+    // « €1,600 » en anglais. Le faire a la main donnerait l un des deux partout.
+    const euros = (n) =>
+        new Intl.NumberFormat(locale(), { style: "currency", currency: "EUR", maximumFractionDigits: 0 })
+            .format(Math.round(n));
+
+    // L espace avant le signe est une regle typographique francaise, que
+    // l anglais et le chinois ne suivent pas.
+    const SANS_ESPACE_POURCENT = ["en", "zh"];
+    const pourcent = (n, d = 1) =>
+        nf(n, d) + (SANS_ESPACE_POURCENT.indexOf(langueActive()) !== -1 ? "%" : " %");
 
     // Une duree en minutes s affiche en heures et minutes : « 247 » ne parle
     // pas, « 4 h 08 min » si. Les minutes sont completees a deux chiffres des
@@ -3945,15 +3971,47 @@
 
     // --- Construction du bloc ---------------------------------------------
 
+    /* ---------------------------------------------------------------------
+     * TRADUCTION DES TEXTES
+     *
+     * Les 169 simulateurs ne sont PAS dupliques par langue : la logique reste
+     * unique, seuls les textes passent par un dictionnaire. Dupliquer les
+     * formules ferait diverger les versions, et une formule fausse ne se voit
+     * pas a l ecran — elle produit un nombre plausible.
+     *
+     * Deux dictionnaires, parce que deux natures de texte :
+     *   textes     correspondance exacte — titres, libelles, lecons
+     *   fragments  remplacement partiel — les mots pris dans une valeur
+     *              calculee, du type « 40 sur 100 » ou « 12 mots »
+     *
+     * Le dictionnaire est charge par la page (assets/js/pratique/<langue>.js).
+     * Sans lui, tout reste en francais : une traduction absente laisse le texte
+     * d origine plutot qu une clef technique.
+     * ------------------------------------------------------------------- */
+    function tr(texte) {
+        const d = typeof window !== "undefined" && window.PRATIQUE_TEXTES;
+        if (!d || typeof texte !== "string" || !texte) return texte;
+        if (d.textes && d.textes[texte]) return d.textes[texte];
+        return texte;
+    }
+
+    function trValeur(valeur) {
+        const d = typeof window !== "undefined" && window.PRATIQUE_TEXTES;
+        if (!d || !d.fragments || typeof valeur !== "string") return valeur;
+        let sortie = valeur;
+        for (const [fr, autre] of Object.entries(d.fragments)) sortie = sortie.split(fr).join(autre);
+        return sortie;
+    }
+
     function construire(bloc, simulateur) {
         const nom = bloc.dataset.pratique;
 
         const entete = document.createElement("div");
         entete.className = "pratique-entete";
         entete.innerHTML =
-            '<span class="pratique-surtitre">À vous d\'essayer</span>' +
-            "<h4>" + simulateur.titre + "</h4>" +
-            (simulateur.intro ? "<p class=\"pratique-intro\">" + simulateur.intro + "</p>" : "");
+            '<span class="pratique-surtitre">' + tr("À vous d\'essayer") + "</span>" +
+            "<h4>" + tr(simulateur.titre) + "</h4>" +
+            (simulateur.intro ? "<p class=\"pratique-intro\">" + tr(simulateur.intro) + "</p>" : "");
         bloc.appendChild(entete);
 
         if (simulateur.type === "controle") { construireControle(bloc, simulateur, nom); return; }
@@ -3969,7 +4027,7 @@
 
             const label = document.createElement("label");
             label.setAttribute("for", id);
-            label.textContent = champ.libelle;
+            label.textContent = tr(champ.libelle);
 
             const groupe = document.createElement("div");
             groupe.className = "pratique-saisie";
@@ -3985,7 +4043,7 @@
 
             const unite = document.createElement("span");
             unite.className = "pratique-unite";
-            unite.textContent = champ.unite;
+            unite.textContent = tr(champ.unite);
             unite.setAttribute("aria-hidden", "true");
 
             groupe.appendChild(input);
@@ -4009,7 +4067,7 @@
         if (simulateur.lecon) {
             const lecon = document.createElement("p");
             lecon.className = "pratique-lecon";
-            lecon.textContent = simulateur.lecon;
+            lecon.textContent = tr(simulateur.lecon);
             bloc.appendChild(lecon);
         }
 
@@ -4027,15 +4085,15 @@
             }
 
             if (invalide) {
-                resultat.innerHTML = '<p class="pratique-invalide">Renseignez « ' + invalide + " » pour voir le résultat.</p>";
+                resultat.innerHTML = '<p class="pratique-invalide">' + tr("Renseignez") + " « " + tr(invalide) + " » " + tr("pour voir le résultat.") + "</p>";
                 return;
             }
 
             const lignes = simulateur.calculer(valeurs);
             resultat.innerHTML = lignes.map(l =>
                 '<div class="pratique-ligne' + (l.fort ? " fort" : "") + '">' +
-                '<span class="pratique-libelle">' + l.libelle + "</span>" +
-                '<span class="pratique-valeur">' + l.valeur + "</span>" +
+                '<span class="pratique-libelle">' + tr(l.libelle) + "</span>" +
+                '<span class="pratique-valeur">' + trValeur(l.valeur) + "</span>" +
                 "</div>"
             ).join("");
         }
@@ -4066,7 +4124,7 @@
 
             const label = document.createElement("label");
             label.setAttribute("for", id);
-            label.textContent = point.texte;
+            label.textContent = tr(point.texte);
 
             li.appendChild(input);
             li.appendChild(label);
@@ -4074,7 +4132,7 @@
             if (point.aide) {
                 const aide = document.createElement("span");
                 aide.className = "pratique-aide";
-                aide.textContent = point.aide;
+                aide.textContent = tr(point.aide);
                 li.appendChild(aide);
             }
 
@@ -4092,7 +4150,7 @@
         if (simulateur.lecon) {
             const lecon = document.createElement("p");
             lecon.className = "pratique-lecon";
-            lecon.textContent = simulateur.lecon;
+            lecon.textContent = tr(simulateur.lecon);
             bloc.appendChild(lecon);
         }
 
@@ -4102,7 +4160,7 @@
             const v = simulateur.verdict(coches, total);
             resultat.innerHTML =
                 '<div class="pratique-ligne fort ton-' + (v.ton || "moyen") + '">' +
-                '<span class="pratique-libelle">' + v.texte + "</span>" +
+                '<span class="pratique-libelle">' + tr(v.texte) + "</span>" +
                 '<span class="pratique-valeur">' + coches + " / " + total + "</span>" +
                 "</div>";
         }

@@ -105,8 +105,14 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
         bloc.addEventListener("click", (e) => {
             const bouton = e.target.closest("button[data-langue]");
             if (!bouton) return;
-            L.definirLangue(bouton.dataset.langue);
-            location.reload();
+            const code = bouton.dataset.langue;
+            L.definirLangue(code);
+
+            // Si le sujet existe dans cette langue, on y va ; sinon on recharge
+            // sur place, et le bandeau explique que le cours est en français.
+            const ailleurs = L.adresseDansLangue(code);
+            if (ailleurs) location.href = ailleurs;
+            else location.reload();
         });
 
         // Échap referme le menu, comme tout menu déroulant.

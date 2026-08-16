@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Learning how to learn - DocMaster</title>
+    <meta name="description" content="Learning how to learn, in three levels: the forgetting curve and spaced repetition, interleaving and deliberate practice, transfer and how to judge a method. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/apprendre/index.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/apprendre/index.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/apprendre/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/apprendre/index.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Learning how to learn - DocMaster">
+    <meta property="og:description" content="Learning how to learn, in three levels: the forgetting curve and spaced repetition, interleaving and deliberate practice, transfer and how to judge a method. Free, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/apprendre/index.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learning how to learn - DocMaster">
+    <meta name="twitter:description" content="Learning how to learn, in three levels: the forgetting curve and spaced repetition, interleaving and deliberate practice, transfer and how to judge a method. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt; <span aria-current="page">🎓 Learning how to learn</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎓 Learning how to learn</h1>
+                <p>The one skill that serves all the others.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 90 Q55 82 70 90 Q85 82 100 90 L100 62 Q85 54 70 62 Q55 54 40 62 Z"/>
+<path d="M70 62 L70 90"/>
+<path d="M44 48 Q60 48 70 40 Q80 32 94 32" stroke-opacity="0.65"/></g></g>
+<circle class="illu-twinkle" cx="94" cy="32" r="3" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:1.1s"/>
+<circle class="illu-twinkle" cx="106" cy="100" r="2.5" fill="white" style="animation-delay:1.7s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <section>
+            <h2 id="the-path">The path</h2>
+            <p>Three levels, to be followed in order or picked up wherever you stand. Each reads on its own, but each assumes what came before.</p>
+            <p>One piece of advice before you start: this is the path to read <strong>first</strong> if you intend to follow any others. What it describes applies to every other guide on this site — and to the quizzes that come with them.</p>
+
+            <ol class="parcours">
+                <li class="etape">
+                    <a class="etape-lien" href="debutant.html">
+                        <span class="etape-rang">Level 1</span>
+                        <span class="etape-titre">Beginner</span>
+                        <span class="etape-resume">What makes things stick. No prior knowledge needed.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>The forgetting curve</li>
+                        <li>Spaced repetition</li>
+                        <li>Testing yourself rather than rereading</li>
+                        <li>The illusions of mastery</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 11 minutes · no prior knowledge needed</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="intermediaire.html">
+                        <span class="etape-rang">Level 2</span>
+                        <span class="etape-titre">Intermediate</span>
+                        <span class="etape-resume">Organising your work, and letting the night finish it.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Interleaving</li>
+                        <li>Elaboration</li>
+                        <li>Deliberate practice</li>
+                        <li>Sleep and consolidation</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 12 minutes · assumes level 1</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="avance.html">
+                        <span class="etape-rang">Level 3</span>
+                        <span class="etape-titre">Advanced</span>
+                        <span class="etape-resume">What transfers, what can be shown, and what lasts.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Frequency, or the order in which to learn</li>
+                        <li>Transfer</li>
+                        <li>Judging a method</li>
+                        <li>Building your system</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 13 minutes · assumes levels 1 and 2</p>
+                </li>
+            </ol>
+        </section>
+
+        <div class="recap-box">
+            <h2>⚡ What you will know by the end</h2>
+            <ul>
+                <li>Why 40 terms learned today come down to 8 within a week — and when to step in.</li>
+                <li>How six well-placed reviews beat twenty-six rereadings, in four times less time.</li>
+                <li>Why a comfortable study session is a suspicious one.</li>
+                <li>How many words it really takes to read in a foreign language.</li>
+                <li>How to sort learning methods with a single question.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="warning">Before you start</h2>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This path is <strong>educational</strong>. The figures quoted come from published work in the psychology of memory and are given as orders of magnitude: they vary with the material learned, with people, and with test conditions.</p>
+                <p>Persistent learning difficulties may stem from a specific disorder, which no revision method will correct. This guide is no substitute for professional advice.</p>
+            </div>
+        </section>
+
+        <div class="guide-nav">
+            <a href="../../../guides/design/index.html"><span class="label">← Previous guide</span>🎨 UX/UI Design</a>
+            <a href="../../../guides/droit/index.html" class="next"><span class="label">Next guide →</span>⚖️ Law &amp; procedures</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../../../guides/productivite/index.html">⏱️ Productivity &amp; Organisation</a>
+                <a href="../../../guides/ia/index.html">🤖 Artificial Intelligence</a>
+                <a href="../../../guides/data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

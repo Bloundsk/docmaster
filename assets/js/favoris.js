@@ -17,6 +17,13 @@
 //   - ancre  : identifiant de la sous-section, vide pour un guide entier
 
 (function () {
+    // Les libelles viennent de langues.js. Sans lui — page isolee, script non
+    // charge — on retombe sur le texte francais plutot que sur rien.
+    const T = (clef, repli) => {
+        const L = window.DOCMASTER_LANGUES;
+        return L ? L.t(clef) : repli;
+    };
+
     const CLE = "docmaster-favoris";
 
     // --- Stockage ---------------------------------------------------------
@@ -138,7 +145,7 @@
             }, titre);
             btn.classList.add("btn-favori-guide");
             const texte = document.createElement("span");
-            texte.textContent = " Favori";
+            texte.textContent = " " + T("favori", "Favori");
             btn.appendChild(texte);
             meta.appendChild(btn);
         }

@@ -47,10 +47,19 @@
        l'erreur coûte cher. D'où le bandeau d'avertissement. */
     const SUJETS_DROIT_FRANCAIS = ["droit", "finance", "entrepreneuriat"];
 
-    /* Les traductions de contenu disponibles, par langue.
-       Vide pour l'instant : les sujets s'y ajouteront au fur et à mesure, et
-       le sélecteur mènera alors vers les vraies pages traduites. */
-    const CONTENU_TRADUIT = { en: [], es: [], de: [], it: [], zh: [], ru: [] };
+    /* Les traductions de contenu disponibles, par langue. Un sujet n'y figure
+       que lorsque ses quatre pages existent sous « <langue>/guides/<sujet>/ » —
+       audit-coherence.mjs le vérifie et bloque sinon.
+
+       C'est de cette liste que dépendent deux comportements : le sélecteur mène
+       vers la page traduite quand elle existe, et le bandeau « les cours sont
+       en français » ne s'affiche plus sur les sujets traduits. */
+    const CONTENU_TRADUIT = { en: ["apprendre"], es: [], de: [], it: [], zh: [], ru: [] };
+
+    // Les correspondances d'adresses entre versions. La version francaise est a
+    // la racine, les autres sous « <langue>/ » : c'est le francais qui existait
+    // d'abord, et deplacer 65 pages casserait tous les liens deja partages.
+    const LOCALES_DATE = { fr: "fr-FR", en: "en-GB", es: "es-ES", de: "de-DE", it: "it-IT", zh: "zh-CN", ru: "ru-RU" };
 
     const TEXTES = {
         // --- Navigation ----------------------------------------------------
@@ -78,6 +87,18 @@
         lienCopie:    { fr: "Lien copié", en: "Link copied", es: "Enlace copiado", de: "Link kopiert", it: "Link copiato", zh: "链接已复制", ru: "Ссылка скопирована" },
         luCompris:    { fr: "J'ai lu et compris", en: "I have read and understood", es: "Lo he leído y entendido", de: "Gelesen und verstanden", it: "Ho letto e capito", zh: "我已阅读并理解", ru: "Прочитано и понято" },
         choisirLangue:{ fr: "Choisir la langue", en: "Choose language", es: "Elegir idioma", de: "Sprache wählen", it: "Scegli la lingua", zh: "选择语言", ru: "Выбрать язык" },
+        lienCopieCourt:{ fr: "✅ Lien copié !", en: "✅ Link copied!", es: "✅ ¡Enlace copiado!", de: "✅ Link kopiert!", it: "✅ Link copiato!", zh: "✅ 链接已复制！", ru: "✅ Ссылка скопирована!" },
+        copieImpossible:{ fr: "Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse.", en: "The link could not be copied automatically. Please copy it from the address bar.", es: "No se ha podido copiar el enlace automáticamente. Cópielo desde la barra de direcciones.", de: "Der Link konnte nicht automatisch kopiert werden. Bitte kopieren Sie ihn aus der Adressleiste.", it: "Impossibile copiare il link automaticamente. Copialo dalla barra degli indirizzi.", zh: "无法自动复制链接，请从地址栏手动复制。", ru: "Не удалось скопировать ссылку автоматически. Скопируйте её из адресной строки." },
+
+        // --- Quiz -----------------------------------------------------------
+        quizSurtitre: { fr: "On passe au test", en: "Time for a test", es: "Pasemos a la prueba", de: "Jetzt wird geprüft", it: "Passiamo alla prova", zh: "来做个测验", ru: "Переходим к проверке" },
+        quizTitre:    { fr: "🧠 Vérifiez votre compréhension", en: "🧠 Check your understanding", es: "🧠 Compruebe lo que ha entendido", de: "🧠 Prüfen Sie Ihr Verständnis", it: "🧠 Verifica la tua comprensione", zh: "🧠 检验你的理解", ru: "🧠 Проверьте, что вы поняли" },
+        // {j} bonnes réponses, {r} questions répondues. Les accolades sont
+        // remplacees a l affichage : l ordre des deux nombres change selon la
+        // langue, une concatenation en dur ne le permettrait pas.
+        quizScore:    { fr: "{j} bonne(s) réponse(s) sur {r} question(s) répondue(s)", en: "{j} correct out of {r} answered", es: "{j} acierto(s) de {r} pregunta(s) respondida(s)", de: "{j} von {r} beantworteten Fragen richtig", it: "{j} risposta/e corretta/e su {r} domanda/e", zh: "已答 {r} 题，答对 {j} 题", ru: "{j} верных из {r} отвеченных" },
+        quizRotation: { fr: "Les questions changent le ", en: "The questions change on ", es: "Las preguntas cambian el ", de: "Die Fragen wechseln am ", it: "Le domande cambiano il ", zh: "题目将于 ", ru: "Вопросы сменятся " },
+        quizRotationFin:{ fr: ".", en: ".", es: ".", de: ".", it: ".", zh: " 更换。", ru: "." },
 
         // --- Bandeaux ------------------------------------------------------
         coursEnFrancais: {
@@ -102,10 +123,23 @@
 
     const CODES = LANGUES.map((l) => l.code);
 
-    /* La langue retenue, dans l'ordre : le choix explicite du visiteur, puis
-       le réglage de son navigateur, puis le français. Même règle que le thème
-       sombre — un choix fait à la main prime toujours sur une détection. */
+    /* La langue retenue, dans l'ordre :
+
+       1. celle de la page affichée, si l'adresse la porte. Une page sous
+          « /en/ » est anglaise, quoi qu'en dise le réglage : afficher une
+          interface russe autour d'un cours anglais n'aurait aucun sens, et
+          c'est ce qui arriverait à qui suit un lien partagé.
+       2. le choix explicite du visiteur, mémorisé ;
+       3. le réglage de son navigateur ;
+       4. le français.
+
+       Les pages françaises n'ont pas de préfixe : un visiteur qui a choisi
+       l'anglais garde donc son interface anglaise en les parcourant, avec le
+       bandeau qui prévient que le cours, lui, est en français. */
     function langueChoisie() {
+        const m = location.pathname.match(new RegExp("/(" + CODES.join("|") + ")/guides/"));
+        if (m) return m[1];
+
         let choix = null;
         try { choix = localStorage.getItem("langue"); } catch (e) {}
         if (choix && CODES.indexOf(choix) !== -1) return choix;
@@ -134,6 +168,35 @@
         return m ? m[1] : null;
     }
 
+    // La langue de la page affichée, lue dans l'adresse et non dans le réglage :
+    // « /en/guides/... » est une page anglaise même si le réglage dit autre chose.
+    function langueDeLaPage() {
+        const m = location.pathname.match(new RegExp("/(" + CODES.join("|") + ")/guides/"));
+        return m ? m[1] : "fr";
+    }
+
+    const LOCALE = () => LOCALES_DATE[langueChoisie()] || "fr-FR";
+
+    /* L'adresse de la page courante dans une autre langue, ou null si elle
+       n'existe pas. Renvoyer null plutôt qu'une adresse fausse est délibéré :
+       une page absente donnerait une erreur 404, ce qui est bien pire que de
+       rester sur place avec un bandeau qui explique. */
+    function adresseDansLangue(code) {
+        const chemin = location.pathname;
+        const sujet = sujetCourant();
+        if (!sujet) return null;
+
+        const actuelle = langueDeLaPage();
+        if (code === actuelle) return null;
+
+        const traduit = code === "fr" || (CONTENU_TRADUIT[code] || []).indexOf(sujet) !== -1;
+        if (!traduit) return null;
+
+        // On retire le préfixe de langue s'il y en a un, puis on pose le nouveau.
+        const nu = chemin.replace(new RegExp("/(" + CODES.join("|") + ")/guides/"), "/guides/");
+        return code === "fr" ? nu : nu.replace("/guides/", "/" + code + "/guides/");
+    }
+
     window.DOCMASTER_LANGUES = {
         LANGUES: LANGUES,
         CODES: CODES,
@@ -144,6 +207,9 @@
         definirLangue: definirLangue,
         t: t,
         sujetCourant: sujetCourant,
+        langueDeLaPage: langueDeLaPage,
+        adresseDansLangue: adresseDansLangue,
+        locale: LOCALE,
     };
 
     // Posé avant le premier affichage : un lecteur d'écran doit connaître la
