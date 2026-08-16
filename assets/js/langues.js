@@ -44,8 +44,14 @@
     /* Les sujets dont le contenu décrit le droit français. Traduire « repos
        quotidien de 11 heures » n'en fait pas une règle allemande : un lecteur
        étranger prendrait ces règles pour les siennes, sur des sujets où
-       l'erreur coûte cher. D'où le bandeau d'avertissement. */
-    const SUJETS_DROIT_FRANCAIS = ["droit", "finance", "entrepreneuriat"];
+       l'erreur coûte cher. D'où le bandeau d'avertissement.
+
+       « sante » y a été ajouté le 16 août 2026, en le traduisant : le
+       simulateur de pauses calcule le minimum du code du travail français,
+       celui de récupération ses repos de 11 h et 35 h, et tout le niveau
+       avancé décrit la médecine du travail, le document unique et le CSE.
+       L'exemple cité dans ce commentaire venait précisément de ce guide. */
+    const SUJETS_DROIT_FRANCAIS = ["droit", "finance", "entrepreneuriat", "sante"];
 
     /* Les traductions de contenu disponibles, par langue. Un sujet n'y figure
        que lorsque ses quatre pages existent sous « <langue>/guides/<sujet>/ » —
@@ -54,7 +60,7 @@
        C'est de cette liste que dépendent deux comportements : le sélecteur mène
        vers la page traduite quand elle existe, et le bandeau « les cours sont
        en français » ne s'affiche plus sur les sujets traduits. */
-    const CONTENU_TRADUIT = { en: ["apprendre", "cybersecurite", "data", "design", "dev-web", "ecologie", "ia", "marketing", "negociation", "productivite"], es: [], de: [], it: [], zh: [], ru: [] };
+    const CONTENU_TRADUIT = { en: ["apprendre", "cybersecurite", "data", "design", "dev-web", "ecologie", "ia", "marketing", "negociation", "productivite", "sante"], es: [], de: [], it: [], zh: [], ru: [] };
 
     // Les correspondances d'adresses entre versions. La version francaise est a
     // la racine, les autres sous « <langue>/ » : c'est le francais qui existait

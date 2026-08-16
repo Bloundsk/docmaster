@@ -1,5 +1,64 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Santé au travail traduite, et le bandeau de droit français enfin utilisé
+Quatre pages, trois banques de questions, 149 textes de simulateurs. `sante`
+est déclaré dans `CONTENU_TRADUIT`.
+
+**Onze sujets sur quatorze**, soit 44 pages et 990 questions.
+
+### `sante` rejoint `SUJETS_DROIT_FRANCAIS`
+
+Le mécanisme existait depuis la mise en place des langues, mais n'avait jamais
+servi sur un sujet traduit : `["droit", "finance", "entrepreneuriat"]`. Il
+manquait celui-ci.
+
+Ce guide est **massivement français** :
+
+- le simulateur de pauses calcule le minimum du **code du travail français** —
+  vingt minutes au-delà de six heures ;
+- celui de récupération applique ses repos de **11 h et 35 h** ;
+- tout le niveau avancé décrit la médecine du travail, le document unique,
+  le CSE, le droit de retrait et l'aménagement de la charge de la preuve.
+
+Ironie : l'exemple cité dans le commentaire de `SUJETS_DROIT_FRANCAIS` — « repos
+quotidien de 11 heures » — venait précisément de ce guide, qui n'y figurait
+pas. Le commentaire a été complété pour dire pourquoi.
+
+**Effet vérifié** : bandeau rouge en tête des quatre pages anglaises,
+*« This guide describes rules that apply in France »*. Sur les pages
+françaises, aucun changement — le mécanisme s'arrête net si la langue est le
+français.
+
+### Le numéro d'urgence, traité avec précaution
+
+Le guide cite le **3114**, numéro français de prévention du suicide. Le donner
+tel quel à un lecteur anglophone en détresse serait au mieux inutile.
+
+Partout où il apparaît — pages, verdict de simulateur, ressources — la version
+anglaise dirige d'abord vers **la ligne d'écoute du pays du lecteur**, puis
+mentionne le 3114 en le nommant comme français. L'ordre compte : c'est la
+première information qui sera lue.
+
+### Un fragment court qui piégeait un mot long
+
+`" jour"` → `" day"`, ajouté pour Data, transformait « réparties dans la
+journée » en **« réparties dans la daynée »**. Le fragment plus long
+`", réparties dans la journée"` passe désormais avant. C'est la troisième fois
+que l'ordre du plus long au plus court sauve un libellé — le principe est
+maintenant écrit dans le fichier, à côté du cas.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 11 sujets | tous complets, **149/149** pour santé |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 772 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 12 sections, 0 orpheline |
+| `audit-geometrie.html` | 298 mesures, 17 gabarits, 0 anomalie |
+| Bandeau de droit français | présent en anglais, absent en français |
+
 ## 2026-08-16 — Écologie numérique traduite, et une hypothèse rendue visible
 Quatre pages, trois banques de questions, 152 textes de simulateurs.
 `ecologie` est déclaré dans `CONTENU_TRADUIT`.

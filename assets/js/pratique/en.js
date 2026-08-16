@@ -58,6 +58,18 @@ window.PRATIQUE_TEXTES = {
         "environ ": "about ",
         " Go": " GB",
         "En le gardant ": "Keeping it ",   // « En le gardant 2 ans de plus »
+
+        // --- Santé au travail : morceaux soudés à un nombre ------------------
+        // Le premier est plus long que le fragment « jour » plus bas, et doit
+        // donc passer avant : sans lui, « réparties dans la journée » devenait
+        // « réparties dans la daynée ». Un fragment court est toujours un piège
+        // pour le mot long qui le contient.
+        ", réparties dans la journée": ", spread through the day",
+        " min d'activité modérée par semaine": " min of moderate activity per week",
+        " h — le vôtre : ": " h — yours: ",
+        " min par semaine": " min per week",
+        " h par semaine": " h per week",
+        " min au-delà": " min beyond",
         "% et ": "% and ",        // « 45.1% et 54.9% », les deux bornes d'un intervalle
 
         " sur ": " of ",
@@ -2735,5 +2747,299 @@ window.PRATIQUE_TEXTES = {
             "The gain has probably been absorbed. Efficiency per unit rises and the total goes up: that has been digital's trajectory for twenty years.",
         "Un pourcentage d'amélioration ne dit rien tant qu'on ne connaît pas l'évolution du total. C'est la seule question qui vaille, et c'est celle qu'on évite.":
             "A percentage improvement says nothing until you know what the total did. That is the only question worth asking, and the one that gets avoided.",
+
+        // =====================================================================
+        // SANTÉ AU TRAVAIL
+        //
+        // Sujet ajouté à SUJETS_DROIT_FRANCAIS : les pauses, les repos minimaux
+        // et tout le niveau avancé décrivent le DROIT FRANÇAIS. Un bandeau
+        // rouge le dit en tête de chaque page traduite.
+        // =====================================================================
+
+        // --- poste-de-travail --------------------------------------------------------------
+        "Votre poste est-il correctement réglé ?": "Is your workstation set up properly?",
+        "Installez-vous comme d'habitude, puis cochez ce qui est vrai.":
+            "Sit down as you usually do, then tick what is true.",
+        "Le haut de l'écran est à hauteur des yeux, ou juste en dessous":
+            "The top of the screen is at eye level, or just below",
+        "L'écran est à environ une longueur de bras": "The screen is about an arm's length away",
+        "Mes avant-bras sont horizontaux, épaules relâchées":
+            "My forearms are horizontal, shoulders relaxed",
+        "Mes pieds reposent à plat, cuisses horizontales":
+            "My feet rest flat, thighs horizontal",
+        "L'écran est perpendiculaire à la fenêtre": "The screen is at right angles to the window",
+        "ni face à la lumière, ni dos à elle": "neither facing the light nor backing onto it",
+        "Sur portable, j'utilise un support et un clavier séparé":
+            "On a laptop, I use a stand and a separate keyboard",
+        "sinon l'écran et les mains ne peuvent pas être bien placés en même temps":
+            "otherwise the screen and the hands cannot both be well placed at once",
+        "Plusieurs réglages à reprendre. Une gêne quotidienne finit par devenir une douleur installée.":
+            "Several settings to revisit. A daily discomfort ends up becoming a settled pain.",
+        "Bonne base. La hauteur d'écran et la position des avant-bras sont les deux réglages qui pèsent le plus.":
+            "A good base. Screen height and forearm position are the two settings that weigh the most.",
+        "Poste correctement réglé. Le réglage tient des mois : c'est du temps très bien placé.":
+            "A properly set-up workstation. The setup holds for months: that is time very well spent.",
+        "Un portable posé sur un bureau place forcément soit l'écran trop bas, soit les mains trop haut. Le support et le clavier séparé règlent une contradiction, pas un confort.":
+            "A laptop on a desk necessarily puts either the screen too low or the hands too high. A stand and a separate keyboard resolve a contradiction, not a comfort preference.",
+
+        // --- sedentarite -------------------------------------------------------------------
+        "Combien de temps passez-vous assis ?": "How long do you spend sitting?",
+        "Et ce que l'activité physique en compense réellement.":
+            "And how much of it physical activity actually offsets.",
+        "Heures assis par jour": "Hours sitting per day",
+        "Jours par semaine": "Days per week",
+        "Minutes d'activité modérée par semaine": "Minutes of moderate activity per week",
+        "Heures assis par semaine": "Hours sitting per week",
+        "Soit, sur une année de travail": "That is, over a working year",
+        "Repère de l'OMS": "WHO benchmark",
+        "Il vous manque": "You are short by",
+        "Repère atteint": "Benchmark met",
+        "Couper la position assise toutes les heures compte autant que la durée totale. Se lever deux minutes n'a l'air de rien et ne se remplace pas par une séance de sport le samedi.":
+            "Breaking up sitting every hour counts as much as the total duration. Standing for two minutes looks like nothing and is not replaced by a Saturday gym session.",
+
+        // --- fatigue-visuelle --------------------------------------------------------------
+        "Ménagez-vous vos yeux ?": "Are you looking after your eyes?",
+        "Cochez ce que vous faites réellement au cours d'une journée d'écran.":
+            "Tick what you actually do over a day at a screen.",
+        "Je regarde au loin quelques secondes toutes les vingt minutes environ":
+            "I look into the distance for a few seconds about every twenty minutes",
+        "Je pense à cligner des yeux quand je fixe longtemps":
+            "I remember to blink when staring for a long time",
+        "la fréquence de clignement chute nettement devant un écran":
+            "blink rate drops markedly in front of a screen",
+        "La luminosité de l'écran est proche de celle de la pièce":
+            "The screen brightness is close to that of the room",
+        "Je ne travaille pas dans le noir avec un écran allumé":
+            "I do not work in the dark with a lit screen",
+        "Ma correction visuelle est à jour": "My glasses or lenses prescription is up to date",
+        "Je consulte si la gêne persiste plusieurs jours":
+            "I see somebody if the discomfort lasts several days",
+        "maux de tête, vision floue en fin de journée":
+            "headaches, blurred vision at the end of the day",
+        "Plusieurs habitudes à reprendre. Une gêne qui dure ne se traite pas par un filtre logiciel.":
+            "Several habits to revisit. A lasting discomfort is not treated with a software filter.",
+        "Correct. Regarder au loin régulièrement est le geste le plus simple et le plus efficace.":
+            "Fine. Looking into the distance regularly is the simplest and most effective thing to do.",
+        "Bonnes habitudes. La fatigue visuelle est réversible quand on la prend tôt.":
+            "Good habits. Eye strain is reversible when caught early.",
+        "L'œil qui fixe un plan rapproché pendant des heures ne se repose jamais. Regarder au loin quelques secondes suffit à relâcher le muscle qui accommode.":
+            "An eye fixed on a close plane for hours never rests. Looking into the distance for a few seconds is enough to relax the focusing muscle.",
+
+        // --- pauses-legales ----------------------------------------------------------------
+        // Les minimums cités sont ceux du code du travail FRANÇAIS.
+        "Vos pauses sont-elles à la hauteur ?": "Do your breaks measure up?",
+        "Au-delà de six heures de travail, vingt minutes de pause sont dues. C'est un plancher, pas un objectif.":
+            "Beyond six hours of work, twenty minutes of break are owed under French law. That is a floor, not a target.",
+        "Heures travaillées dans la journée": "Hours worked in the day",
+        "Minutes de pause réellement prises": "Minutes of break actually taken",
+        "Pause légale minimale": "Legal minimum break (France)",
+        "Pauses réellement prises": "Breaks actually taken",
+        "Écart au minimum légal": "Gap to the legal minimum",
+        "Repère ergonomique sur écran": "Ergonomic benchmark for screen work",
+        "aucune en dessous de 6 h": "none below 6 h",
+        "respecté": "met",
+        "Le minimum légal est de vingt minutes d'un bloc. Ce qui protège vraiment, ce sont des coupures courtes et fréquentes — l'un n'est pas la version réduite de l'autre.":
+            "The French legal minimum is twenty minutes in one block. What actually protects you is short, frequent breaks — one is not a reduced version of the other.",
+
+        // --- stress-chronique --------------------------------------------------------------
+        "Aigu ou installé ?": "Acute, or settled in?",
+        "Cochez ce qui décrit votre situation de travail depuis plusieurs semaines.":
+            "Tick what describes your work situation over the past several weeks.",
+        "La pression ne retombe pas entre deux périodes chargées":
+            "The pressure does not drop between two busy periods",
+        "Le week-end ne suffit plus à récupérer":
+            "The weekend is no longer enough to recover",
+        "Je pense au travail à des moments où je n'y pensais pas avant":
+            "I think about work at times when I did not before",
+        "Mon sommeil a changé depuis plusieurs semaines":
+            "My sleep has changed over the past several weeks",
+        "J'ai réduit ce qui me faisait du bien en dehors du travail":
+            "I have cut back on what did me good outside work",
+        "Mon entourage me l'a fait remarquer": "People around me have pointed it out",
+        "Aucun de ces signaux. Un stress qui retombe entre deux pics est le fonctionnement normal.":
+            "None of these signs. Stress that drops between peaks is normal functioning.",
+        "Quelques signaux. Ils méritent d'être observés sur les prochaines semaines plutôt qu'écartés.":
+            "A few signs. They deserve watching over the coming weeks rather than dismissing.",
+        "Plusieurs signaux installés. Ce n'est pas un diagnostic — c'est une raison d'en parler à un médecin ou au service de santé au travail, qui sont tenus au secret.":
+            "Several settled signs. This is not a diagnosis — it is a reason to talk to a doctor or an occupational health service, both bound by confidentiality.",
+        "Le stress aigu monte puis retombe : c'est une réponse normale. Ce qui abîme, c'est l'absence de retour à la normale — et cela se remarque bien plus tôt de l'extérieur que de l'intérieur.":
+            "Acute stress rises then falls: that is a normal response. What causes damage is the absence of a return to normal — and it is noticed far sooner from the outside than from the inside.",
+
+        // --- karasek -----------------------------------------------------------------------
+        "Où se situe votre poste ?": "Where does your job sit?",
+        "Trois curseurs, de 0 à 10, selon le modèle utilisé en santé au travail depuis les années 1980. Notez ce que vous ressentez de votre poste, pas ce qu'il devrait être.":
+            "Three sliders, 0 to 10, following the model used in occupational health since the 1980s. Rate what you feel about your job, not what it ought to be.",
+        "Exigence du poste": "Demand of the job",
+        "/10": "/10",
+        "Latitude : marge de décision et d'organisation": "Latitude: room to decide and organise",
+        "Soutien des collègues et de la hiérarchie": "Support from colleagues and management",
+        "Situation décrite": "Situation described",
+        "Lecture": "Reading",
+        "Soutien": "Support",
+        "À retenir": "Worth noting",
+        "tendu": "strained",
+        "forte exigence, peu de marge — c'est la combinaison la plus associée au risque":
+            "high demand, little room — the combination most associated with risk",
+        "passif": "passive",
+        "peu exigeant et peu de marge : usure par l'ennui plutôt que par la charge":
+            "undemanding with little room: wear from boredom rather than from load",
+        "actif": "active",
+        "exigeant mais tenable : la marge de manœuvre compense l'exigence":
+            "demanding but sustainable: the room to manoeuvre offsets the demand",
+        "faible — il aggrave chacune des situations ci-dessus":
+            "low — it makes each of the situations above worse",
+        "présent — il amortit l'exigence": "present — it cushions the demand",
+        "situation à évoquer avec le service de santé au travail":
+            "a situation to raise with the occupational health service",
+        "repère à relire dans quelques mois": "a marker to re-read in a few months",
+        "Ce n'est pas l'exigence seule qui use, c'est l'exigence sans marge de manœuvre. Deux postes également chargés n'ont pas le même effet selon ce qu'ils laissent décider.":
+            "It is not demand alone that wears you down, it is demand without room to manoeuvre. Two equally loaded jobs do not have the same effect depending on what they let you decide.",
+
+        // --- charge-recuperation -----------------------------------------------------------
+        // Les 11 h et 35 h sont les minimums du code du travail FRANÇAIS.
+        "Votre semaine laisse-t-elle place à la récupération ?":
+            "Does your week leave room for recovery?",
+        "Les repos minimaux du code du travail servent de repère : 11 heures entre deux journées, 35 heures consécutives par semaine.":
+            "The minimum rest periods of French labour law serve as the benchmark: 11 hours between two working days, 35 consecutive hours per week.",
+        "Heures travaillées par semaine": "Hours worked per week",
+        "Coupure la plus courte entre deux journées": "Shortest break between two working days",
+        "Heures consécutives de repos en fin de semaine":
+            "Consecutive hours of rest at the end of the week",
+        "Repos quotidien minimal": "Minimum daily rest (France)",
+        "Repos hebdomadaire minimal": "Minimum weekly rest (France)",
+        "Heures travaillées": "Hours worked",
+        "Constat": "Finding",
+        "les deux repos minimaux sont respectés": "both minimum rest periods are met",
+        "en dessous du minimum : repos quotidien": "below the minimum: daily rest",
+        "en dessous du minimum : repos hebdomadaire": "below the minimum: weekly rest",
+        "en dessous du minimum : repos quotidien et repos hebdomadaire":
+            "below the minimum: daily rest and weekly rest",
+        "Ces durées ne sont pas des recommandations de confort : ce sont des minimums opposables. Passer en dessous régulièrement se signale au service de santé au travail.":
+            "These durations are not comfort recommendations: under French law they are enforceable minimums. Regularly falling below them is worth reporting to the occupational health service.",
+
+        // --- deconnexion -------------------------------------------------------------------
+        "Vos frontières tiennent-elles ?": "Do your boundaries hold?",
+        "Cochez ce qui est vrai d'une semaine ordinaire.":
+            "Tick what is true of an ordinary week.",
+        "Je ne consulte pas mes messages professionnels le soir":
+            "I do not check work messages in the evening",
+        "Les notifications professionnelles sont coupées en dehors des heures":
+            "Work notifications are off outside working hours",
+        "Je ne réponds pas le week-end, sauf urgence réelle":
+            "I do not reply at weekends, barring a real emergency",
+        "Mon équipe sait que je ne réponds pas en soirée":
+            "My team knows I do not reply in the evening",
+        "Je n'envoie pas de messages tard, ou j'en diffère l'envoi":
+            "I do not send messages late, or I schedule them",
+        "un message envoyé à 23 h met les autres sous pression":
+            "a message sent at 11 pm puts others under pressure",
+        "Mes congés sont réellement sans travail": "My holidays are genuinely work-free",
+        "Le travail déborde largement. Le droit à la déconnexion existe précisément parce que la frontière ne tient pas toute seule.":
+            "Work is spilling over a great deal. The right to disconnect exists in French law precisely because the boundary does not hold on its own.",
+        "Correct. Différer l'envoi des messages tardifs coûte un clic et change les attentes de toute l'équipe.":
+            "Fine. Scheduling late messages costs one click and changes the whole team's expectations.",
+        "Frontières nettes. C'est ce qui permet à la récupération d'avoir lieu.":
+            "Clear boundaries. That is what lets recovery happen.",
+        "La déconnexion n'est pas qu'une affaire individuelle : ce qu'on envoie le soir fixe ce que les autres croient devoir faire.":
+            "Disconnecting is not only an individual matter: what you send in the evening sets what others believe they must do.",
+
+        // --- medecine-travail --------------------------------------------------------------
+        "Savez-vous ce que le médecin du travail peut faire ?":
+            "Do you know what an occupational doctor can do?",
+        "Cochez ce que vous saviez déjà.": "Tick what you already knew.",
+        "Je peux le consulter à ma demande, sans passer par mon employeur":
+            "I can see them at my own request, without going through my employer",
+        "Il est tenu au secret médical : mon employeur n'apprend pas ce que je dis":
+            "They are bound by medical confidentiality: my employer does not learn what I say",
+        "Il peut proposer un aménagement de poste, qui s'impose à l'employeur sauf impossibilité":
+            "They can propose an adjustment to the job, which binds the employer unless impossible",
+        "Il peut demander une étude du poste et des conditions de travail":
+            "They can request a study of the job and the working conditions",
+        "Une visite de préreprise existe pendant un arrêt long, à ma demande":
+            "A pre-return visit exists during a long sick leave, at my request",
+        "Je sais comment joindre mon service de prévention et de santé au travail":
+            "I know how to contact my occupational health and prevention service",
+        "Le médecin du travail n'est pas le médecin de l'employeur. La visite est de droit, confidentielle, et sur le temps de travail.":
+            "The occupational doctor is not the employer's doctor. The visit is a right, confidential, and during working hours.",
+        "Bonne base. La visite à la demande du salarié et le secret médical sont les deux points les plus souvent ignorés.":
+            "A good base. The employee-requested visit and medical confidentiality are the two points most often unknown.",
+        "Vous connaissez ce levier. C'est l'un des plus efficaces et des moins utilisés.":
+            "You know this lever. It is one of the most effective and least used.",
+        "La visite à la demande du salarié est un droit, elle est confidentielle, et l'employeur ne peut pas en connaître le contenu — seulement les conclusions d'aptitude.":
+            "The employee-requested visit is a right, it is confidential, and the employer cannot learn its content — only the fitness conclusions.",
+
+        // --- duerp -------------------------------------------------------------------------
+        "Votre employeur tient-il ses obligations ?": "Is your employer meeting its obligations?",
+        "Cochez ce dont vous avez connaissance dans votre entreprise.":
+            "Tick what you know of in your workplace.",
+        "Un document unique d'évaluation des risques existe et est accessible":
+            "A single risk assessment document exists and is accessible",
+        "Les risques psychosociaux y figurent, pas seulement les risques physiques":
+            "Psychosocial risks appear in it, not only physical risks",
+        "Il est mis à jour, et pas seulement archivé": "It is updated, not merely filed away",
+        "Des représentants du personnel ou un CSE existent et sont identifiables":
+            "Employee representatives or a works council exist and can be identified",
+        "Une procédure est prévue pour signaler une situation dangereuse":
+            "A procedure exists for reporting a dangerous situation",
+        "Je sais que je peux me retirer d'une situation de danger grave et imminent":
+            "I know I can withdraw from a situation of serious and imminent danger",
+        "droit de retrait, sans sanction possible pour ce seul motif":
+            "the right of withdrawal, with no penalty possible on that ground alone",
+        "L'employeur a une obligation de sécurité, qui ne dépend pas de votre demande. Le CSE et l'inspection du travail sont les interlocuteurs quand rien ne bouge.":
+            "The employer has a duty of safety, which does not depend on your asking. The works council and the labour inspectorate are who to turn to when nothing moves.",
+        "Partiel. Le document unique est obligatoire dès le premier salarié, et doit couvrir les risques psychosociaux.":
+            "Partial. Under French law the single document is compulsory from the first employee, and must cover psychosocial risks.",
+        "Cadre en place. Il rend les demandes beaucoup plus simples à formuler.":
+            "The framework is in place. It makes requests far easier to put.",
+        "L'obligation de sécurité de l'employeur est une obligation de moyens renforcée : elle porte sur la prévention, pas seulement sur la réparation une fois le dommage survenu.":
+            "The employer's duty of safety is a reinforced duty of means: it bears on prevention, not only on redress once the harm has occurred.",
+
+        // --- epuisement --------------------------------------------------------------------
+        "Les trois dimensions décrites dans la littérature":
+            "The three dimensions described in the literature",
+        "Cochez ce que vous reconnaissez. Ceci n'est pas un test et ne rend aucun résultat : c'est une aide à mettre des mots avant d'en parler.":
+            "Tick what you recognise. This is not a test and returns no result: it is a help in finding words before speaking to somebody.",
+        "Épuisement : la fatigue ne cède plus au repos":
+            "Exhaustion: the tiredness no longer yields to rest",
+        "Distance : je me suis mis à distance des gens ou du sens de mon travail":
+            "Detachment: I have put distance between myself and people, or the meaning of my work",
+        "Efficacité : j'ai le sentiment de ne plus rien réussir":
+            "Efficacy: I feel I am no longer succeeding at anything",
+        "Cela dure depuis plusieurs semaines": "This has lasted several weeks",
+        "Mon entourage l'a remarqué avant moi": "People around me noticed before I did",
+        "Je n'en ai encore parlé à aucun professionnel":
+            "I have not yet spoken to any professional about it",
+        "Rien de reconnu ici. Cette section reste utile pour reconnaître la situation chez quelqu'un d'autre.":
+            "Nothing recognised here. This section stays useful for recognising the situation in somebody else.",
+        "Ce que vous reconnaissez mérite d'être dit à un médecin. Aucun outil en ligne, celui-ci compris, ne peut aller plus loin.":
+            "What you recognise deserves to be said to a doctor. No online tool, this one included, can go further.",
+        "Parlez-en à votre médecin traitant ou au médecin du travail — c'est la seule suite utile à cet exercice. En cas de détresse, le 3114 répond gratuitement, 24 h sur 24.":
+            "Speak to your own doctor or an occupational doctor — that is the only useful next step to this exercise. If you are in distress, contact your national crisis line; in France, 3114 answers free of charge, 24 hours a day.",
+        "L'épuisement professionnel n'est pas un diagnostic qu'on pose soi-même, et surtout pas au moyen d'un questionnaire en ligne. Ces trois dimensions servent à nommer, pas à conclure.":
+            "Burnout is not a diagnosis you make yourself, and least of all through an online questionnaire. These three dimensions are there to name, not to conclude.",
+
+        // --- situation-grave ---------------------------------------------------------------
+        "Face à une situation grave, dans l'ordre": "Facing a serious situation, in order",
+        "Harcèlement, discrimination, danger : cochez ce qui est déjà fait.":
+            "Harassment, discrimination, danger: tick what has already been done.",
+        "J'ai noté les faits par écrit, datés, au fur et à mesure":
+            "I have written the facts down, dated, as they happened",
+        "J'ai conservé les messages, courriels et documents":
+            "I have kept the messages, emails and documents",
+        "J'ai identifié d'éventuels témoins": "I have identified any witnesses",
+        "J'ai alerté par écrit l'employeur ou le service des ressources humaines":
+            "I have alerted the employer or the HR department in writing",
+        "J'ai contacté un représentant du personnel ou le CSE":
+            "I have contacted an employee representative or the works council",
+        "J'ai consulté le médecin du travail, l'inspection du travail ou un défenseur des droits":
+            "I have consulted the occupational doctor, the labour inspectorate or an equality body",
+        "Commencez par écrire les faits, datés. C'est la première chose que demanderont tous les interlocuteurs — et la plus difficile à reconstituer après coup.":
+            "Start by writing the facts down, dated. It is the first thing everybody will ask for — and the hardest to reconstruct after the event.",
+        "En cours. L'alerte écrite à l'employeur est l'étape qui déclenche son obligation d'agir.":
+            "Under way. The written alert to the employer is the step that triggers its duty to act.",
+        "Démarche complète. Les écrits datés sont ce qui rendra la suite possible, quelle qu'elle soit.":
+            "A complete process. The dated written records are what will make whatever follows possible.",
+        "L'employeur informé par écrit d'une situation de harcèlement a l'obligation de réagir. Ne rien écrire le dispense de fait, quelle que soit la gravité des faits.":
+            "An employer informed in writing of harassment has a duty to react. Writing nothing effectively releases it, however serious the facts.",
     },
 };
