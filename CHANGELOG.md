@@ -1,5 +1,28 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Le titre « Nos catégories » occupait une case de la grille
+Signalé par l'auteur, capture à l'appui : le titre se tenait à gauche, à hauteur
+des cartes, et la première rangée n'en montrait que deux au lieu de trois.
+
+Le `<h2>` est un enfant de la section. En faisant de cette section une grille,
+il en est devenu **un élément comme les autres** et occupait la première case —
+339 px, la largeur exacte d'une carte. Le titre mangeait une place de guide.
+
+Il court désormais sur toute la largeur (`grid-column: 1 / -1`, qui suit le
+nombre de colonnes quel qu'il soit) et il est centré au-dessus des cartes, comme
+demandé.
+
+### Un second défaut, invisible celui-là
+
+L'échelonnement des apparitions reposait sur `nth-child`. Le titre étant compté
+comme premier enfant, **tout était décalé d'un cran** : la première carte prenait
+le délai de la deuxième, et la quatorzième, devenue quinzième enfant, ne
+recevait aucun délai — elle surgissait donc seule, avant toutes les autres.
+
+`nth-of-type` ne compte que les `<article>` et reste juste quoi qu'on ajoute
+autour. Vérifié à quatre largeurs : le premier délai est bien de 0,04 s et le
+dernier de 0,56 s.
+
 ## 2026-08-16 — Les actualités sur deux colonnes, et une régression de largeur
 Demandé par l'auteur, capture à l'appui : le fil d'actualité s'affichait sur une
 seule colonne, avec un grand vide à droite.

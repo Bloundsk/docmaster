@@ -281,6 +281,17 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     gap: 22px;
 }
+
+/* Le titre est un enfant de la section, donc un element de la grille : sans
+   cette regle il occupait la premiere case, et la premiere rangee ne montrait
+   que deux cartes au lieu de trois. Il court desormais sur toute la largeur.
+   1 / -1 va de la premiere a la derniere ligne de colonnes, quel que soit leur
+   nombre — la grille se recompose selon l'ecran, un compte fixe serait faux. */
+#categories > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 6px;   /* l'ecart vient surtout du gap de la grille */
+}
 #categories > article {
     margin-bottom: 0;
     padding: 24px 24px 20px;
@@ -330,24 +341,29 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
 #categories .btn-favori-carte { position: relative; z-index: 1; align-self: flex-start; }
 
 /* Apparition en cascade. Elle s'arretait a la troisieme carte — regles
-   nth-child(1) a (3) heritees du temps ou l'accueil en comptait trois : les
-   onze suivantes surgissaient donc toutes ensemble, ce qui se voyait.
+   heritees du temps ou l'accueil en comptait trois : les onze suivantes
+   surgissaient donc toutes ensemble, ce qui se voyait.
    Le pas est court (40 ms) : sur quatorze cartes, un pas plus long ferait
-   attendre la derniere plus d'une seconde. */
-#categories > article:nth-child(1)  { animation-delay: .04s; }
-#categories > article:nth-child(2)  { animation-delay: .08s; }
-#categories > article:nth-child(3)  { animation-delay: .12s; }
-#categories > article:nth-child(4)  { animation-delay: .16s; }
-#categories > article:nth-child(5)  { animation-delay: .20s; }
-#categories > article:nth-child(6)  { animation-delay: .24s; }
-#categories > article:nth-child(7)  { animation-delay: .28s; }
-#categories > article:nth-child(8)  { animation-delay: .32s; }
-#categories > article:nth-child(9)  { animation-delay: .36s; }
-#categories > article:nth-child(10) { animation-delay: .40s; }
-#categories > article:nth-child(11) { animation-delay: .44s; }
-#categories > article:nth-child(12) { animation-delay: .48s; }
-#categories > article:nth-child(13) { animation-delay: .52s; }
-#categories > article:nth-child(14) { animation-delay: .56s; }
+   attendre la derniere plus d'une seconde.
+
+   nth-of-type et non nth-child : le titre de section est lui aussi un enfant
+   de la grille, si bien que nth-child decalait tout d'un cran — la premiere
+   carte prenait le delai de la deuxieme, et la quatorzieme, devenue quinzieme
+   enfant, n'en recevait aucun. */
+#categories > article:nth-of-type(1)  { animation-delay: .04s; }
+#categories > article:nth-of-type(2)  { animation-delay: .08s; }
+#categories > article:nth-of-type(3)  { animation-delay: .12s; }
+#categories > article:nth-of-type(4)  { animation-delay: .16s; }
+#categories > article:nth-of-type(5)  { animation-delay: .20s; }
+#categories > article:nth-of-type(6)  { animation-delay: .24s; }
+#categories > article:nth-of-type(7)  { animation-delay: .28s; }
+#categories > article:nth-of-type(8)  { animation-delay: .32s; }
+#categories > article:nth-of-type(9)  { animation-delay: .36s; }
+#categories > article:nth-of-type(10) { animation-delay: .40s; }
+#categories > article:nth-of-type(11) { animation-delay: .44s; }
+#categories > article:nth-of-type(12) { animation-delay: .48s; }
+#categories > article:nth-of-type(13) { animation-delay: .52s; }
+#categories > article:nth-of-type(14) { animation-delay: .56s; }
 
 /* ---------------------------------------------------------------
    Blocs de cours des guides : sections depliables.
