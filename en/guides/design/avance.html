@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>UX/UI Design — Advanced - DocMaster</title>
+    <meta name="description" content="Perceived performance, cognitive load, dark patterns and how to measure design rather than argue about it. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/design/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/design/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/design/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/design/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="UX/UI Design — Advanced - DocMaster">
+    <meta property="og:description" content="Perceived performance, cognitive load, dark patterns and how to measure design rather than argue about it. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/design/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UX/UI Design — Advanced - DocMaster">
+    <meta name="twitter:description" content="Perceived performance, cognitive load, dark patterns and how to measure design rather than argue about it. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">🎨 UX/UI Design</a> &gt;
+        <span aria-current="page">Advanced</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎨 UX/UI Design — Advanced</h1>
+                <p>What happens in the user's head, and what to do about it.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="70" cy="70" r="24"/><circle cx="70" cy="70" r="9" stroke-opacity="0.6"/></g><circle cx="70" cy="70" r="3.5" fill="white"/></g>
+<circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#perceived-performance">⏱️ Perceived performance</a></li>
+                <li><a href="#cognitive-load">🧠 Cognitive load</a></li>
+                <li><a href="#dark-patterns">🎯 Dark patterns</a></li>
+                <li><a href="#measuring-design">📐 Measuring design</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>An occupied wait feels shorter than an empty wait of the same length.</li>
+                <li>Decision time grows with the logarithm of the number of options, not linearly.</li>
+                <li>A distant, small target is far slower to reach than a close, large one.</li>
+                <li>A dark pattern produces an immediate conversion and a lasting distrust.</li>
+                <li>A design that is not measured does not improve: it merely changes.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The first two levels were about what you draw: screens, navigation, a system. This one is about <strong>what happens in the person opposite</strong> — how long they think they are waiting, how many options their attention can take, and what makes them give up.</p>
+            <p>These mechanisms are measurable and have been known for decades. They let you justify a design decision other than by taste, and they raise a question nobody escapes: <strong>use this knowledge to help, or to manipulate?</strong></p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong>. The laws quoted are simplified models, useful for reasoning about orders of magnitude — not for predicting an individual's behaviour.</p>
+                <p>The deceptive practices described in the dark patterns section are presented so that they can be <strong>identified and avoided</strong>. Several are penalised under European law.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">What plays out in the user</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="perceived-performance">⏱️ Perceived performance</h3></summary>
+                <div class="lecon-corps">
+                <p>Measured time and felt time are two different things. A page that loads in two seconds can feel slower than one that takes three — it all depends on what happens during the wait.</p>
+
+                <h4>The thresholds of perception</h4>
+                <p>Three values structure this whole area:</p>
+                <p><strong>0.1 second</strong> — the reaction feels instantaneous. Below that, the user has the impression of manipulating the object directly.</p>
+                <p><strong>1 second</strong> — the train of thought is not broken, but the delay is noticed. No visual feedback is needed.</p>
+                <p><strong>10 seconds</strong> — the limit of attention. Beyond it, the person moves on to something else, and you need to show progress to have any hope of keeping them.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>A page of <strong>2,500 kB</strong> on a mobile connection at <strong>10 Mb/s</strong> takes about <strong>2 seconds</strong> to transfer — plus latency and rendering time.</p>
+                    <p>The same page cut to <strong>800 kB</strong> drops under a second. The gain does not come from a faster server, but from the weight removed: uncompressed images, unused fonts, scripts that never run.</p>
+                </div>
+
+                <div class="pratique" data-pratique="budget-performance"></div>
+
+                <h4>Occupying the wait</h4>
+                <p>An empty wait feels about twice as long as an occupied wait of the same length. Hence three effective techniques:</p>
+                <p><strong>Content skeletons</strong> — those grey shapes that outline the layout — give the impression that loading has begun.</p>
+                <p><strong>Immediate feedback</strong>: a button that changes state on click avoids doubt and the second click.</p>
+                <p><strong>Optimistic display</strong>: showing the expected result before the server confirms, correcting it if it fails. This is what makes modern messaging apps feel so fluid.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the infinite spinner</span>
+                    <p>A loading animation with no indication of progress informs of nothing. It only says "something may be happening", and feels all the longer for being indeterminate.</p>
+                    <p>A progress bar, even a rough one, is better tolerated. And for a short operation, a skeleton beats a spinner.</p>
+                </div>
+
+                <p class="retenir">💡 Cutting weight improves real time. Occupying the wait improves felt time. Both count.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="cognitive-load">🧠 Cognitive load</h3></summary>
+                <div class="lecon-corps">
+                <p>Every interface demands mental effort: understanding, choosing, remembering. That effort is limited, and it gets spent. An interface that consumes too much tires people, then makes them give up — often without their being able to say why.</p>
+
+                <h4>Hick's law: the cost of choosing</h4>
+                <p>The time needed to decide grows with the <strong>logarithm</strong> of the number of options. Concretely: going from 2 to 4 choices costs as much as going from 4 to 8.</p>
+                <p>One clarification is needed, because it is almost always left out: this law describes choosing between options that are <strong>already known</strong>. Applied as it stands, it even concludes that a flat list beats a two-tier navigation — since the latter makes you decide twice.</p>
+                <p>What makes grouping win is something else: <strong>visual scanning</strong>. A visitor discovering a menu is not choosing, they are searching — and that run costs roughly linearly. Twenty entries to scan, against four groups then five entries: the gap becomes clear.</p>
+
+                <div class="pratique" data-pratique="loi-de-hick"></div>
+
+                <h4>Fitts's law: the cost of the gesture</h4>
+                <p>The time to reach a target depends on its <strong>distance</strong> and its <strong>size</strong>. A small distant target is slow to aim at; a large close one is immediate.</p>
+                <p>Several well-established consequences follow: the edges and corners of the screen are privileged zones, because the cursor stops there by itself. On a phone, the bottom of the screen is more reachable by the thumb than the top — which explains navigation bars moving downwards.</p>
+                <p>And the main action of a form must be <strong>large and close to the last field filled in</strong>, not banished to a corner.</p>
+
+                <div class="exemple">
+                    <span class="titre">How many items are held at once</span>
+                    <p>Working memory holds a few items at a time — the commonly accepted order of magnitude is around <strong>four</strong>, not the seven long quoted.</p>
+                    <p>This is why a phone number is read in groups, why a long form gains from being split into steps, and why asking someone to remember information from one screen to the next is a bad idea: show it again.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — confusing simple with minimal</span>
+                    <p>Removing labels, hiding options behind obscure icons, deleting explanations: the screen looks cleaner, the mental load goes up.</p>
+                    <p>The user now has to guess. A simple interface is not the one that shows least, it is the one that takes least effort to understand.</p>
+                </div>
+
+                <p class="retenir">💡 The number of options is not as tiring as the absence of a structure for scanning them.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="dark-patterns">🎯 Dark patterns</h3></summary>
+                <div class="lecon-corps">
+                <p>A dark pattern is an interface designed to obtain from the user what they would not have chosen knowingly. These are not clumsy mistakes: they are deliberate design decisions, often tested and optimised.</p>
+
+                <h4>The most widespread forms</h4>
+                <p><strong>Unbalanced consent.</strong> "Accept all" as a big coloured button, "manage settings" as a small grey link. Technically the choice exists; in practice it is steered.</p>
+                <p><strong>One-click subscription, ten-click cancellation.</strong> Signing up takes thirty seconds; cancelling means finding a hidden page, then justifying your departure.</p>
+                <p><strong>Fees revealed at the end.</strong> The displayed price is not the price paid. The extras appear after time has been invested in the checkout.</p>
+                <p><strong>Shaming the refusal.</strong> "No thanks, I'd rather pay more." The wording of the refusal is written to be unpleasant to click.</p>
+                <p><strong>False urgency.</strong> A countdown that resets, "3 people are looking at this item" with no basis at all.</p>
+
+                <div class="exemple">
+                    <span class="titre">What European law says</span>
+                    <p>Several of these practices are not merely questionable: they are <strong>illegal</strong>.</p>
+                    <p>Consent must be <strong>as easy to refuse as to give</strong> — a banner with no "reject all" button at the same level as "accept all" is non-compliant.</p>
+                    <p>Cancellation must be possible by a means as simple as subscription. And consumer-protection authorities penalise misleading price display.</p>
+                </div>
+
+                <div class="pratique" data-pratique="schemas-sombres"></div>
+
+                <h4>Why it is a bad bet</h4>
+                <p>These techniques work: they really do raise conversions in the short term. That is what makes them tempting, and what makes them look effective on a dashboard.</p>
+                <p>What the dashboard does not show: the later cancellations, the refund requests, the negative reviews, and the distrust that settles in. The gain is immediate and measured; the cost is deferred and diffuse.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the unintentional dark pattern</span>
+                    <p>A box pre-ticked "for simplicity", a refusal button made less visible "for the aesthetics": nobody meant to deceive, and the result is the same for the user.</p>
+                    <p>The test is simple: <strong>if the user discovered this mechanism, would they feel cheated?</strong> If so, intent changes nothing.</p>
+                </div>
+
+                <p class="retenir">💡 An interface that obtains a consent nobody would have given knowingly has not persuaded: it has trapped.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="measuring-design">📐 Measuring design</h3></summary>
+                <div class="lecon-corps">
+                <p>"It's prettier" is not an admissible argument, and "the client prefers it" even less so. Design can be measured — imperfectly, but well enough to decide.</p>
+
+                <h4>The three basic measures of a usability test</h4>
+                <p><strong>Success rate</strong>: what proportion of participants finish the task unaided. It is the most important measure, and the most often forgotten.</p>
+                <p><strong>Task time</strong>: how long it takes them. To be read with care — faster is not always better, particularly on an important decision.</p>
+                <p><strong>Number of errors</strong>: how many times they get it wrong, go back, or visibly hesitate.</p>
+                <p>To which is added a standardised satisfaction questionnaire, whose main merit is being comparable from one version to another and from one product to another.</p>
+
+                <div class="exemple">
+                    <span class="titre">The calculation that convinces a management team</span>
+                    <p>An improvement saves <strong>5 seconds</strong> on a task carried out <strong>3 times a day</strong> by <strong>200 people</strong>, 220 days a year.</p>
+                    <p>That is 5 × 3 × 200 × 220 = 660,000 seconds, about <strong>183 hours a year</strong>.</p>
+                    <p>This calculation turns an aesthetic argument into a budgetary one. It is often the only one that gets heard.</p>
+                </div>
+
+                <div class="pratique" data-pratique="gain-de-temps-utilisateur"></div>
+
+                <h4>What the measures do not say</h4>
+                <p>A usability test shows <strong>where</strong> people fail, rarely <strong>why</strong>. The answer comes from observation and from the questions asked afterwards, not from the results table.</p>
+                <p>And an isolated figure is worth nothing: it is the comparison — before and after, version A and version B — that produces the information.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — measuring what is easy to measure</span>
+                    <p>Time spent on a page is easy to collect. It is also perfectly ambiguous: is it interest, or confusion?</p>
+                    <p>A convenient but uninterpretable indicator is worse than no measurement at all: it gives the impression of knowing.</p>
+                </div>
+
+                <p class="retenir">💡 Without measurement, a design does not improve — it changes, and you believe you improved it.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>European guidance on deceptive interfaces</strong>: what is required of a consent banner, and what is penalised.</li>
+                    <li><strong>Consumer-protection authorities</strong>: the rules on price display and cancellation, binding on any trading site.</li>
+                    <li><strong>Nielsen Norman Group's work</strong>: the perception thresholds for response time and the usability test protocols, documented since the 1990s.</li>
+                    <li><strong>Performance audit tools</strong>: they give the real weight of a page and the detail of what slows it down. The list is almost always dominated by images.</li>
+                    <li><strong>The cognitive load literature</strong>: Miller's and Cowan's work on working memory, the origin of the grouping rules.</li>
+                </ul>
+                <p><strong>A useful habit:</strong> before defending an improvement, put it in hours saved per year. The aesthetic argument is arguable, the arithmetic much less so.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Previous level</span>UX/UI Design — Intermediate</a>
+            <a href="index.html" class="next"><span class="label">Path →</span>Back to the Design contents</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../../../guides/dev-web/index.html">💻 Web Development</a>
+                <a href="../../../guides/marketing/index.html">📢 Digital Marketing</a>
+                <a href="../../../guides/data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/design-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

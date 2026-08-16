@@ -28,6 +28,17 @@ window.PRATIQUE_TEXTES = {
         "lecture possible, dictionnaire à portée": "readable, with a dictionary at hand",
         "lecture laborieuse": "heavy going",
         "lecture impossible sans traduction": "unreadable without a translation",
+
+        // --- Design ---------------------------------------------------------
+        // Les quatre premiers servent aux libellés construits avec un nombre,
+        // du type « Décider (Hick) — 4 familles » : aucune entrée exacte ne
+        // peut les couvrir, puisque le nombre varie avec la saisie.
+        "Décider (Hick) — ": "Deciding (Hick) — ",
+        "Chercher — ": "Searching — ",
+        " familles": " groups",
+        "liste plate": "flat list",
+        "sous la seconde : le fil de la pensée n'est pas rompu": "under a second: the train of thought holds",
+        "un retour de progression devient nécessaire": "a progress indicator becomes necessary",
     },
 
     textes: {
@@ -262,5 +273,260 @@ window.PRATIQUE_TEXTES = {
             "Many promises, few measurements. The field is full of them.",
         "Une méthode qui rend l'apprentissage agréable sur le moment est souvent celle qui laisse le moins de traces. La difficulté utile n'a pas bonne presse.":
             "A method that makes learning pleasant in the moment is often the one that leaves the least behind. Useful difficulty has a bad name.",
+
+        // ====================================================================
+        // DESIGN UX/UI
+        // ====================================================================
+
+        // --- Unités ---------------------------------------------------------
+        "Ko": "kB",
+        "Mb/s": "Mb/s",
+        "ms": "ms",
+        "options": "options",
+        "fois": "times",
+        "pers.": "people",
+        "jours": "days",
+        "px CSS": "CSS px",
+
+        // --- ux-ou-ui --------------------------------------------------------
+        "UX ou UI ?": "UX or UI?",
+        "Cochez les décisions qui relèvent de l'UX plutôt que de l'UI. Quatre le sont.":
+            "Tick the decisions that belong to UX rather than UI. Four of them do.",
+        "Décider de l'ordre des étapes d'une inscription": "Deciding the order of the steps in a sign-up",
+        "UX : c'est le parcours": "UX: this is the journey",
+        "Choisir la couleur du bouton principal": "Choosing the colour of the main button",
+        "UI : c'est l'apparence": "UI: this is the appearance",
+        "Déterminer quelles informations demander, et lesquelles supprimer":
+            "Deciding which information to ask for, and which to drop",
+        "UX": "UX",
+        "Définir l'échelle typographique": "Defining the type scale",
+        "UI": "UI",
+        "Comprendre pourquoi les gens abandonnent au paiement": "Understanding why people abandon at payment",
+        "Décider qu'une erreur s'affiche sous le champ concerné plutôt qu'en haut":
+            "Deciding that an error appears under the field concerned rather than at the top",
+        "UX : cela change la capacité à corriger": "UX: it changes the ability to fix things",
+        "Quatre de ces six décisions relèvent de l'UX.": "Four of these six decisions belong to UX.",
+        "Quatre décisions relèvent de l'UX. Vérifiez avec les indications que ce sont les vôtres.":
+            "Four decisions belong to UX. Check against the hints that they are the ones you picked.",
+        "Plus de quatre : deux de ces décisions portent sur l'apparence, pas sur le parcours.":
+            "More than four: two of these decisions are about appearance, not about the journey.",
+        "L'UI se voit, l'UX se vit. Une interface superbe sur un parcours absurde reste inutilisable.":
+            "UI is seen, UX is lived. A beautiful interface on an absurd journey is still unusable.",
+
+        // --- qualite-wireframe -------------------------------------------------
+        "Votre wireframe est-il utile ?": "Is your wireframe useful?",
+        "Cochez ce qui est vrai de la maquette fil de fer que vous avez sous les yeux.":
+            "Tick what is true of the wireframe in front of you.",
+        "Il est en niveaux de gris, sans couleur ni image finale":
+            "It is in greyscale, with no colour and no final images",
+        "sinon la discussion glisse vers l'esthétique": "otherwise the discussion drifts towards aesthetics",
+        "Le contenu est réaliste, pas du faux texte": "The content is realistic, not placeholder text",
+        "un titre réel fait trois lignes, le faux texte en fait une":
+            "a real headline runs to three lines, placeholder text to one",
+        "La hiérarchie des éléments est visible sans explication":
+            "The hierarchy of elements is visible without explanation",
+        "Les états vides, en cours de chargement et en erreur sont prévus":
+            "Empty, loading and error states are accounted for",
+        "Il montre un parcours, pas un écran isolé": "It shows a journey, not an isolated screen",
+        "Il est assez grossier pour qu'on ose le critiquer": "It is rough enough that people dare to criticise it",
+        "trop léché, il paraît définitif et n'est plus discuté":
+            "too polished, it looks settled and stops being discussed",
+        "Cette maquette va produire des retours sur l'apparence, pas sur le fond.":
+            "This mock-up will produce feedback on appearance, not on substance.",
+        "Bonne base. Les états d'erreur et de chargement sont les grands oubliés.":
+            "Good basis. Error and loading states are the great forgotten ones.",
+        "Wireframe efficace : il fait parler de structure, pas de couleurs.":
+            "An effective wireframe: it gets people talking about structure, not colours.",
+        "Un wireframe trop soigné ne reçoit plus de critiques de structure : il paraît déjà décidé.":
+            "A wireframe that is too neat stops attracting structural criticism: it already looks decided.",
+
+        // --- hierarchie-visuelle -----------------------------------------------
+        "Testez votre hiérarchie visuelle": "Test your visual hierarchy",
+        "Plissez les yeux devant votre écran jusqu'à le voir flou, puis cochez.":
+            "Squint at your screen until it blurs, then tick.",
+        "Je distingue encore l'élément le plus important": "I can still make out the most important element",
+        "L'action principale se repère sans lire": "The main action can be spotted without reading",
+        "Les zones se détachent les unes des autres": "The areas stand apart from one another",
+        "Rien ne rivalise avec l'élément principal": "Nothing competes with the main element",
+        "deux éléments également saillants s'annulent": "two equally prominent elements cancel each other out",
+        "Le regard suit un ordre naturel du haut vers le bas": "The eye follows a natural order from top to bottom",
+        "Les espaces séparent ce qui doit l'être et rapprochent ce qui va ensemble":
+            "Spacing separates what should be apart and groups what belongs together",
+        "L'écran demande d'être lu entièrement pour être compris.":
+            "The screen has to be read in full to be understood.",
+        "Correct. Vérifiez surtout qu'un seul élément domine.":
+            "Reasonable. Above all check that a single element dominates.",
+        "Hiérarchie lisible : l'écran se comprend avant d'être lu.":
+            "Readable hierarchy: the screen is understood before it is read.",
+        "Si tout est mis en avant, plus rien ne l'est. Une hiérarchie suppose d'accepter que certaines choses passent au second plan.":
+            "If everything is emphasised, nothing is. A hierarchy means accepting that some things move to the background.",
+
+        // --- combien-de-testeurs -----------------------------------------------
+        "Combien de testeurs faut-il ?": "How many testers do you need?",
+        "La réponse surprend : bien moins qu'on ne croit, et les premiers rapportent presque tout.":
+            "The answer is surprising: far fewer than people think, and the first ones find nearly everything.",
+        "Nombre de participants": "Number of participants",
+        "Part des problèmes qu'un participant révèle en moyenne":
+            "Share of problems one participant reveals on average",
+        "Problèmes détectés": "Problems found",
+        "Apport du participant suivant": "What the next participant adds",
+        "Problèmes encore invisibles": "Problems still invisible",
+        "Mieux vaut trois séries de cinq tests à trois moments du projet qu'une seule série de quinze à la fin.":
+            "Three rounds of five tests at three points in the project beat one round of fifteen at the end.",
+
+        // --- audit-accessibilite -------------------------------------------------
+        "Audit d'accessibilité en dix minutes": "A ten-minute accessibility audit",
+        "Ces vérifications ne demandent aucun outil spécialisé.": "These checks need no specialist tool.",
+        "Le contraste du texte atteint 4,5 pour 1 sur fond uni":
+            "Text contrast reaches 4.5 to 1 against a plain background",
+        "3 pour 1 suffit pour les grands titres": "3 to 1 is enough for large headings",
+        "Je peux parcourir tout le site au clavier seul, sans souris":
+            "I can go through the whole site with the keyboard alone, no mouse",
+        "L'élément actif au clavier est visible en permanence":
+            "The element focused by the keyboard is visible at all times",
+        "ne jamais supprimer le contour de focus": "never remove the focus outline",
+        "Les images porteuses d'information ont une description":
+            "Images that carry information have a description",
+        "Les images décoratives sont marquées comme telles": "Decorative images are marked as such",
+        "Les boutons tactiles font au moins 44 pixels de côté":
+            "Touch targets are at least 44 pixels on a side",
+        "L'information n'est jamais portée par la couleur seule":
+            "Information is never carried by colour alone",
+        "un champ en erreur doit aussi porter un texte": "a field in error must also carry text",
+        "Plusieurs obstacles bloquants subsistent, y compris pour des usages ordinaires.":
+            "Several blocking obstacles remain, including for ordinary use.",
+        "Bon niveau. Le parcours au clavier est le test le plus révélateur s'il manque.":
+            "Good level. The keyboard run-through is the most revealing test if it is missing.",
+        "Base solide : l'essentiel des obstacles courants est levé.":
+            "Solid basis: most common obstacles have been removed.",
+        "Cinq minutes de navigation au clavier révèlent l'essentiel des problèmes, sans aucun outil.":
+            "Five minutes of keyboard navigation reveal most of the problems, with no tool at all.",
+
+        // --- test-des-cartes -------------------------------------------------------
+        "Votre navigation tient-elle debout ?": "Does your navigation stand up?",
+        "Cochez ce qui est vrai du menu que vous avez sous les yeux.":
+            "Tick what is true of the menu in front of you.",
+        "Les entrées correspondent à des tâches, pas à l'organigramme":
+            "The entries match tasks, not the org chart",
+        "Un visiteur découvrant le site devinerait ce qu'il y a derrière chaque libellé":
+            "A first-time visitor would guess what lies behind each label",
+        "Aucun libellé n'utilise de vocabulaire interne à la maison":
+            "No label uses in-house vocabulary",
+        "Il y a moins de huit entrées de premier niveau": "There are fewer than eight top-level entries",
+        "au-delà, il faut regrouper": "beyond that, they need grouping",
+        "Deux entrées ne peuvent pas être confondues": "No two entries can be confused",
+        "« Espace client » et « Mon compte » sur le même site":
+            "“Customer area” and “My account” on the same site",
+        "L'organisation a été vérifiée auprès de personnes extérieures":
+            "The structure has been checked with people from outside",
+        "Cette navigation est probablement claire pour vous seul.":
+            "This navigation is probably clear to you alone.",
+        "Correct. Le test auprès d'extérieurs est celui qui révèle le plus.":
+            "Reasonable. Testing with outsiders is what reveals most.",
+        "Navigation construite du point de vue du visiteur. C'est rare.":
+            "Navigation built from the visitor's point of view. That is rare.",
+        "Un menu construit sur l'organigramme est parfaitement logique de l'intérieur, et opaque de l'extérieur.":
+            "A menu built on the org chart is perfectly logical from inside, and opaque from outside.",
+
+        // --- cible-tactile ------------------------------------------------------------
+        "Vos cibles tactiles sont-elles assez grandes ?": "Are your touch targets big enough?",
+        "Un doigt couvre environ 9 millimètres. Les pixels CSS, eux, ne se voient pas.":
+            "A finger covers about 9 millimetres. CSS pixels, for their part, cannot be seen.",
+        "Taille de la cible": "Target size",
+        "Espacement avec la cible voisine": "Spacing to the neighbouring target",
+        "Taille réelle sur l'écran": "Real size on screen",
+        "Zone atteignable avec l'espacement": "Reachable area including spacing",
+        "Recommandation (44 px, soit 11,6 mm)": "Recommendation (44 px, that is 11.6 mm)",
+        "Une cible trop petite ne produit pas une erreur du concepteur : elle produit un utilisateur qui croit s'être trompé.":
+            "A target that is too small does not produce a designer's error: it produces a user who thinks they got it wrong.",
+
+        // --- sante-systeme --------------------------------------------------------------
+        "Votre système de design tient-il ?": "Is your design system holding up?",
+        "Cochez ce qui est vrai aujourd'hui, pas ce qui était prévu.":
+            "Tick what is true today, not what was planned.",
+        "Les espacements suivent une échelle définie, pas des valeurs libres":
+            "Spacing follows a defined scale, not free values",
+        "Il existe une seule façon d'afficher une erreur": "There is exactly one way of showing an error",
+        "Les couleurs sont nommées par leur rôle, pas par leur teinte":
+            "Colours are named by role, not by hue",
+        "« couleur de danger » plutôt que « rouge »": "“danger colour” rather than “red”",
+        "La documentation décrit le produit réel, pas une version passée":
+            "The documentation describes the real product, not a past version",
+        "Quelqu'un est responsable d'arbitrer les exceptions": "Someone is responsible for ruling on exceptions",
+        "Une exception acceptée est soit intégrée, soit corrigée":
+            "An accepted exception is either absorbed or fixed",
+        "jamais laissée vivre à côté": "never left to live alongside",
+        "Ce système décrit probablement déjà un produit qui n'existe plus.":
+            "This system probably already describes a product that no longer exists.",
+        "Correct. L'absence de propriétaire est ce qui tue les systèmes en quelques mois.":
+            "Reasonable. Having no owner is what kills systems within months.",
+        "Système vivant : il ferme réellement des questions.":
+            "A living system: it actually closes questions.",
+        "Un système de design est un produit à part entière. Sans quelqu'un pour l'arbitrer, il ne survit pas.":
+            "A design system is a product in its own right. Without someone to arbitrate it, it does not survive.",
+
+        // --- budget-performance ------------------------------------------------------------
+        "Calculez votre budget de performance": "Work out your performance budget",
+        "Le poids d'une page se traduit directement en secondes d'attente.":
+            "The weight of a page translates directly into seconds of waiting.",
+        "Poids total de la page": "Total page weight",
+        "Débit de la connexion": "Connection speed",
+        "Latence aller-retour": "Round-trip latency",
+        "Temps de chargement estimé": "Estimated load time",
+        "Poids à retirer pour passer sous 1 s": "Weight to remove to get under 1 s",
+        "Perception": "Perception",
+        "La liste des éléments à alléger est presque toujours dominée par les images non compressées.":
+            "The list of things to slim down is almost always dominated by uncompressed images.",
+
+        // --- loi-de-hick ---------------------------------------------------------------------
+        "Décider, ou chercher : deux coûts différents": "Deciding, or searching: two different costs",
+        "La loi de Hick décrit le choix entre des options <strong>déjà connues</strong>. Trouver une option inconnue relève du balayage visuel, dont le coût est tout autre.":
+            "Hick's law describes choosing between options that are <strong>already known</strong>. Finding an unknown option is visual scanning, whose cost is quite different.",
+        "Nombre d'options présentées": "Number of options presented",
+        "Nombre de familles si vous les regroupez": "Number of groups if you group them",
+        "Décider (Hick) — liste plate": "Deciding (Hick) — flat list",
+        "Chercher — liste plate": "Searching — flat list",
+        "Sur une option déjà connue, regrouper fait perdre un peu de temps. Sur une option qu'il faut trouver, le gain est considérable — et c'est le cas d'un visiteur qui découvre le site.":
+            "For an option already known, grouping costs a little time. For an option that has to be found, the gain is considerable — and that is the case for a first-time visitor.",
+
+        // --- schemas-sombres -------------------------------------------------------------------
+        "Repérez les schémas sombres": "Spot the dark patterns",
+        "Cochez ce que présente l'interface que vous examinez.":
+            "Tick what the interface you are examining does.",
+        "« Tout accepter » est plus visible que le refus": "“Accept all” is more visible than refusing",
+        "non conforme : le refus doit être aussi facile": "non-compliant: refusing must be just as easy",
+        "La résiliation est nettement plus longue que la souscription":
+            "Cancelling takes markedly longer than subscribing",
+        "non conforme au droit français": "non-compliant under French law",
+        "Des frais apparaissent seulement à la fin du tunnel":
+            "Fees only appear at the end of the checkout",
+        "Le libellé du refus est rédigé pour être désagréable":
+            "The wording of the refusal is written to be unpleasant",
+        "« Non merci, je préfère payer plus cher »": "“No thanks, I'd rather pay more”",
+        "Un compte à rebours ou une rareté sont affichés sans fondement":
+            "A countdown or a scarcity claim is displayed with no basis",
+        "Une case est pré-cochée en faveur du site": "A box is pre-ticked in the site's favour",
+        "Aucun schéma repéré. Refaites le test après chaque évolution du tunnel.":
+            "No pattern spotted. Run the test again after every change to the checkout.",
+        "Des pratiques à corriger, dont certaines exposent juridiquement.":
+            "Practices to correct, some of which carry legal exposure.",
+        "Faisceau de pratiques trompeuses : plusieurs sont sanctionnées en droit européen.":
+            "A cluster of deceptive practices: several are penalised under European law.",
+        "Le test qui tranche : si l'utilisateur découvrait ce mécanisme, se sentirait-il floué ? L'intention ne change rien.":
+            "The test that settles it: if the user discovered this mechanism, would they feel cheated? Intent changes nothing.",
+
+        // --- gain-de-temps-utilisateur ------------------------------------------------------------
+        "Chiffrez votre amélioration en heures": "Put your improvement in hours",
+        "L'argument esthétique se discute. Le calcul beaucoup moins.":
+            "The aesthetic argument is arguable. The arithmetic much less so.",
+        "Secondes gagnées par tâche": "Seconds saved per task",
+        "Fois par jour et par personne": "Times per day per person",
+        "Personnes concernées": "People affected",
+        "Jours d'usage par an": "Days of use per year",
+        "Temps gagné par an": "Time saved per year",
+        "Soit en journées de travail": "That is, in working days",
+        "Par personne et par an": "Per person per year",
+        "Cinq secondes ne se défendent pas en réunion. Cent quatre-vingts heures par an, si.":
+            "Five seconds cannot be argued in a meeting. A hundred and eighty hours a year can.",
     },
 };

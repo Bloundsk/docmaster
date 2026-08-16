@@ -1,5 +1,48 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Deuxième sujet traduit : « Design UX/UI » en anglais
+Quatre pages, 12 simulateurs, 90 questions. **Deux sujets sur quatorze sont
+désormais lisibles en anglais.**
+
+### Ce que le pilote avait promis, et ce qu'il a tenu
+
+Le sujet précédent avait servi à poser la mécanique. Le gain se mesure : le
+script de vérification a annoncé d'emblée **166 textes à traduire, dont 5 déjà
+couverts** — il n'y avait plus qu'à écrire, sans rien redécouvrir.
+
+### Un cas que le pilote n'avait pas rencontré
+
+Certains libellés se **construisent avec une valeur** : « Décider (Hick) —
+4 familles ». Aucune entrée exacte ne peut les couvrir, puisque le nombre change
+avec la saisie.
+
+Deux ajustements, l'un dans le rendu et l'autre dans le contrôle :
+
+- `tr()` repasse par les fragments quand la correspondance exacte échoue, ce qui
+  traduit les morceaux fixes autour du nombre ;
+- le vérificateur considère un texte **couvert si le visiteur n'y voit plus de
+  français**, et non s'il possède une entrée. Le critère est ce qui s'affiche,
+  pas la forme de la table.
+
+Sans le second, le contrôle aurait signalé indéfiniment des textes pourtant
+corrects — et ce bruit aurait fini par masquer un vrai oubli.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| Textes de simulateurs — design | **166 / 166** |
+| Textes de simulateurs — apprendre, après les modifications | **138 / 138** |
+| Questions de quiz | 90, sur 12 sections aux ancres anglaises |
+| Liens internes des 4 pages | **aucun cassé** |
+| Français résiduel dans les pages | **0** |
+| Géométrie | 112 mesures, 8 gabarits, aucune anomalie |
+
+Le sujet pilote a été revérifié après chaque modification du mécanisme : une
+amélioration faite pour le second sujet ne doit pas casser le premier.
+
+**Reste à traduire : 12 sujets**, et six langues.
+
 ## 2026-08-16 — Premier sujet traduit : « Apprendre à apprendre » en anglais
 Sujet pilote choisi par l'auteur. Il ne touche pas au droit français, ce qui
 permettait d'éprouver le modèle sur un cas simple avant les guides sensibles.

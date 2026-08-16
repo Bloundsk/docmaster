@@ -67,7 +67,20 @@ for (const nom of poses) {
     }
 }
 
-const manquants = [...textes].filter((t) => t && !dico.textes[t]);
+// Un texte est couvert s'il a une entrée exacte, OU si les fragments suffisent
+// à n'y laisser aucun français — c'est le cas des libellés construits avec une
+// valeur, « Décider (Hick) — 4 familles », qui ne peuvent pas figurer tels
+// quels. Le critère est ce que VOIT le visiteur, pas la forme de l'entrée.
+const fragmenter = (t) => {
+    let sortie = t;
+    for (const [fr, autre] of Object.entries(dico.fragments)) sortie = sortie.split(fr).join(autre);
+    return sortie;
+};
+const resteDuFrancais = (t) =>
+    /[àâçéèêëîïôûùüÿœ]/i.test(t) ||
+    /\b(le|la|les|des|une|un|pour|dans|avec|vous|sur|par|est|sont|plus|moins|que|qui|ne|pas)\b/i.test(t);
+
+const manquants = [...textes].filter((t) => t && !dico.textes[t] && resteDuFrancais(fragmenter(t)));
 
 // Un mot français resté dans une valeur calculée, qu'aucun fragment ne reprend.
 const restes = [];

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>UX/UI Design — Beginner - DocMaster</title>
+    <meta name="description" content="UX and UI, wireframing, visual design principles and user testing without a budget. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/design/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/design/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/design/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/design/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="UX/UI Design — Beginner - DocMaster">
+    <meta property="og:description" content="UX and UI, wireframing, visual design principles and user testing without a budget. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/design/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UX/UI Design — Beginner - DocMaster">
+    <meta name="twitter:description" content="UX and UI, wireframing, visual design principles and user testing without a budget. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">🎨 UX/UI Design</a> &gt;
+        <span aria-current="page">Beginner</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎨 UX/UI Design — Beginner</h1>
+                <p>Understanding why an interface works, or does not. No prior knowledge needed.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="70" cy="70" r="24"/><circle cx="70" cy="70" r="9" stroke-opacity="0.6"/></g><circle cx="70" cy="70" r="3.5" fill="white"/></g>
+<circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#ux-vs-ui">🧭 UX and UI, what is the difference?</a></li>
+                <li><a href="#wireframing">🖊️ Wireframing</a></li>
+                <li><a href="#visual-design-principles">🎨 Visual design principles</a></li>
+                <li><a href="#user-testing">🧪 User testing</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>UX is about the overall experience, UI is about the visual appearance.</li>
+                <li>Wireframing structures an interface before moving on to visual design.</li>
+                <li>Visual hierarchy guides the eye towards what matters most.</li>
+                <li>White space is not wasted space, it lets the layout breathe.</li>
+                <li>Testing early, even with a rough mock-up, costs less than fixing after development.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Design is judged by what gets noticed. That is a mistake of appreciation: the best interfaces are precisely the ones that go unnoticed. Nobody compliments a door for opening the right way — you only notice the ones you push when you should have pulled.</p>
+            <p>Interface design is therefore not a matter of taste. It is a discipline with rules that come from how vision and attention work — rules that can be checked, and learned.</p>
+            <p>This guide first separates two ideas that are constantly confused, then covers the design method, the visual principles, and the only reliable way of knowing whether it works: watching somebody try.</p>
+        </section>
+
+        <section>
+            <h2 id="basics">The basics</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="ux-vs-ui">🧭 UX and UI, what is the difference?</h3></summary>
+                <div class="lecon-corps">
+                <p><strong>UX</strong> (<em>User Experience</em>) deals with what the person goes through: do they understand where they are, do they reach their goal, do they leave satisfied? <strong>UI</strong> (<em>User Interface</em>) deals with what they see: colours, typography, buttons, spacing.</p>
+
+                <div class="exemple">
+                    <span class="titre">An analogy that settles the confusion</span>
+                    <p>In a building, <strong>UX</strong> decides that there must be an emergency exit, where it goes, and how long it takes to reach.</p>
+                    <p><strong>UI</strong> decides the colour of the sign, the typeface, the shape of the pictogram.</p>
+                    <p>A magnificent sign leading to a sealed door: excellent UI, catastrophic UX. A handwritten note pointing to the right exit: poor UI, successful UX.</p>
+                    <p>The second situation saves lives, the first does not.</p>
+                </div>
+
+                <h4>UX is decided before any screen</h4>
+                <p>Most of the work happens upstream: who is this for, what problem does it solve, in what order do the steps follow one another? A graphic overhaul never repairs a badly designed journey — it simply makes getting lost more elegant.</p>
+
+                <h4>What cannot be delegated to aesthetics</h4>
+                <ul>
+                    <li><strong>The number of steps.</strong> Every extra step loses a share of users. No animation compensates for a form with twelve fields.</li>
+                    <li><strong>The vocabulary.</strong> A label taken from in-house jargon — "My MBR area" — stays incomprehensible, whatever typeface you choose.</li>
+                    <li><strong>Error messages.</strong> "An error has occurred" helps nobody. "This postcode does not match any town" lets you act.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — confusing "pretty" with "effective"</span>
+                    <p>Visual trends regularly produce interfaces that are attractive and painful: light grey text on white, buttons with no outline that you can no longer tell from text, animations that delay every action.</p>
+                    <p>The test is not "does it look good in a screenshot?" but "does somebody seeing it for the first time get there straight away?".</p>
+                </div>
+
+                <div class="pratique" data-pratique="ux-ou-ui"></div>
+
+                <p class="retenir">💡 UI is what you see, UX is what you live. You can get the first right and miss the second entirely.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="wireframing">🖊️ Wireframing</h3></summary>
+                <div class="lecon-corps">
+                <p>A <strong>wireframe</strong> is a deliberately ugly mock-up: grey rectangles, filler text, no colour. That ugliness is a methodological choice.</p>
+
+                <h4>Why give up the visuals at the start</h4>
+                <p>Two reasons, one psychological and one economic:</p>
+                <ul>
+                    <li><strong>People criticise a sketch more freely.</strong> Faced with a finished mock-up, feedback lands on the colour of a button. Faced with grey rectangles, people finally discuss the order of the steps — the real subject.</li>
+                    <li><strong>People give it up more easily.</strong> After three days of graphic work, nobody wants to start again. A ten-minute sketch is thrown away without regret.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">The cost of fixing things late</span>
+                    <p>Rethinking a journey at the <strong>paper sketch</strong> stage: a few minutes.</p>
+                    <p>At the <strong>graphic mock-up</strong> stage: one to two days.</p>
+                    <p>After <strong>development</strong>: weeks, budget trade-offs, and often a lopsided compromise you will keep for years.</p>
+                    <p>This is why structural errors must show up as early as possible — while they cost almost nothing.</p>
+                </div>
+
+                <h4>Levels of fidelity</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Level</th><th>Look</th><th>Used for</th></tr>
+                    <tr><td><strong>Low fidelity</strong></td><td>Paper sketch, rectangles</td><td>Exploring several routes, deciding the structure</td></tr>
+                    <tr><td><strong>Medium fidelity</strong></td><td>Grey, real text, right proportions</td><td>Validating journeys, testing with users</td></tr>
+                    <tr><td><strong>High fidelity</strong></td><td>Colours, images, interactions</td><td>Handing over to development, presenting</td></tr>
+                </table>
+                </div>
+                <p>A classic mistake is jumping straight to high fidelity. You gain an impression of fast progress, and you lose the ability to be wrong cheaply.</p>
+
+                <h4>One detail that changes the feedback</h4>
+                <p>Use <strong>real content</strong> rather than Latin placeholder text. A real product name sometimes runs to three lines where the example ran to one. Those overflows are discovered during development — too late — when the mock-up was filled with ideal content.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — polishing the sketch</span>
+                    <p>Spending a day on a wireframe defeats its purpose: you become attached to it, and you stop questioning it. A wireframe must stay ugly enough that you dare to throw it away.</p>
+                    <p>Paper and pencil are often better than any software for this stage.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-wireframe"></div>
+
+                <p class="retenir">💡 Be wrong at the sketch stage, where the mistake costs five minutes. That is the whole point of the wireframe.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="visual-design-principles">🎨 Visual design principles</h3></summary>
+                <div class="lecon-corps">
+                <p>These principles are not a matter of fashion: they follow from how perception works. They held before computers and will hold after them.</p>
+
+                <h4>1. Visual hierarchy</h4>
+                <p>The eye does not read, it scans. In a fraction of a second it ranks elements by apparent importance — from their size, their contrast, their position and the space around them.</p>
+                <p>If everything is emphasised, nothing is. A page where three elements shout equally is a page with no hierarchy: the visitor has to read everything to decide, and most give up.</p>
+                <div class="exemple">
+                    <span class="titre">The squint test</span>
+                    <p>Step back two metres, or squint until the text becomes unreadable.</p>
+                    <p>What remains visible is what the visitor perceives first. If the main action is not part of it, the hierarchy needs revisiting — regardless of how beautiful the page is.</p>
+                </div>
+
+                <h4>2. Proximity</h4>
+                <p>Elements that are close together are perceived as related. A label stuck to the wrong form field creates a misreading that the best wording will not repair. Spacing <em>is</em> information.</p>
+
+                <h4>3. Empty space</h4>
+                <p>Often seen as waste, it is what makes content readable. It isolates, it emphasises, it lets things breathe. The urge to fill every available area produces dense interfaces where nothing stands out any more.</p>
+
+                <h4>4. Consistency</h4>
+                <p>An action button must look the same everywhere. Every variation forces relearning. This is the point of a small system: two or three text sizes, a limited palette, a fixed spacing scale (8, 16, 24, 32 pixels for instance). The constraint speeds up the work and unifies the result.</p>
+
+                <h4>5. Contrast and accessibility</h4>
+                <p>Light grey text on white is elegant on a designer's new screen, and unreadable on a laptop in the sun, or for someone over fifty.</p>
+                <p>Accessibility standards recommend a contrast ratio of at least <strong>4.5:1</strong> for body text. Free checkers measure it in seconds. This is not a constraint for a minority: it is comfort for everyone, in real conditions.</p>
+                <p>One more point: never carry information by colour alone. A field marked red with no message stays invisible to someone with colour blindness — roughly one man in twelve.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — decorating instead of structuring</span>
+                    <p>Adding gradients, shadows and animations to a badly organised page only masks its faults. Successful design subtracts more than it adds.</p>
+                    <p>Before adding a visual element, ask what it helps to understand. If it helps with nothing, it adds noise.</p>
+                </div>
+
+                <div class="pratique" data-pratique="hierarchie-visuelle"></div>
+
+                <p class="retenir">💡 If everything is emphasised, nothing is. Choosing what matters means accepting that the rest stays quiet.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="user-testing">🧪 User testing</h3></summary>
+                <div class="lecon-corps">
+                <p>You cannot evaluate your own interface. You know where everything is and why it was named that way — and that knowledge cannot be undone. The only way to find out is to watch somebody else try.</p>
+
+                <h4>Five people are enough</h4>
+                <p>A classic result from usability research: five users reveal the great majority of major problems. The ones after that mostly confirm what has already been seen.</p>
+                <p>The consequence is practical: five tests before each stage beat thirty in one go at the end.</p>
+
+                <h4>How to go about it</h4>
+                <ol>
+                    <li><strong>Give a task, not a guided tour.</strong> "Find the price of an annual subscription and start signing up", not "what do you think of this page?".</li>
+                    <li><strong>Ask them to think out loud.</strong> That is what reveals hesitations, often more instructive than the mistakes.</li>
+                    <li><strong>Say nothing.</strong> This is the hardest part. The moment you help, the test is over — the real user will have nobody sitting next to them.</li>
+                    <li><strong>Watch what they do, not what they say.</strong> What people do is worth infinitely more than what they declare.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">What a test reveals in ten minutes</span>
+                    <p>A team is convinced their "Start" button is obvious. Five tests later:</p>
+                    <ul>
+                        <li>3 people out of 5 look in the top menu first</li>
+                        <li>2 hesitate because "Start" does not say what will happen next</li>
+                        <li>1 gives up, believing an account is required</li>
+                    </ul>
+                    <p>None of these problems was visible from inside the project. All of them can be fixed in half a day — <em>if</em> they are found before development.</p>
+                </div>
+
+                <h4>With no budget and no equipment</h4>
+                <p>User testing has a reputation for being expensive. It is not: a colleague from another team, a relative, or somebody met in a café will do. Five minutes, one task, a mock-up that can even be on paper. It is far short of a laboratory protocol, and infinitely better than testing nothing.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — testing only at the end</span>
+                    <p>A test run a week before launch no longer helps you decide: it documents the problems you will not have time to fix.</p>
+                    <p>Test on the wireframe, while everything can still change at no cost.</p>
+                </div>
+
+                <div class="pratique" data-pratique="combien-de-testeurs"></div>
+
+                <p class="retenir">💡 When a user gets it wrong, it is not they who failed to understand: it is the interface that failed to be clear. That reversal is the foundation of the trade.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole guide. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Nielsen Norman Group</strong> — the reference for usability research. Their articles rest on studies, not on trends. Start with Nielsen's 10 heuristics.</li>
+                    <li><strong>Laws of UX</strong> — the psychological principles (Fitts, Hick, Jakob) explained one page each, with examples.</li>
+                    <li><strong>“Don't Make Me Think”</strong>, Steve Krug — reads in two hours and durably changes how you look at an interface. The best starting point in the field.</li>
+                    <li><strong>WebAIM Contrast Checker</strong> — checks for free whether your colours are readable. Use it before settling a palette.</li>
+                    <li><strong>Figma</strong> — free for personal use, and now the standard for wireframes as well as final mock-ups.</li>
+                </ul>
+                <p><strong>A method tip:</strong> the most instructive exercise costs nothing — take an interface you use every day and work out why it works, or what annoys you about it. This critical eye is acquired by observation far more than by reading.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Back</span>UX/UI Design path</a>
+            <a href="intermediaire.html" class="next"><span class="label">Next level →</span>UX/UI Design — Intermediate</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../../../guides/ia/index.html">🤖 Artificial Intelligence</a>
+                <a href="../../../guides/marketing/index.html">📢 Digital Marketing</a>
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Entrepreneurship</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/design-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

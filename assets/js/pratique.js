@@ -3992,7 +3992,11 @@
         const d = typeof window !== "undefined" && window.PRATIQUE_TEXTES;
         if (!d || typeof texte !== "string" || !texte) return texte;
         if (d.textes && d.textes[texte]) return d.textes[texte];
-        return texte;
+        // Pas de correspondance exacte : certains libelles se construisent avec
+        // une valeur — « Decider (Hick) — 4 familles » — et ne peuvent donc pas
+        // figurer tels quels dans le dictionnaire. On repasse par les fragments,
+        // qui traduisent les morceaux fixes autour du nombre.
+        return trValeur(texte);
     }
 
     function trValeur(valeur) {
