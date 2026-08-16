@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Data &amp; Analytics — Advanced - DocMaster</title>
+    <meta name="description" content="Advanced level of the Data path: margin of error and confidence interval, A/B tests and statistical power, Simpson's paradox, data pipeline quality.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/data/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/data/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/data/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/data/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Data &amp; Analytics — Advanced - DocMaster">
+    <meta property="og:description" content="Advanced level of the Data path: margin of error and confidence interval, A/B tests and statistical power, Simpson's paradox, data pipeline quality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/data/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data &amp; Analytics — Advanced - DocMaster">
+    <meta name="twitter:description" content="Advanced level of the Data path: margin of error and confidence interval, A/B tests and statistical power, Simpson's paradox, data pipeline quality.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">📊 Data &amp; Analytics</a> &gt;
+        <span aria-current="page">Advanced</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Data &amp; Analytics — Advanced</h1>
+                <p>Knowing what a figure does not say, and how many observations it would take to find out.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#margin-of-error">🎲 The uncertainty in a measurement</a></li>
+                <li><a href="#ab-tests">🧪 A/B tests</a></li>
+                <li><a href="#interpretation-traps">⚠️ Interpretation traps</a></li>
+                <li><a href="#data-pipeline">🏗️ The data pipeline</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points to remember</h2>
+            <ul>
+                <li>Every figure drawn from a sample carries an uncertainty, whether it is shown or not.</li>
+                <li>Halving the margin of error takes four times as many observations.</li>
+                <li>Checking an A/B test every day until it turns favourable guarantees that you will find it favourable.</li>
+                <li>A trend can reverse once the data is pooled: that is Simpson's paradox.</li>
+                <li>Wrong data upstream produces a perfectly presented and perfectly wrong dashboard.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The intermediate level covered data processing and the most common errors of reasoning. Enough to produce an honest analysis.</p>
+            <p>This level covers the question almost nobody asks: <strong>how much confidence does the figure deserve?</strong> Is a 2% gap between two versions of a page a result, or noise? How many visitors would it take to decide? And what do you do when the answer changes depending on how the data is grouped?</p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong>. The formulas given are the usual approximations, good enough to size a test or judge an order of magnitude — not for a scientific publication.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">What a figure does not tell you</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="margin-of-error">🎲 The uncertainty in a measurement</h3></summary>
+                <div class="lecon-corps">
+                <p>“42% of users prefer version B.” That sentence is incomplete. Out of how many people? Asked how? Without that information the figure is not wrong — it is unverifiable.</p>
+
+                <h4>Why a sample is enough, and how far it goes</h4>
+                <p>Measuring on part of a population gives an estimate surrounded by a <strong>margin of error</strong>. The counter-intuitive point: that margin depends almost entirely on the <em>size of the sample</em>, not on the size of the population.</p>
+                <p>Asking 1,000 people gives roughly the same precision for a city of 50,000 as for a country of 60 million. That is what makes opinion polls possible.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>On <strong>400 observations</strong>, a proportion measured at 50% carries a margin of error of about <strong>± 5 points</strong>. The real value therefore sits between 45% and 55%.</p>
+                    <p>To get down to <strong>± 2.5 points</strong> you do not need 800 observations but <strong>1,600</strong>: halving the margin means multiplying the sample by four.</p>
+                    <p>That is why national polls stop at around 1,000 people. Going further costs a great deal to gain very little.</p>
+                </div>
+
+                <div class="pratique" data-pratique="marge-erreur"></div>
+
+                <h4>What the margin of error does not cover</h4>
+                <p>It measures only the randomness of sampling. It says nothing about a badly worded questionnaire, a badly chosen population, or the fact that only the dissatisfied replied. Those biases do not shrink when you ask more people — they grow.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — comparing two figures whose margins overlap</span>
+                    <p>Version A: 42%. Version B: 45%. With a margin of ± 5 points on each, the 3-point gap supports no conclusion at all.</p>
+                    <p>Announcing that B wins would be presenting noise as a result.</p>
+                </div>
+
+                <p class="retenir">💡 A percentage without a sample size is not information, it is an impression with a number on it.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="ab-tests">🧪 A/B tests</h3></summary>
+                <div class="lecon-corps">
+                <p>The A/B test is the only everyday method that establishes <strong>causation</strong>: two groups drawn at random, a single difference, and a comparison of the results. Run well, it settles the question. Run badly, it produces false certainties with all the appearance of rigour.</p>
+
+                <h4>Size it before you launch it</h4>
+                <p>The question to settle <em>before</em> the test: how many observations does it take to detect the effect you are after? It depends on the starting rate and on the size of the improvement you are aiming for.</p>
+                <p>The smaller the expected effect, the more observations you need — and the relationship is brutal: <strong>detecting an effect half the size takes four times the traffic</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Current conversion rate: <strong>3%</strong>. Improvement targeted: <strong>+20% relative</strong>, that is, moving to 3.6%.</p>
+                    <p>You need about <strong>14,000 visitors per group</strong> to conclude at the usual thresholds.</p>
+                    <p>If the site receives 1,000 visitors a day, that is <strong>four weeks</strong> of testing. Knowing it before you launch stops you from stopping after three days believing you have an answer.</p>
+                </div>
+
+                <div class="pratique" data-pratique="taille-test-ab"></div>
+
+                <h4>Repeated looking, or why you always find what you are looking for</h4>
+                <p>Checking the results every day and stopping as soon as the gap turns favourable is the most common fault. Look often enough and the gap eventually crosses the threshold <strong>by chance</strong> — then it goes back down.</p>
+                <p>The rule is simple: fix the duration and the sample size in advance, and only conclude at the end. A test you stop when it agrees with you is no longer testing anything.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — testing several things at once</span>
+                    <p>Changing the headline, the button colour and the image in a single version B answers the question “is the whole thing better?” and no other.</p>
+                    <p>If the result is positive, you will not know which element did the work — nor whether one of them makes things worse and is being offset by the others.</p>
+                </div>
+
+                <p class="retenir">💡 An A/B test is sized before it is launched. Afterwards it is too late to ask whether it could conclude at all.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="interpretation-traps">⚠️ Interpretation traps</h3></summary>
+                <div class="lecon-corps">
+                <p>Three phenomena produce conclusions that are the reverse of reality, starting from perfectly accurate data. Knowing about them costs nothing; ignoring them costs a lot.</p>
+
+                <h4>Simpson's paradox</h4>
+                <p>A trend present in every group can <strong>reverse</strong> when the groups are pooled. This is not a mathematical curiosity: it happens as soon as the groups differ greatly in size.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Version A: <strong>8%</strong> on mobile (800 visitors), <strong>20%</strong> on desktop (200 visitors) → average <strong>10.4%</strong>.</p>
+                    <p>Version B: <strong>10%</strong> on mobile (200 visitors), <strong>22%</strong> on desktop (800 visitors) → average <strong>19.6%</strong>.</p>
+                    <p>B wins by a wide margin overall. But A and B were not that different: B simply received more desktop visitors, who convert better. B is better in each group <em>as well</em>, but the overall gap — almost ten points — is almost entirely down to how the traffic was split.</p>
+                </div>
+
+                <h4>Survivorship bias</h4>
+                <p>Analysing current customers to understand why people stay means asking only those who stayed. The ones who left, who hold the answer, have vanished from the file.</p>
+
+                <h4>Regression to the mean</h4>
+                <p>An exceptionally bad month is usually followed by a better one, even with no intervention. Any action taken after a low point will therefore look effective. It is the most frequent illusion in reviews of corrective action.</p>
+
+                <div class="pratique" data-pratique="pieges-interpretation"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — concluding without looking at the subgroups</span>
+                    <p>Simpson's paradox only shows up when you segment. An overall result that contradicts every segment is the signal of an unbalanced split, not of a discovery.</p>
+                    <p>The reflex: check that the groups being compared have similar make-ups. Otherwise the overall comparison means nothing.</p>
+                </div>
+
+                <p class="retenir">💡 When the total says the opposite of every part, it is not the total you should believe.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="data-pipeline">🏗️ The data pipeline</h3></summary>
+                <div class="lecon-corps">
+                <p>A dashboard is the last link in a chain: collection, transport, storage, transformation, display. An error at any link produces an impeccably presented and wrong result.</p>
+
+                <h4>The four properties to watch</h4>
+                <p><strong>Freshness.</strong> How old is the data on display? A dashboard that does not say leaves you assuming real time. Data frozen for three days because a job failed is more dangerous than no data at all: nobody notices that it has stopped moving.</p>
+                <p><strong>Completeness.</strong> Does a figure below expectations mean a real drop, or a source that failed to report? Telling them apart means counting what is missing too.</p>
+                <p><strong>Consistency.</strong> Two dashboards showing two different figures for “the number of customers” destroy trust in both. The problem almost always comes from diverging definitions that were never written down.</p>
+                <p><strong>Traceability.</strong> For any figure on display, can you trace it back to its source and to the transformation that produced it? Without that, an anomaly cannot be diagnosed.</p>
+
+                <div class="exemple">
+                    <span class="titre">The cheapest check there is</span>
+                    <p>A simple automatic test on volume: if the number of rows received today differs by more than 30% from the average of the last seven days, an alert is raised.</p>
+                    <p>That trivial check catches the majority of real incidents — a source cut off, massive duplicates, an upstream format change — well before a decision is taken on wrong data.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sante-chaine-donnees"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — taking the absence of an alert as a good sign</span>
+                    <p>A job that fails silently leaves the dashboard showing the last known values. Everything looks normal, the figures are plausible, and they are out of date.</p>
+                    <p>Always show the last-updated date next to the figures. It is the cheapest protection there is against the most frequent kind of silent failure.</p>
+                </div>
+
+                <p class="retenir">💡 The quality of an analysis is capped by that of its weakest link, which is rarely the analysis.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They differ from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Your national statistics office — survey methodology</strong>: how public samples are built and which margins of error are published alongside the results.</li>
+                    <li><strong>Sample size calculators</strong>: to be used before any test, writing down the assumptions you chose. The number you get depends entirely on them.</li>
+                    <li><strong>“Thinking, Fast and Slow”</strong>, Daniel Kahneman: the chapter on regression to the mean explains why so many corrective actions look effective.</li>
+                    <li><strong>Work on Simpson's paradox</strong>: the historical cases, notably in university admissions and clinical trials, are more telling than the proof.</li>
+                </ul>
+                <p><strong>One useful habit:</strong> before launching a test, write down the planned duration, the planned sample size and the decision threshold. That note will protect you from yourself after three days.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Previous level</span>Data &amp; Analytics — Intermediate</a>
+            <a href="index.html" class="next"><span class="label">Path →</span>Back to the Data path</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../../../guides/ia/index.html">🤖 Artificial Intelligence</a>
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../productivite/index.html">⏱️ Productivity &amp; Organisation</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/data-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

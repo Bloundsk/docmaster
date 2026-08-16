@@ -1,5 +1,83 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Data & Analytics traduit, et huit défauts trouvés en le vérifiant
+Les quatre pages anglaises de Data et les trois banques de questions sont
+écrites. `data` est maintenant déclaré dans `CONTENU_TRADUIT` : le drapeau
+anglais mène vraiment quelque part depuis les pages françaises de Data.
+
+**Six sujets sur quatorze**, soit 24 pages et 540 questions.
+
+### Le contrôle de traduction annonçait 157/157 sur des pages en français
+
+C'est la deuxième fois que ce vérificateur ment, et pour la même raison de
+fond : **il cherchait des mots français dans une liste**. Une liste ne peut pas
+être complète. « heures », « jours », « lignes », « Visiteurs » n'y étaient pas,
+donc ces mots-là passaient pour traduits.
+
+Le critère est désormais **structurel**, et ne suppose aucune connaissance du
+français :
+
+- Un texte **sans chiffre** est écrit tel quel dans le simulateur : il doit
+  avoir une entrée exacte dans le dictionnaire. Pas de repli possible.
+- Pour une valeur calculée, on applique les fragments **en bornant chaque
+  remplacement**, puis on efface les zones bornées. Ce qui subsiste n'a été
+  touché par rien, et doit figurer dans une courte liste de mots **approuvés**
+  comme identiques dans les deux langues — `min`, `px`, `ms`, `mm`,
+  `observations`.
+
+La différence tient à la direction de l'erreur. Oublier un mot dans une liste
+de recherche laisse passer le défaut **en silence**. Oublier un mot dans une
+liste d'exceptions déclenche une **fausse alerte**, qui se corrige en une
+ligne. Un contrôle doit se tromper du côté bruyant.
+
+### Ce que le nouveau critère a trouvé, déjà en ligne
+
+Huit défauts, dont sept sur des pages publiées depuis plusieurs jours :
+
+| Page anglaise | Ce qui s'affichait |
+|---|---|
+| Design — avancé | `183 heures`, `26 jours`, `perceptible, mais acceptable`, `1 438 Ko` |
+| Design — avancé | `conforme`, `limite`, `trop petite` (verdicts de taille tactile) |
+| Dev web — avancé | `144 heures (4,1 semaines)` |
+| Négociation — intermédiaire | `nulle`, `l'accord tient, mais aucune marge…` |
+| Productivité — débutant | `Votre matrice sert-elle à quelque chose ?` |
+| Data — avancé | `Visiteurs per day, tous groupes confondus`, `29 jours`, `46 000 lignes` |
+
+Et un défaut de fond dans le moteur : les valeurs passaient par `trValeur`, qui
+ne consulte que les fragments. Une valeur qui est un **verdict entier** —
+« conforme », « perceptible, mais acceptable » — ne pouvait donc jamais avoir
+d'entrée exacte. Elles passent maintenant par `tr`, qui cherche d'abord une
+entrée exacte puis retombe sur les fragments : le comportement des valeurs
+chiffrées est inchangé.
+
+### Un dernier, trouvé par le navigateur et non par un script
+
+Le bouton « Tout déplier » réécrivait son propre libellé **en français** à
+chaque bascule, sur les quinze pages anglaises. Le libellé existait pourtant
+dans `langues.js` ; `enhance.js` ne s'en servait pas. Aucun contrôle de fichier
+ne pouvait le voir : le défaut n'apparaît qu'après un clic.
+
+### Deux corrections d'hygiène
+
+- `verifier-traduction.mjs` déduit sa racine de l'emplacement du script. Il
+  contenait un chemin absolu, donc le nom de compte de la machine de
+  développement, dans un dépôt public.
+- `audit-geometrie.html` mesure une page Data de plus : 152 mesures, 12
+  gabarits.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 6 sujets | 138, 157, 166, 166, 148, 156 — rien ne manque |
+| Défauts réinjectés un à un | les 5 testés sont signalés, sortie 1 |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 420 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 12 sections, 0 orpheline |
+| `audit-geometrie.html` | 152 mesures, 0 anomalie |
+| Rendu navigateur | 6 pages parcourues, curseurs poussés aux deux extrêmes |
+
 ## 2026-08-16 — Data & Analytics : le dictionnaire, pas encore les pages
 **Livraison partielle, et annoncée comme telle.** Les 157 textes des 12
 simulateurs de Data sont traduits et vérifiés — c'est la partie réutilisable et

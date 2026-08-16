@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Data &amp; Analytics — Beginner - DocMaster</title>
+    <meta name="description" content="Metrics, data collection, honest charts and the four statistics that matter day to day. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/data/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/data/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/data/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/data/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Data &amp; Analytics — Beginner - DocMaster">
+    <meta property="og:description" content="Metrics, data collection, honest charts and the four statistics that matter day to day. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/data/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data &amp; Analytics — Beginner - DocMaster">
+    <meta name="twitter:description" content="Metrics, data collection, honest charts and the four statistics that matter day to day. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">📊 Data &amp; Analytics</a> &gt;
+        <span aria-current="page">Beginner</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Data &amp; Analytics — Beginner</h1>
+                <p>Reading a figure without being taken in. No statistics background needed.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#metrics">📈 Metrics</a></li>
+                <li><a href="#data-collection">🗂️ Data collection</a></li>
+                <li><a href="#data-visualisation">📉 Data visualisation</a></li>
+                <li><a href="#statistics-basics">🧮 The basics of statistics</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>A good metric is measurable, tied to a precise objective, and actionable.</li>
+                <li>The quality of data matters more than its quantity.</li>
+                <li>The choice of chart depends on the message being conveyed.</li>
+                <li>The median is often more representative than the mean when extreme values exist.</li>
+                <li>Correlation is not causation.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>"It feels like things have been working better since we changed the home page." That sentence is heard in every organisation. It may well be true. The problem is that it cannot be checked — and expensive decisions are about to be taken on the basis of it.</p>
+            <p>Data is not there to produce impressive dashboards. It is there to answer a precise question with a known degree of certainty. That is an important nuance: data badly collected or badly interpreted is <strong>worse</strong> than no data at all, because it gives false confidence.</p>
+            <p>This guide covers four things: choosing what to measure, getting data you can rely on, showing it without lying, and interpreting it without going wrong. No mathematics is needed — the four statistical ideas useful day to day fit on one page.</p>
+        </section>
+
+        <section>
+            <h2 id="basics">The basics</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="metrics">📈 Metrics</h3></summary>
+                <div class="lecon-corps">
+                <p>A <strong>KPI</strong> (<em>Key Performance Indicator</em>) is a figure chosen to answer a decision question. The important word is <em>chosen</em>: thousands of things can be measured, and the difficulty is not collecting, it is selecting.</p>
+
+                <h4>What makes a good metric</h4>
+                <p>A metric deserves tracking if it meets three conditions:</p>
+                <ul>
+                    <li><strong>It is tied to a precise objective.</strong> Not "improve the site", but "increase the share of visitors who buy".</li>
+                    <li><strong>It is measured the same way over time.</strong> If the definition changes along the way, the comparison means nothing any more.</li>
+                    <li><strong>It is actionable.</strong> Its movement must trigger a decision. This is the most discriminating criterion, and the most often forgotten.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>An online shop gets <strong>100,000 visitors</strong> a month and makes <strong>1,200 sales</strong>. The next month, an advertising campaign takes traffic to <strong>180,000 visitors</strong>, for <strong>1,300 sales</strong>.</p>
+                    <p>Seen through traffic: <strong>+80%</strong>. The monthly report looks flattering.</p>
+                    <p>Seen through conversion rate: it falls from <strong>1.20%</strong> to <strong>0.72%</strong>, a drop of <strong>40%</strong>. The campaign brought in 80,000 people almost none of whom were interested.</p>
+                    <p>Both figures are accurate. Only one leads to a decision: revisit the campaign's targeting.</p>
+                </div>
+
+                <h4>Lagging and leading metrics</h4>
+                <p>Revenue is a <strong>lagging metric</strong>: it records what has happened, too late to act. The number of quotes sent this week is a <strong>leading metric</strong>: it announces next month's revenue, while there is still time to react. A useful dashboard contains both.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the vanity metric</span>
+                    <p>Number of followers, views, downloads, likes: these figures almost always go up, never come down, and are pleasant to present. They are rarely tied to a decision.</p>
+                    <p>The test to apply: "if this figure dropped 20% tomorrow, what would I do differently?" If the answer is "nothing", it is not a KPI, it is decoration.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-kpi"></div>
+
+                <p class="retenir">💡 A metric that changes no decision is not a metric. Before tracking one, write down the decision it will serve.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="data-collection">🗂️ Data collection</h3></summary>
+                <div class="lecon-corps">
+                <p>Every analysis inherits the faults of its collection. A flawless calculation on biased data produces a false result — but presented with confidence, which makes it more dangerous than an admitted hunch.</p>
+
+                <h4>Quantitative and qualitative</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Type</th><th>Answers</th><th>Limit</th></tr>
+                    <tr><td><strong>Quantitative</strong><br>figures, measures, counts</td><td><em>How many? Where? When?</em><br>"68% abandon at payment"</td><td>Never says <em>why</em></td></tr>
+                    <tr><td><strong>Qualitative</strong><br>interviews, verbatims, observation</td><td><em>Why? How?</em><br>"I couldn't see the delivery charges"</td><td>Does not say whether it is representative</td></tr>
+                </table>
+                </div>
+                <p>The two complement each other and do not replace each other. Quantitative locates the problem, qualitative explains it. Looking for the cause of basket abandonment in a table of figures is a waste of time: you need to talk to five people.</p>
+
+                <h4>Selection bias</h4>
+                <p>It is the most common collection fault, and the hardest to see: the people who answer are not like the people who do not.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>A service sends a satisfaction survey to its <strong>5,000 customers</strong>. <strong>200 replies</strong> come back, with an average score of <strong>4.3 / 5</strong>. Apparent conclusion: customers are satisfied.</p>
+                    <p>But who takes five minutes to answer a survey? The very happy and the very unhappy. The 4,800 silent ones — including those who left for a competitor — are not in the calculation.</p>
+                    <p>That 4.3 measures the satisfaction <strong>of the people who replied</strong>, not of the customers. The nuance changes everything.</p>
+                </div>
+
+                <h4>Three questions before using a figure</h4>
+                <ol>
+                    <li><strong>Who was measured, and who was left out?</strong> Those absent are often the real subject.</li>
+                    <li><strong>How was the measurement made?</strong> A self-reported form and an automatic reading are not equivalent.</li>
+                    <li><strong>Over what period?</strong> A school holiday week does not predict an ordinary one.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — collecting before knowing what to look for</span>
+                    <p>"Let's collect everything, we'll see later" produces enormous databases, expensive to maintain, in which nothing is found. And on a large volume of data, you always end up unearthing a spectacular correlation due to chance alone.</p>
+                    <p>The question comes before the collection, never the other way round.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-collecte"></div>
+
+                <p class="retenir">💡 Before trusting a figure, ask who was not counted. That is almost always where the error hides.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="data-visualisation">📉 Data visualisation</h3></summary>
+                <div class="lecon-corps">
+                <p>A chart is not decoration placed on a table: it is an argument. It steers the reading, brings one thing forward and pushes another back. Hence a responsibility — the same data can, depending on its presentation, lead to two opposite decisions.</p>
+
+                <h4>Choosing the form according to the question</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Question asked</th><th>Suitable form</th><th>To avoid</th></tr>
+                    <tr><td>How is it changing over time?</td><td>Line</td><td>Bars (unreadable past 12 points)</td></tr>
+                    <tr><td>Which is biggest?</td><td>Horizontal bars, sorted</td><td>Pie (the eye compares angles badly)</td></tr>
+                    <tr><td>What share of the total?</td><td>Pie, <strong>3 slices maximum</strong></td><td>An 8-slice pie</td></tr>
+                    <tr><td>Is there a link between A and B?</td><td>Scatter plot</td><td>Two lines on different scales</td></tr>
+                    <tr><td>One single figure to remember?</td><td>The figure written large</td><td>A gauge, a dial</td></tr>
+                </table>
+                </div>
+
+                <h4>The truncated axis</h4>
+                <p>This is the most widespread visual manipulation, often unintentional — many tools produce it by default.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Two products: <strong>A = 51 sales</strong>, <strong>B = 49 sales</strong>. A gap of 4%.</p>
+                    <p>With an axis starting at <strong>0</strong>, the two bars look identical — which is faithful.</p>
+                    <p>With an axis starting at <strong>48</strong>, A's bar becomes <strong>three times</strong> the height of B's. The reader concludes that A crushes B.</p>
+                    <p>No figure has been falsified. Only the scale changed.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the chart that needs a manual</span>
+                    <p>If the reader has to consult the legend to understand, the chart has failed its job. A good visual reads in three seconds: a title stating the conclusion ("Sales doubled in 6 months", not "2026 Sales"), axes named with their units, and one idea per chart.</p>
+                </div>
+
+                <div class="pratique" data-pratique="choisir-son-graphique"></div>
+
+                <p class="retenir">💡 Always look at where the vertical axis starts. It is the first reflex to acquire, and it will stop you being fooled — including by your own charts.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="statistics-basics">🧮 The basics of statistics</h3></summary>
+                <div class="lecon-corps">
+                <p>Four ideas are enough to avoid the great majority of interpretation errors. None requires complicated calculation.</p>
+
+                <h4>1. Mean or median</h4>
+                <p>The <strong>mean</strong> adds everything up and divides by the count. The <strong>median</strong> is the value that cuts the population into two equal halves.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Ten salaries in a small company: nine people on <strong>€2,000</strong> and a director on <strong>€20,000</strong>.</p>
+                    <p><strong>Mean</strong> = (9 × 2,000 + 20,000) / 10 = <strong>€3,800</strong></p>
+                    <p><strong>Median</strong> = <strong>€2,000</strong></p>
+                    <p>"The average salary is €3,800" is accurate, and describes the reality of none of the ten employees. The median describes that of nine of them.</p>
+                </div>
+                <p>Practical rule: as soon as a distribution has extreme values — salaries, property prices, response times, revenue per customer — the median is more honest. Publishing both is better still: the gap between them alone reveals how unequal the distribution is.</p>
+
+                <h4>2. Correlation and causation</h4>
+                <p>Two variables are <strong>correlated</strong> when they move together. That implies nothing about one causing the other.</p>
+                <p>Three explanations remain possible: A causes B, B causes A, or <strong>C causes both</strong>. That third case is the most frequent and the most forgotten.</p>
+                <div class="exemple">
+                    <span class="titre">Example</span>
+                    <p>Ice cream sales and drownings rise together. Ice cream drowns nobody: heat causes both.</p>
+                    <p>The professional version, harder to spot: "customers who use our mobile app buy 3 times more". Perhaps the app triggers the purchase. Or perhaps the already most loyal customers are simply the ones who install the app. Deciding to invest millions in the app on that basis is a bet, not a deduction.</p>
+                </div>
+
+                <h4>3. Sample size</h4>
+                <p>Out of 10 visitors, 6 clicks makes "60%". Out of 10 other visitors, the same setup might give 30%. Below a few hundred observations, a gap of a few points means nothing: it is noise.</p>
+                <p>A useful order of magnitude: to compare two versions of a page, you generally need <strong>several hundred conversions per version</strong> — not visitors, conversions — before concluding anything.</p>
+
+                <h4>4. The percentage of a percentage</h4>
+                <p>Going from <strong>2% to 3%</strong> is <strong>+1 point</strong> or <strong>+50%</strong>. Both wordings are accurate; the second is spectacular and often chosen for that reason. When a figure impresses you, look for the absolute value behind it.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — concluding before the test ends</span>
+                    <p>Looking at a test's results every morning and stopping it the day the gap is favourable guarantees finding a winner, even between two strictly identical versions. The test's duration is set <strong>before</strong> launching it.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-valeur-extreme"></div>
+
+                <p class="retenir">💡 For any figure: what is the sample size, and could the gap be explained by chance? Those two questions filter out most hasty conclusions.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole guide. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Google Analytics Academy</strong> — free training on web analytics, with certification.</li>
+                    <li><strong>Kaggle</strong> — real datasets and worked exercises for practising without setting up infrastructure.</li>
+                    <li><strong>Our World in Data</strong> — the reference for honest visualisation: sources cited, methods explained, axes not truncated.</li>
+                    <li><strong>“How to Lie with Statistics”</strong>, Darrell Huff — short, written in 1954, and still the best training for spotting misleading charts.</li>
+                    <li><strong>Your national statistics office</strong> — public data, useful for practising on figures that concern your daily life.</li>
+                </ul>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Back</span>Data &amp; Analytics path</a>
+            <a href="intermediaire.html" class="next"><span class="label">Next level →</span>Data &amp; Analytics — Intermediate</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../design/index.html">🎨 UX/UI Design</a>
+                <a href="../apprendre/index.html">🎓 Learning how to learn</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/data-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

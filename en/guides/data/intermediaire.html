@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Data &amp; Analytics — Intermediate - DocMaster</title>
+    <meta name="description" content="Cleaning data, segmenting and comparing, correlation and causation, and the dashboard that triggers decisions. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/data/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/data/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/data/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/data/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Data &amp; Analytics — Intermediate - DocMaster">
+    <meta property="og:description" content="Cleaning data, segmenting and comparing, correlation and causation, and the dashboard that triggers decisions. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/data/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data &amp; Analytics — Intermediate - DocMaster">
+    <meta name="twitter:description" content="Cleaning data, segmenting and comparing, correlation and causation, and the dashboard that triggers decisions. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">📊 Data &amp; Analytics</a> &gt;
+        <span aria-current="page">Intermediate</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Data &amp; Analytics — Intermediate</h1>
+                <p>Going from the figure displayed to the figure you can decide on.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#cleaning-data">🧹 Cleaning the data</a></li>
+                <li><a href="#segmenting">📐 Segmenting and comparing</a></li>
+                <li><a href="#correlation-causation">🔗 Correlation and causation</a></li>
+                <li><a href="#the-dashboard">📊 The dashboard that serves</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>Cleaning takes up most of an analysis, and decides whether it is valid.</li>
+                <li>An overall average almost always hides opposite behaviours.</li>
+                <li>Two lines rising together usually have a common cause, not a direct link.</li>
+                <li>A segment that is too small produces spectacular, meaningless percentages.</li>
+                <li>A metric that can trigger no decision has no place on a dashboard.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The beginner level taught how to read a figure: what a metric is, where data comes from, how to show it without lying, and the basic statistical ideas.</p>
+            <p>This level is about the real work of analysis, the part rarely talked about: <strong>what has to be done to data before it can be believed</strong>, and the four reasoning errors that turn an accurate figure into a false conclusion. That is where most analyses go astray, not in the calculations.</p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong>. The worked examples serve to convey a mechanism, not to establish a result for any particular sector.</p>
+                <p>As soon as an analysis concerns identifiable people, data protection obligations apply — including to a simple working file.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">The real work of analysis</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="cleaning-data">🧹 Cleaning the data</h3></summary>
+                <div class="lecon-corps">
+                <p>Tutorials start with clean tables. Reality starts with a file where dates are written four different ways, where the same customer appears three times, and where one column in five is empty.</p>
+                <p>Cleaning commonly takes up <strong>most of the time of an analysis</strong>. It is not a chore beforehand: it is where it is decided whether the result will mean anything.</p>
+
+                <h4>The four problems that always come back</h4>
+                <p><strong>Duplicates.</strong> The same record counted twice inflates the totals. A customer registered with two different addresses is not an obvious duplicate: you have to decide what defines uniqueness.</p>
+                <p><strong>Missing values.</strong> Three possible courses: delete the row, replace with an estimated value, or treat the absence as information. The choice changes the result, and must be written down.</p>
+                <p><strong>Inconsistent formats.</strong> "01/02/2026" reads differently depending on the country. "1,200.50" and "1200.50" are the same number to a human, not to a spreadsheet.</p>
+                <p><strong>Outliers.</strong> An order of 4 million in a file of 80-euro orders is either a typing error or the company's most important customer. The distinction is not technical.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>A file of <strong>50,000 rows</strong>. After checking: <strong>8%</strong> duplicates, and <strong>12%</strong> of the remaining rows have a missing value in an essential column.</p>
+                    <p>That leaves <strong>40,480 usable rows</strong>, or 81% of the original file.</p>
+                    <p>That is not a problem in itself. The problem would be presenting a result calculated on 40,480 rows while implying it covers 50,000.</p>
+                </div>
+
+                <div class="pratique" data-pratique="impact-du-nettoyage"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — deleting incomplete rows without looking at which</span>
+                    <p>If missing values are spread at random, deleting them reduces the size without distorting the result. But they are rarely spread at random.</p>
+                    <p>A form whose "income" field is optional will mostly be filled in by those the question does not bother. Deleting the others means analysing a population that does not exist.</p>
+                </div>
+
+                <p class="retenir">💡 Undocumented cleaning makes an analysis unverifiable, even by its author three months later.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="segmenting">📐 Segmenting and comparing</h3></summary>
+                <div class="lecon-corps">
+                <p>An average flattens. Average revenue per customer, average time on site, average basket: each mixes populations with nothing in common, and the result describes nobody.</p>
+
+                <h4>Segmenting means looking for where behaviour changes</h4>
+                <p>Split by tenure, by acquisition channel, by device, by region. The goal is not to produce bigger tables, but to find <strong>the places where two groups behave differently</strong> — that is where the decisions hide.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Overall conversion rate: <strong>3%</strong>. Stable for six months, nothing to report.</p>
+                    <p>Segmented by device: <strong>5.2%</strong> on desktop, <strong>1.4%</strong> on mobile.</p>
+                    <p>The overall figure was not wrong — it was useless. It masked a mobile problem representing two thirds of the traffic.</p>
+                </div>
+
+                <div class="pratique" data-pratique="taille-des-segments"></div>
+
+                <h4>The limit: the segment that is too small</h4>
+                <p>Slicing indefinitely eventually produces groups of fifteen people where one special case moves the percentage by seven points. You think you have found a signal, you have found noise.</p>
+                <p>A common rule of prudence is not to comment on a segment of fewer than <strong>a few dozen observations</strong>, and always to show the count next to the percentage.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — comparing with no reference period</span>
+                    <p>"Sales rose 12% after the site was redesigned." Compared with what? The previous month, which had two public holidays? The same period last year?</p>
+                    <p>With no comparison group and no long history, a movement cannot be told apart from ordinary fluctuation.</p>
+                </div>
+
+                <p class="retenir">💡 Always show the count next to the percentage. "40%" out of five people is two people.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="correlation-causation">🔗 Correlation and causation</h3></summary>
+                <div class="lecon-corps">
+                <p>Two variables moving together are <strong>correlated</strong>. That says nothing about why. Confusing the two is the most widespread error, and the costliest: it leads to acting on a lever that is not one.</p>
+
+                <h4>Four possible explanations for the same correlation</h4>
+                <p><strong>A causes B.</strong> This is the hypothesis people spontaneously adopt — often wrongly.</p>
+                <p><strong>B causes A.</strong> The reverse direction is frequently just as plausible.</p>
+                <p><strong>A third variable causes both.</strong> This is the most common case. It is called a confounding variable.</p>
+                <p><strong>Chance.</strong> Across hundreds of metrics compared, some coincide with no link at all.</p>
+
+                <div class="exemple">
+                    <span class="titre">Example — the confounding variable</span>
+                    <p>Observation: customers who use the mobile app have a basket <strong>twice as large</strong>. Tempting conclusion: pushing the app will increase baskets.</p>
+                    <p>More likely explanation: it is the <strong>most loyal customers</strong> who install the app. Their basket was already large beforehand. Loyalty causes the installation <em>and</em> the large basket.</p>
+                    <p>Pushing the app at occasional customers will not reproduce the effect — but will spend the budget.</p>
+                </div>
+
+                <div class="pratique" data-pratique="correlation-causalite"></div>
+
+                <h4>What allows you to conclude</h4>
+                <p>One method alone genuinely establishes causation: <strong>experiment</strong>. Two comparable groups, one treatment that differs, random assignment. Everything else — even a very strong correlation, even a convincing argument — remains a hypothesis.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the plausible story</span>
+                    <p>The danger is not finding an absurd correlation: those are easy to spot. It is finding a correlation you can give a credible explanation for.</p>
+                    <p>A credible explanation is not proof. It simply makes it harder to consider the other three possibilities.</p>
+                </div>
+
+                <p class="retenir">💡 Before concluding "A causes B", look seriously for a third variable that would cause both.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="the-dashboard">📊 The dashboard that serves</h3></summary>
+                <div class="lecon-corps">
+                <p>Most dashboards are consulted for two weeks, then never again. Not because they are technically bad, but because they answer the question "what can we display?" instead of "what decision has to be taken?".</p>
+
+                <h4>The useless-metric test</h4>
+                <p>For every figure displayed, ask: <strong>if this number doubled tomorrow, what would I do differently?</strong> If the answer is "nothing", the metric has no business being there. It takes up space, dilutes attention and gives the illusion of steering.</p>
+                <p>Page views almost always belong in that category.</p>
+
+                <div class="exemple">
+                    <span class="titre">What makes a good metric</span>
+                    <p><strong>It is actionable</strong>: you know what to do when it moves.</p>
+                    <p><strong>It has a point of comparison</strong>: previous period, target, or control group. A figure on its own says nothing.</p>
+                    <p><strong>Its definition is stable</strong>: if the formula changes along the way, the series becomes unusable.</p>
+                    <p><strong>Its frequency matches how fast it moves</strong>: watching daily a figure that moves quarterly produces only noise.</p>
+                </div>
+
+                <div class="pratique" data-pratique="tableau-de-bord-utile"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the mean as the only figure</span>
+                    <p>Showing "average response time: 1.2 s" hides that 5% of users wait eight seconds. Those are the ones who leave.</p>
+                    <p>For any measure of service quality, an extreme value — the ninth decile, for instance — says more than the mean.</p>
+                </div>
+
+                <p class="retenir">💡 A dashboard is judged by the number of decisions it has triggered, not by the number of charts it contains.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Your national statistics office</strong>: survey methodology and official definitions of indicators. The reference for how a public figure is built.</li>
+                    <li><strong>Your data protection authority</strong>: what is allowed in terms of collection and retention, including for an internal working file.</li>
+                    <li><strong>“Factfulness”</strong>, Hans Rosling: on biases in reading data, with examples drawn from world statistics.</li>
+                    <li><strong>Your visualisation tool's documentation</strong>: the chapters on joins and missing values, rarely read and yet decisive.</li>
+                </ul>
+                <p><strong>A useful habit:</strong> note your cleaning decisions in a separate file, as you go. You will not remember them, and somebody will ask.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Previous level</span>Data &amp; Analytics — Beginner</a>
+            <a href="avance.html" class="next"><span class="label">Next level →</span>Data &amp; Analytics — Advanced</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../../../guides/ia/index.html">🤖 Artificial Intelligence</a>
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../design/index.html">🎨 UX/UI Design</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/data-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

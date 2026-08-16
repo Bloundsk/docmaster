@@ -3,9 +3,12 @@
 // en EXÉCUTANT les simulateurs, seule façon de voir ce qui s'affichera.
 import fs from "node:fs";
 import path from "node:path";
+import url from "node:url";
 import vm from "node:vm";
 
-const RACINE = "C:/Users/veylu/Desktop/DocMaster";
+// Déduite de l'emplacement du script : un chemin en dur mettrait le nom de
+// compte de la machine de développement dans un dépôt public.
+const RACINE = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
 const SUJET = process.argv[2] || "apprendre";
 const LANGUE = process.argv[3] || "en";
 
@@ -84,16 +87,45 @@ const resteDuFrancais = (t) =>
     /[àâçéèêëîïôûùüÿœ]/i.test(t) ||
     /\b(le|la|les|des|une|un|pour|dans|avec|vous|sur|par|est|sont|plus|moins|que|qui|ne|pas)\b/i.test(t);
 
-/* Un texte est couvert s'il a une entrée exacte, OU si les fragments l'ont
-   RÉELLEMENT transformé et n'y laissent plus de français.
+/* Ce qu'aucun fragment n'a touché dans une valeur calculée. On applique les
+   fragments en bornant chaque remplacement, puis on efface les zones bornées :
+   ce qui subsiste est du texte d'origine, resté tel quel.
 
-   La condition « transformé » est indispensable. Sans elle, « Largeur » ou
-   « Zone d'accord » passaient pour traduits : aucun fragment ne les touche,
-   et l'heuristique du français ne voyait ni accent ni mot-outil. Le contrôle
-   annonçait 148/148 pendant que la page affichait ces deux libellés en
-   français — un contrôle qui ment est pire qu'une absence de contrôle. */
+   Le mot U+0000 sert de borne parce qu'aucun texte du site ne peut le contenir. */
+const BORNE = "\u0000";
+const intouche = (t) => {
+    let sortie = t;
+    for (const [fr, autre] of fragmentsTries) {
+        sortie = sortie.split(fr).join(BORNE + autre + BORNE);
+    }
+    sortie = sortie.replace(new RegExp(BORNE + "[^" + BORNE + "]*" + BORNE, "g"), " ");
+    return sortie.match(/\p{L}{2,}/gu) || [];
+};
+
+/* Les mots qui s'écrivent pareil dans les deux langues. Une liste d'exceptions
+   APPROUVÉES, et non une liste de mots français à chercher : en oublier une
+   déclenche une fausse alerte, ce qui se corrige. L'inverse — oublier un mot
+   français dans une liste de recherche — laisse passer le défaut en silence,
+   et c'est exactement ce qui est arrivé à « heures », « jours » et « lignes ». */
+const IDENTIQUES = new Set(["min", "minutes", "mm", "px", "em", "ms", "observations"]);
+
+/* Le critère principal est STRUCTUREL, pas heuristique : un texte qui ne
+   contient aucun chiffre est écrit tel quel dans le simulateur, donc il doit
+   avoir une entrée exacte. Seuls les libellés construits avec une valeur —
+   « Décider (Hick) — 4 familles » — ne peuvent pas en avoir, et eux seuls ont
+   droit au repli par fragments.
+
+   Cette règle remplace un critère qui reposait sur une liste de mots-outils
+   français. Elle a immédiatement trouvé deux libellés que la liste laissait
+   passer, dont un déjà en ligne : « Visiteurs par jour, tous groupes
+   confondus » s'affichait « Visiteurs per day, tous groupes confondus », et
+   le contrôle annonçait 157/157. Aucune liste de mots ne pouvait être
+   complète ; la présence d'un chiffre, elle, se constate. */
+const construitAvecUneValeur = (t) => /\d/.test(t);
+
 const manquants = [...textes].filter((t) => {
     if (!t || dico.textes[t]) return false;
+    if (!construitAvecUneValeur(t)) return true;
     const apres = fragmenter(t);
     return apres === t || resteDuFrancais(apres);
 });
@@ -104,13 +136,19 @@ const manquants = [...textes].filter((t) => {
 // signaler pendant un moment un défaut qui n'existait pas.
 const restes = [];
 for (const v of valeurs) {
+    if (dico.textes[v]) continue;   // entrée exacte : tr() la prend avant les fragments
     const sortie = fragmenter(v);
-    // « resteDuFrancais » et non une seconde liste de mots : il y en avait une
-    // ici, plus étroite, qui ne connaissait ni « des » ni « du ». « 2,5 % des
-    // tests » et « 87 % du temps » sont donc restés en français sur le site
-    // pendant que le contrôle annonçait « rien ne manque ».
-    if (resteDuFrancais(sortie)) {
-        restes.push(`${v}  →  ${sortie}`);
+    // Deux filets. Le premier cherche du français ; il ne voit que ce qu'on a
+    // pensé à y mettre. Le second constate ce qu'aucun fragment n'a touché : il
+    // ne dépend d'aucune connaissance du français, seulement de la liste des
+    // mots identiques dans les deux langues. C'est le second qui a trouvé
+    // « 183 heures », « 26 jours » et « 46 000 lignes », affichés en français
+    // sur cinq pages anglaises pendant que le premier annonçait « rien ne
+    // manque ».
+    const mots = intouche(v).filter((m) => !IDENTIQUES.has(m));
+    if (resteDuFrancais(sortie) || mots.length) {
+        const cause = mots.length ? `  (intouché : ${mots.join(", ")})` : "";
+        restes.push(`${v}  →  ${sortie}${cause}`);
     }
 }
 

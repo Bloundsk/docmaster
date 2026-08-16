@@ -4105,7 +4105,12 @@
             resultat.innerHTML = lignes.map(l =>
                 '<div class="pratique-ligne' + (l.fort ? " fort" : "") + '">' +
                 '<span class="pratique-libelle">' + tr(l.libelle) + "</span>" +
-                '<span class="pratique-valeur">' + trValeur(l.valeur) + "</span>" +
+                // « tr » et non « trValeur » : une valeur n est pas toujours un
+                // nombre. Certaines sont des verdicts entiers — « conforme »,
+                // « perceptible, mais acceptable » — qui meritent une entree
+                // exacte. « tr » retombe sur les fragments quand il n en trouve
+                // pas, le comportement des valeurs chiffrees ne change donc pas.
+                '<span class="pratique-valeur">' + tr(l.valeur) + "</span>" +
                 "</div>"
             ).join("");
         }

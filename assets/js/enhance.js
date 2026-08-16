@@ -96,7 +96,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (bouton) {
             const majBouton = () => {
                 const toutOuvert = [...lecons].every(d => d.open);
-                bouton.textContent = toutOuvert ? "Tout replier" : "Tout déplier";
+                // Le libelle du bouton change a chaque bascule : il doit passer
+                // par langues.js comme le reste, sans quoi la page anglaise
+                // repasse en francais des la premiere ouverture d'une lecon.
+                bouton.textContent = toutOuvert
+                    ? T("toutReplier", "Tout replier")
+                    : T("toutDeplier", "Tout déplier");
                 bouton.setAttribute("aria-expanded", String(toutOuvert));
             };
             bouton.addEventListener("click", () => {

@@ -18,6 +18,20 @@
  * ------------------------------------------------------------------------- */
 window.PRATIQUE_TEXTES = {
     fragments: {
+        // --- Unites et mots collés à un nombre ---------------------------------
+        // Ces morceaux-là sont soudés à une valeur calculée : « 183 heures »,
+        // « 26 jours », « 46 000 lignes ». Aucune entrée exacte ne peut les
+        // couvrir puisque le nombre change à chaque saisie. Ils sont restés en
+        // français sur cinq pages anglaises jusqu'au 16 août 2026 : l'ancien
+        // contrôle cherchait des mots-outils, et « heures » n'en est pas un.
+        " heures": " hours",
+        " semaines": " weeks",
+        " jours": " days",
+        " jour": " day",          // « par jour » et « de la journée », plus longs, passent avant
+        " lignes": " rows",
+        " Ko": " kB",
+        "% et ": "% and ",        // « 45.1% et 54.9% », les deux bornes d'un intervalle
+
         " sur ": " of ",
         " éléments": " items",
         " exercices": " exercises",
@@ -479,6 +493,10 @@ window.PRATIQUE_TEXTES = {
         "Taille réelle sur l'écran": "Real size on screen",
         "Zone atteignable avec l'espacement": "Reachable area including spacing",
         "Recommandation (44 px, soit 11,6 mm)": "Recommendation (44 px, that is 11.6 mm)",
+        // Les trois verdicts que ce simulateur affiche, un seul mot chacun.
+        "conforme": "compliant",
+        "limite": "borderline",
+        "trop petite": "too small",
         "Une cible trop petite ne produit pas une erreur du concepteur : elle produit un utilisateur qui croit s'être trompé.":
             "A target that is too small does not produce a designer's error: it produces a user who thinks they got it wrong.",
 
@@ -517,6 +535,9 @@ window.PRATIQUE_TEXTES = {
         "Temps de chargement estimé": "Estimated load time",
         "Poids à retirer pour passer sous 1 s": "Weight to remove to get under 1 s",
         "Perception": "Perception",
+        "perceptible, mais acceptable": "noticeable, but acceptable",
+        "au-delà de la limite d'attention : la plupart abandonnent":
+            "beyond the limit of attention: most people give up",
         "La liste des éléments à alléger est presque toujours dominée par les images non compressées.":
             "The list of things to slim down is almost always dominated by uncompressed images.",
 
@@ -1029,6 +1050,9 @@ window.PRATIQUE_TEXTES = {
         // --- Design ---------------------------------------------------------
         "Zone d'accord": "Zone of agreement",
         "Largeur": "Width",
+        "nulle": "none",
+        "l'accord tient, mais aucune marge de part et d'autre":
+            "the deal holds, but neither side has any room",
         "Limite": "Limit",
 
         // --- Développement web -----------------------------------------------
@@ -1193,6 +1217,7 @@ window.PRATIQUE_TEXTES = {
             "A system you do not trust is shadowed by a mental list — and it is the list that tires you.",
 
         // --- matrice-eisenhower -------------------------------------------------------------
+        "Votre matrice sert-elle à quelque chose ?": "Is your matrix doing anything?",
         "Cochez ce qui est vrai de votre usage réel, pas de vos intentions.":
             "Tick what is true of how you actually use it, not of your intentions.",
         "J'ai classé les tâches de ma semaine dans les quatre cases":
@@ -1338,6 +1363,7 @@ window.PRATIQUE_TEXTES = {
             "To be decided before launching. Afterwards it is too late to know whether the test could conclude.",
         "Taux de conversion actuel": "Current conversion rate",
         "Amélioration relative visée": "Relative improvement targeted",
+        "Visiteurs par jour, tous groupes confondus": "Visitors per day, all groups combined",
         "Visiteurs nécessaires par groupe": "Visitors needed per group",
         "Nouveau taux visé": "New rate targeted",
         "Durée du test à ce trafic": "Test duration at this traffic",
