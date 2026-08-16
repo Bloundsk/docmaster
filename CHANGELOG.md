@@ -1,5 +1,69 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Sept langues : l'ossature et l'interface
+Demandé par l'auteur : un choix de langue avec drapeaux — anglais, espagnol,
+allemand, italien, chinois, russe.
+
+### Ce que la mesure a changé à la demande
+
+Le contenu du site fait **84 059 mots**. Six langues, c'est un demi-million de
+mots, et surtout chaque correction future serait à refaire sept fois.
+
+Mais l'obstacle n'était pas le volume. Trois guides reposent sur le droit
+français — **89 mentions** : Code du travail, URSSAF, assurance-vie, PEA,
+micro-entreprise, délais de rétractation. Traduire « repos quotidien de
+11 heures » n'en fait pas une règle allemande, et un lecteur espagnol suivant le
+guide Finance lirait des conseils sur des produits qui n'existent pas chez lui.
+**Ce n'est plus une traduction, c'est une information fausse** — sur du droit et
+de l'argent.
+
+L'auteur a tranché : traduire, sujet par sujet, et avertir clairement sur les
+guides français.
+
+### La structure d'abord
+
+Le projet a appris à ses dépens que la structure précède le contenu. Traduire
+84 000 mots puis changer de modèle voudrait dire tout refaire.
+
+`assets/js/langues.js` devient la source unique — libellés, drapeaux, bandeaux,
+sujets relevant du droit français, inventaire de ce qui est traduit.
+
+Deux mécanismes, délibérément différents : **l'interface** est traduite par le
+navigateur, ce qui évite 455 fichiers au contenu identique ; **le contenu** sera
+fait de vrais fichiers dans `en/`, `es/`… car une page de cours doit rester
+lisible sans JavaScript et indexable.
+
+### Ce qui marche aujourd'hui
+
+Sélecteur à sept drapeaux dans la barre de navigation, bâti sur `<details>` :
+il s'ouvre au clavier, se ferme avec Échap, et s'annonce aux lecteurs d'écran
+sans une ligne de JavaScript. Navigation, pied de page, recherche, boutons et
+`<html lang>` suivent la langue choisie.
+
+**Chaque drapeau est accompagné du nom de la langue** — un drapeau désigne un
+pays, pas une langue : l'espagnol n'est pas parlé qu'en Espagne.
+
+### Deux bandeaux d'honnêteté
+
+Un drapeau qui promet une traduction inexistante est pire que pas de drapeau.
+Hors français, le visiteur lit **dans sa langue** que les cours sont en français.
+Et sur les trois guides concernés, que les règles décrites sont françaises.
+
+Le français ne change pas d'un pixel : aucun bandeau ne s'y affiche.
+
+### Le garde-fou
+
+`audit-coherence.mjs` gagne un neuvième contrôle : chaque texte doit exister
+dans les sept langues, un sujet annoncé traduit doit avoir ses pages, et
+`langues.js` doit être chargé avant `layout.js` sur chacune des 65 pages.
+Éprouvé en réinjectant les trois régressions — les trois sortent.
+
+Contrastes vérifiés sur les nouveaux éléments, menu ouvert, dans les deux
+thèmes : le plus juste tient 4,6:1. Géométrie inchangée, la barre de navigation
+reste à 70 px.
+
+**Reste à faire : les 84 000 mots de contenu**, sujet par sujet.
+
 ## 2026-08-16 — Un audit qui mesure la mise en page
 Trois signalements d'affilée — actualités écrasées, cartes de parcours à 626 px,
 titre mangeant une case de grille — venaient tous de la même passe visuelle et

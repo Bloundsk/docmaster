@@ -294,6 +294,64 @@ if (blocSombre) {
 }
 console.log(`  ${jetons.length} jetons de palette, ${enDur.size} couleur(s) en dur hors palette`);
 
+// --- 9. Traductions ---------------------------------------------------------
+//
+// Chaque texte d interface doit exister dans les sept langues. Sans ce
+// controle, un texte ajoute plus tard n aurait que sa version francaise : il
+// se replierait sur le francais sans rien signaler, et un menu allemand se
+// retrouverait avec un mot francais au milieu que personne ne remarquerait.
+//
+// On verifie aussi que langues.js est charge AVANT layout.js dans chaque page :
+// c est layout.js qui ecrit la navigation, il lui faut les libelles avant.
+console.log("\n=== 9. TRADUCTIONS ===");
+
+const bacLangues = { window: {}, document: { documentElement: { setAttribute() {} } }, navigator: { language: "fr" }, localStorage: { getItem: () => null, setItem() {} }, location: { pathname: "/" } };
+vm.createContext(bacLangues);
+vm.runInContext(lire(path.join(RACINE, "assets/js/langues.js")), bacLangues);
+const LG = bacLangues.window.DOCMASTER_LANGUES;
+
+if (!LG) {
+    signaler("TRADUCTIONS", "assets/js/langues.js n'expose pas DOCMASTER_LANGUES");
+} else {
+    const codes = LG.CODES;
+    let manquantes = 0;
+    for (const [clef, valeurs] of Object.entries(LG.TEXTES)) {
+        for (const code of codes) {
+            // Une chaine vide est un choix assume pour les bandeaux, qui ne
+            // s affichent pas en francais : c est l absence de clef qui fautive.
+            if (!(code in valeurs)) {
+                signaler("TRADUCTIONS", `« ${clef} » n'existe pas en « ${code} »`);
+                manquantes++;
+            }
+        }
+    }
+
+    // Les sujets declares comme relevant du droit francais doivent exister.
+    const dossiers = new Set(sujets);
+    for (const s of LG.SUJETS_DROIT_FRANCAIS) {
+        if (!dossiers.has(s)) signaler("TRADUCTIONS", `sujet « ${s} » déclaré droit français mais absent de guides/`);
+    }
+
+    // Un sujet annonce comme traduit doit avoir ses pages.
+    for (const [code, liste] of Object.entries(LG.CONTENU_TRADUIT)) {
+        for (const s of liste) {
+            const dossier = path.join(RACINE, code, "guides", s);
+            if (!fs.existsSync(dossier)) {
+                signaler("TRADUCTIONS", `« ${s} » annoncé traduit en « ${code} » mais ${code}/guides/${s}/ n'existe pas`);
+            }
+        }
+    }
+
+    for (const page of toutes) {
+        const a = page.html.indexOf("langues.js");
+        const b = page.html.indexOf("layout.js");
+        if (a === -1) signaler("TRADUCTIONS", `${page.nom} : langues.js n'est pas chargé`);
+        else if (b !== -1 && a > b) signaler("TRADUCTIONS", `${page.nom} : langues.js est chargé après layout.js`);
+    }
+
+    console.log(`  ${Object.keys(LG.TEXTES).length} textes × ${codes.length} langues, ${manquantes} manquante(s)`);
+}
+
 // --- Resultat --------------------------------------------------------------
 console.log("\n=== RESULTAT ===\n");
 if (!anomalies.length) {

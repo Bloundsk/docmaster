@@ -153,6 +153,88 @@ h1, h2, h3, .logo { font-family: 'Poppins', Arial, sans-serif; }
 .theme-toggle { background: none; border: 2px solid var(--muted); border-radius: 50%; width: 40px; height: 40px; font-size: 1.1rem; cursor: pointer; transition: transform .3s, border-color .3s; flex-shrink: 0; }
 .theme-toggle:hover { transform: rotate(20deg); border-color: var(--primary); }
 
+/* ---------------------------------------------------------------
+   Sélecteur de langue.
+   Bâti sur <details> : il s'ouvre et se ferme au clavier et s'annonce
+   aux lecteurs d'écran sans une ligne de JavaScript.
+   --------------------------------------------------------------- */
+.nav-outils { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+.langues { position: relative; }
+.langues > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 40px;
+    padding: 0 10px;
+    border: 2px solid var(--muted);
+    border-radius: 999px;
+    transition: border-color .3s;
+}
+.langues > summary::-webkit-details-marker { display: none; }
+.langues > summary:hover { border-color: var(--primary); }
+.langue-drapeau { font-size: 1.15rem; line-height: 1; }
+.langue-chevron { font-size: .7rem; color: var(--muted); transition: transform .25s; }
+.langues[open] .langue-chevron { transform: rotate(180deg); }
+
+.langues-liste {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 120;
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    min-width: 190px;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow-fort);
+}
+.langues-liste button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 12px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: .95rem;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+}
+.langues-liste button:hover { background: var(--teinte); }
+/* La langue active se signale par un fond ET par une coche : la couleur seule
+   ne suffit pas à qui distingue mal les teintes. */
+.langues-liste button[aria-current] { background: var(--teinte); font-weight: 600; }
+.langues-liste button[aria-current]::after { content: "✓"; margin-left: auto; color: var(--primary); }
+
+/* ---------------------------------------------------------------
+   Bandeaux d'honnêteté affichés hors français.
+   Un drapeau qui promet une traduction inexistante est pire que pas
+   de drapeau : le visiteur doit savoir, dans sa langue, ce qu'il va
+   trouver — et quand un guide décrit le droit français.
+   --------------------------------------------------------------- */
+.bandeau-langue {
+    background: var(--teinte);
+    border-left: 4px solid var(--primary);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    font-size: .94rem;
+}
+.bandeau-langue.alerte { border-left-color: var(--attention); }
+
+@media (max-width: 700px) {
+    .nav-outils { gap: 6px; }
+    .langues > summary { height: 34px; padding: 0 8px; }
+    .langues-liste { min-width: 170px; }
+}
+
 /* Recherche */
 .search-container { max-width: 600px; margin: -25px auto 0; padding: 0 20px; position: relative; z-index: 50; }
 #search-input { width: 100%; padding: 16px 20px; border: none; border-radius: var(--radius); box-shadow: var(--shadow); font-family: 'Inter', Arial, sans-serif; font-size: 1rem; background: var(--surface); color: var(--text); outline: none; transition: box-shadow .2s; }

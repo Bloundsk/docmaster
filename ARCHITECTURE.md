@@ -188,7 +188,55 @@ Tableaux et simulateurs sont exclus du plafond : ils se lisent en colonnes, pas
 en lignes de texte. `:has()` est sans danger ici, un navigateur qui l'ignore
 retombe sur la mise en page large sans rien casser.
 
-## 6. La palette
+## 6. Les langues
+
+Sept langues : français, anglais, espagnol, allemand, italien, chinois, russe.
+`assets/js/langues.js` est la **source unique** — les libellés, les drapeaux, les
+bandeaux et la liste des sujets traduits vivent là, et nulle part ailleurs.
+`audit-coherence.mjs` bloque si un texte manque dans une langue.
+
+**Ajouter une langue** : une entrée dans `LANGUES`, une colonne dans `TEXTES`.
+**Ajouter un texte** : une entrée dans `TEXTES`, avec les sept langues.
+
+### Deux mécanismes, et pourquoi ils diffèrent
+
+| Quoi | Comment | Pourquoi |
+|---|---|---|
+| L'interface | traduite par le navigateur | éviter 455 fichiers dont le contenu serait identique |
+| Le contenu | de vrais fichiers dans `en/`, `es/`… | une page de cours doit être lisible sans JavaScript et indexable |
+
+`langues.js` se charge **avant** `layout.js` dans les 65 pages : c'est `layout.js`
+qui écrit la navigation, il lui faut les libellés avant de l'écrire. L'audit le
+vérifie page par page.
+
+### Ce qui n'est pas négociable
+
+**Un drapeau qui promet une traduction inexistante est pire que pas de drapeau.**
+Tant qu'un sujet n'est pas traduit, un bandeau le dit au visiteur **dans sa
+langue**. Le mécanisme existe avant le contenu, précisément pour que la promesse
+ne précède jamais la livraison.
+
+**Le contenu qui décrit le droit français porte un avertissement.** Traduire
+« repos quotidien de 11 heures » n'en fait pas une règle allemande. Trois sujets
+sont concernés — `droit`, `finance`, `entrepreneuriat`, soit 89 mentions de
+règles françaises — et sont déclarés dans `SUJETS_DROIT_FRANCAIS`. Un lecteur
+étranger prendrait sinon ces règles pour les siennes, sur des sujets où l'erreur
+coûte cher.
+
+**Le drapeau est toujours accompagné du nom de la langue.** Un drapeau désigne un
+pays, pas une langue : l'espagnol n'est pas parlé qu'en Espagne. Le nom lève
+l'ambiguïté et sert de repère à qui ne reconnaît pas le drapeau.
+
+**Google Traduction est exclu.** Il chargerait des cookies Google, ce que le site
+s'interdit — voir la règle sur reCAPTCHA.
+
+### L'état des traductions
+
+L'interface est traduite dans les sept langues. **Le contenu ne l'est pas
+encore** : 84 000 mots, traduits sujet par sujet. `CONTENU_TRADUIT` recense ce
+qui est fait, et l'audit vérifie que les pages annoncées existent vraiment.
+
+## 7. La palette
 
 **Toute couleur vit dans `:root` et `html.dark-mode`, en tête de `style.css`, et
 nulle part ailleurs.** `audit-coherence.mjs` le vérifie et bloque : une couleur
@@ -229,7 +277,7 @@ La vérification se fait sur le DOM réel, dans un navigateur, les deux thèmes 
 quiz répondus : le calcul statique ne voit ni les fonds hérités, ni les voiles
 semi-transparents, ni les états produits par le JavaScript.
 
-## 7. Contrôles automatiques
+## 8. Contrôles automatiques
 
 Les deux hooks vivent dans `.git/hooks/`, qui **n'est pas versionné** : recréés à la
 main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le dépôt.
