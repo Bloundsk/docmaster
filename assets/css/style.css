@@ -845,7 +845,13 @@ code {
     /* La valeur passe sous son libellé : côte à côte, les montants longs
        débordaient de l'écran ou écrasaient le texte. */
     .pratique-ligne { flex-direction: column; gap: 2px; align-items: flex-start; }
-    .pratique-valeur { text-align: left; }
+    /* Et elle doit pouvoir revenir à la ligne. « nowrap » protège un montant
+       comme « 1 600 € » d'une coupure absurde, mais certaines valeurs sont des
+       phrases entières : « au-delà de 150 mots, la plupart des lecteurs
+       parcourent au lieu de lire » mesure 527 px et sortait de l'écran.
+       Le défaut existait en français ; l'audit de géométrie ne l'a trouvé
+       qu'en recevant une page traduite, qui n'a fait que le rendre visible. */
+    .pratique-valeur { text-align: left; white-space: normal; }
 }
 
 /* Les simulateurs n'ont aucun sens sur une feuille imprimée : sans saisie

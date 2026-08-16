@@ -47,6 +47,33 @@ window.PRATIQUE_TEXTES = {
         " requêtes)": " queries)",
         "trop court : le regard revient trop souvent à la ligne": "too short: the eye wraps far too often",
         "trop long : l'œil perd le début de la ligne suivante": "too long: the eye loses the start of the next line",
+
+        // --- Négociation --------------------------------------------------------
+        // pratique.js applique les fragments du plus long au plus court : celui
+        // qui contient « mots » ci-dessus passe donc avant lui, comme il faut.
+        "au-delà de 150 mots, la plupart des lecteurs parcourent au lieu de lire":
+            "beyond 150 words, most readers skim instead of reading",
+        "le blocage coûte plus cher que ce qui reste à négocier":
+            "the deadlock costs more than what is left to negotiate",
+        "acceptable, mais continuer coûterait plus que ce que cela rapporterait":
+            "acceptable, but carrying on would cost more than it would bring in",
+        "une ancre invraisemblable fait perdre la crédibilité, et parfois la négociation":
+            "an implausible anchor loses credibility, and sometimes the negotiation",
+        "le partage de ces": "the split of that",
+        ", pas l'accord lui-même": ", not the agreement itself",
+        "vérifier vos estimations avant de vous y engager":
+            "check your estimates before committing to them",
+        "l'écart justifie encore de discuter": "the gap still justifies talking",
+        "% de l'écart": "% of the gap",
+        " des tests": " of the tests",
+        " du temps": " of the time",
+        "dans la zone confortable": "in the comfortable zone",
+        " fois plus lent": "× slower",
+        "longueur qui se lit vraiment": "a length that actually gets read",
+        " de plus pour que continuer se justifie": " more to make carrying on worthwhile",
+        "vous avez de la marge pour continuer": "you have room to continue",
+        "un seul prix possible : ": "one possible price only: ",
+        " à ": " to ",
     },
 
     textes: {
@@ -749,5 +776,281 @@ window.PRATIQUE_TEXTES = {
         "La correction est remboursée en": "The fix pays for itself in",
         "Formulé ainsi, l'arbitrage n'est plus une question de goût mais de délai de retour.":
             "Put that way, the trade-off is no longer a matter of taste but of payback period.",
+
+        // ====================================================================
+        // NÉGOCIATION & COMMUNICATION
+        // ====================================================================
+
+        // --- preparation-echange -----------------------------------------------
+        "Êtes-vous prêt pour cet échange ?": "Are you ready for this conversation?",
+        "Cochez ce que vous savez déjà, avant d'entrer dans la conversation.":
+            "Tick what you already know, before going into the conversation.",
+        "Je sais ce que je veux obtenir, en une phrase": "I know what I want to get, in one sentence",
+        "Je sais à quoi je renonce si j'obtiens gain de cause": "I know what I give up if I get my way",
+        "Je sais ce que l'autre cherche, ou j'ai prévu de le lui demander":
+            "I know what the other side wants, or I have planned to ask them",
+        "Je sais ce que je fais si nous n'arrivons à rien": "I know what I do if we get nowhere",
+        "J'ai choisi le moment et le canal, plutôt que de les subir":
+            "I chose the moment and the channel, rather than having them imposed",
+        "Je sais ce qui, dans mon dossier, est le plus faible": "I know the weakest point in my case",
+        "l'autre le trouvera de toute façon": "the other side will find it anyway",
+        "Entrer sans préparation revient à improviser face à quelqu'un qui, peut-être, ne l'a pas fait.":
+            "Going in unprepared means improvising against someone who possibly did prepare.",
+        "Bonne base. Savoir ce qu'on fait en cas d'échec est ce qui manque le plus souvent — et ce qui change le plus.":
+            "Good basis. Knowing what you do if it fails is what is most often missing — and what changes most.",
+        "Préparation solide. L'essentiel d'une négociation se joue avant qu'elle ne commence.":
+            "Solid preparation. Most of a negotiation is decided before it starts.",
+        "La question la plus négligée n'est pas « qu'est-ce que je veux ? » mais « qu'est-ce que je fais si je ne l'obtiens pas ? ». C'est elle qui détermine la position réelle.":
+            "The most neglected question is not “what do I want?” but “what do I do if I don't get it?”. That is what sets your real position.",
+
+        // --- ecoute-active -------------------------------------------------------
+        "Écoutez-vous, ou attendez-vous votre tour ?": "Are you listening, or waiting your turn?",
+        "Cochez ce que vous faites réellement pendant que l'autre parle.":
+            "Tick what you actually do while the other person is talking.",
+        "Je ne prépare pas ma réponse pendant qu'il parle": "I do not prepare my answer while they speak",
+        "Je reformule pour vérifier, avant de répondre": "I restate what I heard to check, before answering",
+        "Je pose des questions ouvertes plutôt que des questions fermées":
+            "I ask open questions rather than closed ones",
+        "Je laisse un silence après sa réponse": "I leave a silence after their answer",
+        "c'est souvent là que vient l'essentiel": "that is often where the important part comes",
+        "Je demande « pourquoi est-ce important pour vous ? »": "I ask “why does that matter to you?”",
+        "Je note ce qu'il dit, pas ce que je compte répondre":
+            "I write down what they say, not what I plan to answer",
+        "Attendre son tour n'est pas écouter. La plupart des informations utiles se perdent là.":
+            "Waiting your turn is not listening. Most of the useful information is lost there.",
+        "Bonne écoute. Le silence après une réponse est ce qui rapporte le plus, et ce qu'on supporte le moins.":
+            "Good listening. The silence after an answer pays most, and is the hardest to bear.",
+        "Vous écoutez vraiment. C'est le levier le moins coûteux et le plus rare.":
+            "You are genuinely listening. It is the cheapest lever, and the rarest.",
+        "Reformuler n'est pas une politesse : c'est le seul moyen de vérifier qu'on a compris, et cela révèle très souvent qu'on avait compris autre chose.":
+            "Restating is not a courtesy: it is the only way of checking you understood, and it very often reveals you understood something else.",
+
+        // --- longueur-message ------------------------------------------------------
+        "Un message coûte le temps de tous ses destinataires, pas seulement celui de son auteur.":
+            "A message costs the time of all its recipients, not just its author's.",
+        "Temps mobilisé au total": "Total time taken up",
+        "En divisant la longueur par deux": "Halving the length",
+        "À garder en tête": "Worth keeping in mind",
+        "Écrire court prend plus de temps à l'auteur et en fait gagner à tous les autres. C'est l'arbitrage, et il est presque toujours tranché dans le mauvais sens.":
+            "Writing short takes the author longer and saves everyone else time. That is the trade-off, and it is almost always settled the wrong way.",
+
+        // --- courriel-utile ----------------------------------------------------------
+        "Ce courriel a-t-il une chance d'aboutir ?": "Does this email stand a chance?",
+        "Cochez ce que contient réellement le message que vous vous apprêtez à envoyer.":
+            "Tick what the message you are about to send actually contains.",
+        "L'objet dit ce dont il s'agit ET ce qui est attendu":
+            "The subject line says what it is about AND what is expected",
+        "La demande est dans les deux premières lignes": "The request is in the first two lines",
+        "Une seule demande, ou une liste numérotée s'il y en a plusieurs":
+            "A single request, or a numbered list if there are several",
+        "Une échéance est donnée": "A deadline is given",
+        "Le destinataire principal est seul en « À », les autres en copie":
+            "The main recipient is alone in “To”, the others in copy",
+        "Le contexte vient après la demande, pas avant": "Context comes after the request, not before",
+        "Message qui raconte avant de demander. Il sera lu en diagonale, et la demande passera inaperçue.":
+            "A message that tells a story before asking. It will be skimmed, and the request will go unnoticed.",
+        "Correct. La demande en tête et l'échéance écrite sont les deux qui changent le taux de réponse.":
+            "Reasonable. The request up front and a written deadline are the two that change the reply rate.",
+        "Message traitable. Il obtiendra une réponse parce qu'il est facile d'y répondre.":
+            "A workable message. It will get an answer because it is easy to answer.",
+        "Le lecteur cherche deux choses : ce qu'on lui demande et pour quand. Tout ce qui les précède retarde la réponse.":
+            "The reader is looking for two things: what is being asked and by when. Everything before them delays the answer.",
+
+        // --- solution-de-rechange --------------------------------------------------------
+        "Votre MESORE — meilleure solution de rechange — est ce que vous obtenez si vous partez. Elle fixe votre point de rupture.":
+            "Your BATNA — best alternative to a negotiated agreement — is what you get if you walk away. It sets your walk-away point.",
+        "Offre actuellement sur la table": "Offer currently on the table",
+        "Coût estimé de la poursuite": "Estimated cost of carrying on",
+        "Gain par rapport à partir": "Gain compared with walking away",
+        "Il faut gagner au moins": "You need to gain at least",
+        "Sans solution de rechange chiffrée, on négocie à l'aveugle : impossible de savoir si une offre est bonne, seulement si elle est agréable.":
+            "With no alternative worked out in figures, you negotiate blind: you cannot tell whether an offer is good, only whether it feels pleasant.",
+
+        // --- zone-accord ----------------------------------------------------------------
+        "Y a-t-il une zone d'accord ?": "Is there a zone of possible agreement?",
+        "Le maximum que vous acceptez de payer, et le minimum estimé de l'autre. Entre les deux se trouve — ou non — un accord possible.":
+            "The most you will pay, and your estimate of their minimum. Between the two lies — or does not — a possible agreement.",
+        "Minimum estimé de l'autre": "Their estimated minimum",
+        "Point médian": "Midpoint",
+        "Ce qui se joue": "What is at stake",
+        "Ce que cela signifie": "What that means",
+        "La suite utile": "The useful next step",
+        "Quand il n'y a pas de zone d'accord sur le prix, insister ne sert à rien. Ce qui débloque, c'est d'ajouter une variable : délai, volume, garantie, services.":
+            "When there is no zone of agreement on price, insisting achieves nothing. What unblocks it is adding a variable: timing, volume, warranty, services.",
+
+        // --- ancrage ----------------------------------------------------------------------
+        "Quelle première offre annoncer ?": "What opening offer should you make?",
+        "Le premier chiffre énoncé pèse sur tout ce qui suit — y compris quand chacun sait qu'il est négociable.":
+            "The first number stated weighs on everything that follows — even when everyone knows it is negotiable.",
+        "Résultat que vous visez": "Result you are aiming for",
+        "Offre que vous attendez de l'autre": "Offer you expect from them",
+        "Pour que le milieu tombe sur votre objectif": "For the midpoint to land on your target",
+        "Écart avec votre objectif": "Gap from your target",
+        "Point médian obtenu": "Midpoint obtained",
+        "Le « coupons la poire en deux » paraît équitable et dépend entièrement du premier chiffre annoncé. C'est pour cela qu'il vaut mieux l'annoncer, en restant plausible.":
+            "“Let's split the difference” sounds fair and depends entirely on the first number stated. That is why it is better to state it — while staying plausible.",
+
+        // --- positions-interets ---------------------------------------------------------------
+        "Position ou intérêt ?": "Position or interest?",
+        "Une position est ce qu'on demande. Un intérêt est la raison pour laquelle on le demande. Cochez ce que vous connaissez.":
+            "A position is what you ask for. An interest is why you ask for it. Tick what you know.",
+        "Je sais ce que l'autre demande": "I know what the other side is asking for",
+        "Je sais pourquoi il le demande": "I know why they are asking for it",
+        "Je connais au moins deux façons de satisfaire cette raison":
+            "I know at least two ways of satisfying that reason",
+        "Je sais ce qui, pour lui, ne se négocie pas": "I know what, for them, is not negotiable",
+        "J'ai identifié un point qui me coûte peu et lui rapporte beaucoup":
+            "I have found a point that costs me little and is worth a lot to them",
+        "Je sais ce que je peux échanger contre ce qui compte pour moi":
+            "I know what I can trade for what matters to me",
+        "Négociation sur les positions : chacun campe, et le seul résultat possible est de couper la différence.":
+            "Negotiating on positions: both sides dig in, and the only possible result is splitting the difference.",
+        "Bonne lecture. Le point qui coûte peu à l'un et rapporte à l'autre est ce qui débloque le plus souvent.":
+            "Good reading. The point that costs one side little and is worth a lot to the other is what most often unblocks things.",
+        "Vous négociez sur les intérêts. C'est là que se trouvent les accords que personne n'avait prévus.":
+            "You are negotiating on interests. That is where the agreements nobody foresaw are found.",
+        "Deux personnes qui veulent la même orange peuvent toutes deux être satisfaites : l'une voulait le jus, l'autre l'écorce. Encore fallait-il demander pourquoi.":
+            "Two people who want the same orange can both be satisfied: one wanted the juice, the other the peel. Someone still had to ask why.",
+
+        // --- conversation-difficile ----------------------------------------------------------------
+        "Cette conversation est-elle préparée ?": "Is this conversation prepared?",
+        "Un désaccord, un reproche à formuler, une nouvelle à annoncer. Cochez ce qui est prêt.":
+            "A disagreement, a criticism to make, news to break. Tick what is ready.",
+        "Je décris des faits observables, pas une interprétation":
+            "I describe observable facts, not an interpretation",
+        "« tu es arrivé après 10 h trois fois » et non « tu ne prends rien au sérieux »":
+            "“you arrived after 10 three times”, not “you take nothing seriously”",
+        "Je sais dire l'effet que cela produit, sans accuser":
+            "I can say what effect it has, without accusing",
+        "J'ai une demande précise, pas seulement un reproche":
+            "I have a precise request, not just a complaint",
+        "J'ai prévu du temps pour la réponse de l'autre": "I have allowed time for their answer",
+        "Je le fais en tête-à-tête, et pas devant d'autres": "I do it one to one, not in front of others",
+        "Je distingue ce qui est négociable de ce qui ne l'est pas":
+            "I separate what is negotiable from what is not",
+        "Sans faits datés ni demande précise, la conversation portera sur les intentions supposées — c'est-à-dire nulle part.":
+            "With no dated facts and no precise request, the conversation will be about presumed intentions — that is, about nothing.",
+        "Bonne base. S'en tenir aux faits observables est ce qui évite que la discussion parte sur l'intention.":
+            "Good basis. Sticking to observable facts is what stops the discussion sliding onto intent.",
+        "Conversation préparée. Elle sera désagréable et elle produira quelque chose.":
+            "A prepared conversation. It will be unpleasant and it will produce something.",
+        "Ce n'est pas le reproche qui bloque, c'est l'interprétation. Un fait se discute, une intention prêtée ne se discute pas : elle se nie.":
+            "It is not the criticism that blocks things, it is the interpretation. A fact can be discussed; an attributed intention cannot — it can only be denied.",
+
+        // --- biais-negociation -----------------------------------------------------------------------
+        "Quels biais jouent contre vous ?": "Which biases are working against you?",
+        "Cochez ce que vous reconnaissez dans votre façon de négocier.":
+            "Tick what you recognise in the way you negotiate.",
+        "Je me sens engagé par le temps déjà passé": "I feel committed by the time already spent",
+        "coût irrécupérable : il ne devrait rien changer": "sunk cost: it should change nothing",
+        "Je suppose que ce que je gagne, l'autre le perd":
+            "I assume that what I gain, the other side loses",
+        "vrai sur le prix seul, faux dès qu'il y a plusieurs variables":
+            "true on price alone, false as soon as there are several variables",
+        "Je m'accroche à mon premier chiffre par cohérence":
+            "I cling to my first number out of consistency",
+        "Je cherche surtout ce qui confirme ma lecture de la situation":
+            "I mostly look for what confirms my reading of the situation",
+        "Je surestime ce que l'autre sait de mes contraintes":
+            "I overestimate what they know about my constraints",
+        "Je juge l'accord à ce que j'ai obtenu, pas à mon point de rupture":
+            "I judge the deal by what I got, not by my walk-away point",
+        "Aucun reconnu. À vérifier après coup : ces biais se voient beaucoup mieux sur les autres.":
+            "None recognised. Worth checking afterwards: these biases are far easier to see in other people.",
+        "Deux repères utiles : le temps passé ne doit rien changer, et tout n'est pas à somme nulle.":
+            "Two useful markers: time already spent should change nothing, and not everything is zero-sum.",
+        "Plusieurs biais actifs. Le plus coûteux est de croire que ce que l'un gagne, l'autre le perd : il ferme les accords créatifs.":
+            "Several biases active. The costliest is believing that one side's gain is the other's loss: it shuts down creative deals.",
+        "Un accord se juge par rapport à sa solution de rechange, jamais par rapport à ce qu'on espérait au départ. C'est la seule comparaison qui ait un sens.":
+            "A deal is judged against your alternative, never against what you hoped for at the start. That is the only comparison that means anything.",
+
+        // --- manipulation -------------------------------------------------------------------------------
+        "Reconnaissez-vous ces procédés ?": "Do you recognise these tactics?",
+        "Cochez ceux que vous avez rencontrés dans cette négociation.":
+            "Tick the ones you have met in this negotiation.",
+        "Une urgence artificielle": "Artificial urgency",
+        "Une concession minuscule présentée comme un effort majeur":
+            "A tiny concession presented as a major effort",
+        "Une demande supplémentaire une fois l'accord presque conclu":
+            "An extra demand once the deal is nearly done",
+        "Un « mon supérieur refuse » invérifiable": "An unverifiable “my boss says no”",
+        "Un chiffre annoncé sans source, présenté comme une évidence":
+            "A figure quoted with no source, presented as obvious",
+        "Une mise en cause personnelle plutôt que du fond":
+            "A personal attack rather than substance",
+        "Rien de tout cela. La négociation porte sur le fond.":
+            "None of that. The negotiation is about substance.",
+        "Procédés repérés. Les nommer à voix haute, calmement, suffit le plus souvent à les faire cesser.":
+            "Tactics spotted. Naming them out loud, calmly, is usually enough to stop them.",
+        "Beaucoup de procédés. Votre meilleure réponse reste votre solution de rechange : c'est elle qui rend le départ crédible.":
+            "A lot of tactics. Your best answer is still your alternative: it is what makes walking away credible.",
+        "La réponse à un procédé n'est ni de le subir ni d'en user : c'est de le nommer. « Je note que le délai est très court — est-il négociable ? » désamorce sans affronter.":
+            "The answer to a tactic is neither to suffer it nor to use one: it is to name it. “I notice the deadline is very short — is it negotiable?” defuses without confronting.",
+
+        // --- cout-du-blocage ---------------------------------------------------------------------------------
+        "Combien coûte de ne pas conclure ?": "What does not closing cost?",
+        "Un désaccord qui dure a un prix, rarement calculé et souvent supérieur à l'écart qui reste à combler.":
+            "A disagreement that drags on has a price, rarely calculated and often larger than the gap still to be bridged.",
+        "Écart restant à combler": "Gap still to bridge",
+        "Semaines de blocage prévisibles": "Predictable weeks of deadlock",
+        "Heures par semaine consacrées au sujet": "Hours per week spent on the matter",
+        "Temps consacré": "Time spent",
+        "Coût de ce temps": "Cost of that time",
+        "Comparé à l'écart restant": "Compared with the remaining gap",
+        "Beaucoup de négociations continuent bien après le moment où elles coûtent plus qu'elles ne rapportent. Personne ne fait ce calcul, parce qu'il donne tort aux deux camps.":
+            "Many negotiations carry on well past the point where they cost more than they bring in. Nobody does this calculation, because it makes both sides wrong.",
+
+        // ====================================================================
+        // LIBELLÉS COURTS ET UNITÉS
+        //
+        // Ils étaient passés au travers du contrôle : sans accent ni mot-outil,
+        // l'heuristique du « français restant » ne les voyait pas, et un texte
+        // qu'aucun fragment ne touche était compté comme traduit. Le critère
+        // exige désormais qu'un fragment ait RÉELLEMENT transformé le texte.
+        // ====================================================================
+        "€": "€",
+        "€/h": "€/h",
+        "px": "px",
+        "car.": "chars",
+        "tests": "tests",
+        "appels": "calls",
+        "lignes": "lines",
+        "familles": "groups",
+        "CSS": "CSS",
+        "UX ": "UX ",
+
+        // --- Design ---------------------------------------------------------
+        "Zone d'accord": "Zone of agreement",
+        "Largeur": "Width",
+        "Limite": "Limit",
+
+        // --- Développement web -----------------------------------------------
+        "Votre HTML a-t-il du sens ?": "Does your HTML mean anything?",
+        "CSS ou JavaScript ?": "CSS or JavaScript?",
+        "CSS suffit": "CSS is enough",
+        "Navigateur ou serveur ?": "Browser or server?",
+        "navigateur": "browser",
+        "serveur": "server",
+        "Taille de police": "Font size",
+        "Confort de lecture": "Reading comfort",
+        "Nombre d'appels d'API": "Number of API calls",
+        "Dont fichiers statiques cachables": "Of which cacheable static files",
+        "Combien de temps dure votre suite de tests ?": "How long does your test suite take?",
+        "Tests unitaires": "Unit tests",
+        "Tests de bout en bout": "End-to-end tests",
+        "Mais ils occupent": "Yet they take up",
+        "Chiffrez votre dette technique": "Put a figure on your technical debt",
+
+        // --- Négociation -------------------------------------------------------
+        "« l'offre expire ce soir »": "“the offer expires tonight”",
+        "« si je comprends bien, … »": "“so if I understand correctly, …”",
+        "Ce message sera-t-il lu ?": "Will this message be read?",
+        "Longueur du message": "Message length",
+        "Destinataires": "Recipients",
+        "Temps de lecture": "Reading time",
+        "Faut-il accepter cette offre ?": "Should you accept this offer?",
+        "Valeur de votre solution de rechange": "Value of your alternative",
+        "Point de rupture": "Walk-away point",
+        "Votre maximum": "Your maximum",
     },
 };

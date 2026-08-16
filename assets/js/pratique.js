@@ -3999,11 +3999,19 @@
         return trValeur(texte);
     }
 
+    // Les fragments s appliquent du plus long au plus court. Sans cet ordre,
+    // « mots » traduirait le mot pris a l interieur de « au-dela de 150 mots,
+    // la plupart des lecteurs... », et le fragment long ne correspondrait plus
+    // a rien. Le plus specifique doit passer en premier, toujours.
+    let fragmentsTries = null;
     function trValeur(valeur) {
         const d = typeof window !== "undefined" && window.PRATIQUE_TEXTES;
         if (!d || !d.fragments || typeof valeur !== "string") return valeur;
+        if (!fragmentsTries) {
+            fragmentsTries = Object.entries(d.fragments).sort((a, b) => b[0].length - a[0].length);
+        }
         let sortie = valeur;
-        for (const [fr, autre] of Object.entries(d.fragments)) sortie = sortie.split(fr).join(autre);
+        for (const [fr, autre] of fragmentsTries) sortie = sortie.split(fr).join(autre);
         return sortie;
     }
 

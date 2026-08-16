@@ -1,5 +1,60 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Négociation en anglais, et un contrôle qui mentait
+Quatrième sujet traduit : quatre pages, 12 simulateurs, 90 questions. **Quatre
+sujets sur quatorze**, soit 16 pages et 360 questions.
+
+### Le contrôle annonçait « rien ne manque » sur des pages en partie françaises
+
+C'est le vrai sujet de cette étape. En vérifiant le rendu, deux libellés
+français sont apparus dans un simulateur — « Zone d'accord », « Largeur » —
+alors que `verifier-traduction.mjs` annonçait **148 sur 148**.
+
+Trois défauts distincts, tous de la même famille : **une logique écrite deux
+fois, corrigée une seule.**
+
+| Défaut | Conséquence |
+|---|---|
+| Le tri des fragments n'était appliqué que dans `pratique.js` | le contrôle signalait un défaut inexistant |
+| La substitution était recopiée dans la boucle des valeurs | corriger l'ordre dans l'une ne corrigeait pas l'autre |
+| La détection du français avait **deux listes de mots**, celle des valeurs plus étroite | « 2,5 % des tests » et « 87 % du temps » sont restés en français |
+
+À quoi s'ajoutait un critère trop indulgent : un texte qu'**aucun fragment ne
+touchait** était compté comme traduit, faute d'accent et de mot-outil. « Largeur »
+passait ainsi pour de l'anglais.
+
+### Ce que la correction a révélé
+
+Le contrôle durci a sorti **38 textes non traduits**, dont une partie **déjà en
+ligne** dans Design et Développement Web depuis leur publication. Tous corrigés
+dans le même passage.
+
+**Un contrôle qui ment est pire qu'une absence de contrôle** : il donne la
+tranquillité sans la vérification. Les quatre sujets ont été repassés après
+chaque correction, et le rendu réel des 16 pages a été balayé à la recherche de
+français — le contrôle ne suffisait plus à me convaincre.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| Textes de simulateurs, les 4 sujets | **138/138, 166/166, 166/166, 148/148** |
+| Français dans le rendu des 16 pages | **0** |
+| Liens internes | aucun cassé |
+| Géométrie | 132 mesures, 10 gabarits, aucune anomalie |
+
+### Un défaut français trouvé par une page anglaise
+
+L'audit de géométrie a signalé une valeur de simulateur sortant de l'écran à
+375 px. Vérification faite, **le site français avait le même défaut, et pire** :
+527 px contre 432. `white-space: nowrap` protège un montant comme « 1 600 € »
+d'une coupure absurde, mais certaines valeurs sont des phrases entières.
+
+Le défaut existait depuis toujours ; il n'a été trouvé qu'en ajoutant une page
+traduite à la liste de l'audit. Corrigé pour les deux langues.
+
+**Reste à traduire : 10 sujets.**
+
 ## 2026-08-16 — Troisième sujet traduit : « Développement Web » en anglais
 Quatre pages, 12 simulateurs, 90 questions. **Trois sujets sur quatorze sont
 lisibles en anglais.**

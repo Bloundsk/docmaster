@@ -71,24 +71,45 @@ for (const nom of poses) {
 // à n'y laisser aucun français — c'est le cas des libellés construits avec une
 // valeur, « Décider (Hick) — 4 familles », qui ne peuvent pas figurer tels
 // quels. Le critère est ce que VOIT le visiteur, pas la forme de l'entrée.
+// Du plus long au plus court, exactement comme pratique.js. Ce contrôle doit
+// reproduire le rendu à l'identique : s'il applique les fragments dans un autre
+// ordre, il signale des défauts qui n'existent pas — ou pire, en manque.
+const fragmentsTries = Object.entries(dico.fragments).sort((a, b) => b[0].length - a[0].length);
 const fragmenter = (t) => {
     let sortie = t;
-    for (const [fr, autre] of Object.entries(dico.fragments)) sortie = sortie.split(fr).join(autre);
+    for (const [fr, autre] of fragmentsTries) sortie = sortie.split(fr).join(autre);
     return sortie;
 };
 const resteDuFrancais = (t) =>
     /[àâçéèêëîïôûùüÿœ]/i.test(t) ||
     /\b(le|la|les|des|une|un|pour|dans|avec|vous|sur|par|est|sont|plus|moins|que|qui|ne|pas)\b/i.test(t);
 
-const manquants = [...textes].filter((t) => t && !dico.textes[t] && resteDuFrancais(fragmenter(t)));
+/* Un texte est couvert s'il a une entrée exacte, OU si les fragments l'ont
+   RÉELLEMENT transformé et n'y laissent plus de français.
+
+   La condition « transformé » est indispensable. Sans elle, « Largeur » ou
+   « Zone d'accord » passaient pour traduits : aucun fragment ne les touche,
+   et l'heuristique du français ne voyait ni accent ni mot-outil. Le contrôle
+   annonçait 148/148 pendant que la page affichait ces deux libellés en
+   français — un contrôle qui ment est pire qu'une absence de contrôle. */
+const manquants = [...textes].filter((t) => {
+    if (!t || dico.textes[t]) return false;
+    const apres = fragmenter(t);
+    return apres === t || resteDuFrancais(apres);
+});
 
 // Un mot français resté dans une valeur calculée, qu'aucun fragment ne reprend.
+// La substitution passe par « fragmenter » et non par une seconde copie de la
+// boucle : il y en avait deux, et corriger l'ordre dans l'une seulement a fait
+// signaler pendant un moment un défaut qui n'existait pas.
 const restes = [];
 for (const v of valeurs) {
-    let sortie = v;
-    for (const [fr, autre] of Object.entries(dico.fragments)) sortie = sortie.split(fr).join(autre);
-    // Une lettre accentuée, ou un mot français courant, signale un oubli.
-    if (/[àâçéèêëîïôûùüÿœ]/i.test(sortie) || /\b(sur|mots|éléments|exercices|moins|page|lecture)\b/.test(sortie)) {
+    const sortie = fragmenter(v);
+    // « resteDuFrancais » et non une seconde liste de mots : il y en avait une
+    // ici, plus étroite, qui ne connaissait ni « des » ni « du ». « 2,5 % des
+    // tests » et « 87 % du temps » sont donc restés en français sur le site
+    // pendant que le contrôle annonçait « rien ne manque ».
+    if (resteDuFrancais(sortie)) {
         restes.push(`${v}  →  ${sortie}`);
     }
 }
