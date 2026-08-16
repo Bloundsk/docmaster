@@ -1,5 +1,53 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Droit & démarches traduit : douze sujets sur quatorze
+Quatre pages, trois banques de questions, 152 textes de simulateurs. `droit`
+est déclaré dans `CONTENU_TRADUIT`, et le bandeau rouge s'affiche — le sujet
+était déjà dans `SUJETS_DROIT_FRANCAIS` depuis l'origine.
+
+**Douze sujets sur quatorze**, soit 48 pages et 1 080 questions.
+
+### Le sujet le plus français de tous
+
+Ici, rien n'est transposable : les délais de prescription, la garantie légale
+de deux ans, le préavis de bail, la période d'essai, la majoration de 10 % sur
+un dépôt de garantie rendu en retard — tout est du droit français.
+
+La règle appliquée : **chaque fois qu'un délai ou un mécanisme est cité, la
+version anglaise dit qu'il est français**, dans la phrase elle-même et pas
+seulement dans le bandeau. « The general French limitation period is 5 years »,
+« in France, twenty minutes are owed », « check your own country's rules ».
+Le bandeau prévient ; la phrase, elle, empêche de sortir un chiffre de son
+contexte.
+
+Deux exceptions signalées comme telles : les **droits RGPD**, qui valent dans
+toute l'Union, et les **noms propres** — Légifrance, le code du travail
+numérique — conservés parce qu'un lecteur qui les cherche doit pouvoir les
+trouver.
+
+### Le singulier et le pluriel, un piège de traduction
+
+Le français écrit « 1 mois » et « 2 mois » de la même façon ; l'anglais non.
+Un fragment `" mois"` → `" months"` aurait produit « 1 months » dans le
+simulateur de période d'essai et dans celui de prescription.
+
+Deux fragments au singulier — `" 1 mois"` et `" 1 an "` — sont donc placés
+**avant** le pluriel, l'ordre du plus long au plus court faisant le reste. Même
+mécanisme que pour « réparties dans la journée » la veille : un fragment court
+est toujours un piège pour la forme longue qui le contient.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 12 sujets | tous complets, **152/152** pour droit |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 842 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 12 sections, 0 orpheline |
+| `audit-geometrie.html` | 312 mesures, 18 gabarits, 0 anomalie |
+| Bandeau de droit français | présent sur les quatre pages anglaises |
+
 ## 2026-08-16 — Santé au travail traduite, et le bandeau de droit français enfin utilisé
 Quatre pages, trois banques de questions, 149 textes de simulateurs. `sante`
 est déclaré dans `CONTENU_TRADUIT`.

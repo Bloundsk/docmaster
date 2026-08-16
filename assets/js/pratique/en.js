@@ -70,6 +70,19 @@ window.PRATIQUE_TEXTES = {
         " min par semaine": " min per week",
         " h par semaine": " h per week",
         " min au-delà": " min beyond",
+
+        // --- Droit : durées composées et morceaux soudés à un nombre ---------
+        // Le français écrit « 1 mois » et « 2 mois » de la même façon ; l'anglais
+        // non. Les deux fragments au singulier sont plus longs que le pluriel,
+        // ils passent donc avant lui.
+        " % du loyer par mois entamé)": "% of the rent per month started)",
+        "dépassée depuis ": "overdue by ",
+        " 1 mois": " 1 month",
+        " 1 an ": " 1 year ",
+        " heures": " hours",
+        " mois": " months",
+        "encore ": "still ",
+        "dans ": "in ",
         "% et ": "% and ",        // « 45.1% et 54.9% », les deux bornes d'un intervalle
 
         " sur ": " of ",
@@ -3041,5 +3054,289 @@ window.PRATIQUE_TEXTES = {
             "A complete process. The dated written records are what will make whatever follows possible.",
         "L'employeur informé par écrit d'une situation de harcèlement a l'obligation de réagir. Ne rien écrire le dispense de fait, quelle que soit la gravité des faits.":
             "An employer informed in writing of harassment has a duty to react. Writing nothing effectively releases it, however serious the facts.",
+
+        // =====================================================================
+        // DROIT & DÉMARCHES
+        //
+        // Sujet de SUJETS_DROIT_FRANCAIS : tout ce qui suit décrit le DROIT
+        // FRANÇAIS. Un bandeau rouge le dit en tête de chaque page traduite,
+        // et les libellés qui citent un délai le rappellent.
+        // =====================================================================
+
+        // --- source-fiable -----------------------------------------------------------------
+        "Cette réponse juridique vaut-elle quelque chose ?": "Is this legal answer worth anything?",
+        "Cochez ce qui est vrai de la source où vous venez de lire une règle.":
+            "Tick what is true of the source where you have just read a rule.",
+        "Elle vient d'un site officiel": "It comes from an official site",
+        "service-public.fr, Légifrance, un site en .gouv.fr":
+            "in France: service-public.fr, Légifrance, any .gouv.fr site",
+        "Elle cite un article de loi ou de code que je peux aller vérifier":
+            "It cites an article of law or code I can go and check",
+        "Elle porte une date, et cette date est récente": "It carries a date, and that date is recent",
+        "Elle concerne bien le droit français": "It really does concern French law",
+        "beaucoup de réponses en ligne sont belges, suisses ou canadiennes":
+            "many answers online are Belgian, Swiss or Canadian",
+        "Elle distingue ce qui est obligatoire de ce qui est d'usage":
+            "It separates what is compulsory from what is customary",
+        "Ce n'est pas un message de forum ni une réponse d'IA prise telle quelle":
+            "It is not a forum post nor an AI answer taken as it stands",
+        "À ne pas utiliser pour décider. Le droit change, et une réponse plausible peut être périmée ou étrangère.":
+            "Not to be used to decide on. The law changes, and a plausible answer may be out of date or from another country.",
+        "Probablement juste, mais vérifiez la date et l'article cité avant d'agir.":
+            "Probably right, but check the date and the article cited before acting.",
+        "Source solide. Vous pouvez vous en servir, et la citer si besoin.":
+            "A solid source. You can use it, and cite it if needed.",
+        "La plupart des erreurs juridiques du quotidien ne viennent pas d'une règle mal comprise, mais d'une règle qui n'existe plus, ou qui n'a jamais existé en France.":
+            "Most everyday legal mistakes do not come from a rule misunderstood, but from a rule that no longer exists, or never existed in France.",
+
+        // --- delais-consommateur -----------------------------------------------------------
+        "Que vous reste-t-il comme recours ?": "What remedies do you have left?",
+        "Pour un achat auprès d'un professionnel. Comptez à partir du jour où vous avez reçu le bien.":
+            "For a purchase from a trader, under French law. Count from the day you received the goods.",
+        "Jours depuis la réception": "Days since delivery",
+        "Présomption : 24 (neuf) ou 12 (occasion)": "Presumption: 24 (new) or 12 (second-hand)",
+        "Rétractation (achat à distance)": "Right to withdraw (distance selling)",
+        "Garantie légale de conformité": "Legal guarantee of conformity",
+        "C'est au vendeur de prouver que le bien était conforme":
+            "It is for the seller to prove the goods conformed",
+        "Vice caché": "Hidden defect",
+        "2 ans à compter de la découverte": "2 years from discovery",
+        "encore 14 jour(s)": "still 14 day(s)",
+        "terminé : la preuve vous revient": "over: the burden of proof falls back on you",
+        "La rétractation ne dure que quatorze jours et ne vaut qu'à distance ; la garantie de conformité dure deux ans et vaut partout. Ce sont deux droits distincts, souvent confondus.":
+            "The right to withdraw lasts only fourteen days and applies only to distance sales; the guarantee of conformity lasts two years and applies everywhere. Two distinct rights, often confused.",
+
+        // --- lettre-efficace ---------------------------------------------------------------
+        "Votre courrier vaudra-t-il preuve ?": "Will your letter count as evidence?",
+        "Cochez ce que contient réellement le courrier que vous vous apprêtez à envoyer.":
+            "Tick what the letter you are about to send actually contains.",
+        "Vos coordonnées complètes et la référence du dossier ou du contrat":
+            "Your full details and the file or contract reference",
+        "Les faits, datés, sans commentaire ni reproche":
+            "The facts, dated, with no commentary or reproach",
+        "Ce que vous demandez, précisément": "What you are asking for, precisely",
+        "« le remboursement de 149 € », pas « un geste »":
+            "“a refund of €149”, not “a gesture”",
+        "Un délai de réponse, raisonnable et écrit": "A deadline to reply, reasonable and in writing",
+        "Le fondement invoqué": "The grounds relied on",
+        "un article de loi, ou à défaut la clause du contrat":
+            "an article of law, or failing that the clause of the contract",
+        "Un envoi qui laisse une trace": "A method of sending that leaves a trace",
+        "recommandé avec accusé de réception, ou courriel conservé":
+            "recorded delivery with proof of receipt, or an email you keep",
+        "Ce courrier exprime un mécontentement. Il ne constitue pas une mise en demeure et ne fera courir aucun délai.":
+            "This letter expresses dissatisfaction. It is not a formal demand and will start no time running.",
+        "Correct. La demande chiffrée et le délai écrit sont ce qui manque le plus souvent.":
+            "Fine. The itemised request and the written deadline are what is most often missing.",
+        "Courrier utilisable. S'il reste sans réponse, il servira de point de départ à la suite.":
+            "A usable letter. If it goes unanswered, it will serve as the starting point for what follows.",
+        "Un courrier de réclamation n'a pas à être bien tourné. Il doit être daté, chiffré, fondé et prouvable — le reste est décoratif.":
+            "A letter of complaint does not have to be well turned. It has to be dated, itemised, grounded and provable — the rest is decoration.",
+
+        // --- conserver-papiers -------------------------------------------------------------
+        "Gardez-vous ce qu'il faut, aussi longtemps qu'il faut ?":
+            "Are you keeping what you need, for as long as you need?",
+        "Cochez ce qui est vrai de vos archives personnelles.":
+            "Tick what is true of your personal records.",
+        "Je garde mes bulletins de paie sans limite de durée":
+            "I keep my payslips with no time limit",
+        "ils servent au calcul de la retraite": "they are used to calculate the pension",
+        "Je garde mes avis d'imposition au moins trois ans":
+            "I keep my tax assessments at least three years",
+        "Je garde mes quittances de loyer au moins trois ans après le départ":
+            "I keep my rent receipts at least three years after moving out",
+        "Je garde les factures de travaux dix ans": "I keep building work invoices for ten years",
+        "durée de la garantie décennale": "the length of the ten-year building guarantee in France",
+        "J'ai une copie numérique de mes papiers d'identité, stockée à part":
+            "I have a digital copy of my identity documents, stored separately",
+        "Quelqu'un d'autre saurait où les trouver en cas de besoin":
+            "Somebody else would know where to find them if needed",
+        "Sans document, un droit reste un droit — mais il n'est pas défendable. La charge de la preuve pèse sur celui qui réclame.":
+            "With no document, a right remains a right — but it cannot be defended. The burden of proof falls on whoever is claiming.",
+        "Bon ensemble. Les bulletins de paie et les factures de travaux sont ceux qu'on jette le plus vite, et qu'on regrette le plus.":
+            "A good set. Payslips and building invoices are the ones thrown away soonest, and regretted most.",
+        "Archives solides. C'est ce qui rend une contestation possible plutôt que théorique.":
+            "Solid records. That is what makes a challenge possible rather than theoretical.",
+        "Un litige se gagne rarement sur le fond et souvent sur la pièce qu'on peut produire. Jeter trop tôt coûte plus cher que classer.":
+            "A dispute is rarely won on the merits and often on the document you can produce. Throwing away too soon costs more than filing.",
+
+        // --- depot-de-garantie -------------------------------------------------------------
+        "Votre dépôt de garantie vous revient-il ?": "Is your deposit coming back to you?",
+        "Location vide ou meublée, après la remise des clés.":
+            "Unfurnished or furnished tenancy in France, after the keys are handed back.",
+        "Dépôt de garantie versé": "Deposit paid",
+        "Loyer mensuel hors charges": "Monthly rent excluding charges",
+        "Retenues justifiées par le bailleur": "Deductions justified by the landlord",
+        "Mois de retard entamés": "Months of delay started",
+        "Somme qui vous revient": "Amount owed to you",
+        "Délai légal de restitution": "Legal deadline for return (France)",
+        "1 mois si l'état des lieux est conforme, 2 mois sinon":
+            "1 month if the inventory matches, 2 months otherwise",
+        "Majoration de retard": "Late-payment increase",
+        "Total réclamable": "Total claimable",
+        "La majoration n'est pas une faveur à demander : elle est due de plein droit. Encore faut-il la réclamer — personne ne la verse spontanément.":
+            "The increase is not a favour to be asked for: it is owed as of right. It still has to be claimed — nobody pays it spontaneously.",
+
+        // --- preavis-bail ------------------------------------------------------------------
+        "Votre congé est-il valable ?": "Is your notice valid?",
+        "Cochez ce qui est vrai du congé que vous donnez à votre bailleur.":
+            "Tick what is true of the notice you are giving your landlord.",
+        "Il est donné par écrit": "It is given in writing",
+        "recommandé avec accusé de réception, acte d'huissier ou remise en main propre contre signature":
+            "recorded delivery with proof of receipt, by bailiff, or handed over against signature",
+        "Je connais la durée de mon préavis": "I know the length of my notice period",
+        "3 mois en location vide, 1 mois en meublé ou en zone tendue":
+            "in France: 3 months unfurnished, 1 month furnished or in a designated tight market",
+        "Je sais que le préavis court à compter de la réception, pas de l'envoi":
+            "I know the notice runs from receipt, not from posting",
+        "Si j'invoque un préavis réduit, j'en donne le motif dans la lettre":
+            "If I claim a shortened notice, I give the reason in the letter",
+        "sans motif écrit, le préavis reste de trois mois":
+            "with no written reason, the notice stays three months",
+        "J'ai gardé l'état des lieux d'entrée pour le comparer à celui de sortie":
+            "I have kept the check-in inventory to compare with the check-out one",
+        "J'ai relevé les compteurs et gardé une photo datée du logement":
+            "I have read the meters and kept a dated photo of the property",
+        "Congé fragile. Un préavis mal donné se prolonge, et un mois de loyer supplémentaire coûte plus cher qu'un recommandé.":
+            "A fragile notice. A badly given notice runs on, and an extra month's rent costs more than recorded delivery.",
+        "L'essentiel y est. Attention au motif écrit : c'est lui qui justifie un préavis réduit.":
+            "The essentials are there. Watch the written reason: it is what justifies a shortened notice.",
+        "Congé en règle. Les deux dernières cases sont ce qui protège le dépôt de garantie.":
+            "A notice in order. The last two boxes are what protects the deposit.",
+        "Le point de départ du préavis est la réception, jamais l'envoi. Deux jours de courrier peuvent décaler la sortie d'un mois entier.":
+            "Notice starts on receipt, never on posting. Two days in the post can shift the move-out by a whole month.",
+
+        // --- periode-essai -----------------------------------------------------------------
+        "Où en êtes-vous de votre période d'essai ?": "Where are you in your probation period?",
+        "Contrat à durée indéterminée. La durée initiale dépend de la catégorie : 2 mois employé, 3 mois agent de maîtrise, 4 mois cadre.":
+            "Permanent contract under French law. The initial length depends on the category: 2 months for staff, 3 for supervisors, 4 for managers.",
+        "Durée initiale prévue": "Initial length provided for",
+        "Jours depuis l'embauche": "Days since starting",
+        "Fin de la période d'essai": "End of the probation period",
+        "Durée maximale avec renouvellement": "Maximum length with renewal",
+        "Délai de prévenance applicable aujourd'hui": "Notice period applicable today",
+        "Renouvellement": "Renewal",
+        "possible seulement si le contrat le prévoit et avec votre accord écrit":
+            "possible only if the contract provides for it and with your written agreement",
+        "24 heures": "24 hours",
+        "48 heures": "48 hours",
+        "2 semaines": "2 weeks",
+        "1 mois": "1 month",
+        "Le renouvellement ne se présume jamais : sans clause au contrat et sans accord écrit, la période d'essai s'arrête à sa durée initiale.":
+            "Renewal is never presumed: with no clause in the contract and no written agreement, the probation period ends at its initial length.",
+
+        // --- micro-entreprise --------------------------------------------------------------
+        "La micro-entreprise vous convient-elle ?": "Does the micro-entrepreneur regime suit you?",
+        "Cochez ce qui correspond à votre situation réelle.":
+            "Tick what matches your actual situation.",
+        "Mon chiffre d'affaires reste sous les seuils du régime":
+            "My turnover stays under the regime's thresholds",
+        "seuils révisés régulièrement : à vérifier sur service-public.fr":
+            "thresholds are revised regularly: check them on the official French site",
+        "Mes charges réelles sont faibles": "My actual costs are low",
+        "en micro, elles ne sont pas déductibles : l'abattement est forfaitaire":
+            "under this regime they are not deductible: the allowance is a flat rate",
+        "Je n'ai pas besoin de récupérer la TVA sur mes achats":
+            "I do not need to reclaim VAT on my purchases",
+        "Je n'ai pas d'associé et n'envisage pas d'en prendre":
+            "I have no partner and do not plan to take one",
+        "Je n'ai pas besoin de protéger un patrimoine important":
+            "I do not need to protect substantial assets",
+        "J'ai vérifié que mon activité est éligible": "I have checked my activity is eligible",
+        "certaines professions en sont exclues": "some professions are excluded from it",
+        "Plusieurs signaux pointent vers une autre forme. Un rendez-vous gratuit en chambre consulaire vaut mieux qu'un choix par défaut.":
+            "Several signs point to another form. A free appointment at a chamber of commerce beats a choice made by default.",
+        "Possible, mais regardez de près les cases non cochées : ce sont elles qui coûtent cher en cours de route.":
+            "Possible, but look closely at the unticked boxes: those are the ones that cost dearly along the way.",
+        "La micro-entreprise est probablement adaptée. C'est le régime le plus simple à ouvrir et à fermer.":
+            "The micro-entrepreneur regime is probably suitable. It is the simplest to open and to close.",
+        "En micro-entreprise, les charges ne se déduisent pas : l'abattement est forfaitaire. Une activité à fortes dépenses y est fiscalement pénalisée, quel que soit son chiffre d'affaires.":
+            "Under this regime costs are not deducted: the allowance is a flat rate. A business with heavy expenses is penalised by it, whatever its turnover.",
+
+        // --- clauses-abusives --------------------------------------------------------------
+        "Ce contrat contient-il des clauses à écarter ?":
+            "Does this contract contain clauses to be set aside?",
+        "Contrat entre un professionnel et un particulier. Cochez ce que vous y trouvez.":
+            "A contract between a trader and a consumer. Tick what you find in it.",
+        "Une clause qui supprime ou réduit le droit à réparation en cas de faute du professionnel":
+            "A clause removing or reducing the right to compensation if the trader is at fault",
+        "Une clause qui autorise le professionnel à modifier le contrat seul, sans motif prévu":
+            "A clause letting the trader change the contract alone, with no stated reason",
+        "Une clause qui impose une preuve impossible à apporter":
+            "A clause requiring proof that cannot be provided",
+        "Une clause qui prive de la garantie légale de conformité":
+            "A clause depriving you of the legal guarantee of conformity",
+        "Une clause qui impose de renoncer à saisir un juge":
+            "A clause requiring you to give up going to court",
+        "Une clause qui engage sans durée ni possibilité de résilier":
+            "A clause committing you with no term and no way to cancel",
+        "Rien de manifestement abusif dans cette liste. Cela ne dispense pas de lire les conditions de résiliation.":
+            "Nothing obviously unfair in this list. That does not excuse skipping the cancellation terms.",
+        "Une clause abusive est réputée non écrite : elle ne s'applique pas, même signée. Le reste du contrat, lui, reste valable.":
+            "An unfair term is deemed unwritten: it does not apply, even signed. The rest of the contract stays valid.",
+        "Beaucoup de clauses déséquilibrées. Signer n'y change rien — mais mieux vaut le savoir avant qu'après.":
+            "Many one-sided terms. Signing changes nothing — but better to know before than after.",
+        "Une clause abusive est réputée non écrite. Signer un contrat qui en contient ne la rend pas valable : ce que le contrat retire à la loi, la loi le reprend.":
+            "An unfair term is deemed unwritten. Signing a contract containing one does not make it valid: what the contract takes from the law, the law takes back.",
+
+        // --- prescription ------------------------------------------------------------------
+        "Est-il encore temps d'agir ?": "Is there still time to act?",
+        "Délai de droit commun : 5 ans. Certains délais sont plus courts — 2 ans pour un professionnel réclamant à un particulier, 3 ans pour les salaires ou les loyers.":
+            "The general French limitation period is 5 years. Some are shorter — 2 years for a trader claiming from a consumer, 3 years for wages or rent.",
+        "Mois écoulés depuis les faits": "Months elapsed since the events",
+        "Délai applicable": "Applicable period",
+        "Délai total": "Total period",
+        "Déjà écoulé": "Already elapsed",
+        "Il vous reste": "You have left",
+        "Prescrit depuis": "Time-barred for",
+        "Verdict": "Verdict",
+        "l'action est encore ouverte": "the claim is still open",
+        "l'action n'est plus recevable": "the claim can no longer be brought",
+        // Deux valeurs entières, sans chiffre à interpoler pour la seconde.
+        "1 an": "1 year",
+        "délai expiré": "period expired",
+        "La prescription s'apprécie à la date où l'on saisit le juge, pas à celle où l'on commence à s'en occuper. Une mise en demeure ne l'interrompt pas ; une assignation, si.":
+            "Limitation is judged at the date the court is seised, not the date you start dealing with it. A formal demand does not interrupt it; a claim form does.",
+
+        // --- cout-litige -------------------------------------------------------------------
+        "Le procès en vaut-il la peine ?": "Is the case worth bringing?",
+        "Une estimation honnête avant de saisir un juge — pour comparer avec un règlement amiable.":
+            "An honest estimate before going to court — to compare with settling.",
+        "Somme réclamée": "Amount claimed",
+        "Frais estimés": "Estimated costs",
+        "Chances de gagner, à votre estime": "Chances of winning, in your own estimation",
+        "Si vous gagnez": "If you win",
+        "Si vous perdez": "If you lose",
+        "Résultat moyen attendu": "Average expected outcome",
+        "un accord amiable, même partiel, rapporterait davantage":
+            "a settlement, even a partial one, would bring in more",
+        "l'action se défend, sans compter le temps qu'elle prendra":
+            "the claim is defensible, leaving aside the time it will take",
+        "Sous 5 000 €, l'avocat n'est pas obligatoire et le conciliateur de justice est gratuit. Beaucoup de litiges du quotidien ne valent économiquement pas le procès qu'ils méritent moralement.":
+            "In France, below €5,000 a lawyer is not compulsory and the court conciliator is free. Many everyday disputes are not economically worth the case they morally deserve.",
+
+        // --- droits-rgpd -------------------------------------------------------------------
+        "Savez-vous ce que vous pouvez exiger ?": "Do you know what you can demand?",
+        "Cochez les droits que vous savez pouvoir exercer auprès de n'importe quelle entreprise détenant vos données.":
+            "Tick the rights you know you can exercise against any company holding your data.",
+        "Obtenir la copie de toutes les données détenues sur moi":
+            "Obtain a copy of all the data held about me",
+        "Faire corriger une information inexacte": "Have inaccurate information corrected",
+        "Faire effacer mes données, hors obligation légale de conservation":
+            "Have my data erased, outside any legal retention obligation",
+        "M'opposer à la prospection commerciale, sans avoir à me justifier":
+            "Object to marketing, without having to justify myself",
+        "Récupérer mes données dans un format réutilisable":
+            "Get my data back in a reusable format",
+        "Saisir la CNIL gratuitement si l'entreprise ne répond pas sous un mois":
+            "Complain free of charge to my data protection authority if the company does not answer within a month",
+        "Ces droits existent depuis 2018 et ne coûtent rien à exercer. Ils sont surtout inutilisés.":
+            "These rights have existed since 2018 and cost nothing to exercise. Mostly they go unused.",
+        "Bonne base. Le droit à la portabilité et le délai d'un mois sont les moins connus, et les plus utiles.":
+            "A good base. The right to portability and the one-month deadline are the least known, and the most useful.",
+        "Vous connaissez vos droits. Ils s'exercent par un simple courriel, sans motif à donner.":
+            "You know your rights. They are exercised by a simple email, with no reason to give.",
+        "Une demande d'accès se fait par courriel, sans justification, et l'entreprise a un mois pour répondre. Le silence est lui-même un motif de plainte.":
+            "An access request is made by email, without justification, and the company has one month to answer. Silence is itself grounds for a complaint.",
     },
 };
