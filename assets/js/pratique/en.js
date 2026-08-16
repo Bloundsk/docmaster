@@ -73,6 +73,13 @@ window.PRATIQUE_TEXTES = {
         " de plus pour que continuer se justifie": " more to make carrying on worthwhile",
         "vous avez de la marge pour continuer": "you have room to continue",
         "un seul prix possible : ": "one possible price only: ",
+
+        // --- Productivité -------------------------------------------------------
+        " de la journée": " of the day",
+        " par jour": " per day",
+        "En 1 passage(s) groupé(s)": "In 1 batched pass",
+        " passage(s) groupé(s)": " batched passes",
+        "En ": "In ",
         " à ": " to ",
     },
 
@@ -1052,5 +1059,254 @@ window.PRATIQUE_TEXTES = {
         "Valeur de votre solution de rechange": "Value of your alternative",
         "Point de rupture": "Walk-away point",
         "Votre maximum": "Your maximum",
+
+        // ====================================================================
+        // PRODUCTIVITÉ & ORGANISATION
+        // ====================================================================
+
+        // --- Unités ---------------------------------------------------------
+        "min": "min",
+        "msg": "msg",
+
+        // --- rythme-journee --------------------------------------------------
+        "Travaillez-vous au bon moment ?": "Are you working at the right time?",
+        "Cochez ce qui décrit votre journée réelle.": "Tick what describes your actual day.",
+        "Je connais mon meilleur créneau de concentration": "I know my best window for concentration",
+        "observé, pas supposé": "observed, not assumed",
+        "Le travail de fond y est effectivement placé": "Deep work is actually placed there",
+        "Les tâches mécaniques occupent le creux d'après-midi":
+            "Mechanical tasks fill the afternoon dip",
+        "Je ne consacre pas ma première heure aux messages":
+            "I do not give my first hour to messages",
+        "Je prends des pauses qui changent de registre": "I take breaks that change register",
+        "consulter son téléphone n'est pas une pause pour l'attention":
+            "checking your phone is not a break for attention",
+        "Je n'allonge pas la journée quand le travail déborde":
+            "I do not lengthen the day when work overflows",
+        "le total produit sur la semaine baisse": "the weekly output goes down",
+        "Votre meilleur créneau est probablement consacré aux priorités des autres.":
+            "Your best window is probably given over to other people's priorities.",
+        "Bonne base. Protéger la première heure est le changement le plus rentable.":
+            "Good basis. Protecting the first hour is the most profitable change.",
+        "Vos heures les plus productives servent ce qui compte le plus.":
+            "Your most productive hours serve what matters most.",
+        "Deux heures au bon moment valent quatre heures au mauvais. C'est l'optimisation qui ne coûte rien.":
+            "Two hours at the right time are worth four at the wrong one. That is the optimisation that costs nothing.",
+
+        // --- habitude-durable ---------------------------------------------------
+        "Votre habitude peut-elle tenir ?": "Can your habit last?",
+        "Cochez ce qui est vrai de l'habitude que vous voulez installer.":
+            "Tick what is true of the habit you want to establish.",
+        "Elle est rattachée à une action déjà automatique": "It is attached to an already automatic action",
+        "le déclencheur existe, rien à retenir": "the trigger exists, nothing to remember",
+        "Sa version minimale est ridiculement petite": "Its minimal version is ridiculously small",
+        "« écrire une phrase », « ouvrir le fichier »": "“write one sentence”, “open the file”",
+        "J'ai retiré de la friction devant elle": "I have removed friction in front of it",
+        "préparé la veille, outil déjà ouvert": "prepared the night before, tool already open",
+        "J'ai ajouté de la friction devant ce qui la concurrence":
+            "I have added friction in front of what competes with it",
+        "J'ai une règle de reprise après une rupture": "I have a rule for restarting after a break",
+        "ne jamais manquer deux fois de suite": "never miss twice in a row",
+        "Je n'installe qu'une seule habitude à la fois": "I establish only one habit at a time",
+        "Cette habitude repose encore sur la volonté, qui fluctue par nature.":
+            "This habit still rests on willpower, which fluctuates by nature.",
+        "Bonne conception. La règle de reprise est ce qui décide au deuxième mois.":
+            "Well designed. The restart rule is what decides in the second month.",
+        "Cette habitude ne dépend pas de votre motivation. Elle a une vraie chance.":
+            "This habit does not depend on your motivation. It has a real chance.",
+        "Ajouter vingt secondes d'effort réduit fortement la fréquence d'un geste. En retirer vingt l'augmente d'autant.":
+            "Adding twenty seconds of effort sharply reduces how often something is done. Removing twenty raises it as much.",
+
+        // --- cout-reunion ---------------------------------------------------------
+        "Combien coûte cette réunion ?": "What does this meeting cost?",
+        "Une réunion coûte sa durée multipliée par le nombre de participants.":
+            "A meeting costs its length multiplied by the number of participants.",
+        "Durée": "Length",
+        "Participants": "Participants",
+        "Coût horaire chargé moyen": "Average loaded hourly cost",
+        "Occurrences par an": "Occurrences per year",
+        "Heures de travail par séance": "Working hours per session",
+        "Coût par séance": "Cost per session",
+        "Une heure à huit personnes, c'est une journée de travail. La question « faut-il convier tout le monde ? » se pose alors autrement.":
+            "One hour with eight people is a working day. The question “does everyone need to be there?” then looks different.",
+
+        // --- revue-systeme ----------------------------------------------------------
+        "Votre système résiste-t-il à la dérive ?": "Does your system resist drift?",
+        "Cochez ce qui a effectivement lieu, à intervalle régulier.":
+            "Tick what actually happens, at regular intervals.",
+        "Une revue hebdomadaire de trente minutes, à heure fixe dans l'agenda":
+            "A thirty-minute weekly review, at a fixed time in the calendar",
+        "Un point mensuel sur ce qui n'a pas avancé, et pourquoi":
+            "A monthly check on what has not moved, and why",
+        "Un recul trimestriel sur ce qui compte vraiment":
+            "A quarterly step back on what really matters",
+        "Je pose devant chaque projet : « si cela n'existait pas, est-ce que je le commencerais ? »":
+            "For each project I ask: “if this did not exist, would I start it?”",
+        "J'ai arrêté au moins un engagement au cours des six derniers mois":
+            "I have stopped at least one commitment in the last six months",
+        "Rien de nouveau n'entre sans que quelque chose sorte":
+            "Nothing new comes in without something going out",
+        "Sans revue, ce système dérivera jusqu'à être abandonné en bloc.":
+            "With no review, this system will drift until it is abandoned wholesale.",
+        "Bonne discipline. Arrêter des choses reste la partie la plus difficile.":
+            "Good discipline. Stopping things remains the hardest part.",
+        "Votre système se corrige tout seul. C'est ce qui le fera durer.":
+            "Your system corrects itself. That is what will make it last.",
+        "Quand un système se dérègle, changer d'outil reporte le problème d'un trimestre. Ce qui manquait, c'était la revue.":
+            "When a system goes off the rails, changing tool postpones the problem by a quarter. What was missing was the review.",
+
+        // --- pomodoro --------------------------------------------------------------------
+        "Que produit une journée en Pomodoro ?": "What does a Pomodoro day produce?",
+        "Le total surprend : le temps réellement concentré est bien inférieur aux heures passées.":
+            "The total is surprising: genuinely focused time is far below the hours spent.",
+        "Durée d'une session": "Length of a session",
+        "Pause entre deux sessions": "Break between two sessions",
+        "Heures consacrées au travail de fond": "Hours given to deep work",
+        "Sessions dans la plage": "Sessions in the window",
+        "Temps réellement concentré": "Genuinely focused time",
+        "Part de la plage": "Share of the window",
+        "Quatre heures de présence donnent environ trois heures de concentration réelle. C'est déjà beaucoup.":
+            "Four hours of presence give about three hours of real concentration. That is already a lot.",
+
+        // --- systeme-gtd -----------------------------------------------------------------
+        "Votre système tient-il debout ?": "Does your system stand up?",
+        "Cochez ce qui est vrai aujourd'hui, pas ce que vous aviez prévu.":
+            "Tick what is true today, not what you had planned.",
+        "Tout ce que j'ai à faire est noté quelque part, hors de ma tête":
+            "Everything I have to do is written down somewhere, outside my head",
+        "Il existe un seul endroit pour capturer, pas cinq": "There is one place to capture, not five",
+        "Chaque tâche commence par un verbe d'action": "Every task starts with an action verb",
+        "« appeler le comptable » et non « comptable »": "“call the accountant”, not “accountant”",
+        "Les tâches de plus d'une étape sont identifiées comme projets":
+            "Tasks with more than one step are identified as projects",
+        "Je vide mes boîtes de capture au moins une fois par semaine":
+            "I empty my inboxes at least once a week",
+        "Je fais confiance à mon système : je n'ai pas de liste parallèle mentale":
+            "I trust my system: I keep no parallel list in my head",
+        "Votre mémoire porte encore une partie du système, et elle le porte mal.":
+            "Your memory is still carrying part of the system, and carrying it badly.",
+        "Bonne base. La revue hebdomadaire est ce qui manque le plus souvent.":
+            "Good basis. The weekly review is what is most often missing.",
+        "Système fiable : votre tête n'a plus à servir de mémoire.":
+            "A reliable system: your head no longer has to serve as memory.",
+        "Un système auquel on ne fait pas confiance est doublé d'une liste mentale — et c'est elle qui fatigue.":
+            "A system you do not trust is shadowed by a mental list — and it is the list that tires you.",
+
+        // --- matrice-eisenhower -------------------------------------------------------------
+        "Cochez ce qui est vrai de votre usage réel, pas de vos intentions.":
+            "Tick what is true of how you actually use it, not of your intentions.",
+        "J'ai classé les tâches de ma semaine dans les quatre cases":
+            "I have sorted this week's tasks into the four boxes",
+        "Le quadrant 4 n'est pas vide": "Quadrant 4 is not empty",
+        "s'il l'est, c'est que rien n'a été renoncé": "if it is, nothing has been given up",
+        "Un créneau récurrent est réservé au quadrant 2 dans mon agenda":
+            "A recurring slot is reserved for quadrant 2 in my calendar",
+        "important mais non urgent": "important but not urgent",
+        "Devant une tâche urgente, je me demande « urgent pour qui ? »":
+            "Faced with an urgent task, I ask myself “urgent for whom?”",
+        "Les tâches du quadrant 3 sont déléguées ou expédiées, pas soignées":
+            "Quadrant 3 tasks are delegated or dispatched, not polished",
+        "Je refais l'exercice au moins une fois par mois": "I redo the exercise at least once a month",
+        "L'exercice a été fait, mais rien n'a changé dans l'agenda : il n'a rien arbitré.":
+            "The exercise was done, but nothing changed in the calendar: it settled nothing.",
+        "Bon usage. Le créneau réservé au quadrant 2 est ce qui manque le plus souvent.":
+            "Good use. The slot reserved for quadrant 2 is what is most often missing.",
+        "La matrice arbitre réellement. C'est tout ce qu'on lui demande.":
+            "The matrix genuinely settles things. That is all it is asked to do.",
+        "L'urgent se signale de lui-même. L'important reste silencieux : il faut lui réserver du temps, ou il n'arrivera jamais.":
+            "The urgent announces itself. The important stays silent: you have to reserve time for it, or it never happens.",
+
+        // --- choisir-outil ----------------------------------------------------------------------
+        "Cet outil vous convient-il ?": "Is this tool right for you?",
+        "Cochez ce qui est vrai de l'outil que vous utilisez ou envisagez.":
+            "Tick what is true of the tool you use or are considering.",
+        "Capturer une tâche prend moins de cinq secondes": "Capturing a task takes less than five seconds",
+        "au-delà, on ne capture plus": "beyond that, people stop capturing",
+        "Il est accessible partout où les idées surviennent":
+            "It is reachable everywhere ideas turn up",
+        "Je n'ai pas passé plus d'une heure à le configurer":
+            "I have not spent more than an hour configuring it",
+        "Je l'utilise encore trois mois après l'avoir adopté":
+            "I still use it three months after adopting it",
+        "Il ne me demande pas de renseigner des champs dont je ne me sers pas":
+            "It does not ask me to fill in fields I never use",
+        "Je peux en sortir mes données si je change d'avis":
+            "I can get my data out if I change my mind",
+        "Cet outil consomme probablement plus d'énergie qu'il n'en fait gagner.":
+            "This tool probably consumes more energy than it saves.",
+        "Correct. La vraie question reste : l'utiliserez-vous dans trois mois ?":
+            "Reasonable. The real question remains: will you still use it in three months?",
+        "Outil adapté : il sert le système au lieu de le remplacer.":
+            "A fitting tool: it serves the system instead of replacing it.",
+        "Le meilleur outil est celui qu'on utilise encore dans six mois. Tous les autres critères passent après.":
+            "The best tool is the one you still use in six months. Every other criterion comes after.",
+
+        // --- cout-interruptions --------------------------------------------------------------------
+        "Ce que coûtent vos interruptions": "What your interruptions cost",
+        "Le temps perdu n'est pas la durée de l'interruption, c'est le temps de reprise.":
+            "The time lost is not the length of the interruption, it is the time to get back in.",
+        "Interruptions par jour": "Interruptions per day",
+        "Durée moyenne d'une interruption": "Average length of an interruption",
+        "Temps de reprise après coupure": "Time to get back in after a break",
+        "Durée de la journée de travail": "Length of the working day",
+        "Temps des interruptions": "Time in interruptions",
+        "Temps de reprise": "Time getting back in",
+        "Total perdu": "Total lost",
+        "Une coupure de deux minutes en coûte vingt. C'est pourquoi le total surprend toujours.":
+            "A two-minute interruption costs twenty. That is why the total always comes as a surprise.",
+
+        // --- temps-disponible ------------------------------------------------------------------------
+        "Combien de temps vous reste-t-il vraiment ?": "How much time do you really have left?",
+        "Planifier plus que le disponible garantit d'échouer — par arithmétique, pas par manque de discipline.":
+            "Planning more than you have guarantees failure — by arithmetic, not for lack of discipline.",
+        "Durée de la journée": "Length of the day",
+        "Réunions": "Meetings",
+        "Traitement des messages": "Handling messages",
+        "Imprévus et transitions": "Unplanned events and transitions",
+        "Temps disponible pour le travail de fond": "Time available for deep work",
+        "Part de la journée": "Share of the day",
+        "À planifier raisonnablement (70 %)": "Reasonable to plan (70%)",
+        "Une planification à 70 % tient. Une planification à 100 % casse à la première urgence.":
+            "Planning to 70% holds. Planning to 100% breaks at the first emergency.",
+
+        // --- traitement-par-lots -----------------------------------------------------------------------
+        "Au fil de l'eau, ou par lots ?": "As they come, or in batches?",
+        "Le travail est le même. Ce sont les transitions qui coûtent.":
+            "The work is the same. It is the transitions that cost.",
+        "Messages par jour": "Messages per day",
+        "Temps de traitement par message": "Handling time per message",
+        "Reprise après chaque interruption": "Getting back in after each interruption",
+        "Nombre de passages par jour si traité par lots": "Number of passes per day if batched",
+        "Au fil de l'eau": "As they come",
+        "Économie": "Saving",
+        "Ce n'est pas le nombre de messages qui coûte cher, c'est le nombre de fois qu'on les regarde.":
+            "It is not the number of messages that costs, it is the number of times you look at them.",
+
+        // --- dire-non ----------------------------------------------------------------------------------
+        "Faut-il dire oui ?": "Should you say yes?",
+        "Cochez ce que vous avez vérifié avant d'accepter cette demande.":
+            "Tick what you checked before accepting this request.",
+        "Je sais précisément ce que je ne ferai pas si j'accepte":
+            "I know precisely what I will not do if I accept",
+        "Cette chose abandonnée est moins importante que la demande":
+            "The thing given up matters less than the request",
+        "J'ai estimé la durée réelle, pas la durée annoncée":
+            "I have estimated the real duration, not the stated one",
+        "J'ai vérifié qu'elle rentre dans mon temps disponible, pas dans ma journée théorique":
+            "I have checked it fits my available time, not my theoretical day",
+        "Si je dois refuser, j'ai une formulation qui rend le coût visible":
+            "If I have to refuse, I have wording that makes the cost visible",
+        "report daté, arbitrage explicite, version réduite":
+            "a dated postponement, an explicit trade-off, a reduced version",
+        "La personne qui demande sait ce que cela décale":
+            "The person asking knows what it pushes back",
+        "Accepter ici, c'est refuser autre chose sans l'avoir décidé.":
+            "Accepting here means refusing something else without having decided to.",
+        "Il manque l'essentiel : nommer ce qui sera abandonné.":
+            "The essential is missing: naming what will be given up.",
+        "Décision instruite : c'est un vrai oui, ou un refus argumenté.":
+            "An informed decision: a real yes, or a reasoned no.",
+        "Personne ne vient réclamer le travail qui n'a pas été fait. C'est ce qui rend ce coût invisible.":
+            "Nobody comes to claim the work that was not done. That is what makes this cost invisible.",
     },
 };

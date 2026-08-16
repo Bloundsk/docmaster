@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Productivity — Intermediate - DocMaster</title>
+    <meta name="description" content="The cost of task switching, time blocking, handling incoming streams and prioritising for real. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/productivite/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/productivite/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/productivite/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/productivite/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Productivity — Intermediate - DocMaster">
+    <meta property="og:description" content="The cost of task switching, time blocking, handling incoming streams and prioritising for real. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/productivite/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Productivity — Intermediate - DocMaster">
+    <meta name="twitter:description" content="The cost of task switching, time blocking, handling incoming streams and prioritising for real. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">⏱️ Productivity &amp; Organisation</a> &gt;
+        <span aria-current="page">Intermediate</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⏱️ Productivity — Intermediate</h1>
+                <p>Protecting your attention rather than filling your calendar.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#cost-of-switching">🧠 The cost of task switching</a></li>
+                <li><a href="#time-blocking">📅 Time blocking</a></li>
+                <li><a href="#handling-streams">📥 Handling incoming streams</a></li>
+                <li><a href="#prioritising-for-real">🎯 Prioritising for real</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>An interruption costs far more than its length: getting back in is counted in minutes.</li>
+                <li>A task takes up the time you give it — hence the value of setting that in advance.</li>
+                <li>A full calendar is not a productive one: deep work needs blocks.</li>
+                <li>Handling messages in batches costs less than handling them as they come.</li>
+                <li>Saying yes to something is saying no to everything else — even without putting it into words.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The beginner level presented four proven methods: Pomodoro, GTD, the Eisenhower matrix, and choosing a tool. Enough to organise your tasks.</p>
+            <p>This level is about what those methods assume without saying it: <strong>available attention</strong>. Attention is the scarce resource, not time. An eight-hour day cut into ten-minute fragments is not worth three hours of continuous work — and no task system corrects that.</p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong>. The durations quoted are orders of magnitude from work on attention: they vary with people, with the nature of the task and with context.</p>
+                <p>Persistent difficulty concentrating may be about something other than organisation. This guide does not replace medical advice.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">Protecting the scarce resource</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="cost-of-switching">🧠 The cost of task switching</h3></summary>
+                <div class="lecon-corps">
+                <p>Moving from one task to another is not free. The brain has to unload the current context, load the new one, and then find the abandoned thread again. That cost is invisible on a calendar, and considerable across a day.</p>
+
+                <h4>What a two-minute interruption costs</h4>
+                <p>The work on this converges: after an interruption, returning to the previous level of concentration takes on the order of <strong>fifteen to twenty minutes</strong> on a demanding task. A two-minute break therefore costs twenty.</p>
+                <p>The arithmetic gets brutal when multiplied. Six interruptions in a morning do not take twelve minutes: they can consume more than a hundred.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>A day with <strong>9 interruptions</strong>, each of 3 minutes, on tasks needing <strong>12 minutes</strong> to get back into.</p>
+                    <p>Time in interruptions: 27 minutes. Time getting back in: <strong>108 minutes</strong>.</p>
+                    <p>Total: <strong>2 h 15</strong> lost from an 8-hour day — nearly 28%, most of which appears nowhere.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-changement-tache"></div>
+
+                <h4>What actually protects you</h4>
+                <p>Turning off notifications is not enough if you check for yourself every ten minutes. Three measures work together: <strong>make interruption impossible</strong> — device out of reach, messaging closed; <strong>announce a window of unavailability</strong>, so others do not have to interrupt; and <strong>note where you were</strong> before stopping, which markedly shortens getting back in.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — believing you are doing two things at once</span>
+                    <p>The brain does not process two demanding tasks simultaneously: it alternates rapidly, paying the switching cost on every round trip.</p>
+                    <p>What looks like parallel work is sequential work with transition fees — and lower quality on both tasks.</p>
+                </div>
+
+                <p class="retenir">💡 The time lost is not the length of the interruption, it is the time it then takes to come back.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="time-blocking">📅 Time blocking</h3></summary>
+                <div class="lecon-corps">
+                <p>A task list says <em>what</em> to do. It does not say <em>when</em>, and that is exactly what is missing: a list of twenty items facing an empty calendar mostly produces guilt.</p>
+
+                <h4>Reserve the time as you would a meeting</h4>
+                <p>The principle is simple: every important task gets a slot in the calendar, just like an appointment. The difference is as much psychological as practical — a slot can be defended, an intention cannot.</p>
+                <p>It also forces a useful confrontation: if the tasks do not fit, there are too many of them. The list hid that; the calendar shows it.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — what is really left</span>
+                    <p>An <strong>8-hour</strong> day. Meetings: <strong>2 h 30</strong>. Handling messages: <strong>1 h 15</strong>. Unplanned events and transitions: <strong>1 h</strong>.</p>
+                    <p>Time genuinely available for deep work: <strong>3 h 15</strong>.</p>
+                    <p>Planning six hours of output for that day guarantees failure — not for lack of discipline, but by arithmetic.</p>
+                </div>
+
+                <div class="pratique" data-pratique="blocage-de-temps"></div>
+
+                <h4>Parkinson's law, and how to use it</h4>
+                <p>A task tends to fill all the time allotted to it. A note that would take forty minutes will take three hours if the afternoon is free.</p>
+                <p>Hence the value of setting a <strong>duration before starting</strong>, even arbitrarily. It is not a constraint: it is what stops the task spreading by capillary action.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — filling the calendar to 100%</span>
+                    <p>A calendar with no empty space does not survive the first emergency: everything else shifts, and the day becomes a chase to catch up.</p>
+                    <p>Planning empty blocks is not wasted time, it is what makes the plan robust. Planning to 70% holds; planning to 100% breaks.</p>
+                </div>
+
+                <p class="retenir">💡 A task list with no slots is a wish list. The calendar is what confronts it with reality.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="handling-streams">📥 Handling incoming streams</h3></summary>
+                <div class="lecon-corps">
+                <p>Messages, notifications, requests, documents: the incoming stream is continuous and never stops. The question is not to empty it, but to stop it dictating the order of the day.</p>
+
+                <h4>In batches, never as they come</h4>
+                <p>Handling messages as they arrive means interrupting yourself every time — with the restart cost seen above. Handling them in two or three dedicated passes costs the same handling time, without the switching fees.</p>
+                <p>Two slots a day are enough in most jobs. The fear of "missing something urgent" is settled by agreeing on a channel reserved for real emergencies — the phone, usually.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the weight of the stream</span>
+                    <p><strong>45 messages</strong> a day, <strong>1.5 minutes</strong> each on average: 68 minutes of pure handling.</p>
+                    <p>Handled as they come, with <strong>4 minutes</strong> to get back in each time: <strong>4 h 08</strong>.</p>
+                    <p>Handled in two batches: <strong>1 h 16</strong>. The work is the same; it was the transitions that cost nearly three hours.</p>
+                </div>
+
+                <div class="pratique" data-pratique="flux-entrant"></div>
+
+                <h4>One decision per item</h4>
+                <p>The principle that actually empties an inbox: touch each item once, and decide immediately. <strong>Reply</strong> if it takes less than two minutes, <strong>schedule</strong> if it is a task, <strong>delegate</strong>, <strong>archive</strong>, or <strong>delete</strong>.</p>
+                <p>What makes an inbox overflow is not volume: it is reading messages without doing anything with them, then rereading them.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — starting the day with your messages</span>
+                    <p>The first hour is generally when attention is most available. Giving it to the incoming stream means giving your best window to other people's priorities.</p>
+                    <p>An hour of deep work before opening your mail changes the whole day — and nothing important is lost in sixty minutes.</p>
+                </div>
+
+                <p class="retenir">💡 It is not the number of messages that costs, it is the number of times you look at them.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="prioritising-for-real">🎯 Prioritising for real</h3></summary>
+                <div class="lecon-corps">
+                <p>Prioritising does not mean ordering tasks by importance. It means <strong>giving some up</strong>. As long as no task is dropped, there has been no prioritising, only sorting.</p>
+
+                <h4>Opportunity cost, applied to time</h4>
+                <p>Accepting a half-day request means refusing everything you could have done in that half-day. That refusal is real, it is simply invisible: nobody comes to claim the work that was not done.</p>
+                <p>Hence a useful question before accepting: <strong>what will I not do if I say yes?</strong> If the answer is "nothing important", it is a real yes. If it names something, the decision deserves weighing.</p>
+
+                <div class="exemple">
+                    <span class="titre">Three ways of refusing without closing a door</span>
+                    <p><strong>The dated postponement.</strong> "I can't this week. I can start on the 24th, does that work?"</p>
+                    <p><strong>The explicit trade-off.</strong> "I can do it, but it pushes project X back a week. Which would you prefer?" — the decision goes back to whoever is asking.</p>
+                    <p><strong>The reduced version.</strong> "I can't do all of it, but I can do this part by Thursday."</p>
+                    <p>None of these is a flat refusal. All of them make the cost visible, which "yes" was hiding.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-opportunite"></div>
+
+                <h4>Separating the important from the urgent, concretely</h4>
+                <p>The urgent announces itself: it shouts, it has a deadline, somebody is waiting. The important stays silent — training, thinking, preventing a problem, maintaining a relationship.</p>
+                <p>This is why the important never arrives spontaneously in a day: you have to reserve time for it, or the urgent fills it entirely.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the list that never shrinks</span>
+                    <p>A task list that has been growing for six months contains things that will never be done. They stay there, take up attention on every reread, and maintain a permanent sense of failure.</p>
+                    <p>A monthly review with a single question — "will I really do this?" — and a deliberate deletion beats an indefinite postponement.</p>
+                </div>
+
+                <p class="retenir">💡 A prioritisation that gives nothing up is not a prioritisation. It is a ranking.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>“Deep Work”</strong>, Cal Newport: on the value of focused work and the conditions that make it possible. The reference book on the subject.</li>
+                    <li><strong>Gloria Mark's work</strong> on interruptions at work: the recovery-time measurements quoted in this guide come from it.</li>
+                    <li><strong>“Getting Things Done”</strong>, David Allen: the full method whose principles the beginner level covers.</li>
+                    <li><strong>Occupational health bodies</strong>: official guidance on organisational factors and their effects on mental load.</li>
+                </ul>
+                <p><strong>A useful habit:</strong> for three days, note every interruption and the time. The total is surprising, and it makes the conversation possible with the people around you at work.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Previous level</span>Productivity — Beginner</a>
+            <a href="avance.html" class="next"><span class="label">Next level →</span>Productivity — Advanced</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../apprendre/index.html">🎓 Learning how to learn</a>
+                <a href="../negociation/index.html">🤝 Negotiation &amp; communication</a>
+                <a href="../design/index.html">🎨 UX/UI Design</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/productivite-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

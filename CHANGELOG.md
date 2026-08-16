@@ -1,5 +1,39 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Cinquième sujet traduit : « Productivité » en anglais
+Quatre pages, 12 simulateurs, 90 questions. **Cinq sujets sur quatorze**, soit
+20 pages et 450 questions.
+
+### Ce que le contrôle durci a changé
+
+C'est le premier sujet traduit après la correction du vérificateur. La
+différence se voit : **156 textes sur 156 dès la première passe**, et aucun
+libellé français découvert en vérifiant le rendu — alors que les deux sujets
+précédents en cachaient.
+
+Un défaut de contrôle coûte deux fois : une fois quand il laisse passer, une
+seconde quand il faut reprendre ce qui est déjà publié.
+
+### Un cas nouveau : l'ordre des fragments
+
+Un verdict de simulateur contenait « au-delà de 150 mots, la plupart des
+lecteurs… ». Le fragment « mots », plus court, s'appliquait avant le fragment
+long qui le contient — et le laissait à moitié traduit.
+
+Les fragments s'appliquent désormais **du plus long au plus court**, dans le
+rendu comme dans le contrôle. Le plus spécifique passe en premier, toujours.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| Textes de simulateurs, les 5 sujets | 138/138, 166/166, 166/166, 148/148, **156/156** |
+| Français dans le rendu des 20 pages | **0** |
+| Liens internes | aucun cassé |
+| Géométrie | 142 mesures, 11 gabarits, aucune anomalie |
+
+**Reste à traduire : 9 sujets.**
+
 ## 2026-08-16 — Négociation en anglais, et un contrôle qui mentait
 Quatrième sujet traduit : quatre pages, 12 simulateurs, 90 questions. **Quatre
 sujets sur quatorze**, soit 16 pages et 360 questions.

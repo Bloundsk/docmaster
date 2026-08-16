@@ -54,7 +54,7 @@
        C'est de cette liste que dépendent deux comportements : le sélecteur mène
        vers la page traduite quand elle existe, et le bandeau « les cours sont
        en français » ne s'affiche plus sur les sujets traduits. */
-    const CONTENU_TRADUIT = { en: ["apprendre", "design", "dev-web", "negociation"], es: [], de: [], it: [], zh: [], ru: [] };
+    const CONTENU_TRADUIT = { en: ["apprendre", "design", "dev-web", "negociation", "productivite"], es: [], de: [], it: [], zh: [], ru: [] };
 
     // Les correspondances d'adresses entre versions. La version francaise est a
     // la racine, les autres sous « <langue>/ » : c'est le francais qui existait

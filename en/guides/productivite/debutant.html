@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Productivity — Beginner - DocMaster</title>
+    <meta name="description" content="The Pomodoro technique, GTD, the Eisenhower matrix and how to choose a task tool. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/productivite/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/productivite/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/productivite/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/productivite/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Productivity — Beginner - DocMaster">
+    <meta property="og:description" content="The Pomodoro technique, GTD, the Eisenhower matrix and how to choose a task tool. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/productivite/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Productivity — Beginner - DocMaster">
+    <meta name="twitter:description" content="The Pomodoro technique, GTD, the Eisenhower matrix and how to choose a task tool. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">⏱️ Productivity &amp; Organisation</a> &gt;
+        <span aria-current="page">Beginner</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⏱️ Productivity — Beginner</h1>
+                <p>The four methods that have proved themselves. No prior knowledge needed.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#the-pomodoro-technique">🍅 The Pomodoro technique</a></li>
+                <li><a href="#the-gtd-method">✅ The GTD method</a></li>
+                <li><a href="#the-eisenhower-matrix">🎯 The Eisenhower matrix</a></li>
+                <li><a href="#task-management-tools">🛠️ Task management tools</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>The Pomodoro technique alternates 25 minutes of focused work and 5 minutes of break.</li>
+                <li>GTD means capturing every task in a reliable system outside your head.</li>
+                <li>The Eisenhower matrix separates urgency from importance.</li>
+                <li>Reserve time every week for tasks that are important but not urgent.</li>
+                <li>The best tool is the one you actually use day to day.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Productivity is a field saturated with advice, and that is precisely its problem: people spend more time choosing a method than doing the work. Installing a new tool also produces an immediate satisfaction very close to that of having made progress — without having made any.</p>
+            <p>The methods here have one thing in common: they do not try to make you work faster, but to <strong>reduce what costs you without producing anything</strong> — interruptions, repeated decisions, the mental load of what you are afraid of forgetting.</p>
+            <p>A useful warning: adopt only one at a time, and give it three weeks. Stacking four systems amounts to having none.</p>
+        </section>
+
+        <section>
+            <h2 id="basics">The basics</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="the-pomodoro-technique">🍅 The Pomodoro technique</h3></summary>
+                <div class="lecon-corps">
+                <p>Work <strong>25 minutes with no interruption at all</strong>, then take a <strong>5-minute break</strong>. After four cycles, a long break of 15 to 30 minutes. That is all.</p>
+
+                <h4>Why it works</h4>
+                <p>Two mechanisms, both independent of willpower:</p>
+                <ul>
+                    <li><strong>A short commitment is easy to make.</strong> "Work on this file" is vague and daunting; "give it 25 minutes" is doable. The method acts first against procrastination, not against tiredness.</li>
+                    <li><strong>The timer protects against interruptions.</strong> Picking up the thread after a break takes several minutes of restarting. Work interrupted six times an hour is not work that advances slowly: it is work that never starts.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">The real cost of an interruption</span>
+                    <p>A demanding task requiring <strong>2 hours</strong> of concentration.</p>
+                    <p><strong>Unprotected:</strong> a notification roughly every 10 minutes. Each restart costs several minutes of getting back into context. Over two hours, a considerable share of the time goes into restarting — and quality suffers more than duration does.</p>
+                    <p><strong>In Pomodoro:</strong> four genuinely continuous 25-minute blocks. The work is finished before the second hour, and the result is better.</p>
+                    <p>The gain does not come from greater speed. It comes from removing the time lost starting again.</p>
+                </div>
+
+                <div class="pratique" data-pratique="rythme-pomodoro"></div>
+
+                <h4>In practice</h4>
+                <ol>
+                    <li>Write down <strong>one single</strong> task before starting the timer. A vague ambition produces a vague pomodoro.</li>
+                    <li>Turn off notifications. The method makes no sense without this step.</li>
+                    <li>If an idea comes up, note it on paper and carry on. Do not act on it.</li>
+                    <li>Actually take the break, and <strong>change the type of activity</strong>: stand up, drink, look into the distance. Scrolling a social network is not a break for attention.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — skipping breaks when it is going well</span>
+                    <p>It is tempting, and it is what produces exhaustion by the end of the day. Breaks are not a reward: they are part of the mechanism, and they are what lets the fourth block be as good as the first.</p>
+                    <p>One more adjustment: there is nothing sacred about 25 minutes. Some creative tasks need 50 minutes just to get into. Adapt the length, keep the principle.</p>
+                </div>
+
+                <p class="retenir">💡 The gain comes not from speed but from continuity. Twenty-five uninterrupted minutes beat a chopped-up hour.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="the-gtd-method">✅ The GTD method</h3></summary>
+                <div class="lecon-corps">
+                <p><strong>GTD</strong> (<em>Getting Things Done</em>) starts from an observation: memory is excellent for thinking and catastrophic for storing. As long as a task is written down nowhere, the mind keeps coming back to it — not to deal with it, only to check it has not been forgotten. It is a permanent, invisible tiredness.</p>
+
+                <h4>The five steps</h4>
+                <ol>
+                    <li><strong>Capture</strong> — get everything out of your head into one place: tasks, ideas, commitments, including the most trivial.</li>
+                    <li><strong>Clarify</strong> — for each item: is it actionable? If not, bin it, file it or put it on hold. If yes, what is the <strong>next concrete physical action</strong>?</li>
+                    <li><strong>Organise</strong> — sort by context: on the phone, at the computer, out shopping, to discuss with X.</li>
+                    <li><strong>Review</strong> — a weekly review, without which the system goes stale and loses all credibility.</li>
+                    <li><strong>Engage</strong> — choose according to context, time available and energy of the moment.</li>
+                </ol>
+
+                <h4>The central point: the next action</h4>
+                <div class="exemple">
+                    <span class="titre">Rephrasing to unblock</span>
+                    <p><strong>"Organise the seminar"</strong> — a task pushed back for weeks. It is not an action, it is a project: the brain does not know where to start, so it avoids.</p>
+                    <p><strong>"Call the caterer on 01 23 45 67 89 to ask for a quote for 30 people"</strong> — a precise action, doable in four minutes, which gets done without thinking.</p>
+                    <p>A task you have been putting off for a long time is almost always badly phrased. Rephrasing it is often enough to unblock it.</p>
+                </div>
+
+                <h4>The two-minute rule</h4>
+                <p>If an action takes less than two minutes, do it immediately. Noting it, filing it, rereading it and finding it again would cost more than doing it.</p>
+
+                <h4>The weekly review</h4>
+                <p>It is the step everyone abandons first, and the one that holds the whole thing together. Thirty minutes, the same day each week: empty the inboxes, reread the current projects, check that each has a defined next action.</p>
+                <p>Without it, the list fills with stale items, you stop believing in it, and you go back to memory — and therefore to the mental load.</p>
+
+                <div class="pratique" data-pratique="sante-gtd"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — building the perfect system</span>
+                    <p>You can spend weeks designing an elegant architecture of tags, databases and automations. It is pleasant, it looks like work, and it is not.</p>
+                    <p>A sheet of paper and a box kept seriously beat a sophisticated system abandoned after ten days.</p>
+                </div>
+
+                <p class="retenir">💡 The point is not to do everything, but to have nothing left to remember. An unloaded mind thinks better.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="the-eisenhower-matrix">🎯 The Eisenhower matrix</h3></summary>
+                <div class="lecon-corps">
+                <p>Two questions, four boxes. The tool looks simplistic, and that is exactly why it works when a list of thirty tasks paralyses you.</p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>Urgent</th><th>Not urgent</th></tr>
+                    <tr><th>Important</th><td><strong>1. Do now</strong><br>Crisis, imminent deadline, breakdown</td><td><strong>2. Schedule</strong><br>Training, prevention, strategy, health, relationships</td></tr>
+                    <tr><th>Not important</th><td><strong>3. Delegate or dispatch</strong><br>Requests, meetings you did not call, some emails</td><td><strong>4. Drop</strong><br>Distractions, activities done out of habit</td></tr>
+                </table>
+                </div>
+
+                <h4>The quadrant that changes everything</h4>
+                <p><strong>Quadrant 2</strong> — important but not urgent — is the only one with a lasting effect. Training, maintaining relationships, preventing problems, sleeping: none of it has a deadline, so none of it ever forces itself on you.</p>
+                <p>The mechanism is mechanical: the more you neglect quadrant 2, the more quadrant 1 fills up. A skill left unmaintained becomes an emergency retraining; a service postponed becomes a breakdown. <strong>Today's emergencies are the quadrant 2 you neglected six months ago.</strong></p>
+
+                <div class="exemple">
+                    <span class="titre">The urgency test</span>
+                    <p>Faced with a task that seems urgent, ask: <em>"urgent for whom?"</em></p>
+                    <p>Many emergencies are someone else's emergency, transferred by an insistent message. That does not mean it should be refused — but you should know you are doing it as a favour, not because it is one of your priorities.</p>
+                    <p>Without that distinction, a whole day can fill up with other people's priorities.</p>
+                </div>
+
+                <h4>Putting it into practice</h4>
+                <p>Block <strong>a recurring slot</strong> in your calendar for quadrant 2, treated as an appointment that cannot be moved. What is not in the calendar does not exist: it will always be absorbed by an emergency.</p>
+
+                <div class="pratique" data-pratique="matrice-eisenhower"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — classing everything as "important"</span>
+                    <p>If all four boxes are equally full, the exercise achieved nothing. The matrix forces a trade-off, and a trade-off means some things will not be done.</p>
+                    <p>Quadrant 4 must contain something. If it is empty, you have given nothing up.</p>
+                </div>
+
+                <p class="retenir">💡 The urgent forces itself on you, the important never does. It is for the important that time must be reserved in advance.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="task-management-tools">🛠️ Task management tools</h3></summary>
+                <div class="lecon-corps">
+                <p>A tool makes nobody organised. It makes visible an organisation that already exists — or it makes visible its absence.</p>
+
+                <h4>Choosing according to how you work</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Tool</th><th>Works well for</th><th>Limit</th></tr>
+                    <tr><td><strong>Todoist</strong></td><td>Task lists, deadlines, contexts. Close to GTD.</td><td>Poorly suited to following a project visually</td></tr>
+                    <tr><td><strong>Trello</strong></td><td>Visual tracking in columns (to do / doing / done)</td><td>Becomes unreadable past a few dozen cards</td></tr>
+                    <tr><td><strong>Notion</strong></td><td>Notes and tasks together, highly customisable</td><td>Its flexibility is a trap: you tinker instead of doing</td></tr>
+                    <tr><td><strong>Paper</strong></td><td>Daily use, with no notifications and no distractions</td><td>No search, no reminders, no backup</td></tr>
+                </table>
+                </div>
+
+                <h4>The criteria that really count</h4>
+                <ul>
+                    <li><strong>Speed of capture.</strong> If noting a task takes more than five seconds, you will stop doing it — and the system collapses at that precise moment.</li>
+                    <li><strong>One place only.</strong> Three apps in parallel guarantee that none is up to date. An imperfect but single system beats three perfect ones.</li>
+                    <li><strong>Daily consultation.</strong> A list you do not open is a dead list.</li>
+                    <li><strong>The ability to get out.</strong> Check that your data can be exported: tools shut down or change their pricing.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">The three-week test</span>
+                    <p>Every new tool seems wonderful in the first few days — it is the novelty that pleases, not the tool.</p>
+                    <p>The real question comes in the third week, when the workload returns and the enthusiasm has gone: <em>do you still open it?</em></p>
+                    <p>If yes, keep it and stop looking. If not, the problem is probably not the tool.</p>
+                </div>
+
+                <div class="pratique" data-pratique="choisir-outil"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — organised procrastination</span>
+                    <p>Reorganising your lists, comparing apps, watching method videos: it looks like work and it is not. It is even a particularly comfortable form of procrastination, since it comes with a clear conscience.</p>
+                    <p>Warning sign: if you have changed tool more than twice this year, the subject is not the tool.</p>
+                </div>
+
+                <p class="retenir">💡 The best tool is the one you will still open in three weeks. Every other criterion comes a long way behind.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole guide. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>“Getting Things Done”</strong>, David Allen — the founding work of GTD. Dense; the first three chapters are enough to start.</li>
+                    <li><strong>“Deep Work”</strong>, Cal Newport — on sustained concentration and why it is becoming rare. A good complement to Pomodoro.</li>
+                    <li><strong>“Atomic Habits”</strong>, James Clear — the approach through habits rather than motivation. The most directly applicable of the three.</li>
+                    <li><strong>Blocking apps</strong> (Cold Turkey, Freedom, built-in focus modes) — more effective than willpower, because they act before the temptation.</li>
+                    <li><strong>Your phone's timer</strong> — free and sufficient for Pomodoro. No dedicated app is needed.</li>
+                </ul>
+                <p><strong>A method tip:</strong> do not read these three books one after another. Take one, apply a single idea for a month, and only open the next if the need arises. Reading about productivity is itself one of the most common ways of avoiding it.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Back</span>Productivity &amp; Organisation path</a>
+            <a href="intermediaire.html" class="next"><span class="label">Next level →</span>Productivity — Intermediate</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../design/index.html">🎨 UX/UI Design</a>
+                <a href="../apprendre/index.html">🎓 Learning how to learn</a>
+                <a href="../negociation/index.html">🤝 Negotiation &amp; communication</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/productivite-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
