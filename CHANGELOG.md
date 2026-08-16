@@ -1,5 +1,51 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Cybersécurité traduite : huit sujets sur quatorze
+Quatre pages, trois banques de questions, 165 textes de simulateurs —
+**165 sur 165 dès la première passe**, comme pour l'IA. `cybersecurite` est
+déclaré dans `CONTENU_TRADUIT`.
+
+**Huit sujets sur quatorze**, soit 32 pages et 720 questions.
+
+### Deux passes vertes d'affilée, et ce que cela dit
+
+C'est le deuxième sujet consécutif traduit sans qu'aucune vérification ne
+trouve de français résiduel. Ce n'est pas de la chance : le critère structurel
+du vérificateur oblige à écrire une entrée exacte pour tout texte sans chiffre,
+donc à ne rien oublier au moment de la traduction plutôt qu'à le découvrir
+après coup.
+
+Les seuls ajouts au dictionnaire hors entrées exactes sont un fragment
+`" ans"` → `" years"` — pour les durées de recherche exhaustive du simulateur
+de mots de passe, « 512 ans », « 10^58 ans » — et cinq paliers de durée
+(« moins d'une seconde », « quelques heures »…) qui sont des **valeurs
+entières**, donc des entrées exactes. Elles ne fonctionnent que depuis la
+correction d'hier, qui fait passer les valeurs par `tr()` avant les fragments.
+
+### Les références nationales rendues génériques
+
+Le parcours renvoyait quatre fois vers des organismes français —
+cybermalveillance.gouv.fr, l'ANSSI, la CNIL, Phishing Initiative. Un lecteur
+anglophone n'en a pas l'usage, et le bandeau `SUJETS_DROIT_FRANCAIS` ne se
+justifie pas ici : ce sont des pointeurs vers des ressources, pas des règles de
+droit qu'on risquerait de prendre pour les siennes.
+
+Ils sont donc formulés par leur fonction — « your national cybersecurity
+agency », « your national cybercrime reporting service » — comme la CNIL l'a
+été dans Data et l'IA.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 8 sujets | 138, **165**, 157, 166, 166, 176, 148, 156 |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 560 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 12 sections, 0 orpheline |
+| `audit-geometrie.html` | 252 mesures, 14 gabarits, 0 anomalie |
+| Rendu navigateur | 3 pages, curseurs et cases poussés aux extrêmes |
+
 ## 2026-08-16 — Intelligence Artificielle traduite, et la langue enfin cohérente
 Quatre pages anglaises, trois banques de questions, 176 textes de simulateurs —
 le plus gros sujet traduit jusqu'ici, et **176 sur 176 dès la première passe**.

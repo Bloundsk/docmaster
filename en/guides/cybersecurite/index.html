@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Cybersecurity - DocMaster</title>
+    <meta name="description" content="Cybersecurity in three levels: from the basic habits to the blind spots the obvious protections do not cover. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/index.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/index.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/index.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Cybersecurity - DocMaster">
+    <meta property="og:description" content="Cybersecurity in three levels: from the basic habits to the blind spots the obvious protections do not cover. Free, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/index.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cybersecurity - DocMaster">
+    <meta name="twitter:description" content="Cybersecurity in three levels: from the basic habits to the blind spots the obvious protections do not cover. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt; <span aria-current="page">🔒 Cybersecurity</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🔒 Cybersecurity</h1>
+                <p>Understanding the basics of protecting yourself and your data online.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="52" y="65" width="36" height="28" rx="4"/><path d="M58 65 L58 53 a12 12 0 0 1 24 0 L82 65"/></g><circle cx="70" cy="79" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="105" cy="60" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="95" r="2.5" fill="white" style="animation-delay:1.1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <section>
+            <h2 id="the-path">The path</h2>
+            <p>Three levels, to be followed in order or picked up wherever you stand. Each reads on its own, but each assumes what came before.</p>
+
+            <ol class="parcours">
+                <li class="etape">
+                    <a class="etape-lien" href="debutant.html">
+                        <span class="etape-rang">Level 1</span>
+                        <span class="etape-titre">Beginner</span>
+                        <span class="etape-resume">Protecting yourself with the basic habits. No technical background needed.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Passwords and authentication</li>
+                        <li>Recognising a phishing attempt</li>
+                        <li>Firewalls and antivirus: what they actually do</li>
+                        <li>What encrypting your data means</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 10 minutes · no prior knowledge needed</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="intermediaire.html">
+                        <span class="etape-rang">Level 2</span>
+                        <span class="etape-titre">Intermediate</span>
+                        <span class="etape-resume">Putting in place what lasts, without thinking about it every day.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>The password manager, and the single-vault objection</li>
+                        <li>Two-factor authentication, from SMS to physical keys</li>
+                        <li>The 3-2-1 rule against ransomware</li>
+                        <li>What a VPN protects — and what it does not</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 11 minutes · assumes level 1</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="avance.html">
+                        <span class="etape-rang">Level 3</span>
+                        <span class="etape-titre">Advanced</span>
+                        <span class="etape-resume">What is left once the obvious protections are in place.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Data breaches and credential stuffing</li>
+                        <li>The targeted attack, which shows no crude signs at all</li>
+                        <li>The limits of end-to-end encryption</li>
+                        <li>Shrinking your attack surface, once and for all</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 12 minutes · assumes levels 1 and 2</p>
+                </li>
+            </ol>
+        </section>
+
+        <div class="recap-box">
+            <h2>⚡ What you will know by the end</h2>
+            <ul>
+                <li>Why reusing a password weighs more than how complex it is.</li>
+                <li>Which account to protect first, and why it is always the same one.</li>
+                <li>What separates a backup from a copy doomed along with the original.</li>
+                <li>What encryption guarantees, and what it leaves perfectly visible.</li>
+                <li>Why a written procedure protects better than vigilance.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="warning">Before you start</h2>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This path is <strong>educational</strong> and general. It holds for ordinary personal use; a professional, non-profit or exposed setting calls for its own measures and a specialist's advice.</p>
+                <p>If an incident has actually happened, contact your country's official cybercrime reporting service, which can put you in touch with vetted providers.</p>
+            </div>
+        </section>
+
+        <div class="guide-nav">
+            <a href="../ia/index.html"><span class="label">← Previous guide</span>🤖 Artificial Intelligence</a>
+            <a href="../dev-web/index.html" class="next"><span class="label">Next guide →</span>💻 Web Development</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../ia/index.html">🤖 Artificial Intelligence</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

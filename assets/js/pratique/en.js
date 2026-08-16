@@ -33,6 +33,7 @@ window.PRATIQUE_TEXTES = {
         // Le plus long d'abord : il contient « jetons », qui suit juste après.
         " k jetons — bien au-delà de toute fenêtre": " k tokens — far beyond any window",
         " jetons": " tokens",
+        " ans": " years",         // « 512 ans », « 10^58 ans » : durées de recherche exhaustive
         "% et ": "% and ",        // « 45.1% et 54.9% », les deux bornes d'un intervalle
 
         " sur ": " of ",
@@ -1900,5 +1901,300 @@ window.PRATIQUE_TEXTES = {
             "More than four: two of these situations are about form, not knowledge.",
         "« Le modèle ne sait pas » appelle la récupération. « Le modèle répond mal » appelle d'abord la consigne.":
             "“The model does not know” calls for retrieval. “The model answers badly” calls for the prompt first.",
+
+        // =====================================================================
+        // CYBERSÉCURITÉ
+        // =====================================================================
+
+        // --- force-mot-de-passe ------------------------------------------------------------
+        "Mesurez la solidité d'un mot de passe": "Measure the strength of a password",
+        "La longueur pèse bien plus lourd que la complexité. Ce calcul le montre.":
+            "Length weighs far more than complexity. This calculation shows it.",
+        "Nombre de caractères": "Number of characters",
+        "Caractères différents utilisés (26 = minuscules, 62 = + majuscules et chiffres, 95 = + symboles)":
+            "Different characters used (26 = lower case, 62 = + capitals and digits, 95 = + symbols)",
+        "Essais par seconde de l'attaquant": "Attempts per second by the attacker",
+        "milliards": "billion",
+        "Combinaisons possibles": "Possible combinations",
+        "Temps de recherche exhaustive": "Time for an exhaustive search",
+        // Les paliers de durée : des valeurs entières, pas des nombres habillés.
+        "moins d'une seconde": "less than a second",
+        "quelques secondes": "a few seconds",
+        "moins d'une heure": "less than an hour",
+        "quelques heures": "a few hours",
+        "moins d'un an": "less than a year",
+        "Ajoutez deux caractères plutôt qu'un symbole : l'effet sur le temps de recherche est sans commune mesure.":
+            "Add two characters rather than a symbol: the effect on search time is in another league.",
+
+        // --- signaux-phishing --------------------------------------------------------------
+        "Passez un message suspect au crible": "Put a suspicious message through the sieve",
+        "Cochez ce que vous constatez sur le message que vous avez sous les yeux.":
+            "Tick what you can see on the message in front of you.",
+        "Il crée l'urgence : compte bloqué, dernier avertissement, délai de 24 h":
+            "It creates urgency: account locked, final warning, 24-hour deadline",
+        "L'adresse de l'expéditeur ne correspond pas exactement au domaine officiel":
+            "The sender's address does not exactly match the official domain",
+        "survolez-la, ne lisez pas seulement le nom affiché":
+            "hover over it, do not just read the displayed name",
+        "Le lien pointe ailleurs que ce qu'il annonce": "The link points somewhere other than it claims",
+        "survolez sans cliquer et lisez l'adresse réelle":
+            "hover without clicking and read the real address",
+        "On me demande un mot de passe, un code ou des coordonnées bancaires":
+            "I am asked for a password, a code or bank details",
+        "Le message est inattendu, ou concerne un service que je n'utilise pas":
+            "The message is unexpected, or concerns a service I do not use",
+        "La formule d'appel est générique — « Cher client » plutôt que mon nom":
+            "The greeting is generic — “Dear customer” rather than my name",
+        "Une pièce jointe m'est envoyée sans que je l'aie demandée":
+            "An attachment is sent to me without my having asked for it",
+        "Aucun signal relevé. Vérifiez tout de même en passant par le site officiel, jamais par le lien du message.":
+            "No warning signs. Check all the same by going to the official site, never via the link in the message.",
+        "Signaux relevés. Ne cliquez pas : rendez-vous sur le site officiel par vos propres moyens.":
+            "Warning signs found. Do not click: go to the official site under your own steam.",
+        "Faisceau clair d'indices. Supprimez le message et signalez-le.":
+            "A clear cluster of signs. Delete the message and report it.",
+        "Un seul signal suffit à justifier la méfiance. Aucun ne suffit à garantir l'authenticité.":
+            "One sign alone is enough to justify suspicion. None is enough to guarantee authenticity.",
+
+        // --- protections-de-base -----------------------------------------------------------
+        "Vérifiez vos protections de base": "Check your basic protections",
+        "Les quatre premières lignes coûtent zéro euro et couvrent l'essentiel du risque courant.":
+            "The first four lines cost nothing and cover most of the everyday risk.",
+        "Les mises à jour de mon système sont installées automatiquement":
+            "My system updates install automatically",
+        "Les mises à jour de mon navigateur le sont aussi": "My browser updates do too",
+        "c'est lui qui affronte le web en première ligne":
+            "it is the browser that faces the web in the front line",
+        "Le pare-feu de mon système est actif": "My system firewall is switched on",
+        "Un antivirus est actif et à jour": "An antivirus is active and up to date",
+        "celui intégré au système suffit dans la plupart des cas":
+            "the one built into the system is enough in most cases",
+        "Je n'installe de logiciels que depuis leur site officiel ou une boutique d'applications":
+            "I only install software from its official site or an app store",
+        "Ma session est protégée par un mot de passe ou une biométrie":
+            "My session is protected by a password or biometrics",
+        "Plusieurs protections élémentaires manquent — commencez par les mises à jour automatiques.":
+            "Several basic protections are missing — start with automatic updates.",
+        "Presque. Les points restants sont ceux qui demandent le moins d'effort.":
+            "Almost. The remaining points are the ones that take the least effort.",
+        "Base saine. C'est le socle sur lequel tout le reste s'appuie.":
+            "A sound base. It is the ground everything else rests on.",
+        "La grande majorité des compromissions exploitent une faille déjà corrigée par une mise à jour disponible.":
+            "The vast majority of compromises exploit a hole already fixed by an available update.",
+
+        // --- ou-est-le-chiffrement ---------------------------------------------------------
+        "Repérez où vos données sont chiffrées": "Spot where your data is encrypted",
+        "Le chiffrement ne protège que là où il est effectivement appliqué.":
+            "Encryption only protects where it is actually applied.",
+        "Le disque de mon ordinateur est chiffré": "My computer's disk is encrypted",
+        "BitLocker sous Windows, FileVault sous macOS": "BitLocker on Windows, FileVault on macOS",
+        "Mon téléphone est chiffré et verrouillé par code":
+            "My phone is encrypted and locked with a code",
+        "Les sites que j'utilise affichent bien « https » ": "The sites I use do show “https”",
+        "Mes sauvegardes sont chiffrées, pas seulement copiées":
+            "My backups are encrypted, not merely copied",
+        "Ma messagerie sensible utilise un chiffrement de bout en bout":
+            "My sensitive messaging uses end-to-end encryption",
+        "Ma clé USB, si j'en utilise une, est chiffrée": "My USB stick, if I use one, is encrypted",
+        "c'est l'objet le plus facile à perdre": "it is the easiest object to lose",
+        "Un appareil perdu livrerait aujourd'hui son contenu à qui le trouve.":
+            "As things stand, a lost device would hand its contents to whoever finds it.",
+        "L'essentiel est couvert. Les points restants concernent surtout la perte ou le vol.":
+            "The essentials are covered. The remaining points mostly concern loss or theft.",
+        "Vos données sont protégées au repos comme en transit.":
+            "Your data is protected at rest as well as in transit.",
+        "Le chiffrement du disque ne coûte rien et ne se remarque pas — jusqu'au jour où l'appareil disparaît.":
+            "Disk encryption costs nothing and goes unnoticed — until the day the device disappears.",
+
+        // --- propagation-fuite -------------------------------------------------------------
+        "Mesurez la propagation d'une fuite": "Measure how far a breach spreads",
+        "Un mot de passe réutilisé transforme une fuite unique en compromission générale.":
+            "A reused password turns a single breach into a general compromise.",
+        "Nombre de comptes en ligne que vous possédez": "Number of online accounts you have",
+        "comptes": "accounts",
+        "Part de ces comptes partageant le même mot de passe":
+            "Share of those accounts sharing the same password",
+        "Comptes utilisant ce mot de passe": "Accounts using that password",
+        "Comptes accessibles après UNE seule fuite": "Accounts reachable after ONE single breach",
+        "Comptes restés hors d'atteinte": "Accounts left out of reach",
+        "Les listes issues de fuites sont rejouées automatiquement sur des centaines d'autres services. Aucun attaquant humain n'intervient.":
+            "Lists from breaches are replayed automatically against hundreds of other services. No human attacker is involved.",
+
+        // --- robustesse-2fa ----------------------------------------------------------------
+        "Classez vos comptes par exposition": "Rank your accounts by exposure",
+        "Tous les comptes ne se valent pas : certains servent à récupérer tous les autres.":
+            "Not all accounts are equal: some are the way back into all the others.",
+        "Ma boîte mail principale a une double authentification":
+            "My main mailbox has two-factor authentication",
+        "c'est la clé de tout le reste : elle réinitialise les autres comptes":
+            "it is the key to everything else: it resets the other accounts",
+        "Mes comptes bancaires en ont une": "My bank accounts have it",
+        "Mon gestionnaire de mots de passe en a une": "My password manager has it",
+        "Mes réseaux sociaux en ont une": "My social accounts have it",
+        "J'utilise une application ou une clé physique plutôt que le SMS":
+            "I use an app or a physical key rather than SMS",
+        "le SMS est interceptable par détournement de carte SIM":
+            "SMS can be intercepted by SIM swapping",
+        "J'ai conservé mes codes de secours ailleurs que sur le téléphone concerné":
+            "I have kept my backup codes somewhere other than the phone in question",
+        "Un mot de passe volé suffirait aujourd'hui à entrer.":
+            "As things stand, a stolen password would be enough to get in.",
+        "Bonne base. Traitez la boîte mail en priorité si elle n'est pas encore couverte.":
+            "A good base. Deal with the mailbox first if it is not covered yet.",
+        "Vos comptes critiques sont protégés, y compris en cas de perte du téléphone.":
+            "Your critical accounts are protected, including if you lose the phone.",
+        "Protéger sa boîte mail avant tout le reste : c'est elle qui permet de réinitialiser les autres comptes.":
+            "Protect your mailbox before anything else: it is what lets the other accounts be reset.",
+
+        // --- regle-3-2-1 -------------------------------------------------------------------
+        "Confrontez vos sauvegardes à la règle 3-2-1": "Test your backups against the 3-2-1 rule",
+        "Trois copies, sur deux supports différents, dont une hors ligne.":
+            "Three copies, on two different media, one of them offline.",
+        "Mes données existent en au moins trois exemplaires":
+            "My data exists in at least three copies",
+        "Elles sont sur au moins deux supports de nature différente":
+            "They are on at least two different kinds of media",
+        "disque interne et disque externe, par exemple": "internal disk and external disk, for instance",
+        "Une copie est hors du logement": "One copy is outside the home",
+        "un incendie ou un vol emporte tout ce qui est au même endroit":
+            "a fire or a burglary takes everything in the same place",
+        "Une copie est déconnectée en permanence": "One copy is permanently disconnected",
+        "un rançongiciel chiffre tout ce qui est accessible, y compris le disque branché":
+            "ransomware encrypts everything reachable, the plugged-in disk included",
+        "J'ai déjà restauré un fichier depuis cette sauvegarde":
+            "I have already restored a file from that backup",
+        "une sauvegarde jamais restaurée n'est qu'une hypothèse":
+            "a backup never restored is only a hypothesis",
+        "Une seule mauvaise journée suffirait à tout perdre.":
+            "One bad day would be enough to lose everything.",
+        "Il manque l'essentiel : la copie déconnectée, ou le test de restauration.":
+            "The essential part is missing: the disconnected copy, or the restore test.",
+        "Vous survivriez à un rançongiciel comme à une panne matérielle.":
+            "You would survive ransomware as well as a hardware failure.",
+        "Une sauvegarde branchée en permanence est chiffrée en même temps que l'original. Elle ne compte pas.":
+            "A backup left permanently plugged in gets encrypted along with the original. It does not count.",
+
+        // --- ce-que-protege-un-vpn ---------------------------------------------------------
+        "Cochez ce qu'un VPN protège réellement": "Tick what a VPN actually protects",
+        "Cochez uniquement les affirmations exactes. Certaines sont fausses.":
+            "Tick only the accurate statements. Some are false.",
+        "Il masque mon adresse IP au site que je visite":
+            "It hides my IP address from the site I visit",
+        "Il empêche le gestionnaire du wifi public de voir les sites visités":
+            "It stops whoever runs the public wifi from seeing the sites visited",
+        "Il me rend anonyme sur les sites où je suis connecté":
+            "It makes me anonymous on sites where I am logged in",
+        "faux : un compte connecté vous identifie, VPN ou non":
+            "false: a logged-in account identifies you, VPN or not",
+        "Il protège contre le phishing et les logiciels malveillants":
+            "It protects against phishing and malware",
+        "faux : il transporte le trafic, il ne l'inspecte pas":
+            "false: it carries the traffic, it does not inspect it",
+        "Il remplace le HTTPS": "It replaces HTTPS",
+        "faux : HTTPS chiffre jusqu'au site, le VPN seulement jusqu'à son propre serveur":
+            "false: HTTPS encrypts all the way to the site, the VPN only to its own server",
+        "Il déplace ma confiance du fournisseur d'accès vers le fournisseur de VPN":
+            "It moves my trust from the internet provider to the VPN provider",
+        "exact, et c'est le point le plus important": "correct, and it is the most important point",
+        "Trois affirmations sont exactes. Si vous en avez coché exactement trois, vérifiez lesquelles.":
+            "Three statements are accurate. If you ticked exactly three, check which ones.",
+        "Plus de trois cases cochées : certaines affirmations sont fausses. Lisez les indications.":
+            "More than three boxes ticked: some statements are false. Read the hints.",
+        "Un VPN déplace la confiance, il ne la supprime pas. La question devient : ce fournisseur mérite-t-il plus de confiance que le précédent ?":
+            "A VPN moves trust, it does not remove it. The question becomes: does this provider deserve more trust than the last one?",
+
+        // --- reflexes-apres-fuite ----------------------------------------------------------
+        "Établissez votre conduite après une fuite": "Set out what you do after a breach",
+        "L'ordre compte : certains gestes rendent les suivants inutiles s'ils sont faits trop tard.":
+            "Order matters: some steps make the next ones pointless if taken too late.",
+        "Changer d'abord le mot de passe de la boîte mail de secours":
+            "Change the recovery mailbox password first",
+        "sans elle, l'attaquant reprend tout le reste":
+            "without it, the attacker takes back everything else",
+        "Changer ensuite le mot de passe du service concerné":
+            "Then change the password of the service concerned",
+        "Changer partout où ce mot de passe avait été réutilisé":
+            "Change it everywhere that password had been reused",
+        "Vérifier les règles de redirection automatique de la messagerie":
+            "Check the mailbox's automatic forwarding rules",
+        "une règle de transfert survit à un changement de mot de passe":
+            "a forwarding rule survives a password change",
+        "Déconnecter toutes les sessions actives depuis les réglages du compte":
+            "Sign out every active session from the account settings",
+        "Vérifier les appareils et applications autorisés":
+            "Check the authorised devices and applications",
+        "Activer la double authentification si elle ne l'était pas":
+            "Switch on two-factor authentication if it was not on",
+        "Changer le mot de passe ne suffit pas à reprendre le contrôle.":
+            "Changing the password is not enough to take back control.",
+        "L'essentiel y est. Les règles de redirection sont le point le plus souvent négligé.":
+            "The essentials are there. Forwarding rules are the most often overlooked point.",
+        "Conduite complète, y compris les points que la plupart oublient.":
+            "A complete response, including the points most people forget.",
+        "Une règle de transfert automatique posée par un attaquant continue de fonctionner après le changement de mot de passe.":
+            "An automatic forwarding rule set by an attacker keeps working after the password change.",
+
+        // --- signaux-spear-phishing --------------------------------------------------------
+        "Reconnaissez une attaque ciblée": "Recognise a targeted attack",
+        "Le hameçonnage ciblé ne présente aucun des signaux grossiers du hameçonnage de masse.":
+            "Spear phishing shows none of the crude signs of mass phishing.",
+        "Le message me connaît : mon nom, mon poste, un projet en cours":
+            "The message knows me: my name, my job, a project under way",
+        "Il semble venir d'un collègue ou d'un supérieur":
+            "It appears to come from a colleague or a manager",
+        "Il demande une action inhabituelle mais plausible":
+            "It asks for an unusual but plausible action",
+        "un virement urgent, un changement de coordonnées bancaires":
+            "an urgent transfer, a change of bank details",
+        "Il insiste sur la discrétion ou l'urgence": "It presses for discretion or urgency",
+        "Il arrive à un moment opportun — veille de congés, clôture comptable":
+            "It arrives at a convenient moment — the eve of a holiday, the accounting close",
+        "Il évite le téléphone et privilégie l'écrit": "It avoids the phone and favours writing",
+        "Aucun signal. La vérification par un autre canal reste la seule certitude.":
+            "No warning signs. Checking through another channel remains the only certainty.",
+        "Vérifiez par un canal différent — appelez un numéro que vous connaissez déjà.":
+            "Check through a different channel — call a number you already know.",
+        "Profil typique d'une attaque ciblée. N'agissez pas avant vérification directe.":
+            "The typical profile of a targeted attack. Do not act before checking directly.",
+        "Contre une attaque ciblée, la parade n'est pas de mieux lire le message : c'est de vérifier par un autre canal.":
+            "Against a targeted attack, the defence is not reading the message more carefully: it is checking through another channel.",
+
+        // --- metadonnees-visibles ----------------------------------------------------------
+        "Distinguez le contenu des métadonnées": "Tell content apart from metadata",
+        "Cochez ce qui reste visible malgré un chiffrement de bout en bout.":
+            "Tick what stays visible despite end-to-end encryption.",
+        "Le texte de mes messages": "The text of my messages",
+        "non : c'est précisément ce que le chiffrement protège":
+            "no: that is precisely what the encryption protects",
+        "L'identité de mes correspondants": "Who I am talking to",
+        "oui, dans la plupart des messageries": "yes, on most messaging services",
+        "La date et l'heure de chaque échange": "The date and time of each exchange",
+        "La fréquence et le volume de mes échanges": "How often and how much I exchange",
+        "Mon adresse IP, donc une localisation approximative":
+            "My IP address, and so a rough location",
+        "oui, sauf protection spécifique": "yes, barring specific protection",
+        "Le fait même que je sois inscrit sur ce service":
+            "The very fact that I am signed up to this service",
+        "Cinq de ces six éléments restent visibles. Les indications précisent lesquels.":
+            "Five of these six items stay visible. The hints say which.",
+        "Cinq de ces éléments restent visibles. Si vous avez coché les cinq derniers, c'est exact.":
+            "Five of these items stay visible. If you ticked the last five, that is right.",
+        "Le contenu, lui, est bien protégé : c'est le seul élément à ne pas cocher.":
+            "The content itself is well protected: it is the one item not to tick.",
+        "Qui parle à qui, quand et à quelle fréquence : ces données seules suffisent souvent à reconstituer une situation.":
+            "Who talks to whom, when and how often: that data alone is often enough to reconstruct a situation.",
+
+        // --- score-exposition --------------------------------------------------------------
+        "Chiffrez votre surface d'attaque": "Put a number on your attack surface",
+        "Le nombre de comptes compte moins que la proportion de ceux qui sont mal protégés.":
+            "The number of accounts matters less than the share of them that are poorly protected.",
+        "Comptes en ligne possédés": "Online accounts held",
+        "Part avec un mot de passe unique": "Share with a unique password",
+        "Part avec double authentification": "Share with two-factor authentication",
+        "Comptes à mot de passe partagé": "Accounts on a shared password",
+        "Comptes sans second facteur": "Accounts with no second factor",
+        "Indice de protection": "Protection index",
+        "Aucun de ces deux chiffres ne descend tout seul. Les faire baisser demande une séance, une fois — pas une vigilance permanente.":
+            "Neither of those two figures comes down on its own. Bringing them down takes one sitting, once — not permanent vigilance.",
     },
 };

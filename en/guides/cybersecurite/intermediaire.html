@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Cybersecurity — Intermediate - DocMaster</title>
+    <meta name="description" content="Intermediate level of the Cybersecurity path: password manager, two-factor authentication, backups against ransomware, network and VPN.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Cybersecurity — Intermediate - DocMaster">
+    <meta property="og:description" content="Intermediate level of the Cybersecurity path: password manager, two-factor authentication, backups against ransomware, network and VPN.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cybersecurity — Intermediate - DocMaster">
+    <meta name="twitter:description" content="Intermediate level of the Cybersecurity path: password manager, two-factor authentication, backups against ransomware, network and VPN.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">🔒 Cybersecurity</a> &gt;
+        <span aria-current="page">Intermediate</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🔒 Cybersecurity — Intermediate</h1>
+                <p>Putting in place what lasts, without thinking about it every day.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="52" y="65" width="36" height="28" rx="4"/><path d="M58 65 L58 53 a12 12 0 0 1 24 0 L82 65"/></g><circle cx="70" cy="79" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="105" cy="60" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="95" r="2.5" fill="white" style="animation-delay:1.1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#password-manager">🔐 The password manager</a></li>
+                <li><a href="#two-factor-authentication">📱 Two-factor authentication</a></li>
+                <li><a href="#backups-and-ransomware">💾 Backups and ransomware</a></li>
+                <li><a href="#network-and-vpn">🌐 The network and the VPN</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points to remember</h2>
+            <ul>
+                <li>A reused password turns a single breach into a general compromise.</li>
+                <li>The mailbox gets protected before anything else: it resets every other account.</li>
+                <li>A second factor by SMS is the weakest of the second factors — but far better than none.</li>
+                <li>A backup left permanently plugged in gets encrypted along with the original.</li>
+                <li>A VPN moves trust to its provider; it does not remove it.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The beginner level was about reflexes: recognising a dubious message, keeping your system updated, understanding what encrypting means. Actions to repeat.</p>
+            <p>This level is about <strong>arrangements</strong>: things you set up once and that then work without you. That is a change in kind. Security resting on daily vigilance always gives way in the end, on a tired or hurried day. Security resting on a mechanism holds even on the bad days.</p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong> and general. Its recommendations hold for ordinary personal use; a professional, non-profit or exposed setting calls for its own measures and a specialist's advice.</p>
+                <p>Tools and services change: check the settings on the official pages before acting.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">The arrangements to put in place</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="password-manager">🔐 The password manager</h3></summary>
+                <div class="lecon-corps">
+                <p>The advice “a different password everywhere” is correct and impossible from memory. Nobody remembers eighty distinct passwords. The outcome is well known: one gets reused, sometimes two, across the lot.</p>
+
+                <h4>The real problem is not strength, it is reuse</h4>
+                <p>A long, complex password is still a stolen password if the service holding it suffers a breach. And the lists from those breaches are then <strong>replayed automatically</strong> against hundreds of other services — email, shops, social accounts. No human attacker is involved: a program tries them, in bulk.</p>
+                <p>A manager remembers for you. You memorise <strong>one single</strong> password, the vault's, and each site gets a unique value you do not even know.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Somebody has <strong>80 accounts</strong> and reuses the same password on <strong>60% of them</strong>.</p>
+                    <p>One of those 80 services suffers a breach. <strong>48 accounts</strong> become immediately reachable, with no extra effort.</p>
+                    <p>With a unique password per service, the same breach compromises <strong>one</strong>.</p>
+                </div>
+
+                <h4>The “all your eggs in one basket” objection</h4>
+                <p>It is legitimate and deserves a straight answer. Yes, the vault concentrates the risk. But it concentrates it on one point <strong>you protect seriously</strong>: a long password, known to you alone, backed by a second authentication factor.</p>
+                <p>The situation without a manager is not “risk spread out”: it is the same risk, spread across eighty services whose security and breaches you control not at all.</p>
+
+                <div class="pratique" data-pratique="propagation-fuite"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the browser's own list</span>
+                    <p>Saving passwords in the browser is better than reusing them. But synchronisation is often tied to an account itself protected by a plain password, and access to the open session is sometimes enough to read everything in clear.</p>
+                    <p>If you settle for it, at least protect that account with two-factor authentication.</p>
+                </div>
+
+                <p class="retenir">💡 The manager does not make your passwords stronger: it makes reusing them unnecessary.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="two-factor-authentication">📱 Two-factor authentication</h3></summary>
+                <div class="lecon-corps">
+                <p>A password is something you know. It can therefore be guessed, stolen, or read in a breach. The second factor adds something you <strong>have</strong> — a phone, a key — that a remote attacker does not.</p>
+
+                <h4>The three forms, from weakest to strongest</h4>
+                <p><strong>SMS</strong> works everywhere and needs nothing installed. It is also the most fragile: SIM swapping lets somebody receive your codes in your place, and the operation is within reach of a motivated attacker. It remains far better than no second factor at all.</p>
+                <p><strong>An app</strong> generates a code every thirty seconds, on the device, with no network. Nothing to intercept: the code travels nowhere. It is the right balance between effort and protection.</p>
+                <p><strong>A physical key</strong> is an object to plug in or hold near. It also checks the site's address, which makes it <strong>immune to phishing</strong>: on a copycat site it simply refuses to respond.</p>
+
+                <h4>Where to start</h4>
+                <p>Not all accounts are equal. Your <strong>main mailbox</strong> comes before everything: it receives the reset links for all the others. Whoever controls it controls the lot, however carefully you protect the rest.</p>
+
+                <div class="pratique" data-pratique="robustesse-2fa"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — backup codes left in the wrong place</span>
+                    <p>Every service offers backup codes when you switch it on. Many people save them… on the phone that carries the authenticator app.</p>
+                    <p>The day that phone is lost, stolen or replaced, the account becomes unreachable to its rightful owner. Those codes must live elsewhere: printed, or in the password manager.</p>
+                </div>
+
+                <p class="retenir">💡 Start with the mailbox. Everything else depends on it, including what you protect next.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="backups-and-ransomware">💾 Backups and ransomware</h3></summary>
+                <div class="lecon-corps">
+                <p>Ransomware encrypts your files and demands a payment for the key. Against it, an antivirus is only one barrier among others. The one answer that works every time is <strong>a backup it could not reach</strong>.</p>
+
+                <h4>The 3-2-1 rule</h4>
+                <p><strong>Three</strong> copies of the data, on <strong>two</strong> different kinds of media, <strong>one</strong> of them outside the home. This rule does not come from the fight against ransomware — it is far older — but it applies perfectly.</p>
+
+                <div class="exemple">
+                    <span class="titre">What each level covers</span>
+                    <p><strong>Three copies</strong>: a disk failure loses nothing.</p>
+                    <p><strong>Two different media</strong>: a batch defect or a mishandling does not take everything.</p>
+                    <p><strong>One outside the home</strong>: a fire, a flood or a burglary leaves a way out.</p>
+                    <p>And a fourth condition, specific to ransomware: <strong>one disconnected copy</strong>.</p>
+                </div>
+
+                <h4>Why the permanently plugged-in disk does not count</h4>
+                <p>Ransomware encrypts everything your session can write to. The external disk left plugged in, the folder synced to the cloud, the network drive: all of it goes, often within minutes. A backup that is writable is not a backup, it is one more copy to encrypt.</p>
+                <p>The copy that saves you is the one that was <strong>unplugged</strong> at the time of the attack.</p>
+
+                <div class="pratique" data-pratique="regle-3-2-1"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the backup never restored</span>
+                    <p>A system that has said “backup successful” for three years may be empty, incomplete, or unreadable. You only find out when you need it — that is, at the worst possible moment.</p>
+                    <p>Restore a file at random, once a quarter. A backup never restored is only a hypothesis.</p>
+                </div>
+
+                <p class="retenir">💡 Paying the ransom guarantees nothing. An unplugged copy does.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="network-and-vpn">🌐 The network and the VPN</h3></summary>
+                <div class="lecon-corps">
+                <p>The VPN is the most heavily sold and most misunderstood security product. It does one precise thing, very well; it does not do most of what is attributed to it.</p>
+
+                <h4>What it actually does</h4>
+                <p>It creates an encrypted tunnel between your device and a server, then goes out onto the internet from that server. Two consequences: whoever runs the local network — the café's wifi, the hotel's — <strong>no longer sees which sites you visit</strong>, and the sites visited see the server's address instead of yours.</p>
+
+                <h4>What it does not do</h4>
+                <p>It does not analyse traffic: a phishing site remains a phishing site, a malicious file remains malicious. It does not make you anonymous on services where you are <strong>logged in with an account</strong> — you identified yourself there. And it does not replace HTTPS: that protects all the way to the site, the VPN only as far as its own server.</p>
+
+                <div class="exemple">
+                    <span class="titre">The shift in trust</span>
+                    <p><strong>Without a VPN</strong>, your internet provider sees the domains you visit.</p>
+                    <p><strong>With a VPN</strong>, it sees nothing any more — but the VPN provider sees everything.</p>
+                    <p>The question is therefore not “am I protected?” but <strong>“who am I trusting?”</strong>. A free service funded by advertising is not the best candidate to receive the whole of your traffic.</p>
+                </div>
+
+                <div class="pratique" data-pratique="ce-que-protege-un-vpn"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the false sense of security</span>
+                    <p>Some providers' advertising suggests a VPN protects against viruses, scams and bank details being stolen. It does none of that.</p>
+                    <p>The risk is real: believing your browser protected leads to dropping your guard where it counts — on the links clicked and the files opened.</p>
+                </div>
+
+                <p class="retenir">💡 HTTPS protects the content everywhere. The VPN hides the destination from your local network. They are not the same problem.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They differ from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Your national cybercrime reporting service</strong>: the public assistance scheme. Practical sheets, and above all what to do when an incident has actually happened.</li>
+                    <li><strong>Your national cybersecurity agency</strong>: its digital hygiene guides. Written for organisations, but the principles hold for an individual.</li>
+                    <li><strong>Your national data protection authority</strong>: what to do after a data breach, and what your rights are against the service that suffered it.</li>
+                    <li><strong>Have I Been Pwned</strong>: check whether an address appears in a known breach. The service is well regarded and asks for no password — if it asked for one, that would be the signal to run.</li>
+                </ul>
+                <p><strong>One useful habit:</strong> before installing a security tool, look up who funds it. A free product handling the whole of your traffic has to make its money some other way.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Previous level</span>Cybersecurity — Beginner</a>
+            <a href="avance.html" class="next"><span class="label">Next level →</span>Cybersecurity — Advanced</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../ia/index.html">🤖 Artificial Intelligence</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/cybersecurite-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
