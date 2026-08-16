@@ -1,5 +1,26 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Data & Analytics : le dictionnaire, pas encore les pages
+**Livraison partielle, et annoncée comme telle.** Les 157 textes des 12
+simulateurs de Data sont traduits et vérifiés — c'est la partie réutilisable et
+la plus technique du travail. Les quatre pages de cours et les trois banques de
+questions restent à écrire.
+
+Rien n'est cassé pour autant : `data` **n'est pas déclaré** dans
+`CONTENU_TRADUIT`, aucune page ne pointe vers `en/guides/data/`, et
+`audit-coherence.mjs` vérifie précisément qu'un sujet annoncé traduit possède
+ses pages. L'état est cohérent, simplement incomplet.
+
+### Un point vérifié au passage
+
+Data contenait trois mentions repérées comme « propres à la France ». Vérification
+faite, il s'agit du **RGPD et de la CNIL** — du droit européen, pas français. Le
+bandeau d'avertissement n'a donc pas lieu d'être ; seule la référence à
+l'autorité nationale devra être formulée de façon générique dans les pages.
+
+C'est le genre de distinction qu'un comptage automatique ne fait pas : « en
+France » dans une phrase ne signifie pas que la règle soit française.
+
 ## 2026-08-16 — Cinquième sujet traduit : « Productivité » en anglais
 Quatre pages, 12 simulateurs, 90 questions. **Cinq sujets sur quatorze**, soit
 20 pages et 450 questions.

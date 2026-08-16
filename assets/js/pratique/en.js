@@ -1308,5 +1308,269 @@ window.PRATIQUE_TEXTES = {
             "An informed decision: a real yes, or a reasoned no.",
         "Personne ne vient réclamer le travail qui n'a pas été fait. C'est ce qui rend ce coût invisible.":
             "Nobody comes to claim the work that was not done. That is what makes this cost invisible.",
+
+        // ====================================================================
+        // DATA & ANALYTICS
+        // ====================================================================
+
+        // --- Unités ---------------------------------------------------------
+        "obs.": "obs.",
+        "vis./j": "vis./day",
+        "val.": "val.",
+        "critères": "criteria",
+        "valeurs": "values",
+
+        // --- marge-erreur ------------------------------------------------------
+        "Calculez la marge d'erreur": "Work out the margin of error",
+        "Elle dépend de la taille de l'échantillon, presque jamais de celle de la population.":
+            "It depends on the size of the sample, almost never on that of the population.",
+        "Taille de l'échantillon": "Sample size",
+        "Proportion mesurée": "Proportion measured",
+        "Marge d'erreur (95 %)": "Margin of error (95%)",
+        "La valeur réelle se situe entre": "The real value lies between",
+        "Pour diviser cette marge par deux, il faudrait": "To halve that margin you would need",
+        "Deux chiffres dont les intervalles se chevauchent ne peuvent pas être déclarés différents.":
+            "Two figures whose intervals overlap cannot be declared different.",
+
+        // --- test-ab -------------------------------------------------------------
+        "Dimensionnez votre test A/B": "Size your A/B test",
+        "À décider avant de lancer. Après, il est trop tard pour savoir si le test pouvait conclure.":
+            "To be decided before launching. Afterwards it is too late to know whether the test could conclude.",
+        "Taux de conversion actuel": "Current conversion rate",
+        "Amélioration relative visée": "Relative improvement targeted",
+        "Visiteurs nécessaires par groupe": "Visitors needed per group",
+        "Nouveau taux visé": "New rate targeted",
+        "Durée du test à ce trafic": "Test duration at this traffic",
+        "Détecter un effet deux fois plus petit demande quatre fois plus de trafic. C'est ce qui rend les petits gains si coûteux à prouver.":
+            "Detecting an effect half the size takes four times the traffic. That is what makes small gains so expensive to prove.",
+
+        // --- pieges-interpretation --------------------------------------------------
+        "Identifiez le piège": "Spot the trap",
+        "Cochez les situations où une conclusion serait probablement fausse.":
+            "Tick the situations where a conclusion would probably be wrong.",
+        "Le résultat global contredit ce qu'on observe dans chaque sous-groupe":
+            "The overall result contradicts what is seen in each subgroup",
+        "paradoxe de Simpson : vérifiez la répartition": "Simpson's paradox: check the split",
+        "On analyse les clients actuels pour comprendre pourquoi les gens restent":
+            "You analyse current customers to understand why people stay",
+        "biais du survivant : les partis ont la réponse":
+            "survivorship bias: the ones who left have the answer",
+        "Une action a été prise après un mois exceptionnellement mauvais, et le mois suivant est meilleur":
+            "Action was taken after an exceptionally bad month, and the next month is better",
+        "régression vers la moyenne : cela arrive sans intervention":
+            "regression to the mean: it happens without intervention",
+        "Les groupes comparés ont des compositions très différentes":
+            "The groups compared have very different compositions",
+        "L'écart observé est inférieur à la marge d'erreur":
+            "The observed gap is smaller than the margin of error",
+        "On a testé cinquante hypothèses et retenu celle qui ressortait":
+            "Fifty hypotheses were tested and the one that stood out was kept",
+        "sur cinquante, certaines ressortent par hasard": "out of fifty, some stand out by chance",
+        "Ces six situations conduisent toutes à des conclusions fausses à partir de données exactes.":
+            "All six of these situations lead to false conclusions from accurate data.",
+        "Bonne vigilance. Les six sont en réalité des pièges classiques.":
+            "Good vigilance. All six are in fact classic traps.",
+        "Les six situations sont effectivement piégeuses. Vous les reconnaissez toutes.":
+            "All six situations are indeed traps. You recognise them all.",
+        "Aucun de ces pièges ne suppose une erreur de calcul. Les données sont justes ; c'est la lecture qui trompe.":
+            "None of these traps involves a calculation error. The data is correct; it is the reading that deceives.",
+
+        // --- chaine-de-donnees ---------------------------------------------------------
+        "Auditez votre chaîne de données": "Audit your data pipeline",
+        "Cochez ce qui est en place aujourd'hui.": "Tick what is in place today.",
+        "La date de dernière mise à jour est affichée à côté des chiffres":
+            "The last-updated date is shown next to the figures",
+        "la protection la moins coûteuse contre la panne silencieuse":
+            "the cheapest protection against a silent failure",
+        "Une alerte se déclenche si le volume reçu s'écarte de l'habitude":
+            "An alert fires if the volume received departs from the usual",
+        "Un traitement en échec produit une alerte, pas un silence":
+            "A failed job produces an alert, not silence",
+        "Les définitions des indicateurs sont écrites et partagées":
+            "The definitions of the metrics are written down and shared",
+        "Deux tableaux de bord différents donnent le même chiffre pour la même notion":
+            "Two different dashboards give the same figure for the same idea",
+        "Je peux remonter d'un chiffre affiché jusqu'à sa source":
+            "I can trace a displayed figure back to its source",
+        "Un incident en amont produirait aujourd'hui un tableau de bord faux et crédible.":
+            "An upstream incident would today produce a dashboard that is wrong and believable.",
+        "Correct. L'alerte sur le volume est le contrôle au meilleur rapport effort-utilité.":
+            "Reasonable. The volume alert is the check with the best effort-to-usefulness ratio.",
+        "Chaîne surveillée : une anomalie sera vue avant qu'une décision soit prise dessus.":
+            "A monitored pipeline: an anomaly will be seen before a decision is taken on it.",
+        "Une donnée figée depuis trois jours est plus dangereuse qu'une donnée absente : personne ne remarque qu'elle ne bouge plus.":
+            "Data frozen for three days is more dangerous than missing data: nobody notices it has stopped moving.",
+
+        // --- utilite-kpi ------------------------------------------------------------------
+        "Votre indicateur est-il utile ?": "Is your metric useful?",
+        "Prenez un indicateur que vous suivez, et cochez ce qui est vrai.":
+            "Take a metric you track, and tick what is true.",
+        "Je sais quoi faire différemment s'il double demain":
+            "I know what I would do differently if it doubled tomorrow",
+        "le test décisif : sinon, il occupe de la place pour rien":
+            "the decisive test: otherwise it takes up space for nothing",
+        "Il a un point de comparaison : période précédente, objectif ou groupe témoin":
+            "It has a point of comparison: previous period, target or control group",
+        "Sa définition est écrite et n'a pas changé depuis six mois":
+            "Its definition is written down and has not changed in six months",
+        "Sa fréquence de suivi correspond à sa vitesse d'évolution":
+            "Its tracking frequency matches how fast it moves",
+        "Il est accompagné de son effectif, pas seulement d'un pourcentage":
+            "It comes with its count, not just a percentage",
+        "Quelqu'un est nommément responsable de le regarder":
+            "Someone is named as responsible for looking at it",
+        "Cet indicateur donne surtout l'illusion du pilotage.":
+            "This metric mostly gives the illusion of steering.",
+        "Bonne base. La définition écrite est le point qui manque le plus souvent.":
+            "Good basis. The written definition is what is most often missing.",
+        "Indicateur solide : il peut réellement déclencher une décision.":
+            "A solid metric: it can genuinely trigger a decision.",
+        "Si personne ne change rien quand un chiffre bouge, ce chiffre n'est pas un indicateur : c'est une décoration.":
+            "If nobody changes anything when a figure moves, that figure is not a metric: it is decoration.",
+
+        // --- qualite-collecte --------------------------------------------------------------
+        "Vos données disent-elles ce que vous croyez ?": "Does your data say what you think it does?",
+        "Cochez ce qui est vrai de la façon dont ces données ont été recueillies.":
+            "Tick what is true of the way this data was collected.",
+        "Je sais qui a été mesuré, et qui ne l'a pas été":
+            "I know who was measured, and who was not",
+        "les absents faussent plus que les présents": "those absent distort more than those present",
+        "La collecte est automatique, ou le questionnaire est identique pour tous":
+            "Collection is automatic, or the questionnaire is identical for everyone",
+        "Les personnes mesurées ne savaient pas qu'on cherchait ce résultat":
+            "The people measured did not know what result was being looked for",
+        "sinon leur comportement change": "otherwise their behaviour changes",
+        "La période couverte est représentative": "The period covered is representative",
+        "pas seulement les soldes, ou un mois avec deux jours fériés":
+            "not just the sales period, or a month with two public holidays",
+        "Je connais le taux de réponse ou de couverture": "I know the response or coverage rate",
+        "Les définitions n'ont pas changé pendant la période":
+            "The definitions did not change during the period",
+        "Les données décrivent peut-être une population différente de celle visée.":
+            "The data may describe a population different from the one intended.",
+        "Acceptable. Notez les réserves à côté du résultat plutôt que de les oublier.":
+            "Acceptable. Note the caveats next to the result rather than forgetting them.",
+        "Collecte saine : les chiffres portent bien sur ce que vous croyez.":
+            "Sound collection: the figures really are about what you think.",
+        "Aucun traitement statistique ne rattrape une collecte biaisée. Il la rend seulement plus présentable.":
+            "No statistical treatment rescues biased collection. It only makes it more presentable.",
+
+        // --- choisir-graphique ---------------------------------------------------------------
+        "Le bon graphique pour la bonne question": "The right chart for the right question",
+        "Cochez les associations exactes. Quatre le sont.": "Tick the correct pairings. Four of them are.",
+        "Comparer des catégories → barres": "Comparing categories → bars",
+        "exact": "correct",
+        "Suivre une évolution dans le temps → courbe": "Following a change over time → line",
+        "Montrer une répartition en parts d'un tout → camembert, si peu de parts":
+            "Showing shares of a whole → pie, if there are few shares",
+        "exact, au-delà de cinq parts il devient illisible":
+            "correct; beyond five shares it becomes unreadable",
+        "Comparer des catégories → camembert": "Comparing categories → pie",
+        "faux : l'œil compare mal des angles": "wrong: the eye compares angles badly",
+        "Montrer une relation entre deux variables → nuage de points":
+            "Showing a relationship between two variables → scatter plot",
+        "Faire paraître une hausse plus forte → tronquer l'axe vertical":
+            "Making a rise look bigger → truncating the vertical axis",
+        "faux : c'est la manipulation la plus répandue":
+            "wrong: it is the most widespread manipulation",
+        "Quatre de ces six associations sont exactes.": "Four of these six pairings are correct.",
+        "Quatre associations sont exactes. Vérifiez avec les indications que ce sont les vôtres.":
+            "Four pairings are correct. Check against the hints that they are the ones you picked.",
+        "Plus de quatre : deux de ces propositions sont fausses.":
+            "More than four: two of these statements are wrong.",
+        "Un axe vertical qui ne part pas de zéro n'est pas toujours malhonnête — mais il doit toujours être signalé.":
+            "A vertical axis that does not start at zero is not always dishonest — but it must always be flagged.",
+
+        // --- moyenne-mediane -------------------------------------------------------------------
+        "Voyez une valeur extrême déformer la moyenne": "Watch one extreme value distort the mean",
+        "C'est la raison pour laquelle la médiane existe.": "This is why the median exists.",
+        "Nombre de valeurs ordinaires": "Number of ordinary values",
+        "Valeur ordinaire": "Ordinary value",
+        "Valeur extrême ajoutée": "Extreme value added",
+        "Moyenne sans la valeur extrême": "Mean without the extreme value",
+        "Moyenne avec la valeur extrême": "Mean with the extreme value",
+        "Médiane (inchangée)": "Median (unchanged)",
+        "La médiane ne bouge pas d'un centime. C'est pourquoi on la préfère dès qu'il existe des valeurs extrêmes — salaires, paniers, temps de réponse.":
+            "The median does not move a penny. That is why it is preferred as soon as extreme values exist — salaries, basket sizes, response times.",
+
+        // --- nettoyage-donnees -----------------------------------------------------------------
+        "Combien de lignes restera-t-il ?": "How many rows will be left?",
+        "Le chiffre à retenir n'est pas la taille du fichier, c'est la taille de ce qui est exploitable.":
+            "The figure to remember is not the size of the file, it is the size of what is usable.",
+        "Lignes dans le fichier": "Rows in the file",
+        "Part de doublons": "Share of duplicates",
+        "Part des lignes restantes avec une valeur manquante essentielle":
+            "Share of remaining rows with an essential value missing",
+        "Après suppression des doublons": "After removing duplicates",
+        "Lignes réellement exploitables": "Genuinely usable rows",
+        "Part du fichier de départ": "Share of the original file",
+        "Le problème n'est jamais d'avoir perdu des lignes. C'est de présenter un résultat en laissant croire qu'il porte sur le fichier entier.":
+            "The problem is never having lost rows. It is presenting a result while implying it covers the whole file.",
+
+        // --- taille-segments ---------------------------------------------------------------------
+        "Vos segments sont-ils assez fournis ?": "Are your segments big enough?",
+        "Découper indéfiniment finit par produire du bruit qu'on prend pour du signal.":
+            "Slicing indefinitely eventually produces noise mistaken for signal.",
+        "Population totale": "Total population",
+        "Nombre de critères croisés": "Number of criteria crossed",
+        "Valeurs possibles par critère": "Possible values per criterion",
+        "Segments produits": "Segments produced",
+        "Observations par segment en moyenne": "Observations per segment on average",
+        "Une seule observation fait bouger le taux de": "One observation moves the rate by",
+        "Quand une observation déplace le pourcentage de plusieurs points, le segment ne mesure plus rien d'autre que lui-même.":
+            "When one observation shifts the percentage by several points, the segment measures nothing but itself.",
+
+        // --- correlation-causalite ------------------------------------------------------------------
+        "Avant de conclure « A cause B »": "Before concluding “A causes B”",
+        "Passez votre corrélation au crible : cochez ce que vous avez réellement vérifié.":
+            "Put your correlation through the sieve: tick what you have actually checked.",
+        "J'ai envisagé que B cause A": "I have considered that B causes A",
+        "le sens inverse est souvent aussi plausible": "the reverse direction is often just as plausible",
+        "J'ai cherché une troisième variable qui causerait les deux":
+            "I have looked for a third variable causing both",
+        "le cas le plus fréquent, et de loin": "by far the most frequent case",
+        "J'ai vérifié que A précède bien B dans le temps":
+            "I have checked that A does precede B in time",
+        "L'effet persiste quand je segmente la population":
+            "The effect persists when I segment the population",
+        "Je n'ai pas comparé des dizaines d'indicateurs pour trouver celui-ci":
+            "I did not compare dozens of metrics to find this one",
+        "sur cent comparaisons, certaines coïncident par hasard":
+            "out of a hundred comparisons, some coincide by chance",
+        "Une expérimentation a été menée, ou est prévue":
+            "An experiment has been run, or is planned",
+        "la seule méthode qui établisse vraiment la causalité":
+            "the only method that genuinely establishes causation",
+        "À ce stade, vous avez une corrélation et une histoire plausible. Pas une cause.":
+            "At this point you have a correlation and a plausible story. Not a cause.",
+        "Il manque des vérifications. La variable confondante est celle qu'on oublie le plus.":
+            "Checks are missing. The confounding variable is the one most often forgotten.",
+        "Hypothèse sérieusement instruite. Reste que seule l'expérimentation tranche.":
+            "A seriously examined hypothesis. Still, only an experiment settles it.",
+        "Le danger n'est pas la corrélation absurde, qui se repère. C'est celle à laquelle on peut donner une explication crédible.":
+            "The danger is not the absurd correlation, which is easy to spot. It is the one you can give a credible explanation for.",
+
+        // --- tableau-de-bord ---------------------------------------------------------------------------
+        "Passez votre tableau de bord au crible": "Put your dashboard through the sieve",
+        "Cochez ce qui est vrai du tableau de bord que vous avez sous les yeux.":
+            "Tick what is true of the dashboard in front of you.",
+        "Chaque indicateur passe le test « si ce nombre doublait, que ferais-je ? »":
+            "Every metric passes the test “if this number doubled, what would I do?”",
+        "Aucun chiffre n'est affiché sans point de comparaison":
+            "No figure is displayed without a point of comparison",
+        "La date de dernière mise à jour est visible": "The last-updated date is visible",
+        "Les effectifs accompagnent les pourcentages": "Counts accompany the percentages",
+        "Sur les mesures de qualité, une valeur extrême est affichée en plus de la moyenne":
+            "For quality measures, an extreme value is shown as well as the mean",
+        "le neuvième décile en dit plus que la moyenne": "the ninth decile says more than the mean",
+        "Il tient sur un écran sans défilement": "It fits on one screen without scrolling",
+        "Ce tableau sera consulté deux semaines, puis oublié.":
+            "This dashboard will be consulted for two weeks, then forgotten.",
+        "Bon niveau. La date de mise à jour est le manque le plus dangereux.":
+            "Good level. The update date is the most dangerous omission.",
+        "Tableau de bord exploitable : il sert à décider, pas à rassurer.":
+            "A usable dashboard: it serves decisions, not reassurance.",
+        "Un tableau de bord se juge au nombre de décisions qu'il a déclenchées, pas au nombre de graphiques.":
+            "A dashboard is judged by the number of decisions it has triggered, not the number of charts.",
     },
 };
