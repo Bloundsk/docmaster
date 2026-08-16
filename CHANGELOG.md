@@ -1,5 +1,32 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Le dézoom rendu explicitement possible sur téléphone
+Signalé par l'auteur : impossible de dézoomer sur son téléphone.
+
+Rien ne l'interdisait pourtant. Les 65 pages portaient la même balise —
+`width=device-width, initial-scale=1.0` — sans `user-scalable=no`, sans
+`maximum-scale`, et aucune règle `touch-action` ne gênait le geste.
+
+**Le défaut était le silence de la balise.** Ne rien dire des limites, c'est
+laisser chaque navigateur choisir les siennes. Les navigateurs intégrés aux
+applications — Facebook, Instagram, messageries — sont plus restrictifs que
+Chrome ou Safari, et ramènent volontiers le dézoom à 1. Or c'est par là
+qu'arrive une bonne part des visiteurs d'un site partagé sur les réseaux.
+
+Les 65 pages autorisent désormais la plage explicitement : de **25 % à 500 %**.
+
+### Le garde-fou
+
+Le contrôle d'accessibilité surveille maintenant les **trois** façons de bloquer
+le zoom : `user-scalable=no`, un plafond sous 2, un plancher au-dessus de 0,5.
+Interdire d'agrandir met dehors quiconque a besoin de grossir pour lire — c'est
+le critère 1.4.4 des WCAG.
+
+Le seuil du plancher a dû être corrigé : il testait `> 1`, si bien que
+`minimum-scale=1` — qui interdit pourtant tout dézoom — passait au travers. Le
+défaut n'est apparu qu'en réinjectant les trois blocages pour éprouver le
+contrôle. **Un garde-fou qu'on n'essaie pas ne garde rien.**
+
 ## 2026-08-16 — Quatre entrées du menu invisibles sur téléphone
 Signalé par l'auteur, qui décrivait l'en-tête vu sur son téléphone. La barre de
 navigation n'était pas cassée — à toutes les largeurs testées, de 320 à 500 px,

@@ -194,6 +194,29 @@ for (const page of toutes) {
     if (!/id="main-content"/.test(page.html)) signaler("ACCESSIBILITE", `${page.nom} : pas de cible pour le lien d'évitement`);
     const h1 = (page.html.match(/<h1[ >]/g) || []).length;
     if (h1 !== 1) signaler("ACCESSIBILITE", `${page.nom} : ${h1} titre(s) de niveau 1`);
+
+    // Le zoom doit rester possible. Une page qui l interdit met dehors quiconque
+    // a besoin d agrandir pour lire, et c est un manquement au critere 1.4.4 des
+    // WCAG. Le controle porte sur les trois facons de le bloquer.
+    const vp = page.html.match(/<meta\s+name="viewport"\s+content="([^"]*)"/);
+    if (!vp) {
+        signaler("ACCESSIBILITE", `${page.nom} : pas de balise viewport`);
+    } else {
+        const contenu = vp[1].replace(/\s/g, "");
+        if (/user-scalable=(no|0)/i.test(contenu)) {
+            signaler("ACCESSIBILITE", `${page.nom} : le zoom est interdit (user-scalable)`);
+        }
+        const max = contenu.match(/maximum-scale=([\d.]+)/i);
+        if (max && parseFloat(max[1]) < 2) {
+            signaler("ACCESSIBILITE", `${page.nom} : zoom plafonné à ${max[1]}, il faut au moins 2`);
+        }
+        // Le seuil est 0,5 et non 1 : « minimum-scale=1 » interdit deja tout
+        // dezoom, et c est exactement le defaut que ce controle doit empecher.
+        const min = contenu.match(/minimum-scale=([\d.]+)/i);
+        if (min && parseFloat(min[1]) > 0.5) {
+            signaler("ACCESSIBILITE", `${page.nom} : dézoom trop bridé (minimum-scale=${min[1]}, il faut au plus 0.5)`);
+        }
+    }
     for (const m of page.html.matchAll(/<img\b(?![^>]*\balt=)[^>]*>/g)) {
         signaler("ACCESSIBILITE", `${page.nom} : image sans alternative textuelle`);
     }
