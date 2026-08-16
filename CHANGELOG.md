@@ -1,5 +1,47 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Un audit qui mesure la mise en page
+Trois signalements d'affilée — actualités écrasées, cartes de parcours à 626 px,
+titre mangeant une case de grille — venaient tous de la même passe visuelle et
+du même genre d'erreur : **une règle écrite pour un cas qui en attrape d'autres.**
+Aucun contrôle ne les voyait, et c'est l'auteur qui les a trouvés, après
+publication.
+
+Les audits existants lisent des fichiers. Celui-ci mesure des pages réellement
+affichées.
+
+### Pourquoi il ne bloque pas au commit
+
+**Une largeur ne se déduit pas du CSS.** Savoir qu'une carte fait 626 px au lieu
+de 1060 demande un moteur de rendu ; Node n'en a pas. L'y ajouter voudrait dire
+installer un navigateur sans interface dans un projet qui n'a aucune dépendance
+— un coût sans rapport avec le problème.
+
+Le navigateur est donc le moteur, et le prix assumé est que l'audit se lance à
+la main. `scripts/serveur.js` arrive avec lui : un serveur local de trente
+lignes, sans dépendance, qui sert aussi à regarder le site avant de publier.
+
+### Ce qu'il mesure
+
+6 gabarits × 4 largeurs = **92 mesures**. Débordement horizontal, éléments hors
+de la fenêtre, grilles qui occupent leur largeur, nombre de colonnes annoncé,
+titres qui ne prennent pas une case, longueur de ligne du texte.
+
+### Éprouvé, pas supposé
+
+Les quatre familles de contrôle ont été **vérifiées en réinjectant les vraies
+régressions**, une par une :
+
+| Régression rejouée | Ce que l'audit a répondu |
+|---|---|
+| limite de lecture reprenant les listes à classe | `626 px sur 1060 (59 %)` — 6 échecs |
+| titre rendu à la grille | `Nos catégories : 339 px sur 1060` — 3 échecs |
+| 3 colonnes d'actualités + cartes trop larges | `dépasse de 165 px`, `3 obtenue(s)` — 16 échecs |
+
+Puis retour à zéro échec après rétablissement. Un garde-fou qu'on n'essaie pas
+ne garde rien : le contrôle de zoom en avait fait la démonstration la veille, son
+seuil laissant passer le cas le plus probable.
+
 ## 2026-08-16 — Le titre « Nos catégories » occupait une case de la grille
 Signalé par l'auteur, capture à l'appui : le titre se tenait à gauche, à hauteur
 des cartes, et la première rangée n'en montrait que deux au lieu de trois.

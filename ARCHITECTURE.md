@@ -240,6 +240,40 @@ main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le d�
 | `pre-commit` | `scripts/dater-guides.js` | Date les pages de `guides/` réellement commitées |
 | `post-commit` | — | Met à jour la sauvegarde `.bundle` |
 
+### La géométrie, elle, se mesure
+
+`scripts/audit-geometrie.html` — **à lancer à la main après toute modification de
+la mise en page.** Il ne se déclenche pas au commit, et c'est une limite assumée :
+
+```bash
+node scripts/serveur.js
+```
+
+puis ouvrir `http://localhost:8099/scripts/audit-geometrie.html`.
+
+**Une largeur ne se déduit pas du CSS.** Il faut un moteur de rendu pour savoir
+qu'une carte fait 626 px et non 1060, ou qu'un titre occupe une case de grille.
+Node n'en a pas, et l'y ajouter voudrait dire installer un navigateur sans
+interface et les dépendances qui vont avec — dans un projet qui n'en a aucune.
+Le navigateur est donc le moteur, et le prix est que le contrôle se lance à la
+main.
+
+Il mesure 6 gabarits à 4 largeurs, soit 92 mesures, et vérifie :
+
+| Contrôle | Défaut qui l'a fait naître |
+|---|---|
+| Pas de débordement horizontal | — |
+| Aucun élément hors de la fenêtre | — |
+| Les grilles occupent leur largeur | limite de lecture écrasant `.actu-liste` et `.parcours` à 59 % |
+| Le nombre de colonnes annoncé | repli mobile écrasé par la cascade, 2 colonnes de 155 px |
+| Un titre ne prend pas une case de grille | « Nos catégories » mangeait la place d'un guide |
+| Texte sous 85 signes par ligne | 130 signes avant la passe visuelle |
+
+**Les quatre familles de contrôle ont été éprouvées en réinjectant les vraies
+régressions**, une par une, et en vérifiant que chacune ressort avec sa mesure.
+Un garde-fou qu'on n'essaie pas ne garde rien — c'est déjà arrivé sur le seuil
+du contrôle de zoom.
+
 ### Sauvegardes
 
 Le `.bundle` se régénère à chaque commit dans `Desktop\Sauvegardes-DocMaster\`. La
