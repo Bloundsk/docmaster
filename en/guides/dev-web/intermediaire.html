@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Web Development — Intermediate - DocMaster</title>
+    <meta name="description" content="APIs and JSON, databases and the N+1 trap, going live, and working with others through Git. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/dev-web/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/dev-web/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Web Development — Intermediate - DocMaster">
+    <meta property="og:description" content="APIs and JSON, databases and the N+1 trap, going live, and working with others through Git. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/dev-web/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Development — Intermediate - DocMaster">
+    <meta name="twitter:description" content="APIs and JSON, databases and the N+1 trap, going live, and working with others through Git. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">💻 Web Development</a> &gt;
+        <span aria-current="page">Intermediate</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💻 Web Development — Intermediate</h1>
+                <p>Making the pieces talk to each other, storing data, and going live.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#apis-and-json">🔌 APIs and JSON</a></li>
+                <li><a href="#databases">🗄️ Databases</a></li>
+                <li><a href="#going-live">🚀 Going live</a></li>
+                <li><a href="#working-with-others">🧰 Working with others</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>An API is a contract: what you send, what you get back, what happens on error.</li>
+                <li>A page's timing often depends on the number of round trips, not on the server's speed.</li>
+                <li>A query inside a loop turns a fast page into an unusable one.</li>
+                <li>A secret placed in browser code is no longer a secret.</li>
+                <li>Git is not for backups: it is for going back, and for working together.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The beginner level described the bricks: HTML, CSS, JavaScript, the difference between what runs in the browser and what runs on a server, and adapting to screens.</p>
+            <p>This level is about what turns a page into an <strong>application</strong>: how the pieces talk to each other, where the data lives, how all of it reaches visitors, and how to work with others without getting in each other's way. These are the four subjects on which a personal project becomes a real one.</p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong> and independent of fashionable technologies. The principles set out here hold whatever the language or framework; tools change, mechanisms much less.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">What makes an application</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="apis-and-json">🔌 APIs and JSON</h3></summary>
+                <div class="lecon-corps">
+                <p>An <strong>API</strong> is the point of contact between two programs. On the web it almost always takes the same shape: the browser sends a request to an address, the server returns structured data — most often in <strong>JSON</strong> format.</p>
+
+                <h4>A contract, not just an address</h4>
+                <p>A well-designed API defines four things: <strong>the address</strong> and method, <strong>what you send</strong>, <strong>what you get back</strong>, and <strong>what happens when it fails</strong>. The last point is the one people forget, and it is the one that brings applications down in production.</p>
+                <p>Status codes have precise meanings: <strong>200</strong> all is well, <strong>400</strong> the request is malformed, <strong>401</strong> you need to identify yourself, <strong>404</strong> the resource does not exist, <strong>500</strong> the server failed. Returning 200 with an error message in the body forces every client to guess.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the cost of round trips</span>
+                    <p>A page that chains <strong>8 API calls</strong>, each with <strong>120 ms</strong> of network latency and <strong>30 ms</strong> of server processing.</p>
+                    <p>In sequence: <strong>1,200 ms</strong>. In parallel, when the calls do not depend on each other: about <strong>150 ms</strong>.</p>
+                    <p>The server is no faster in the second case. It is the arrangement of the calls that changes everything.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-des-appels"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the API key in browser code</span>
+                    <p>Everything the browser receives can be read: the JavaScript, the variables, the headers. A secret key placed there is public, even "minified".</p>
+                    <p>Calls that need a secret must go through your own server, which holds the key and relays the request.</p>
+                </div>
+
+                <p class="retenir">💡 A page's timing depends mostly on the number of round trips, rarely on the server's speed.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="databases">🗄️ Databases</h3></summary>
+                <div class="lecon-corps">
+                <p>As soon as an application keeps something between two visits, it needs a database. The choice of type matters less than people say; the way you query it matters enormously.</p>
+
+                <h4>Relational or document</h4>
+                <p>A <strong>relational</strong> database arranges data into tables linked to one another, with a schema defined in advance. It guarantees consistency: you cannot record an order without an existing customer.</p>
+                <p>A <strong>document</strong> database stores complete objects, with no imposed schema. It is more flexible at the start, and moves responsibility for consistency into the code.</p>
+                <p>For the great majority of projects, relational remains the reasonable default: data almost always ends up having relationships, and it is better for the database to enforce them.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the problem of queries in a loop</span>
+                    <p>Displaying 50 articles with their author's name.</p>
+                    <p><strong>One query per author</strong>: 1 query for the articles, then 50 queries. At 4 ms each, that makes <strong>204 ms</strong>.</p>
+                    <p><strong>A single query with a join</strong>: about <strong>6 ms</strong>.</p>
+                    <p>The ratio is 34 to 1. At 500 articles it becomes catastrophic — while the code looks identical.</p>
+                </div>
+
+                <div class="pratique" data-pratique="probleme-n-plus-1"></div>
+
+                <h4>Indexes, and their price</h4>
+                <p>An index speeds up searching on a column, like the index of a book. Without one, the database goes through every row. With one, it goes straight to the right place.</p>
+                <p>The price: every index slows writes down a little and takes up space. Index the columns used in filters and joins, not all of them.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — building a query by gluing text together</span>
+                    <p>Assembling a query by concatenating what the user typed opens the door to SQL injection — one of the oldest and most exploited vulnerabilities.</p>
+                    <p>The defence is simple and systematic: <strong>prepared statements</strong>, where values are passed separately from the query text. There is no reason to do otherwise, ever.</p>
+                </div>
+
+                <p class="retenir">💡 A query inside a loop is the most common performance fault, and the least visible when reading the code.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="going-live">🚀 Going live</h3></summary>
+                <div class="lecon-corps">
+                <p>A site that works on your machine does not work yet. Going live adds constraints that local development hides entirely.</p>
+
+                <h4>The four elements</h4>
+                <p><strong>A domain name</strong>, rented by the year. <strong>Hosting</strong>, which runs your code and serves your files. <strong>A certificate</strong>, which turns on HTTPS — today free and automatic with most hosts. <strong>A way of deploying</strong>, that is, sending a new version without breaking the previous one.</p>
+                <p>For a site with no server code, static hosting is enough: it is often free, very fast, and has almost nothing to maintain.</p>
+
+                <div class="exemple">
+                    <span class="titre">What changes between local and production</span>
+                    <p><strong>Paths</strong> are not the same. A link that works locally can point nowhere once online.</p>
+                    <p><strong>Casing matters.</strong> Windows does not tell <code>Image.png</code> from <code>image.png</code>; the server does. It is the most frequent failure of a first deployment.</p>
+                    <p><strong>Secrets</strong> can no longer sit in the code: they go through environment variables.</p>
+                    <p><strong>Caching</strong> appears. A change can seem absent when it has in fact been deployed.</p>
+                </div>
+
+                <div class="pratique" data-pratique="checklist-mise-en-ligne"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — deploying by copying a few files</span>
+                    <p>Manually sending "the changed files" sooner or later means forgetting one. The site then references a missing script, and breaks for everyone.</p>
+                    <p>Always deploy the whole thing, from a single source — ideally automatically, from the code repository.</p>
+                </div>
+
+                <p class="retenir">💡 The difference between "it works on my machine" and "it is live" comes down to four points, all checkable in one go.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="working-with-others">🧰 Working with others</h3></summary>
+                <div class="lecon-corps">
+                <p>Git is presented as a backup tool. That is inaccurate and it leads to using it badly. Git is for <strong>going back</strong> and for <strong>working with others on the same code</strong> without getting in each other's way.</p>
+
+                <h4>What a good history allows</h4>
+                <p>A readable history answers concrete questions: when did this line change, why, and what else moved at the same time. That requires commits that are <strong>small</strong>, <strong>coherent</strong>, and accompanied by a message explaining the <em>why</em> rather than the <em>what</em>.</p>
+                <p>"Fix VAT calculation on partial refunds" is worth infinitely more than "fix". The second forces you to read the code to understand.</p>
+
+                <h4>Branches</h4>
+                <p>A branch isolates work in progress. The principle: the main branch always stays <strong>working</strong>, and each piece of work lives alongside until it is ready.</p>
+                <p>A branch that lives three weeks becomes very hard to merge back: everything else moved meanwhile. Short branches, merged often, avoid most conflicts.</p>
+
+                <div class="exemple">
+                    <span class="titre">What really protects you</span>
+                    <p><strong>Never commit secrets.</strong> A password pushed once stays in the history, even if deleted afterwards. It must be considered compromised and changed.</p>
+                    <p><strong>An ignore file</strong> from day one: dependencies, local configuration files, logs.</p>
+                    <p><strong>Review before merging.</strong> Even alone: rereading your own change an hour after writing it brings out what you had stopped seeing.</p>
+                </div>
+
+                <div class="pratique" data-pratique="hygiene-git"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the catch-all commit</span>
+                    <p>A commit mixing a fix, a new feature and a reformatting of the code is impossible to undo cleanly: you cannot take one out without the others.</p>
+                    <p>One commit, one intention. That is what makes the history usable the day something has to be undone.</p>
+                </div>
+
+                <p class="retenir">💡 Git does not protect you from losing files. It protects you from being unable to go back.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>MDN Web Docs</strong>: the reference on HTTP, status codes and browser APIs. Free, ad-free, community-maintained.</li>
+                    <li><strong>The official Git documentation</strong>: the chapter on branching and merging, clearer than most tutorials.</li>
+                    <li><strong>OWASP</strong>: the list of the most widespread vulnerabilities, including SQL injection. Read it before writing a query, not after.</li>
+                    <li><strong>Your host's documentation</strong>: environment variables and automatic deployment from a repository. Two hours that save months.</li>
+                </ul>
+                <p><strong>A useful habit:</strong> as soon as a page seems slow, count the number of queries it triggers before optimising anything else.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Previous level</span>Web Development — Beginner</a>
+            <a href="avance.html" class="next"><span class="label">Next level →</span>Web Development — Advanced</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../design/index.html">🎨 UX/UI Design</a>
+                <a href="../../../guides/cybersecurite/index.html">🔒 Cybersecurity</a>
+                <a href="../../../guides/ia/index.html">🤖 Artificial Intelligence</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/dev-web-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

@@ -1,5 +1,39 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Troisième sujet traduit : « Développement Web » en anglais
+Quatre pages, 12 simulateurs, 90 questions. **Trois sujets sur quatorze sont
+lisibles en anglais.**
+
+### Le sujet a été choisi, pas tiré au sort
+
+Neuf candidats mesurés sur deux critères : le volume, et surtout le nombre de
+règles proprement françaises. Développement Web en compte **zéro** — contre 10
+pour Sobriété numérique et 4 pour Marketing. Un sujet sans droit français
+n'oblige à aucun avertissement et se traduit sans risque d'induire en erreur.
+
+### Ce que la mécanique a coûté cette fois
+
+Le vérificateur a annoncé **166 textes, dont 32 déjà couverts** par les deux
+sujets précédents. Le dictionnaire se rentabilise : un tiers du travail était
+déjà fait avant de commencer.
+
+Aucun ajustement du mécanisme n'a été nécessaire. Le seul cas particulier — un
+libellé construit avec un nombre, « Une requête par élément (51 requêtes) » —
+était déjà couvert par le repli sur les fragments ajouté pour Design.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| Textes de simulateurs — dev-web | **166 / 166** |
+| Les deux sujets précédents, après ajout | **138 / 138** et **166 / 166** |
+| Questions de quiz | 90, sur 12 sections |
+| Liens internes des 4 pages | **aucun cassé** |
+| Français résiduel dans les pages | **0** |
+| Géométrie | 122 mesures, 9 gabarits, aucune anomalie |
+
+**Reste à traduire : 11 sujets.**
+
 ## 2026-08-16 — Deuxième sujet traduit : « Design UX/UI » en anglais
 Quatre pages, 12 simulateurs, 90 questions. **Deux sujets sur quatorze sont
 désormais lisibles en anglais.**

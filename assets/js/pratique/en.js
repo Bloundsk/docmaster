@@ -39,6 +39,14 @@ window.PRATIQUE_TEXTES = {
         "liste plate": "flat list",
         "sous la seconde : le fil de la pensée n'est pas rompu": "under a second: the train of thought holds",
         "un retour de progression devient nécessaire": "a progress indicator becomes necessary",
+
+        // --- Développement web ------------------------------------------------
+        // Comme pour Hick plus haut, le nombre de requêtes varie avec la saisie :
+        // seul un fragment peut traduire le texte qui l'entoure.
+        "Une requête par élément (": "One query per item (",
+        " requêtes)": " queries)",
+        "trop court : le regard revient trop souvent à la ligne": "too short: the eye wraps far too often",
+        "trop long : l'œil perd le début de la ligne suivante": "too long: the eye loses the start of the next line",
     },
 
     textes: {
@@ -528,5 +536,218 @@ window.PRATIQUE_TEXTES = {
         "Par personne et par an": "Per person per year",
         "Cinq secondes ne se défendent pas en réunion. Cent quatre-vingts heures par an, si.":
             "Five seconds cannot be argued in a meeting. A hundred and eighty hours a year can.",
+
+        // ====================================================================
+        // DÉVELOPPEMENT WEB
+        // ====================================================================
+
+        // --- structure-html ----------------------------------------------------
+        "Cochez ce qui est vrai de la page que vous avez sous les yeux.":
+            "Tick what is true of the page in front of you.",
+        "Un seul titre de niveau 1 par page": "Exactly one level-1 heading per page",
+        "Les niveaux de titre se suivent sans sauter de rang": "Heading levels follow on without skipping a rank",
+        "pas de h4 juste après un h2": "no h4 straight after an h2",
+        "La navigation est dans un élément dédié, pas dans une division quelconque":
+            "Navigation sits in a dedicated element, not in a generic division",
+        "Les boutons qui déclenchent une action sont des boutons, pas des liens":
+            "Buttons that trigger an action are buttons, not links",
+        "Chaque champ de formulaire a une étiquette qui lui est liée":
+            "Every form field has a label bound to it",
+        "Les images informatives ont un texte de remplacement": "Informative images have alternative text",
+        "Cette page se comprend visuellement, mais pas structurellement.":
+            "This page can be understood visually, but not structurally.",
+        "Bonne base. Les étiquettes de formulaire sont le manque le plus fréquent.":
+            "Good basis. Form labels are the most frequent omission.",
+        "Structure saine : lisible par un lecteur d'écran comme par un moteur de recherche.":
+            "Sound structure: readable by a screen reader as well as by a search engine.",
+        "Le bon élément HTML apporte gratuitement l'accessibilité et le comportement clavier. Une division n'apporte rien.":
+            "The right HTML element brings accessibility and keyboard behaviour for free. A generic division brings nothing.",
+
+        // --- css-ou-javascript -------------------------------------------------
+        "Cochez ce qui se fait aujourd'hui en CSS seul. Quatre réponses.":
+            "Tick what can be done today in CSS alone. Four answers.",
+        "Afficher ou masquer un menu déroulant au survol": "Showing or hiding a dropdown menu on hover",
+        "Animer une transition de couleur ou de taille": "Animating a colour or size transition",
+        "CSS, et c'est plus fluide": "CSS, and it is smoother",
+        "Adapter la mise en page à la largeur de l'écran": "Adapting the layout to the screen width",
+        "Envoyer un formulaire sans recharger la page": "Submitting a form without reloading the page",
+        "JavaScript nécessaire": "JavaScript required",
+        "Coller un en-tête en haut de l'écran au défilement": "Sticking a header to the top of the screen on scroll",
+        "Calculer un total à partir de champs saisis": "Calculating a total from entered fields",
+        "Quatre de ces six tâches se font en CSS seul.": "Four of these six tasks can be done in CSS alone.",
+        "Quatre réponses en CSS. Vérifiez avec les indications que ce sont bien celles-là.":
+            "Four answers in CSS. Check against the hints that these are the right ones.",
+        "Plus de quatre : deux de ces tâches demandent réellement du JavaScript.":
+            "More than four: two of these tasks genuinely need JavaScript.",
+        "Ce qui se fait en CSS fonctionne même si le JavaScript échoue à charger. C'est une robustesse gratuite.":
+            "What is done in CSS still works if the JavaScript fails to load. That is robustness for free.",
+
+        // --- client-ou-serveur ---------------------------------------------------
+        "Cochez ce qui DOIT être fait côté serveur, sans exception.":
+            "Tick what MUST be done on the server, without exception.",
+        "Vérifier qu'un utilisateur a le droit d'accéder à une donnée":
+            "Checking that a user is allowed to access a piece of data",
+        "toujours côté serveur": "always on the server",
+        "Vérifier qu'un champ est bien rempli avant envoi": "Checking that a field is filled in before sending",
+        "côté navigateur pour le confort — mais le serveur doit revérifier":
+            "in the browser for convenience — but the server must check again",
+        "Calculer le prix final d'une commande": "Calculating the final price of an order",
+        "serveur : sinon le prix se modifie depuis la console":
+            "server: otherwise the price can be changed from the console",
+        "Afficher une infobulle au survol": "Showing a tooltip on hover",
+        "Décider si un compte peut être supprimé": "Deciding whether an account can be deleted",
+        "Masquer un bouton réservé aux administrateurs": "Hiding a button reserved for administrators",
+        "masquer ne protège pas : l'action doit être refusée côté serveur":
+            "hiding protects nothing: the action must be refused on the server",
+        "Quatre de ces six doivent impérativement être traités côté serveur.":
+            "Four of these six must be handled on the server, without exception.",
+        "Quatre traitements relèvent obligatoirement du serveur.":
+            "Four of them belong on the server, compulsorily.",
+        "Plus de quatre : deux de ces éléments relèvent du confort d'affichage.":
+            "More than four: two of these are a matter of display convenience.",
+        "Tout ce qui protège quelque chose se vérifie côté serveur. Le navigateur appartient à l'utilisateur.":
+            "Anything that protects something is checked on the server. The browser belongs to the user.",
+
+        // --- largeur-de-texte -------------------------------------------------------
+        "Trouvez la bonne largeur de texte": "Find the right text width",
+        "Une ligne trop longue fatigue l'œil, qui perd le début de la ligne suivante.":
+            "A line that is too long tires the eye, which loses the start of the next line.",
+        "Caractères par ligne visés": "Characters per line targeted",
+        "Largeur de bloc recommandée": "Recommended block width",
+        "En unités relatives": "In relative units",
+        "La zone confortable se situe entre 45 et 75 caractères par ligne, quelle que soit la taille de l'écran.":
+            "The comfortable zone lies between 45 and 75 characters per line, whatever the screen size.",
+
+        // --- appels-api ---------------------------------------------------------------
+        "Séquentiel ou parallèle ?": "Sequential or parallel?",
+        "Le temps d'une page dépend surtout du nombre d'allers-retours.":
+            "A page's timing depends mostly on the number of round trips.",
+        "Latence réseau par appel": "Network latency per call",
+        "Traitement serveur par appel": "Server processing per call",
+        "En séquence": "In sequence",
+        "En parallèle": "In parallel",
+        "Temps économisé": "Time saved",
+        "Le serveur n'est pas plus rapide dans le second cas. C'est l'organisation des appels qui change tout.":
+            "The server is no faster in the second case. It is the arrangement of the calls that changes everything.",
+
+        // --- requete-en-boucle ----------------------------------------------------------
+        "Mesurez le coût d'une requête en boucle": "Measure the cost of a query in a loop",
+        "Le défaut de performance le plus courant, et le plus invisible à la lecture du code.":
+            "The most common performance fault, and the least visible when reading the code.",
+        "Éléments à afficher": "Items to display",
+        "Durée d'une requête simple": "Duration of a simple query",
+        "Durée de la requête avec jointure": "Duration of the query with a join",
+        "Une seule requête avec jointure": "A single query with a join",
+        "Le code paraît identique dans les deux cas. Seul le compteur de requêtes révèle la différence.":
+            "The code looks identical in both cases. Only the query counter reveals the difference.",
+
+        // --- mise-en-ligne ------------------------------------------------------------------
+        "Prêt à mettre en ligne ?": "Ready to go live?",
+        "Cochez ce qui est vérifié. Ces points expliquent la quasi-totalité des premières mises en ligne ratées.":
+            "Tick what has been checked. These points explain almost every failed first deployment.",
+        "Aucun secret ne figure dans le code envoyé": "No secret appears in the code being sent",
+        "clés d'API, mots de passe, jetons": "API keys, passwords, tokens",
+        "La casse des noms de fichiers est exacte": "File name casing is exact",
+        "le serveur distingue Image.png de image.png, pas Windows":
+            "the server tells Image.png from image.png, Windows does not",
+        "Les chemins fonctionnent depuis la racine du site": "Paths work from the site root",
+        "Le HTTPS est actif et la redirection en place": "HTTPS is on and the redirect is in place",
+        "Une page d'erreur personnalisée existe": "A custom error page exists",
+        "Le déploiement envoie l'ensemble des fichiers, pas une sélection":
+            "The deployment sends all the files, not a selection",
+        "J'ai ouvert le site dans une fenêtre privée après déploiement":
+            "I opened the site in a private window after deploying",
+        "pour contourner le cache et voir ce que voient les autres":
+            "to bypass the cache and see what everyone else sees",
+        "Plusieurs points bloquants risquent d'apparaître après le déploiement.":
+            "Several blocking problems are likely to surface after deployment.",
+        "Presque. La casse des fichiers et les secrets sont les deux à ne pas manquer.":
+            "Almost. File casing and secrets are the two not to miss.",
+        "Prêt. Ces sept points couvrent l'essentiel des incidents de première mise en ligne.":
+            "Ready. These seven points cover most first-deployment incidents.",
+        "« Ça marche chez moi » et « c'est en ligne » diffèrent par quelques points précis, tous vérifiables d'avance.":
+            "“It works on my machine” and “it is live” differ by a few precise points, all checkable in advance.",
+
+        // --- historique-git ----------------------------------------------------------------------
+        "Votre historique est-il utilisable ?": "Is your history usable?",
+        "Cochez ce qui décrit vos habitudes réelles.": "Tick what describes your actual habits.",
+        "Un commit correspond à une seule intention": "One commit matches one intention",
+        "Les messages expliquent le pourquoi, pas seulement le quoi":
+            "Messages explain the why, not just the what",
+        "« fix » n'apprend rien à personne": "“fix” teaches nobody anything",
+        "Un fichier d'exclusion existe depuis le premier jour": "An ignore file has existed since day one",
+        "Aucun secret n'a jamais été commité": "No secret has ever been committed",
+        "un secret poussé reste dans l'historique, même supprimé ensuite":
+            "a pushed secret stays in the history, even if deleted afterwards",
+        "La branche principale reste toujours fonctionnelle": "The main branch always stays working",
+        "Les branches vivent quelques jours, pas quelques semaines":
+            "Branches live for days, not weeks",
+        "Je relis mon propre changement avant de le fusionner": "I review my own change before merging it",
+        "Cet historique servira difficilement le jour où il faudra défaire quelque chose.":
+            "This history will be of little help the day something has to be undone.",
+        "Bonnes habitudes. Les branches longues sont la cause principale des conflits.":
+            "Good habits. Long-lived branches are the main cause of conflicts.",
+        "Historique exploitable : vous pourrez revenir en arrière proprement.":
+            "Usable history: you will be able to roll back cleanly.",
+        "Un commit fourre-tout ne peut pas être annulé proprement : on ne peut pas en retirer une partie.":
+            "A catch-all commit cannot be undone cleanly: you cannot take part of it back out.",
+
+        // --- cache-navigateur -----------------------------------------------------------------------
+        "Ce que le cache économise": "What the cache saves",
+        "Le seul levier qui améliore la performance sans rien alléger.":
+            "The only lever that improves performance without slimming anything down.",
+        "Poids total d'une page": "Total weight of a page",
+        "Part de visites avec cache déjà rempli": "Share of visits with the cache already filled",
+        "Première visite": "First visit",
+        "Visite avec cache": "Visit with cache",
+        "Volume moyen par visite": "Average volume per visit",
+        "Un fichier fortement mis en cache ne peut plus changer en place : versionnez son nom, et le problème disparaît.":
+            "A heavily cached file can no longer change in place: version its name, and the problem goes away.",
+
+        // --- securite-applicative --------------------------------------------------------------------
+        "Audit de sécurité applicative": "Application security audit",
+        "Cochez ce qui est en place dans votre application.": "Tick what is in place in your application.",
+        "Toutes les requêtes de base de données sont préparées": "All database queries are prepared statements",
+        "aucune concaténation de valeurs saisies": "no concatenation of entered values",
+        "Le contenu utilisateur est échappé à l'affichage": "User content is escaped on output",
+        "Une politique de sécurité de contenu est déclarée": "A content security policy is declared",
+        "Les formulaires sensibles portent un jeton anti-rejeu": "Sensitive forms carry an anti-replay token",
+        "Toute autorisation est vérifiée côté serveur": "Every authorisation is checked on the server",
+        "masquer un bouton ne protège rien": "hiding a button protects nothing",
+        "Les dépendances sont mises à jour régulièrement": "Dependencies are updated regularly",
+        "la majorité des compromissions passent par là": "most breaches come through there",
+        "Les messages d'erreur en production ne révèlent rien du système":
+            "Error messages in production reveal nothing about the system",
+        "Plusieurs vulnérabilités classiques sont probablement exploitables.":
+            "Several classic vulnerabilities are probably exploitable.",
+        "Bon niveau. Les dépendances non mises à jour restent le vecteur le plus exploité.":
+            "Good level. Out-of-date dependencies remain the most exploited route in.",
+        "Les vulnérabilités les plus répandues sont couvertes.":
+            "The most widespread vulnerabilities are covered.",
+        "Toute donnée venant de l'extérieur est hostile jusqu'à preuve du contraire. C'est le principe qui règle l'essentiel.":
+            "Any data coming from outside is hostile until proven otherwise. That principle settles most of it.",
+
+        // --- tests-automatises -------------------------------------------------------------------------
+        "Si elle dépasse quelques minutes, elle ne sera plus lancée à chaque modification.":
+            "If it runs longer than a few minutes, it will stop being run on every change.",
+        "Tests d'intégration": "Integration tests",
+        "Durée d'un test de bout en bout": "Duration of one end-to-end test",
+        "Durée totale de la suite": "Total duration of the suite",
+        "Part des tests de bout en bout": "Share taken by end-to-end tests",
+        "C'est cette poignée de tests lents qui décide si la suite tourne à chaque modification, ou une fois par semaine.":
+            "It is this handful of slow tests that decides whether the suite runs on every change, or once a week.",
+
+        // --- dette-technique --------------------------------------------------------------------------------
+        "Le seul langage qui obtient du temps pour la corriger.":
+            "The only language that gets you time to fix it.",
+        "Heures perdues par semaine": "Hours lost per week",
+        "Semaines travaillées par an": "Weeks worked per year",
+        "Heures estimées pour corriger": "Estimated hours to fix",
+        "Coût horaire chargé": "Loaded hourly cost",
+        "Temps perdu par an": "Time lost per year",
+        "Coût annuel": "Annual cost",
+        "La correction est remboursée en": "The fix pays for itself in",
+        "Formulé ainsi, l'arbitrage n'est plus une question de goût mais de délai de retour.":
+            "Put that way, the trade-off is no longer a matter of taste but of payback period.",
     },
 };

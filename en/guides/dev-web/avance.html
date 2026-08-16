@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Web Development — Advanced - DocMaster</title>
+    <meta name="description" content="Performance and caching, application security, automated testing and technical debt: what decides how long a site lasts. Free, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/dev-web/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/dev-web/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Web Development — Advanced - DocMaster">
+    <meta property="og:description" content="Performance and caching, application security, automated testing and technical debt: what decides how long a site lasts. Free, no sign-up.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/dev-web/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Development — Advanced - DocMaster">
+    <meta name="twitter:description" content="Performance and caching, application security, automated testing and technical debt: what decides how long a site lasts. Free, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">💻 Web Development</a> &gt;
+        <span aria-current="page">Advanced</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💻 Web Development — Advanced</h1>
+                <p>What separates a site that works from a site that lasts.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#performance-and-caching">⚡ Performance and caching</a></li>
+                <li><a href="#application-security">🔐 Application security</a></li>
+                <li><a href="#automated-testing">🧪 Automated testing</a></li>
+                <li><a href="#technical-debt">🏗️ Technical debt</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points</h2>
+            <ul>
+                <li>Caching is the only lever that improves performance without slimming anything down.</li>
+                <li>Any data coming from outside is hostile until proven otherwise.</li>
+                <li>A test that fails at random is worse than no test: it teaches people to ignore alerts.</li>
+                <li>Technical debt is not a moral failing, it is a loan — the problem is the interest.</li>
+                <li>A complete rewrite fails more often than it succeeds.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The intermediate level was about building: making the pieces talk, storing data, going live, working with others. Enough to ship an application that works.</p>
+            <p>This level is about what decides its <strong>lifespan</strong>: holding up under load, resisting attacks, being changeable without fear, and ageing without becoming unreadable. Four subjects that are invisible on launch day, and that decide everything afterwards.</p>
+            <div class="piege">
+                <span class="titre">Warning</span>
+                <p>This guide is <strong>educational</strong>. The vulnerabilities described are there to be understood and avoided at the design stage. Performance orders of magnitude depend heavily on context: measure on your own system rather than trusting a figure read somewhere.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">What decides the lifespan</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="performance-and-caching">⚡ Performance and caching</h3></summary>
+                <div class="lecon-corps">
+                <p>Optimising without measuring is guessing. The first step is always the same: open the browser tools, look at what takes time, and attack the biggest bar — not the most interesting one.</p>
+
+                <h4>Caching, the only free lever</h4>
+                <p>Slimming a file down takes work. Caching it takes one line of configuration, and removes its download entirely for returning visitors.</p>
+                <p>The mechanism: the server states how long a file stays valid. While that period runs, the browser asks for nothing — not even to check.</p>
+                <p>Hence a constraint: a heavily cached file can no longer be changed in place. The universal solution is the <strong>versioned name</strong>: <code>style.a3f9.css</code>. A change alters the name, therefore the address, so the cache is bypassed naturally.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the effect of caching</span>
+                    <p>A page of <strong>1,800 kB</strong>, of which <strong>1,500 kB</strong> are static files — scripts, styles, fonts, images.</p>
+                    <p>If <strong>60%</strong> of visits are returns, those visitors download only 300 kB.</p>
+                    <p>Average volume per visit: <strong>900 kB</strong> instead of 1,800. Half as much, without having slimmed anything down.</p>
+                </div>
+
+                <div class="pratique" data-pratique="impact-du-cache"></div>
+
+                <h4>What weighs, in order</h4>
+                <p>In the vast majority of cases: <strong>images</strong> first — badly sized, in an old format —, then <strong>third-party scripts</strong> — analytics, widgets, banners —, then the application's own code.</p>
+                <p>Starting by optimising your own code while a 4 MB image sits at the top of the page is a frequent error of priority.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the page that shifts while loading</span>
+                    <p>An image with no declared dimensions, a font replacing another, a banner slotting in: content moves under your fingers, and the user clicks the wrong thing.</p>
+                    <p>Declaring image dimensions and reserving space for deferred elements removes this fault, without speeding anything up.</p>
+                </div>
+
+                <p class="retenir">💡 Measure first. The cause of slowness is almost never the one you imagine.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="application-security">🔐 Application security</h3></summary>
+                <div class="lecon-corps">
+                <p>A single principle settles most of it: <strong>any data coming from outside is hostile until proven otherwise</strong>. Forms, addresses, headers, uploaded files, responses from a third-party API.</p>
+
+                <h4>The three attacks to know</h4>
+                <p><strong>SQL injection</strong>: a query built by concatenation lets the user write part of the query. Defence: prepared statements, systematically.</p>
+                <p><strong>Injected script</strong> — often called XSS: user content displayed as it stands can contain code, which will run for other visitors. Defence: escape on output, and set a content security policy.</p>
+                <p><strong>Forged request</strong> — CSRF: a third-party site triggers an action on yours by taking advantage of the visitor's open session. Defence: a unique token per form, and cookies configured not to travel to other sites.</p>
+
+                <div class="exemple">
+                    <span class="titre">The defences that cost least</span>
+                    <p><strong>Validate on input, escape on output.</strong> Two distinct acts: the first refuses what does not have the expected shape, the second neutralises what is displayed.</p>
+                    <p><strong>Never trust the browser.</strong> A client-side check improves comfort; it can be bypassed in three seconds. The check that counts is the server's.</p>
+                    <p><strong>Update your dependencies.</strong> Most breaches come through a known, un-updated library, not through a novel flaw.</p>
+                </div>
+
+                <div class="pratique" data-pratique="audit-securite-web"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — error messages that say too much</span>
+                    <p>An error page showing the SQL query, the file paths or the server version hands an attacker a free map.</p>
+                    <p>In production: a generic message for the visitor, the full detail in the logs. Both, never the reverse.</p>
+                </div>
+
+                <p class="retenir">💡 Security is not added at the end. It consists of never trusting, from the first line.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="automated-testing">🧪 Automated testing</h3></summary>
+                <div class="lecon-corps">
+                <p>Tests do not exist to prove the code is correct: they exist so that it <strong>can be changed without fear</strong>. A project with no tests becomes a project nobody dares touch, and that is how it dies.</p>
+
+                <h4>Three levels, three uses</h4>
+                <p><strong>Unit</strong> tests check one isolated function. Fast — a few milliseconds — they say precisely what breaks.</p>
+                <p><strong>Integration</strong> tests check that several pieces work together, database included. Slower, closer to reality.</p>
+                <p><strong>End-to-end</strong> tests drive a real browser through a complete journey. The slowest and the most fragile, but the only ones that check what the user experiences.</p>
+                <p>The classic proportion: many unit tests, a few integration ones, very few end-to-end. The reverse produces a slow suite nobody waits for any more.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the duration of a suite</span>
+                    <p><strong>400 unit tests</strong> at 5 ms: 2 seconds.</p>
+                    <p><strong>60 integration tests</strong> at 200 ms: 12 seconds.</p>
+                    <p><strong>12 end-to-end tests</strong> at 8 s: 96 seconds.</p>
+                    <p>Total: <strong>110 seconds</strong>, of which 87% for 2.5% of the tests. It is this handful of slow tests that decides whether the suite runs on every change, or once a week.</p>
+                </div>
+
+                <div class="pratique" data-pratique="pyramide-des-tests"></div>
+
+                <h4>What to test first</h4>
+                <p>Business logic — calculations, rules, edge cases — and critical journeys: sign-up, payment, sending. The rest can wait.</p>
+                <p>What does not deserve a test: trivial getters, library code, and the exact appearance of a screen, which will change anyway.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the flaky test</span>
+                    <p>A test that fails one time in ten for no reason teaches the team to rerun without looking. The day it detects a real problem, nobody believes it.</p>
+                    <p>A flaky test must be fixed or deleted — never tolerated.</p>
+                </div>
+
+                <p class="retenir">💡 Tests do not exist to catch bugs: they exist to make change possible.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="technical-debt">🏗️ Technical debt</h3></summary>
+                <div class="lecon-corps">
+                <p>The metaphor is accurate: you borrow time today — by simplifying, by working around — and you repay it later, with interest. The problem is not borrowing, it is never repaying.</p>
+
+                <h4>Chosen debt and inherited debt</h4>
+                <p><strong>Chosen</strong> debt is owned: "we ship fast to validate the idea, we will come back to this module". It is documented and dated.</p>
+                <p><strong>Inherited</strong> debt comes from ignorance or haste. Nobody knows it exists until they trip over it.</p>
+                <p>The first can be managed. The second builds up silently, until the slightest change becomes long and risky.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the interest</span>
+                    <p>A shaky architecture costs <strong>3 hours a week</strong> in workarounds and fixes.</p>
+                    <p>Over a year: <strong>144 hours</strong>, that is nearly <strong>four weeks</strong> of work.</p>
+                    <p>If fixing it takes 40 hours, the operation pays for itself in under four months. Put that way, the trade-off is no longer a matter of taste.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-de-la-dette"></div>
+
+                <h4>Rewriting, rarely</h4>
+                <p>The temptation to start again is strong in front of old code. It usually fails, for one precise reason: the existing code contains <strong>years of fixes for special cases</strong> that nobody remembers, and that the rewrite will lose.</p>
+                <p>Gradual refactoring — replacing one piece at a time, keeping the rest working — is less gratifying and far safer.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — the invisible debt in dependencies</span>
+                    <p>A library not updated for two years becomes very hard to move forward: the intermediate versions introduced breaking changes that now all have to be crossed at once.</p>
+                    <p>Updating regularly, in small steps, costs far less than one big jump every three years — and closes known vulnerabilities along the way.</p>
+                </div>
+
+                <p class="retenir">💡 Put the debt in hours lost per week. It is the only language that gets you time to fix it.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They are different from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>OWASP Top 10</strong>: the ten most widespread vulnerabilities, with vulnerable and fixed code examples. The reference in the field.</li>
+                    <li><strong>MDN — HTTP caching headers</strong>: the documentation that actually explains the difference between the directives, which are often misunderstood.</li>
+                    <li><strong>Browser audit tools</strong>: they give performance metrics and a list of recommendations ranked by gain.</li>
+                    <li><strong>“Working Effectively with Legacy Code”</strong>, Michael Feathers: how to add tests to code that has none, without breaking everything.</li>
+                    <li><strong>Vulnerability databases</strong>: they let you check whether a dependency you use is affected by a known flaw.</li>
+                </ul>
+                <p><strong>A useful habit:</strong> before proposing a rewrite, measure the time lost each week because of the current code. The figure changes the conversation.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Previous level</span>Web Development — Intermediate</a>
+            <a href="index.html" class="next"><span class="label">Path →</span>Back to the Web Development contents</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../../../guides/cybersecurite/index.html">🔒 Cybersecurity</a>
+                <a href="../design/index.html">🎨 UX/UI Design</a>
+                <a href="../../../guides/data/index.html">📊 Data &amp; Analytics</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/dev-web-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
