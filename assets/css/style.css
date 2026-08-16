@@ -214,8 +214,13 @@ main:has(.lecon) { max-width: 780px; }
 .lecon-corps > .piege,
 .lecon-corps > .retenir,
 main > section > p,
-main > section > ul,
-main > section > ol { max-width: 62ch; }
+main > section > ul:not([class]),
+main > section > ol:not([class]) { max-width: 62ch; }
+/* Une liste qui porte une classe est un composant, pas de la prose : liste
+   d'actualités, étapes d'un parcours. Sans cette distinction, la limite de
+   62 signes les écrasait — les cartes tombaient à 626 px dans un conteneur de
+   1100, laissant un grand vide à droite sur la page des actualités et sur les
+   quatorze sommaires de guide. */
 
 /* ---------------------------------------------------------------
    Liens dans le texte courant.
@@ -877,13 +882,34 @@ html { background: var(--background); }
 
 /* Actualites — liens externes rattaches a une section de guide.
    La liste est produite par scripts/publier-actualites.js. */
-.actu-liste { list-style: none; padding: 0; margin: 0; }
+/* Deux colonnes : une seule laissait la moitié de la largeur inoccupée, et
+   demandait de faire défiler pour parcourir une liste de titres courts.
+   Les cartes d'une même rangée s'alignent en hauteur, ce que fait la grille
+   sans qu'on ait à le demander. */
+.actu-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* Le repli mobile est ici, et non dans le bloc responsive commun plus haut :
+   à spécificité égale, c'est la dernière règle du fichier qui l'emporte, media
+   query ou non. Placée plus haut, elle était écrasée par la grille ci-dessus et
+   le téléphone gardait deux colonnes de 155 px. */
+@media (max-width: 700px) {
+    /* Deux colonnes ne tiennent pas sur un téléphone : les titres de presse y
+       seraient coupés tous les deux mots. */
+    .actu-liste { grid-template-columns: 1fr; }
+}
+
 .actu {
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 16px 20px;
-    margin-bottom: 12px;
     /* Un liseré sur la tranche : il distingue d'un coup d'œil un lien qui
        sort du site des liens internes, sans ajouter de pictogramme. */
     border-left: 3px solid var(--primary);

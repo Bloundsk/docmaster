@@ -1,5 +1,38 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Les actualités sur deux colonnes, et une régression de largeur
+Demandé par l'auteur, capture à l'appui : le fil d'actualité s'affichait sur une
+seule colonne, avec un grand vide à droite.
+
+### La cause du vide n'était pas le nombre de colonnes
+
+Les cartes ne faisaient que **626 px dans un conteneur de 1 100**. La règle de
+largeur de lecture posée la veille — 62 signes maximum — visait `ul` et `ol`
+enfants directs d'une section. `.actu-liste` en est un : la limite conçue pour
+des paragraphes écrasait donc des cartes.
+
+**Et pas seulement les actualités.** Les étapes des parcours (`.parcours`)
+étaient touchées de la même façon, sur les quatorze pages de sommaire de guide :
+des cartes de niveau réduites à 626 px au lieu de 1 060.
+
+La règle distingue maintenant la prose du composant : **une liste qui porte une
+classe n'est pas du texte courant.** Les listes sans classe — mentions légales,
+À propos — gardent leur limite de lecture, qui est là pour elles.
+
+### Deux colonnes
+
+`.actu-liste` devient une grille de deux colonnes, une seule sous 700 px : les
+titres de presse seraient coupés tous les deux mots sur un téléphone. Les cartes
+d'une même rangée s'alignent en hauteur, ce que la grille fait d'elle-même.
+
+### Un piège de cascade
+
+Le repli mobile avait d'abord été écrit dans le bloc responsive commun, placé
+plus haut dans le fichier. **À spécificité égale, c'est la dernière règle qui
+l'emporte, media query ou non** : la grille définie plus bas l'écrasait, et le
+téléphone gardait deux colonnes de 155 px. Le repli vit désormais auprès du
+composant qu'il corrige.
+
 ## 2026-08-16 — Le dézoom rendu explicitement possible sur téléphone
 Signalé par l'auteur : impossible de dézoomer sur son téléphone.
 
