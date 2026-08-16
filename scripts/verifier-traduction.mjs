@@ -112,6 +112,8 @@ const IDENTIQUES = new Set([
     // Unités de l'écologie : « 2 667 kg CO₂e », « 73,0 kWh », « 22 222 km ».
     // « CO » apparaît seul parce que le « ₂e » n'est pas une lettre latine.
     "kg", "CO", "kWh", "km", "GB", "MB", "W",
+    // « 8 280 € net » : le mot s'écrit et se lit pareil dans les deux langues.
+    "net",
 ]);
 
 /* Le critère principal est STRUCTUREL, pas heuristique : un texte qui ne
@@ -128,11 +130,18 @@ const IDENTIQUES = new Set([
    complète ; la présence d'un chiffre, elle, se constate. */
 const construitAvecUneValeur = (t) => /\d/.test(t);
 
+/* Les deux mêmes filets que pour les valeurs, et pour la même raison : le
+   premier cherche du français et ne voit que ce qu'on a pensé à y mettre ; le
+   second constate ce qu'aucun fragment n'a touché. « Avec 0,2 % de frais »
+   passait le premier — « de » et « frais » ne figuraient dans aucune liste de
+   mots — et s'affichait « With 0.2 % de frais » sur la page anglaise pendant
+   que ce contrôle annonçait 124/124. Il n'était visible qu'en ouvrant la page. */
 const manquants = [...textes].filter((t) => {
     if (!t || dico.textes[t]) return false;
     if (!construitAvecUneValeur(t)) return true;
     const apres = fragmenter(t);
-    return apres === t || resteDuFrancais(apres);
+    if (apres === t || resteDuFrancais(apres)) return true;
+    return intouche(t).filter((m) => !IDENTIQUES.has(m)).length > 0;
 });
 
 // Un mot français resté dans une valeur calculée, qu'aucun fragment ne reprend.

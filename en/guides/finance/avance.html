@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Finance — Advanced - DocMaster</title>
+    <meta name="description" content="Advanced level of the Finance path: order of withdrawal and tax, bond sensitivity to interest rates, real diversification, the cost of behavioural decisions.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/finance/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/finance/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/finance/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/finance/avance.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Finance — Advanced - DocMaster">
+    <meta property="og:description" content="Advanced level of the Finance path: order of withdrawal and tax, bond sensitivity to interest rates, real diversification, the cost of behavioural decisions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/finance/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finance — Advanced - DocMaster">
+    <meta name="twitter:description" content="Advanced level of the Finance path: order of withdrawal and tax, bond sensitivity to interest rates, real diversification, the cost of behavioural decisions.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">💰 Finance</a> &gt;
+        <span aria-current="page">Advanced</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Finance — Advanced</h1>
+                <p>The mechanisms you only see by looking closely.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#order-of-withdrawal">🧾 The order of withdrawal</a></li>
+                <li><a href="#bonds-and-rates">📉 Bonds and interest rates</a></li>
+                <li><a href="#real-diversification">🌍 Real diversification</a></li>
+                <li><a href="#the-behavioural-factor">🧠 The behavioural factor</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points to remember</h2>
+            <ul>
+                <li>The order in which you withdraw changes the net amount received, on identical capital.</li>
+                <li>A bond loses value when rates rise: the mechanism is arithmetic, not a matter of sentiment.</li>
+                <li>Holding twenty positions in the same market is not diversification.</li>
+                <li>The gap between a fund's return and its investors' return is counted in points a year.</li>
+                <li>Missing the best sessions costs more than avoiding the worst ones gains.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The first two levels dealt with what to do and in what order. This one covers less visible mechanisms, which only show themselves at certain moments — at withdrawal, when rates rise, or during a market fall.</p>
+            <p>They have one thing in common: <strong>they are counter-intuitive</strong>. A bond that falls when rates rise, a very full portfolio that diversifies nothing, an investor who earns less than the fund they hold — each of these seems absurd before it is explained, and obvious afterwards.</p>
+            <div class="piege">
+                <span class="titre">Warning — please read</span>
+                <p>This guide is <strong>educational</strong>: it explains mechanisms, it recommends no investment. It is not personalised investment advice and does not replace a regulated professional. No investment is without risk, and past performance does not predict future performance.</p>
+                <p><strong>The wrappers and tax rates in the first section are French.</strong> The three sections that follow — bonds, diversification, behaviour — depend on no particular country.</p>
+                <p>The rates, ceilings and tax rules quoted change: always check them at their official source before acting.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">The mechanisms to master</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="order-of-withdrawal">🧾 The order of withdrawal</h3></summary>
+                <div class="lecon-corps">
+                <p>People think hard about how to invest, and rarely about how to withdraw. Yet withdrawal is where tax materialises, and the order in which you draw on your wrappers changes the net amount received — <strong>on strictly identical capital and performance</strong>.</p>
+
+                <h4>Each wrapper empties differently</h4>
+                <p>Here the French wrappers make the point concrete. A withdrawal from an ordinary securities account is taxed on the <em>gain realised</em> at that moment. A withdrawal from a PEA held over five years escapes income tax, but not social levies. A partial surrender of an assurance-vie held over eight years benefits from an annual allowance on the gains — an allowance that renews every year, and that is <strong>lost if it is not used</strong>.</p>
+                <p>The names differ from one country to another; the structure rarely does. Most tax systems have a wrapper that is taxed on realisation, one that is exempt after a holding period, and one with an annual allowance. The reasoning below transfers even where the labels do not.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the same need, two net amounts</span>
+                    <p>Need: <strong>€20,000</strong>. Available: a securities account and an assurance-vie held over eight years, each made up half of gains.</p>
+                    <p><strong>Taking it all from the securities account</strong>: €10,000 of gains, taxed at 30%, that is €3,000 of tax.</p>
+                    <p><strong>Spreading it over the assurance-vie</strong>, staying under the annual allowance: the gains surrendered escape income tax, only the 17.2% social levies apply — about €1,720.</p>
+                    <p><strong>Difference: more than €1,200</strong>, for the same need met, purely by choosing where to draw from.</p>
+                </div>
+
+                <h4>A withdrawal is not taxed on its amount</h4>
+                <p>This is the most misunderstood point. Withdrawing €20,000 does not mean being taxed on €20,000. The withdrawal is deemed to consist of a share of contributed capital — never taxed — and a share of gains — the only part taxed. A contract containing 20% of gains therefore triggers tax on only a fifth of the amount withdrawn.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — emptying a wrapper “to keep things simple”</span>
+                    <p>Closing a contract in one go concentrates all the gains into a single tax year. Annual allowances being, by definition, annual, everything above is taxed at full rate — and the following years' allowance is permanently lost.</p>
+                    <p>Spreading the same withdrawal over two calendar years is sometimes enough to erase a sizeable part of the tax.</p>
+                </div>
+
+                <div class="pratique" data-pratique="part-de-gains-imposee"></div>
+
+                <p class="retenir">💡 It is not only what you withdraw that counts, it is from where and when.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="bonds-and-rates">📉 Bonds and interest rates</h3></summary>
+                <div class="lecon-corps">
+                <p>Bonds pass for the safe part of a portfolio. They can nonetheless lose value, and many people discovered this when rates rose. The mechanism holds no mystery: it is arithmetic.</p>
+
+                <h4>Why a bond falls when rates rise</h4>
+                <p>A bond is a fixed-rate loan. If you hold a security paying <strong>1% a year</strong> and equivalent new bonds are issued at <strong>3%</strong>, nobody will buy yours at its original price any more: it pays less for the same risk.</p>
+                <p>Its price therefore falls mechanically to the point where its yield to a buyer becomes comparable to 3%. No default by the borrower, no panic: simply a levelling by price.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the effect of duration</span>
+                    <p><strong>Duration</strong> measures a bond's sensitivity to rates. Rule of thumb: a rate rise of <strong>1 point</strong> pushes the price down by about <strong>1% per year of duration</strong>.</p>
+                    <p>Bond with a duration of <strong>2 years</strong>, rates +1 point → price ≈ <strong>−2%</strong>.</p>
+                    <p>Bond with a duration of <strong>10 years</strong>, rates +1 point → price ≈ <strong>−10%</strong>.</p>
+                    <p>Two investments “without default risk”, but a ratio of one to five in the fall suffered. Duration is the piece of information to look at before the yield on display.</p>
+                </div>
+
+                <h4>What is lost, and what is not</h4>
+                <p>A bond held to maturity repays its face value: the fall seen along the way is erased. A bond <em>fund</em>, by contrast, has no maturity — it continually rolls its holdings. The fall there is quite real, later offset by higher coupons, but over a period close to the fund's duration.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — treating “bond” as a synonym for “risk-free”</span>
+                    <p>A bond's safety concerns the borrower's <strong>risk of default</strong>, not the stability of its price. A long-duration government bond fund can lose more than 15% in a year without any government having defaulted.</p>
+                    <p>A pocket meant to be used in two years therefore has no business being in long bonds.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sensibilite-duration"></div>
+
+                <p class="retenir">💡 Prices and rates move in opposite directions, and duration says by how much.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="real-diversification">🌍 Real diversification</h3></summary>
+                <div class="lecon-corps">
+                <p>Diversifying does not consist of multiplying holdings, but of owning things that <strong>do not fall at the same time</strong>. A portfolio of twenty shares from the same country and the same sector is not diversified: it is a single position, cut into twenty pieces.</p>
+
+                <h4>Correlation, the only measure that counts</h4>
+                <p>Two investments complement each other in proportion to how independent their movements are. Adding up strongly correlated holdings gives the illusion of caution without producing its effect.</p>
+                <p>You should also know that correlations <strong>rise in a crisis</strong>: at the precise moment you are counting on diversification, assets that are usually independent tend to fall together. Diversification softens, it does not protect.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — home bias</span>
+                    <p>France serves as the example here, because that is what the simulator below measures — but the pattern repeats in every country, and usually at the same scale.</p>
+                    <p>French equity markets are worth about <strong>3%</strong> of world stock market capitalisation. Yet French savers typically hold <strong>more than half</strong> of their equity pocket in domestic shares.</p>
+                    <p>Concretely: on €10,000 of equities, a global weighting would put about <strong>€300</strong> in France. An allocation at 50% puts <strong>€5,000</strong> there, an over-exposure by a factor of sixteen to a single economy — the one that already holds the saver's job, and often their home.</p>
+                    <p>Substitute your own country and its own weight in the world index: the arithmetic does not change, only the numbers do.</p>
+                </div>
+
+                <h4>Currency risk</h4>
+                <p>Investing outside your own currency adds a variable: the exchange rate. An American index can gain 10% in dollars and return nothing in euros if the dollar has fallen by as much. Over long periods this effect tends to fade; over a few years, it can dominate the result.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — stacking funds that overlap</span>
+                    <p>Holding a “world” fund, a “North America” fund and a “technology” fund gives the feeling of a well-filled allocation. In reality the same large companies appear three times: the portfolio is concentrated without its owner knowing.</p>
+                    <p>The only way to check is to look at each fund's top holdings. The overlap is often spectacular.</p>
+                </div>
+
+                <div class="pratique" data-pratique="biais-domestique"></div>
+
+                <p class="retenir">💡 The number of holdings measures nothing. What counts is what falls at the same time.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="the-behavioural-factor">🧠 The behavioural factor</h3></summary>
+                <div class="lecon-corps">
+                <p>An uncomfortable fact is well documented: <strong>the holders of a fund obtain on average less than the fund itself</strong>. Published performance assumes you stayed invested from beginning to end. In practice contributions arrive after the rises and withdrawals after the falls.</p>
+
+                <h4>The cost of absence</h4>
+                <p>Strong rises are concentrated into a very small number of sessions, and those most often occur <strong>immediately alongside the worst ones</strong>, in the middle of the turmoil. Stepping out to “wait for things to calm down” almost always means missing the rebound.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — missing the best sessions</span>
+                    <p>Over a long period, an investment left permanently in the market turns <strong>€10,000</strong> into roughly <strong>€60,000</strong>.</p>
+                    <p>The same investment, having missed the <strong>10 best sessions</strong>: about <strong>€28,000</strong>.</p>
+                    <p>Missing the <strong>20 best</strong>: about <strong>€18,000</strong>.</p>
+                    <p>Some twenty days, out of thousands, explain two thirds of the result. Nobody can identify them in advance — only continuous presence guarantees them.</p>
+                </div>
+
+                <h4>Loss aversion</h4>
+                <p>The pain of a loss is felt about twice as strongly as the pleasure of an equivalent gain. This asymmetry explains why a 20% fall prompts selling while a 20% rise does not prompt buying, and why so many plans built in the calm do not survive their first test.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — believing you will hold on</span>
+                    <p>Everyone judges themselves capable of withstanding a 40% fall, as long as it is hypothetical. The real thing comes with a context: alarming headlines, worried people around you, sometimes a job under threat.</p>
+                    <p>The remedy is not strength of character but the <strong>decision written down in advance</strong>: record your allocation, your reason for it, and what you plan to do in a fall. A document written in the calm holds up better than a resolution taken in the heat.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-du-report"></div>
+
+                <p class="retenir">💡 The gap between a fund's return and its holders' return has a name: the decisions taken in between.</p>
+                </div>
+            </details>
+
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They differ from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>SPIVA studies</strong> (S&amp;P Dow Jones Indices): the share of active funds beaten by their index, over 1, 5 and 10 years. Raw figures, published twice a year.</li>
+                    <li><strong>Morningstar's “Mind the Gap” analyses</strong>: the measurement of the gap between fund performance and the performance actually obtained by their holders.</li>
+                    <li><strong>Your central bank's published series</strong>: policy rates and government bond yields, to observe for yourself the relationship between rates and bond prices.</li>
+                    <li><strong>“Thinking, Fast and Slow”</strong>, Daniel Kahneman: the reference work on loss aversion, by the researcher who demonstrated it.</li>
+                    <li><strong>Key information documents</strong>: they state the duration of bond funds and their main holdings — enough to check the overlaps described above.</li>
+                </ul>
+                <p><strong>One useful habit:</strong> before adding a fund, compare its top ten holdings with those you already own. If they largely overlap, you are concentrating instead of diversifying.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Previous level</span>Finance — Intermediate</a>
+            <a href="index.html" class="next"><span class="label">Path →</span>Back to the Finance contents</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Entrepreneurship</a>
+                <a href="../ia/index.html">🤖 Artificial Intelligence</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/finance-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

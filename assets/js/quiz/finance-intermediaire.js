@@ -91,11 +91,11 @@ window.QUIZ = {
                 q: "Sur 30 ans et 20 000 € placés à 6 %, que coûte un point de frais annuel supplémentaire ?",
                 options: [
                     "Environ 2 000 €",
-                    "Environ 27 000 €, soit un quart du résultat",
+                    "Environ 29 000 €, soit un quart du résultat",
                     "Environ 6 000 €"
                 ],
                 a: 1,
-                explication: "108 000 € avec 0,2 % de frais, contre 81 000 € avec 1,2 %. L'écart dépasse le capital initialement investi."
+                explication: "113 000 € avec 0,2 % de frais, contre 84 000 € avec 1,2 %. L'écart dépasse le capital initialement investi."
             },
             {
                 q: "Comment sont prélevés les frais de gestion d'un fonds ?",

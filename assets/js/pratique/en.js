@@ -78,7 +78,20 @@ window.PRATIQUE_TEXTES = {
         " % du loyer par mois entamé)": "% of the rent per month started)",
         "dépassée depuis ": "overdue by ",
         " 1 mois": " 1 month",
-        " 1 an ": " 1 year ",
+        " 1 an": " 1 year",
+
+        // --- Finance : morceaux soudés à un montant --------------------------
+        " du total)": " of the total)",
+        " du résultat)": " of the result)",
+        /* Sans espace final, à dessein. « En démarrant dans » suivi de l'espace
+           consommerait celui de « 1 an », qui ne serait alors plus reconnu :
+           l'anglais affichait « Starting in 1 an ». Les fragments soudés à un
+           nombre commencent tous par une espace ; un fragment qui la mange
+           les désamorce. */
+        "En démarrant dans": "Starting in",
+        " % de frais": "% fees",
+        " versés)": " paid in)",
+        "Après ": "After ",
         " heures": " hours",
         " mois": " months",
         "encore ": "still ",
@@ -3338,5 +3351,174 @@ window.PRATIQUE_TEXTES = {
             "You know your rights. They are exercised by a simple email, with no reason to give.",
         "Une demande d'accès se fait par courriel, sans justification, et l'entreprise a un mois pour répondre. Le silence est lui-même un motif de plainte.":
             "An access request is made by email, without justification, and the company has one month to answer. Silence is itself grounds for a complaint.",
+
+        // =====================================================================
+        // FINANCE
+        //
+        // Sujet de SUJETS_DROIT_FRANCAIS. Les enveloppes citées — PEA,
+        // assurance-vie, compte-titres — et leurs taux de prélèvement sont
+        // FRANÇAIS. Leurs noms sont conservés : ce sont des produits qui
+        // n'existent pas ailleurs, et un lecteur qui les cherche doit pouvoir
+        // les trouver.
+        // =====================================================================
+
+        // --- reserve-precaution ------------------------------------------------------------
+        "Calculez votre réserve de précaution": "Work out your emergency fund",
+        "Elle se calcule sur vos <strong>dépenses</strong>, jamais sur vos revenus.":
+            "It is calculated on your <strong>spending</strong>, never on your income.",
+        "Dépenses mensuelles": "Monthly spending",
+        "Ce que vous pouvez mettre de côté chaque mois": "What you can set aside each month",
+        // Le nombre est écrit en dur dans le simulateur : ces deux libellés
+        // sont des textes fixes, pas des libellés construits avec une valeur.
+        "Objectif minimal (3 mois)": "Minimum target (3 months)",
+        "Objectif confortable (6 mois)": "Comfortable target (6 months)",
+        "Temps pour atteindre le minimum": "Time to reach the minimum",
+        "À partir du moment où cette réserve existe, un imprévu cesse d'être une catastrophe financière.":
+            "From the moment that fund exists, an unexpected event stops being a financial disaster.",
+
+        // --- interets-composes -------------------------------------------------------------
+        "Voyez travailler les intérêts composés": "Watch compound interest work",
+        "La part qui vient des intérêts, et non de votre effort, est ce qui grandit avec le temps.":
+            "The share coming from interest, rather than from your effort, is what grows with time.",
+        "Capital de départ": "Starting capital",
+        "Capital au terme": "Capital at the end",
+        "Dont versé par vous": "Of which paid in by you",
+        "Dont produit par les intérêts": "Of which produced by interest",
+        "Allongez la durée de dix ans sans rien changer d'autre : c'est le levier le plus puissant du tableau.":
+            "Extend the term by ten years and change nothing else: it is the most powerful lever on the table.",
+
+        // --- etf-vs-livret -----------------------------------------------------------------
+        "Comparez un placement et un livret": "Compare an investment and a savings account",
+        "Le livret protège le capital ; il ne le fait pas croître. Les deux ont un rôle distinct.":
+            "A savings account protects capital; it does not grow it. The two have distinct roles.",
+        "Somme placée": "Amount invested",
+        "Taux du livret": "Savings account rate",
+        "Rendement supposé du placement": "Assumed return of the investment",
+        "Sur le livret": "In the savings account",
+        "Sur le placement": "In the investment",
+        "Le placement n'est pas garanti, le livret si. L'écart est le prix du risque accepté — pas un gain acquis.":
+            "The investment is not guaranteed, the savings account is. The gap is the price of the risk accepted — not a gain already earned.",
+
+        // --- asymetrie-perte ---------------------------------------------------------------
+        "Mesurez l'asymétrie d'une baisse": "Measure the asymmetry of a fall",
+        "Une baisse et la hausse qui la répare ne sont jamais du même montant.":
+            "A fall and the rise that repairs it are never the same size.",
+        "Capital investi": "Capital invested",
+        "Baisse subie": "Fall suffered",
+        "Capital après la baisse": "Capital after the fall",
+        "Hausse nécessaire pour revenir au point de départ":
+            "Rise needed to get back to the starting point",
+        "Perdre 50 % impose de regagner 100 % pour revenir à zéro. C'est pourquoi éviter les pertes lourdes compte plus que capter les hausses.":
+            "Losing 50% means having to gain 100% to get back to par. That is why avoiding heavy losses counts for more than catching the rises.",
+
+        // --- pea-vs-cto --------------------------------------------------------------------
+        "Comparez la fiscalité à la sortie": "Compare the tax on the way out",
+        "Même support, même performance : seul le contenant change.":
+            "Same fund, same performance: only the wrapper changes.",
+        "Gain réalisé": "Gain realised",
+        "Prélèvement sur compte-titres (30 %)": "Tax on an ordinary securities account (30%, France)",
+        "Prélèvement sur PEA de plus de 5 ans (17,2 %)":
+            "Tax on a PEA — the French equity savings plan — held over 5 years (17.2%)",
+        "Écart en votre faveur": "Difference in your favour",
+        "Ce montant n'a demandé aucune performance supplémentaire : seulement d'avoir ouvert le bon contenant, assez tôt.":
+            "That amount required no extra performance: only opening the right wrapper, early enough.",
+
+        // --- perte-max-portefeuille --------------------------------------------------------
+        "Traduisez votre allocation en perte possible":
+            "Turn your allocation into a possible loss",
+        "Une allocation ne se juge pas sur son rendement espéré, mais sur ce qu'elle fait perdre au pire moment.":
+            "An allocation is not judged on its expected return, but on what it loses at the worst moment.",
+        "Capital total": "Total capital",
+        "Part en actions": "Share in equities",
+        "Chute du marché actions envisagée": "Equity market fall considered",
+        "Perte du portefeuille": "Loss of the portfolio",
+        "Soit, sur le total": "That is, on the total",
+        "Il vous resterait": "You would be left with",
+        "Si ce montant vous empêcherait de dormir, l'allocation est trop exposée — quelle que soit la qualité du raisonnement qui l'a produite.":
+            "If that amount would keep you awake, the allocation is too exposed — however good the reasoning that produced it.",
+
+        // --- cout-des-frais ----------------------------------------------------------------
+        "Chiffrez ce que vous coûtent les frais": "Put a number on what fees cost you",
+        "La performance est une hypothèse. Les frais, eux, sont certains.":
+            "Performance is a hypothesis. Fees are a certainty.",
+        "Rendement annuel avant frais": "Annual return before fees",
+        "Frais du support A": "Fees of fund A",
+        "Frais du support B": "Fees of fund B",
+        "Coût de l'écart de frais": "Cost of the fee difference",
+        "Rien de cet écart n'apparaîtra jamais sur un relevé : il se déduit silencieusement, chaque année.":
+            "None of that difference will ever appear on a statement: it is deducted silently, every year.",
+
+        // --- comparateur-enveloppes --------------------------------------------------------
+        "Comparez les trois enveloppes sur un même gain":
+            "Compare the three French wrappers on the same gain",
+        "L'abattement de l'assurance-vie est annuel : il ne se reporte pas d'une année sur l'autre.":
+            "The assurance-vie allowance is annual: it does not carry over from one year to the next.",
+        "Abattement annuel disponible (assurance-vie de plus de 8 ans)":
+            "Annual allowance available (assurance-vie held over 8 years)",
+        "Compte-titres": "Ordinary securities account",
+        "PEA de plus de 5 ans": "PEA held over 5 years",
+        "Assurance-vie de plus de 8 ans": "Assurance-vie held over 8 years",
+        "Meilleur net": "Best net",
+        "Les taux évoluent et votre situation aussi : ce calcul montre un ordre de grandeur, pas une réponse définitive.":
+            "Rates change and so does your situation: this calculation shows an order of magnitude, not a definitive answer.",
+
+        // --- effet-duree -------------------------------------------------------------------
+        "Isolez l'effet de la durée": "Isolate the effect of time",
+        "Même effort mensuel, trois durées : l'écart ne vient que du temps laissé aux intérêts.":
+            "Same monthly effort, three terms: the difference comes only from the time left to the interest.",
+        "Versement mensuel": "Monthly contribution",
+        "Rendement annuel supposé": "Assumed annual return",
+        "Triplez la durée et le capital est bien plus que triplé : c'est la durée, non le montant, qui fait le résultat.":
+            "Triple the term and the capital is far more than tripled: it is the term, not the amount, that makes the result.",
+
+        // --- part-de-gains-imposee ---------------------------------------------------------
+        "Décomposez un retrait": "Break down a withdrawal",
+        "Retirer 20 000 € ne signifie pas être imposé sur 20 000 €.":
+            "Withdrawing €20,000 does not mean being taxed on €20,000.",
+        "Montant retiré": "Amount withdrawn",
+        "Part de gains dans le contrat": "Share of gains in the contract",
+        "Abattement annuel disponible": "Annual allowance available",
+        "Part de capital (jamais imposée)": "Capital share (never taxed)",
+        "Part de gains": "Share of gains",
+        "Gains effectivement imposables après abattement":
+            "Gains actually taxable after the allowance",
+        "Étaler le même retrait sur deux années civiles permet d'utiliser deux fois l'abattement.":
+            "Spreading the same withdrawal over two calendar years uses the allowance twice.",
+
+        // --- sensibilite-duration ----------------------------------------------------------
+        "Calculez la sensibilité aux taux": "Work out the sensitivity to rates",
+        "Règle d'approximation : la baisse de prix vaut la duration multipliée par la variation de taux.":
+            "Rule of thumb: the fall in price equals the duration multiplied by the change in rates.",
+        "Montant placé en obligations": "Amount invested in bonds",
+        "Duration du support": "Duration of the fund",
+        "Hausse des taux": "Rise in rates",
+        "Baisse de prix attendue": "Expected fall in price",
+        "Soit, sur votre montant": "That is, on your amount",
+        "Valeur après la hausse des taux": "Value after the rise in rates",
+        "Aucun emprunteur n'a fait défaut dans ce calcul : la baisse est purement arithmétique.":
+            "No borrower defaulted in this calculation: the fall is purely arithmetical.",
+
+        // --- biais-domestique --------------------------------------------------------------
+        "Mesurez votre biais domestique": "Measure your home bias",
+        "Les marchés français pèsent environ 3 % de la capitalisation mondiale.":
+            "French markets are about 3% of world market capitalisation.",
+        "Poche actions": "Equity pocket",
+        "Part investie en France": "Share invested in France",
+        "Investi en France": "Invested in France",
+        "Une répartition mondiale en mettrait": "A world allocation would put in",
+        "Surexposition": "Overexposure",
+        "Votre emploi et souvent votre logement dépendent déjà de cette même économie.":
+            "Your job and often your home already depend on that same economy.",
+
+        // --- cout-du-report ----------------------------------------------------------------
+        "Chiffrez le coût d'attendre": "Put a number on the cost of waiting",
+        "Reporter le démarrage paraît sans conséquence. Le calcul dit autre chose.":
+            "Putting off the start seems harmless. The calculation says otherwise.",
+        "Horizon total": "Total horizon",
+        "Report du démarrage": "Delay before starting",
+        "En démarrant maintenant": "Starting now",
+        "Coût du report": "Cost of the delay",
+        "Ce sont les dernières années qui portent les intérêts les plus lourds — et ce sont elles qu'un report supprime.":
+            "It is the final years that carry the heaviest interest — and those are the ones a delay removes.",
     },
 };

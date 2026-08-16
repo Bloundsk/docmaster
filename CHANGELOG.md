@@ -1,5 +1,89 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — Finance traduite, et un contrôle qui mentait encore
+Quatre pages, trois banques de questions, 124 textes de simulateurs. `finance`
+est déclaré dans `CONTENU_TRADUIT` ; le sujet était déjà dans
+`SUJETS_DROIT_FRANCAIS`, le bandeau rouge s'affiche donc sur les quatre pages.
+
+**Treize sujets sur quatorze**, soit 52 pages et 1 176 questions.
+
+### Ce qui se traduit, et ce qui ne se traduit pas
+
+Le raisonnement est universel : intérêts composés, coût des frais, asymétrie
+des pertes, biais domestique, corrélation, aversion à la perte. **Les chiffres
+ne le sont pas.** PEA, assurance-vie, compte-titres, fonds euros n'existent
+qu'en France, et les taux de 30 % et 17,2 % avec eux.
+
+Les noms sont donc **conservés comme noms propres, avec une glose anglaise** :
+« a PEA — the French equity savings plan — held over 5 years ». Un lecteur qui
+cherche le produit doit pouvoir le trouver ; un lecteur qui lit le chiffre doit
+savoir d'où il vient. L'encadré d'avertissement de la page de sommaire est
+remonté **au-dessus du parcours** et le dit sans détour : *« What transfers is
+the reasoning. The figures do not. »*
+
+### Le simulateur commande la prose, et non l'inverse
+
+Le simulateur de biais domestique calcule sur la France — 3 % de la
+capitalisation mondiale, écrit en dur. L'exemple de la page anglaise avait
+d'abord été transposé au Royaume-Uni : 4 %, facteur six. La page annonçait donc
+un chiffre, et le simulateur juste en dessous en affichait un autre.
+
+Transposer un exemple est le bon réflexe — mais **pas quand un simulateur
+partagé le contredit trois lignes plus bas**. L'exemple est revenu à la France,
+en disant pourquoi, et en invitant le lecteur à y substituer son propre pays.
+Rien de tout cela n'était visible dans un fichier : il a fallu ouvrir la page.
+
+### Le contrôle annonçait 124/124 sur des libellés français
+
+`verifier-traduction.mjs` appliquait deux filets aux **valeurs** calculées, mais
+un seul aux **libellés** : la recherche de mots français. « Avec 0,2 % de
+frais » ne contient ni accent, ni mot de la liste ; il passait. La page
+anglaise affichait « With 0.2 % de frais » pendant que le contrôle disait que
+rien ne manquait.
+
+Le second filet — *ce qu'aucun fragment n'a touché* — est désormais appliqué
+aux libellés aussi. Il a immédiatement trouvé **sept défauts** dans les pages
+anglaises de finance, tous invisibles jusque-là :
+
+| Libellé | Ce que la page anglaise affichait |
+|---|---|
+| `Avec 0,2 % de frais` (×4 valeurs) | « With 0.2 % de frais » |
+| `Objectif minimal (3 mois)` | inchangé, en français |
+| `Objectif confortable (6 mois)` | inchangé, en français |
+| `En démarrant dans 1 an` | « Starting in 1 an » |
+
+Le dernier méritait son propre correctif : le fragment `"En démarrant dans "`
+mangeait l'espace de `" 1 an"`, qui n'était donc plus reconnu. **Un fragment
+qui consomme l'espace finale désamorce tous les fragments soudés à un nombre**,
+qui commencent tous par une espace. Il a perdu la sienne.
+
+Zéro fausse alerte sur les douze autres sujets : le filet est plus strict sans
+être bruyant.
+
+### Une incohérence de chiffres côté français, corrigée
+
+La page française annonçait 113 000 € et 84 000 € — ce que calcule le
+simulateur, en capitalisation mensuelle. La banque de questions du même niveau
+annonçait 108 000 € et 81 000 € — le même calcul en capitalisation annuelle.
+Les deux étaient en ligne depuis l'origine. C'est la page qui a raison ; le
+quiz français a été aligné.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 13 sujets | tous complets, **124/124** pour finance |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 912 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 157 sections, 0 orpheline |
+| `audit-geometrie.html` | 330 mesures, 19 gabarits, 0 anomalie |
+| Bandeau de droit français | présent sur les quatre pages anglaises |
+| Simulateurs posés FR ↔ EN | 13 de chaque côté, aucun écart |
+
+Reste **entrepreneuriat**, dernier des quatorze — lui aussi dans
+`SUJETS_DROIT_FRANCAIS`.
+
 ## 2026-08-16 — Droit & démarches traduit : douze sujets sur quatorze
 Quatre pages, trois banques de questions, 152 textes de simulateurs. `droit`
 est déclaré dans `CONTENU_TRADUIT`, et le bandeau rouge s'affiche — le sujet

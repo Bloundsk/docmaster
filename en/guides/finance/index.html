@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Finance - DocMaster</title>
+    <meta name="description" content="Finance in three levels: from the basics of saving to the tax on withdrawal. Describes French wrappers and tax. Free, no sign-up, and no sales pitch.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/finance/index.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/finance/index.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/finance/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/finance/index.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Finance - DocMaster">
+    <meta property="og:description" content="Finance in three levels: from the basics of saving to the tax on withdrawal. Describes French wrappers and tax. Free, no sign-up, and no sales pitch.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/finance/index.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finance - DocMaster">
+    <meta name="twitter:description" content="Finance in three levels: from the basics of saving to the tax on withdrawal. Describes French wrappers and tax. Free, no sign-up, and no sales pitch.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt; <span aria-current="page">💰 Finance</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Finance</h1>
+                <p>Understanding the basics of investing and managing money.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <section>
+            <h2 id="warning">Before you start</h2>
+            <div class="piege">
+                <span class="titre">Warning — please read</span>
+                <p>This path is <strong>educational</strong>: it explains mechanisms, it recommends no investment. It is not personalised investment advice and does not replace a regulated professional. No investment is without risk, and past performance does not predict future performance.</p>
+                <p><strong>The tax wrappers described are French</strong> — the PEA, the assurance-vie, the ordinary securities account — as are the rates applied to them. They have no exact equivalent elsewhere. What transfers is the reasoning: compound interest, fees, asymmetry of losses, home bias. <strong>The figures do not.</strong></p>
+                <p>The rates, ceilings and tax rules quoted change: always check them at their official source before acting.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="the-path">The path</h2>
+            <p>Three levels, to be followed in order or picked up wherever you stand. Each reads on its own, but each assumes what came before.</p>
+
+            <ol class="parcours">
+                <li class="etape">
+                    <a class="etape-lien" href="debutant.html">
+                        <span class="etape-rang">Level 1</span>
+                        <span class="etape-titre">Beginner</span>
+                        <span class="etape-resume">Protect yourself first, put your money to work second.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>The emergency fund: how much, and why before everything else</li>
+                        <li>What an investment really is</li>
+                        <li>ETFs, and what they change</li>
+                        <li>Risk and investment horizon</li>
+                        <li>The main tax wrappers</li>
+                    </ul>
+                    <p class="etape-duree">5 sections · about 11 minutes · no prior knowledge needed</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="intermediaire.html">
+                        <span class="etape-rang">Level 2</span>
+                        <span class="etape-titre">Intermediate</span>
+                        <span class="etape-resume">From principles to decisions: how much, where, at what cost.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Building an allocation from your horizon</li>
+                        <li>Putting a number on what fees really cost</li>
+                        <li>Choosing between the French wrappers</li>
+                        <li>Regular contributions and rebalancing</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 10 minutes · assumes level 1</p>
+                </li>
+
+                <li class="etape">
+                    <a class="etape-lien" href="avance.html">
+                        <span class="etape-rang">Level 3</span>
+                        <span class="etape-titre">Advanced</span>
+                        <span class="etape-resume">The mechanisms you only see by looking closely.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>The order of withdrawal, and what it changes to the net received</li>
+                        <li>Why a bond falls when rates rise</li>
+                        <li>Diversifying for real: correlation and home bias</li>
+                        <li>The measurable cost of decisions taken in the heat of the moment</li>
+                    </ul>
+                    <p class="etape-duree">4 sections · about 11 minutes · assumes levels 1 and 2</p>
+                </li>
+            </ol>
+        </section>
+
+        <div class="recap-box">
+            <h2>⚡ What you will know by the end</h2>
+            <ul>
+                <li>What order to do things in, and why that order is not negotiable.</li>
+                <li>How to derive an allocation from a deadline rather than from an opinion.</li>
+                <li>What annual fees really cost, with the figures.</li>
+                <li>Which wrapper matches which plan.</li>
+                <li>Why the costliest mistakes are behavioural, not technical.</li>
+            </ul>
+        </div>
+
+        <div class="guide-nav">
+            <a href="../negociation/index.html"><span class="label">← Previous guide</span>🤝 Negotiation &amp; communication</a>
+            <a href="../ia/index.html" class="next"><span class="label">Next guide →</span>🤖 Artificial Intelligence</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../droit/index.html">⚖️ Law &amp; Procedures</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../productivite/index.html">⏱️ Productivity &amp; Organisation</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

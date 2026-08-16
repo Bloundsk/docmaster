@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Finance — Intermediate - DocMaster</title>
+    <meta name="description" content="Intermediate level of the Finance path: building an allocation, measuring the effect of fees, choosing a tax wrapper, investing regularly. Describes French wrappers.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/finance/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/finance/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/finance/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/finance/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Finance — Intermediate - DocMaster">
+    <meta property="og:description" content="Intermediate level of the Finance path: building an allocation, measuring the effect of fees, choosing a tax wrapper, investing regularly. Describes French wrappers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/finance/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finance — Intermediate - DocMaster">
+    <meta name="twitter:description" content="Intermediate level of the Finance path: building an allocation, measuring the effect of fees, choosing a tax wrapper, investing regularly. Describes French wrappers.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">💰 Finance</a> &gt;
+        <span aria-current="page">Intermediate</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Finance — Intermediate</h1>
+                <p>From principles to decisions: how much, where, at what cost.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#building-an-allocation">🧭 Building an allocation</a></li>
+                <li><a href="#fees">💸 Fees, the silent enemy</a></li>
+                <li><a href="#choosing-a-wrapper">🏦 Choosing a wrapper</a></li>
+                <li><a href="#investing-over-time">🔁 Investing over time</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points to remember</h2>
+            <ul>
+                <li>The split between equities and bonds follows from the horizon, not from today's mood.</li>
+                <li>One percentage point of annual fees costs about a fifth of the final capital over thirty years.</li>
+                <li>No wrapper is “better” than another: they answer different questions.</li>
+                <li>Investing in regular instalments does not return more on average — it makes the waiting bearable.</li>
+                <li>Annual rebalancing is what keeps an allocation alive over time.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The beginner level answered a simple question: what order to do things in. Build a reserve, understand what an investment is, do not confuse saving with investing.</p>
+            <p>This level answers the questions that come straight afterwards, and that are far more concrete: <strong>what share of my money to put into equities</strong>, <strong>what my intermediary really costs me</strong>, <strong>what kind of account to open</strong>, and <strong>at what rhythm to invest</strong>. Those four decisions determine most of the outcome, long before the choice of any particular fund.</p>
+            <div class="piege">
+                <span class="titre">Warning — please read</span>
+                <p>This guide is <strong>educational</strong>: it explains mechanisms, it recommends no investment. It is not personalised investment advice and does not replace a regulated professional. No investment is without risk, and past performance does not predict future performance.</p>
+                <p><strong>The wrappers and tax rates described are French.</strong> The reasoning about horizon, fees and rebalancing holds anywhere; the tax figures do not.</p>
+                <p>The rates, ceilings and tax rules quoted change: always check them at their official source before acting.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">The decisions to take</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="building-an-allocation">🧭 Building an allocation</h3></summary>
+                <div class="lecon-corps">
+                <p>Allocation is how your capital is split between risky investments — mainly equities — and stable ones — mainly bonds and capital-guaranteed funds. It is <strong>the most structural decision</strong>: it explains most of the variation in your results, far more than the choice of individual funds.</p>
+
+                <h4>The horizon commands, not the temperament</h4>
+                <p>The question to ask is not “am I cautious or bold?” but <strong>“in how long will I need this money?”</strong>. A temperament does not change the fact that an equity market can take several years to recover from a fall.</p>
+                <p>The logic is mechanical: the longer the horizon, the more time a fall has to be erased. Over one year, a 100% equity allocation can lose a third of its value. Over twenty years the risk is not nil, but it changes in nature.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Three plans, three different allocations for the same person:</p>
+                    <p><strong>Buying a car in 2 years</strong> — 0% equities. The need is close and the amount must be certain. A savings account or a guaranteed fund.</p>
+                    <p><strong>House deposit in 8 years</strong> — about 40% equities. A fall has time to be partly erased, but not fully.</p>
+                    <p><strong>Retirement in 25 years</strong> — 80% or more. The horizon absorbs several complete market cycles.</p>
+                    <p>Note that these are not three types of person, but <strong>three pockets of the same person</strong>, each with its own deadline.</p>
+                </div>
+
+                <h4>The “100 minus your age” rule, and what it is worth</h4>
+                <p>An old rule suggests holding in equities a percentage equal to <strong>100 minus your age</strong>: 70% at thirty, 40% at sixty. Its merit is that it exists and that it reduces risk as the need approaches.</p>
+                <p>Its limit is that it confuses age with horizon. Somebody of sixty who will not draw on their capital until eighty still has twenty years, not zero. Conversely, somebody of thirty buying a home in two years has no reason to be 70% exposed.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — choosing your allocation by watching the markets</span>
+                    <p>Deciding to increase your equity share because the market has risen for two years is buying dear. Reducing it after a fall is selling low and turning a temporary drop into a permanent loss.</p>
+                    <p>An allocation is set <strong>calmly</strong>, from known deadlines, and revised only when those deadlines change — not when the news gets loud.</p>
+                </div>
+
+                <div class="pratique" data-pratique="perte-max-portefeuille"></div>
+
+                <p class="retenir">💡 An allocation follows from a date, not from an opinion about the markets.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="fees">💸 Fees, the silent enemy</h3></summary>
+                <div class="lecon-corps">
+                <p>Fees are the only component of your return that is <strong>known in advance and absolutely certain</strong>. Performance is uncertain; fees will be taken whatever happens, in the good years as in the bad.</p>
+
+                <h4>Where they hide</h4>
+                <p>They stack, and that is what makes them hard to see:</p>
+                <ul>
+                    <li><strong>Fund management fees</strong> (the “TER” of a fund or ETF): taken each year from the assets, never invoiced separately. They are deducted silently from the performance shown.</li>
+                    <li><strong>Wrapper fees</strong>: French assurance-vie contracts take additional annual fees on unit-linked funds.</li>
+                    <li><strong>Brokerage fees</strong>: on every order placed.</li>
+                    <li><strong>Entry fees</strong>: taken from every contribution by some contracts.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — what one point of fees costs</span>
+                    <p>Capital of <strong>€20,000</strong>, invested for <strong>30 years</strong>, in a fund returning <strong>6% a year before fees</strong>.</p>
+                    <p>With <strong>0.2% fees</strong> (a common index ETF), the net return is 5.8%: the capital reaches about <strong>€113,000</strong>.</p>
+                    <p>With <strong>1.2% fees</strong> (an actively managed fund), the net return falls to 4.8%: the capital reaches about <strong>€84,000</strong>.</p>
+                    <p>A single point of annual fees cost <strong>€29,000</strong>, a quarter of the result — with nothing ever appearing on a statement.</p>
+                </div>
+
+                <h4>Why the gap is so violent</h4>
+                <p>Because fees apply to the <em>whole</em> capital every year, including the accumulated gains. They do not only shave the return: they also deprive you of the interest that return would have produced in the following years. It is compound interest running backwards.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — judging a fund on past performance</span>
+                    <p>A fund showing a good year naturally attracts. But past performance does not repeat reliably, whereas fees repeat identically every year.</p>
+                    <p>Comparing two funds by looking at their fees first is comparing on the one figure you can be certain of.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-des-frais"></div>
+
+                <p class="retenir">💡 Performance is a hypothesis, fees are a certainty. Start by comparing what is certain.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="choosing-a-wrapper">🏦 Choosing a wrapper</h3></summary>
+                <div class="lecon-corps">
+                <p>The wrapper is the container: in France, the PEA, the ordinary securities account, the assurance-vie. The content — the shares, the ETFs — can often be the same. What changes is the <strong>tax</strong> and the <strong>exit conditions</strong>.</p>
+                <p>Many people look for “the best one”. The question is badly put: they answer different questions.</p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>PEA</th><th>Securities account</th><th>Assurance-vie</th></tr>
+                    <tr><th>What it can hold</th><td>European shares and funds</td><td>Anything, with no geographic restriction</td><td>The funds offered by the contract</td></tr>
+                    <tr><th>Main advantage</th><td>Gains exempt from income tax after 5 years</td><td>No constraint</td><td>Annual allowance after 8 years, and inheritance treatment</td></tr>
+                    <tr><th>Constraint</th><td>One per person, contribution ceiling</td><td>Full tax from the first euro of gain</td><td>Contract fees, limited choice of funds</td></tr>
+                    <tr><th>Withdrawal before term</th><td>Possible, but closes the plan before 5 years</td><td>Free</td><td>Free, less favourable tax before 8 years</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — what the wrapper changes</span>
+                    <p>The same investment produces <strong>€10,000 of gains</strong>. At the moment of withdrawal:</p>
+                    <p><strong>In a securities account</strong>: taxed at the flat rate of 30% (income tax and social levies combined), that is <strong>€3,000</strong>. €7,000 is left.</p>
+                    <p><strong>In a PEA held over five years</strong>: only social levies apply, at 17.2% — about <strong>€1,720</strong>. €8,280 is left.</p>
+                    <p>Same fund, same performance, same duration: <strong>€1,280 of difference</strong>, purely from the container.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — opening the PEA late</span>
+                    <p>The five-year clock starts at the <strong>opening</strong> of the plan, not at the first significant contribution. Opening one with a modest sum, even with no immediate project, starts the clock.</p>
+                    <p>Many people wait until they “have enough” to open it, and give up several years of seniority that cost nothing to acquire.</p>
+                </div>
+
+                <div class="pratique" data-pratique="comparateur-enveloppes"></div>
+
+                <p class="retenir">💡 You do not choose the best wrapper, you choose the one that matches the deadline and the content you have in mind.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="investing-over-time">🔁 Investing over time</h3></summary>
+                <div class="lecon-corps">
+                <p>Choosing an allocation is one thing; holding it for twenty years is another. That is where most plans fail, not through a calculation error but through abandonment.</p>
+
+                <h4>Regular contributions</h4>
+                <p>Investing a fixed sum at regular intervals, whatever the market level, means mechanically buying more units when prices are low and fewer when they are high.</p>
+                <p>Let us be honest about what that brings: <strong>on average it does not return more</strong> than investing everything at once — historically it returns slightly less, since the money spends less time invested. The benefit is elsewhere, and it is decisive: the method <strong>removes the question of when to enter</strong>, which paralyses people and leads to endless postponement.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p><strong>€200 a month for 20 years</strong>, that is €48,000 paid in, at 6% a year: about <strong>€92,000</strong>. The interest exceeds the contributions.</p>
+                    <p>The same monthly sum for <strong>10 years only</strong> (€24,000 paid in): about <strong>€33,000</strong>.</p>
+                    <p>Twice the duration does not produce twice the capital, but nearly three times. It is the duration, more than the amount, that makes the result.</p>
+                </div>
+
+                <h4>Rebalancing</h4>
+                <p>Over time, the pocket that has grown most takes an increasing share. An allocation planned at 60% equities can drift to 75% after a few good years — the risk has risen without any decision being taken.</p>
+                <p>Rebalancing means returning to the target <strong>once a year</strong>, by paying into the lagging pocket rather than selling, where possible. The operation is counter-intuitive — it means topping up whatever did worst — but that is precisely what maintains the level of risk you chose.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — checking your portfolio every day</span>
+                    <p>Daily checking multiplies the occasions to see red, and therefore the temptations to act. Every unplanned intervention is a decision taken under the influence of emotion.</p>
+                    <p>An annual appointment, written in a diary in advance, is enough for a long-term portfolio — and avoids most of the costly mistakes.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-duree"></div>
+
+                <p class="retenir">💡 The hard part is not choosing an allocation, it is not changing it when it is put to the test.</p>
+                </div>
+            </details>
+
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They differ from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Your national markets regulator</strong> — its calculators and fee sheets let you cost a real contract rather than a theoretical example.</li>
+                    <li><strong>Your government's official portal</strong> — wrapper ceilings, tax treatment, levy rates. To be checked at source, these values change.</li>
+                    <li><strong>Key information documents</strong>: every fund must publish one, stating its real fees. It is the document to read before subscribing to anything, and it fits on three pages.</li>
+                    <li><strong>SPIVA studies</strong> (S&amp;P Dow Jones Indices): the annual comparison between active funds and indices. It bears directly on the question of fees.</li>
+                </ul>
+                <p><strong>One useful habit:</strong> always ask for the total annual fees — fund and wrapper combined. An intermediary who struggles to answer that question has already answered it.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Previous level</span>Finance — Beginner</a>
+            <a href="avance.html" class="next"><span class="label">Next level →</span>Finance — Advanced</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../droit/index.html">⚖️ Law &amp; Procedures</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../productivite/index.html">⏱️ Productivity &amp; Organisation</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/finance-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

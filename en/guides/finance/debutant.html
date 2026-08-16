@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Finance — Beginner - DocMaster</title>
+    <meta name="description" content="Beginner level of the Finance path: the emergency fund, investing, ETFs, risk and tax, explained from zero. Describes French wrappers and tax.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/finance/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/finance/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/finance/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/finance/debutant.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Finance — Beginner - DocMaster">
+    <meta property="og:description" content="Beginner level of the Finance path: the emergency fund, investing, ETFs, risk and tax, explained from zero. Describes French wrappers and tax.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/finance/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Finance — Beginner - DocMaster">
+    <meta name="twitter:description" content="Beginner level of the Finance path: the emergency fund, investing, ETFs, risk and tax, explained from zero. Describes French wrappers and tax.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">💰 Finance</a> &gt;
+        <span aria-current="page">Beginner</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Finance — Beginner</h1>
+                <p>Protect yourself first, put your money to work second. No prior knowledge needed.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#saving">📊 Saving</a></li>
+                <li><a href="#investing">📈 Investing</a></li>
+                <li><a href="#etfs">📦 ETFs</a></li>
+                <li><a href="#risk-management">⚖️ Managing risk</a></li>
+                <li><a href="#tax-on-savings">🧾 Tax on savings</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points to remember</h2>
+            <ul>
+                <li>Always build an emergency fund (3 to 6 months of spending) before investing.</li>
+                <li>Compound interest strongly rewards investments started early.</li>
+                <li>ETFs make diversification easy at low cost.</li>
+                <li>The acceptable level of risk depends above all on your investment horizon.</li>
+                <li>The choice of tax wrapper has a real effect on the net return.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>Personal finance suffers from a misunderstanding: people think it requires mathematical skill or starting capital. In reality the essentials come down to a few principles, and the most decisive factor is neither talent nor amount — it is <strong>time</strong>.</p>
+            <p>This guide follows the order in which things must be done: first protect yourself against the unexpected, only then put the surplus to work. That order is not a presentational detail. Investing with no safety net leads to having to sell at the worst moment, when you need the money — and that is very often the moment markets have fallen.</p>
+            <div class="piege">
+                <span class="titre">Warning — please read</span>
+                <p>This guide is <strong>educational</strong>: it explains mechanisms, it recommends no investment. It is not personalised investment advice and does not replace a regulated professional. No investment is without risk, and past performance does not predict future performance.</p>
+                <p><strong>The wrappers and tax rates described are French.</strong> The reasoning transfers anywhere; the figures do not. Check what applies in your own country.</p>
+                <p>The rates, ceilings and tax rules quoted change: always check them at their official source before acting.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">The basics to know</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+            <details class="lecon">
+                <summary><h3 id="saving">📊 Saving</h3></summary>
+                <div class="lecon-corps">
+                <p>Saving means deciding in advance not to spend part of your income. The difficulty is not understanding the principle — it is making it automatic, because willpower alone does not hold over ten years.</p>
+
+                <h4>The emergency fund comes before everything</h4>
+                <p>Before any plan, any investment, any move into the markets, you need an immediately available reserve covering <strong>3 to 6 months of ordinary spending</strong>. Not income: <em>spending</em>. The distinction is often a 30% difference.</p>
+                <p>That reserve absorbs an unexpected event — a car to repair, a home to leave, a job lost — without resorting to consumer credit, whose rates are in another league entirely from what any investment returns.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p>Monthly spending: <strong>€1,600</strong> (rent, food, transport, bills, insurance).</p>
+                    <p>Emergency fund target: between <strong>€4,800</strong> (3 months) and <strong>€9,600</strong> (6 months).</p>
+                    <p>Setting aside <strong>€250 a month</strong>, the lower bound is reached in <strong>20 months</strong>. That is neither fast nor spectacular — but from that moment on, an unexpected event stops being a financial disaster.</p>
+                </div>
+
+                <h4>Where to keep it</h4>
+                <p>In something <strong>available within 48 hours with no risk to capital</strong>: a regulated savings account (in France, the Livret A or LDDS) or an ordinary bank savings account. The return matters little here — this is not investing, it is insurance. Trying to optimise this pocket is a reasoning error: what you gain is negligible, what you risk losing is not.</p>
+
+                <h4>Regularity beats amount</h4>
+                <p>An automatic transfer set for <strong>the day after your salary arrives</strong> is more effective than resolving to save “whatever is left at the end of the month”. There is never anything left: spending naturally adjusts to what is available.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — investing before having the reserve</span>
+                    <p>Putting your savings into the markets with no safety cushion looks profitable. Until the first unexpected event: then you have to sell, and statistically financial shocks often arrive when the economy is doing badly — that is, when markets are low.</p>
+                    <p>You thereby turn a temporary fall, which was only a red line on a screen, into a definitive and very real loss.</p>
+                </div>
+
+                <div class="pratique" data-pratique="reserve-precaution"></div>
+
+                <p class="retenir">💡 The emergency fund is not a mediocre investment: it is what lets you never sell at the wrong moment.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="investing">📈 Investing</h3></summary>
+                <div class="lecon-corps">
+                <p>Investing means accepting a risk of loss in exchange for an expected return. That sentence is worth re-reading: risk is not an unfortunate side effect, it is <strong>the consideration</strong> for the return. An investment promising a high return with no risk does not exist — that is the definition of a scam.</p>
+
+                <h4>The main families</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Asset</th><th>Nature</th><th>Risk</th><th>Minimum horizon</th></tr>
+                    <tr><td><strong>Equities</strong></td><td>A share of ownership in a company</td><td>High, very variable in the short term</td><td>8 years and over</td></tr>
+                    <tr><td><strong>Bonds</strong></td><td>A loan to a company or a state</td><td>Moderate; depends on the borrower</td><td>3 to 5 years</td></tr>
+                    <tr><td><strong>Property</strong></td><td>An asset let out or resold</td><td>Moderate; illiquid, high costs</td><td>10 years and over</td></tr>
+                    <tr><td><strong>Fonds euros</strong> (French)</td><td>Capital guaranteed by the insurer</td><td>Low</td><td>Short term possible</td></tr>
+                </table>
+                </div>
+
+                <h4>Compound interest, the only real lever</h4>
+                <p>Compound interest is the return that itself produces return. Over a few years the effect is discreet. Over several decades it becomes the dominant element — far more than the amount saved.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — the cost of waiting ten years</span>
+                    <p>Two people pay in <strong>€200 a month</strong> until 65, with an average annual return of <strong>5%</strong>.</p>
+                    <ul>
+                        <li><strong>Amélie starts at 25.</strong> She pays in €96,000 over 40 years, and ends with about <strong>€305,000</strong>.</li>
+                        <li><strong>Bruno starts at 35.</strong> He pays in €72,000 over 30 years, and ends with about <strong>€166,000</strong>.</li>
+                    </ul>
+                    <p>Bruno paid in <strong>€24,000 less</strong>. He finishes with <strong>€139,000 less</strong>. The gap in outcome is nearly six times the gap in effort.</p>
+                    <p>Those ten years cannot be made up by a greater effort later — it is the time, not the amount, that makes the difference.</p>
+                </div>
+
+                <h4>Fees, the silent enemy</h4>
+                <p>A difference in fees looks harmless. Applied every year for twenty-five years, it becomes one of the heaviest factors in the final result.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p><strong>€10,000</strong> invested for <strong>25 years</strong>, with a gross return of <strong>6%</strong> a year:</p>
+                    <ul>
+                        <li>With <strong>0.2%</strong> annual fees: about <strong>€40,900</strong></li>
+                        <li>With <strong>2%</strong> annual fees: about <strong>€26,700</strong></li>
+                    </ul>
+                    <p>Difference: <strong>€14,200</strong>, more than the capital invested at the start. Fees are the only variable you control completely — the return cannot be ordered.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — trying to pick the right moment</span>
+                    <p>Waiting “for it to fall before getting in” or “to rise before getting out” assumes you can forecast markets. Nobody does so reliably, including the professionals paid to do it.</p>
+                    <p>Regular investing — a fixed amount, on a fixed date, whatever happens — removes the question. You mechanically buy more units when prices fall, fewer when they rise.</p>
+                </div>
+
+                <div class="pratique" data-pratique="interets-composes"></div>
+
+                <p class="retenir">💡 Time spent invested counts for more than the moment chosen to invest. Starting modestly and early beats starting big and late by a distance.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="etfs">📦 ETFs</h3></summary>
+                <div class="lecon-corps">
+                <p>An <strong>ETF</strong> (<em>Exchange Traded Fund</em>), or tracker, is a fund listed on an exchange that simply reproduces an index. It does not try to beat the market: it follows it, which lets it cost very little.</p>
+
+                <h4>What you are actually buying</h4>
+                <p>A unit of an ETF tracking the MSCI World is a fraction of over 1,500 companies across 23 developed countries — in one transaction, with a few tens of euros. Rebuilding that spread line by line would be out of reach for an individual, on brokerage costs alone.</p>
+
+                <h4>Passive and active management</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>ETF (passive)</th><th>Active fund</th></tr>
+                    <tr><td>Objective</td><td>Track the index</td><td>Beat the index</td></tr>
+                    <tr><td>Ongoing annual fees</td><td>0.05% to 0.40%</td><td>1.5% to 2.5%</td></tr>
+                    <tr><td>Result over 10 years</td><td colspan="2">Most active funds do worse than their benchmark index, once fees are deducted</td></tr>
+                </table>
+                </div>
+                <p>This is measured regularly, notably by the SPIVA studies published each year. It does not mean no manager beats the market — but identifying <em>in advance</em> which ones will is another matter.</p>
+
+                <h4>Points to check before choosing one</h4>
+                <ul>
+                    <li><strong>Ongoing charges</strong> (often shown as TER): the first criterion, and the only one known in advance.</li>
+                    <li><strong>Accumulating or distributing</strong>: the first automatically reinvests dividends — handy for compound interest; the second pays them into the account.</li>
+                    <li><strong>Eligibility for the wrapper you use</strong>: in France, some world ETFs are available inside a PEA through a particular structure, which strongly changes the tax.</li>
+                    <li><strong>The size of the fund</strong>: one that is too small can be closed, forcing a sale at a moment chosen by the issuer.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — believing an ETF protects against risk</span>
+                    <p>Diversification protects against the risk tied to <strong>one</strong> company: if one of the 1,500 goes bust, the effect is marginal. It gives no protection at all against a general market fall.</p>
+                    <p>A world equity ETF lost over 30% in past crises. That is the product working normally, not a malfunction — and it is precisely why it does not suit a short horizon.</p>
+                </div>
+
+                <div class="pratique" data-pratique="etf-vs-livret"></div>
+
+                <p class="retenir">💡 An ETF simplifies diversification and cuts fees. It does not remove market risk, and does not turn a long-term investment into a safe short-term one.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="risk-management">⚖️ Managing risk</h3></summary>
+                <div class="lecon-corps">
+                <p>“Risk” does not mean “probability of losing everything”. In finance, risk refers to the <strong>size of the swings</strong>: the more an investment can rise, the more it can fall. The two go together, always.</p>
+
+                <h4>The horizon determines everything</h4>
+                <p>The most useful question is not “what return am I aiming for?” but <strong>“in how long will I need this money?”</strong>. That is what governs the acceptable level of risk.</p>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Money needed in</th><th>Examples</th><th>Orientation</th></tr>
+                    <tr><td>Under 2 years</td><td>Emergencies, a trip, a driving licence</td><td>No risk to capital</td></tr>
+                    <tr><td>2 to 5 years</td><td>House deposit, a vehicle</td><td>Cautious, mostly secured</td></tr>
+                    <tr><td>5 to 10 years</td><td>Medium-term plan</td><td>Balanced</td></tr>
+                    <tr><td>Over 10 years</td><td>Retirement, passing on wealth</td><td>Time absorbs the volatility</td></tr>
+                </table>
+                </div>
+                <p>Putting money into equities for a need 18 months away is not bold, it is badly designed: the timescale leaves no room to recover from a fall.</p>
+
+                <h4>Diversify, at the right level</h4>
+                <p>Holding ten shares in the same sector is not diversification. Real spread works on several axes: asset classes, geographies, sectors, and entry points in time.</p>
+
+                <h4>The real risk is behavioural</h4>
+                <p>Studies of savers' behaviour regularly show the same pattern: the return individuals obtain is lower than that of the funds they hold. The explanation fits in one sentence — they buy after the rises and sell after the falls.</p>
+
+                <div class="exemple">
+                    <span class="titre">The test to run before investing</span>
+                    <p>Look at your amount and ask yourself, without flattering yourself: <em>“if this capital lost 35% next year, would I hold without selling?”</em></p>
+                    <p>If the answer is no, the allocation is too risky — regardless of what any risk profile questionnaire says. The right level of risk is the one that lets you sleep <strong>and</strong> hold your strategy through a storm.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — confusing volatility with loss</span>
+                    <p>As long as you do not sell, a fall stays virtual. It becomes a real loss only at the moment of sale. That is why the emergency fund and the investment horizon count for more than the choice of fund: they are what stops you being forced to sell.</p>
+                </div>
+
+                <div class="pratique" data-pratique="asymetrie-perte"></div>
+
+                <p class="retenir">💡 The level of risk is not chosen from the return hoped for, but from the date you will need the money.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="tax-on-savings">🧾 Tax on savings</h3></summary>
+                <div class="lecon-corps">
+                <p>Two investments with identical returns can leave very different amounts once tax is paid. The <strong>wrapper</strong> — the tax container your investments sit in — therefore deserves as much attention as the choice of investments themselves.</p>
+
+                <h4>The main French wrappers</h4>
+                <p>The four below are French products with no exact equivalent elsewhere. Their names are kept as they are, because that is what you would search for. If you are outside France, look up the equivalents in your own system — most countries have at least one tax-advantaged wrapper.</p>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Wrapper</th><th>What it holds</th><th>Tax on gains</th><th>Availability</th></tr>
+                    <tr><td><strong>Livret A / LDDS</strong></td><td>Cash only</td><td>Free of income tax and social levies</td><td>Immediate</td></tr>
+                    <tr><td><strong>PEA</strong> (equity savings plan)</td><td>European shares and funds</td><td>After 5 years: exempt from income tax, social levies still due</td><td>A withdrawal before 5 years closes the plan</td></tr>
+                    <tr><td><strong>Assurance-vie</strong></td><td>Fonds euros and unit-linked funds</td><td>After 8 years: annual allowance on gains withdrawn</td><td>Available at any time</td></tr>
+                    <tr><td><strong>Ordinary securities account</strong></td><td>Anything, with no restriction</td><td>Flat tax of 30% (of which 17.2% social levies)</td><td>Immediate</td></tr>
+                </table>
+                </div>
+
+                <h4>What tax seniority changes</h4>
+                <p>The 5-year clock on the PEA and the 8-year clock on the assurance-vie start at <strong>opening</strong>, not at the first significant contribution. Opening a plan with a modest sum, even with no immediate project, starts the clock. It is one of the rare financial decisions that costs practically nothing and cannot be caught up later.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example</span>
+                    <p><strong>€10,000</strong> of gains, withdrawn from a PEA held over 5 years rather than an ordinary securities account:</p>
+                    <ul>
+                        <li>Securities account: 30% flat tax → <strong>€3,000</strong> of tax, leaving €7,000</li>
+                        <li>PEA over 5 years: only 17.2% social levies → <strong>€1,720</strong>, leaving €8,280</li>
+                    </ul>
+                    <p>Difference: <strong>€1,280</strong>, for exactly the same investments. Only the container differs.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — choosing an investment for its tax treatment alone</span>
+                    <p>A tax advantage never makes up for high fees or an unsuitable investment. Some products advertise an immediate tax reduction while imposing several years of lock-up and heavy charges.</p>
+                    <p>The order of reasoning is: the need, then the horizon, then the investment — and the tax wrapper <strong>last</strong>.</p>
+                </div>
+
+                <div class="pratique" data-pratique="pea-vs-cto"></div>
+
+                <p class="retenir">💡 Opening a tax-advantaged wrapper early, even with a symbolic sum, starts a clock that cannot be caught up. It is a free act with lasting effects.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this guide</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole guide. They differ from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Your national markets regulator</strong> — in France, the AMF. Their educational guides are free and carry no commercial interest. Their <em>blacklist</em> of unauthorised sites is worth checking before sending money to any unknown firm.</li>
+                    <li><strong>Your government's official portal</strong> — the source for ceilings, regulated rates and current tax rules. To be preferred over any blog article, this one included.</li>
+                    <li><strong>Your central bank</strong> — economic data, usury rates, and often a free information service on over-indebtedness.</li>
+                    <li><strong>SPIVA studies</strong> (S&amp;P Dow Jones Indices): the annual comparison between active funds and benchmark indices. Raw figures, no sales commentary.</li>
+                    <li><strong>“The Intelligent Investor”</strong>, Benjamin Graham: the reference work on investor behaviour. Demanding, but the chapters on psychology remain unmatched.</li>
+                </ul>
+                <p><strong>One useful habit:</strong> before entrusting money to an intermediary, check they are registered with your national regulator. It is free, it takes two minutes, and it eliminates most frauds.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Back</span>Finance path</a>
+            <a href="intermediaire.html" class="next"><span class="label">Next level →</span>Finance — Intermediate</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../droit/index.html">⚖️ Law &amp; Procedures</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../productivite/index.html">⏱️ Productivity &amp; Organisation</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/finance-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
