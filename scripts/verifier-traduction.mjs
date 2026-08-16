@@ -107,7 +107,12 @@ const intouche = (t) => {
    déclenche une fausse alerte, ce qui se corrige. L'inverse — oublier un mot
    français dans une liste de recherche — laisse passer le défaut en silence,
    et c'est exactement ce qui est arrivé à « heures », « jours » et « lignes ». */
-const IDENTIQUES = new Set(["min", "minutes", "mm", "px", "em", "ms", "observations"]);
+const IDENTIQUES = new Set([
+    "min", "minutes", "mm", "px", "em", "ms", "observations",
+    // Unités de l'écologie : « 2 667 kg CO₂e », « 73,0 kWh », « 22 222 km ».
+    // « CO » apparaît seul parce que le « ₂e » n'est pas une lettre latine.
+    "kg", "CO", "kWh", "km", "GB", "MB", "W",
+]);
 
 /* Le critère principal est STRUCTUREL, pas heuristique : un texte qui ne
    contient aucun chiffre est écrit tel quel dans le simulateur, donc il doit

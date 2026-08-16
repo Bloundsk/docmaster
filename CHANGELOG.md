@@ -1,5 +1,62 @@
 # Changelog — DocMaster
 
+## 2026-08-16 — Écologie numérique traduite, et une hypothèse rendue visible
+Quatre pages, trois banques de questions, 152 textes de simulateurs.
+`ecologie` est déclaré dans `CONTENU_TRADUIT`.
+
+**Dix sujets sur quatorze**, soit 40 pages et 900 questions.
+
+### Le sujet où la traduction ne suffisait pas
+
+Tous les calculs carbone de ce parcours reposent sur `G_PAR_KWH_FR = 60`,
+c'est-à-dire l'**électricité française** — l'une des moins carbonées d'Europe
+grâce au nucléaire et à l'hydraulique. Ailleurs, les mêmes opérations donnent
+**cinq à dix fois plus**.
+
+Traduire les pages sans plus d'égards aurait produit un guide qui affirme
+« deux heures de vidéo par jour = 4,4 kg par an » à des lecteurs pour qui le
+chiffre est faux d'un facteur cinq à dix. Sur un sujet dont la première leçon
+est précisément « un chiffre sans pays ne veut rien dire », c'eût été
+particulièrement mal venu.
+
+L'avertissement français existait déjà ; il a été **promu** dans la version
+anglaise. Chacune des quatre pages ouvre désormais sur un encadré titré
+« Warning — the figures assume French electricity », placé avant tout le
+reste, avec le facteur d'écart annoncé en gras. Le niveau intermédiaire, dont
+la hiérarchie terminaux / réseau / serveurs dépend directement de cette
+hypothèse, le rappelle une seconde fois dans la section concernée.
+
+Une hypothèse qui change le résultat d'un facteur dix n'est pas une note de
+bas de page.
+
+### Le cadre réglementaire : européen, avec ses exceptions nommées
+
+Indice de durabilité, disponibilité des pièces, filière DEEE, reprise à
+l'achat : ce sont des mécanismes européens. **L'obsolescence programmée comme
+délit pénal, en revanche, est spécifiquement française** — la version anglaise
+le dit, au lieu de laisser croire à une règle générale.
+
+### Une liste d'exceptions élargie, et vérifiée
+
+`IDENTIQUES` accueille `kg`, `CO`, `kWh`, `km`, `GB`, `MB`, `W` : les unités de
+ce sujet s'écrivent pareil dans les deux langues. Élargir une liste
+d'exceptions affaiblit mécaniquement un contrôle, donc le défaut a été
+réinjecté ensuite : en retirant le fragment `" par an"`, le contrôle signale
+bien les huit valeurs devenues « kg CO₂e par an ».
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × 10 sujets | tous complets, **152/152** pour écologie |
+| Défaut réinjecté après élargissement d'`IDENTIQUES` | signalé, 8 valeurs |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 700 vérifiés, 0 cassé |
+| Ancres de quiz ↔ `id` des `h3` | 12 sections, 0 orpheline |
+| `audit-geometrie.html` | 284 mesures, 16 gabarits, 0 anomalie |
+| Rendu navigateur | 3 pages, curseurs et cases poussés aux extrêmes |
+
 ## 2026-08-16 — Marketing Digital traduit : neuf sujets sur quatorze
 Quatre pages, trois banques de questions, 166 textes de simulateurs. Troisième
 sujet consécutif sans français résiduel à la vérification. `marketing` est

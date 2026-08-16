@@ -49,6 +49,15 @@ window.PRATIQUE_TEXTES = {
         // aucune entrée exacte ne peut couvrir ce libellé.
         " points de moins": " points less",
         "Avec ": "With ",
+
+        // --- Écologie : unités et comparaisons soudées à un nombre ----------
+        " par an, soit ": " per year, that is ",   // le plus long, il passe avant les deux suivants
+        " de moins": " less",
+        " de plus": " more",
+        " par an": " per year",
+        "environ ": "about ",
+        " Go": " GB",
+        "En le gardant ": "Keeping it ",   // « En le gardant 2 ans de plus »
         "% et ": "% and ",        // « 45.1% et 54.9% », les deux bornes d'un intervalle
 
         " sur ": " of ",
@@ -2478,5 +2487,253 @@ window.PRATIQUE_TEXTES = {
             "Compliant on the most frequently inspected points.",
         "En cas de plainte, c'est à vous de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté.":
             "If a complaint is made, it is for you to prove consent — not for the person to prove they never agreed.",
+
+        // =====================================================================
+        // ÉCOLOGIE NUMÉRIQUE
+        //
+        // Tous les calculs carbone reposent sur G_PAR_KWH_FR = 60 g/kWh, soit
+        // l'électricité française. Les pages anglaises le disent en toutes
+        // lettres : ailleurs, le même calcul donne cinq à dix fois plus.
+        // =====================================================================
+
+        // --- empreinte-appareil ------------------------------------------------------------
+        "Ce que change la durée de garde": "What keeping it longer changes",
+        "La fabrication est payée une fois. Plus l'appareil sert longtemps, plus elle se dilue.":
+            "Manufacturing is paid for once. The longer the device serves, the more it is diluted.",
+        "Fabrication de l'appareil": "Manufacturing of the device",
+        "kg CO₂e": "kg CO₂e",
+        "Électricité consommée par an": "Electricity used per year",
+        "Durée de garde": "How long it is kept",
+        "ans": "years",
+        "Fabrication, ramenée à l'année": "Manufacturing, per year",
+        "Total par an": "Total per year",
+        "Part de la fabrication": "Share from manufacturing",
+        "Pour un terminal, l'essentiel de l'impact est déjà payé quand vous l'allumez. Le seul levier vraiment puissant est la durée pendant laquelle il servira.":
+            "For a device, most of the impact is already paid for by the time you switch it on. The one genuinely powerful lever is how long it will serve.",
+
+        // --- duree-de-vie ------------------------------------------------------------------
+        "Faites-vous durer vos appareils ?": "Do you make your devices last?",
+        "Cochez ce que vous faites réellement.": "Tick what you actually do.",
+        "Je garde mon téléphone au moins quatre ans": "I keep my phone at least four years",
+        "J'utilise une coque et une protection d'écran": "I use a case and a screen protector",
+        "la casse est la première cause de remplacement":
+            "breakage is the leading cause of replacement",
+        "Je fais remplacer la batterie plutôt que l'appareil":
+            "I have the battery replaced rather than the device",
+        "Je continue les mises à jour de sécurité tant qu'elles existent":
+            "I keep applying security updates for as long as they exist",
+        "Je fais réparer avant de remplacer, au moins pour comparer le devis":
+            "I get a repair quote before replacing, if only to compare",
+        "Je revends ou je donne au lieu de garder l'ancien dans un tiroir":
+            "I sell or give away rather than leave the old one in a drawer",
+        "Chaque année gagnée sur la durée de vie fait plus que tous les gestes d'usage réunis.":
+            "Every extra year of life does more than all the usage habits put together.",
+        "Bonne base. Le remplacement de batterie est le geste au meilleur rapport, et le plus souvent écarté.":
+            "A good base. Replacing the battery has the best return, and is the most often dismissed.",
+        "C'est l'essentiel de ce qui est en votre pouvoir sur le sujet.":
+            "That is most of what is within your power on this subject.",
+        "Un appareil rangé dans un tiroir a la même empreinte de fabrication qu'un appareil utilisé. Le revendre, c'est éviter la fabrication de celui qui aurait été acheté à sa place.":
+            "A device sitting in a drawer has the same manufacturing footprint as one in use. Selling it avoids manufacturing the one that would have been bought instead.",
+
+        // --- gestes-symboliques ------------------------------------------------------------
+        "Ces gestes servent-ils à quelque chose ?": "Do these habits achieve anything?",
+        "Cochez ceux qui ont un effet mesurable sur l'empreinte du numérique.":
+            "Tick the ones with a measurable effect on the footprint of digital technology.",
+        "Garder son téléphone deux ans de plus": "Keeping your phone two years longer",
+        "effet réel et important": "a real and substantial effect",
+        "Supprimer ses vieux courriels": "Deleting your old emails",
+        "effet réel mais très faible : quelques grammes":
+            "a real but very small effect: a few grams",
+        "Acheter reconditionné plutôt que neuf": "Buying refurbished rather than new",
+        "Vider le cache de son navigateur": "Clearing your browser cache",
+        "aucun effet, voire négatif": "no effect, possibly negative",
+        "Réduire la résolution vidéo sur un téléphone": "Lowering the video quality on a phone",
+        "effet marginal comparé au choix de l'écran":
+            "marginal compared with the choice of screen",
+        "Réparer au lieu de remplacer": "Repairing instead of replacing",
+        "Trois gestes de cette liste comptent vraiment, et ils portent tous sur le matériel, jamais sur l'usage.":
+            "Three habits on this list genuinely count, and all of them concern the hardware, never the usage.",
+        "Trois gestes ont un effet important : garder, acheter reconditionné, réparer. Si ce sont ceux-là, c'est exact.":
+            "Three habits have a substantial effect: keeping, buying refurbished, repairing. If those are the ones, that is right.",
+        "Trois seulement pèsent réellement. Les autres occupent l'attention et déplacent l'effort là où il ne change presque rien.":
+            "Only three genuinely weigh. The others occupy attention and move the effort to where it changes almost nothing.",
+        "Les gestes qui circulent le plus — vider sa boîte mail, supprimer des photos — portent sur l'usage, où presque rien ne se joue. Le matériel décide.":
+            "The habits that circulate most — emptying your inbox, deleting photos — concern usage, where almost nothing is at stake. The hardware decides.",
+
+        // --- achat-responsable -------------------------------------------------------------
+        "Avant d'acheter un appareil": "Before buying a device",
+        "Cochez ce que vous avez réellement vérifié.": "Tick what you actually checked.",
+        "J'ai vérifié que l'ancien n'était pas réparable":
+            "I checked the old one could not be repaired",
+        "J'ai regardé le reconditionné": "I looked at refurbished",
+        "il évite la quasi-totalité de la fabrication":
+            "it avoids nearly all of the manufacturing",
+        "J'ai comparé les indices de réparabilité ou de durabilité":
+            "I compared the repairability or durability ratings",
+        "J'ai vérifié la durée de disponibilité des pièces détachées":
+            "I checked how long spare parts stay available",
+        "J'ai vérifié combien d'années de mises à jour sont garanties":
+            "I checked how many years of updates are guaranteed",
+        "J'ai choisi la taille et la puissance dont j'ai besoin, pas au-dessus":
+            "I chose the size and power I need, not more",
+        "L'achat est le moment où tout se joue : c'est là que la fabrication est décidée, et elle représente l'essentiel de l'impact.":
+            "The purchase is the moment everything is decided: that is where manufacturing is committed, and it accounts for most of the impact.",
+        "Bonne démarche. Le reconditionné reste le levier le plus fort quand il est possible.":
+            "A good approach. Refurbished remains the strongest lever where it is possible.",
+        "Achat réfléchi. La durée de mise à jour est le critère le plus décisif et le moins regardé.":
+            "A considered purchase. The update window is the most decisive criterion and the least looked at.",
+        "Un appareil qui cesse de recevoir des mises à jour de sécurité devient difficile à garder, quel que soit son état matériel. C'est un critère d'achat, pas un détail.":
+            "A device that stops receiving security updates becomes hard to keep, whatever its physical condition. That is a buying criterion, not a detail.",
+
+        // --- lire-un-chiffre ---------------------------------------------------------------
+        "Ce chiffre d'impact tient-il ?": "Does that impact figure hold up?",
+        "Cochez ce qui est vrai du chiffre qu'on vous présente.":
+            "Tick what is true of the figure you are being shown.",
+        "Son périmètre est précisé": "Its scope is stated",
+        "fabrication comprise, ou usage seul ?": "manufacturing included, or usage only?",
+        "Le pays est indiqué": "The country is given",
+        "l'électricité française émet cinq à dix fois moins que la moyenne européenne":
+            "French electricity emits five to ten times less than the European average",
+        "La source est identifiable et datée": "The source can be identified and is dated",
+        "L'unité est explicite": "The unit is explicit",
+        "grammes de CO₂e, kWh, litres d'eau : ce ne sont pas des équivalents":
+            "grams of CO₂e, kWh, litres of water: these are not equivalent",
+        "Il n'est pas repris d'un article qui le reprend d'un autre":
+            "It is not taken from an article that took it from another",
+        "Une incertitude est donnée, ou au moins mentionnée":
+            "An uncertainty is given, or at least mentioned",
+        "À ne pas relayer. Ce domaine a diffusé pendant des années des chiffres faux d'un facteur dix, repris de bonne foi.":
+            "Do not pass it on. This field circulated figures wrong by a factor of ten for years, repeated in good faith.",
+        "Utilisable avec prudence. Vérifiez surtout le périmètre : c'est là que se cachent les facteurs dix.":
+            "Usable with caution. Check the scope above all: that is where the factors of ten hide.",
+        "Chiffre exploitable. Il est rare qu'un chiffre médiatique coche tout cela.":
+            "A usable figure. It is rare for a figure in the media to tick all of that.",
+        "« Un mail = 10 g » et « une heure de streaming = 3,2 kg » ont circulé des années avant d'être corrigés d'un facteur dix. Les deux venaient d'estimations reprises sans vérification.":
+            "“One email = 10 g” and “one hour of streaming = 3.2 kg” circulated for years before being corrected by a factor of ten. Both came from estimates repeated without checking.",
+
+        // --- streaming ---------------------------------------------------------------------
+        "Regarder une vidéo : ce qui pèse": "Watching video: what actually weighs",
+        "Le calcul certain est celui de l'appareil : sa puissance multipliée par la durée. Le reste — réseau, serveurs — est plus petit et beaucoup plus incertain.":
+            "The certain calculation is the device's: its power multiplied by the time. The rest — network, servers — is smaller and far more uncertain.",
+        "Heures de vidéo par jour": "Hours of video per day",
+        "Puissance de l'écran utilisé": "Power of the screen used",
+        "W": "W",
+        "Puissance d'un autre écran, pour comparer": "Power of another screen, to compare",
+        "Consommation annuelle de l'écran": "Yearly consumption of the screen",
+        "Émissions, électricité française": "Emissions, on French electricity",
+        "Sur l'autre écran, ce serait": "On the other screen it would be",
+        "Écart": "Gap",
+        "L'écran choisi pèse bien plus que la qualité vidéo sélectionnée. Regarder sur un téléviseur ou sur un téléphone n'est pas le même geste, d'un facteur considérable.":
+            "The screen chosen weighs far more than the video quality selected. Watching on a television or on a phone is not the same act, by a considerable factor.",
+
+        // --- parc-du-foyer -----------------------------------------------------------------
+        "L'empreinte du parc, pas de l'usage": "The footprint of the fleet, not the usage",
+        "Comptez tout ce qui est branché : téléphones, ordinateurs, téléviseur, tablette, box, console, montre.":
+            "Count everything plugged in: phones, computers, television, tablet, router, console, watch.",
+        "Appareils dans le foyer": "Devices in the household",
+        "Fabrication moyenne par appareil": "Average manufacturing per device",
+        "Durée de vie moyenne": "Average lifetime",
+        "Fabrication de tout le parc": "Manufacturing of the whole fleet",
+        "Ramenée à l'année": "Per year",
+        "Soit, en voiture": "That is, by car",
+        "Un appareil de moins ferait": "One device fewer would give",
+        "La question utile n'est pas « comment mieux utiliser mes appareils » mais « combien en ai-je, et combien de temps les garderai-je ».":
+            "The useful question is not “how do I use my devices better” but “how many do I have, and how long will I keep them”.",
+
+        // --- visio-vs-deplacement ----------------------------------------------------------
+        "Se déplacer, ou pas": "To travel, or not",
+        "Une réunion, comparée selon la façon de s'y rendre. Aller-retour compris.":
+            "One meeting, compared by how you get there. Return journey included.",
+        "Distance aller": "One-way distance",
+        "km": "km",
+        "Durée de la réunion en visio": "Length of the meeting by video",
+        "Puissance de votre appareil": "Power of your device",
+        "En train": "By train",
+        "En voiture, seul": "By car, alone",
+        "En avion": "By plane",
+        "En visioconférence": "By video call",
+        "C'est le seul endroit du numérique où l'ordre de grandeur bascule : un déplacement évité pèse mille fois ce que coûte la visioconférence qui l'a remplacé.":
+            "It is the one place in digital where the order of magnitude flips: a journey avoided weighs a thousand times what the video call replacing it costs.",
+
+        // --- poids-page --------------------------------------------------------------------
+        "Le poids d'une page, à l'échelle du site": "The weight of a page, across a whole site",
+        "Le volume transféré est certain. L'énergie par gigaoctet l'est beaucoup moins : elle varie d'un facteur dix selon les études, et diminue vite.":
+            "The volume transferred is certain. The energy per gigabyte much less so: it varies by a factor of ten between studies, and is falling fast.",
+        "Poids d'une page": "Weight of one page",
+        "Mo": "MB",
+        "Visites par mois": "Visits per month",
+        "Énergie par gigaoctet transféré": "Energy per gigabyte transferred",
+        "kWh/Go": "kWh/GB",
+        "Transféré par an": "Transferred per year",
+        "Émissions estimées": "Estimated emissions",
+        "En divisant le poids par deux": "Halving the weight",
+        "À garder en tête": "Worth bearing in mind",
+        "l'effet le plus net d'une page légère est sur les vieux appareils et les connexions lentes":
+            "the clearest effect of a light page is on old devices and slow connections",
+        "Alléger une page se justifie d'abord parce qu'elle devient utilisable sur un appareil ancien — donc gardé plus longtemps. Le gain carbone direct, lui, est modeste.":
+            "Lightening a page is justified first because it becomes usable on an old device — and therefore kept longer. The direct carbon gain is modest.",
+
+        // --- ecoconception -----------------------------------------------------------------
+        "Ce service est-il sobre ?": "Is this service frugal?",
+        "Cochez ce qui est vrai du site ou de l'application que vous concevez ou utilisez.":
+            "Tick what is true of the site or app you are designing or using.",
+        "Il reste utilisable sur un appareil de cinq ans":
+            "It stays usable on a five-year-old device",
+        "Il fonctionne sur une connexion lente": "It works on a slow connection",
+        "Les vidéos ne se lancent pas automatiquement": "Videos do not start automatically",
+        "Il n'y a pas de défilement infini": "There is no infinite scroll",
+        "un mécanisme conçu pour allonger le temps passé":
+            "a mechanism designed to stretch time spent",
+        "Les images sont dimensionnées pour leur affichage réel":
+            "Images are sized for how they are actually displayed",
+        "Le service fait ce qu'on attend de lui sans fonctions ajoutées par habitude":
+            "The service does what is expected of it, with no features added out of habit",
+        "L'écoconception n'est pas d'abord une affaire de kilo-octets : c'est de ne pas rendre obsolète un appareil qui fonctionne.":
+            "Frugal design is not first a matter of kilobytes: it is about not making a working device obsolete.",
+        "Bonne direction. La compatibilité avec les appareils anciens est le critère qui compte le plus.":
+            "The right direction. Compatibility with old devices is the criterion that counts most.",
+        "Service sobre. Il sera aussi plus rapide et plus accessible — les trois vont ensemble.":
+            "A frugal service. It will also be faster and more accessible — the three go together.",
+        "Le pire effet d'un service lourd n'est pas sa consommation : c'est de pousser au renouvellement d'un appareil qui marchait encore.":
+            "The worst effect of a heavy service is not what it consumes: it is pushing somebody to replace a device that still worked.",
+
+        // --- parc-entreprise ---------------------------------------------------------------
+        "Allonger le renouvellement d'un parc": "Extending a fleet's replacement cycle",
+        "Le calcul qui décide, dans une entreprise, avant toute campagne de sensibilisation.":
+            "The calculation that decides, in a company, before any awareness campaign.",
+        "Postes de travail": "Workstations",
+        "Fabrication d'un poste": "Manufacturing of one workstation",
+        "Renouvellement actuel": "Current replacement cycle",
+        "Renouvellement visé": "Target replacement cycle",
+        "Aujourd'hui": "Today",
+        "Après allongement": "After extending",
+        "Économie annuelle": "Yearly saving",
+        "Deux ans de plus sur un parc de cent postes pèsent davantage que toutes les consignes d'usage envoyées aux salariés — et ne demandent rien à personne.":
+            "Two extra years on a fleet of a hundred machines weigh more than every usage instruction sent to staff — and ask nothing of anybody.",
+
+        // --- effet-rebond ------------------------------------------------------------------
+        "Ce gain va-t-il tenir ?": "Will this gain hold?",
+        "Une amélioration technique est souvent absorbée par un usage accru. Cochez ce que vous reconnaissez.":
+            "A technical improvement is often absorbed by increased use. Tick what you recognise.",
+        "Les appareils consomment moins, et il y en a davantage":
+            "Devices consume less, and there are more of them",
+        "Le stockage coûte moins cher, et on garde tout":
+            "Storage costs less, and everything gets kept",
+        "Les réseaux vont plus vite, et les contenus sont plus lourds":
+            "Networks are faster, and content is heavier",
+        "Un modèle plus efficace est utilisé bien plus souvent":
+            "A more efficient model gets used far more often",
+        "Le gain est annoncé en pourcentage, jamais en total":
+            "The gain is announced as a percentage, never as a total",
+        "Personne ne mesure ce que le service remplace vraiment":
+            "Nobody measures what the service actually replaces",
+        "Un gain d'efficacité sans report d'usage : c'est rare, et cela mérite d'être vérifié dans le temps.":
+            "An efficiency gain with no shift in usage: that is rare, and worth checking over time.",
+        "Effet rebond partiel. La question à poser reste la même : le total a-t-il baissé ?":
+            "A partial rebound effect. The question to ask stays the same: has the total gone down?",
+        "Gain probablement absorbé. L'efficacité par unité progresse et le total augmente : c'est la trajectoire du numérique depuis vingt ans.":
+            "The gain has probably been absorbed. Efficiency per unit rises and the total goes up: that has been digital's trajectory for twenty years.",
+        "Un pourcentage d'amélioration ne dit rien tant qu'on ne connaît pas l'évolution du total. C'est la seule question qui vaille, et c'est celle qu'on évite.":
+            "A percentage improvement says nothing until you know what the total did. That is the only question worth asking, and the one that gets avoided.",
     },
 };

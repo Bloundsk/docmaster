@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Digital Sustainability — Intermediate - DocMaster</title>
+    <meta name="description" content="Intermediate level of the Digital Sustainability path: reading an impact figure, streaming, the split between devices, network and servers, and the journey avoided.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/guides/ecologie/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/ecologie/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/ecologie/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/ecologie/intermediaire.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Digital Sustainability — Intermediate - DocMaster">
+    <meta property="og:description" content="Intermediate level of the Digital Sustainability path: reading an impact figure, streaming, the split between devices, network and servers, and the journey avoided.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/guides/ecologie/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Digital Sustainability — Intermediate - DocMaster">
+    <meta name="twitter:description" content="Intermediate level of the Digital Sustainability path: reading an impact figure, streaming, the split between devices, network and servers, and the journey avoided.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../../../index.html">Home</a> &gt;
+        <a href="index.html">🌱 Digital Sustainability</a> &gt;
+        <span aria-current="page">Intermediate</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🌱 Digital Sustainability — Intermediate</h1>
+                <p>Reading the figures, and knowing which ones hold up.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 102 L70 62"/>
+<path d="M70 66 Q52 62 48 44 Q66 42 70 62"/>
+<path d="M70 74 Q88 70 92 52 Q74 50 70 70"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="92" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="102" cy="88" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="guide-meta">
+        <span>🕒 Last updated: 16 August 2026</span>
+        <button class="copy-link-btn">🔗 Copy link</button>
+    </div>
+
+    <main id="main-content">
+        <div class="toc">
+            <h2>📑 Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#reading-an-impact-figure">📊 Reading an impact figure</a></li>
+                <li><a href="#the-streaming-case">🎥 The case of streaming</a></li>
+                <li><a href="#what-weighs-what">☁️ Devices, network, servers</a></li>
+                <li><a href="#the-journey-avoided">🚄 The journey avoided</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box">
+            <h2>⚡ Key points to remember</h2>
+            <ul>
+                <li>An impact figure without a scope or a country means nothing.</li>
+                <li>For video, the screen you choose weighs far more than the quality you select.</li>
+                <li>The network consumes mostly because it is switched on, not because it carries traffic.</li>
+                <li>Devices dominate digital's impact in low-carbon-electricity countries, well ahead of data centres.</li>
+                <li>A journey avoided is the one case where digital wins by a factor of a thousand.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="introduction">Introduction</h2>
+            <p>The beginner level established where the impact is. This one teaches you to <strong>read the field's figures</strong> — starting with the most famous ones, which turned out to be wrong.</p>
+            <p>It is a more methodological level than a practical one, and deliberately so: in this field, knowing how to discard a bad figure is worth more than knowing ten good habits.</p>
+
+            <div class="piege">
+                <span class="titre">Warning — the figures assume French electricity</span>
+                <p><strong>The calculations use the carbon intensity of French electricity, which is unusually low.</strong> Elsewhere in Europe the same operations give <strong>five to ten times more</strong> on anything electrical. This matters especially in this level, where the split between devices, network and servers depends directly on it.</p>
+                <p>Some values in this field — notably the energy per gigabyte transferred — vary by a factor of ten between studies and are falling fast. They are therefore treated as <strong>inputs</strong>, never as constants.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="basics">Measuring, and knowing what you are measuring</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Expand all</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="reading-an-impact-figure">📊 Reading an impact figure</h3></summary>
+                <div class="lecon-corps">
+                <p>This field produced wrong figures at scale, repeated by serious institutions and for years. Understanding how that happened is worth more than memorising the corrected values.</p>
+
+                <h4>The five questions to ask</h4>
+                <ol>
+                    <li><strong>What scope?</strong> Manufacturing included, or usage only? That is where the factors of ten hide.</li>
+                    <li><strong>What country?</strong> French electricity emits five to ten times less than the European average. The same calculation gives a completely different result.</li>
+                    <li><strong>What unit?</strong> Grams of CO₂e, kilowatt-hours, litres of water, kilos of materials: these are not interchangeable equivalents.</li>
+                    <li><strong>What source, what date?</strong> Digital's energy intensities are falling fast; a 2015 figure is often out of date.</li>
+                    <li><strong>What uncertainty?</strong> A figure with no range, in a field this variable, should ring an alarm.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">How a wrong figure takes hold</span>
+                    <p>An old estimate is published with its assumptions. An article repeats it without the assumptions. A second cites the first. A report cites the second. An institutional campaign cites the report.</p>
+                    <p>By the fifth repetition the original source has vanished, the assumptions with it, and the figure has become obvious. That is exactly the path of “3.2 kg per hour of video”, later corrected by a factor of around eight.</p>
+                    <p>The remedy is not to distrust everything: it is to <strong>go up one level</strong>. A figure that cannot be traced back to its source does not get passed on.</p>
+                </div>
+
+                <div class="pratique" data-pratique="lire-un-chiffre"></div>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — correcting a wrong figure with another wrong figure</span>
+                    <p>The reaction to the “3.2 kg” produced equally categorical claims in the opposite direction: “streaming consumes nothing”. That is no more accurate.</p>
+                    <p>The right answer is often an order of magnitude with an uncertainty attached, which passes on badly — and that is precisely why the wrong figures circulate better.</p>
+                </div>
+
+                <p class="retenir">💡 A figure that cannot be traced back to its source does not get passed on, even if it points the right way.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="the-streaming-case">🎥 The case of streaming</h3></summary>
+                <div class="lecon-corps">
+                <p>This is the field's most instructive example, because you can calculate the main part yourself — and discover it is not the part everybody talks about.</p>
+
+                <h4>What can be calculated with certainty</h4>
+                <p>The consumption of the device you watch on: its power multiplied by the time. A television draws on the order of 100 watts, a laptop 30, a phone 3.</p>
+                <p>Multiplied by the carbon intensity of the electricity, that consumption gives a solid result — and it is dominated by a single choice: <strong>which screen you watch on</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — two hours of video a day</span>
+                    <p><strong>On a 100 W television:</strong> 73 kWh a year, that is <strong>4.4 kg CO₂e</strong> on French electricity.</p>
+                    <p><strong>On a 3 W phone:</strong> <strong>0.13 kg CO₂e</strong> a year.</p>
+                    <p><strong>A factor of 33</strong> between the two, for exactly the same content and the same duration.</p>
+                    <p>Next to that, moving from high definition to standard definition changes a far smaller share — and on the most uncertain item of all.</p>
+                </div>
+
+                <div class="pratique" data-pratique="streaming"></div>
+
+                <h4>Why the network counts for less than people think</h4>
+                <p>The natural intuition is that a file twice as heavy consumes twice as much. That is wrong for the most part: a network consumes mainly <strong>because it is switched on</strong>, not because it carries traffic. The equipment runs whether traffic is heavy or light.</p>
+                <p>Consumption per gigabyte therefore falls as traffic rises, which makes “per gigabyte” calculations particularly misleading — and explains part of the past errors.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — deciding on the resolution</span>
+                    <p>Lowering the video quality is the most widespread advice on this subject. Its effect exists, but it applies to the smallest and most uncertain share.</p>
+                    <p>Watching on a phone rather than a television has an effect twenty times larger — which is not a recommendation either: it is an indication of where the lever is.</p>
+                </div>
+
+                <p class="retenir">💡 The screen chosen decides, not the resolution. And the network consumes because it is switched on, not because it carries traffic.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="what-weighs-what">☁️ Devices, network, servers</h3></summary>
+                <div class="lecon-corps">
+                <p>Digital's impact splits across three items. Their ranking is well established in France, and it contradicts the dominant image — that of giant data centres.</p>
+
+                <h4>The ranking</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Item</th><th>Weight</th><th>What dominates</th></tr>
+                    <tr><td><strong>Devices</strong></td><td>First by a distance</td><td>The manufacturing of users' devices</td></tr>
+                    <tr><td><strong>Networks</strong></td><td>Intermediate</td><td>Equipment permanently switched on</td></tr>
+                    <tr><td><strong>Data centres</strong></td><td>The most visible, not the heaviest</td><td>Electricity, and the server hardware</td></tr>
+                </table>
+                </div>
+                <p>This ranking is specific to France and to ordinary usage: electricity there is low-carbon, which lightens everything to do with consumption and leaves manufacturing dominant. In a country with a more carbon-intensive grid the ranking shifts.</p>
+
+                <div class="exemple">
+                    <span class="titre">Why data centres take up all the space</span>
+                    <p>They are visible, concentrated, photogenic, and belong to companies you can name. Devices are in everybody's home, in small quantities.</p>
+                    <p>But the sum of billions of small objects manufactured and replaced far exceeds a few thousand buildings — however power-hungry.</p>
+                    <p>It is the same bias as elsewhere: whatever is easy to point at is taken for the main culprit.</p>
+                </div>
+
+                <div class="pratique" data-pratique="parc-du-foyer"></div>
+
+                <h4>What that implies</h4>
+                <p>A service “hosted in a green data centre” addresses the smallest item. That is not nothing, and it does not change the ranking.</p>
+                <p>A service that stays usable on a five-year-old device acts on the dominant item — by pushing back a replacement. That is the subject of the advanced level.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — transposing figures from one country to another</span>
+                    <p>The share of data centres and of networks rises markedly in countries where electricity is more carbon-intensive. A German study and a French study do not describe the same split.</p>
+                    <p>That is the second of the five questions in the previous section, and the one most often forgotten when quoting a foreign source.</p>
+                </div>
+
+                <p class="retenir">💡 What weighs most is in your home, not in a shed photographed to illustrate an article.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="the-journey-avoided">🚄 The journey avoided</h3></summary>
+                <div class="lecon-corps">
+                <p>There is one case where digital changes the order of magnitude instead of nibbling at it: when it replaces a physical journey. It is the field's only trade-off where the ratio runs into thousands.</p>
+
+                <h4>The orders of magnitude</h4>
+                <p>Per passenger per kilometre: French trains emit a few grams, a petrol car with a single occupant on the order of a hundred, a short-haul flight more still.</p>
+                <p>Against that, two hours of video calling on a laptop consume a few grams of CO₂e <strong>in total</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Worked example — a meeting 400 km away, return journey</span>
+                    <p><strong>By train: 2.4 kg CO₂e.</strong></p>
+                    <p><strong>By car, alone: 96 kg.</strong></p>
+                    <p><strong>By plane: 184 kg.</strong></p>
+                    <p><strong>By video call: 3.6 grams.</strong></p>
+                    <p>The ratio against the plane exceeds 50,000. No other trade-off in this guide comes close — which is why it deserves to be known before all the others.</p>
+                    <p>Note that the train figure is a French one: on a more carbon-intensive grid, rail emits several times more, though still far less than flying.</p>
+                </div>
+
+                <div class="pratique" data-pratique="visio-vs-deplacement"></div>
+
+                <h4>The limits of the argument</h4>
+                <p>The journey does have to be <strong>genuinely avoided</strong>. A video call added on top of unchanged physical meetings avoids nothing: it adds.</p>
+                <p>And home working shifts consumption rather than removing it: home heating, duplicated equipment, sometimes moving further away. The balance stays favourable in most studies, but it is far tighter than the calculation above.</p>
+
+                <div class="piege">
+                    <span class="titre">Common mistake — counting a gain that never happened</span>
+                    <p>That is the classic weakness of “avoidance” accounting: it compares against a hypothetical scenario nobody checks.</p>
+                    <p>The honest question is about the total: has the number of journeys actually gone down, or only the number of journeys per meeting?</p>
+                </div>
+
+                <p class="retenir">💡 A journey avoided weighs a thousand times what the video call replacing it costs — provided it really was avoided.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">I have read and understood this level</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Summary quiz</h2>
+            <p class="quiz-intro">These questions cover the whole level. They differ from the ones in the sections.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section>
+            <h2>📚 Going further</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Your national environment agency and telecoms regulator</strong> — several publish jointly the reference study on digital's environmental footprint and its split between devices, networks and data centres.</li>
+                    <li><strong>International Energy Agency</strong> — analyses of network and data-centre consumption, and of the frequent methodological errors.</li>
+                    <li><strong>Public emission factor databases</strong> — to check an order of magnitude yourself, using the factors for your own country.</li>
+                    <li><strong>Transport emission factors</strong> — the per-passenger, per-kilometre values used in this guide. They vary strongly by country, especially for rail.</li>
+                </ul>
+                <p><strong>One useful habit:</strong> next time a digital impact figure strikes you, look for its original source. Half the time it does not exist, or it says something else.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Previous level</span>Sustainability — Beginner</a>
+            <a href="avance.html" class="next"><span class="label">Next level →</span>Sustainability — Advanced</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Related guides</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Web Development</a>
+                <a href="../data/index.html">📊 Data &amp; Analytics</a>
+                <a href="../ia/index.html">🤖 Artificial Intelligence</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/en/ecologie-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/en.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
