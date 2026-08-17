@@ -202,26 +202,57 @@ bandeaux et la liste des sujets traduits vivent là, et nulle part ailleurs.
 
 | Quoi | Comment | Pourquoi |
 |---|---|---|
-| L'interface | traduite par le navigateur | éviter 455 fichiers dont le contenu serait identique |
+| L'interface | traduite par le navigateur | éviter des centaines de fichiers dont le contenu serait identique |
 | Le contenu | de vrais fichiers dans `en/`, `es/`… | une page de cours doit être lisible sans JavaScript et indexable |
 
-`langues.js` se charge **avant** `layout.js` dans les 65 pages : c'est `layout.js`
-qui écrit la navigation, il lui faut les libellés avant de l'écrire. L'audit le
-vérifie page par page.
+`langues.js` se charge **avant** `layout.js` dans les 129 pages : c'est
+`layout.js` qui écrit la navigation, il lui faut les libellés avant de l'écrire.
+L'audit le vérifie page par page.
+
+### Deux listes, deux emplacements
+
+`CONTENU_TRADUIT` recense les **sujets** traduits, qui vivent sous
+`<langue>/guides/<sujet>/`. `PAGES_TRADUITES` recense les **pages hors cours**,
+qui vivent sous `<langue>/<page>.html`. Les deux ne pointent pas au même
+endroit ; les confondre produirait des adresses fausses, donc des 404.
+
+Un préfixe de langue se reconnaît par `/(langue)/` **suivi de `guides/` ou d'un
+nom de fichier**. Sans cette condition, `/guides/it/` serait lu comme de
+l'italien le jour où un sujet s'appellerait `it`. La même règle est recopiée
+dans `audit-geometrie.html` — elle y avait été oubliée une fois, et le contrôle
+réclamait `lang="fr"` sur six pages anglaises.
+
+Les liens du menu et du pied passent par un `lien()` qui pose le préfixe quand
+la page existe dans la langue courante. Sans lui, le menu était traduit mais
+menait au français.
 
 ### Ce qui n'est pas négociable
 
 **Un drapeau qui promet une traduction inexistante est pire que pas de drapeau.**
-Tant qu'un sujet n'est pas traduit, un bandeau le dit au visiteur **dans sa
+Tant qu'une page n'est pas traduite, un bandeau le dit au visiteur **dans sa
 langue**. Le mécanisme existe avant le contenu, précisément pour que la promesse
 ne précède jamais la livraison.
 
+**Le bandeau ne parle que de la page affichée.** Il a d'abord annoncé « les cours
+de ce site sont écrits en français » — affirmation devenue fausse le jour où le
+quatorzième sujet a été traduit, et qui décourageait alors d'aller lire des
+cours qui existaient. *Une affirmation sur l'ensemble du site vieillit mal ; une
+affirmation sur la page qu'on a sous les yeux reste vraie.* Trois états, donc :
+rien si la page est déjà dans la bonne langue, un **lien** vers la version
+traduite si elle existe, l'aveu qu'elle n'existe pas sinon.
+
 **Le contenu qui décrit le droit français porte un avertissement.** Traduire
-« repos quotidien de 11 heures » n'en fait pas une règle allemande. Trois sujets
-sont concernés — `droit`, `finance`, `entrepreneuriat`, soit 89 mentions de
-règles françaises — et sont déclarés dans `SUJETS_DROIT_FRANCAIS`. Un lecteur
-étranger prendrait sinon ces règles pour les siennes, sur des sujets où l'erreur
-coûte cher.
+« repos quotidien de 11 heures » n'en fait pas une règle allemande. Quatre sujets
+sont concernés — `droit`, `finance`, `entrepreneuriat`, `sante` — et sont
+déclarés dans `SUJETS_DROIT_FRANCAIS`. Un lecteur étranger prendrait sinon ces
+règles pour les siennes, sur des sujets où l'erreur coûte cher.
+
+**Le bandeau ne suffit pas : la phrase elle-même doit le dire.** « The general
+French limitation period is 5 years », « a PEA — the French equity savings plan ».
+Le bandeau prévient ; la phrase empêche de sortir un chiffre de son contexte
+quand elle est lue seule. Deux exceptions signalées comme telles : le **RGPD**,
+qui vaut dans toute l'Union, et les **noms propres** — INPI, Légifrance —
+conservés pour rester trouvables.
 
 **Le drapeau est toujours accompagné du nom de la langue.** Un drapeau désigne un
 pays, pas une langue : l'espagnol n'est pas parlé qu'en Espagne. Le nom lève
@@ -232,9 +263,38 @@ s'interdit — voir la règle sur reCAPTCHA.
 
 ### L'état des traductions
 
-L'interface est traduite dans les sept langues. **Le contenu ne l'est pas
-encore** : 84 000 mots, traduits sujet par sujet. `CONTENU_TRADUIT` recense ce
-qui est fait, et l'audit vérifie que les pages annoncées existent vraiment.
+L'interface est traduite dans les sept langues : 37 textes × 7. **L'anglais est
+complet** — les 14 sujets et les 8 pages hors cours, soit 64 pages sous `en/`.
+Les cinq autres langues n'ont que l'interface.
+
+Trois choses restent en français dans la version anglaise, et le disent :
+
+- **les titres d'articles** de la page Actualités — un titre traduit ne se
+  retrouve plus dans un moteur de recherche ;
+- **l'index de recherche**, dont les 237 entrées sont titrées en français ; les
+  liens, eux, mènent aux pages anglaises ;
+- **les mentions légales**, traduction de courtoisie : le site est publié en
+  France, un encadré indique que la version française fait foi.
+
+`CONTENU_TRADUIT` et `PAGES_TRADUITES` recensent ce qui est fait, et l'audit
+vérifie que les pages annoncées existent vraiment.
+
+### La page 404 est un cas à part
+
+GitHub Pages la sert pour **toute** adresse inconnue, `/en/` comprise : elle ne
+peut donc pas exister en un exemplaire par langue. Elle traduit son propre
+texte, et son lien de retour mène à l'accueil de la bonne langue. Le français
+reste écrit dans le HTML pour qu'elle demeure lisible sans JavaScript. Elle pose
+`window.DOCMASTER_PAGE_AUTOTRADUITE`, qui évite que le bandeau l'annonce comme
+non traduite.
+
+### Ce qui s'écrit dans les deux langues
+
+`scripts/publier-actualites.js` rend **quatre** pages : `actualites.html` et
+`index.html`, dans chaque langue. Il n'en rendait que deux ; la page anglaise
+aurait figé sa liste au jour de sa traduction, **sans que rien ne le signale**.
+Son option `--hors-ligne` rejoue le rendu depuis l'état enregistré, sans jeton
+GitHub — la seule façon de voir l'effet d'un gabarit modifié.
 
 ## 7. La palette
 
