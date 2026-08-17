@@ -152,6 +152,10 @@ body {
     color: var(--text);
     line-height: 1.6;
     animation: fadeIn .6s ease;
+    /* Repère pour le rail de la mascotte, seul élément posé en absolu par
+       rapport au document entier : son « bottom: 0 » doit désigner le bas de la
+       page, et non celui de la fenêtre. */
+    position: relative;
 }
 
 h1, h2, h3, .logo { font-family: 'Poppins', Arial, sans-serif; }
@@ -1136,22 +1140,40 @@ header { position: relative; overflow: visible; }
 }
 
 /* --- Ailleurs : elle surgit dans le coin, avec sa bulle ------------------- */
-/* Elle se place AU-DESSUS du bouton de retour en haut, qui occupe le même coin.
-   La hauteur n'est plus écrite en dur : elle se CALCULE à partir des jetons du
-   coin, si bien qu'agrandir ou déplacer le bouton repousse la mascotte tout
-   seul. Les deux se recouvraient sur 19 px parce que chacun posait ses
-   distances sans rien savoir de l'autre.
+/* Le rail dans lequel elle colle. Il part de la hauteur du titre — mascotte.js
+   pose ce « top », seule valeur qui demande une mesure — et descend jusqu'au
+   bas du document, si bien qu'elle reste visible sur toute la page.
 
-   Le z-index passe sous celui du bouton : si l'un doit gagner, c'est celui qui
-   sert à quelque chose. */
-.mascotte-surgit {
-    position: fixed;
+   Il ne reçoit aucun clic : sans cela, il formerait une colonne invisible de
+   96 px de large sur toute la hauteur, qui avalerait les clics à droite. */
+.mascotte-rail {
+    position: absolute;
     right: var(--flottant-marge);
-    bottom: calc(var(--flottant-marge) + var(--flottant-taille) + var(--flottant-ecart));
+    bottom: 0;
     width: 96px;
+    pointer-events: none;
     z-index: 89;
+}
+
+/* C'est « sticky » qui suit le défilement, et non un gestionnaire d'événement :
+   le navigateur maintient la position sans qu'une ligne de script ne tourne
+   pendant le défilement, donc sans image de retard possible.
+
+   Son z-index reste sous celui de la barre de navigation (100) : elle glisse
+   dessous au lieu de la recouvrir. */
+.mascotte-surgit {
+    position: sticky;
+    width: 96px;
     pointer-events: auto;
     animation: mascotteSurgit .7s cubic-bezier(.22, 1.2, .36, 1) .9s backwards;
+}
+
+/* Repli : sans bannière ni titre, elle retrouve le coin bas-droit, dégagé du
+   bouton de retour en haut par les jetons du coin. */
+.mascotte-coin {
+    position: fixed;
+    bottom: calc(var(--flottant-marge) + var(--flottant-taille) + var(--flottant-ecart));
+    top: auto !important;
 }
 
 @keyframes mascotteSurgit {
@@ -1163,10 +1185,13 @@ header { position: relative; overflow: visible; }
 
 .mascotte-part { animation: mascotteSurgit .35s ease-in reverse forwards; }
 
+/* La bulle est passée SOUS la mascotte le jour où celle-ci a rejoint la hauteur
+   du titre : au-dessus, elle serait allée se loger derrière la barre de
+   navigation, voire hors de l'écran une fois la mascotte ancrée. */
 .mascotte-bulle {
     position: absolute;
     right: 0;
-    bottom: calc(100% + 10px);
+    top: calc(100% + 10px);
     width: max-content;
     max-width: min(15rem, 62vw);
     background: var(--surface);
@@ -1187,18 +1212,19 @@ header { position: relative; overflow: visible; }
 }
 .mascotte-lien:hover { text-decoration: underline; }
 
-/* La petite pointe qui rattache la bulle a la mascotte. */
+/* La petite pointe qui rattache la bulle à la mascotte. Elle pointe vers le
+   HAUT, la bulle étant désormais sous le personnage. */
 .mascotte-bulle::after {
     content: "";
     position: absolute;
     right: 26px;
-    top: 100%;
+    bottom: 100%;
     border: 8px solid transparent;
-    border-top-color: var(--surface);
+    border-bottom-color: var(--surface);
 }
 
 @keyframes mascotteBulle {
-    from { opacity: 0; transform: translateY(8px) scale(.94); }
+    from { opacity: 0; transform: translateY(-8px) scale(.94); }
     to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 

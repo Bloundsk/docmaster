@@ -108,7 +108,7 @@ const colonnesDe = (el) =>
         .filter((e) => getComputedStyle(e).gridColumn !== "1 / -1" && largeurDe(e) > 0)
         .map((e) => Math.round(e.getBoundingClientRect().left))).size;
 
-function controler(d, w, largeur, nomPage) {
+async function controler(d, w, largeur, nomPage) {
     const ok = (c, m) => noter("ok", nomPage, largeur, c, m);
     const ko = (c, m) => noter("ko", nomPage, largeur, c, m);
 
@@ -266,6 +266,47 @@ function controler(d, w, largeur, nomPage) {
         if (collision) ko("les éléments flottants ne se recouvrent pas", collision);
         else ok("les éléments flottants ne se recouvrent pas", `${flottants.length} éléments`);
     }
+
+    /* 10. La mascotte part à hauteur du titre, puis suit la page.
+       Deux promesses, et une seule mesure ne suffit pas à les vérifier :
+       au repos elle doit être centrée sur le <h1> de la bannière ; une fois la
+       page défilée, elle doit rester visible en s'ancrant sous la barre de
+       navigation, sans la recouvrir.
+
+       On fait donc défiler pour de bon. Un premier essai concluait « elle suit »
+       alors qu'elle disparaissait : l'onglet ne composait pas les images, donc
+       l'événement « scroll » n'était jamais émis. Ici la page est réellement
+       rendue, et le défilement est réel. */
+    const masc = d.querySelector(".mascotte-surgit");
+    const titre = d.querySelector("header h1");
+    if (masc && titre) {
+        w.scrollTo(0, 0);
+        const rm = masc.getBoundingClientRect(), rt = titre.getBoundingClientRect();
+        const ecart = Math.abs((rm.top + rm.height / 2) - (rt.top + rt.height / 2));
+        if (ecart > 6) ko("la mascotte démarre à hauteur du titre", `${Math.round(ecart)} px d'écart`);
+        else ok("la mascotte démarre à hauteur du titre", `${Math.round(ecart)} px`);
+
+        /* Assez bas pour que la bannière soit largement sortie de l'écran.
+
+           Aucune attente n'est nécessaire : « position: sticky » est résolu
+           par le moteur de rendu au moment même du défilement, sans passer par
+           un événement. C'est justement ce qui l'a fait préférer à un
+           gestionnaire de « scroll » — le contrôle devenait alors une course
+           entre la mesure et la distribution de l'événement. */
+        w.scrollTo(0, 1200);
+        const apres = masc.getBoundingClientRect();
+        const barre = d.querySelector(".navbar");
+        const basBarre = barre ? barre.getBoundingClientRect().bottom : 0;
+
+        if (apres.bottom <= 0 || apres.top >= w.innerHeight) {
+            ko("la mascotte suit le défilement", "elle a disparu de l'écran");
+        } else if (apres.top < basBarre - 1) {
+            ko("la mascotte suit le défilement", "elle passe sous la barre de navigation");
+        } else {
+            ok("la mascotte suit le défilement", `ancrée à ${Math.round(apres.top)} px`);
+        }
+        w.scrollTo(0, 0);
+    }
 }
 
 async function lancer() {
@@ -296,7 +337,7 @@ async function lancer() {
             const d = cadre.contentDocument;
             try { await d.fonts.ready; } catch (e) {}
             d.querySelectorAll("details").forEach((x) => (x.open = true));
-            controler(d, cadre.contentWindow, largeur, page.nom);
+            await controler(d, cadre.contentWindow, largeur, page.nom);
         }
     }
 

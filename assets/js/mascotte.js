@@ -107,6 +107,54 @@
             // laisser invisible mais present dans l ordre de tabulation.
             setTimeout(() => bloc.remove(), 400);
         });
+
+        suivreLaPage(bloc);
+    }
+
+    /* Elle part a la HAUTEUR DU TITRE, puis suit le defilement.
+     *
+     * C est « position: sticky » qui fait tout le travail, et non un
+     * gestionnaire de defilement. Le premier jet en utilisait un : il
+     * fonctionnait, mais reposait sur un evenement asynchrone, avec une image
+     * de retard possible sur un defilement rapide — et il exigeait un calcul a
+     * chaque mouvement de la page.
+     *
+     * Sticky est natif : le navigateur maintient la position sans qu une seule
+     * ligne de script ne tourne pendant le defilement. Il ne reste a JavaScript
+     * qu UNE mesure, prise une fois : la hauteur du titre, qui depend de la
+     * police et de la largeur de la fenetre.
+     *
+     * Le rail est le conteneur DANS LEQUEL elle colle. Il part du titre et
+     * descend jusqu au bas du document : la mascotte reste donc visible sur
+     * toute la page. Il ne recoit aucun clic — « pointer-events: none » — pour
+     * ne pas former une colonne invisible qui avalerait les clics a droite. */
+    function suivreLaPage(bloc) {
+        const entete = document.querySelector("header");
+        const titre = entete && entete.querySelector("h1");
+        // Sans banniere ni titre — cas d une page depouillee — on garde le coin.
+        if (!entete || !titre) { bloc.classList.add("mascotte-coin"); return; }
+
+        const rail = document.createElement("div");
+        rail.className = "mascotte-rail";
+        rail.appendChild(bloc);
+        document.body.appendChild(rail);
+
+        const barre = document.querySelector(".navbar");
+
+        function mesurer() {
+            // Le haut du rail : le titre, moins la moitie de la mascotte, pour
+            // que les deux soient centres l un sur l autre.
+            const y = entete.offsetTop + titre.offsetTop
+                    + titre.offsetHeight / 2 - bloc.offsetHeight / 2;
+            rail.style.top = y + "px";
+            // Ou elle s arrete en descendant : juste sous la barre collante.
+            bloc.style.top = ((barre ? barre.getBoundingClientRect().height : 0) + 16) + "px";
+        }
+
+        mesurer();
+        // Seul un changement de taille peut deplacer le titre. Le defilement,
+        // lui, n a plus besoin de nous.
+        window.addEventListener("resize", mesurer);
     }
 
     // La racine du site, deja calculee par les pages pour leurs scripts.
