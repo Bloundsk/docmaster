@@ -13,9 +13,12 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import url from "node:url";
 import vm from "node:vm";
 
-const RACINE = path.join(path.dirname(new URL(import.meta.url).pathname.slice(1)), "..");
+// « fileURLToPath » et non « pathname.slice(1) » : ce dernier retire la barre
+// initiale d un chemin absolu sous Linux, et le script ne trouve plus rien.
+const RACINE = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
 
 // --- Les fonctions de search.js, recopiees a l identique --------------------
 // Elles vivent dans une fermeture liee au DOM : les extraire du fichier serait

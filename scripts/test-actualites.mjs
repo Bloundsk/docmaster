@@ -8,17 +8,26 @@
 // s attendaient indefiniment.
 import fs from "node:fs";
 import path from "node:path";
+import url from "node:url";
 import { execFileSync } from "node:child_process";
 
-const RACINE = path.join(path.dirname(new URL(import.meta.url).pathname.slice(1)), "..");
+// « fileURLToPath » et non « pathname.slice(1) » : ce dernier retire la barre
+// initiale d un chemin absolu sous Linux, et le script ne trouve plus rien.
+const RACINE = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
 const BAC = path.join(process.env.TEMP || "/tmp", "docmaster-test-actualites");
 const FICHIER_ISSUES = path.join(BAC, "issues.json");
 
 fs.rmSync(BAC, { recursive: true, force: true });
 fs.mkdirSync(path.join(BAC, "scripts"), { recursive: true });
+fs.mkdirSync(path.join(BAC, "en"), { recursive: true });
 fs.copyFileSync(path.join(RACINE, "scripts/publier-actualites.js"), path.join(BAC, "scripts/publier-actualites.js"));
-fs.copyFileSync(path.join(RACINE, "actualites.html"), path.join(BAC, "actualites.html"));
-fs.copyFileSync(path.join(RACINE, "index.html"), path.join(BAC, "index.html"));
+
+/* Les QUATRE pages porteuses des marqueurs. Le bac n en copiait que deux : le
+   jour ou le script a commence a ecrire aussi les pages anglaises, il s est
+   arrete sur un fichier absent — et ce test, qu on n avait pas relance, etait
+   le seul a pouvoir le dire. */
+const PAGES = ["actualites.html", "index.html", "en/actualites.html", "en/index.html"];
+for (const p of PAGES) fs.copyFileSync(path.join(RACINE, p), path.join(BAC, p));
 
 const METAS = {
     "https://news.google.com/a": { titre: "86 % des PME ont subi un incident", source: "itdaily.fr", date: "2026-08-12", guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing", section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" },
@@ -95,6 +104,16 @@ verifier("pas de HTML injecté brut", !page2.includes("<en 2026>"));
 verifier("lien vers la section du guide", page2.includes('href="guides/cybersecurite/debutant.html#le-phishing"'));
 verifier("liens externes protégés", (page2.match(/rel="noopener noreferrer"/g) || []).length === 2);
 verifier("l'état vide a disparu", !page2.includes("Aucune actualité retenue"));
+
+/* Les quatre pages, et pas seulement les deux francaises. Le titre d article
+   reste en francais partout — un titre traduit ne se retrouve plus — mais ce
+   que le site ecrit AUTOUR doit suivre la langue de la page. */
+const pageEn = lirePage("en/actualites.html");
+verifier("la page anglaise est écrite aussi", pageEn.includes("86 % des PME ont subi un incident"));
+verifier("elle est rédigée en anglais", pageEn.includes("Related to") && !pageEn.includes("En rapport avec"));
+verifier("elle renvoie vers le guide anglais", pageEn.includes('href="guides/cybersecurite/debutant.html"'));
+verifier("l'accueil anglais aussi", lirePage("en/index.html").includes("Read elsewhere"));
+verifier("l'accueil français reste français", lirePage("index.html").includes("À lire ailleurs"));
 
 const accueil2 = lirePage("index.html");
 verifier("l'accueil montre la rubrique", accueil2.includes("À lire ailleurs"));

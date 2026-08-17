@@ -6,13 +6,20 @@
 // qui aurait pu passer inapercue.
 import fs from "node:fs";
 import path from "node:path";
+import url from "node:url";
 import vm from "node:vm";
 
-// La racine se deduit de l emplacement du script, elle n est pas ecrite en dur.
-// Le chemin absolu contenait le nom d utilisateur Windows de l auteur, publie
-// tel quel dans un depot public alors que le site parait sous pseudonyme.
-// slice(1) retire la barre oblique que Windows place devant la lettre de lecteur.
-const RACINE = path.join(path.dirname(new URL(import.meta.url).pathname.slice(1)), "..");
+/* La racine se deduit de l emplacement du script, elle n est pas ecrite en dur :
+   un chemin absolu mettrait le nom de compte de la machine de developpement
+   dans un depot public, alors que le site parait sous pseudonyme.
+
+   « fileURLToPath » plutot qu un « pathname.slice(1) » fait a la main. Ce
+   slice(1) retirait la barre obliquee que Windows place devant la lettre de
+   lecteur — et, sous Linux, retirait la barre initiale d un vrai chemin
+   absolu : « /home/runner/... » devenait « home/runner/... », introuvable.
+   Le defaut ne pouvait pas se voir sur la machine de l auteur ; il est apparu
+   au premier passage du controle sur un runner. */
+const RACINE = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
 const GUIDES = path.join(RACINE, "guides");
 
 const anomalies = [];

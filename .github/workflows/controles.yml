@@ -60,6 +60,16 @@ jobs:
           done
           exit $echec
 
+      # Les deux jeux de tests du depot. Ils existaient, mais rien ne les
+      # lancait : celui des actualites est reste casse une journee entiere
+      # apres une modification du script qu il couvre, sans que personne le
+      # sache — il etait pourtant le seul a pouvoir le dire.
+      - name: Tests de la publication d'actualités
+        run: node scripts/test-actualites.mjs
+
+      - name: Tests de la recherche
+        run: node scripts/test-recherche.mjs
+
       # Le seul controle qui MESURE des pages affichees : une largeur, un
       # nombre de colonnes, un debordement ne se deduisent pas du CSS. Il
       # tournait donc uniquement a la main.
