@@ -53,6 +53,20 @@
        Cette valeur tient 4,83:1 sur la teinte et 5,43:1 sur une carte. */
     --muted: #5c6b80;
 
+    /* --- Le coin bas-droit, partagé ------------------------------------
+       Deux éléments flottants s'y installent : le bouton de retour en haut
+       et la mascotte. Ils se sont chevauchés sur 19 px parce que chacun
+       posait ses distances dans son coin du fichier, sans rien savoir de
+       l'autre.
+
+       Les trois valeurs vivent donc ici, et les deux éléments les lisent.
+       Déplacer ou agrandir le bouton repousse la mascotte d'autant, sans
+       qu'on ait à y penser. Le contrôle 9 de audit-geometrie.html vérifie
+       le résultat au pixel près. */
+    --flottant-marge: 24px;      /* distance au bord de la fenêtre */
+    --flottant-taille: 46px;     /* côté du bouton de retour en haut */
+    --flottant-ecart: 24px;      /* respiration entre deux flottants */
+
     --radius: 16px;
     --shadow: 0 10px 25px rgba(0,0,0,0.08);
     /* Une ombre plus franche, pour ce qui doit se detacher au survol. */
@@ -904,7 +918,9 @@ code {
 }
 
 /* Bouton retour en haut */
-#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--primary-fond); color: white; border: none; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 90; }
+/* Ses distances viennent des jetons du coin bas-droit, qu'il partage avec la
+   mascotte : voir la note en tête de la palette. */
+#back-to-top { position: fixed; bottom: var(--flottant-marge); right: var(--flottant-marge); width: var(--flottant-taille); height: var(--flottant-taille); border-radius: 50%; background: var(--primary-fond); color: white; border: none; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 90; }
 #back-to-top.visible { display: flex; }
 
 /* Footer */
@@ -1120,20 +1136,18 @@ header { position: relative; overflow: visible; }
 }
 
 /* --- Ailleurs : elle surgit dans le coin, avec sa bulle ------------------- */
-/* Elle se place AU-DESSUS du bouton de retour en haut, qui occupe le même coin :
-   « #back-to-top » va de 24 px à 70 px depuis le bas. Les deux se recouvraient
-   sur 19 px, mesurés — et avec le même z-index, donc sans règle pour départager.
-
-   Les 82 px se déduisent de ce bouton : 24 de marge + 46 de haut + 12 d'écart.
-   Écrits en clair ici pour que le lien entre les deux soit visible : déplacer
-   le bouton sans toucher à cette valeur ramènerait le chevauchement.
+/* Elle se place AU-DESSUS du bouton de retour en haut, qui occupe le même coin.
+   La hauteur n'est plus écrite en dur : elle se CALCULE à partir des jetons du
+   coin, si bien qu'agrandir ou déplacer le bouton repousse la mascotte tout
+   seul. Les deux se recouvraient sur 19 px parce que chacun posait ses
+   distances sans rien savoir de l'autre.
 
    Le z-index passe sous celui du bouton : si l'un doit gagner, c'est celui qui
    sert à quelque chose. */
 .mascotte-surgit {
     position: fixed;
-    right: 18px;
-    bottom: 82px;
+    right: var(--flottant-marge);
+    bottom: calc(var(--flottant-marge) + var(--flottant-taille) + var(--flottant-ecart));
     width: 96px;
     z-index: 89;
     pointer-events: auto;
@@ -1221,9 +1235,9 @@ header { position: relative; overflow: visible; }
    mascotte. */
 @media (max-width: 700px) {
     .mascotte-vol { width: 84px; right: 12px; bottom: -12px; }
-    /* Même dégagement qu'en grand écran : le bouton de retour en haut garde
-       ses 24 px de marge et ses 46 px de haut quelle que soit la largeur. */
-    .mascotte-surgit { width: 68px; right: 12px; bottom: 82px; }
+    /* Seule la largeur change : le dégagement reste calculé sur les mêmes
+       jetons, le bouton gardant ses dimensions quelle que soit la fenêtre. */
+    .mascotte-surgit { width: 68px; }
     .mascotte-bulle { display: none; }
 }
 

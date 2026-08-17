@@ -370,12 +370,34 @@ for (const c of enDur) {
 }
 
 const jetons = [...palette.matchAll(/(--[a-z-]+):/g)].map((m) => m[1]);
-// Un jeton de couleur defini en clair doit l etre aussi en sombre, sans quoi il
-// garde sa valeur claire sur fond sombre — exactement le defaut d origine.
-const JETONS_NEUTRES = ["--radius", "--shadow", "--shadow-fort", "--decalage-ancre"];
+
+/* Un jeton de COULEUR defini en clair doit l etre aussi en sombre, sans quoi
+   il garde sa valeur claire sur fond sombre — le defaut d origine.
+
+   Encore faut-il savoir lequel est une couleur. Ce controle s appuyait sur une
+   liste d exceptions ecrite a la main : elle a rate les trois jetons de
+   distance du coin bas-droit le jour de leur ajout, et reclame du mode sombre
+   pour des « 24px ». Une liste qu il faut penser a completer finit toujours
+   par etre incomplete.
+
+   La regle se DEDUIT donc de la valeur : un jeton qui ne contient aucune
+   couleur — que des longueurs, des nombres — n a rien a redefinir en sombre.
+   Les nouveaux jetons de mise en page sont exemptes tout seuls. */
+const valeurDe = (jeton) => {
+    const m = palette.match(new RegExp(jeton + ":\\s*([^;]+);"));
+    return m ? m[1] : "";
+};
+const contientUneCouleur = (v) => /#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(|\b(white|black|transparent|currentColor)\b/i.test(v);
+
+/* Les deux ombres font exception dans l autre sens : elles CONTIENNENT une
+   couleur, mais restent volontairement identiques dans les deux themes — une
+   ombre portee noire translucide fonctionne sur clair comme sur sombre. */
+const OMBRES_VOLONTAIREMENT_NEUTRES = ["--shadow", "--shadow-fort"];
+
 if (blocSombre) {
     for (const j of jetons) {
-        if (JETONS_NEUTRES.includes(j)) continue;
+        if (OMBRES_VOLONTAIREMENT_NEUTRES.includes(j)) continue;
+        if (!contientUneCouleur(valeurDe(j))) continue;      // une distance, pas une teinte
         if (!blocSombre[0].includes(j + ":")) {
             signaler("COULEURS", `${j} n'est pas redéfini en mode sombre`);
         }

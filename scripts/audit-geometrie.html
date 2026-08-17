@@ -245,6 +245,13 @@ function controler(d, w, largeur, nomPage) {
 
     if (flottants.length > 1) {
         flottants.forEach(([e]) => e.classList.add("visible"));
+
+        /* On force les animations à leur état final avant de mesurer. Sans
+           cela, on mesure une boîte encore réduite par le « pop » d'entrée —
+           et deux éléments qui se chevauchent au repos paraissent séparés.
+           C'est exactement l'erreur qui a fait conclure « pas de collision »
+           sur une page qui en avait une. */
+        try { d.getAnimations().forEach((a) => a.finish()); } catch (e) {}
         let collision = null;
         for (let i = 0; i < flottants.length; i++) {
             for (let j = i + 1; j < flottants.length; j++) {
