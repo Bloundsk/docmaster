@@ -200,12 +200,28 @@ const motifs = [
     { regex: /couvrant\s+(\d+)\s+domaines/g, attendu: nbSujets, quoi: "domaines" },
     { regex: /aujourd'hui\s+(\d+)\s+domaines/g, attendu: nbSujets, quoi: "domaines" },
 ];
+/* Toutes les pages du site, les deux langues comprises. « toutes » ne
+   contenait que les pages francaises : les controles qui s appuient dessus —
+   chiffres annonces, accessibilite, chargement de langues.js — ignoraient donc
+   la moitie du site. La version anglaise pouvait annoncer un nombre de sujets
+   faux ou perdre un attribut « alt » sans que rien ne le dise. */
 const pagesSite = fs.readdirSync(RACINE).filter((f) => f.endsWith(".html"));
-const toutes = [
-    ...pagesSite.map((f) => ({ nom: f, html: lire(path.join(RACINE, f)) })),
-    ...sujets.flatMap((s) => fs.readdirSync(path.join(GUIDES, s)).filter((f) => f.endsWith(".html"))
-        .map((f) => ({ nom: `guides/${s}/${f}`, html: lire(path.join(GUIDES, s, f)) }))),
-];
+const toutes = [];
+for (const [prefixe, racine] of [["", RACINE], ["en/", path.join(RACINE, "en")]]) {
+    if (!fs.existsSync(racine)) continue;
+    for (const f of fs.readdirSync(racine).filter((x) => x.endsWith(".html"))) {
+        toutes.push({ nom: prefixe + f, html: lire(path.join(racine, f)) });
+    }
+    const dossierGuides = path.join(racine, "guides");
+    if (!fs.existsSync(dossierGuides)) continue;
+    for (const s of fs.readdirSync(dossierGuides)) {
+        const chemin = path.join(dossierGuides, s);
+        if (!fs.statSync(chemin).isDirectory()) continue;
+        for (const f of fs.readdirSync(chemin).filter((x) => x.endsWith(".html"))) {
+            toutes.push({ nom: `${prefixe}guides/${s}/${f}`, html: lire(path.join(chemin, f)) });
+        }
+    }
+}
 for (const page of toutes) {
     for (const { regex, attendu, quoi } of motifs) {
         for (const m of page.html.matchAll(regex)) {
@@ -218,26 +234,45 @@ console.log(`  ${toutes.length} pages examinées, référence : ${nbSujets} suje
 // --- 6. Dates de mise a jour ----------------------------------------------
 console.log("\n=== 6. DATES ===");
 
+/* Les deux libelles, comme dans dater-guides.js. Ce controle ne connaissait
+   que le francais : les 56 pages anglaises affichaient une date qu il ne
+   regardait pas — et qu aucun script ne mettait a jour, ce qui allait de pair. */
 const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
               "août", "septembre", "octobre", "novembre", "décembre"];
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july",
+                "august", "september", "october", "november", "december"];
 const aujourdhui = new Date();
+let datees = 0;
 for (const page of toutes) {
-    const m = page.html.match(/Dernière mise à jour\s*:\s*(\d+)\s+(\S+)\s+(\d{4})/);
+    const m = page.html.match(/(?:Dernière mise à jour|Last updated)\s*:\s*(\d+)\s+(\S+)\s+(\d{4})/);
     if (!m) continue;
-    const mois = MOIS.indexOf(m[2]);
+    datees++;
+    const nom = m[2].toLowerCase();
+    const mois = MOIS.indexOf(nom) !== -1 ? MOIS.indexOf(nom) : MONTHS.indexOf(nom);
     if (mois === -1) { signaler("DATES", `${page.nom} : mois « ${m[2]} » non reconnu`); continue; }
     const d = new Date(Number(m[3]), mois, Number(m[1]));
     // Une date future est forcement fausse ; une date anterieure au projet aussi.
     if (d > aujourdhui) signaler("DATES", `${page.nom} annonce une date future : ${m[0]}`);
     if (d < new Date(2026, 6, 1)) signaler("DATES", `${page.nom} annonce une date suspecte : ${m[0]}`);
 }
-console.log(`  ${toutes.filter((p) => /Dernière mise à jour/.test(p.html)).length} pages datées`);
+console.log(`  ${datees} pages datées`);
 
 // --- 7. Accessibilite de base ---------------------------------------------
 console.log("\n=== 7. ACCESSIBILITE ===");
 
 for (const page of toutes) {
-    if (!/<html lang="fr">/.test(page.html)) signaler("ACCESSIBILITE", `${page.nom} : langue non déclarée`);
+    /* La langue attendue vient du chemin : une page sous « en/ » doit
+       s annoncer anglaise. Ce controle cherchait « lang="fr" » en dur — ecrit
+       quand le site etait monolingue, il aurait reclame du francais sur les 64
+       pages anglaises le jour ou on le leur aurait applique. C est exactement
+       ce qui s est produit en etendant l audit aux deux langues.
+
+       L attribut est lu par les lecteurs d ecran pour choisir leur
+       prononciation : le declarer faux est pire que ne pas le declarer. */
+    const langueAttendue = page.nom.startsWith("en/") ? "en" : "fr";
+    if (!new RegExp(`<html lang="${langueAttendue}">`).test(page.html)) {
+        signaler("ACCESSIBILITE", `${page.nom} : langue non déclarée ou incorrecte (attendu « ${langueAttendue} »)`);
+    }
     if (!/id="main-content"/.test(page.html)) signaler("ACCESSIBILITE", `${page.nom} : pas de cible pour le lien d'évitement`);
     const h1 = (page.html.match(/<h1[ >]/g) || []).length;
     if (h1 !== 1) signaler("ACCESSIBILITE", `${page.nom} : ${h1} titre(s) de niveau 1`);
@@ -418,6 +453,116 @@ if (!LG) {
     console.log(`  ${Object.keys(LG.TEXTES).length} textes × ${codes.length} langues, ${manquantes} manquante(s)`);
     console.log(`  ${LG.LANGUES.length} langue(s) proposée(s) au sélecteur : ${LG.LANGUES.map((l) => l.code).join(", ")}`);
 }
+
+/* --- 10. Liens et ancres --------------------------------------------------
+
+   Un lien mort ne casse rien de visible : la page s affiche, le lien est la,
+   et il ne mene nulle part. C est le defaut le moins couteux a produire et le
+   plus long a decouvrir.
+
+   Ce controle etait rejoue a la main a chaque session, sous forme de script
+   jetable. Le remettre ici lui donne la seule qualite qui compte : il tourne
+   sans qu on y pense. */
+console.log("\n=== 10. LIENS ET ANCRES ===");
+
+const HTML = [];
+(function collecter(dossier) {
+    for (const f of fs.readdirSync(dossier)) {
+        const p = path.join(dossier, f);
+        if (fs.statSync(p).isDirectory()) {
+            if (!/\.git|node_modules|Sauvegardes/.test(p)) collecter(p);
+        } else if (f.endsWith(".html")) HTML.push(p);
+    }
+})(RACINE);
+
+let liens = 0, ancres = 0;
+for (const page of HTML) {
+    const html = fs.readFileSync(page, "utf8");
+    const nom = path.relative(RACINE, page).replace(/\\/g, "/");
+
+    for (const m of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
+        const brut = m[1];
+        // Les gabarits JavaScript (« ${...} ») ne sont pas des adresses.
+        if (/^(https?:|#|mailto:|data:|javascript:)/.test(brut) || brut.includes("${")) continue;
+        liens++;
+        const [chemin, ancre] = brut.split("#");
+        const cible = path.resolve(path.dirname(page), decodeURIComponent(chemin.split("?")[0]));
+        if (!fs.existsSync(cible)) { signaler("LIENS", `${nom} → ${brut} (fichier absent)`); continue; }
+        if (!ancre) continue;
+        ancres++;
+        const id = decodeURIComponent(ancre);
+        const cibleHtml = fs.readFileSync(cible, "utf8");
+        if (!cibleHtml.includes(`id="${id}"`)) signaler("LIENS", `${nom} → ${brut} (ancre absente)`);
+    }
+
+    // Une ancre interne « #x » pointe vers la page elle-meme.
+    for (const m of html.matchAll(/href="#([^"]+)"/g)) {
+        const id = decodeURIComponent(m[1]);
+        if (id === "main-content") continue;          // pose par layout.js
+        ancres++;
+        if (!html.includes(`id="${id}"`)) signaler("LIENS", `${nom} → #${id} (ancre absente de la page)`);
+    }
+}
+console.log(`  ${HTML.length} pages, ${liens} liens locaux, ${ancres} ancres`);
+
+/* --- 11. Parite entre les deux langues -------------------------------------
+
+   Une page traduite doit avoir la MEME ossature que son original : mêmes
+   sections, mêmes simulateurs, mêmes questions rattachées aux mêmes ancres.
+   Une section oubliée à la traduction ne se voit pas — la page anglaise se lit
+   très bien sans elle. Seule la comparaison la révèle. */
+console.log("\n=== 11. PARITÉ FR / EN ===");
+
+const bacL = { window: {}, document: { documentElement: { setAttribute() {} } }, navigator: { language: "fr" }, localStorage: { getItem: () => null, setItem() {} }, location: { pathname: "/" } };
+vm.createContext(bacL);
+vm.runInContext(lire(path.join(RACINE, "assets/js/langues.js")), bacL);
+const TRADUITS = bacL.window.DOCMASTER_LANGUES.CONTENU_TRADUIT.en || [];
+
+let compares = 0;
+for (const sujet of TRADUITS) {
+    for (const niveau of [...PARCOURS[sujet].niveaux, "index"]) {
+        const fr = path.join(RACINE, "guides", sujet, niveau + ".html");
+        const en = path.join(RACINE, "en/guides", sujet, niveau + ".html");
+        if (!fs.existsSync(en)) { signaler("PARITÉ", `en/guides/${sujet}/${niveau}.html manquant`); continue; }
+        compares++;
+        const a = fs.readFileSync(fr, "utf8"), b = fs.readFileSync(en, "utf8");
+
+        const sections = (h) => (h.match(/<h3 id=/g) || []).length;
+        if (sections(a) !== sections(b)) {
+            signaler("PARITÉ", `${sujet}/${niveau} : ${sections(a)} section(s) en français, ${sections(b)} en anglais`);
+        }
+        const sims = (h) => [...h.matchAll(/data-pratique="([^"]+)"/g)].map((m) => m[1]).sort().join(",");
+        if (sims(a) !== sims(b)) {
+            signaler("PARITÉ", `${sujet}/${niveau} : simulateurs différents entre les deux langues`);
+        }
+    }
+}
+
+/* Les questions d un quiz sont rattachees a une section par son « id ». Une
+   ancre renommee sans que la banque suive fait disparaitre le quiz de la
+   section, en silence : la page s affiche, le bloc est vide. */
+let sections = 0;
+for (const dossier of ["guides", "en/guides"]) {
+    for (const sujet of sujets) {
+        for (const niveau of PARCOURS[sujet].niveaux) {
+            const page = path.join(RACINE, dossier, sujet, niveau + ".html");
+            if (!fs.existsSync(page)) continue;
+            const html = fs.readFileSync(page, "utf8");
+            const ids = [...html.matchAll(/<h3 id="([^"]+)"/g)].map((m) => m[1]);
+            const ref = html.match(/quiz\/(en\/)?([a-z0-9-]+)\.js/);
+            if (!ref) { signaler("PARITÉ", `${dossier}/${sujet}/${niveau} : aucune banque de questions`); continue; }
+            const banque = path.join(RACINE, "assets/js/quiz", ref[1] || "", ref[2] + ".js");
+            if (!fs.existsSync(banque)) { signaler("PARITÉ", `${banque} introuvable`); continue; }
+            const bq = { window: {} }; vm.createContext(bq);
+            vm.runInContext(fs.readFileSync(banque, "utf8"), bq);
+            const cles = Object.keys(bq.window.QUIZ.sections);
+            sections += cles.length;
+            for (const id of ids) if (!cles.includes(id)) signaler("PARITÉ", `${dossier}/${sujet}/${niveau} : section « ${id} » sans questions`);
+            for (const c of cles) if (!ids.includes(c)) signaler("PARITÉ", `${dossier}/${sujet}/${niveau} : questions « ${c} » sans section`);
+        }
+    }
+}
+console.log(`  ${compares} pages comparées FR/EN, ${sections} sections de quiz rattachées`);
 
 // --- Resultat --------------------------------------------------------------
 console.log("\n=== RESULTAT ===\n");

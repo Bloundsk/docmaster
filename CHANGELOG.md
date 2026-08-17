@@ -1,5 +1,91 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — L'audit ne voyait que la moitié du site
+Ludo a posé la bonne question : l'audit est-il complet, tient-il compte de ce
+que tout est lié ? **Non.** Le contrôle du glossaire venait d'être ajouté parce
+qu'un trou avait été trouvé — c'était réactif. Recensement fait, quatre autres
+trous, dont deux défauts déjà en ligne.
+
+### Ce que l'audit ignorait
+
+| Trou | Conséquence |
+|---|---|
+| `toutes` ne listait que les pages françaises | chiffres annoncés et accessibilité **non contrôlés sur 64 pages** |
+| Le contrôle de langue cherchait `lang="fr"` en dur | il aurait réclamé du français sur les pages anglaises |
+| `dater-guides.js` ne connaissait que `guides/` | **les 56 pages anglaises ne se dataient jamais** |
+| Liens et ancres | rejoués à la main chaque session, jamais dans l'audit |
+| Parité FR/EN, ancres de quiz | idem |
+| **Rien ne lançait l'audit** | il ne tournait que si on y pensait |
+
+### Le défaut le plus concret : des dates gelées
+
+Les pages françaises se datent seules depuis le 8 août, à partir de leurs
+**vraies** modifications de contenu. Les anglaises affichaient la date tapée à
+la main le jour de leur traduction, et ne bougeaient plus. Un écart d'autant
+plus trompeur qu'une date figée a l'air d'une vraie date.
+
+`dater-guides.js` connaît désormais les deux libellés — « Dernière mise à
+jour » et « Last updated » — et les deux arborescences. Le hook aussi : son
+motif `^guides/` laissait passer `en/guides/`.
+
+### Trois contrôles ajoutés
+
+**10. Liens et ancres** — 2 142 liens locaux et 426 ancres vérifiés sur les 130
+pages. Un lien mort ne casse rien de visible : la page s'affiche, le lien est
+là, il ne mène nulle part. C'est le défaut le moins coûteux à produire et le
+plus long à découvrir.
+
+**11. Parité FR / EN** — 56 pages comparées : même nombre de sections, mêmes
+simulateurs, et **338 sections de quiz** dont l'ancre doit correspondre à une
+clé de la banque de questions. Une section oubliée à la traduction ne se voit
+pas — la page anglaise se lit très bien sans elle.
+
+**Les deux langues partout** — les contrôles 5, 6 et 7 passent de 65 à 129
+pages examinées, et de 56 à 112 pages datées.
+
+### Et surtout : l'audit se lance tout seul
+
+Il existait, mais **rien ne l'appelait**. Le pre-commit ne faisait que valider
+la syntaxe de trois fichiers JS et dater les guides. C'est ainsi que le
+glossaire a pu rester cinq sujets en arrière : *un contrôle qu'on doit se
+rappeler de lancer n'est pas un contrôle.*
+
+Il tourne maintenant à chaque commit touchant du contenu ou des données, et il
+**bloque**. Vérifié en le provoquant : un lien `acceuil.html` glissé dans le
+glossaire, le commit est refusé avec la ligne fautive.
+
+```
+[audit] anomalies detectees, commit interrompu :
+[LIENS] 1
+  - glossaire.html → acceuil.html (fichier absent)
+```
+
+Le hook vit dans `.git/hooks/`, qui n'est pas versionné : une copie est gardée
+dans `scripts/hook-pre-commit.txt` pour qu'un clone neuf puisse le remettre.
+
+### Ce qui reste hors de l'audit, et pourquoi
+
+- **La géométrie** (`audit-geometrie.html`) : il faut un moteur de rendu, elle
+  ne peut pas tourner dans Node. Reste à lancer à la main.
+- **Les traductions de simulateurs** (`verifier-traduction.mjs`) : elle exécute
+  les 169 simulateurs, trop lent pour un hook. Reste à lancer par sujet.
+- **Le sens des textes** : aucun script ne dira qu'une phrase traduite dit
+  autre chose que l'originale.
+
+### Vérifications
+
+| Contrôle | Avant | Après |
+|---|---|---|
+| Pages examinées (chiffres, accessibilité) | 65 | **129** |
+| Pages datées | 56 | **112** |
+| Liens locaux vérifiés | 0 | **2 142** |
+| Ancres vérifiées | 0 | **426** |
+| Pages comparées FR/EN | 0 | **56** |
+| Sections de quiz rattachées | 0 | **338** |
+| Lancé automatiquement | non | **oui, bloquant** |
+
+Résultat : 0 anomalie sur les 11 contrôles.
+
 ## 2026-08-17 — Cinq sujets n'avaient jamais rejoint le glossaire
 Signalé par Ludo. Le glossaire en était resté aux **neuf sujets d'origine** :
 droit, santé au travail, sobriété numérique, négociation et apprendre n'avaient

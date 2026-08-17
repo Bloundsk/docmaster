@@ -22,13 +22,26 @@ const { execFileSync } = require("child_process");
 const RACINE = path.join(__dirname, "..");
 const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin",
               "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const MONTHS = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
 
-// On capture le libelle et la date separement : seule la date est remplacee,
-// l emoji et le texte restent tels qu ils sont ecrits dans la page.
-const MOTIF = /(Dernière mise à jour\s*:\s*)([^<]*)/;
+/* Les deux libelles, francais et anglais. On capture le libelle et la date
+   separement : seule la date est remplacee, l emoji et le texte restent tels
+   qu ils sont ecrits dans la page.
 
-function enFrancais(d) {
-    return `${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}`;
+   Les pages anglaises etaient absentes de ce script : leur date, tapee a la
+   main a la traduction, ne bougeait plus jamais. La version francaise se
+   datait toute seule pendant que l anglaise affichait indefiniment le jour de
+   sa traduction — un ecart d autant plus trompeur qu il a l air d une vraie
+   date. */
+const FORMATS = [
+    { motif: /(Dernière mise à jour\s*:\s*)([^<]*)/, ecrire: (d) => `${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}` },
+    { motif: /(Last updated:\s*)([^<]*)/,            ecrire: (d) => `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}` },
+];
+
+// Le format qui s applique a cette page, ou null si elle n affiche pas de date.
+function formatDe(html) {
+    return FORMATS.find((f) => f.motif.test(html)) || null;
 }
 
 // Date du dernier commit ayant touche ce fichier. Utilisee pour le rattrapage :
@@ -48,13 +61,18 @@ function dateDuDernierCommit(fichier) {
 // contenu et donc la date. Ne lister que index.html laisserait les niveaux
 // afficher une date figee — exactement le defaut que ce script corrige.
 function listerGuides() {
-    const dossier = path.join(RACINE, "guides");
     const pages = [];
-    for (const sujet of fs.readdirSync(dossier)) {
-        const chemin = path.join(dossier, sujet);
-        if (!fs.statSync(chemin).isDirectory()) continue;
-        for (const fichier of fs.readdirSync(chemin)) {
-            if (fichier.endsWith(".html")) pages.push(`guides/${sujet}/${fichier}`);
+    // Les deux arborescences. « en/guides » manquait : ses 56 pages gardaient
+    // la date tapee le jour de leur traduction.
+    for (const racine of ["guides", "en/guides"]) {
+        const dossier = path.join(RACINE, racine);
+        if (!fs.existsSync(dossier)) continue;
+        for (const sujet of fs.readdirSync(dossier)) {
+            const chemin = path.join(dossier, sujet);
+            if (!fs.statSync(chemin).isDirectory()) continue;
+            for (const fichier of fs.readdirSync(chemin)) {
+                if (fichier.endsWith(".html")) pages.push(`${racine}/${sujet}/${fichier}`);
+            }
         }
     }
     return pages;
@@ -93,17 +111,19 @@ function dater(relatif, date) {
     const complet = path.join(RACINE, relatif);
     const avant = fs.readFileSync(complet, "utf8");
 
-    if (!MOTIF.test(avant)) {
+    // Le libelle depend de la langue de la page ; on prend celui qu elle porte.
+    const format = formatDe(avant);
+    if (!format) {
         console.warn(`  ${relatif} : aucune date trouvée, ignoré`);
         return false;
     }
 
-    const voulue = enFrancais(date);
-    const apres = avant.replace(MOTIF, (_, libelle) => libelle + voulue);
+    const voulue = format.ecrire(date);
+    const apres = avant.replace(format.motif, (_, libelle) => libelle + voulue);
 
     if (apres === avant) return false;          // deja a jour, on ne reecrit pas
     fs.writeFileSync(complet, apres);
-    console.log(`  ${relatif} : ${avant.match(MOTIF)[2].trim()} -> ${voulue}`);
+    console.log(`  ${relatif} : ${avant.match(format.motif)[2].trim()} -> ${voulue}`);
     return true;
 }
 

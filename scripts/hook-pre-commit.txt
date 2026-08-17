@@ -1,0 +1,87 @@
+#!/bin/sh
+# ---------------------------------------------------------------------------
+# Deux controles avant chaque commit :
+#   1. les fichiers JS de donnees sont reellement chargeables (bloquant)
+#   2. la date « Derniere mise a jour » des guides commites est celle du jour
+#
+# Ce fichier vit dans .git/hooks/, qui n est pas versionne. Les scripts qu il
+# appelle, eux, sont dans le depot : scripts/valider-js.js et
+# scripts/dater-guides.js.
+# ---------------------------------------------------------------------------
+
+# --- 1. Fichiers JS de donnees --------------------------------------------
+#
+# Une virgule oubliee dans search-data.js rend le fichier invalide : le
+# navigateur abandonne le script entier et la recherche disparait de TOUTES
+# les pages. Rien ne le signale, la page s affiche normalement.
+#
+# Ce controle bloque le commit, contrairement a celui des dates : une date
+# figee est genante, une fonction du site cassee pour tous les visiteurs l est
+# davantage. En cas d echec, la marche a suivre est de corriger le fichier.
+
+JS=$(git diff --cached --name-only --diff-filter=ACM \
+     | grep -E '^assets/js/(search-data|parcours|pratique)\.js$|^assets/js/quiz/.*\.js$')
+
+if [ -n "$JS" ] && command -v node >/dev/null 2>&1; then
+    node scripts/valider-js.js $JS || exit 1
+fi
+
+# --- 2. Date des guides ----------------------------------------------------
+#
+# Cette date etait ecrite a la main dans les 9 pages : elle est restee bloquee
+# au 7 aout 2026 pendant que les guides changeaient six fois. Personne ne pense
+# a mettre a jour vingt-sept dates a la main, donc la machine s en charge.
+#
+# Seuls les guides reellement commites sont touches : modifier le CSS ne fait
+# pas mentir les pages en pretendant que leur contenu a change. Toutes les
+# pages d un sujet sont concernees, et non le seul index : un sujet se
+# decompose en niveaux, qui portent le contenu et doivent donc porter la date.
+
+# « en/guides/ » etait absent de ce motif : les 56 pages anglaises gardaient la
+# date tapee a la main le jour de leur traduction, pendant que leur version
+# francaise se datait toute seule. Un ecart d autant plus trompeur qu une date
+# figee a l air d une vraie date.
+GUIDES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^(en/)?guides/.*\.html$')
+
+# --- 3. Coherence d ensemble -----------------------------------------------
+#
+# L audit existait, mais rien ne le lancait : il ne tournait que si on y
+# pensait. C est ainsi que le glossaire a pu rester cinq sujets en arriere.
+# Un controle qu on doit se rappeler de lancer n est pas un controle.
+#
+# Bloquant : les anomalies qu il detecte - lien mort, section sans questions,
+# page annoncant un mauvais nombre de sujets - sont visibles par les visiteurs.
+#
+# Il ne tourne que si le commit touche du contenu ou des donnees, pour ne pas
+# ralentir un commit qui ne modifie qu un script ou la documentation.
+CONTENU=$(git diff --cached --name-only --diff-filter=ACMRD \
+          | grep -E '\.html$|^assets/js/(search-data|parcours|langues)\.js$|^assets/js/quiz/')
+
+if [ -n "$CONTENU" ] && command -v node >/dev/null 2>&1; then
+    if ! node scripts/audit-coherence.mjs > /tmp/docmaster-audit.txt 2>&1; then
+        echo "[audit] anomalies detectees, commit interrompu :" >&2
+        grep -E '^\[|^  - ' /tmp/docmaster-audit.txt >&2
+        echo "[audit] detail complet : node scripts/audit-coherence.mjs" >&2
+        exit 1
+    fi
+fi
+
+[ -z "$GUIDES" ] && exit 0
+
+# Sans node, on laisse passer le commit plutot que de le bloquer : une date
+# figee est genante, un commit impossible l est davantage.
+if ! command -v node >/dev/null 2>&1; then
+    echo "[dates] node introuvable, dates des guides inchangees" >&2
+    exit 0
+fi
+
+if ! node scripts/dater-guides.js $GUIDES; then
+    echo "[dates] echec de la mise a jour, commit poursuivi" >&2
+    exit 0
+fi
+
+# Les fichiers viennent d etre reecrits : sans cela, la version indexee resterait
+# celle d avant, et la date corrigee n entrerait dans le depot qu au commit suivant.
+git add $GUIDES
+
+exit 0
