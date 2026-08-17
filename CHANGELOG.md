@@ -1,5 +1,57 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — Le workflow des actualités ne publiait pas les pages anglaises
+Trouvé en vérifiant que la veille tournait bien. Elle tourne — deux passages
+par jour, sans échec depuis le 14 août. Mais le workflow qui publie ce qu'elle
+retient avait gardé une liste de fichiers écrite à la main :
+
+```
+git add data/actualites.json actualites.html index.html
+```
+
+Le script en écrit **cinq** depuis ce matin. Les deux pages anglaises étaient
+donc modifiées à chaque passage, puis **perdues au checkout suivant**, sans
+commit et sans message d'erreur.
+
+C'est exactement le défaut que l'entrée précédente disait avoir corrigé : le
+script rendait bien les quatre pages, mais **le workflow qui publie son
+résultat n'avait pas suivi**. Corriger le producteur sans regarder ce qui
+consomme sa sortie ne corrige rien.
+
+### Deux changements, dont un qui rend l'oubli impossible
+
+`git add -u` remplace la liste en dur : tout fichier suivi et modifié est
+publié, quel que soit le nombre de pages que le script écrira demain.
+
+Et une étape de vérification ferme la porte : si quoi que ce soit reste
+modifié après le commit, le workflow **échoue** au lieu de laisser filer.
+Une liste en dur oubliée redevient visible immédiatement, au lieu d'être
+découverte des semaines plus tard devant une page figée.
+
+### Vérifié en le provoquant
+
+Le bloc d'actualités a été vidé dans les deux pages anglaises, puis le script
+relancé : il les a bien réécrites toutes les deux. Deux passages consécutifs
+ensuite ne produisent aucune modification — le rendu est idempotent, condition
+sans laquelle chaque passage programmé produirait un commit inutile.
+
+| Contrôle | Résultat |
+|---|---|
+| Fichiers écrits par le script | 5 |
+| Couverts par l'ancienne liste | 3 — **`en/actualites.html` et `en/index.html` oubliés** |
+| Réécriture après effacement | les deux pages restaurées |
+| Deux passages consécutifs | « Pages inchangées » |
+| `audit-coherence.mjs`, `valider-js.js` | 0 anomalie, 0 erreur |
+
+### Au passage : l'état de la veille
+
+| | |
+|---|---|
+| Dernier passage | 17/08 à 09:26, **succès** en 1 min 40 |
+| Six derniers passages | tous en succès |
+| Produit | Issue #30, 6 articles à trier |
+| En attente de tri | **220 cases** réparties sur 9 rapports |
+
 ## 2026-08-17 — Les drapeaux ne s'affichaient pas sur ordinateur
 Sur téléphone, le sélecteur montrait 🇫🇷 et 🇬🇧. Sur ordinateur, il affichait
 « FR » et « GB » — deux lettres, pas un drapeau. Signalé depuis un poste
