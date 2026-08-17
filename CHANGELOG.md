@@ -1,5 +1,76 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — Les drapeaux ne s'affichaient pas sur ordinateur
+Sur téléphone, le sélecteur montrait 🇫🇷 et 🇬🇧. Sur ordinateur, il affichait
+« FR » et « GB » — deux lettres, pas un drapeau. Signalé depuis un poste
+Windows, invisible depuis un mobile.
+
+### Ce n'était pas un défaut de mise en page
+
+**Windows n'a aucune police qui dessine les drapeaux.** Segoe UI Emoji n'en
+contient pas un seul : c'est un choix de Microsoft, pas un manque de
+configuration. Le système retombe alors sur les deux lettres qui composent le
+caractère — un emoji drapeau est fait de deux « indicateurs régionaux », ici
+🇫 et 🇷 — et les affiche telles quelles.
+
+Aucune règle CSS ne corrige cela : **il n'y a pas de glyphe à styler.**
+
+### Mesuré plutôt que supposé
+
+Le diagnostic aurait pu s'arrêter à « ça ne marche pas sous Windows ». Il a été
+vérifié sur la machine concernée, en mesurant la largeur du texte rendu :
+
+| Mesure | Résultat |
+|---|---|
+| `🇫🇷` en entier | 28 px |
+| `🇫` seul | 13 px |
+| `🇷` seul | 15 px |
+| Somme des deux | **28 px — exactement la même** |
+
+Un vrai drapeau serait **un** glyphe, plus large que chacune de ses deux
+lettres. Deux glyphes rendus côte à côte, c'est « FR ».
+
+### Les sept drapeaux sont désormais dessinés
+
+Du SVG en ligne dans `langues.js` : pas de fichier à charger, pas de
+dépendance, net à toute taille, identique sur tous les systèmes. Cadre commun
+3:2 pour que la liste reste alignée, hauteur en `em` pour suivre le texte
+voisin, et un liseré très discret — sans lui, la bande blanche du drapeau
+français se confond avec le fond clair.
+
+L'Union Jack est adapté au cadre 3:2, comme le font les jeux d'icônes
+rectangulaires, et ses diagonales rouges sont centrées plutôt que décalées en
+contre-échange : à 18 px le décalage ne se voit pas et coûterait quatre tracés
+de plus.
+
+### Vérifié en échantillonnant les pixels peints
+
+Un SVG déclaré juste peut se peindre faux. Chaque drapeau a donc été rendu dans
+un canvas, puis **échantillonné point par point** — c'est la seule façon de
+constater ce qui est peint plutôt que ce qui est écrit :
+
+| Drapeau | Points vérifiés |
+|---|---|
+| 🇫🇷 | bleu / blanc / rouge aux trois bandes |
+| 🇬🇧 | champ bleu, liseré blanc, croix rouge de bord à bord, diagonales |
+| 🇪🇸 🇩🇪 🇮🇹 🇷🇺 | les trois bandes de chacun |
+| 🇨🇳 | fond rouge, grande étoile, petite étoile |
+
+Trois « échecs » du premier passage venaient de mes points de contrôle, pas des
+drapeaux : le coin d'un Union Jack **est** rouge, son bras horizontal traverse
+bien toute la largeur. Corrigés, les sept passent.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| Pixels peints, 7 drapeaux | conformes |
+| `audit-geometrie.html` | 454 mesures, 26 gabarits, 0 anomalie |
+| `audit-coherence.mjs` | 0 anomalie |
+| `valider-js.js` | 0 erreur |
+| Sélecteur à 1400, 700 et 375 px | drapeau 24×16, liste dans la fenêtre |
+| Aucun emoji drapeau restant | vérifié dans le DOM |
+
 ## 2026-08-17 — Le sélecteur ne propose plus que les langues qui existent
 Le menu déroulant offrait sept drapeaux. Cinq ne menaient nulle part :
 l'espagnol, l'allemand, l'italien, le chinois et le russe n'ont que l'interface

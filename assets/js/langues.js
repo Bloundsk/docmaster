@@ -39,15 +39,81 @@
        accompagné du nom de la langue : un drapeau désigne un pays, pas une
        langue — l'espagnol n'est pas parlé qu'en Espagne, ni l'anglais qu'au
        Royaume-Uni. Le nom lève l'ambiguïté et sert aussi de repère à qui ne
-       reconnaît pas le drapeau. */
+       reconnaît pas le drapeau.
+
+       POURQUOI DU SVG ET NON DES EMOJIS
+
+       « 🇫🇷 » est un emoji drapeau, et **Windows n'a pas de police qui les
+       dessine** : Segoe UI Emoji ne contient aucun drapeau de pays. Le système
+       retombe alors sur les deux lettres qui composent le caractère, et le
+       visiteur lit « FR » au lieu de voir un drapeau. Sur Android et iOS, les
+       mêmes octets donnent bien un drapeau — d'où un défaut invisible depuis
+       un téléphone, et permanent sur un ordinateur.
+
+       Mesuré plutôt que supposé : sur cette machine, la largeur de « 🇫🇷 »
+       vaut exactement la somme des largeurs de ses deux lettres prises
+       séparément (28 px = 13 + 15). Un vrai drapeau serait UN glyphe, plus
+       large qu'aucune des deux.
+
+       Aucune règle CSS ne corrige cela : il n'y a pas de glyphe à styler. Les
+       drapeaux sont donc dessinés, en SVG en ligne — pas de fichier à charger,
+       pas de dépendance, net à toute taille, et identique sur tous les
+       systèmes. Cadre commun 3:2 pour que la liste reste alignée. */
+    const svg = (contenu) =>
+        '<svg class="langue-drapeau" viewBox="0 0 60 40" role="presentation" aria-hidden="true" focusable="false">' +
+        contenu + '</svg>';
+
+    // Une étoile à cinq branches, centrée sur (x, y), de rayon r.
+    const etoile = (x, y, r) => {
+        const p = [];
+        for (let i = 0; i < 10; i++) {
+            const rayon = i % 2 ? r * 0.382 : r;              // nombre d'or
+            const a = -Math.PI / 2 + i * Math.PI / 5;
+            p.push((x + rayon * Math.cos(a)).toFixed(2) + "," + (y + rayon * Math.sin(a)).toFixed(2));
+        }
+        return '<polygon fill="#FFDE00" points="' + p.join(" ") + '"/>';
+    };
+
     const LANGUES = [
-        { code: "fr", drapeau: "🇫🇷", nom: "Français" },
-        { code: "en", drapeau: "🇬🇧", nom: "English" },
-        { code: "es", drapeau: "🇪🇸", nom: "Español" },
-        { code: "de", drapeau: "🇩🇪", nom: "Deutsch" },
-        { code: "it", drapeau: "🇮🇹", nom: "Italiano" },
-        { code: "zh", drapeau: "🇨🇳", nom: "中文" },
-        { code: "ru", drapeau: "🇷🇺", nom: "Русский" },
+        { code: "fr", nom: "Français", drapeau: svg(
+            '<rect width="20" height="40" fill="#002654"/>' +
+            '<rect x="20" width="20" height="40" fill="#F5F5F5"/>' +
+            '<rect x="40" width="20" height="40" fill="#CE1126"/>') },
+
+        /* L'Union Jack, adapté au cadre 3:2 comme le font les jeux d'icônes
+           rectangulaires. Les diagonales rouges sont centrées plutôt que
+           décalées en contre-échange : à 18 px, le décalage ne se voit pas et
+           coûterait quatre tracés de plus. */
+        { code: "en", nom: "English", drapeau: svg(
+            '<rect width="60" height="40" fill="#012169"/>' +
+            '<path d="M0,0 60,40 M60,0 0,40" stroke="#F5F5F5" stroke-width="8"/>' +
+            '<path d="M0,0 60,40 M60,0 0,40" stroke="#C8102E" stroke-width="4"/>' +
+            '<path d="M30,0 V40 M0,20 H60" stroke="#F5F5F5" stroke-width="13"/>' +
+            '<path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/>') },
+
+        { code: "es", nom: "Español", drapeau: svg(
+            '<rect width="60" height="40" fill="#AA151B"/>' +
+            '<rect y="10" width="60" height="20" fill="#F1BF00"/>') },
+
+        { code: "de", nom: "Deutsch", drapeau: svg(
+            '<rect width="60" height="40" fill="#000000"/>' +
+            '<rect y="13.33" width="60" height="13.34" fill="#DD0000"/>' +
+            '<rect y="26.67" width="60" height="13.33" fill="#FFCE00"/>') },
+
+        { code: "it", nom: "Italiano", drapeau: svg(
+            '<rect width="20" height="40" fill="#008C45"/>' +
+            '<rect x="20" width="20" height="40" fill="#F5F5F5"/>' +
+            '<rect x="40" width="20" height="40" fill="#CD212A"/>') },
+
+        { code: "zh", nom: "中文", drapeau: svg(
+            '<rect width="60" height="40" fill="#EE1C25"/>' +
+            etoile(10, 10, 6) +
+            etoile(20, 4, 2) + etoile(24, 9, 2) + etoile(24, 15, 2) + etoile(20, 20, 2)) },
+
+        { code: "ru", nom: "Русский", drapeau: svg(
+            '<rect width="60" height="40" fill="#F5F5F5"/>' +
+            '<rect y="13.33" width="60" height="13.34" fill="#0039A6"/>' +
+            '<rect y="26.67" width="60" height="13.33" fill="#D52B1E"/>') },
     ];
 
     /* Les sujets dont le contenu décrit le droit français. Traduire « repos

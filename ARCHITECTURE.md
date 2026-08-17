@@ -273,6 +273,21 @@ conservés pour rester trouvables.
 pays, pas une langue : l'espagnol n'est pas parlé qu'en Espagne. Le nom lève
 l'ambiguïté et sert de repère à qui ne reconnaît pas le drapeau.
 
+**Les drapeaux sont des SVG en ligne, jamais des emojis.** `🇫🇷` est un emoji
+drapeau, et **Windows n'a aucune police qui les dessine** — Segoe UI Emoji n'en
+contient pas un seul. Le système retombe alors sur les deux lettres du
+caractère, et l'ordinateur affichait « FR » là où le téléphone montrait un
+drapeau. Un défaut invisible depuis un mobile, permanent sur un poste fixe, et
+qu'aucune règle CSS ne rattrape : il n'y a pas de glyphe à styler.
+
+Mesuré plutôt que supposé : la largeur de `🇫🇷` valait exactement la somme des
+largeurs de ses deux lettres prises séparément — 28 px = 13 + 15. Un vrai
+drapeau serait un seul glyphe, plus large que chacune.
+
+Les sept sont donc dessinés dans `langues.js`, dans un cadre commun 3:2 pour que
+la liste reste alignée. Pas de fichier à charger, pas de dépendance, net à
+toute taille, identique sur tous les systèmes.
+
 **Google Traduction est exclu.** Il chargerait des cookies Google, ce que le site
 s'interdit — voir la règle sur reCAPTCHA.
 

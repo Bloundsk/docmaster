@@ -38,15 +38,21 @@
        s'ouvre et se ferme au clavier, se referme avec Échap et s'annonce
        correctement aux lecteurs d'écran, sans une ligne de JavaScript.
        Chaque entrée porte le drapeau ET le nom de la langue — un drapeau
-       désigne un pays, pas une langue. */
+       désigne un pays, pas une langue.
+
+       Le drapeau est un SVG en ligne, écrit dans langues.js : les emojis
+       drapeaux ne s'affichent pas sous Windows, qui n'a aucune police pour les
+       dessiner et rend « FR » à la place. Il porte déjà sa classe et son
+       aria-hidden, on ne l'enveloppe donc plus. */
+    const actuelle = L ? L.LANGUES.find((x) => x.code === langue) : null;
     const selecteurHTML = L ? `
                 <details class="langues">
-                    <summary aria-label="${t("choisirLangue")}">
-                        <span class="langue-drapeau">${L.LANGUES.find((x) => x.code === langue).drapeau}</span>
+                    <summary aria-label="${t("choisirLangue")} (${actuelle.nom})">
+                        ${actuelle.drapeau}
                         <span class="langue-chevron" aria-hidden="true">▾</span>
                     </summary>
                     <ul class="langues-liste">
-${L.LANGUES.map((l) => `                        <li><button type="button" data-langue="${l.code}" lang="${l.code}"${l.code === langue ? ' aria-current="true"' : ""}><span aria-hidden="true">${l.drapeau}</span> ${l.nom}</button></li>`).join("\n")}
+${L.LANGUES.map((l) => `                        <li><button type="button" data-langue="${l.code}" lang="${l.code}"${l.code === langue ? ' aria-current="true"' : ""}>${l.drapeau} ${l.nom}</button></li>`).join("\n")}
                     </ul>
                 </details>` : "";
 

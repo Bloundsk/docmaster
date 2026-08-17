@@ -175,7 +175,24 @@ h1, h2, h3, .logo { font-family: 'Poppins', Arial, sans-serif; }
 }
 .langues > summary::-webkit-details-marker { display: none; }
 .langues > summary:hover { border-color: var(--primary); }
-.langue-drapeau { font-size: 1.15rem; line-height: 1; }
+/* Le drapeau est un SVG en ligne et non un emoji : Windows n'a aucune police
+   qui dessine les drapeaux, et y affichait « FR » à la place de 🇫🇷. Un défaut
+   invisible depuis un téléphone, permanent sur un ordinateur.
+
+   Hauteur en « em » pour qu'il suive la taille du texte à côté duquel il est
+   posé, et « flex-shrink: 0 » parce qu'un drapeau écrasé n'est plus un
+   drapeau — le nom de la langue, lui, peut se serrer. */
+.langue-drapeau {
+    height: 1.05em;
+    width: auto;
+    flex-shrink: 0;
+    display: block;
+    border-radius: 2px;
+    /* Le blanc du drapeau français se confond avec un fond clair : un liseré
+       très discret redonne son contour au rectangle, dans les deux thèmes. */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .16);
+}
+html.dark-mode .langue-drapeau { box-shadow: 0 0 0 1px rgba(255, 255, 255, .22); }
 .langue-chevron { font-size: .7rem; color: var(--muted); transition: transform .25s; }
 .langues[open] .langue-chevron { transform: rotate(180deg); }
 
