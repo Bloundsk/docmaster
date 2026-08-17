@@ -6,21 +6,30 @@
  *
  * CE QUI EST TRADUIT, ET CE QUI NE L'EST PAS ENCORE
  *
- * L'interface l'est : navigation, boutons, recherche, pied de page. Les cours
- * ne le sont pas — 84 000 mots, traduits sujet par sujet. Tant qu'un sujet ne
- * l'est pas, le visiteur lit un bandeau qui le lui dit DANS SA LANGUE. Un
- * drapeau qui promet une traduction inexistante est pire que pas de drapeau.
+ * L'interface est prête dans les sept langues. Le CONTENU ne l'est qu'en
+ * anglais : les 14 sujets et les 8 pages hors cours. Tant qu'une page ne l'est
+ * pas, le visiteur lit un bandeau qui le lui dit DANS SA LANGUE.
+ *
+ * LE SÉLECTEUR N'AFFICHE QUE LES LANGUES QUI ONT DU CONTENU
+ *
+ * Une interface traduite autour d'un site entièrement français n'est pas une
+ * traduction, c'est une promesse non tenue : un drapeau qui promet une
+ * traduction inexistante est pire que pas de drapeau. Les cinq langues sans
+ * contenu ne sont donc PAS proposées — leurs libellés restent ici, prêts, et
+ * leur drapeau apparaîtra tout seul le jour où elles auront un sujet.
  *
  * POURQUOI L'INTERFACE EST TRADUITE PAR LE NAVIGATEUR ET LE CONTENU NE LE SERA
  * PAS
  *
- * Traduire l'interface côté navigateur évite de créer 65 pages par langue —
- * 455 fichiers dont le contenu serait identique. En revanche, quand un sujet
- * sera traduit, ce seront de VRAIS fichiers dans « en/ », « es/ », etc. : une
- * page de cours doit être lisible sans JavaScript et indexable par les moteurs
- * de recherche, ce qu'un texte injecté ne serait pas.
+ * Traduire l'interface côté navigateur évite de recopier chaque page dans
+ * chaque langue pour un contenu identique. En revanche, un contenu traduit est
+ * fait de VRAIS fichiers dans « en/ », « es/ », etc. : une page de cours doit
+ * être lisible sans JavaScript et indexable par les moteurs de recherche, ce
+ * qu'un texte injecté ne serait pas.
  *
- * AJOUTER UNE LANGUE : une entrée dans LANGUES, une colonne dans TEXTES.
+ * AJOUTER UNE LANGUE : une entrée dans LANGUES, une colonne dans TEXTES. Le
+ *   sélecteur l'ignorera jusqu'à ce qu'elle figure dans CONTENU_TRADUIT ou
+ *   PAGES_TRADUITES — c'est voulu, et audit-coherence.mjs le vérifie.
  * AJOUTER UN TEXTE  : une entrée dans TEXTES, avec les sept langues.
  * ------------------------------------------------------------------------- */
 (function () {
@@ -177,6 +186,29 @@
 
     const CODES = LANGUES.map((l) => l.code);
 
+    /* Les langues réellement proposées au visiteur. Le français y est toujours :
+       c'est la version d'origine, elle existe par construction. Une autre langue
+       n'apparaît que si elle a du contenu — un sujet traduit, ou une page hors
+       cours traduite.
+
+       La liste se DÉDUIT, elle ne se déclare pas : le jour où l'espagnol
+       recevra son premier sujet, son drapeau apparaîtra sans qu'on y pense.
+       Une liste écrite à la main aurait à être tenue à jour en parallèle des
+       deux autres, et aurait fini par les contredire.
+
+       Pourquoi filtrer : l'interface est traduite dans les sept langues, mais
+       une interface traduite autour d'un site entièrement français n'est pas
+       une traduction — c'est une promesse non tenue. « Un drapeau qui promet
+       une traduction inexistante est pire que pas de drapeau. » */
+    function langueDisponible(code) {
+        if (code === "fr") return true;
+        return (CONTENU_TRADUIT[code] || []).length > 0 ||
+               (PAGES_TRADUITES[code] || []).length > 0;
+    }
+
+    const LANGUES_DISPONIBLES = LANGUES.filter((l) => langueDisponible(l.code));
+    const CODES_DISPONIBLES = LANGUES_DISPONIBLES.map((l) => l.code);
+
     /* Le préfixe de langue dans une adresse. La condition qui suit — un dossier
        « guides/ », un nom de fichier, ou rien — évite de confondre un préfixe
        avec un dossier qui porterait le même nom qu'un code. Sans elle,
@@ -208,20 +240,27 @@
        Les pages françaises n'ont pas de préfixe : un visiteur qui a choisi
        l'anglais garde donc son interface anglaise en les parcourant, avec le
        bandeau qui prévient que le cours, lui, est en français. */
+    /* On filtre sur CODES_DISPONIBLES et non sur CODES. Ce n'est pas une
+       précaution théorique : avec CODES, un visiteur ayant choisi le russe
+       avant que le sélecteur ne soit restreint faisait chercher à layout.js un
+       drapeau absent de sa liste. La lecture de « .drapeau » sur « undefined »
+       levait une exception AVANT le document.write de la navigation — et la
+       page s'affichait alors **sans aucune barre de navigation**. Vérifié en
+       réinjectant le défaut : 0 entrée de menu. */
     function langueChoisie() {
         const m = location.pathname.match(PREFIXE);
         if (m) return m[1];
 
         let choix = null;
         try { choix = localStorage.getItem("langue"); } catch (e) {}
-        if (choix && CODES.indexOf(choix) !== -1) return choix;
+        if (choix && CODES_DISPONIBLES.indexOf(choix) !== -1) return choix;
 
         const nav = (navigator.language || "fr").slice(0, 2).toLowerCase();
-        return CODES.indexOf(nav) !== -1 ? nav : "fr";
+        return CODES_DISPONIBLES.indexOf(nav) !== -1 ? nav : "fr";
     }
 
     function definirLangue(code) {
-        if (CODES.indexOf(code) === -1) return;
+        if (CODES_DISPONIBLES.indexOf(code) === -1) return;
         try { localStorage.setItem("langue", code); } catch (e) {}
         document.documentElement.setAttribute("lang", code);
     }
@@ -278,13 +317,18 @@
     }
 
     window.DOCMASTER_LANGUES = {
-        LANGUES: LANGUES,
+        // Ce que le sélecteur doit afficher. « LANGUES » reste exposé pour les
+        // contrôles, qui vérifient que les sept colonnes de TEXTES existent —
+        // elles sont prêtes, elles attendent seulement leur contenu.
+        LANGUES: LANGUES_DISPONIBLES,
+        LANGUES_TOUTES: LANGUES,
         CODES: CODES,
         TEXTES: TEXTES,
         SUJETS_DROIT_FRANCAIS: SUJETS_DROIT_FRANCAIS,
         CONTENU_TRADUIT: CONTENU_TRADUIT,
         PAGES_TRADUITES: PAGES_TRADUITES,
         existeDansLangue: existeDansLangue,
+        langueDisponible: langueDisponible,
         langueChoisie: langueChoisie,
         definirLangue: definirLangue,
         t: t,

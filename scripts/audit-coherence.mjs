@@ -342,6 +342,25 @@ if (!LG) {
         }
     }
 
+    // Une page hors cours annoncee traduite doit exister, comme un sujet.
+    for (const [code, liste] of Object.entries(LG.PAGES_TRADUITES || {})) {
+        for (const f of liste) {
+            if (!fs.existsSync(path.join(RACINE, code, f))) {
+                signaler("TRADUCTIONS", `« ${f} » annoncé traduit en « ${code} » mais ${code}/${f} n'existe pas`);
+            }
+        }
+    }
+
+    /* Le selecteur ne doit proposer que des langues qui ont du contenu.
+       « Un drapeau qui promet une traduction inexistante est pire que pas de
+       drapeau » : ce controle rend la regle verifiable au lieu de la laisser
+       a la vigilance. */
+    for (const l of LG.LANGUES) {
+        if (!LG.langueDisponible(l.code)) {
+            signaler("TRADUCTIONS", `« ${l.code} » est proposé au sélecteur sans avoir de contenu traduit`);
+        }
+    }
+
     for (const page of toutes) {
         const a = page.html.indexOf("langues.js");
         const b = page.html.indexOf("layout.js");
@@ -350,6 +369,7 @@ if (!LG) {
     }
 
     console.log(`  ${Object.keys(LG.TEXTES).length} textes × ${codes.length} langues, ${manquantes} manquante(s)`);
+    console.log(`  ${LG.LANGUES.length} langue(s) proposée(s) au sélecteur : ${LG.LANGUES.map((l) => l.code).join(", ")}`);
 }
 
 // --- Resultat --------------------------------------------------------------

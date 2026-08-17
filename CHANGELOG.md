@@ -1,5 +1,64 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — Le sélecteur ne propose plus que les langues qui existent
+Le menu déroulant offrait sept drapeaux. Cinq ne menaient nulle part :
+l'espagnol, l'allemand, l'italien, le chinois et le russe n'ont que l'interface
+traduite — les choisir donnait un menu traduit autour d'un site entièrement
+français.
+
+C'est exactement ce que la règle du projet interdit depuis l'origine :
+**« un drapeau qui promet une traduction inexistante est pire que pas de
+drapeau »**. Elle était écrite dans `ARCHITECTURE.md`, appliquée aux bandeaux,
+et démentie par le sélecteur lui-même.
+
+### La liste se déduit, elle ne se déclare pas
+
+Une langue est proposée si elle a du contenu : un sujet dans `CONTENU_TRADUIT`,
+ou une page dans `PAGES_TRADUITES`. Le français est toujours là, il est la
+version d'origine.
+
+Écrire une troisième liste à la main aurait demandé de la tenir à jour en
+parallèle des deux autres — et elle aurait fini par les contredire. Déduite,
+elle est juste par construction : **le jour où l'espagnol recevra son premier
+sujet, son drapeau apparaîtra sans qu'on y pense.**
+
+Les libellés des cinq langues restent en place. Ils sont prêts, l'audit
+continue de vérifier les sept colonnes de `TEXTES` : c'est le contenu qui
+manque, pas la traduction de l'interface.
+
+### Le repli cachait une page sans navigation
+
+`langueChoisie()` acceptait n'importe lequel des sept codes mémorisés. Un
+visiteur ayant choisi le russe **avant** cette restriction gardait donc `ru`,
+et `layout.js` cherchait alors un drapeau absent de sa liste. Lire `.drapeau`
+sur `undefined` levait une exception **avant** le `document.write` de la
+navigation.
+
+Résultat mesuré en réinjectant le défaut : `navbar: ABSENTE`, **0 entrée de
+menu**. Le repli se fait donc sur les langues disponibles, et ces visiteurs
+retombent proprement sur le français.
+
+### Un contrôle plutôt qu'une vigilance
+
+`audit-coherence.mjs` signale désormais toute langue proposée sans contenu, et
+vérifie au passage que les pages de `PAGES_TRADUITES` existent — ce qu'il
+faisait déjà pour les sujets, mais pas pour les pages hors cours ajoutées ce
+matin. Vérifié en réinjectant le défaut : 5 anomalies, sortie en erreur.
+
+Il affiche aussi ce qu'il constate — `2 langue(s) proposée(s) : fr, en` — plutôt
+que de se contenter de ne rien dire.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie ; **rougit** si une langue vide est proposée |
+| `valider-js.js` | 0 erreur |
+| Sélecteur, dans le navigateur | 2 entrées : 🇫🇷 Français, 🇬🇧 English |
+| Préférence mémorisée `ru`, `es` | repli sur le français, menu et sélecteur intacts |
+| Préférence mémorisée `en`, `fr` | inchangée |
+| `TEXTES` | toujours 37 textes × 7 langues |
+
 ## 2026-08-17 — Les pages hors cours traduites : **le site entier bascule en anglais**
 Huit pages sous `en/` — accueil, actualités, glossaire, boîte à idées, FAQ,
 à propos, mentions légales, mon espace — plus une page 404 qui traduit son

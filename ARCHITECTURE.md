@@ -190,12 +190,27 @@ retombe sur la mise en page large sans rien casser.
 
 ## 6. Les langues
 
-Sept langues : français, anglais, espagnol, allemand, italien, chinois, russe.
-`assets/js/langues.js` est la **source unique** — les libellés, les drapeaux, les
-bandeaux et la liste des sujets traduits vivent là, et nulle part ailleurs.
-`audit-coherence.mjs` bloque si un texte manque dans une langue.
+Sept langues déclarées : français, anglais, espagnol, allemand, italien,
+chinois, russe. `assets/js/langues.js` est la **source unique** — les libellés,
+les drapeaux, les bandeaux et les listes de ce qui est traduit vivent là, et
+nulle part ailleurs. `audit-coherence.mjs` bloque si un texte manque dans une
+langue.
+
+**Le sélecteur n'en propose que deux.** Une langue n'y figure que si elle a du
+contenu — un sujet dans `CONTENU_TRADUIT`, ou une page dans `PAGES_TRADUITES`.
+Les cinq autres ont leurs libellés prêts et attendent. La liste se **déduit**
+de ces deux-là plutôt que d'être écrite à la main : une troisième liste aurait
+fini par les contredire, et le jour où l'espagnol recevra son premier sujet,
+son drapeau apparaîtra sans qu'on y pense.
+
+Le repli d'un choix mémorisé se fait aussi sur les langues *disponibles*, pas
+sur les sept déclarées. Ce n'est pas théorique : un visiteur ayant choisi le
+russe avant la restriction faisait chercher un drapeau absent de la liste, et
+l'exception tombait **avant** l'écriture de la navigation — la page s'affichait
+sans barre de menu.
 
 **Ajouter une langue** : une entrée dans `LANGUES`, une colonne dans `TEXTES`.
+Elle restera invisible au sélecteur tant qu'elle n'aura pas de contenu.
 **Ajouter un texte** : une entrée dans `TEXTES`, avec les sept langues.
 
 ### Deux mécanismes, et pourquoi ils diffèrent
