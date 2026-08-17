@@ -1302,23 +1302,38 @@ header { position: relative; overflow: visible; }
        dépend de la police et du réglage de taille du système. */
     .mascotte-vol { width: min(84px, 17vw); right: 22px; bottom: -12px; }
     .mascotte-trainee { width: min(84px, 17vw); right: 22px; bottom: -12px; }
-    /* Seule la largeur change : le dégagement reste calculé sur les mêmes
-       jetons, le bouton gardant ses dimensions quelle que soit la fenêtre. */
-    /* SUR ÉCRAN ÉTROIT, ELLE RETOURNE DANS LE COIN.
-       À hauteur de titre, il n'y a aucune place libre : le titre tient la
-       gauche, la mascotte la droite, et une bulle posée là recouvre le
-       sous-titre — mesuré à 375 comme à 320 px. Aucune largeur de bulle ne
-       règle cela, c'est la place qui manque.
+    .mascotte-bulle {
+        max-width: min(11rem, 46vw);
+        padding: 10px 12px;
+        font-size: .82rem;
+    }
+}
 
-       Le coin bas-droit est sa place conventionnelle, déjà dégagée du bouton
-       de retour en haut par les jetons du coin. La bulle repasse au-dessus
-       d'elle, là où rien ne la gêne.
+/* ELLE RETOURNE DANS LE COIN DÈS QUE LA BANNIÈRE EST À L'ÉTROIT.
 
-       Une tentative précédente la laissait à hauteur de titre et n'affichait
-       la bulle qu'après défilement, via un observateur d'intersection. Elle a
-       été abandonnée : l'observateur est asynchrone, et la classe restait
-       posée au retour en haut de page — la bulle recouvrait alors la bannière
-       le temps de quelques images. */
+   Le seuil est calculé, pas choisi. Le sous-titre d'une bannière fait au plus
+   600 px et il est centré ; à droite de lui il reste donc (L − 600) / 2 − 24
+   pixels. Pour une bulle de 240 px, il faut L > 1128 :
+
+       800 px  →   76 px libres     1128 px →  240 px
+      1000 px  →  176 px libres     1280 px →  316 px
+
+   Sous ce seuil, une bulle posée à hauteur de titre recouvre le texte. Le
+   défaut a été trouvé par l'audit sur « Mon espace » à 1000 px — et seulement
+   en anglais, où « Pick up where you left off? » faisait 207 px contre 126 au
+   français. Un seuil à 700 px, choisi au jugé, laissait donc passer toute la
+   plage 700–1128.
+
+   Le coin bas-droit est sa place conventionnelle, déjà dégagée du bouton de
+   retour en haut par les jetons du coin. La bulle repasse au-dessus d'elle,
+   là où rien ne la gêne.
+
+   Une tentative précédente la laissait à hauteur de titre et n'affichait la
+   bulle qu'après défilement, via un observateur d'intersection. Abandonnée :
+   l'observateur est asynchrone, et la classe restait posée au retour en haut
+   de page — la bulle recouvrait alors la bannière le temps de quelques
+   images. */
+@media (max-width: 1128px) {
     .mascotte-surgit {
         position: fixed;
         top: auto !important;
@@ -1334,9 +1349,6 @@ header { position: relative; overflow: visible; }
     .mascotte-bulle {
         top: auto;
         bottom: calc(100% + 10px);
-        max-width: min(11rem, 46vw);
-        padding: 10px 12px;
-        font-size: .82rem;
     }
     /* La pointe repointe vers le bas, la bulle étant repassée au-dessus. */
     .mascotte-bulle::after {

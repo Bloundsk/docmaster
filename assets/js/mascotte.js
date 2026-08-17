@@ -97,10 +97,11 @@
         /* Ailleurs, elle surgit dans le coin avec une bulle. Le bouton de
            fermeture porte un vrai libelle : une croix seule ne dit rien a qui
            n a que le texte. */
+        const propos = proposDeLaPage();
         bloc.innerHTML = `
             <div class="mascotte-bulle" role="status">
-                <p>${t("mascotteBulle", "Besoin d'un coup de main ? Les 14 guides sont là.")}</p>
-                <a class="mascotte-lien" href="${racine()}index.html">${t("mascotteLien", "Voir les guides")}</a>
+                <p>${t(propos.texte, "Par où commencer ?")}</p>
+                <a class="mascotte-lien" href="${propos.cible}">${t(propos.lien, "Voir les guides")}</a>
             </div>
             <button type="button" class="mascotte-fermer" aria-label="${t("mascotteFermer", "Masquer la mascotte")}">✕</button>
             ${DESSIN}`;
@@ -447,6 +448,42 @@
         const f = span > 0 ? (t - instants[i]) / span : 0;
         const a = chemin[i], b = chemin[i + 1];
         return { x: a.x + (b.x - a.x) * f, y: a.y + (b.y - a.y) * f };
+    }
+
+    /* CE QUE LA MASCOTTE DIT, SELON LA PAGE.
+     *
+     * Elle parle de l endroit ou l on se trouve, pas du site en general :
+     * « Une suggestion ? » sur la boite a idees, « Une question ? » sur la FAQ,
+     * « Perdu ? » sur la page introuvable. Un message unique aurait ete du
+     * remplissage — la mascotte n aurait rien apporte que la page ne dise deja.
+     *
+     * Le lien suit : sur la boite a idees, il mene au formulaire de la page
+     * meme, et non a l accueil. Renvoyer ailleurs quelqu un qui est deja au bon
+     * endroit serait le seul conseil a ne pas donner.
+     *
+     * Les cles sont resolues par langues.js, et audit-coherence.mjs verifie
+     * qu elles y existent bien : une faute de frappe afficherait sinon une
+     * chaine vide, sans que rien ne le signale. */
+    const PROPOS = {
+        "actualites.html":      { texte: "mascotteBulleActualites" },
+        "glossaire.html":       { texte: "mascotteBulleGlossaire" },
+        "faq.html":             { texte: "mascotteBulleFaq" },
+        "a-propos.html":        { texte: "mascotteBulleAPropos" },
+        "mentions-legales.html":{ texte: "mascotteBulleMentions" },
+        "mon-espace.html":      { texte: "mascotteBulleEspace" },
+        "404.html":             { texte: "mascotteBulle404", lien: "retourAccueil" },
+        "idees.html":           { texte: "mascotteBulleIdees", lien: "mascotteLienIdees", ancre: "#form-idee" },
+    };
+
+    function proposDeLaPage() {
+        const fichier = location.pathname.split("/").pop() || "index.html";
+        const p = PROPOS[fichier] || {};
+        return {
+            texte: p.texte || "mascotteBulle",
+            lien: p.lien || "mascotteLien",
+            // Une ancre reste sur la page ; sinon on renvoie a l accueil.
+            cible: p.ancre || racine() + "index.html",
+        };
     }
 
     // La racine du site, deja calculee par les pages pour leurs scripts.

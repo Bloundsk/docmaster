@@ -205,6 +205,22 @@
            nombre de sujets. Une question ne vieillit pas. */
         mascotteBulle:  { fr: "Par où commencer ?", en: "Where to start?", es: "¿Por dónde empezar?", de: "Womit anfangen?", it: "Da dove iniziare?", zh: "从哪里开始？", ru: "С чего начать?" },
         mascotteLien:   { fr: "Voir les guides", en: "See the guides", es: "Ver las guías", de: "Zu den Leitfäden", it: "Vedi le guide", zh: "查看指南", ru: "К руководствам" },
+
+        /* Un message par page : la mascotte parle de l'endroit où l'on se
+           trouve, pas du site en general. « Une suggestion ? » sur la boite a
+           idees, « Une question ? » sur la FAQ. Le repli sur « mascotteBulle »
+           reste en place pour toute page qui n aurait pas le sien. */
+        mascotteBulleActualites: { fr: "Une lecture ?", en: "Something to read?", es: "¿Una lectura?", de: "Etwas zu lesen?", it: "Una lettura?", zh: "想读点什么？", ru: "Что почитать?" },
+        mascotteBulleGlossaire:  { fr: "Un mot à éclaircir ?", en: "A word to clear up?", es: "¿Una palabra que aclarar?", de: "Ein Wort klären?", it: "Una parola da chiarire?", zh: "有词不懂？", ru: "Непонятное слово?" },
+        mascotteBulleIdees:      { fr: "Une suggestion ?", en: "A suggestion?", es: "¿Una sugerencia?", de: "Ein Vorschlag?", it: "Un suggerimento?", zh: "有建议吗？", ru: "Есть предложение?" },
+        mascotteBulleFaq:        { fr: "Une question ?", en: "A question?", es: "¿Una pregunta?", de: "Eine Frage?", it: "Una domanda?", zh: "有问题吗？", ru: "Есть вопрос?" },
+        mascotteBulleAPropos:    { fr: "Envie d'en savoir plus ?", en: "Want to know more?", es: "¿Quiere saber más?", de: "Mehr erfahren?", it: "Vuoi saperne di più?", zh: "想了解更多？", ru: "Хотите узнать больше?" },
+        mascotteBulleMentions:   { fr: "Tout y est écrit.", en: "It's all written here.", es: "Todo está escrito aquí.", de: "Hier steht alles.", it: "Qui è scritto tutto.", zh: "全都写在这里。", ru: "Здесь всё написано." },
+        mascotteBulleEspace:     { fr: "On reprend ?", en: "Carry on?", es: "¿Retomamos?", de: "Weitermachen?", it: "Riprendiamo?", zh: "继续吗？", ru: "Продолжим?" },
+        mascotteBulle404:        { fr: "Perdu ?", en: "Lost?", es: "¿Perdido?", de: "Verirrt?", it: "Perso?", zh: "迷路了？", ru: "Заблудились?" },
+
+        // Le lien change lui aussi quand la page appelle une autre action.
+        mascotteLienIdees:       { fr: "Proposer un sujet", en: "Propose a subject", es: "Proponer un tema", de: "Thema vorschlagen", it: "Proponi un argomento", zh: "提出主题", ru: "Предложить тему" },
         mascotteFermer: { fr: "Masquer la mascotte", en: "Hide the mascot", es: "Ocultar la mascota", de: "Maskottchen ausblenden", it: "Nascondi la mascotte", zh: "隐藏吉祥物", ru: "Скрыть талисман" },
 
         // --- Page introuvable ------------------------------------------------

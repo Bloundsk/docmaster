@@ -634,6 +634,29 @@ if (!fs.existsSync(fichierMascotte)) {
     }
 }
 
+/* Les libelles que mascotte.js reclame doivent exister dans langues.js.
+   Une clef mal orthographiee y renverrait une chaine vide : la bulle
+   s afficherait sans texte, et rien ne le dirait. Le controle 9 verifie que
+   chaque clef existe dans les sept langues ; celui-ci verifie qu on ne demande
+   pas une clef inexistante. */
+if (fs.existsSync(fichierMascotte)) {
+    const src = fs.readFileSync(fichierMascotte, "utf8");
+    const reclamees = new Set([...src.matchAll(/"(mascotte[A-Za-z0-9]+|retourAccueil)"/g)].map((m) => m[1]));
+    for (const clef of reclamees) {
+        if (!LG || !LG.TEXTES[clef]) signaler("MASCOTTE", `mascotte.js demande « ${clef} », absent de langues.js`);
+    }
+
+    /* Et chaque page hors cours merite son propre message : « Une suggestion ? »
+       sur la boite a idees, « Une question ? » sur la FAQ. Le repli existe,
+       mais une page qui s en contente n a rien de particulier a dire — ce qui
+       se decide, et ne s oublie pas. */
+    for (const page of toutes) {
+        const nom = page.nom.replace(/^en\//, "");
+        if (/guides\//.test(page.nom) || nom === "index.html") continue;
+        if (!src.includes(`"${nom}"`)) signaler("MASCOTTE", `${nom} : aucun message de mascotte déclaré`);
+    }
+}
+
 // Elle doit se figer pour qui a demande moins d animations, comme le reste.
 const feuille = lire(path.join(RACINE, "assets/css/style.css"));
 const bloc = feuille.slice(feuille.indexOf("LA MASCOTTE"));
