@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------------------
+# Les controles du projet, a chaque poussee et a chaque pull request.
+#
+# Ils existaient deja, mais ne tournaient que sur la machine de l auteur, dans
+# le hook pre-commit. Une modification faite depuis l interface web de GitHub,
+# depuis un autre poste, ou par un workflow n etait verifiee par personne.
+#
+# Tout tient en moins de deux secondes et ne demande aucune dependance : le
+# site n en a aucune, ce workflow non plus.
+# ---------------------------------------------------------------------------
+name: Contrôles DocMaster
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Une poussee qui en suit une autre de pres annule la precedente : verifier un
+# etat deja remplace ne sert a rien et occupe un runner.
+concurrency:
+  group: controles-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  controles:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Une virgule oubliee dans search-data.js rend le fichier invalide : le
+      # navigateur abandonne le script entier et la recherche disparait de
+      # TOUTES les pages, sans que rien ne le signale.
+      - name: Fichiers de données chargeables
+        run: node scripts/valider-js.js
+
+      # Les onze controles : simulateurs, parcours, anneau, recherche,
+      # glossaire, chiffres annonces, dates, accessibilite, couleurs,
+      # traductions, liens et ancres, parite FR/EN.
+      - name: Cohérence d'ensemble
+        run: node scripts/audit-coherence.mjs
+
+      # Les textes des simulateurs, sujet par sujet. Separe de l audit parce
+      # qu il EXECUTE les 169 simulateurs pour voir ce qui s affichera.
+      - name: Traduction des simulateurs
+        run: |
+          echec=0
+          for sujet in apprendre cybersecurite data design dev-web droit ecologie \
+                       entrepreneuriat finance ia marketing negociation productivite sante; do
+            if ! node scripts/verifier-traduction.mjs "$sujet" en; then echec=1; fi
+          done
+          exit $echec
+
+      # Le seul controle qui MESURE des pages affichees : une largeur, un
+      # nombre de colonnes, un debordement ne se deduisent pas du CSS. Il
+      # tournait donc uniquement a la main.
+      #
+      # Chrome est preinstalle sur les runners ubuntu ; « --virtual-time-budget »
+      # suffit a executer la page jusqu au bout, sans Playwright ni npm.
+      - name: Géométrie des pages
+        run: node scripts/lancer-audit-geometrie.mjs

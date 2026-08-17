@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------------
+# Ouvre une Issue quand la publication du site echoue.
+#
+# Le 17 aout 2026, quatre deploiements ont echoue d affilee sur une erreur 503
+# de GitHub. Rien ne l a signale : le site a continue de servir l ancienne
+# version, et le defaut corrige le matin meme n etait pas en ligne. On ne l a
+# su qu en allant regarder.
+#
+# Un echec de publication est silencieux par nature - l ancienne version reste
+# affichee, et elle a l air parfaitement normale. C est ce qui le rend
+# dangereux : rien ne ressemble plus a un site qui marche qu un site fige.
+# ---------------------------------------------------------------------------
+name: Alerte de déploiement
+
+on:
+  workflow_run:
+    # Le workflow de GitHub Pages, declenche automatiquement a chaque poussee.
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+
+jobs:
+  signaler:
+    # On ne fait rien quand tout va bien.
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Ouvrir une Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URL: ${{ github.event.workflow_run.html_url }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+          DEPOT: ${{ github.repository }}
+        run: |
+          # Une Issue par echec serait vite illisible si la panne dure : on
+          # complete celle qui est ouverte plutot que d en empiler.
+          existante=$(gh issue list --repo "$DEPOT" --label deploiement --state open \
+                      --limit 1 --json number -q '.[0].number')
+
+          corps=$(printf '%s\n' \
+            "La publication du site a échoué." \
+            "" \
+            "- **Commit** : \`$SHA\`" \
+            "- **Journal** : $URL" \
+            "" \
+            "Le site sert donc encore la version précédente, sans que rien ne l'indique aux visiteurs." \
+            "" \
+            "**Si la cause est une panne GitHub** (erreur 503), il suffit de relancer :" \
+            "" \
+            '```bash' \
+            "gh run rerun \$(gh run list --workflow=pages-build-deployment --limit 1 --json databaseId -q '.[0].databaseId') --failed" \
+            '```' \
+            "" \
+            "Sinon, le journal indique l'étape fautive." \
+            "" \
+            "_Issue ouverte automatiquement. À refermer une fois la publication réussie._")
+
+          if [ -n "$existante" ]; then
+            gh issue comment "$existante" --repo "$DEPOT" --body "$corps"
+            echo "Commentaire ajouté à l'Issue #$existante."
+          else
+            gh issue create --repo "$DEPOT" \
+              --title "🚨 Échec de publication du site" \
+              --label deploiement \
+              --body "$corps"
+          fi
