@@ -1292,9 +1292,16 @@ header { position: relative; overflow: visible; }
     /* Marge droite de 22 px et non 12 : pendant le vol, la mascotte tourne, et
        une boîte englobante tournée est plus large que le dessin. Sur 84 px à
        24 degrés, cela fait 13 px de plus de chaque côté — de quoi déborder
-       d'une marge de 12. */
-    .mascotte-vol { width: 84px; right: 22px; bottom: -12px; }
-    .mascotte-trainee { width: 84px; right: 22px; bottom: -12px; }
+       d'une marge de 12.
+
+       La largeur suit l'écran, car elle se pose désormais À CÔTÉ DU TITRE :
+       la place à droite de « DocMaster » vaut 149 px à 430, 121 à 375 et
+       seulement 94 à 320. À 84 px fixes, elle mordait sur le texte ; « 17vw »
+       la ramène à 64 px sur un téléphone courant et lui laisse de la marge.
+       Le « top » exact est mesuré par mascotte.js — la hauteur d'un titre
+       dépend de la police et du réglage de taille du système. */
+    .mascotte-vol { width: min(84px, 17vw); right: 22px; bottom: -12px; }
+    .mascotte-trainee { width: min(84px, 17vw); right: 22px; bottom: -12px; }
     /* Seule la largeur change : le dégagement reste calculé sur les mêmes
        jetons, le bouton gardant ses dimensions quelle que soit la fenêtre. */
     /* SUR ÉCRAN ÉTROIT, ELLE RETOURNE DANS LE COIN.

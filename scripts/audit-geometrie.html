@@ -88,7 +88,12 @@ const PAGES = [
     { url: "../en/actualites.html",       nom: "actualités (en)" },
 ];
 
-const LARGEURS = [1400, 1000, 700, 375];
+/* 320 px est le plus petit écran encore répandu. Il a été ajouté après coup :
+   un défaut de placement n'apparaissait qu'à cette largeur — la mascotte mordait
+   sur le titre de l'accueil — et le contrôle écrit pour l'attraper restait muet,
+   faute d'être exercé là où le problème existe. Un contrôle qu'on ne met jamais
+   dans l'état à risque ne contrôle rien. */
+const LARGEURS = [1400, 1000, 700, 375, 320];
 
 /* Les grilles de cartes du site. « colonnes » dit ce qu'on attend à chaque
    largeur — c'est la promesse qu'on veut voir tenue. */
@@ -107,6 +112,21 @@ const colonnesDe = (el) =>
     new Set([...el.children]
         .filter((e) => getComputedStyle(e).gridColumn !== "1 / -1" && largeurDe(e) > 0)
         .map((e) => Math.round(e.getBoundingClientRect().left))).size;
+
+/* Fige toutes les animations sur leur etat final, pour mesurer une page au
+   repos et non en plein mouvement.
+
+   Chaque appel est protege SEPAREMENT. « finish() » leve une exception sur une
+   animation infinie — la levitation de la mascotte, son antenne, sa LED, son
+   clignement — et un seul try autour de la boucle laissait la premiere
+   exception interrompre tout le reste. Le vol d arrivee n etait alors jamais
+   fige, et le controle mesurait une position de passage : il annoncait
+   « au pied de la banniere » pour une mascotte posee a cote du titre. */
+function figerLesAnimations(d) {
+    for (const a of d.getAnimations()) {
+        try { a.finish(); } catch (e) { /* animation infinie : sans etat final */ }
+    }
+}
 
 async function controler(d, w, largeur, nomPage) {
     const ok = (c, m) => noter("ok", nomPage, largeur, c, m);
@@ -251,7 +271,7 @@ async function controler(d, w, largeur, nomPage) {
            et deux éléments qui se chevauchent au repos paraissent séparés.
            C'est exactement l'erreur qui a fait conclure « pas de collision »
            sur une page qui en avait une. */
-        try { d.getAnimations().forEach((a) => a.finish()); } catch (e) {}
+        figerLesAnimations(d);
         let collision = null;
         for (let i = 0; i < flottants.length; i++) {
             for (let j = i + 1; j < flottants.length; j++) {
@@ -351,6 +371,46 @@ async function controler(d, w, largeur, nomPage) {
        On parcourt donc le vol en posant le temps de chaque animation, et on
        retient le PIRE instant. Une page ne grandit que vers le bas et vers la
        droite : c'est la largeur qu'on surveille. */
+    /* 13. Sur l'accueil, la mascotte ne mord jamais sur le titre.
+       Elle se pose à côté de « DocMaster » quand la place le permet, au pied de
+       la bannière sinon — le choix se fait à la mesure, pas à un point de
+       rupture. Ce contrôle ne juge pas lequel des deux : il vérifie la seule
+       chose qui compte, qu'elle ne recouvre pas le texte.
+
+       La largeur du TEXTE, et non celle du <h1> : le titre est centré dans
+       toute la largeur, sa boîte touche les deux bords et ne dit rien de la
+       place restante. */
+    const volTitre = d.querySelector("header h1");
+    const enVolMasc = d.querySelector(".mascotte-vol");
+    if (enVolMasc && volTitre) {
+        /* On fige d'abord le vol : sans cela on mesure une position de passage,
+           pas celle où elle se pose. Une première version l'a fait, et
+           annonçait « au pied de la bannière » à 375 px pour une mascotte qui
+           s'arrête bel et bien à côté du titre — elle était simplement encore
+           en route au moment de la mesure. */
+        figerLesAnimations(d);
+
+        const plage = d.createRange();
+        plage.selectNodeContents(volTitre);
+        const texte = plage.getBoundingClientRect();
+        const r = enVolMasc.getBoundingClientRect();
+        const memeHauteur = !(r.bottom < texte.top || r.top > texte.bottom);
+        const memeColonne = !(r.right < texte.left || r.left > texte.right);
+
+        if (memeHauteur && memeColonne) {
+            ko("la mascotte ne mord pas sur le titre", `${Math.round(texte.right - r.left)} px de recouvrement`);
+        } else if (memeHauteur) {
+            // Cote a cote : l ecart horizontal a un sens, on le donne.
+            ok("la mascotte ne mord pas sur le titre", `à côté, ${Math.round(r.left - texte.right)} px d'écart`);
+        } else {
+            /* Separees verticalement : annoncer un ecart horizontal n aurait
+               aucun sens. Une premiere version le faisait, et affichait
+               « -1019 px d'écart » pour une mise en page parfaitement saine —
+               un chiffre juste, mais qui ne mesurait pas ce qu il pretendait. */
+            ok("la mascotte ne mord pas sur le titre", "au pied de la bannière");
+        }
+    }
+
     const enVol = d.querySelector(".mascotte-vol");
     if (enVol) {
         /* On balaie plus longtemps que le vol ne dure. Un balayage cale sur sa

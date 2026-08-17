@@ -85,7 +85,12 @@
             bloc.innerHTML = DESSIN;
             const entete = document.querySelector("header");
             (entete || document.body).appendChild(bloc);
-            if (entete) volInaugural(bloc, entete);
+            if (entete) {
+                // AVANT le vol : la trajectoire se calcule en decalages par
+                // rapport a la position de repos, il faut donc l arreter d abord.
+                caler(bloc, entete);
+                volInaugural(bloc, entete);
+            }
             return;
         }
 
@@ -157,6 +162,55 @@
         // lui, n a plus besoin de nous.
         window.addEventListener("resize", mesurer);
 
+    }
+
+    /* OU ELLE SE POSE, SUR L ACCUEIL.
+     *
+     * Sur un ecran large, au pied de la banniere : il y a la place, et le
+     * titre garde tout son espace.
+     *
+     * Sur un ecran etroit, A COTE DU TITRE. Mesure de la place disponible a
+     * droite de « DocMaster » : 149 px a 430, 121 px a 375, 94 px a 320 — de
+     * quoi loger la mascotte sans toucher au texte, a condition qu elle
+     * retrecisse un peu. C est ce que fait le « min(84px, 20vw) » du CSS.
+     *
+     * Le calage vertical est MESURE et non ecrit en dur : la hauteur du titre
+     * depend de la police, de la taille de texte du systeme et de la largeur —
+     * un « top: 40px » n aurait ete juste que sur un seul appareil. */
+    const ETROIT = "(max-width: 700px)";
+
+    function caler(bloc, entete) {
+        const titre = entete.querySelector("h1");
+        if (!titre) return;
+
+        // Le pied de la banniere : on y revient des que le titre est a l etroit.
+        const auPied = () => { bloc.style.top = ""; bloc.style.bottom = ""; };
+
+        function placer() {
+            if (!window.matchMedia || !window.matchMedia(ETROIT).matches) return auPied();
+
+            /* La largeur du TEXTE, et non celle de la boite : le titre est
+               centre dans toute la largeur de la banniere, si bien que sa boite
+               touche les deux bords et ne dit rien de la place restante. */
+            const plage = document.createRange();
+            plage.selectNodeContents(titre);
+            const texte = plage.getBoundingClientRect();
+            const moi = bloc.getBoundingClientRect();
+
+            /* S il n y a pas la place, elle redescend au pied plutot que de
+               mordre sur le titre. Mesure a 320 px : 10 px de recouvrement,
+               la ou 375 en laissait 6 de libre. Un point de rupture ecrit en
+               dur aurait tranche au mauvais endroit des que la police ou le
+               reglage de taille du systeme change. */
+            if (moi.left < texte.right + 6) return auPied();
+
+            const y = titre.offsetTop + titre.offsetHeight / 2 - bloc.offsetHeight / 2;
+            bloc.style.top = y + "px";
+            bloc.style.bottom = "auto";
+        }
+
+        placer();
+        window.addEventListener("resize", placer);
     }
 
     /* ---------------------------------------------------------------------
