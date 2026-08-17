@@ -1123,7 +1123,15 @@ html { background: var(--background); }
     bottom: -18px;
     width: 128px;
     z-index: 3;
+    /* Elle porte une bulle avec un lien et un bouton : sans cela, le
+       « pointer-events: none » de « .mascotte » les rendrait inertes. */
+    pointer-events: auto;
 }
+
+/* La bulle de l'accueil attend la fin du vol. Elle voyagerait sinon avec la
+   mascotte le long de son huit : illisible, et hors de l'écran à chaque
+   boucle. C'est mascotte.js qui retire cette classe. */
+.mascotte-bulle-attend { display: none !important; }
 /* La banniere doit devenir le repere de ce positionnement absolu. */
 header { position: relative; overflow: visible; }
 
@@ -1346,12 +1354,19 @@ header { position: relative; overflow: visible; }
     }
     .mascotte-rail { position: static; }
 
-    .mascotte-bulle {
+    /* Sur l'accueil, la mascotte reste dans sa bannière — elle s'arrête à
+       côté du titre — mais sa bulle n'y tient plus : mesurée à 375 px, elle
+       masque 160×59 px du sous-titre ET 160×26 px du champ de recherche.
+       Elle attend donc un écran assez large. Voir la note du seuil ci-dessus. */
+    .mascotte-vol .mascotte-bulle { display: none; }
+
+    /* Uniquement en mode coin : sur l'accueil, la mascotte reste dans sa
+       bannière et sa bulle doit rester SOUS elle, comme demandé. */
+    .mascotte-surgit .mascotte-bulle {
         top: auto;
         bottom: calc(100% + 10px);
     }
-    /* La pointe repointe vers le bas, la bulle étant repassée au-dessus. */
-    .mascotte-bulle::after {
+    .mascotte-surgit .mascotte-bulle::after {
         bottom: auto;
         top: 100%;
         border-bottom-color: transparent;

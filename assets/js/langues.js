@@ -210,6 +210,7 @@
            trouve, pas du site en general. « Une suggestion ? » sur la boite a
            idees, « Une question ? » sur la FAQ. Le repli sur « mascotteBulle »
            reste en place pour toute page qui n aurait pas le sien. */
+        mascotteBulleAccueil:    { fr: "Satisferez-vous votre curiosité ?", en: "Will you satisfy your curiosity?", es: "¿Satisfará su curiosidad?", de: "Stillen Sie Ihre Neugier?", it: "Soddisferai la tua curiosità?", zh: "要满足你的好奇心吗？", ru: "Утолите своё любопытство?" },
         mascotteBulleActualites: { fr: "Une lecture ?", en: "Something to read?", es: "¿Una lectura?", de: "Etwas zu lesen?", it: "Una lettura?", zh: "想读点什么？", ru: "Что почитать?" },
         mascotteBulleGlossaire:  { fr: "Un mot à éclaircir ?", en: "A word to clear up?", es: "¿Una palabra que aclarar?", de: "Ein Wort klären?", it: "Una parola da chiarire?", zh: "有词不懂？", ru: "Непонятное слово?" },
         mascotteBulleIdees:      { fr: "Une suggestion ?", en: "A suggestion?", es: "¿Una sugerencia?", de: "Ein Vorschlag?", it: "Un suggerimento?", zh: "有建议吗？", ru: "Есть предложение?" },

@@ -79,10 +79,20 @@
         const bloc = document.createElement("div");
         bloc.className = "mascotte " + (estAccueil ? "mascotte-vol" : "mascotte-surgit");
 
+        /* La bulle, identique partout : meme dessin, meme bouton de fermeture,
+           meme refus memorise. Seul le message change avec la page.
+           Le bouton porte un vrai libelle : une croix seule ne dit rien a qui
+           n a que le texte. */
+        const propos = proposDeLaPage();
+        bloc.innerHTML = `
+            <div class="mascotte-bulle${estAccueil ? " mascotte-bulle-attend" : ""}" role="status">
+                <p>${t(propos.texte, "Par où commencer ?")}</p>
+                <a class="mascotte-lien" href="${propos.cible}">${t(propos.lien, "Voir les guides")}</a>
+            </div>
+            <button type="button" class="mascotte-fermer" aria-label="${t("mascotteFermer", "Masquer la mascotte")}">✕</button>
+            ${DESSIN}`;
+
         if (estAccueil) {
-            // Sur l accueil, le vol suffit : la bulle repeterait ce que la page
-            // dit deja en grand juste a cote.
-            bloc.innerHTML = DESSIN;
             const entete = document.querySelector("header");
             (entete || document.body).appendChild(bloc);
             if (entete) {
@@ -90,22 +100,13 @@
                 // rapport a la position de repos, il faut donc l arreter d abord.
                 caler(bloc, entete);
                 volInaugural(bloc, entete);
+                // La bulle attend que le vol soit fini : elle suivrait sinon la
+                // mascotte dans son huit, illisible et hors de l ecran.
+                devoilerLaBulle(bloc);
             }
-            return;
+        } else {
+            document.body.appendChild(bloc);
         }
-
-        /* Ailleurs, elle surgit dans le coin avec une bulle. Le bouton de
-           fermeture porte un vrai libelle : une croix seule ne dit rien a qui
-           n a que le texte. */
-        const propos = proposDeLaPage();
-        bloc.innerHTML = `
-            <div class="mascotte-bulle" role="status">
-                <p>${t(propos.texte, "Par où commencer ?")}</p>
-                <a class="mascotte-lien" href="${propos.cible}">${t(propos.lien, "Voir les guides")}</a>
-            </div>
-            <button type="button" class="mascotte-fermer" aria-label="${t("mascotteFermer", "Masquer la mascotte")}">✕</button>
-            ${DESSIN}`;
-        document.body.appendChild(bloc);
 
         bloc.querySelector(".mascotte-fermer").addEventListener("click", () => {
             bloc.classList.add("mascotte-part");
@@ -115,7 +116,23 @@
             setTimeout(() => bloc.remove(), 400);
         });
 
-        suivreLaPage(bloc);
+        if (!estAccueil) suivreLaPage(bloc);
+    }
+
+    /* Sur l accueil, la bulle n apparait qu une fois la mascotte posee.
+       Sans cette attente elle voyagerait avec elle le long du huit : illisible,
+       et sortant de l ecran a chaque boucle.
+
+       Si le vol n a pas lieu — pas de JavaScript d animation, ou moins de
+       mouvement demande au systeme — elle s affiche tout de suite : il n y a
+       rien a attendre. */
+    function devoilerLaBulle(bloc) {
+        const bulle = bloc.querySelector(".mascotte-bulle");
+        if (!bulle) return;
+        const sansVol = !bloc.animate ||
+            (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+        const attente = sansVol ? 0 : DUREE_VOL + 150;
+        setTimeout(() => bulle.classList.remove("mascotte-bulle-attend"), attente);
     }
 
     /* Elle part a la HAUTEUR DU TITRE, puis suit le defilement.
@@ -465,6 +482,9 @@
      * qu elles y existent bien : une faute de frappe afficherait sinon une
      * chaine vide, sans que rien ne le signale. */
     const PROPOS = {
+        // Sur l accueil, le lien descend aux categories : renvoyer a l accueil
+        // depuis l accueil ne menerait nulle part.
+        "index.html":           { texte: "mascotteBulleAccueil", ancre: "#categories" },
         "actualites.html":      { texte: "mascotteBulleActualites" },
         "glossaire.html":       { texte: "mascotteBulleGlossaire" },
         "faq.html":             { texte: "mascotteBulleFaq" },
