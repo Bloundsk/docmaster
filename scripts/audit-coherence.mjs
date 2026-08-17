@@ -144,6 +144,53 @@ for (const t of new Set(titres.filter((t, i) => titres.indexOf(t) !== i))) {
 }
 console.log(`  ${index.length} entrées, ${new Set(index.map((e) => e.url)).size} pages distinctes`);
 
+/* --- 4 bis. Couverture du glossaire ---------------------------------------
+
+   Un sujet ajoute au site doit apporter ses termes au glossaire. Rien ne le
+   verifiait, et le trou a grandi cinq sujets durant : droit, sante, ecologie,
+   negociation et apprendre n'avaient AUCUNE entree, le glossaire etant reste
+   aux neuf sujets d'origine. Personne ne pouvait s'en rendre compte depuis les
+   pages ajoutees - le manque est ailleurs, et c'est ce qui l'a fait durer.
+
+   Le controle porte sur la CATEGORIE affichee et non sur le dossier : c'est ce
+   que le visiteur lit, et c'est ce qui manquait. Deux glossaires a couvrir,
+   le francais et l'anglais. */
+console.log("\n=== 4 bis. GLOSSAIRE ===");
+
+// Le libelle attendu par sujet, dans chaque langue. Ecrit ici plutot que
+// devine : « ecologie » s'affiche « Sobriete numerique », rien ne le deduit.
+const CATEGORIES = {
+    finance: ["Finance", "Finance"],
+    ia: ["IA", "IA"],
+    "dev-web": ["Développement Web", "Web Development"],
+    marketing: ["Marketing", "Marketing"],
+    cybersecurite: ["Cybersécurité", "Cybersecurity"],
+    entrepreneuriat: ["Entrepreneuriat", "Entrepreneurship"],
+    productivite: ["Productivité", "Productivity"],
+    data: ["Data", "Data"],
+    design: ["Design", "Design"],
+    droit: ["Droit", "Law"],
+    sante: ["Santé au travail", "Health at Work"],
+    ecologie: ["Sobriété numérique", "Digital Sustainability"],
+    negociation: ["Négociation", "Negotiation"],
+    apprendre: ["Apprendre", "Learning"],
+};
+
+for (const [fichier, rang] of [["glossaire.html", 0], ["en/glossaire.html", 1]]) {
+    const chemin = path.join(RACINE, fichier);
+    if (!fs.existsSync(chemin)) { signaler("GLOSSAIRE", `${fichier} est absent`); continue; }
+    const html = fs.readFileSync(chemin, "utf8");
+    const vues = [...html.matchAll(/<span class="cat">([^<]+)<\/span>/g)].map((m) => m[1]);
+
+    for (const sujet of sujets) {
+        const attendu = (CATEGORIES[sujet] || [])[rang];
+        if (!attendu) { signaler("GLOSSAIRE", `sujet « ${sujet} » sans libellé déclaré dans l'audit`); continue; }
+        const combien = vues.filter((v) => v.includes(attendu)).length;
+        if (!combien) signaler("GLOSSAIRE", `${fichier} : aucun terme pour « ${sujet} » (${attendu})`);
+    }
+    console.log(`  ${fichier} : ${[...html.matchAll(/<dt>/g)].length} termes, ${new Set(vues).size} catégories`);
+}
+
 // --- 5. Affirmations chiffrees dans les pages du site ----------------------
 console.log("\n=== 5. CHIFFRES ANNONCES ===");
 

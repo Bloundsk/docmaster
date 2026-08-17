@@ -1,5 +1,65 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — Cinq sujets n'avaient jamais rejoint le glossaire
+Signalé par Ludo. Le glossaire en était resté aux **neuf sujets d'origine** :
+droit, santé au travail, sobriété numérique, négociation et apprendre n'avaient
+**aucune entrée**, alors que chacun apporte son vocabulaire — prescription,
+charge mentale, effet rebond, BATNA, répétition espacée.
+
+Le reproche est juste, et porte plus loin que ce cas : **un ajout de contenu
+n'est pas fini quand la page est écrite.** Le site est un maillage. Une notion
+expliquée dans un guide est cherchée depuis le glossaire, la recherche, les
+renvois entre guides. Une page livrée sans ses rattachements est à moitié
+livrée — et le manque est invisible depuis la page elle-même, ce qui le fait
+durer.
+
+### Pourquoi ça a duré cinq sujets
+
+`audit-coherence.mjs` vérifie l'index de recherche, les cartes de l'accueil,
+l'anneau de navigation, les chiffres annoncés en prose. **Rien ne regardait le
+glossaire.** Les surfaces contrôlées sont restées justes tout du long ; la
+seule qui ne l'était pas a dérivé, sujet après sujet, sans qu'aucun passage ne
+le signale.
+
+Vérification faite, le trou était unique — index de recherche, cartes des deux
+accueils et « déjà couvert » de la boîte à idées couvraient bien les quatorze.
+
+### 15 termes ajoutés, dans les deux langues
+
+Trois par sujet, tirés des sections réellement écrites :
+
+| Sujet | Termes |
+|---|---|
+| ⚖️ Droit | Prescription, Mise en demeure, RGPD |
+| 🩺 Santé au travail | Document unique, Charge mentale, Droit de retrait |
+| 🌱 Sobriété numérique | Effet rebond, Écoconception, Empreinte de fabrication |
+| 🤝 Négociation | BATNA, Ancrage, Écoute active |
+| 🎓 Apprendre | Répétition espacée, Courbe de l'oubli, Rappel actif |
+
+Le glossaire passe de **20 à 35 termes** et de 9 à **14 catégories**, en
+français comme en anglais. Les définitions qui décrivent une règle française —
+prescription, document unique, droit de retrait — le disent dans la version
+anglaise, comme partout ailleurs.
+
+### Le contrôle qui manquait
+
+Un contrôle `GLOSSAIRE` vérifie que **chaque sujet déclaré a au moins un terme**,
+dans les deux glossaires. Il porte sur la catégorie affichée et non sur le nom
+de dossier : c'est ce que le visiteur lit, et c'est ce qui manquait.
+
+Vérifié en le provoquant : les trois termes de Négociation retirés du glossaire
+français, le contrôle signale `aucun terme pour « negociation »`.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie ; **rougit** si un sujet n'a aucun terme |
+| Glossaire fr / en | 35 termes, 14 catégories chacun |
+| Filtre du glossaire, au navigateur | « batna », « prescription », « rebond », « recall » trouvent bien |
+| Index de recherche, cartes, boîte à idées | les 14 sujets, déjà à jour |
+| `valider-js.js` | 0 erreur |
+
 ## 2026-08-17 — Le workflow des actualités ne publiait pas les pages anglaises
 Trouvé en vérifiant que la veille tournait bien. Elle tourne — deux passages
 par jour, sans échec depuis le 14 août. Mais le workflow qui publie ce qu'elle

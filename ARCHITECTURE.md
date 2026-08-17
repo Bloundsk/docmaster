@@ -188,6 +188,33 @@ Tableaux et simulateurs sont exclus du plafond : ils se lisent en colonnes, pas
 en lignes de texte. `:has()` est sans danger ici, un navigateur qui l'ignore
 retombe sur la mise en page large sans rien casser.
 
+### Ajouter un sujet ne s'arrête pas au dossier `guides/`
+
+Le site est un maillage. Une notion expliquée dans un guide est cherchée depuis
+le glossaire, depuis la recherche, depuis les renvois entre guides. **Une page
+livrée sans ses rattachements est à moitié livrée**, et le manque est invisible
+depuis la page elle-même — ce qui le fait durer.
+
+Les surfaces à mettre à jour, à chaque sujet ajouté :
+
+| Surface | Contrôlée par |
+|---|---|
+| `parcours.js` | contrôle 2 |
+| Anneau de navigation | contrôle 3 |
+| `search-data.js` | contrôle 4 |
+| **Glossaire, français et anglais** | **contrôle 4 bis** |
+| Chiffres annoncés en prose | contrôle 5 |
+| Cartes de l'accueil, « déjà couvert » | contrôle 5 |
+| `CONTENU_TRADUIT`, `PAGES_TRADUITES` | contrôle 9 |
+
+Le contrôle 4 bis a été ajouté après coup, et pour cause : c'était la seule
+surface sans contrôle, et **elle a dérivé cinq sujets durant**. Droit, santé,
+écologie, négociation et apprendre n'avaient aucune entrée au glossaire, resté
+aux neuf sujets d'origine. Toutes les autres étaient restées justes.
+
+La leçon est celle du reste du document : *ce qui n'est pas contrôlé dérive, et
+la dérive ne se voit pas depuis l'endroit où elle se produit.*
+
 ## 6. Les langues
 
 Sept langues déclarées : français, anglais, espagnol, allemand, italien,
