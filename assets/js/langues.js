@@ -194,6 +194,12 @@
         lienCopieCourt:{ fr: "✅ Lien copié !", en: "✅ Link copied!", es: "✅ ¡Enlace copiado!", de: "✅ Link kopiert!", it: "✅ Link copiato!", zh: "✅ 链接已复制！", ru: "✅ Ссылка скопирована!" },
         copieImpossible:{ fr: "Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse.", en: "The link could not be copied automatically. Please copy it from the address bar.", es: "No se ha podido copiar el enlace automáticamente. Cópielo desde la barra de direcciones.", de: "Der Link konnte nicht automatisch kopiert werden. Bitte kopieren Sie ihn aus der Adressleiste.", it: "Impossibile copiare il link automaticamente. Copialo dalla barra degli indirizzi.", zh: "无法自动复制链接，请从地址栏手动复制。", ru: "Не удалось скопировать ссылку автоматически. Скопируйте её из адресной строки." },
 
+        // --- La mascotte -----------------------------------------------------
+        mascotteAlt:    { fr: "La mascotte de DocMaster : un robot dont le corps est un livre ouvert", en: "The DocMaster mascot: a robot whose body is an open book", es: "La mascota de DocMaster: un robot cuyo cuerpo es un libro abierto", de: "Das Maskottchen von DocMaster: ein Roboter, dessen Körper ein aufgeschlagenes Buch ist", it: "La mascotte di DocMaster: un robot il cui corpo è un libro aperto", zh: "DocMaster 的吉祥物：身体是一本翻开的书的机器人", ru: "Талисман DocMaster: робот, чьё тело — раскрытая книга" },
+        mascotteBulle:  { fr: "Besoin d'un coup de main ? Les 14 guides sont là.", en: "Need a hand? All 14 guides are here.", es: "¿Necesita ayuda? Las 14 guías están aquí.", de: "Brauchen Sie Hilfe? Alle 14 Leitfäden sind hier.", it: "Ti serve una mano? Le 14 guide sono qui.", zh: "需要帮忙吗？14 份指南都在这里。", ru: "Нужна помощь? Все 14 руководств здесь." },
+        mascotteLien:   { fr: "Voir les guides", en: "See the guides", es: "Ver las guías", de: "Zu den Leitfäden", it: "Vedi le guide", zh: "查看指南", ru: "К руководствам" },
+        mascotteFermer: { fr: "Masquer la mascotte", en: "Hide the mascot", es: "Ocultar la mascota", de: "Maskottchen ausblenden", it: "Nascondi la mascotte", zh: "隐藏吉祥物", ru: "Скрыть талисман" },
+
         // --- Page introuvable ------------------------------------------------
         // Servie par GitHub Pages pour toute adresse inconnue du site, quelle
         // que soit la langue du chemin demandé : elle ne peut pas exister en

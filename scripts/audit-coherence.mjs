@@ -571,6 +571,56 @@ for (const dossier of ["guides", "en/guides"]) {
 }
 console.log(`  ${compares} pages comparées FR/EN, ${sections} sections de quiz rattachées`);
 
+/* --- 12. La mascotte -------------------------------------------------------
+
+   Elle accueille sur les pages hors cours, et n entre JAMAIS dans un guide.
+   Ce n est pas une preference d affichage : la credibilite du contenu tient a
+   sa sobriete — « ce n est pas un conseil en investissement », « verifiez a la
+   source ». Un personnage souriant a cote d un delai de prescription abimerait
+   ce qui fait la valeur du texte.
+
+   Une regle qui ne tient qu a la vigilance finit par ceder : une page ajoutee
+   plus tard reprend le pied de page d une autre, script compris. */
+console.log("\n=== 12. MASCOTTE ===");
+
+let avec = 0;
+for (const page of toutes) {
+    const estUnCours = /(^|\/)guides\//.test(page.nom);
+    const porte = page.html.includes("assets/js/mascotte.js");
+
+    if (estUnCours && porte) {
+        signaler("MASCOTTE", `${page.nom} : page de cours, la mascotte n'y a pas sa place`);
+    }
+    if (!estUnCours && !porte) {
+        signaler("MASCOTTE", `${page.nom} : page hors cours sans la mascotte`);
+    }
+    if (porte) avec++;
+}
+
+// Le dessin et ses textes vivent dans le script ; s il disparaissait, les pages
+// le chargeraient dans le vide sans que rien ne le dise.
+const fichierMascotte = path.join(RACINE, "assets/js/mascotte.js");
+if (!fs.existsSync(fichierMascotte)) {
+    signaler("MASCOTTE", "assets/js/mascotte.js est absent alors que des pages le chargent");
+} else {
+    const src = fs.readFileSync(fichierMascotte, "utf8");
+    // Le garde-fou qui l empeche d entrer dans les cours.
+    if (!/guides\//.test(src)) signaler("MASCOTTE", "mascotte.js ne sait plus reconnaître une page de cours");
+    // Les libelles doivent passer par langues.js, pas etre ecrits en dur.
+    for (const clef of ["mascotteAlt", "mascotteBulle", "mascotteFermer"]) {
+        if (!src.includes(clef)) signaler("MASCOTTE", `mascotte.js n'utilise plus « ${clef} »`);
+    }
+}
+
+// Elle doit se figer pour qui a demande moins d animations, comme le reste.
+const feuille = lire(path.join(RACINE, "assets/css/style.css"));
+const bloc = feuille.slice(feuille.indexOf("LA MASCOTTE"));
+if (!/prefers-reduced-motion[\s\S]*mascotte-flotte/.test(bloc)) {
+    signaler("MASCOTTE", "les animations de la mascotte ne sont pas figées pour « prefers-reduced-motion »");
+}
+
+console.log(`  ${avec} page(s) hors cours l'affichent, 0 page de cours`);
+
 // --- Resultat --------------------------------------------------------------
 console.log("\n=== RESULTAT ===\n");
 if (!anomalies.length) {

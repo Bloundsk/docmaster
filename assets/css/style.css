@@ -1074,3 +1074,152 @@ html { background: var(--background); }
     .lecon-corps { display: block !important; }
     .lecon { break-inside: avoid; }
 }
+
+/* ===========================================================================
+   LA MASCOTTE
+   ---------------------------------------------------------------------------
+   Un robot dont le corps est un livre ouvert, pose par assets/js/mascotte.js.
+   Deux entrees : elle ARRIVE EN VOLANT sur l'accueil, elle SURGIT dans le coin
+   ailleurs. Jamais dans les pages de cours — le script s'y abstient.
+
+   Toutes les couleurs viennent de la palette : le dessin utilise
+   var(--primary), var(--secondary), var(--surface) et var(--text), il suit
+   donc le theme sombre sans une seule regle de plus.
+   ======================================================================== */
+
+.mascotte { pointer-events: none; }
+.mascotte-dessin { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* --- Sur l'accueil : elle vole jusqu'a sa place, dans la banniere --------- */
+.mascotte-vol {
+    position: absolute;
+    right: max(24px, 4vw);
+    bottom: -18px;
+    width: 128px;
+    z-index: 3;
+    animation: mascotteVol 1.5s cubic-bezier(.2, .8, .3, 1) backwards;
+}
+/* La banniere doit devenir le repere de ce positionnement absolu. */
+header { position: relative; overflow: visible; }
+
+/* Elle arrive PAR LE HAUT, et non par la droite.
+   Le premier jet la faisait entrer depuis la droite de l'écran : le dépassement
+   latéral élargissait la page et créait une barre de défilement horizontale —
+   ce que l'audit de géométrie interdit, à juste titre.
+
+   Vers le haut, le dépassement ne crée aucun défilement : une page ne grandit
+   que vers le bas et vers la droite. Le vol reste lisible, et il est même plus
+   franc — elle plonge dans la bannière. Un défaut qui ne se voyait pas au
+   premier coup d'œil : c'est la mesure qui l'a dit. */
+@keyframes mascotteVol {
+    0%   { transform: translateY(-320%) rotate(22deg) scale(.4); opacity: 0; }
+    35%  { opacity: 1; }
+    68%  { transform: translateY(9%) rotate(-9deg) scale(1.1); }
+    86%  { transform: translateY(-4%) rotate(4deg) scale(.97); }
+    100% { transform: translateY(0) rotate(0) scale(1); opacity: 1; }
+}
+
+/* --- Ailleurs : elle surgit dans le coin, avec sa bulle ------------------- */
+.mascotte-surgit {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 96px;
+    z-index: 90;
+    pointer-events: auto;
+    animation: mascotteSurgit .7s cubic-bezier(.22, 1.2, .36, 1) .9s backwards;
+}
+
+@keyframes mascotteSurgit {
+    0%   { transform: scale(.2) translateY(30px); opacity: 0; }
+    55%  { transform: scale(1.14) translateY(-7px); opacity: 1; }
+    78%  { transform: scale(.95) translateY(3px); }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.mascotte-part { animation: mascotteSurgit .35s ease-in reverse forwards; }
+
+.mascotte-bulle {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    width: max-content;
+    max-width: min(15rem, 62vw);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 14px;
+    box-shadow: var(--shadow-fort);
+    padding: 13px 15px;
+    font-size: .88rem;
+    line-height: 1.45;
+    animation: mascotteBulle .45s ease 1.5s backwards;
+}
+.mascotte-bulle p { margin: 0 0 8px; }
+.mascotte-lien {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: .85rem;
+}
+.mascotte-lien:hover { text-decoration: underline; }
+
+/* La petite pointe qui rattache la bulle a la mascotte. */
+.mascotte-bulle::after {
+    content: "";
+    position: absolute;
+    right: 26px;
+    top: 100%;
+    border: 8px solid transparent;
+    border-top-color: var(--surface);
+}
+
+@keyframes mascotteBulle {
+    from { opacity: 0; transform: translateY(8px) scale(.94); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.mascotte-fermer {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--muted);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: .75rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+}
+.mascotte-fermer:hover { border-color: var(--primary); color: var(--primary); }
+
+/* --- Les mouvements de fond, une fois posee ------------------------------ */
+.mascotte-flotte  { animation: mascotteFlotte 3.4s ease-in-out infinite; transform-origin: center; }
+.mascotte-antenne { animation: mascotteAntenne 2.6s ease-in-out infinite; transform-origin: 40px 15px; }
+.mascotte-led     { animation: mascotteLed 1.8s ease-in-out infinite; }
+.mascotte-yeux    { animation: mascotteCligne 4.6s ease-in-out infinite; transform-origin: center; }
+
+@keyframes mascotteFlotte  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes mascotteAntenne { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+@keyframes mascotteLed     { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }
+@keyframes mascotteCligne  { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.08); } }
+
+/* Sur un ecran etroit, elle retrecit ; la bulle, elle, disparait plutot que de
+   recouvrir le texte. Une mascotte qui gene la lecture n'est plus une
+   mascotte. */
+@media (max-width: 700px) {
+    .mascotte-vol { width: 84px; right: 12px; bottom: -12px; }
+    .mascotte-surgit { width: 68px; right: 12px; bottom: 12px; }
+    .mascotte-bulle { display: none; }
+}
+
+/* Meme regle que pour les illustrations des guides : qui a demande moins de
+   mouvement a son systeme n'en recoit aucun. Elle reste visible, immobile. */
+@media (prefers-reduced-motion: reduce) {
+    .mascotte-vol, .mascotte-surgit, .mascotte-part, .mascotte-bulle,
+    .mascotte-flotte, .mascotte-antenne, .mascotte-led, .mascotte-yeux {
+        animation: none !important;
+    }
+}
