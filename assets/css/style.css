@@ -1120,12 +1120,22 @@ header { position: relative; overflow: visible; }
 }
 
 /* --- Ailleurs : elle surgit dans le coin, avec sa bulle ------------------- */
+/* Elle se place AU-DESSUS du bouton de retour en haut, qui occupe le même coin :
+   « #back-to-top » va de 24 px à 70 px depuis le bas. Les deux se recouvraient
+   sur 19 px, mesurés — et avec le même z-index, donc sans règle pour départager.
+
+   Les 82 px se déduisent de ce bouton : 24 de marge + 46 de haut + 12 d'écart.
+   Écrits en clair ici pour que le lien entre les deux soit visible : déplacer
+   le bouton sans toucher à cette valeur ramènerait le chevauchement.
+
+   Le z-index passe sous celui du bouton : si l'un doit gagner, c'est celui qui
+   sert à quelque chose. */
 .mascotte-surgit {
     position: fixed;
     right: 18px;
-    bottom: 18px;
+    bottom: 82px;
     width: 96px;
-    z-index: 90;
+    z-index: 89;
     pointer-events: auto;
     animation: mascotteSurgit .7s cubic-bezier(.22, 1.2, .36, 1) .9s backwards;
 }
@@ -1211,7 +1221,9 @@ header { position: relative; overflow: visible; }
    mascotte. */
 @media (max-width: 700px) {
     .mascotte-vol { width: 84px; right: 12px; bottom: -12px; }
-    .mascotte-surgit { width: 68px; right: 12px; bottom: 12px; }
+    /* Même dégagement qu'en grand écran : le bouton de retour en haut garde
+       ses 24 px de marge et ses 46 px de haut quelle que soit la largeur. */
+    .mascotte-surgit { width: 68px; right: 12px; bottom: 82px; }
     .mascotte-bulle { display: none; }
 }
 

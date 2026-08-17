@@ -225,6 +225,40 @@ function controler(d, w, largeur, nomPage) {
                           `${anglais} en anglais, ${francais} en français, page ${attenduLang}`);
         else ok("séparateur des milliers = langue du texte", `${valeurs.length} valeur(s)`);
     }
+
+    /* 9. Les éléments flottants du coin ne se recouvrent pas.
+       Défaut vécu : la mascotte et le bouton de retour en haut occupent tous
+       deux le coin bas-droit. Ils se chevauchaient sur 19 px, avec le MÊME
+       z-index — donc sans règle pour départager lequel passe devant.
+
+       Aucun contrôle de fichier ne pouvait le voir : les deux éléments sont
+       corrects pris séparément, c'est leur voisinage qui ne l'est pas. Il faut
+       les positions réellement calculées, donc un moteur de rendu.
+
+       Le bouton est forcé visible : il ne s'affiche qu'après défilement, et un
+       contrôle qui ne met pas le système dans l'état à risque ne contrôle
+       rien. */
+    const flottants = [
+        [d.querySelector(".mascotte-surgit"), "mascotte"],
+        [d.getElementById("back-to-top"), "retour en haut"],
+    ].filter(([e]) => e);
+
+    if (flottants.length > 1) {
+        flottants.forEach(([e]) => e.classList.add("visible"));
+        let collision = null;
+        for (let i = 0; i < flottants.length; i++) {
+            for (let j = i + 1; j < flottants.length; j++) {
+                const a = flottants[i][0].getBoundingClientRect();
+                const b = flottants[j][0].getBoundingClientRect();
+                if (!(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom)) {
+                    collision = `${flottants[i][1]} × ${flottants[j][1]}, ` +
+                                `${Math.round(Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top))} px`;
+                }
+            }
+        }
+        if (collision) ko("les éléments flottants ne se recouvrent pas", collision);
+        else ok("les éléments flottants ne se recouvrent pas", `${flottants.length} éléments`);
+    }
 }
 
 async function lancer() {
