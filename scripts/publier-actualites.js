@@ -190,41 +190,80 @@ const echapper = (t) =>
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;");
 
-function enFrancais(iso) {
+function dateLisible(iso, locale) {
     const d = new Date(iso + "T12:00:00Z");
     if (isNaN(d)) return "";
     const options = { day: "numeric", month: "long", timeZone: "UTC" };
     if (d.getUTCFullYear() !== new Date().getUTCFullYear()) options.year = "numeric";
-    return d.toLocaleDateString("fr-FR", options);
+    return d.toLocaleDateString(locale, options);
 }
 
-function rendreArticle(a, base) {
-    const legende = [a.source, a.date ? enFrancais(a.date) : ""].filter(Boolean).join(" · ");
-    const lienSection = `${base}guides/${a.guide}/${a.page}#${encodeURIComponent(a.ancre)}`;
+/* Les deux versions de la page. Les titres d'articles restent en français
+   dans les deux : ce sont des titres d'articles français, et un titre traduit
+   ne se retrouve plus. Ce qui change, c'est ce que le site écrit AUTOUR.
+
+   La version anglaise renvoie vers la page anglaise du guide, sans ancre : les
+   ancres anglaises portent d'autres noms que les françaises, et un lien vers
+   une ancre absente ne défile nulle part. Arriver en haut de la bonne page
+   vaut mieux qu'arriver nulle part. */
+const VERSIONS = {
+    fr: {
+        dossier: "", locale: "fr-FR",
+        rapport: "En rapport avec",
+        vide: "Aucune actualité retenue pour le moment. Cette page se remplit au fil des lectures.",
+        titreAccueil: "📰 À lire ailleurs",
+        introAccueil: "Quelques lectures en rapport avec les guides, choisies à la main.",
+        toutes: "Toutes les actualités →",
+        // Le libellé de la section, tel que la veille l'a relevé.
+        etiquette: (a) => `<a href="guides/${a.guide}/${a.page}#${encodeURIComponent(a.ancre)}">${echapper(a.section)}</a> · ${echapper(a.sujet)}`,
+    },
+    en: {
+        dossier: "en/", locale: "en-GB",
+        rapport: "Related to",
+        vide: "No article selected for now. This page fills up as the reading goes.",
+        titreAccueil: "📰 Read elsewhere",
+        introAccueil: "A few readings related to the guides, picked by hand. <strong>They are in French</strong>: they point to French sources, and a translated headline could no longer be found again.",
+        toutes: "All the news →",
+        etiquette: (a) => `<a href="guides/${a.guide}/${a.page}">${echapper(NOMS_EN[a.guide] || a.guide)} — ${echapper(NIVEAUX_EN[a.page.replace(".html", "")] || "")}</a>`,
+    },
+};
+
+const NOMS_EN = {
+    finance: "💰 Finance", ia: "🤖 Artificial Intelligence", "dev-web": "💻 Web Development",
+    marketing: "📢 Digital Marketing", cybersecurite: "🔒 Cybersecurity",
+    entrepreneuriat: "🚀 Entrepreneurship", productivite: "⏱️ Productivity & Organisation",
+    data: "📊 Data & Analytics", design: "🎨 UX/UI Design", droit: "⚖️ Law & Procedures",
+    sante: "🩺 Health at Work", ecologie: "🌱 Digital Sustainability",
+    negociation: "🤝 Negotiation & Communication", apprendre: "🎓 Learning How to Learn",
+};
+const NIVEAUX_EN = { debutant: "Beginner", intermediaire: "Intermediate", avance: "Advanced", index: "" };
+
+function rendreArticle(a, v) {
+    const legende = [a.source, a.date ? dateLisible(a.date, v.locale) : ""].filter(Boolean).join(" · ");
 
     return `                    <li class="actu">
                         <a class="actu-titre" href="${echapper(a.lien)}" target="_blank" rel="noopener noreferrer">${echapper(a.titre)}</a>
                         ${legende ? `<p class="actu-source">${echapper(legende)}</p>` : ""}
-                        <p class="actu-lien-guide">En rapport avec <a href="${echapper(lienSection)}">${echapper(a.section)}</a> · ${echapper(a.sujet)}</p>
+                        <p class="actu-lien-guide">${v.rapport} ${v.etiquette(a)}</p>
                     </li>`;
 }
 
-function rendreListe(articles, base) {
+function rendreListe(articles, v) {
     if (!articles.length) {
-        return `                <p class="actu-vide">Aucune actualité retenue pour le moment. Cette page se remplit au fil des lectures.</p>`;
+        return `                <p class="actu-vide">${v.vide}</p>`;
     }
     return `                <ul class="actu-liste">
-${articles.map((a) => rendreArticle(a, base)).join("\n")}
+${articles.map((a) => rendreArticle(a, v)).join("\n")}
                 </ul>`;
 }
 
 // L accueil ne montre rien plutot qu une section vide : une rubrique
 // « Actualites » sans actualite fait plus de mal que son absence.
-function rendreAccueil(articles) {
+function rendreAccueil(articles, v) {
     if (!articles.length) return "";
 
     const items = articles.slice(0, NB_SUR_ACCUEIL).map((a) => {
-        const legende = [a.source, a.date ? enFrancais(a.date) : ""].filter(Boolean).join(" · ");
+        const legende = [a.source, a.date ? dateLisible(a.date, v.locale) : ""].filter(Boolean).join(" · ");
         return `                    <li class="actu">
                         <a class="actu-titre" href="${echapper(a.lien)}" target="_blank" rel="noopener noreferrer">${echapper(a.titre)}</a>
                         ${legende ? `<p class="actu-source">${echapper(legende)}</p>` : ""}
@@ -232,12 +271,12 @@ function rendreAccueil(articles) {
     });
 
     return `        <section id="actualites">
-            <h2>📰 À lire ailleurs</h2>
-            <p>Quelques lectures en rapport avec les guides, choisies à la main.</p>
+            <h2>${v.titreAccueil}</h2>
+            <p>${v.introAccueil}</p>
             <ul class="actu-liste">
 ${items.join("\n")}
             </ul>
-            <p><a href="actualites.html">Toutes les actualités →</a></p>
+            <p><a href="actualites.html">${v.toutes}</a></p>
         </section>`;
 }
 
@@ -272,16 +311,25 @@ function injecter(fichier, contenu) {
 
 (async () => {
     try {
-        const repo = process.env.GITHUB_REPOSITORY;
-        const token = process.env.GITHUB_TOKEN;
-        if (!repo || !token) throw new Error("GITHUB_REPOSITORY et GITHUB_TOKEN sont requis.");
+        /* « --hors-ligne » réécrit les pages à partir de l'état déjà enregistré,
+           sans interroger GitHub. C'est ce qu'il faut après avoir modifié un
+           gabarit : sans cette option, la seule façon de voir le rendu était
+           d'attendre le passage automatique suivant, ou de se munir d'un jeton
+           pour une opération qui ne lit rien de nouveau. */
+        const horsLigne = process.argv.includes("--hors-ligne");
 
-        const issues = await recupererIssues(repo, token);
-        const { coches, decoches } = depouiller(issues);
-        console.log(`${issues.length} Issue(s) lue(s) : ${coches.size} article(s) coché(s).`);
+        let articles = lireEtat().articles;
+        if (!horsLigne) {
+            const repo = process.env.GITHUB_REPOSITORY;
+            const token = process.env.GITHUB_TOKEN;
+            if (!repo || !token) throw new Error("GITHUB_REPOSITORY et GITHUB_TOKEN sont requis (ou --hors-ligne).");
 
+            const issues = await recupererIssues(repo, token);
+            const { coches, decoches } = depouiller(issues);
+            console.log(`${issues.length} Issue(s) lue(s) : ${coches.size} article(s) coché(s).`);
+            articles = fusionner(articles, coches, decoches);
+        }
         const avant = lireEtat().articles;
-        const articles = fusionner(avant, coches, decoches);
 
         // « maj » ne date pas le passage du script mais le dernier changement
         // de la liste. Sans cette distinction, chaque exécution réécrivait
@@ -297,10 +345,14 @@ function injecter(fichier, contenu) {
             fs.writeFileSync(ETAT, JSON.stringify({ maj, articles }, null, 2) + "\n");
         }
 
-        const modifies = [
-            injecter("actualites.html", rendreListe(articles, "")) ? "actualites.html" : null,
-            injecter("index.html", rendreAccueil(articles)) ? "index.html" : null,
-        ].filter(Boolean);
+        /* Les quatre pages porteuses des marqueurs, dans les deux langues. La
+           version anglaise a été oubliée une fois : les deux pages françaises
+           se mettaient à jour, l'anglaise gardait la liste du jour de sa
+           traduction sans que rien ne le signale. */
+        const modifies = Object.values(VERSIONS).flatMap((v) => [
+            injecter(v.dossier + "actualites.html", rendreListe(articles, v)) ? v.dossier + "actualites.html" : null,
+            injecter(v.dossier + "index.html", rendreAccueil(articles, v)) ? v.dossier + "index.html" : null,
+        ]).filter(Boolean);
 
         console.log(`${articles.length} article(s) publié(s).`);
         console.log(modifies.length ? `Pages mises à jour : ${modifies.join(", ")}` : "Pages inchangées.");

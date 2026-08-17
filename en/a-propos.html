@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>About - DocMaster</title>
+    <meta name="description" content="What DocMaster is, how the guides are built, and why the site sets no cookie and asks for no account.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/a-propos.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/a-propos.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/a-propos.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/a-propos.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="About - DocMaster">
+    <meta property="og:description" content="What DocMaster is, how the guides are built, and why the site sets no cookie and asks for no account.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/a-propos.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About - DocMaster">
+    <meta name="twitter:description" content="What DocMaster is, how the guides are built, and why the site sets no cookie and asks for no account.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &gt; <span aria-current="page">About</span>
+    </nav>
+
+    <header>
+        <h1>About DocMaster</h1>
+        <p>A free library of knowledge, built step by step.</p>
+    </header>
+
+    <main id="main-content">
+        <section>
+            <h2>The project</h2>
+            <!-- Cette phrase énumérait les domaines un par un. Elle a dû être
+                 corrigée à la main à chaque nouveau guide, et s'est trouvée
+                 fausse entre-temps. La liste vit désormais à un seul endroit :
+                 la page d'accueil. -->
+            <p>
+                DocMaster is a library of free educational guides, from finance to health at
+                work. The <a href="index.html">home page</a> gives the complete list, each
+                guide split into three levels.
+            </p>
+            <p>
+                Every guide starts from zero. No prior knowledge is needed: technical
+                vocabulary is explained as it comes up, and the <a href="glossaire.html">glossary</a>
+                gathers all the terms used on the site.
+            </p>
+        </section>
+
+        <section>
+            <h2>How the guides are built</h2>
+            <p>
+                A definition is not enough to understand something. Every notion therefore follows
+                the same pattern:
+            </p>
+            <ul>
+                <li>an <strong>explanation</strong> that genuinely develops the subject;</li>
+                <li>a <strong>worked example</strong>, with numbers you can check;</li>
+                <li>the <strong>common mistake</strong> on that precise point, and what it costs;</li>
+                <li>a sentence to remember, and a <strong>quiz</strong> to check it has stuck.</li>
+            </ul>
+            <p>
+                Sections are collapsed by default: a course page runs between 1,400 and 2,200 words,
+                and showing everything at once discourages more than it helps. You open what
+                interests you.
+            </p>
+        </section>
+
+        <section>
+            <h2>The two languages</h2>
+            <p>
+                The site was written in French, and the <strong>fourteen course paths are fully
+                translated into English</strong> — 56 pages, with their simulators and their quizzes.
+            </p>
+            <p>
+                Two things stay in French, on purpose. The <a href="actualites.html">news items</a>
+                point to French sources: a translated headline could no longer be found again. And
+                <strong>anything that describes French law</strong> — tax wrappers, notice periods,
+                legal forms — keeps its French figures, with a warning at the top of the page and,
+                in the sentence itself, a note that the rule is French.
+            </p>
+        </section>
+
+        <section>
+            <h2>What runs on its own</h2>
+            <p>
+                Two mechanisms work by themselves. An <strong>automated watch</strong> goes through
+                the news for every subsection of the guides each day and flags what would deserve
+                an update. And the <strong>quiz questions change every two weeks</strong>, so that a
+                guide read again later does not ask the same questions.
+            </p>
+        </section>
+
+        <section>
+            <h2>No account, no cookie, no advertising</h2>
+            <p>
+                The site sets <strong>no cookie</strong>. That is why you have never seen a consent
+                banner on arriving. There is no advertising, no paid link and no sponsored content.
+            </p>
+            <p>
+                Your favourites, your progress and your choice of theme stay <strong>in your
+                browser</strong> and are sent to no server. That is what makes it possible to offer
+                a <a href="mon-espace.html">personal space</a> without ever asking for a sign-up,
+                a password or an email address.
+            </p>
+            <p>
+                The detail is in the <a href="mentions-legales.html">legal notice</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2>Taking part</h2>
+            <p>
+                The site is hosted free of charge on GitHub Pages, and its code is public. If a
+                subject is missing for you, the <a href="idees.html">suggestion box</a> lets you
+                propose it in a few seconds — the requests that come back most often are handled
+                first.
+            </p>
+            <p>
+                The most common questions are answered in the <a href="faq.html">FAQ</a>.
+            </p>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+</body>
+</html>

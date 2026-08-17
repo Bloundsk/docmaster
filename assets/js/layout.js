@@ -24,6 +24,16 @@
 
     const langue = L ? L.langueChoisie() : "fr";
 
+    /* L'adresse d'une page du site dans la langue courante. Sans cela, un
+       visiteur qui a choisi l'anglais et clique « Glossary » atterrissait sur
+       la page française : le menu était traduit, mais menait ailleurs.
+
+       Le repli sur le français est volontaire — une page absente donnerait une
+       404, ce qu'aucun libellé traduit ne compense. */
+    const traduites = (L && L.PAGES_TRADUITES[langue]) || [];
+    const lien = (fichier) =>
+        base + (traduites.indexOf(fichier) !== -1 ? langue + "/" : "") + fichier;
+
     /* Le sélecteur repose sur <details> plutôt que sur un menu maison : il
        s'ouvre et se ferme au clavier, se referme avec Échap et s'annonce
        correctement aux lecteurs d'écran, sans une ligne de JavaScript.
@@ -43,15 +53,15 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
     const navbarHTML = `
         <nav class="navbar">
             <div class="nav-container">
-                <a href="${base}index.html" class="logo">Doc<span>Master</span></a>
+                <a href="${lien("index.html")}" class="logo">Doc<span>Master</span></a>
                 <ul class="nav-links">
-                    <li><a href="${base}index.html">${t("accueil")}</a></li>
-                    <li><a href="${base}actualites.html">${t("actualites")}</a></li>
-                    <li><a href="${base}glossaire.html">${t("glossaire")}</a></li>
-                    <li><a href="${base}idees.html">${t("idees")}</a></li>
-                    <li><a href="${base}faq.html">${t("faq")}</a></li>
-                    <li><a href="${base}a-propos.html">${t("aPropos")}</a></li>
-                    <li><a href="${base}mon-espace.html">⭐ ${t("monEspace")}</a></li>
+                    <li><a href="${lien("index.html")}">${t("accueil")}</a></li>
+                    <li><a href="${lien("actualites.html")}">${t("actualites")}</a></li>
+                    <li><a href="${lien("glossaire.html")}">${t("glossaire")}</a></li>
+                    <li><a href="${lien("idees.html")}">${t("idees")}</a></li>
+                    <li><a href="${lien("faq.html")}">${t("faq")}</a></li>
+                    <li><a href="${lien("a-propos.html")}">${t("aPropos")}</a></li>
+                    <li><a href="${lien("mon-espace.html")}">⭐ ${t("monEspace")}</a></li>
                 </ul>
                 <div class="nav-outils">${selecteurHTML}
                     <button id="theme-toggle" class="theme-toggle" aria-label="${t("theme")}">🌙</button>
@@ -67,13 +77,13 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
                  le logo y mène déjà. Les mentions légales ferment la liste,
                  comme il est d'usage. -->
             <nav aria-label="${t("mentions")}">
-                <a href="${base}actualites.html">${t("actualites")}</a>·
-                <a href="${base}glossaire.html">${t("glossaire")}</a>·
-                <a href="${base}idees.html">${t("idees")}</a>·
-                <a href="${base}faq.html">${t("faq")}</a>·
-                <a href="${base}a-propos.html">${t("aPropos")}</a>·
-                <a href="${base}mon-espace.html">${t("monEspace")}</a>·
-                <a href="${base}mentions-legales.html">${t("mentions")}</a>
+                <a href="${lien("actualites.html")}">${t("actualites")}</a>·
+                <a href="${lien("glossaire.html")}">${t("glossaire")}</a>·
+                <a href="${lien("idees.html")}">${t("idees")}</a>·
+                <a href="${lien("faq.html")}">${t("faq")}</a>·
+                <a href="${lien("a-propos.html")}">${t("aPropos")}</a>·
+                <a href="${lien("mon-espace.html")}">${t("monEspace")}</a>·
+                <a href="${lien("mentions-legales.html")}">${t("mentions")}</a>
             </nav>
         </footer>`;
 
@@ -144,9 +154,19 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
         if (sujet && L.SUJETS_DROIT_FRANCAIS.indexOf(sujet) !== -1) {
             messages.push({ texte: L.t("reglesFrancaises"), classe: "alerte" });
         }
-        // On ne le répète pas si le sujet est déjà traduit.
-        if (!sujet || (L.CONTENU_TRADUIT[langue] || []).indexOf(sujet) === -1) {
-            messages.push({ texte: L.t("coursEnFrancais"), classe: "" });
+
+        /* Trois situations, et une seule phrase juste pour chacune :
+           — la page affichée est déjà dans la langue voulue : rien à dire ;
+           — elle existe ailleurs dans cette langue : on y renvoie, par un lien ;
+           — elle n'existe pas : on le dit, pour cette page et pour elle seule. */
+        /* Une page qui traduit son propre texte n'a pas à être annoncée comme
+           non traduite. Seule la page 404 est dans ce cas : GitHub Pages la
+           sert pour toute adresse inconnue, elle ne peut donc pas exister en
+           un exemplaire par langue. */
+        if (L.langueDeLaPage() !== langue && !window.DOCMASTER_PAGE_AUTOTRADUITE) {
+            const ailleurs = L.adresseDansLangue(langue);
+            if (ailleurs) messages.push({ texte: L.t("versionDisponible"), classe: "", vers: ailleurs });
+            else messages.push({ texte: L.t("pageNonTraduite"), classe: "" });
         }
 
         for (const m of messages.reverse()) {
@@ -154,7 +174,14 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
             const p = document.createElement("p");
             p.className = "bandeau-langue " + m.classe;
             p.setAttribute("lang", langue);
-            p.textContent = m.texte;
+            if (m.vers) {
+                const a = document.createElement("a");
+                a.href = m.vers;
+                a.textContent = m.texte;
+                p.appendChild(a);
+            } else {
+                p.textContent = m.texte;
+            }
             principal.insertBefore(p, principal.firstChild);
         }
     }

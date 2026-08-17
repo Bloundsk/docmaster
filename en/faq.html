@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>FAQ - DocMaster</title>
+    <meta name="description" content="Frequently asked questions about DocMaster: guide content, dark mode, reading progress, privacy and the data collected.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .faq-group { margin-bottom: 34px; }
+        .faq-group > h2 { margin-bottom: 16px; }
+
+        .faq-item {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            padding: 18px 22px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        /* Masque la flèche native pour la remplacer par notre chevron */
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        .faq-item summary::after {
+            content: "▾";
+            font-size: 1.1rem;
+            line-height: 1;
+            color: var(--muted);
+            flex-shrink: 0;
+            transition: transform .25s;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        /* Respecte le réglage système « réduire les animations » */
+        @media (prefers-reduced-motion: reduce) {
+            .faq-item summary::after { transition: none; }
+        }
+
+        .faq-item summary:hover { color: var(--secondary); }
+
+        .faq-item .answer {
+            padding: 0 22px 20px;
+            color: var(--text);
+        }
+
+        .faq-item .answer p { margin-bottom: 10px; }
+        .faq-item .answer p:last-child { margin-bottom: 0; }
+        .faq-item .answer ul { margin: 10px 0 0 20px; }
+        .faq-item .answer li { margin-bottom: 6px; }
+
+        .faq-empty {
+            text-align: center;
+            color: var(--muted);
+            padding: 30px;
+        }
+
+        kbd {
+            background: var(--background);
+            border: 1px solid var(--muted);
+            border-radius: 5px;
+            padding: 1px 7px;
+            font-family: monospace;
+            font-size: .9em;
+        }
+    </style>
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/faq.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/faq.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/faq.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/faq.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="FAQ - DocMaster">
+    <meta property="og:description" content="Frequently asked questions about DocMaster: guide content, dark mode, reading progress, privacy and the data collected.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/faq.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FAQ - DocMaster">
+    <meta name="twitter:description" content="Frequently asked questions about DocMaster: guide content, dark mode, reading progress, privacy and the data collected.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &gt; <span aria-current="page">FAQ</span>
+    </nav>
+
+    <header>
+        <h1>❓ Frequently asked questions</h1>
+        <p>Everything worth knowing about DocMaster, in short answers.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="faq-search" placeholder="🔍 Filter the questions…" autocomplete="off" aria-label="Filter the frequently asked questions" style="width:100%;padding:16px 20px;border:none;border-radius:var(--radius);box-shadow:var(--shadow);font-family:'Inter',sans-serif;font-size:1rem;background:var(--surface);color:var(--text);outline:none;">
+    </div>
+
+    <main id="main-content">
+
+        <div class="faq-group">
+            <h2>The site</h2>
+
+            <details class="faq-item">
+                <summary>What is DocMaster?</summary>
+                <div class="answer">
+                    <p>A library of free educational guides, from finance to health at work. The <a href="index.html">home page</a> gives the complete list — it is the only place kept up to date.</p>
+                    <p>Every guide starts from zero and gets to the point: the key ideas, concrete examples, and a quiz to check you have understood.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Is the site really free?</summary>
+                <div class="answer">
+                    <p>Yes, entirely. No sign-up, no subscription, no paid tier, no advertising. Nothing is reserved for members.</p>
+                    <p>The site is hosted free of charge by GitHub Pages, which is what makes it possible to charge nothing.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Who is DocMaster for?</summary>
+                <div class="answer">
+                    <p>Beginners and the curious. No prior knowledge is needed: the guides explain the vocabulary as they go, and the glossary gathers all the technical terms.</p>
+                    <p>If you are already an expert in one area, that guide will probably look too simple to you — but the others may still interest you.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do I need to create an account?</summary>
+                <div class="answer">
+                    <p>No, and it is not even possible. The site manages no user accounts: no email address, no password.</p>
+                    <p>Your favourites, your reading progress and your choice of theme are saved directly in your browser, without passing through a server. The <a href="mon-espace.html">My space</a> page shows them to you.</p>
+                    <p>It is a deliberate choice: asking for a sign-up just for bookmarks would mean storing passwords, with every risk that entails.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I bookmark a guide or a section?</summary>
+                <div class="answer">
+                    <p>Click the star ☆. You will find one on every card of the home page, at the top of every guide, and to the right of every section title.</p>
+                    <p>The star turns gold ★ once the favourite is saved. You will find them all in <a href="mon-espace.html">My space</a>, along with your progress.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do my favourites follow me from one device to another?</summary>
+                <div class="answer">
+                    <p>No. They are saved in the browser you are using, on this particular device.</p>
+                    <p>If you change computer or phone, or if you clear your browsing data, they start again from zero. That is the direct counterpart of having no account: nothing is stored on a server, so nothing can be synchronised — nor read by anybody.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>The content</h2>
+
+            <details class="faq-item">
+                <summary>In what order should I read the guides?</summary>
+                <div class="answer">
+                    <p>Whatever order you like: each guide stands on its own and does not assume you have read the others.</p>
+                    <p>If you are unsure, every guide offers “related guides” at the bottom of the page, along with “previous / next” links that suggest a coherent route.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Are the guides up to date?</summary>
+                <div class="answer">
+                    <p>The guides cover fundamentals, which change slowly. Every page shows its date of last update, calculated automatically from the real changes to the content.</p>
+                    <p>A watch also runs twice a day over every section of every guide. The most interesting things it brings back are published on the <a href="actualites.html">News</a> page.</p>
+                    <p>That said, for anything touching on figures, rates, prices or regulation, always check the information at its original source.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where do the articles on the News page come from?</summary>
+                <div class="answer">
+                    <p>An automated search goes through the online press twice a day, one query per guide section. It publishes nothing: it proposes.</p>
+                    <p><strong>Every published article has been read and selected by hand.</strong> A fully automated selection would also bring up promotional content and sloppy articles — the sorting is what separates a press review from a mere feed.</p>
+                    <p>Every article is attached to the guide it extends, so you can go from the news item to the underlying idea in one click.</p>
+                    <p>These articles are published on other sites: citing them means they seemed worth reading, not that their content is endorsed or guaranteed accurate. <strong>They are in French</strong>, like the sources they come from.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I follow the financial advice in the Finance guide?</summary>
+                <div class="answer">
+                    <p>The Finance guide is <strong>educational</strong> content. It explains how saving, ETFs, diversification and risk work — it recommends no particular investment.</p>
+                    <p>It is not personalised investment advice, and it does not replace a regulated adviser. No investment is without risk, and past performance does not predict future performance. Note also that <strong>the tax wrappers it describes are French</strong>.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I propose a new subject or category?</summary>
+                <div class="answer">
+                    <p>Yes, and you are encouraged to. The <a href="idees.html">suggestion box</a> lets you propose either a whole area or one precise subject to add to an existing guide.</p>
+                    <p>The requests that come back most often are handled first. The page also shows the themes already under consideration, which you can give your view on.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>I found a mistake — how do I report it?</summary>
+                <div class="answer">
+                    <p>By email to <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span> — the same address to use for any request concerning your personal data.</p>
+                    <p>Please say which guide and section if you can: that is what makes the fastest correction possible.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I reuse the content?</summary>
+                <div class="answer">
+                    <p>For personal or educational use — revising, quoting a definition, leaning on a guide to explain something to somebody — no problem at all.</p>
+                    <p>For full republication or commercial use, write to <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span> to discuss it.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>Using the site</h2>
+
+            <details class="faq-item">
+                <summary>Why are the guide sections collapsed?</summary>
+                <div class="answer">
+                    <p>A course page runs between 1,400 and 2,200 words. Showing it all at once presents a wall of text that discourages before you have even started.</p>
+                    <p>Collapsed, the guide fits on one screen: you see its structure at a glance and open what interests you. The <strong>“Expand all”</strong> button opens everything if you prefer to read straight through.</p>
+                    <p>Clicking an entry in the contents automatically opens the section it points to — you do not have to hunt for it.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I search the guides quickly?</summary>
+                <div class="answer">
+                    <p>Press the <kbd>/</kbd> key from any page: the cursor goes straight into the search bar.</p>
+                    <p>The search tolerates typos. <strong>Its entries are titled in French</strong>, because it indexes the original version — but the links lead to the English pages.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I switch between light and dark theme?</summary>
+                <div class="answer">
+                    <p>By default the site <strong>follows your device setting</strong>: if your phone or computer is in dark mode, so is the site. There is nothing for you to do.</p>
+                    <p>To force a theme, click the 🌙 or ☀️ icon at the top right. Your choice then takes priority over the system setting, and it is remembered for your next visits in this browser.</p>
+                    <p>To go back to following the system, clear the site data in your browser settings.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What is the “I have read and understood this guide” box for?</summary>
+                <div class="answer">
+                    <p>To track your progress. Once ticked, the guide is marked as finished and stays that way on your next visits.</p>
+                    <p>It is a personal reminder: nobody else sees this information, and it is sent nowhere.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Do I find my progress again on another device?</summary>
+                <div class="answer">
+                    <p>No. Progress is stored in the browser you are using, on this particular device.</p>
+                    <p>If you change computer, phone or browser, or if you clear your browsing data, progress starts again from zero. That is the counterpart of the choice to create no user accounts.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Are the quizzes graded?</summary>
+                <div class="answer">
+                    <p>No, and no result is recorded. The quiz is only there to make you think: you see immediately whether your answer is right or wrong, with an explanation.</p>
+                    <p>You can retake it as many times as you like.</p>
+                    <p>There is <strong>a quiz at the bottom of each section</strong>, plus a <strong>summary quiz</strong> at the end of the guide whose questions are different and cover the whole subject.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Why do the questions change?</summary>
+                <div class="answer">
+                    <p>Every quiz draws on a larger pool than it shows. <strong>Every two weeks</strong>, it switches automatically to other questions.</p>
+                    <p>The point: coming back to a guide a few weeks later does not ask you exactly the same questions, which tests that you understood rather than memorised.</p>
+                    <p>Reloading the page changes nothing: everybody sees the same set at the same time. Otherwise it would be enough to refresh until the familiar questions came up.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Can I print a guide or read it offline?</summary>
+                <div class="answer">
+                    <p>Yes. Press <kbd>Ctrl</kbd> + <kbd>P</kbd>: a print-specific layout removes the navigation, the buttons and the interactive elements, keeping only the text.</p>
+                    <p>You can also choose “Save as PDF” rather than a printer.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Does the site work on a phone?</summary>
+                <div class="answer">
+                    <p>Yes, the layout adapts to phone and tablet screens: the navigation reorganises itself and the text stays readable without zooming.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>Data and privacy</h2>
+
+            <details class="faq-item">
+                <summary>Does the site use cookies?</summary>
+                <div class="answer">
+                    <p><strong>None, without exception.</strong> That is why you have never seen an “accept cookies” banner on arriving.</p>
+                    <p>The display theme, your favourites and your reading progress use the browser's local storage (<em>localStorage</em>), which stays on your device and is sent to no server.</p>
+                    <p>The <a href="idees.html">suggestion box</a> sends your suggestion directly from the page, without asking for an address and without loading any verification system.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>What data is collected?</summary>
+                <div class="answer">
+                    <p>Only aggregated traffic statistics, through a privacy-respecting tool: pages viewed, the site the visitor came from, country and browser type.</p>
+                    <p>To that is added the counting of three actions inside the guides: opening a section, adding a favourite, marking a guide as read. This serves to know which subjects are of most interest, in order to decide the next guides. Only the name of the action is sent — “section opened: ETFs” — with nothing that would allow two actions to be linked to the same person.</p>
+                    <p>No IP address is kept, and no identifier makes it possible to recognise you from one visit to the next or to follow you on other sites. <strong>The contents of your favourites stay in your browser</strong>: what is counted is that a section was bookmarked, never by whom nor alongside what else.</p>
+                    <p>The only exception is what you write yourself in the <a href="idees.html">suggestion box</a>. A suggestion is kept for <strong>24 months at most</strong>, long enough to see whether the subject comes back often, then it is deleted. As you are asked for no address, it stays anonymous — unless you identify yourself in the text.</p>
+                    <p>The detail is in the <a href="mentions-legales.html">legal notice</a>.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Is there advertising or sponsored content?</summary>
+                <div class="answer">
+                    <p>No. No advertising, no affiliate links, no paid partnerships. The site pursues no profit, which guarantees that nothing is promoted for commercial reasons.</p>
+                </div>
+            </details>
+        </div>
+
+        <p class="faq-empty" id="faq-empty" hidden>No question matches your search.</p>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script>
+        // Filtre les questions au fil de la frappe, et déplie automatiquement
+        // celles qui correspondent pour que la réponse soit visible tout de suite.
+        const faqSearch = document.getElementById("faq-search");
+        const faqEmpty = document.getElementById("faq-empty");
+
+        faqSearch.addEventListener("input", (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            let visibles = 0;
+
+            document.querySelectorAll(".faq-item").forEach(item => {
+                const match = q === "" || item.textContent.toLowerCase().includes(q);
+                item.hidden = !match;
+                item.open = q !== "" && match;
+                if (match) visibles++;
+            });
+
+            // Masque un groupe entier si aucune de ses questions ne correspond
+            document.querySelectorAll(".faq-group").forEach(group => {
+                const reste = group.querySelectorAll(".faq-item:not([hidden])").length;
+                group.hidden = reste === 0;
+            });
+
+            faqEmpty.hidden = visibles > 0;
+        });
+    </script>
+</body>
+</html>

@@ -76,6 +76,16 @@ const PAGES = [
     { url: "../en/guides/droit/intermediaire.html",    nom: "cours traduit 12 (en)" },
     { url: "../en/guides/finance/avance.html",         nom: "cours traduit 13 (en)" },
     { url: "../en/guides/entrepreneuriat/debutant.html", nom: "cours traduit 14 (en)" },
+
+    // Les pages hors cours traduites. Leur gabarit diffère de celui des cours :
+    // grille de cartes sur l'accueil, tableaux dans les mentions légales,
+    // formulaire dans la boîte à idées, listes de définitions au glossaire.
+    { url: "../en/index.html",            nom: "accueil (en)" },
+    { url: "../en/faq.html",              nom: "FAQ (en)" },
+    { url: "../en/glossaire.html",        nom: "glossaire (en)" },
+    { url: "../en/idees.html",            nom: "boîte à idées (en)" },
+    { url: "../en/mentions-legales.html", nom: "mentions légales (en)" },
+    { url: "../en/actualites.html",       nom: "actualités (en)" },
 ];
 
 const LARGEURS = [1400, 1000, 700, 375];
@@ -190,7 +200,12 @@ function controler(d, w, largeur, nomPage) {
        Ce contrôle ne coûte rien à chaque largeur, mais la préférence doit être
        posée pour que le cas dépareillé soit réellement exercé — c'est fait
        dans « lancer ». */
-    const attenduLang = /\/en\/guides\//.test(d.location.pathname) ? "en" : "fr";
+    /* Le préfixe de langue vaut pour TOUTE page, pas seulement les cours.
+       Ce contrôle cherchait « /en/guides/ » : le jour où les pages hors cours
+       ont été traduites, il a réclamé « lang="fr" » sur six pages anglaises —
+       24 échecs qui n'en étaient pas. La règle est la même que celle de
+       langues.js, et doit le rester. */
+    const attenduLang = /\/en\/(guides\/|[a-z0-9-]+\.html$)/.test(d.location.pathname) ? "en" : "fr";
     const vuLang = d.documentElement.getAttribute("lang");
     if (vuLang !== attenduLang) ko("langue déclarée = langue du texte", `lang="${vuLang}", attendu "${attenduLang}"`);
     else ok("langue déclarée = langue du texte", `lang="${vuLang}"`);

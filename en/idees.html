@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Suggestions - DocMaster</title>
+    <meta name="description" content="Propose a new category or a subject to cover on DocMaster. Visitors' suggestions shape the next guides.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .idea-intro {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .covered {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .covered li {
+            background: var(--background);
+            border: 1px solid var(--muted);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: .9rem;
+        }
+
+        .shortlist {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 26px;
+            margin-bottom: 30px;
+        }
+
+        .shortlist ul { margin: 14px 0 0 20px; }
+        .shortlist li { margin-bottom: 8px; }
+
+        /* Formulaire de suggestion.
+           Il n'envoie rien tout seul : le site est statique et n'a pas de
+           serveur. Il assemble un message et ouvre le logiciel de messagerie
+           du visiteur, qui garde la main sur ce qu'il envoie. Aucun service
+           tiers, aucun cookie. */
+        .form-zone {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+        }
+
+        .champ { margin-bottom: 20px; }
+        .champ label {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: .95rem;
+            margin-bottom: 7px;
+        }
+        .champ .aide { display: block; font-weight: 400; font-size: .85rem; color: var(--muted); margin-top: 3px; }
+
+        .champ input[type="text"],
+        .champ textarea,
+        .champ select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid var(--quiz-case);
+            border-radius: 10px;
+            background: var(--quiz-case);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: .97rem;
+            transition: border-color .2s;
+        }
+        .champ input:focus, .champ textarea:focus, .champ select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--surface);
+        }
+        .champ textarea { min-height: 110px; resize: vertical; }
+
+        .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+        .btn-envoyer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border: none;
+            border-radius: var(--radius);
+            padding: 14px 26px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .btn-envoyer:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(37,99,235,.35); }
+
+        .btn-copier {
+            background: none;
+            border: 1px solid var(--muted);
+            color: var(--text);
+            border-radius: var(--radius);
+            padding: 14px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: .95rem;
+            cursor: pointer;
+            transition: border-color .2s, color .2s;
+        }
+        .btn-copier:hover { border-color: var(--primary); color: var(--primary); }
+
+        .form-note {
+            color: var(--muted);
+            font-size: .9rem;
+            line-height: 1.55;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid var(--background);
+        }
+
+        /* Retour apres envoi : succes ou echec, annonce aussi aux lecteurs
+           d'ecran via role="status" sur le conteneur. */
+        .form-retour {
+            margin-top: 20px;
+            padding: 16px 20px;
+            border-radius: 10px;
+            line-height: 1.5;
+        }
+        .form-retour.succes { background: rgba(34,197,94,.12); border-left: 4px solid #22c55e; }
+        .form-retour.erreur { background: rgba(239,68,68,.12); border-left: 4px solid #ef4444; }
+
+        .btn-envoyer:disabled { opacity: .6; cursor: wait; transform: none; box-shadow: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .btn-envoyer { transition: none; }
+            .btn-envoyer:hover { transform: none; }
+        }
+    </style>
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/idees.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/idees.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/idees.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/idees.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="Suggestions - DocMaster">
+    <meta property="og:description" content="Propose a new category or a subject to cover on DocMaster. Visitors' suggestions shape the next guides.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/idees.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suggestions - DocMaster">
+    <meta name="twitter:description" content="Propose a new category or a subject to cover on DocMaster. Visitors' suggestions shape the next guides.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &gt; <span aria-current="page">Suggestions</span>
+    </nav>
+
+    <header>
+        <h1>💡 Suggestions</h1>
+        <p>Which subject would you like covered? You are the one who shapes the next guides.</p>
+    </header>
+
+    <main id="main-content">
+
+        <section>
+            <div class="idea-intro">
+                <h2>How it works</h2>
+                <p>
+                    DocMaster covers 14 areas today. What comes next depends on what you find
+                    missing: propose a whole theme, or simply one precise subject to add to an
+                    existing guide. The most requested suggestions are handled first.
+                </p>
+                <p style="margin-top:14px;"><strong>Already covered:</strong></p>
+                <ul class="covered">
+                    <li>💰 Finance</li>
+                    <li>🤖 Artificial intelligence</li>
+                    <li>💻 Web development</li>
+                    <li>📢 Digital marketing</li>
+                    <li>🔒 Cybersecurity</li>
+                    <li>🚀 Entrepreneurship</li>
+                    <li>⏱️ Productivity</li>
+                    <li>📊 Data &amp; Analytics</li>
+                    <li>🎨 UX/UI design</li>
+                    <li>🎓 Learning how to learn</li>
+                    <li>⚖️ Law &amp; procedures</li>
+                    <li>🩺 Health at work</li>
+                    <li>🌱 Digital sustainability</li>
+                    <li>🤝 Negotiation &amp; communication</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="shortlist">
+                <h2>Every announced theme is now published</h2>
+                <p>
+                    The five themes that used to be listed here — law and procedures, health at
+                    work, learning, digital sustainability, negotiation and communication — are
+                    now online, each split into three levels.
+                </p>
+                <p style="margin-top:14px;">
+                    What comes next depends entirely on your proposals. The form below is the
+                    only place the next subjects will come from.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Propose an idea</h2>
+            <div class="form-zone">
+                <form id="form-idee" novalidate>
+                    <div class="champ">
+                        <label for="idee-sujet">Which subject or category would you like covered?
+                            <span class="aide">Required</span>
+                        </label>
+                        <input type="text" id="idee-sujet" name="sujet" required
+                               placeholder="For example: the steps for setting up a charity">
+                    </div>
+
+                    <div class="champ">
+                        <label for="idee-pourquoi">Why does this subject interest you?
+                            <span class="aide">Optional, but it is what helps most in deciding</span>
+                        </label>
+                        <textarea id="idee-pourquoi" name="pourquoi"
+                                  placeholder="What you were looking for without finding it, what is blocking you…"></textarea>
+                    </div>
+
+                    <!-- Champ piege : invisible pour un humain, rempli par les robots.
+                         Toute soumission qui le renseigne est ignoree en silence.
+                         C'est ce qui permet de se passer d'un captcha, et donc de
+                         Google et de ses cookies. -->
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off"
+                           aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;">
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-envoyer" id="idee-envoyer">Send my suggestion</button>
+                    </div>
+                </form>
+
+                <div id="idee-retour" role="status" aria-live="polite"></div>
+
+                <p class="form-note">
+                    Your suggestion is sent directly from here, without leaving the page and without
+                    an email client. There is nothing else for you to do.
+                    <br><br>
+                    You are asked for no address. If you would like a reply, write instead to
+                    <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span>.
+                    <br><br>
+                    Your suggestion is kept for <strong>24 months at most</strong>, then deleted.
+                    The detail is in the <a href="mentions-legales.html">legal notice</a>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script>
+        // ===================================
+        // Formulaire de suggestion — envoi direct
+        // ===================================
+        // Le site est statique et ne peut rien envoyer lui-meme. Le formulaire
+        // poste donc vers FormSubmit, un relai gratuit et sans inscription qui
+        // transmet le message a la boite de l'editeur.
+        //
+        // Choix retenus :
+        //  - envoi en AJAX : le visiteur reste sur la page et voit une
+        //    confirmation, au lieu d'etre redirige vers un site inconnu
+        //  - _captcha desactive : le reCAPTCHA de FormSubmit chargerait Google
+        //    et ses cookies, ce que le site s'interdit. Le champ piege _honey
+        //    joue ce role sans script tiers
+        //  - l'adresse reste hors du code source, comme partout ailleurs
+        //
+        (function () {
+            // Identifiant aleatoire fourni par FormSubmit apres confirmation de
+            // la boite de reception. Il remplace l'adresse dans le point d'envoi :
+            // celle-ci n'apparait donc plus du tout, pas meme reassemblee.
+            const ENDPOINT = "https://formsubmit.co/ajax/ea4b9d9834431e70c724007b4804a789";
+
+            // Conserves uniquement pour le message de secours affiche si l'envoi
+            // echoue : le visiteur doit alors pouvoir ecrire directement.
+            const NOM = "docmaster.contact";
+            const DOMAINE = "proton.me";
+
+            const form = document.getElementById("form-idee");
+            const bouton = document.getElementById("idee-envoyer");
+            const retour = document.getElementById("idee-retour");
+
+            const afficher = (texte, type) => {
+                retour.innerHTML = '<p class="form-retour ' + type + '">' + texte + "</p>";
+            };
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const sujet = document.getElementById("idee-sujet").value.trim();
+                const pourquoi = document.getElementById("idee-pourquoi").value.trim();
+                const piege = form.querySelector('[name="_honey"]').value;
+
+                if (!sujet) {
+                    afficher("Please give at least the subject you are proposing.", "erreur");
+                    document.getElementById("idee-sujet").focus();
+                    return;
+                }
+
+                // Robot : on fait comme si tout allait bien, sans rien envoyer.
+                if (piege) { afficher("Thank you, your suggestion has been sent.", "succes"); form.reset(); return; }
+
+                bouton.disabled = true;
+                const libelle = bouton.textContent;
+                bouton.textContent = "Sending…";
+                afficher("", "");
+
+                try {
+                    const reponse = await fetch(ENDPOINT, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json", Accept: "application/json" },
+                        body: JSON.stringify({
+                            "Subject proposed": sujet,
+                            "Why this subject": pourquoi || "(not specified)",
+                            _subject: "Suggestions (EN) — " + sujet.slice(0, 70),
+                            _template: "table",
+                            _captcha: "false"
+                        })
+                    });
+
+                    if (!reponse.ok) throw new Error("HTTP " + reponse.status);
+
+                    afficher(
+                        "<strong>Thank you, your suggestion is on its way.</strong><br>" +
+                        "It will be read, and it may shape the next guides.",
+                        "succes"
+                    );
+                    form.reset();
+                } catch (err) {
+                    // Panne du relai, coupure reseau, bloqueur de publicite :
+                    // on donne une porte de sortie plutot qu'un echec sec.
+                    afficher(
+                        "<strong>The message could not be sent.</strong><br>" +
+                        "You can try again, or write directly to " +
+                        NOM + String.fromCharCode(64) + DOMAINE + ".",
+                        "erreur"
+                    );
+                } finally {
+                    bouton.disabled = false;
+                    bouton.textContent = libelle;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

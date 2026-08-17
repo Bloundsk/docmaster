@@ -62,6 +62,25 @@
        en français » ne s'affiche plus sur les sujets traduits. */
     const CONTENU_TRADUIT = { en: ["apprendre", "cybersecurite", "data", "design", "dev-web", "droit", "ecologie", "entrepreneuriat", "finance", "ia", "marketing", "negociation", "productivite", "sante"], es: [], de: [], it: [], zh: [], ru: [] };
 
+    /* Les pages hors cours traduites, par langue, désignées par leur nom de
+       fichier. Même règle que CONTENU_TRADUIT : une page n'y figure que
+       lorsqu'elle existe réellement sous « <langue>/ », faute de quoi le
+       sélecteur mènerait à une 404.
+
+       Elles sont listées à part des sujets parce qu'elles ne vivent pas au
+       même endroit : « en/faq.html » et non « en/guides/<sujet>/ ». */
+    const PAGES_TRADUITES = {
+        /* « 404.html » ne figure pas ici, et n'a pas de version « en/ ».
+           GitHub Pages sert le 404 de la racine pour toute adresse inconnue,
+           y compris sous « /en/ » : une copie traduite ne serait jamais
+           affichée. Cette page traduit donc son propre texte, à partir des
+           libellés ci-dessous. */
+        en: ["index.html", "actualites.html", "glossaire.html", "idees.html",
+             "faq.html", "a-propos.html", "mentions-legales.html",
+             "mon-espace.html"],
+        es: [], de: [], it: [], zh: [], ru: [],
+    };
+
     // Les correspondances d'adresses entre versions. La version francaise est a
     // la racine, les autres sous « <langue>/ » : c'est le francais qui existait
     // d'abord, et deplacer 65 pages casserait tous les liens deja partages.
@@ -82,7 +101,11 @@
         allerContenu: { fr: "Aller au contenu principal", en: "Skip to main content", es: "Ir al contenido principal", de: "Zum Hauptinhalt springen", it: "Vai al contenuto principale", zh: "跳到主要内容", ru: "Перейти к основному содержанию" },
         theme:        { fr: "Activer ou désactiver le mode sombre", en: "Toggle dark mode", es: "Activar o desactivar el modo oscuro", de: "Dunkelmodus umschalten", it: "Attiva o disattiva la modalità scura", zh: "切换深色模式", ru: "Переключить тёмную тему" },
         rechercher:   { fr: "🔍 Rechercher un guide, un sujet...", en: "🔍 Search for a guide or topic…", es: "🔍 Buscar una guía o un tema…", de: "🔍 Leitfaden oder Thema suchen…", it: "🔍 Cerca una guida o un argomento…", zh: "🔍 搜索指南或主题…", ru: "🔍 Искать руководство или тему…" },
-        aucunResultat:{ fr: "Aucun résultat", en: "No results", es: "Sin resultados", de: "Keine Ergebnisse", it: "Nessun risultato", zh: "没有结果", ru: "Ничего не найдено" },
+        aucunResultat:{ fr: "Aucun résultat trouvé.", en: "No results found.", es: "No se ha encontrado ningún resultado.", de: "Keine Ergebnisse gefunden.", it: "Nessun risultato trovato.", zh: "没有找到结果。", ru: "Ничего не найдено." },
+        recherchesRecentes:{ fr: "Recherches récentes :", en: "Recent searches:", es: "Búsquedas recientes:", de: "Letzte Suchanfragen:", it: "Ricerche recenti:", zh: "最近的搜索：", ru: "Недавние запросы:" },
+        // La recherche ne connaît que les titres français : le dire là où le
+        // visiteur le constate vaut mieux que de le laisser deviner.
+        rechercheEnFrancais:{ fr: "", en: "Results are listed under their French titles; the links lead to the English pages.", es: "Los resultados aparecen con su título en francés; los enlaces llevan a las páginas traducidas.", de: "Die Ergebnisse tragen ihre französischen Titel; die Links führen zu den übersetzten Seiten.", it: "I risultati portano il loro titolo francese; i link rimandano alle pagine tradotte.", zh: "结果显示法语标题，链接指向已翻译的页面。", ru: "Результаты показаны с французскими заголовками; ссылки ведут на переведённые страницы." },
         retourHaut:   { fr: "Retour en haut de la page", en: "Back to top", es: "Volver arriba", de: "Nach oben", it: "Torna su", zh: "返回顶部", ru: "Наверх" },
         toutDeplier:  { fr: "Tout déplier", en: "Expand all", es: "Desplegar todo", de: "Alle ausklappen", it: "Espandi tutto", zh: "全部展开", ru: "Развернуть всё" },
         toutReplier:  { fr: "Tout replier", en: "Collapse all", es: "Plegar todo", de: "Alle einklappen", it: "Comprimi tutto", zh: "全部折叠", ru: "Свернуть всё" },
@@ -96,6 +119,14 @@
         lienCopieCourt:{ fr: "✅ Lien copié !", en: "✅ Link copied!", es: "✅ ¡Enlace copiado!", de: "✅ Link kopiert!", it: "✅ Link copiato!", zh: "✅ 链接已复制！", ru: "✅ Ссылка скопирована!" },
         copieImpossible:{ fr: "Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse.", en: "The link could not be copied automatically. Please copy it from the address bar.", es: "No se ha podido copiar el enlace automáticamente. Cópielo desde la barra de direcciones.", de: "Der Link konnte nicht automatisch kopiert werden. Bitte kopieren Sie ihn aus der Adressleiste.", it: "Impossibile copiare il link automaticamente. Copialo dalla barra degli indirizzi.", zh: "无法自动复制链接，请从地址栏手动复制。", ru: "Не удалось скопировать ссылку автоматически. Скопируйте её из адресной строки." },
 
+        // --- Page introuvable ------------------------------------------------
+        // Servie par GitHub Pages pour toute adresse inconnue du site, quelle
+        // que soit la langue du chemin demandé : elle ne peut pas exister en
+        // plusieurs exemplaires, elle traduit donc son propre texte.
+        introuvableTitre: { fr: "Cette page n'existe pas ou a été déplacée.", en: "This page does not exist, or has been moved.", es: "Esta página no existe o ha sido trasladada.", de: "Diese Seite existiert nicht oder wurde verschoben.", it: "Questa pagina non esiste o è stata spostata.", zh: "该页面不存在或已被移动。", ru: "Эта страница не существует или была перемещена." },
+        introuvableTexte: { fr: "Pas de panique — retourne à l'accueil pour retrouver tous les guides.", en: "No need to worry — go back to the home page to find all the guides.", es: "Que no cunda el pánico: vuelva al inicio para encontrar todas las guías.", de: "Kein Grund zur Sorge — kehren Sie zur Startseite zurück, um alle Leitfäden zu finden.", it: "Niente panico: torna alla home per ritrovare tutte le guide.", zh: "别担心 — 返回首页即可找到所有指南。", ru: "Не волнуйтесь — вернитесь на главную, чтобы найти все руководства." },
+        retourAccueil:    { fr: "← Retour à l'accueil", en: "← Back to the home page", es: "← Volver al inicio", de: "← Zurück zur Startseite", it: "← Torna alla home", zh: "← 返回首页", ru: "← Вернуться на главную" },
+
         // --- Quiz -----------------------------------------------------------
         quizSurtitre: { fr: "On passe au test", en: "Time for a test", es: "Pasemos a la prueba", de: "Jetzt wird geprüft", it: "Passiamo alla prova", zh: "来做个测验", ru: "Переходим к проверке" },
         quizTitre:    { fr: "🧠 Vérifiez votre compréhension", en: "🧠 Check your understanding", es: "🧠 Compruebe lo que ha entendido", de: "🧠 Prüfen Sie Ihr Verständnis", it: "🧠 Verifica la tua comprensione", zh: "🧠 检验你的理解", ru: "🧠 Проверьте, что вы поняли" },
@@ -107,14 +138,31 @@
         quizRotationFin:{ fr: ".", en: ".", es: ".", de: ".", it: ".", zh: " 更换。", ru: "." },
 
         // --- Bandeaux ------------------------------------------------------
-        coursEnFrancais: {
+        /* Ce message ne parle que de LA PAGE AFFICHÉE, et non plus de tout le
+           site. Sa version précédente — « les cours de ce site sont écrits en
+           français » — est devenue fausse le jour où les quatorze sujets ont
+           été traduits, et décourageait alors d'aller les lire. Une affirmation
+           sur l'ensemble du site vieillit mal ; une affirmation sur la page
+           qu'on a sous les yeux reste vraie. */
+        pageNonTraduite: {
             fr: "",
-            en: "The courses on this site are written in French. The interface is translated; the course content is not yet.",
-            es: "Los cursos de este sitio están escritos en francés. La interfaz está traducida; el contenido de los cursos todavía no.",
-            de: "Die Kurse auf dieser Website sind auf Französisch verfasst. Die Oberfläche ist übersetzt, die Kursinhalte noch nicht.",
-            it: "I corsi di questo sito sono scritti in francese. L'interfaccia è tradotta, i contenuti dei corsi non ancora.",
-            zh: "本站课程以法语撰写。界面已翻译，课程内容尚未翻译。",
-            ru: "Курсы на этом сайте написаны на французском языке. Интерфейс переведён, содержание курсов — пока нет.",
+            en: "This page has not been translated yet. It is shown in French.",
+            es: "Esta página aún no está traducida. Se muestra en francés.",
+            de: "Diese Seite ist noch nicht übersetzt. Sie wird auf Französisch angezeigt.",
+            it: "Questa pagina non è ancora tradotta. È mostrata in francese.",
+            zh: "本页面尚未翻译，显示为法语。",
+            ru: "Эта страница ещё не переведена. Она показана на французском языке.",
+        },
+        // Affiché sur une page française qui, elle, a bien une traduction : le
+        // visiteur y est arrivé par un lien partagé ou par son navigateur.
+        versionDisponible: {
+            fr: "",
+            en: "This page is also available in English.",
+            es: "Esta página también está disponible en español.",
+            de: "Diese Seite ist auch auf Deutsch verfügbar.",
+            it: "Questa pagina è disponibile anche in italiano.",
+            zh: "本页面也提供中文版本。",
+            ru: "Эта страница также доступна на русском языке.",
         },
         reglesFrancaises: {
             fr: "",
@@ -128,6 +176,24 @@
     };
 
     const CODES = LANGUES.map((l) => l.code);
+
+    /* Le préfixe de langue dans une adresse. La condition qui suit — un dossier
+       « guides/ », un nom de fichier, ou rien — évite de confondre un préfixe
+       avec un dossier qui porterait le même nom qu'un code. Sans elle,
+       « /guides/it/ » serait lu comme de l'italien le jour où un sujet
+       s'appellerait « it ».
+
+       Le site est servi à la racine en local et sous « /docmaster/ » en ligne :
+       on ne peut donc pas ancrer au début du chemin. On prend la première
+       occurrence, qui est le préfixe. */
+    const PREFIXE = new RegExp("/(" + CODES.join("|") + ")/(?=guides/|[a-z0-9-]+\\.html$|$)");
+
+    // Le nom de fichier de la page courante. Une adresse qui finit par « / »
+    // désigne l'index du dossier, comme le fait tout serveur web.
+    function fichierCourant() {
+        const dernier = location.pathname.split("/").pop();
+        return dernier || "index.html";
+    }
 
     /* La langue retenue, dans l'ordre :
 
@@ -143,7 +209,7 @@
        l'anglais garde donc son interface anglaise en les parcourant, avec le
        bandeau qui prévient que le cours, lui, est en français. */
     function langueChoisie() {
-        const m = location.pathname.match(new RegExp("/(" + CODES.join("|") + ")/guides/"));
+        const m = location.pathname.match(PREFIXE);
         if (m) return m[1];
 
         let choix = null;
@@ -177,8 +243,17 @@
     // La langue de la page affichée, lue dans l'adresse et non dans le réglage :
     // « /en/guides/... » est une page anglaise même si le réglage dit autre chose.
     function langueDeLaPage() {
-        const m = location.pathname.match(new RegExp("/(" + CODES.join("|") + ")/guides/"));
+        const m = location.pathname.match(PREFIXE);
         return m ? m[1] : "fr";
+    }
+
+    /* La page courante existe-t-elle dans cette langue ? Vrai pour le français,
+       qui est la version d'origine et existe toujours. */
+    function existeDansLangue(code) {
+        if (code === "fr") return true;
+        const sujet = sujetCourant();
+        if (sujet) return (CONTENU_TRADUIT[code] || []).indexOf(sujet) !== -1;
+        return (PAGES_TRADUITES[code] || []).indexOf(fichierCourant()) !== -1;
     }
 
     const LOCALE = () => LOCALES_DATE[langueChoisie()] || "fr-FR";
@@ -188,19 +263,18 @@
        une page absente donnerait une erreur 404, ce qui est bien pire que de
        rester sur place avec un bandeau qui explique. */
     function adresseDansLangue(code) {
-        const chemin = location.pathname;
-        const sujet = sujetCourant();
-        if (!sujet) return null;
+        if (code === langueDeLaPage()) return null;
+        if (!existeDansLangue(code)) return null;
 
-        const actuelle = langueDeLaPage();
-        if (code === actuelle) return null;
+        // On retire le préfixe s'il y en a un ; il ne reste que le chemin
+        // français, celui de la version d'origine. Puis on pose le nouveau.
+        const nu = location.pathname.replace(PREFIXE, "/");
+        if (code === "fr") return nu;
 
-        const traduit = code === "fr" || (CONTENU_TRADUIT[code] || []).indexOf(sujet) !== -1;
-        if (!traduit) return null;
-
-        // On retire le préfixe de langue s'il y en a un, puis on pose le nouveau.
-        const nu = chemin.replace(new RegExp("/(" + CODES.join("|") + ")/guides/"), "/guides/");
-        return code === "fr" ? nu : nu.replace("/guides/", "/" + code + "/guides/");
+        // Le préfixe se glisse juste avant le dernier segment du chemin pour
+        // une page hors cours, et avant « guides/ » pour un cours.
+        const coupe = nu.lastIndexOf(sujetCourant() ? "/guides/" : "/");
+        return nu.slice(0, coupe) + "/" + code + nu.slice(coupe);
     }
 
     window.DOCMASTER_LANGUES = {
@@ -209,6 +283,8 @@
         TEXTES: TEXTES,
         SUJETS_DROIT_FRANCAIS: SUJETS_DROIT_FRANCAIS,
         CONTENU_TRADUIT: CONTENU_TRADUIT,
+        PAGES_TRADUITES: PAGES_TRADUITES,
+        existeDansLangue: existeDansLangue,
         langueChoisie: langueChoisie,
         definirLangue: definirLangue,
         t: t,

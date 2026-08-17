@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>DocMaster - A library of knowledge</title>
+    <meta name="description" content="DocMaster is a library of free educational guides on finance, artificial intelligence, web development, marketing, cybersecurity, entrepreneurship, productivity, data, design, learning, law, health at work, digital sustainability and negotiation.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/index.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/index.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/index.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="DocMaster - A library of knowledge">
+    <meta property="og:description" content="DocMaster is a library of free educational guides on finance, artificial intelligence, web development, marketing, cybersecurity, entrepreneurship, productivity, data, design, learning, law, health at work, digital sustainability and negotiation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/index.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DocMaster - A library of knowledge">
+    <meta name="twitter:description" content="DocMaster is a library of free educational guides on finance, artificial intelligence, web development, marketing, cybersecurity, entrepreneurship, productivity, data, design, learning, law, health at work, digital sustainability and negotiation.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <header>
+        <h1>DocMaster</h1>
+        <p>A library of knowledge for learning and understanding the skills of tomorrow.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="🔍 Search for a guide or topic…" autocomplete="off">
+        <span class="search-hint">/</span>
+        <div id="search-results" class="search-results"></div>
+    </div>
+
+    <main id="main-content">
+        <section>
+            <h2>Welcome</h2>
+            <p>Explore complete guides to learn, understand and master new skills. Tip: press <strong>"/"</strong> anywhere on the site to start a quick search.</p>
+        </section>
+
+        <!-- Bloc produit par scripts/publier-actualites.js, qui écrit les deux
+             langues. Vide tant qu'aucun article n'est retenu : une rubrique
+             « Actualités » sans actualité fait plus de mal que son absence. -->
+        <!-- ACTUALITES:DEBUT -->
+        <section id="actualites">
+            <h2>📰 Read elsewhere</h2>
+            <p>A few readings related to the guides, picked by hand. <strong>They are in French</strong>: they point to French sources, and a translated headline could no longer be found again.</p>
+            <ul class="actu-liste">
+                    <li class="actu">
+                        <a class="actu-titre" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQQXBucDA3RmJRYjVVcWpKb2xxQTNaSVc3RnBpejJJaEZUZnZVX1M4dzNNenFnMS1fY25Waml0TFFzSEFWMTBZVkI0Vms0ZUsxTGdpbG5IOWhwdk52X3NKUTVSTVY2YmFEVDRtUVR5WmY4NkJwMDNZT19MYWdsZFJLVUp5WXNpTklqMWRXWDFFbklTSloyVVE?oc=5" target="_blank" rel="noopener noreferrer">Transformers en déclin : l'IA cherche des solutions innovantes</a>
+                        <p class="actu-source">Brief IA · 11 August</p>
+                    </li>
+                    <li class="actu">
+                        <a class="actu-titre" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOSUlaQ3RCU2JleThweUxwREhrS2xiTEltVjFZUno4c2JTYTJOS3hlNi1TeEc5U3NobnVIZEllbkVWLXlnRWt0UkVyN1ZBeWp5U1hDMHBlN2R0RTc1aGtZTG93X1I0cE9pWERMVG1ZYTV4b040Zl9Ia1hWdjhHdS1ncURNWUU?oc=5" target="_blank" rel="noopener noreferrer">Investir en private equity : les meilleures plateformes en 2026</a>
+                        <p class="actu-source">Cafédelabourse · 30 June</p>
+                    </li>
+                    <li class="actu">
+                        <a class="actu-titre" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOcTIwOGd1cVdBckM0a3BWaVRtdlhQZmZPa0dMVmlvQzVpSDRmY1dNUnpqX1JXRnR2UXJqcDJFc3Q1TlZIMl9oTEdKQnZCWDIyYm83UzlsSGJfYXVvRnVHWnRfeXFjSV9ZTzFlSE43emstWmhCU0M0OWd4aUE1SHZtMjA1aDFxTW1PdC0wS0pJY3g0YmNDMll3bnpQT2c1ZWVQc0N4TlFiSlZPcXZnb2FzRGdyZXNKNTFDS1FYUUln?oc=5" target="_blank" rel="noopener noreferrer">Circulaire Retraite et Retraite Progressive 2027-2028 : Tout comprendre pour votre demande</a>
+                        <p class="actu-source">SE UNSA · 24 June</p>
+                    </li>
+            </ul>
+            <p><a href="actualites.html">All the news →</a></p>
+        </section>
+        <!-- ACTUALITES:FIN -->
+
+        <section id="categories">
+            <h2>Our categories</h2>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">💰</span>Finance</h3>
+                <p>Learning the basics of financial investing.</p>
+                <a href="guides/finance/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🤖</span>Artificial Intelligence</h3>
+                <p>Discovering how AI agents are built and the technologies behind them.</p>
+                <a href="guides/ia/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">💻</span>Web Development</h3>
+                <p>Learning to build modern websites and web applications.</p>
+                <a href="guides/dev-web/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">📢</span>Digital Marketing</h3>
+                <p>Understanding the levers for promoting a product or a brand online.</p>
+                <a href="guides/marketing/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🔒</span>Cybersecurity</h3>
+                <p>Understanding the basics of protecting yourself and your data online.</p>
+                <a href="guides/cybersecurite/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🚀</span>Entrepreneurship</h3>
+                <p>Learning to structure and launch a business project.</p>
+                <a href="guides/entrepreneuriat/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">⏱️</span>Productivity &amp; Organisation</h3>
+                <p>Getting better organised to be more effective day to day.</p>
+                <a href="guides/productivite/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">📊</span>Data &amp; Analytics</h3>
+                <p>Learning to collect, analyse and interpret data.</p>
+                <a href="guides/data/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🎨</span>UX/UI Design</h3>
+                <p>Understanding how to create interfaces that are clear and pleasant to use.</p>
+                <a href="guides/design/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">⚖️</span>Law &amp; Procedures</h3>
+                <p>Finding your way through official procedures, knowing your deadlines and asserting your rights.</p>
+                <a href="guides/droit/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🩺</span>Health at Work</h3>
+                <p>Setting up your workstation, understanding mental load, knowing your options.</p>
+                <a href="guides/sante/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🌱</span>Digital Sustainability</h3>
+                <p>Where the impact of digital technology really is, and which figures hold up.</p>
+                <a href="guides/ecologie/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🤝</span>Negotiation &amp; Communication</h3>
+                <p>Making yourself understood, and knowing what can be worked out before negotiating.</p>
+                <a href="guides/negociation/index.html">See the guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🎓</span>Learning How to Learn</h3>
+                <p>Retaining what you read, revising at the right moment, and sorting the methods.</p>
+                <a href="guides/apprendre/index.html">See the guide →</a>
+            </article>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/search-data.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+
+    <!-- Les statistiques d'audience (GoatCounter) sont chargées par assets/js/layout.js,
+         présent sur toutes les pages du site. Rien à ajouter ici. -->
+</body>
+</html>

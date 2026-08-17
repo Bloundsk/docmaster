@@ -1,5 +1,106 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — Les pages hors cours traduites : **le site entier bascule en anglais**
+Huit pages sous `en/` — accueil, actualités, glossaire, boîte à idées, FAQ,
+à propos, mentions légales, mon espace — plus une page 404 qui traduit son
+propre texte. Avec les 56 pages de cours, **64 pages anglaises**.
+
+Jusqu'ici, choisir l'anglais traduisait le menu et les cours, mais laissait
+neuf pages en français. Le drapeau n'y menait nulle part, et les cartes de
+l'accueil renvoyaient vers les guides français.
+
+### Le bandeau affirmait quelque chose de faux
+
+Un visiteur anglophone lisait sur l'accueil : *« The courses on this site are
+written in French. The interface is translated; the course content is not
+yet. »* C'était vrai à l'écriture de la phrase. Ça ne l'était plus depuis la
+traduction du quatorzième sujet — et le message **décourageait d'aller lire
+les cours qui existaient bel et bien**.
+
+La leçon vaut au-delà de ce cas : **une affirmation sur l'ensemble du site
+vieillit mal ; une affirmation sur la page qu'on a sous les yeux reste vraie.**
+Le bandeau ne parle donc plus que de la page affichée, et il a maintenant trois
+états au lieu d'un :
+
+| Situation | Ce qui s'affiche |
+|---|---|
+| La page est déjà dans la bonne langue | rien |
+| Elle existe dans cette langue | « This page is also available in English », **cliquable** |
+| Elle n'existe pas | « This page has not been translated yet » |
+
+### Le préfixe de langue n'est plus réservé aux cours
+
+`langues.js` reconnaissait une page traduite au motif `/(langue)/guides/`.
+Trois fonctions en dépendaient. Elles reconnaissent désormais aussi
+`/(langue)/<page>.html`, avec une condition qui empêche de confondre un
+préfixe avec un dossier homonyme : le jour où un sujet s'appellerait `it`,
+`/guides/it/` aurait été lu comme de l'italien.
+
+La liste des pages traduites vit dans un `PAGES_TRADUITES` distinct de
+`CONTENU_TRADUIT` : les deux ne pointent pas au même endroit.
+
+### Le menu était traduit, mais menait au français
+
+Les liens de la barre et du pied étaient construits sur `base + fichier`.
+Cliquer « Glossary » depuis une page anglaise ramenait donc à la page
+française. Ils passent maintenant par un `lien()` qui pose le préfixe quand la
+page existe dans la langue courante, et retombe sur le français sinon — une
+404 ne se compense par aucun libellé traduit.
+
+### La page 404 ne peut pas être dupliquée
+
+GitHub Pages sert le 404 de la racine pour **toute** adresse inconnue, `/en/`
+comprise : une copie sous `en/` ne serait jamais affichée. Cette page traduit
+donc son propre texte, et son lien de retour mène à l'accueil de la bonne
+langue. Le français reste écrit dans le HTML, pour rester lisible sans
+JavaScript.
+
+### Les actualités s'écrivent maintenant dans les deux langues
+
+`publier-actualites.js` n'écrivait que `actualites.html` et `index.html`. Sans
+correction, la page anglaise aurait figé la liste du jour de sa traduction,
+**sans que rien ne le signale**. Le script rend désormais les quatre pages, à
+partir d'un même jeu d'articles.
+
+Les titres restent en français dans les deux versions : ce sont des titres
+d'articles français, et un titre traduit ne se retrouve plus. Ce qui change,
+c'est ce que le site écrit autour. La version anglaise renvoie vers la page
+anglaise du guide **sans ancre** : les ancres anglaises portent d'autres noms,
+et arriver en haut de la bonne page vaut mieux qu'arriver nulle part.
+
+Le script accepte au passage `--hors-ligne`, qui réécrit les pages depuis
+l'état enregistré sans interroger GitHub — la seule façon de voir le rendu
+d'un gabarit modifié sans attendre le passage automatique suivant.
+
+### Le contrôle de géométrie faisait la même hypothèse
+
+Sa règle « langue déclarée = langue du texte » cherchait `/en/guides/`. Les six
+nouvelles pages anglaises ont donc produit **24 échecs qui n'en étaient pas**,
+le contrôle réclamant `lang="fr"` sur des pages anglaises. Même correction
+qu'au-dessus, même raison.
+
+### Ce qui reste en français, et le dit
+
+- **Les titres d'articles** de la page Actualités, avec la raison écrite sur la page.
+- **L'index de recherche** : 237 entrées titrées en français. Les liens mènent
+  aux pages anglaises — la FAQ anglaise le dit à l'endroit où le lecteur le
+  constate, et le message « aucun résultat » est traduit.
+- **Les mentions légales** sont une traduction de courtoisie : le site est
+  publié en France, un encadré indique que la version française fait foi.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `audit-geometrie.html` | **454 mesures, 26 gabarits**, 0 anomalie |
+| `valider-js.js` | 0 erreur |
+| Liens locaux | 3 235 vérifiés, 0 cassé |
+| Bandeau, dans ses 3 états | vérifié page par page dans le navigateur |
+| Menu et pied depuis `en/` | 22 liens, tous sous `en/` ou `assets/` |
+| Page 404 en `fr` et en `en` | texte et lien de retour corrects, sans bandeau |
+| Français résiduel sous `en/` | aucun, hors titres d'articles et noms propres |
+
 ## 2026-08-17 — Entrepreneuriat traduit : **les quatorze sujets sont en anglais**
 Quatre pages, trois banques de questions, 146 textes de simulateurs.
 `entrepreneuriat` est déclaré dans `CONTENU_TRADUIT` ; il était déjà dans

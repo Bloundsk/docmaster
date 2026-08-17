@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>News - DocMaster</title>
+    <meta name="description" content="Des lectures en rapport avec les guides DocMaster, choisies à la main : une sélection d'articles rattachés à la section qu'ils prolongent.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/actualites.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/actualites.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/actualites.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/actualites.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="News - DocMaster">
+    <meta property="og:description" content="Des lectures en rapport avec les guides DocMaster, choisies à la main.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/actualites.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="News - DocMaster">
+    <meta name="twitter:description" content="Des lectures en rapport avec les guides DocMaster, choisies à la main.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &gt; <span aria-current="page">News</span>
+    </nav>
+
+    <header>
+        <h1>📰 News</h1>
+        <p>Readings that extend the guides, each attached to the guide it relates to.</p>
+    </header>
+
+    <main id="main-content">
+        <section>
+            <h2 id="lectures">Read elsewhere</h2>
+
+            <!-- Cette liste est produite par scripts/publier-actualites.js à
+                 partir des articles cochés dans les rapports de veille. Elle est
+                 réécrite à chaque publication : toute modification faite ici à la
+                 main serait perdue au passage suivant.
+
+                 Les titres restent en français : ce sont des titres d'articles
+                 français, et un titre traduit ne se retrouve plus. -->
+            <!-- ACTUALITES:DEBUT -->
+                <ul class="actu-liste">
+                    <li class="actu">
+                        <a class="actu-titre" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQQXBucDA3RmJRYjVVcWpKb2xxQTNaSVc3RnBpejJJaEZUZnZVX1M4dzNNenFnMS1fY25Waml0TFFzSEFWMTBZVkI0Vms0ZUsxTGdpbG5IOWhwdk52X3NKUTVSTVY2YmFEVDRtUVR5WmY4NkJwMDNZT19MYWdsZFJLVUp5WXNpTklqMWRXWDFFbklTSloyVVE?oc=5" target="_blank" rel="noopener noreferrer">Transformers en déclin : l'IA cherche des solutions innovantes</a>
+                        <p class="actu-source">Brief IA · 11 August</p>
+                        <p class="actu-lien-guide">Related to <a href="guides/ia/debutant.html">🤖 Artificial Intelligence — Beginner</a></p>
+                    </li>
+                    <li class="actu">
+                        <a class="actu-titre" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOSUlaQ3RCU2JleThweUxwREhrS2xiTEltVjFZUno4c2JTYTJOS3hlNi1TeEc5U3NobnVIZEllbkVWLXlnRWt0UkVyN1ZBeWp5U1hDMHBlN2R0RTc1aGtZTG93X1I0cE9pWERMVG1ZYTV4b040Zl9Ia1hWdjhHdS1ncURNWUU?oc=5" target="_blank" rel="noopener noreferrer">Investir en private equity : les meilleures plateformes en 2026</a>
+                        <p class="actu-source">Cafédelabourse · 30 June</p>
+                        <p class="actu-lien-guide">Related to <a href="guides/finance/intermediaire.html">💰 Finance — Intermediate</a></p>
+                    </li>
+                    <li class="actu">
+                        <a class="actu-titre" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOcTIwOGd1cVdBckM0a3BWaVRtdlhQZmZPa0dMVmlvQzVpSDRmY1dNUnpqX1JXRnR2UXJqcDJFc3Q1TlZIMl9oTEdKQnZCWDIyYm83UzlsSGJfYXVvRnVHWnRfeXFjSV9ZTzFlSE43emstWmhCU0M0OWd4aUE1SHZtMjA1aDFxTW1PdC0wS0pJY3g0YmNDMll3bnpQT2c1ZWVQc0N4TlFiSlZPcXZnb2FzRGdyZXNKNTFDS1FYUUln?oc=5" target="_blank" rel="noopener noreferrer">Circulaire Retraite et Retraite Progressive 2027-2028 : Tout comprendre pour votre demande</a>
+                        <p class="actu-source">SE UNSA · 24 June</p>
+                        <p class="actu-lien-guide">Related to <a href="guides/droit/avance.html">⚖️ Law &amp; Procedures — Advanced</a></p>
+                    </li>
+                    <li class="actu">
+                        <a class="actu-titre" href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxNakprcERoNXcwSk43WTh4OUZoT1RHcHdDVkVkUWhqRFdkRExHemJaZVpzOUthdGhTbVd5MV9wdG1EY3U1MzRCdFNiNkZISTh0QW5PSFhEcXNqREtKQjd5aXBLWm9JYmxLb1o5NXlIbGNfUEFyVWFCUnZxRG03MEYyNkRSb05fM3JETTNkZW9pS3h2aVlKUzB5bEduc2xEWFNEREVOdHRrR3VpOHB3NGtmWWROOFlvdTAwa04zN3l0am1ROU0wLUhOMUNDYWJvOElkeGJ1RmszTGVWX25xQ2d3c001aV9zRzJUbDV4LXJzSml1UE40djBDWVBlZw?oc=5" target="_blank" rel="noopener noreferrer">Levée de fonds : « le sens est clair, ce qui est flou, c'est la manière dont il faut procéder »</a>
+                        <p class="actu-source">Les Echos · 29 May</p>
+                        <p class="actu-lien-guide">Related to <a href="guides/entrepreneuriat/avance.html">🚀 Entrepreneurship — Advanced</a></p>
+                    </li>
+                </ul>
+            <!-- ACTUALITES:FIN -->
+        </section>
+
+        <section>
+            <h2 id="methode">How this page is made</h2>
+            <p>Twice a day, an automated search goes through the online press for every section of every guide. It publishes nothing: it proposes.</p>
+            <p><strong>Every article on this page has been read and selected by hand.</strong> An automated selection would also bring up promotional content and sloppy articles — the sorting is what makes the difference between a press review and a news feed.</p>
+
+            <div class="piege">
+                <span class="titre">About the links</span>
+                <p>These articles are published by third-party sites. Citing them here means they seemed worth reading, not that DocMaster endorses every line or guarantees their accuracy.</p>
+                <p>Some may become paywalled, move or disappear: DocMaster has no control over their content.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+</body>
+</html>

@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchResults = document.getElementById('search-results');
     if (!searchInput || !searchResults) return;
 
+    /* Les libellés viennent de langues.js. Le repli sur le français est
+       volontaire : si le fichier manquait, un mot en français vaut mieux
+       qu'une clef technique affichée au visiteur. */
+    const L = window.DOCMASTER_LANGUES;
+    const T = (clef, defaut) => (L && L.t(clef)) || defaut;
+
     // Distance de Levenshtein simplifiée (tolérance aux fautes de frappe)
     function distance(a, b) {
         if (Math.abs(a.length - b.length) > 2) return 99;
@@ -104,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Le texte est posé avec textContent, jamais concaténé dans du HTML :
         // une recherche passée est une saisie libre, et « <img onerror=...> »
         // aurait été réinterprété comme du balisage au retour sur la page.
-        searchResults.innerHTML = '<p class="no-results">Recherches récentes :</p>';
+        searchResults.innerHTML = '<p class="no-results">' + T("recherchesRecentes", "Recherches récentes :") + '</p>';
         history.forEach(h => {
             const lien = document.createElement("a");
             lien.href = "#";
@@ -148,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .sort((a, b) => pertinence(b, query) - pertinence(a, query));
 
         if (matches.length === 0) {
-            searchResults.innerHTML = '<p class="no-results">Aucun résultat trouvé.</p>';
+            searchResults.innerHTML = '<p class="no-results">' + T("aucunResultat", "Aucun résultat trouvé.") + '</p>';
             searchResults.classList.add('active');
             return;
         }

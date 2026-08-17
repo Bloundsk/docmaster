@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>My space - DocMaster</title>
+    <meta name="description" content="Your favourites and your progress on DocMaster, kept in your browser alone — no account, no sign-up.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/mon-espace.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/mon-espace.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/mon-espace.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/mon-espace.html">
+    <meta property="og:site_name" content="DocMaster">
+    <meta property="og:title" content="My space - DocMaster">
+    <meta property="og:description" content="Your favourites and your progress on DocMaster, kept in your browser alone — no account, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/mon-espace.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DocMaster — 14 free guides for the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My space - DocMaster">
+    <meta name="twitter:description" content="Your favourites and your progress on DocMaster, kept in your browser alone — no account, no sign-up.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &gt; <span aria-current="page">My space</span>
+    </nav>
+
+    <header>
+        <h1>⭐ My space</h1>
+        <p>Your favourites and your progress, with no account and no sign-up.</p>
+    </header>
+
+    <main id="main-content">
+
+        <div class="espace-stats" id="espace-stats"></div>
+
+        <section>
+            <h2>My favourites</h2>
+            <div id="espace-favoris"></div>
+        </section>
+
+        <section>
+            <h2>Guides I have finished</h2>
+            <div id="espace-lus"></div>
+        </section>
+
+        <div class="espace-note">
+            <p><strong>Where is this information stored?</strong></p>
+            <p>
+                In this browser only, on this device. It is sent to no server — the site does
+                not have one. That is why no sign-up is asked for: no email address, no
+                password.
+            </p>
+            <p>
+                In exchange, you will not find it again on another device, and it will
+                disappear if you clear your browsing data.
+            </p>
+            <p style="margin-top:14px;">
+                <button type="button" id="espace-effacer" class="espace-retirer" style="border:1px solid var(--muted);border-radius:999px;padding:7px 16px;font-size:.9rem;font-family:'Inter',sans-serif;">
+                    Erase everything
+                </button>
+            </p>
+        </div>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/parcours.js"></script>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Le total se déduit de la structure déclarée dans parcours.js.
+            // Écrit en dur, il deviendrait faux dès qu'un sujet se décompose en
+            // niveaux — sans cesser pour autant de paraître crédible, ce qui est
+            // la pire forme d'erreur : personne ne la remarque.
+            const PAGES = window.DOCMASTER_PAGES || [];
+            const NB_GUIDES = PAGES.length || 9;
+
+            // --- Guides termines : releves depuis les cles posees par enhance.js
+            function guidesLus() {
+                const lus = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const cle = localStorage.key(i);
+                    if (!cle || !cle.startsWith("docmaster-read-")) continue;
+                    if (localStorage.getItem(cle) !== "true") continue;
+                    // La cle contient le chemin complet de la page au moment du clic
+                    const chemin = cle.replace("docmaster-read-", "");
+                    // La clé porte le chemin complet : « guides/finance/debutant.html »
+                    // pour un sujet découpé en niveaux, « guides/ia/index.html » sinon.
+                    const m = chemin.match(/guides\/([^/]+)\/([^/.]+)\.html/);
+                    if (!m) continue;
+                    lus.push({
+                        dossier: m[1],
+                        niveau: m[2] === "index" ? "" : m[2],
+                        chemin: "guides/" + m[1] + "/" + m[2] + ".html"
+                    });
+                }
+                return lus;
+            }
+
+            /* Les noms anglais des sujets. Cette page est le seul endroit du
+               site où un nom de sujet est reconstruit à partir de son dossier :
+               ailleurs il est écrit dans la page. */
+            const NOMS = {
+                finance: "💰 Finance", ia: "🤖 Artificial Intelligence",
+                "dev-web": "💻 Web Development", marketing: "📢 Digital Marketing",
+                cybersecurite: "🔒 Cybersecurity", entrepreneuriat: "🚀 Entrepreneurship",
+                productivite: "⏱️ Productivity & Organisation", data: "📊 Data & Analytics",
+                design: "🎨 UX/UI Design", droit: "⚖️ Law & Procedures",
+                sante: "🩺 Health at Work", ecologie: "🌱 Digital Sustainability",
+                negociation: "🤝 Negotiation & Communication", apprendre: "🎓 Learning How to Learn"
+            };
+
+            // Les niveaux viennent de parcours.js, qui les nomme en français :
+            // cette page les traduit pour elle-même plutôt que de traduire une
+            // source de vérité partagée par les deux langues.
+            const NIVEAUX = { debutant: "Beginner", intermediaire: "Intermediate", avance: "Advanced" };
+
+            // « 💰 Finance — Beginner » pour un sujet à niveaux, « 🤖 AI » sinon.
+            function nomComplet(page) {
+                const nom = NOMS[page.dossier] || page.dossier;
+                if (!page.niveau) return nom;
+                return nom + " — " + (NIVEAUX[page.niveau] || page.niveau);
+            }
+
+            function rendre() {
+                const favoris = window.DocMasterFavoris.lire();
+                const lus = guidesLus();
+
+                // --- Chiffres
+                document.getElementById("espace-stats").innerHTML = `
+                    <div class="espace-stat"><span class="nombre">${favoris.length}</span><span class="libelle">favourite${favoris.length > 1 ? "s" : ""}</span></div>
+                    <div class="espace-stat"><span class="nombre">${lus.length}/${NB_GUIDES}</span><span class="libelle">pages finished</span></div>
+                    <div class="espace-stat"><span class="nombre">${Math.round(lus.length / NB_GUIDES * 100)}%</span><span class="libelle">of progress</span></div>`;
+
+                // --- Favoris, regroupes par guide
+                const zone = document.getElementById("espace-favoris");
+                if (!favoris.length) {
+                    zone.innerHTML = `<div class="espace-vide">
+                        <p><strong>No favourites yet.</strong></p>
+                        <p>Click the star ☆ next to a guide or a section to find it again here.</p>
+                    </div>`;
+                } else {
+                    const groupes = {};
+                    for (const f of favoris) (groupes[f.guide || "Other"] ||= []).push(f);
+                    zone.innerHTML = Object.entries(groupes).map(([guide, liste]) => `
+                        <div class="espace-groupe">
+                            <h3>${guide}</h3>
+                            <ul class="espace-liste">
+                                ${liste.sort((a, b) => a.date - b.date).map(f => `
+                                    <li>
+                                        <a href="${f.chemin}${f.ancre ? "#" + encodeURIComponent(f.ancre) : ""}">${f.titre}</a>
+                                        <button type="button" class="espace-retirer" data-id="${f.id}"
+                                                aria-label="Remove from favourites: ${f.titre}" title="Remove">✕</button>
+                                    </li>`).join("")}
+                            </ul>
+                        </div>`).join("");
+                }
+
+                // --- Guides termines
+                const zoneLus = document.getElementById("espace-lus");
+                if (!lus.length) {
+                    zoneLus.innerHTML = `<div class="espace-vide">
+                        <p><strong>No guide finished yet.</strong></p>
+                        <p>Tick “I have read and understood this guide” at the bottom of a guide to mark it here.</p>
+                    </div>`;
+                } else {
+                    zoneLus.innerHTML = `<div class="espace-groupe"><ul class="espace-liste">
+                        ${lus.map(g => `<li><a href="${g.chemin}">${nomComplet(g)}</a></li>`).join("")}
+                    </ul></div>`;
+                }
+
+                // Retrait d'un favori depuis cette page
+                zone.querySelectorAll(".espace-retirer").forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        const restants = window.DocMasterFavoris.lire().filter(f => f.id !== btn.dataset.id);
+                        window.DocMasterFavoris.ecrire(restants);
+                        rendre();
+                    });
+                });
+            }
+
+            rendre();
+
+            document.getElementById("espace-effacer").addEventListener("click", () => {
+                if (!confirm("Erase your favourites and your progress? This cannot be undone.")) return;
+                window.DocMasterFavoris.ecrire([]);
+                const aSupprimer = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const c = localStorage.key(i);
+                    if (c && c.startsWith("docmaster-read-")) aSupprimer.push(c);
+                }
+                aSupprimer.forEach(c => localStorage.removeItem(c));
+                rendre();
+            });
+        });
+    </script>
+</body>
+</html>
