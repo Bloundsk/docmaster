@@ -183,7 +183,7 @@
      * L animation ne pose aucun etat final : si elle ne joue pas, la mascotte
      * est deja a sa place. C est ce qui la rend inoffensive.
      * ------------------------------------------------------------------- */
-    const DUREE_VOL = 2200;
+    const DUREE_VOL = 5600;
 
     function volInaugural(bloc, entete) {
         // Qui a demande moins de mouvement n en recoit aucun : elle est
@@ -191,32 +191,7 @@
         if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         if (!bloc.animate) return;             // navigateur sans l API : elle se pose, sans vol
 
-        const large = entete.clientWidth || 1000;
-        // Le balayage occupe un peu plus de la moitie de la banniere, sans
-        // jamais depasser 420 px : au-dela, le mouvement devient une traversee.
-        const amp = Math.min(420, large * 0.58);
-
-        /* Le chemin, en decalages par rapport a la position de repos (0, 0).
-           AUCUN X N EST POSITIF, et ce n est pas un detail : la position de
-           repos est deja calee a droite de la banniere, si bien que le moindre
-           decalage vers la droite elargit la page.
-
-           La premiere version commencait a x: +34 — le commentaire au-dessus
-           jurait pourtant que la trajectoire n allait jamais a droite. L audit
-           l a vu : 15 px de debordement a 1000, 35 px a 700.
-
-           La rotation compte double : tourner un carre de 128 px de 24 degres
-           porte sa boite englobante a 169 px, soit 20 px de plus de chaque
-           cote. Le depassement final ci-dessous est donc lui aussi vers la
-           gauche. */
-        const chemin = [
-            { x: -18,         y: -340, r: 24,  o: 0 },   // elle arrive d en haut
-            { x: -amp * 0.5,  y: -170, r: -16, o: 1 },   // elle bascule a gauche
-            { x: -amp,        y: -10,  r: -8,  o: 1 },   // point le plus lointain
-            { x: -amp * 0.45, y: 62,   r: 14,  o: 1 },   // elle remonte vers son perchoir
-            { x: -26,         y: -14,  r: 7,   o: 1 },   // petit depassement, a gauche
-            { x: 0,           y: 0,    r: 0,   o: 1 },   // posee
-        ];
+        const chemin = cheminInfini(bloc, entete);
 
         bloc.animate(
             chemin.map((p, i) => ({
@@ -224,10 +199,77 @@
                 opacity: p.o,
                 offset: i / (chemin.length - 1),
             })),
-            { duration: DUREE_VOL, easing: "cubic-bezier(.42,.02,.28,1)" }
+            /* Presque lineaire, a dessein. Une courbe d acceleration marquee
+               ferait filer la mascotte au milieu du huit puis trainer dans les
+               boucles : c est le mouvement qu on veut lire, pas la hate. Les
+               deux extremites restent adoucies. */
+            { duration: DUREE_VOL, easing: "cubic-bezier(.35,.06,.28,1)" }
         );
 
         semerLesPages(bloc, entete, chemin);
+    }
+
+    /* LE SIGNE DE L INFINI, tracé sur toute la largeur de la page.
+     *
+     * Une lemniscate de Gerono : x = a·cos(t), y = (h/2)·sin(2t). Elle se croise
+     * en son milieu, ce qui donne le huit couche du signe ∞ — la ou un cercle
+     * ou une ellipse n auraient donne qu une boucle.
+     *
+     * LE CALAGE, QUI EST TOUT LE PROBLEME
+     *
+     * La position de repos est collee au bord DROIT de la banniere. Or une page
+     * ne grandit que vers le bas et vers la droite : le moindre depassement a
+     * droite ajoute une barre de defilement horizontale. On decale donc la
+     * courbe pour que son point le plus a droite soit EXACTEMENT la position de
+     * repos — x va de -2a a 0, jamais au-dela. Le huit occupe ainsi toute la
+     * largeur disponible, entierement a gauche.
+     *
+     * Elle part de sa place, trace le huit, et y revient : la courbe commence
+     * et finit en (0, 0), sans qu on ait a raccorder quoi que ce soit.
+     *
+     * L inclinaison suit la TANGENTE, calculee sur le point suivant, puis
+     * bridee a 26 degres — un robot qui pique du nez a 80 degres dans une
+     * boucle serree ne ressemble plus a rien.
+     */
+    function cheminInfini(bloc, entete) {
+        const large = entete.clientWidth || 1000;
+        const droite = parseFloat(getComputedStyle(bloc).right) || 24;
+        const largeurBloc = bloc.offsetWidth || 128;
+
+        // Toute la largeur utile, moins de quoi ne pas raser les bords.
+        const etendue = Math.max(220, large - droite - largeurBloc - 24);
+        const a = etendue / 2;
+        // Assez haut pour que les deux boucles se lisent, sans sortir par le bas.
+        const h = Math.min(210, entete.clientHeight * 0.72);
+
+        const pts = [];
+        // La chute initiale, au-dessus de son perchoir.
+        pts.push({ x: 0, y: -420, r: 18, o: 0 });
+        pts.push({ x: 0, y: -150, r: 10, o: 1 });
+
+        const N = 96;                       // assez de points pour que le trace soit lisse
+        for (let i = 0; i <= N; i++) {
+            const t = (i / N) * Math.PI * 2;
+            pts.push({
+                x: -a + a * Math.cos(t),
+                y: (h / 2) * Math.sin(2 * t),
+                o: 1,
+            });
+        }
+
+        // L inclinaison, deduite du deplacement vers le point suivant.
+        for (let i = 2; i < pts.length; i++) {
+            const suivant = pts[Math.min(i + 1, pts.length - 1)];
+            const angle = Math.atan2(suivant.y - pts[i].y, suivant.x - pts[i].x) * 180 / Math.PI;
+            // On ramene dans [-90, 90] : elle penche, elle ne se retourne pas.
+            let penche = angle;
+            if (penche > 90) penche -= 180;
+            if (penche < -90) penche += 180;
+            pts[i].r = Math.max(-26, Math.min(26, penche));
+        }
+        pts[pts.length - 1].r = 0;          // posee, bien droite
+
+        return pts;
     }
 
     /* La trainee. Une page se detache a intervalles reguliers le long du
@@ -237,14 +279,17 @@
        page nait la ou elle se trouvait a cet instant. Recopier des positions a
        la main aurait produit une trainee qui ne suit rien. */
     function semerLesPages(bloc, entete, chemin) {
-        const NOMBRE = 14;
+        // Le trajet est long : quatorze pages y laisseraient de grands vides.
+        const NOMBRE = 30;
         const conteneur = document.createElement("div");
         conteneur.className = "mascotte-trainee";
         entete.insertBefore(conteneur, bloc);   // derriere elle, jamais devant
 
         for (let n = 0; n < NOMBRE; n++) {
-            // On evite les tout premiers instants : elle est encore invisible.
-            const t = 0.12 + (n / NOMBRE) * 0.78;
+            /* On evite les tout premiers instants — elle est encore invisible —
+               et les tout derniers, sinon des pages tomberaient devant elle
+               alors qu elle est deja posee. */
+            const t = 0.10 + (n / NOMBRE) * 0.82;
             const p = pointSurLeChemin(chemin, t);
 
             const page = document.createElement("span");

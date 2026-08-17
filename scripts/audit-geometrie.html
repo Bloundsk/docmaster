@@ -319,9 +319,12 @@ async function controler(d, w, largeur, nomPage) {
        droite : c'est la largeur qu'on surveille. */
     const enVol = d.querySelector(".mascotte-vol");
     if (enVol) {
+        /* On balaie plus longtemps que le vol ne dure. Un balayage cale sur sa
+           durée exacte se serait tu le jour où le vol s'allonge — et il s'est
+           allongé, de 2,2 s à 5,6 s, dès la version suivante. */
         const anims = d.getAnimations();
         let pire = 0, quand = null, pas = 0;
-        for (let t = 0; t <= 4400; t += 100) {
+        for (let t = 0; t <= 9000; t += 100) {
             anims.forEach((a) => { try { a.currentTime = t; } catch (e) {} });
             pas++;
             const depasse = d.documentElement.scrollWidth - largeur;
