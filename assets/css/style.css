@@ -1297,19 +1297,10 @@ header { position: relative; overflow: visible; }
    recouvrir le texte. Une mascotte qui gene la lecture n'est plus une
    mascotte. */
 @media (max-width: 700px) {
-    /* Marge droite de 22 px et non 12 : pendant le vol, la mascotte tourne, et
-       une boîte englobante tournée est plus large que le dessin. Sur 84 px à
-       24 degrés, cela fait 13 px de plus de chaque côté — de quoi déborder
-       d'une marge de 12.
-
-       La largeur suit l'écran, car elle se pose désormais À CÔTÉ DU TITRE :
-       la place à droite de « DocMaster » vaut 149 px à 430, 121 à 375 et
-       seulement 94 à 320. À 84 px fixes, elle mordait sur le texte ; « 17vw »
-       la ramène à 64 px sur un téléphone courant et lui laisse de la marge.
-       Le « top » exact est mesuré par mascotte.js — la hauteur d'un titre
-       dépend de la police et du réglage de taille du système. */
-    .mascotte-vol { width: min(84px, 17vw); right: 22px; bottom: -12px; }
-    .mascotte-trainee { width: min(84px, 17vw); right: 22px; bottom: -12px; }
+    /* La mascotte de l'accueil ne se règle plus ici : sous 1128 px elle gagne
+       le coin, avec sa taille et ses marges. Les anciennes règles de largeur et
+       de marge droite se contredisaient avec celles du coin — même spécificité,
+       l'ordre du fichier tranchait, ce qui est le pire des arbitrages. */
     .mascotte-bulle {
         max-width: min(11rem, 46vw);
         padding: 10px 12px;
@@ -1354,19 +1345,27 @@ header { position: relative; overflow: visible; }
     }
     .mascotte-rail { position: static; }
 
-    /* Sur l'accueil, la mascotte reste dans sa bannière — elle s'arrête à
-       côté du titre — mais sa bulle n'y tient plus : mesurée à 375 px, elle
-       masque 160×59 px du sous-titre ET 160×26 px du champ de recherche.
-       Elle attend donc un écran assez large. Voir la note du seuil ci-dessus. */
-    .mascotte-vol .mascotte-bulle { display: none; }
+    /* L'ACCUEIL REJOINT LE COIN LUI AUSSI.
+       Sa mascotte s'arrêtait à côté du titre, mais la bulle demandée dessous
+       n'y tenait pas : mesuré à 375 px, elle masquait 160×59 px du sous-titre
+       et 160×26 px du champ de recherche. Aucune largeur ne réglait cela.
 
-    /* Uniquement en mode coin : sur l'accueil, la mascotte reste dans sa
-       bannière et sa bulle doit rester SOUS elle, comme demandé. */
-    .mascotte-surgit .mascotte-bulle {
+       Sous le seuil, l'accueil se comporte donc comme toutes les autres pages.
+       Le vol a bien lieu — il se termine simplement dans le coin. */
+    .mascotte-vol, .mascotte-trainee {
+        position: fixed;
+        top: auto !important;
+        right: var(--flottant-marge);
+        bottom: calc(var(--flottant-marge) + var(--flottant-taille) + var(--flottant-ecart));
+        width: 68px;
+    }
+
+    /* La bulle repasse au-dessus, dans les deux mises en page. */
+    .mascotte-bulle {
         top: auto;
         bottom: calc(100% + 10px);
     }
-    .mascotte-surgit .mascotte-bulle::after {
+    .mascotte-bulle::after {
         bottom: auto;
         top: 100%;
         border-bottom-color: transparent;
