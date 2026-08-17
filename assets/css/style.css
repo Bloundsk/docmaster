@@ -1297,8 +1297,47 @@ header { position: relative; overflow: visible; }
     .mascotte-trainee { width: 84px; right: 22px; bottom: -12px; }
     /* Seule la largeur change : le dégagement reste calculé sur les mêmes
        jetons, le bouton gardant ses dimensions quelle que soit la fenêtre. */
-    .mascotte-surgit { width: 68px; }
-    .mascotte-bulle { display: none; }
+    /* SUR ÉCRAN ÉTROIT, ELLE RETOURNE DANS LE COIN.
+       À hauteur de titre, il n'y a aucune place libre : le titre tient la
+       gauche, la mascotte la droite, et une bulle posée là recouvre le
+       sous-titre — mesuré à 375 comme à 320 px. Aucune largeur de bulle ne
+       règle cela, c'est la place qui manque.
+
+       Le coin bas-droit est sa place conventionnelle, déjà dégagée du bouton
+       de retour en haut par les jetons du coin. La bulle repasse au-dessus
+       d'elle, là où rien ne la gêne.
+
+       Une tentative précédente la laissait à hauteur de titre et n'affichait
+       la bulle qu'après défilement, via un observateur d'intersection. Elle a
+       été abandonnée : l'observateur est asynchrone, et la classe restait
+       posée au retour en haut de page — la bulle recouvrait alors la bannière
+       le temps de quelques images. */
+    .mascotte-surgit {
+        position: fixed;
+        top: auto !important;
+        /* « right » est indispensable : en position fixe, sans lui, l'élément
+           reste à l'abscisse où le flux l'avait posé — c'est-à-dire au bord
+           gauche, la bulle sortant alors de l'écran. Mesuré : -53 → 68. */
+        right: var(--flottant-marge);
+        bottom: calc(var(--flottant-marge) + var(--flottant-taille) + var(--flottant-ecart));
+        width: 68px;
+    }
+    .mascotte-rail { position: static; }
+
+    .mascotte-bulle {
+        top: auto;
+        bottom: calc(100% + 10px);
+        max-width: min(11rem, 46vw);
+        padding: 10px 12px;
+        font-size: .82rem;
+    }
+    /* La pointe repointe vers le bas, la bulle étant repassée au-dessus. */
+    .mascotte-bulle::after {
+        bottom: auto;
+        top: 100%;
+        border-bottom-color: transparent;
+        border-top-color: var(--surface);
+    }
 }
 
 /* Même règle que pour les illustrations des guides : qui a demandé moins de

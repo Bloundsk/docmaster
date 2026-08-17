@@ -279,7 +279,14 @@ async function controler(d, w, largeur, nomPage) {
        rendue, et le défilement est réel. */
     const masc = d.querySelector(".mascotte-surgit");
     const titre = d.querySelector("header h1");
-    if (masc && titre) {
+    /* Deux mises en page, et deux promesses differentes. Sur un ecran large
+       elle est collante et part a hauteur du titre ; sur un ecran etroit elle
+       est fixe dans le coin, faute de place a cette hauteur. On lit donc son
+       mode dans sa position calculee plutot que de supposer l un des deux —
+       une premiere version reclamait l alignement au titre partout, et
+       signalait 596 px d ecart sur une mise en page pourtant voulue. */
+    const colle = masc && w.getComputedStyle(masc).position === "sticky";
+    if (masc && titre && colle) {
         w.scrollTo(0, 0);
         const rm = masc.getBoundingClientRect(), rt = titre.getBoundingClientRect();
         const ecart = Math.abs((rm.top + rm.height / 2) - (rt.top + rt.height / 2));
@@ -306,6 +313,33 @@ async function controler(d, w, largeur, nomPage) {
             ok("la mascotte suit le défilement", `ancrée à ${Math.round(apres.top)} px`);
         }
         w.scrollTo(0, 0);
+    }
+
+    /* 12. La bulle ne recouvre jamais le texte de la bannière.
+       Sur un écran étroit, il n'y a aucune place libre à hauteur de titre : le
+       titre tient la gauche, la mascotte la droite. Mesuré à 375 comme à
+       320 px, une bulle posée là masquait le sous-titre — et ce défaut ne se
+       voit pas depuis un écran large, où la place ne manque pas.
+
+       On vérifie l'invariant, pas le mécanisme : peu importe qu'elle soit
+       masquée, décalée ou retardée, elle ne doit rien cacher. */
+    const bulle = d.querySelector(".mascotte-bulle");
+    if (bulle) {
+        const lisible = (el) => {
+            if (!el) return false;
+            const r = el.getBoundingClientRect(), b = bulle.getBoundingClientRect();
+            if (w.getComputedStyle(bulle).display === "none" || b.width === 0) return false;
+            return !(b.right < r.left || b.left > r.right || b.bottom < r.top || b.top > r.bottom);
+        };
+        const gene = ["header h1", "header p"].filter((s) => lisible(d.querySelector(s)));
+        if (gene.length) ko("la bulle ne recouvre pas la bannière", gene.join(", "));
+        else ok("la bulle ne recouvre pas la bannière", "—");
+
+        // Et elle doit rester dans la fenêtre, sans quoi son texte est coupé.
+        const b = bulle.getBoundingClientRect();
+        if (w.getComputedStyle(bulle).display !== "none" && (b.left < -1 || b.right > largeur + 1)) {
+            ko("la bulle tient dans la fenêtre", `${Math.round(b.left)} → ${Math.round(b.right)}`);
+        } else ok("la bulle tient dans la fenêtre", "—");
     }
 
     /* 11. Le vol d'arrivée n'élargit la page À AUCUN INSTANT.

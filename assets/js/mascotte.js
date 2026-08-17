@@ -156,6 +156,7 @@
         // Seul un changement de taille peut deplacer le titre. Le defilement,
         // lui, n a plus besoin de nous.
         window.addEventListener("resize", mesurer);
+
     }
 
     /* ---------------------------------------------------------------------

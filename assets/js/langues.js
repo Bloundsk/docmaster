@@ -196,7 +196,14 @@
 
         // --- La mascotte -----------------------------------------------------
         mascotteAlt:    { fr: "La mascotte de DocMaster : un robot dont le corps est un livre ouvert", en: "The DocMaster mascot: a robot whose body is an open book", es: "La mascota de DocMaster: un robot cuyo cuerpo es un libro abierto", de: "Das Maskottchen von DocMaster: ein Roboter, dessen Körper ein aufgeschlagenes Buch ist", it: "La mascotte di DocMaster: un robot il cui corpo è un libro aperto", zh: "DocMaster 的吉祥物：身体是一本翻开的书的机器人", ru: "Талисман DocMaster: робот, чьё тело — раскрытая книга" },
-        mascotteBulle:  { fr: "Besoin d'un coup de main ? Les 14 guides sont là.", en: "Need a hand? All 14 guides are here.", es: "¿Necesita ayuda? Las 14 guías están aquí.", de: "Brauchen Sie Hilfe? Alle 14 Leitfäden sind hier.", it: "Ti serve una mano? Le 14 guide sono qui.", zh: "需要帮忙吗？14 份指南都在这里。", ru: "Нужна помощь? Все 14 руководств здесь." },
+        /* Court, pour tenir sur un téléphone sans recouvrir la bannière : la
+           version longue faisait 240 px, soit les deux tiers d'un écran de 375.
+
+           Et SANS CHIFFRE, délibérément. « Les 14 guides sont là » aurait été
+           faux au quinzième sujet, et rien ne l'aurait signalé : seules 2 des
+           17 pages hors cours chargent parcours.js, la source de vérité du
+           nombre de sujets. Une question ne vieillit pas. */
+        mascotteBulle:  { fr: "Par où commencer ?", en: "Where to start?", es: "¿Por dónde empezar?", de: "Womit anfangen?", it: "Da dove iniziare?", zh: "从哪里开始？", ru: "С чего начать?" },
         mascotteLien:   { fr: "Voir les guides", en: "See the guides", es: "Ver las guías", de: "Zu den Leitfäden", it: "Vedi le guide", zh: "查看指南", ru: "К руководствам" },
         mascotteFermer: { fr: "Masquer la mascotte", en: "Hide the mascot", es: "Ocultar la mascota", de: "Maskottchen ausblenden", it: "Nascondi la mascotte", zh: "隐藏吉祥物", ru: "Скрыть талисман" },
 
