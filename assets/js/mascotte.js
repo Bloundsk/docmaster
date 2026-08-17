@@ -85,6 +85,7 @@
             bloc.innerHTML = DESSIN;
             const entete = document.querySelector("header");
             (entete || document.body).appendChild(bloc);
+            if (entete) volInaugural(bloc, entete);
             return;
         }
 
@@ -155,6 +156,135 @@
         // Seul un changement de taille peut deplacer le titre. Le defilement,
         // lui, n a plus besoin de nous.
         window.addEventListener("resize", mesurer);
+    }
+
+    /* ---------------------------------------------------------------------
+     * LE VOL D ARRIVEE, SUR L ACCUEIL
+     *
+     * Elle plonge d en haut, balaie vers la GAUCHE, revient et se pose. Des
+     * pages de livre se detachent tout au long du trajet et tombent derriere
+     * elle, comme une trainee.
+     *
+     * POURQUOI VERS LA GAUCHE, ET JAMAIS VERS LA DROITE
+     *
+     * Une page ne grandit que vers le bas et vers la droite : un depassement a
+     * gauche ou en haut ne cree aucune barre de defilement. Un premier vol
+     * partait de la droite de l ecran et elargissait la page — defaut trouve a
+     * la mesure, pas a l oeil. La trajectoire reste donc dans ce demi-plan.
+     *
+     * POURQUOI EN JAVASCRIPT PLUTOT QU EN CSS
+     *
+     * L amplitude du balayage se deduit de la largeur de la banniere : ecrite
+     * en dur, elle sortirait de l ecran sur un telephone et paraitrait timide
+     * sur un grand ecran. Les positions des pages sont echantillonnees sur LE
+     * MEME chemin que la mascotte — une seule source, donc pas de derive entre
+     * la trainee et celle qui la laisse.
+     *
+     * L animation ne pose aucun etat final : si elle ne joue pas, la mascotte
+     * est deja a sa place. C est ce qui la rend inoffensive.
+     * ------------------------------------------------------------------- */
+    const DUREE_VOL = 2200;
+
+    function volInaugural(bloc, entete) {
+        // Qui a demande moins de mouvement n en recoit aucun : elle est
+        // simplement la, a sa place.
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (!bloc.animate) return;             // navigateur sans l API : elle se pose, sans vol
+
+        const large = entete.clientWidth || 1000;
+        // Le balayage occupe un peu plus de la moitie de la banniere, sans
+        // jamais depasser 420 px : au-dela, le mouvement devient une traversee.
+        const amp = Math.min(420, large * 0.58);
+
+        /* Le chemin, en decalages par rapport a la position de repos (0, 0).
+           AUCUN X N EST POSITIF, et ce n est pas un detail : la position de
+           repos est deja calee a droite de la banniere, si bien que le moindre
+           decalage vers la droite elargit la page.
+
+           La premiere version commencait a x: +34 — le commentaire au-dessus
+           jurait pourtant que la trajectoire n allait jamais a droite. L audit
+           l a vu : 15 px de debordement a 1000, 35 px a 700.
+
+           La rotation compte double : tourner un carre de 128 px de 24 degres
+           porte sa boite englobante a 169 px, soit 20 px de plus de chaque
+           cote. Le depassement final ci-dessous est donc lui aussi vers la
+           gauche. */
+        const chemin = [
+            { x: -18,         y: -340, r: 24,  o: 0 },   // elle arrive d en haut
+            { x: -amp * 0.5,  y: -170, r: -16, o: 1 },   // elle bascule a gauche
+            { x: -amp,        y: -10,  r: -8,  o: 1 },   // point le plus lointain
+            { x: -amp * 0.45, y: 62,   r: 14,  o: 1 },   // elle remonte vers son perchoir
+            { x: -26,         y: -14,  r: 7,   o: 1 },   // petit depassement, a gauche
+            { x: 0,           y: 0,    r: 0,   o: 1 },   // posee
+        ];
+
+        bloc.animate(
+            chemin.map((p, i) => ({
+                transform: `translate(${p.x}px, ${p.y}px) rotate(${p.r}deg)`,
+                opacity: p.o,
+                offset: i / (chemin.length - 1),
+            })),
+            { duration: DUREE_VOL, easing: "cubic-bezier(.42,.02,.28,1)" }
+        );
+
+        semerLesPages(bloc, entete, chemin);
+    }
+
+    /* La trainee. Une page se detache a intervalles reguliers le long du
+       chemin, puis tombe en tournoyant et s efface.
+
+       Les positions sont INTERPOLEES sur le chemin de la mascotte : chaque
+       page nait la ou elle se trouvait a cet instant. Recopier des positions a
+       la main aurait produit une trainee qui ne suit rien. */
+    function semerLesPages(bloc, entete, chemin) {
+        const NOMBRE = 14;
+        const conteneur = document.createElement("div");
+        conteneur.className = "mascotte-trainee";
+        entete.insertBefore(conteneur, bloc);   // derriere elle, jamais devant
+
+        for (let n = 0; n < NOMBRE; n++) {
+            // On evite les tout premiers instants : elle est encore invisible.
+            const t = 0.12 + (n / NOMBRE) * 0.78;
+            const p = pointSurLeChemin(chemin, t);
+
+            const page = document.createElement("span");
+            page.className = "mascotte-page";
+            page.setAttribute("aria-hidden", "true");
+            conteneur.appendChild(page);
+
+            // Une chute jamais identique : sans cela, quatorze pages tombent
+            // au meme rythme et le hasard se voit plus que le mouvement.
+            const derive = -14 - Math.random() * 46;      // toujours vers la gauche
+            const chute = 90 + Math.random() * 110;
+            const tour = 140 + Math.random() * 220;
+
+            page.animate(
+                [
+                    { transform: `translate(${p.x}px, ${p.y}px) rotate(0deg) scale(.9)`, opacity: 0 },
+                    { transform: `translate(${p.x + derive * 0.3}px, ${p.y + chute * 0.2}px) rotate(${tour * 0.25}deg) scale(1)`, opacity: .95, offset: .18 },
+                    { transform: `translate(${p.x + derive}px, ${p.y + chute}px) rotate(${tour}deg) scale(.7)`, opacity: 0 },
+                ],
+                {
+                    duration: 1500 + Math.random() * 500,
+                    delay: t * DUREE_VOL,
+                    easing: "cubic-bezier(.3,.5,.5,1)",
+                }
+            );
+        }
+
+        // On retire la trainee une fois tombee : quatorze elements figes dans
+        // la banniere ne servent plus a rien, et le contrôle de geometrie les
+        // mesurerait pour rien.
+        setTimeout(() => conteneur.remove(), DUREE_VOL + 2400);
+    }
+
+    // Interpolation lineaire entre deux points voisins du chemin.
+    function pointSurLeChemin(chemin, t) {
+        const echelle = t * (chemin.length - 1);
+        const i = Math.min(Math.floor(echelle), chemin.length - 2);
+        const f = echelle - i;
+        const a = chemin[i], b = chemin[i + 1];
+        return { x: a.x + (b.x - a.x) * f, y: a.y + (b.y - a.y) * f };
     }
 
     // La racine du site, deja calculee par les pages pour leurs scripts.

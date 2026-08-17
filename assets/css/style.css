@@ -1111,32 +1111,61 @@ html { background: var(--background); }
 .mascotte-dessin { display: block; width: 100%; height: auto; overflow: visible; }
 
 /* --- Sur l'accueil : elle vole jusqu'a sa place, dans la banniere --------- */
+/* Aucune animation déclarée ici : le vol est joué par mascotte.js, qui
+   l'adapte à la largeur de la bannière. La règle ne décrit donc que la
+   position de REPOS — celle où la mascotte se trouve si le vol ne joue pas,
+   faute de JavaScript ou parce que le visiteur a demandé moins de mouvement.
+   C'est ce qui rend l'animation inoffensive : elle n'a aucun état final à
+   poser. */
 .mascotte-vol {
     position: absolute;
     right: max(24px, 4vw);
     bottom: -18px;
     width: 128px;
     z-index: 3;
-    animation: mascotteVol 1.5s cubic-bezier(.2, .8, .3, 1) backwards;
 }
 /* La banniere doit devenir le repere de ce positionnement absolu. */
 header { position: relative; overflow: visible; }
 
-/* Elle arrive PAR LE HAUT, et non par la droite.
-   Le premier jet la faisait entrer depuis la droite de l'écran : le dépassement
-   latéral élargissait la page et créait une barre de défilement horizontale —
-   ce que l'audit de géométrie interdit, à juste titre.
+/* Le vol d'arrivée n'est plus décrit ici : sa trajectoire dépend de la largeur
+   de la bannière, et se construit donc dans mascotte.js. Les pages qui s'en
+   détachent sont échantillonnées sur le même chemin, ce qu'une règle CSS ne
+   saurait faire.
 
-   Vers le haut, le dépassement ne crée aucun défilement : une page ne grandit
-   que vers le bas et vers la droite. Le vol reste lisible, et il est même plus
-   franc — elle plonge dans la bannière. Un défaut qui ne se voyait pas au
-   premier coup d'œil : c'est la mesure qui l'a dit. */
-@keyframes mascotteVol {
-    0%   { transform: translateY(-320%) rotate(22deg) scale(.4); opacity: 0; }
-    35%  { opacity: 1; }
-    68%  { transform: translateY(9%) rotate(-9deg) scale(1.1); }
-    86%  { transform: translateY(-4%) rotate(4deg) scale(.97); }
-    100% { transform: translateY(0) rotate(0) scale(1); opacity: 1; }
+   Ce qui reste vrai, et qui a coûté une mesure pour être trouvé : la
+   trajectoire ne va JAMAIS vers la droite. Une page ne grandit que vers le bas
+   et vers la droite — un dépassement à gauche ou en haut ne crée aucune barre
+   de défilement, un dépassement à droite si. */
+
+/* La traînée : des pages de livre qui se détachent au fil du trajet. */
+.mascotte-trainee {
+    position: absolute;
+    right: max(24px, 4vw);
+    bottom: -18px;
+    width: 128px;
+    height: 128px;
+    pointer-events: none;
+    z-index: 2;                 /* derrière la mascotte, qui est à 3 */
+}
+
+.mascotte-page {
+    position: absolute;
+    left: 38px;
+    top: 44px;
+    width: 22px;
+    height: 28px;
+    border-radius: 3px;
+    background: var(--surface);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, .18);
+    /* Les deux traits d'écriture, en dégradé plutôt qu'en éléments : une page
+       de 22 px n'a pas besoin de deux nœuds de plus, multipliés par quatorze. */
+    background-image:
+        linear-gradient(var(--secondary), var(--secondary)),
+        linear-gradient(var(--secondary), var(--secondary));
+    background-size: 12px 1.5px, 12px 1.5px;
+    background-position: 5px 9px, 5px 14px;
+    background-repeat: no-repeat;
+    opacity: 0;
 }
 
 /* --- Ailleurs : elle surgit dans le coin, avec sa bulle ------------------- */
@@ -1260,15 +1289,24 @@ header { position: relative; overflow: visible; }
    recouvrir le texte. Une mascotte qui gene la lecture n'est plus une
    mascotte. */
 @media (max-width: 700px) {
-    .mascotte-vol { width: 84px; right: 12px; bottom: -12px; }
+    /* Marge droite de 22 px et non 12 : pendant le vol, la mascotte tourne, et
+       une boîte englobante tournée est plus large que le dessin. Sur 84 px à
+       24 degrés, cela fait 13 px de plus de chaque côté — de quoi déborder
+       d'une marge de 12. */
+    .mascotte-vol { width: 84px; right: 22px; bottom: -12px; }
+    .mascotte-trainee { width: 84px; right: 22px; bottom: -12px; }
     /* Seule la largeur change : le dégagement reste calculé sur les mêmes
        jetons, le bouton gardant ses dimensions quelle que soit la fenêtre. */
     .mascotte-surgit { width: 68px; }
     .mascotte-bulle { display: none; }
 }
 
-/* Meme regle que pour les illustrations des guides : qui a demande moins de
-   mouvement a son systeme n'en recoit aucun. Elle reste visible, immobile. */
+/* Même règle que pour les illustrations des guides : qui a demandé moins de
+   mouvement à son système n'en reçoit aucun. Elle reste visible, immobile.
+
+   Le vol d'arrivée et sa traînée ne figurent pas ici : mascotte.js ne les
+   déclenche tout simplement pas dans ce cas — une animation jouée par script
+   ne s'arrête pas avec une règle CSS. La traînée n'est alors même pas créée. */
 @media (prefers-reduced-motion: reduce) {
     .mascotte-vol, .mascotte-surgit, .mascotte-part, .mascotte-bulle,
     .mascotte-flotte, .mascotte-antenne, .mascotte-led, .mascotte-yeux {

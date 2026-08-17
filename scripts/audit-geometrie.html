@@ -307,6 +307,33 @@ async function controler(d, w, largeur, nomPage) {
         }
         w.scrollTo(0, 0);
     }
+
+    /* 11. Le vol d'arrivée n'élargit la page À AUCUN INSTANT.
+       Tous les autres contrôles mesurent une image : celle prise 400 ms après
+       le chargement. Le vol dure 2,2 s — un débordement à mi-parcours passait
+       donc inaperçu, et c'est exactement ce qui est arrivé : le premier point
+       du chemin partait vers la droite, 15 px de trop à 1000, 35 px à 700.
+
+       On parcourt donc le vol en posant le temps de chaque animation, et on
+       retient le PIRE instant. Une page ne grandit que vers le bas et vers la
+       droite : c'est la largeur qu'on surveille. */
+    const enVol = d.querySelector(".mascotte-vol");
+    if (enVol) {
+        const anims = d.getAnimations();
+        let pire = 0, quand = null, pas = 0;
+        for (let t = 0; t <= 4400; t += 100) {
+            anims.forEach((a) => { try { a.currentTime = t; } catch (e) {} });
+            pas++;
+            const depasse = d.documentElement.scrollWidth - largeur;
+            if (depasse > pire) { pire = depasse; quand = t; }
+        }
+        // On remet tout au repos : les contrôles suivants mesurent la page
+        // telle qu'elle sera vue, pas telle qu'elle traverse son animation.
+        anims.forEach((a) => { try { a.finish(); } catch (e) {} });
+
+        if (pire > 1) ko("le vol n'élargit jamais la page", `${pire} px à ${quand} ms`);
+        else ok("le vol n'élargit jamais la page", `${pas} instants mesurés`);
+    }
 }
 
 async function lancer() {
