@@ -1,5 +1,69 @@
 # Changelog — DocMaster
 
+## 2026-08-17 — Entrepreneuriat traduit : **les quatorze sujets sont en anglais**
+Quatre pages, trois banques de questions, 146 textes de simulateurs.
+`entrepreneuriat` est déclaré dans `CONTENU_TRADUIT` ; il était déjà dans
+`SUJETS_DROIT_FRANCAIS`, le bandeau rouge s'affiche donc sur les quatre pages.
+
+**Quatorze sujets sur quatorze**, soit 56 pages anglaises et 1 266 questions.
+Le site existe désormais intégralement dans les deux langues.
+
+### Ce qui est français ici, et ce qui ne l'est pas
+
+Les **formes juridiques** — micro-entreprise, EURL/SARL, SASU/SAS — leurs
+seuils, et le **coefficient de charges patronales de 1,45** sont français. Le
+tableau des statuts est conservé tel quel, précédé d'une phrase qui dit que
+chaque pays a l'équivalent de chacune de ces familles sous d'autres noms :
+*« Read the columns, not the acronyms. »*
+
+Les organismes cités deviennent génériques avec leur nom français en exemple —
+« your public investment bank (Bpifrance in France) », « your national trade
+mark office (the INPI in France) ». Le **RGPD**, lui, est signalé comme
+européen et non français.
+
+Tout le reste — valider un besoin, marge, seuil de rentabilité, autonomie,
+unit economics, dilution, ce qu'il faut écrire avant que ça se passe mal — ne
+dépend d'aucun pays.
+
+### Une collision de dictionnaire, invisible jusqu'à ce jour
+
+Le dictionnaire est plat : une clé, une traduction. Or `"tours"` était déjà
+l'unité du simulateur de conversation de l'IA, où il signifie **turns**. Le
+simulateur de dilution utilisait le même mot pour des **tours de table**. La
+page anglaise aurait affiché « 2 turns » pour deux levées de fonds.
+
+Aucun contrôle ne pouvait le voir : les deux entrées sont légitimes,
+séparément. L'unité française de la dilution est donc devenue
+`"tours de table"` — plus précise en français aussi — et traduite par
+`"rounds"`. **Un dictionnaire plat ne distingue pas deux sens d'un mot ; c'est
+au texte source de les distinguer.**
+
+### Vingt-cinq pages anglaises pointaient encore vers le français
+
+Quand un sujet était traduit, les pages anglaises **déjà écrites** continuaient
+de le référencer par `../../../guides/<sujet>/` — le lien de repli posé à
+l'époque où sa version anglaise n'existait pas. Sept liens vers
+l'entrepreneuriat, mais aussi vers le droit, la santé, l'écologie et la
+finance : au total **25 fichiers**, accumulés sujet après sujet.
+
+Le défaut ne cassait rien — les liens fonctionnaient — mais éjectait le
+visiteur anglophone vers une page française sans prévenir. Corrigé d'un coup,
+en dérivant la règle de `CONTENU_TRADUIT` plutôt qu'à la main. Il ne reste
+aucun lien `../../../guides/` sous `en/`.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| `audit-coherence.mjs` | 0 anomalie sur 9 contrôles |
+| `verifier-traduction.mjs` × **14 sujets** | tous complets, **146/146** pour entrepreneuriat |
+| `valider-js.js` | 0 erreur |
+| Liens locaux de `en/` | 982 vérifiés, 0 cassé, 0 renvoi vers le français |
+| Ancres de quiz ↔ `id` des `h3` | 169 sections, 0 orpheline |
+| `audit-geometrie.html` | 348 mesures, 20 gabarits, 0 anomalie |
+| Bandeau de droit français | présent sur les quatre pages anglaises |
+| Simulateurs posés FR ↔ EN | 12 de chaque côté, aucun écart |
+
 ## 2026-08-17 — Finance traduite, et un contrôle qui mentait encore
 Quatre pages, trois banques de questions, 124 textes de simulateurs. `finance`
 est déclaré dans `CONTENU_TRADUIT` ; le sujet était déjà dans

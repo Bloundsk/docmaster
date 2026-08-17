@@ -1768,7 +1768,12 @@
                 { id: "montant", libelle: "Montant levé", unite: "€", defaut: 300000, min: 1000, max: 100000000, pas: 10000 },
                 { id: "valorisation", libelle: "Valorisation avant opération", unite: "€", defaut: 1200000, min: 1000, max: 1000000000, pas: 50000 },
                 { id: "part", libelle: "Votre part actuelle du capital", unite: "%", defaut: 100, min: 1, max: 100, pas: 1 },
-                { id: "tours", libelle: "Tours de table supplémentaires envisagés", unite: "tours", defaut: 2, min: 0, max: 8, pas: 1 }
+                /* Unité « tours de table » et non « tours » : ce dernier mot est
+                   déjà l'unité du simulateur de conversation de l'IA, où il
+                   signifie « turns ». Le dictionnaire est plat et ne sait pas
+                   distinguer deux sens d'un même mot — la version anglaise
+                   aurait affiché « 2 turns » pour deux levées de fonds. */
+                { id: "tours", libelle: "Tours de table supplémentaires envisagés", unite: "tours de table", defaut: 2, min: 0, max: 8, pas: 1 }
             ],
             calculer: ({ montant, valorisation, part, tours }) => {
                 const apres = valorisation + montant;

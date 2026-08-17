@@ -92,6 +92,22 @@ window.PRATIQUE_TEXTES = {
         " % de frais": "% fees",
         " versés)": " paid in)",
         "Après ": "After ",
+
+        // --- Entrepreneuriat : verdicts soudés à un ratio ---------------------
+        // Le simulateur d'unit economics colle son verdict au ratio, celui de
+        // dilution sa mise en garde au pourcentage. Aucun ne peut avoir
+        // d'entrée exacte : le nombre change à chaque réglage.
+        " — chaque client fait perdre de l'argent": " — every customer loses you money",
+        " — fragile : peu de marge pour investir": " — fragile: little room to invest",
+        " — très élevé : vous n'investissez peut-être pas assez en acquisition":
+            " — very high: you may not be investing enough in acquisition",
+        " — sain": " — healthy",
+        " — sous la majorité": " — below a majority",
+        " tour(s) comparable(s)": " comparable round(s)",
+        " — c'est faux": " — which is wrong",
+        " clients": " customers",
+        // Avant « mois » tout court, qui rendrait « par months ».
+        " par mois": " a month",
         " heures": " hours",
         " mois": " months",
         "encore ": "still ",
@@ -3520,5 +3536,235 @@ window.PRATIQUE_TEXTES = {
         "Coût du report": "Cost of the delay",
         "Ce sont les dernières années qui portent les intérêts les plus lourds — et ce sont elles qu'un report supprime.":
             "It is the final years that carry the heaviest interest — and those are the ones a delay removes.",
+
+        // =====================================================================
+        // ENTREPRENEURIAT
+        //
+        // Sujet de SUJETS_DROIT_FRANCAIS. Les formes juridiques — micro-
+        // entreprise, société — leurs seuils et le coefficient de charges
+        // patronales sont FRANÇAIS. Le raisonnement — marge, seuil de
+        // rentabilité, autonomie, dilution — ne l'est pas.
+        // =====================================================================
+
+        // --- qualite-business-plan ---------------------------------------------------------
+        "Votre business plan tient-il debout ?": "Does your business plan hold up?",
+        "Cochez ce qui figure réellement dans votre document, pas ce que vous avez en tête.":
+            "Tick what actually appears in your document, not what you have in mind.",
+        "Le problème résolu est décrit avant la solution": "The problem solved is described before the solution",
+        "Les clients visés sont nommés précisément": "The customers targeted are named precisely",
+        "« les PME » n'est pas une cible, c'est une catégorie": "“small businesses” is not a target, it is a category",
+        "Les hypothèses chiffrées sont justifiées, pas posées": "The figures assumed are justified, not simply stated",
+        "d'où vient le taux de conversion retenu ?": "where does the conversion rate you used come from?",
+        "La rémunération du fondateur figure dans les charges": "The founder's pay appears in the costs",
+        "Un scénario dégradé est prévu, pas seulement le scénario prévu":
+            "A downside scenario is planned, not only the expected one",
+        "Le besoin de trésorerie du démarrage est calculé, pas estimé":
+            "The start-up cash requirement is calculated, not estimated",
+        "Document solide : il servira à décider, pas seulement à convaincre.":
+            "A solid document: it will serve to decide, not only to convince.",
+        "Bonne base. Le scénario dégradé et la rémunération sont les oublis les plus fréquents.":
+            "A good base. The downside scenario and the founder's pay are the most frequent omissions.",
+        "Ce plan décrit une intention, pas encore un projet vérifiable.":
+            "This plan describes an intention, not yet a verifiable project.",
+        "Un business plan sert d'abord à vous : c'est l'exercice qui révèle les hypothèses que vous n'aviez pas vues.":
+            "A business plan serves you first: it is the exercise that reveals the assumptions you had not seen.",
+
+        // --- taille-de-marche --------------------------------------------------------------
+        "Estimez votre marché de façon honnête": "Estimate your market honestly",
+        "Trois cercles concentriques, du plus large au plus atteignable.":
+            "Three concentric circles, from the widest to the most reachable.",
+        "Clients potentiels au total": "Potential customers in total",
+        "clients": "customers",
+        "Part réellement accessible (zone, langue, segment)": "Share genuinely reachable (area, language, segment)",
+        "Part de marché visée à 3 ans": "Market share targeted in 3 years",
+        "Chiffre d'affaires annuel par client": "Annual revenue per customer",
+        "Marché accessible": "Reachable market",
+        "Clients visés à 3 ans": "Customers targeted in 3 years",
+        "Chiffre d'affaires correspondant": "Corresponding revenue",
+        "Si le résultat paraît trop beau, c'est la part accessible qui est optimiste — presque jamais le panier.":
+            "If the result looks too good, it is the reachable share that is optimistic — almost never the basket.",
+
+        // --- choisir-statut ----------------------------------------------------------------
+        // Les formes citées sont françaises : la « micro-entreprise » et ses
+        // seuils n'ont pas d'équivalent exact ailleurs. Le nom est conservé et
+        // la phrase dit qu'il est français.
+        "Quel statut vous correspond ?": "Which legal form suits you?",
+        "Cochez ce qui décrit votre situation. Les réponses orientent, elles ne décident pas.":
+            "Tick what describes your situation. The answers point a way, they do not decide.",
+        "Je démarre seul, sans investissement initial important":
+            "I am starting alone, with no significant initial investment",
+        "Mon chiffre d'affaires restera sous les seuils de la micro-entreprise":
+            "My revenue will stay under the thresholds of the French micro-entreprise",
+        "Je n'ai pas besoin de déduire de charges importantes": "I do not need to deduct significant costs",
+        "en micro, l'abattement est forfaitaire": "under the micro regime, the deduction is a flat rate",
+        "Je souhaite protéger mon patrimoine personnel": "I want to protect my personal assets",
+        "J'envisage d'accueillir des associés ou des investisseurs":
+            "I am considering taking on partners or investors",
+        "Je vais recruter dans les douze mois": "I will be hiring within twelve months",
+        "Situation à préciser : listez vos charges prévisionnelles avant de trancher.":
+            "The picture needs sharpening: list your expected costs before deciding.",
+        "Profil orienté micro-entreprise. Vérifiez les seuils et l'absence de charges lourdes.":
+            "A profile pointing towards the French micro-entreprise. Check the thresholds and the absence of heavy costs.",
+        "Les trois derniers points orientent vers une société. Faites-vous accompagner.":
+            "The last three points point towards an incorporated company. Get professional help.",
+        "Le statut se change, mais rarement sans coût. Mieux vaut anticiper douze mois que reprendre dans six.":
+            "A legal form can be changed, but rarely for free. Better to plan twelve months ahead than to redo it in six.",
+
+        // --- besoin-de-financement ---------------------------------------------------------
+        "Chiffrez votre besoin de démarrage": "Put a number on what starting up needs",
+        "Le poste le plus souvent oublié n'est pas l'investissement : c'est la trésorerie d'attente.":
+            "The item most often forgotten is not the investment: it is the cash to live on while waiting.",
+        "Matériel, aménagement, développement": "Equipment, fit-out, development",
+        "Charges mensuelles hors investissement": "Monthly costs excluding investment",
+        "Mois avant les premiers encaissements": "Months before the first money comes in",
+        "Apport personnel disponible": "Personal funds available",
+        "Trésorerie d'attente nécessaire": "Cash needed for the waiting period",
+        "Besoin total de démarrage": "Total start-up requirement",
+        "Reste à financer après apport": "Left to finance after your own funds",
+        "Un plan qui ne finance que l'investissement conduit à manquer d'argent au troisième mois, alors que tout se passe bien.":
+            "A plan that finances only the investment runs out of money in the third month, while everything is going well.",
+
+        // --- test-de-validation ------------------------------------------------------------
+        "Votre besoin est-il vraiment validé ?": "Is the need really validated?",
+        "Cochez ce que vous avez constaté, pas ce qu'on vous a dit.":
+            "Tick what you have observed, not what you were told.",
+        "J'ai interrogé des inconnus, pas seulement mes proches":
+            "I have interviewed strangers, not only people close to me",
+        "Mes questions portaient sur le passé, pas sur des intentions":
+            "My questions were about the past, not about intentions",
+        "« la dernière fois que... » et non « utiliseriez-vous... »":
+            "“the last time you…” rather than “would you use…”",
+        "Des personnes ont déjà bricolé une solution de leur côté":
+            "People have already rigged up a solution of their own",
+        "signal fort : le problème est assez douloureux": "a strong signal: the problem hurts enough",
+        "Certaines ont déjà dépensé de l'argent pour ce problème":
+            "Some have already spent money on this problem",
+        "On m'a demandé spontanément quand ce serait disponible":
+            "People have asked me unprompted when it would be available",
+        "Au moins une personne a proposé de payer maintenant": "At least one person has offered to pay now",
+        "cela vaut cinquante entretiens polis": "that is worth fifty polite interviews",
+        "Besoin réel, confirmé par des comportements et non par des paroles.":
+            "A real need, confirmed by behaviour rather than by words.",
+        "Signaux encourageants. Cherchez maintenant une preuve de paiement.":
+            "Encouraging signals. Now look for proof of payment.",
+        "Vous avez de l'encouragement, pas encore de validation.":
+            "You have encouragement, not yet validation.",
+        "Un compliment poli ne vaut rien. Un « je peux payer maintenant ? » vaut cinquante entretiens.":
+            "A polite compliment is worth nothing. A “can I pay now?” is worth fifty interviews.",
+
+        // --- marge-et-prix -----------------------------------------------------------------
+        "Calculez votre marge et votre équilibre": "Work out your margin and your break-even",
+        "Le nombre de clients à atteindre se calcule sur la marge, jamais sur le prix affiché.":
+            "The number of customers to reach is worked out on the margin, never on the price on display.",
+        "Prix de vente mensuel": "Monthly selling price",
+        "Coût variable par client": "Variable cost per customer",
+        "Charges fixes mensuelles, rémunération comprise": "Monthly fixed costs, your own pay included",
+        "Marge unitaire": "Margin per unit",
+        "Clients pour atteindre l'équilibre": "Customers needed to break even",
+        "Le calcul sur le prix affiché donnerait": "The calculation on the price on display would give",
+        "jamais": "never",
+        "Une vente sans marge n'est pas un client gagné : c'est une perte qui grandit avec le volume.":
+            "A sale without margin is not a customer won: it is a loss that grows with volume.",
+
+        // --- cout-acquisition --------------------------------------------------------------
+        "Combien vous coûte un client ?": "What does a customer cost you?",
+        "Le chiffre n'a de sens que comparé à ce que le client rapporte.":
+            "The figure only means something compared with what the customer brings in.",
+        "Budget d'acquisition mensuel": "Monthly acquisition budget",
+        "Visiteurs générés": "Visitors generated",
+        "Taux de conversion en client": "Conversion rate into customers",
+        "Clients gagnés par mois": "Customers won per month",
+        "Coût d'acquisition par client": "Acquisition cost per customer",
+        "Mois avant remboursement": "Months before it pays for itself",
+        "Un coût d'acquisition n'est ni bon ni mauvais dans l'absolu. Il l'est par rapport à la marge et à la durée de vie.":
+            "An acquisition cost is neither good nor bad in the abstract. It is so relative to the margin and the lifetime.",
+
+        // --- seuil-de-rentabilite ----------------------------------------------------------
+        "Combien de mois d'autonomie ?": "How many months of runway?",
+        "Le chiffre le plus important de tous : combien de temps il reste pour atteindre l'équilibre.":
+            "The most important figure of all: how long is left to reach break-even.",
+        "Trésorerie disponible": "Cash available",
+        "Décaissements mensuels": "Monthly cash out",
+        "Encaissements mensuels": "Monthly cash in",
+        "Perte de trésorerie mensuelle": "Monthly cash burn",
+        "Excédent mensuel": "Monthly surplus",
+        "Autonomie": "Runway",
+        "à l'équilibre ou positif": "break-even or positive",
+        "Encaissements nécessaires pour l'équilibre": "Cash in needed to break even",
+        "Surveillez votre autonomie en mois, pas votre chiffre d'affaires. C'est elle qui dit combien de temps il reste.":
+            "Watch your runway in months, not your revenue. It is the runway that says how long is left.",
+
+        // --- cac-ltv -----------------------------------------------------------------------
+        "Vos unit economics tiennent-elles ?": "Do your unit economics hold up?",
+        "La valeur vie se calcule sur la marge, jamais sur le chiffre d'affaires.":
+            "Lifetime value is worked out on the margin, never on the revenue.",
+        "Durée de vie moyenne d'un client": "Average lifetime of a customer",
+        "Coût d'acquisition d'un client": "Cost of acquiring a customer",
+        "Valeur vie du client": "Customer lifetime value",
+        "Ratio valeur vie / coût d'acquisition": "Lifetime value / acquisition cost ratio",
+        "Période de récupération": "Payback period",
+        "Augmenter la durée de vie de 14 à 20 mois fait gagner 43 % de valeur vie, sans un euro d'acquisition en plus.":
+            "Raising the lifetime from 14 to 20 months adds 43% of lifetime value, without a single extra euro of acquisition.",
+
+        // --- dilution ----------------------------------------------------------------------
+        "Mesurez votre dilution": "Measure your dilution",
+        "Ce qu'on cède en capital ne se récupère pas.": "What you give away in equity does not come back.",
+        "Montant levé": "Amount raised",
+        "Valorisation avant opération": "Pre-money valuation",
+        "Votre part actuelle du capital": "Your current share of the equity",
+        "Tours de table supplémentaires envisagés": "Further funding rounds envisaged",
+        "tours de table": "rounds",
+        "Part cédée à l'investisseur": "Share given to the investor",
+        "Votre part après cette levée": "Your share after this round",
+        "Lever n'est pas gagner de l'argent : c'est prendre un engagement de croissance devant des gens qui attendent une sortie.":
+            "Raising money is not earning it: it is committing to growth in front of people who expect an exit.",
+
+        // --- cout-reel-salarie -------------------------------------------------------------
+        // Le coefficient de charges patronales est français : il n'a pas
+        // d'équivalent direct ailleurs, et le libellé le dit.
+        "Combien coûte réellement un salarié ?": "What does an employee really cost?",
+        "Le salaire brut n'est qu'une partie de l'addition.": "The gross salary is only part of the bill.",
+        "Salaire brut mensuel": "Monthly gross salary",
+        "Coefficient de charges patronales": "Employer contributions multiplier (French rates)",
+        "×": "×",
+        "Taux de marge de l'activité": "Margin rate of the business",
+        "Coût employeur mensuel": "Monthly cost to the employer",
+        "Chiffre d'affaires supplémentaire nécessaire": "Extra revenue needed",
+        "La question devient concrète : cette personne apportera-t-elle ce chiffre d'affaires, ou libérera-t-elle assez de votre temps pour que vous le fassiez ?":
+            "The question becomes concrete: will this person bring in that revenue, or free up enough of your time for you to bring it in?",
+
+        // --- risques-juridiques ------------------------------------------------------------
+        // L'INPI est l'office français des marques : nom propre conservé, et la
+        // phrase dit qu'il est français. Le registre des traitements, lui, vient
+        // du RGPD et vaut dans toute l'Union.
+        "Ce qui est écrit, et ce qui ne l'est pas": "What is written down, and what is not",
+        "Cochez ce qui existe aujourd'hui, sous forme écrite et signée.":
+            "Tick what exists today, written down and signed.",
+        "Un accord entre associés prévoit le départ de l'un d'eux":
+            "A shareholders' agreement covers one of them leaving",
+        "la première cause de conflit mortel pour une jeune entreprise":
+            "the leading cause of fatal conflict in a young company",
+        "Les prestataires ont signé une cession de droits": "Contractors have signed an assignment of rights",
+        "sans elle, le logo et le code restent à leur auteur":
+            "without it, the logo and the code stay with whoever made them",
+        "Des conditions de vente encadrent délais, pénalités et responsabilité":
+            "Terms of sale set out deadlines, penalties and liability",
+        "Un registre des traitements de données personnelles existe":
+            "A record of personal data processing exists",
+        "Les personnes dont je détiens les données sont informées":
+            "The people whose data I hold have been informed",
+        "La marque a fait l'objet d'une recherche d'antériorité":
+            "The trade mark has been searched for earlier rights",
+        "gratuite sur la base de l'INPI": "free on the database of the INPI, the French trade mark office",
+        "Les contrats importants ont été relus par un professionnel":
+            "The important contracts have been reviewed by a professional",
+        "Base juridique saine : les conflits les plus coûteux sont anticipés.":
+            "A sound legal base: the costliest conflicts are anticipated.",
+        "Correct. L'accord entre associés est celui à ne pas repousser.":
+            "Reasonable. The shareholders' agreement is the one not to put off.",
+        "Plusieurs risques majeurs reposent aujourd'hui sur la bonne entente.":
+            "Several major risks rest today on everyone getting along.",
+        "Ce qui coûte cher n'est pas le contrat qu'on rédige, c'est celui qu'on n'a pas rédigé.":
+            "What costs money is not the contract you draw up, it is the one you did not.",
     },
 };
