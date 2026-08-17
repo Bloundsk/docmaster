@@ -183,7 +183,7 @@
      * L animation ne pose aucun etat final : si elle ne joue pas, la mascotte
      * est deja a sa place. C est ce qui la rend inoffensive.
      * ------------------------------------------------------------------- */
-    const DUREE_VOL = 5600;
+    const DUREE_VOL = 6800;   // le trajet s'est allonge : entree par la gauche, huit complet, montee finale
 
     function volInaugural(bloc, entete) {
         // Qui a demande moins de mouvement n en recoit aucun : elle est
@@ -193,39 +193,59 @@
 
         const chemin = cheminInfini(bloc, entete);
 
+        /* Les instants se calent sur la DISTANCE parcourue, et non sur le rang
+           du point. Reparties uniformement, les 117 etapes donnaient le meme
+           temps a un long trait droit qu a une boucle serree : elle filait
+           dans les lignes droites et s attardait dans les courbes. La vitesse
+           est desormais constante sur tout le trajet. */
+        const instants = repartirParDistance(chemin);
+
         bloc.animate(
             chemin.map((p, i) => ({
                 transform: `translate(${p.x}px, ${p.y}px) rotate(${p.r}deg)`,
                 opacity: p.o,
-                offset: i / (chemin.length - 1),
+                offset: instants[i],
             })),
-            /* Presque lineaire, a dessein. Une courbe d acceleration marquee
-               ferait filer la mascotte au milieu du huit puis trainer dans les
-               boucles : c est le mouvement qu on veut lire, pas la hate. Les
-               deux extremites restent adoucies. */
-            { duration: DUREE_VOL, easing: "cubic-bezier(.35,.06,.28,1)" }
+            /* Quasi lineaire. Les etapes etant deja reparties par distance,
+               toute courbe d acceleration marquee redonnerait ce qu on venait
+               de corriger : mesure avec « cubic-bezier(.35,.06,.28,1) », la
+               vitesse variait de 2 a 259 px par 200 ms, soit 129 fois. On ne
+               garde qu un leger adoucissement aux deux extremites, de quoi
+               eviter le depart et l arret secs. */
+            { duration: DUREE_VOL, easing: "cubic-bezier(.32,.28,.68,.72)" }
         );
 
-        semerLesPages(bloc, entete, chemin);
+        // Les memes instants sont passes a la trainee : sans cela, les pages
+        // naitraient la ou la mascotte n est plus.
+        semerLesPages(bloc, entete, chemin, instants);
     }
 
-    /* LE SIGNE DE L INFINI, tracé sur toute la largeur de la page.
+    /* LE SIGNE DE L INFINI, tracé sur toute la largeur, de GAUCHE A DROITE.
      *
      * Une lemniscate de Gerono : x = a·cos(t), y = (h/2)·sin(2t). Elle se croise
      * en son milieu, ce qui donne le huit couche du signe ∞ — la ou un cercle
      * ou une ellipse n auraient donne qu une boucle.
      *
-     * LE CALAGE, QUI EST TOUT LE PROBLEME
+     * LE SENS DE LECTURE
+     *
+     * La premiere version faisait commencer le huit a la position de repos,
+     * c est-a-dire A DROITE : la mascotte partait de son perchoir, filait a
+     * gauche et revenait. Mesure : x = 1146 → 106 → 1146. Le mouvement se
+     * lisait donc droite-gauche-droite, et le huit ne se voyait pas puisqu on
+     * la decouvrait d abord posee la ou elle allait finir.
+     *
+     * Elle entre desormais PAR LA GAUCHE, hors de l ecran, trace le huit
+     * complet, puis file vers la droite jusqu a son perchoir. Le trajet se lit
+     * dans le sens de la lecture.
+     *
+     * LE CALAGE, QUI RESTE LA CONTRAINTE
      *
      * La position de repos est collee au bord DROIT de la banniere. Or une page
      * ne grandit que vers le bas et vers la droite : le moindre depassement a
-     * droite ajoute une barre de defilement horizontale. On decale donc la
-     * courbe pour que son point le plus a droite soit EXACTEMENT la position de
-     * repos — x va de -2a a 0, jamais au-dela. Le huit occupe ainsi toute la
-     * largeur disponible, entierement a gauche.
-     *
-     * Elle part de sa place, trace le huit, et y revient : la courbe commence
-     * et finit en (0, 0), sans qu on ait a raccorder quoi que ce soit.
+     * droite ajoute une barre de defilement horizontale. La courbe est donc
+     * decalee pour que son point le plus a droite soit EXACTEMENT la position
+     * de repos — x va de -2a a 0, jamais au-dela. A gauche, en revanche, elle
+     * peut sortir de l ecran sans rien casser : c est par la qu elle arrive.
      *
      * L inclinaison suit la TANGENTE, calculee sur le point suivant, puis
      * bridee a 26 degres — un robot qui pique du nez a 80 degres dans une
@@ -239,23 +259,45 @@
         // Toute la largeur utile, moins de quoi ne pas raser les bords.
         const etendue = Math.max(220, large - droite - largeurBloc - 24);
         const a = etendue / 2;
-        // Assez haut pour que les deux boucles se lisent, sans sortir par le bas.
-        const h = Math.min(210, entete.clientHeight * 0.72);
+        /* Plus haut qu avant : a 196 px pour 1040 de large, le huit etait si
+           plat qu il passait pour un aller-retour. Il deborde maintenant un peu
+           de la banniere, ce qui n a aucune consequence — seuls le bas et la
+           droite font grandir une page. */
+        const h = Math.min(300, entete.clientHeight * 1.05);
 
         const pts = [];
-        // La chute initiale, au-dessus de son perchoir.
-        pts.push({ x: 0, y: -420, r: 18, o: 0 });
-        pts.push({ x: 0, y: -150, r: 10, o: 1 });
 
-        const N = 96;                       // assez de points pour que le trace soit lisse
+        /* 1. Elle entre par la gauche, hors de l ecran, en descendant.
+              Les deux points portent une rotation EXPLICITE. Sans elle,
+              « p.r » valait undefined et produisait « rotate(undefineddeg) » :
+              une transformation invalide, que le navigateur rejette en bloc.
+              L image restait alors a sa position de repos, a droite, puis
+              filait vers la gauche des la premiere image valide — soit
+              exactement le contraire du mouvement voulu. Une seule propriete
+              manquante, et tout le sens de lecture s inversait. */
+        pts.push({ x: -2 * a - 220, y: -300, r: 16, o: 0 });
+        pts.push({ x: -2 * a - 60,  y: -120, r: 10, o: 1 });
+
+        /* 2. Le huit complet. On part de t = π, soit le point le plus a GAUCHE,
+              et on parcourt un tour entier : le trace commence donc la ou elle
+              vient d arriver, sans saut. */
+        const N = 110;                      // assez de points pour que le trace soit lisse
         for (let i = 0; i <= N; i++) {
-            const t = (i / N) * Math.PI * 2;
+            const t = Math.PI + (i / N) * Math.PI * 2;
             pts.push({
                 x: -a + a * Math.cos(t),
                 y: (h / 2) * Math.sin(2 * t),
                 o: 1,
             });
         }
+
+        /* 3. La montee finale vers le perchoir, a droite. Le huit s acheve a
+              gauche : sans ce dernier trait, elle finirait a l oppose de sa
+              place et devrait y sauter. */
+        pts.push({ x: -a * 1.15, y: -h * 0.22, o: 1 });
+        pts.push({ x: -a * 0.45, y: -h * 0.16, o: 1 });
+        pts.push({ x: -30,       y: -18,       o: 1 });
+        pts.push({ x: 0,         y: 0,         o: 1 });
 
         // L inclinaison, deduite du deplacement vers le point suivant.
         for (let i = 2; i < pts.length; i++) {
@@ -278,7 +320,7 @@
        Les positions sont INTERPOLEES sur le chemin de la mascotte : chaque
        page nait la ou elle se trouvait a cet instant. Recopier des positions a
        la main aurait produit une trainee qui ne suit rien. */
-    function semerLesPages(bloc, entete, chemin) {
+    function semerLesPages(bloc, entete, chemin, instants) {
         // Le trajet est long : quatorze pages y laisseraient de grands vides.
         const NOMBRE = 30;
         const conteneur = document.createElement("div");
@@ -290,7 +332,7 @@
                et les tout derniers, sinon des pages tomberaient devant elle
                alors qu elle est deja posee. */
             const t = 0.10 + (n / NOMBRE) * 0.82;
-            const p = pointSurLeChemin(chemin, t);
+            const p = pointSurLeChemin(chemin, instants, t);
 
             const page = document.createElement("span");
             page.className = "mascotte-page";
@@ -323,11 +365,31 @@
         setTimeout(() => conteneur.remove(), DUREE_VOL + 2400);
     }
 
-    // Interpolation lineaire entre deux points voisins du chemin.
-    function pointSurLeChemin(chemin, t) {
-        const echelle = t * (chemin.length - 1);
-        const i = Math.min(Math.floor(echelle), chemin.length - 2);
-        const f = echelle - i;
+    /* La part du trajet accomplie a chaque point, mesuree en distance. Rend un
+       tableau d offsets de 0 a 1, utilisable tel quel par l API d animation. */
+    function repartirParDistance(chemin) {
+        const cumul = [0];
+        for (let i = 1; i < chemin.length; i++) {
+            const dx = chemin[i].x - chemin[i - 1].x;
+            const dy = chemin[i].y - chemin[i - 1].y;
+            cumul.push(cumul[i - 1] + Math.hypot(dx, dy));
+        }
+        const total = cumul[cumul.length - 1] || 1;
+        return cumul.map((d) => d / total);
+    }
+
+    /* Ou se trouve la mascotte a l instant t (de 0 a 1). On cherche l etape
+       dans la meme repartition par distance que celle de son animation, puis
+       on interpole entre ses deux bornes.
+
+       Chercher par rang de point aurait fait naitre les pages a cote : les
+       etapes ne sont pas espacees dans le temps de facon uniforme, seulement
+       dans l espace. */
+    function pointSurLeChemin(chemin, instants, t) {
+        let i = 0;
+        while (i < instants.length - 2 && instants[i + 1] < t) i++;
+        const span = instants[i + 1] - instants[i];
+        const f = span > 0 ? (t - instants[i]) / span : 0;
         const a = chemin[i], b = chemin[i + 1];
         return { x: a.x + (b.x - a.x) * f, y: a.y + (b.y - a.y) * f };
     }
