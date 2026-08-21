@@ -70,10 +70,23 @@ réinjectés un par un pour vérifier qu'ils sont bien vus.
 | Adresse absolue recopiée dans un lien | `verifier-identite.mjs` |
 | « 9 guides gratuits » dans un sommaire | `verifier-identite.mjs` |
 | `og:site_name` modifié à la main | `appliquer-identite.js --verifier` |
+| Vouvoiement dans un fichier non recensé | `verifier-registre.mjs` |
+| Plafond de vouvoiement dépassé | `verifier-registre.mjs` |
 
-Les deux se complètent : le premier ne voit pas ce qu'il n'a pas écrit, le
-second ne corrige rien. Workflow `.github/workflows/identite.yml`, plus une
-section 4 dans le hook pre-commit.
+Les deux premiers se complètent : l'un ne voit pas ce qu'il n'a pas écrit,
+l'autre ne corrige rien. Workflow `.github/workflows/identite.yml`, registre
+ajouté à `controles.yml`, et deux sections de plus dans le hook pre-commit —
+qui en compte désormais cinq.
+
+`scripts/registre.json` recense **86 occurrences de vouvoiement dans 32
+fichiers**, chacune avec sa raison : non-conseil, parole rapportée, ou
+jumelage d'un quiz avec sa page. Le registre ne recule pas — le contrôle
+refuse qu'un fichier en gagne, jamais qu'il en perde.
+
+**Ce que ce contrôle ne voit pas, et c'est écrit dans le script :**
+l'impératif de politesse ne porte aucun pronom. Une liste de verbes serait
+nécessaire, et une liste partielle donnerait l'impression d'une couverture
+qu'elle n'a pas. La limite est déclarée plutôt que devinée plus tard.
 
 ### Ce qui ne suit pas le renommage
 
@@ -97,7 +110,77 @@ rendrait l'exemple faux.
 
 Le tutoiement ne s'arrête pas aux pages : les quiz et les simulateurs affichent
 leur texte **dans** les guides. Les oublier aurait laissé le site à moitié
-converti, de façon invisible depuis les fichiers de cours.
+converti, de façon invisible depuis les fichiers de cours. Portée réelle :
+56 guides, 9 pages, 32 banques de quiz, 169 simulateurs, index de recherche.
+
+Mesure à l'écran, sur la page négociation intermédiaire : elle affichait
+**8 « vous »** venus des seuls simulateurs alors que sa prose tutoyait déjà.
+Il en reste **un**, la réplique citée.
+
+#### Deux pièges que seule la mesure a montrés
+
+**Le motif `vous|votre|vos` sous-comptait de 30 %.** L'impératif de politesse
+ne porte aucun pronom : `Notez`, `Vérifiez`, `Déployez`, `Reculez` échappent à
+la recherche. Une soixantaine d'occurrences ont dû être trouvées par balayage
+des formes en `-ez`, relecture par relecture. Le premier décompte annonçait
+545 occurrences dans les guides ; il en manquait un tiers.
+
+**`assets/js/pratique/en.js` traduit par correspondance EXACTE de fragments
+français**, et 232 de ses clés vouvoyaient. Changer un texte dans `pratique.js`
+sans changer la clé jumelle fait retomber le simulateur anglais en français —
+aucune erreur, aucun message, le texte français s'affiche simplement sur la
+page anglaise. Les deux fichiers ont avancé en verrou, sujet par sujet, et
+`verifier-traduction.mjs` a été rejoué après chacun. `pratique.js` passe de
+271 à 4 occurrences, `en.js` de 232 clés vouvoyantes à 5.
+
+C'est la leçon des liens transverses appliquée à un cas nouveau : ce qui casse
+n'est pas le fichier qu'on modifie, c'est celui qui le référençait.
+
+### Un défaut antérieur trouvé au passage
+
+La branche `gain < 0` du simulateur `mesore` — « cette offre est moins bonne
+que ta solution de rechange » — n'avait **aucune** traduction et s'affichait en
+français sur la page anglaise. Le contrôle ne pouvait pas la voir : ses trois
+jeux d'essai (`defaut`, `min`, `max`) ne rendent jamais `gain` négatif.
+Traduction ajoutée, avec le commentaire qui explique l'angle mort.
+
+### Deux régressions que j'ai failli introduire
+
+**`og:locale` est passé de `en_GB` à `en_US`** sur les 64 pages anglaises,
+parce que mon tableau des locales l'écrivait ainsi. Le site s'écrit en
+orthographe britannique : c'était annoncer aux moteurs une langue qu'il n'écrit
+pas. Repéré en relisant le diff des pages anglaises, corrigé.
+
+**Le hook pre-commit a été abîmé par un `perl -i` mal ancré** : le motif s'est
+substitué à lui-même dans quatre lignes, dont deux de commentaire. Réparé et
+revalidé par `sh -n`. Le remplacement en ligne sur un fichier qu'on n'a pas
+sous les yeux reste la façon la plus rapide de casser quelque chose sans le
+voir.
+
+### Renommer le dépôt : ce qui casse, et ce qui le rattrape
+
+Le dépôt s'appelle toujours `docmaster`, donc l'adresse n'a pas bougé. Ce n'est
+pas un oubli. La documentation GitHub est explicite : tout est redirigé
+*« with the exception of project site URLs »*. Renommer le dépôt ne redirige
+**pas** `bloundsk.github.io/docmaster/...` — les 129 adresses indexées cessent
+simplement de répondre, et GitHub Pages ne sert aucun fichier de redirection
+côté serveur.
+
+`scripts/generer-redirections.js` produit les 129 pages de renvoi — canonique
+vers la nouvelle adresse, méta-rafraîchissement, lien visible en repli — à
+déposer dans un dépôt neuf nommé `docmaster`. Le renommage n'a d'intérêt que
+fait en entier ; sans ce dépôt, il coûte tout le référencement acquis.
+
+### Ménage
+
+Dix-huit issues fermées : onze rapports de veille et deux rapports d'usage
+dont toutes les cases étaient traitées, plus cinq plus anciens qu'un premier
+comptage avait manqués — `gh issue list` s'arrête à trente résultats. Restent
+18 issues ouvertes et 283 cases, toutes portant du travail réel.
+
+La description du dépôt portait les **deux** noms précédents à la fois :
+« Bibliothèque de connaissances DocMaster IA ». Remplacée par la signature, et
+le champ site renseigné — il était vide.
 
 ## 2026-08-17 — L'audit ne voyait que la moitié du site
 Ludo a posé la bonne question : l'audit est-il complet, tient-il compte de ce
