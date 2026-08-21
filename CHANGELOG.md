@@ -1,5 +1,89 @@
 # Changelog — Clicked
 
+## 2026-08-22 — Les actualités se publient toutes seules
+
+Ludo ne veut plus avoir à cocher pour qu'un article paraisse.
+
+### Inverser un défaut plutôt qu'ajouter un mécanisme
+
+La mécanique du veto existait déjà : `publier-actualites.js` retire du site
+tout article dont la case est vide. Il n'y avait donc rien à inventer, **une
+valeur par défaut à inverser**. La veille coche les cases d'office ; décocher
+retire toujours l'article. Le veto reste entier, il a changé de sens.
+
+### Le déclencheur évident ne se déclenche jamais
+
+Premier essai : `issues: opened`. La veille crée l'Issue, la publication suit.
+Exécuté pour de vrai, **rien ne partait** — l'Issue #40 est née avec sa case
+cochée et le site n'a pas bougé.
+
+La documentation GitHub l'explique : *« events triggered by the GITHUB_TOKEN
+will not create a new workflow run »*, un garde-fou contre les boucles
+infinies. L'Issue étant créée par Actions avec ce jeton, l'événement n'existe
+pas.
+
+**L'ancien fonctionnement marchait précisément parce qu'il dépendait d'un
+humain** : c'est Ludo qui cochait, depuis son navigateur, avec son compte.
+Automatiser avait retiré la seule chose qui déclenchait la suite.
+
+`workflow_run` chaîne les deux workflows sans jeton personnel. Vérifié en
+production : veille lancée, publication déclenchée, trois articles parus, site
+déployé.
+
+### Ce que la relecture attrapait doit être attrapé autrement
+
+Sur les huit articles publiés sous l'ancien fonctionnement, **deux étaient du
+contenu d'affiliation** — « les meilleures plateformes en 2026 », « meilleure
+application pour investir » — placés sous le guide Finance, sur un site dont
+les mentions légales promettent aucun lien rémunéré. Ils étaient passés
+**malgré** la relecture humaine.
+
+`scripts/actualites-regles.js` porte deux filets : les tournures
+promotionnelles d'abord — un comparatif reste un comparatif quel que soit le
+site — puis une liste de sources pour ce que le titre ne trahit pas. Le
+communiqué « IA Local souveraine pour tous vos collaborateurs sécurisé
+gratuite » n'a aucune tournure suspecte ; il est seulement mal écrit.
+
+Appliqué deux fois, à la proposition et juste avant la mise en ligne, et sur
+les **deux** chemins — `--hors-ligne` compris. Tant que le filtre vivait dans
+`fusionner()`, régénérer les pages hors ligne le contournait en silence.
+
+Effet rétroactif : les trois articles promotionnels déjà en ligne ont disparu
+au premier passage, sans intervention.
+
+L'âge maximal cesse d'être recopié dans deux fichiers avec, dans chacun, un
+commentaire demandant à l'autre de rester synchrone. Une règle qui tient par un
+commentaire ne tient pas.
+
+### Quatre phrases devenues fausses
+
+Le site promettait, en quatre endroits — page Actualités, FAQ, mentions
+légales, français et anglais — que **« chaque article a été lu et retenu à la
+main »**. C'était vrai ; ça ne l'est plus.
+
+Elles disent maintenant ce qui se passe, y compris ce que le filtre ne sait pas
+faire : *juger si un article est juste*. Une automatisation qui laisse en place
+la promesse de l'ancien fonctionnement ne trompe pas la machine, elle trompe le
+lecteur.
+
+### Vérifications
+
+La veille a été exécutée **entièrement hors ligne**, réseau simulé, pour lire
+l'Issue qu'elle produirait : cases toutes cochées, aucune vide, et le bloc des
+écartés nommant chaque refus avec sa raison.
+
+Deux tests ajoutés, avec les deux titres réellement publiés : le filtre doit
+les refuser **même cochés**. Chacun vérifié en retirant sa règle — le test
+rougit, puis reverdit.
+
+Deux défauts vus dans cette exécution et corrigés : la liste des écartés
+répétait la même ligne des dizaines de fois, et un article remonté par
+plusieurs recherches occupait plusieurs cases alors que le site n'en affiche
+qu'un.
+
+Le bac à sable de `test-actualites.mjs` ne copiait pas le nouveau module —
+même défaut que le jour où il ne copiait que deux des quatre pages.
+
 ## 2026-08-21 — DocMaster devient Clicked
 
 Le nom était pris : `docmaster.net`, `docmaster.org`, le plugin DocMaster de
