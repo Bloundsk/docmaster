@@ -1,6 +1,30 @@
 {
-  "maj": "2026-08-21T21:02:33.193Z",
+  "maj": "2026-08-21T21:58:00.742Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQb0F5S3EyeUNaVnNBc3dRa3RVck9adjlNdzk2Rk9uOGtBZ0QzSkJSRk9DZjZTdml4bExVVFNtUXU3RjJiSXlYd3ZCN3lCYXJoT2tYRUZZZHpyT1IxNUg4V1pXYnBhYzRVbWFjWnVOaFdGQmQ5SlN0djFERFplMnVKRTJBRU9BQ1NxLVBTUEtsVUh2d1lWcUdRTzREcDdhUG5rZDJ4LVRWbFNDdVRJWkJ4MGV1bjd0M3hkSDFGRjhyUElWSjd1X2cwczlJb1FVVGJmUUY3dTJWRWFUc0E?oc=5",
+      "titre": "Piratage du fisc : une nouvelle fuite concernant des données liées aux successions, depuis \"coupée\"",
+      "source": "RTL",
+      "date": "2026-08-18",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-08-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPNWNqbXdRRVVuUVRSQXlKTkQ1RHZmTUJuYzVLUHNOOFZkcFM0VDVjRXBtSmoxUE1Td2RHS3pPRURMd0JqUm9sNWJITUJDWGcycXBUTUQ4WTk0enBfbzl5Z1BfdkM1cjd1clRsLVpLdmRYcHE4MUhXLUtLT05aRkhkZ1RmYWRNRDlORVYydDA2bVhWMU5SNkh0b1g5eHBuU2FFWFRiSE13RlRCd2x4bVprNTNkSXJhWFNqYWhadlZlVEllM0o2UDVxSzduc2VQdncteXZiNUVyNnJnYzVWMWVNTHZaSkFRTFJvWnJ6d3phalVMRWZHVnktZ1plQ0ZEWl9YcXBsa093ejZ4dw?oc=5",
+      "titre": "\"La cybersécurité n’a pas été une priorité\" : les syndicats dénoncent une gestion exposant les données de milliers de Français",
+      "source": "lanouvellerepublique.fr",
+      "date": "2026-08-18",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-08-21"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQQXBucDA3RmJRYjVVcWpKb2xxQTNaSVc3RnBpejJJaEZUZnZVX1M4dzNNenFnMS1fY25Waml0TFFzSEFWMTBZVkI0Vms0ZUsxTGdpbG5IOWhwdk52X3NKUTVSTVY2YmFEVDRtUVR5WmY4NkJwMDNZT19MYWdsZFJLVUp5WXNpTklqMWRXWDFFbklTSloyVVE?oc=5",
       "titre": "Transformers en déclin : l'IA cherche des solutions innovantes",
@@ -33,9 +57,21 @@
       "guide": "droit",
       "page": "avance.html",
       "ancre": "vos-donnees-personnelles",
-      "section": "🔐 Tes données personnelles",
+      "section": "🔐 Vos données personnelles",
       "sujet": "⚖️ Droit & démarches — Avancé",
       "publie": "2026-08-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQTBoR3U2OUF4dnhnWDVyTHhBcnhmNjlyZjJMMkRFYjlVLVR4eDdrT2xMMldnWlV2UWsyektUWW9NMERYT2NwUDg0UkxWUDI1RkZWYUEyVXAySnFLZ2VZTHdKX2h2cGNEVmlCeWZiNUhuZ0VFQ1JqNHpGNkFSX1BXMEJSSldzOXRIRXN5UlpQRnNRVFBGRDJEbTB3?oc=5",
+      "titre": "SK Telecom mise sur l’IA d’Anthropic pour la cybersécurité",
+      "source": "Servicesmobiles.fr",
+      "date": "2026-06-04",
+      "guide": "ia",
+      "page": "avance.html",
+      "ancre": "evaluer-un-systeme",
+      "section": "🪞 Évaluer un système",
+      "sujet": "🤖 Intelligence Artificielle — Avancé",
+      "publie": "2026-08-21"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNakprcERoNXcwSk43WTh4OUZoT1RHcHdDVkVkUWhqRFdkRExHemJaZVpzOUthdGhTbVd5MV9wdG1EY3U1MzRCdFNiNkZISTh0QW5PSFhEcXNqREtKQjd5aXBLWm9JYmxLb1o5NXlIbGNfUEFyVWFCUnZxRG03MEYyNkRSb05fM3JETTNkZW9pS3h2aVlKUzB5bEduc2xEWFNEREVOdHRrR3VpOHB3NGtmWWROOFlvdTAwa04zN3l0am1ROU0wLUhOMUNDYWJvOElkeGJ1RmszTGVWX25xQ2d3c001aV9zRzJUbDV4LXJzSml1UE40djBDWVBlZw?oc=5",
