@@ -3,15 +3,29 @@ name: Publication des actualités Clicked
 # Publie sur le site les articles COCHES dans les rapports de veille.
 #
 # Depuis le 21 aout 2026, la veille coche les cases d office : publier ne
-# demande donc plus aucun geste. « opened » est ce qui rend l automatisation
-# reelle — sans ce declencheur, les articles n auraient paru qu au filet
-# quotidien du lendemain matin, soit jusqu a vingt-quatre heures plus tard.
+# demande donc plus aucun geste.
 #
-# « edited » reste, pour le veto : decocher une case modifie le corps de
-# l Issue et retire l article du site dans la minute.
+# POURQUOI « workflow_run » ET NON « issues: opened »
+#
+# Le declencheur evident etait « issues: opened » : la veille cree l Issue, la
+# publication suit. Il a ete essaye, et il ne se declenche JAMAIS. La
+# documentation GitHub l explique : « events triggered by the GITHUB_TOKEN will
+# not create a new workflow run », un garde-fou contre les boucles infinies.
+# L Issue etant creee par Actions avec ce jeton, l evenement n existe pas.
+#
+# L ancien fonctionnement marchait justement parce qu il dependait d un HUMAIN :
+# c est Ludo qui cochait, depuis le navigateur, avec son propre compte.
+#
+# « workflow_run » chaine les deux workflows sans jeton personnel : il se
+# declenche a la fin de la veille, quel qu ait ete son propre declencheur.
 on:
+  workflow_run:
+    workflows: ["Veille quotidienne Clicked"]
+    types: [completed]
+  # Le veto : decocher une case modifie le corps de l Issue. Cet evenement-la
+  # vient d une personne, il se declenche donc bien.
   issues:
-    types: [opened, edited]
+    types: [edited]
   workflow_dispatch:
   schedule:
     # Filet quotidien, au cas ou un evenement se serait perdu. Minute decalee :
