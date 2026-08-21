@@ -84,6 +84,49 @@ qu'un.
 Le bac à sable de `test-actualites.mjs` ne copiait pas le nouveau module —
 même défaut que le jour où il ne copiait que deux des quatre pages.
 
+### Ce que la première vérification a trouvé
+
+Ludo a demandé de vérifier que la chaîne avait bien publié. Elle avait publié.
+Mais regarder **ce que le filtre écarte** a montré deux défauts que le résultat
+seul ne montrait pas.
+
+**Les recherches partaient avec le niveau du guide.** Le titre d'une page de
+cours porte son niveau — « Cybersécurité — Avancé » — et ce mot entrait dans la
+requête de presse. **113 des 169 recherches** le portaient. Google News lit
+« Avancé » comme « en avance », « avancées », « contacts avancés » : le rapport
+proposait des transferts de football, un résumé d'épisode de série et une
+soluce de Fallout 4, sous les guides Cybersécurité et IA.
+
+Ils avaient été écartés — mais seulement parce qu'ils avaient plus de 120 jours.
+Tant qu'un humain cochait, ce n'était que du bruit qu'il ne cochait pas ; depuis
+que la publication est automatique, **un hors-sujet assez récent paraîtrait**.
+Le défaut existait avant l'automatisation ; c'est elle qui le rendait coûteux.
+
+Deux requêtes traînaient en plus un possessif entré la veille avec le
+tutoiement — « Ta surface d'attaque », « Tes données personnelles ». La liste
+des mots vides connaissait « son », « sa », « ses », pas « ta », « ton »,
+« tes ».
+
+**Le libellé de section venait de l'Issue, pas du guide.** La première
+publication automatique a remis « Vos données personnelles » en ligne alors que
+la section s'appelle « Tes données personnelles » depuis la veille : l'Issue
+porte une copie du titre, figée le jour où la veille l'a relevée, et la
+publication la recopiait telle quelle.
+
+`data/actualites.json` avait été corrigé à la main la veille. **Ça n'a tenu que
+jusqu'à la publication suivante** — c'est exactement ce que vaut une correction
+appliquée à l'endroit plutôt qu'à la cause. Le libellé est désormais relu dans
+le guide par son ancre : l'ancre est un identifiant, elle ne bouge pas.
+
+### Une erreur de méthode, à ne pas refaire
+
+Le second défaut a failli passer inaperçu. Les contrôles étaient enchaînés sous
+la forme `node script | tail -1`, et **un tube renvoie le code de sortie du
+dernier maillon** — celui de `tail`, toujours nul. Le registre était rouge, la
+commande verte, et le commit est parti.
+
+Un contrôle dont on ne lit pas le code de sortie n'est pas un contrôle.
+
 ## 2026-08-21 — DocMaster devient Clicked
 
 Le nom était pris : `docmaster.net`, `docmaster.org`, le plugin DocMaster de
