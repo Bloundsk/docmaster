@@ -20,7 +20,14 @@ const FICHIER_ISSUES = path.join(BAC, "issues.json");
 fs.rmSync(BAC, { recursive: true, force: true });
 fs.mkdirSync(path.join(BAC, "scripts"), { recursive: true });
 fs.mkdirSync(path.join(BAC, "en"), { recursive: true });
-fs.copyFileSync(path.join(RACINE, "scripts/publier-actualites.js"), path.join(BAC, "scripts/publier-actualites.js"));
+/* Les deux fichiers, pas seulement celui qu'on teste : publier-actualites.js
+   requiert actualites-regles.js. Le bac à sable ne copiait que le premier, et
+   le test tombait sur MODULE_NOT_FOUND — même défaut que le jour où il ne
+   copiait que deux des quatre pages. Ce qu'un script lit, le bac doit
+   l'avoir. */
+for (const f of ["publier-actualites.js", "actualites-regles.js"]) {
+    fs.copyFileSync(path.join(RACINE, "scripts", f), path.join(BAC, "scripts", f));
+}
 
 /* Les QUATRE pages porteuses des marqueurs. Le bac n en copiait que deux : le
    jour ou le script a commence a ecrire aussi les pages anglaises, il s est
@@ -184,6 +191,44 @@ verifier("les articles récents restent", e7.length === 1, `${e7.length}`);
 verifier("l'écart est annoncé", /écarté/.test(sortie7), sortie7.trim());
 verifier("avec le titre et l'âge", /Un article de 2021/.test(sortie7) && /\d+ j\)/.test(sortie7),
     sortie7.trim());
+
+/* --- 8. Le filtre d admission -----------------------------------------------
+ *
+ * Depuis que la publication est automatique, ce filtre est tout ce qui separe
+ * le flux Google News de la page d actualites. Il n y a plus d humain derriere.
+ *
+ * Les deux cas testes sont reels : ce sont deux articles qui ont ete publies
+ * sur le site sous l ancien fonctionnement, cases cochees a la main. Ils
+ * doivent desormais etre refuses MEME coches — c est la difference entre un
+ * filtre et une suggestion. */
+console.log("\n=== 8. LE FILTRE REFUSE MEME UNE CASE COCHEE ===");
+
+const refuses = {
+    "https://news.google.com/promo": {
+        titre: "Investir en private equity : les meilleures plateformes en 2026",
+        source: "Un site quelconque", date: "2026-08-19",
+        guide: "finance", page: "debutant.html", ancre: "lépargne",
+        section: "L'épargne", sujet: "💰 Finance — Débutant",
+    },
+    "https://news.google.com/source": {
+        titre: "Un titre parfaitement anodin",
+        source: "news-eco.com", date: "2026-08-19",
+        guide: "ia", page: "debutant.html", ancre: "les-llm",
+        section: "Les LLM", sujet: "🤖 IA — Débutant",
+    },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(refuses).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(refuses)}\n-->\n`,
+}];
+const sortie8 = lancer();
+const e8 = lireEtat().articles;
+verifier("le comparatif d'affiliation est refusé",
+    !e8.some((a) => a.lien.endsWith("/promo")), JSON.stringify(e8.map((a) => a.lien)));
+verifier("l'article de la source écartée est refusé",
+    !e8.some((a) => a.lien.endsWith("/source")), JSON.stringify(e8.map((a) => a.lien)));
+verifier("la raison du refus est dite", /palmar|source écartée/.test(sortie8), sortie8.trim());
 
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

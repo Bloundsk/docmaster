@@ -24,16 +24,6 @@ const NB_JOURS_AVANT_FERMETURE = 14; // ferme automatiquement les anciennes veil
 const TAILLE_POOL = 10;              // articles lus par recherche, avant deduplication
 const NB_ARTICLES_RETENUS = 1;       // articles conserves par sous-section
 
-// Age maximal d un article propose. Google News remonte volontiers de vieux
-// articles quand une requete est peu couverte : un rapport a deja propose des
-// textes de 2021 et 2023, melanges aux nouveautes et impossibles a distinguer
-// sans lire chaque date.
-//
-// La valeur doit rester identique a celle de scripts/publier-actualites.js.
-// Si la veille proposait plus vieux que ce que le site accepte, l auteur
-// cocherait des articles qui ne paraitraient jamais.
-const AGE_MAX_JOURS = 120;
-
 // Une Issue GitHub refuse un corps de plus de 65 536 caracteres. On decoupe
 // bien en dessous : l en-tete, le pied et la charge utile s ajoutent ensuite,
 // et un guide entier doit pouvoir tenir dans ce qui reste.
@@ -54,14 +44,11 @@ const MOTS_VIDES = new Set([
 
 const attendre = ms => new Promise(r => setTimeout(r, ms));
 
-// Un article sans date est garde : mieux vaut le proposer et laisser juger que
-// l ecarter sur une information absente.
-function assezRecent(iso) {
-    if (!iso) return true;
-    const t = Date.parse(iso);
-    if (isNaN(t)) return true;
-    return (Date.now() - t) / 86400000 <= AGE_MAX_JOURS;
-}
+/* Les regles d admission vivent dans scripts/actualites-regles.js, partagees
+   avec le script de publication. Elles etaient auparavant recopiees dans les
+   deux fichiers, chacun portant un commentaire demandant a l autre de rester
+   synchrone : une regle qui tient par un commentaire ne tient pas. */
+const { admissible } = require("./actualites-regles.js");
 
 // « 2026-08-12 » -> « 12 août ». L annee n est ajoutee que si elle differe de
 // l annee en cours : sur une page d actualites, « 12 août 2026 » en plein
@@ -214,16 +201,35 @@ async function construireRapport(guides, dejaProposes) {
     const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
     const entete =
-        `# 📰 Veille DocMaster — ${date} (${heure})\n\n` +
+        `# 📰 Veille Clicked — ${date} (${heure})\n\n` +
         `Articles récents, classés par **sous-section de guide**. Les recherches sont ` +
         `déduites automatiquement du contenu des guides, et les articles déjà proposés ` +
         `récemment sont écartés.\n\n` +
-        `> **Cochez une case pour publier l'article** dans les actualités du site.\n` +
-        `> Décochez-la pour l'en retirer. La publication se fait dans la minute qui suit.\n` +
-        `> Rien n'est publié tant que rien n'est coché.\n\n---\n\n`;
+        `> **Ces articles sont DÉJÀ EN LIGNE.** Ils sont publiés automatiquement, sans ` +
+        `rien à faire.\n` +
+        `> **Décoche une case pour retirer l'article du site** — il disparaît dans la ` +
+        `minute qui suit.\n` +
+        `> Recocher le remet en ligne.\n\n---\n\n`;
 
     let total = 0;
     let recherches = 0;
+
+    /* Ce que le filtre a refuse, pour ce passage. Depuis que la publication est
+       automatique, cette liste est le seul endroit ou l on peut voir ce qui a
+       ete ecarte et verifier que la regle ne coupe pas trop large.
+
+       Un Set, et non un tableau : un article promotionnel remonte souvent sur
+       plusieurs des 169 recherches, et la liste repetait alors la meme ligne
+       des dizaines de fois. */
+    const ecartes = new Set();
+
+    /* Les liens deja retenus DANS CE PASSAGE. « dejaProposes » ne couvre que
+       les Issues precedentes : un article correspondant a plusieurs recherches
+       occupait plusieurs cases du meme rapport. Tant que l auteur cochait a la
+       main, c etait du bruit ; maintenant que tout part en ligne, c est une
+       promesse fausse — le site n en affichera qu un, la publication etant
+       indexee par lien. */
+    const retenusCePassage = new Set();
 
     // Un bloc par guide, avec ses metadonnees. Le rapport n est plus assemble
     // en une seule chaine : au-dela de treize sujets il depassait la limite de
@@ -245,10 +251,22 @@ async function construireRapport(guides, dejaProposes) {
             let nouveaux = [];
             try {
                 const articles = await recupererArticles(s.requete);
-                nouveaux = articles
-                    .filter(a => !dejaProposes.has(a.lien))
-                    .filter(a => assezRecent(a.date))
-                    .slice(0, NB_ARTICLES_RETENUS);
+                const retenus = [];
+                for (const a of articles) {
+                    if (dejaProposes.has(a.lien) || retenusCePassage.has(a.lien)) continue;
+                    const verdict = admissible(a);
+                    if (!verdict.ok) {
+                        // Ce qu un script ecarte, il doit le dire. Depuis que la
+                        // publication est automatique, ces lignes sont le seul
+                        // endroit ou l on voit ce que le filtre a refuse.
+                        ecartes.add(`${verdict.raison} · ${a.source || "?"} · ${a.titre}`);
+                        continue;
+                    }
+                    retenus.push(a);
+                    retenusCePassage.add(a.lien);
+                    if (retenus.length >= NB_ARTICLES_RETENUS) break;
+                }
+                nouveaux = retenus;
             } catch (e) {
                 texte += `### ${s.titre}\n_Erreur de récupération._\n\n`;
                 continue;
@@ -263,7 +281,14 @@ async function construireRapport(guides, dejaProposes) {
             texte += `<sub>recherche : \`${s.requete}\`</sub>\n\n`;
             for (const a of nouveaux) {
                 const legende = [a.source, a.date ? enFrancais(a.date) : ""].filter(Boolean).join(" · ");
-                texte += `- [ ] [${a.titre}](${a.lien})${legende ? ` — <sub>${legende}</sub>` : ""}\n`;
+                /* Case COCHEE d office : l article est publie sans intervention.
+                   C est le sens du changement demande le 21 aout 2026 — la
+                   veille ne propose plus, elle publie, et l auteur retire ce
+                   qu il ne veut pas. La mecanique de retrait existait deja :
+                   publier-actualites.js retire du site tout article dont la
+                   case est vide, il n y avait donc rien a inventer pour le
+                   veto, seulement une valeur par defaut a inverser. */
+                texte += `- [x] [${a.titre}](${a.lien})${legende ? ` — <sub>${legende}</sub>` : ""}\n`;
                 donnees[a.lien] = {
                     titre: a.titre,
                     source: a.source,
@@ -282,6 +307,28 @@ async function construireRapport(guides, dejaProposes) {
 
         if (!trouveDansGuide) texte += `_Rien de nouveau sur ce guide._\n\n`;
         blocs.push({ texte, donnees });
+    }
+
+    /* Le filtre rend des comptes. C est un bloc comme un autre, donc il suit
+       le decoupage en plusieurs Issues sans traitement particulier.
+
+       Il est replie : la liste est longue et sans interet la plupart du temps.
+       Elle sert le jour ou un article attendu ne parait pas — sans elle, il
+       aurait disparu sans laisser de trace, et le filtre passerait pour une
+       panne. */
+    if (ecartes.size) {
+        // Plafonnee : une Issue GitHub refuse un corps de plus de 65 536
+        // caracteres, et cette liste n a pas a manger le budget des articles
+        // qui, eux, paraissent. Trente lignes suffisent a voir si le filtre
+        // coupe trop large.
+        const PLAFOND = 30;
+        const liste = [...ecartes];
+        let texte = `## 🚫 Écartés par le filtre\n\n`;
+        texte += `<details><summary>${liste.length} article(s) refusés avant publication</summary>\n\n`;
+        for (const e of liste.slice(0, PLAFOND)) texte += `- ${e}\n`;
+        if (liste.length > PLAFOND) texte += `- _… et ${liste.length - PLAFOND} autres._\n`;
+        texte += `\n_Les règles sont dans \`scripts/actualites-regles.js\`._\n</details>\n\n`;
+        blocs.push({ texte, donnees: {} });
     }
 
     return { rapports: assembler(entete, blocs, recherches, total), total };

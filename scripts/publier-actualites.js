@@ -1,23 +1,32 @@
 #!/usr/bin/env node
 /* ---------------------------------------------------------------------------
- * DOCMASTER — PUBLICATION DES ACTUALITES
+ * CLICKED — PUBLICATION DES ACTUALITES
  *
- * La veille propose, l auteur dispose.
+ * La veille publie, l auteur retire.
  *
- * Deux fois par jour, scripts/veille.js depose dans une Issue une liste
- * d articles trouves pour chaque sous-section de guide. Chaque article y est
- * une case a cocher. Ce script relit ces Issues, retient les articles COCHES,
- * et les publie sur le site.
+ * Deux fois par jour, scripts/veille.js depose dans une Issue les articles
+ * trouves pour chaque sous-section de guide. Chaque article y est une case a
+ * cocher, COCHEE d office. Ce script relit ces Issues et publie sur le site
+ * tout ce qui est coche — c est-a-dire tout, sauf ce qui a ete decoche.
  *
- * Pourquoi une validation manuelle, alors que tout le reste est automatique :
- * publier sans relire reviendrait a faire paraitre sur le site, sous la
- * responsabilite de son auteur, des titres de presse que personne n a lus.
- * Un flux de recherche automatique remonte aussi des articles promotionnels,
- * des contenus payants et parfois des contre-verites. Une case a cocher coute
- * un clic ; republier sans regarder coute la credibilite du site.
+ * CE QUI A CHANGE LE 21 AOUT 2026, ET CE QUE CELA COUTE
  *
- * Cocher une case modifie le corps de l Issue, ce qui declenche le workflow :
- * l article parait sur le site dans la minute. Decocher l en retire.
+ * Jusque-la, les cases arrivaient vides : rien ne paraissait tant qu un humain
+ * n avait pas lu le titre. Ludo a demande que la publication soit automatique.
+ *
+ * La relecture disparait, mais ce qu elle attrapait ne disparait pas : un flux
+ * de recherche automatique remonte des articles promotionnels, des contenus
+ * payants et parfois des contre-verites. Deux des huit articles publies sous
+ * l ancien fonctionnement etaient deja du contenu d affiliation — ils etaient
+ * passes MALGRE la relecture. Le filtre de scripts/actualites-regles.js prend
+ * donc le relais, et il est applique DEUX fois : a la proposition, puis ici,
+ * juste avant la mise en ligne.
+ *
+ * Le veto reste entier, il a seulement change de sens : decocher une case
+ * retire l article du site dans la minute. Recocher le remet.
+ *
+ * Ce que le filtre ne saura jamais faire : juger si un article est juste.
+ * C est le prix de l automatisation, et il est assume.
  *
  * Deux sorties :
  *   - data/actualites.json   l etat, qui sert de memoire d un passage a l autre
@@ -32,15 +41,13 @@ const path = require("path");
 const RACINE = path.join(__dirname, "..");
 const ETAT = path.join(RACINE, "data", "actualites.json");
 
+/* Les regles d admission sont partagees avec scripts/veille.js. Elles etaient
+   recopiees dans les deux fichiers, chacun demandant a l autre par commentaire
+   de rester synchrone. Une regle qui tient par un commentaire ne tient pas. */
+const { AGE_MAX_JOURS, admissible } = require("./actualites-regles.js");
+
 const MAX_ARTICLES = 24;   // au-dela, la page devient un mur
 
-// Un site qui annonce « les competences de demain » ne peut pas afficher un
-// article de 2021 : la page se contredirait elle-meme.
-//
-// La valeur doit rester identique a celle de scripts/veille.js, qui ne propose
-// donc jamais rien de plus ancien. Ce qui est ecarte ici est signale nom par
-// nom — la regle est bonne, c est de l appliquer en silence qui ne l etait pas.
-const AGE_MAX_JOURS = 120;
 const NB_SUR_ACCUEIL = 3;
 
 const MARQUE_DEBUT = "<!-- ACTUALITES:DEBUT -->";
@@ -153,6 +160,23 @@ function fusionner(existants, coches, decoches) {
         });
     }
 
+    return [...parLien.values()];
+}
+
+/* Le filtre d admission, applique juste avant le rendu.
+ *
+ * Il vit ici et non dans « fusionner » parce que « --hors-ligne » ne fusionne
+ * rien : il reecrit les pages depuis l etat enregistre, sans interroger
+ * GitHub. Tant que le filtre etait dans « fusionner », cette option le
+ * contournait — regenerer les pages apres avoir ajoute une regle aurait remis
+ * en ligne ce que la regle refuse, en silence. Les deux chemins passent
+ * desormais par ici.
+ *
+ * Consequence utile : ajouter une source a la liste des ecartees retire du
+ * site, au passage suivant, ce qu elle avait laisse passer avant. Les trois
+ * articles promotionnels publies sous l ancien fonctionnement disparaissent
+ * ainsi sans intervention. */
+function filtrer(articles) {
     // La regle d age s applique, mais elle s explique.
     //
     // Elle a deja ecarte cinq articles coches sans un mot : l auteur a vu sept
@@ -161,18 +185,32 @@ function fusionner(existants, coches, decoches) {
     const limite = Date.now() - AGE_MAX_JOURS * 86400000;
     const ecartes = [];
 
-    const retenus = [...parLien.values()].filter((a) => {
+    const retenus = articles.filter((a) => {
         const reference = Date.parse(a.date || a.publie);
-        if (isNaN(reference) || reference >= limite) return true;
-        ecartes.push(a);
-        return false;
+        if (!isNaN(reference) && reference < limite) {
+            // L age en jours, et pas seulement « trop vieux » : c est lui qui
+            // dit s il s en fallait de peu ou de deux ans.
+            const jours = Math.round((Date.now() - reference) / 86400000);
+            ecartes.push({ article: a, raison: `plus de ${AGE_MAX_JOURS} jours (${jours} j)` });
+            return false;
+        }
+        /* Second passage du filtre, ici plutot que seulement dans la veille.
+           Depuis que la publication est automatique, ce script est le dernier
+           avant la mise en ligne : il doit pouvoir refuser seul. Il attrape
+           aussi les articles entres AVANT une regle — ajouter une source a la
+           liste retire donc du site ce qu elle avait laisse passer. */
+        const verdict = admissible(a);
+        if (!verdict.ok) {
+            ecartes.push({ article: a, raison: verdict.raison });
+            return false;
+        }
+        return true;
     });
 
     if (ecartes.length) {
-        console.warn(`${ecartes.length} article(s) coché(s) mais écarté(s) — plus de ${AGE_MAX_JOURS} jours :`);
-        for (const a of ecartes) {
-            const jours = Math.round((Date.now() - Date.parse(a.date)) / 86400000);
-            console.warn(`  · ${a.date} (${jours} j) — ${a.titre}`);
+        console.warn(`${ecartes.length} article(s) écarté(s) avant publication :`);
+        for (const { article, raison } of ecartes) {
+            console.warn(`  · ${raison} — ${article.source || "?"} — ${article.titre}`);
         }
     }
 
@@ -212,7 +250,7 @@ const VERSIONS = {
         rapport: "En rapport avec",
         vide: "Aucune actualité retenue pour le moment. Cette page se remplit au fil des lectures.",
         titreAccueil: "📰 À lire ailleurs",
-        introAccueil: "Quelques lectures en rapport avec les guides, choisies à la main.",
+        introAccueil: "Quelques lectures en rapport avec les guides, repérées automatiquement.",
         toutes: "Toutes les actualités →",
         // Le libellé de la section, tel que la veille l'a relevé.
         etiquette: (a) => `<a href="guides/${a.guide}/${a.page}#${encodeURIComponent(a.ancre)}">${echapper(a.section)}</a> · ${echapper(a.sujet)}`,
@@ -222,7 +260,7 @@ const VERSIONS = {
         rapport: "Related to",
         vide: "No article selected for now. This page fills up as the reading goes.",
         titreAccueil: "📰 Read elsewhere",
-        introAccueil: "A few readings related to the guides, picked by hand. <strong>They are in French</strong>: they point to French sources, and a translated headline could no longer be found again.",
+        introAccueil: "A few readings related to the guides, found automatically. <strong>They are in French</strong>: they point to French sources, and a translated headline could no longer be found again.",
         toutes: "All the news →",
         etiquette: (a) => `<a href="guides/${a.guide}/${a.page}">${echapper(NOMS_EN[a.guide] || a.guide)} — ${echapper(NIVEAUX_EN[a.page.replace(".html", "")] || "")}</a>`,
     },
@@ -329,6 +367,10 @@ function injecter(fichier, contenu) {
             console.log(`${issues.length} Issue(s) lue(s) : ${coches.size} article(s) coché(s).`);
             articles = fusionner(articles, coches, decoches);
         }
+
+        // Le filtre, sur les deux chemins : en ligne comme hors ligne.
+        articles = filtrer(articles);
+
         const avant = lireEtat().articles;
 
         // « maj » ne date pas le passage du script mais le dernier changement

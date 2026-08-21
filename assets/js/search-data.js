@@ -242,7 +242,7 @@ const searchIndex = [
     { title: "Reconnaître la manipulation", description: "Un procédé nommé cesse de fonctionner.", url: "guides/negociation/avance.html", keywords: "manipulation urgence artificielle grignotage autorité absente procédé cialdini" },
     { title: "Savoir s'arrêter", description: "Un blocage coûte souvent plus que l'écart à combler.", url: "guides/negociation/avance.html", keywords: "arrêter partir quitter table coût désaccord blocage fatigue accord" },
 
-    { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
+    { title: "Actualités", description: "Des lectures qui prolongent les guides, repérées automatiquement.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
 
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur le site.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
     { title: "Le site est-il gratuit ?", description: "Pas d'inscription, pas d'abonnement, pas de publicité.", url: "faq.html", keywords: "gratuit prix payant abonnement inscription compte publicité" },

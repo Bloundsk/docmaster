@@ -2,13 +2,16 @@ name: Publication des actualités Clicked
 
 # Publie sur le site les articles COCHES dans les rapports de veille.
 #
-# Cocher une case dans une Issue en modifie le corps, ce qui declenche
-# l evenement « issues: edited » : l article parait dans la minute. C est ce
-# qui rend la validation supportable — sans cela, il faudrait attendre le
-# passage suivant de la veille pour voir le resultat d un clic.
+# Depuis le 21 aout 2026, la veille coche les cases d office : publier ne
+# demande donc plus aucun geste. « opened » est ce qui rend l automatisation
+# reelle — sans ce declencheur, les articles n auraient paru qu au filet
+# quotidien du lendemain matin, soit jusqu a vingt-quatre heures plus tard.
+#
+# « edited » reste, pour le veto : decocher une case modifie le corps de
+# l Issue et retire l article du site dans la minute.
 on:
   issues:
-    types: [edited]
+    types: [opened, edited]
   workflow_dispatch:
   schedule:
     # Filet quotidien, au cas ou un evenement se serait perdu. Minute decalee :
