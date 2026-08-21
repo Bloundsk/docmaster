@@ -166,6 +166,7 @@
         accueil:    { fr: "Accueil", en: "Home", es: "Inicio", de: "Startseite", it: "Home", zh: "首页", ru: "Главная" },
         actualites: { fr: "Actualités", en: "News", es: "Actualidad", de: "Aktuelles", it: "Attualità", zh: "资讯", ru: "Новости" },
         glossaire:  { fr: "Glossaire", en: "Glossary", es: "Glosario", de: "Glossar", it: "Glossario", zh: "术语表", ru: "Глоссарий" },
+        podcasts:   { fr: "Podcasts", en: "Podcasts", es: "Podcasts", de: "Podcasts", it: "Podcast", zh: "播客", ru: "Подкасты" },
         idees:      { fr: "Boîte à idées", en: "Suggestions", es: "Buzón de ideas", de: "Ideenbox", it: "Cassetta delle idee", zh: "意见箱", ru: "Предложения" },
         faq:        { fr: "FAQ", en: "FAQ", es: "Preguntas frecuentes", de: "FAQ", it: "FAQ", zh: "常见问题", ru: "Вопросы и ответы" },
         aPropos:    { fr: "À propos", en: "About", es: "Acerca de", de: "Über uns", it: "Chi siamo", zh: "关于", ru: "О сайте" },
@@ -212,6 +213,7 @@
            reste en place pour toute page qui n aurait pas le sien. */
         mascotteBulleAccueil:    { fr: "Satisferas-tu ta curiosité ?", en: "Will you satisfy your curiosity?", es: "¿Satisfará su curiosidad?", de: "Stillen Sie Ihre Neugier?", it: "Soddisferai la tua curiosità?", zh: "要满足你的好奇心吗？", ru: "Утолите своё любопытство?" },
         mascotteBulleActualites: { fr: "Une lecture ?", en: "Something to read?", es: "¿Una lectura?", de: "Etwas zu lesen?", it: "Una lettura?", zh: "想读点什么？", ru: "Что почитать?" },
+        mascotteBullePodcasts:   { fr: "Une oreille libre ?", en: "Got a free ear?", es: "¿Un rato para escuchar?", de: "Ein Ohr frei?", it: "Un orecchio libero?", zh: "有空听听吗？", ru: "Найдётся минутка послушать?" },
         mascotteBulleGlossaire:  { fr: "Un mot à éclaircir ?", en: "A word to clear up?", es: "¿Una palabra que aclarar?", de: "Ein Wort klären?", it: "Una parola da chiarire?", zh: "有词不懂？", ru: "Непонятное слово?" },
         mascotteBulleIdees:      { fr: "Une suggestion ?", en: "A suggestion?", es: "¿Una sugerencia?", de: "Ein Vorschlag?", it: "Un suggerimento?", zh: "有建议吗？", ru: "Есть предложение?" },
         mascotteBulleFaq:        { fr: "Une question ?", en: "A question?", es: "¿Una pregunta?", de: "Eine Frage?", it: "Una domanda?", zh: "有问题吗？", ru: "Есть вопрос?" },

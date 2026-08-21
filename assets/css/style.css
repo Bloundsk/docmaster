@@ -1073,6 +1073,41 @@ html { background: var(--background); }
 .actu-lien-guide a:hover { text-decoration: underline; }
 .actu-vide { color: var(--muted); font-style: italic; }
 
+/* ---------------------------------------------------------------
+   Podcasts. Meme carte que les actualites, liseré compris — mais en
+   secondaire : un episode renvoie a l interieur du site, une actualite
+   en sort. La couleur porte donc la meme information que la fleche
+   « ↗ » du titre d actualite.
+   --------------------------------------------------------------- */
+.podcast {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px 22px;
+    border-left: 3px solid var(--secondary);
+    margin-bottom: 18px;
+}
+.podcast h3 { margin: 0 0 4px; font-size: 1.15rem; }
+.podcast-duree { font-size: .82rem; color: var(--muted); margin: 0 0 10px; }
+
+/* Largeur pleine : le lecteur natif du navigateur est plus etroit que la
+   carte, et un lecteur audio decentre a l air casse. « display: block »
+   parce que <audio> est en ligne par defaut, ce qui laisse un blanc sous
+   la barre. */
+.podcast audio { width: 100%; display: block; margin: 12px 0; }
+
+.podcast-attente {
+    font-size: .9rem;
+    color: var(--muted);
+    background: var(--teinte);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    margin: 12px 0;
+}
+.podcast-texte { margin-top: 12px; }
+.podcast-texte > summary { cursor: pointer; color: var(--primary); font-size: .9rem; }
+.podcast-texte h4 { margin: 18px 0 6px; font-size: 1rem; }
+
 /* Plus de rattrapage local ici : --primary s eclaircit de lui-meme en mode
    sombre, voir la note de la palette en tete de fichier. */
 

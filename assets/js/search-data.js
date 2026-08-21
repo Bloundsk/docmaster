@@ -243,6 +243,7 @@ const searchIndex = [
     { title: "Savoir s'arrêter", description: "Un blocage coûte souvent plus que l'écart à combler.", url: "guides/negociation/avance.html", keywords: "arrêter partir quitter table coût désaccord blocage fatigue accord" },
 
     { title: "Actualités", description: "Des lectures qui prolongent les guides, repérées automatiquement.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
+    { title: "Podcasts", description: "Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.", url: "podcasts.html", keywords: "podcast podcasts audio écouter épisode transcription flux rss" },
 
     { title: "FAQ", description: "Les réponses aux questions fréquentes sur le site.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
     { title: "Le site est-il gratuit ?", description: "Pas d'inscription, pas d'abonnement, pas de publicité.", url: "faq.html", keywords: "gratuit prix payant abonnement inscription compte publicité" },

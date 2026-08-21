@@ -441,6 +441,7 @@
         // depuis l accueil ne menerait nulle part.
         "index.html":           { texte: "mascotteBulleAccueil", ancre: "#categories" },
         "actualites.html":      { texte: "mascotteBulleActualites" },
+        "podcasts.html":        { texte: "mascotteBullePodcasts", ancre: "#episodes" },
         "glossaire.html":       { texte: "mascotteBulleGlossaire" },
         "faq.html":             { texte: "mascotteBulleFaq" },
         "a-propos.html":        { texte: "mascotteBulleAPropos" },

@@ -14,7 +14,8 @@
     // navigation : un menu absent est bien pire qu'un menu non traduit.
     const L = window.DOCMASTER_LANGUES;
     const t = L ? L.t : (clef) => ({
-        accueil: "Accueil", actualites: "Actualités", glossaire: "Glossaire",
+        accueil: "Accueil", actualites: "Actualités", podcasts: "Podcasts",
+        glossaire: "Glossaire",
         idees: "Boîte à idées", faq: "FAQ", aPropos: "À propos",
         monEspace: "Mon espace", mentions: "Mentions légales",
         allerContenu: "Aller au contenu principal",
@@ -70,6 +71,7 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
                 <ul class="nav-links">
                     <li><a href="${lien("index.html")}">${t("accueil")}</a></li>
                     <li><a href="${lien("actualites.html")}">${t("actualites")}</a></li>
+                    <li><a href="${lien("podcasts.html")}">${t("podcasts")}</a></li>
                     <li><a href="${lien("glossaire.html")}">${t("glossaire")}</a></li>
                     <li><a href="${lien("idees.html")}">${t("idees")}</a></li>
                     <li><a href="${lien("faq.html")}">${t("faq")}</a></li>
@@ -91,6 +93,7 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
                  comme il est d'usage. -->
             <nav aria-label="${t("mentions")}">
                 <a href="${lien("actualites.html")}">${t("actualites")}</a>·
+                <a href="${lien("podcasts.html")}">${t("podcasts")}</a>·
                 <a href="${lien("glossaire.html")}">${t("glossaire")}</a>·
                 <a href="${lien("idees.html")}">${t("idees")}</a>·
                 <a href="${lien("faq.html")}">${t("faq")}</a>·
