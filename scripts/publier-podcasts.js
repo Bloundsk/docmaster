@@ -40,6 +40,22 @@ const verifierSeulement = process.argv.includes("--verifier");
 // 180, une lecture pedagogique descend a 140.
 const MOTS_PAR_MINUTE = 150;
 
+/* La duree exacte d un fichier, en secondes, ou null si ffprobe est absent.
+   ffprobe vient avec ffmpeg ; le site n en depend pas pour s afficher, ce
+   script s en passe donc plutot que d echouer. */
+function dureeReelle(fichier) {
+    try {
+        const s = require("child_process").execFileSync("ffprobe", [
+            "-v", "error", "-show_entries", "format=duration",
+            "-of", "default=nw=1:nk=1", fichier,
+        ], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+        const t = Math.round(Number(s));
+        return Number.isFinite(t) && t > 0 ? t : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 // --- Les sources uniques ----------------------------------------------------
 const bac = { window: {} };
 vm.createContext(bac);
@@ -105,7 +121,17 @@ function lireEpisode(fichier) {
     const cheminAudio = path.join(AUDIO, fichierAudio);
     const audio = fs.existsSync(cheminAudio);
 
+    /* La duree REELLE prime des qu il y a un fichier. L estimation par le
+       nombre de mots ne vaut que tant qu il n y en a pas : une application de
+       podcast affiche la duree du flux avant de telecharger quoi que ce soit,
+       et annoncer huit minutes pour un fichier d une minute se voit tout de
+       suite. Si ffprobe manque, on retombe sur l estimation — mais on cesse
+       alors de la presenter comme une certitude. */
+    const secondes = audio ? dureeReelle(cheminAudio) : null;
+
     return {
+        secondes,
+        exacte: secondes !== null,
         sujet,
         titre: entete.titre,
         resume: entete.resume,
@@ -113,7 +139,9 @@ function lireEpisode(fichier) {
         parcours: PARCOURS[sujet].titre,
         corps,
         mots,
-        minutes: Math.max(1, Math.round(mots / MOTS_PAR_MINUTE)),
+        minutes: secondes !== null
+            ? Math.max(1, Math.round(secondes / 60))
+            : Math.max(1, Math.round(mots / MOTS_PAR_MINUTE)),
         audio,
         fichierAudio,
         octets: audio ? fs.statSync(cheminAudio).size : 0,
@@ -161,7 +189,7 @@ function rendreEpisode(e) {
 
     return `            <article class="podcast" id="${e.sujet}">
                 <h3>${echapper(sansEmoji(e.parcours))} — ${echapper(e.titre)}</h3>
-                <p class="podcast-duree">${e.audio ? "" : "environ "}${e.minutes} minutes · ${echapper(enFrancais(e.publie))}</p>
+                <p class="podcast-duree">${e.exacte ? "" : "environ "}${e.minutes} minute${e.minutes > 1 ? "s" : ""} · ${echapper(enFrancais(e.publie))}</p>
                 <p>${echapper(e.resume)}</p>
 ${ecoute}                <p><a href="${lien}">Ouvrir le parcours ${echapper(sansEmoji(e.parcours))} →</a></p>
                 <details class="podcast-texte">
@@ -286,7 +314,7 @@ function rendreFlux(episodes) {
             <guid isPermaLink="false">${ID.base}podcasts.html#${e.sujet}</guid>
             <pubDate>${new Date(e.publie + "T08:00:00Z").toUTCString()}</pubDate>
             <enclosure url="${ID.base}assets/audio/${e.fichierAudio}" length="${e.octets}" type="audio/mpeg"/>
-            <itunes:duration>${e.minutes * 60}</itunes:duration>
+            <itunes:duration>${e.secondes || e.minutes * 60}</itunes:duration>
             <itunes:explicit>false</itunes:explicit>
         </item>
 `).join("");

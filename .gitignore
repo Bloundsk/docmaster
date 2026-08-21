@@ -12,3 +12,9 @@ desktop.ini
 # Dependances et journaux, si le projet en accueille un jour
 node_modules/
 *.log
+
+# Enregistrements bruts des podcasts. Ce sont des WAV : un episode de huit
+# minutes pese 40 Mo brut contre 4 Mo une fois encode. Seul le MP3 produit,
+# dans assets/audio/, est versionne — c'est lui que le site sert.
+# Le brut se garde ailleurs : le regenerer demanderait de reenregistrer.
+podcasts/brut/
