@@ -37,6 +37,11 @@ const MOTS_VIDES = new Set([
     "a", "au", "aux", "en", "dans", "sur", "pour", "par", "avec", "sans",
     "qu", "que", "qui", "quoi", "quelle", "quel", "est", "ce", "cette", "ces",
     "son", "ses", "sa", "leur", "leurs", "vs", "plus",
+    // Possessifs du tutoiement. Ils sont entres dans les titres de section le
+    // 21 aout, quand le site est passe au tutoiement : « Ta surface d attaque »,
+    // « Tes donnees personnelles ». La liste ne connaissait que « son », « sa »,
+    // « ses » — deux recherches partaient donc avec un mot vide de plus.
+    "ta", "ton", "tes", "toi", "tu", "votre", "vos", "vous",
     // formes composees : le filtre compare des mots entiers, "est-ce" doit
     // donc figurer tel quel pour ne pas se retrouver dans la recherche
     "est-ce", "qu-est-ce"
@@ -87,7 +92,30 @@ function decoder(texte) {
         .replace(/&nbsp;/g, " ");
 }
 
+/* Le titre d une page de cours porte son niveau : « Cybersécurité — Avancé ».
+   Ce mot n a rien a faire dans une recherche de presse, et il ne s y contentait
+   pas d etre inutile : Google News lit « Avancé » comme « en avance »,
+   « avancées », « contacts avancés ». Le rapport du 21 aout proposait ainsi des
+   transferts de football, un resume d episode de serie et une soluce de
+   Fallout 4 — sous les guides Cybersecurite et IA.
+
+   113 des 169 recherches portaient ce mot. Tant qu un humain cochait, ce
+   n etait que du bruit qu il ne cochait pas. Depuis que la publication est
+   automatique, un article hors sujet ASSEZ RECENT paraitrait sur le site.
+
+   On ne coupe que si le dernier segment est exactement un nom de niveau : un
+   titre qui contiendrait un tiret cadratin pour une autre raison est intact. */
+const NIVEAUX = ["Débutant", "Intermédiaire", "Avancé"];
+
+function sansLeNiveau(titre) {
+    const bout = titre.lastIndexOf("—");
+    if (bout === -1) return titre;
+    const dernier = titre.slice(bout + 1).trim();
+    return NIVEAUX.includes(dernier) ? titre.slice(0, bout).trim() : titre;
+}
+
 function construireRequete(categorie, sousSection) {
+    categorie = sansLeNiveau(categorie);
     const mots = (nettoyer(categorie) + " " + nettoyer(sousSection))
         .split(" ")
         .filter(m => m.length > 1 && !MOTS_VIDES.has(m.toLowerCase()));
