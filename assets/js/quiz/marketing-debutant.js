@@ -200,17 +200,17 @@ window.QUIZ = {
                 q: "Pourquoi le courriel reste-t-il le canal au meilleur rendement ?",
                 options: [
                     "Parce qu'il est gratuit",
-                    "Parce que la liste vous appartient, sans algorithme entre vous et vos abonnés",
+                    "Parce que la liste t'appartient, sans algorithme entre toi et tes abonnés",
                     "Parce que les gens lisent tous leurs messages"
                 ],
                 a: 1,
-                explication: "C'est le seul actif réellement à vous, contrairement à une audience louée à une plateforme."
+                explication: "C'est le seul actif réellement à toi, contrairement à une audience louée à une plateforme."
             },
             {
                 q: "Que produit une liste d'adresses achetée ?",
                 options: [
                     "Un gain de temps appréciable",
-                    "Des signalements en masse qui ruinent durablement votre réputation d'expéditeur",
+                    "Des signalements en masse qui ruinent durablement ta réputation d'expéditeur",
                     "Les mêmes résultats qu'une liste construite"
                 ],
                 a: 1,
@@ -245,7 +245,7 @@ window.QUIZ = {
                     "Les désabonnements"
                 ],
                 a: 1,
-                explication: "Quelques signalements suffisent à dégrader la délivrabilité de tous vos envois suivants."
+                explication: "Quelques signalements suffisent à dégrader la délivrabilité de tous tes envois suivants."
             },
             {
                 q: "Faut-il rendre le lien de désabonnement bien visible ?",
@@ -255,7 +255,7 @@ window.QUIZ = {
                     "Peu importe, c'est un détail"
                 ],
                 a: 1,
-                explication: "Un désabonnement est une perte d'un contact ; un signalement abîme toute votre liste."
+                explication: "Un désabonnement est une perte d'un contact ; un signalement abîme toute ta liste."
             }
         ]
     },
@@ -283,24 +283,24 @@ window.QUIZ = {
                 "Le meilleur moment de la journée pour publier"
             ],
             a: 1,
-            explication: "Sans ce chiffre, vous ne pilotez rien : vous dépensez."
+            explication: "Sans ce chiffre, tu ne pilotes rien : tu dépenses."
         },
         {
-            q: "Quel canal vous appartient réellement ?",
+            q: "Quel canal t'appartient réellement ?",
             options: [
-                "Votre compte Instagram",
-                "Votre liste de courriels",
-                "Votre page Facebook"
+                "Ton compte Instagram",
+                "Ta liste de courriels",
+                "Ta page Facebook"
             ],
             a: 1,
-            explication: "Vous louez votre audience aux plateformes. La liste que vous en extrayez est le seul actif durable."
+            explication: "Tu loues ton audience aux plateformes. La liste que tu en extrais est le seul actif durable."
         },
         // Série 2
         {
-            q: "Vous hésitez entre doubler votre budget publicitaire ou améliorer votre page de vente. Que faire d'abord ?",
+            q: "Tu hésites entre doubler ton budget publicitaire ou améliorer ta page de vente. Que faire d'abord ?",
             options: [
                 "Doubler le budget, l'effet est immédiat",
-                "Améliorer la conversion : le gain profite ensuite à tous vos canaux",
+                "Améliorer la conversion : le gain profite ensuite à tous tes canaux",
                 "Les deux en même temps"
             ],
             a: 1,

@@ -1,4 +1,103 @@
-# Changelog — DocMaster
+# Changelog — Clicked
+
+## 2026-08-21 — DocMaster devient Clicked
+
+Le nom était pris : `docmaster.net`, `docmaster.org`, le plugin DocMaster de
+Malbek, un outil libre du même nom hébergé lui aussi sur GitHub Pages. Et il
+annonçait de la gestion documentaire quand le site propose des parcours
+d'apprentissage. Aucune page ne ressortait dans une recherche sur son propre
+nom.
+
+### Centraliser avant de renommer
+
+Le nom était écrit **1 586 fois** dans 129 pages. Un chercher-remplacer aurait
+refait l'erreur que l'`ARCHITECTURE` documente déjà deux fois : la donnée
+recopiée finit par mentir.
+
+`assets/js/identite.js` déclare désormais le nom, la signature, l'adresse de
+base et l'initiale du logo — et rien d'autre ne les déclare.
+
+Les pages en portent malgré tout des copies, et **il le faut** : les robots des
+réseaux sociaux et des moteurs n'exécutent pas JavaScript pour lire un `<head>`.
+Une balise `og:` posée à l'affichage n'existe pas pour eux, et tout partage
+montrerait un aperçu vide. La règle n'est donc pas « la donnée n'apparaît
+qu'une fois » mais **« la donnée n'est saisie qu'une fois »** :
+`scripts/appliquer-identite.js` écrit les copies, comme `dater-guides.js` écrit
+les dates.
+
+| Ce qui dérive maintenant d'`identite.js` | Occurrences |
+|---|---|
+| `<title>`, `og:title`, `twitter:title` | 387 |
+| `og:site_name`, `og:image:alt`, `og:locale` | 387 |
+| `canonical`, `og:url`, `og:image`, `twitter:image` | 516 |
+| `hreflang` fr / en / x-default | 192 |
+| Logo, pied de page, bannière de l'accueil | 4 |
+| `sitemap.xml`, `robots.txt`, favicon, image de partage | 4 fichiers |
+
+Le prochain renommage coûte une ligne, plus le nom sortant ajouté à
+`anciensNoms` — sans quoi le script ne reconnaîtrait plus ce qu'il a écrit la
+fois d'avant.
+
+### L'image de partage mentait, et personne ne pouvait le voir
+
+`og:image:alt` avait été corrigé de 9 à 14 guides lors du chantier
+« élargir ». **L'image, elle, ne l'avait jamais été** : `og-image.png` restait
+dessinée avec « 9 guides gratuits » et sept domaines, et c'est elle que voit
+quiconque reçoit un lien du site. Elle n'avait aucune source ; personne ne
+pouvait la corriger sans la redessiner.
+
+Elle est maintenant générée : `assets/img/og-image.svg` est écrit par le script
+depuis `identite.js` et `parcours.js`, et le PNG s'en exporte. L'énumération des
+domaines a disparu du dessin — elle aurait été une donnée dupliquée de plus, et
+elle ne tenait pas à quatorze.
+
+**On ne relit pas une image. Il faut donc qu'elle soit dérivée.**
+
+### Le sitemap listait 8 pages sur 129
+
+Il ne contenait que les pages françaises hors guides. Les 56 guides et les 64
+pages anglaises n'y figuraient pas — le moteur devait les deviner. Il est
+maintenant produit à partir de la même liste que les métadonnées.
+
+### Le garde-fou
+
+Un contrôle qui ne peut pas échouer ne vaut rien : les trois défauts ont été
+réinjectés un par un pour vérifier qu'ils sont bien vus.
+
+| Défaut réinjecté | Vu par |
+|---|---|
+| « DocMaster » remis dans le corps d'une page | `verifier-identite.mjs` |
+| Adresse absolue recopiée dans un lien | `verifier-identite.mjs` |
+| « 9 guides gratuits » dans un sommaire | `verifier-identite.mjs` |
+| `og:site_name` modifié à la main | `appliquer-identite.js --verifier` |
+
+Les deux se complètent : le premier ne voit pas ce qu'il n'a pas écrit, le
+second ne corrige rien. Workflow `.github/workflows/identite.yml`, plus une
+section 4 dans le hook pre-commit.
+
+### Ce qui ne suit pas le renommage
+
+Les clés de stockage local — `docmaster-favoris`, `docmaster-read-*`,
+`docmaster-mascotte`, `docmaster-search-history` — et la variable
+`DocMasterFavoris`. Les renommer effacerait les favoris et la progression de
+chaque visiteur pour un bénéfice nul : personne ne les voit. Le remplacement
+s'arrête devant une lettre suivante, et la casse compte.
+
+### Le site tutoie
+
+L'accueil et la 404 tutoyaient, les cours vouvoyaient. Le nouveau nom tranche :
+tutoiement partout. La familiarité porte sur l'adresse au lecteur, **pas** sur
+le niveau de langue ni sur la rigueur des explications.
+
+Gardent leur vouvoiement : les mentions légales, les blocs de non-conseil
+financier, juridique et médical, et les paroles rapportées — courriels
+d'hameçonnage cités, répliques de négociation, modèles de lettre, argumentaires
+adressés à un client. Leur « vous » n'est pas adressé au lecteur ; le convertir
+rendrait l'exemple faux.
+
+Le tutoiement ne s'arrête pas aux pages : les quiz et les simulateurs affichent
+leur texte **dans** les guides. Les oublier aurait laissé le site à moitié
+converti, de façon invisible depuis les fichiers de cours.
 
 ## 2026-08-17 — L'audit ne voyait que la moitié du site
 Ludo a posé la bonne question : l'audit est-il complet, tient-il compte de ce

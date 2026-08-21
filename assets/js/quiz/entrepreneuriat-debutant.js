@@ -14,16 +14,16 @@ window.QUIZ = {
                 q: "Quelle est la fonction la plus importante d'un business plan ?",
                 options: [
                     "Convaincre un banquier",
-                    "Vous faire réfléchir, quitte à découvrir que vos hypothèses ne tiennent pas",
+                    "Te faire réfléchir, quitte à découvrir que tes hypothèses ne tiennent pas",
                     "Respecter une obligation légale"
                 ],
                 a: 1,
-                explication: "Un plan qui ne vous a rien appris ni fait douter de rien a été écrit pour plaire, pas pour éprouver."
+                explication: "Un plan qui ne t'a rien appris ni fait douter de rien a été écrit pour plaire, pas pour éprouver."
             },
             {
                 q: "Qu'est-ce que le seuil de rentabilité ?",
                 options: [
-                    "Le chiffre d'affaires à partir duquel vous cessez de perdre de l'argent",
+                    "Le chiffre d'affaires à partir duquel tu cesses de perdre de l'argent",
                     "Le montant minimum à investir au départ",
                     "Le bénéfice visé la première année"
                 ],
@@ -76,7 +76,7 @@ window.QUIZ = {
                 q: "Quel est l'objectif d'une étude de marché ?",
                 options: [
                     "Confirmer que l'idée est bonne",
-                    "Essayer de démolir l'idée : si elle résiste, vous tenez quelque chose",
+                    "Essayer de démolir l'idée : si elle résiste, tu tiens quelque chose",
                     "Estimer le chiffre d'affaires de la première année"
                 ],
                 a: 1,
@@ -90,13 +90,13 @@ window.QUIZ = {
                     "« Trouvez-vous cette idée intéressante ? »"
                 ],
                 a: 1,
-                explication: "Interrogez le passé, jamais le futur. Une intention déclarée ne vaut rien, un comportement passé beaucoup."
+                explication: "Interroge le passé, jamais le futur. Une intention déclarée ne vaut rien, un comportement passé beaucoup."
             },
             {
-                q: "Pourquoi l'avis de vos proches est-il peu utile ?",
+                q: "Pourquoi l'avis de tes proches est-il peu utile ?",
                 options: [
                     "Ils ne connaissent pas le secteur",
-                    "Ils veulent vous encourager : leur avis est affectueux, pas informatif",
+                    "Ils veulent t'encourager : leur avis est affectueux, pas informatif",
                     "Ils n'ont pas le temps de répondre sérieusement"
                 ],
                 a: 1,
@@ -107,7 +107,7 @@ window.QUIZ = {
                 q: "Que vaut l'argument « le marché du bien-être pèse 4 milliards » ?",
                 options: [
                     "C'est un excellent argument de crédibilité",
-                    "Rien pour vous : il faut descendre au marché réellement atteignable",
+                    "Rien pour toi : il faut descendre au marché réellement atteignable",
                     "C'est suffisant si la source est fiable"
                 ],
                 a: 1,
@@ -121,7 +121,7 @@ window.QUIZ = {
                     "L'accord de principe d'un futur associé"
                 ],
                 a: 1,
-                explication: "Tant que personne n'a payé, vous avez des encouragements, pas un marché."
+                explication: "Tant que personne n'a payé, tu as des encouragements, pas un marché."
             },
             {
                 q: "En quoi consiste la « version manuelle » d'un service ?",
@@ -146,7 +146,7 @@ window.QUIZ = {
                     "Oui, sauf en cas de liquidation"
                 ],
                 a: 1,
-                explication: "Ne bloquez pas votre projet sur ce choix : changer de statut est prévu et courant."
+                explication: "Ne bloque pas ton projet sur ce choix : changer de statut est prévu et courant."
             },
             {
                 q: "Quel est le principal avantage de la micro-entreprise pour tester une activité ?",
@@ -177,7 +177,7 @@ window.QUIZ = {
                     "Peu importe, le résultat est identique"
                 ],
                 a: 1,
-                explication: "Plus vos charges réelles sont élevées, moins la micro-entreprise convient."
+                explication: "Plus tes charges réelles sont élevées, moins la micro-entreprise convient."
             },
             {
                 q: "Quel statut facilite le plus l'entrée d'investisseurs au capital ?",
@@ -208,7 +208,7 @@ window.QUIZ = {
                     "Une commission fixe"
                 ],
                 a: 1,
-                explication: "Vous acquérez des associés qui auront leur mot à dire, y compris sur votre maintien à la direction."
+                explication: "Tu acquiers des associés qui auront leur mot à dire, y compris sur ton maintien à la direction."
             },
             {
                 q: "Qu'est-ce qu'un prêt d'honneur ?",
@@ -224,7 +224,7 @@ window.QUIZ = {
                 q: "Quel apport personnel une banque attend-elle généralement ?",
                 options: ["5 %", "20 à 30 % du besoin", "50 % au minimum"],
                 a: 1,
-                explication: "Si vous ne risquez rien, pourquoi risquerait-elle ?"
+                explication: "Si tu ne risques rien, pourquoi risquerait-elle ?"
             },
             // Série 2
             {
@@ -251,7 +251,7 @@ window.QUIZ = {
                 q: "Que regarde une banque au-delà des chiffres ?",
                 options: [
                     "Le design du business plan",
-                    "La cohérence des hypothèses et votre expérience du secteur",
+                    "La cohérence des hypothèses et ton expérience du secteur",
                     "Le nombre de pages du dossier"
                 ],
                 a: 1,
@@ -297,7 +297,7 @@ window.QUIZ = {
         },
         // Série 2
         {
-            q: "Vous hésitez entre créer votre société maintenant ou trouver d'abord un client. Que faire ?",
+            q: "Tu hésites entre créer ta société maintenant ou trouver d'abord un client. Que faire ?",
             options: [
                 "Créer la structure : c'est plus sérieux vis-à-vis des clients",
                 "Chercher un premier client payant : cela valide le projet et rassure les financeurs",
@@ -307,14 +307,14 @@ window.QUIZ = {
             explication: "Cela évite parfois de créer une entreprise dont on découvrirait trop tard qu'elle n'a pas de marché."
         },
         {
-            q: "Vingt personnes vous disent que votre idée est excellente. Que pouvez-vous en conclure ?",
+            q: "Vingt personnes te disent que ton idée est excellente. Que peux-tu en conclure ?",
             options: [
                 "Que le marché est validé",
                 "Rien : aucune n'a payé",
-                "Que vous pouvez lever des fonds"
+                "Que tu peux lever des fonds"
             ],
             a: 1,
-            explication: "Interrogez le passé plutôt que le futur, et cherchez des personnes qui n'ont aucune raison de vous ménager."
+            explication: "Interroge le passé plutôt que le futur, et cherche des personnes qui n'ont aucune raison de te ménager."
         },
         {
             q: "Quel accompagnement gratuit est le plus sous-utilisé par les créateurs ?",
@@ -324,7 +324,7 @@ window.QUIZ = {
                 "Les forums en ligne"
             ],
             a: 0,
-            explication: "Financé par vos futures cotisations, et souvent accompagné de prêts d'honneur via Initiative France ou Réseau Entreprendre."
+            explication: "Financé par tes futures cotisations, et souvent accompagné de prêts d'honneur via Initiative France ou Réseau Entreprendre."
         }
     ]
 };

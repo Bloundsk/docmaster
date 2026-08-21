@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Cybersécurité — Intermédiaire - DocMaster</title>
+    <title>Cybersécurité — Intermédiaire - Clicked</title>
     <meta name="description" content="Niveau intermédiaire du parcours Cybersécurité : gestionnaire de mots de passe, double authentification, sauvegardes face aux rançongiciels, réseau et VPN.">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
 
@@ -31,23 +31,24 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/intermediaire.html">
-    <meta property="og:site_name" content="DocMaster">
-    <meta property="og:title" content="Cybersécurité — Intermédiaire - DocMaster">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Cybersécurité — Intermédiaire - Clicked">
     <meta property="og:description" content="Niveau intermédiaire du parcours Cybersécurité : gestionnaire de mots de passe, double authentification, sauvegardes face aux rançongiciels, réseau et VPN.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/cybersecurite/intermediaire.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cybersécurité — Intermédiaire - DocMaster">
+    <meta name="twitter:title" content="Cybersécurité — Intermédiaire - Clicked">
     <meta name="twitter:description" content="Niveau intermédiaire du parcours Cybersécurité : gestionnaire de mots de passe, double authentification, sauvegardes face aux rançongiciels, réseau et VPN.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
     <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/identite.js"></script>
     <script src="../../assets/js/langues.js"></script>
     <script src="../../assets/js/layout.js"></script>
 
@@ -76,7 +77,7 @@
     </header>
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 16 août 2026</span>
+        <span>🕒 Dernière mise à jour : 21 août 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -106,7 +107,7 @@
         <section>
             <h2 id="introduction">Introduction</h2>
             <p>Le niveau débutant portait sur des réflexes : reconnaître un message douteux, tenir son système à jour, comprendre ce que chiffrer veut dire. Des gestes à répéter.</p>
-            <p>Ce niveau-ci porte sur des <strong>dispositifs</strong> : des choses qu'on installe une fois et qui travaillent ensuite sans vous. C'est un changement de nature. La sécurité qui repose sur la vigilance quotidienne finit toujours par céder, un jour de fatigue ou de précipitation. Celle qui repose sur un mécanisme tient même les mauvais jours.</p>
+            <p>Ce niveau-ci porte sur des <strong>dispositifs</strong> : des choses qu'on installe une fois et qui travaillent ensuite sans toi. C'est un changement de nature. La sécurité qui repose sur la vigilance quotidienne finit toujours par céder, un jour de fatigue ou de précipitation. Celle qui repose sur un mécanisme tient même les mauvais jours.</p>
             <div class="piege">
                 <span class="titre">Avertissement</span>
                 <p>Ce guide est <strong>pédagogique</strong> et généraliste. Les recommandations qu'il contient valent pour un usage personnel courant ; un contexte professionnel, associatif ou exposé appelle des mesures propres et l'avis d'un spécialiste.</p>
@@ -127,7 +128,7 @@
 
                 <h4>Le vrai problème n'est pas la force, c'est la réutilisation</h4>
                 <p>Un mot de passe long et complexe reste un mot de passe volé si le service qui le détenait subit une fuite. Et les listes issues de ces fuites sont ensuite <strong>rejouées automatiquement</strong> sur des centaines d'autres services — messagerie, boutiques, réseaux sociaux. Aucun attaquant humain n'intervient : c'est un programme qui essaie, en masse.</p>
-                <p>Un gestionnaire retient à votre place. Vous mémorisez <strong>un seul</strong> mot de passe, celui du coffre, et chaque site reçoit une valeur unique que vous ne connaissez même pas.</p>
+                <p>Un gestionnaire retient à ta place. Tu mémorises <strong>un seul</strong> mot de passe, celui du coffre, et chaque site reçoit une valeur unique que tu ne connais même pas.</p>
 
                 <div class="exemple">
                     <span class="titre">Exemple chiffré</span>
@@ -137,18 +138,18 @@
                 </div>
 
                 <h4>L'objection du « tous les œufs dans le même panier »</h4>
-                <p>Elle est légitime et mérite une réponse franche. Oui, le coffre concentre le risque. Mais il le concentre sur un point <strong>que vous protégez sérieusement</strong> : un mot de passe long, connu de vous seul, doublé d'une seconde authentification.</p>
-                <p>La situation sans gestionnaire n'est pas « le risque réparti » : c'est le même risque, réparti sur quatre-vingts services dont vous ne maîtrisez ni la sécurité ni les fuites.</p>
+                <p>Elle est légitime et mérite une réponse franche. Oui, le coffre concentre le risque. Mais il le concentre sur un point <strong>que tu protèges sérieusement</strong> : un mot de passe long, connu de toi seul, doublé d'une seconde authentification.</p>
+                <p>La situation sans gestionnaire n'est pas « le risque réparti » : c'est le même risque, réparti sur quatre-vingts services dont tu ne maîtrises ni la sécurité ni les fuites.</p>
 
                 <div class="pratique" data-pratique="propagation-fuite"></div>
 
                 <div class="piege">
                     <span class="titre">Erreur fréquente — le carnet dans le navigateur</span>
                     <p>Enregistrer ses mots de passe dans le navigateur vaut mieux que les réutiliser. Mais la synchronisation est souvent liée à un compte lui-même protégé par un simple mot de passe, et l'accès à la session ouverte suffit parfois à tout lire en clair.</p>
-                    <p>Si vous vous en contentez, protégez au minimum ce compte par une double authentification.</p>
+                    <p>Si tu t'en contentes, protège au minimum ce compte par une double authentification.</p>
                 </div>
 
-                <p class="retenir">💡 Le gestionnaire ne rend pas vos mots de passe plus forts : il rend leur réutilisation inutile.</p>
+                <p class="retenir">💡 Le gestionnaire ne rend pas tes mots de passe plus forts : il rend leur réutilisation inutile.</p>
                 </div>
             </details>
 
@@ -158,12 +159,12 @@
                 <p>Un mot de passe est une chose que l'on sait. Il peut donc être deviné, volé, ou lu dans une fuite. Le second facteur ajoute une chose que l'on <strong>possède</strong> — un téléphone, une clé — et qu'un attaquant distant n'a pas.</p>
 
                 <h4>Les trois formes, de la plus faible à la plus solide</h4>
-                <p><strong>Le SMS</strong> fonctionne partout et ne demande rien à installer. C'est aussi le plus fragile : le détournement de carte SIM permet de recevoir vos codes à votre place, et l'opération est à la portée d'un attaquant motivé. Il reste très supérieur à l'absence de second facteur.</p>
+                <p><strong>Le SMS</strong> fonctionne partout et ne demande rien à installer. C'est aussi le plus fragile : le détournement de carte SIM permet de recevoir tes codes à ta place, et l'opération est à la portée d'un attaquant motivé. Il reste très supérieur à l'absence de second facteur.</p>
                 <p><strong>L'application</strong> génère un code toutes les trente secondes, sur l'appareil, sans réseau. Rien à intercepter : le code ne transite nulle part. C'est le bon rapport entre effort et protection.</p>
                 <p><strong>La clé physique</strong> est un objet à brancher ou à approcher. Elle vérifie en plus l'adresse du site, ce qui la rend <strong>insensible au hameçonnage</strong> : sur un site imitateur, elle refuse simplement de répondre.</p>
 
                 <h4>Par où commencer</h4>
-                <p>Tous les comptes ne se valent pas. Votre <strong>boîte mail principale</strong> passe avant tout : c'est elle qui reçoit les liens de réinitialisation de tous les autres. Qui la contrôle contrôle l'ensemble, quel que soit le soin apporté ailleurs.</p>
+                <p>Tous les comptes ne se valent pas. Ta <strong>boîte mail principale</strong> passe avant tout : c'est elle qui reçoit les liens de réinitialisation de tous les autres. Qui la contrôle contrôle l'ensemble, quel que soit le soin apporté ailleurs.</p>
 
                 <div class="pratique" data-pratique="robustesse-2fa"></div>
 
@@ -173,14 +174,14 @@
                     <p>Le jour où ce téléphone est perdu, volé ou remplacé, le compte devient inaccessible à son propriétaire légitime. Ces codes doivent vivre ailleurs : imprimés, ou dans le gestionnaire de mots de passe.</p>
                 </div>
 
-                <p class="retenir">💡 Commencez par la boîte mail. Tout le reste en dépend, y compris ce que vous protégerez ensuite.</p>
+                <p class="retenir">💡 Commence par la boîte mail. Tout le reste en dépend, y compris ce que tu protégeras ensuite.</p>
                 </div>
             </details>
 
             <details class="lecon">
                 <summary><h3 id="sauvegarde-et-rancongiciel">💾 Sauvegarde et rançongiciel</h3></summary>
                 <div class="lecon-corps">
-                <p>Un rançongiciel chiffre vos fichiers et réclame un paiement pour la clé. Contre lui, l'antivirus n'est qu'une barrière parmi d'autres. La seule réponse qui fonctionne à tous les coups est <strong>une sauvegarde qu'il n'a pas pu atteindre</strong>.</p>
+                <p>Un rançongiciel chiffre tes fichiers et réclame un paiement pour la clé. Contre lui, l'antivirus n'est qu'une barrière parmi d'autres. La seule réponse qui fonctionne à tous les coups est <strong>une sauvegarde qu'il n'a pas pu atteindre</strong>.</p>
 
                 <h4>La règle 3-2-1</h4>
                 <p><strong>Trois</strong> copies des données, sur <strong>deux</strong> supports de nature différente, dont <strong>une</strong> hors du logement. Cette règle ne vient pas de la lutte contre les rançongiciels — elle est bien plus ancienne — mais elle s'y applique parfaitement.</p>
@@ -194,15 +195,15 @@
                 </div>
 
                 <h4>Pourquoi le disque branché en permanence ne compte pas</h4>
-                <p>Un rançongiciel chiffre tout ce que votre session peut écrire. Le disque externe resté branché, le dossier synchronisé dans le nuage, le lecteur réseau : tout y passe, souvent en quelques minutes. Une sauvegarde accessible en écriture n'est pas une sauvegarde, c'est une copie de plus à chiffrer.</p>
-                <p>La copie qui vous sauve est celle qui était <strong>débranchée</strong> au moment de l'attaque.</p>
+                <p>Un rançongiciel chiffre tout ce que ta session peut écrire. Le disque externe resté branché, le dossier synchronisé dans le nuage, le lecteur réseau : tout y passe, souvent en quelques minutes. Une sauvegarde accessible en écriture n'est pas une sauvegarde, c'est une copie de plus à chiffrer.</p>
+                <p>La copie qui te sauve est celle qui était <strong>débranchée</strong> au moment de l'attaque.</p>
 
                 <div class="pratique" data-pratique="regle-3-2-1"></div>
 
                 <div class="piege">
                     <span class="titre">Erreur fréquente — la sauvegarde jamais restaurée</span>
                     <p>Un dispositif qui affiche « sauvegarde réussie » depuis trois ans peut être vide, incomplet, ou illisible. On ne le découvre qu'au moment de s'en servir — c'est-à-dire au pire moment possible.</p>
-                    <p>Restaurez un fichier au hasard, une fois par trimestre. Une sauvegarde jamais restaurée n'est qu'une hypothèse.</p>
+                    <p>Restaure un fichier au hasard, une fois par trimestre. Une sauvegarde jamais restaurée n'est qu'une hypothèse.</p>
                 </div>
 
                 <p class="retenir">💡 Payer la rançon ne garantit rien. Une copie débranchée, si.</p>
@@ -215,16 +216,16 @@
                 <p>Le VPN est le produit de sécurité le plus vendu et le plus mal compris. Il fait une chose précise, très bien ; il ne fait pas la plupart de ce qu'on lui prête.</p>
 
                 <h4>Ce qu'il fait réellement</h4>
-                <p>Il crée un tunnel chiffré entre votre appareil et un serveur, puis sort sur internet depuis ce serveur. Deux conséquences : le gestionnaire du réseau local — le wifi du café, celui de l'hôtel — <strong>ne voit plus quels sites vous consultez</strong>, et les sites visités voient l'adresse du serveur au lieu de la vôtre.</p>
+                <p>Il crée un tunnel chiffré entre ton appareil et un serveur, puis sort sur internet depuis ce serveur. Deux conséquences : le gestionnaire du réseau local — le wifi du café, celui de l'hôtel — <strong>ne voit plus quels sites tu consultes</strong>, et les sites visités voient l'adresse du serveur au lieu de la tienne.</p>
 
                 <h4>Ce qu'il ne fait pas</h4>
-                <p>Il n'analyse pas le trafic : un site de hameçonnage reste un site de hameçonnage, un fichier malveillant reste malveillant. Il ne vous rend pas anonyme sur les services où vous êtes <strong>connecté avec un compte</strong> — vous vous y êtes identifié vous-même. Et il ne remplace pas HTTPS : celui-ci protège jusqu'au site, le VPN seulement jusqu'à son propre serveur.</p>
+                <p>Il n'analyse pas le trafic : un site de hameçonnage reste un site de hameçonnage, un fichier malveillant reste malveillant. Il ne te rend pas anonyme sur les services où tu es <strong>connecté avec un compte</strong> — tu t'y es identifié toi-même. Et il ne remplace pas HTTPS : celui-ci protège jusqu'au site, le VPN seulement jusqu'à son propre serveur.</p>
 
                 <div class="exemple">
                     <span class="titre">Le déplacement de confiance</span>
-                    <p><strong>Sans VPN</strong>, votre fournisseur d'accès voit les domaines que vous visitez.</p>
+                    <p><strong>Sans VPN</strong>, ton fournisseur d'accès voit les domaines que tu visites.</p>
                     <p><strong>Avec VPN</strong>, il ne voit plus rien — mais le fournisseur de VPN, lui, voit tout.</p>
-                    <p>La question n'est donc pas « suis-je protégé ? » mais <strong>« à qui est-ce que je fais confiance ? »</strong>. Un service gratuit financé par la publicité n'est pas le meilleur candidat pour recevoir la totalité de votre trafic.</p>
+                    <p>La question n'est donc pas « suis-je protégé ? » mais <strong>« à qui est-ce que je fais confiance ? »</strong>. Un service gratuit financé par la publicité n'est pas le meilleur candidat pour recevoir la totalité de ton trafic.</p>
                 </div>
 
                 <div class="pratique" data-pratique="ce-que-protege-un-vpn"></div>
@@ -235,7 +236,7 @@
                     <p>Le risque est réel : croire son navigateur protégé conduit à baisser la garde là où elle compte — sur les liens cliqués et les fichiers ouverts.</p>
                 </div>
 
-                <p class="retenir">💡 HTTPS protège le contenu partout. Le VPN cache la destination à votre réseau local. Ce ne sont pas les mêmes problèmes.</p>
+                <p class="retenir">💡 HTTPS protège le contenu partout. Le VPN cache la destination à ton réseau local. Ce ne sont pas les mêmes problèmes.</p>
                 </div>
             </details>
         </section>
@@ -258,10 +259,10 @@
                 <ul class="ressources">
                     <li><strong>cybermalveillance.gouv.fr</strong> : le dispositif public d'assistance. Fiches pratiques, et surtout marche à suivre en cas d'incident avéré.</li>
                     <li><strong>ANSSI</strong> : les guides d'hygiène numérique de l'agence nationale. Écrits pour les organisations, mais les principes valent pour un particulier.</li>
-                    <li><strong>CNIL</strong> : que faire après une fuite de données, et quels sont vos droits face au service qui l'a subie.</li>
-                    <li><strong>Have I Been Pwned</strong> : vérifier si une adresse figure dans une fuite connue. Le service est réputé et ne demande pas de mot de passe — s'il vous en demandait un, ce serait le signal de fuir.</li>
+                    <li><strong>CNIL</strong> : que faire après une fuite de données, et quels sont tes droits face au service qui l'a subie.</li>
+                    <li><strong>Have I Been Pwned</strong> : vérifier si une adresse figure dans une fuite connue. Le service est réputé et ne demande pas de mot de passe — s'il t'en demandait un, ce serait le signal de fuir.</li>
                 </ul>
-                <p><strong>Un réflexe utile :</strong> avant d'installer un outil de sécurité, cherchez qui le finance. Un produit gratuit qui traite l'intégralité de votre trafic doit se rémunérer autrement.</p>
+                <p><strong>Un réflexe utile :</strong> avant d'installer un outil de sécurité, cherche qui le finance. Un produit gratuit qui traite l'intégralité de ton trafic doit se rémunérer autrement.</p>
             </article>
         </section>
 

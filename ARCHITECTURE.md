@@ -1,4 +1,4 @@
-# Architecture de contenu — DocMaster
+# Architecture de contenu — Clicked
 
 Ce document fixe la structure du site **avant** d'écrire le contenu. Il existe
 parce que huit mécanismes dérivent aujourd'hui du chemin `guides/<sujet>/index.html` :
@@ -174,6 +174,51 @@ ajouts de sujet l'ont prouvé trois fois :
 
 La troisième ligne est le modèle : ce qui est dérivé d'une source unique ne ment
 jamais. Les deux premières ont menti.
+
+**Suite, 21 août 2026.** La première ligne mentait encore, et personne ne
+pouvait le voir : le texte alternatif avait bien été corrigé à 14, mais
+`og-image.png` — l'image elle-même, celle que voient les gens à qui l'on
+partage un lien — restait *dessinée* avec « 9 guides gratuits » et sept
+domaines. Elle n'avait aucune source : personne ne pouvait la corriger sans la
+redessiner. Elle est désormais générée depuis `assets/img/og-image.svg`, lui-même
+écrit par `appliquer-identite.js`. **On ne relit pas une image ; il faut donc
+qu'elle soit dérivée.**
+
+### L'identité du site
+
+`assets/js/identite.js` déclare le nom, la signature, l'adresse de base et
+l'initiale du logo. Rien d'autre ne les écrit.
+
+Les 129 pages en portent malgré tout des copies, dans leur `<head>` et dans leur
+prose. **Ce n'est pas une entorse, c'est une obligation :** les robots des
+réseaux sociaux et des moteurs de recherche ne lisent pas ce que JavaScript
+ajoute après coup. Une balise `og:` posée à l'affichage n'existe pas pour eux, et
+tout partage montrerait un aperçu vide.
+
+La règle n'est donc pas « la donnée n'apparaît qu'une fois », mais **« la donnée
+n'est SAISIE qu'une fois »**. `scripts/appliquer-identite.js` écrit les copies ;
+`scripts/verifier-identite.mjs` et le mode `--verifier` refusent celles que la
+source ne produirait pas. Même modèle que `dater-guides.js`, pour la même raison.
+
+| Ce qui dérive | Nombre |
+|---|---|
+| `<title>`, `og:title`, `twitter:title` | 129 × 3 |
+| `og:site_name`, `og:image:alt`, `og:locale` | 129 × 3 |
+| `canonical`, `og:url`, `og:image`, `twitter:image` | 129 × 4 |
+| `hreflang` fr / en / x-default | 64 × 3 |
+| Bannière de l'accueil, logo, pied de page | 2 + 2 |
+| `sitemap.xml`, `robots.txt`, favicon, image de partage | 4 fichiers |
+
+Renommer le site coûte une ligne dans `identite.js`, plus le nom sortant ajouté
+à `anciensNoms` — sans quoi le script ne saurait plus reconnaître ce qu'il a
+lui-même écrit la fois d'avant.
+
+**Ce qui ne suit pas le renommage, volontairement :** les clés de stockage local
+(`docmaster-favoris`, `docmaster-read-*`, `docmaster-mascotte`,
+`docmaster-search-history`) et la variable `DocMasterFavoris`. Les renommer
+effacerait les favoris et la progression de chaque visiteur pour un bénéfice
+nul — personne ne les voit. Le remplacement s'arrête donc devant une lettre
+suivante, et la casse compte.
 
 ---
 

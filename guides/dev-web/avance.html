@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Développement Web — Avancé - DocMaster</title>
+    <title>Développement Web — Avancé - Clicked</title>
     <meta name="description" content="Niveau avancé du parcours Développement Web : performance et cache, sécurité applicative, tests automatisés, et gestion de la dette technique.">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
 
@@ -31,23 +31,24 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
-    <meta property="og:site_name" content="DocMaster">
-    <meta property="og:title" content="Développement Web — Avancé - DocMaster">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Développement Web — Avancé - Clicked">
     <meta property="og:description" content="Niveau avancé du parcours Développement Web : performance et cache, sécurité applicative, tests automatisés, et gestion de la dette technique.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Développement Web — Avancé - DocMaster">
+    <meta name="twitter:title" content="Développement Web — Avancé - Clicked">
     <meta name="twitter:description" content="Niveau avancé du parcours Développement Web : performance et cache, sécurité applicative, tests automatisés, et gestion de la dette technique.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
     <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/identite.js"></script>
     <script src="../../assets/js/langues.js"></script>
     <script src="../../assets/js/layout.js"></script>
 
@@ -77,7 +78,7 @@
     </header>
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 16 août 2026</span>
+        <span>🕒 Dernière mise à jour : 21 août 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -110,7 +111,7 @@
             <p>Ce niveau porte sur ce qui décide de sa <strong>durée de vie</strong> : tenir la charge, résister aux attaques, pouvoir être modifié sans peur, et vieillir sans devenir illisible. Quatre sujets qui ne se voient pas le jour de la mise en ligne, et qui décident de tout ensuite.</p>
             <div class="piege">
                 <span class="titre">Avertissement</span>
-                <p>Ce guide est <strong>pédagogique</strong>. Les vulnérabilités décrites le sont pour être comprises et évitées lors de la conception. Les ordres de grandeur de performance dépendent fortement du contexte : mesurez chez vous plutôt que de vous fier à un chiffre lu quelque part.</p>
+                <p>Ce guide est <strong>pédagogique</strong>. Les vulnérabilités décrites le sont pour être comprises et évitées lors de la conception. Les ordres de grandeur de performance dépendent fortement du contexte : mesure chez toi plutôt que de te fier à un chiffre lu quelque part.</p>
             </div>
         </section>
 
@@ -149,7 +150,7 @@
                     <p>Déclarer les dimensions des images et réserver la place des éléments différés supprime ce défaut, sans rien accélérer.</p>
                 </div>
 
-                <p class="retenir">💡 Mesurez d'abord. La cause d'une lenteur est presque jamais celle qu'on imagine.</p>
+                <p class="retenir">💡 Mesure d'abord. La cause d'une lenteur est presque jamais celle qu'on imagine.</p>
                 </div>
             </details>
 
@@ -161,7 +162,7 @@
                 <h4>Les trois attaques à connaître</h4>
                 <p><strong>L'injection SQL</strong> : une requête construite par concaténation permet à l'utilisateur d'écrire une partie de la requête. Parade : requêtes préparées, systématiquement.</p>
                 <p><strong>Le script injecté</strong> — souvent appelé XSS : du contenu utilisateur affiché tel quel dans la page peut contenir du code, qui s'exécutera chez les autres visiteurs. Parade : échapper à l'affichage, et poser une politique de sécurité de contenu.</p>
-                <p><strong>La requête forgée</strong> — CSRF : un site tiers déclenche une action sur le vôtre en profitant de la session ouverte du visiteur. Parade : un jeton unique par formulaire, et des cookies configurés pour ne pas partir vers d'autres sites.</p>
+                <p><strong>La requête forgée</strong> — CSRF : un site tiers déclenche une action sur le tien en profitant de la session ouverte du visiteur. Parade : un jeton unique par formulaire, et des cookies configurés pour ne pas partir vers d'autres sites.</p>
 
                 <div class="exemple">
                     <span class="titre">Les défenses qui coûtent le moins</span>
@@ -246,7 +247,7 @@
                     <p>Mettre à jour régulièrement, par petits pas, coûte beaucoup moins qu'un grand saut tous les trois ans — et ferme au passage les failles connues.</p>
                 </div>
 
-                <p class="retenir">💡 Chiffrez la dette en heures perdues par semaine. C'est le seul langage qui obtient du temps pour la corriger.</p>
+                <p class="retenir">💡 Chiffre la dette en heures perdues par semaine. C'est le seul langage qui obtient du temps pour la corriger.</p>
                 </div>
             </details>
         </section>
@@ -273,7 +274,7 @@
                     <li><strong>« Working Effectively with Legacy Code »</strong>, Michael Feathers : comment ajouter des tests à un code qui n'en a pas, sans tout casser.</li>
                     <li><strong>Bases de données de vulnérabilités</strong> : elles permettent de vérifier si une dépendance utilisée est concernée par une faille connue.</li>
                 </ul>
-                <p><strong>Un réflexe utile :</strong> avant de proposer une refonte, mesurez le temps perdu chaque semaine à cause du code actuel. Le chiffre change la conversation.</p>
+                <p><strong>Un réflexe utile :</strong> avant de proposer une refonte, mesure le temps perdu chaque semaine à cause du code actuel. Le chiffre change la conversation.</p>
             </article>
         </section>
 

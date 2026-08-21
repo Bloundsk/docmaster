@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - SCRIPT DE VEILLE
+// CLICKED - SCRIPT DE VEILLE
 // v3 : les recherches sont deduites des guides eux-memes
 // ===================================
 //

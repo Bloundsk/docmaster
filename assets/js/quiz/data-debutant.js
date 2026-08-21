@@ -309,7 +309,7 @@ window.QUIZ = {
         },
         // Série 2
         {
-            q: "Vous devez comparer deux versions d'une page. Que faut-il avant de conclure ?",
+            q: "Tu dois comparer deux versions d'une page. Que faut-il avant de conclure ?",
             options: [
                 "Quelques centaines de visiteurs par version",
                 "Quelques centaines de conversions par version, pas de visiteurs",
@@ -319,14 +319,14 @@ window.QUIZ = {
             explication: "Et une durée fixée à l'avance, sinon on trouve toujours un gagnant."
         },
         {
-            q: "Votre outil produit un graphique dont l'axe démarre à 48 au lieu de 0. Que faire ?",
+            q: "Ton outil produit un graphique dont l'axe démarre à 48 au lieu de 0. Que faire ?",
             options: [
                 "Le laisser : l'outil sait ce qu'il fait",
                 "Corriger l'axe : il exagère artificiellement un écart de 4 %",
                 "Ajouter une note en bas du graphique"
             ],
             a: 1,
-            explication: "Ce réflexe vous évitera de vous faire abuser — y compris par vos propres graphiques."
+            explication: "Ce réflexe t'évitera de te faire abuser — y compris par tes propres graphiques."
         },
         {
             q: "Quel ordre suivre dans une démarche data ?",

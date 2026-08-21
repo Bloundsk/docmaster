@@ -237,7 +237,7 @@ window.QUIZ = {
                     "Les statuts de l'entreprise"
                 ],
                 a: 0,
-                explication: "Il décrit ce que vous collectez, pourquoi, et pendant combien de temps."
+                explication: "Il décrit ce que tu collectes, pourquoi, et pendant combien de temps."
             },
             // Série 2
             {
@@ -248,7 +248,7 @@ window.QUIZ = {
                     "Les deux à parts égales"
                 ],
                 a: 1,
-                explication: "En cas de plainte, c'est à vous de prouver le consentement."
+                explication: "En cas de plainte, c'est à toi de prouver le consentement."
             },
             {
                 q: "Une allégation environnementale vague et non justifiée constitue :",
@@ -268,7 +268,7 @@ window.QUIZ = {
                     "Mentionner le montant perçu"
                 ],
                 a: 0,
-                explication: "L'obligation vaut aussi pour le créateur avec qui vous travaillez."
+                explication: "L'obligation vaut aussi pour le créateur avec qui tu travailles."
             }
         ]
     },

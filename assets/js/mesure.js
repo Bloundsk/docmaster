@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - MESURE D'USAGE
+// CLICKED - MESURE D'USAGE
 // ===================================
 //
 // Le tableau de bord GoatCounter compte deja les pages vues : on sait donc

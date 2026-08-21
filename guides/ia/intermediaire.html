@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Intelligence Artificielle — Intermédiaire - DocMaster</title>
+    <title>Intelligence Artificielle — Intermédiaire - Clicked</title>
     <meta name="description" content="Niveau intermédiaire du parcours IA : fenêtre de contexte et jetons, RAG, appel d'outils, et comment choisir un modèle selon le coût et la latence.">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
 
@@ -31,23 +31,24 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
-    <meta property="og:site_name" content="DocMaster">
-    <meta property="og:title" content="Intelligence Artificielle — Intermédiaire - DocMaster">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Intelligence Artificielle — Intermédiaire - Clicked">
     <meta property="og:description" content="Niveau intermédiaire du parcours IA : fenêtre de contexte et jetons, RAG, appel d'outils, et comment choisir un modèle selon le coût et la latence.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Intelligence Artificielle — Intermédiaire - DocMaster">
+    <meta name="twitter:title" content="Intelligence Artificielle — Intermédiaire - Clicked">
     <meta name="twitter:description" content="Niveau intermédiaire du parcours IA : fenêtre de contexte et jetons, RAG, appel d'outils, et comment choisir un modèle selon le coût et la latence.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
     <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/identite.js"></script>
     <script src="../../assets/js/langues.js"></script>
     <script src="../../assets/js/layout.js"></script>
 
@@ -77,7 +78,7 @@
     </header>
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 16 août 2026</span>
+        <span>🕒 Dernière mise à jour : 21 août 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -123,7 +124,7 @@
             <details class="lecon">
                 <summary><h3 id="contexte-et-jetons">🧩 Le contexte et les jetons</h3></summary>
                 <div class="lecon-corps">
-                <p>Un modèle ne traite pas des mots mais des <strong>jetons</strong> : des fragments de texte, souvent une syllabe ou un mot court. En français, comptez environ <strong>trois jetons pour deux mots</strong>. Un roman de 80 000 mots pèse donc quelque 120 000 jetons.</p>
+                <p>Un modèle ne traite pas des mots mais des <strong>jetons</strong> : des fragments de texte, souvent une syllabe ou un mot court. En français, compte environ <strong>trois jetons pour deux mots</strong>. Un roman de 80 000 mots pèse donc quelque 120 000 jetons.</p>
 
                 <h4>La fenêtre de contexte est un plafond, pas une mémoire</h4>
                 <p>La fenêtre de contexte est la quantité de texte que le modèle peut lire en une fois : la consigne, les documents fournis, l'historique de la conversation et la réponse à produire, le tout additionné.</p>
@@ -153,7 +154,7 @@
             <details class="lecon">
                 <summary><h3 id="le-rag">📚 Donner ses documents au modèle</h3></summary>
                 <div class="lecon-corps">
-                <p>Un modèle ne connaît pas vos documents internes, vos procédures, vos tarifs. La méthode qui règle ce problème s'appelle le <strong>RAG</strong> — génération augmentée par récupération. Le principe tient en une phrase : <em>chercher d'abord les passages pertinents, puis les donner au modèle avec la question</em>.</p>
+                <p>Un modèle ne connaît pas tes documents internes, tes procédures, tes tarifs. La méthode qui règle ce problème s'appelle le <strong>RAG</strong> — génération augmentée par récupération. Le principe tient en une phrase : <em>chercher d'abord les passages pertinents, puis les donner au modèle avec la question</em>.</p>
 
                 <h4>Comment ça marche, sans jargon</h4>
                 <p>Les documents sont découpés en fragments de quelques centaines de jetons. Chaque fragment est transformé en une liste de nombres qui représente son sens — un <strong>plongement</strong>. La question de l'utilisateur subit le même traitement, puis on cherche les fragments dont les nombres sont les plus proches.</p>
@@ -162,7 +163,7 @@
                 <div class="exemple">
                     <span class="titre">Ce que le RAG change</span>
                     <p><strong>Sans RAG</strong> : « Quel est notre délai de rétractation ? » → le modèle répond avec le droit général, ou invente.</p>
-                    <p><strong>Avec RAG</strong> : la question va d'abord chercher l'article 7 de vos conditions générales, puis le modèle répond en le citant.</p>
+                    <p><strong>Avec RAG</strong> : la question va d'abord chercher l'article 7 de tes conditions générales, puis le modèle répond en le citant.</p>
                     <p>La différence n'est pas l'intelligence du modèle. C'est qu'il a le bon document sous les yeux.</p>
                 </div>
 
@@ -188,16 +189,16 @@
                 <p>Un modèle seul ne fait que produire du texte. Ce qui transforme un assistant en <strong>agent</strong>, c'est la capacité d'appeler des outils : consulter une base, envoyer un message, créer un fichier.</p>
 
                 <h4>Le mécanisme réel</h4>
-                <p>On décrit au modèle les outils disponibles : leur nom, ce qu'ils font, les paramètres attendus. Quand il juge qu'un outil est utile, il ne l'exécute pas lui-même — <strong>il produit une demande d'appel</strong>, sous forme structurée. Votre programme reçoit cette demande, décide de l'exécuter ou non, et lui renvoie le résultat.</p>
-                <p>Cette distinction est fondamentale : <strong>le modèle propose, votre code dispose</strong>. C'est là que se place toute la sécurité d'un agent.</p>
+                <p>On décrit au modèle les outils disponibles : leur nom, ce qu'ils font, les paramètres attendus. Quand il juge qu'un outil est utile, il ne l'exécute pas lui-même — <strong>il produit une demande d'appel</strong>, sous forme structurée. Ton programme reçoit cette demande, décide de l'exécuter ou non, et lui renvoie le résultat.</p>
+                <p>Cette distinction est fondamentale : <strong>le modèle propose, ton code dispose</strong>. C'est là que se place toute la sécurité d'un agent.</p>
 
                 <div class="exemple">
                     <span class="titre">Le déroulé d'un échange avec outil</span>
                     <p>1. L'utilisateur demande : « Combien de commandes en attente ? »</p>
                     <p>2. Le modèle renvoie une demande d'appel : <code>compter_commandes(statut: "en_attente")</code>.</p>
-                    <p>3. Votre programme vérifie que l'appel est légitime, l'exécute, obtient <code>47</code>.</p>
+                    <p>3. Ton programme vérifie que l'appel est légitime, l'exécute, obtient <code>47</code>.</p>
                     <p>4. Le résultat est renvoyé au modèle, qui rédige la réponse.</p>
-                    <p>Quatre étapes, dont une seule est faite par le modèle : celle du milieu vous appartient entièrement.</p>
+                    <p>Quatre étapes, dont une seule est faite par le modèle : celle du milieu t'appartient entièrement.</p>
                 </div>
 
                 <div class="pratique" data-pratique="perimetre-outils"></div>
@@ -209,10 +210,10 @@
                 <div class="piege">
                     <span class="titre">Erreur fréquente — l'action irréversible sans confirmation</span>
                     <p>Un agent qui peut supprimer, envoyer ou payer sans validation humaine finira par le faire à tort. Pas nécessairement par malveillance : une consigne ambiguë suffit.</p>
-                    <p>Séparez les outils qui lisent de ceux qui écrivent. Les seconds passent par une confirmation.</p>
+                    <p>Sépare les outils qui lisent de ceux qui écrivent. Les seconds passent par une confirmation.</p>
                 </div>
 
-                <p class="retenir">💡 Le modèle ne fait rien tout seul. Ce qu'il peut casser est exactement ce que vous lui avez donné.</p>
+                <p class="retenir">💡 Le modèle ne fait rien tout seul. Ce qu'il peut casser est exactement ce que tu lui as donné.</p>
                 </div>
             </details>
 
@@ -222,10 +223,10 @@
                 <p>Le réflexe est de prendre le modèle le plus performant. C'est rarement le bon choix : sur une tâche simple et répétée, un modèle plus petit répond aussi bien, dix fois plus vite et pour une fraction du prix.</p>
 
                 <h4>Quatre critères, dans cet ordre</h4>
-                <p><strong>La qualité sur votre tâche</strong> — pas la qualité en général. Un modèle excellent en raisonnement mathématique n'est pas forcément meilleur pour classer des courriels.</p>
+                <p><strong>La qualité sur ta tâche</strong> — pas la qualité en général. Un modèle excellent en raisonnement mathématique n'est pas forcément meilleur pour classer des courriels.</p>
                 <p><strong>La latence.</strong> Deux secondes contre dix, ce n'est pas un détail dans une interface où quelqu'un attend.</p>
                 <p><strong>Le coût</strong>, facturé par million de jetons, en distinguant l'entrée et la sortie — la sortie est généralement plusieurs fois plus chère.</p>
-                <p><strong>Où tournent les données.</strong> Un modèle ouvert hébergé chez vous ne fait sortir aucune donnée ; un service distant, si. Cette question précède parfois toutes les autres.</p>
+                <p><strong>Où tournent les données.</strong> Un modèle ouvert hébergé chez toi ne fait sortir aucune donnée ; un service distant, si. Cette question précède parfois toutes les autres.</p>
 
                 <div class="exemple">
                     <span class="titre">Exemple chiffré</span>
@@ -238,11 +239,11 @@
 
                 <div class="piege">
                     <span class="titre">Erreur fréquente — juger un modèle sur les classements</span>
-                    <p>Les classements publics mesurent des capacités générales sur des jeux de tests standardisés. Ils ne disent rien de votre cas particulier, et les modèles finissent par être optimisés pour ces tests.</p>
-                    <p>Constituez vingt exemples représentatifs de votre tâche réelle et faites-les passer aux candidats. Une demi-journée de travail, et une réponse qui vous concerne.</p>
+                    <p>Les classements publics mesurent des capacités générales sur des jeux de tests standardisés. Ils ne disent rien de ton cas particulier, et les modèles finissent par être optimisés pour ces tests.</p>
+                    <p>Constitue vingt exemples représentatifs de ta tâche réelle et fais-les passer aux candidats. Une demi-journée de travail, et une réponse qui te concerne.</p>
                 </div>
 
-                <p class="retenir">💡 Le bon modèle est le plus petit qui réussit votre tâche — pas le plus grand disponible.</p>
+                <p class="retenir">💡 Le bon modèle est le plus petit qui réussit ta tâche — pas le plus grand disponible.</p>
                 </div>
             </details>
         </section>
@@ -268,7 +269,7 @@
                     <li><strong>CNIL — recommandations sur l'IA</strong> : les obligations qui s'appliquent dès qu'un traitement porte sur des données personnelles.</li>
                     <li><strong>Règlement européen sur l'IA</strong> : les catégories de risque et les obligations associées, utile avant de déployer un système auprès du public.</li>
                 </ul>
-                <p><strong>Un réflexe utile :</strong> avant de choisir un modèle, écrivez vos vingt cas de test. Ils serviront ensuite à chaque changement de version — et il y en aura.</p>
+                <p><strong>Un réflexe utile :</strong> avant de choisir un modèle, écris tes vingt cas de test. Ils serviront ensuite à chaque changement de version — et il y en aura.</p>
             </article>
         </section>
 

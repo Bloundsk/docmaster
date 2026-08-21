@@ -286,7 +286,7 @@ window.QUIZ = {
                 "La performance technique"
             ],
             a: 0,
-            explication: "Des utilisateurs qui ne vous ressemblent pas, des dizaines d'écrans à faire tenir ensemble, des tailles d'écran très différentes."
+            explication: "Des utilisateurs qui ne te ressemblent pas, des dizaines d'écrans à faire tenir ensemble, des tailles d'écran très différentes."
         },
         {
             q: "Quel test révèle le plus de problèmes d'accessibilité en cinq minutes ?",

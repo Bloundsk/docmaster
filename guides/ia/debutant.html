@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Intelligence Artificielle — Débutant - DocMaster</title>
+    <title>Intelligence Artificielle — Débutant - Clicked</title>
     <meta name="description" content="Guide gratuit pour comprendre les LLM, les agents IA, le prompt engineering et les limites de l'intelligence artificielle.">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
 
@@ -31,23 +31,24 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/ia/debutant.html">
-    <meta property="og:site_name" content="DocMaster">
-    <meta property="og:title" content="Intelligence Artificielle — Débutant - DocMaster">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Intelligence Artificielle — Débutant - Clicked">
     <meta property="og:description" content="Guide gratuit pour comprendre les LLM, les agents IA, le prompt engineering et les limites de l'intelligence artificielle.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/ia/debutant.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Intelligence Artificielle — Débutant - DocMaster">
+    <meta name="twitter:title" content="Intelligence Artificielle — Débutant - Clicked">
     <meta name="twitter:description" content="Guide gratuit pour comprendre les LLM, les agents IA, le prompt engineering et les limites de l'intelligence artificielle.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
     <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/identite.js"></script>
     <script src="../../assets/js/langues.js"></script>
     <script src="../../assets/js/layout.js"></script>
 
@@ -77,7 +78,7 @@
     </header>
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 16 août 2026</span>
+        <span>🕒 Dernière mise à jour : 21 août 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -134,7 +135,7 @@
 
                 <h4>Trois notions à connaître</h4>
                 <ul>
-                    <li><strong>Le contexte</strong> : ce que le modèle « voit » en une fois — votre conversation, vos documents. Au-delà, le début est oublié.</li>
+                    <li><strong>Le contexte</strong> : ce que le modèle « voit » en une fois — ta conversation, tes documents. Au-delà, le début est oublié.</li>
                     <li><strong>La date de connaissance</strong> (<em>knowledge cutoff</em>) : l'entraînement s'arrête à une date. Sans outil de recherche, tout événement postérieur lui est inconnu.</li>
                     <li><strong>La température</strong> : le degré de hasard dans le choix des tokens. Basse, les réponses sont prévisibles ; haute, plus variées et plus risquées.</li>
                 </ul>
@@ -146,7 +147,7 @@
 
                 <div class="pratique" data-pratique="anatomie-llm"></div>
 
-                <p class="retenir">💡 Un LLM ne distingue pas ce qu'il sait de ce qu'il invente : dans les deux cas, il complète. C'est à vous d'introduire cette distinction, en vérifiant.</p>
+                <p class="retenir">💡 Un LLM ne distingue pas ce qu'il sait de ce qu'il invente : dans les deux cas, il complète. C'est à toi d'introduire cette distinction, en vérifiant.</p>
                 </div>
             </details>
 
@@ -165,7 +166,7 @@
                     <tr><td>En cas d'erreur</td><td>Une réponse fausse à lire</td><td>Une action fausse déjà exécutée</td></tr>
                 </table>
                 </div>
-                <p>La dernière ligne est celle qui compte. Un chatbot qui se trompe vous fait perdre une minute. Un agent qui se trompe a déjà supprimé le fichier ou envoyé le message.</p>
+                <p>La dernière ligne est celle qui compte. Un chatbot qui se trompe te fait perdre une minute. Un agent qui se trompe a déjà supprimé le fichier ou envoyé le message.</p>
 
                 <div class="exemple">
                     <span class="titre">Exemple concret</span>
@@ -181,7 +182,7 @@
                 <div class="piege">
                     <span class="titre">Erreur fréquente — l'autonomie sans point de contrôle</span>
                     <p>« Range ma boîte mail » autorise à lire les messages, pas à exécuter ce qu'ils demandent. Sur toute action irréversible — supprimer, envoyer, payer, publier — l'agent doit s'arrêter et demander confirmation.</p>
-                    <p>Un agent bien conçu se reconnaît à cela : il vous rend la main sur ce qui ne se rattrape pas.</p>
+                    <p>Un agent bien conçu se reconnaît à cela : il te rend la main sur ce qui ne se rattrape pas.</p>
                 </div>
 
                 <div class="pratique" data-pratique="anatomie-agent"></div>
@@ -193,13 +194,13 @@
             <details class="lecon">
                 <summary><h3 id="le-prompt-engineering">✍️ Le prompt engineering</h3></summary>
                 <div class="lecon-corps">
-                <p>Formuler une demande efficace ne relève pas de formules magiques. Le principe est simple : <strong>tout ce que vous n'avez pas précisé, le modèle le comblera par ce qui est statistiquement le plus courant</strong> — c'est-à-dire par du générique.</p>
+                <p>Formuler une demande efficace ne relève pas de formules magiques. Le principe est simple : <strong>tout ce que tu n'as pas précisé, le modèle le comblera par ce qui est statistiquement le plus courant</strong> — c'est-à-dire par du générique.</p>
 
                 <h4>Les quatre éléments d'une bonne consigne</h4>
                 <ol>
                     <li><strong>Le contexte</strong> : pour qui, dans quel cadre, avec quel niveau de connaissance ?</li>
                     <li><strong>La tâche</strong> : un verbe précis. « Résume », « compare », « réécris » — pas « parle-moi de ».</li>
-                    <li><strong>Le format</strong> : longueur, structure, ton. Sinon vous obtiendrez le format moyen d'internet.</li>
+                    <li><strong>Le format</strong> : longueur, structure, ton. Sinon tu obtiendras le format moyen d'internet.</li>
                     <li><strong>Les contraintes</strong> : ce qu'il faut éviter, les limites à respecter.</li>
                 </ol>
 
@@ -227,7 +228,7 @@
 
                 <div class="pratique" data-pratique="qualite-consigne"></div>
 
-                <p class="retenir">💡 Écrivez votre consigne comme pour un collègue compétent qui arrive à l'instant : il ne connaît ni votre contexte, ni vos habitudes, ni ce que vous jugez évident.</p>
+                <p class="retenir">💡 Écris ta consigne comme pour un collègue compétent qui arrive à l'instant : il ne connaît ni ton contexte, ni tes habitudes, ni ce que tu juges évident.</p>
                 </div>
             </details>
 
@@ -241,11 +242,11 @@
                 <p>Le signal d'alerte utile : plus une réponse est précise sur un sujet obscur, plus elle mérite vérification.</p>
 
                 <h4>Les biais</h4>
-                <p>Un modèle reproduit les régularités de ses données d'entraînement, y compris les stéréotypes. Demandez « décris une infirmière » et « décris un chirurgien » : les descriptions genrées apparaissent souvent sans qu'aucune intention n'ait été programmée.</p>
+                <p>Un modèle reproduit les régularités de ses données d'entraînement, y compris les stéréotypes. Demande « décris une infirmière » et « décris un chirurgien » : les descriptions genrées apparaissent souvent sans qu'aucune intention n'ait été programmée.</p>
                 <p>Cela devient sérieux dès qu'une IA intervient dans un tri de candidatures, une évaluation ou une décision d'octroi — le biais s'applique alors à grande échelle, avec une apparence d'objectivité.</p>
 
                 <h4>La confidentialité</h4>
-                <p>Ce que vous saisissez quitte votre machine. Selon le service et ses réglages, ces données peuvent être conservées, relues par des humains pour améliorer le produit, ou servir à l'entraînement.</p>
+                <p>Ce que tu saisis quitte ta machine. Selon le service et ses réglages, ces données peuvent être conservées, relues par des humains pour améliorer le produit, ou servir à l'entraînement.</p>
                 <div class="exemple">
                     <span class="titre">Règle pratique</span>
                     <p>Avant de coller un contenu : <em>« serais-je à l'aise si ce texte apparaissait dans un document public ? »</em></p>
@@ -257,7 +258,7 @@
                     <li><strong>Le calcul exact.</strong> Un LLM prédit du texte, il ne calcule pas. Sur des opérations précises, un tableur reste supérieur — sauf si le modèle dispose d'un outil de calcul.</li>
                     <li><strong>L'actualité.</strong> Sans accès à une recherche, la connaissance s'arrête à la date d'entraînement.</li>
                     <li><strong>La cohérence longue.</strong> Sur un texte de plusieurs dizaines de pages, des contradictions internes apparaissent.</li>
-                    <li><strong>Le jugement.</strong> Un modèle peut lister les arguments d'une décision difficile ; il n'en porte pas la responsabilité. Vous, si.</li>
+                    <li><strong>Le jugement.</strong> Un modèle peut lister les arguments d'une décision difficile ; il n'en porte pas la responsabilité. Toi, si.</li>
                 </ul>
 
                 <div class="piege">
@@ -268,7 +269,7 @@
 
                 <div class="pratique" data-pratique="signaux-hallucination"></div>
 
-                <p class="retenir">💡 Utilisez l'IA sur ce que vous savez évaluer. Sur un sujet que vous maîtrisez, vous repérez l'erreur en un instant ; sur un sujet inconnu, vous n'avez aucun moyen de la voir.</p>
+                <p class="retenir">💡 Utilise l'IA sur ce que tu sais évaluer. Sur un sujet que tu maîtrises, tu repères l'erreur en un instant ; sur un sujet inconnu, tu n'as aucun moyen de la voir.</p>
                 </div>
             </details>
         </section>
@@ -295,7 +296,7 @@
                     <li><strong>« Attention Is All You Need »</strong> (Vaswani et al., 2017) : l'article fondateur de l'architecture Transformer. Technique, mais son introduction se lit sans bagage particulier.</li>
                     <li><strong>AI Incident Database</strong> : recensement des cas où des systèmes d'IA ont causé un dommage réel. Le meilleur antidote aux discours commerciaux.</li>
                 </ul>
-                <p><strong>Conseil de méthode :</strong> ce domaine bouge vite et les affirmations spectaculaires y sont nombreuses. Privilégiez les sources qui publient leurs méthodes d'évaluation, et méfiez-vous de toute démonstration qu'on ne peut pas reproduire soi-même.</p>
+                <p><strong>Conseil de méthode :</strong> ce domaine bouge vite et les affirmations spectaculaires y sont nombreuses. Privilégie les sources qui publient leurs méthodes d'évaluation, et méfie-toi de toute démonstration qu'on ne peut pas reproduire soi-même.</p>
             </article>
         </section>
 

@@ -30,7 +30,13 @@ vm.createContext(bacDico);
 vm.runInContext(fs.readFileSync(path.join(RACINE, `assets/js/pratique/${LANGUE}.js`), "utf8"), bacDico);
 const dico = bacDico.window.PRATIQUE_TEXTES;
 
-const textes = new Set(["À vous d'essayer", "Renseignez", "pour voir le résultat."]);
+/* Les trois textes qui entourent CHAQUE simulateur — surtitre et message de
+   champ vide. Ils sont ecrits en dur dans la fonction de rendu de pratique.js,
+   et non dans la declaration d un simulateur : on ne peut donc pas les en
+   deduire, il faut les recopier ici. C est une donnee dupliquee, assumee.
+   Elle se signale d elle-meme : si l original change sans que cette ligne
+   suive, les 14 sujets tombent d un coup en faux positif. */
+const textes = new Set(["À toi d'essayer", "Renseigne", "pour voir le résultat."]);
 const valeurs = new Set();
 
 for (const nom of poses) {

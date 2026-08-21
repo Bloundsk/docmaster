@@ -220,7 +220,7 @@ window.QUIZ = {
                 explication: "Les faits appris par entraînement se diluent, ne sont pas citables et deviennent obsolètes."
             },
             {
-                q: "Le modèle ignore vos tarifs, qui changent chaque mois. Que faire ?",
+                q: "Le modèle ignore tes tarifs, qui changent chaque mois. Que faire ?",
                 options: [
                     "Un fine-tuning mensuel",
                     "Une récupération de documents",
@@ -248,7 +248,7 @@ window.QUIZ = {
                     "Il est plus lent à répondre"
                 ],
                 a: 1,
-                explication: "Vous quittez le fournisseur qui met à jour pour vous et prenez la charge à votre compte."
+                explication: "Tu quittes le fournisseur qui met à jour pour toi et prends la charge à ton compte."
             },
             {
                 q: "Pourquoi un modèle affiné ne peut-il pas citer ses sources ?",
@@ -327,7 +327,7 @@ window.QUIZ = {
                 "Il remplace la documentation"
             ],
             a: 0,
-            explication: "Et il y aura des changements de version, sans que vous les décidiez."
+            explication: "Et il y aura des changements de version, sans que tu les décides."
         },
         {
             q: "Quel est le fil conducteur de ce niveau ?",

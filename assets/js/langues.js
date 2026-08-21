@@ -195,7 +195,7 @@
         copieImpossible:{ fr: "Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse.", en: "The link could not be copied automatically. Please copy it from the address bar.", es: "No se ha podido copiar el enlace automáticamente. Cópielo desde la barra de direcciones.", de: "Der Link konnte nicht automatisch kopiert werden. Bitte kopieren Sie ihn aus der Adressleiste.", it: "Impossibile copiare il link automaticamente. Copialo dalla barra degli indirizzi.", zh: "无法自动复制链接，请从地址栏手动复制。", ru: "Не удалось скопировать ссылку автоматически. Скопируйте её из адресной строки." },
 
         // --- La mascotte -----------------------------------------------------
-        mascotteAlt:    { fr: "La mascotte de DocMaster : un robot dont le corps est un livre ouvert", en: "The DocMaster mascot: a robot whose body is an open book", es: "La mascota de DocMaster: un robot cuyo cuerpo es un libro abierto", de: "Das Maskottchen von DocMaster: ein Roboter, dessen Körper ein aufgeschlagenes Buch ist", it: "La mascotte di DocMaster: un robot il cui corpo è un libro aperto", zh: "DocMaster 的吉祥物：身体是一本翻开的书的机器人", ru: "Талисман DocMaster: робот, чьё тело — раскрытая книга" },
+        mascotteAlt:    { fr: "La mascotte de {nom} : un robot dont le corps est un livre ouvert", en: "The {nom} mascot: a robot whose body is an open book", es: "La mascota de {nom}: un robot cuyo cuerpo es un libro abierto", de: "Das Maskottchen von {nom}: ein Roboter, dessen Körper ein aufgeschlagenes Buch ist", it: "La mascotte di {nom}: un robot il cui corpo è un libro aperto", zh: "{nom} 的吉祥物：身体是一本翻开的书的机器人", ru: "Талисман {nom}: робот, чьё тело — раскрытая книга" },
         /* Court, pour tenir sur un téléphone sans recouvrir la bannière : la
            version longue faisait 240 px, soit les deux tiers d'un écran de 375.
 
@@ -210,7 +210,7 @@
            trouve, pas du site en general. « Une suggestion ? » sur la boite a
            idees, « Une question ? » sur la FAQ. Le repli sur « mascotteBulle »
            reste en place pour toute page qui n aurait pas le sien. */
-        mascotteBulleAccueil:    { fr: "Satisferez-vous votre curiosité ?", en: "Will you satisfy your curiosity?", es: "¿Satisfará su curiosidad?", de: "Stillen Sie Ihre Neugier?", it: "Soddisferai la tua curiosità?", zh: "要满足你的好奇心吗？", ru: "Утолите своё любопытство?" },
+        mascotteBulleAccueil:    { fr: "Satisferas-tu ta curiosité ?", en: "Will you satisfy your curiosity?", es: "¿Satisfará su curiosidad?", de: "Stillen Sie Ihre Neugier?", it: "Soddisferai la tua curiosità?", zh: "要满足你的好奇心吗？", ru: "Утолите своё любопытство?" },
         mascotteBulleActualites: { fr: "Une lecture ?", en: "Something to read?", es: "¿Una lectura?", de: "Etwas zu lesen?", it: "Una lettura?", zh: "想读点什么？", ru: "Что почитать?" },
         mascotteBulleGlossaire:  { fr: "Un mot à éclaircir ?", en: "A word to clear up?", es: "¿Una palabra que aclarar?", de: "Ein Wort klären?", it: "Una parola da chiarire?", zh: "有词不懂？", ru: "Непонятное слово?" },
         mascotteBulleIdees:      { fr: "Une suggestion ?", en: "A suggestion?", es: "¿Una sugerencia?", de: "Ein Vorschlag?", it: "Un suggerimento?", zh: "有建议吗？", ru: "Есть предложение?" },
@@ -234,7 +234,7 @@
 
         // --- Quiz -----------------------------------------------------------
         quizSurtitre: { fr: "On passe au test", en: "Time for a test", es: "Pasemos a la prueba", de: "Jetzt wird geprüft", it: "Passiamo alla prova", zh: "来做个测验", ru: "Переходим к проверке" },
-        quizTitre:    { fr: "🧠 Vérifiez votre compréhension", en: "🧠 Check your understanding", es: "🧠 Compruebe lo que ha entendido", de: "🧠 Prüfen Sie Ihr Verständnis", it: "🧠 Verifica la tua comprensione", zh: "🧠 检验你的理解", ru: "🧠 Проверьте, что вы поняли" },
+        quizTitre:    { fr: "🧠 Vérifie ta compréhension", en: "🧠 Check your understanding", es: "🧠 Compruebe lo que ha entendido", de: "🧠 Prüfen Sie Ihr Verständnis", it: "🧠 Verifica la tua comprensione", zh: "🧠 检验你的理解", ru: "🧠 Проверьте, что вы поняли" },
         // {j} bonnes réponses, {r} questions répondues. Les accolades sont
         // remplacees a l affichage : l ordre des deux nombres change selon la
         // langue, une concatenation en dur ne le permettrait pas.

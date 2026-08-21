@@ -166,12 +166,12 @@ window.QUIZ = {
             {
                 q: "Quel est le vrai rempart contre tous ces procédés ?",
                 options: [
-                    "Votre solution de rechange",
+                    "Ta solution de rechange",
                     "L'expérience",
                     "Un contrat écrit"
                 ],
                 a: 0,
-                explication: "Ils supposent tous que vous ne puissiez pas partir."
+                explication: "Ils supposent tous que tu ne puisses pas partir."
             },
             // Série 2
             {
@@ -253,12 +253,12 @@ window.QUIZ = {
             {
                 q: "Quitter la table, qu'est-ce que c'est ?",
                 options: [
-                    "L'exercice de votre solution de rechange",
+                    "L'exercice de ta solution de rechange",
                     "Un échec de la négociation",
                     "Une menace tactique"
                 ],
                 a: 0,
-                explication: "C'est l'usage de ce qui vous donnait du pouvoir depuis le début."
+                explication: "C'est l'usage de ce qui te donnait du pouvoir depuis le début."
             },
             {
                 q: "Que produit la fatigue d'une négociation longue ?",

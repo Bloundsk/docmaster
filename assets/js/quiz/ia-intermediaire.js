@@ -19,7 +19,7 @@ window.QUIZ = {
                     "Une phrase entière"
                 ],
                 a: 1,
-                explication: "En français, comptez environ trois jetons pour deux mots."
+                explication: "En français, compte environ trois jetons pour deux mots."
             },
             {
                 q: "Que contient la fenêtre de contexte ?",
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Que fait le RAG, en une phrase ?",
                 options: [
-                    "Il entraîne le modèle sur vos documents",
+                    "Il entraîne le modèle sur tes documents",
                     "Il cherche les passages pertinents puis les donne au modèle avec la question",
                     "Il compresse les documents pour les faire tenir en mémoire"
                 ],
@@ -147,11 +147,11 @@ window.QUIZ = {
                 q: "Que fait un modèle quand il décide d'utiliser un outil ?",
                 options: [
                     "Il exécute l'outil lui-même",
-                    "Il produit une demande d'appel, que votre programme exécute ou non",
+                    "Il produit une demande d'appel, que ton programme exécute ou non",
                     "Il demande l'autorisation à l'utilisateur"
                 ],
                 a: 1,
-                explication: "Le modèle propose, votre code dispose. Toute la sécurité d'un agent se place à cet endroit."
+                explication: "Le modèle propose, ton code dispose. Toute la sécurité d'un agent se place à cet endroit."
             },
             {
                 q: "Qu'est-ce qui transforme un assistant en agent ?",
@@ -175,14 +175,14 @@ window.QUIZ = {
             },
             // Série 2
             {
-                q: "Dans le déroulé d'un appel d'outil, quelle étape vous appartient ?",
+                q: "Dans le déroulé d'un appel d'outil, quelle étape t'appartient ?",
                 options: [
                     "La décision d'appeler l'outil",
                     "La vérification et l'exécution de l'appel",
                     "La rédaction de la réponse finale"
                 ],
                 a: 1,
-                explication: "Sur quatre étapes, celle du milieu est entièrement de votre ressort."
+                explication: "Sur quatre étapes, celle du milieu est entièrement de ton ressort."
             },
             {
                 q: "Comment traiter les outils qui produisent des effets irréversibles ?",
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Quel est généralement le bon choix de modèle ?",
                 options: [
                     "Le plus performant disponible",
-                    "Le plus petit qui réussit votre tâche",
+                    "Le plus petit qui réussit ta tâche",
                     "Le moins cher, toujours"
                 ],
                 a: 1,
@@ -237,14 +237,14 @@ window.QUIZ = {
                     "La taille de la fenêtre de contexte"
                 ],
                 a: 1,
-                explication: "Un modèle ouvert hébergé chez vous ne fait sortir aucune donnée ; un service distant, si."
+                explication: "Un modèle ouvert hébergé chez toi ne fait sortir aucune donnée ; un service distant, si."
             },
             // Série 2
             {
-                q: "Que valent les classements publics de modèles pour votre projet ?",
+                q: "Que valent les classements publics de modèles pour ton projet ?",
                 options: [
                     "Ils donnent la réponse directement",
-                    "Ils mesurent des capacités générales, pas votre cas particulier",
+                    "Ils mesurent des capacités générales, pas ton cas particulier",
                     "Ils sont sans aucun intérêt"
                 ],
                 a: 1,
@@ -258,7 +258,7 @@ window.QUIZ = {
                     "En comparant le nombre de paramètres"
                 ],
                 a: 1,
-                explication: "Une demi-journée de travail, et une réponse qui vous concerne vraiment."
+                explication: "Une demi-journée de travail, et une réponse qui te concerne vraiment."
             },
             {
                 q: "Pourquoi la latence est-elle un critère à part entière ?",

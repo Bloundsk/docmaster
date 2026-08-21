@@ -69,7 +69,7 @@ window.QUIZ = {
                     "Oui, sinon la méthode ne fonctionne plus"
                 ],
                 a: 1,
-                explication: "Adaptez la durée, gardez le principe : un bloc réellement continu."
+                explication: "Adapte la durée, garde le principe : un bloc réellement continu."
             }
         ],
 
@@ -196,9 +196,9 @@ window.QUIZ = {
             {
                 q: "Que signifie un quadrant « supprimer » resté vide ?",
                 options: [
-                    "Que vous êtes bien organisé",
-                    "Que vous n'avez renoncé à rien : l'exercice n'a pas joué son rôle",
-                    "Que vos tâches sont toutes utiles"
+                    "Que tu es bien organisé",
+                    "Que tu n'as renoncé à rien : l'exercice n'a pas joué son rôle",
+                    "Que tes tâches sont toutes utiles"
                 ],
                 a: 1,
                 explication: "La matrice force un arbitrage, et un arbitrage suppose que certaines choses ne seront pas faites."
@@ -222,7 +222,7 @@ window.QUIZ = {
                 q: "Quel critère compte le plus dans le choix d'un outil ?",
                 options: [
                     "Le nombre de fonctionnalités",
-                    "La vitesse de saisie : au-delà de cinq secondes, vous cesserez de noter",
+                    "La vitesse de saisie : au-delà de cinq secondes, tu cesseras de noter",
                     "Son intégration avec d'autres logiciels"
                 ],
                 a: 1,
@@ -260,9 +260,9 @@ window.QUIZ = {
                 explication: "Réorganiser ses listes ressemble à du travail sans en être."
             },
             {
-                q: "Vous avez changé d'outil trois fois cette année. Quel est le signal ?",
+                q: "Tu as changé d'outil trois fois cette année. Quel est le signal ?",
                 options: [
-                    "Vous affinez votre méthode",
+                    "Tu affines ta méthode",
                     "Le problème n'est probablement pas l'outil",
                     "Le marché évolue vite"
                 ],
@@ -285,7 +285,7 @@ window.QUIZ = {
                 "Le nombre de projets menés de front"
             ],
             a: 1,
-            explication: "Aucune ne vise à vous faire travailler plus vite."
+            explication: "Aucune ne vise à te faire travailler plus vite."
         },
         {
             q: "Combien de méthodes adopter à la fois ?",
@@ -309,7 +309,7 @@ window.QUIZ = {
         },
         // Série 2
         {
-            q: "Vous avez deux heures pour une tâche exigeante et beaucoup de notifications. Que faire d'abord ?",
+            q: "Tu as deux heures pour une tâche exigeante et beaucoup de notifications. Que faire d'abord ?",
             options: [
                 "Commencer immédiatement pour ne pas perdre de temps",
                 "Couper les notifications, puis lancer un bloc de travail continu",
@@ -319,7 +319,7 @@ window.QUIZ = {
             explication: "Sans cette étape, la méthode Pomodoro n'a aucun sens."
         },
         {
-            q: "Une tâche traîne sur votre liste depuis un mois. Quelle est la cause la plus probable ?",
+            q: "Une tâche traîne sur ta liste depuis un mois. Quelle est la cause la plus probable ?",
             options: [
                 "Un manque de motivation",
                 "Elle est mal formulée : ce n'est pas une action concrète",
@@ -332,7 +332,7 @@ window.QUIZ = {
             q: "Quel est le meilleur outil de gestion de tâches ?",
             options: [
                 "Celui qui a le plus de fonctionnalités",
-                "Celui que vous ouvrirez encore dans trois semaines",
+                "Celui que tu ouvriras encore dans trois semaines",
                 "Celui utilisé par les professionnels du secteur"
             ],
             a: 1,

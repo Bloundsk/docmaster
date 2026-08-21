@@ -219,7 +219,7 @@ window.QUIZ = {
                     "Six mois"
                 ],
                 a: 0,
-                explication: "S'il prolonge, il doit vous en informer."
+                explication: "S'il prolonge, il doit t'en informer."
             },
             {
                 q: "Faut-il justifier une demande d'accès à ses données ?",
@@ -263,7 +263,7 @@ window.QUIZ = {
                 explication: "Le silence est lui-même un motif recevable."
             },
             {
-                q: "La CNIL peut-elle vous obtenir une indemnisation ?",
+                q: "La CNIL peut-elle t'obtenir une indemnisation ?",
                 options: [
                     "Non : c'est une autorité de contrôle, pas un tribunal",
                     "Oui, elle fixe le montant",

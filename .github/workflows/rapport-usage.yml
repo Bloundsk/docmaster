@@ -1,4 +1,4 @@
-name: Rapport d'usage DocMaster
+name: Rapport d'usage Clicked
 
 on:
   schedule:

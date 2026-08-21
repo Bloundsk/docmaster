@@ -39,7 +39,7 @@ window.QUIZ = {
                     "Rien, tout est automatique"
                 ],
                 a: 0,
-                explication: "Chaque site reçoit une valeur unique que vous ne connaissez même pas. Vous n'en mémorisez qu'une."
+                explication: "Chaque site reçoit une valeur unique que tu ne connais même pas. Tu n'en mémorises qu'une."
             },
             // Série 2
             {
@@ -50,7 +50,7 @@ window.QUIZ = {
                     "Il vaut mieux tout noter sur papier"
                 ],
                 a: 1,
-                explication: "Sans gestionnaire, le risque n'est pas réparti : c'est le même risque, étalé sur des dizaines de services dont vous ne maîtrisez ni la sécurité ni les fuites."
+                explication: "Sans gestionnaire, le risque n'est pas réparti : c'est le même risque, étalé sur des dizaines de services dont tu ne maîtrises ni la sécurité ni les fuites."
             },
             {
                 q: "Le gestionnaire rend-il les mots de passe plus forts ?",
@@ -95,7 +95,7 @@ window.QUIZ = {
                     "La clé physique"
                 ],
                 a: 0,
-                explication: "Le détournement de carte SIM permet de recevoir les codes à votre place. Le SMS reste néanmoins très supérieur à l'absence de second facteur."
+                explication: "Le détournement de carte SIM permet de recevoir les codes à ta place. Le SMS reste néanmoins très supérieur à l'absence de second facteur."
             },
             {
                 q: "Quel compte protéger en priorité ?",
@@ -217,7 +217,7 @@ window.QUIZ = {
                     "Il remplace le chiffrement HTTPS"
                 ],
                 a: 0,
-                explication: "Deux conséquences : le réseau local ne voit plus les sites visités, et les sites voient l'adresse du serveur au lieu de la vôtre."
+                explication: "Deux conséquences : le réseau local ne voit plus les sites visités, et les sites voient l'adresse du serveur au lieu de la tienne."
             },
             {
                 q: "Un VPN protège-t-il du hameçonnage ?",
@@ -233,11 +233,11 @@ window.QUIZ = {
                 q: "Un VPN rend-il anonyme sur un service où l'on est connecté ?",
                 options: [
                     "Oui, l'adresse IP est masquée",
-                    "Non, le compte connecté vous identifie de lui-même",
+                    "Non, le compte connecté t'identifie de lui-même",
                     "Oui, si l'on efface les cookies"
                 ],
                 a: 1,
-                explication: "Vous vous êtes identifié vous-même en vous connectant. Le VPN n'y change rien."
+                explication: "Tu t'es identifié toi-même en te connectant. Le VPN n'y change rien."
             },
             // Série 2
             {
@@ -264,7 +264,7 @@ window.QUIZ = {
                 q: "Quel risque particulier présente un VPN gratuit financé par la publicité ?",
                 options: [
                     "Une vitesse réduite seulement",
-                    "Il reçoit la totalité de votre trafic et doit se rémunérer autrement",
+                    "Il reçoit la totalité de ton trafic et doit se rémunérer autrement",
                     "Aucun, le chiffrement est identique"
                 ],
                 a: 1,
@@ -292,14 +292,14 @@ window.QUIZ = {
             q: "Quel point commun entre le gestionnaire de mots de passe et la sauvegarde déconnectée ?",
             options: [
                 "Ils coûtent cher",
-                "Ils se mettent en place une fois et travaillent ensuite sans vous",
+                "Ils se mettent en place une fois et travaillent ensuite sans toi",
                 "Ils demandent des compétences techniques"
             ],
             a: 1,
             explication: "C'est le critère qui les fait figurer à ce niveau : un effort ponctuel, une protection permanente."
         },
         {
-            q: "Un attaquant obtient votre mot de passe de messagerie. Qu'est-ce qui l'arrête ?",
+            q: "Un attaquant obtient ton mot de passe de messagerie. Qu'est-ce qui l'arrête ?",
             options: [
                 "Un antivirus à jour",
                 "Une double authentification par application ou clé",

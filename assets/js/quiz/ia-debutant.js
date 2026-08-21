@@ -64,7 +64,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi la même question peut-elle recevoir deux réponses différentes ?",
                 options: [
-                    "Parce que le modèle apprend de vos échanges en direct",
+                    "Parce que le modèle apprend de tes échanges en direct",
                     "Parce qu'il régénère à chaque fois au lieu de consulter une base",
                     "Parce que la connexion internet varie"
                 ],
@@ -94,7 +94,7 @@ window.QUIZ = {
                     "Il n'y a aucune différence"
                 ],
                 a: 0,
-                explication: "Un chatbot qui se trompe vous fait perdre une minute. Un agent a déjà supprimé le fichier ou envoyé le message."
+                explication: "Un chatbot qui se trompe te fait perdre une minute. Un agent a déjà supprimé le fichier ou envoyé le message."
             },
             {
                 q: "Qu'est-ce que l'injection d'instructions ?",
@@ -115,7 +115,7 @@ window.QUIZ = {
                     "Aucune, sinon il perd son intérêt"
                 ],
                 a: 1,
-                explication: "Un agent bien conçu vous rend la main sur ce qui ne se rattrape pas."
+                explication: "Un agent bien conçu te rend la main sur ce qui ne se rattrape pas."
             },
             {
                 q: "« Range ma boîte mail » autorise l'agent à faire quoi ?",
@@ -143,9 +143,9 @@ window.QUIZ = {
         "le-prompt-engineering": [
             // Série 1
             {
-                q: "Que fait le modèle avec ce que vous n'avez pas précisé ?",
+                q: "Que fait le modèle avec ce que tu n'as pas précisé ?",
                 options: [
-                    "Il vous pose la question",
+                    "Il te pose la question",
                     "Il le comble par ce qui est statistiquement le plus courant",
                     "Il laisse un blanc"
                 ],
@@ -285,7 +285,7 @@ window.QUIZ = {
                 "Sur n'importe quel sujet, en lui faisant confiance"
             ],
             a: 1,
-            explication: "Sur un sujet inconnu, vous n'avez aucun moyen de voir l'erreur."
+            explication: "Sur un sujet inconnu, tu n'as aucun moyen de voir l'erreur."
         },
         {
             q: "Un modèle affirme une chose avec assurance. Que peut-on en conclure ?",
@@ -295,7 +295,7 @@ window.QUIZ = {
                 "Qu'il a vérifié sa source"
             ],
             a: 1,
-            explication: "C'est à vous d'introduire la distinction entre savoir et compléter, en vérifiant."
+            explication: "C'est à toi d'introduire la distinction entre savoir et compléter, en vérifiant."
         },
         {
             q: "Plus un système agit sur le monde réel, quelle question devient prioritaire ?",
@@ -309,7 +309,7 @@ window.QUIZ = {
         },
         // Série 2
         {
-            q: "Vous devez faire rédiger un mémo interne. Quelle demande donnera le meilleur résultat ?",
+            q: "Tu dois faire rédiger un mémo interne. Quelle demande donnera le meilleur résultat ?",
             options: [
                 "« Écris un texte sur la sécurité informatique »",
                 "Une demande précisant le public, la longueur, le ton et trois exemples attendus",
@@ -319,7 +319,7 @@ window.QUIZ = {
             explication: "Trente secondes de plus à écrire la consigne font gagner trois allers-retours."
         },
         {
-            q: "Une IA vous propose une référence juridique précise avec numéro d'article. Que faire ?",
+            q: "Une IA te propose une référence juridique précise avec numéro d'article. Que faire ?",
             options: [
                 "L'utiliser telle quelle, la précision est un gage de fiabilité",
                 "La vérifier à la source : c'est exactement le profil d'une hallucination",
@@ -336,7 +336,7 @@ window.QUIZ = {
                 "La possibilité de traduire d'une langue à l'autre"
             ],
             a: 1,
-            explication: "Un modèle peut lister les arguments d'une décision difficile ; il n'en porte pas la responsabilité. Vous, si."
+            explication: "Un modèle peut lister les arguments d'une décision difficile ; il n'en porte pas la responsabilité. Toi, si."
         }
     ]
 };

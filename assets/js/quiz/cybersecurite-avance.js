@@ -39,7 +39,7 @@ window.QUIZ = {
                     "En années"
                 ],
                 a: 1,
-                explication: "S'y ajoutent souvent plusieurs semaines avant la notification. Quand vous êtes prévenu, les identifiants circulent déjà."
+                explication: "S'y ajoutent souvent plusieurs semaines avant la notification. Quand tu es prévenu, les identifiants circulent déjà."
             },
             // Série 2
             {
@@ -50,7 +50,7 @@ window.QUIZ = {
                     "Prévenir ses contacts"
                 ],
                 a: 1,
-                explication: "Tant qu'un attaquant contrôle la messagerie de secours, il reprend tout ce que vous venez de changer."
+                explication: "Tant qu'un attaquant contrôle la messagerie de secours, il reprend tout ce que tu viens de changer."
             },
             {
                 q: "Qu'est-ce qui survit à un changement de mot de passe ?",
@@ -85,7 +85,7 @@ window.QUIZ = {
                     "Elle utilise toujours une pièce jointe"
                 ],
                 a: 0,
-                explication: "Elle est rédigée pour vous, à partir d'informations réelles, et demande une action qui a du sens dans votre contexte."
+                explication: "Elle est rédigée pour toi, à partir d'informations réelles, et demande une action qui a du sens dans ton contexte."
             },
             {
                 q: "D'où proviennent le plus souvent les informations utilisées ?",
@@ -147,7 +147,7 @@ window.QUIZ = {
                 q: "Que garantit le chiffrement de bout en bout ?",
                 options: [
                     "Que seuls les correspondants peuvent lire le contenu",
-                    "Que personne ne sait avec qui vous échangez",
+                    "Que personne ne sait avec qui tu échanges",
                     "Que les messages sont supprimés automatiquement"
                 ],
                 a: 0,
@@ -195,11 +195,11 @@ window.QUIZ = {
                 explication: "Un appareil compromis lit les messages après déchiffrement, comme leur destinataire légitime."
             },
             {
-                q: "Que peut faire votre correspondant, quel que soit le chiffrement ?",
+                q: "Que peut faire ton correspondant, quel que soit le chiffrement ?",
                 options: [
                     "Rien de particulier",
                     "Une capture d'écran, ou transmettre le contenu",
-                    "Déchiffrer vos autres conversations"
+                    "Déchiffrer tes autres conversations"
                 ],
                 a: 1,
                 explication: "Le chiffrement protège le trajet, pas la confiance accordée à l'autre extrémité."
@@ -223,7 +223,7 @@ window.QUIZ = {
                 q: "Pourquoi les comptes oubliés sont-ils particulièrement risqués ?",
                 options: [
                     "Ils coûtent de l'argent",
-                    "Ils gardent un vieux mot de passe et vous n'êtes pas prévenu s'ils fuitent",
+                    "Ils gardent un vieux mot de passe et tu n'es pas prévenu s'ils fuitent",
                     "Ils ralentissent le navigateur"
                 ],
                 a: 1,
@@ -248,14 +248,14 @@ window.QUIZ = {
                     "Les désactiver systématiquement"
                 ],
                 a: 1,
-                explication: "Le nom de jeune fille de votre mère ou votre ville de naissance sont publics ou faciles à deviner pour un proche."
+                explication: "Le nom de jeune fille de ta mère ou ta ville de naissance sont publics ou faciles à deviner pour un proche."
             },
             {
                 q: "Quel intérêt à supprimer un compte inutilisé ?",
                 options: [
                     "Un compte supprimé ne fuite pas",
                     "Cela améliore la vitesse du réseau",
-                    "Cela libère votre adresse électronique"
+                    "Cela libère ton adresse électronique"
                 ],
                 a: 0,
                 explication: "C'est la seule réduction de risque définitive : la porte n'existe plus."
@@ -264,7 +264,7 @@ window.QUIZ = {
                 q: "Que faut-il vérifier concernant les applications tierces ?",
                 options: [
                     "Leur note dans la boutique",
-                    "Celles qui gardent un accès permanent à vos comptes principaux",
+                    "Celles qui gardent un accès permanent à tes comptes principaux",
                     "Leur taille sur le disque"
                 ],
                 a: 1,
@@ -310,14 +310,14 @@ window.QUIZ = {
         },
         // Série 2
         {
-            q: "Qu'est-ce qui, dans ce niveau, ne dépend pas du tout de vous ?",
+            q: "Qu'est-ce qui, dans ce niveau, ne dépend pas du tout de toi ?",
             options: [
-                "La sécurité des services auxquels vous confiez des données",
-                "Le choix de vos mots de passe",
+                "La sécurité des services auxquels tu confies des données",
+                "Le choix de tes mots de passe",
                 "L'activation de la double authentification"
             ],
             a: 0,
-            explication: "Vous ne pouvez pas empêcher une fuite. Vous pouvez seulement empêcher sa propagation."
+            explication: "Tu ne peux pas empêcher une fuite. Tu peux seulement empêcher sa propagation."
         },
         {
             q: "Quelle action réduit la surface d'attaque de façon définitive ?",

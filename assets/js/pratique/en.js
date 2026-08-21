@@ -66,7 +66,7 @@ window.PRATIQUE_TEXTES = {
         // pour le mot long qui le contient.
         ", réparties dans la journée": ", spread through the day",
         " min d'activité modérée par semaine": " min of moderate activity per week",
-        " h — le vôtre : ": " h — yours: ",
+        " h — le tien : ": " h — yours: ",
         " min par semaine": " min per week",
         " h par semaine": " h per week",
         " min au-delà": " min beyond",
@@ -99,7 +99,7 @@ window.PRATIQUE_TEXTES = {
         // d'entrée exacte : le nombre change à chaque réglage.
         " — chaque client fait perdre de l'argent": " — every customer loses you money",
         " — fragile : peu de marge pour investir": " — fragile: little room to invest",
-        " — très élevé : vous n'investissez peut-être pas assez en acquisition":
+        " — très élevé : tu n'investis peut-être pas assez en acquisition":
             " — very high: you may not be investing enough in acquisition",
         " — sain": " — healthy",
         " — sous la majorité": " — below a majority",
@@ -157,7 +157,7 @@ window.PRATIQUE_TEXTES = {
             "an implausible anchor loses credibility, and sometimes the negotiation",
         "le partage de ces": "the split of that",
         ", pas l'accord lui-même": ", not the agreement itself",
-        "vérifier vos estimations avant de vous y engager":
+        "vérifier tes estimations avant de t'y engager":
             "check your estimates before committing to them",
         "l'écart justifie encore de discuter": "the gap still justifies talking",
         "% de l'écart": "% of the gap",
@@ -167,7 +167,7 @@ window.PRATIQUE_TEXTES = {
         " fois plus lent": "× slower",
         "longueur qui se lit vraiment": "a length that actually gets read",
         " de plus pour que continuer se justifie": " more to make carrying on worthwhile",
-        "vous avez de la marge pour continuer": "you have room to continue",
+        "tu as de la marge pour continuer": "you have room to continue",
         "un seul prix possible : ": "one possible price only: ",
 
         // --- Productivité -------------------------------------------------------
@@ -181,8 +181,8 @@ window.PRATIQUE_TEXTES = {
 
     textes: {
         // --- Commandes communes ------------------------------------------
-        "À vous d'essayer": "Your turn",
-        "Renseignez": "Fill in",
+        "À toi d'essayer": "Your turn",
+        "Renseigne": "Fill in",
         "pour voir le résultat.": "to see the result.",
 
         // --- Unités --------------------------------------------------------
@@ -224,7 +224,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- effet-test ------------------------------------------------------
         "Relire, ou se tester ?": "Reread, or test yourself?",
-        "À temps de travail égal, réglez la part consacrée à vous interroger plutôt qu'à relire.":
+        "À temps de travail égal, règle la part consacrée à t'interroger plutôt qu'à relire.":
             "For the same study time, set how much of it goes to testing yourself rather than rereading.",
         "Part du temps passée à se tester": "Share of time spent self-testing",
         "Rétention à une semaine": "Retention after one week",
@@ -233,8 +233,8 @@ window.PRATIQUE_TEXTES = {
             "Testing yourself is not a way of checking that you have learned: it is the way of learning. The test is the exercise.",
 
         // --- illusion-maitrise -----------------------------------------------
-        "Le savez-vous vraiment ?": "Do you really know it?",
-        "Cochez ce qui est vrai d'un sujet que vous pensez maîtriser.":
+        "Le sais-tu vraiment ?": "Do you really know it?",
+        "Coche ce qui est vrai d'un sujet que tu penses maîtriser.":
             "Tick what is true of a topic you believe you have mastered.",
         "Je peux le réexpliquer sans regarder mes notes": "I can explain it again without looking at my notes",
         "Je peux l'expliquer à quelqu'un qui n'y connaît rien": "I can explain it to someone who knows nothing about it",
@@ -253,8 +253,8 @@ window.PRATIQUE_TEXTES = {
             "Familiarity is easily mistaken for knowledge. A text read four times feels obvious — and is nowhere to be found a week later.",
 
         // --- elaboration -------------------------------------------------------
-        "Traitez-vous vraiment ce que vous lisez ?": "Are you really processing what you read?",
-        "Cochez ce que vous faites réellement pendant une séance de travail.":
+        "Traites-tu vraiment ce que tu lis ?": "Are you really processing what you read?",
+        "Coche ce que tu fais réellement pendant une séance de travail.":
             "Tick what you actually do during a study session.",
         "Je me demande « pourquoi est-ce vrai ? » avant de passer à la suite":
             "I ask myself “why is this true?” before moving on",
@@ -264,7 +264,7 @@ window.PRATIQUE_TEXTES = {
         "Je pose par écrit une question à laquelle le cours ne répond pas":
             "I write down a question the course does not answer",
         "Je m'arrête pour anticiper la suite avant de la lire": "I stop to predict what comes next before reading it",
-        "Vous traitez le contenu au lieu de le parcourir. C'est ce qui laisse une trace.":
+        "Tu traites le contenu au lieu de le parcourir. C'est ce qui laisse une trace.":
             "You are processing the content instead of skimming it. That is what leaves a trace.",
         "Bon départ. Les questions « pourquoi » et les contre-exemples sont ce qui rapporte le plus.":
             "Good start. “Why” questions and counter-examples are what pay off most.",
@@ -275,7 +275,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- entrelacement -------------------------------------------------------
         "En blocs ou entrelacé ?": "Blocked or interleaved?",
-        "Réglez la part d'exercices mélangés plutôt que groupés par type.":
+        "Règle la part d'exercices mélangés plutôt que groupés par type.":
             "Set the share of exercises mixed together rather than grouped by type.",
         "Exercices au total": "Exercises in total",
         "Part d'exercices entrelacés": "Share of interleaved exercises",
@@ -299,11 +299,11 @@ window.PRATIQUE_TEXTES = {
             "The first thousand words do most of the work. The next thousand do ten times less — which is why frequency order is worth following.",
 
         // --- pratique-deliberee ------------------------------------------------------
-        "Où passe votre temps de travail ?": "Where does your study time go?",
+        "Où passe ton temps de travail ?": "Where does your study time go?",
         "Le temps passé sur ce qu'on réussit déjà entretient ; il ne fait pas progresser.":
             "Time spent on what you already get right maintains; it does not improve.",
         "Heures de travail par semaine": "Study hours per week",
-        "Part passée sur ce que vous ratez": "Share spent on what you get wrong",
+        "Part passée sur ce que tu rates": "Share spent on what you get wrong",
         "Sur combien de semaines": "Over how many weeks",
         "Heures utiles par semaine": "Useful hours per week",
         "Heures de confort par semaine": "Comfort hours per week",
@@ -313,7 +313,7 @@ window.PRATIQUE_TEXTES = {
             "Redoing what you get right is pleasant and measurable. Working on what you get wrong is unpleasant, and it is the only thing that moves the level.",
 
         // --- sommeil-consolidation -------------------------------------------------------
-        "Votre nuit fait-elle son travail ?": "Is your night doing its job?",
+        "Ta nuit fait-elle son travail ?": "Is your night doing its job?",
         "La mémoire se consolide pendant le sommeil, pas pendant la révision.":
             "Memory consolidates during sleep, not during review.",
         "Je dors au moins sept heures la nuit qui suit un apprentissage":
@@ -328,7 +328,7 @@ window.PRATIQUE_TEXTES = {
             "I take real breaks while learning, away from screens",
         "Je n'attends pas d'un rattrapage le week-end qu'il annule la semaine":
             "I do not expect a weekend catch-up to cancel out the week",
-        "Vos nuits travaillent pour vous. C'est l'heure de révision la moins chère qui existe.":
+        "Tes nuits travaillent pour toi. C'est l'heure de révision la moins chère qui existe.":
             "Your nights are working for you. It is the cheapest hour of review there is.",
         "Correct. La nuit qui suit l'apprentissage est celle qui compte le plus.":
             "Reasonable. The night after learning is the one that counts most.",
@@ -338,8 +338,8 @@ window.PRATIQUE_TEXTES = {
             "Revising late then sleeping beats revising late then staying up. This is not about discipline: it is when the brain files things away.",
 
         // --- systeme-apprentissage ---------------------------------------------------------
-        "Votre système tiendra-t-il six mois ?": "Will your system last six months?",
-        "Cochez ce qui existe déjà, pas ce que vous comptez mettre en place.":
+        "Ton système tiendra-t-il six mois ?": "Will your system last six months?",
+        "Coche ce qui existe déjà, pas ce que tu comptes mettre en place.":
             "Tick what already exists, not what you intend to set up.",
         "Un endroit unique où atterrit ce que je veux retenir":
             "A single place where anything I want to remember lands",
@@ -360,8 +360,8 @@ window.PRATIQUE_TEXTES = {
             "What lasts does not depend on the mood of the day. A slot and a five-minute version beat an ambitious plan.",
 
         // --- transfert -----------------------------------------------------------------------
-        "Ce que vous apprenez servira-t-il ailleurs ?": "Will what you learn be of use elsewhere?",
-        "Cochez ce qui est vrai de votre façon d'apprendre ce sujet.":
+        "Ce que tu apprends servira-t-il ailleurs ?": "Will what you learn be of use elsewhere?",
+        "Coche ce qui est vrai de ta façon d'apprendre ce sujet.":
             "Tick what is true of the way you are learning this subject.",
         "Je m'entraîne sur des cas variés, pas toujours le même format":
             "I practise on varied cases, not always the same format",
@@ -377,7 +377,7 @@ window.PRATIQUE_TEXTES = {
             "I do not count on a logic puzzle to improve anything else",
         "les jeux d'entraînement cérébral améliorent surtout ces jeux":
             "brain-training games mostly improve brain-training games",
-        "Ce que vous apprenez a une chance de sortir de la salle de classe.":
+        "Ce que tu apprends a une chance de sortir de la salle de classe.":
             "What you are learning has a chance of leaving the classroom.",
         "Partiel. La variété des cas est le levier le plus fort, et le plus négligé.":
             "Partial. Variety of cases is the strongest lever, and the most neglected.",
@@ -387,8 +387,8 @@ window.PRATIQUE_TEXTES = {
             "Transfer is not automatic: it is prepared. What is learned in a single setting stays attached to that setting.",
 
         // --- evaluer-methode -------------------------------------------------------------------
-        "Cette méthode vaut-elle votre temps ?": "Is this method worth your time?",
-        "Cochez ce qui est vrai de la méthode d'apprentissage qu'on vous propose.":
+        "Cette méthode vaut-elle ton temps ?": "Is this method worth your time?",
+        "Coche ce qui est vrai de la méthode d'apprentissage qu'on te propose.":
             "Tick what is true of the learning method being offered to you.",
         "Elle a été comparée à une autre méthode, pas seulement à rien":
             "It has been compared with another method, not merely with nothing",
@@ -405,7 +405,7 @@ window.PRATIQUE_TEXTES = {
         "Elle ne promet pas un résultat sans effort": "It does not promise a result without effort",
         "Méthode défendable. Elle mérite qu'on lui consacre quelques semaines.":
             "A defensible method. It deserves a few weeks.",
-        "À creuser. Vérifiez surtout le délai du test : c'est là que la plupart des méthodes s'effondrent.":
+        "À creuser. Vérifie surtout le délai du test : c'est là que la plupart des méthodes s'effondrent.":
             "Worth digging into. Check the delay before testing above all: that is where most methods collapse.",
         "Beaucoup de promesses, peu de mesures. Le domaine en est plein.":
             "Many promises, few measurements. The field is full of them.",
@@ -428,7 +428,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- ux-ou-ui --------------------------------------------------------
         "UX ou UI ?": "UX or UI?",
-        "Cochez les décisions qui relèvent de l'UX plutôt que de l'UI. Quatre le sont.":
+        "Coche les décisions qui relèvent de l'UX plutôt que de l'UI. Quatre le sont.":
             "Tick the decisions that belong to UX rather than UI. Four of them do.",
         "Décider de l'ordre des étapes d'une inscription": "Deciding the order of the steps in a sign-up",
         "UX : c'est le parcours": "UX: this is the journey",
@@ -444,7 +444,7 @@ window.PRATIQUE_TEXTES = {
             "Deciding that an error appears under the field concerned rather than at the top",
         "UX : cela change la capacité à corriger": "UX: it changes the ability to fix things",
         "Quatre de ces six décisions relèvent de l'UX.": "Four of these six decisions belong to UX.",
-        "Quatre décisions relèvent de l'UX. Vérifiez avec les indications que ce sont les vôtres.":
+        "Quatre décisions relèvent de l'UX. Vérifie avec les indications que ce sont les tiennes.":
             "Four decisions belong to UX. Check against the hints that they are the ones you picked.",
         "Plus de quatre : deux de ces décisions portent sur l'apparence, pas sur le parcours.":
             "More than four: two of these decisions are about appearance, not about the journey.",
@@ -452,8 +452,8 @@ window.PRATIQUE_TEXTES = {
             "UI is seen, UX is lived. A beautiful interface on an absurd journey is still unusable.",
 
         // --- qualite-wireframe -------------------------------------------------
-        "Votre wireframe est-il utile ?": "Is your wireframe useful?",
-        "Cochez ce qui est vrai de la maquette fil de fer que vous avez sous les yeux.":
+        "Ton wireframe est-il utile ?": "Is your wireframe useful?",
+        "Coche ce qui est vrai de la maquette fil de fer que tu as sous les yeux.":
             "Tick what is true of the wireframe in front of you.",
         "Il est en niveaux de gris, sans couleur ni image finale":
             "It is in greyscale, with no colour and no final images",
@@ -479,8 +479,8 @@ window.PRATIQUE_TEXTES = {
             "A wireframe that is too neat stops attracting structural criticism: it already looks decided.",
 
         // --- hierarchie-visuelle -----------------------------------------------
-        "Testez votre hiérarchie visuelle": "Test your visual hierarchy",
-        "Plissez les yeux devant votre écran jusqu'à le voir flou, puis cochez.":
+        "Teste ta hiérarchie visuelle": "Test your visual hierarchy",
+        "Plisse les yeux devant ton écran jusqu'à le voir flou, puis coche.":
             "Squint at your screen until it blurs, then tick.",
         "Je distingue encore l'élément le plus important": "I can still make out the most important element",
         "L'action principale se repère sans lire": "The main action can be spotted without reading",
@@ -492,7 +492,7 @@ window.PRATIQUE_TEXTES = {
             "Spacing separates what should be apart and groups what belongs together",
         "L'écran demande d'être lu entièrement pour être compris.":
             "The screen has to be read in full to be understood.",
-        "Correct. Vérifiez surtout qu'un seul élément domine.":
+        "Correct. Vérifie surtout qu'un seul élément domine.":
             "Reasonable. Above all check that a single element dominates.",
         "Hiérarchie lisible : l'écran se comprend avant d'être lu.":
             "Readable hierarchy: the screen is understood before it is read.",
@@ -541,8 +541,8 @@ window.PRATIQUE_TEXTES = {
             "Five minutes of keyboard navigation reveal most of the problems, with no tool at all.",
 
         // --- test-des-cartes -------------------------------------------------------
-        "Votre navigation tient-elle debout ?": "Does your navigation stand up?",
-        "Cochez ce qui est vrai du menu que vous avez sous les yeux.":
+        "Ta navigation tient-elle debout ?": "Does your navigation stand up?",
+        "Coche ce qui est vrai du menu que tu as sous les yeux.":
             "Tick what is true of the menu in front of you.",
         "Les entrées correspondent à des tâches, pas à l'organigramme":
             "The entries match tasks, not the org chart",
@@ -557,7 +557,7 @@ window.PRATIQUE_TEXTES = {
             "“Customer area” and “My account” on the same site",
         "L'organisation a été vérifiée auprès de personnes extérieures":
             "The structure has been checked with people from outside",
-        "Cette navigation est probablement claire pour vous seul.":
+        "Cette navigation est probablement claire pour toi seul.":
             "This navigation is probably clear to you alone.",
         "Correct. Le test auprès d'extérieurs est celui qui révèle le plus.":
             "Reasonable. Testing with outsiders is what reveals most.",
@@ -567,7 +567,7 @@ window.PRATIQUE_TEXTES = {
             "A menu built on the org chart is perfectly logical from inside, and opaque from outside.",
 
         // --- cible-tactile ------------------------------------------------------------
-        "Vos cibles tactiles sont-elles assez grandes ?": "Are your touch targets big enough?",
+        "Tes cibles tactiles sont-elles assez grandes ?": "Are your touch targets big enough?",
         "Un doigt couvre environ 9 millimètres. Les pixels CSS, eux, ne se voient pas.":
             "A finger covers about 9 millimetres. CSS pixels, for their part, cannot be seen.",
         "Taille de la cible": "Target size",
@@ -583,8 +583,8 @@ window.PRATIQUE_TEXTES = {
             "A target that is too small does not produce a designer's error: it produces a user who thinks they got it wrong.",
 
         // --- sante-systeme --------------------------------------------------------------
-        "Votre système de design tient-il ?": "Is your design system holding up?",
-        "Cochez ce qui est vrai aujourd'hui, pas ce qui était prévu.":
+        "Ton système de design tient-il ?": "Is your design system holding up?",
+        "Coche ce qui est vrai aujourd'hui, pas ce qui était prévu.":
             "Tick what is true today, not what was planned.",
         "Les espacements suivent une échelle définie, pas des valeurs libres":
             "Spacing follows a defined scale, not free values",
@@ -608,7 +608,7 @@ window.PRATIQUE_TEXTES = {
             "A design system is a product in its own right. Without someone to arbitrate it, it does not survive.",
 
         // --- budget-performance ------------------------------------------------------------
-        "Calculez votre budget de performance": "Work out your performance budget",
+        "Calcule ton budget de performance": "Work out your performance budget",
         "Le poids d'une page se traduit directement en secondes d'attente.":
             "The weight of a page translates directly into seconds of waiting.",
         "Poids total de la page": "Total page weight",
@@ -628,15 +628,15 @@ window.PRATIQUE_TEXTES = {
         "La loi de Hick décrit le choix entre des options <strong>déjà connues</strong>. Trouver une option inconnue relève du balayage visuel, dont le coût est tout autre.":
             "Hick's law describes choosing between options that are <strong>already known</strong>. Finding an unknown option is visual scanning, whose cost is quite different.",
         "Nombre d'options présentées": "Number of options presented",
-        "Nombre de familles si vous les regroupez": "Number of groups if you group them",
+        "Nombre de familles si tu les regroupes": "Number of groups if you group them",
         "Décider (Hick) — liste plate": "Deciding (Hick) — flat list",
         "Chercher — liste plate": "Searching — flat list",
         "Sur une option déjà connue, regrouper fait perdre un peu de temps. Sur une option qu'il faut trouver, le gain est considérable — et c'est le cas d'un visiteur qui découvre le site.":
             "For an option already known, grouping costs a little time. For an option that has to be found, the gain is considerable — and that is the case for a first-time visitor.",
 
         // --- schemas-sombres -------------------------------------------------------------------
-        "Repérez les schémas sombres": "Spot the dark patterns",
-        "Cochez ce que présente l'interface que vous examinez.":
+        "Repère les schémas sombres": "Spot the dark patterns",
+        "Coche ce que présente l'interface que tu examines.":
             "Tick what the interface you are examining does.",
         "« Tout accepter » est plus visible que le refus": "“Accept all” is more visible than refusing",
         "non conforme : le refus doit être aussi facile": "non-compliant: refusing must be just as easy",
@@ -651,7 +651,7 @@ window.PRATIQUE_TEXTES = {
         "Un compte à rebours ou une rareté sont affichés sans fondement":
             "A countdown or a scarcity claim is displayed with no basis",
         "Une case est pré-cochée en faveur du site": "A box is pre-ticked in the site's favour",
-        "Aucun schéma repéré. Refaites le test après chaque évolution du tunnel.":
+        "Aucun schéma repéré. Refais le test après chaque évolution du tunnel.":
             "No pattern spotted. Run the test again after every change to the checkout.",
         "Des pratiques à corriger, dont certaines exposent juridiquement.":
             "Practices to correct, some of which carry legal exposure.",
@@ -661,7 +661,7 @@ window.PRATIQUE_TEXTES = {
             "The test that settles it: if the user discovered this mechanism, would they feel cheated? Intent changes nothing.",
 
         // --- gain-de-temps-utilisateur ------------------------------------------------------------
-        "Chiffrez votre amélioration en heures": "Put your improvement in hours",
+        "Chiffre ton amélioration en heures": "Put your improvement in hours",
         "L'argument esthétique se discute. Le calcul beaucoup moins.":
             "The aesthetic argument is arguable. The arithmetic much less so.",
         "Secondes gagnées par tâche": "Seconds saved per task",
@@ -679,7 +679,7 @@ window.PRATIQUE_TEXTES = {
         // ====================================================================
 
         // --- structure-html ----------------------------------------------------
-        "Cochez ce qui est vrai de la page que vous avez sous les yeux.":
+        "Coche ce qui est vrai de la page que tu as sous les yeux.":
             "Tick what is true of the page in front of you.",
         "Un seul titre de niveau 1 par page": "Exactly one level-1 heading per page",
         "Les niveaux de titre se suivent sans sauter de rang": "Heading levels follow on without skipping a rank",
@@ -701,7 +701,7 @@ window.PRATIQUE_TEXTES = {
             "The right HTML element brings accessibility and keyboard behaviour for free. A generic division brings nothing.",
 
         // --- css-ou-javascript -------------------------------------------------
-        "Cochez ce qui se fait aujourd'hui en CSS seul. Quatre réponses.":
+        "Coche ce qui se fait aujourd'hui en CSS seul. Quatre réponses.":
             "Tick what can be done today in CSS alone. Four answers.",
         "Afficher ou masquer un menu déroulant au survol": "Showing or hiding a dropdown menu on hover",
         "Animer une transition de couleur ou de taille": "Animating a colour or size transition",
@@ -712,7 +712,7 @@ window.PRATIQUE_TEXTES = {
         "Coller un en-tête en haut de l'écran au défilement": "Sticking a header to the top of the screen on scroll",
         "Calculer un total à partir de champs saisis": "Calculating a total from entered fields",
         "Quatre de ces six tâches se font en CSS seul.": "Four of these six tasks can be done in CSS alone.",
-        "Quatre réponses en CSS. Vérifiez avec les indications que ce sont bien celles-là.":
+        "Quatre réponses en CSS. Vérifie avec les indications que ce sont bien celles-là.":
             "Four answers in CSS. Check against the hints that these are the right ones.",
         "Plus de quatre : deux de ces tâches demandent réellement du JavaScript.":
             "More than four: two of these tasks genuinely need JavaScript.",
@@ -720,7 +720,7 @@ window.PRATIQUE_TEXTES = {
             "What is done in CSS still works if the JavaScript fails to load. That is robustness for free.",
 
         // --- client-ou-serveur ---------------------------------------------------
-        "Cochez ce qui DOIT être fait côté serveur, sans exception.":
+        "Coche ce qui DOIT être fait côté serveur, sans exception.":
             "Tick what MUST be done on the server, without exception.",
         "Vérifier qu'un utilisateur a le droit d'accéder à une donnée":
             "Checking that a user is allowed to access a piece of data",
@@ -746,7 +746,7 @@ window.PRATIQUE_TEXTES = {
             "Anything that protects something is checked on the server. The browser belongs to the user.",
 
         // --- largeur-de-texte -------------------------------------------------------
-        "Trouvez la bonne largeur de texte": "Find the right text width",
+        "Trouve la bonne largeur de texte": "Find the right text width",
         "Une ligne trop longue fatigue l'œil, qui perd le début de la ligne suivante.":
             "A line that is too long tires the eye, which loses the start of the next line.",
         "Caractères par ligne visés": "Characters per line targeted",
@@ -768,7 +768,7 @@ window.PRATIQUE_TEXTES = {
             "The server is no faster in the second case. It is the arrangement of the calls that changes everything.",
 
         // --- requete-en-boucle ----------------------------------------------------------
-        "Mesurez le coût d'une requête en boucle": "Measure the cost of a query in a loop",
+        "Mesure le coût d'une requête en boucle": "Measure the cost of a query in a loop",
         "Le défaut de performance le plus courant, et le plus invisible à la lecture du code.":
             "The most common performance fault, and the least visible when reading the code.",
         "Éléments à afficher": "Items to display",
@@ -780,7 +780,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- mise-en-ligne ------------------------------------------------------------------
         "Prêt à mettre en ligne ?": "Ready to go live?",
-        "Cochez ce qui est vérifié. Ces points expliquent la quasi-totalité des premières mises en ligne ratées.":
+        "Coche ce qui est vérifié. Ces points expliquent la quasi-totalité des premières mises en ligne ratées.":
             "Tick what has been checked. These points explain almost every failed first deployment.",
         "Aucun secret ne figure dans le code envoyé": "No secret appears in the code being sent",
         "clés d'API, mots de passe, jetons": "API keys, passwords, tokens",
@@ -806,8 +806,8 @@ window.PRATIQUE_TEXTES = {
             "“It works on my machine” and “it is live” differ by a few precise points, all checkable in advance.",
 
         // --- historique-git ----------------------------------------------------------------------
-        "Votre historique est-il utilisable ?": "Is your history usable?",
-        "Cochez ce qui décrit vos habitudes réelles.": "Tick what describes your actual habits.",
+        "Ton historique est-il utilisable ?": "Is your history usable?",
+        "Coche ce qui décrit tes habitudes réelles.": "Tick what describes your actual habits.",
         "Un commit correspond à une seule intention": "One commit matches one intention",
         "Les messages expliquent le pourquoi, pas seulement le quoi":
             "Messages explain the why, not just the what",
@@ -824,7 +824,7 @@ window.PRATIQUE_TEXTES = {
             "This history will be of little help the day something has to be undone.",
         "Bonnes habitudes. Les branches longues sont la cause principale des conflits.":
             "Good habits. Long-lived branches are the main cause of conflicts.",
-        "Historique exploitable : vous pourrez revenir en arrière proprement.":
+        "Historique exploitable : tu pourras revenir en arrière proprement.":
             "Usable history: you will be able to roll back cleanly.",
         "Un commit fourre-tout ne peut pas être annulé proprement : on ne peut pas en retirer une partie.":
             "A catch-all commit cannot be undone cleanly: you cannot take part of it back out.",
@@ -838,12 +838,12 @@ window.PRATIQUE_TEXTES = {
         "Première visite": "First visit",
         "Visite avec cache": "Visit with cache",
         "Volume moyen par visite": "Average volume per visit",
-        "Un fichier fortement mis en cache ne peut plus changer en place : versionnez son nom, et le problème disparaît.":
+        "Un fichier fortement mis en cache ne peut plus changer en place : versionne son nom, et le problème disparaît.":
             "A heavily cached file can no longer change in place: version its name, and the problem goes away.",
 
         // --- securite-applicative --------------------------------------------------------------------
         "Audit de sécurité applicative": "Application security audit",
-        "Cochez ce qui est en place dans votre application.": "Tick what is in place in your application.",
+        "Coche ce qui est en place dans ton application.": "Tick what is in place in your application.",
         "Toutes les requêtes de base de données sont préparées": "All database queries are prepared statements",
         "aucune concaténation de valeurs saisies": "no concatenation of entered values",
         "Le contenu utilisateur est échappé à l'affichage": "User content is escaped on output",
@@ -892,8 +892,8 @@ window.PRATIQUE_TEXTES = {
         // ====================================================================
 
         // --- preparation-echange -----------------------------------------------
-        "Êtes-vous prêt pour cet échange ?": "Are you ready for this conversation?",
-        "Cochez ce que vous savez déjà, avant d'entrer dans la conversation.":
+        "Es-tu prêt pour cet échange ?": "Are you ready for this conversation?",
+        "Coche ce que tu sais déjà, avant d'entrer dans la conversation.":
             "Tick what you already know, before going into the conversation.",
         "Je sais ce que je veux obtenir, en une phrase": "I know what I want to get, in one sentence",
         "Je sais à quoi je renonce si j'obtiens gain de cause": "I know what I give up if I get my way",
@@ -914,8 +914,8 @@ window.PRATIQUE_TEXTES = {
             "The most neglected question is not “what do I want?” but “what do I do if I don't get it?”. That is what sets your real position.",
 
         // --- ecoute-active -------------------------------------------------------
-        "Écoutez-vous, ou attendez-vous votre tour ?": "Are you listening, or waiting your turn?",
-        "Cochez ce que vous faites réellement pendant que l'autre parle.":
+        "Écoutes-tu, ou attends-tu ton tour ?": "Are you listening, or waiting your turn?",
+        "Coche ce que tu fais réellement pendant que l'autre parle.":
             "Tick what you actually do while the other person is talking.",
         "Je ne prépare pas ma réponse pendant qu'il parle": "I do not prepare my answer while they speak",
         "Je reformule pour vérifier, avant de répondre": "I restate what I heard to check, before answering",
@@ -930,7 +930,7 @@ window.PRATIQUE_TEXTES = {
             "Waiting your turn is not listening. Most of the useful information is lost there.",
         "Bonne écoute. Le silence après une réponse est ce qui rapporte le plus, et ce qu'on supporte le moins.":
             "Good listening. The silence after an answer pays most, and is the hardest to bear.",
-        "Vous écoutez vraiment. C'est le levier le moins coûteux et le plus rare.":
+        "Tu écoutes vraiment. C'est le levier le moins coûteux et le plus rare.":
             "You are genuinely listening. It is the cheapest lever, and the rarest.",
         "Reformuler n'est pas une politesse : c'est le seul moyen de vérifier qu'on a compris, et cela révèle très souvent qu'on avait compris autre chose.":
             "Restating is not a courtesy: it is the only way of checking you understood, and it very often reveals you understood something else.",
@@ -946,7 +946,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- courriel-utile ----------------------------------------------------------
         "Ce courriel a-t-il une chance d'aboutir ?": "Does this email stand a chance?",
-        "Cochez ce que contient réellement le message que vous vous apprêtez à envoyer.":
+        "Coche ce que contient réellement le message que tu t'apprêtes à envoyer.":
             "Tick what the message you are about to send actually contains.",
         "L'objet dit ce dont il s'agit ET ce qui est attendu":
             "The subject line says what it is about AND what is expected",
@@ -967,18 +967,23 @@ window.PRATIQUE_TEXTES = {
             "The reader is looking for two things: what is being asked and by when. Everything before them delays the answer.",
 
         // --- solution-de-rechange --------------------------------------------------------
-        "Votre MESORE — meilleure solution de rechange — est ce que vous obtenez si vous partez. Elle fixe votre point de rupture.":
+        "Ta MESORE — meilleure solution de rechange — est ce que tu obtiens si tu pars. Elle fixe ton point de rupture.":
             "Your BATNA — best alternative to a negotiated agreement — is what you get if you walk away. It sets your walk-away point.",
         "Offre actuellement sur la table": "Offer currently on the table",
         "Coût estimé de la poursuite": "Estimated cost of carrying on",
         "Gain par rapport à partir": "Gain compared with walking away",
         "Il faut gagner au moins": "You need to gain at least",
+        // Branche « gain < 0 » : les trois jeux d'essai du controle de
+        // traduction ne la produisent jamais, elle s'affichait donc en
+        // francais sur la page anglaise sans que rien le signale.
+        "cette offre est moins bonne que ta solution de rechange":
+            "this offer is worse than your alternative",
         "Sans solution de rechange chiffrée, on négocie à l'aveugle : impossible de savoir si une offre est bonne, seulement si elle est agréable.":
             "With no alternative worked out in figures, you negotiate blind: you cannot tell whether an offer is good, only whether it feels pleasant.",
 
         // --- zone-accord ----------------------------------------------------------------
         "Y a-t-il une zone d'accord ?": "Is there a zone of possible agreement?",
-        "Le maximum que vous acceptez de payer, et le minimum estimé de l'autre. Entre les deux se trouve — ou non — un accord possible.":
+        "Le maximum que tu acceptes de payer, et le minimum estimé de l'autre. Entre les deux se trouve — ou non — un accord possible.":
             "The most you will pay, and your estimate of their minimum. Between the two lies — or does not — a possible agreement.",
         "Minimum estimé de l'autre": "Their estimated minimum",
         "Point médian": "Midpoint",
@@ -992,17 +997,17 @@ window.PRATIQUE_TEXTES = {
         "Quelle première offre annoncer ?": "What opening offer should you make?",
         "Le premier chiffre énoncé pèse sur tout ce qui suit — y compris quand chacun sait qu'il est négociable.":
             "The first number stated weighs on everything that follows — even when everyone knows it is negotiable.",
-        "Résultat que vous visez": "Result you are aiming for",
-        "Offre que vous attendez de l'autre": "Offer you expect from them",
-        "Pour que le milieu tombe sur votre objectif": "For the midpoint to land on your target",
-        "Écart avec votre objectif": "Gap from your target",
+        "Résultat que tu vises": "Result you are aiming for",
+        "Offre que tu attends de l'autre": "Offer you expect from them",
+        "Pour que le milieu tombe sur ton objectif": "For the midpoint to land on your target",
+        "Écart avec ton objectif": "Gap from your target",
         "Point médian obtenu": "Midpoint obtained",
         "Le « coupons la poire en deux » paraît équitable et dépend entièrement du premier chiffre annoncé. C'est pour cela qu'il vaut mieux l'annoncer, en restant plausible.":
             "“Let's split the difference” sounds fair and depends entirely on the first number stated. That is why it is better to state it — while staying plausible.",
 
         // --- positions-interets ---------------------------------------------------------------
         "Position ou intérêt ?": "Position or interest?",
-        "Une position est ce qu'on demande. Un intérêt est la raison pour laquelle on le demande. Cochez ce que vous connaissez.":
+        "Une position est ce qu'on demande. Un intérêt est la raison pour laquelle on le demande. Coche ce que tu connais.":
             "A position is what you ask for. An interest is why you ask for it. Tick what you know.",
         "Je sais ce que l'autre demande": "I know what the other side is asking for",
         "Je sais pourquoi il le demande": "I know why they are asking for it",
@@ -1017,14 +1022,14 @@ window.PRATIQUE_TEXTES = {
             "Negotiating on positions: both sides dig in, and the only possible result is splitting the difference.",
         "Bonne lecture. Le point qui coûte peu à l'un et rapporte à l'autre est ce qui débloque le plus souvent.":
             "Good reading. The point that costs one side little and is worth a lot to the other is what most often unblocks things.",
-        "Vous négociez sur les intérêts. C'est là que se trouvent les accords que personne n'avait prévus.":
+        "Tu négocies sur les intérêts. C'est là que se trouvent les accords que personne n'avait prévus.":
             "You are negotiating on interests. That is where the agreements nobody foresaw are found.",
         "Deux personnes qui veulent la même orange peuvent toutes deux être satisfaites : l'une voulait le jus, l'autre l'écorce. Encore fallait-il demander pourquoi.":
             "Two people who want the same orange can both be satisfied: one wanted the juice, the other the peel. Someone still had to ask why.",
 
         // --- conversation-difficile ----------------------------------------------------------------
         "Cette conversation est-elle préparée ?": "Is this conversation prepared?",
-        "Un désaccord, un reproche à formuler, une nouvelle à annoncer. Cochez ce qui est prêt.":
+        "Un désaccord, un reproche à formuler, une nouvelle à annoncer. Coche ce qui est prêt.":
             "A disagreement, a criticism to make, news to break. Tick what is ready.",
         "Je décris des faits observables, pas une interprétation":
             "I describe observable facts, not an interpretation",
@@ -1048,8 +1053,8 @@ window.PRATIQUE_TEXTES = {
             "It is not the criticism that blocks things, it is the interpretation. A fact can be discussed; an attributed intention cannot — it can only be denied.",
 
         // --- biais-negociation -----------------------------------------------------------------------
-        "Quels biais jouent contre vous ?": "Which biases are working against you?",
-        "Cochez ce que vous reconnaissez dans votre façon de négocier.":
+        "Quels biais jouent contre toi ?": "Which biases are working against you?",
+        "Coche ce que tu reconnais dans ta façon de négocier.":
             "Tick what you recognise in the way you negotiate.",
         "Je me sens engagé par le temps déjà passé": "I feel committed by the time already spent",
         "coût irrécupérable : il ne devrait rien changer": "sunk cost: it should change nothing",
@@ -1075,8 +1080,8 @@ window.PRATIQUE_TEXTES = {
             "A deal is judged against your alternative, never against what you hoped for at the start. That is the only comparison that means anything.",
 
         // --- manipulation -------------------------------------------------------------------------------
-        "Reconnaissez-vous ces procédés ?": "Do you recognise these tactics?",
-        "Cochez ceux que vous avez rencontrés dans cette négociation.":
+        "Reconnais-tu ces procédés ?": "Do you recognise these tactics?",
+        "Coche ceux que tu as rencontrés dans cette négociation.":
             "Tick the ones you have met in this negotiation.",
         "Une urgence artificielle": "Artificial urgency",
         "Une concession minuscule présentée comme un effort majeur":
@@ -1092,7 +1097,7 @@ window.PRATIQUE_TEXTES = {
             "None of that. The negotiation is about substance.",
         "Procédés repérés. Les nommer à voix haute, calmement, suffit le plus souvent à les faire cesser.":
             "Tactics spotted. Naming them out loud, calmly, is usually enough to stop them.",
-        "Beaucoup de procédés. Votre meilleure réponse reste votre solution de rechange : c'est elle qui rend le départ crédible.":
+        "Beaucoup de procédés. Ta meilleure réponse reste ta solution de rechange : c'est elle qui rend le départ crédible.":
             "A lot of tactics. Your best answer is still your alternative: it is what makes walking away credible.",
         "La réponse à un procédé n'est ni de le subir ni d'en user : c'est de le nommer. « Je note que le délai est très court — est-il négociable ? » désamorce sans affronter.":
             "The answer to a tactic is neither to suffer it nor to use one: it is to name it. “I notice the deadline is very short — is it negotiable?” defuses without confronting.",
@@ -1138,7 +1143,7 @@ window.PRATIQUE_TEXTES = {
         "Limite": "Limit",
 
         // --- Développement web -----------------------------------------------
-        "Votre HTML a-t-il du sens ?": "Does your HTML mean anything?",
+        "Ton HTML a-t-il du sens ?": "Does your HTML mean anything?",
         "CSS ou JavaScript ?": "CSS or JavaScript?",
         "CSS suffit": "CSS is enough",
         "Navigateur ou serveur ?": "Browser or server?",
@@ -1148,11 +1153,11 @@ window.PRATIQUE_TEXTES = {
         "Confort de lecture": "Reading comfort",
         "Nombre d'appels d'API": "Number of API calls",
         "Dont fichiers statiques cachables": "Of which cacheable static files",
-        "Combien de temps dure votre suite de tests ?": "How long does your test suite take?",
+        "Combien de temps dure ta suite de tests ?": "How long does your test suite take?",
         "Tests unitaires": "Unit tests",
         "Tests de bout en bout": "End-to-end tests",
         "Mais ils occupent": "Yet they take up",
-        "Chiffrez votre dette technique": "Put a figure on your technical debt",
+        "Chiffre ta dette technique": "Put a figure on your technical debt",
 
         // --- Négociation -------------------------------------------------------
         "« l'offre expire ce soir »": "“the offer expires tonight”",
@@ -1162,9 +1167,9 @@ window.PRATIQUE_TEXTES = {
         "Destinataires": "Recipients",
         "Temps de lecture": "Reading time",
         "Faut-il accepter cette offre ?": "Should you accept this offer?",
-        "Valeur de votre solution de rechange": "Value of your alternative",
+        "Valeur de ta solution de rechange": "Value of your alternative",
         "Point de rupture": "Walk-away point",
-        "Votre maximum": "Your maximum",
+        "Ton maximum": "Your maximum",
 
         // ====================================================================
         // PRODUCTIVITÉ & ORGANISATION
@@ -1175,8 +1180,8 @@ window.PRATIQUE_TEXTES = {
         "msg": "msg",
 
         // --- rythme-journee --------------------------------------------------
-        "Travaillez-vous au bon moment ?": "Are you working at the right time?",
-        "Cochez ce qui décrit votre journée réelle.": "Tick what describes your actual day.",
+        "Travailles-tu au bon moment ?": "Are you working at the right time?",
+        "Coche ce qui décrit ta journée réelle.": "Tick what describes your actual day.",
         "Je connais mon meilleur créneau de concentration": "I know my best window for concentration",
         "observé, pas supposé": "observed, not assumed",
         "Le travail de fond y est effectivement placé": "Deep work is actually placed there",
@@ -1190,18 +1195,18 @@ window.PRATIQUE_TEXTES = {
         "Je n'allonge pas la journée quand le travail déborde":
             "I do not lengthen the day when work overflows",
         "le total produit sur la semaine baisse": "the weekly output goes down",
-        "Votre meilleur créneau est probablement consacré aux priorités des autres.":
+        "Ton meilleur créneau est probablement consacré aux priorités des autres.":
             "Your best window is probably given over to other people's priorities.",
         "Bonne base. Protéger la première heure est le changement le plus rentable.":
             "Good basis. Protecting the first hour is the most profitable change.",
-        "Vos heures les plus productives servent ce qui compte le plus.":
+        "Tes heures les plus productives servent ce qui compte le plus.":
             "Your most productive hours serve what matters most.",
         "Deux heures au bon moment valent quatre heures au mauvais. C'est l'optimisation qui ne coûte rien.":
             "Two hours at the right time are worth four at the wrong one. That is the optimisation that costs nothing.",
 
         // --- habitude-durable ---------------------------------------------------
-        "Votre habitude peut-elle tenir ?": "Can your habit last?",
-        "Cochez ce qui est vrai de l'habitude que vous voulez installer.":
+        "Ton habitude peut-elle tenir ?": "Can your habit last?",
+        "Coche ce qui est vrai de l'habitude que tu veux installer.":
             "Tick what is true of the habit you want to establish.",
         "Elle est rattachée à une action déjà automatique": "It is attached to an already automatic action",
         "le déclencheur existe, rien à retenir": "the trigger exists, nothing to remember",
@@ -1218,7 +1223,7 @@ window.PRATIQUE_TEXTES = {
             "This habit still rests on willpower, which fluctuates by nature.",
         "Bonne conception. La règle de reprise est ce qui décide au deuxième mois.":
             "Well designed. The restart rule is what decides in the second month.",
-        "Cette habitude ne dépend pas de votre motivation. Elle a une vraie chance.":
+        "Cette habitude ne dépend pas de ta motivation. Elle a une vraie chance.":
             "This habit does not depend on your motivation. It has a real chance.",
         "Ajouter vingt secondes d'effort réduit fortement la fréquence d'un geste. En retirer vingt l'augmente d'autant.":
             "Adding twenty seconds of effort sharply reduces how often something is done. Removing twenty raises it as much.",
@@ -1237,8 +1242,8 @@ window.PRATIQUE_TEXTES = {
             "One hour with eight people is a working day. The question “does everyone need to be there?” then looks different.",
 
         // --- revue-systeme ----------------------------------------------------------
-        "Votre système résiste-t-il à la dérive ?": "Does your system resist drift?",
-        "Cochez ce qui a effectivement lieu, à intervalle régulier.":
+        "Ton système résiste-t-il à la dérive ?": "Does your system resist drift?",
+        "Coche ce qui a effectivement lieu, à intervalle régulier.":
             "Tick what actually happens, at regular intervals.",
         "Une revue hebdomadaire de trente minutes, à heure fixe dans l'agenda":
             "A thirty-minute weekly review, at a fixed time in the calendar",
@@ -1256,7 +1261,7 @@ window.PRATIQUE_TEXTES = {
             "With no review, this system will drift until it is abandoned wholesale.",
         "Bonne discipline. Arrêter des choses reste la partie la plus difficile.":
             "Good discipline. Stopping things remains the hardest part.",
-        "Votre système se corrige tout seul. C'est ce qui le fera durer.":
+        "Ton système se corrige tout seul. C'est ce qui le fera durer.":
             "Your system corrects itself. That is what will make it last.",
         "Quand un système se dérègle, changer d'outil reporte le problème d'un trimestre. Ce qui manquait, c'était la revue.":
             "When a system goes off the rails, changing tool postpones the problem by a quarter. What was missing was the review.",
@@ -1275,8 +1280,8 @@ window.PRATIQUE_TEXTES = {
             "Four hours of presence give about three hours of real concentration. That is already a lot.",
 
         // --- systeme-gtd -----------------------------------------------------------------
-        "Votre système tient-il debout ?": "Does your system stand up?",
-        "Cochez ce qui est vrai aujourd'hui, pas ce que vous aviez prévu.":
+        "Ton système tient-il debout ?": "Does your system stand up?",
+        "Coche ce qui est vrai aujourd'hui, pas ce que tu avais prévu.":
             "Tick what is true today, not what you had planned.",
         "Tout ce que j'ai à faire est noté quelque part, hors de ma tête":
             "Everything I have to do is written down somewhere, outside my head",
@@ -1289,18 +1294,18 @@ window.PRATIQUE_TEXTES = {
             "I empty my inboxes at least once a week",
         "Je fais confiance à mon système : je n'ai pas de liste parallèle mentale":
             "I trust my system: I keep no parallel list in my head",
-        "Votre mémoire porte encore une partie du système, et elle le porte mal.":
+        "Ta mémoire porte encore une partie du système, et elle le porte mal.":
             "Your memory is still carrying part of the system, and carrying it badly.",
         "Bonne base. La revue hebdomadaire est ce qui manque le plus souvent.":
             "Good basis. The weekly review is what is most often missing.",
-        "Système fiable : votre tête n'a plus à servir de mémoire.":
+        "Système fiable : ta tête n'a plus à servir de mémoire.":
             "A reliable system: your head no longer has to serve as memory.",
         "Un système auquel on ne fait pas confiance est doublé d'une liste mentale — et c'est elle qui fatigue.":
             "A system you do not trust is shadowed by a mental list — and it is the list that tires you.",
 
         // --- matrice-eisenhower -------------------------------------------------------------
-        "Votre matrice sert-elle à quelque chose ?": "Is your matrix doing anything?",
-        "Cochez ce qui est vrai de votre usage réel, pas de vos intentions.":
+        "Ta matrice sert-elle à quelque chose ?": "Is your matrix doing anything?",
+        "Coche ce qui est vrai de ton usage réel, pas de tes intentions.":
             "Tick what is true of how you actually use it, not of your intentions.",
         "J'ai classé les tâches de ma semaine dans les quatre cases":
             "I have sorted this week's tasks into the four boxes",
@@ -1324,8 +1329,8 @@ window.PRATIQUE_TEXTES = {
             "The urgent announces itself. The important stays silent: you have to reserve time for it, or it never happens.",
 
         // --- choisir-outil ----------------------------------------------------------------------
-        "Cet outil vous convient-il ?": "Is this tool right for you?",
-        "Cochez ce qui est vrai de l'outil que vous utilisez ou envisagez.":
+        "Cet outil te convient-il ?": "Is this tool right for you?",
+        "Coche ce qui est vrai de l'outil que tu utilises ou envisages.":
             "Tick what is true of the tool you use or are considering.",
         "Capturer une tâche prend moins de cinq secondes": "Capturing a task takes less than five seconds",
         "au-delà, on ne capture plus": "beyond that, people stop capturing",
@@ -1341,7 +1346,7 @@ window.PRATIQUE_TEXTES = {
             "I can get my data out if I change my mind",
         "Cet outil consomme probablement plus d'énergie qu'il n'en fait gagner.":
             "This tool probably consumes more energy than it saves.",
-        "Correct. La vraie question reste : l'utiliserez-vous dans trois mois ?":
+        "Correct. La vraie question reste : l'utiliseras-tu dans trois mois ?":
             "Reasonable. The real question remains: will you still use it in three months?",
         "Outil adapté : il sert le système au lieu de le remplacer.":
             "A fitting tool: it serves the system instead of replacing it.",
@@ -1349,7 +1354,7 @@ window.PRATIQUE_TEXTES = {
             "The best tool is the one you still use in six months. Every other criterion comes after.",
 
         // --- cout-interruptions --------------------------------------------------------------------
-        "Ce que coûtent vos interruptions": "What your interruptions cost",
+        "Ce que coûtent tes interruptions": "What your interruptions cost",
         "Le temps perdu n'est pas la durée de l'interruption, c'est le temps de reprise.":
             "The time lost is not the length of the interruption, it is the time to get back in.",
         "Interruptions par jour": "Interruptions per day",
@@ -1363,7 +1368,7 @@ window.PRATIQUE_TEXTES = {
             "A two-minute interruption costs twenty. That is why the total always comes as a surprise.",
 
         // --- temps-disponible ------------------------------------------------------------------------
-        "Combien de temps vous reste-t-il vraiment ?": "How much time do you really have left?",
+        "Combien de temps te reste-t-il vraiment ?": "How much time do you really have left?",
         "Planifier plus que le disponible garantit d'échouer — par arithmétique, pas par manque de discipline.":
             "Planning more than you have guarantees failure — by arithmetic, not for lack of discipline.",
         "Durée de la journée": "Length of the day",
@@ -1391,7 +1396,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- dire-non ----------------------------------------------------------------------------------
         "Faut-il dire oui ?": "Should you say yes?",
-        "Cochez ce que vous avez vérifié avant d'accepter cette demande.":
+        "Coche ce que tu as vérifié avant d'accepter cette demande.":
             "Tick what you checked before accepting this request.",
         "Je sais précisément ce que je ne ferai pas si j'accepte":
             "I know precisely what I will not do if I accept",
@@ -1428,7 +1433,7 @@ window.PRATIQUE_TEXTES = {
         "valeurs": "values",
 
         // --- marge-erreur ------------------------------------------------------
-        "Calculez la marge d'erreur": "Work out the margin of error",
+        "Calcule la marge d'erreur": "Work out the margin of error",
         "Elle dépend de la taille de l'échantillon, presque jamais de celle de la population.":
             "It depends on the size of the sample, almost never on that of the population.",
         "Taille de l'échantillon": "Sample size",
@@ -1440,7 +1445,7 @@ window.PRATIQUE_TEXTES = {
             "Two figures whose intervals overlap cannot be declared different.",
 
         // --- test-ab -------------------------------------------------------------
-        "Dimensionnez votre test A/B": "Size your A/B test",
+        "Dimensionne ton test A/B": "Size your A/B test",
         "À décider avant de lancer. Après, il est trop tard pour savoir si le test pouvait conclure.":
             "To be decided before launching. Afterwards it is too late to know whether the test could conclude.",
         "Taux de conversion actuel": "Current conversion rate",
@@ -1453,12 +1458,12 @@ window.PRATIQUE_TEXTES = {
             "Detecting an effect half the size takes four times the traffic. That is what makes small gains so expensive to prove.",
 
         // --- pieges-interpretation --------------------------------------------------
-        "Identifiez le piège": "Spot the trap",
-        "Cochez les situations où une conclusion serait probablement fausse.":
+        "Identifie le piège": "Spot the trap",
+        "Coche les situations où une conclusion serait probablement fausse.":
             "Tick the situations where a conclusion would probably be wrong.",
         "Le résultat global contredit ce qu'on observe dans chaque sous-groupe":
             "The overall result contradicts what is seen in each subgroup",
-        "paradoxe de Simpson : vérifiez la répartition": "Simpson's paradox: check the split",
+        "paradoxe de Simpson : vérifie la répartition": "Simpson's paradox: check the split",
         "On analyse les clients actuels pour comprendre pourquoi les gens restent":
             "You analyse current customers to understand why people stay",
         "biais du survivant : les partis ont la réponse":
@@ -1478,14 +1483,14 @@ window.PRATIQUE_TEXTES = {
             "All six of these situations lead to false conclusions from accurate data.",
         "Bonne vigilance. Les six sont en réalité des pièges classiques.":
             "Good vigilance. All six are in fact classic traps.",
-        "Les six situations sont effectivement piégeuses. Vous les reconnaissez toutes.":
+        "Les six situations sont effectivement piégeuses. Tu les reconnais toutes.":
             "All six situations are indeed traps. You recognise them all.",
         "Aucun de ces pièges ne suppose une erreur de calcul. Les données sont justes ; c'est la lecture qui trompe.":
             "None of these traps involves a calculation error. The data is correct; it is the reading that deceives.",
 
         // --- chaine-de-donnees ---------------------------------------------------------
-        "Auditez votre chaîne de données": "Audit your data pipeline",
-        "Cochez ce qui est en place aujourd'hui.": "Tick what is in place today.",
+        "Audite ta chaîne de données": "Audit your data pipeline",
+        "Coche ce qui est en place aujourd'hui.": "Tick what is in place today.",
         "La date de dernière mise à jour est affichée à côté des chiffres":
             "The last-updated date is shown next to the figures",
         "la protection la moins coûteuse contre la panne silencieuse":
@@ -1510,8 +1515,8 @@ window.PRATIQUE_TEXTES = {
             "Data frozen for three days is more dangerous than missing data: nobody notices it has stopped moving.",
 
         // --- utilite-kpi ------------------------------------------------------------------
-        "Votre indicateur est-il utile ?": "Is your metric useful?",
-        "Prenez un indicateur que vous suivez, et cochez ce qui est vrai.":
+        "Ton indicateur est-il utile ?": "Is your metric useful?",
+        "Prends un indicateur que tu suis, et coche ce qui est vrai.":
             "Take a metric you track, and tick what is true.",
         "Je sais quoi faire différemment s'il double demain":
             "I know what I would do differently if it doubled tomorrow",
@@ -1537,8 +1542,8 @@ window.PRATIQUE_TEXTES = {
             "If nobody changes anything when a figure moves, that figure is not a metric: it is decoration.",
 
         // --- qualite-collecte --------------------------------------------------------------
-        "Vos données disent-elles ce que vous croyez ?": "Does your data say what you think it does?",
-        "Cochez ce qui est vrai de la façon dont ces données ont été recueillies.":
+        "Tes données disent-elles ce que tu crois ?": "Does your data say what you think it does?",
+        "Coche ce qui est vrai de la façon dont ces données ont été recueillies.":
             "Tick what is true of the way this data was collected.",
         "Je sais qui a été mesuré, et qui ne l'a pas été":
             "I know who was measured, and who was not",
@@ -1556,16 +1561,16 @@ window.PRATIQUE_TEXTES = {
             "The definitions did not change during the period",
         "Les données décrivent peut-être une population différente de celle visée.":
             "The data may describe a population different from the one intended.",
-        "Acceptable. Notez les réserves à côté du résultat plutôt que de les oublier.":
+        "Acceptable. Note les réserves à côté du résultat plutôt que de les oublier.":
             "Acceptable. Note the caveats next to the result rather than forgetting them.",
-        "Collecte saine : les chiffres portent bien sur ce que vous croyez.":
+        "Collecte saine : les chiffres portent bien sur ce que tu crois.":
             "Sound collection: the figures really are about what you think.",
         "Aucun traitement statistique ne rattrape une collecte biaisée. Il la rend seulement plus présentable.":
             "No statistical treatment rescues biased collection. It only makes it more presentable.",
 
         // --- choisir-graphique ---------------------------------------------------------------
         "Le bon graphique pour la bonne question": "The right chart for the right question",
-        "Cochez les associations exactes. Quatre le sont.": "Tick the correct pairings. Four of them are.",
+        "Coche les associations exactes. Quatre le sont.": "Tick the correct pairings. Four of them are.",
         "Comparer des catégories → barres": "Comparing categories → bars",
         "exact": "correct",
         "Suivre une évolution dans le temps → courbe": "Following a change over time → line",
@@ -1582,7 +1587,7 @@ window.PRATIQUE_TEXTES = {
         "faux : c'est la manipulation la plus répandue":
             "wrong: it is the most widespread manipulation",
         "Quatre de ces six associations sont exactes.": "Four of these six pairings are correct.",
-        "Quatre associations sont exactes. Vérifiez avec les indications que ce sont les vôtres.":
+        "Quatre associations sont exactes. Vérifie avec les indications que ce sont les tiennes.":
             "Four pairings are correct. Check against the hints that they are the ones you picked.",
         "Plus de quatre : deux de ces propositions sont fausses.":
             "More than four: two of these statements are wrong.",
@@ -1590,7 +1595,7 @@ window.PRATIQUE_TEXTES = {
             "A vertical axis that does not start at zero is not always dishonest — but it must always be flagged.",
 
         // --- moyenne-mediane -------------------------------------------------------------------
-        "Voyez une valeur extrême déformer la moyenne": "Watch one extreme value distort the mean",
+        "Vois une valeur extrême déformer la moyenne": "Watch one extreme value distort the mean",
         "C'est la raison pour laquelle la médiane existe.": "This is why the median exists.",
         "Nombre de valeurs ordinaires": "Number of ordinary values",
         "Valeur ordinaire": "Ordinary value",
@@ -1616,7 +1621,7 @@ window.PRATIQUE_TEXTES = {
             "The problem is never having lost rows. It is presenting a result while implying it covers the whole file.",
 
         // --- taille-segments ---------------------------------------------------------------------
-        "Vos segments sont-ils assez fournis ?": "Are your segments big enough?",
+        "Tes segments sont-ils assez fournis ?": "Are your segments big enough?",
         "Découper indéfiniment finit par produire du bruit qu'on prend pour du signal.":
             "Slicing indefinitely eventually produces noise mistaken for signal.",
         "Population totale": "Total population",
@@ -1630,7 +1635,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- correlation-causalite ------------------------------------------------------------------
         "Avant de conclure « A cause B »": "Before concluding “A causes B”",
-        "Passez votre corrélation au crible : cochez ce que vous avez réellement vérifié.":
+        "Passe ta corrélation au crible : coche ce que tu as réellement vérifié.":
             "Put your correlation through the sieve: tick what you have actually checked.",
         "J'ai envisagé que B cause A": "I have considered that B causes A",
         "le sens inverse est souvent aussi plausible": "the reverse direction is often just as plausible",
@@ -1649,7 +1654,7 @@ window.PRATIQUE_TEXTES = {
             "An experiment has been run, or is planned",
         "la seule méthode qui établisse vraiment la causalité":
             "the only method that genuinely establishes causation",
-        "À ce stade, vous avez une corrélation et une histoire plausible. Pas une cause.":
+        "À ce stade, tu as une corrélation et une histoire plausible. Pas une cause.":
             "At this point you have a correlation and a plausible story. Not a cause.",
         "Il manque des vérifications. La variable confondante est celle qu'on oublie le plus.":
             "Checks are missing. The confounding variable is the one most often forgotten.",
@@ -1659,8 +1664,8 @@ window.PRATIQUE_TEXTES = {
             "The danger is not the absurd correlation, which is easy to spot. It is the one you can give a credible explanation for.",
 
         // --- tableau-de-bord ---------------------------------------------------------------------------
-        "Passez votre tableau de bord au crible": "Put your dashboard through the sieve",
-        "Cochez ce qui est vrai du tableau de bord que vous avez sous les yeux.":
+        "Passe ton tableau de bord au crible": "Put your dashboard through the sieve",
+        "Coche ce qui est vrai du tableau de bord que tu as sous les yeux.":
             "Tick what is true of the dashboard in front of you.",
         "Chaque indicateur passe le test « si ce nombre doublait, que ferais-je ? »":
             "Every metric passes the test “if this number doubled, what would I do?”",
@@ -1687,7 +1692,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- anatomie-llm ------------------------------------------------------------------
         "Ce qu'un modèle de langage fait, et ne fait pas": "What a language model does, and does not do",
-        "Cochez uniquement les affirmations exactes. Trois le sont.":
+        "Coche uniquement les affirmations exactes. Trois le sont.":
             "Tick only the accurate statements. Three of them are.",
         "Il prédit le fragment de texte suivant, encore et encore":
             "It predicts the next piece of text, over and over",
@@ -1711,9 +1716,9 @@ window.PRATIQUE_TEXTES = {
             "It works out its answers from rules written by humans",
         "faux : les règles ne sont écrites nulle part, elles sont apprises":
             "false: the rules are written nowhere, they are learnt",
-        "Trois de ces affirmations sont exactes. Les indications vous disent lesquelles.":
+        "Trois de ces affirmations sont exactes. Les indications te disent lesquelles.":
             "Three of these statements are accurate. The hints tell you which.",
-        "Trois affirmations sont exactes. Vérifiez avec les indications que ce sont bien les vôtres.":
+        "Trois affirmations sont exactes. Vérifie avec les indications que ce sont bien les tiennes.":
             "Three statements are accurate. Check against the hints that they are the ones you picked.",
         "Plus de trois cases cochées : certaines affirmations sont fausses.":
             "More than three boxes ticked: some of the statements are false.",
@@ -1721,8 +1726,8 @@ window.PRATIQUE_TEXTES = {
             "A model produces plausible text. True and plausible often coincide — not always.",
 
         // --- anatomie-agent ----------------------------------------------------------------
-        "Distinguez un agent d'un assistant": "Tell an agent from an assistant",
-        "Cochez ce qui caractérise un agent, par opposition à un simple assistant conversationnel.":
+        "Distingue un agent d'un assistant": "Tell an agent from an assistant",
+        "Coche ce qui caractérise un agent, par opposition à un simple assistant conversationnel.":
             "Tick what characterises an agent, as opposed to a plain conversational assistant.",
         "Il peut appeler des outils extérieurs": "It can call external tools",
         "Il enchaîne plusieurs étapes sans qu'on les lui dicte une par une":
@@ -1745,8 +1750,8 @@ window.PRATIQUE_TEXTES = {
             "It is not intelligence that makes an agent, it is the ability to act — and therefore to be wrong with consequences.",
 
         // --- qualite-consigne --------------------------------------------------------------
-        "Passez votre consigne au crible": "Put your prompt through the sieve",
-        "Reprenez une consigne que vous avez écrite, et cochez ce qui y figure vraiment.":
+        "Passe ta consigne au crible": "Put your prompt through the sieve",
+        "Reprends une consigne que tu as écrite, et coche ce qui y figure vraiment.":
             "Take a prompt you have written, and tick what is actually in it.",
         "Le rôle ou le point de vue attendu est précisé":
             "The expected role or point of view is stated",
@@ -1770,8 +1775,8 @@ window.PRATIQUE_TEXTES = {
             "A model never asks for clarification. What the prompt does not say, it fills in on its own.",
 
         // --- signaux-hallucination ---------------------------------------------------------
-        "Repérez une réponse à vérifier": "Spot an answer worth checking",
-        "Cochez ce que présente la réponse que vous avez sous les yeux.":
+        "Repère une réponse à vérifier": "Spot an answer worth checking",
+        "Coche ce que présente la réponse que tu as sous les yeux.":
             "Tick what the answer in front of you shows.",
         "Elle cite une source précise — référence, article, page":
             "It cites a precise source — a reference, an article, a page",
@@ -1783,9 +1788,9 @@ window.PRATIQUE_TEXTES = {
         "Elle est affirmée sans la moindre nuance": "It is stated without the slightest qualification",
         "Elle concerne une personne, un lieu ou une entreprise nommément":
             "It names a specific person, place or company",
-        "Aucun signal. La vérification reste utile pour tout ce qui vous engage.":
+        "Aucun signal. La vérification reste utile pour tout ce qui t'engage.":
             "No warning signs. Checking is still worthwhile for anything that commits you.",
-        "Quelques signaux. Vérifiez les éléments chiffrés et les noms propres.":
+        "Quelques signaux. Vérifie les éléments chiffrés et les noms propres.":
             "A few warning signs. Check the figures and the proper nouns.",
         "Réponse à vérifier avant tout usage : plusieurs facteurs de risque sont réunis.":
             "An answer to check before any use: several risk factors are present at once.",
@@ -1793,7 +1798,7 @@ window.PRATIQUE_TEXTES = {
             "The most dangerous inventions are the most plausible ones: a well-formed reference that does not exist.",
 
         // --- cout-en-tokens ----------------------------------------------------------------
-        "Mesurez le coût réel d'une conversation": "Work out what a conversation really costs",
+        "Mesure le coût réel d'une conversation": "Work out what a conversation really costs",
         "L'historique est relu à chaque tour. Ce n'est pas le dernier message qui coûte, c'est leur somme.":
             "The history is re-read on every turn. It is not the last message that costs, it is their sum.",
         "Mots par échange (question et réponse)": "Words per exchange (question and answer)",
@@ -1804,12 +1809,12 @@ window.PRATIQUE_TEXTES = {
         "Jetons par échange": "Tokens per exchange",
         "Total réellement lu sur la conversation": "Total actually read over the conversation",
         "Coût de la conversation": "Cost of the conversation",
-        "Doublez le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire.":
+        "Double le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire.":
             "Double the number of turns and the total read roughly quadruples: the growth is not linear.",
 
         // --- dimensionner-un-rag -----------------------------------------------------------
-        "Dimensionnez une base documentaire": "Size a document base",
-        "Avant de choisir un outil, mesurez ce que vous avez réellement à indexer.":
+        "Dimensionne une base documentaire": "Size a document base",
+        "Avant de choisir un outil, mesure ce que tu as réellement à indexer.":
             "Before choosing a tool, measure what you actually have to index.",
         "Nombre de documents": "Number of documents",
         "doc.": "docs",
@@ -1824,8 +1829,8 @@ window.PRATIQUE_TEXTES = {
             "It is precisely because that volume fits in no window that retrieval exists.",
 
         // --- perimetre-outils --------------------------------------------------------------
-        "Délimitez le périmètre de votre agent": "Draw the boundary around your agent",
-        "Cochez ce qui est vrai de l'agent que vous concevez.":
+        "Délimite le périmètre de ton agent": "Draw the boundary around your agent",
+        "Coche ce qui est vrai de l'agent que tu conçois.":
             "Tick what is true of the agent you are designing.",
         "Chaque outil fait une chose précise et nommée": "Each tool does one precise, named thing",
         "plutôt qu'un outil général du type « exécute cette requête »":
@@ -1837,13 +1842,13 @@ window.PRATIQUE_TEXTES = {
         "envoyer, supprimer, payer": "sending, deleting, paying",
         "Mon code vérifie les paramètres avant d'exécuter un appel":
             "My code checks the parameters before running a call",
-        "le modèle propose, votre code dispose": "the model proposes, your code disposes",
+        "le modèle propose, ton code dispose": "the model proposes, your code disposes",
         "Un agent qui lit du contenu extérieur n'a pas d'outil d'envoi":
             "An agent that reads outside content has no sending tool",
         "cloisonnement : c'est la parade à l'injection de consigne":
             "compartmenting: that is the answer to prompt injection",
         "Les appels d'outils sont journalisés": "Tool calls are logged",
-        "L'agent peut aujourd'hui produire des effets que vous n'avez pas prévus.":
+        "L'agent peut aujourd'hui produire des effets que tu n'as pas prévus.":
             "As it stands, the agent can produce effects you have not planned for.",
         "Bonne architecture. La confirmation humaine et le cloisonnement sont les deux points à ne pas lâcher.":
             "Good architecture. Human confirmation and compartmenting are the two points not to let go of.",
@@ -1853,7 +1858,7 @@ window.PRATIQUE_TEXTES = {
             "What an agent can break is exactly what its tools allow. Nothing more, nothing less.",
 
         // --- arbitrage-modele --------------------------------------------------------------
-        "Comparez le coût mensuel de deux modèles": "Compare the monthly cost of two models",
+        "Compare le coût mensuel de deux modèles": "Compare the monthly cost of two models",
         "Un écart minime par requête devient structurant à l'échelle du mois.":
             "A tiny gap per request becomes decisive over a month.",
         "Requêtes par mois": "Requests per month",
@@ -1869,8 +1874,8 @@ window.PRATIQUE_TEXTES = {
             "Output costs about three times input: shortening the answers is often the most profitable lever.",
 
         // --- reglage-temperature -----------------------------------------------------------
-        "Choisissez votre température": "Choose your temperature",
-        "Cochez les tâches qui appellent une température BASSE.":
+        "Choisis ta température": "Choose your temperature",
+        "Coche les tâches qui appellent une température BASSE.":
             "Tick the tasks that call for a LOW temperature.",
         "Extraire des informations d'un document": "Extracting information from a document",
         "oui : on veut la même réponse à chaque fois": "yes: you want the same answer every time",
@@ -1884,7 +1889,7 @@ window.PRATIQUE_TEXTES = {
         "Répondre à une question factuelle": "Answering a factual question",
         "Quatre de ces six tâches appellent une température basse.":
             "Four of these six tasks call for a low temperature.",
-        "Quatre tâches appellent une température basse. Vérifiez que ce sont bien celles-là.":
+        "Quatre tâches appellent une température basse. Vérifie que ce sont bien celles-là.":
             "Four tasks call for a low temperature. Check that they are the ones you picked.",
         "Plus de quatre : deux de ces tâches gagnent au contraire à la variété.":
             "More than four: two of these tasks gain from variety instead.",
@@ -1892,8 +1897,8 @@ window.PRATIQUE_TEXTES = {
             "The default setting sits in the middle. It therefore suits neither end well — extraction included.",
 
         // --- jeu-de-test -------------------------------------------------------------------
-        "Évaluez votre méthode d'évaluation": "Evaluate the way you evaluate",
-        "Cochez ce qui est vrai de votre manière de mesurer.":
+        "Évalue ta méthode d'évaluation": "Evaluate the way you evaluate",
+        "Coche ce qui est vrai de ta manière de mesurer.":
             "Tick what is true of the way you measure.",
         "J'ai au moins vingt cas de test écrits avec leur réponse attendue":
             "I have at least twenty test cases written down with their expected answer",
@@ -1917,14 +1922,14 @@ window.PRATIQUE_TEXTES = {
             "Without measurement, an improvement felt over three tries can be a decline over a hundred.",
         "Base correcte. Le jeu de contrôle mis à part et le détail des cas font la différence.":
             "A decent base. The held-out set and the individual cases are what make the difference.",
-        "Méthode solide : vos améliorations sont mesurées, pas ressenties.":
+        "Méthode solide : tes améliorations sont mesurées, pas ressenties.":
             "A solid method: your improvements are measured, not felt.",
         "Le jeu de test est ce qui transforme une opinion sur un système en information sur un système.":
             "A test set is what turns an opinion about a system into information about a system.",
 
         // --- surface-injection -------------------------------------------------------------
-        "Mesurez votre exposition à l'injection": "Measure your exposure to injection",
-        "Cochez ce qui s'applique à votre système.": "Tick what applies to your system.",
+        "Mesure ton exposition à l'injection": "Measure your exposure to injection",
+        "Coche ce qui s'applique à ton système.": "Tick what applies to your system.",
         "L'agent lit des contenus que je ne maîtrise pas":
             "The agent reads content I do not control",
         "pages web, courriels reçus, documents envoyés par des tiers":
@@ -1938,7 +1943,7 @@ window.PRATIQUE_TEXTES = {
         "Sa seule protection contre l'injection est une phrase dans la consigne":
             "Its only protection against injection is a sentence in the prompt",
         "cela aide un peu, et se contourne": "that helps a little, and can be worked around",
-        "Exposition faible. Reconsidérez à chaque nouvel outil ajouté.":
+        "Exposition faible. Reconsidère à chaque nouvel outil ajouté.":
             "Low exposure. Reconsider each time a new tool is added.",
         "Exposition limitée. Le cloisonnement lecture / écriture reste la précaution clé.":
             "Limited exposure. Separating reading from writing remains the key precaution.",
@@ -1949,10 +1954,10 @@ window.PRATIQUE_TEXTES = {
 
         // --- entrainer-ou-recuperer --------------------------------------------------------
         "Faut-il entraîner, ou récupérer ?": "Train, or retrieve?",
-        "Cochez les situations qui relèvent de la RÉCUPÉRATION plutôt que de l'entraînement.":
+        "Coche les situations qui relèvent de la RÉCUPÉRATION plutôt que de l'entraînement.":
             "Tick the situations that call for RETRIEVAL rather than training.",
         "Le modèle ignore nos procédures internes": "The model does not know our internal procedures",
-        "récupération : mettez le document sous ses yeux":
+        "récupération : mets le document sous ses yeux":
             "retrieval: put the document in front of it",
         "Le modèle ignore nos tarifs, qui changent chaque mois":
             "The model does not know our prices, which change every month",
@@ -1985,7 +1990,7 @@ window.PRATIQUE_TEXTES = {
         // =====================================================================
 
         // --- force-mot-de-passe ------------------------------------------------------------
-        "Mesurez la solidité d'un mot de passe": "Measure the strength of a password",
+        "Mesure la solidité d'un mot de passe": "Measure the strength of a password",
         "La longueur pèse bien plus lourd que la complexité. Ce calcul le montre.":
             "Length weighs far more than complexity. This calculation shows it.",
         "Nombre de caractères": "Number of characters",
@@ -2001,21 +2006,21 @@ window.PRATIQUE_TEXTES = {
         "moins d'une heure": "less than an hour",
         "quelques heures": "a few hours",
         "moins d'un an": "less than a year",
-        "Ajoutez deux caractères plutôt qu'un symbole : l'effet sur le temps de recherche est sans commune mesure.":
+        "Ajoute deux caractères plutôt qu'un symbole : l'effet sur le temps de recherche est sans commune mesure.":
             "Add two characters rather than a symbol: the effect on search time is in another league.",
 
         // --- signaux-phishing --------------------------------------------------------------
-        "Passez un message suspect au crible": "Put a suspicious message through the sieve",
-        "Cochez ce que vous constatez sur le message que vous avez sous les yeux.":
+        "Passe un message suspect au crible": "Put a suspicious message through the sieve",
+        "Coche ce que tu constates sur le message que tu as sous les yeux.":
             "Tick what you can see on the message in front of you.",
         "Il crée l'urgence : compte bloqué, dernier avertissement, délai de 24 h":
             "It creates urgency: account locked, final warning, 24-hour deadline",
         "L'adresse de l'expéditeur ne correspond pas exactement au domaine officiel":
             "The sender's address does not exactly match the official domain",
-        "survolez-la, ne lisez pas seulement le nom affiché":
+        "survole-la, ne lis pas seulement le nom affiché":
             "hover over it, do not just read the displayed name",
         "Le lien pointe ailleurs que ce qu'il annonce": "The link points somewhere other than it claims",
-        "survolez sans cliquer et lisez l'adresse réelle":
+        "survole sans cliquer et lis l'adresse réelle":
             "hover without clicking and read the real address",
         "On me demande un mot de passe, un code ou des coordonnées bancaires":
             "I am asked for a password, a code or bank details",
@@ -2025,17 +2030,17 @@ window.PRATIQUE_TEXTES = {
             "The greeting is generic — “Dear customer” rather than my name",
         "Une pièce jointe m'est envoyée sans que je l'aie demandée":
             "An attachment is sent to me without my having asked for it",
-        "Aucun signal relevé. Vérifiez tout de même en passant par le site officiel, jamais par le lien du message.":
+        "Aucun signal relevé. Vérifie tout de même en passant par le site officiel, jamais par le lien du message.":
             "No warning signs. Check all the same by going to the official site, never via the link in the message.",
-        "Signaux relevés. Ne cliquez pas : rendez-vous sur le site officiel par vos propres moyens.":
+        "Signaux relevés. Ne clique pas : rends-toi sur le site officiel par tes propres moyens.":
             "Warning signs found. Do not click: go to the official site under your own steam.",
-        "Faisceau clair d'indices. Supprimez le message et signalez-le.":
+        "Faisceau clair d'indices. Supprime le message et signale-le.":
             "A clear cluster of signs. Delete the message and report it.",
         "Un seul signal suffit à justifier la méfiance. Aucun ne suffit à garantir l'authenticité.":
             "One sign alone is enough to justify suspicion. None is enough to guarantee authenticity.",
 
         // --- protections-de-base -----------------------------------------------------------
-        "Vérifiez vos protections de base": "Check your basic protections",
+        "Vérifie tes protections de base": "Check your basic protections",
         "Les quatre premières lignes coûtent zéro euro et couvrent l'essentiel du risque courant.":
             "The first four lines cost nothing and cover most of the everyday risk.",
         "Les mises à jour de mon système sont installées automatiquement":
@@ -2051,7 +2056,7 @@ window.PRATIQUE_TEXTES = {
             "I only install software from its official site or an app store",
         "Ma session est protégée par un mot de passe ou une biométrie":
             "My session is protected by a password or biometrics",
-        "Plusieurs protections élémentaires manquent — commencez par les mises à jour automatiques.":
+        "Plusieurs protections élémentaires manquent — commence par les mises à jour automatiques.":
             "Several basic protections are missing — start with automatic updates.",
         "Presque. Les points restants sont ceux qui demandent le moins d'effort.":
             "Almost. The remaining points are the ones that take the least effort.",
@@ -2061,7 +2066,7 @@ window.PRATIQUE_TEXTES = {
             "The vast majority of compromises exploit a hole already fixed by an available update.",
 
         // --- ou-est-le-chiffrement ---------------------------------------------------------
-        "Repérez où vos données sont chiffrées": "Spot where your data is encrypted",
+        "Repère où tes données sont chiffrées": "Spot where your data is encrypted",
         "Le chiffrement ne protège que là où il est effectivement appliqué.":
             "Encryption only protects where it is actually applied.",
         "Le disque de mon ordinateur est chiffré": "My computer's disk is encrypted",
@@ -2079,16 +2084,16 @@ window.PRATIQUE_TEXTES = {
             "As things stand, a lost device would hand its contents to whoever finds it.",
         "L'essentiel est couvert. Les points restants concernent surtout la perte ou le vol.":
             "The essentials are covered. The remaining points mostly concern loss or theft.",
-        "Vos données sont protégées au repos comme en transit.":
+        "Tes données sont protégées au repos comme en transit.":
             "Your data is protected at rest as well as in transit.",
         "Le chiffrement du disque ne coûte rien et ne se remarque pas — jusqu'au jour où l'appareil disparaît.":
             "Disk encryption costs nothing and goes unnoticed — until the day the device disappears.",
 
         // --- propagation-fuite -------------------------------------------------------------
-        "Mesurez la propagation d'une fuite": "Measure how far a breach spreads",
+        "Mesure la propagation d'une fuite": "Measure how far a breach spreads",
         "Un mot de passe réutilisé transforme une fuite unique en compromission générale.":
             "A reused password turns a single breach into a general compromise.",
-        "Nombre de comptes en ligne que vous possédez": "Number of online accounts you have",
+        "Nombre de comptes en ligne que tu possèdes": "Number of online accounts you have",
         "comptes": "accounts",
         "Part de ces comptes partageant le même mot de passe":
             "Share of those accounts sharing the same password",
@@ -2099,7 +2104,7 @@ window.PRATIQUE_TEXTES = {
             "Lists from breaches are replayed automatically against hundreds of other services. No human attacker is involved.",
 
         // --- robustesse-2fa ----------------------------------------------------------------
-        "Classez vos comptes par exposition": "Rank your accounts by exposure",
+        "Classe tes comptes par exposition": "Rank your accounts by exposure",
         "Tous les comptes ne se valent pas : certains servent à récupérer tous les autres.":
             "Not all accounts are equal: some are the way back into all the others.",
         "Ma boîte mail principale a une double authentification":
@@ -2117,15 +2122,15 @@ window.PRATIQUE_TEXTES = {
             "I have kept my backup codes somewhere other than the phone in question",
         "Un mot de passe volé suffirait aujourd'hui à entrer.":
             "As things stand, a stolen password would be enough to get in.",
-        "Bonne base. Traitez la boîte mail en priorité si elle n'est pas encore couverte.":
+        "Bonne base. Traite la boîte mail en priorité si elle n'est pas encore couverte.":
             "A good base. Deal with the mailbox first if it is not covered yet.",
-        "Vos comptes critiques sont protégés, y compris en cas de perte du téléphone.":
+        "Tes comptes critiques sont protégés, y compris en cas de perte du téléphone.":
             "Your critical accounts are protected, including if you lose the phone.",
         "Protéger sa boîte mail avant tout le reste : c'est elle qui permet de réinitialiser les autres comptes.":
             "Protect your mailbox before anything else: it is what lets the other accounts be reset.",
 
         // --- regle-3-2-1 -------------------------------------------------------------------
-        "Confrontez vos sauvegardes à la règle 3-2-1": "Test your backups against the 3-2-1 rule",
+        "Confronte tes sauvegardes à la règle 3-2-1": "Test your backups against the 3-2-1 rule",
         "Trois copies, sur deux supports différents, dont une hors ligne.":
             "Three copies, on two different media, one of them offline.",
         "Mes données existent en au moins trois exemplaires":
@@ -2147,14 +2152,14 @@ window.PRATIQUE_TEXTES = {
             "One bad day would be enough to lose everything.",
         "Il manque l'essentiel : la copie déconnectée, ou le test de restauration.":
             "The essential part is missing: the disconnected copy, or the restore test.",
-        "Vous survivriez à un rançongiciel comme à une panne matérielle.":
+        "Tu survivrais à un rançongiciel comme à une panne matérielle.":
             "You would survive ransomware as well as a hardware failure.",
         "Une sauvegarde branchée en permanence est chiffrée en même temps que l'original. Elle ne compte pas.":
             "A backup left permanently plugged in gets encrypted along with the original. It does not count.",
 
         // --- ce-que-protege-un-vpn ---------------------------------------------------------
-        "Cochez ce qu'un VPN protège réellement": "Tick what a VPN actually protects",
-        "Cochez uniquement les affirmations exactes. Certaines sont fausses.":
+        "Coche ce qu'un VPN protège réellement": "Tick what a VPN actually protects",
+        "Coche uniquement les affirmations exactes. Certaines sont fausses.":
             "Tick only the accurate statements. Some are false.",
         "Il masque mon adresse IP au site que je visite":
             "It hides my IP address from the site I visit",
@@ -2162,7 +2167,7 @@ window.PRATIQUE_TEXTES = {
             "It stops whoever runs the public wifi from seeing the sites visited",
         "Il me rend anonyme sur les sites où je suis connecté":
             "It makes me anonymous on sites where I am logged in",
-        "faux : un compte connecté vous identifie, VPN ou non":
+        "faux : un compte connecté t'identifie, VPN ou non":
             "false: a logged-in account identifies you, VPN or not",
         "Il protège contre le phishing et les logiciels malveillants":
             "It protects against phishing and malware",
@@ -2174,15 +2179,15 @@ window.PRATIQUE_TEXTES = {
         "Il déplace ma confiance du fournisseur d'accès vers le fournisseur de VPN":
             "It moves my trust from the internet provider to the VPN provider",
         "exact, et c'est le point le plus important": "correct, and it is the most important point",
-        "Trois affirmations sont exactes. Si vous en avez coché exactement trois, vérifiez lesquelles.":
+        "Trois affirmations sont exactes. Si tu en as coché exactement trois, vérifie lesquelles.":
             "Three statements are accurate. If you ticked exactly three, check which ones.",
-        "Plus de trois cases cochées : certaines affirmations sont fausses. Lisez les indications.":
+        "Plus de trois cases cochées : certaines affirmations sont fausses. Lis les indications.":
             "More than three boxes ticked: some statements are false. Read the hints.",
         "Un VPN déplace la confiance, il ne la supprime pas. La question devient : ce fournisseur mérite-t-il plus de confiance que le précédent ?":
             "A VPN moves trust, it does not remove it. The question becomes: does this provider deserve more trust than the last one?",
 
         // --- reflexes-apres-fuite ----------------------------------------------------------
-        "Établissez votre conduite après une fuite": "Set out what you do after a breach",
+        "Établis ta conduite après une fuite": "Set out what you do after a breach",
         "L'ordre compte : certains gestes rendent les suivants inutiles s'ils sont faits trop tard.":
             "Order matters: some steps make the next ones pointless if taken too late.",
         "Changer d'abord le mot de passe de la boîte mail de secours":
@@ -2213,7 +2218,7 @@ window.PRATIQUE_TEXTES = {
             "An automatic forwarding rule set by an attacker keeps working after the password change.",
 
         // --- signaux-spear-phishing --------------------------------------------------------
-        "Reconnaissez une attaque ciblée": "Recognise a targeted attack",
+        "Reconnais une attaque ciblée": "Recognise a targeted attack",
         "Le hameçonnage ciblé ne présente aucun des signaux grossiers du hameçonnage de masse.":
             "Spear phishing shows none of the crude signs of mass phishing.",
         "Le message me connaît : mon nom, mon poste, un projet en cours":
@@ -2230,16 +2235,16 @@ window.PRATIQUE_TEXTES = {
         "Il évite le téléphone et privilégie l'écrit": "It avoids the phone and favours writing",
         "Aucun signal. La vérification par un autre canal reste la seule certitude.":
             "No warning signs. Checking through another channel remains the only certainty.",
-        "Vérifiez par un canal différent — appelez un numéro que vous connaissez déjà.":
+        "Vérifie par un canal différent — appelle un numéro que tu connais déjà.":
             "Check through a different channel — call a number you already know.",
-        "Profil typique d'une attaque ciblée. N'agissez pas avant vérification directe.":
+        "Profil typique d'une attaque ciblée. N'agis pas avant vérification directe.":
             "The typical profile of a targeted attack. Do not act before checking directly.",
         "Contre une attaque ciblée, la parade n'est pas de mieux lire le message : c'est de vérifier par un autre canal.":
             "Against a targeted attack, the defence is not reading the message more carefully: it is checking through another channel.",
 
         // --- metadonnees-visibles ----------------------------------------------------------
-        "Distinguez le contenu des métadonnées": "Tell content apart from metadata",
-        "Cochez ce qui reste visible malgré un chiffrement de bout en bout.":
+        "Distingue le contenu des métadonnées": "Tell content apart from metadata",
+        "Coche ce qui reste visible malgré un chiffrement de bout en bout.":
             "Tick what stays visible despite end-to-end encryption.",
         "Le texte de mes messages": "The text of my messages",
         "non : c'est précisément ce que le chiffrement protège":
@@ -2255,7 +2260,7 @@ window.PRATIQUE_TEXTES = {
             "The very fact that I am signed up to this service",
         "Cinq de ces six éléments restent visibles. Les indications précisent lesquels.":
             "Five of these six items stay visible. The hints say which.",
-        "Cinq de ces éléments restent visibles. Si vous avez coché les cinq derniers, c'est exact.":
+        "Cinq de ces éléments restent visibles. Si tu as coché les cinq derniers, c'est exact.":
             "Five of these items stay visible. If you ticked the last five, that is right.",
         "Le contenu, lui, est bien protégé : c'est le seul élément à ne pas cocher.":
             "The content itself is well protected: it is the one item not to tick.",
@@ -2263,7 +2268,7 @@ window.PRATIQUE_TEXTES = {
             "Who talks to whom, when and how often: that data alone is often enough to reconstruct a situation.",
 
         // --- score-exposition --------------------------------------------------------------
-        "Chiffrez votre surface d'attaque": "Put a number on your attack surface",
+        "Chiffre ta surface d'attaque": "Put a number on your attack surface",
         "Le nombre de comptes compte moins que la proportion de ceux qui sont mal protégés.":
             "The number of accounts matters less than the share of them that are poorly protected.",
         "Comptes en ligne possédés": "Online accounts held",
@@ -2281,7 +2286,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- bases-seo ---------------------------------------------------------------------
         "Les fondations du référencement": "The foundations of search ranking",
-        "Cochez ce qui est vrai de la page que vous voulez positionner.":
+        "Coche ce qui est vrai de la page que tu veux positionner.":
             "Tick what is true of the page you want to rank.",
         "Le titre de la page décrit son contenu et contient les mots recherchés":
             "The page title describes its content and contains the words being searched",
@@ -2306,7 +2311,7 @@ window.PRATIQUE_TEXTES = {
             "Search ranking rewards a page that genuinely answers, first of all. The rest is only presentation.",
 
         // --- budget-sea --------------------------------------------------------------------
-        "Que rapporte votre budget publicitaire ?": "What does your advertising budget bring in?",
+        "Que rapporte ton budget publicitaire ?": "What does your advertising budget bring in?",
         "Trois chiffres suffisent à savoir si une campagne peut être rentable.":
             "Three figures are enough to know whether a campaign can be profitable.",
         "Budget mensuel": "Monthly budget",
@@ -2321,7 +2326,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- choisir-reseau ----------------------------------------------------------------
         "Faut-il être sur ce réseau ?": "Should you be on this network?",
-        "Cochez ce qui est vrai pour le réseau que vous envisagez.":
+        "Coche ce qui est vrai pour le réseau que tu envisages.":
             "Tick what is true of the network you are considering.",
         "Mes clients y sont réellement présents": "My customers are genuinely there",
         "pas « des gens comme eux » : eux": "not “people like them”: them",
@@ -2340,14 +2345,14 @@ window.PRATIQUE_TEXTES = {
             "This network is liable to eat time and return nothing.",
         "Plausible. La régularité est ce qui manque le plus souvent, pas la créativité.":
             "Plausible. Regularity is what is most often missing, not creativity.",
-        "Choix fondé. Tenez-le six mois avant d'en juger.":
+        "Choix fondé. Tiens-le six mois avant d'en juger.":
             "A sound choice. Stick with it for six months before judging.",
         "Un compte abandonné après trois mois nuit plus qu'un compte inexistant : il signale une activité arrêtée.":
             "An account abandoned after three months does more harm than no account at all: it signals a business that stopped.",
 
         // --- qualite-email -----------------------------------------------------------------
-        "Votre message a-t-il une chance ?": "Does your message stand a chance?",
-        "Cochez ce qui est vrai du courriel que vous vous apprêtez à envoyer.":
+        "Ton message a-t-il une chance ?": "Does your message stand a chance?",
+        "Coche ce qui est vrai du courriel que tu t'apprêtes à envoyer.":
             "Tick what is true of the email you are about to send.",
         "L'objet dit ce que contient le message, sans promesse excessive":
             "The subject line says what the message contains, with no excessive promise",
@@ -2369,7 +2374,7 @@ window.PRATIQUE_TEXTES = {
             "The subject line decides the open, the single action decides the click. The rest counts for far less.",
 
         // --- points-de-fuite ---------------------------------------------------------------
-        "Où partent vos visiteurs ?": "Where do your visitors go?",
+        "Où partent tes visiteurs ?": "Where do your visitors go?",
         "Les taux se multiplient : c'est ce que l'intuition rate systématiquement.":
             "The rates multiply: that is what intuition misses every time.",
         "Visiteurs": "Visitors",
@@ -2385,8 +2390,8 @@ window.PRATIQUE_TEXTES = {
             "Four steps at 50% do not leave half at the end, but 6.25%. The loss compounds.",
 
         // --- intention-de-recherche --------------------------------------------------------
-        "Votre contenu répond-il à l'intention ?": "Does your content match the intent?",
-        "Cochez ce que vous avez vérifié avant d'écrire.":
+        "Ton contenu répond-il à l'intention ?": "Does your content match the intent?",
+        "Coche ce que tu as vérifié avant d'écrire.":
             "Tick what you checked before writing.",
         "J'ai tapé la recherche visée et regardé les dix premiers résultats":
             "I typed the target search and looked at the first ten results",
@@ -2415,7 +2420,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- vanity-metrics ----------------------------------------------------------------
         "Ce chiffre sert-il à quelque chose ?": "Is that figure any use?",
-        "Cochez les indicateurs qui peuvent réellement changer une décision. Trois le peuvent.":
+        "Coche les indicateurs qui peuvent réellement changer une décision. Trois le peuvent.":
             "Tick the metrics that can genuinely change a decision. Three of them can.",
         "Nombre d'impressions": "Number of impressions",
         "monte avec le budget, ne dit rien du résultat":
@@ -2435,7 +2440,7 @@ window.PRATIQUE_TEXTES = {
             "decision-grade: it weighs acquisition against retention",
         "Trois de ces six indicateurs peuvent réellement changer une décision.":
             "Three of these six metrics can genuinely change a decision.",
-        "Trois indicateurs sont décisionnels. Vérifiez que ce sont bien ceux-là.":
+        "Trois indicateurs sont décisionnels. Vérifie que ce sont bien ceux-là.":
             "Three metrics are decision-grade. Check they are the ones you picked.",
         "Plus de trois : certains de ces chiffres ne changent aucune décision.":
             "More than three: some of those figures change no decision at all.",
@@ -2487,7 +2492,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- persuasion-ethique ------------------------------------------------------------
         "Persuasion ou manipulation ?": "Persuasion or manipulation?",
-        "Cochez les pratiques légitimes. Trois le sont.":
+        "Coche les pratiques légitimes. Trois le sont.":
             "Tick the legitimate practices. Three of them are.",
         "Afficher « 2 400 clients » quand c'est le nombre réel":
             "Displaying “2,400 customers” when that is the real number",
@@ -2506,7 +2511,7 @@ window.PRATIQUE_TEXTES = {
         "tromperie, et souvent une infraction": "deception, and often an offence",
         "Trois de ces six pratiques sont légitimes. Le critère est la véracité.":
             "Three of these six practices are legitimate. The criterion is truthfulness.",
-        "Trois pratiques sont légitimes. Vérifiez que ce sont bien celles-là.":
+        "Trois pratiques sont légitimes. Vérifie que ce sont bien celles-là.":
             "Three practices are legitimate. Check they are the ones you picked.",
         "Plus de trois : certaines de ces pratiques reposent sur une information fausse.":
             "More than three: some of these practices rest on false information.",
@@ -2514,7 +2519,7 @@ window.PRATIQUE_TEXTES = {
             "The wording can be identical. What changes is whether the information is true — and whether the customer would accept it knowing so.",
 
         // --- conformite-prospection --------------------------------------------------------
-        "Votre prospection est-elle conforme ?": "Is your outreach compliant?",
+        "Ta prospection est-elle conforme ?": "Is your outreach compliant?",
         "Chaque adresse de particulier provient d'un consentement libre et spécifique":
             "Every private individual's address comes from freely given, specific consent",
         "pas une case pré-cochée": "not a pre-ticked box",
@@ -2539,7 +2544,7 @@ window.PRATIQUE_TEXTES = {
             "A good level. The record and the retention period are the most frequent omissions.",
         "Conforme sur les points les plus contrôlés.":
             "Compliant on the most frequently inspected points.",
-        "En cas de plainte, c'est à vous de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté.":
+        "En cas de plainte, c'est à toi de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté.":
             "If a complaint is made, it is for you to prove consent — not for the person to prove they never agreed.",
 
         // =====================================================================
@@ -2562,12 +2567,12 @@ window.PRATIQUE_TEXTES = {
         "Fabrication, ramenée à l'année": "Manufacturing, per year",
         "Total par an": "Total per year",
         "Part de la fabrication": "Share from manufacturing",
-        "Pour un terminal, l'essentiel de l'impact est déjà payé quand vous l'allumez. Le seul levier vraiment puissant est la durée pendant laquelle il servira.":
+        "Pour un terminal, l'essentiel de l'impact est déjà payé quand tu l'allumes. Le seul levier vraiment puissant est la durée pendant laquelle il servira.":
             "For a device, most of the impact is already paid for by the time you switch it on. The one genuinely powerful lever is how long it will serve.",
 
         // --- duree-de-vie ------------------------------------------------------------------
-        "Faites-vous durer vos appareils ?": "Do you make your devices last?",
-        "Cochez ce que vous faites réellement.": "Tick what you actually do.",
+        "Fais-tu durer tes appareils ?": "Do you make your devices last?",
+        "Coche ce que tu fais réellement.": "Tick what you actually do.",
         "Je garde mon téléphone au moins quatre ans": "I keep my phone at least four years",
         "J'utilise une coque et une protection d'écran": "I use a case and a screen protector",
         "la casse est la première cause de remplacement":
@@ -2584,14 +2589,14 @@ window.PRATIQUE_TEXTES = {
             "Every extra year of life does more than all the usage habits put together.",
         "Bonne base. Le remplacement de batterie est le geste au meilleur rapport, et le plus souvent écarté.":
             "A good base. Replacing the battery has the best return, and is the most often dismissed.",
-        "C'est l'essentiel de ce qui est en votre pouvoir sur le sujet.":
+        "C'est l'essentiel de ce qui est en ton pouvoir sur le sujet.":
             "That is most of what is within your power on this subject.",
         "Un appareil rangé dans un tiroir a la même empreinte de fabrication qu'un appareil utilisé. Le revendre, c'est éviter la fabrication de celui qui aurait été acheté à sa place.":
             "A device sitting in a drawer has the same manufacturing footprint as one in use. Selling it avoids manufacturing the one that would have been bought instead.",
 
         // --- gestes-symboliques ------------------------------------------------------------
         "Ces gestes servent-ils à quelque chose ?": "Do these habits achieve anything?",
-        "Cochez ceux qui ont un effet mesurable sur l'empreinte du numérique.":
+        "Coche ceux qui ont un effet mesurable sur l'empreinte du numérique.":
             "Tick the ones with a measurable effect on the footprint of digital technology.",
         "Garder son téléphone deux ans de plus": "Keeping your phone two years longer",
         "effet réel et important": "a real and substantial effect",
@@ -2616,7 +2621,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- achat-responsable -------------------------------------------------------------
         "Avant d'acheter un appareil": "Before buying a device",
-        "Cochez ce que vous avez réellement vérifié.": "Tick what you actually checked.",
+        "Coche ce que tu as réellement vérifié.": "Tick what you actually checked.",
         "J'ai vérifié que l'ancien n'était pas réparable":
             "I checked the old one could not be repaired",
         "J'ai regardé le reconditionné": "I looked at refurbished",
@@ -2641,7 +2646,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- lire-un-chiffre ---------------------------------------------------------------
         "Ce chiffre d'impact tient-il ?": "Does that impact figure hold up?",
-        "Cochez ce qui est vrai du chiffre qu'on vous présente.":
+        "Coche ce qui est vrai du chiffre qu'on te présente.":
             "Tick what is true of the figure you are being shown.",
         "Son périmètre est précisé": "Its scope is stated",
         "fabrication comprise, ou usage seul ?": "manufacturing included, or usage only?",
@@ -2658,7 +2663,7 @@ window.PRATIQUE_TEXTES = {
             "An uncertainty is given, or at least mentioned",
         "À ne pas relayer. Ce domaine a diffusé pendant des années des chiffres faux d'un facteur dix, repris de bonne foi.":
             "Do not pass it on. This field circulated figures wrong by a factor of ten for years, repeated in good faith.",
-        "Utilisable avec prudence. Vérifiez surtout le périmètre : c'est là que se cachent les facteurs dix.":
+        "Utilisable avec prudence. Vérifie surtout le périmètre : c'est là que se cachent les facteurs dix.":
             "Usable with caution. Check the scope above all: that is where the factors of ten hide.",
         "Chiffre exploitable. Il est rare qu'un chiffre médiatique coche tout cela.":
             "A usable figure. It is rare for a figure in the media to tick all of that.",
@@ -2682,7 +2687,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- parc-du-foyer -----------------------------------------------------------------
         "L'empreinte du parc, pas de l'usage": "The footprint of the fleet, not the usage",
-        "Comptez tout ce qui est branché : téléphones, ordinateurs, téléviseur, tablette, box, console, montre.":
+        "Compte tout ce qui est branché : téléphones, ordinateurs, téléviseur, tablette, box, console, montre.":
             "Count everything plugged in: phones, computers, television, tablet, router, console, watch.",
         "Appareils dans le foyer": "Devices in the household",
         "Fabrication moyenne par appareil": "Average manufacturing per device",
@@ -2701,7 +2706,7 @@ window.PRATIQUE_TEXTES = {
         "Distance aller": "One-way distance",
         "km": "km",
         "Durée de la réunion en visio": "Length of the meeting by video",
-        "Puissance de votre appareil": "Power of your device",
+        "Puissance de ton appareil": "Power of your device",
         "En train": "By train",
         "En voiture, seul": "By car, alone",
         "En avion": "By plane",
@@ -2729,7 +2734,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- ecoconception -----------------------------------------------------------------
         "Ce service est-il sobre ?": "Is this service frugal?",
-        "Cochez ce qui est vrai du site ou de l'application que vous concevez ou utilisez.":
+        "Coche ce qui est vrai du site ou de l'application que tu conçois ou utilises.":
             "Tick what is true of the site or app you are designing or using.",
         "Il reste utilisable sur un appareil de cinq ans":
             "It stays usable on a five-year-old device",
@@ -2767,7 +2772,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- effet-rebond ------------------------------------------------------------------
         "Ce gain va-t-il tenir ?": "Will this gain hold?",
-        "Une amélioration technique est souvent absorbée par un usage accru. Cochez ce que vous reconnaissez.":
+        "Une amélioration technique est souvent absorbée par un usage accru. Coche ce que tu reconnais.":
             "A technical improvement is often absorbed by increased use. Tick what you recognise.",
         "Les appareils consomment moins, et il y en a davantage":
             "Devices consume less, and there are more of them",
@@ -2799,8 +2804,8 @@ window.PRATIQUE_TEXTES = {
         // =====================================================================
 
         // --- poste-de-travail --------------------------------------------------------------
-        "Votre poste est-il correctement réglé ?": "Is your workstation set up properly?",
-        "Installez-vous comme d'habitude, puis cochez ce qui est vrai.":
+        "Ton poste est-il correctement réglé ?": "Is your workstation set up properly?",
+        "Installe-toi comme d'habitude, puis coche ce qui est vrai.":
             "Sit down as you usually do, then tick what is true.",
         "Le haut de l'écran est à hauteur des yeux, ou juste en dessous":
             "The top of the screen is at eye level, or just below",
@@ -2825,7 +2830,7 @@ window.PRATIQUE_TEXTES = {
             "A laptop on a desk necessarily puts either the screen too low or the hands too high. A stand and a separate keyboard resolve a contradiction, not a comfort preference.",
 
         // --- sedentarite -------------------------------------------------------------------
-        "Combien de temps passez-vous assis ?": "How long do you spend sitting?",
+        "Combien de temps passes-tu assis ?": "How long do you spend sitting?",
         "Et ce que l'activité physique en compense réellement.":
             "And how much of it physical activity actually offsets.",
         "Heures assis par jour": "Hours sitting per day",
@@ -2834,14 +2839,14 @@ window.PRATIQUE_TEXTES = {
         "Heures assis par semaine": "Hours sitting per week",
         "Soit, sur une année de travail": "That is, over a working year",
         "Repère de l'OMS": "WHO benchmark",
-        "Il vous manque": "You are short by",
+        "Il te manque": "You are short by",
         "Repère atteint": "Benchmark met",
         "Couper la position assise toutes les heures compte autant que la durée totale. Se lever deux minutes n'a l'air de rien et ne se remplace pas par une séance de sport le samedi.":
             "Breaking up sitting every hour counts as much as the total duration. Standing for two minutes looks like nothing and is not replaced by a Saturday gym session.",
 
         // --- fatigue-visuelle --------------------------------------------------------------
-        "Ménagez-vous vos yeux ?": "Are you looking after your eyes?",
-        "Cochez ce que vous faites réellement au cours d'une journée d'écran.":
+        "Ménages-tu tes yeux ?": "Are you looking after your eyes?",
+        "Coche ce que tu fais réellement au cours d'une journée d'écran.":
             "Tick what you actually do over a day at a screen.",
         "Je regarde au loin quelques secondes toutes les vingt minutes environ":
             "I look into the distance for a few seconds about every twenty minutes",
@@ -2869,7 +2874,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- pauses-legales ----------------------------------------------------------------
         // Les minimums cités sont ceux du code du travail FRANÇAIS.
-        "Vos pauses sont-elles à la hauteur ?": "Do your breaks measure up?",
+        "Tes pauses sont-elles à la hauteur ?": "Do your breaks measure up?",
         "Au-delà de six heures de travail, vingt minutes de pause sont dues. C'est un plancher, pas un objectif.":
             "Beyond six hours of work, twenty minutes of break are owed under French law. That is a floor, not a target.",
         "Heures travaillées dans la journée": "Hours worked in the day",
@@ -2885,7 +2890,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- stress-chronique --------------------------------------------------------------
         "Aigu ou installé ?": "Acute, or settled in?",
-        "Cochez ce qui décrit votre situation de travail depuis plusieurs semaines.":
+        "Coche ce qui décrit ta situation de travail depuis plusieurs semaines.":
             "Tick what describes your work situation over the past several weeks.",
         "La pression ne retombe pas entre deux périodes chargées":
             "The pressure does not drop between two busy periods",
@@ -2908,8 +2913,8 @@ window.PRATIQUE_TEXTES = {
             "Acute stress rises then falls: that is a normal response. What causes damage is the absence of a return to normal — and it is noticed far sooner from the outside than from the inside.",
 
         // --- karasek -----------------------------------------------------------------------
-        "Où se situe votre poste ?": "Where does your job sit?",
-        "Trois curseurs, de 0 à 10, selon le modèle utilisé en santé au travail depuis les années 1980. Notez ce que vous ressentez de votre poste, pas ce qu'il devrait être.":
+        "Où se situe ton poste ?": "Where does your job sit?",
+        "Trois curseurs, de 0 à 10, selon le modèle utilisé en santé au travail depuis les années 1980. Note ce que tu ressens de ton poste, pas ce qu'il devrait être.":
             "Three sliders, 0 to 10, following the model used in occupational health since the 1980s. Rate what you feel about your job, not what it ought to be.",
         "Exigence du poste": "Demand of the job",
         "/10": "/10",
@@ -2939,7 +2944,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- charge-recuperation -----------------------------------------------------------
         // Les 11 h et 35 h sont les minimums du code du travail FRANÇAIS.
-        "Votre semaine laisse-t-elle place à la récupération ?":
+        "Ta semaine laisse-t-elle place à la récupération ?":
             "Does your week leave room for recovery?",
         "Les repos minimaux du code du travail servent de repère : 11 heures entre deux journées, 35 heures consécutives par semaine.":
             "The minimum rest periods of French labour law serve as the benchmark: 11 hours between two working days, 35 consecutive hours per week.",
@@ -2960,8 +2965,8 @@ window.PRATIQUE_TEXTES = {
             "These durations are not comfort recommendations: under French law they are enforceable minimums. Regularly falling below them is worth reporting to the occupational health service.",
 
         // --- deconnexion -------------------------------------------------------------------
-        "Vos frontières tiennent-elles ?": "Do your boundaries hold?",
-        "Cochez ce qui est vrai d'une semaine ordinaire.":
+        "Tes frontières tiennent-elles ?": "Do your boundaries hold?",
+        "Coche ce qui est vrai d'une semaine ordinaire.":
             "Tick what is true of an ordinary week.",
         "Je ne consulte pas mes messages professionnels le soir":
             "I do not check work messages in the evening",
@@ -2986,9 +2991,9 @@ window.PRATIQUE_TEXTES = {
             "Disconnecting is not only an individual matter: what you send in the evening sets what others believe they must do.",
 
         // --- medecine-travail --------------------------------------------------------------
-        "Savez-vous ce que le médecin du travail peut faire ?":
+        "Sais-tu ce que le médecin du travail peut faire ?":
             "Do you know what an occupational doctor can do?",
-        "Cochez ce que vous saviez déjà.": "Tick what you already knew.",
+        "Coche ce que tu savais déjà.": "Tick what you already knew.",
         "Je peux le consulter à ma demande, sans passer par mon employeur":
             "I can see them at my own request, without going through my employer",
         "Il est tenu au secret médical : mon employeur n'apprend pas ce que je dis":
@@ -3005,14 +3010,14 @@ window.PRATIQUE_TEXTES = {
             "The occupational doctor is not the employer's doctor. The visit is a right, confidential, and during working hours.",
         "Bonne base. La visite à la demande du salarié et le secret médical sont les deux points les plus souvent ignorés.":
             "A good base. The employee-requested visit and medical confidentiality are the two points most often unknown.",
-        "Vous connaissez ce levier. C'est l'un des plus efficaces et des moins utilisés.":
+        "Tu connais ce levier. C'est l'un des plus efficaces et des moins utilisés.":
             "You know this lever. It is one of the most effective and least used.",
         "La visite à la demande du salarié est un droit, elle est confidentielle, et l'employeur ne peut pas en connaître le contenu — seulement les conclusions d'aptitude.":
             "The employee-requested visit is a right, it is confidential, and the employer cannot learn its content — only the fitness conclusions.",
 
         // --- duerp -------------------------------------------------------------------------
-        "Votre employeur tient-il ses obligations ?": "Is your employer meeting its obligations?",
-        "Cochez ce dont vous avez connaissance dans votre entreprise.":
+        "Ton employeur tient-il ses obligations ?": "Is your employer meeting its obligations?",
+        "Coche ce dont tu as connaissance dans ton entreprise.":
             "Tick what you know of in your workplace.",
         "Un document unique d'évaluation des risques existe et est accessible":
             "A single risk assessment document exists and is accessible",
@@ -3027,7 +3032,7 @@ window.PRATIQUE_TEXTES = {
             "I know I can withdraw from a situation of serious and imminent danger",
         "droit de retrait, sans sanction possible pour ce seul motif":
             "the right of withdrawal, with no penalty possible on that ground alone",
-        "L'employeur a une obligation de sécurité, qui ne dépend pas de votre demande. Le CSE et l'inspection du travail sont les interlocuteurs quand rien ne bouge.":
+        "L'employeur a une obligation de sécurité, qui ne dépend pas de ta demande. Le CSE et l'inspection du travail sont les interlocuteurs quand rien ne bouge.":
             "The employer has a duty of safety, which does not depend on your asking. The works council and the labour inspectorate are who to turn to when nothing moves.",
         "Partiel. Le document unique est obligatoire dès le premier salarié, et doit couvrir les risques psychosociaux.":
             "Partial. Under French law the single document is compulsory from the first employee, and must cover psychosocial risks.",
@@ -3039,7 +3044,7 @@ window.PRATIQUE_TEXTES = {
         // --- epuisement --------------------------------------------------------------------
         "Les trois dimensions décrites dans la littérature":
             "The three dimensions described in the literature",
-        "Cochez ce que vous reconnaissez. Ceci n'est pas un test et ne rend aucun résultat : c'est une aide à mettre des mots avant d'en parler.":
+        "Coche ce que tu reconnais. Ceci n'est pas un test et ne rend aucun résultat : c'est une aide à mettre des mots avant d'en parler.":
             "Tick what you recognise. This is not a test and returns no result: it is a help in finding words before speaking to somebody.",
         "Épuisement : la fatigue ne cède plus au repos":
             "Exhaustion: the tiredness no longer yields to rest",
@@ -3062,7 +3067,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- situation-grave ---------------------------------------------------------------
         "Face à une situation grave, dans l'ordre": "Facing a serious situation, in order",
-        "Harcèlement, discrimination, danger : cochez ce qui est déjà fait.":
+        "Harcèlement, discrimination, danger : coche ce qui est déjà fait.":
             "Harassment, discrimination, danger: tick what has already been done.",
         "J'ai noté les faits par écrit, datés, au fur et à mesure":
             "I have written the facts down, dated, as they happened",
@@ -3075,7 +3080,7 @@ window.PRATIQUE_TEXTES = {
             "I have contacted an employee representative or the works council",
         "J'ai consulté le médecin du travail, l'inspection du travail ou un défenseur des droits":
             "I have consulted the occupational doctor, the labour inspectorate or an equality body",
-        "Commencez par écrire les faits, datés. C'est la première chose que demanderont tous les interlocuteurs — et la plus difficile à reconstituer après coup.":
+        "Commence par écrire les faits, datés. C'est la première chose que demanderont tous les interlocuteurs — et la plus difficile à reconstituer après coup.":
             "Start by writing the facts down, dated. It is the first thing everybody will ask for — and the hardest to reconstruct after the event.",
         "En cours. L'alerte écrite à l'employeur est l'étape qui déclenche son obligation d'agir.":
             "Under way. The written alert to the employer is the step that triggers its duty to act.",
@@ -3094,7 +3099,7 @@ window.PRATIQUE_TEXTES = {
 
         // --- source-fiable -----------------------------------------------------------------
         "Cette réponse juridique vaut-elle quelque chose ?": "Is this legal answer worth anything?",
-        "Cochez ce qui est vrai de la source où vous venez de lire une règle.":
+        "Coche ce qui est vrai de la source où tu viens de lire une règle.":
             "Tick what is true of the source where you have just read a rule.",
         "Elle vient d'un site officiel": "It comes from an official site",
         "service-public.fr, Légifrance, un site en .gouv.fr":
@@ -3111,16 +3116,16 @@ window.PRATIQUE_TEXTES = {
             "It is not a forum post nor an AI answer taken as it stands",
         "À ne pas utiliser pour décider. Le droit change, et une réponse plausible peut être périmée ou étrangère.":
             "Not to be used to decide on. The law changes, and a plausible answer may be out of date or from another country.",
-        "Probablement juste, mais vérifiez la date et l'article cité avant d'agir.":
+        "Probablement juste, mais vérifie la date et l'article cité avant d'agir.":
             "Probably right, but check the date and the article cited before acting.",
-        "Source solide. Vous pouvez vous en servir, et la citer si besoin.":
+        "Source solide. Tu peux t'en servir, et la citer si besoin.":
             "A solid source. You can use it, and cite it if needed.",
         "La plupart des erreurs juridiques du quotidien ne viennent pas d'une règle mal comprise, mais d'une règle qui n'existe plus, ou qui n'a jamais existé en France.":
             "Most everyday legal mistakes do not come from a rule misunderstood, but from a rule that no longer exists, or never existed in France.",
 
         // --- delais-consommateur -----------------------------------------------------------
-        "Que vous reste-t-il comme recours ?": "What remedies do you have left?",
-        "Pour un achat auprès d'un professionnel. Comptez à partir du jour où vous avez reçu le bien.":
+        "Que te reste-t-il comme recours ?": "What remedies do you have left?",
+        "Pour un achat auprès d'un professionnel. Compte à partir du jour où tu as reçu le bien.":
             "For a purchase from a trader, under French law. Count from the day you received the goods.",
         "Jours depuis la réception": "Days since delivery",
         "Présomption : 24 (neuf) ou 12 (occasion)": "Presumption: 24 (new) or 12 (second-hand)",
@@ -3131,19 +3136,19 @@ window.PRATIQUE_TEXTES = {
         "Vice caché": "Hidden defect",
         "2 ans à compter de la découverte": "2 years from discovery",
         "encore 14 jour(s)": "still 14 day(s)",
-        "terminé : la preuve vous revient": "over: the burden of proof falls back on you",
+        "terminé : la preuve te revient": "over: the burden of proof falls back on you",
         "La rétractation ne dure que quatorze jours et ne vaut qu'à distance ; la garantie de conformité dure deux ans et vaut partout. Ce sont deux droits distincts, souvent confondus.":
             "The right to withdraw lasts only fourteen days and applies only to distance sales; the guarantee of conformity lasts two years and applies everywhere. Two distinct rights, often confused.",
 
         // --- lettre-efficace ---------------------------------------------------------------
-        "Votre courrier vaudra-t-il preuve ?": "Will your letter count as evidence?",
-        "Cochez ce que contient réellement le courrier que vous vous apprêtez à envoyer.":
+        "Ton courrier vaudra-t-il preuve ?": "Will your letter count as evidence?",
+        "Coche ce que contient réellement le courrier que tu t'apprêtes à envoyer.":
             "Tick what the letter you are about to send actually contains.",
-        "Vos coordonnées complètes et la référence du dossier ou du contrat":
+        "Tes coordonnées complètes et la référence du dossier ou du contrat":
             "Your full details and the file or contract reference",
         "Les faits, datés, sans commentaire ni reproche":
             "The facts, dated, with no commentary or reproach",
-        "Ce que vous demandez, précisément": "What you are asking for, precisely",
+        "Ce que tu demandes, précisément": "What you are asking for, precisely",
         "« le remboursement de 149 € », pas « un geste »":
             "“a refund of €149”, not “a gesture”",
         "Un délai de réponse, raisonnable et écrit": "A deadline to reply, reasonable and in writing",
@@ -3163,9 +3168,9 @@ window.PRATIQUE_TEXTES = {
             "A letter of complaint does not have to be well turned. It has to be dated, itemised, grounded and provable — the rest is decoration.",
 
         // --- conserver-papiers -------------------------------------------------------------
-        "Gardez-vous ce qu'il faut, aussi longtemps qu'il faut ?":
+        "Gardes-tu ce qu'il faut, aussi longtemps qu'il faut ?":
             "Are you keeping what you need, for as long as you need?",
-        "Cochez ce qui est vrai de vos archives personnelles.":
+        "Coche ce qui est vrai de tes archives personnelles.":
             "Tick what is true of your personal records.",
         "Je garde mes bulletins de paie sans limite de durée":
             "I keep my payslips with no time limit",
@@ -3190,14 +3195,14 @@ window.PRATIQUE_TEXTES = {
             "A dispute is rarely won on the merits and often on the document you can produce. Throwing away too soon costs more than filing.",
 
         // --- depot-de-garantie -------------------------------------------------------------
-        "Votre dépôt de garantie vous revient-il ?": "Is your deposit coming back to you?",
+        "Ton dépôt de garantie te revient-il ?": "Is your deposit coming back to you?",
         "Location vide ou meublée, après la remise des clés.":
             "Unfurnished or furnished tenancy in France, after the keys are handed back.",
         "Dépôt de garantie versé": "Deposit paid",
         "Loyer mensuel hors charges": "Monthly rent excluding charges",
         "Retenues justifiées par le bailleur": "Deductions justified by the landlord",
         "Mois de retard entamés": "Months of delay started",
-        "Somme qui vous revient": "Amount owed to you",
+        "Somme qui te revient": "Amount owed to you",
         "Délai légal de restitution": "Legal deadline for return (France)",
         "1 mois si l'état des lieux est conforme, 2 mois sinon":
             "1 month if the inventory matches, 2 months otherwise",
@@ -3207,8 +3212,8 @@ window.PRATIQUE_TEXTES = {
             "The increase is not a favour to be asked for: it is owed as of right. It still has to be claimed — nobody pays it spontaneously.",
 
         // --- preavis-bail ------------------------------------------------------------------
-        "Votre congé est-il valable ?": "Is your notice valid?",
-        "Cochez ce qui est vrai du congé que vous donnez à votre bailleur.":
+        "Ton congé est-il valable ?": "Is your notice valid?",
+        "Coche ce qui est vrai du congé que tu donnes à ton bailleur.":
             "Tick what is true of the notice you are giving your landlord.",
         "Il est donné par écrit": "It is given in writing",
         "recommandé avec accusé de réception, acte d'huissier ou remise en main propre contre signature":
@@ -3236,7 +3241,7 @@ window.PRATIQUE_TEXTES = {
             "Notice starts on receipt, never on posting. Two days in the post can shift the move-out by a whole month.",
 
         // --- periode-essai -----------------------------------------------------------------
-        "Où en êtes-vous de votre période d'essai ?": "Where are you in your probation period?",
+        "Où en es-tu de ta période d'essai ?": "Where are you in your probation period?",
         "Contrat à durée indéterminée. La durée initiale dépend de la catégorie : 2 mois employé, 3 mois agent de maîtrise, 4 mois cadre.":
             "Permanent contract under French law. The initial length depends on the category: 2 months for staff, 3 for supervisors, 4 for managers.",
         "Durée initiale prévue": "Initial length provided for",
@@ -3245,7 +3250,7 @@ window.PRATIQUE_TEXTES = {
         "Durée maximale avec renouvellement": "Maximum length with renewal",
         "Délai de prévenance applicable aujourd'hui": "Notice period applicable today",
         "Renouvellement": "Renewal",
-        "possible seulement si le contrat le prévoit et avec votre accord écrit":
+        "possible seulement si le contrat le prévoit et avec ton accord écrit":
             "possible only if the contract provides for it and with your written agreement",
         "24 heures": "24 hours",
         "48 heures": "48 hours",
@@ -3255,8 +3260,8 @@ window.PRATIQUE_TEXTES = {
             "Renewal is never presumed: with no clause in the contract and no written agreement, the probation period ends at its initial length.",
 
         // --- micro-entreprise --------------------------------------------------------------
-        "La micro-entreprise vous convient-elle ?": "Does the micro-entrepreneur regime suit you?",
-        "Cochez ce qui correspond à votre situation réelle.":
+        "La micro-entreprise te convient-elle ?": "Does the micro-entrepreneur regime suit you?",
+        "Coche ce qui correspond à ta situation réelle.":
             "Tick what matches your actual situation.",
         "Mon chiffre d'affaires reste sous les seuils du régime":
             "My turnover stays under the regime's thresholds",
@@ -3275,7 +3280,7 @@ window.PRATIQUE_TEXTES = {
         "certaines professions en sont exclues": "some professions are excluded from it",
         "Plusieurs signaux pointent vers une autre forme. Un rendez-vous gratuit en chambre consulaire vaut mieux qu'un choix par défaut.":
             "Several signs point to another form. A free appointment at a chamber of commerce beats a choice made by default.",
-        "Possible, mais regardez de près les cases non cochées : ce sont elles qui coûtent cher en cours de route.":
+        "Possible, mais regarde de près les cases non cochées : ce sont elles qui coûtent cher en cours de route.":
             "Possible, but look closely at the unticked boxes: those are the ones that cost dearly along the way.",
         "La micro-entreprise est probablement adaptée. C'est le régime le plus simple à ouvrir et à fermer.":
             "The micro-entrepreneur regime is probably suitable. It is the simplest to open and to close.",
@@ -3285,7 +3290,7 @@ window.PRATIQUE_TEXTES = {
         // --- clauses-abusives --------------------------------------------------------------
         "Ce contrat contient-il des clauses à écarter ?":
             "Does this contract contain clauses to be set aside?",
-        "Contrat entre un professionnel et un particulier. Cochez ce que vous y trouvez.":
+        "Contrat entre un professionnel et un particulier. Coche ce que tu y trouves.":
             "A contract between a trader and a consumer. Tick what you find in it.",
         "Une clause qui supprime ou réduit le droit à réparation en cas de faute du professionnel":
             "A clause removing or reducing the right to compensation if the trader is at fault",
@@ -3316,7 +3321,7 @@ window.PRATIQUE_TEXTES = {
         "Délai applicable": "Applicable period",
         "Délai total": "Total period",
         "Déjà écoulé": "Already elapsed",
-        "Il vous reste": "You have left",
+        "Il te reste": "You have left",
         "Prescrit depuis": "Time-barred for",
         "Verdict": "Verdict",
         "l'action est encore ouverte": "the claim is still open",
@@ -3333,9 +3338,9 @@ window.PRATIQUE_TEXTES = {
             "An honest estimate before going to court — to compare with settling.",
         "Somme réclamée": "Amount claimed",
         "Frais estimés": "Estimated costs",
-        "Chances de gagner, à votre estime": "Chances of winning, in your own estimation",
-        "Si vous gagnez": "If you win",
-        "Si vous perdez": "If you lose",
+        "Chances de gagner, à ton estime": "Chances of winning, in your own estimation",
+        "Si tu gagnes": "If you win",
+        "Si tu perds": "If you lose",
         "Résultat moyen attendu": "Average expected outcome",
         "un accord amiable, même partiel, rapporterait davantage":
             "a settlement, even a partial one, would bring in more",
@@ -3345,8 +3350,8 @@ window.PRATIQUE_TEXTES = {
             "In France, below €5,000 a lawyer is not compulsory and the court conciliator is free. Many everyday disputes are not economically worth the case they morally deserve.",
 
         // --- droits-rgpd -------------------------------------------------------------------
-        "Savez-vous ce que vous pouvez exiger ?": "Do you know what you can demand?",
-        "Cochez les droits que vous savez pouvoir exercer auprès de n'importe quelle entreprise détenant vos données.":
+        "Sais-tu ce que tu peux exiger ?": "Do you know what you can demand?",
+        "Coche les droits que tu sais pouvoir exercer auprès de n'importe quelle entreprise détenant tes données.":
             "Tick the rights you know you can exercise against any company holding your data.",
         "Obtenir la copie de toutes les données détenues sur moi":
             "Obtain a copy of all the data held about me",
@@ -3363,7 +3368,7 @@ window.PRATIQUE_TEXTES = {
             "These rights have existed since 2018 and cost nothing to exercise. Mostly they go unused.",
         "Bonne base. Le droit à la portabilité et le délai d'un mois sont les moins connus, et les plus utiles.":
             "A good base. The right to portability and the one-month deadline are the least known, and the most useful.",
-        "Vous connaissez vos droits. Ils s'exercent par un simple courriel, sans motif à donner.":
+        "Tu connais tes droits. Ils s'exercent par un simple courriel, sans motif à donner.":
             "You know your rights. They are exercised by a simple email, with no reason to give.",
         "Une demande d'accès se fait par courriel, sans justification, et l'entreprise a un mois pour répondre. Le silence est lui-même un motif de plainte.":
             "An access request is made by email, without justification, and the company has one month to answer. Silence is itself grounds for a complaint.",
@@ -3379,11 +3384,11 @@ window.PRATIQUE_TEXTES = {
         // =====================================================================
 
         // --- reserve-precaution ------------------------------------------------------------
-        "Calculez votre réserve de précaution": "Work out your emergency fund",
-        "Elle se calcule sur vos <strong>dépenses</strong>, jamais sur vos revenus.":
+        "Calcule ta réserve de précaution": "Work out your emergency fund",
+        "Elle se calcule sur tes <strong>dépenses</strong>, jamais sur tes revenus.":
             "It is calculated on your <strong>spending</strong>, never on your income.",
         "Dépenses mensuelles": "Monthly spending",
-        "Ce que vous pouvez mettre de côté chaque mois": "What you can set aside each month",
+        "Ce que tu peux mettre de côté chaque mois": "What you can set aside each month",
         // Le nombre est écrit en dur dans le simulateur : ces deux libellés
         // sont des textes fixes, pas des libellés construits avec une valeur.
         "Objectif minimal (3 mois)": "Minimum target (3 months)",
@@ -3393,18 +3398,18 @@ window.PRATIQUE_TEXTES = {
             "From the moment that fund exists, an unexpected event stops being a financial disaster.",
 
         // --- interets-composes -------------------------------------------------------------
-        "Voyez travailler les intérêts composés": "Watch compound interest work",
-        "La part qui vient des intérêts, et non de votre effort, est ce qui grandit avec le temps.":
+        "Vois travailler les intérêts composés": "Watch compound interest work",
+        "La part qui vient des intérêts, et non de ton effort, est ce qui grandit avec le temps.":
             "The share coming from interest, rather than from your effort, is what grows with time.",
         "Capital de départ": "Starting capital",
         "Capital au terme": "Capital at the end",
-        "Dont versé par vous": "Of which paid in by you",
+        "Dont versé par toi": "Of which paid in by you",
         "Dont produit par les intérêts": "Of which produced by interest",
-        "Allongez la durée de dix ans sans rien changer d'autre : c'est le levier le plus puissant du tableau.":
+        "Allonge la durée de dix ans sans rien changer d'autre : c'est le levier le plus puissant du tableau.":
             "Extend the term by ten years and change nothing else: it is the most powerful lever on the table.",
 
         // --- etf-vs-livret -----------------------------------------------------------------
-        "Comparez un placement et un livret": "Compare an investment and a savings account",
+        "Compare un placement et un livret": "Compare an investment and a savings account",
         "Le livret protège le capital ; il ne le fait pas croître. Les deux ont un rôle distinct.":
             "A savings account protects capital; it does not grow it. The two have distinct roles.",
         "Somme placée": "Amount invested",
@@ -3416,7 +3421,7 @@ window.PRATIQUE_TEXTES = {
             "The investment is not guaranteed, the savings account is. The gap is the price of the risk accepted — not a gain already earned.",
 
         // --- asymetrie-perte ---------------------------------------------------------------
-        "Mesurez l'asymétrie d'une baisse": "Measure the asymmetry of a fall",
+        "Mesure l'asymétrie d'une baisse": "Measure the asymmetry of a fall",
         "Une baisse et la hausse qui la répare ne sont jamais du même montant.":
             "A fall and the rise that repairs it are never the same size.",
         "Capital investi": "Capital invested",
@@ -3428,19 +3433,19 @@ window.PRATIQUE_TEXTES = {
             "Losing 50% means having to gain 100% to get back to par. That is why avoiding heavy losses counts for more than catching the rises.",
 
         // --- pea-vs-cto --------------------------------------------------------------------
-        "Comparez la fiscalité à la sortie": "Compare the tax on the way out",
+        "Compare la fiscalité à la sortie": "Compare the tax on the way out",
         "Même support, même performance : seul le contenant change.":
             "Same fund, same performance: only the wrapper changes.",
         "Gain réalisé": "Gain realised",
         "Prélèvement sur compte-titres (30 %)": "Tax on an ordinary securities account (30%, France)",
         "Prélèvement sur PEA de plus de 5 ans (17,2 %)":
             "Tax on a PEA — the French equity savings plan — held over 5 years (17.2%)",
-        "Écart en votre faveur": "Difference in your favour",
+        "Écart en ta faveur": "Difference in your favour",
         "Ce montant n'a demandé aucune performance supplémentaire : seulement d'avoir ouvert le bon contenant, assez tôt.":
             "That amount required no extra performance: only opening the right wrapper, early enough.",
 
         // --- perte-max-portefeuille --------------------------------------------------------
-        "Traduisez votre allocation en perte possible":
+        "Traduis ton allocation en perte possible":
             "Turn your allocation into a possible loss",
         "Une allocation ne se juge pas sur son rendement espéré, mais sur ce qu'elle fait perdre au pire moment.":
             "An allocation is not judged on its expected return, but on what it loses at the worst moment.",
@@ -3449,12 +3454,12 @@ window.PRATIQUE_TEXTES = {
         "Chute du marché actions envisagée": "Equity market fall considered",
         "Perte du portefeuille": "Loss of the portfolio",
         "Soit, sur le total": "That is, on the total",
-        "Il vous resterait": "You would be left with",
-        "Si ce montant vous empêcherait de dormir, l'allocation est trop exposée — quelle que soit la qualité du raisonnement qui l'a produite.":
+        "Il te resterait": "You would be left with",
+        "Si ce montant t'empêcherait de dormir, l'allocation est trop exposée — quelle que soit la qualité du raisonnement qui l'a produite.":
             "If that amount would keep you awake, the allocation is too exposed — however good the reasoning that produced it.",
 
         // --- cout-des-frais ----------------------------------------------------------------
-        "Chiffrez ce que vous coûtent les frais": "Put a number on what fees cost you",
+        "Chiffre ce que te coûtent les frais": "Put a number on what fees cost you",
         "La performance est une hypothèse. Les frais, eux, sont certains.":
             "Performance is a hypothesis. Fees are a certainty.",
         "Rendement annuel avant frais": "Annual return before fees",
@@ -3465,7 +3470,7 @@ window.PRATIQUE_TEXTES = {
             "None of that difference will ever appear on a statement: it is deducted silently, every year.",
 
         // --- comparateur-enveloppes --------------------------------------------------------
-        "Comparez les trois enveloppes sur un même gain":
+        "Compare les trois enveloppes sur un même gain":
             "Compare the three French wrappers on the same gain",
         "L'abattement de l'assurance-vie est annuel : il ne se reporte pas d'une année sur l'autre.":
             "The assurance-vie allowance is annual: it does not carry over from one year to the next.",
@@ -3475,20 +3480,20 @@ window.PRATIQUE_TEXTES = {
         "PEA de plus de 5 ans": "PEA held over 5 years",
         "Assurance-vie de plus de 8 ans": "Assurance-vie held over 8 years",
         "Meilleur net": "Best net",
-        "Les taux évoluent et votre situation aussi : ce calcul montre un ordre de grandeur, pas une réponse définitive.":
+        "Les taux évoluent et ta situation aussi : ce calcul montre un ordre de grandeur, pas une réponse définitive.":
             "Rates change and so does your situation: this calculation shows an order of magnitude, not a definitive answer.",
 
         // --- effet-duree -------------------------------------------------------------------
-        "Isolez l'effet de la durée": "Isolate the effect of time",
+        "Isole l'effet de la durée": "Isolate the effect of time",
         "Même effort mensuel, trois durées : l'écart ne vient que du temps laissé aux intérêts.":
             "Same monthly effort, three terms: the difference comes only from the time left to the interest.",
         "Versement mensuel": "Monthly contribution",
         "Rendement annuel supposé": "Assumed annual return",
-        "Triplez la durée et le capital est bien plus que triplé : c'est la durée, non le montant, qui fait le résultat.":
+        "Triple la durée et le capital est bien plus que triplé : c'est la durée, non le montant, qui fait le résultat.":
             "Triple the term and the capital is far more than tripled: it is the term, not the amount, that makes the result.",
 
         // --- part-de-gains-imposee ---------------------------------------------------------
-        "Décomposez un retrait": "Break down a withdrawal",
+        "Décompose un retrait": "Break down a withdrawal",
         "Retirer 20 000 € ne signifie pas être imposé sur 20 000 €.":
             "Withdrawing €20,000 does not mean being taxed on €20,000.",
         "Montant retiré": "Amount withdrawn",
@@ -3502,20 +3507,20 @@ window.PRATIQUE_TEXTES = {
             "Spreading the same withdrawal over two calendar years uses the allowance twice.",
 
         // --- sensibilite-duration ----------------------------------------------------------
-        "Calculez la sensibilité aux taux": "Work out the sensitivity to rates",
+        "Calcule la sensibilité aux taux": "Work out the sensitivity to rates",
         "Règle d'approximation : la baisse de prix vaut la duration multipliée par la variation de taux.":
             "Rule of thumb: the fall in price equals the duration multiplied by the change in rates.",
         "Montant placé en obligations": "Amount invested in bonds",
         "Duration du support": "Duration of the fund",
         "Hausse des taux": "Rise in rates",
         "Baisse de prix attendue": "Expected fall in price",
-        "Soit, sur votre montant": "That is, on your amount",
+        "Soit, sur ton montant": "That is, on your amount",
         "Valeur après la hausse des taux": "Value after the rise in rates",
         "Aucun emprunteur n'a fait défaut dans ce calcul : la baisse est purement arithmétique.":
             "No borrower defaulted in this calculation: the fall is purely arithmetical.",
 
         // --- biais-domestique --------------------------------------------------------------
-        "Mesurez votre biais domestique": "Measure your home bias",
+        "Mesure ton biais domestique": "Measure your home bias",
         "Les marchés français pèsent environ 3 % de la capitalisation mondiale.":
             "French markets are about 3% of world market capitalisation.",
         "Poche actions": "Equity pocket",
@@ -3523,11 +3528,11 @@ window.PRATIQUE_TEXTES = {
         "Investi en France": "Invested in France",
         "Une répartition mondiale en mettrait": "A world allocation would put in",
         "Surexposition": "Overexposure",
-        "Votre emploi et souvent votre logement dépendent déjà de cette même économie.":
+        "Ton emploi et souvent ton logement dépendent déjà de cette même économie.":
             "Your job and often your home already depend on that same economy.",
 
         // --- cout-du-report ----------------------------------------------------------------
-        "Chiffrez le coût d'attendre": "Put a number on the cost of waiting",
+        "Chiffre le coût d'attendre": "Put a number on the cost of waiting",
         "Reporter le démarrage paraît sans conséquence. Le calcul dit autre chose.":
             "Putting off the start seems harmless. The calculation says otherwise.",
         "Horizon total": "Total horizon",
@@ -3547,8 +3552,8 @@ window.PRATIQUE_TEXTES = {
         // =====================================================================
 
         // --- qualite-business-plan ---------------------------------------------------------
-        "Votre business plan tient-il debout ?": "Does your business plan hold up?",
-        "Cochez ce qui figure réellement dans votre document, pas ce que vous avez en tête.":
+        "Ton business plan tient-il debout ?": "Does your business plan hold up?",
+        "Coche ce qui figure réellement dans ton document, pas ce que tu as en tête.":
             "Tick what actually appears in your document, not what you have in mind.",
         "Le problème résolu est décrit avant la solution": "The problem solved is described before the solution",
         "Les clients visés sont nommés précisément": "The customers targeted are named precisely",
@@ -3566,11 +3571,11 @@ window.PRATIQUE_TEXTES = {
             "A good base. The downside scenario and the founder's pay are the most frequent omissions.",
         "Ce plan décrit une intention, pas encore un projet vérifiable.":
             "This plan describes an intention, not yet a verifiable project.",
-        "Un business plan sert d'abord à vous : c'est l'exercice qui révèle les hypothèses que vous n'aviez pas vues.":
+        "Un business plan sert d'abord à toi : c'est l'exercice qui révèle les hypothèses que tu n'avais pas vues.":
             "A business plan serves you first: it is the exercise that reveals the assumptions you had not seen.",
 
         // --- taille-de-marche --------------------------------------------------------------
-        "Estimez votre marché de façon honnête": "Estimate your market honestly",
+        "Estime ton marché de façon honnête": "Estimate your market honestly",
         "Trois cercles concentriques, du plus large au plus atteignable.":
             "Three concentric circles, from the widest to the most reachable.",
         "Clients potentiels au total": "Potential customers in total",
@@ -3588,8 +3593,8 @@ window.PRATIQUE_TEXTES = {
         // Les formes citées sont françaises : la « micro-entreprise » et ses
         // seuils n'ont pas d'équivalent exact ailleurs. Le nom est conservé et
         // la phrase dit qu'il est français.
-        "Quel statut vous correspond ?": "Which legal form suits you?",
-        "Cochez ce qui décrit votre situation. Les réponses orientent, elles ne décident pas.":
+        "Quel statut te correspond ?": "Which legal form suits you?",
+        "Coche ce qui décrit ta situation. Les réponses orientent, elles ne décident pas.":
             "Tick what describes your situation. The answers point a way, they do not decide.",
         "Je démarre seul, sans investissement initial important":
             "I am starting alone, with no significant initial investment",
@@ -3601,17 +3606,17 @@ window.PRATIQUE_TEXTES = {
         "J'envisage d'accueillir des associés ou des investisseurs":
             "I am considering taking on partners or investors",
         "Je vais recruter dans les douze mois": "I will be hiring within twelve months",
-        "Situation à préciser : listez vos charges prévisionnelles avant de trancher.":
+        "Situation à préciser : liste tes charges prévisionnelles avant de trancher.":
             "The picture needs sharpening: list your expected costs before deciding.",
-        "Profil orienté micro-entreprise. Vérifiez les seuils et l'absence de charges lourdes.":
+        "Profil orienté micro-entreprise. Vérifie les seuils et l'absence de charges lourdes.":
             "A profile pointing towards the French micro-entreprise. Check the thresholds and the absence of heavy costs.",
-        "Les trois derniers points orientent vers une société. Faites-vous accompagner.":
+        "Les trois derniers points orientent vers une société. Fais-toi accompagner.":
             "The last three points point towards an incorporated company. Get professional help.",
         "Le statut se change, mais rarement sans coût. Mieux vaut anticiper douze mois que reprendre dans six.":
             "A legal form can be changed, but rarely for free. Better to plan twelve months ahead than to redo it in six.",
 
         // --- besoin-de-financement ---------------------------------------------------------
-        "Chiffrez votre besoin de démarrage": "Put a number on what starting up needs",
+        "Chiffre ton besoin de démarrage": "Put a number on what starting up needs",
         "Le poste le plus souvent oublié n'est pas l'investissement : c'est la trésorerie d'attente.":
             "The item most often forgotten is not the investment: it is the cash to live on while waiting.",
         "Matériel, aménagement, développement": "Equipment, fit-out, development",
@@ -3625,8 +3630,8 @@ window.PRATIQUE_TEXTES = {
             "A plan that finances only the investment runs out of money in the third month, while everything is going well.",
 
         // --- test-de-validation ------------------------------------------------------------
-        "Votre besoin est-il vraiment validé ?": "Is the need really validated?",
-        "Cochez ce que vous avez constaté, pas ce qu'on vous a dit.":
+        "Ton besoin est-il vraiment validé ?": "Is the need really validated?",
+        "Coche ce que tu as constaté, pas ce qu'on t'a dit.":
             "Tick what you have observed, not what you were told.",
         "J'ai interrogé des inconnus, pas seulement mes proches":
             "I have interviewed strangers, not only people close to me",
@@ -3645,15 +3650,15 @@ window.PRATIQUE_TEXTES = {
         "cela vaut cinquante entretiens polis": "that is worth fifty polite interviews",
         "Besoin réel, confirmé par des comportements et non par des paroles.":
             "A real need, confirmed by behaviour rather than by words.",
-        "Signaux encourageants. Cherchez maintenant une preuve de paiement.":
+        "Signaux encourageants. Cherche maintenant une preuve de paiement.":
             "Encouraging signals. Now look for proof of payment.",
-        "Vous avez de l'encouragement, pas encore de validation.":
+        "Tu as de l'encouragement, pas encore de validation.":
             "You have encouragement, not yet validation.",
         "Un compliment poli ne vaut rien. Un « je peux payer maintenant ? » vaut cinquante entretiens.":
             "A polite compliment is worth nothing. A “can I pay now?” is worth fifty interviews.",
 
         // --- marge-et-prix -----------------------------------------------------------------
-        "Calculez votre marge et votre équilibre": "Work out your margin and your break-even",
+        "Calcule ta marge et ton équilibre": "Work out your margin and your break-even",
         "Le nombre de clients à atteindre se calcule sur la marge, jamais sur le prix affiché.":
             "The number of customers to reach is worked out on the margin, never on the price on display.",
         "Prix de vente mensuel": "Monthly selling price",
@@ -3667,7 +3672,7 @@ window.PRATIQUE_TEXTES = {
             "A sale without margin is not a customer won: it is a loss that grows with volume.",
 
         // --- cout-acquisition --------------------------------------------------------------
-        "Combien vous coûte un client ?": "What does a customer cost you?",
+        "Combien te coûte un client ?": "What does a customer cost you?",
         "Le chiffre n'a de sens que comparé à ce que le client rapporte.":
             "The figure only means something compared with what the customer brings in.",
         "Budget d'acquisition mensuel": "Monthly acquisition budget",
@@ -3691,11 +3696,11 @@ window.PRATIQUE_TEXTES = {
         "Autonomie": "Runway",
         "à l'équilibre ou positif": "break-even or positive",
         "Encaissements nécessaires pour l'équilibre": "Cash in needed to break even",
-        "Surveillez votre autonomie en mois, pas votre chiffre d'affaires. C'est elle qui dit combien de temps il reste.":
+        "Surveille ton autonomie en mois, pas ton chiffre d'affaires. C'est elle qui dit combien de temps il reste.":
             "Watch your runway in months, not your revenue. It is the runway that says how long is left.",
 
         // --- cac-ltv -----------------------------------------------------------------------
-        "Vos unit economics tiennent-elles ?": "Do your unit economics hold up?",
+        "Tes unit economics tiennent-elles ?": "Do your unit economics hold up?",
         "La valeur vie se calcule sur la marge, jamais sur le chiffre d'affaires.":
             "Lifetime value is worked out on the margin, never on the revenue.",
         "Durée de vie moyenne d'un client": "Average lifetime of a customer",
@@ -3707,15 +3712,15 @@ window.PRATIQUE_TEXTES = {
             "Raising the lifetime from 14 to 20 months adds 43% of lifetime value, without a single extra euro of acquisition.",
 
         // --- dilution ----------------------------------------------------------------------
-        "Mesurez votre dilution": "Measure your dilution",
+        "Mesure ta dilution": "Measure your dilution",
         "Ce qu'on cède en capital ne se récupère pas.": "What you give away in equity does not come back.",
         "Montant levé": "Amount raised",
         "Valorisation avant opération": "Pre-money valuation",
-        "Votre part actuelle du capital": "Your current share of the equity",
+        "Ta part actuelle du capital": "Your current share of the equity",
         "Tours de table supplémentaires envisagés": "Further funding rounds envisaged",
         "tours de table": "rounds",
         "Part cédée à l'investisseur": "Share given to the investor",
-        "Votre part après cette levée": "Your share after this round",
+        "Ta part après cette levée": "Your share after this round",
         "Lever n'est pas gagner de l'argent : c'est prendre un engagement de croissance devant des gens qui attendent une sortie.":
             "Raising money is not earning it: it is committing to growth in front of people who expect an exit.",
 
@@ -3730,7 +3735,7 @@ window.PRATIQUE_TEXTES = {
         "Taux de marge de l'activité": "Margin rate of the business",
         "Coût employeur mensuel": "Monthly cost to the employer",
         "Chiffre d'affaires supplémentaire nécessaire": "Extra revenue needed",
-        "La question devient concrète : cette personne apportera-t-elle ce chiffre d'affaires, ou libérera-t-elle assez de votre temps pour que vous le fassiez ?":
+        "La question devient concrète : cette personne apportera-t-elle ce chiffre d'affaires, ou libérera-t-elle assez de ton temps pour que tu le fasses ?":
             "The question becomes concrete: will this person bring in that revenue, or free up enough of your time for you to bring it in?",
 
         // --- risques-juridiques ------------------------------------------------------------
@@ -3738,7 +3743,7 @@ window.PRATIQUE_TEXTES = {
         // phrase dit qu'il est français. Le registre des traitements, lui, vient
         // du RGPD et vaut dans toute l'Union.
         "Ce qui est écrit, et ce qui ne l'est pas": "What is written down, and what is not",
-        "Cochez ce qui existe aujourd'hui, sous forme écrite et signée.":
+        "Coche ce qui existe aujourd'hui, sous forme écrite et signée.":
             "Tick what exists today, written down and signed.",
         "Un accord entre associés prévoit le départ de l'un d'eux":
             "A shareholders' agreement covers one of them leaving",

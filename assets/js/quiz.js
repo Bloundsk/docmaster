@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - QUIZ INTERACTIF
+// CLICKED - QUIZ INTERACTIF
 // v2 : un quiz par sous-section + un quiz de synthèse, avec rotation
 // ===================================
 //
@@ -166,7 +166,7 @@
             const banque = (window.QUIZ.sections || {})[titreH3.id];
             if (!banque) return;
 
-            construireQuiz(selectionner(banque), corps, T("quizTitre", "🧠 Vérifiez votre compréhension"), T("quizSurtitre", "On passe au test"));
+            construireQuiz(selectionner(banque), corps, T("quizTitre", "🧠 Vérifie ta compréhension"), T("quizSurtitre", "On passe au test"));
         });
 
         // 2. Le quiz de synthèse, en bas de page

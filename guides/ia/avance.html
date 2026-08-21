@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Intelligence Artificielle — Avancé - DocMaster</title>
+    <title>Intelligence Artificielle — Avancé - Clicked</title>
     <meta name="description" content="Niveau avancé du parcours IA : température et reproductibilité, évaluation d'un système, injection de consigne, et l'arbitrage entre fine-tuning et RAG.">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
 
@@ -31,23 +31,24 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/ia/avance.html">
-    <meta property="og:site_name" content="DocMaster">
-    <meta property="og:title" content="Intelligence Artificielle — Avancé - DocMaster">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Intelligence Artificielle — Avancé - Clicked">
     <meta property="og:description" content="Niveau avancé du parcours IA : température et reproductibilité, évaluation d'un système, injection de consigne, et l'arbitrage entre fine-tuning et RAG.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/ia/avance.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Intelligence Artificielle — Avancé - DocMaster">
+    <meta name="twitter:title" content="Intelligence Artificielle — Avancé - Clicked">
     <meta name="twitter:description" content="Niveau avancé du parcours IA : température et reproductibilité, évaluation d'un système, injection de consigne, et l'arbitrage entre fine-tuning et RAG.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
     <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/identite.js"></script>
     <script src="../../assets/js/langues.js"></script>
     <script src="../../assets/js/layout.js"></script>
 
@@ -77,7 +78,7 @@
     </header>
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 16 août 2026</span>
+        <span>🕒 Dernière mise à jour : 21 août 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -154,7 +155,7 @@
                 <p>« On a changé la consigne, c'est mieux. » Cette phrase, très répandue, ne veut rien dire. Sans mesure, une amélioration ressentie sur trois essais peut parfaitement être une dégradation sur cent.</p>
 
                 <h4>Le jeu de test, avant tout le reste</h4>
-                <p>Constituez <strong>vingt à cinquante cas représentatifs</strong> de l'usage réel, avec pour chacun la réponse attendue. Ce jeu est votre seule protection contre l'illusion du progrès.</p>
+                <p>Constitue <strong>vingt à cinquante cas représentatifs</strong> de l'usage réel, avec pour chacun la réponse attendue. Ce jeu est ta seule protection contre l'illusion du progrès.</p>
                 <p>Il doit contenir des cas faciles, des cas limites, et surtout des cas où <strong>la bonne réponse est « je ne sais pas »</strong>. Ces derniers sont les plus révélateurs : un système qui invente échoue précisément là.</p>
 
                 <div class="exemple">
@@ -172,10 +173,10 @@
                 <div class="piege">
                     <span class="titre">Erreur fréquente — évaluer sur les cas qui ont servi à régler</span>
                     <p>Ajuster une consigne en regardant les mêmes exemples qui servent à la noter garantit un excellent score, et ne dit rien du comportement réel.</p>
-                    <p>Gardez un jeu à part, jamais consulté pendant les réglages, et ne l'ouvrez qu'à la fin.</p>
+                    <p>Garde un jeu à part, jamais consulté pendant les réglages, et ne l'ouvre qu'à la fin.</p>
                 </div>
 
-                <p class="retenir">💡 Sans jeu de test, vous n'améliorez pas un système : vous le déplacez.</p>
+                <p class="retenir">💡 Sans jeu de test, tu n'améliores pas un système : tu le déplaces.</p>
                 </div>
             </details>
 
@@ -185,7 +186,7 @@
                 <p>C'est la vulnérabilité la plus importante des systèmes à base de modèles de langage, et la seule qu'on ne sache pas refermer complètement.</p>
 
                 <h4>La cause : tout est du texte</h4>
-                <p>Un modèle reçoit vos instructions et les données à traiter dans un même flux de texte. <strong>Il n'a aucun moyen fiable de distinguer les deux.</strong> Si une donnée contient une phrase ressemblant à une instruction, elle peut être suivie.</p>
+                <p>Un modèle reçoit tes instructions et les données à traiter dans un même flux de texte. <strong>Il n'a aucun moyen fiable de distinguer les deux.</strong> Si une donnée contient une phrase ressemblant à une instruction, elle peut être suivie.</p>
                 <p>Le cas indirect est le plus dangereux : l'attaquant n'écrit pas au système. Il place son texte dans une page web, un document, un courriel — quelque chose que l'agent ira lire de lui-même.</p>
 
                 <div class="exemple">
@@ -207,7 +208,7 @@
                     <p>Traiter cela comme une question de rédaction plutôt que d'architecture, c'est se croire protégé sans l'être.</p>
                 </div>
 
-                <p class="retenir">💡 Un agent qui lit du contenu non maîtrisé doit être conçu comme s'il pouvait être retourné contre vous.</p>
+                <p class="retenir">💡 Un agent qui lit du contenu non maîtrisé doit être conçu comme s'il pouvait être retourné contre toi.</p>
                 </div>
             </details>
 
@@ -217,7 +218,7 @@
                 <p>« Il faudrait entraîner un modèle sur nos données. » L'intuition est répandue et se révèle presque toujours inutile — voire contre-productive.</p>
 
                 <h4>Ce que le fine-tuning fait, et ne fait pas</h4>
-                <p>Le fine-tuning poursuit l'entraînement d'un modèle existant sur vos exemples. Il excelle à enseigner une <strong>forme</strong> : un ton, un format de sortie, une manière de structurer les réponses, un vocabulaire métier.</p>
+                <p>Le fine-tuning poursuit l'entraînement d'un modèle existant sur tes exemples. Il excelle à enseigner une <strong>forme</strong> : un ton, un format de sortie, une manière de structurer les réponses, un vocabulaire métier.</p>
                 <p>Il est en revanche mauvais pour ajouter des <strong>connaissances</strong>. Les faits appris s'y diluent, ne sont pas citables, et deviennent obsolètes sans qu'on puisse les corriger autrement qu'en recommençant. Une information qui change chaque semaine n'a rien à faire dans des poids figés.</p>
 
                 <div class="exemple">
@@ -230,7 +231,7 @@
                 <div class="pratique" data-pratique="entrainer-ou-recuperer"></div>
 
                 <h4>Le coût caché</h4>
-                <p>Un modèle affiné est un modèle que vous devez maintenir : refaire l'entraînement à chaque nouvelle version du modèle de base, conserver le jeu d'exemples, mesurer les régressions. Vous quittez le fournisseur qui met à jour pour vous et prenez la charge à votre compte.</p>
+                <p>Un modèle affiné est un modèle que tu dois maintenir : refaire l'entraînement à chaque nouvelle version du modèle de base, conserver le jeu d'exemples, mesurer les régressions. Tu quittes le fournisseur qui met à jour pour toi et prends la charge à ton compte.</p>
 
                 <div class="piege">
                     <span class="titre">Erreur fréquente — l'entraînement comme raccourci face à un problème mal posé</span>
@@ -238,7 +239,7 @@
                     <p>Le résultat est un modèle coûteux qui échoue de manière plus difficile à diagnostiquer, sur un problème qui n'avait jamais été mesuré.</p>
                 </div>
 
-                <p class="retenir">💡 Entraîner apprend une manière de dire. Récupérer apporte ce qu'il y a à dire. Ne confondez pas les deux besoins.</p>
+                <p class="retenir">💡 Entraîner apprend une manière de dire. Récupérer apporte ce qu'il y a à dire. Ne confonds pas les deux besoins.</p>
                 </div>
             </details>
         </section>
@@ -264,7 +265,7 @@
                     <li><strong>Règlement européen sur l'IA</strong> : les obligations de transparence et de documentation, qui supposent précisément d'avoir mesuré son système.</li>
                     <li><strong>Travaux sur les biais des modèles-juges</strong> : préférence pour les réponses longues et effet de position, mesurés et quantifiés.</li>
                 </ul>
-                <p><strong>Un réflexe utile :</strong> avant d'envisager un entraînement, écrivez la phrase « le modèle ne sait pas X » ou « le modèle répond mal ». La réponse détermine seule la marche à suivre.</p>
+                <p><strong>Un réflexe utile :</strong> avant d'envisager un entraînement, écris la phrase « le modèle ne sait pas X » ou « le modèle répond mal ». La réponse détermine seule la marche à suivre.</p>
             </article>
         </section>
 

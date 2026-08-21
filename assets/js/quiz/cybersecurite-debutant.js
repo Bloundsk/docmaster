@@ -59,7 +59,7 @@ window.QUIZ = {
                     "Une application d'authentification"
                 ],
                 a: 1,
-                explication: "Le SIM swapping permet à un escroc de faire transférer votre numéro sur sa propre carte SIM."
+                explication: "Le SIM swapping permet à un escroc de faire transférer ton numéro sur sa propre carte SIM."
             },
             {
                 q: "Que produit l'obligation de changer de mot de passe tous les 90 jours ?",
@@ -94,7 +94,7 @@ window.QUIZ = {
                     "Elles n'ont jamais été un signal"
                 ],
                 a: 1,
-                explication: "Regardez plutôt le domaine, à droite du @ et avant le premier /."
+                explication: "Regarde plutôt le domaine, à droite du @ et avant le premier /."
             },
             {
                 q: "Dans l'adresse banque.fr.verification-compte.net, quel est le vrai domaine ?",
@@ -114,14 +114,14 @@ window.QUIZ = {
                 explication: "N'importe qui obtient un certificat gratuit en cinq minutes, y compris un escroc."
             },
             {
-                q: "Un conseiller bancaire vous appelle et demande un code de validation. Que faire ?",
+                q: "Un conseiller bancaire t'appelle et demande un code de validation. Que faire ?",
                 options: [
-                    "Le donner s'il connaît vos coordonnées",
-                    "Raccrocher et rappeler le numéro au dos de votre carte",
+                    "Le donner s'il connaît tes coordonnées",
+                    "Raccrocher et rappeler le numéro au dos de ta carte",
                     "Demander son matricule puis le donner"
                 ],
                 a: 1,
-                explication: "Un vrai conseiller le comprendra ; un escroc tentera de vous en dissuader."
+                explication: "Un vrai conseiller le comprendra ; un escroc tentera de t'en dissuader."
             },
             {
                 q: "Pourquoi les campagnes de test en entreprise montrent-elles des taux de clic élevés ?",
@@ -146,7 +146,7 @@ window.QUIZ = {
                     "Les fichiers infectés téléchargés"
                 ],
                 a: 1,
-                explication: "Il ne voit rien quand vous saisissez volontairement votre mot de passe sur un faux site."
+                explication: "Il ne voit rien quand tu saisis volontairement ton mot de passe sur un faux site."
             },
             {
                 q: "Quelle est la mesure de protection la plus efficace ?",
@@ -177,7 +177,7 @@ window.QUIZ = {
                     "Un pare-feu bien configuré"
                 ],
                 a: 1,
-                explication: "Aucun antivirus ne garantit une protection contre le chiffrement de vos fichiers."
+                explication: "Aucun antivirus ne garantit une protection contre le chiffrement de tes fichiers."
             },
             {
                 q: "Que signifie la règle 3-2-1 en matière de sauvegarde ?",
@@ -197,7 +197,7 @@ window.QUIZ = {
                     "Sa fréquence"
                 ],
                 a: 1,
-                explication: "Essayez de restaurer un fichier au hasard une fois par an : une sauvegarde jamais testée n'en est pas une."
+                explication: "Essaie de restaurer un fichier au hasard une fois par an : une sauvegarde jamais testée n'en est pas une."
             }
         ],
 
@@ -209,10 +209,10 @@ window.QUIZ = {
                 options: [
                     "Que le site est légitime",
                     "Que personne ne peut lire ni modifier les échanges pendant le trajet",
-                    "Que vos données ne seront pas revendues"
+                    "Que tes données ne seront pas revendues"
                 ],
                 a: 1,
-                explication: "Le cadenas protège la route, pas la destination. Vérifiez toujours le nom de domaine."
+                explication: "Le cadenas protège la route, pas la destination. Vérifie toujours le nom de domaine."
             },
             {
                 q: "Quelle différence entre chiffrement en transit et au repos ?",
@@ -232,7 +232,7 @@ window.QUIZ = {
                     "Le message s'efface après lecture"
                 ],
                 a: 1,
-                explication: "Beaucoup de messageries électroniques classiques ne l'appliquent pas : l'hébergeur peut lire vos courriels."
+                explication: "Beaucoup de messageries électroniques classiques ne l'appliquent pas : l'hébergeur peut lire tes courriels."
             },
             // Série 2
             {
@@ -253,7 +253,7 @@ window.QUIZ = {
                     "Oui, s'il est payant"
                 ],
                 a: 1,
-                explication: "Il déplace simplement la confiance de votre opérateur vers le fournisseur du VPN, qui voit tout votre trafic."
+                explication: "Il déplace simplement la confiance de ton opérateur vers le fournisseur du VPN, qui voit tout ton trafic."
             },
             {
                 q: "Quelle précaution reste utile sur un Wi-Fi public ?",
@@ -294,7 +294,7 @@ window.QUIZ = {
             explication: "Une soirée de mise en place suffit à éliminer l'essentiel du risque personnel."
         },
         {
-            q: "Un organisme légitime peut-il vous demander votre mot de passe ?",
+            q: "Un organisme légitime peut-il te demander ton mot de passe ?",
             options: [
                 "Oui, s'il s'agit du service de sécurité",
                 "Non, par aucun canal, sans exception",
@@ -305,17 +305,17 @@ window.QUIZ = {
         },
         // Série 2
         {
-            q: "Vous recevez un SMS annonçant un colis bloqué, avec un lien. Que faire ?",
+            q: "Tu reçois un SMS annonçant un colis bloqué, avec un lien. Que faire ?",
             options: [
-                "Cliquer, puisque vous attendez effectivement un colis",
-                "Ouvrir vous-même le site du transporteur que vous connaissez",
+                "Cliquer, puisque tu attends effectivement un colis",
+                "Ouvrir toi-même le site du transporteur que tu connais",
                 "Répondre au SMS pour demander des précisions"
             ],
             a: 1,
-            explication: "Le réflexe unique : ne jamais utiliser le lien fourni. Si le message était vrai, l'information vous attendra."
+            explication: "Le réflexe unique : ne jamais utiliser le lien fourni. Si le message était vrai, l'information t'attendra."
         },
         {
-            q: "Que faire en priorité si vous pensez qu'un compte a été compromis ?",
+            q: "Que faire en priorité si tu penses qu'un compte a été compromis ?",
             options: [
                 "Lancer une analyse antivirus complète",
                 "Changer le mot de passe de la messagerie principale depuis un appareil sain",

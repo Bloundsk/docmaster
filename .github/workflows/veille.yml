@@ -1,4 +1,4 @@
-name: Veille quotidienne DocMaster
+name: Veille quotidienne Clicked
 
 on:
   schedule:

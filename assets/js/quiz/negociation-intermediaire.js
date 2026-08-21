@@ -14,9 +14,9 @@ window.QUIZ = {
             {
                 q: "D'où vient le pouvoir dans une négociation ?",
                 options: [
-                    "De ce que vous obtenez si vous partez",
-                    "De la qualité de vos arguments",
-                    "De votre assurance"
+                    "De ce que tu obtiens si tu pars",
+                    "De la qualité de tes arguments",
+                    "De ton assurance"
                 ],
                 a: 0,
                 explication: "C'est ce qui explique que deux personnes également habiles n'aient pas le même pouvoir."
@@ -29,12 +29,12 @@ window.QUIZ = {
                     "La moyenne des offres reçues"
                 ],
                 a: 0,
-                explication: "Elle fixe votre point de rupture : aucune offre inférieure ne mérite d'être acceptée."
+                explication: "Elle fixe ton point de rupture : aucune offre inférieure ne mérite d'être acceptée."
             },
             {
                 q: "Solution de rechange à 28 000 €, offre à 30 000 €, coût de poursuite 500 € :",
                 options: [
-                    "Gain de 2 000 € — vous avez de la marge pour continuer",
+                    "Gain de 2 000 € — tu as de la marge pour continuer",
                     "Il faut accepter immédiatement",
                     "L'offre est moins bonne que de partir"
                 ],
@@ -56,11 +56,11 @@ window.QUIZ = {
                 q: "Que dit la solution de rechange de l'autre ?",
                 options: [
                     "Jusqu'où il peut aller",
-                    "Ce qu'il pense de vous",
+                    "Ce qu'il pense de toi",
                     "Son budget exact"
                 ],
                 a: 0,
-                explication: "Un fournisseur qui n'a que vous comme client ne négocie pas comme un fournisseur qui en a vingt."
+                explication: "Un fournisseur qui n'a que toi comme client ne négocie pas comme un fournisseur qui en a vingt."
             },
             {
                 q: "Que vaut « je peux très bien aller ailleurs » sans que ce soit vrai ?",
@@ -182,7 +182,7 @@ window.QUIZ = {
                     "Elle n'a aucun effet"
                 ],
                 a: 0,
-                explication: "L'autre en conclut que vous ne connaissez pas le sujet, ou que vous ne négociez pas de bonne foi."
+                explication: "L'autre en conclut que tu ne connais pas le sujet, ou que tu ne négocies pas de bonne foi."
             },
             {
                 q: "Qu'est-ce qui caractérise une ancre efficace ?",

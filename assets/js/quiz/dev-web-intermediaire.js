@@ -56,7 +56,7 @@ window.QUIZ = {
                 q: "Où placer une clé d'API secrète ?",
                 options: [
                     "Dans le code JavaScript, en la minifiant",
-                    "Sur votre serveur, qui relaie la demande",
+                    "Sur ton serveur, qui relaie la demande",
                     "Dans une variable du navigateur"
                 ],
                 a: 1,
@@ -182,7 +182,7 @@ window.QUIZ = {
                     "Cela ne fonctionne pas en HTTPS"
                 ],
                 a: 1,
-                explication: "Déployez toujours l'ensemble, depuis une source unique — idéalement automatiquement."
+                explication: "Déploie toujours l'ensemble, depuis une source unique — idéalement automatiquement."
             },
             {
                 q: "Pourquoi une modification peut-elle sembler absente après déploiement ?",

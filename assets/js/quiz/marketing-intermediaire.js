@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Quel avantage l'e-mail conserve-t-il sur les réseaux sociaux ?",
                 options: [
                     "Un meilleur taux de conversion garanti",
-                    "La liste vous appartient : aucun algorithme ne peut vous priver de votre audience",
+                    "La liste t'appartient : aucun algorithme ne peut te priver de ton audience",
                     "Un coût nul"
                 ],
                 a: 1,
@@ -299,7 +299,7 @@ window.QUIZ = {
             explication: "Dans les deux cas, la première étape pèse le plus lourd sur le résultat final."
         },
         {
-            q: "Vous avez 1 000 € et un tunnel qui convertit à 1 %. Que faire ?",
+            q: "Tu as 1 000 € et un tunnel qui convertit à 1 %. Que faire ?",
             options: [
                 "Acheter du trafic",
                 "Comprendre pourquoi 99 % partent",

@@ -19,7 +19,7 @@ window.QUIZ = {
                     "Comment vais-je commencer ?"
                 ],
                 a: 0,
-                explication: "Elle détermine votre position réelle, pas votre position affichée."
+                explication: "Elle détermine ta position réelle, pas ta position affichée."
             },
             {
                 q: "Que vaut une demande formulée comme « être mieux reconnu » ?",
@@ -326,7 +326,7 @@ window.QUIZ = {
             explication: "Aucune technique du guide ne demande moins d'effort et n'en rapporte autant."
         },
         {
-            q: "Un collègue vous demande un avis sur un désaccord à régler par courriel. Que conseiller ?",
+            q: "Un collègue te demande un avis sur un désaccord à régler par courriel. Que conseiller ?",
             options: [
                 "De le traiter à l'oral : les désaccords s'écrivent mal, et l'écrit sert ensuite à acter",
                 "De soigner particulièrement le ton du message",

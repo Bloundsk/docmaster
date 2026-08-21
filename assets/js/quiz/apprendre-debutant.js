@@ -122,7 +122,7 @@ window.QUIZ = {
                 q: "Que font les logiciels de cartes mémoire comme Anki ?",
                 options: [
                     "Ils tiennent le calendrier des révisions",
-                    "Ils mémorisent à votre place",
+                    "Ils mémorisent à ta place",
                     "Ils rédigent les fiches"
                 ],
                 a: 0,
@@ -237,7 +237,7 @@ window.QUIZ = {
                     "Se dire qu'on a compris"
                 ],
                 a: 1,
-                explication: "Ce qui sort est ce que vous savez. Le reste, vous l'auriez identifié dans une liste."
+                explication: "Ce qui sort est ce que tu sais. Le reste, tu l'aurais identifié dans une liste."
             },
             // Série 2
             {
@@ -326,7 +326,7 @@ window.QUIZ = {
             explication: "C'est à la fois le test le plus fiable et une révision à part entière."
         },
         {
-            q: "Vous avez appris quelque chose ce matin. Quand la révision rapportera-t-elle le plus ?",
+            q: "Tu as appris quelque chose ce matin. Quand la révision rapportera-t-elle le plus ?",
             options: [
                 "Aujourd'hui ou demain",
                 "Dans deux semaines",

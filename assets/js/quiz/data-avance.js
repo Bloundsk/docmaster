@@ -337,7 +337,7 @@ window.QUIZ = {
                 "La documentation de l'outil"
             ],
             a: 1,
-            explication: "Ce document vous protège de vous-même au bout de trois jours."
+            explication: "Ce document te protège de toi-même au bout de trois jours."
         }
     ]
 };

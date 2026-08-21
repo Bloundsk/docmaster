@@ -171,7 +171,7 @@ window.QUIZ = {
                 q: "Que prouve le recommandé avec accusé de réception, qu'un courriel ne prouve pas toujours ?",
                 options: [
                     "Que le destinataire a reçu",
-                    "Que vous avez écrit",
+                    "Que tu as écrit",
                     "La date d'envoi"
                 ],
                 a: 0,

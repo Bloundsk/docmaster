@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - DONNÉES DE RECHERCHE
+// CLICKED - DONNÉES DE RECHERCHE
 // ===================================
 
 const searchIndex = [
@@ -27,7 +27,7 @@ const searchIndex = [
     { title: "IA — Intermédiaire", description: "Ce quil faut comprendre pour construire quelque chose qui tienne.", url: "guides/ia/intermediaire.html", keywords: "ia intermédiaire niveau 2 jetons contexte rag outils coût modèle" },
     { title: "Le contexte et les jetons", description: "Pourquoi le coût dune conversation grimpe avec le nombre de tours.", url: "guides/ia/intermediaire.html", keywords: "jeton token fenêtre contexte historique coût facturation mémoire" },
     { title: "Donner ses documents au modèle", description: "Le RAG expliqué sans jargon : chercher dabord, répondre ensuite.", url: "guides/ia/intermediaire.html", keywords: "rag récupération plongement embedding fragment découpage documents sources" },
-    { title: "Les outils dun agent", description: "Le modèle propose, votre code dispose.", url: "guides/ia/intermediaire.html", keywords: "outils fonction appel agent moindre privilège confirmation irréversible" },
+    { title: "Les outils dun agent", description: "Le modèle propose, ton code dispose.", url: "guides/ia/intermediaire.html", keywords: "outils fonction appel agent moindre privilège confirmation irréversible" },
     { title: "Choisir un modèle", description: "Qualité sur la tâche, latence, coût, et où circulent les données.", url: "guides/ia/intermediaire.html", keywords: "choisir modèle latence coût million jetons ouvert fermé classement benchmark" },
     { title: "IA — Avancé", description: "Mesurer, sécuriser, et savoir quand ne pas entraîner.", url: "guides/ia/avance.html", keywords: "ia avancé niveau 3 température évaluation injection fine-tuning" },
     { title: "La température et le hasard", description: "Pourquoi la même question donne des réponses différentes.", url: "guides/ia/avance.html", keywords: "température échantillonnage hasard reproductibilité déterminisme réglage" },
@@ -62,7 +62,7 @@ const searchIndex = [
     { title: "Le parcours dachat", description: "Les taux se multiplient : quatre étapes à 50 % laissent 6 %.", url: "guides/marketing/intermediaire.html", keywords: "parcours achat tunnel conversion point de fuite panier abandon" },
     { title: "Lintention de recherche", description: "Informationnelle, navigationnelle, commerciale, transactionnelle.", url: "guides/marketing/intermediaire.html", keywords: "intention recherche seo contenu format serp longue traîne" },
     { title: "Mesurer ce qui compte", description: "Un chiffre qui ne change aucune décision est une décoration.", url: "guides/marketing/intermediaire.html", keywords: "mesure indicateur vanité utm attribution taux volume conversion" },
-    { title: "Lemail et lautomatisation", description: "La liste vous appartient : trois séquences font lessentiel.", url: "guides/marketing/intermediaire.html", keywords: "email newsletter séquence automatisation délivrabilité consentement rgpd" },
+    { title: "Lemail et lautomatisation", description: "La liste tappartient : trois séquences font lessentiel.", url: "guides/marketing/intermediaire.html", keywords: "email newsletter séquence automatisation délivrabilité consentement rgpd" },
     { title: "Marketing — Avancé", description: "Ce que les outils ne mesurent pas, et ce que la loi encadre.", url: "guides/marketing/avance.html", keywords: "marketing avancé niveau 3 attribution rétention persuasion juridique" },
     { title: "Lattribution", description: "Le dernier clic récompense qui récolte, pas qui a convaincu.", url: "guides/marketing/avance.html", keywords: "attribution dernier clic premier clic réparti modèle canal découverte" },
     { title: "La rétention client", description: "Quatre points de fidélité allongent la relation de moitié.", url: "guides/marketing/avance.html", keywords: "rétention fidélité churn durée de vie réactivation cycle client" },
@@ -87,7 +87,7 @@ const searchIndex = [
     { title: "Les fuites de données", description: "Rejeu d identifiants, délai de détection, reprise de contrôle.", url: "guides/cybersecurite/avance.html", keywords: "fuite données credential stuffing rejeu identifiants règle de transfert" },
     { title: "L ingénierie sociale ciblée", description: "L attaque qui ne présente aucun signal grossier.", url: "guides/cybersecurite/avance.html", keywords: "ingénierie sociale spear phishing attaque ciblée fraude président urgence" },
     { title: "Les limites du chiffrement", description: "Le contenu est protégé, les métadonnées ne le sont pas.", url: "guides/cybersecurite/avance.html", keywords: "chiffrement bout en bout métadonnées sauvegarde terminaux limites" },
-    { title: "Votre surface d attaque", description: "Comptes oubliés et chemins de récupération.", url: "guides/cybersecurite/avance.html", keywords: "surface attaque comptes oubliés récupération questions de sécurité applications tierces" },
+    { title: "Ta surface d attaque", description: "Comptes oubliés et chemins de récupération.", url: "guides/cybersecurite/avance.html", keywords: "surface attaque comptes oubliés récupération questions de sécurité applications tierces" },
 
     { title: "Entrepreneuriat", description: "Apprendre à structurer et lancer un projet d'entreprise.", url: "guides/entrepreneuriat/index.html", keywords: "entrepreneuriat entreprise créer lancer projet" },
     { title: "Le business plan", description: "Structurer son projet : offre, marché cible, stratégie et prévisions.", url: "guides/entrepreneuriat/debutant.html", keywords: "business plan projet stratégie prévisions" },
@@ -130,7 +130,7 @@ const searchIndex = [
     { title: "Nettoyer les données", description: "Doublons, valeurs manquantes, formats, valeurs aberrantes.", url: "guides/data/intermediaire.html", keywords: "nettoyage doublons valeurs manquantes aberrantes formats préparation qualité" },
     { title: "Segmenter et comparer", description: "Une moyenne globale ne décrit presque jamais personne.", url: "guides/data/intermediaire.html", keywords: "segmentation moyenne cohorte comparaison effectif groupe témoin" },
     { title: "Corrélation et causalité", description: "Quatre explications possibles, dont la variable confondante.", url: "guides/data/intermediaire.html", keywords: "corrélation causalité variable confondante expérimentation hasard" },
-    { title: "Le tableau de bord qui sert", description: "Si ce nombre doublait demain, que feriez-vous différemment ?", url: "guides/data/intermediaire.html", keywords: "tableau de bord dashboard indicateur actionnable décile moyenne" },
+    { title: "Le tableau de bord qui sert", description: "Si ce nombre doublait demain, que ferais-tu différemment ?", url: "guides/data/intermediaire.html", keywords: "tableau de bord dashboard indicateur actionnable décile moyenne" },
     { title: "Data — Avancé", description: "Savoir ce qu un chiffre ne dit pas, et ce qu il faudrait pour le savoir.", url: "guides/data/avance.html", keywords: "data avancé niveau 3 marge erreur test ab simpson chaîne de données" },
     { title: "L incertitude d une mesure", description: "Marge d erreur, intervalle de confiance, taille d échantillon.", url: "guides/data/avance.html", keywords: "marge erreur intervalle confiance échantillon sondage précision biais" },
     { title: "Les tests A/B", description: "Dimensionner avant de lancer, et ne pas regarder tous les jours.", url: "guides/data/avance.html", keywords: "test ab puissance échantillon conversion peeking expérimentation" },
@@ -189,7 +189,7 @@ const searchIndex = [
     { title: "Les clauses abusives", description: "Réputée non écrite : elle ne s'applique pas, même signée.", url: "guides/droit/avance.html", keywords: "clause abusive contrat conditions générales déséquilibre résiliation signature" },
     { title: "La prescription", description: "Une mise en demeure ne l'interrompt pas ; une assignation, si.", url: "guides/droit/avance.html", keywords: "prescription délai action justice interruption suspension 5 ans forclusion" },
     { title: "Régler un litige sans juge", description: "Le conciliateur de justice est gratuit, et largement ignoré.", url: "guides/droit/avance.html", keywords: "conciliateur médiateur amiable litige tribunal aide juridictionnelle frais procès" },
-    { title: "Vos droits sur vos données", description: "Un courriel, aucun motif, un mois pour répondre.", url: "guides/droit/avance.html", keywords: "rgpd données personnelles cnil accès effacement portabilité opposition plainte" },
+    { title: "Tes droits sur tes données", description: "Un courriel, aucun motif, un mois pour répondre.", url: "guides/droit/avance.html", keywords: "rgpd données personnelles cnil accès effacement portabilité opposition plainte" },
 
     { title: "Santé au travail", description: "Ne pas s'abîmer au travail : le corps, la charge, et les recours.", url: "guides/sante/index.html", keywords: "santé travail bien-être ergonomie stress prévention risques" },
     { title: "Santé — Débutant", description: "Le corps au travail. Aucun prérequis.", url: "guides/sante/debutant.html", keywords: "santé débutant niveau 1 poste sédentarité écrans pauses" },
@@ -203,21 +203,21 @@ const searchIndex = [
     { title: "La récupération", description: "11 heures entre deux journées, 35 heures par semaine : des minimums.", url: "guides/sante/intermediaire.html", keywords: "récupération repos quotidien hebdomadaire détachement congés fatigue" },
     { title: "Le droit à la déconnexion", description: "Ce qu'on envoie le soir fixe ce que les autres croient devoir faire.", url: "guides/sante/intermediaire.html", keywords: "déconnexion messages soir télétravail frontières notifications charte" },
     { title: "Santé — Avancé", description: "Les acteurs, les obligations, et quoi faire quand ça va mal.", url: "guides/sante/avance.html", keywords: "santé avancé niveau 3 médecine travail employeur épuisement harcèlement" },
-    { title: "La médecine du travail", description: "Une visite à votre demande, confidentielle, sans passer par l'employeur.", url: "guides/sante/avance.html", keywords: "médecine travail visite secret médical aménagement préreprise aptitude spst" },
+    { title: "La médecine du travail", description: "Une visite à ta demande, confidentielle, sans passer par l'employeur.", url: "guides/sante/avance.html", keywords: "médecine travail visite secret médical aménagement préreprise aptitude spst" },
     { title: "Les obligations de l'employeur", description: "L'obligation porte sur la prévention, pas sur la réparation.", url: "guides/sante/avance.html", keywords: "duerp document unique cse droit de retrait inspection travail prévention sécurité" },
     { title: "L'épuisement professionnel", description: "Trois dimensions pour nommer — aucun test en ligne pour conclure.", url: "guides/sante/avance.html", keywords: "épuisement burn-out burnout fatigue distance efficacité travail" },
     { title: "Harcèlement et situations graves", description: "Écrire les faits, datés, avant tout le reste.", url: "guides/sante/avance.html", keywords: "harcèlement moral sexuel discrimination preuve alerte défenseur droits témoin" },
 
     { title: "Sobriété numérique", description: "Où est vraiment l'impact du numérique, et quels chiffres tiennent.", url: "guides/ecologie/index.html", keywords: "écologie sobriété numérique impact environnement carbone empreinte" },
     { title: "Sobriété — Débutant", description: "Où est vraiment l'impact. Aucun prérequis.", url: "guides/ecologie/debutant.html", keywords: "sobriété débutant niveau 1 fabrication durée de vie gestes achat" },
-    { title: "L'impact est dans la fabrication", description: "L'essentiel est payé quand vous allumez l'appareil pour la première fois.", url: "guides/ecologie/debutant.html", keywords: "fabrication empreinte terminal amortissement extraction métaux cycle de vie" },
+    { title: "L'impact est dans la fabrication", description: "L'essentiel est payé quand tu allumes l'appareil pour la première fois.", url: "guides/ecologie/debutant.html", keywords: "fabrication empreinte terminal amortissement extraction métaux cycle de vie" },
     { title: "Allonger la durée de vie", description: "Un appareil dans un tiroir a la même empreinte qu'un appareil utilisé.", url: "guides/ecologie/debutant.html", keywords: "durée de vie batterie casse réparation mises à jour revente obsolescence" },
     { title: "Les gestes symboliques", description: "Le mail à 10 g a circulé dix ans avant d'être corrigé.", url: "guides/ecologie/debutant.html", keywords: "mail courriel cache gestes symboliques inutiles tri boîte de réception" },
     { title: "Bien acheter un appareil", description: "Garder, réparer, reconditionner — l'achat neuf en dernier.", url: "guides/ecologie/debutant.html", keywords: "reconditionné achat indice réparabilité durabilité pièces détachées neuf" },
     { title: "Sobriété — Intermédiaire", description: "Lire les chiffres, et savoir lesquels tiennent.", url: "guides/ecologie/intermediaire.html", keywords: "sobriété intermédiaire niveau 2 chiffres streaming réseau déplacement" },
     { title: "Lire un chiffre d'impact", description: "Périmètre, pays, unité, source, incertitude : cinq questions.", url: "guides/ecologie/intermediaire.html", keywords: "chiffre impact périmètre source incertitude méthode ademe vérifier" },
     { title: "Le cas du streaming", description: "L'écran choisi pèse trente fois plus que la résolution.", url: "guides/ecologie/intermediaire.html", keywords: "streaming vidéo écran résolution watts téléviseur réseau gigaoctet" },
-    { title: "Terminaux, réseau, serveurs", description: "Ce qui pèse le plus est chez vous, pas dans un hangar.", url: "guides/ecologie/intermediaire.html", keywords: "terminaux réseau centres de données datacenter répartition france arcep" },
+    { title: "Terminaux, réseau, serveurs", description: "Ce qui pèse le plus est chez toi, pas dans un hangar.", url: "guides/ecologie/intermediaire.html", keywords: "terminaux réseau centres de données datacenter répartition france arcep" },
     { title: "Le déplacement évité", description: "Une réunion à 400 km : 184 kg en avion, 3,6 g en visio.", url: "guides/ecologie/intermediaire.html", keywords: "visioconférence déplacement train avion voiture télétravail évitement" },
     { title: "Sobriété — Avancé", description: "Concevoir, décider, et se méfier des gains annoncés.", url: "guides/ecologie/avance.html", keywords: "sobriété avancé niveau 3 écoconception parc réglementation rebond" },
     { title: "L'écoconception", description: "Le pire effet d'un service lourd est de rendre un appareil obsolète.", url: "guides/ecologie/avance.html", keywords: "écoconception rgesn poids page défilement infini accessibilité performance" },
@@ -232,10 +232,10 @@ const searchIndex = [
     { title: "Structurer un message", description: "La conclusion au début — et ce que dit vraiment Mehrabian.", url: "guides/negociation/debutant.html", keywords: "structure pyramide minto conclusion non verbal mehrabian 93 % mythe" },
     { title: "Écrire pour être lu", description: "L'objet et les deux premières lignes décident du reste.", url: "guides/negociation/debutant.html", keywords: "courriel email objet demande échéance destinataires longueur lecture" },
     { title: "Négociation — Intermédiaire", description: "Ce qui se calcule avant de s'asseoir à la table.", url: "guides/negociation/intermediaire.html", keywords: "négociation intermédiaire niveau 2 mesore batna zone accord ancrage intérêts" },
-    { title: "La solution de rechange", description: "Votre pouvoir vient de ce que vous obtenez si vous partez.", url: "guides/negociation/intermediaire.html", keywords: "mesore batna solution rechange point de rupture pouvoir alternative" },
+    { title: "La solution de rechange", description: "Ton pouvoir vient de ce que tu obtiens si tu pars.", url: "guides/negociation/intermediaire.html", keywords: "mesore batna solution rechange point de rupture pouvoir alternative" },
     { title: "La zone d'accord", description: "Sans zone d'accord sur le prix, insister ne sert à rien.", url: "guides/negociation/intermediaire.html", keywords: "zopa zone accord possible limite réserve variable prix marge" },
     { title: "L'ancrage", description: "« Coupons la poire en deux » dépend du premier chiffre.", url: "guides/negociation/intermediaire.html", keywords: "ancrage première offre chiffre biais kahneman tversky point médian" },
-    { title: "Positions et intérêts", description: "Pourquoi est-ce important pour vous ? La question la plus rentable.", url: "guides/negociation/intermediaire.html", keywords: "positions intérêts harvard fisher ury orange échange asymétrique somme nulle" },
+    { title: "Positions et intérêts", description: "Pourquoi est-ce important pour toi ? La question la plus rentable.", url: "guides/negociation/intermediaire.html", keywords: "positions intérêts harvard fisher ury orange échange asymétrique somme nulle" },
     { title: "Négociation — Avancé", description: "Les conversations difficiles, et savoir quand s'arrêter.", url: "guides/negociation/avance.html", keywords: "négociation avancé niveau 3 conflit biais manipulation arrêter" },
     { title: "Les conversations difficiles", description: "Décrivez ce qu'une caméra aurait enregistré.", url: "guides/negociation/avance.html", keywords: "conversation difficile feedback reproche fait intention désaccord critique" },
     { title: "Les biais en négociation", description: "Le temps déjà investi ne devrait rien changer — et change tout.", url: "guides/negociation/avance.html", keywords: "biais coût irrécupérable somme nulle cohérence kahneman point de rupture" },
@@ -244,7 +244,7 @@ const searchIndex = [
 
     { title: "Actualités", description: "Des lectures qui prolongent les guides, choisies à la main.", url: "actualites.html", keywords: "actualités actualite news presse articles veille lectures nouveautés" },
 
-    { title: "FAQ", description: "Les réponses aux questions fréquentes sur DocMaster.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
+    { title: "FAQ", description: "Les réponses aux questions fréquentes sur le site.", url: "faq.html", keywords: "faq questions fréquentes aide réponses" },
     { title: "Le site est-il gratuit ?", description: "Pas d'inscription, pas d'abonnement, pas de publicité.", url: "faq.html", keywords: "gratuit prix payant abonnement inscription compte publicité" },
     { title: "Cookies et données personnelles", description: "Ce que le site collecte, et ce qu'il ne collecte pas.", url: "faq.html", keywords: "cookies données personnelles vie privée rgpd statistiques traceur" },
     { title: "Mode sombre", description: "Activer le thème sombre et le conserver d'une visite à l'autre.", url: "faq.html", keywords: "mode sombre dark theme nuit affichage" },
@@ -255,6 +255,6 @@ const searchIndex = [
     { title: "Boîte à idées", description: "Proposer une nouvelle catégorie ou un sujet à traiter.", url: "idees.html", keywords: "idée idées suggestion proposer catégorie sujet thème demande boîte" },
     { title: "Proposer une catégorie", description: "Suggérer un domaine entier qui manque encore sur le site.", url: "idees.html", keywords: "nouvelle catégorie domaine thème manquant proposition vote" },
 
-    { title: "Mon espace", description: "Vos favoris, vos guides terminés et votre progression.", url: "mon-espace.html", keywords: "mon espace favoris progression compte connexion inscription profil" },
+    { title: "Mon espace", description: "Tes favoris, tes guides terminés et ta progression.", url: "mon-espace.html", keywords: "mon espace favoris progression compte connexion inscription profil" },
     { title: "Mes favoris", description: "Retrouver les guides et sections mis en favori.", url: "mon-espace.html", keywords: "favoris étoile marque-page enregistrer sauvegarder retrouver" }
 ];

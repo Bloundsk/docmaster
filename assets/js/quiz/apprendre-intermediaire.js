@@ -333,7 +333,7 @@ window.QUIZ = {
                 "Allonger les séances"
             ],
             a: 0,
-            explication: "Vous vous tromperez davantage. C'est le signe que cela marche."
+            explication: "Tu te tromperas davantage. C'est le signe que cela marche."
         }
     ]
 };

@@ -1,4 +1,4 @@
-# DOCMASTER
+# CLICKED
 ## Cahier des charges du projet
 
 Version : 1.0
@@ -7,7 +7,7 @@ Version : 1.0
 
 # 1. Présentation du projet
 
-DocMaster est une plateforme de documentation en ligne.
+Clicked est une plateforme de documentation en ligne.
 
 Son objectif est de créer une bibliothèque de guides pédagogiques sur différents sujets.
 
@@ -78,7 +78,7 @@ Le site devra fonctionner directement dans un navigateur.
 
 Le projet sera organisé ainsi :
 
-DocMaster/
+Clicked/
 
 - index.html
 - assets/

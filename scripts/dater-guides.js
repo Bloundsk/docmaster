@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - DATE DE MISE A JOUR DES GUIDES
+// CLICKED - DATE DE MISE A JOUR DES GUIDES
 // ===================================
 //
 // Chaque guide affiche « Dernière mise à jour : ... ». Cette date etait ecrite

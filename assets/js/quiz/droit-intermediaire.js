@@ -168,7 +168,7 @@ window.QUIZ = {
             {
                 q: "La période d'essai peut-elle se renouveler tacitement ?",
                 options: [
-                    "Non : il faut un accord de branche, une clause au contrat et votre accord écrit",
+                    "Non : il faut un accord de branche, une clause au contrat et ton accord écrit",
                     "Oui, si l'employeur le décide",
                     "Oui, une seule fois"
                 ],

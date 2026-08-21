@@ -8,7 +8,7 @@
 # Tout tient en moins de deux secondes et ne demande aucune dependance : le
 # site n en a aucune, ce workflow non plus.
 # ---------------------------------------------------------------------------
-name: Contrôles DocMaster
+name: Contrôles Clicked
 
 on:
   push:
@@ -48,6 +48,15 @@ jobs:
       # traductions, liens et ancres, parite FR/EN.
       - name: Cohérence d'ensemble
         run: node scripts/audit-coherence.mjs
+
+      # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
+      # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
+      # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le
+      # registre de son auteur du jour, et le site redeviendrait ce qu il etait :
+      # moitie tutoye, moitie vouvoye, sans que personne ne s en apercoive avant
+      # d avoir tout relu.
+      - name: Registre d'adresse au lecteur
+        run: node scripts/verifier-registre.mjs
 
       # Les textes des simulateurs, sujet par sujet. Separe de l audit parce
       # qu il EXECUTE les 169 simulateurs pour voir ce qui s affichera.

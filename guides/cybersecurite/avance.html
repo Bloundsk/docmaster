@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Cybersécurité — Avancé - DocMaster</title>
+    <title>Cybersécurité — Avancé - Clicked</title>
     <meta name="description" content="Niveau avancé du parcours Cybersécurité : fuites de données et credential stuffing, attaques ciblées, limites du chiffrement de bout en bout, surface d'attaque personnelle.">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
 
@@ -31,23 +31,24 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/avance.html">
-    <meta property="og:site_name" content="DocMaster">
-    <meta property="og:title" content="Cybersécurité — Avancé - DocMaster">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Cybersécurité — Avancé - Clicked">
     <meta property="og:description" content="Niveau avancé du parcours Cybersécurité : fuites de données et credential stuffing, attaques ciblées, limites du chiffrement de bout en bout, surface d'attaque personnelle.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/cybersecurite/avance.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cybersécurité — Avancé - DocMaster">
+    <meta name="twitter:title" content="Cybersécurité — Avancé - Clicked">
     <meta name="twitter:description" content="Niveau avancé du parcours Cybersécurité : fuites de données et credential stuffing, attaques ciblées, limites du chiffrement de bout en bout, surface d'attaque personnelle.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
     <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/identite.js"></script>
     <script src="../../assets/js/langues.js"></script>
     <script src="../../assets/js/layout.js"></script>
 
@@ -76,7 +77,7 @@
     </header>
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 16 août 2026</span>
+        <span>🕒 Dernière mise à jour : 21 août 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -88,7 +89,7 @@
                 <li><a href="#fuites-de-donnees">🧬 Les fuites de données</a></li>
                 <li><a href="#ingenierie-sociale">🎭 L'ingénierie sociale ciblée</a></li>
                 <li><a href="#chiffrement-de-bout-en-bout">🔏 Les limites du chiffrement</a></li>
-                <li><a href="#surface-attaque">🗺️ Votre surface d'attaque</a></li>
+                <li><a href="#surface-attaque">🗺️ Ta surface d'attaque</a></li>
             </ul>
         </div>
 
@@ -106,7 +107,7 @@
         <section>
             <h2 id="introduction">Introduction</h2>
             <p>Les deux premiers niveaux couvraient les gestes et les dispositifs. Une fois ceux-ci en place, le risque ne disparaît pas : il se déplace.</p>
-            <p>Il se déplace vers ce que vous ne contrôlez pas — les bases de données des services que vous utilisez — et vers ce qu'aucun outil ne filtre : <strong>une demande plausible, adressée à vous personnellement, au bon moment</strong>. Ce niveau porte sur ces angles morts, et sur les limites réelles des protections qu'on croit totales.</p>
+            <p>Il se déplace vers ce que tu ne contrôles pas — les bases de données des services que tu utilises — et vers ce qu'aucun outil ne filtre : <strong>une demande plausible, adressée à toi personnellement, au bon moment</strong>. Ce niveau porte sur ces angles morts, et sur les limites réelles des protections qu'on croit totales.</p>
             <div class="piege">
                 <span class="titre">Avertissement</span>
                 <p>Ce guide est <strong>pédagogique</strong> et généraliste. Il décrit des mécanismes d'attaque pour permettre de s'en défendre. Un contexte professionnel, associatif ou exposé appelle des mesures propres et l'avis d'un spécialiste.</p>
@@ -123,20 +124,20 @@
             <details class="lecon">
                 <summary><h3 id="fuites-de-donnees">🧬 Les fuites de données</h3></summary>
                 <div class="lecon-corps">
-                <p>Vous pouvez faire tout ce qu'il faut et être compromis quand même : il suffit qu'un service auquel vous avez confié une adresse et un mot de passe se fasse dérober sa base. Ce risque-là ne dépend pas de vous.</p>
+                <p>Tu peux faire tout ce qu'il faut et être compromis quand même : il suffit qu'un service auquel tu as confié une adresse et un mot de passe se fasse dérober sa base. Ce risque-là ne dépend pas de toi.</p>
 
                 <h4>Le rejeu d'identifiants</h4>
                 <p>Une fois publiée, la liste circule et se retrouve rejouée automatiquement sur des centaines d'autres services. C'est ce qu'on appelle le <em>credential stuffing</em>. Le taux de réussite est faible — quelques dixièmes de pour cent — mais appliqué à des millions de couples, il suffit largement.</p>
-                <p>Le fait que votre mot de passe soit long ne change rien : il n'est pas deviné, il est <strong>connu</strong>.</p>
+                <p>Le fait que ton mot de passe soit long ne change rien : il n'est pas deviné, il est <strong>connu</strong>.</p>
 
                 <div class="exemple">
                     <span class="titre">L'ordre de grandeur du délai</span>
                     <p>Le temps moyen entre une intrusion et sa détection se compte en <strong>mois</strong>, pas en jours. Le temps entre la détection et la notification aux personnes concernées ajoute souvent plusieurs semaines.</p>
-                    <p>Autrement dit : quand vous recevez le courriel vous informant d'une fuite, les identifiants circulent déjà depuis longtemps. La notification n'est pas une alerte, c'est un constat.</p>
+                    <p>Autrement dit : quand tu reçois le courriel t'informant d'une fuite, les identifiants circulent déjà depuis longtemps. La notification n'est pas une alerte, c'est un constat.</p>
                 </div>
 
                 <h4>Reprendre le contrôle, dans le bon ordre</h4>
-                <p>L'ordre compte, parce que certains gestes rendent les suivants inutiles s'ils arrivent trop tard. La <strong>boîte mail de secours d'abord</strong> : tant qu'un attaquant la contrôle, il reprend tout ce que vous venez de changer.</p>
+                <p>L'ordre compte, parce que certains gestes rendent les suivants inutiles s'ils arrivent trop tard. La <strong>boîte mail de secours d'abord</strong> : tant qu'un attaquant la contrôle, il reprend tout ce que tu viens de changer.</p>
                 <p>Vient ensuite le service concerné, puis tous ceux où le mot de passe avait été réutilisé — et enfin, le geste que presque tout le monde oublie.</p>
 
                 <div class="pratique" data-pratique="reflexes-apres-fuite"></div>
@@ -147,14 +148,14 @@
                     <p>Vérifier les règles de redirection et les sessions actives fait partie de la reprise de contrôle. Le mot de passe seul ne suffit pas.</p>
                 </div>
 
-                <p class="retenir">💡 Une fuite ne se prévient pas de votre côté. Ce qui se prévient, c'est sa propagation.</p>
+                <p class="retenir">💡 Une fuite ne se prévient pas de ton côté. Ce qui se prévient, c'est sa propagation.</p>
                 </div>
             </details>
 
             <details class="lecon">
                 <summary><h3 id="ingenierie-sociale">🎭 L'ingénierie sociale ciblée</h3></summary>
                 <div class="lecon-corps">
-                <p>Le hameçonnage de masse se reconnaît : fautes, adresse douteuse, formule générique. L'attaque ciblée ne présente <strong>aucun de ces signaux</strong>. Elle est rédigée pour vous, à partir d'informations réelles, et demande une action qui a du sens dans votre contexte.</p>
+                <p>Le hameçonnage de masse se reconnaît : fautes, adresse douteuse, formule générique. L'attaque ciblée ne présente <strong>aucun de ces signaux</strong>. Elle est rédigée pour toi, à partir d'informations réelles, et demande une action qui a du sens dans ton contexte.</p>
 
                 <h4>D'où viennent les informations</h4>
                 <p>De sources publiques, le plus souvent : un profil professionnel, une annonce de recrutement, un organigramme, une publication sur les réseaux. Rien n'est piraté pour construire le message — tout est simplement lu.</p>
@@ -167,7 +168,7 @@
 
                 <h4>La seule parade fiable</h4>
                 <p>Elle n'est pas de mieux lire le message. Un message bien fait ne se distingue pas d'un vrai, et se croire capable de repérer l'imposture est précisément ce qui rend vulnérable.</p>
-                <p>La parade est <strong>procédurale</strong> : pour toute demande inhabituelle touchant à de l'argent, à des identifiants ou à des données, vérifier <strong>par un autre canal</strong> — un numéro que vous connaissiez déjà, jamais celui indiqué dans le message.</p>
+                <p>La parade est <strong>procédurale</strong> : pour toute demande inhabituelle touchant à de l'argent, à des identifiants ou à des données, vérifier <strong>par un autre canal</strong> — un numéro que tu connaissais déjà, jamais celui indiqué dans le message.</p>
 
                 <div class="pratique" data-pratique="signaux-spear-phishing"></div>
 
@@ -177,7 +178,7 @@
                     <p>Une règle écrite — « aucun virement sans confirmation vocale » — protège même les jours où l'attention manque. C'est tout son intérêt.</p>
                 </div>
 
-                <p class="retenir">💡 Contre une attaque ciblée, ce n'est pas votre discernement qui protège, c'est votre procédure.</p>
+                <p class="retenir">💡 Contre une attaque ciblée, ce n'est pas ton discernement qui protège, c'est ta procédure.</p>
                 </div>
             </details>
 
@@ -195,7 +196,7 @@
                     <span class="titre">Ce qui reste exposé malgré le chiffrement</span>
                     <p><strong>Les terminaux.</strong> Le chiffrement protège le transport, pas les appareils. Un message déchiffré s'affiche à l'écran, et se sauvegarde parfois en clair.</p>
                     <p><strong>Les sauvegardes.</strong> Une conversation chiffrée dont la sauvegarde automatique n'est pas chiffrée redevient lisible dans le nuage.</p>
-                    <p><strong>Le destinataire.</strong> Rien n'empêche votre correspondant de faire une capture d'écran, ni son propre appareil d'être compromis.</p>
+                    <p><strong>Le destinataire.</strong> Rien n'empêche ton correspondant de faire une capture d'écran, ni son propre appareil d'être compromis.</p>
                 </div>
 
                 <div class="pratique" data-pratique="metadonnees-visibles"></div>
@@ -206,17 +207,17 @@
                     <p>La protection du transport est alors intacte, et parfaitement inutile.</p>
                 </div>
 
-                <p class="retenir">💡 Le chiffrement protège ce que vous dites. Il ne cache pas à qui vous le dites, ni quand.</p>
+                <p class="retenir">💡 Le chiffrement protège ce que tu dis. Il ne cache pas à qui tu le dis, ni quand.</p>
                 </div>
             </details>
 
             <details class="lecon">
-                <summary><h3 id="surface-attaque">🗺️ Votre surface d'attaque</h3></summary>
+                <summary><h3 id="surface-attaque">🗺️ Ta surface d'attaque</h3></summary>
                 <div class="lecon-corps">
                 <p>La surface d'attaque, c'est l'ensemble des points par lesquels quelqu'un pourrait entrer. Elle grandit toute seule, sans décision : chaque compte créé, chaque application autorisée, chaque service essayé et oublié l'agrandit d'un cran.</p>
 
                 <h4>Les comptes oubliés sont les plus dangereux</h4>
-                <p>Un service inscrit il y a huit ans, jamais utilisé depuis, conserve votre adresse et un mot de passe de l'époque — souvent l'un de ceux que vous réutilisiez alors. Il n'a pas été mis à jour, ne propose pas de double authentification, et vous ne serez pas prévenu s'il fuite, puisque vous avez oublié son existence.</p>
+                <p>Un service inscrit il y a huit ans, jamais utilisé depuis, conserve ton adresse et un mot de passe de l'époque — souvent l'un de ceux que tu réutilisais alors. Il n'a pas été mis à jour, ne propose pas de double authentification, et tu ne seras pas prévenu s'il fuite, puisque tu as oublié son existence.</p>
 
                 <h4>La récupération de compte, maillon faible</h4>
                 <p>Toute l'attention se porte sur le mot de passe. Or la plupart des services offrent un chemin parallèle : les questions de sécurité, une adresse de secours, un numéro de téléphone.</p>
@@ -224,18 +225,18 @@
 
                 <div class="exemple">
                     <span class="titre">Réduire la surface, une fois</span>
-                    <p><strong>Recensez</strong> : la liste des comptes du gestionnaire de mots de passe, plus une recherche de « bienvenue » ou « confirmez votre inscription » dans la messagerie.</p>
-                    <p><strong>Fermez</strong> ce qui ne sert plus. Un compte supprimé ne fuite pas.</p>
-                    <p><strong>Révoquez</strong> les applications tierces autorisées sur vos comptes principaux : beaucoup gardent un accès permanent bien après avoir cessé d'être utilisées.</p>
-                    <p><strong>Vérifiez</strong> les adresses et numéros de récupération : ils doivent être à vous et toujours actifs.</p>
+                    <p><strong>Recense</strong> : la liste des comptes du gestionnaire de mots de passe, plus une recherche de « bienvenue » ou « confirmez votre inscription » dans la messagerie.</p>
+                    <p><strong>Ferme</strong> ce qui ne sert plus. Un compte supprimé ne fuite pas.</p>
+                    <p><strong>Révoque</strong> les applications tierces autorisées sur tes comptes principaux : beaucoup gardent un accès permanent bien après avoir cessé d'être utilisées.</p>
+                    <p><strong>Vérifie</strong> les adresses et numéros de récupération : ils doivent être à toi et toujours actifs.</p>
                 </div>
 
                 <div class="pratique" data-pratique="score-exposition"></div>
 
                 <div class="piege">
                     <span class="titre">Erreur fréquente — les réponses honnêtes aux questions de sécurité</span>
-                    <p>Le nom de jeune fille de votre mère, votre ville de naissance, votre premier établissement scolaire : ces informations sont publiques ou faciles à deviner pour un proche.</p>
-                    <p>Une question de sécurité n'est pas un questionnaire de sincérité. Traitez la réponse comme un second mot de passe : arbitraire, et conservée dans le gestionnaire.</p>
+                    <p>Le nom de jeune fille de ta mère, ta ville de naissance, ton premier établissement scolaire : ces informations sont publiques ou faciles à deviner pour un proche.</p>
+                    <p>Une question de sécurité n'est pas un questionnaire de sincérité. Traite la réponse comme un second mot de passe : arbitraire, et conservée dans le gestionnaire.</p>
                 </div>
 
                 <p class="retenir">💡 Chaque compte fermé est une porte de moins, définitivement.</p>
@@ -260,12 +261,12 @@
             <article class="lecon">
                 <ul class="ressources">
                     <li><strong>cybermalveillance.gouv.fr</strong> : la conduite à tenir en cas d'incident, et la mise en relation avec des prestataires référencés.</li>
-                    <li><strong>CNIL</strong> : vos droits après une fuite, et les obligations du service qui l'a subie — notamment le délai de notification.</li>
+                    <li><strong>CNIL</strong> : tes droits après une fuite, et les obligations du service qui l'a subie — notamment le délai de notification.</li>
                     <li><strong>Have I Been Pwned</strong> : la surveillance d'une adresse dans les fuites connues, avec alerte en cas de nouvelle apparition.</li>
                     <li><strong>ANSSI</strong> : guides sur l'authentification et sur la sécurisation des messageries, plus détaillés que la plupart des articles grand public.</li>
                     <li><strong>Rapports annuels sur les compromissions</strong> : les délais de détection et les vecteurs d'entrée les plus fréquents, chiffrés et sans commentaire commercial.</li>
                 </ul>
-                <p><strong>Un réflexe utile :</strong> une fois par an, relisez la liste des applications autorisées sur votre compte principal. Elle contient presque toujours des services dont vous aviez oublié l'existence.</p>
+                <p><strong>Un réflexe utile :</strong> une fois par an, relis la liste des applications autorisées sur ton compte principal. Elle contient presque toujours des services dont tu avais oublié l'existence.</p>
             </article>
         </section>
 

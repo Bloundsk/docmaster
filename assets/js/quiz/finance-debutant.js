@@ -43,7 +43,7 @@ window.QUIZ = {
             },
             // Série 2
             {
-                q: "Vos dépenses mensuelles s'élèvent à 1 600 €. Quelle réserve viser au minimum ?",
+                q: "Tes dépenses mensuelles s'élèvent à 1 600 €. Quelle réserve viser au minimum ?",
                 options: ["1 600 €", "4 800 €", "16 000 €"],
                 a: 1,
                 explication: "3 mois × 1 600 € = 4 800 €. La borne haute, à 6 mois, serait de 9 600 €."
@@ -118,7 +118,7 @@ window.QUIZ = {
                 q: "Sur 10 000 € placés 25 ans à 6 % brut, quel écart entre 0,2 % et 2 % de frais annuels ?",
                 options: ["Environ 1 500 €", "Environ 5 000 €", "Environ 14 200 €"],
                 a: 2,
-                explication: "Soit davantage que le capital investi au départ. Les frais sont la seule variable que vous maîtrisez totalement."
+                explication: "Soit davantage que le capital investi au départ. Les frais sont la seule variable que tu maîtrises totalement."
             },
             {
                 q: "Pourquoi l'investissement programmé évite-t-il de chercher le bon moment ?",
@@ -250,7 +250,7 @@ window.QUIZ = {
                     "Comparer les frais de trois courtiers"
                 ],
                 a: 1,
-                explication: "Le bon niveau de risque est celui qui vous laisse dormir et tenir votre stratégie dans la tempête."
+                explication: "Le bon niveau de risque est celui qui te laisse dormir et tenir ta stratégie dans la tempête."
             },
             {
                 q: "Quand une baisse devient-elle une perte réelle ?",
@@ -337,24 +337,24 @@ window.QUIZ = {
             explication: "Commencer modestement et tôt bat largement commencer fort et tard."
         },
         {
-            q: "Parmi ces éléments, lequel maîtrisez-vous totalement à l'avance ?",
+            q: "Parmi ces éléments, lequel maîtrises-tu totalement à l'avance ?",
             options: ["Le rendement", "Les frais", "La durée d'une crise"],
             a: 1,
             explication: "Le rendement ne se commande pas ; les frais, si. D'où leur importance disproportionnée."
         },
         // Série 2
         {
-            q: "Un ami vous propose un placement à 12 % par an garanti sans risque. Que faire ?",
+            q: "Un ami te propose un placement à 12 % par an garanti sans risque. Que faire ?",
             options: [
                 "Investir une petite somme pour tester",
                 "Refuser : rendement élevé et absence de risque sont incompatibles",
                 "Demander un rendement plus élevé"
             ],
             a: 1,
-            explication: "Vérifiez systématiquement l'enregistrement de l'intermédiaire auprès de l'ORIAS ou de l'ACPR."
+            explication: "Vérifie systématiquement l'enregistrement de l'intermédiaire auprès de l'ORIAS ou de l'ACPR."
         },
         {
-            q: "Vous avez besoin de 15 000 € dans 18 mois pour un apport immobilier. Quelle orientation ?",
+            q: "Tu as besoin de 15 000 € dans 18 mois pour un apport immobilier. Quelle orientation ?",
             options: [
                 "Actions, pour maximiser le gain d'ici là",
                 "Aucun risque en capital : l'horizon est trop court",

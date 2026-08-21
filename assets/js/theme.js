@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - GESTION DU THÈME
+// CLICKED - GESTION DU THÈME
 // ===================================
 //
 // L'APPLICATION initiale du thème ne se fait PAS ici : elle a lieu dans le

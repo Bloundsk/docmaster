@@ -1,0 +1,74 @@
+# ---------------------------------------------------------------------------
+# Garde-fou de l'identite du site.
+#
+# Trois donnees n'existent qu'a un seul endroit : le nom du site, l'adresse de
+# base et le nombre de parcours. La premiere et la deuxieme vivent dans
+# assets/js/identite.js, la troisieme dans assets/js/parcours.js.
+#
+# Ce workflow echoue des qu'une page ou un script en porte une COPIE que la
+# source ne produirait pas. C'est arrive deux fois : 45 pages ont annonce
+# « 9 guides gratuits » alors qu'il y en avait 14, parce que ce nombre etait
+# recopie a la main dans le texte alternatif de l'image de partage.
+#
+# Deux verifications, complementaires et toutes deux necessaires :
+#
+#   appliquer-identite.js --verifier  relit les 129 pages et refuse le moindre
+#                                     ecart entre ce qu'elles portent et ce que
+#                                     la source produirait. Ne corrige rien ici.
+#   verifier-identite.mjs             cherche les donnees ecrites a la main
+#                                     ailleurs : nom perime dans le corps d'une
+#                                     page, adresse absolue recopiee, nombre de
+#                                     parcours faux.
+#
+# Le premier ne voit pas ce qu'il n'a pas ecrit ; le second ne corrige rien.
+# Aucune dependance : le site n'en a aucune, ce workflow non plus.
+# ---------------------------------------------------------------------------
+name: Identité du site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: identite-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  identite:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Les donnees derivees : titre, Open Graph, Twitter, adresse canonique,
+      # hreflang, sitemap, robots.txt. Le script ecrit normalement ces zones ;
+      # « --verifier » lui interdit d'ecrire et lui fait signaler les ecarts.
+      - name: Métadonnées conformes à la source unique
+        run: node scripts/appliquer-identite.js --verifier
+
+      # Les donnees ecrites a la main la ou rien ne les genere : le nom du site
+      # dans le corps d'une page, une adresse absolue recopiee dans un lien, un
+      # nombre de parcours annonce en prose.
+      - name: Aucune donnée dupliquée dans les pages
+        run: node scripts/verifier-identite.mjs
+
+      # Le message d'echec doit dire quoi faire, sinon il faudra rouvrir ce
+      # fichier pour s'en souvenir. « always() » n'est pas utilisable ici : on
+      # ne veut ce rappel qu'en cas d'echec de l'une des deux etapes.
+      - name: Marche à suivre en cas d'échec
+        if: failure()
+        run: |
+          echo "::error::Une donnée du site ne vient plus de sa source unique."
+          echo "Corriger en une commande :  node scripts/appliquer-identite.js"
+          echo "Changer le nom ou l'adresse : assets/js/identite.js, puis la même commande."
+          exit 1

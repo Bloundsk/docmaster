@@ -56,7 +56,7 @@ window.QUIZ = {
                 q: "Pourquoi ne pas valider auprès de ses proches ?",
                 options: [
                     "Ils ne sont pas la cible",
-                    "Ils veulent vous encourager : leur retour est affectueux et sans valeur",
+                    "Ils veulent t'encourager : leur retour est affectueux et sans valeur",
                     "Ils manquent de compétence"
                 ],
                 a: 1,
@@ -85,7 +85,7 @@ window.QUIZ = {
                     "S'aligner sur la concurrence"
                 ],
                 a: 1,
-                explication: "Si votre service fait gagner deux heures par semaine, la référence est la valeur de ces deux heures, pas votre coût de revient."
+                explication: "Si ton service fait gagner deux heures par semaine, la référence est la valeur de ces deux heures, pas ton coût de revient."
             },
             {
                 q: "Prix 49 €, coût variable 11 €, charges fixes 4 000 € : combien de clients pour l'équilibre ?",
@@ -178,11 +178,11 @@ window.QUIZ = {
                 q: "Quel est le bon canal d'acquisition ?",
                 options: [
                     "Celui qui est à la mode",
-                    "Celui où vos clients sont déjà, en train de chercher une solution",
+                    "Celui où tes clients sont déjà, en train de chercher une solution",
                     "Le moins cher"
                 ],
                 a: 1,
-                explication: "La mode change ; la présence de vos clients quelque part est un fait."
+                explication: "La mode change ; la présence de tes clients quelque part est un fait."
             },
             {
                 q: "Des milliers de vues et zéro vente. Que conclure ?",
@@ -217,7 +217,7 @@ window.QUIZ = {
                     "Seulement en cas de fraude"
                 ],
                 a: 1,
-                explication: "Vous facturez en janvier, vous êtes payé en mars, mais les salaires sont dus entre-temps."
+                explication: "Tu factures en janvier, tu es payé en mars, mais les salaires sont dus entre-temps."
             },
             {
                 q: "Qu'est-ce que le besoin en fonds de roulement ?",
@@ -227,7 +227,7 @@ window.QUIZ = {
                     "La trésorerie de sécurité"
                 ],
                 a: 1,
-                explication: "Et il augmente avec la croissance : plus vous vendez, plus vous avancez d'argent."
+                explication: "Et il augmente avec la croissance : plus tu vends, plus tu avances d'argent."
             },
             {
                 q: "Trésorerie 18 000 €, dépenses 5 200 €, encaissements 3 100 € : quelle autonomie ?",
@@ -317,7 +317,7 @@ window.QUIZ = {
                 "Parce qu'elle complique la comptabilité"
             ],
             a: 0,
-            explication: "Plus vous vendez, plus vous avancez d'argent avant d'être payé."
+            explication: "Plus tu vends, plus tu avances d'argent avant d'être payé."
         },
         {
             q: "Quel indicateur regarder chaque semaine au démarrage ?",

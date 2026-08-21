@@ -220,7 +220,7 @@ window.QUIZ = {
                     "Elles sont interdites par les normes"
                 ],
                 a: 1,
-                explication: "Préférez %, rem, fr et max-width, qui s'adaptent à la place disponible."
+                explication: "Préfère %, rem, fr et max-width, qui s'adaptent à la place disponible."
             },
             {
                 q: "En quoi consiste l'approche mobile-first ?",
@@ -278,7 +278,7 @@ window.QUIZ = {
             explication: "Elles n'ont pas changé depuis vingt ans, et tous les frameworks finissent par produire ces trois choses-là."
         },
         {
-            q: "Votre page ne fait pas ce que vous attendez. Quel est le premier réflexe ?",
+            q: "Ta page ne fait pas ce que tu attends. Quel est le premier réflexe ?",
             options: [
                 "Réécrire le code depuis le début",
                 "Ouvrir la console avec F12 : l'erreur y est presque toujours écrite, avec sa ligne",
@@ -299,7 +299,7 @@ window.QUIZ = {
         },
         // Série 2
         {
-            q: "Vous devez créer un portfolio de dix pages. Quelle approche privilégier ?",
+            q: "Tu dois créer un portfolio de dix pages. Quelle approche privilégier ?",
             options: [
                 "Un framework moderne, pour être à jour",
                 "Des fichiers HTML, CSS et JavaScript simples, servis tels quels",
@@ -312,7 +312,7 @@ window.QUIZ = {
             q: "Quel est le meilleur moyen de progresser en développement web ?",
             options: [
                 "Enchaîner les tutoriels",
-                "Mener un projet réel qui vous tient à cœur",
+                "Mener un projet réel qui te tient à cœur",
                 "Apprendre les frameworks avant les bases"
             ],
             a: 1,

@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - FAVORIS
+// CLICKED - FAVORIS
 // ===================================
 //
 // Les favoris sont enregistres dans le navigateur du visiteur (localStorage),

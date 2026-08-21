@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Développement Web — Intermédiaire - DocMaster</title>
+    <title>Développement Web — Intermédiaire - Clicked</title>
     <meta name="description" content="Niveau intermédiaire du parcours Développement Web : API et JSON, bases de données, mise en ligne, et travail à plusieurs avec Git.">
     <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
 
@@ -31,23 +31,24 @@
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
-    <meta property="og:site_name" content="DocMaster">
-    <meta property="og:title" content="Développement Web — Intermédiaire - DocMaster">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Développement Web — Intermédiaire - Clicked">
     <meta property="og:description" content="Niveau intermédiaire du parcours Développement Web : API et JSON, bases de données, mise en ligne, et travail à plusieurs avec Git.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DocMaster — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Développement Web — Intermédiaire - DocMaster">
+    <meta name="twitter:title" content="Développement Web — Intermédiaire - Clicked">
     <meta name="twitter:description" content="Niveau intermédiaire du parcours Développement Web : API et JSON, bases de données, mise en ligne, et travail à plusieurs avec Git.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
     <script>window.DOCMASTER_BASE = "../../";</script>
+    <script src="../../assets/js/identite.js"></script>
     <script src="../../assets/js/langues.js"></script>
     <script src="../../assets/js/layout.js"></script>
 
@@ -77,7 +78,7 @@
     </header>
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 16 août 2026</span>
+        <span>🕒 Dernière mise à jour : 21 août 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -141,7 +142,7 @@
                 <div class="piege">
                     <span class="titre">Erreur fréquente — la clé d'API dans le code du navigateur</span>
                     <p>Tout ce que le navigateur reçoit est lisible : le code JavaScript, les variables, les en-têtes. Une clé secrète placée là est publique, même « minifiée ».</p>
-                    <p>Les appels qui nécessitent un secret doivent passer par votre propre serveur, qui détient la clé et relaie la demande.</p>
+                    <p>Les appels qui nécessitent un secret doivent passer par ton propre serveur, qui détient la clé et relaie la demande.</p>
                 </div>
 
                 <p class="retenir">💡 Le temps d'une page dépend surtout du nombre d'allers-retours, rarement de la vitesse du serveur.</p>
@@ -185,10 +186,10 @@
             <details class="lecon">
                 <summary><h3 id="mettre-en-ligne">🚀 Mettre en ligne</h3></summary>
                 <div class="lecon-corps">
-                <p>Un site qui fonctionne sur votre machine ne fonctionne pas encore. La mise en ligne ajoute des contraintes que le développement local masque entièrement.</p>
+                <p>Un site qui fonctionne sur ta machine ne fonctionne pas encore. La mise en ligne ajoute des contraintes que le développement local masque entièrement.</p>
 
                 <h4>Les quatre éléments</h4>
-                <p><strong>Un nom de domaine</strong>, loué à l'année. <strong>Un hébergement</strong>, qui exécute votre code et sert vos fichiers. <strong>Un certificat</strong>, qui active le HTTPS — aujourd'hui gratuit et automatique chez la plupart des hébergeurs. <strong>Un moyen de déployer</strong>, c'est-à-dire d'envoyer une nouvelle version sans casser la précédente.</p>
+                <p><strong>Un nom de domaine</strong>, loué à l'année. <strong>Un hébergement</strong>, qui exécute ton code et sert tes fichiers. <strong>Un certificat</strong>, qui active le HTTPS — aujourd'hui gratuit et automatique chez la plupart des hébergeurs. <strong>Un moyen de déployer</strong>, c'est-à-dire d'envoyer une nouvelle version sans casser la précédente.</p>
                 <p>Pour un site sans code serveur, l'hébergement statique suffit : il est souvent gratuit, très rapide, et n'a presque rien à maintenir.</p>
 
                 <div class="exemple">
@@ -204,7 +205,7 @@
                 <div class="piege">
                     <span class="titre">Erreur fréquente — déployer en copiant quelques fichiers</span>
                     <p>Envoyer manuellement « les fichiers modifiés » conduit tôt ou tard à en oublier un. Le site référence alors un script absent, et casse pour tout le monde.</p>
-                    <p>Déployez toujours l'ensemble, depuis une source unique — idéalement automatiquement, à partir du dépôt de code.</p>
+                    <p>Déploie toujours l'ensemble, depuis une source unique — idéalement automatiquement, à partir du dépôt de code.</p>
                 </div>
 
                 <p class="retenir">💡 La différence entre « ça marche chez moi » et « c'est en ligne » tient dans quatre points, tous vérifiables en une fois.</p>
@@ -239,7 +240,7 @@
                     <p>Un commit, une intention. C'est ce qui rend l'historique utilisable le jour où il faut défaire quelque chose.</p>
                 </div>
 
-                <p class="retenir">💡 Git ne vous protège pas de la perte de fichiers. Il vous protège de l'impossibilité de revenir en arrière.</p>
+                <p class="retenir">💡 Git ne te protège pas de la perte de fichiers. Il te protège de l'impossibilité de revenir en arrière.</p>
                 </div>
             </details>
         </section>
@@ -263,9 +264,9 @@
                     <li><strong>MDN Web Docs</strong> : la référence sur HTTP, les codes de retour et les API du navigateur. Gratuite, sans publicité, et maintenue par la communauté.</li>
                     <li><strong>Documentation officielle de Git</strong> : le chapitre sur les branches et la fusion, plus clair que la plupart des tutoriels.</li>
                     <li><strong>OWASP</strong> : la liste des vulnérabilités les plus répandues, dont l'injection SQL. À lire avant d'écrire une requête, pas après.</li>
-                    <li><strong>Documentation de votre hébergeur</strong> : les variables d'environnement et le déploiement automatique depuis un dépôt. Deux heures qui font gagner des mois.</li>
+                    <li><strong>Documentation de ton hébergeur</strong> : les variables d'environnement et le déploiement automatique depuis un dépôt. Deux heures qui font gagner des mois.</li>
                 </ul>
-                <p><strong>Un réflexe utile :</strong> dès qu'une page semble lente, comptez le nombre de requêtes qu'elle déclenche avant d'optimiser quoi que ce soit d'autre.</p>
+                <p><strong>Un réflexe utile :</strong> dès qu'une page semble lente, compte le nombre de requêtes qu'elle déclenche avant d'optimiser quoi que ce soit d'autre.</p>
             </article>
         </section>
 

@@ -177,8 +177,8 @@ window.QUIZ = {
             {
                 q: "Quel test précède une délégation ?",
                 options: [
-                    "Sauriez-vous expliquer en dix minutes ce qu'il faut faire et à quoi ressemble un bon résultat ?",
-                    "Avez-vous le budget ?",
+                    "Saurais-tu expliquer en dix minutes ce qu'il faut faire et à quoi ressemble un bon résultat ?",
+                    "As-tu le budget ?",
                     "La personne a-t-elle de l'expérience ?"
                 ],
                 a: 0,
@@ -220,9 +220,9 @@ window.QUIZ = {
                 explication: "Ces questions sont faciles à trancher au départ et deviennent des conflits ensuite."
             },
             {
-                q: "Ce qu'un prestataire produit vous appartient-il automatiquement ?",
+                q: "Ce qu'un prestataire produit t'appartient-il automatiquement ?",
                 options: [
-                    "Oui, dès lors que vous l'avez payé",
+                    "Oui, dès lors que tu l'as payé",
                     "Non : il faut une cession de droits écrite",
                     "Oui, s'il s'agit d'un travail sur commande"
                 ],

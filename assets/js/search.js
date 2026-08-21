@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - MOTEUR DE RECHERCHE
+// CLICKED - MOTEUR DE RECHERCHE
 // ===================================
 
 document.addEventListener("DOMContentLoaded", () => {

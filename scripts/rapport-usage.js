@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - RAPPORT D'USAGE
+// CLICKED - RAPPORT D'USAGE
 // ===================================
 //
 // Interroge GoatCounter et publie un classement lisible : quels guides sont

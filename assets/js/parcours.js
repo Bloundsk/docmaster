@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - STRUCTURE DES PARCOURS
+// CLICKED - STRUCTURE DES PARCOURS
 // ===================================
 //
 // Source unique de verite sur le decoupage des sujets. Un sujet peut etre

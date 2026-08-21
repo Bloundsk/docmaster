@@ -201,10 +201,10 @@ window.QUIZ = {
         "les-tests-utilisateurs": [
             // Série 1
             {
-                q: "Pourquoi ne pouvez-vous pas évaluer votre propre interface ?",
+                q: "Pourquoi ne peux-tu pas évaluer ta propre interface ?",
                 options: [
                     "Par manque d'objectivité émotionnelle",
-                    "Parce que vous savez où se trouve chaque chose, et cette connaissance est irréversible",
+                    "Parce que tu sais où se trouve chaque chose, et cette connaissance est irréversible",
                     "Parce qu'il faut une certification"
                 ],
                 a: 1,
@@ -224,7 +224,7 @@ window.QUIZ = {
                     "« Naviguez librement quelques minutes »"
                 ],
                 a: 1,
-                explication: "Donnez une tâche, pas une visite guidée. Ce que les gens font vaut plus que ce qu'ils déclarent."
+                explication: "Donne une tâche, pas une visite guidée. Ce que les gens font vaut plus que ce qu'ils déclarent."
             },
             // Série 2
             {
@@ -235,7 +235,7 @@ window.QUIZ = {
                     "Chronométrer"
                 ],
                 a: 1,
-                explication: "Dès que vous aidez, le test est terminé : l'utilisateur réel n'aura personne à côté de lui."
+                explication: "Dès que tu aides, le test est terminé : l'utilisateur réel n'aura personne à côté de lui."
             },
             {
                 q: "À quel moment tester ?",
@@ -293,11 +293,11 @@ window.QUIZ = {
                 "Il reproduit les codes du secteur"
             ],
             a: 1,
-            explication: "Avant d'ajouter un élément, demandez ce qu'il aide à comprendre. S'il n'aide à rien, il ajoute du bruit."
+            explication: "Avant d'ajouter un élément, demande ce qu'il aide à comprendre. S'il n'aide à rien, il ajoute du bruit."
         },
         // Série 2
         {
-            q: "Votre équipe trouve un bouton « évident ». Comment le vérifier ?",
+            q: "Ton équipe trouve un bouton « évident ». Comment le vérifier ?",
             options: [
                 "Demander l'avis d'un autre designer",
                 "Regarder cinq personnes tenter la tâche, sans les aider",
@@ -307,7 +307,7 @@ window.QUIZ = {
             explication: "Aucun de ces problèmes n'est visible depuis l'intérieur du projet."
         },
         {
-            q: "Vous devez livrer vite. Sur quoi ne pas rogner ?",
+            q: "Tu dois livrer vite. Sur quoi ne pas rogner ?",
             options: [
                 "Le soin apporté aux wireframes",
                 "Les tests utilisateurs, même informels sur une maquette papier",
@@ -317,7 +317,7 @@ window.QUIZ = {
             explication: "Cinq minutes, une tâche, une maquette même papier : c'est infiniment supérieur à ne rien tester."
         },
         {
-            q: "Un texte gris clair sur fond blanc, élégant sur votre écran. Quel problème ?",
+            q: "Un texte gris clair sur fond blanc, élégant sur ton écran. Quel problème ?",
             options: [
                 "Il consomme plus d'encre à l'impression",
                 "Il devient illisible au soleil ou pour une personne de plus de cinquante ans",

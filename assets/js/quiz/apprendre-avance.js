@@ -316,7 +316,7 @@ window.QUIZ = {
             explication: "Un quart d'heure par mois suffit à l'empêcher d'être abandonné en bloc."
         },
         {
-            q: "Quelqu'un vous dit être « plutôt visuel ». Que répondre d'utile ?",
+            q: "Quelqu'un te dit être « plutôt visuel ». Que répondre d'utile ?",
             options: [
                 "Que chacun a des préférences, mais qu'adapter l'enseignement à ces préférences n'améliore pas les résultats",
                 "Qu'il doit privilégier les schémas",

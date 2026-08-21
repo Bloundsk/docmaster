@@ -1,8 +1,11 @@
 #!/bin/sh
 # ---------------------------------------------------------------------------
-# Deux controles avant chaque commit :
+# Cinq controles avant chaque commit :
 #   1. les fichiers JS de donnees sont reellement chargeables (bloquant)
-#   2. la date « Derniere mise a jour » des guides commites est celle du jour
+#   2. la coherence d ensemble du site (bloquant)
+#   3. le registre d adresse au lecteur (bloquant)
+#   4. l identite du site vient bien de sa source unique (bloquant)
+#   5. la date « Derniere mise a jour » des guides commites est celle du jour
 #
 # Ce fichier vit dans .git/hooks/, qui n est pas versionne. Les scripts qu il
 # appelle, eux, sont dans le depot : scripts/valider-js.js et
@@ -20,7 +23,7 @@
 # davantage. En cas d echec, la marche a suivre est de corriger le fichier.
 
 JS=$(git diff --cached --name-only --diff-filter=ACM \
-     | grep -E '^assets/js/(search-data|parcours|pratique)\.js$|^assets/js/quiz/.*\.js$')
+     | grep -E '^assets/js/(search-data|parcours|pratique|identite)\.js$|^assets/js/quiz/.*\.js$')
 
 if [ -n "$JS" ] && command -v node >/dev/null 2>&1; then
     node scripts/valider-js.js $JS || exit 1
@@ -55,13 +58,50 @@ GUIDES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^(en/)?guide
 # Il ne tourne que si le commit touche du contenu ou des donnees, pour ne pas
 # ralentir un commit qui ne modifie qu un script ou la documentation.
 CONTENU=$(git diff --cached --name-only --diff-filter=ACMRD \
-          | grep -E '\.html$|^assets/js/(search-data|parcours|langues)\.js$|^assets/js/quiz/')
+          | grep -E '\.html$|^assets/js/(search-data|parcours|langues|identite)\.js$|^assets/js/quiz/')
 
 if [ -n "$CONTENU" ] && command -v node >/dev/null 2>&1; then
     if ! node scripts/audit-coherence.mjs > /tmp/docmaster-audit.txt 2>&1; then
         echo "[audit] anomalies detectees, commit interrompu :" >&2
         grep -E '^\[|^  - ' /tmp/docmaster-audit.txt >&2
         echo "[audit] detail complet : node scripts/audit-coherence.mjs" >&2
+        exit 1
+    fi
+fi
+
+# --- 3 bis. Registre d adresse au lecteur ----------------------------------
+#
+# Le site tutoie son lecteur. Les passages qui gardent le vouvoiement - blocs
+# de non-conseil, paroles rapportees - sont recenses dans scripts/registre.json
+# avec leur raison. Sans ce controle, le prochain guide serait ecrit dans le
+# registre de son auteur du jour, et le site redeviendrait moitie tutoye,
+# moitie vouvoye, sans que personne ne s en apercoive avant d avoir tout relu.
+
+if [ -n "$CONTENU" ] && command -v node >/dev/null 2>&1; then
+    if ! node scripts/verifier-registre.mjs > /tmp/clicked-registre.txt 2>&1; then
+        echo "[registre] du vouvoiement est revenu :" >&2
+        grep -E '^\[|^  - ' /tmp/clicked-registre.txt >&2
+        exit 1
+    fi
+fi
+
+# --- 4. Identite du site ---------------------------------------------------
+#
+# Le nom, l adresse de base et le nombre de parcours n existent qu a un seul
+# endroit : assets/js/identite.js et assets/js/parcours.js. Les 129 pages en
+# portent des copies, ecrites par scripts/appliquer-identite.js — il le faut,
+# les robots des reseaux sociaux ne lisent pas ce que JavaScript ajoute.
+#
+# On VERIFIE ici, on ne corrige pas : le script reecrit les 129 pages, et les
+# ajouter a l index mettrait du travail non commite au passage. Le message dit
+# quoi lancer.
+
+if [ -n "$CONTENU" ] && command -v node >/dev/null 2>&1; then
+    if ! node scripts/appliquer-identite.js --verifier > /tmp/clicked-identite.txt 2>&1 \
+       || ! node scripts/verifier-identite.mjs >> /tmp/clicked-identite.txt 2>&1; then
+        echo "[identite] une donnee ne vient plus de sa source unique :" >&2
+        grep -E '^\[|^  - ' /tmp/clicked-identite.txt >&2
+        echo "[identite] corriger :  node scripts/appliquer-identite.js" >&2
         exit 1
     fi
 fi

@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - MISE EN PAGE PARTAGÉE
+// CLICKED - MISE EN PAGE PARTAGÉE
 // (navbar + footer uniques, plus besoin de dupliquer le HTML dans chaque page)
 // ===================================
 
@@ -23,6 +23,13 @@
     }[clef] || "");
 
     const langue = L ? L.langueChoisie() : "fr";
+
+    /* Le nom du site vient de identite.js, chargé juste avant. Même repli que
+       pour les libellés : un pied de page sans nom vaut mieux qu'une page sans
+       navigation. Le logo est bicolore, la coupure est déclarée là-bas. */
+    const ID = window.DOCMASTER_IDENTITE || { nom: "Clicked", coupureLogo: 5 };
+    const logoHTML = ID.nom.slice(0, ID.coupureLogo) +
+                     "<span>" + ID.nom.slice(ID.coupureLogo) + "</span>";
 
     /* L'adresse d'une page du site dans la langue courante. Sans cela, un
        visiteur qui a choisi l'anglais et clique « Glossary » atterrissait sur
@@ -59,7 +66,7 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
     const navbarHTML = `
         <nav class="navbar">
             <div class="nav-container">
-                <a href="${lien("index.html")}" class="logo">Doc<span>Master</span></a>
+                <a href="${lien("index.html")}" class="logo">${logoHTML}</a>
                 <ul class="nav-links">
                     <li><a href="${lien("index.html")}">${t("accueil")}</a></li>
                     <li><a href="${lien("actualites.html")}">${t("actualites")}</a></li>
@@ -77,7 +84,7 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
 
     const footerHTML = `
         <footer>
-            <p>© DocMaster</p>
+            <p>© ${ID.nom}</p>
             <!-- Même ordre que la barre de navigation, pour qu'un lien se cherche
                  au même endroit en haut et en bas. « Accueil » n'y figure pas :
                  le logo y mène déjà. Les mentions légales ferment la liste,

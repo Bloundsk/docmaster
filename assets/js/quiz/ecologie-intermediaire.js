@@ -296,7 +296,7 @@ window.QUIZ = {
             explication: "Et les deux venaient d'estimations reprises sans leurs hypothèses."
         },
         {
-            q: "Quelqu'un vous cite une étude allemande sur la répartition de l'impact. Quelle réserve ?",
+            q: "Quelqu'un te cite une étude allemande sur la répartition de l'impact. Quelle réserve ?",
             options: [
                 "L'électricité allemande est bien plus carbonée : la répartition n'est pas transposable",
                 "Les études allemandes sont moins fiables",
@@ -326,7 +326,7 @@ window.QUIZ = {
             explication: "C'est le seul où l'ordre de grandeur bascule."
         },
         {
-            q: "Que faire quand un chiffre d'impact vous frappe ?",
+            q: "Que faire quand un chiffre d'impact te frappe ?",
             options: [
                 "Chercher sa source d'origine : dans la moitié des cas, elle n'existe pas ou dit autre chose",
                 "Le vérifier auprès d'un deuxième article",

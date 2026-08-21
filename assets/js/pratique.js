@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - EXERCICES ET SIMULATEURS
+// CLICKED - EXERCICES ET SIMULATEURS
 // ===================================
 //
 // On n acquiert pas une competence en lisant. Chaque section de cours porte
@@ -241,11 +241,11 @@
         // ---------- Niveau débutant ----------
 
         "reserve-precaution": {
-            titre: "Calculez votre réserve de précaution",
-            intro: "Elle se calcule sur vos <strong>dépenses</strong>, jamais sur vos revenus.",
+            titre: "Calcule ta réserve de précaution",
+            intro: "Elle se calcule sur tes <strong>dépenses</strong>, jamais sur tes revenus.",
             champs: [
                 { id: "depenses", libelle: "Dépenses mensuelles", unite: "€", defaut: 1600, min: 100, max: 20000, pas: 50 },
-                { id: "effort", libelle: "Ce que vous pouvez mettre de côté chaque mois", unite: "€", defaut: 250, min: 10, max: 5000, pas: 10 }
+                { id: "effort", libelle: "Ce que tu peux mettre de côté chaque mois", unite: "€", defaut: 250, min: 10, max: 5000, pas: 10 }
             ],
             calculer: ({ depenses, effort }) => {
                 const basse = depenses * 3, haute = depenses * 6;
@@ -260,8 +260,8 @@
         },
 
         "interets-composes": {
-            titre: "Voyez travailler les intérêts composés",
-            intro: "La part qui vient des intérêts, et non de votre effort, est ce qui grandit avec le temps.",
+            titre: "Vois travailler les intérêts composés",
+            intro: "La part qui vient des intérêts, et non de ton effort, est ce qui grandit avec le temps.",
             champs: [
                 { id: "capital", libelle: "Capital de départ", unite: "€", defaut: 1000, min: 0, max: 500000, pas: 100 },
                 { id: "mensuel", libelle: "Versement mensuel", unite: "€", defaut: 150, min: 0, max: 5000, pas: 10 },
@@ -277,15 +277,15 @@
                 const part = final > 0 ? " (" + pourcent(interets / final * 100, 0) + " du total)" : "";
                 return [
                     { libelle: "Capital au terme", valeur: euros(final), fort: true },
-                    { libelle: "Dont versé par vous", valeur: euros(verse) },
+                    { libelle: "Dont versé par toi", valeur: euros(verse) },
                     { libelle: "Dont produit par les intérêts", valeur: euros(interets) + part }
                 ];
             },
-            lecon: "Allongez la durée de dix ans sans rien changer d'autre : c'est le levier le plus puissant du tableau."
+            lecon: "Allonge la durée de dix ans sans rien changer d'autre : c'est le levier le plus puissant du tableau."
         },
 
         "etf-vs-livret": {
-            titre: "Comparez un placement et un livret",
+            titre: "Compare un placement et un livret",
             intro: "Le livret protège le capital ; il ne le fait pas croître. Les deux ont un rôle distinct.",
             champs: [
                 { id: "montant", libelle: "Somme placée", unite: "€", defaut: 10000, min: 100, max: 500000, pas: 100 },
@@ -306,7 +306,7 @@
         },
 
         "asymetrie-perte": {
-            titre: "Mesurez l'asymétrie d'une baisse",
+            titre: "Mesure l'asymétrie d'une baisse",
             intro: "Une baisse et la hausse qui la répare ne sont jamais du même montant.",
             champs: [
                 { id: "capital", libelle: "Capital investi", unite: "€", defaut: 10000, min: 100, max: 500000, pas: 100 },
@@ -324,7 +324,7 @@
         },
 
         "pea-vs-cto": {
-            titre: "Comparez la fiscalité à la sortie",
+            titre: "Compare la fiscalité à la sortie",
             intro: "Même support, même performance : seul le contenant change.",
             champs: [
                 { id: "gain", libelle: "Gain réalisé", unite: "€", defaut: 10000, min: 100, max: 500000, pas: 100 }
@@ -335,7 +335,7 @@
                 return [
                     { libelle: "Prélèvement sur compte-titres (30 %)", valeur: euros(cto) },
                     { libelle: "Prélèvement sur PEA de plus de 5 ans (17,2 %)", valeur: euros(pea) },
-                    { libelle: "Écart en votre faveur", valeur: euros(cto - pea), fort: true }
+                    { libelle: "Écart en ta faveur", valeur: euros(cto - pea), fort: true }
                 ];
             },
             lecon: "Ce montant n'a demandé aucune performance supplémentaire : seulement d'avoir ouvert le bon contenant, assez tôt."
@@ -344,7 +344,7 @@
         // ---------- Niveau intermédiaire ----------
 
         "perte-max-portefeuille": {
-            titre: "Traduisez votre allocation en perte possible",
+            titre: "Traduis ton allocation en perte possible",
             intro: "Une allocation ne se juge pas sur son rendement espéré, mais sur ce qu'elle fait perdre au pire moment.",
             champs: [
                 { id: "capital", libelle: "Capital total", unite: "€", defaut: 20000, min: 100, max: 1000000, pas: 500 },
@@ -356,14 +356,14 @@
                 return [
                     { libelle: "Perte du portefeuille", valeur: euros(perte), fort: true },
                     { libelle: "Soit, sur le total", valeur: pourcent(perte / capital * 100) },
-                    { libelle: "Il vous resterait", valeur: euros(capital - perte) }
+                    { libelle: "Il te resterait", valeur: euros(capital - perte) }
                 ];
             },
-            lecon: "Si ce montant vous empêcherait de dormir, l'allocation est trop exposée — quelle que soit la qualité du raisonnement qui l'a produite."
+            lecon: "Si ce montant t'empêcherait de dormir, l'allocation est trop exposée — quelle que soit la qualité du raisonnement qui l'a produite."
         },
 
         "cout-des-frais": {
-            titre: "Chiffrez ce que vous coûtent les frais",
+            titre: "Chiffre ce que te coûtent les frais",
             intro: "La performance est une hypothèse. Les frais, eux, sont certains.",
             champs: [
                 { id: "capital", libelle: "Capital de départ", unite: "€", defaut: 20000, min: 100, max: 1000000, pas: 500 },
@@ -387,7 +387,7 @@
         },
 
         "comparateur-enveloppes": {
-            titre: "Comparez les trois enveloppes sur un même gain",
+            titre: "Compare les trois enveloppes sur un même gain",
             intro: "L'abattement de l'assurance-vie est annuel : il ne se reporte pas d'une année sur l'autre.",
             champs: [
                 { id: "gain", libelle: "Gain réalisé", unite: "€", defaut: 10000, min: 100, max: 500000, pas: 100 },
@@ -407,11 +407,11 @@
                 lignes.push({ libelle: "Meilleur net", valeur: euros(meilleur), fort: true });
                 return lignes;
             },
-            lecon: "Les taux évoluent et votre situation aussi : ce calcul montre un ordre de grandeur, pas une réponse définitive."
+            lecon: "Les taux évoluent et ta situation aussi : ce calcul montre un ordre de grandeur, pas une réponse définitive."
         },
 
         "effet-duree": {
-            titre: "Isolez l'effet de la durée",
+            titre: "Isole l'effet de la durée",
             intro: "Même effort mensuel, trois durées : l'écart ne vient que du temps laissé aux intérêts.",
             champs: [
                 { id: "mensuel", libelle: "Versement mensuel", unite: "€", defaut: 200, min: 10, max: 5000, pas: 10 },
@@ -428,13 +428,13 @@
                     };
                 });
             },
-            lecon: "Triplez la durée et le capital est bien plus que triplé : c'est la durée, non le montant, qui fait le résultat."
+            lecon: "Triple la durée et le capital est bien plus que triplé : c'est la durée, non le montant, qui fait le résultat."
         },
 
         // ---------- Niveau avancé ----------
 
         "part-de-gains-imposee": {
-            titre: "Décomposez un retrait",
+            titre: "Décompose un retrait",
             intro: "Retirer 20 000 € ne signifie pas être imposé sur 20 000 €.",
             champs: [
                 { id: "retrait", libelle: "Montant retiré", unite: "€", defaut: 20000, min: 100, max: 500000, pas: 500 },
@@ -455,7 +455,7 @@
         },
 
         "sensibilite-duration": {
-            titre: "Calculez la sensibilité aux taux",
+            titre: "Calcule la sensibilité aux taux",
             intro: "Règle d'approximation : la baisse de prix vaut la duration multipliée par la variation de taux.",
             champs: [
                 { id: "montant", libelle: "Montant placé en obligations", unite: "€", defaut: 10000, min: 100, max: 1000000, pas: 500 },
@@ -467,7 +467,7 @@
                 const perte = montant * baisse / 100;
                 return [
                     { libelle: "Baisse de prix attendue", valeur: "− " + pourcent(baisse), fort: true },
-                    { libelle: "Soit, sur votre montant", valeur: "− " + euros(perte) },
+                    { libelle: "Soit, sur ton montant", valeur: "− " + euros(perte) },
                     { libelle: "Valeur après la hausse des taux", valeur: euros(montant - perte) }
                 ];
             },
@@ -475,7 +475,7 @@
         },
 
         "biais-domestique": {
-            titre: "Mesurez votre biais domestique",
+            titre: "Mesure ton biais domestique",
             intro: "Les marchés français pèsent environ 3 % de la capitalisation mondiale.",
             champs: [
                 { id: "montant", libelle: "Poche actions", unite: "€", defaut: 10000, min: 100, max: 1000000, pas: 500 },
@@ -491,11 +491,11 @@
                     { libelle: "Surexposition", valeur: "× " + nf(facteur, 1), fort: facteur > 1.5 }
                 ];
             },
-            lecon: "Votre emploi et souvent votre logement dépendent déjà de cette même économie."
+            lecon: "Ton emploi et souvent ton logement dépendent déjà de cette même économie."
         },
 
         "cout-du-report": {
-            titre: "Chiffrez le coût d'attendre",
+            titre: "Chiffre le coût d'attendre",
             intro: "Reporter le démarrage paraît sans conséquence. Le calcul dit autre chose.",
             champs: [
                 { id: "mensuel", libelle: "Versement mensuel", unite: "€", defaut: 200, min: 10, max: 5000, pas: 10 },
@@ -521,7 +521,7 @@
         // ---------- Niveau débutant ----------
 
         "force-mot-de-passe": {
-            titre: "Mesurez la solidité d'un mot de passe",
+            titre: "Mesure la solidité d'un mot de passe",
             intro: "La longueur pèse bien plus lourd que la complexité. Ce calcul le montre.",
             champs: [
                 { id: "longueur", libelle: "Nombre de caractères", unite: "car.", defaut: 12, min: 4, max: 40, pas: 1 },
@@ -548,33 +548,33 @@
                     { libelle: "Temps de recherche exhaustive", valeur: duree, fort: true }
                 ];
             },
-            lecon: "Ajoutez deux caractères plutôt qu'un symbole : l'effet sur le temps de recherche est sans commune mesure."
+            lecon: "Ajoute deux caractères plutôt qu'un symbole : l'effet sur le temps de recherche est sans commune mesure."
         },
 
         "signaux-phishing": {
             type: "controle",
-            titre: "Passez un message suspect au crible",
-            intro: "Cochez ce que vous constatez sur le message que vous avez sous les yeux.",
+            titre: "Passe un message suspect au crible",
+            intro: "Coche ce que tu constates sur le message que tu as sous les yeux.",
             points: [
                 { texte: "Il crée l'urgence : compte bloqué, dernier avertissement, délai de 24 h" },
-                { texte: "L'adresse de l'expéditeur ne correspond pas exactement au domaine officiel", aide: "survolez-la, ne lisez pas seulement le nom affiché" },
-                { texte: "Le lien pointe ailleurs que ce qu'il annonce", aide: "survolez sans cliquer et lisez l'adresse réelle" },
+                { texte: "L'adresse de l'expéditeur ne correspond pas exactement au domaine officiel", aide: "survole-la, ne lis pas seulement le nom affiché" },
+                { texte: "Le lien pointe ailleurs que ce qu'il annonce", aide: "survole sans cliquer et lis l'adresse réelle" },
                 { texte: "On me demande un mot de passe, un code ou des coordonnées bancaires" },
                 { texte: "Le message est inattendu, ou concerne un service que je n'utilise pas" },
                 { texte: "La formule d'appel est générique — « Cher client » plutôt que mon nom" },
                 { texte: "Une pièce jointe m'est envoyée sans que je l'aie demandée" }
             ],
             verdict: (n) => {
-                if (n === 0) return { texte: "Aucun signal relevé. Vérifiez tout de même en passant par le site officiel, jamais par le lien du message.", ton: "bon" };
-                if (n <= 2) return { texte: "Signaux relevés. Ne cliquez pas : rendez-vous sur le site officiel par vos propres moyens.", ton: "moyen" };
-                return { texte: "Faisceau clair d'indices. Supprimez le message et signalez-le.", ton: "alerte" };
+                if (n === 0) return { texte: "Aucun signal relevé. Vérifie tout de même en passant par le site officiel, jamais par le lien du message.", ton: "bon" };
+                if (n <= 2) return { texte: "Signaux relevés. Ne clique pas : rends-toi sur le site officiel par tes propres moyens.", ton: "moyen" };
+                return { texte: "Faisceau clair d'indices. Supprime le message et signale-le.", ton: "alerte" };
             },
             lecon: "Un seul signal suffit à justifier la méfiance. Aucun ne suffit à garantir l'authenticité."
         },
 
         "protections-de-base": {
             type: "controle",
-            titre: "Vérifiez vos protections de base",
+            titre: "Vérifie tes protections de base",
             intro: "Les quatre premières lignes coûtent zéro euro et couvrent l'essentiel du risque courant.",
             points: [
                 { texte: "Les mises à jour de mon système sont installées automatiquement" },
@@ -587,14 +587,14 @@
             verdict: (n, total) => {
                 if (n === total) return { texte: "Base saine. C'est le socle sur lequel tout le reste s'appuie.", ton: "bon" };
                 if (n >= total - 2) return { texte: "Presque. Les points restants sont ceux qui demandent le moins d'effort.", ton: "moyen" };
-                return { texte: "Plusieurs protections élémentaires manquent — commencez par les mises à jour automatiques.", ton: "alerte" };
+                return { texte: "Plusieurs protections élémentaires manquent — commence par les mises à jour automatiques.", ton: "alerte" };
             },
             lecon: "La grande majorité des compromissions exploitent une faille déjà corrigée par une mise à jour disponible."
         },
 
         "ou-est-le-chiffrement": {
             type: "controle",
-            titre: "Repérez où vos données sont chiffrées",
+            titre: "Repère où tes données sont chiffrées",
             intro: "Le chiffrement ne protège que là où il est effectivement appliqué.",
             points: [
                 { texte: "Le disque de mon ordinateur est chiffré", aide: "BitLocker sous Windows, FileVault sous macOS" },
@@ -605,7 +605,7 @@
                 { texte: "Ma clé USB, si j'en utilise une, est chiffrée", aide: "c'est l'objet le plus facile à perdre" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Vos données sont protégées au repos comme en transit.", ton: "bon" };
+                if (n === total) return { texte: "Tes données sont protégées au repos comme en transit.", ton: "bon" };
                 if (n >= 3) return { texte: "L'essentiel est couvert. Les points restants concernent surtout la perte ou le vol.", ton: "moyen" };
                 return { texte: "Un appareil perdu livrerait aujourd'hui son contenu à qui le trouve.", ton: "alerte" };
             },
@@ -615,10 +615,10 @@
         // ---------- Niveau intermédiaire ----------
 
         "propagation-fuite": {
-            titre: "Mesurez la propagation d'une fuite",
+            titre: "Mesure la propagation d'une fuite",
             intro: "Un mot de passe réutilisé transforme une fuite unique en compromission générale.",
             champs: [
-                { id: "comptes", libelle: "Nombre de comptes en ligne que vous possédez", unite: "comptes", defaut: 80, min: 1, max: 500, pas: 5 },
+                { id: "comptes", libelle: "Nombre de comptes en ligne que tu possèdes", unite: "comptes", defaut: 80, min: 1, max: 500, pas: 5 },
                 { id: "reutilisation", libelle: "Part de ces comptes partageant le même mot de passe", unite: "%", defaut: 60, min: 0, max: 100, pas: 5 }
             ],
             calculer: ({ comptes, reutilisation }) => {
@@ -634,7 +634,7 @@
 
         "robustesse-2fa": {
             type: "controle",
-            titre: "Classez vos comptes par exposition",
+            titre: "Classe tes comptes par exposition",
             intro: "Tous les comptes ne se valent pas : certains servent à récupérer tous les autres.",
             points: [
                 { texte: "Ma boîte mail principale a une double authentification", aide: "c'est la clé de tout le reste : elle réinitialise les autres comptes" },
@@ -645,8 +645,8 @@
                 { texte: "J'ai conservé mes codes de secours ailleurs que sur le téléphone concerné" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Vos comptes critiques sont protégés, y compris en cas de perte du téléphone.", ton: "bon" };
-                if (n >= 3) return { texte: "Bonne base. Traitez la boîte mail en priorité si elle n'est pas encore couverte.", ton: "moyen" };
+                if (n === total) return { texte: "Tes comptes critiques sont protégés, y compris en cas de perte du téléphone.", ton: "bon" };
+                if (n >= 3) return { texte: "Bonne base. Traite la boîte mail en priorité si elle n'est pas encore couverte.", ton: "moyen" };
                 return { texte: "Un mot de passe volé suffirait aujourd'hui à entrer.", ton: "alerte" };
             },
             lecon: "Protéger sa boîte mail avant tout le reste : c'est elle qui permet de réinitialiser les autres comptes."
@@ -654,7 +654,7 @@
 
         "regle-3-2-1": {
             type: "controle",
-            titre: "Confrontez vos sauvegardes à la règle 3-2-1",
+            titre: "Confronte tes sauvegardes à la règle 3-2-1",
             intro: "Trois copies, sur deux supports différents, dont une hors ligne.",
             points: [
                 { texte: "Mes données existent en au moins trois exemplaires" },
@@ -664,7 +664,7 @@
                 { texte: "J'ai déjà restauré un fichier depuis cette sauvegarde", aide: "une sauvegarde jamais restaurée n'est qu'une hypothèse" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Vous survivriez à un rançongiciel comme à une panne matérielle.", ton: "bon" };
+                if (n === total) return { texte: "Tu survivrais à un rançongiciel comme à une panne matérielle.", ton: "bon" };
                 if (n >= 3) return { texte: "Il manque l'essentiel : la copie déconnectée, ou le test de restauration.", ton: "moyen" };
                 return { texte: "Une seule mauvaise journée suffirait à tout perdre.", ton: "alerte" };
             },
@@ -673,20 +673,20 @@
 
         "ce-que-protege-un-vpn": {
             type: "controle",
-            titre: "Cochez ce qu'un VPN protège réellement",
-            intro: "Cochez uniquement les affirmations exactes. Certaines sont fausses.",
+            titre: "Coche ce qu'un VPN protège réellement",
+            intro: "Coche uniquement les affirmations exactes. Certaines sont fausses.",
             points: [
                 { texte: "Il masque mon adresse IP au site que je visite", aide: "exact" },
                 { texte: "Il empêche le gestionnaire du wifi public de voir les sites visités", aide: "exact" },
-                { texte: "Il me rend anonyme sur les sites où je suis connecté", aide: "faux : un compte connecté vous identifie, VPN ou non" },
+                { texte: "Il me rend anonyme sur les sites où je suis connecté", aide: "faux : un compte connecté t'identifie, VPN ou non" },
                 { texte: "Il protège contre le phishing et les logiciels malveillants", aide: "faux : il transporte le trafic, il ne l'inspecte pas" },
                 { texte: "Il remplace le HTTPS", aide: "faux : HTTPS chiffre jusqu'au site, le VPN seulement jusqu'à son propre serveur" },
                 { texte: "Il déplace ma confiance du fournisseur d'accès vers le fournisseur de VPN", aide: "exact, et c'est le point le plus important" }
             ],
             verdict: (n, total) => {
-                if (n === 3) return { texte: "Trois affirmations sont exactes. Si vous en avez coché exactement trois, vérifiez lesquelles.", ton: "moyen" };
-                if (n > 3) return { texte: "Plus de trois cases cochées : certaines affirmations sont fausses. Lisez les indications.", ton: "alerte" };
-                return { texte: "Trois de ces affirmations sont exactes. Les indications vous disent lesquelles.", ton: "moyen" };
+                if (n === 3) return { texte: "Trois affirmations sont exactes. Si tu en as coché exactement trois, vérifie lesquelles.", ton: "moyen" };
+                if (n > 3) return { texte: "Plus de trois cases cochées : certaines affirmations sont fausses. Lis les indications.", ton: "alerte" };
+                return { texte: "Trois de ces affirmations sont exactes. Les indications te disent lesquelles.", ton: "moyen" };
             },
             lecon: "Un VPN déplace la confiance, il ne la supprime pas. La question devient : ce fournisseur mérite-t-il plus de confiance que le précédent ?"
         },
@@ -695,7 +695,7 @@
 
         "reflexes-apres-fuite": {
             type: "controle",
-            titre: "Établissez votre conduite après une fuite",
+            titre: "Établis ta conduite après une fuite",
             intro: "L'ordre compte : certains gestes rendent les suivants inutiles s'ils sont faits trop tard.",
             points: [
                 { texte: "Changer d'abord le mot de passe de la boîte mail de secours", aide: "sans elle, l'attaquant reprend tout le reste" },
@@ -716,7 +716,7 @@
 
         "signaux-spear-phishing": {
             type: "controle",
-            titre: "Reconnaissez une attaque ciblée",
+            titre: "Reconnais une attaque ciblée",
             intro: "Le hameçonnage ciblé ne présente aucun des signaux grossiers du hameçonnage de masse.",
             points: [
                 { texte: "Le message me connaît : mon nom, mon poste, un projet en cours" },
@@ -728,16 +728,16 @@
             ],
             verdict: (n) => {
                 if (n === 0) return { texte: "Aucun signal. La vérification par un autre canal reste la seule certitude.", ton: "bon" };
-                if (n <= 2) return { texte: "Vérifiez par un canal différent — appelez un numéro que vous connaissez déjà.", ton: "moyen" };
-                return { texte: "Profil typique d'une attaque ciblée. N'agissez pas avant vérification directe.", ton: "alerte" };
+                if (n <= 2) return { texte: "Vérifie par un canal différent — appelle un numéro que tu connais déjà.", ton: "moyen" };
+                return { texte: "Profil typique d'une attaque ciblée. N'agis pas avant vérification directe.", ton: "alerte" };
             },
             lecon: "Contre une attaque ciblée, la parade n'est pas de mieux lire le message : c'est de vérifier par un autre canal."
         },
 
         "metadonnees-visibles": {
             type: "controle",
-            titre: "Distinguez le contenu des métadonnées",
-            intro: "Cochez ce qui reste visible malgré un chiffrement de bout en bout.",
+            titre: "Distingue le contenu des métadonnées",
+            intro: "Coche ce qui reste visible malgré un chiffrement de bout en bout.",
             points: [
                 { texte: "Le texte de mes messages", aide: "non : c'est précisément ce que le chiffrement protège" },
                 { texte: "L'identité de mes correspondants", aide: "oui, dans la plupart des messageries" },
@@ -747,7 +747,7 @@
                 { texte: "Le fait même que je sois inscrit sur ce service", aide: "oui" }
             ],
             verdict: (n) => {
-                if (n === 5) return { texte: "Cinq de ces éléments restent visibles. Si vous avez coché les cinq derniers, c'est exact.", ton: "bon" };
+                if (n === 5) return { texte: "Cinq de ces éléments restent visibles. Si tu as coché les cinq derniers, c'est exact.", ton: "bon" };
                 if (n >= 6) return { texte: "Le contenu, lui, est bien protégé : c'est le seul élément à ne pas cocher.", ton: "alerte" };
                 return { texte: "Cinq de ces six éléments restent visibles. Les indications précisent lesquels.", ton: "moyen" };
             },
@@ -755,7 +755,7 @@
         },
 
         "score-exposition": {
-            titre: "Chiffrez votre surface d'attaque",
+            titre: "Chiffre ta surface d'attaque",
             intro: "Le nombre de comptes compte moins que la proportion de ceux qui sont mal protégés.",
             champs: [
                 { id: "comptes", libelle: "Comptes en ligne possédés", unite: "comptes", defaut: 80, min: 1, max: 500, pas: 5 },
@@ -782,7 +782,7 @@
         "anatomie-llm": {
             type: "controle",
             titre: "Ce qu'un modèle de langage fait, et ne fait pas",
-            intro: "Cochez uniquement les affirmations exactes. Trois le sont.",
+            intro: "Coche uniquement les affirmations exactes. Trois le sont.",
             points: [
                 { texte: "Il prédit le fragment de texte suivant, encore et encore", aide: "exact : c'est tout son fonctionnement" },
                 { texte: "Il consulte une base de connaissances à chaque réponse", aide: "faux : sauf si on lui en branche une explicitement" },
@@ -792,17 +792,17 @@
                 { texte: "Il calcule ses réponses à partir de règles écrites par des humains", aide: "faux : les règles ne sont écrites nulle part, elles sont apprises" }
             ],
             verdict: (n) => {
-                if (n === 3) return { texte: "Trois affirmations sont exactes. Vérifiez avec les indications que ce sont bien les vôtres.", ton: "bon" };
+                if (n === 3) return { texte: "Trois affirmations sont exactes. Vérifie avec les indications que ce sont bien les tiennes.", ton: "bon" };
                 if (n > 3) return { texte: "Plus de trois cases cochées : certaines affirmations sont fausses.", ton: "alerte" };
-                return { texte: "Trois de ces affirmations sont exactes. Les indications vous disent lesquelles.", ton: "moyen" };
+                return { texte: "Trois de ces affirmations sont exactes. Les indications te disent lesquelles.", ton: "moyen" };
             },
             lecon: "Un modèle produit du texte plausible. Le vrai et le plausible coïncident souvent — pas toujours."
         },
 
         "anatomie-agent": {
             type: "controle",
-            titre: "Distinguez un agent d'un assistant",
-            intro: "Cochez ce qui caractérise un agent, par opposition à un simple assistant conversationnel.",
+            titre: "Distingue un agent d'un assistant",
+            intro: "Coche ce qui caractérise un agent, par opposition à un simple assistant conversationnel.",
             points: [
                 { texte: "Il peut appeler des outils extérieurs" },
                 { texte: "Il enchaîne plusieurs étapes sans qu'on les lui dicte une par une" },
@@ -820,8 +820,8 @@
 
         "qualite-consigne": {
             type: "controle",
-            titre: "Passez votre consigne au crible",
-            intro: "Reprenez une consigne que vous avez écrite, et cochez ce qui y figure vraiment.",
+            titre: "Passe ta consigne au crible",
+            intro: "Reprends une consigne que tu as écrite, et coche ce qui y figure vraiment.",
             points: [
                 { texte: "Le rôle ou le point de vue attendu est précisé" },
                 { texte: "La tâche est décrite en une phrase claire" },
@@ -840,8 +840,8 @@
 
         "signaux-hallucination": {
             type: "controle",
-            titre: "Repérez une réponse à vérifier",
-            intro: "Cochez ce que présente la réponse que vous avez sous les yeux.",
+            titre: "Repère une réponse à vérifier",
+            intro: "Coche ce que présente la réponse que tu as sous les yeux.",
             points: [
                 { texte: "Elle cite une source précise — référence, article, page" },
                 { texte: "Elle donne des chiffres exacts sans indiquer d'où ils viennent" },
@@ -851,8 +851,8 @@
                 { texte: "Elle concerne une personne, un lieu ou une entreprise nommément" }
             ],
             verdict: (n) => {
-                if (n === 0) return { texte: "Aucun signal. La vérification reste utile pour tout ce qui vous engage.", ton: "bon" };
-                if (n <= 2) return { texte: "Quelques signaux. Vérifiez les éléments chiffrés et les noms propres.", ton: "moyen" };
+                if (n === 0) return { texte: "Aucun signal. La vérification reste utile pour tout ce qui t'engage.", ton: "bon" };
+                if (n <= 2) return { texte: "Quelques signaux. Vérifie les éléments chiffrés et les noms propres.", ton: "moyen" };
                 return { texte: "Réponse à vérifier avant tout usage : plusieurs facteurs de risque sont réunis.", ton: "alerte" };
             },
             lecon: "Les inventions les plus dangereuses sont les plus plausibles : une référence bien formée qui n'existe pas."
@@ -861,7 +861,7 @@
         // ---------- Niveau intermédiaire ----------
 
         "cout-en-tokens": {
-            titre: "Mesurez le coût réel d'une conversation",
+            titre: "Mesure le coût réel d'une conversation",
             intro: "L'historique est relu à chaque tour. Ce n'est pas le dernier message qui coûte, c'est leur somme.",
             champs: [
                 // 333 mots font 500 jetons : la valeur par defaut reproduit
@@ -882,12 +882,12 @@
                     { libelle: "Coût de la conversation", valeur: euros(cumul / 1e6 * prix, 3) }
                 ];
             },
-            lecon: "Doublez le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire."
+            lecon: "Double le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire."
         },
 
         "dimensionner-un-rag": {
-            titre: "Dimensionnez une base documentaire",
-            intro: "Avant de choisir un outil, mesurez ce que vous avez réellement à indexer.",
+            titre: "Dimensionne une base documentaire",
+            intro: "Avant de choisir un outil, mesure ce que tu as réellement à indexer.",
             champs: [
                 { id: "documents", libelle: "Nombre de documents", unite: "doc.", defaut: 200, min: 1, max: 100000, pas: 10 },
                 { id: "pages", libelle: "Pages par document en moyenne", unite: "pages", defaut: 8, min: 1, max: 2000, pas: 1 },
@@ -908,26 +908,26 @@
 
         "perimetre-outils": {
             type: "controle",
-            titre: "Délimitez le périmètre de votre agent",
-            intro: "Cochez ce qui est vrai de l'agent que vous concevez.",
+            titre: "Délimite le périmètre de ton agent",
+            intro: "Coche ce qui est vrai de l'agent que tu conçois.",
             points: [
                 { texte: "Chaque outil fait une chose précise et nommée", aide: "plutôt qu'un outil général du type « exécute cette requête »" },
                 { texte: "Les outils qui lisent sont séparés de ceux qui écrivent" },
                 { texte: "Toute action irréversible passe par une confirmation humaine", aide: "envoyer, supprimer, payer" },
-                { texte: "Mon code vérifie les paramètres avant d'exécuter un appel", aide: "le modèle propose, votre code dispose" },
+                { texte: "Mon code vérifie les paramètres avant d'exécuter un appel", aide: "le modèle propose, ton code dispose" },
                 { texte: "Un agent qui lit du contenu extérieur n'a pas d'outil d'envoi", aide: "cloisonnement : c'est la parade à l'injection de consigne" },
                 { texte: "Les appels d'outils sont journalisés" }
             ],
             verdict: (n, total) => {
                 if (n === total) return { texte: "Périmètre maîtrisé : même détourné, l'agent ne peut pas faire grand-chose.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne architecture. La confirmation humaine et le cloisonnement sont les deux points à ne pas lâcher.", ton: "moyen" };
-                return { texte: "L'agent peut aujourd'hui produire des effets que vous n'avez pas prévus.", ton: "alerte" };
+                return { texte: "L'agent peut aujourd'hui produire des effets que tu n'as pas prévus.", ton: "alerte" };
             },
             lecon: "Ce qu'un agent peut casser est exactement ce que ses outils permettent. Rien de plus, rien de moins."
         },
 
         "arbitrage-modele": {
-            titre: "Comparez le coût mensuel de deux modèles",
+            titre: "Compare le coût mensuel de deux modèles",
             intro: "Un écart minime par requête devient structurant à l'échelle du mois.",
             champs: [
                 { id: "requetes", libelle: "Requêtes par mois", unite: "req.", defaut: 10000, min: 1, max: 10000000, pas: 100 },
@@ -956,8 +956,8 @@
 
         "reglage-temperature": {
             type: "controle",
-            titre: "Choisissez votre température",
-            intro: "Cochez les tâches qui appellent une température BASSE.",
+            titre: "Choisis ta température",
+            intro: "Coche les tâches qui appellent une température BASSE.",
             points: [
                 { texte: "Extraire des informations d'un document", aide: "oui : on veut la même réponse à chaque fois" },
                 { texte: "Classer des messages par catégorie", aide: "oui" },
@@ -967,7 +967,7 @@
                 { texte: "Répondre à une question factuelle", aide: "oui" }
             ],
             verdict: (n) => {
-                if (n === 4) return { texte: "Quatre tâches appellent une température basse. Vérifiez que ce sont bien celles-là.", ton: "bon" };
+                if (n === 4) return { texte: "Quatre tâches appellent une température basse. Vérifie que ce sont bien celles-là.", ton: "bon" };
                 if (n > 4) return { texte: "Plus de quatre : deux de ces tâches gagnent au contraire à la variété.", ton: "alerte" };
                 return { texte: "Quatre de ces six tâches appellent une température basse.", ton: "moyen" };
             },
@@ -976,8 +976,8 @@
 
         "jeu-de-test": {
             type: "controle",
-            titre: "Évaluez votre méthode d'évaluation",
-            intro: "Cochez ce qui est vrai de votre manière de mesurer.",
+            titre: "Évalue ta méthode d'évaluation",
+            intro: "Coche ce qui est vrai de ta manière de mesurer.",
             points: [
                 { texte: "J'ai au moins vingt cas de test écrits avec leur réponse attendue" },
                 { texte: "Le jeu contient des cas limites, pas seulement des cas faciles" },
@@ -987,7 +987,7 @@
                 { texte: "Si j'utilise un modèle-juge, j'inverse l'ordre des candidats", aide: "un juge favorise ce qui est présenté en premier" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Méthode solide : vos améliorations sont mesurées, pas ressenties.", ton: "bon" };
+                if (n === total) return { texte: "Méthode solide : tes améliorations sont mesurées, pas ressenties.", ton: "bon" };
                 if (n >= 3) return { texte: "Base correcte. Le jeu de contrôle mis à part et le détail des cas font la différence.", ton: "moyen" };
                 return { texte: "Sans mesure, une amélioration ressentie sur trois essais peut être une dégradation sur cent.", ton: "alerte" };
             },
@@ -996,8 +996,8 @@
 
         "surface-injection": {
             type: "controle",
-            titre: "Mesurez votre exposition à l'injection",
-            intro: "Cochez ce qui s'applique à votre système.",
+            titre: "Mesure ton exposition à l'injection",
+            intro: "Coche ce qui s'applique à ton système.",
             points: [
                 { texte: "L'agent lit des contenus que je ne maîtrise pas", aide: "pages web, courriels reçus, documents envoyés par des tiers" },
                 { texte: "Il dispose d'outils capables d'envoyer ou de publier" },
@@ -1007,7 +1007,7 @@
                 { texte: "Sa seule protection contre l'injection est une phrase dans la consigne", aide: "cela aide un peu, et se contourne" }
             ],
             verdict: (n) => {
-                if (n === 0) return { texte: "Exposition faible. Reconsidérez à chaque nouvel outil ajouté.", ton: "bon" };
+                if (n === 0) return { texte: "Exposition faible. Reconsidère à chaque nouvel outil ajouté.", ton: "bon" };
                 if (n <= 2) return { texte: "Exposition limitée. Le cloisonnement lecture / écriture reste la précaution clé.", ton: "moyen" };
                 return { texte: "Un texte placé dans un contenu lu par l'agent pourrait déclencher des actions non voulues.", ton: "alerte" };
             },
@@ -1017,9 +1017,9 @@
         "entrainer-ou-recuperer": {
             type: "controle",
             titre: "Faut-il entraîner, ou récupérer ?",
-            intro: "Cochez les situations qui relèvent de la RÉCUPÉRATION plutôt que de l'entraînement.",
+            intro: "Coche les situations qui relèvent de la RÉCUPÉRATION plutôt que de l'entraînement.",
             points: [
-                { texte: "Le modèle ignore nos procédures internes", aide: "récupération : mettez le document sous ses yeux" },
+                { texte: "Le modèle ignore nos procédures internes", aide: "récupération : mets le document sous ses yeux" },
                 { texte: "Le modèle ignore nos tarifs, qui changent chaque mois", aide: "récupération : des poids figés vieilliraient aussitôt" },
                 { texte: "Les réponses ne respectent pas notre charte de ton", aide: "entraînement possible — après avoir essayé la consigne et des exemples" },
                 { texte: "Le modèle ne connaît pas les événements récents", aide: "récupération" },
@@ -1040,8 +1040,8 @@
 
         "qualite-kpi": {
             type: "controle",
-            titre: "Votre indicateur est-il utile ?",
-            intro: "Prenez un indicateur que vous suivez, et cochez ce qui est vrai.",
+            titre: "Ton indicateur est-il utile ?",
+            intro: "Prends un indicateur que tu suis, et coche ce qui est vrai.",
             points: [
                 { texte: "Je sais quoi faire différemment s'il double demain", aide: "le test décisif : sinon, il occupe de la place pour rien" },
                 { texte: "Il a un point de comparaison : période précédente, objectif ou groupe témoin" },
@@ -1060,8 +1060,8 @@
 
         "qualite-collecte": {
             type: "controle",
-            titre: "Vos données disent-elles ce que vous croyez ?",
-            intro: "Cochez ce qui est vrai de la façon dont ces données ont été recueillies.",
+            titre: "Tes données disent-elles ce que tu crois ?",
+            intro: "Coche ce qui est vrai de la façon dont ces données ont été recueillies.",
             points: [
                 { texte: "Je sais qui a été mesuré, et qui ne l'a pas été", aide: "les absents faussent plus que les présents" },
                 { texte: "La collecte est automatique, ou le questionnaire est identique pour tous" },
@@ -1071,8 +1071,8 @@
                 { texte: "Les définitions n'ont pas changé pendant la période" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Collecte saine : les chiffres portent bien sur ce que vous croyez.", ton: "bon" };
-                if (n >= 4) return { texte: "Acceptable. Notez les réserves à côté du résultat plutôt que de les oublier.", ton: "moyen" };
+                if (n === total) return { texte: "Collecte saine : les chiffres portent bien sur ce que tu crois.", ton: "bon" };
+                if (n >= 4) return { texte: "Acceptable. Note les réserves à côté du résultat plutôt que de les oublier.", ton: "moyen" };
                 return { texte: "Les données décrivent peut-être une population différente de celle visée.", ton: "alerte" };
             },
             lecon: "Aucun traitement statistique ne rattrape une collecte biaisée. Il la rend seulement plus présentable."
@@ -1081,7 +1081,7 @@
         "choisir-son-graphique": {
             type: "controle",
             titre: "Le bon graphique pour la bonne question",
-            intro: "Cochez les associations exactes. Quatre le sont.",
+            intro: "Coche les associations exactes. Quatre le sont.",
             points: [
                 { texte: "Comparer des catégories → barres", aide: "exact" },
                 { texte: "Suivre une évolution dans le temps → courbe", aide: "exact" },
@@ -1091,7 +1091,7 @@
                 { texte: "Faire paraître une hausse plus forte → tronquer l'axe vertical", aide: "faux : c'est la manipulation la plus répandue" }
             ],
             verdict: (n) => {
-                if (n === 4) return { texte: "Quatre associations sont exactes. Vérifiez avec les indications que ce sont les vôtres.", ton: "bon" };
+                if (n === 4) return { texte: "Quatre associations sont exactes. Vérifie avec les indications que ce sont les tiennes.", ton: "bon" };
                 if (n > 4) return { texte: "Plus de quatre : deux de ces propositions sont fausses.", ton: "alerte" };
                 return { texte: "Quatre de ces six associations sont exactes.", ton: "moyen" };
             },
@@ -1099,7 +1099,7 @@
         },
 
         "effet-valeur-extreme": {
-            titre: "Voyez une valeur extrême déformer la moyenne",
+            titre: "Vois une valeur extrême déformer la moyenne",
             intro: "C'est la raison pour laquelle la médiane existe.",
             champs: [
                 { id: "nombre", libelle: "Nombre de valeurs ordinaires", unite: "val.", defaut: 19, min: 2, max: 1000, pas: 1 },
@@ -1143,7 +1143,7 @@
         },
 
         "taille-des-segments": {
-            titre: "Vos segments sont-ils assez fournis ?",
+            titre: "Tes segments sont-ils assez fournis ?",
             intro: "Découper indéfiniment finit par produire du bruit qu'on prend pour du signal.",
             champs: [
                 { id: "population", libelle: "Population totale", unite: "obs.", defaut: 5000, min: 10, max: 10000000, pas: 100 },
@@ -1166,7 +1166,7 @@
         "correlation-causalite": {
             type: "controle",
             titre: "Avant de conclure « A cause B »",
-            intro: "Passez votre corrélation au crible : cochez ce que vous avez réellement vérifié.",
+            intro: "Passe ta corrélation au crible : coche ce que tu as réellement vérifié.",
             points: [
                 { texte: "J'ai envisagé que B cause A", aide: "le sens inverse est souvent aussi plausible" },
                 { texte: "J'ai cherché une troisième variable qui causerait les deux", aide: "le cas le plus fréquent, et de loin" },
@@ -1178,15 +1178,15 @@
             verdict: (n, total) => {
                 if (n === total) return { texte: "Hypothèse sérieusement instruite. Reste que seule l'expérimentation tranche.", ton: "bon" };
                 if (n >= 3) return { texte: "Il manque des vérifications. La variable confondante est celle qu'on oublie le plus.", ton: "moyen" };
-                return { texte: "À ce stade, vous avez une corrélation et une histoire plausible. Pas une cause.", ton: "alerte" };
+                return { texte: "À ce stade, tu as une corrélation et une histoire plausible. Pas une cause.", ton: "alerte" };
             },
             lecon: "Le danger n'est pas la corrélation absurde, qui se repère. C'est celle à laquelle on peut donner une explication crédible."
         },
 
         "tableau-de-bord-utile": {
             type: "controle",
-            titre: "Passez votre tableau de bord au crible",
-            intro: "Cochez ce qui est vrai du tableau de bord que vous avez sous les yeux.",
+            titre: "Passe ton tableau de bord au crible",
+            intro: "Coche ce qui est vrai du tableau de bord que tu as sous les yeux.",
             points: [
                 { texte: "Chaque indicateur passe le test « si ce nombre doublait, que ferais-je ? »" },
                 { texte: "Aucun chiffre n'est affiché sans point de comparaison" },
@@ -1206,7 +1206,7 @@
         // ---------- Niveau avancé ----------
 
         "marge-erreur": {
-            titre: "Calculez la marge d'erreur",
+            titre: "Calcule la marge d'erreur",
             intro: "Elle dépend de la taille de l'échantillon, presque jamais de celle de la population.",
             champs: [
                 { id: "taille", libelle: "Taille de l'échantillon", unite: "obs.", defaut: 400, min: 10, max: 1000000, pas: 50 },
@@ -1229,7 +1229,7 @@
         },
 
         "taille-test-ab": {
-            titre: "Dimensionnez votre test A/B",
+            titre: "Dimensionne ton test A/B",
             intro: "À décider avant de lancer. Après, il est trop tard pour savoir si le test pouvait conclure.",
             champs: [
                 { id: "base", libelle: "Taux de conversion actuel", unite: "%", defaut: 3, min: 0.1, max: 90, pas: 0.1 },
@@ -1255,10 +1255,10 @@
 
         "pieges-interpretation": {
             type: "controle",
-            titre: "Identifiez le piège",
-            intro: "Cochez les situations où une conclusion serait probablement fausse.",
+            titre: "Identifie le piège",
+            intro: "Coche les situations où une conclusion serait probablement fausse.",
             points: [
-                { texte: "Le résultat global contredit ce qu'on observe dans chaque sous-groupe", aide: "paradoxe de Simpson : vérifiez la répartition" },
+                { texte: "Le résultat global contredit ce qu'on observe dans chaque sous-groupe", aide: "paradoxe de Simpson : vérifie la répartition" },
                 { texte: "On analyse les clients actuels pour comprendre pourquoi les gens restent", aide: "biais du survivant : les partis ont la réponse" },
                 { texte: "Une action a été prise après un mois exceptionnellement mauvais, et le mois suivant est meilleur", aide: "régression vers la moyenne : cela arrive sans intervention" },
                 { texte: "Les groupes comparés ont des compositions très différentes" },
@@ -1266,7 +1266,7 @@
                 { texte: "On a testé cinquante hypothèses et retenu celle qui ressortait", aide: "sur cinquante, certaines ressortent par hasard" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Les six situations sont effectivement piégeuses. Vous les reconnaissez toutes.", ton: "bon" };
+                if (n === total) return { texte: "Les six situations sont effectivement piégeuses. Tu les reconnais toutes.", ton: "bon" };
                 if (n >= 3) return { texte: "Bonne vigilance. Les six sont en réalité des pièges classiques.", ton: "moyen" };
                 return { texte: "Ces six situations conduisent toutes à des conclusions fausses à partir de données exactes.", ton: "alerte" };
             },
@@ -1275,8 +1275,8 @@
 
         "sante-chaine-donnees": {
             type: "controle",
-            titre: "Auditez votre chaîne de données",
-            intro: "Cochez ce qui est en place aujourd'hui.",
+            titre: "Audite ta chaîne de données",
+            intro: "Coche ce qui est en place aujourd'hui.",
             points: [
                 { texte: "La date de dernière mise à jour est affichée à côté des chiffres", aide: "la protection la moins coûteuse contre la panne silencieuse" },
                 { texte: "Une alerte se déclenche si le volume reçu s'écarte de l'habitude" },
@@ -1300,7 +1300,7 @@
         "ux-ou-ui": {
             type: "controle",
             titre: "UX ou UI ?",
-            intro: "Cochez les décisions qui relèvent de l'UX plutôt que de l'UI. Quatre le sont.",
+            intro: "Coche les décisions qui relèvent de l'UX plutôt que de l'UI. Quatre le sont.",
             points: [
                 { texte: "Décider de l'ordre des étapes d'une inscription", aide: "UX : c'est le parcours" },
                 { texte: "Choisir la couleur du bouton principal", aide: "UI : c'est l'apparence" },
@@ -1310,7 +1310,7 @@
                 { texte: "Décider qu'une erreur s'affiche sous le champ concerné plutôt qu'en haut", aide: "UX : cela change la capacité à corriger" }
             ],
             verdict: (n) => {
-                if (n === 4) return { texte: "Quatre décisions relèvent de l'UX. Vérifiez avec les indications que ce sont les vôtres.", ton: "bon" };
+                if (n === 4) return { texte: "Quatre décisions relèvent de l'UX. Vérifie avec les indications que ce sont les tiennes.", ton: "bon" };
                 if (n > 4) return { texte: "Plus de quatre : deux de ces décisions portent sur l'apparence, pas sur le parcours.", ton: "alerte" };
                 return { texte: "Quatre de ces six décisions relèvent de l'UX.", ton: "moyen" };
             },
@@ -1319,8 +1319,8 @@
 
         "qualite-wireframe": {
             type: "controle",
-            titre: "Votre wireframe est-il utile ?",
-            intro: "Cochez ce qui est vrai de la maquette fil de fer que vous avez sous les yeux.",
+            titre: "Ton wireframe est-il utile ?",
+            intro: "Coche ce qui est vrai de la maquette fil de fer que tu as sous les yeux.",
             points: [
                 { texte: "Il est en niveaux de gris, sans couleur ni image finale", aide: "sinon la discussion glisse vers l'esthétique" },
                 { texte: "Le contenu est réaliste, pas du faux texte", aide: "un titre réel fait trois lignes, le faux texte en fait une" },
@@ -1339,8 +1339,8 @@
 
         "hierarchie-visuelle": {
             type: "controle",
-            titre: "Testez votre hiérarchie visuelle",
-            intro: "Plissez les yeux devant votre écran jusqu'à le voir flou, puis cochez.",
+            titre: "Teste ta hiérarchie visuelle",
+            intro: "Plisse les yeux devant ton écran jusqu'à le voir flou, puis coche.",
             points: [
                 { texte: "Je distingue encore l'élément le plus important" },
                 { texte: "L'action principale se repère sans lire" },
@@ -1351,7 +1351,7 @@
             ],
             verdict: (n, total) => {
                 if (n === total) return { texte: "Hiérarchie lisible : l'écran se comprend avant d'être lu.", ton: "bon" };
-                if (n >= 4) return { texte: "Correct. Vérifiez surtout qu'un seul élément domine.", ton: "moyen" };
+                if (n >= 4) return { texte: "Correct. Vérifie surtout qu'un seul élément domine.", ton: "moyen" };
                 return { texte: "L'écran demande d'être lu entièrement pour être compris.", ton: "alerte" };
             },
             lecon: "Si tout est mis en avant, plus rien ne l'est. Une hiérarchie suppose d'accepter que certaines choses passent au second plan."
@@ -1402,8 +1402,8 @@
 
         "test-des-cartes": {
             type: "controle",
-            titre: "Votre navigation tient-elle debout ?",
-            intro: "Cochez ce qui est vrai du menu que vous avez sous les yeux.",
+            titre: "Ta navigation tient-elle debout ?",
+            intro: "Coche ce qui est vrai du menu que tu as sous les yeux.",
             points: [
                 { texte: "Les entrées correspondent à des tâches, pas à l'organigramme" },
                 { texte: "Un visiteur découvrant le site devinerait ce qu'il y a derrière chaque libellé" },
@@ -1415,13 +1415,13 @@
             verdict: (n, total) => {
                 if (n === total) return { texte: "Navigation construite du point de vue du visiteur. C'est rare.", ton: "bon" };
                 if (n >= 4) return { texte: "Correct. Le test auprès d'extérieurs est celui qui révèle le plus.", ton: "moyen" };
-                return { texte: "Cette navigation est probablement claire pour vous seul.", ton: "alerte" };
+                return { texte: "Cette navigation est probablement claire pour toi seul.", ton: "alerte" };
             },
             lecon: "Un menu construit sur l'organigramme est parfaitement logique de l'intérieur, et opaque de l'extérieur."
         },
 
         "cible-tactile": {
-            titre: "Vos cibles tactiles sont-elles assez grandes ?",
+            titre: "Tes cibles tactiles sont-elles assez grandes ?",
             intro: "Un doigt couvre environ 9 millimètres. Les pixels CSS, eux, ne se voient pas.",
             champs: [
                 { id: "taille", libelle: "Taille de la cible", unite: "px CSS", defaut: 32, min: 8, max: 200, pas: 2 },
@@ -1443,8 +1443,8 @@
 
         "sante-systeme": {
             type: "controle",
-            titre: "Votre système de design tient-il ?",
-            intro: "Cochez ce qui est vrai aujourd'hui, pas ce qui était prévu.",
+            titre: "Ton système de design tient-il ?",
+            intro: "Coche ce qui est vrai aujourd'hui, pas ce qui était prévu.",
             points: [
                 { texte: "Les espacements suivent une échelle définie, pas des valeurs libres" },
                 { texte: "Il existe une seule façon d'afficher une erreur" },
@@ -1464,7 +1464,7 @@
         // ---------- Niveau avancé ----------
 
         "budget-performance": {
-            titre: "Calculez votre budget de performance",
+            titre: "Calcule ton budget de performance",
             intro: "Le poids d'une page se traduit directement en secondes d'attente.",
             champs: [
                 { id: "poids", libelle: "Poids total de la page", unite: "Ko", defaut: 2500, min: 50, max: 50000, pas: 100 },
@@ -1493,7 +1493,7 @@
             intro: "La loi de Hick décrit le choix entre des options <strong>déjà connues</strong>. Trouver une option inconnue relève du balayage visuel, dont le coût est tout autre.",
             champs: [
                 { id: "options", libelle: "Nombre d'options présentées", unite: "options", defaut: 20, min: 2, max: 100, pas: 1 },
-                { id: "groupes", libelle: "Nombre de familles si vous les regroupez", unite: "familles", defaut: 4, min: 1, max: 20, pas: 1 }
+                { id: "groupes", libelle: "Nombre de familles si tu les regroupes", unite: "familles", defaut: 4, min: 1, max: 20, pas: 1 }
             ],
             calculer: ({ options, groupes }) => {
                 // Hick : T = a + b log2(n+1). Le terme constant represente le temps
@@ -1521,8 +1521,8 @@
 
         "schemas-sombres": {
             type: "controle",
-            titre: "Repérez les schémas sombres",
-            intro: "Cochez ce que présente l'interface que vous examinez.",
+            titre: "Repère les schémas sombres",
+            intro: "Coche ce que présente l'interface que tu examines.",
             points: [
                 { texte: "« Tout accepter » est plus visible que le refus", aide: "non conforme : le refus doit être aussi facile" },
                 { texte: "La résiliation est nettement plus longue que la souscription", aide: "non conforme au droit français" },
@@ -1532,7 +1532,7 @@
                 { texte: "Une case est pré-cochée en faveur du site" }
             ],
             verdict: (n) => {
-                if (n === 0) return { texte: "Aucun schéma repéré. Refaites le test après chaque évolution du tunnel.", ton: "bon" };
+                if (n === 0) return { texte: "Aucun schéma repéré. Refais le test après chaque évolution du tunnel.", ton: "bon" };
                 if (n <= 2) return { texte: "Des pratiques à corriger, dont certaines exposent juridiquement.", ton: "moyen" };
                 return { texte: "Faisceau de pratiques trompeuses : plusieurs sont sanctionnées en droit européen.", ton: "alerte" };
             },
@@ -1540,7 +1540,7 @@
         },
 
         "gain-de-temps-utilisateur": {
-            titre: "Chiffrez votre amélioration en heures",
+            titre: "Chiffre ton amélioration en heures",
             intro: "L'argument esthétique se discute. Le calcul beaucoup moins.",
             champs: [
                 { id: "secondes", libelle: "Secondes gagnées par tâche", unite: "s", defaut: 5, min: 0.5, max: 600, pas: 0.5 },
@@ -1566,8 +1566,8 @@
 
         "qualite-business-plan": {
             type: "controle",
-            titre: "Votre business plan tient-il debout ?",
-            intro: "Cochez ce qui figure réellement dans votre document, pas ce que vous avez en tête.",
+            titre: "Ton business plan tient-il debout ?",
+            intro: "Coche ce qui figure réellement dans ton document, pas ce que tu as en tête.",
             points: [
                 { texte: "Le problème résolu est décrit avant la solution" },
                 { texte: "Les clients visés sont nommés précisément", aide: "« les PME » n'est pas une cible, c'est une catégorie" },
@@ -1581,11 +1581,11 @@
                 if (n >= 4) return { texte: "Bonne base. Le scénario dégradé et la rémunération sont les oublis les plus fréquents.", ton: "moyen" };
                 return { texte: "Ce plan décrit une intention, pas encore un projet vérifiable.", ton: "alerte" };
             },
-            lecon: "Un business plan sert d'abord à vous : c'est l'exercice qui révèle les hypothèses que vous n'aviez pas vues."
+            lecon: "Un business plan sert d'abord à toi : c'est l'exercice qui révèle les hypothèses que tu n'avais pas vues."
         },
 
         "taille-de-marche": {
-            titre: "Estimez votre marché de façon honnête",
+            titre: "Estime ton marché de façon honnête",
             intro: "Trois cercles concentriques, du plus large au plus atteignable.",
             champs: [
                 { id: "total", libelle: "Clients potentiels au total", unite: "clients", defaut: 200000, min: 10, max: 100000000, pas: 1000 },
@@ -1607,8 +1607,8 @@
 
         "choisir-statut": {
             type: "controle",
-            titre: "Quel statut vous correspond ?",
-            intro: "Cochez ce qui décrit votre situation. Les réponses orientent, elles ne décident pas.",
+            titre: "Quel statut te correspond ?",
+            intro: "Coche ce qui décrit ta situation. Les réponses orientent, elles ne décident pas.",
             points: [
                 { texte: "Je démarre seul, sans investissement initial important" },
                 { texte: "Mon chiffre d'affaires restera sous les seuils de la micro-entreprise" },
@@ -1618,15 +1618,15 @@
                 { texte: "Je vais recruter dans les douze mois" }
             ],
             verdict: (n) => {
-                if (n <= 2) return { texte: "Situation à préciser : listez vos charges prévisionnelles avant de trancher.", ton: "moyen" };
-                if (n === 3) return { texte: "Profil orienté micro-entreprise. Vérifiez les seuils et l'absence de charges lourdes.", ton: "bon" };
-                return { texte: "Les trois derniers points orientent vers une société. Faites-vous accompagner.", ton: "moyen" };
+                if (n <= 2) return { texte: "Situation à préciser : liste tes charges prévisionnelles avant de trancher.", ton: "moyen" };
+                if (n === 3) return { texte: "Profil orienté micro-entreprise. Vérifie les seuils et l'absence de charges lourdes.", ton: "bon" };
+                return { texte: "Les trois derniers points orientent vers une société. Fais-toi accompagner.", ton: "moyen" };
             },
             lecon: "Le statut se change, mais rarement sans coût. Mieux vaut anticiper douze mois que reprendre dans six."
         },
 
         "besoin-de-financement": {
-            titre: "Chiffrez votre besoin de démarrage",
+            titre: "Chiffre ton besoin de démarrage",
             intro: "Le poste le plus souvent oublié n'est pas l'investissement : c'est la trésorerie d'attente.",
             champs: [
                 { id: "investissement", libelle: "Matériel, aménagement, développement", unite: "€", defaut: 12000, min: 0, max: 5000000, pas: 500 },
@@ -1651,8 +1651,8 @@
 
         "test-de-validation": {
             type: "controle",
-            titre: "Votre besoin est-il vraiment validé ?",
-            intro: "Cochez ce que vous avez constaté, pas ce qu'on vous a dit.",
+            titre: "Ton besoin est-il vraiment validé ?",
+            intro: "Coche ce que tu as constaté, pas ce qu'on t'a dit.",
             points: [
                 { texte: "J'ai interrogé des inconnus, pas seulement mes proches" },
                 { texte: "Mes questions portaient sur le passé, pas sur des intentions", aide: "« la dernière fois que... » et non « utiliseriez-vous... »" },
@@ -1663,14 +1663,14 @@
             ],
             verdict: (n, total) => {
                 if (n >= 5) return { texte: "Besoin réel, confirmé par des comportements et non par des paroles.", ton: "bon" };
-                if (n >= 3) return { texte: "Signaux encourageants. Cherchez maintenant une preuve de paiement.", ton: "moyen" };
-                return { texte: "Vous avez de l'encouragement, pas encore de validation.", ton: "alerte" };
+                if (n >= 3) return { texte: "Signaux encourageants. Cherche maintenant une preuve de paiement.", ton: "moyen" };
+                return { texte: "Tu as de l'encouragement, pas encore de validation.", ton: "alerte" };
             },
             lecon: "Un compliment poli ne vaut rien. Un « je peux payer maintenant ? » vaut cinquante entretiens."
         },
 
         "marge-et-prix": {
-            titre: "Calculez votre marge et votre équilibre",
+            titre: "Calcule ta marge et ton équilibre",
             intro: "Le nombre de clients à atteindre se calcule sur la marge, jamais sur le prix affiché.",
             champs: [
                 { id: "prix", libelle: "Prix de vente mensuel", unite: "€", defaut: 49, min: 1, max: 100000, pas: 1 },
@@ -1692,7 +1692,7 @@
         },
 
         "cout-acquisition": {
-            titre: "Combien vous coûte un client ?",
+            titre: "Combien te coûte un client ?",
             intro: "Le chiffre n'a de sens que comparé à ce que le client rapporte.",
             champs: [
                 { id: "budget", libelle: "Budget d'acquisition mensuel", unite: "€", defaut: 800, min: 0, max: 1000000, pas: 50 },
@@ -1730,13 +1730,13 @@
                     { libelle: "Encaissements nécessaires pour l'équilibre", valeur: euros(depenses) + " par mois" }
                 ];
             },
-            lecon: "Surveillez votre autonomie en mois, pas votre chiffre d'affaires. C'est elle qui dit combien de temps il reste."
+            lecon: "Surveille ton autonomie en mois, pas ton chiffre d'affaires. C'est elle qui dit combien de temps il reste."
         },
 
         // ---------- Niveau avancé ----------
 
         "cac-ltv": {
-            titre: "Vos unit economics tiennent-elles ?",
+            titre: "Tes unit economics tiennent-elles ?",
             intro: "La valeur vie se calcule sur la marge, jamais sur le chiffre d'affaires.",
             champs: [
                 { id: "marge", libelle: "Marge mensuelle par client", unite: "€", defaut: 38, min: 0.1, max: 100000, pas: 1 },
@@ -1751,7 +1751,7 @@
                 if (ratio < 1) verdict = "chaque client fait perdre de l'argent";
                 else if (ratio < 3) verdict = "fragile : peu de marge pour investir";
                 else if (ratio <= 5) verdict = "sain";
-                else verdict = "très élevé : vous n'investissez peut-être pas assez en acquisition";
+                else verdict = "très élevé : tu n'investis peut-être pas assez en acquisition";
                 return [
                     { libelle: "Valeur vie du client", valeur: euros(ltv) },
                     { libelle: "Ratio valeur vie / coût d'acquisition", valeur: nf(ratio, 1) + " — " + verdict, fort: true },
@@ -1762,12 +1762,12 @@
         },
 
         "dilution": {
-            titre: "Mesurez votre dilution",
+            titre: "Mesure ta dilution",
             intro: "Ce qu'on cède en capital ne se récupère pas.",
             champs: [
                 { id: "montant", libelle: "Montant levé", unite: "€", defaut: 300000, min: 1000, max: 100000000, pas: 10000 },
                 { id: "valorisation", libelle: "Valorisation avant opération", unite: "€", defaut: 1200000, min: 1000, max: 1000000000, pas: 50000 },
-                { id: "part", libelle: "Votre part actuelle du capital", unite: "%", defaut: 100, min: 1, max: 100, pas: 1 },
+                { id: "part", libelle: "Ta part actuelle du capital", unite: "%", defaut: 100, min: 1, max: 100, pas: 1 },
                 /* Unité « tours de table » et non « tours » : ce dernier mot est
                    déjà l'unité du simulateur de conversation de l'IA, où il
                    signifie « turns ». Le dictionnaire est plat et ne sait pas
@@ -1783,7 +1783,7 @@
                 const partFinale = partApres * Math.pow(1 - cede, tours);
                 return [
                     { libelle: "Part cédée à l'investisseur", valeur: pourcent(cede * 100, 1) },
-                    { libelle: "Votre part après cette levée", valeur: pourcent(partApres, 1), fort: true },
+                    { libelle: "Ta part après cette levée", valeur: pourcent(partApres, 1), fort: true },
                     { libelle: `Après ${tours} tour(s) comparable(s)`, valeur: pourcent(partFinale, 1) + (partFinale < 50 ? " — sous la majorité" : "") }
                 ];
             },
@@ -1808,13 +1808,13 @@
                     { libelle: "Chiffre d'affaires supplémentaire nécessaire", valeur: euros(caNecessaire) + " par an" }
                 ];
             },
-            lecon: "La question devient concrète : cette personne apportera-t-elle ce chiffre d'affaires, ou libérera-t-elle assez de votre temps pour que vous le fassiez ?"
+            lecon: "La question devient concrète : cette personne apportera-t-elle ce chiffre d'affaires, ou libérera-t-elle assez de ton temps pour que tu le fasses ?"
         },
 
         "risques-juridiques": {
             type: "controle",
             titre: "Ce qui est écrit, et ce qui ne l'est pas",
-            intro: "Cochez ce qui existe aujourd'hui, sous forme écrite et signée.",
+            intro: "Coche ce qui existe aujourd'hui, sous forme écrite et signée.",
             points: [
                 { texte: "Un accord entre associés prévoit le départ de l'un d'eux", aide: "la première cause de conflit mortel pour une jeune entreprise" },
                 { texte: "Les prestataires ont signé une cession de droits", aide: "sans elle, le logo et le code restent à leur auteur" },
@@ -1838,8 +1838,8 @@
 
         "semantique-html": {
             type: "controle",
-            titre: "Votre HTML a-t-il du sens ?",
-            intro: "Cochez ce qui est vrai de la page que vous avez sous les yeux.",
+            titre: "Ton HTML a-t-il du sens ?",
+            intro: "Coche ce qui est vrai de la page que tu as sous les yeux.",
             points: [
                 { texte: "Un seul titre de niveau 1 par page" },
                 { texte: "Les niveaux de titre se suivent sans sauter de rang", aide: "pas de h4 juste après un h2" },
@@ -1859,7 +1859,7 @@
         "js-ou-css": {
             type: "controle",
             titre: "CSS ou JavaScript ?",
-            intro: "Cochez ce qui se fait aujourd'hui en CSS seul. Quatre réponses.",
+            intro: "Coche ce qui se fait aujourd'hui en CSS seul. Quatre réponses.",
             points: [
                 { texte: "Afficher ou masquer un menu déroulant au survol", aide: "CSS suffit" },
                 { texte: "Animer une transition de couleur ou de taille", aide: "CSS, et c'est plus fluide" },
@@ -1869,7 +1869,7 @@
                 { texte: "Calculer un total à partir de champs saisis", aide: "JavaScript nécessaire" }
             ],
             verdict: (n) => {
-                if (n === 4) return { texte: "Quatre réponses en CSS. Vérifiez avec les indications que ce sont bien celles-là.", ton: "bon" };
+                if (n === 4) return { texte: "Quatre réponses en CSS. Vérifie avec les indications que ce sont bien celles-là.", ton: "bon" };
                 if (n > 4) return { texte: "Plus de quatre : deux de ces tâches demandent réellement du JavaScript.", ton: "alerte" };
                 return { texte: "Quatre de ces six tâches se font en CSS seul.", ton: "moyen" };
             },
@@ -1879,7 +1879,7 @@
         "ou-placer-la-logique": {
             type: "controle",
             titre: "Navigateur ou serveur ?",
-            intro: "Cochez ce qui DOIT être fait côté serveur, sans exception.",
+            intro: "Coche ce qui DOIT être fait côté serveur, sans exception.",
             points: [
                 { texte: "Vérifier qu'un utilisateur a le droit d'accéder à une donnée", aide: "toujours côté serveur" },
                 { texte: "Vérifier qu'un champ est bien rempli avant envoi", aide: "côté navigateur pour le confort — mais le serveur doit revérifier" },
@@ -1897,7 +1897,7 @@
         },
 
         "largeur-de-ligne": {
-            titre: "Trouvez la bonne largeur de texte",
+            titre: "Trouve la bonne largeur de texte",
             intro: "Une ligne trop longue fatigue l'œil, qui perd le début de la ligne suivante.",
             champs: [
                 { id: "police", libelle: "Taille de police", unite: "px", defaut: 17, min: 10, max: 40, pas: 1 },
@@ -1945,7 +1945,7 @@
         },
 
         "probleme-n-plus-1": {
-            titre: "Mesurez le coût d'une requête en boucle",
+            titre: "Mesure le coût d'une requête en boucle",
             intro: "Le défaut de performance le plus courant, et le plus invisible à la lecture du code.",
             champs: [
                 { id: "lignes", libelle: "Éléments à afficher", unite: "lignes", defaut: 50, min: 1, max: 10000, pas: 10 },
@@ -1967,7 +1967,7 @@
         "checklist-mise-en-ligne": {
             type: "controle",
             titre: "Prêt à mettre en ligne ?",
-            intro: "Cochez ce qui est vérifié. Ces points expliquent la quasi-totalité des premières mises en ligne ratées.",
+            intro: "Coche ce qui est vérifié. Ces points expliquent la quasi-totalité des premières mises en ligne ratées.",
             points: [
                 { texte: "Aucun secret ne figure dans le code envoyé", aide: "clés d'API, mots de passe, jetons" },
                 { texte: "La casse des noms de fichiers est exacte", aide: "le serveur distingue Image.png de image.png, pas Windows" },
@@ -1987,8 +1987,8 @@
 
         "hygiene-git": {
             type: "controle",
-            titre: "Votre historique est-il utilisable ?",
-            intro: "Cochez ce qui décrit vos habitudes réelles.",
+            titre: "Ton historique est-il utilisable ?",
+            intro: "Coche ce qui décrit tes habitudes réelles.",
             points: [
                 { texte: "Un commit correspond à une seule intention" },
                 { texte: "Les messages expliquent le pourquoi, pas seulement le quoi", aide: "« fix » n'apprend rien à personne" },
@@ -1999,7 +1999,7 @@
                 { texte: "Je relis mon propre changement avant de le fusionner" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Historique exploitable : vous pourrez revenir en arrière proprement.", ton: "bon" };
+                if (n === total) return { texte: "Historique exploitable : tu pourras revenir en arrière proprement.", ton: "bon" };
                 if (n >= 5) return { texte: "Bonnes habitudes. Les branches longues sont la cause principale des conflits.", ton: "moyen" };
                 return { texte: "Cet historique servira difficilement le jour où il faudra défaire quelque chose.", ton: "alerte" };
             },
@@ -2026,13 +2026,13 @@
                     { libelle: "Volume moyen par visite", valeur: nf(Math.round(moyenne)) + " Ko", fort: true }
                 ];
             },
-            lecon: "Un fichier fortement mis en cache ne peut plus changer en place : versionnez son nom, et le problème disparaît."
+            lecon: "Un fichier fortement mis en cache ne peut plus changer en place : versionne son nom, et le problème disparaît."
         },
 
         "audit-securite-web": {
             type: "controle",
             titre: "Audit de sécurité applicative",
-            intro: "Cochez ce qui est en place dans votre application.",
+            intro: "Coche ce qui est en place dans ton application.",
             points: [
                 { texte: "Toutes les requêtes de base de données sont préparées", aide: "aucune concaténation de valeurs saisies" },
                 { texte: "Le contenu utilisateur est échappé à l'affichage" },
@@ -2051,7 +2051,7 @@
         },
 
         "pyramide-des-tests": {
-            titre: "Combien de temps dure votre suite de tests ?",
+            titre: "Combien de temps dure ta suite de tests ?",
             intro: "Si elle dépasse quelques minutes, elle ne sera plus lancée à chaque modification.",
             champs: [
                 { id: "unitaires", libelle: "Tests unitaires", unite: "tests", defaut: 400, min: 0, max: 100000, pas: 10 },
@@ -2078,7 +2078,7 @@
         },
 
         "cout-de-la-dette": {
-            titre: "Chiffrez votre dette technique",
+            titre: "Chiffre ta dette technique",
             intro: "Le seul langage qui obtient du temps pour la corriger.",
             champs: [
                 { id: "heures", libelle: "Heures perdues par semaine", unite: "h", defaut: 3, min: 0.5, max: 40, pas: 0.5 },
@@ -2105,7 +2105,7 @@
         "bases-seo": {
             type: "controle",
             titre: "Les fondations du référencement",
-            intro: "Cochez ce qui est vrai de la page que vous voulez positionner.",
+            intro: "Coche ce qui est vrai de la page que tu veux positionner.",
             points: [
                 { texte: "Le titre de la page décrit son contenu et contient les mots recherchés" },
                 { texte: "Un seul titre de niveau 1, qui annonce le sujet" },
@@ -2124,7 +2124,7 @@
         },
 
         "budget-sea": {
-            titre: "Que rapporte votre budget publicitaire ?",
+            titre: "Que rapporte ton budget publicitaire ?",
             intro: "Trois chiffres suffisent à savoir si une campagne peut être rentable.",
             champs: [
                 { id: "budget", libelle: "Budget mensuel", unite: "€", defaut: 600, min: 10, max: 1000000, pas: 50 },
@@ -2149,7 +2149,7 @@
         "choisir-reseau": {
             type: "controle",
             titre: "Faut-il être sur ce réseau ?",
-            intro: "Cochez ce qui est vrai pour le réseau que vous envisagez.",
+            intro: "Coche ce qui est vrai pour le réseau que tu envisages.",
             points: [
                 { texte: "Mes clients y sont réellement présents", aide: "pas « des gens comme eux » : eux" },
                 { texte: "Je peux y publier au format attendu sans me forcer", aide: "vidéo, photo, texte long : ce n'est pas interchangeable" },
@@ -2159,7 +2159,7 @@
                 { texte: "Je préfère un seul réseau tenu qu'à trois à moitié" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Choix fondé. Tenez-le six mois avant d'en juger.", ton: "bon" };
+                if (n === total) return { texte: "Choix fondé. Tiens-le six mois avant d'en juger.", ton: "bon" };
                 if (n >= 4) return { texte: "Plausible. La régularité est ce qui manque le plus souvent, pas la créativité.", ton: "moyen" };
                 return { texte: "Ce réseau risque de consommer du temps sans rien rapporter.", ton: "alerte" };
             },
@@ -2168,8 +2168,8 @@
 
         "qualite-email": {
             type: "controle",
-            titre: "Votre message a-t-il une chance ?",
-            intro: "Cochez ce qui est vrai du courriel que vous vous apprêtez à envoyer.",
+            titre: "Ton message a-t-il une chance ?",
+            intro: "Coche ce qui est vrai du courriel que tu t'apprêtes à envoyer.",
             points: [
                 { texte: "L'objet dit ce que contient le message, sans promesse excessive" },
                 { texte: "Le nom d'expéditeur est reconnaissable" },
@@ -2190,7 +2190,7 @@
         // ---------- Niveau intermédiaire ----------
 
         "points-de-fuite": {
-            titre: "Où partent vos visiteurs ?",
+            titre: "Où partent tes visiteurs ?",
             intro: "Les taux se multiplient : c'est ce que l'intuition rate systématiquement.",
             champs: [
                 { id: "visiteurs", libelle: "Visiteurs", unite: "vis.", defaut: 1000, min: 1, max: 10000000, pas: 100 },
@@ -2217,8 +2217,8 @@
 
         "intention-de-recherche": {
             type: "controle",
-            titre: "Votre contenu répond-il à l'intention ?",
-            intro: "Cochez ce que vous avez vérifié avant d'écrire.",
+            titre: "Ton contenu répond-il à l'intention ?",
+            intro: "Coche ce que tu as vérifié avant d'écrire.",
             points: [
                 { texte: "J'ai tapé la recherche visée et regardé les dix premiers résultats", aide: "le test le plus rapide et le plus fiable" },
                 { texte: "Mon format correspond à ce qui est déjà classé", aide: "guide, comparatif, page produit : le moteur a déjà tranché" },
@@ -2238,7 +2238,7 @@
         "vanity-metrics": {
             type: "controle",
             titre: "Ce chiffre sert-il à quelque chose ?",
-            intro: "Cochez les indicateurs qui peuvent réellement changer une décision. Trois le peuvent.",
+            intro: "Coche les indicateurs qui peuvent réellement changer une décision. Trois le peuvent.",
             points: [
                 { texte: "Nombre d'impressions", aide: "monte avec le budget, ne dit rien du résultat" },
                 { texte: "Coût par client acquis", aide: "décisionnel : il se compare à la marge" },
@@ -2248,7 +2248,7 @@
                 { texte: "Part de nouveaux clients dans le chiffre d'affaires", aide: "décisionnel : il arbitre acquisition et rétention" }
             ],
             verdict: (n) => {
-                if (n === 3) return { texte: "Trois indicateurs sont décisionnels. Vérifiez que ce sont bien ceux-là.", ton: "bon" };
+                if (n === 3) return { texte: "Trois indicateurs sont décisionnels. Vérifie que ce sont bien ceux-là.", ton: "bon" };
                 if (n > 3) return { texte: "Plus de trois : certains de ces chiffres ne changent aucune décision.", ton: "alerte" };
                 return { texte: "Trois de ces six indicateurs peuvent réellement changer une décision.", ton: "moyen" };
             },
@@ -2326,7 +2326,7 @@
         "persuasion-ethique": {
             type: "controle",
             titre: "Persuasion ou manipulation ?",
-            intro: "Cochez les pratiques légitimes. Trois le sont.",
+            intro: "Coche les pratiques légitimes. Trois le sont.",
             points: [
                 { texte: "Afficher « 2 400 clients » quand c'est le nombre réel", aide: "légitime : information vraie et vérifiable" },
                 { texte: "Afficher « plus que 3 en stock » avec 400 unités disponibles", aide: "tromperie" },
@@ -2336,7 +2336,7 @@
                 { texte: "Citer une certification qu'on ne détient pas", aide: "tromperie, et souvent une infraction" }
             ],
             verdict: (n) => {
-                if (n === 3) return { texte: "Trois pratiques sont légitimes. Vérifiez que ce sont bien celles-là.", ton: "bon" };
+                if (n === 3) return { texte: "Trois pratiques sont légitimes. Vérifie que ce sont bien celles-là.", ton: "bon" };
                 if (n > 3) return { texte: "Plus de trois : certaines de ces pratiques reposent sur une information fausse.", ton: "alerte" };
                 return { texte: "Trois de ces six pratiques sont légitimes. Le critère est la véracité.", ton: "moyen" };
             },
@@ -2345,8 +2345,8 @@
 
         "conformite-prospection": {
             type: "controle",
-            titre: "Votre prospection est-elle conforme ?",
-            intro: "Cochez ce qui est en place aujourd'hui.",
+            titre: "Ta prospection est-elle conforme ?",
+            intro: "Coche ce qui est en place aujourd'hui.",
             points: [
                 { texte: "Chaque adresse de particulier provient d'un consentement libre et spécifique", aide: "pas une case pré-cochée" },
                 { texte: "Le lien de désinscription est visible et effectif rapidement" },
@@ -2362,7 +2362,7 @@
                 if (n >= 6) return { texte: "Bon niveau. Le registre et la durée de conservation sont les oublis les plus fréquents.", ton: "moyen" };
                 return { texte: "Plusieurs manquements exposent l'entreprise, pas le prestataire qui a exécuté.", ton: "alerte" };
             },
-            lecon: "En cas de plainte, c'est à vous de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté."
+            lecon: "En cas de plainte, c'est à toi de prouver le consentement — pas à la personne de prouver qu'elle n'a rien accepté."
         },
 
         // ================= PRODUCTIVITÉ & ORGANISATION =================
@@ -2392,8 +2392,8 @@
 
         "sante-gtd": {
             type: "controle",
-            titre: "Votre système tient-il debout ?",
-            intro: "Cochez ce qui est vrai aujourd'hui, pas ce que vous aviez prévu.",
+            titre: "Ton système tient-il debout ?",
+            intro: "Coche ce qui est vrai aujourd'hui, pas ce que tu avais prévu.",
             points: [
                 { texte: "Tout ce que j'ai à faire est noté quelque part, hors de ma tête" },
                 { texte: "Il existe un seul endroit pour capturer, pas cinq" },
@@ -2403,17 +2403,17 @@
                 { texte: "Je fais confiance à mon système : je n'ai pas de liste parallèle mentale" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Système fiable : votre tête n'a plus à servir de mémoire.", ton: "bon" };
+                if (n === total) return { texte: "Système fiable : ta tête n'a plus à servir de mémoire.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne base. La revue hebdomadaire est ce qui manque le plus souvent.", ton: "moyen" };
-                return { texte: "Votre mémoire porte encore une partie du système, et elle le porte mal.", ton: "alerte" };
+                return { texte: "Ta mémoire porte encore une partie du système, et elle le porte mal.", ton: "alerte" };
             },
             lecon: "Un système auquel on ne fait pas confiance est doublé d'une liste mentale — et c'est elle qui fatigue."
         },
 
         "matrice-eisenhower": {
             type: "controle",
-            titre: "Votre matrice sert-elle à quelque chose ?",
-            intro: "Cochez ce qui est vrai de votre usage réel, pas de vos intentions.",
+            titre: "Ta matrice sert-elle à quelque chose ?",
+            intro: "Coche ce qui est vrai de ton usage réel, pas de tes intentions.",
             points: [
                 { texte: "J'ai classé les tâches de ma semaine dans les quatre cases" },
                 { texte: "Le quadrant 4 n'est pas vide", aide: "s'il l'est, c'est que rien n'a été renoncé" },
@@ -2432,8 +2432,8 @@
 
         "choisir-outil": {
             type: "controle",
-            titre: "Cet outil vous convient-il ?",
-            intro: "Cochez ce qui est vrai de l'outil que vous utilisez ou envisagez.",
+            titre: "Cet outil te convient-il ?",
+            intro: "Coche ce qui est vrai de l'outil que tu utilises ou envisages.",
             points: [
                 { texte: "Capturer une tâche prend moins de cinq secondes", aide: "au-delà, on ne capture plus" },
                 { texte: "Il est accessible partout où les idées surviennent" },
@@ -2444,7 +2444,7 @@
             ],
             verdict: (n, total) => {
                 if (n === total) return { texte: "Outil adapté : il sert le système au lieu de le remplacer.", ton: "bon" };
-                if (n >= 4) return { texte: "Correct. La vraie question reste : l'utiliserez-vous dans trois mois ?", ton: "moyen" };
+                if (n >= 4) return { texte: "Correct. La vraie question reste : l'utiliseras-tu dans trois mois ?", ton: "moyen" };
                 return { texte: "Cet outil consomme probablement plus d'énergie qu'il n'en fait gagner.", ton: "alerte" };
             },
             lecon: "Le meilleur outil est celui qu'on utilise encore dans six mois. Tous les autres critères passent après."
@@ -2453,7 +2453,7 @@
         // ---------- Niveau intermédiaire ----------
 
         "cout-changement-tache": {
-            titre: "Ce que coûtent vos interruptions",
+            titre: "Ce que coûtent tes interruptions",
             intro: "Le temps perdu n'est pas la durée de l'interruption, c'est le temps de reprise.",
             champs: [
                 { id: "nombre", libelle: "Interruptions par jour", unite: "fois", defaut: 9, min: 0, max: 100, pas: 1 },
@@ -2475,7 +2475,7 @@
         },
 
         "blocage-de-temps": {
-            titre: "Combien de temps vous reste-t-il vraiment ?",
+            titre: "Combien de temps te reste-t-il vraiment ?",
             intro: "Planifier plus que le disponible garantit d'échouer — par arithmétique, pas par manque de discipline.",
             champs: [
                 { id: "journee", libelle: "Durée de la journée", unite: "h", defaut: 8, min: 1, max: 16, pas: 0.5 },
@@ -2522,7 +2522,7 @@
         "cout-opportunite": {
             type: "controle",
             titre: "Faut-il dire oui ?",
-            intro: "Cochez ce que vous avez vérifié avant d'accepter cette demande.",
+            intro: "Coche ce que tu as vérifié avant d'accepter cette demande.",
             points: [
                 { texte: "Je sais précisément ce que je ne ferai pas si j'accepte" },
                 { texte: "Cette chose abandonnée est moins importante que la demande" },
@@ -2543,8 +2543,8 @@
 
         "rythme-energie": {
             type: "controle",
-            titre: "Travaillez-vous au bon moment ?",
-            intro: "Cochez ce qui décrit votre journée réelle.",
+            titre: "Travailles-tu au bon moment ?",
+            intro: "Coche ce qui décrit ta journée réelle.",
             points: [
                 { texte: "Je connais mon meilleur créneau de concentration", aide: "observé, pas supposé" },
                 { texte: "Le travail de fond y est effectivement placé" },
@@ -2554,17 +2554,17 @@
                 { texte: "Je n'allonge pas la journée quand le travail déborde", aide: "le total produit sur la semaine baisse" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Vos heures les plus productives servent ce qui compte le plus.", ton: "bon" };
+                if (n === total) return { texte: "Tes heures les plus productives servent ce qui compte le plus.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne base. Protéger la première heure est le changement le plus rentable.", ton: "moyen" };
-                return { texte: "Votre meilleur créneau est probablement consacré aux priorités des autres.", ton: "alerte" };
+                return { texte: "Ton meilleur créneau est probablement consacré aux priorités des autres.", ton: "alerte" };
             },
             lecon: "Deux heures au bon moment valent quatre heures au mauvais. C'est l'optimisation qui ne coûte rien."
         },
 
         "friction-habitude": {
             type: "controle",
-            titre: "Votre habitude peut-elle tenir ?",
-            intro: "Cochez ce qui est vrai de l'habitude que vous voulez installer.",
+            titre: "Ton habitude peut-elle tenir ?",
+            intro: "Coche ce qui est vrai de l'habitude que tu veux installer.",
             points: [
                 { texte: "Elle est rattachée à une action déjà automatique", aide: "le déclencheur existe, rien à retenir" },
                 { texte: "Sa version minimale est ridiculement petite", aide: "« écrire une phrase », « ouvrir le fichier »" },
@@ -2574,7 +2574,7 @@
                 { texte: "Je n'installe qu'une seule habitude à la fois" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Cette habitude ne dépend pas de votre motivation. Elle a une vraie chance.", ton: "bon" };
+                if (n === total) return { texte: "Cette habitude ne dépend pas de ta motivation. Elle a une vraie chance.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne conception. La règle de reprise est ce qui décide au deuxième mois.", ton: "moyen" };
                 return { texte: "Cette habitude repose encore sur la volonté, qui fluctue par nature.", ton: "alerte" };
             },
@@ -2604,8 +2604,8 @@
 
         "revue-reguliere": {
             type: "controle",
-            titre: "Votre système résiste-t-il à la dérive ?",
-            intro: "Cochez ce qui a effectivement lieu, à intervalle régulier.",
+            titre: "Ton système résiste-t-il à la dérive ?",
+            intro: "Coche ce qui a effectivement lieu, à intervalle régulier.",
             points: [
                 { texte: "Une revue hebdomadaire de trente minutes, à heure fixe dans l'agenda" },
                 { texte: "Un point mensuel sur ce qui n'a pas avancé, et pourquoi" },
@@ -2615,7 +2615,7 @@
                 { texte: "Rien de nouveau n'entre sans que quelque chose sorte" }
             ],
             verdict: (n, total) => {
-                if (n === total) return { texte: "Votre système se corrige tout seul. C'est ce qui le fera durer.", ton: "bon" };
+                if (n === total) return { texte: "Ton système se corrige tout seul. C'est ce qui le fera durer.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne discipline. Arrêter des choses reste la partie la plus difficile.", ton: "moyen" };
                 return { texte: "Sans revue, ce système dérivera jusqu'à être abandonné en bloc.", ton: "alerte" };
             },
@@ -2673,7 +2673,7 @@
 
         "effet-test": {
             titre: "Relire, ou se tester ?",
-            intro: "À temps de travail égal, réglez la part consacrée à vous interroger plutôt qu'à relire.",
+            intro: "À temps de travail égal, règle la part consacrée à t'interroger plutôt qu'à relire.",
             champs: [
                 { id: "elements", libelle: "Éléments à retenir", unite: "", defaut: 100, min: 1, max: 500, pas: 10 },
                 { id: "part", libelle: "Part du temps passée à se tester", unite: "%", defaut: 50, min: 0, max: 100, pas: 5 }
@@ -2696,8 +2696,8 @@
 
         "illusion-maitrise": {
             type: "controle",
-            titre: "Le savez-vous vraiment ?",
-            intro: "Cochez ce qui est vrai d'un sujet que vous pensez maîtriser.",
+            titre: "Le sais-tu vraiment ?",
+            intro: "Coche ce qui est vrai d'un sujet que tu penses maîtriser.",
             points: [
                 { texte: "Je peux le réexpliquer sans regarder mes notes" },
                 { texte: "Je peux l'expliquer à quelqu'un qui n'y connaît rien" },
@@ -2716,7 +2716,7 @@
 
         "entrelacement": {
             titre: "En blocs ou entrelacé ?",
-            intro: "Réglez la part d'exercices mélangés plutôt que groupés par type.",
+            intro: "Règle la part d'exercices mélangés plutôt que groupés par type.",
             champs: [
                 { id: "exercices", libelle: "Exercices au total", unite: "", defaut: 48, min: 4, max: 500, pas: 4 },
                 { id: "part", libelle: "Part d'exercices entrelacés", unite: "%", defaut: 50, min: 0, max: 100, pas: 10 }
@@ -2736,8 +2736,8 @@
 
         "elaboration": {
             type: "controle",
-            titre: "Traitez-vous vraiment ce que vous lisez ?",
-            intro: "Cochez ce que vous faites réellement pendant une séance de travail.",
+            titre: "Traites-tu vraiment ce que tu lis ?",
+            intro: "Coche ce que tu fais réellement pendant une séance de travail.",
             points: [
                 { texte: "Je me demande « pourquoi est-ce vrai ? » avant de passer à la suite" },
                 { texte: "Je relie la notion à quelque chose que je connais déjà" },
@@ -2747,7 +2747,7 @@
                 { texte: "Je m'arrête pour anticiper la suite avant de la lire" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Vous traitez le contenu au lieu de le parcourir. C'est ce qui laisse une trace.", ton: "bon" };
+                if (n >= total - 1) return { texte: "Tu traites le contenu au lieu de le parcourir. C'est ce qui laisse une trace.", ton: "bon" };
                 if (n >= 3) return { texte: "Bon départ. Les questions « pourquoi » et les contre-exemples sont ce qui rapporte le plus.", ton: "moyen" };
                 return { texte: "Lecture passive : le texte défile et rien ne s'y accroche. Une seule question posée à voix haute change déjà le résultat.", ton: "alerte" };
             },
@@ -2755,11 +2755,11 @@
         },
 
         "pratique-deliberee": {
-            titre: "Où passe votre temps de travail ?",
+            titre: "Où passe ton temps de travail ?",
             intro: "Le temps passé sur ce qu'on réussit déjà entretient ; il ne fait pas progresser.",
             champs: [
                 { id: "heures", libelle: "Heures de travail par semaine", unite: "h", defaut: 5, min: 0.5, max: 60, pas: 0.5 },
-                { id: "part", libelle: "Part passée sur ce que vous ratez", unite: "%", defaut: 20, min: 0, max: 100, pas: 5 },
+                { id: "part", libelle: "Part passée sur ce que tu rates", unite: "%", defaut: 20, min: 0, max: 100, pas: 5 },
                 { id: "semaines", libelle: "Sur combien de semaines", unite: "sem.", defaut: 12, min: 1, max: 104, pas: 1 }
             ],
             calculer: ({ heures, part, semaines }) => {
@@ -2776,7 +2776,7 @@
 
         "sommeil-consolidation": {
             type: "controle",
-            titre: "Votre nuit fait-elle son travail ?",
+            titre: "Ta nuit fait-elle son travail ?",
             intro: "La mémoire se consolide pendant le sommeil, pas pendant la révision.",
             points: [
                 { texte: "Je dors au moins sept heures la nuit qui suit un apprentissage" },
@@ -2787,7 +2787,7 @@
                 { texte: "Je n'attends pas d'un rattrapage le week-end qu'il annule la semaine" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Vos nuits travaillent pour vous. C'est l'heure de révision la moins chère qui existe.", ton: "bon" };
+                if (n >= total - 1) return { texte: "Tes nuits travaillent pour toi. C'est l'heure de révision la moins chère qui existe.", ton: "bon" };
                 if (n >= 3) return { texte: "Correct. La nuit qui suit l'apprentissage est celle qui compte le plus.", ton: "moyen" };
                 return { texte: "Une nuit blanche avant un examen échange la consolidation contre quelques heures de relecture. Le change est mauvais.", ton: "alerte" };
             },
@@ -2821,8 +2821,8 @@
 
         "transfert": {
             type: "controle",
-            titre: "Ce que vous apprenez servira-t-il ailleurs ?",
-            intro: "Cochez ce qui est vrai de votre façon d'apprendre ce sujet.",
+            titre: "Ce que tu apprends servira-t-il ailleurs ?",
+            intro: "Coche ce qui est vrai de ta façon d'apprendre ce sujet.",
             points: [
                 { texte: "Je m'entraîne sur des cas variés, pas toujours le même format" },
                 { texte: "Je m'entraîne dans les conditions où je devrai m'en servir" },
@@ -2832,7 +2832,7 @@
                 { texte: "Je ne compte pas sur un exercice de logique pour améliorer autre chose", aide: "les jeux d'entraînement cérébral améliorent surtout ces jeux" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Ce que vous apprenez a une chance de sortir de la salle de classe.", ton: "bon" };
+                if (n >= total - 1) return { texte: "Ce que tu apprends a une chance de sortir de la salle de classe.", ton: "bon" };
                 if (n >= 3) return { texte: "Partiel. La variété des cas est le levier le plus fort, et le plus négligé.", ton: "moyen" };
                 return { texte: "Apprentissage collé à son contexte : il fonctionnera sur les exercices du cours, et nulle part ailleurs.", ton: "alerte" };
             },
@@ -2841,8 +2841,8 @@
 
         "evaluer-methode": {
             type: "controle",
-            titre: "Cette méthode vaut-elle votre temps ?",
-            intro: "Cochez ce qui est vrai de la méthode d'apprentissage qu'on vous propose.",
+            titre: "Cette méthode vaut-elle ton temps ?",
+            intro: "Coche ce qui est vrai de la méthode d'apprentissage qu'on te propose.",
             points: [
                 { texte: "Elle a été comparée à une autre méthode, pas seulement à rien" },
                 { texte: "Elle a été mesurée après plusieurs jours, pas juste après la séance" },
@@ -2853,7 +2853,7 @@
             ],
             verdict: (n, total) => {
                 if (n >= total - 1) return { texte: "Méthode défendable. Elle mérite qu'on lui consacre quelques semaines.", ton: "bon" };
-                if (n >= 4) return { texte: "À creuser. Vérifiez surtout le délai du test : c'est là que la plupart des méthodes s'effondrent.", ton: "moyen" };
+                if (n >= 4) return { texte: "À creuser. Vérifie surtout le délai du test : c'est là que la plupart des méthodes s'effondrent.", ton: "moyen" };
                 return { texte: "Beaucoup de promesses, peu de mesures. Le domaine en est plein.", ton: "alerte" };
             },
             lecon: "Une méthode qui rend l'apprentissage agréable sur le moment est souvent celle qui laisse le moins de traces. La difficulté utile n'a pas bonne presse."
@@ -2861,8 +2861,8 @@
 
         "systeme-apprentissage": {
             type: "controle",
-            titre: "Votre système tiendra-t-il six mois ?",
-            intro: "Cochez ce qui existe déjà, pas ce que vous comptez mettre en place.",
+            titre: "Ton système tiendra-t-il six mois ?",
+            intro: "Coche ce qui existe déjà, pas ce que tu comptes mettre en place.",
             points: [
                 { texte: "Un endroit unique où atterrit ce que je veux retenir" },
                 { texte: "Un moment fixe pour réviser, dans l'agenda" },
@@ -2886,7 +2886,7 @@
         "source-fiable": {
             type: "controle",
             titre: "Cette réponse juridique vaut-elle quelque chose ?",
-            intro: "Cochez ce qui est vrai de la source où vous venez de lire une règle.",
+            intro: "Coche ce qui est vrai de la source où tu viens de lire une règle.",
             points: [
                 { texte: "Elle vient d'un site officiel", aide: "service-public.fr, Légifrance, un site en .gouv.fr" },
                 { texte: "Elle cite un article de loi ou de code que je peux aller vérifier" },
@@ -2896,16 +2896,16 @@
                 { texte: "Ce n'est pas un message de forum ni une réponse d'IA prise telle quelle" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Source solide. Vous pouvez vous en servir, et la citer si besoin.", ton: "bon" };
-                if (n >= 4) return { texte: "Probablement juste, mais vérifiez la date et l'article cité avant d'agir.", ton: "moyen" };
+                if (n >= total - 1) return { texte: "Source solide. Tu peux t'en servir, et la citer si besoin.", ton: "bon" };
+                if (n >= 4) return { texte: "Probablement juste, mais vérifie la date et l'article cité avant d'agir.", ton: "moyen" };
                 return { texte: "À ne pas utiliser pour décider. Le droit change, et une réponse plausible peut être périmée ou étrangère.", ton: "alerte" };
             },
             lecon: "La plupart des erreurs juridiques du quotidien ne viennent pas d'une règle mal comprise, mais d'une règle qui n'existe plus, ou qui n'a jamais existé en France."
         },
 
         "delais-consommateur": {
-            titre: "Que vous reste-t-il comme recours ?",
-            intro: "Pour un achat auprès d'un professionnel. Comptez à partir du jour où vous avez reçu le bien.",
+            titre: "Que te reste-t-il comme recours ?",
+            intro: "Pour un achat auprès d'un professionnel. Compte à partir du jour où tu as reçu le bien.",
             champs: [
                 { id: "jours", libelle: "Jours depuis la réception", unite: "j", defaut: 20, min: 0, max: 1500, pas: 1 },
                 { id: "presomption", libelle: "Présomption : 24 (neuf) ou 12 (occasion)", unite: "mois", defaut: 24, min: 12, max: 24, pas: 12 }
@@ -2926,7 +2926,7 @@
                     },
                     {
                         libelle: "C'est au vendeur de prouver que le bien était conforme",
-                        valeur: restePresomption > 0 ? "encore " + nf(Math.floor(restePresomption / JOURS_PAR_MOIS)) + " mois" : "terminé : la preuve vous revient"
+                        valeur: restePresomption > 0 ? "encore " + nf(Math.floor(restePresomption / JOURS_PAR_MOIS)) + " mois" : "terminé : la preuve te revient"
                     },
                     { libelle: "Vice caché", valeur: "2 ans à compter de la découverte" }
                 ];
@@ -2936,12 +2936,12 @@
 
         "lettre-efficace": {
             type: "controle",
-            titre: "Votre courrier vaudra-t-il preuve ?",
-            intro: "Cochez ce que contient réellement le courrier que vous vous apprêtez à envoyer.",
+            titre: "Ton courrier vaudra-t-il preuve ?",
+            intro: "Coche ce que contient réellement le courrier que tu t'apprêtes à envoyer.",
             points: [
-                { texte: "Vos coordonnées complètes et la référence du dossier ou du contrat" },
+                { texte: "Tes coordonnées complètes et la référence du dossier ou du contrat" },
                 { texte: "Les faits, datés, sans commentaire ni reproche" },
-                { texte: "Ce que vous demandez, précisément", aide: "« le remboursement de 149 € », pas « un geste »" },
+                { texte: "Ce que tu demandes, précisément", aide: "« le remboursement de 149 € », pas « un geste »" },
                 { texte: "Un délai de réponse, raisonnable et écrit" },
                 { texte: "Le fondement invoqué", aide: "un article de loi, ou à défaut la clause du contrat" },
                 { texte: "Un envoi qui laisse une trace", aide: "recommandé avec accusé de réception, ou courriel conservé" }
@@ -2956,8 +2956,8 @@
 
         "conserver-papiers": {
             type: "controle",
-            titre: "Gardez-vous ce qu'il faut, aussi longtemps qu'il faut ?",
-            intro: "Cochez ce qui est vrai de vos archives personnelles.",
+            titre: "Gardes-tu ce qu'il faut, aussi longtemps qu'il faut ?",
+            intro: "Coche ce qui est vrai de tes archives personnelles.",
             points: [
                 { texte: "Je garde mes bulletins de paie sans limite de durée", aide: "ils servent au calcul de la retraite" },
                 { texte: "Je garde mes avis d'imposition au moins trois ans" },
@@ -2975,7 +2975,7 @@
         },
 
         "depot-de-garantie": {
-            titre: "Votre dépôt de garantie vous revient-il ?",
+            titre: "Ton dépôt de garantie te revient-il ?",
             intro: "Location vide ou meublée, après la remise des clés.",
             champs: [
                 { id: "depot", libelle: "Dépôt de garantie versé", unite: "€", defaut: 700, min: 0, max: 20000, pas: 50 },
@@ -2987,7 +2987,7 @@
                 const du = Math.max(0, depot - retenues);
                 const majoration = retard * loyer * MAJORATION_DEPOT / 100;
                 return [
-                    { libelle: "Somme qui vous revient", valeur: euros(du) },
+                    { libelle: "Somme qui te revient", valeur: euros(du) },
                     { libelle: "Délai légal de restitution", valeur: "1 mois si l'état des lieux est conforme, 2 mois sinon" },
                     { libelle: "Majoration de retard", valeur: euros(majoration) + " (" + nf(MAJORATION_DEPOT) + " % du loyer par mois entamé)" },
                     { libelle: "Total réclamable", valeur: euros(du + majoration), fort: true }
@@ -2998,8 +2998,8 @@
 
         "preavis-bail": {
             type: "controle",
-            titre: "Votre congé est-il valable ?",
-            intro: "Cochez ce qui est vrai du congé que vous donnez à votre bailleur.",
+            titre: "Ton congé est-il valable ?",
+            intro: "Coche ce qui est vrai du congé que tu donnes à ton bailleur.",
             points: [
                 { texte: "Il est donné par écrit", aide: "recommandé avec accusé de réception, acte d'huissier ou remise en main propre contre signature" },
                 { texte: "Je connais la durée de mon préavis", aide: "3 mois en location vide, 1 mois en meublé ou en zone tendue" },
@@ -3017,7 +3017,7 @@
         },
 
         "periode-essai": {
-            titre: "Où en êtes-vous de votre période d'essai ?",
+            titre: "Où en es-tu de ta période d'essai ?",
             intro: "Contrat à durée indéterminée. La durée initiale dépend de la catégorie : 2 mois employé, 3 mois agent de maîtrise, 4 mois cadre.",
             champs: [
                 { id: "duree", libelle: "Durée initiale prévue", unite: "mois", defaut: 4, min: 1, max: 4, pas: 1 },
@@ -3034,7 +3034,7 @@
                     },
                     { libelle: "Durée maximale avec renouvellement", valeur: nf(duree * 2) + " mois" },
                     { libelle: "Délai de prévenance applicable aujourd'hui", valeur: delaiDePrevenance(jours) },
-                    { libelle: "Renouvellement", valeur: "possible seulement si le contrat le prévoit et avec votre accord écrit" }
+                    { libelle: "Renouvellement", valeur: "possible seulement si le contrat le prévoit et avec ton accord écrit" }
                 ];
             },
             lecon: "Le renouvellement ne se présume jamais : sans clause au contrat et sans accord écrit, la période d'essai s'arrête à sa durée initiale."
@@ -3042,8 +3042,8 @@
 
         "micro-entreprise": {
             type: "controle",
-            titre: "La micro-entreprise vous convient-elle ?",
-            intro: "Cochez ce qui correspond à votre situation réelle.",
+            titre: "La micro-entreprise te convient-elle ?",
+            intro: "Coche ce qui correspond à ta situation réelle.",
             points: [
                 { texte: "Mon chiffre d'affaires reste sous les seuils du régime", aide: "seuils révisés régulièrement : à vérifier sur service-public.fr" },
                 { texte: "Mes charges réelles sont faibles", aide: "en micro, elles ne sont pas déductibles : l'abattement est forfaitaire" },
@@ -3054,7 +3054,7 @@
             ],
             verdict: (n, total) => {
                 if (n >= total - 1) return { texte: "La micro-entreprise est probablement adaptée. C'est le régime le plus simple à ouvrir et à fermer.", ton: "bon" };
-                if (n >= 4) return { texte: "Possible, mais regardez de près les cases non cochées : ce sont elles qui coûtent cher en cours de route.", ton: "moyen" };
+                if (n >= 4) return { texte: "Possible, mais regarde de près les cases non cochées : ce sont elles qui coûtent cher en cours de route.", ton: "moyen" };
                 return { texte: "Plusieurs signaux pointent vers une autre forme. Un rendez-vous gratuit en chambre consulaire vaut mieux qu'un choix par défaut.", ton: "alerte" };
             },
             lecon: "En micro-entreprise, les charges ne se déduisent pas : l'abattement est forfaitaire. Une activité à fortes dépenses y est fiscalement pénalisée, quel que soit son chiffre d'affaires."
@@ -3063,7 +3063,7 @@
         "clauses-abusives": {
             type: "controle",
             titre: "Ce contrat contient-il des clauses à écarter ?",
-            intro: "Contrat entre un professionnel et un particulier. Cochez ce que vous y trouvez.",
+            intro: "Contrat entre un professionnel et un particulier. Coche ce que tu y trouves.",
             points: [
                 { texte: "Une clause qui supprime ou réduit le droit à réparation en cas de faute du professionnel" },
                 { texte: "Une clause qui autorise le professionnel à modifier le contrat seul, sans motif prévu" },
@@ -3101,7 +3101,7 @@
                     { libelle: "Délai total", valeur: nf(delai) + " ans" },
                     { libelle: "Déjà écoulé", valeur: nf(ecoules) + " mois" },
                     {
-                        libelle: reste > 0 ? "Il vous reste" : "Prescrit depuis",
+                        libelle: reste > 0 ? "Il te reste" : "Prescrit depuis",
                         valeur: enClair,
                         fort: true
                     },
@@ -3117,17 +3117,17 @@
             champs: [
                 { id: "montant", libelle: "Somme réclamée", unite: "€", defaut: 1500, min: 0, max: 200000, pas: 100 },
                 { id: "honoraires", libelle: "Frais estimés", unite: "€", defaut: 1200, min: 0, max: 50000, pas: 100 },
-                { id: "chances", libelle: "Chances de gagner, à votre estime", unite: "%", defaut: 60, min: 0, max: 100, pas: 5 }
+                { id: "chances", libelle: "Chances de gagner, à ton estime", unite: "%", defaut: 60, min: 0, max: 100, pas: 5 }
             ],
             calculer: ({ montant, honoraires, chances }) => {
                 const p = chances / 100;
                 const siGagne = montant - honoraires;
                 const esperance = p * siGagne - (1 - p) * honoraires;
                 return [
-                    { libelle: "Si vous gagnez", valeur: euros(siGagne) },
+                    { libelle: "Si tu gagnes", valeur: euros(siGagne) },
                     // Le conciliateur de justice est gratuit : des frais nuls
                     // sont un cas reel, et « − 0 € » se lit mal.
-                    { libelle: "Si vous perdez", valeur: honoraires > 0 ? "− " + euros(honoraires) : "0 €" },
+                    { libelle: "Si tu perds", valeur: honoraires > 0 ? "− " + euros(honoraires) : "0 €" },
                     { libelle: "Résultat moyen attendu", valeur: (esperance >= 0 ? "" : "− ") + euros(Math.abs(esperance)), fort: true },
                     {
                         libelle: "Verdict",
@@ -3142,8 +3142,8 @@
 
         "droits-rgpd": {
             type: "controle",
-            titre: "Savez-vous ce que vous pouvez exiger ?",
-            intro: "Cochez les droits que vous savez pouvoir exercer auprès de n'importe quelle entreprise détenant vos données.",
+            titre: "Sais-tu ce que tu peux exiger ?",
+            intro: "Coche les droits que tu sais pouvoir exercer auprès de n'importe quelle entreprise détenant tes données.",
             points: [
                 { texte: "Obtenir la copie de toutes les données détenues sur moi" },
                 { texte: "Faire corriger une information inexacte" },
@@ -3153,7 +3153,7 @@
                 { texte: "Saisir la CNIL gratuitement si l'entreprise ne répond pas sous un mois" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Vous connaissez vos droits. Ils s'exercent par un simple courriel, sans motif à donner.", ton: "bon" };
+                if (n >= total - 1) return { texte: "Tu connais tes droits. Ils s'exercent par un simple courriel, sans motif à donner.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne base. Le droit à la portabilité et le délai d'un mois sont les moins connus, et les plus utiles.", ton: "moyen" };
                 return { texte: "Ces droits existent depuis 2018 et ne coûtent rien à exercer. Ils sont surtout inutilisés.", ton: "alerte" };
             },
@@ -3171,8 +3171,8 @@
 
         "poste-de-travail": {
             type: "controle",
-            titre: "Votre poste est-il correctement réglé ?",
-            intro: "Installez-vous comme d'habitude, puis cochez ce qui est vrai.",
+            titre: "Ton poste est-il correctement réglé ?",
+            intro: "Installe-toi comme d'habitude, puis coche ce qui est vrai.",
             points: [
                 { texte: "Le haut de l'écran est à hauteur des yeux, ou juste en dessous" },
                 { texte: "L'écran est à environ une longueur de bras" },
@@ -3190,7 +3190,7 @@
         },
 
         "sedentarite": {
-            titre: "Combien de temps passez-vous assis ?",
+            titre: "Combien de temps passes-tu assis ?",
             intro: "Et ce que l'activité physique en compense réellement.",
             champs: [
                 { id: "heures", libelle: "Heures assis par jour", unite: "h", defaut: 9, min: 0, max: 20, pas: 0.5 },
@@ -3205,7 +3205,7 @@
                     { libelle: "Soit, sur une année de travail", valeur: nf(Math.round(parSemaine * 45)) + " h", fort: true },
                     { libelle: "Repère de l'OMS", valeur: nf(ACTIVITE_OMS) + " min d'activité modérée par semaine" },
                     {
-                        libelle: manque > 0 ? "Il vous manque" : "Repère atteint",
+                        libelle: manque > 0 ? "Il te manque" : "Repère atteint",
                         valeur: manque > 0
                             ? nf(manque) + " min par semaine"
                             : (activite > ACTIVITE_OMS ? "+ " + nf(activite - ACTIVITE_OMS) + " min au-delà" : "tout juste")
@@ -3216,7 +3216,7 @@
         },
 
         "pauses-legales": {
-            titre: "Vos pauses sont-elles à la hauteur ?",
+            titre: "Tes pauses sont-elles à la hauteur ?",
             intro: "Au-delà de six heures de travail, vingt minutes de pause sont dues. C'est un plancher, pas un objectif.",
             champs: [
                 { id: "travail", libelle: "Heures travaillées dans la journée", unite: "h", defaut: 8, min: 1, max: 16, pas: 0.5 },
@@ -3239,8 +3239,8 @@
 
         "fatigue-visuelle": {
             type: "controle",
-            titre: "Ménagez-vous vos yeux ?",
-            intro: "Cochez ce que vous faites réellement au cours d'une journée d'écran.",
+            titre: "Ménages-tu tes yeux ?",
+            intro: "Coche ce que tu fais réellement au cours d'une journée d'écran.",
             points: [
                 { texte: "Je regarde au loin quelques secondes toutes les vingt minutes environ" },
                 { texte: "Je pense à cligner des yeux quand je fixe longtemps", aide: "la fréquence de clignement chute nettement devant un écran" },
@@ -3258,7 +3258,7 @@
         },
 
         "charge-recuperation": {
-            titre: "Votre semaine laisse-t-elle place à la récupération ?",
+            titre: "Ta semaine laisse-t-elle place à la récupération ?",
             intro: "Les repos minimaux du code du travail servent de repère : 11 heures entre deux journées, 35 heures consécutives par semaine.",
             champs: [
                 { id: "heures", libelle: "Heures travaillées par semaine", unite: "h", defaut: 45, min: 0, max: 100, pas: 1 },
@@ -3270,8 +3270,8 @@
                 if (coupure < REPOS_QUOTIDIEN) alertes.push("repos quotidien");
                 if (weekend < REPOS_HEBDOMADAIRE) alertes.push("repos hebdomadaire");
                 return [
-                    { libelle: "Repos quotidien minimal", valeur: nf(REPOS_QUOTIDIEN) + " h — le vôtre : " + souple(coupure) + " h" },
-                    { libelle: "Repos hebdomadaire minimal", valeur: nf(REPOS_HEBDOMADAIRE) + " h — le vôtre : " + nf(weekend) + " h" },
+                    { libelle: "Repos quotidien minimal", valeur: nf(REPOS_QUOTIDIEN) + " h — le tien : " + souple(coupure) + " h" },
+                    { libelle: "Repos hebdomadaire minimal", valeur: nf(REPOS_HEBDOMADAIRE) + " h — le tien : " + nf(weekend) + " h" },
                     { libelle: "Heures travaillées", valeur: nf(heures) + " h par semaine" },
                     {
                         libelle: "Constat",
@@ -3286,8 +3286,8 @@
         },
 
         "karasek": {
-            titre: "Où se situe votre poste ?",
-            intro: "Trois curseurs, de 0 à 10, selon le modèle utilisé en santé au travail depuis les années 1980. Notez ce que vous ressentez de votre poste, pas ce qu'il devrait être.",
+            titre: "Où se situe ton poste ?",
+            intro: "Trois curseurs, de 0 à 10, selon le modèle utilisé en santé au travail depuis les années 1980. Note ce que tu ressens de ton poste, pas ce qu'il devrait être.",
             champs: [
                 { id: "demande", libelle: "Exigence du poste", unite: "/10", defaut: 7, min: 0, max: 10, pas: 1 },
                 { id: "latitude", libelle: "Latitude : marge de décision et d'organisation", unite: "/10", defaut: 3, min: 0, max: 10, pas: 1 },
@@ -3315,7 +3315,7 @@
         "stress-chronique": {
             type: "controle",
             titre: "Aigu ou installé ?",
-            intro: "Cochez ce qui décrit votre situation de travail depuis plusieurs semaines.",
+            intro: "Coche ce qui décrit ta situation de travail depuis plusieurs semaines.",
             points: [
                 { texte: "La pression ne retombe pas entre deux périodes chargées" },
                 { texte: "Le week-end ne suffit plus à récupérer" },
@@ -3334,8 +3334,8 @@
 
         "deconnexion": {
             type: "controle",
-            titre: "Vos frontières tiennent-elles ?",
-            intro: "Cochez ce qui est vrai d'une semaine ordinaire.",
+            titre: "Tes frontières tiennent-elles ?",
+            intro: "Coche ce qui est vrai d'une semaine ordinaire.",
             points: [
                 { texte: "Je ne consulte pas mes messages professionnels le soir" },
                 { texte: "Les notifications professionnelles sont coupées en dehors des heures" },
@@ -3354,8 +3354,8 @@
 
         "medecine-travail": {
             type: "controle",
-            titre: "Savez-vous ce que le médecin du travail peut faire ?",
-            intro: "Cochez ce que vous saviez déjà.",
+            titre: "Sais-tu ce que le médecin du travail peut faire ?",
+            intro: "Coche ce que tu savais déjà.",
             points: [
                 { texte: "Je peux le consulter à ma demande, sans passer par mon employeur" },
                 { texte: "Il est tenu au secret médical : mon employeur n'apprend pas ce que je dis" },
@@ -3365,7 +3365,7 @@
                 { texte: "Je sais comment joindre mon service de prévention et de santé au travail" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Vous connaissez ce levier. C'est l'un des plus efficaces et des moins utilisés.", ton: "bon" };
+                if (n >= total - 1) return { texte: "Tu connais ce levier. C'est l'un des plus efficaces et des moins utilisés.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne base. La visite à la demande du salarié et le secret médical sont les deux points les plus souvent ignorés.", ton: "moyen" };
                 return { texte: "Le médecin du travail n'est pas le médecin de l'employeur. La visite est de droit, confidentielle, et sur le temps de travail.", ton: "alerte" };
             },
@@ -3374,8 +3374,8 @@
 
         "duerp": {
             type: "controle",
-            titre: "Votre employeur tient-il ses obligations ?",
-            intro: "Cochez ce dont vous avez connaissance dans votre entreprise.",
+            titre: "Ton employeur tient-il ses obligations ?",
+            intro: "Coche ce dont tu as connaissance dans ton entreprise.",
             points: [
                 { texte: "Un document unique d'évaluation des risques existe et est accessible" },
                 { texte: "Les risques psychosociaux y figurent, pas seulement les risques physiques" },
@@ -3387,7 +3387,7 @@
             verdict: (n, total) => {
                 if (n >= total - 1) return { texte: "Cadre en place. Il rend les demandes beaucoup plus simples à formuler.", ton: "bon" };
                 if (n >= 4) return { texte: "Partiel. Le document unique est obligatoire dès le premier salarié, et doit couvrir les risques psychosociaux.", ton: "moyen" };
-                return { texte: "L'employeur a une obligation de sécurité, qui ne dépend pas de votre demande. Le CSE et l'inspection du travail sont les interlocuteurs quand rien ne bouge.", ton: "alerte" };
+                return { texte: "L'employeur a une obligation de sécurité, qui ne dépend pas de ta demande. Le CSE et l'inspection du travail sont les interlocuteurs quand rien ne bouge.", ton: "alerte" };
             },
             lecon: "L'obligation de sécurité de l'employeur est une obligation de moyens renforcée : elle porte sur la prévention, pas seulement sur la réparation une fois le dommage survenu."
         },
@@ -3395,7 +3395,7 @@
         "epuisement": {
             type: "controle",
             titre: "Les trois dimensions décrites dans la littérature",
-            intro: "Cochez ce que vous reconnaissez. Ceci n'est pas un test et ne rend aucun résultat : c'est une aide à mettre des mots avant d'en parler.",
+            intro: "Coche ce que tu reconnais. Ceci n'est pas un test et ne rend aucun résultat : c'est une aide à mettre des mots avant d'en parler.",
             points: [
                 { texte: "Épuisement : la fatigue ne cède plus au repos" },
                 { texte: "Distance : je me suis mis à distance des gens ou du sens de mon travail" },
@@ -3415,7 +3415,7 @@
         "situation-grave": {
             type: "controle",
             titre: "Face à une situation grave, dans l'ordre",
-            intro: "Harcèlement, discrimination, danger : cochez ce qui est déjà fait.",
+            intro: "Harcèlement, discrimination, danger : coche ce qui est déjà fait.",
             points: [
                 { texte: "J'ai noté les faits par écrit, datés, au fur et à mesure" },
                 { texte: "J'ai conservé les messages, courriels et documents" },
@@ -3427,7 +3427,7 @@
             verdict: (n, total) => {
                 if (n >= total - 1) return { texte: "Démarche complète. Les écrits datés sont ce qui rendra la suite possible, quelle qu'elle soit.", ton: "bon" };
                 if (n >= 3) return { texte: "En cours. L'alerte écrite à l'employeur est l'étape qui déclenche son obligation d'agir.", ton: "moyen" };
-                return { texte: "Commencez par écrire les faits, datés. C'est la première chose que demanderont tous les interlocuteurs — et la plus difficile à reconstituer après coup.", ton: "alerte" };
+                return { texte: "Commence par écrire les faits, datés. C'est la première chose que demanderont tous les interlocuteurs — et la plus difficile à reconstituer après coup.", ton: "alerte" };
             },
             lecon: "L'employeur informé par écrit d'une situation de harcèlement a l'obligation de réagir. Ne rien écrire le dispense de fait, quelle que soit la gravité des faits."
         },
@@ -3458,12 +3458,12 @@
                     { libelle: "En le gardant 2 ans de plus", valeur: nf(plusLong, 1) + " kg CO₂e par an, soit " + pourcent(gain, 0) + " de moins" }
                 ];
             },
-            lecon: "Pour un terminal, l'essentiel de l'impact est déjà payé quand vous l'allumez. Le seul levier vraiment puissant est la durée pendant laquelle il servira."
+            lecon: "Pour un terminal, l'essentiel de l'impact est déjà payé quand tu l'allumes. Le seul levier vraiment puissant est la durée pendant laquelle il servira."
         },
 
         "parc-du-foyer": {
             titre: "L'empreinte du parc, pas de l'usage",
-            intro: "Comptez tout ce qui est branché : téléphones, ordinateurs, téléviseur, tablette, box, console, montre.",
+            intro: "Compte tout ce qui est branché : téléphones, ordinateurs, téléviseur, tablette, box, console, montre.",
             champs: [
                 { id: "appareils", libelle: "Appareils dans le foyer", unite: "", defaut: 8, min: 1, max: 60, pas: 1 },
                 { id: "fabrication", libelle: "Fabrication moyenne par appareil", unite: "kg CO₂e", defaut: 60, min: 5, max: 500, pas: 5 },
@@ -3484,8 +3484,8 @@
 
         "duree-de-vie": {
             type: "controle",
-            titre: "Faites-vous durer vos appareils ?",
-            intro: "Cochez ce que vous faites réellement.",
+            titre: "Fais-tu durer tes appareils ?",
+            intro: "Coche ce que tu fais réellement.",
             points: [
                 { texte: "Je garde mon téléphone au moins quatre ans" },
                 { texte: "J'utilise une coque et une protection d'écran", aide: "la casse est la première cause de remplacement" },
@@ -3495,7 +3495,7 @@
                 { texte: "Je revends ou je donne au lieu de garder l'ancien dans un tiroir" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "C'est l'essentiel de ce qui est en votre pouvoir sur le sujet.", ton: "bon" };
+                if (n >= total - 1) return { texte: "C'est l'essentiel de ce qui est en ton pouvoir sur le sujet.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne base. Le remplacement de batterie est le geste au meilleur rapport, et le plus souvent écarté.", ton: "moyen" };
                 return { texte: "Chaque année gagnée sur la durée de vie fait plus que tous les gestes d'usage réunis.", ton: "alerte" };
             },
@@ -3505,7 +3505,7 @@
         "gestes-symboliques": {
             type: "controle",
             titre: "Ces gestes servent-ils à quelque chose ?",
-            intro: "Cochez ceux qui ont un effet mesurable sur l'empreinte du numérique.",
+            intro: "Coche ceux qui ont un effet mesurable sur l'empreinte du numérique.",
             points: [
                 { texte: "Garder son téléphone deux ans de plus", aide: "effet réel et important" },
                 { texte: "Supprimer ses vieux courriels", aide: "effet réel mais très faible : quelques grammes" },
@@ -3562,7 +3562,7 @@
             champs: [
                 { id: "distance", libelle: "Distance aller", unite: "km", defaut: 400, min: 1, max: 20000, pas: 10 },
                 { id: "duree", libelle: "Durée de la réunion en visio", unite: "h", defaut: 2, min: 0.5, max: 12, pas: 0.5 },
-                { id: "puissance", libelle: "Puissance de votre appareil", unite: "W", defaut: 30, min: 1, max: 500, pas: 1 }
+                { id: "puissance", libelle: "Puissance de ton appareil", unite: "W", defaut: 30, min: 1, max: 500, pas: 1 }
             ],
             calculer: ({ distance, duree, puissance }) => {
                 const ar = distance * 2;
@@ -3580,7 +3580,7 @@
         "lire-un-chiffre": {
             type: "controle",
             titre: "Ce chiffre d'impact tient-il ?",
-            intro: "Cochez ce qui est vrai du chiffre qu'on vous présente.",
+            intro: "Coche ce qui est vrai du chiffre qu'on te présente.",
             points: [
                 { texte: "Son périmètre est précisé", aide: "fabrication comprise, ou usage seul ?" },
                 { texte: "Le pays est indiqué", aide: "l'électricité française émet cinq à dix fois moins que la moyenne européenne" },
@@ -3591,7 +3591,7 @@
             ],
             verdict: (n, total) => {
                 if (n >= total - 1) return { texte: "Chiffre exploitable. Il est rare qu'un chiffre médiatique coche tout cela.", ton: "bon" };
-                if (n >= 4) return { texte: "Utilisable avec prudence. Vérifiez surtout le périmètre : c'est là que se cachent les facteurs dix.", ton: "moyen" };
+                if (n >= 4) return { texte: "Utilisable avec prudence. Vérifie surtout le périmètre : c'est là que se cachent les facteurs dix.", ton: "moyen" };
                 return { texte: "À ne pas relayer. Ce domaine a diffusé pendant des années des chiffres faux d'un facteur dix, repris de bonne foi.", ton: "alerte" };
             },
             lecon: "« Un mail = 10 g » et « une heure de streaming = 3,2 kg » ont circulé des années avant d'être corrigés d'un facteur dix. Les deux venaient d'estimations reprises sans vérification."
@@ -3600,7 +3600,7 @@
         "achat-responsable": {
             type: "controle",
             titre: "Avant d'acheter un appareil",
-            intro: "Cochez ce que vous avez réellement vérifié.",
+            intro: "Coche ce que tu as réellement vérifié.",
             points: [
                 { texte: "J'ai vérifié que l'ancien n'était pas réparable" },
                 { texte: "J'ai regardé le reconditionné", aide: "il évite la quasi-totalité de la fabrication" },
@@ -3642,7 +3642,7 @@
         "ecoconception": {
             type: "controle",
             titre: "Ce service est-il sobre ?",
-            intro: "Cochez ce qui est vrai du site ou de l'application que vous concevez ou utilisez.",
+            intro: "Coche ce qui est vrai du site ou de l'application que tu conçois ou utilises.",
             points: [
                 { texte: "Il reste utilisable sur un appareil de cinq ans" },
                 { texte: "Il fonctionne sur une connexion lente" },
@@ -3692,7 +3692,7 @@
         "effet-rebond": {
             type: "controle",
             titre: "Ce gain va-t-il tenir ?",
-            intro: "Une amélioration technique est souvent absorbée par un usage accru. Cochez ce que vous reconnaissez.",
+            intro: "Une amélioration technique est souvent absorbée par un usage accru. Coche ce que tu reconnais.",
             points: [
                 { texte: "Les appareils consomment moins, et il y en a davantage" },
                 { texte: "Le stockage coûte moins cher, et on garde tout" },
@@ -3715,8 +3715,8 @@
 
         "preparer-echange": {
             type: "controle",
-            titre: "Êtes-vous prêt pour cet échange ?",
-            intro: "Cochez ce que vous savez déjà, avant d'entrer dans la conversation.",
+            titre: "Es-tu prêt pour cet échange ?",
+            intro: "Coche ce que tu sais déjà, avant d'entrer dans la conversation.",
             points: [
                 { texte: "Je sais ce que je veux obtenir, en une phrase" },
                 { texte: "Je sais à quoi je renonce si j'obtiens gain de cause" },
@@ -3735,8 +3735,8 @@
 
         "ecoute-active": {
             type: "controle",
-            titre: "Écoutez-vous, ou attendez-vous votre tour ?",
-            intro: "Cochez ce que vous faites réellement pendant que l'autre parle.",
+            titre: "Écoutes-tu, ou attends-tu ton tour ?",
+            intro: "Coche ce que tu fais réellement pendant que l'autre parle.",
             points: [
                 { texte: "Je ne prépare pas ma réponse pendant qu'il parle" },
                 { texte: "Je reformule pour vérifier, avant de répondre", aide: "« si je comprends bien, … »" },
@@ -3746,7 +3746,7 @@
                 { texte: "Je note ce qu'il dit, pas ce que je compte répondre" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Vous écoutez vraiment. C'est le levier le moins coûteux et le plus rare.", ton: "bon" };
+                if (n >= total - 1) return { texte: "Tu écoutes vraiment. C'est le levier le moins coûteux et le plus rare.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne écoute. Le silence après une réponse est ce qui rapporte le plus, et ce qu'on supporte le moins.", ton: "moyen" };
                 return { texte: "Attendre son tour n'est pas écouter. La plupart des informations utiles se perdent là.", ton: "alerte" };
             },
@@ -3781,7 +3781,7 @@
         "courriel-lu": {
             type: "controle",
             titre: "Ce courriel a-t-il une chance d'aboutir ?",
-            intro: "Cochez ce que contient réellement le message que vous vous apprêtez à envoyer.",
+            intro: "Coche ce que contient réellement le message que tu t'apprêtes à envoyer.",
             points: [
                 { texte: "L'objet dit ce dont il s'agit ET ce qui est attendu" },
                 { texte: "La demande est dans les deux premières lignes" },
@@ -3800,9 +3800,9 @@
 
         "mesore": {
             titre: "Faut-il accepter cette offre ?",
-            intro: "Votre MESORE — meilleure solution de rechange — est ce que vous obtenez si vous partez. Elle fixe votre point de rupture.",
+            intro: "Ta MESORE — meilleure solution de rechange — est ce que tu obtiens si tu pars. Elle fixe ton point de rupture.",
             champs: [
-                { id: "mesore", libelle: "Valeur de votre solution de rechange", unite: "€", defaut: 28000, min: 0, max: 10000000, pas: 500 },
+                { id: "mesore", libelle: "Valeur de ta solution de rechange", unite: "€", defaut: 28000, min: 0, max: 10000000, pas: 500 },
                 { id: "offre", libelle: "Offre actuellement sur la table", unite: "€", defaut: 30000, min: 0, max: 10000000, pas: 500 },
                 { id: "cout", libelle: "Coût estimé de la poursuite", unite: "€", defaut: 500, min: 0, max: 1000000, pas: 100 }
             ],
@@ -3815,8 +3815,8 @@
                     {
                         libelle: "Verdict",
                         valeur: gain < 0
-                            ? "cette offre est moins bonne que votre solution de rechange"
-                            : (gain < cout ? "acceptable, mais continuer coûterait plus que ce que cela rapporterait" : "vous avez de la marge pour continuer")
+                            ? "cette offre est moins bonne que ta solution de rechange"
+                            : (gain < cout ? "acceptable, mais continuer coûterait plus que ce que cela rapporterait" : "tu as de la marge pour continuer")
                     }
                 ];
             },
@@ -3825,9 +3825,9 @@
 
         "zopa": {
             titre: "Y a-t-il une zone d'accord ?",
-            intro: "Le maximum que vous acceptez de payer, et le minimum estimé de l'autre. Entre les deux se trouve — ou non — un accord possible.",
+            intro: "Le maximum que tu acceptes de payer, et le minimum estimé de l'autre. Entre les deux se trouve — ou non — un accord possible.",
             champs: [
-                { id: "maxAcheteur", libelle: "Votre maximum", unite: "€", defaut: 32000, min: 0, max: 10000000, pas: 500 },
+                { id: "maxAcheteur", libelle: "Ton maximum", unite: "€", defaut: 32000, min: 0, max: 10000000, pas: 500 },
                 { id: "minVendeur", libelle: "Minimum estimé de l'autre", unite: "€", defaut: 27000, min: 0, max: 10000000, pas: 500 }
             ],
             calculer: ({ maxAcheteur, minVendeur }) => {
@@ -3847,7 +3847,7 @@
                         { libelle: "Zone d'accord", valeur: "un seul prix possible : " + euros(maxAcheteur), fort: true },
                         { libelle: "Largeur", valeur: "nulle" },
                         { libelle: "Ce que cela signifie", valeur: "l'accord tient, mais aucune marge de part et d'autre" },
-                        { libelle: "La suite utile", valeur: "vérifier vos estimations avant de vous y engager" }
+                        { libelle: "La suite utile", valeur: "vérifier tes estimations avant de t'y engager" }
                     ];
                 }
                 return [
@@ -3864,8 +3864,8 @@
             titre: "Quelle première offre annoncer ?",
             intro: "Le premier chiffre énoncé pèse sur tout ce qui suit — y compris quand chacun sait qu'il est négociable.",
             champs: [
-                { id: "objectif", libelle: "Résultat que vous visez", unite: "€", defaut: 29000, min: 0, max: 10000000, pas: 500 },
-                { id: "attendue", libelle: "Offre que vous attendez de l'autre", unite: "€", defaut: 27000, min: 0, max: 10000000, pas: 500 }
+                { id: "objectif", libelle: "Résultat que tu vises", unite: "€", defaut: 29000, min: 0, max: 10000000, pas: 500 },
+                { id: "attendue", libelle: "Offre que tu attends de l'autre", unite: "€", defaut: 27000, min: 0, max: 10000000, pas: 500 }
             ],
             calculer: ({ objectif, attendue }) => {
                 // Le point median entre deux offres tombe sur l objectif si la
@@ -3873,8 +3873,8 @@
                 const ancre = 2 * objectif - attendue;
                 const ecart = ancre - objectif;
                 return [
-                    { libelle: "Pour que le milieu tombe sur votre objectif", valeur: euros(ancre), fort: true },
-                    { libelle: "Écart avec votre objectif", valeur: (ecart >= 0 ? "+ " : "− ") + euros(Math.abs(ecart)) },
+                    { libelle: "Pour que le milieu tombe sur ton objectif", valeur: euros(ancre), fort: true },
+                    { libelle: "Écart avec ton objectif", valeur: (ecart >= 0 ? "+ " : "− ") + euros(Math.abs(ecart)) },
                     { libelle: "Point médian obtenu", valeur: euros((ancre + attendue) / 2) },
                     { libelle: "Limite", valeur: "une ancre invraisemblable fait perdre la crédibilité, et parfois la négociation" }
                 ];
@@ -3885,7 +3885,7 @@
         "interets-positions": {
             type: "controle",
             titre: "Position ou intérêt ?",
-            intro: "Une position est ce qu'on demande. Un intérêt est la raison pour laquelle on le demande. Cochez ce que vous connaissez.",
+            intro: "Une position est ce qu'on demande. Un intérêt est la raison pour laquelle on le demande. Coche ce que tu connais.",
             points: [
                 { texte: "Je sais ce que l'autre demande" },
                 { texte: "Je sais pourquoi il le demande" },
@@ -3895,7 +3895,7 @@
                 { texte: "Je sais ce que je peux échanger contre ce qui compte pour moi" }
             ],
             verdict: (n, total) => {
-                if (n >= total - 1) return { texte: "Vous négociez sur les intérêts. C'est là que se trouvent les accords que personne n'avait prévus.", ton: "bon" };
+                if (n >= total - 1) return { texte: "Tu négocies sur les intérêts. C'est là que se trouvent les accords que personne n'avait prévus.", ton: "bon" };
                 if (n >= 4) return { texte: "Bonne lecture. Le point qui coûte peu à l'un et rapporte à l'autre est ce qui débloque le plus souvent.", ton: "moyen" };
                 return { texte: "Négociation sur les positions : chacun campe, et le seul résultat possible est de couper la différence.", ton: "alerte" };
             },
@@ -3905,7 +3905,7 @@
         "conversation-difficile": {
             type: "controle",
             titre: "Cette conversation est-elle préparée ?",
-            intro: "Un désaccord, un reproche à formuler, une nouvelle à annoncer. Cochez ce qui est prêt.",
+            intro: "Un désaccord, un reproche à formuler, une nouvelle à annoncer. Coche ce qui est prêt.",
             points: [
                 { texte: "Je décris des faits observables, pas une interprétation", aide: "« tu es arrivé après 10 h trois fois » et non « tu ne prends rien au sérieux »" },
                 { texte: "Je sais dire l'effet que cela produit, sans accuser" },
@@ -3924,8 +3924,8 @@
 
         "biais-negociation": {
             type: "controle",
-            titre: "Quels biais jouent contre vous ?",
-            intro: "Cochez ce que vous reconnaissez dans votre façon de négocier.",
+            titre: "Quels biais jouent contre toi ?",
+            intro: "Coche ce que tu reconnais dans ta façon de négocier.",
             points: [
                 { texte: "Je me sens engagé par le temps déjà passé", aide: "coût irrécupérable : il ne devrait rien changer" },
                 { texte: "Je suppose que ce que je gagne, l'autre le perd", aide: "vrai sur le prix seul, faux dès qu'il y a plusieurs variables" },
@@ -3944,8 +3944,8 @@
 
         "manipulation": {
             type: "controle",
-            titre: "Reconnaissez-vous ces procédés ?",
-            intro: "Cochez ceux que vous avez rencontrés dans cette négociation.",
+            titre: "Reconnais-tu ces procédés ?",
+            intro: "Coche ceux que tu as rencontrés dans cette négociation.",
             points: [
                 { texte: "Une urgence artificielle", aide: "« l'offre expire ce soir »" },
                 { texte: "Une concession minuscule présentée comme un effort majeur" },
@@ -3957,7 +3957,7 @@
             verdict: (n) => {
                 if (n === 0) return { texte: "Rien de tout cela. La négociation porte sur le fond.", ton: "bon" };
                 if (n <= 2) return { texte: "Procédés repérés. Les nommer à voix haute, calmement, suffit le plus souvent à les faire cesser.", ton: "moyen" };
-                return { texte: "Beaucoup de procédés. Votre meilleure réponse reste votre solution de rechange : c'est elle qui rend le départ crédible.", ton: "alerte" };
+                return { texte: "Beaucoup de procédés. Ta meilleure réponse reste ta solution de rechange : c'est elle qui rend le départ crédible.", ton: "alerte" };
             },
             lecon: "La réponse à un procédé n'est ni de le subir ni d'en user : c'est de le nommer. « Je note que le délai est très court — est-il négociable ? » désamorce sans affronter."
         },
@@ -4042,7 +4042,7 @@
         const entete = document.createElement("div");
         entete.className = "pratique-entete";
         entete.innerHTML =
-            '<span class="pratique-surtitre">' + tr("À vous d\'essayer") + "</span>" +
+            '<span class="pratique-surtitre">' + tr("À toi d\'essayer") + "</span>" +
             "<h4>" + tr(simulateur.titre) + "</h4>" +
             (simulateur.intro ? "<p class=\"pratique-intro\">" + tr(simulateur.intro) + "</p>" : "");
         bloc.appendChild(entete);
@@ -4118,7 +4118,7 @@
             }
 
             if (invalide) {
-                resultat.innerHTML = '<p class="pratique-invalide">' + tr("Renseignez") + " « " + tr(invalide) + " » " + tr("pour voir le résultat.") + "</p>";
+                resultat.innerHTML = '<p class="pratique-invalide">' + tr("Renseigne") + " « " + tr(invalide) + " » " + tr("pour voir le résultat.") + "</p>";
                 return;
             }
 

@@ -47,9 +47,16 @@
     /* Le dessin. Les couleurs viennent de la palette : « currentColor » suit le
        theme sans qu on ait a redeclarer quoi que ce soit, et le degrade est
        repris des jetons --primary / --secondary par le CSS. */
+    /* Le nom du site dans un texte traduit. Les sept traductions du texte
+       alternatif portent un {nom} plutôt que le nom lui-même : sinon un
+       renommage obligerait à corriger sept phrases, dont trois dans des
+       alphabets où l'oubli ne se voit pas. */
+    const nommer = (texte) =>
+        texte.replace(/\{nom\}/g, (window.DOCMASTER_IDENTITE || {}).nom || "Clicked");
+
     const DESSIN = `
 <svg class="mascotte-dessin" viewBox="0 0 80 80" role="img" aria-labelledby="mascotte-titre" focusable="false">
-  <title id="mascotte-titre">${t("mascotteAlt", "La mascotte de DocMaster : un robot dont le corps est un livre ouvert")}</title>
+  <title id="mascotte-titre">${nommer(t("mascotteAlt", "La mascotte de {nom} : un robot dont le corps est un livre ouvert"))}</title>
   <defs>
     <linearGradient id="mascotte-degrade" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="var(--primary)"/>

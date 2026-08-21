@@ -1,0 +1,65 @@
+{
+  "_lisez_moi": [
+    "Le site tutoie son lecteur. Les passages listés ici gardent le vouvoiement,",
+    "et chacun dit pourquoi. Contrôlé par scripts/verifier-registre.mjs.",
+    "",
+    "« max » est un plafond, pas une cible : le faire baisser est toujours permis",
+    "— convertir une exception restante est une amélioration. Le dépasser ne l'est",
+    "pas : c'est le vouvoiement qui revient.",
+    "",
+    "Trois motifs, et trois seulement :",
+    "  non-conseil   avertissement légal, médical ou juridique, renvoi vers un",
+    "                professionnel ou vers un service officiel ;",
+    "  parole        courriel d'hameçonnage cité, réplique de négociation, script",
+    "                d'entretien client, consigne de test, conseil entre guillemets.",
+    "                Ce « vous » n'est pas adressé au lecteur ; le convertir rendrait",
+    "                l'exemple faux ;",
+    "  jumelage      un quiz reprend mot pour mot une phrase de sa page, laquelle",
+    "                relève déjà de l'un des deux motifs ci-dessus."
+  ],
+
+  "exceptions": {
+    "guides/cybersecurite/index.html": { "max": 1, "pourquoi": "non-conseil : renvoi vers cybermalveillance.gouv.fr" },
+    "guides/cybersecurite/avance.html": { "max": 3, "pourquoi": "non-conseil + parole : question de sécurité citée" },
+
+    "guides/design/index.html": { "max": 1, "pourquoi": "non-conseil : renvoi vers le RGAA" },
+    "guides/design/intermediaire.html": { "max": 1, "pourquoi": "non-conseil : renvoi vers le RGAA" },
+    "guides/design/debutant.html": { "max": 1, "pourquoi": "parole : consignes dites au participant d'un test" },
+
+    "guides/droit/index.html": { "max": 4, "pourquoi": "non-conseil juridique" },
+    "guides/droit/debutant.html": { "max": 5, "pourquoi": "non-conseil + parole : question posée par un conciliateur" },
+    "guides/droit/intermediaire.html": { "max": 1, "pourquoi": "non-conseil : renvoi vers service-public.fr" },
+    "guides/droit/avance.html": { "max": 3, "pourquoi": "non-conseil + parole : réplique du professionnel" },
+
+    "guides/ecologie/avance.html": { "max": 1, "pourquoi": "non-conseil : renvoi vers les sources réglementaires" },
+    "guides/ecologie/debutant.html": { "max": 1, "pourquoi": "parole : conseil cité entre guillemets" },
+
+    "guides/entrepreneuriat/debutant.html": { "max": 7, "pourquoi": "non-conseil + parole : script d'entretien client" },
+    "guides/entrepreneuriat/intermediaire.html": { "max": 6, "pourquoi": "non-conseil + parole : script d'entretien client" },
+
+    "guides/marketing/debutant.html": { "max": 1, "pourquoi": "parole : modèle de courriel adressé à des clients" },
+    "guides/marketing/avance.html": { "max": 1, "pourquoi": "non-conseil juridique" },
+
+    "guides/negociation/debutant.html": { "max": 4, "pourquoi": "parole : questions posées à l'interlocuteur" },
+    "guides/negociation/intermediaire.html": { "max": 1, "pourquoi": "parole : question reprise dans l'encadré à retenir" },
+    "guides/negociation/avance.html": { "max": 1, "pourquoi": "parole : script de sortie de table" },
+
+    "guides/productivite/intermediaire.html": { "max": 1, "pourquoi": "parole : réplique de refus adressée à un demandeur" },
+    "guides/productivite/avance.html": { "max": 1, "pourquoi": "non-conseil : renvoi vers un avis médical" },
+
+    "guides/sante/index.html": { "max": 3, "pourquoi": "non-conseil médical" },
+    "guides/sante/debutant.html": { "max": 5, "pourquoi": "non-conseil médical + renvoi vers le service de santé au travail" },
+    "guides/sante/intermediaire.html": { "max": 4, "pourquoi": "non-conseil médical" },
+    "guides/sante/avance.html": { "max": 6, "pourquoi": "non-conseil médical + renvoi vers le service de santé au travail" },
+
+    "assets/js/quiz/design-debutant.js": { "max": 1, "pourquoi": "jumelage : consignes de test citées, comme dans la page" },
+    "assets/js/quiz/droit-debutant.js": { "max": 3, "pourquoi": "jumelage : questions du conciliateur, comme dans la page" },
+    "assets/js/quiz/droit-avance.js": { "max": 2, "pourquoi": "jumelage : réplique du professionnel + ancre vos-donnees-personnelles" },
+    "assets/js/quiz/ecologie-debutant.js": { "max": 1, "pourquoi": "jumelage : conseil cité, comme dans la page" },
+    "assets/js/quiz/entrepreneuriat-debutant.js": { "max": 5, "pourquoi": "jumelage : script d'entretien client, comme dans la page" },
+    "assets/js/quiz/entrepreneuriat-intermediaire.js": { "max": 3, "pourquoi": "jumelage : script d'entretien client, comme dans la page" },
+    "assets/js/quiz/negociation-debutant.js": { "max": 4, "pourquoi": "jumelage : questions à l'interlocuteur, comme dans la page" },
+
+    "assets/js/pratique.js": { "max": 4, "pourquoi": "non-conseil médical et 3114 + deux répliques citées" }
+  }
+}

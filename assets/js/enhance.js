@@ -1,5 +1,5 @@
 // ===================================
-// DOCMASTER - AMÉLIORATIONS PARTAGÉES
+// CLICKED - AMÉLIORATIONS PARTAGÉES
 // (barre de progression, retour en haut, copier le lien, marquer comme lu)
 // ===================================
 
