@@ -230,5 +230,40 @@ verifier("l'article de la source écartée est refusé",
     !e8.some((a) => a.lien.endsWith("/source")), JSON.stringify(e8.map((a) => a.lien)));
 verifier("la raison du refus est dite", /palmar|source écartée/.test(sortie8), sortie8.trim());
 
+/* --- 9. Le libelle de section est relu dans le guide ------------------------
+ *
+ * L Issue porte une COPIE du titre de section, figee le jour ou la veille l a
+ * relevee. Le 22 aout, la premiere publication automatique a lu une Issue
+ * d avant le passage au tutoiement et remis « Vos donnees personnelles » en
+ * ligne, alors que la section s appelait « Tes donnees personnelles » depuis la
+ * veille. Corriger l etat a la main n aurait tenu que jusqu a la publication
+ * suivante.
+ *
+ * Le bac contient donc un faux guide, dont le titre de section differe de celui
+ * que porte l Issue : c est le titre du GUIDE qui doit paraitre. */
+console.log("\n=== 9. LE LIBELLE VIENT DU GUIDE, PAS DE L'ISSUE ===");
+
+fs.mkdirSync(path.join(BAC, "guides/cybersecurite"), { recursive: true });
+fs.writeFileSync(path.join(BAC, "guides/cybersecurite/debutant.html"),
+    `<h2>x</h2>\n<details><summary><h3 id="le-phishing">🎣 Le titre actuel</h3></summary></details>\n`);
+
+const perime = {
+    "https://news.google.com/perime": {
+        titre: "Un article valable", source: "Le Monde",
+        date: new Date().toISOString().slice(0, 10),
+        guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing",
+        section: "L'ANCIEN TITRE FIGÉ", sujet: "🔒 Cybersécurité — Débutant",
+    },
+};
+etatIssues = [{
+    number: 1,
+    body: `- [x] [x](https://news.google.com/perime)\n\n<!-- ACTUALITES\n${JSON.stringify(perime)}\n-->\n`,
+}];
+lancer();
+const page9 = lirePage("actualites.html");
+verifier("le titre courant de la section est affiché", /Le titre actuel/.test(page9),
+    (page9.match(/En rapport avec[^<]*<[^>]*>[^<]*/) || ["(rien)"])[0]);
+verifier("l'ancien titre figé n'apparaît pas", !/ANCIEN TITRE FIGÉ/.test(page9));
+
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

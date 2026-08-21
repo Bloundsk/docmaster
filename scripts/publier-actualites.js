@@ -163,6 +163,33 @@ function fusionner(existants, coches, decoches) {
     return [...parLien.values()];
 }
 
+/* Le libelle de la section, relu DANS LE GUIDE plutot que dans l Issue.
+ *
+ * L Issue porte une copie du titre de section, figee le jour ou la veille l a
+ * relevee. Quand un guide change, cette copie ment — et comme la publication
+ * la recopie telle quelle, elle ressuscite l ancien titre sur le site.
+ *
+ * C est arrive le 22 aout : le site est passe au tutoiement, la section
+ * « Vos donnees personnelles » est devenue « Tes donnees personnelles », et la
+ * premiere publication automatique a remis l ancien libelle en ligne en lisant
+ * une Issue d avant. Corriger data/actualites.json n aurait tenu que jusqu a la
+ * publication suivante.
+ *
+ * L ancre, elle, ne bouge pas : c est un identifiant, et c est ce qui permet de
+ * retrouver le titre courant. On garde le libelle stocke si la section a
+ * disparu — un titre perime vaut mieux qu un libelle vide. */
+function libelleActuel(article) {
+    const fichier = path.join(RACINE, "guides", article.guide || "", article.page || "");
+    if (!article.ancre || !fs.existsSync(fichier)) return article.section;
+
+    const html = fs.readFileSync(fichier, "utf8");
+    const motif = new RegExp(`<h3 id="${article.ancre.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}">([\\s\\S]*?)</h3>`);
+    const trouve = html.match(motif);
+    if (!trouve) return article.section;
+
+    return trouve[1].replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").trim();
+}
+
 /* Le filtre d admission, applique juste avant le rendu.
  *
  * Il vit ici et non dans « fusionner » parce que « --hors-ligne » ne fusionne
@@ -205,7 +232,7 @@ function filtrer(articles) {
             return false;
         }
         return true;
-    });
+    }).map((a) => ({ ...a, section: libelleActuel(a) }));
 
     if (ecartes.length) {
         console.warn(`${ecartes.length} article(s) écarté(s) avant publication :`);
