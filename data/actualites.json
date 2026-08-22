@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-22T08:04:11.805Z",
+  "maj": "2026-08-22T18:00:00.131Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWmxkUVpNVHJaTXVQTXoxNU5qS21TSVQ0ZFFmalUtSDd2MVhxOXo4T0VMVG52TEZGQjFNeHhQYVV4U0NMdVFER3pPenBBdWxTOTVHSDZqcjlKamxyamNtRFE2dlpybGZuUmdxTmhmd2poTHNZUmVpai1SQUZrTFdzdzR3YzVQbUM5OTNOdGpSS1VRVnRWaVFoZnZRUVpHQTdpME9JcTVLemE?oc=5",
@@ -11,6 +11,42 @@
       "ancre": "accessibilite",
       "section": "♿ L'accessibilité",
       "sujet": "🎨 Design UX/UI — Intermédiaire",
+      "publie": "2026-08-22"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMifkFVX3lxTE83RjU1SUZWWXdxRmJ1b2VUUXd5aTkyc3BkcEVwV0RpQ2llb2VLd3RROG9JWDJvdXBPa2lqd05XWkRNZ3M3NmFkYUh4cldZSmEybWdUc2VVeHM3Ylk5MzJJZmM0RlJIRW9hbWhUbElqWmhMMUdIbXhxWE5Da2ctQQ?oc=5",
+      "titre": "Encourager l'esprit d'entreprise chez les jeunes.",
+      "source": "Vietnam.vn",
+      "date": "2026-08-22",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "modele-economique",
+      "section": "💰 Le modèle économique",
+      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
+      "publie": "2026-08-22"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPUWphcHJGRkQ1VHM4RDgtc21Ncjd4Tm1nTjgtS0ptcWl2R3hCWXVIWDB5REEwTWJVQmwybjJxVUM1NUlwanJVN0JmeHgyRlQ2VmdGMDM3V0RNRzRGWkJieDZhcWFfb0c2UTByUXpudktBQktpQ2RnRlFNUmxILWdYWW14VDNnWExMUUE?oc=5",
+      "titre": "Le prix de Zcash atteint un sommet de 8 ans alors que l’ETF Grayscale se rapproche",
+      "source": "Yahoo Finance France",
+      "date": "2026-08-22",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "les-etf",
+      "section": "📦 Les ETF",
+      "sujet": "💰 Finance — Débutant",
+      "publie": "2026-08-22"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQRHptR1c2NnNVY3JJbGJJbUNRSEdjVkpqYjZ1cXpaZWNlNWNNdEVDbXRBRk5Ub2FWOGtrd1UtSG9yQmZZNHl4V042blgwd2F2YURUenRqY2VubWtlczJIa3RnVDBjWDF2VlB2NmhTUmF3WUtvRng5cFBCNWdjWE5tU2RlR1pNanMzYWdCRC1hZE8wc2cyRXNKUmUtTGtlNk9vRlVfZVZCal9YRjJfRUMxUDZLMkRvb3cyRWxrejVVVl83elFxd0pzSVhn?oc=5",
+      "titre": "Les prochains milliards d'utilisateurs de la crypto pourraient être des agents IA, et ils paient avec des stablecoins",
+      "source": "CoinDesk",
+      "date": "2026-08-22",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "les-agents-ia",
+      "section": "⚙️ Les agents IA",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
       "publie": "2026-08-22"
     },
     {
@@ -170,6 +206,30 @@
       "publie": "2026-08-22"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmpZbzR6UG5lLWM4Vi05QkZzRmVYU2tJOEV2Y2I0YnNSRWN1LURJSURkZ05KVUdOa1JOQVl2LVVwSUJEU3BBQVpObU5xam5xNEtodTlhVTRPVTROOW1nLWVjNXZ6SHZFTHVUQ0JvT3h6ZDkzNFBCV3g3OFlBY1EzWXZVQUxxTUc0cGRSUHBGLVl6b0ZkMENyQmhQd181SzBX?oc=5",
+      "titre": "Tunisie: Programme d’accompagnement dédié aux entrepreneurs de la diaspora",
+      "source": "Espacemanager",
+      "date": "2026-08-21",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "premiers-clients",
+      "section": "📈 Trouver ses premiers clients",
+      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
+      "publie": "2026-08-22"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQOUxPMnJMTE5MZHFmYWpSc2xQYXh2TnllbktEVm9sLVY1TkhoWnRYVFJJX1lmSk9QNElURHFyODhYcGdxTlhSTlBMeW1uX0x1SUlyeUpMbjZ3MzBxc1FnSkg1WkxsblFMMnJibF9qZkJkclhXTDZnZ0N1YzFtUkxpWVBpNjlRbTN2Y1d4Nm9CNUFnRlhlM0RpV0RsTE8xb0kxZC1tN3RkazJFTFNmYzliSW1SeFQwWnl0QVVIRmN0aF9xWTNYZnRhQUNrSWVhX0s4cnpkbVVrbzRxR0QxcWE4?oc=5",
+      "titre": "Piratage du fisc : le gouvernement veut accélèrer la double authentification et lance un plan cyber avec « bug bounty »",
+      "source": "epochtimes.fr",
+      "date": "2026-08-21",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "double-authentification",
+      "section": "📱 La double authentification",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "publie": "2026-08-22"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQTmpPZGtnbGUtbDlYODdzcWpTbzd3aFFGVXI3cEwxVDFtZmFJdW5zdzRZVVRBQUFobWFNeGVVdjlLajJJOVoxME56bmFVMlpqOHB3dHlWcnZaMjZibjRpSVBCYUNoa1VkdkNZaGRMS05uWklaQmZ2SVJIX2tFMVY3bk5XZ0E3RTR5dm4wSnNSb3dsMzR3SDRHQlJlUkliNUdaSU1vS19nbGtreGJJNy15YVJNQUp1STVIVkZ2dWxjZFNxMmY1clAwUmhITG5pd3J2RUhRTDhZRDlVSmY4?oc=5",
       "titre": "« Vous perdez la notion du temps à un certain moment » : les réseaux sociaux sont-ils conçus pour nous rendre accros ?",
       "source": "RTL Info",
@@ -227,66 +287,6 @@
       "ancre": "fuites-de-donnees",
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQeG83NFhELVRFOGdWZXVoYkI3dlAtYXRxbVMteUFTa0NIR3AwbThIQ3dVTzRvMHhvTFl2NEFSTlMyYl9xdGc2X2tobGZlMEd6cnU5WU85LXpTS2VEYmJ2c2UxSHY3QUtSdHcteldIdVQxM2NaQngzLWI2UlBLbUQxYkFGVnlpVzFETll6YkQzVDF3SkoyNHFqOU8xOEhpcngxdTBUM0Rld0FmM2JWYlQwOFNhT3FnUkRuTnN2UjNmZlBYUXktakZuV21ZUTcwUQ?oc=5",
-      "titre": "Vos mots de passe circulent déjà sur le Dark Web, voici comment le savoir en deux minutes",
-      "source": "Clubic",
-      "date": "2026-08-20",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "mots-de-passe-authentification",
-      "section": "🔑 Mots de passe & authentification",
-      "sujet": "🔒 Cybersécurité — Débutant",
-      "publie": "2026-08-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOMHQzWjBqMk8tTUp5Y3Y2SFMzandXMFlVNC1VdVROeHlJZmFCdUJTWUJkRGpNX0QzSVhhRURYMEtYb2U2MVBCTVJwemE5MjNLU0hkaE5YdjB5d3lRQWs3WmRqeHBBZVB4R0xITEJZZFZYQjNoQjBvWklmdWEwb2J0OWVQbmw4Wk5CMzNEb3hPZUJxcTdDTmZOMURQZVI4UGdVeVI2UlkxUUpNRTkxbDhTOTN4NVRPeHowcFRablRKZ05GU05SajVoVng0TVBMRHBtY1RBZ2tVdV9pT2JBUEVCc0E0RXhRc1E?oc=5",
-      "titre": "Cybersécurité, Phishing, mots de passe, données sensibles : El Malick Ndiaye plaide pour une formation obligatoire des agents publics et une initiation dès l’école",
-      "source": "DAKARACTU.COM",
-      "date": "2026-08-20",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "le-phishing",
-      "section": "🎣 Le phishing",
-      "sujet": "🔒 Cybersécurité — Débutant",
-      "publie": "2026-08-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPNUJGWmZwa3p5SkdKVmRub2RiUURMQlBxXy00cjFiSWZLVGVLbnlfWVNDWjc2ZVVsd2I0RmFCcUpSWEdfcnpiNXJROHhaYjBpZ3BBZHpRcEhSRVpmblNacVhQSF9wRVVaOUJVYUpJVXhLZjNlWUNaUGEtYUJ5aE5SSDBZRnhVS3lMaDZOQ2tqUk95WTJSU1gwckNXLVhRM0ZPM3NCOUE1YlNMT2dfNGdxYUhRMWJ4MVd5UjdDQkVvYkpVbGtISXlKT2tMZnVTbmZfaFdxSjEyZzJHQjZlY0d3UG9R?oc=5",
-      "titre": "Intelligent Bio Solutions Reports Fiscal 2026 Revenue Up 38% to $4.22M, Gross Margin 48.63%",
-      "source": "TradingView",
-      "date": "2026-08-19",
-      "guide": "entrepreneuriat",
-      "page": "avance.html",
-      "ancre": "unit-economics",
-      "section": "📊 Les unit economics",
-      "sujet": "🚀 Entrepreneuriat — Avancé",
-      "publie": "2026-08-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSjE0WjdIUlhPc01wX1c2STZwSlFLOGItLXhjY2pJejFYS1k3REJqM3N4bTBkOE1QVFFMcl83RTd1cWJsdFdpTlk3RDFrcWhsaTVYM1pKWXZWZUxMTFlrR05lSFV5WDg0MG94R1k3MElMYm11b1BZSDAzQXJUOFU5bXVYSDB4dm1lVy1EOWxud0pUbF9MazlLam8ybER4ajA1QkhQWFFxTVRraXdpTXIwRw?oc=5",
-      "titre": "L’épargne des Français finance-t-elle la défense à leur insu ?",
-      "source": "Alternatives économiques",
-      "date": "2026-08-19",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9uOFZJRjhHY0ZPemxXR2hkVGtHcXRqeTd4czh3S3o1NE1tRHNHR2ZXcDhZVnI5YWVYSkpnMzgwMWw3b0s4dTlvTmlkTkZNaDJ6YU1nblRweWRSbC1KMVNGREdqTjZmNU5oRDZmUnFQR1h4U0Jpblo0aTRSMA?oc=5",
-      "titre": "Test Boox Note Air5 C : la liseuse-tablette couleur qui peaufine sa recette plutôt que de la réinventer",
-      "source": "Les Numériques",
-      "date": "2026-08-19",
-      "guide": "apprendre",
-      "page": "debutant.html",
-      "ancre": "se-tester-plutot-que-relire",
-      "section": "✍️ Se tester plutôt que relire",
-      "sujet": "🎓 Apprendre à apprendre — Débutant",
       "publie": "2026-08-22"
     }
   ]
