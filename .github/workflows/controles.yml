@@ -49,6 +49,16 @@ jobs:
       - name: Cohérence d'ensemble
         run: node scripts/audit-coherence.mjs
 
+      # podcasts.html et podcast.xml sont ecrits par un script, a partir des
+      # fichiers de podcasts/. Une retouche faite a la main dans la page serait
+      # perdue au passage suivant, sans que rien ne le dise — sauf ici.
+      #
+      # La GENERATION de la voix, elle, ne tourne pas en integration : elle
+      # demande une carte graphique et la voix de reference, qui n a rien a
+      # faire dans un depot public.
+      - name: Pages de podcasts conformes à leur source
+        run: node scripts/publier-podcasts.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le

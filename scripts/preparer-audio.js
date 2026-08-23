@@ -25,8 +25,12 @@
 //   TP=-1.5           Crete reelle maximale, en dB. La marge evite la
 //                     saturation lors du reencodage par certaines applications.
 //   mono, 44,1 kHz    De la parole. La stereo doublerait le poids pour rien.
-//   64 kb/s           Suffisant pour une voix. Au-dela, on encode le bruit de
-//                     la piece.
+//   96 kb/s           Mesure plutot que suppose : a 64 kb/s, l encodeur ajoute
+//                     2 dB de depassement de crete — le WAV sortait a
+//                     -2,4 dBTP et le MP3 a -0,4, c est-a-dire au bord de la
+//                     saturation. A 96 kb/s le depassement tombe a 0,5 dB.
+//                     Le poids passe de 4,4 a 6,6 Mo par episode : le prix de
+//                     ne pas saturer.
 //
 // Le calcul de loudnorm se fait en DEUX PASSES : la premiere mesure, la seconde
 // corrige. En une seule passe, ffmpeg normalise a l aveugle au fil du fichier
@@ -132,14 +136,46 @@ for (const fichier of fs.readdirSync(BRUT)) {
     let m = null;
     try { m = JSON.parse(bloc); } catch (e) { /* on retombe sur une passe simple */ }
 
-    const filtre = m
-        ? `loudnorm=I=-16:TP=-1.5:LRA=11:measured_I=${m.input_i}:measured_TP=${m.input_tp}` +
-          `:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`
-        : "loudnorm=I=-16:TP=-1.5:LRA=11";
+    /* La masterisation, avant la mise a niveau. Trois traitements, et chacun
+       repond a un defaut entendu :
+
+         highpass 80 Hz   le grondement, les bruits de manipulation, le
+                          souffle de la piece. Rien d utile ne vit sous 80 Hz
+                          dans une voix parlee.
+         acompressor      resserre l ecart entre les passages forts et faibles.
+                          C est CE traitement qui donne l impression que la
+                          voix est PROCHE, comme quelqu un assis en face —
+                          l effet que cherche un podcast d explication.
+         equalizer 3 kHz  la bande de l intelligibilite. +2,5 dB, et on
+                          comprend sans effort, meme en marchant dans la rue.
+
+       Ce qui n y est PAS : aucun debruitage. Il durcit les consonnes, et sur
+       un enregistrement dont les silences sont deja vides il ne gagne rien —
+       mesure sur la prise retenue : plancher a -inf avec comme sans.
+
+       Et surtout : rien de tout cela ne rend une voix expressive. Un filtre
+       deplace des frequences, il n invente pas une montee de voix sur une
+       question. L expressivite se joue a la generation. */
+    const MASTERISATION = "highpass=f=80," +
+        "acompressor=threshold=-20dB:ratio=3:attack=15:release=200:makeup=1," +
+        "equalizer=f=3000:width_type=o:width=1.2:g=2.5,";
+
+    /* Un limiteur EN DERNIER, et il n est pas decoratif.
+       Mesure sans lui : +0,5 dBTP, c est-a-dire au-dessus de zero — ca sature,
+       et ca s entend comme une durete sur les consonnes. La cause est double :
+       le rattrapage de 2 dB du compresseur, et « linear=true » qui fait
+       appliquer a loudnorm un gain constant, sans limitation dynamique. Il
+       respecte alors la cible de NIVEAU en manquant celle de CRETE.
+       Le limiteur rattrape ce que le gain constant laisse passer. */
+    const filtre = MASTERISATION + (m
+        ? `loudnorm=I=-16:TP=-2:LRA=9:measured_I=${m.input_i}:measured_TP=${m.input_tp}` +
+          `:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}`
+        : "loudnorm=I=-16:TP=-2:LRA=9") +
+        ",alimiter=limit=0.891:attack=5:release=50:level=disabled";   // filet, ≈ -1 dBFS
 
     execFileSync("ffmpeg", [
         "-y", "-loglevel", "error", "-i", source,
-        "-af", filtre, "-ac", "1", "-ar", "44100", "-b:a", "64k",
+        "-af", filtre, "-ac", "1", "-ar", "44100", "-b:a", "96k",
         cible,
     ], { stdio: ["ignore", "ignore", "pipe"] });
 

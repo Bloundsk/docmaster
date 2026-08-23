@@ -161,6 +161,84 @@ ils s'emploient dans un cadre, avec un entretien et une interprétation.
 Tout parcours touchant à la santé porte les coordonnées d'aide réelles : médecin
 traitant, médecin du travail, et le **3114**.
 
+### Les podcasts
+
+Un épisode par parcours, une dizaine de minutes. La chaîne va du texte au flux
+RSS en trois commandes, chacune faisant une seule chose :
+
+| Commande | De | Vers |
+|---|---|---|
+| `python scripts/generer-voix.py <sujet>` | `podcasts/<sujet>.md` | `podcasts/brut/<sujet>.wav` |
+| `node scripts/preparer-audio.js` | `podcasts/brut/*.wav` | `assets/audio/<sujet>.mp3` |
+| `node scripts/publier-podcasts.js` | les deux | `podcasts.html`, `podcast.xml` |
+
+**L'en-tête et le texte vivent dans le même fichier.** Un épisode est une
+unité ; séparer son titre de son texte créerait deux endroits à tenir d'accord.
+
+**L'unité de génération est le paragraphe.** Le premier jet découpait à la
+phrase, pour empêcher la voix de dériver sur huit minutes. Il empêchait la
+dérive et produisait pire : chaque phrase repartait à zéro — même hauteur, même
+attaque — séparée de la suivante par un blanc mécanique. À l'écoute, on
+entendait le montage, et personne ne tient neuf minutes là-dessus.
+
+La preuve était pourtant disponible : le seul extrait validé à l'oreille avait
+été généré **d'un seul tenant**. Le découpage était le défaut, pas le modèle.
+
+Un paragraphe fait deux à cinq phrases : assez long pour que le modèle enchaîne
+et fasse varier son intonation d'une phrase à l'autre, assez court pour ne pas
+dériver. **C'est l'unité de sens, c'est donc l'unité de génération.** Chaque
+segment reçoit un fondu de 15 ms — sans lui, la coupure nette du modèle laisse
+un clic à chaque raccord.
+
+**Ce qu'aucun traitement ne rattrape.** Un filtre déplace des fréquences ; il
+n'invente pas une montée de voix sur une question. L'expressivité se joue à la
+génération, et son plafond est fixé par l'enregistrement de référence : une
+référence lue à plat donne un clone à plat, quel que soit le réglage.
+
+**La graine est fixe.** Deux exécutions sur le même texte donnent le même
+résultat ; sans cela, corriger une phrase changerait aussi toutes les autres.
+
+**Le niveau sonore est le même partout** : -16 LUFS, en deux passes. Un auditeur
+qui enchaîne deux épisodes et doit toucher au volume entend le défaut
+immédiatement. C'est pour ça que ces réglages sont dans un script et non dans
+une commande à retaper quatorze fois.
+
+La masterisation ajoute un coupe-bas à 80 Hz, une compression douce — c'est
+elle qui donne l'impression que la voix est *proche*, comme quelqu'un assis en
+face — et une présence à 3 kHz, la bande de l'intelligibilité. Pas de
+débruitage : il durcit les consonnes, et sur un enregistrement aux silences
+déjà vides il ne gagne rien.
+
+**Le MP3 est encodé à 96 kb/s, et ce chiffre est le fruit d'une mesure.** À
+64 kb/s l'encodeur ajoutait 2 dB de dépassement de crête : le WAV sortait à
+-2,4 dBTP et le MP3 à -0,4, c'est-à-dire au bord de la saturation. Deux
+tentatives de correction — baisser le rattrapage du compresseur, ajouter un
+limiteur — ont *empiré* la mesure avant que la comparaison avant/après
+encodage ne désigne le vrai coupable. Le poids passe de 4,4 à 6,6 Mo par
+épisode : le prix de ne pas saturer.
+
+**Le flux ne contient que les épisodes dont l'audio existe.** Une pièce jointe
+annoncée mais absente fait afficher une erreur dans l'application de
+l'auditeur, loin du site — le pire endroit pour se tromper. Le texte, lui,
+paraît dès qu'il est écrit et sert de transcription.
+
+**La durée annoncée est lue dans le fichier** dès qu'il existe. L'estimation
+par le nombre de mots ne sert que tant qu'il n'y en a pas, et le mot
+« environ » le dit.
+
+#### Ce qui ne doit jamais entrer dans le dépôt
+
+`podcasts/brut/` est ignoré par git, et ce n'est pas qu'une question de poids.
+Il contient **la voix de l'auteur** : l'enregistrement source et l'extrait de
+référence qui sert au clonage. Le dépôt est public et le site publié sous
+pseudonyme — une voix est une donnée qui identifie. Seul le MP3 produit est
+versionné.
+
+L'audio généré porte un **filigrane inaudible** (Perth, inclus dans
+Chatterbox), qui l'identifie comme synthétique. Il n'est pas désactivé : sur un
+site dont l'argument est l'honnêteté, publier une voix synthétique sans
+marqueur serait contradictoire.
+
 ### Ce qui compte les sujets
 
 Un nombre écrit en toutes lettres dans une page est une donnée dupliquée. Trois

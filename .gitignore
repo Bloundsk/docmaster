@@ -13,8 +13,18 @@ desktop.ini
 node_modules/
 *.log
 
-# Enregistrements bruts des podcasts. Ce sont des WAV : un episode de huit
-# minutes pese 40 Mo brut contre 4 Mo une fois encode. Seul le MP3 produit,
-# dans assets/audio/, est versionne — c'est lui que le site sert.
-# Le brut se garde ailleurs : le regenerer demanderait de reenregistrer.
+# Les podcasts, avant encodage.
+#
+#   brut/  les episodes generes, en WAV. Huit minutes pesent 40 Mo bruts
+#          contre 4 une fois encodes ; seul le MP3 de assets/audio/ est
+#          versionne, c est lui que le site sert.
+#   voix/  la VOIX DE L AUTEUR : enregistrement source et extrait de
+#          reference. Le depot est public et le site publie sous pseudonyme —
+#          une voix identifie son proprietaire. Elle ne doit jamais y entrer.
 podcasts/brut/
+podcasts/voix/
+
+# Cache de compilation Python, produit par py_compile. Machine-dependant,
+# regenere a la volee, et sans interet pour qui relit le depot.
+__pycache__/
+*.pyc
