@@ -1,5 +1,101 @@
 # Changelog — Clicked
 
+## 2026-08-23 — Les podcasts, et ce que l'automatisation laissait passer
+
+### Une chaîne de podcasts, mise en pause avant l'audio
+
+Un épisode par parcours, texte écrit pour l'oreille, voix synthétisée à partir
+d'un enregistrement de l'auteur. Trois commandes, du texte au flux RSS.
+
+**Rien de sa voix n'entre dans le dépôt** : ni l'enregistrement source, ni
+l'extrait de référence, ni l'épisode produit. Le dépôt est public et le site
+pseudonyme — une voix identifie son propriétaire. Seul le MP3 servi par le site
+serait versionné, le jour où il y en aura un.
+
+Ludo a suspendu le chantier avant publication. La page annonce donc que l'audio
+n'est pas encore enregistré, ce qui est exact du point de vue du site.
+
+#### Quatre erreurs, dont une de méthode
+
+| Symptôme | Cause réelle | Comment elle a été trouvée |
+|---|---|---|
+| Ça se coupe à chaque phrase | Génération phrase par phrase | À l'oreille |
+| Craquements permanents | 171 échantillons écrêtés à l'écriture 16 bits | `Abs Peak count` du fichier brut |
+| Bruits parasites | Température d'échantillonnage trop haute | Trois versions, une variable à la fois |
+| — | **Une correction inventée** | La mesure, après coup |
+
+Le découpage par phrase visait à empêcher la voix de dériver sur huit minutes.
+Il l'empêchait, et produisait pire : chaque phrase repartait à zéro, séparée de
+la suivante par un blanc mécanique. **La preuve était disponible depuis le
+début** — le seul extrait validé à l'oreille avait été généré d'un seul tenant.
+
+L'écrêtage était invisible dans les mesures du MP3 final, où la masterisation
+avait déjà tout ramené sous zéro. **Je regardais la fin de la chaîne au lieu de
+son début.** Baisser le volume d'un son saturé ne le désature pas.
+
+Et l'erreur de méthode, la plus coûteuse : avoir lu `long_tail=True` dans le
+journal du modèle, conclu qu'il décrochait sur les segments longs, et plafonné
+à 250 caractères **avant de vérifier**. Mesure ensuite : 42 décrochages pour
+42 segments — c'est son mécanisme normal de fin de texte. Trente-huit minutes
+de calcul pour un non-problème. Ce qui a tranché, ce sont trois versions du
+même passage en quatre-vingt-dix secondes.
+
+### Le hors-sujet : 62 % des articles publiés
+
+L'automatisation des actualités, mise en place la veille, a produit son premier
+vrai dégât. Sur les 24 articles en ligne, **15 n'avaient rien à voir avec la
+section à laquelle ils étaient rattachés** — une réunion de comité local
+vietnamien sous « Apprendre à apprendre », un calculateur d'itinéraire vélo
+sous « L'accessibilité », une recommandation d'achat d'action sous « Les unit
+economics », sur un site qui promet de ne donner aucun conseil.
+
+Le filtre existant traquait la publicité. Il ne voyait pas ça.
+
+La cause est toujours la même — un mot de la recherche apparaît dans le titre,
+**dans un autre sens** :
+
+| Le titre disait | La section parlait de |
+|---|---|
+| diversification **économique** d'un pays | diversification d'un **portefeuille** |
+| les **jetons** d'IA *(revenus)* | le contexte et les **jetons** du modèle |
+| l'Agefiph **finance** ses dossiers | choisir son enveloppe *(guide Finance)* |
+
+**Deux mots communs au minimum**, sur formes réduites — accents retirés,
+pluriels ramenés au singulier. Un seul mot commun est une coïncidence.
+
+**Ce que ça coûte, mesuré et assumé** : 5 gardés sur 24. Parmi les refusés,
+plusieurs méritaient de rester — l'article sur le prompt engineering sous la
+section « Le prompt engineering ». La précision est excellente, le rappel est
+faible. Pour une publication automatique sans relecture, c'est le bon échange :
+mieux vaut cinq articles justes que vingt-quatre mélangés, et la veille
+interroge 169 sections deux fois par jour.
+
+### Deux pannes du workflow, la seconde causée par le remède de la première
+
+Le workflow poussait **sans jamais récupérer**. Une poussée faite à la main
+s'est glissée entre son checkout et son push : la publication a échoué, et
+l'article qu'on venait de retirer serait resté en ligne sans que rien ne
+prévienne. Le garde-fou `concurrency` ne protège que contre deux exécutions du
+même workflow ; il ne sait rien d'un humain.
+
+Le remède — récupérer avant de pousser — a créé la panne suivante : la
+récupération arrivait **après** la construction, donc le commit portait des
+fichiers générés sur une base périmée, et deux exécutions entraient en conflit.
+
+**Un fichier entièrement généré ne se fusionne pas : il se régénère.** L'ordre
+est désormais : se remettre à jour, construire sur cette base, pousser. Trois
+essais, puis échec explicite.
+
+### Ce qui a servi, et ce qui a fait perdre du temps
+
+Ce qui a servi : mesurer avant de coder, une variable à la fois, et lire ce que
+l'outil dit plutôt que les seuls indicateurs qu'on s'est choisis. Le compte
+d'échantillons écrêtés et le journal du modèle disaient tous deux la vérité
+avant qu'on les regarde.
+
+Ce qui a fait perdre du temps : trois corrections appliquées sur des hypothèses
+non vérifiées. Deux tenaient, une était une invention.
+
 ## 2026-08-22 — Les actualités se publient toutes seules
 
 Ludo ne veut plus avoir à cocher pour qu'un article paraisse.
