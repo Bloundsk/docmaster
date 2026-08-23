@@ -212,7 +212,11 @@ function filtrer(articles) {
     const limite = Date.now() - AGE_MAX_JOURS * 86400000;
     const ecartes = [];
 
-    const retenus = articles.filter((a) => {
+    /* Le libelle de section est rafraichi AVANT de juger la pertinence, et non
+       apres. Le filtre compare le titre de l article aux mots de sa section :
+       le faire sur une copie perimee reviendrait a juger un article sur un
+       intitule qui n existe plus. */
+    const retenus = articles.map((a) => ({ ...a, section: libelleActuel(a) })).filter((a) => {
         const reference = Date.parse(a.date || a.publie);
         if (!isNaN(reference) && reference < limite) {
             // L age en jours, et pas seulement « trop vieux » : c est lui qui
@@ -232,7 +236,7 @@ function filtrer(articles) {
             return false;
         }
         return true;
-    }).map((a) => ({ ...a, section: libelleActuel(a) }));
+    });
 
     if (ecartes.length) {
         console.warn(`${ecartes.length} article(s) écarté(s) avant publication :`);

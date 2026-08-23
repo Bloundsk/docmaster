@@ -96,6 +96,76 @@ function crie(titre) {
     return majuscules / lettres.length > 0.5;
 }
 
+/* --------------------------------------------------------------------------
+   LA PERTINENCE
+
+   Le filtre precedent traquait la PUBLICITE. Il ne voyait pas le hors-sujet,
+   qui s est revele bien plus frequent : le 23 aout, 15 des 24 articles en
+   ligne n avaient rien a voir avec la section a laquelle ils etaient
+   rattaches. 62 %.
+
+   La cause est toujours la meme — un mot de la recherche apparait dans le
+   titre, mais dans un AUTRE SENS :
+
+     « La diversification ECONOMIQUE d un pays »  sous « la diversification
+                                                  d un PORTEFEUILLE »
+     « les JETONS d IA » au sens de revenus       sous « le contexte et les
+                                                  JETONS » du modele
+     « l Agefiph FINANCE ses dossiers »           sous « choisir son
+                                                  enveloppe », guide Finance
+     « BJ s (BJRI): Buy, Sell, or Hold »          sous « les unit economics »
+
+   La regle : DEUX mots significatifs de la recherche, au moins, doivent
+   figurer dans le titre. Un seul mot commun est une coincidence ; deux le sont
+   rarement.
+
+   Ce filtre est volontairement severe et il ecarte de bons articles — mesure
+   sur les donnees reelles, il en refuse quelques-uns qui meritaient de rester.
+   C est un echange accepte : la veille interroge 169 sections deux fois par
+   jour, le vivier est large, et un article manquant coute moins cher qu un
+   article absurde sous un guide.
+   -------------------------------------------------------------------------- */
+
+// « Épargne » et « epargne », « ETF » et « etf », « jetons » et « jeton » :
+// c est le meme mot. On compare des formes reduites.
+function reduire(mot) {
+    return mot
+        .toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")   // accents
+        .replace(/[^a-z0-9]/g, "")
+        .replace(/(aux|eaux)$/, "al")                        // journaux -> journal
+        .replace(/s$/, "");                                  // pluriel simple
+}
+
+const MOTS_IGNORES = new Set([
+    "le", "la", "les", "un", "une", "des", "du", "de", "et", "ou", "a", "au",
+    "aux", "en", "dan", "sur", "pour", "par", "avec", "san", "que", "qui",
+    "quoi", "quel", "quelle", "est", "ce", "cette", "ce", "son", "se", "sa",
+    "leur", "plu", "son", "ver", "chez", "entre",
+].map(reduire));
+
+// Les mots d une recherche ou d un intitule, reduits et debarrasses des mots
+// vides. Le Set evite qu un mot repete compte deux fois.
+function motsUtiles(texte) {
+    return new Set(
+        String(texte)
+            .split(/[\s'’,:;.!?()«»"\/–—-]+/)
+            .map(reduire)
+            .filter((m) => m.length > 2 && !MOTS_IGNORES.has(m))
+    );
+}
+
+const MINIMUM_MOTS_COMMUNS = 2;
+
+/* Combien de mots la recherche et le titre ont-ils reellement en commun.
+   Exporte pour que la mesure soit possible ailleurs : une regle qu on ne peut
+   pas eprouver sur des donnees reelles ne vaut pas mieux qu une intuition. */
+function motsCommuns(titre, recherche) {
+    const cherches = motsUtiles(recherche);
+    const dansLeTitre = motsUtiles(titre);
+    return [...cherches].filter((m) => dansLeTitre.has(m));
+}
+
 function assezRecent(iso) {
     if (!iso) return true;          // sans date, on ne peut pas ecarter
     const t = Date.parse(iso);
@@ -107,8 +177,13 @@ function assezRecent(iso) {
    La raison est toujours dite : ce qu un script ecarte, il doit le dire.
    Sans cela, un article disparaitrait du rapport sans que personne sache
    pourquoi — et la regle passerait pour un bug. */
-function admissible(article) {
+/* Verdict sur un article, « recherche » etant les mots qui l ont fait remonter.
+   Quand elle n est pas connue — la publication ne dispose que de la section et
+   du sujet — on la reconstitue a partir de ceux-la : ce sont exactement les
+   mots dont la veille avait forme sa requete. */
+function admissible(article, recherche) {
     const titre = article.titre || "";
+    const requete = recherche || `${article.sujet || ""} ${article.section || ""}`;
 
     if (!assezRecent(article.date)) {
         return { ok: false, raison: `plus de ${AGE_MAX_JOURS} jours` };
@@ -123,7 +198,18 @@ function admissible(article) {
     for (const { motif, quoi } of TOURNURES_PROMOTIONNELLES) {
         if (motif.test(titre)) return { ok: false, raison: quoi };
     }
+
+    // La pertinence en dernier : c est la regle la plus severe, autant qu elle
+    // s applique a ce qui a passe tout le reste. La raison nomme les mots
+    // trouves, sans quoi un refus serait indiscutable faute d etre lisible.
+    const communs = motsCommuns(titre, requete);
+    if (communs.length < MINIMUM_MOTS_COMMUNS) {
+        const vus = communs.length ? ` (seul « ${communs[0]} » en commun)` : " (aucun mot en commun)";
+        return { ok: false, raison: `hors sujet${vus}` };
+    }
+
     return { ok: true };
 }
 
-module.exports = { AGE_MAX_JOURS, assezRecent, admissible, TOURNURES_PROMOTIONNELLES, SOURCES_ECARTEES };
+module.exports = { AGE_MAX_JOURS, assezRecent, admissible, motsCommuns,
+                   MINIMUM_MOTS_COMMUNS, TOURNURES_PROMOTIONNELLES, SOURCES_ECARTEES };

@@ -1,18 +1,6 @@
 {
-  "maj": "2026-08-23T22:31:57.698Z",
+  "maj": "2026-08-23T22:45:09.379Z",
   "articles": [
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxObjJpSXpjUGQtZUt0VUt3RENZQzF5dW9oQlRmWW1CVmlubEt5dFJjSmtyZ1ExS09JZG5RWnhIVk1BV1o1ampSTGVuT3psSWxoa09pUDV5RXRDSU9qLWpIanQ2TVp4UlloVWJLQUNxYVVYNGNtVE9QSXRQMnUwdjRFY0pRSkQwcWZiNG5Rb3hxSTJkbDdjTEV5Tm1ibnR2N1RNbVl1a3ZYTE1wV3VRT0tlZHphOWFPRXJSLXN0ZGJGNjJ2UzhjdUZxRHN5V3NDMVdUZHVib0hocTA3LWhmSk1Fb1RHLUlFSWVmRng5MDluVnM?oc=5",
-      "titre": "IA : la fin programmée des prompts, vraiment ?",
-      "source": "Atlantico.fr",
-      "date": "2026-08-23",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "le-prompt-engineering",
-      "section": "✍️ Le prompt engineering",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-08-23"
-    },
     {
       "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWngzVkgxTWZzX1VJem0yRGZmQkJqN05IOC1KVW5VYk54YTJaeWdoTGRIU1czME9vUk9FNzd4VmNVTFNJTUVtVno3RVZTXzlVSVVRQUlwcTVNMWVrMGRqaVFZV0xJZHBJSmQ1T21UNHpsd29NSnQzOXhHSkdaaXlQclJkdlNlZDNIR3NxR2NVUFM?oc=5",
       "titre": "Stress au travail : le coût caché que paie notre santé",
@@ -24,54 +12,6 @@
       "section": "🏥 La médecine du travail",
       "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPMVBLR2xKOGNiS282Vy1kNnJldjVlX3hZM1M3LVJkMXRGc1pvM2VGTEFUSFk3eEVta3NTNW9WNDlNZGlOQVVMMVI4UlRrTmZIZW5FSEdJUTY5cjQ5ZGtjVWYxdk5aZ2UtanY0aElPNkZaVnVCOHNaSV9VeDZuZHJpZlZLendtM0cyMUtyWk8tdUh1aE9OTTdNbDJlTDhhSGdZaHY3NWFWZTdWMENWLVY5REFkQUhEZlhqWGQ5dTBIOXBjQUh6ZGREdUtzZkNSMmFaTi02MFJyUXo2MVFDUlhFVjBnejNmV0I0b0tucA?oc=5",
-      "titre": "L'IA devient le premier client de l'IA : l'usage de tokens par des agents autonomes est multiplié par 14 sur OpenRouter",
-      "source": "lefilia.fr",
-      "date": "2026-08-23",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Les agents IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWDVyVU8wU2xNTWt0YldrOWV3SHQ4N2NkVGNvZGRhUm9vTGE0dDltSnczRG1XeXNTeXI0c1hBZmw3eEozZjlkMHVZRXlFTnNFXzkzTGdjMVlZdEVGY1VtQU01WDltWGxlc1ViMVhreEFfUV9FS3NEN0NWaXk1Unk3ekdkNTBLT2FxejlGRExvaUYtSHRmQUx1NGpYcFpKNnJhMTRHcmYxNnJpY0ljSnh4R01wZk95TlVwYTlGQ1BULWl2eklNQzAtOGNwYWtweEVHWV9nV1FpRzF2NkNoUUE?oc=5",
-      "titre": "“Finfluenceurs” sur Instagram ou TikTok : le business florissant des nouveaux coachs en épargne",
-      "source": "Telerama",
-      "date": "2026-08-23",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTXFtOEtkcERkaHlLMjN3Z0tnV1AycDgtbTUwQkdpbVlYMk1MTGNtUG9xNUkwS0twSEUxMzllbVhTZE95OWdETUtJaGR0c2lndkg4RDF1MVg4ajYzT19QYllXdnlVaGhWM1FvSklHVjFucGhSbHhPTXlxT09WLU1rZ2tpUXMwY3ZxaHEwT2F1VVN5WDAzSUFqbw?oc=5",
-      "titre": "Comment se porte l’entrepreneuriat chez les jeunes à Bruxelles ?",
-      "source": "BX1",
-      "date": "2026-08-22",
-      "guide": "entrepreneuriat",
-      "page": "debutant.html",
-      "ancre": "le-financement",
-      "section": "💵 Le financement",
-      "sujet": "🚀 Entrepreneuriat — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZ3p1Rk5aMUlCQlhEak51a0ZaM3hhaHkwN2F6SUxXMElKQjJ3Z2ZsLWl0NHJNLXA2OFZkZHpGc3B6Mi14YlRIajdrUjlwMkgxWGExbFlyY0dKYXROdy1ISjFHemxkcVRmUF9hdzU0NEtGMF91SFJtYjRBaTJQZkRFb1hJYllWbk1yNU1EUmhqaElHZngzRkRNYWJwTW9sMmVpV3JWWVhNeVo3bTV5dnE2OEY0dw?oc=5",
-      "titre": "Snowflake optimise les coûts de l’IA grâce au routage dynamique des modèles",
-      "source": "Global Security Mag Online",
-      "date": "2026-08-21",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "choisir-un-modele",
-      "section": "⚖️ Choisir un modèle",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "publie": "2026-08-22"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObUQ5aUs3d2hzSEx3WmFyNUJfQVRDdTkxZXQ5Z1ZEWkdfZ1FjUWxtalEyVUxEeTFCZTJ0S1Y4cTNybXQ3eVRzTTQyck1Wa01jc2RVaVJLcFN5ZW4zbGkzVjByc3ViUWJRTEk2MEVmMlNscGdCdnktV0FEdFAzQzdqZ1M0WXhKeFN1dllkRm9fUU9Sa240aExZQm1KWi00ZjdrMVFMcUkzS3RUQQ?oc=5",
@@ -98,78 +38,6 @@
       "publie": "2026-08-22"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQSEgtT1NqSGUtWjNvT3QzM0EwM1ZXS0swekNRZlBEajZ0d0d6bVdjbWtlWi1tNG1KWFh4WkZqeVl1Unp6aE9lWlptZTB3b3R5V29sZGpyMF9uckc4aTdCbnZIeG81NkpvMDhVbHZZZ3J4TGFKY08tUFlDVkRWWk5SZm1ENm5oekVHVEJ5V19BeXk4ZmtsLVlSemJR?oc=5",
-      "titre": "Aucune IA ne restitue les données utilisées pour l'entraînement",
-      "source": "Brief IA",
-      "date": "2026-08-21",
-      "guide": "ia",
-      "page": "avance.html",
-      "ancre": "entrainer-ou-recuperer",
-      "section": "⚙️ Entraîner ou récupérer",
-      "sujet": "🤖 Intelligence Artificielle — Avancé",
-      "publie": "2026-08-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOczJuN2pveHNZcEUtOUt3WWN3NzNDWmNkSVJ4dDlsSTdCNFpHSHdURnlyMzBwYkJzd2x3YVAwU1FrWGotOFBlaVBrdG5LTVZyLVY3Ym1kOTlMUEgySi1mMU1lRHphNE14TlRkdkxhbER3Mk1SSXE4b2ZILTM2ejZ4bjBRQ3psaEVDSDNhYU4tVQ?oc=5",
-      "titre": "MRCC3 : messages clés à aborder avec vos clients",
-      "source": "Finance et Investissement",
-      "date": "2026-08-21",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "linvestissement",
-      "section": "📈 L'investissement",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPM2l3TXlJbFhXd0NRSkFSU0Zvd3AzUk1CTkFRNWZ3eHM2NlBidC1pQmpqRGd5SkVqWWszcFpmQ3VjX1pGMlJxUlNSMmY0X1dIU2VzWUlLOTVXb3hLNmFVY0NJTm9LV0ZTVWVwczlGVG1VR29TaTFmQlFibWhZN2NkNkRNMmNNRkthVVlmOUo0UzZwLVRMaGZIenBLNzlXc0tZZlNnZFZ1TQ?oc=5",
-      "titre": "La Gen Z continue de dépenser malgré les contraintes financières",
-      "source": "Finance et Investissement",
-      "date": "2026-08-21",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQYmNVMU5JNGNoeUZfTUNVMTYzR1djS3NTalhnXzhnYU9pbTVFcVktM3hCSHhiNFdIQ0NSUHhCN1NoQy12aUptY3plYTVUQWtTdjlIeGRpdTBtbzZVMlU0V2FvLWM1S1Z6YkpBcDBDajB6LU1LYlJ1N3JIX3NkOGR5dngxSXI2Y3otZk1mLVFXcURQOUxZQTliNjFLaXZtX2JYV2JpejJobW9XNnRlQlFZcTZHeGhtSHRKd3lZY24tbWtJTXBtMnc?oc=5",
-      "titre": "Loi de Finances 2027 : ce que la nouvelle circulaire dit de la nouvelle bataille budgétaire au Tchad",
-      "source": "Alwihda Info",
-      "date": "2026-08-21",
-      "guide": "finance",
-      "page": "intermediaire.html",
-      "ancre": "choisir-son-enveloppe",
-      "section": "🏦 Choisir son enveloppe",
-      "sujet": "💰 Finance — Intermédiaire",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNSU1WVndaUVZtcGtUU0NIcUNXbkRZSlhCT0hDU0o0YWMyYTJ0ZVoxRUxQbUhvVk5vSlphb0I5RFFNeWpuUTZNa1BBNzhfcXdKanhiUjFjT0RJS0l3aTBHZFMySGRLdEdsbkVvLTRKVm9XNDlyeWZRelFOX1g5aTJ0bFh5Q093djE2WjNHTFd4VVJKYlBhalU2NWxxcUhLRmJ0enFzeWVrUkd1RnJvY0FjZXNRaEFuOTdCdFRoVVRNQk9TUjRRTXEwNWEtQVpwUnFxWTdyZVNfYnpPR2dWa3pjb3hB?oc=5",
-      "titre": "Justice : Il cache des instructions pour ChatGPT afin d'orienter le jugement du tribunal lors de son procès",
-      "source": "JeuxVideo.com",
-      "date": "2026-08-21",
-      "guide": "ia",
-      "page": "avance.html",
-      "ancre": "injection-de-consigne",
-      "section": "🛡️ L'injection de consigne",
-      "sujet": "🤖 Intelligence Artificielle — Avancé",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUmpZbzR6UG5lLWM4Vi05QkZzRmVYU2tJOEV2Y2I0YnNSRWN1LURJSURkZ05KVUdOa1JOQVl2LVVwSUJEU3BBQVpObU5xam5xNEtodTlhVTRPVTROOW1nLWVjNXZ6SHZFTHVUQ0JvT3h6ZDkzNFBCV3g3OFlBY1EzWXZVQUxxTUc0cGRSUHBGLVl6b0ZkMENyQmhQd181SzBX?oc=5",
-      "titre": "Tunisie: Programme d’accompagnement dédié aux entrepreneurs de la diaspora",
-      "source": "Espacemanager",
-      "date": "2026-08-21",
-      "guide": "entrepreneuriat",
-      "page": "intermediaire.html",
-      "ancre": "premiers-clients",
-      "section": "📈 Trouver ses premiers clients",
-      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
-      "publie": "2026-08-23"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQOUxPMnJMTE5MZHFmYWpSc2xQYXh2TnllbktEVm9sLVY1TkhoWnRYVFJJX1lmSk9QNElURHFyODhYcGdxTlhSTlBMeW1uX0x1SUlyeUpMbjZ3MzBxc1FnSkg1WkxsblFMMnJibF9qZkJkclhXTDZnZ0N1YzFtUkxpWVBpNjlRbTN2Y1d4Nm9CNUFnRlhlM0RpV0RsTE8xb0kxZC1tN3RkazJFTFNmYzliSW1SeFQwWnl0QVVIRmN0aF9xWTNYZnRhQUNrSWVhX0s4cnpkbVVrbzRxR0QxcWE4?oc=5",
       "titre": "Piratage du fisc : le gouvernement veut accélèrer la double authentification et lance un plan cyber avec « bug bounty »",
       "source": "epochtimes.fr",
@@ -179,102 +47,6 @@
       "ancre": "double-authentification",
       "section": "📱 La double authentification",
       "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdlZaWnlJWlEtZk4yN0UzdGNiTDJHOWRyRVlROGRZUXo3LS0tQTdmcXJpYnN1U1QwUWFOYlhocDA2R2l0NlZTc3pfTUdlWmhnLU9PU2E5SUN3dlpseTI2Wk1ZT01uWEN5QW5CWm5wQk1uR1JGVW1URTdLUDc1UWRZNzVKVjJzbmJNV2ZSeExrUG9kSXJXMmh0NmxnVjQxQQ?oc=5",
-      "titre": "llm-openrouter 0.7 ajoute trois outils et prend LLM 0.32 en charge",
-      "source": "Brief IA",
-      "date": "2026-08-21",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "quest-ce-quun-llm",
-      "section": "🧠 Qu'est-ce qu'un LLM ?",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOSVEtX0hYMFNGNTVMNVFzRzNjLW55blAzMDg1MThKaE4xMnpNUGlyVEFSMjdiNEQ5cjA1NUJ4OEdYVy1GZmQydDVTOVI4eW10dm5fRkl2NVNvNFZkdXBxM0ZRNHdsMnRoZzRnUWhJTWk5WWQ5QkpaczFESHdnMVZNQk5GOGxEMHdzLVpyQ0JLaFh3bTk2dFNOX3JmZkNhVFg4OWc?oc=5",
-      "titre": "Agent IA en entreprise : quelles clauses et quelles précautions face au risque de concurrence",
-      "source": "Kohen Avocats",
-      "date": "2026-08-21",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Les agents IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOd2FaSlBVbTl1VDBXVUY2bzlVSmNFaUFWQmctZERXU0FnZ3RHVmltdDBLenhKWHVxRzNCOFFwN3EzRnZPN2J2Mk0zY3J0aUtfV01jbVFOX0RwMkJ4MkcxY2xnTW5vYV9FcG5ZWU8wYTZ1OXRKZGtDNXliT0xJSTBKRXdPZ0Rsci12eEM2UGN5R3M0QzVrZzBWTjVWYkJVSTlzTUFzVXNIOHhpVU9oeWw4UU1BTzFrcHZtdUE4ZkZfOHh1SXhudlNGdGJZdzk1Zw?oc=5",
-      "titre": "Apprentissage des langues : ce que la recherche scientifique valide vraiment",
-      "source": "journaldunet.com",
-      "date": "2026-08-21",
-      "guide": "apprendre",
-      "page": "avance.html",
-      "ancre": "evaluer-une-methode",
-      "section": "🔬 Évaluer une méthode",
-      "sujet": "🎓 Apprendre à apprendre — Avancé",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQUnVrU09hYmNZeU9CQ0tqTmFaeldvWkVMWFNoRDFtTDV0VTJEUFAydzEyNUlsVGljb0dkN2tLNHBER3ZzTDNmaE5LS0JYWEo4RVVJZkt2SGVBYkZCRmd1R0FCMzdTZEN3UEhhOThOUnJ2SnlKZkRURE5rVmtzbGhTNVhHRjRlbGlMSnVIUkM1R0F2Vi01dTJVMkc4QXdtcDTSAaQBQVVfeXFMUHEwdHY3UEJZVl8yOVRDRm9WMXZQWkwwQ0ZSZ2QzNzZNV182amNwSi1lR2JQSnlGbndoUjluWWk2Umpka3BVMzN4Rk1BRlMxYkpUNmljYkVEYnNTb1dROVduc2FFQU9nQkxRRjlxcmxpNTFtTFJQc2t3aThmck9tTVBPS1RWbW04Wk9lTGZZQk80Z0k1Q2hKT3djX3lZbFZiV1d4REY?oc=5",
-      "titre": "L’ARNm : des vaccins Covid à la nouvelle ère de l’oncologie",
-      "source": "Il Mattino",
-      "date": "2026-08-21",
-      "guide": "apprendre",
-      "page": "avance.html",
-      "ancre": "construire-son-systeme",
-      "section": "📐 Construire son système",
-      "sujet": "🎓 Apprendre à apprendre — Avancé",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPTG93ZGxtYks5RUY2bnF5Z2RDWmsyR1FfbjZXTlFabnh3SzVLOUlBWGhISGNFS3ZfcVd4WTdPamRleFR3VmdRRlNjbDIxNkw3c3g4MF9FMGtoODNzSTFqZThCeTdWYnNvSy1zRERrTkp4Vjlud0RtOE9fYmJ0S0NhY0FKM2FsY21HTDRULUphaF9MN0J1WTZrUG9qckNrOHN6SDZjQjc5V2xTVUVDT1BtM2ZFRFVqbDQ?oc=5",
-      "titre": "ETF et PEA : du nouveau à venir à la rentrée ?",
-      "source": "Option Finance",
-      "date": "2026-08-20",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "les-etf",
-      "section": "📦 Les ETF",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWjl0TXFPakRLMl9NckdQVV9lYjZHS1pHYngzYWVuNHJpLXI5TVo5aUZFd1hJN2xVcGEyb0NUaDZzakw1ekotSzF6alNjUzlJMHdvTDZ3WTFFUmJPYml1bHBYVVpEZkxQajRxMWEyS2hXSEQ2dmhJdmh5d0xBeDdIR2UxZGpZZzBPX1d0Z2FqRUNjV3hvWGxzb1JyVlRpMlVNdi1iV1Jn?oc=5",
-      "titre": "Quand un agent autonome oublie ses règles, quels garde-fous mettre en place ?",
-      "source": "Atlantico.fr",
-      "date": "2026-08-20",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Les agents IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOOC1tdF9UQ2hjZk54RjNxMl9jX3JLSlAzT19yZGtnVXExZklTUVRrNURFRHZmY29PLWlKYmNjMnBNbXF5cF8tUHJGb3NvX0gyZ2pJT1FvRWI5SHBlM0JfVkpHeGFOZFJBcWFLangzSnVSd3hGMU50ZmlMQmZQR3A2MlNidjVUSXhYb2JobzJRRkR0aU9ZYWU5eW9taUVDNDFRdXRXbjd4U0ZKRTB1Y0E?oc=5",
-      "titre": "Télétravail : découvrez ses effets surprenants sur votre santé selon une étude",
-      "source": "Santé Magazine",
-      "date": "2026-08-20",
-      "guide": "sante",
-      "page": "debutant.html",
-      "ancre": "la-sedentarite",
-      "section": "🚶 La sédentarité",
-      "sujet": "🩺 Santé au travail — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTU9pclc5ZnJKdXRfNE0yMjFodXhTV2RON3JFNUFvLWRzU0h6N3FJUFYwRFpLYnYwYnc5Rk51N20wUE9LYTdGMlNMMXBYWlhwSVMzQlNZRUhxUm1IWjJ2TXEzdG44Nm1hNW1DSWRLcmZiWWdsTU1yNUk0Q2NIWGl2SDdrTjBEcndOZjlGRTFfcTNERTJwRTJMZnBuZU1lSWV6MEJTMks1cDlrYmV0dTVUTzZGaEFhMk0wd3ZaQXZ2dW9fZHIza1g3eTYtQWtjdFpZUGRyYVhwSzE?oc=5",
-      "titre": "Dijon. Réparer et entretenir son ordinateur, comprendre la cybersécurité, deux ateliers gratuits à venir",
-      "source": "Le Bien Public",
-      "date": "2026-08-20",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "le-phishing",
-      "section": "🎣 Le phishing",
-      "sujet": "🔒 Cybersécurité — Débutant",
       "publie": "2026-08-23"
     },
     {

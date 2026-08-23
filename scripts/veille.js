@@ -282,7 +282,7 @@ async function construireRapport(guides, dejaProposes) {
                 const retenus = [];
                 for (const a of articles) {
                     if (dejaProposes.has(a.lien) || retenusCePassage.has(a.lien)) continue;
-                    const verdict = admissible(a);
+                    const verdict = admissible(a, s.requete);
                     if (!verdict.ok) {
                         // Ce qu un script ecarte, il doit le dire. Depuis que la
                         // publication est automatique, ces lignes sont le seul

@@ -36,10 +36,13 @@ for (const f of ["publier-actualites.js", "actualites-regles.js"]) {
 const PAGES = ["actualites.html", "index.html", "en/actualites.html", "en/index.html"];
 for (const p of PAGES) fs.copyFileSync(path.join(RACINE, p), path.join(BAC, p));
 
+/* Les titres partagent VRAIMENT deux mots avec leur section : depuis l ajout du
+   filtre de pertinence, un titre factice sans rapport est refuse — et c est le
+   filtre qui a raison. Des donnees d essai irrealistes ne testent rien. */
 const METAS = {
-    "https://news.google.com/a": { titre: "86 % des PME ont subi un incident", source: "itdaily.fr", date: "2026-08-12", guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing", section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" },
-    "https://news.google.com/b": { titre: "Les taux & l'épargne <en 2026>", source: "Le Monde", date: "2026-08-13", guide: "finance", page: "debutant.html", ancre: "lépargne", section: "L'épargne", sujet: "💰 Finance — Débutant" },
-    "https://news.google.com/c": { titre: "Un article qu'on ne veut pas", source: "spam.example", date: "2026-08-11", guide: "ia", page: "debutant.html", ancre: "les-llm", section: "Les LLM", sujet: "🤖 IA — Débutant" }
+    "https://news.google.com/a": { titre: "Phishing : la cybersécurité des PME en question", source: "itdaily.fr", date: "2026-08-12", guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing", section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" },
+    "https://news.google.com/b": { titre: "Épargne & finance : les taux <en 2026>", source: "Le Monde", date: "2026-08-13", guide: "finance", page: "debutant.html", ancre: "lépargne", section: "L'épargne", sujet: "💰 Finance — Débutant" },
+    "https://news.google.com/c": { titre: "Les LLM et l'intelligence artificielle en entreprise", source: "spam.example", date: "2026-08-11", guide: "ia", page: "debutant.html", ancre: "les-llm", section: "Les LLM", sujet: "🤖 Intelligence Artificielle — Débutant" }
 };
 
 function corps(coches) {
@@ -105,7 +108,7 @@ verifier("le plus récent en premier", e2.articles[0].lien === "https://news.goo
 verifier("l'article non coché est absent", !e2.articles.some((a) => a.lien.endsWith("/c")));
 
 const page2 = lirePage("actualites.html");
-verifier("le titre apparaît sur la page", page2.includes("86 % des PME ont subi un incident"));
+verifier("le titre apparaît sur la page", page2.includes("Phishing : la cybersécurité des PME en question"));
 verifier("les caractères spéciaux sont échappés", page2.includes("&amp;") && page2.includes("&lt;en 2026&gt;"));
 verifier("pas de HTML injecté brut", !page2.includes("<en 2026>"));
 verifier("lien vers la section du guide", page2.includes('href="guides/cybersecurite/debutant.html#le-phishing"'));
@@ -116,7 +119,7 @@ verifier("l'état vide a disparu", !page2.includes("Aucune actualité retenue"))
    reste en francais partout — un titre traduit ne se retrouve plus — mais ce
    que le site ecrit AUTOUR doit suivre la langue de la page. */
 const pageEn = lirePage("en/actualites.html");
-verifier("la page anglaise est écrite aussi", pageEn.includes("86 % des PME ont subi un incident"));
+verifier("la page anglaise est écrite aussi", pageEn.includes("Phishing : la cybersécurité des PME en question"));
 verifier("elle est rédigée en anglais", pageEn.includes("Related to") && !pageEn.includes("En rapport avec"));
 verifier("elle renvoie vers le guide anglais", pageEn.includes('href="guides/cybersecurite/debutant.html"'));
 verifier("l'accueil anglais aussi", lirePage("en/index.html").includes("Read elsewhere"));
@@ -134,7 +137,7 @@ lancer();
 const e3 = lireEtat();
 verifier("il ne reste qu'un article", e3.articles.length === 1, `${e3.articles.length}`);
 verifier("c'est bien celui resté coché", e3.articles[0].lien === "https://news.google.com/b");
-verifier("le retiré a disparu de la page", !lirePage("actualites.html").includes("86 % des PME"));
+verifier("le retiré a disparu de la page", !lirePage("actualites.html").includes("Phishing : la cybersécurité"));
 
 // --- 4. Issue sans metadonnees ---------------------------------------------
 console.log("\n=== 4. ISSUE ANCIENNE, SANS METADONNEES ===");
@@ -245,11 +248,11 @@ console.log("\n=== 9. LE LIBELLE VIENT DU GUIDE, PAS DE L'ISSUE ===");
 
 fs.mkdirSync(path.join(BAC, "guides/cybersecurite"), { recursive: true });
 fs.writeFileSync(path.join(BAC, "guides/cybersecurite/debutant.html"),
-    `<h2>x</h2>\n<details><summary><h3 id="le-phishing">🎣 Le titre actuel</h3></summary></details>\n`);
+    `<h2>x</h2>\n<details><summary><h3 id="le-phishing">🎣 Phishing : le titre actuel</h3></summary></details>\n`);
 
 const perime = {
     "https://news.google.com/perime": {
-        titre: "Un article valable", source: "Le Monde",
+        titre: "Phishing : la cybersécurité des PME en question", source: "Le Monde",
         date: new Date().toISOString().slice(0, 10),
         guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing",
         section: "L'ANCIEN TITRE FIGÉ", sujet: "🔒 Cybersécurité — Débutant",
@@ -261,9 +264,45 @@ etatIssues = [{
 }];
 lancer();
 const page9 = lirePage("actualites.html");
-verifier("le titre courant de la section est affiché", /Le titre actuel/.test(page9),
+verifier("le titre courant de la section est affiché", /Phishing : le titre actuel/.test(page9),
     (page9.match(/En rapport avec[^<]*<[^>]*>[^<]*/) || ["(rien)"])[0]);
 verifier("l'ancien titre figé n'apparaît pas", !/ANCIEN TITRE FIGÉ/.test(page9));
+
+/* --- 10. Le filtre de pertinence -------------------------------------------
+ *
+ * Les quatre cas testes sont REELS : ils etaient en ligne le 23 aout, sous les
+ * sections indiquees. Quinze articles sur vingt-quatre etaient dans ce cas.
+ *
+ * Chacun illustre le meme piege — un mot de la recherche apparait dans le
+ * titre, mais dans un autre sens. C est ce que le filtre doit voir. */
+console.log("\n=== 10. LE HORS-SUJET EST REFUSE ===");
+
+const horsSujet = {
+    "https://news.google.com/hs1": {
+        titre: "La diversification économique face au piège des annonces",
+        source: "Le Matin", date: new Date().toISOString().slice(0, 10),
+        guide: "finance", page: "avance.html", ancre: "la-diversification-reelle",
+        section: "La diversification réelle", sujet: "💰 Finance — Avancé",
+    },
+    "https://news.google.com/hs2": {
+        titre: "BJ's (BJRI): Buy, Sell, or Hold Post Q2 Earnings?",
+        source: "TradingView", date: new Date().toISOString().slice(0, 10),
+        guide: "entrepreneuriat", page: "avance.html", ancre: "les-unit-economics",
+        section: "Les unit economics", sujet: "🚀 Entrepreneuriat — Avancé",
+    },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(horsSujet).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(horsSujet)}\n-->\n`,
+}];
+const sortie10 = lancer();
+const e10 = lireEtat().articles;
+verifier("« diversification économique » ne passe pas sous « diversification réelle »",
+    !e10.some((a) => a.lien.endsWith("/hs1")), JSON.stringify(e10.map((a) => a.lien)));
+verifier("une recommandation boursière ne passe pas sous « unit economics »",
+    !e10.some((a) => a.lien.endsWith("/hs2")));
+verifier("le refus nomme le mot en commun", /hors sujet/.test(sortie10), sortie10.trim().slice(0, 200));
 
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);
