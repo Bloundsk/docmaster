@@ -18,11 +18,13 @@ node_modules/
 #   brut/  les episodes generes, en WAV. Huit minutes pesent 40 Mo bruts
 #          contre 4 une fois encodes ; seul le MP3 de assets/audio/ est
 #          versionne, c est lui que le site sert.
+#   ecoute/ les episodes masterises gardes pour reecoute, hors production.
 #   voix/  la VOIX DE L AUTEUR : enregistrement source et extrait de
 #          reference. Le depot est public et le site publie sous pseudonyme —
 #          une voix identifie son proprietaire. Elle ne doit jamais y entrer.
 podcasts/brut/
 podcasts/voix/
+podcasts/ecoute/
 
 # Cache de compilation Python, produit par py_compile. Machine-dependant,
 # regenere a la volee, et sans interet pour qui relit le depot.

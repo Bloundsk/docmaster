@@ -80,6 +80,99 @@ if (!fs.existsSync(BRUT)) {
 }
 fs.mkdirSync(SORTIE, { recursive: true });
 
+/* --------------------------------------------------------------------------
+   LES CONTROLES, AVANT ET APRES
+
+   Trois defauts sont partis en production avant d etre trouves a l oreille par
+   Ludo : un decoupage qui hachait la voix, 171 echantillons ecretes, et des
+   parasites de generation. Les deux derniers etaient MESURABLES — ils ne
+   l ont pas ete, parce que les mesures faites l etaient au mauvais endroit :
+   sur le MP3 final, ou la masterisation avait deja tout ramene sous zero.
+
+   D ou deux barrages, et ils bloquent :
+
+     avant  le WAV entrant ne doit pas etre ecrete. Un son sature ne se
+            repare pas au montage — baisser le volume d un son sature ne le
+            desature pas.
+     apres  le MP3 produit doit tenir ses promesses : niveau, crete, duree.
+            Le MP3 a 64 kb/s ajoutait 2 dB de depassement sans que rien ne le
+            dise.
+
+   Un fichier qui echoue n entre pas en production. Une erreur bruyante vaut
+   mieux qu un episode qui craque chez l auditeur.
+   -------------------------------------------------------------------------- */
+
+// Une mesure de ffmpeg, lue dans son journal (qu il ecrit sur stderr).
+function mesurer(fichier, filtre, clefs) {
+    const r = spawnSync("ffmpeg", [
+        "-hide_banner", "-nostats", "-i", fichier, "-af", filtre, "-f", "null", "-",
+    ], { encoding: "utf8" });
+    const journal = (r.stderr || "") + (r.stdout || "");
+    const valeurs = {};
+    for (const [nom, motif] of Object.entries(clefs)) {
+        const m = journal.match(motif);
+        valeurs[nom] = m ? Number(m[1]) : null;
+    }
+    return valeurs;
+}
+
+// Combien d echantillons touchent le maximum. Au-dela d une poignee, le
+// fichier est ecrete : ce sont autant de craquements.
+const ECRETAGE_TOLERE = 8;
+
+function verifierEntree(source) {
+    const { satures } = mesurer(source, "astats=metadata=1",
+        { satures: /Abs Peak count:\s*([\d.]+)/ });
+    if (satures === null) return null;               // mesure indisponible : on ne bloque pas
+    if (satures > ECRETAGE_TOLERE) {
+        return `${satures} échantillons saturés dans la source — le son craquera. ` +
+               `Régénérer en abaissant le niveau avant écriture.`;
+    }
+    return null;
+}
+
+function verifierSortie(cible, secondesSource) {
+    const m = mesurer(cible, "loudnorm=print_format=summary", {
+        niveau: /Input Integrated:\s*(-?[\d.]+)/,
+        crete: /Input True Peak:\s*(-?[\d.]+)/,
+    });
+    /* Chaque mesure est testee SEPAREMENT, et une mesure absente n est pas une
+       mesure ratee. Le premier jet sortait tot des que le niveau manquait, puis
+       comparait la crete sans verifier qu elle existait : « null > -0.5 » vaut
+       vrai en JavaScript, null se comparant comme zero. Le controle a bloque un
+       fichier en annoncant « crête à null dBTP » — il avait raison de bloquer,
+       mais pour une raison inventee. Un controle qui se declenche quand il ne
+       sait pas mesurer finira par bloquer un fichier sain. */
+    if (m.crete === null && m.niveau === null) return null;   // ffmpeg muet
+
+    if (m.crete !== null && m.crete > -0.5) {
+        return `crête à ${m.crete} dBTP — au bord de la saturation. ` +
+               `L'encodage MP3 ajoute du dépassement : baisser TP dans loudnorm.`;
+    }
+    if (m.niveau !== null && Math.abs(m.niveau + 16) > 2.5) {
+        return `niveau à ${m.niveau} LUFS, loin des -16 attendus.`;
+    }
+    // Une duree qui bouge signale un fichier tronque, pas un reglage.
+    const s = secondes(cible);
+    if (s && secondesSource && Math.abs(s - secondesSource) / secondesSource > 0.01) {
+        return `durée de ${s.toFixed(0)} s contre ${secondesSource.toFixed(0)} s à la source.`;
+    }
+    return null;
+}
+
+function secondes(fichier) {
+    try {
+        const s = execFileSync("ffprobe", [
+            "-v", "error", "-show_entries", "format=duration",
+            "-of", "default=nw=1:nk=1", fichier,
+        ], { encoding: "utf8" }).trim();
+        const t = Number(s);
+        return Number.isFinite(t) ? t : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 // La duree reelle, lue dans le fichier produit. C est elle qui remplacera
 // l estimation faite sur le nombre de mots.
 function duree(fichier) {
@@ -93,6 +186,28 @@ function duree(fichier) {
     } catch (e) {
         return "durée inconnue";
     }
+}
+
+/* Deux fichiers pour le meme parcours : « finance.wav » et « finance.mp3 »
+   dans le meme dossier. Le second est le RESULTAT range la par erreur ; le
+   script le prenait pour une source, le reencodait, et le dernier lu ecrasait
+   l autre — en silence, l ordre du dossier decidant du gagnant.
+   Un reencodage degrade a chaque passage. On refuse plutot que d arbitrer. */
+const parSujet = new Map();
+for (const f of fs.readdirSync(BRUT)) {
+    const ext = path.extname(f).toLowerCase();
+    if (!EXTENSIONS.includes(ext)) continue;
+    const s = path.basename(f, ext);
+    parSujet.set(s, [...(parSujet.get(s) || []), f]);
+}
+const ambigus = [...parSujet].filter(([, fichiers]) => fichiers.length > 1);
+if (ambigus.length) {
+    console.error("Plusieurs fichiers portent le même parcours — lequel est la source ?");
+    for (const [sujet, fichiers] of ambigus) {
+        console.error(`  ${sujet} : ${fichiers.join(", ")}`);
+    }
+    console.error("N'en garder qu'un dans podcasts/brut/.");
+    process.exit(1);
 }
 
 let traites = 0, ignores = 0, refuses = 0;
@@ -109,6 +224,15 @@ for (const fichier of fs.readdirSync(BRUT)) {
     }
 
     const source = path.join(BRUT, fichier);
+
+    // Barrage d entree : un son sature ne se repare pas au montage.
+    const defautEntree = verifierEntree(source);
+    if (defautEntree) {
+        console.error(`  ✗ ${fichier} : ${defautEntree}`);
+        refuses++;
+        continue;
+    }
+
     const cible = path.join(SORTIE, `${sujet}.mp3`);
 
     // Un enregistrement inchange n a pas a etre reencode : chaque passage
@@ -178,6 +302,18 @@ for (const fichier of fs.readdirSync(BRUT)) {
         "-af", filtre, "-ac", "1", "-ar", "44100", "-b:a", "96k",
         cible,
     ], { stdio: ["ignore", "ignore", "pipe"] });
+
+    /* Barrage de sortie. Le fichier fautif est SUPPRIME plutot que laisse en
+       place : un MP3 qui sature est pire qu un MP3 absent, parce qu il part en
+       ligne sans que personne le reecoute. */
+    const defautSortie = verifierSortie(cible, secondes(source));
+    if (defautSortie) {
+        fs.unlinkSync(cible);
+        console.error(`  ✗ ${sujet} : ${defautSortie}`);
+        console.error(`     fichier supprimé — il ne partira pas en production.`);
+        refuses++;
+        continue;
+    }
 
     const ko = Math.round(fs.statSync(cible).size / 1024);
     console.log(`  ✓ ${sujet.padEnd(16)} ${duree(cible).padStart(12)}   ${String(ko).padStart(6)} Ko${m ? "" : "   (mesure illisible, passe simple)"}`);
