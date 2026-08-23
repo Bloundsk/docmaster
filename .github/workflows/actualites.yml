@@ -59,42 +59,60 @@ jobs:
       - name: Récupérer le code
         uses: actions/checkout@v5
 
-      - name: Construire les pages
+      # SYNCHRONISER, PUIS CONSTRUIRE, PUIS POUSSER — DANS CET ORDRE.
+      #
+      # Deux pannes en une soiree ont impose cette forme.
+      #
+      # La premiere : le workflow poussait sans jamais recuperer. Une poussee
+      # faite a la main s est glissee entre son checkout et son push, et la
+      # publication a echoue — l article qu on venait de retirer est reste en
+      # ligne. Le garde-fou « concurrency » ne protege que contre deux
+      # executions de CE workflow ; il ne sait rien d un humain qui pousse.
+      #
+      # La seconde, causee par le remede : recuperer APRES avoir construit.
+      # Le commit portait des fichiers generes sur une base perimee, et le
+      # rebase entrait en conflit avec ceux de l execution precedente.
+      #
+      # Un fichier ENTIEREMENT GENERE ne se fusionne pas : il se regenere.
+      # D ou l ordre — on se remet a jour sur origin, on construit sur cette
+      # base, on pousse. Si quelqu un a pousse entre-temps, on recommence :
+      # reconstruire coute quelques secondes, et le resultat est le meme.
+      - name: Construire et publier
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: node scripts/publier-actualites.js
-
-      - name: Publier si quelque chose a changé
         run: |
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "Rien à publier."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # « git add -u » plutôt qu'une liste de fichiers : le script écrit
-          # désormais les quatre pages porteuses des marqueurs, français et
-          # anglais. La liste en dur n'en citait que deux ; les pages anglaises
-          # auraient ete modifiees puis perdues au checkout suivant, sans que
-          # rien ne le signale. Le controle ci-dessous rend l'oubli impossible.
-          git add -u
-          git commit -m "Publie les actualites retenues"
 
-          # « pull --rebase » avant de pousser, sinon le moindre commit arrive
-          # entre-temps fait echouer le workflow.
-          #
-          # Ce n est pas theorique : le 23 aout, une poussee faite a la main
-          # s est glissee entre le checkout et le push, et la publication a
-          # echoue — l article qu on venait de retirer est reste en ligne.
-          # Le garde-fou « concurrency » ne protege que contre DEUX executions
-          # de ce workflow ; il ne sait rien d un humain ni d un autre
-          # workflow.
-          #
-          # Rebase et non merge : ce commit ne fait que reecrire des fichiers
-          # generes, il n a aucune raison de creer une fusion dans l historique.
-          git pull --rebase origin main
-          git push
+          for essai in 1 2 3; do
+            git fetch --quiet origin main
+            git reset --quiet --hard origin/main
+
+            node scripts/publier-actualites.js
+
+            if [ -z "$(git status --porcelain)" ]; then
+              echo "Rien à publier."
+              exit 0
+            fi
+
+            # « git add -u » plutôt qu'une liste de fichiers : le script écrit
+            # les quatre pages porteuses des marqueurs, françaises et anglaises.
+            # La liste en dur n'en citait que deux ; les pages anglaises étaient
+            # modifiées puis perdues au checkout suivant, sans que rien ne le
+            # signale. Le contrôle ci-dessous rend l'oubli impossible.
+            git add -u
+            git commit --quiet -m "Publie les actualites retenues"
+
+            if git push --quiet; then
+              echo "Publié (essai $essai)."
+              exit 0
+            fi
+            echo "Poussée refusée — quelqu'un a poussé entre-temps. On recommence."
+          done
+
+          echo "::error::Trois tentatives refusées. Le dépôt bouge plus vite que ce workflow."
+          exit 1
 
       # Le script est la seule source de ces pages : si l'une d'elles n'a pas
       # ete versionnee, la liste anglaise se figerait en silence. On le
