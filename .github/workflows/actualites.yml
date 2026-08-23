@@ -80,6 +80,20 @@ jobs:
           # rien ne le signale. Le controle ci-dessous rend l'oubli impossible.
           git add -u
           git commit -m "Publie les actualites retenues"
+
+          # « pull --rebase » avant de pousser, sinon le moindre commit arrive
+          # entre-temps fait echouer le workflow.
+          #
+          # Ce n est pas theorique : le 23 aout, une poussee faite a la main
+          # s est glissee entre le checkout et le push, et la publication a
+          # echoue — l article qu on venait de retirer est reste en ligne.
+          # Le garde-fou « concurrency » ne protege que contre DEUX executions
+          # de ce workflow ; il ne sait rien d un humain ni d un autre
+          # workflow.
+          #
+          # Rebase et non merge : ce commit ne fait que reecrire des fichiers
+          # generes, il n a aucune raison de creer une fusion dans l historique.
+          git pull --rebase origin main
           git push
 
       # Le script est la seule source de ces pages : si l'une d'elles n'a pas
