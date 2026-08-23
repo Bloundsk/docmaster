@@ -1,5 +1,70 @@
 # Changelog — Clicked
 
+## 2026-08-24 — Ce qui échappe aux contrôles du dépôt
+
+Ludo, après trois épisodes de podcast livrés comme prêts et trois défauts qu'il
+a trouvés lui-même : *« il faut absolument que tu finisses la tâche de A à Z,
+faire toutes les vérifications avant d'oser m'écrire que tout est ok. »*
+
+Il a raison, et le reproche est précis. Les contrôles existaient ; ils étaient
+faits **au mauvais endroit**. Sur le fichier final, où la masterisation avait
+déjà tout ramené sous zéro — pendant que le fichier craquait.
+
+### Les barrages qui manquaient
+
+Promis deux fois, notés « à faire », jamais construits. Entre-temps le même
+défaut est reparti en production. Ils existent maintenant, et ils bloquent :
+
+**Avant** — un WAV écrêté est refusé. Un son saturé ne se répare pas au
+montage : baisser le volume d'un son saturé ne le désature pas. Éprouvé sur un
+fichier fabriqué à +8 dB — 25 222 échantillons saturés, refusé.
+
+**Après** — le MP3 doit tenir ses promesses de niveau, de crête et de durée. Le
+fichier fautif est **supprimé**, pas laissé en place : un MP3 qui sature est
+pire qu'un MP3 absent, parce qu'il part en ligne sans que personne le
+réécoute. Éprouvé en faussant la cible — « −27,3 LUFS, loin des −16 attendus ».
+
+Trois défauts trouvés en les construisant. Le dossier des sources contenait
+`finance.wav` **et** `finance.mp3` : le script prenait le résultat pour une
+source, l'ordre du dossier décidant du gagnant. Le barrage de sortie s'est
+déclenché en annonçant « crête à **null** dBTP » — la mesure avait échoué, et
+`null > -0.5` vaut vrai en JavaScript ; il bloquait pour une raison inventée.
+Et le premier essai de ce barrage était invalide, `TP=1` étant hors des bornes
+de ffmpeg : le contrôle n'avait pas été éprouvé du tout.
+
+### Le renommage n'était pas fini, et rien ne pouvait le dire
+
+Trois tâches automatiques tournent hors du dépôt, dans
+`C:\Users\veylu\.claude\scheduled-tasks\`. Le renommage en Clicked les avait
+**cassées deux jours plus tôt** :
+
+```
+could not find any workflows named Contrôles DocMaster
+```
+
+Deux des six étapes du point hebdomadaire échouaient en silence. **Aucun
+contrôle du dépôt ne pouvait le voir**, puisque ces fichiers n'y sont pas.
+
+Le point hebdomadaire était périmé sur cinq autres points : 11 contrôles
+annoncés au lieu de 12, les quatre ajoutés depuis ignorés, la vérification des
+simulateurs traduits ignorée, la page des podcasts absente — et il comptait
+encore « les cases restant à cocher » alors que la veille coche d'elle-même
+depuis le 22. Ce compte ne veut plus rien dire ; il regarde désormais si les
+articles publiés ont un rapport avec leur section.
+
+Les deux tâches disent maintenant **pourquoi** le dossier, le dépôt et
+l'adresse gardent l'ancien nom, sinon une exécution future « corrigerait » ce
+qui est délibéré.
+
+### La leçon, plus large que ce projet
+
+Un chantier déclaré fini ne l'est que jusqu'à la frontière qu'on a regardée.
+Le renommage touchait 129 pages, quatre workflows, deux scripts de génération —
+et trois fichiers vivant ailleurs, invisibles depuis le dépôt.
+
+**Ce qui vit hors du dépôt échappe à tous les contrôles du dépôt.** C'est la
+règle des liens transverses, appliquée à une frontière qui n'avait pas été vue.
+
 ## 2026-08-23 — Les podcasts, et ce que l'automatisation laissait passer
 
 ### Une chaîne de podcasts, mise en pause avant l'audio
