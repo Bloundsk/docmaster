@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-24T10:09:38.297Z",
+  "maj": "2026-08-24T19:19:21.307Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5mYjFteFUtSHdud09rMDBDWERmOEdrX3dSOHlkQnNaUXg5TGg5UjV0UVVnTWxBSGplNlNXbmNnbnJEUDlvN3VKbNIBQkFVX3lxTFB0SVgyTmxPMm9abzJINDFEeDNtY05PcXhoQ0N5YkpVa0pkbkpTWU1CTndOdzlEenc5MVR1X011UmpaUQ?oc=5",
@@ -35,6 +35,18 @@
       "ancre": "parcours-achat",
       "section": "🎯 Le parcours d'achat",
       "sujet": "📢 Marketing Digital — Intermédiaire",
+      "publie": "2026-08-24"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPeEppamJCdF9obVhJbWRNRExGa2dJMzZVeDNPLUROcFpuejlJN0U4QmJkNVlBX2M4b0FreEZLNDQ2TE02TnV0MGxFT2MxdHREbFJkM003X3Y2ZnFfT0gwWEFsenIwQ1lCdlRNd194aW1aOXZ2VVdkT2hQT21JbllNeWVncFB3a1l2NkRzUGxvUTRwQVJ5Mm1jQlJ6RE1MMHJjVE1tV211bUtDUndPZXpkcG1sd0pmT085dEhrQUpMcEZGd3NqNUpKUXoxb1JxLUpxdnFPV1VzVmlkUjdTeFRBX2JR?oc=5",
+      "titre": "Rouen. Face aux vols de données personnelles, ce spécialiste de la cybersécurité appelle à la vigilance",
+      "source": "tendanceouest.com",
+      "date": "2026-08-24",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-08-24"
     },
     {
@@ -275,18 +287,6 @@
       "ancre": "lecoconception",
       "section": "🪶 L'écoconception",
       "sujet": "🌱 Sobriété numérique — Avancé",
-      "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNZUtLanBZbEtOVEFIQ0FzaThoaTdESHRFVU5CRXEtUmpHT0VwdkhQeF9KT2xwT3hOY09EdjBVVm04Ql9TYkxCWDBOWVhtVk5abUF1aFBpZkVEX3lxdkRJY0dtY0ExaGNXVVBjNURuVW5VSjlyM3Jfbm1PM0MtQUZHeVRkR3ItNFlWUl9zVWFVanlENVlQdUpabXhBMGhoQjBteXVrbUUyYzBYUE4xYlh5eld0TGFNX1R0S3lIVUtSOVNHSTRjMGh5WnZLTlVSam0tVDBLOGo1WXVQYXlla1pwR0ZLR0IySzlWQmFWZUc1WERfNEVpQXNQTlQ4R2llM3Ft?oc=5",
-      "titre": "The Magnum Ice Cream Company : campagne estivale avec télévision, digital, réseaux sociaux et marketing d’influence",
-      "source": "Distribuzione Moderna",
-      "date": "2026-08-15",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
       "publie": "2026-08-24"
     }
   ]
