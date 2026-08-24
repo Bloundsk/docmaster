@@ -282,7 +282,11 @@ async function construireRapport(guides, dejaProposes) {
                 const retenus = [];
                 for (const a of articles) {
                     if (dejaProposes.has(a.lien) || retenusCePassage.has(a.lien)) continue;
-                    const verdict = admissible(a, s.requete);
+                    // s.titre, l intitule de la section, est passe a part : la
+                    // regle de pertinence exige qu au moins un mot commun en
+                    // vienne, et la requete seule ne permet plus de distinguer
+                    // ce qui vient de la section de ce qui vient du parcours.
+                    const verdict = admissible(a, s.requete, s.titre);
                     if (!verdict.ok) {
                         // Ce qu un script ecarte, il doit le dire. Depuis que la
                         // publication est automatique, ces lignes sont le seul

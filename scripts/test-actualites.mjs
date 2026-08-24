@@ -304,5 +304,46 @@ verifier("une recommandation boursière ne passe pas sous « unit economics »",
     !e10.some((a) => a.lien.endsWith("/hs2")));
 verifier("le refus nomme le mot en commun", /hors sujet/.test(sortie10), sortie10.trim().slice(0, 200));
 
+/* --- 11. Les deux mots ne peuvent pas venir du seul nom du parcours ---------
+ *
+ * Cas reel, en ligne le 25 aout : un article sur le marketing digital publie
+ * sous « Le cadre juridique » du parcours Marketing. Il avait bien deux mots
+ * communs, « marketing » et « digital » — mais tous deux venant du NOM DU
+ * PARCOURS, aucun de la section. Le nom du parcours servait de laissez-passer :
+ * il vaut pour ses quinze sections, donc il ne discrimine rien.
+ *
+ * Le second article est le temoin, et il compte autant que le premier : il
+ * porte « juridique », un mot de la section, et il DOIT passer. Sans lui, une
+ * regle qui refuserait tout aurait l air de fonctionner. */
+console.log("\n=== 11. UN MOT DOIT VENIR DE LA SECTION ===");
+
+const malRange = {
+    "https://news.google.com/mr1": {
+        titre: "Couleurs, influenceurs et algorithmes : comment le marketing digital cible les enfants",
+        source: "SNRTnews", date: new Date().toISOString().slice(0, 10),
+        guide: "marketing", page: "avance.html", ancre: "le-cadre-juridique",
+        section: "Le cadre juridique", sujet: "📢 Marketing Digital — Avancé",
+    },
+    "https://news.google.com/mr2": {
+        titre: "Publicité ciblée : le cadre juridique se durcit pour le marketing digital",
+        source: "Les Echos", date: new Date().toISOString().slice(0, 10),
+        guide: "marketing", page: "avance.html", ancre: "le-cadre-juridique",
+        section: "Le cadre juridique", sujet: "📢 Marketing Digital — Avancé",
+    },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(malRange).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(malRange)}\n-->\n`,
+}];
+const sortie11 = lancer();
+const e11 = lireEtat().articles;
+verifier("deux mots venant du seul parcours ne suffisent pas",
+    !e11.some((a) => a.lien.endsWith("/mr1")), JSON.stringify(e11.map((a) => a.lien)));
+verifier("un mot de la section suffit à faire passer l'article",
+    e11.some((a) => a.lien.endsWith("/mr2")), JSON.stringify(e11.map((a) => a.lien)));
+verifier("le refus dit que l'article est mal rangé", /mal rangé/.test(sortie11),
+    sortie11.trim().slice(0, 200));
+
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

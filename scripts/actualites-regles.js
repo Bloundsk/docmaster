@@ -124,6 +124,51 @@ function crie(titre) {
    C est un echange accepte : la veille interroge 169 sections deux fois par
    jour, le vivier est large, et un article manquant coute moins cher qu un
    article absurde sous un guide.
+
+   CE QUE CETTE REGLE NE VOYAIT PAS (corrige le 25 aout 2026)
+   ----------------------------------------------------------
+
+   Compter deux mots communs ne dit pas D OU ils viennent. Or la recherche est
+   faite de deux morceaux qui n ont pas la meme valeur :
+
+     le SUJET, c est-a-dire le nom du parcours  — « Marketing Digital »
+     la SECTION, l intitule precis du chapitre  — « Le cadre juridique »
+
+   Le sujet est large par construction : il vaut pour les dix ou quinze
+   sections du parcours. S il suffit a lui seul, il devient un laissez-passer —
+   n importe quel article de marketing entre sous n importe quelle section de
+   marketing. C est ce qui est arrive a :
+
+     « Couleurs, influenceurs et algorithmes : comment le marketing digital
+       cible les enfants »        publie sous « Le cadre juridique »
+
+   Deux mots communs, « marketing » et « digital », tous deux venant du nom du
+   parcours, aucun de la section. L article n est pas mauvais : il est mal
+   range, ce qui sur une page classee par chapitre revient au meme pour qui lit.
+
+   D ou la regle ajoutee : au moins UN mot commun doit venir de la SECTION.
+   C est elle qui discrimine ; le sujet ne fait que confirmer.
+
+   MESURE SUR L HISTORIQUE COMPLET, avant de l adopter — 685 couples
+   (article, section) tires des 51 rapports de veille depuis le 6 aout :
+
+     admis par la regle a deux mots seule ....... 175
+     admis en exigeant un mot de la section ..... 139
+     ecartes en plus ............................  36  (20,6 %)
+
+   Les 36 ont ete relus un par un. La grande majorite etait effectivement mal
+   rangee — « Directeur Marketing Digital : etudes, missions, salaires » sous
+   « SEO », « 7 Popular Data Analytics Certifications » sous « Les tests A/B »,
+   « Guerre en Iran : le plan de negociation avance par Teheran » sous
+   « Savoir s arreter ». Deux ou trois meritaient de rester, dont :
+
+     « Quelle IA pour quel usage ? Le guide 2026 »  sous « Choisir un modele »
+
+   qui parle bien de choisir un modele, mais sans jamais employer ces mots-la.
+   C est la limite assumee d un filtre lexical : il compare des mots, pas des
+   sens. Le compte reste tres favorable — une trentaine d articles absurdes
+   evites contre deux bons perdus, et ces deux-la peuvent toujours reparaitre
+   sous la section dont ils portent les mots.
    -------------------------------------------------------------------------- */
 
 // « Épargne » et « epargne », « ETF » et « etf », « jetons » et « jeton » :
@@ -157,6 +202,11 @@ function motsUtiles(texte) {
 
 const MINIMUM_MOTS_COMMUNS = 2;
 
+/* Combien de ces mots communs doivent venir de la section, et non du seul nom
+   du parcours. Un suffit : on demande que la section soit representee, pas
+   qu elle porte tout le poids. */
+const MINIMUM_MOTS_SECTION = 1;
+
 /* Combien de mots la recherche et le titre ont-ils reellement en commun.
    Exporte pour que la mesure soit possible ailleurs : une regle qu on ne peut
    pas eprouver sur des donnees reelles ne vaut pas mieux qu une intuition. */
@@ -180,9 +230,15 @@ function assezRecent(iso) {
 /* Verdict sur un article, « recherche » etant les mots qui l ont fait remonter.
    Quand elle n est pas connue — la publication ne dispose que de la section et
    du sujet — on la reconstitue a partir de ceux-la : ce sont exactement les
-   mots dont la veille avait forme sa requete. */
-function admissible(article, recherche) {
+   mots dont la veille avait forme sa requete.
+
+   « section » est l intitule du chapitre, passe a part car la regle de
+   pertinence a besoin de le distinguer du nom du parcours (voir plus haut).
+   La veille le connait et le transmet ; a la publication il est deja porte par
+   l article lui-meme. */
+function admissible(article, recherche, section) {
     const titre = article.titre || "";
+    const intitule = section || article.section || "";
     const requete = recherche || `${article.sujet || ""} ${article.section || ""}`;
 
     if (!assezRecent(article.date)) {
@@ -208,8 +264,27 @@ function admissible(article, recherche) {
         return { ok: false, raison: `hors sujet${vus}` };
     }
 
+    /* Puis d ou viennent ces mots. On n exige la representation de la section
+       que si elle a elle-meme des mots a offrir : un intitule qui se reduirait
+       a des mots vides — « Les bases », « Le pourquoi » — rendrait la regle
+       impossible a satisfaire et viderait la section de tout article. Aucun
+       des 129 intitules de l historique n est dans ce cas, mais le prochain
+       pourrait l etre, et il tomberait alors en silence. */
+    const motsDeLaSection = motsCommuns(intitule, intitule);
+    if (motsDeLaSection.length) {
+        const communsSection = motsCommuns(titre, intitule);
+        if (communsSection.length < MINIMUM_MOTS_SECTION) {
+            return {
+                ok: false,
+                raison: `mal rangé : « ${communs.join(" », « ")} » vient du parcours, ` +
+                        `rien de la section « ${intitule} »`,
+            };
+        }
+    }
+
     return { ok: true };
 }
 
 module.exports = { AGE_MAX_JOURS, assezRecent, admissible, motsCommuns,
-                   MINIMUM_MOTS_COMMUNS, TOURNURES_PROMOTIONNELLES, SOURCES_ECARTEES };
+                   MINIMUM_MOTS_COMMUNS, MINIMUM_MOTS_SECTION,
+                   TOURNURES_PROMOTIONNELLES, SOURCES_ECARTEES };
