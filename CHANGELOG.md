@@ -1,6 +1,6 @@
 # Changelog — Clicked
 
-## 2026-08-25 — Le nom du parcours servait de laissez-passer
+## 2026-08-25 — Ce qui passait encore le filtre des actualités
 
 ### Deux articles retirés, et ce que le second a révélé
 
@@ -93,6 +93,68 @@ encore le 24 — et refusait une date qu'elle jugeait future. Les deux lisent
 désormais `Europe/Paris`. Vérifié qu'une date réellement future reste refusée :
 un contrôle assoupli pour faire passer un cas gênant ne contrôle plus rien.
 
+### Le communiqué produit, que rien ne pouvait voir
+
+Restait le trou signalé la veille, et Ludo a demandé qu'il soit bouché. L'article
+retiré le matin — « BNI présente wondrZ, un compte d'épargne pour enfants » —
+franchissait **tous** les filets : aucune tournure promotionnelle, aucune
+majuscule criée, source inconnue, correctement rangé sous « L'épargne », et jugé
+pertinent à juste titre. Un communiqué de presse bien écrit, c'est-à-dire de la
+publicité sur un site dont les mentions légales promettent le contraire.
+
+**Le réflexe évident était faux.** Écarter les verbes d'annonce — « présente »,
+« lance », « dévoile » — se mesure avant de s'adopter : dix-huit titres de
+l'historique les portent, et la majorité est du vrai journalisme.
+
+> « Bercy **dévoile** son plan pour renforcer la cybersécurité »
+> « le gouvernement **annonce** une simplification de la procédure »
+> « les erreurs fatales à éviter quand on se **lance** dans l'entrepreneuriat »
+
+Le verbe dit qu'il se passe quelque chose, pas que c'est de la publicité.
+
+Ce qui distingue réellement le communiqué, c'est la **conjonction** de trois
+choses — et la troisième porte l'essentiel :
+
+| | communiqué | journalisme |
+|---|---|---|
+| sujet | une marque — `BNI` | `le gouvernement`, `Bercy` |
+| verbe | présente / lance / dévoile | *identique* |
+| **objet** | un **produit nommé** — `wondrZ` | un nom commun — `son plan` |
+
+Une institution annonce des noms communs : un plan, une campagne, une
+simplification. Une marque qui annonce un **nom propre** annonce un produit.
+C'est la différence entre informer et vendre, et elle est lisible dans la
+grammaire du titre.
+
+Mesuré sur les 685 couples avant adoption : **12 titres « marque + verbe »,
+dont 6 avec un produit nommé** — wondrZ (BNI), un VPN souverain (ÉHO.LINK),
+« Gladiator Training Data Analytics » (Thales), Claude Sonnet 4.5 (Anthropic),
+AI Futures (OpenAI), « Personal Computer » (Perplexity). Les six autres sont
+épargnés par leur objet : Microsoft « un nouvel outil », BANK OF AFRICA « une
+campagne de recrutement ». Deux pièges absents du corpus ont été fabriqués pour
+l'éprouver — « Le gouvernement lance un plan RGPD », « La CNIL dévoile ses
+recommandations » — tous deux épargnés.
+
+**Ce que cela coûte est dit, et la décision revient à Ludo.** Trois des six sont
+des annonces d'éditeurs qu'on pourrait vouloir garder : une sortie de modèle
+intéresse un site qui parle des compétences de demain. Le filtre ne distingue
+pas BNI d'Anthropic — la nature de l'écrit est la même, seule la notoriété
+change. La promesse « aucune publicité » l'emporte en attendant.
+
+### Un test vert qui n'éprouvait rien
+
+Le test du communiqué est passé du premier coup, et c'était le problème. En
+réinjectant le défaut — filtre neutralisé — l'article BNI restait refusé : le
+titre que j'avais **tronqué** perdait le mot « finances » et tombait dès la règle
+de pertinence, sans jamais atteindre le filtre qu'il devait éprouver.
+
+Le titre réel a été remis en entier. L'injection montre maintenant ce qu'elle
+doit montrer : sans le filtre, l'article est publié.
+
+C'est la même erreur que celle du 24 août, à un autre endroit — mesurer là où
+c'est commode plutôt que là où le défaut naît. Un test vert ne prouve rien tant
+qu'on ne l'a pas vu rougir pour la bonne raison.
+
 ### La leçon
 
 Un seuil chiffré dit *combien*, jamais *quoi*. « Deux mots communs » avait l'air
@@ -101,6 +163,15 @@ un mot qui distingue et un mot qui ne distingue rien.
 
 **Quand une règle agrège des sources de valeur inégale, le seuil se satisfait
 par la plus facile.**
+
+Le second filtre dit la même chose autrement. Le signal le plus visible — le
+verbe d'annonce — n'était pas le signal discriminant ; il était seulement le
+plus facile à voir. Ce qui sépare la publicité de l'information ne tenait dans
+aucun des trois éléments pris isolément, mais dans leur conjonction.
+
+**Le marqueur le plus voyant est rarement celui qui discrimine.** Les deux
+règles adoptées ce jour l'ont été après mesure sur l'historique complet, et
+aucune des deux ne ressemble à ce que l'intuition proposait d'abord.
 
 ## 2026-08-24 — Ce qui échappe aux contrôles du dépôt
 
