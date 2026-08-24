@@ -1,18 +1,6 @@
 {
-  "maj": "2026-08-24T22:01:49.370Z",
+  "maj": "2026-08-24T22:17:33.365Z",
   "articles": [
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5mYjFteFUtSHdud09rMDBDWERmOEdrX3dSOHlkQnNaUXg5TGg5UjV0UVVnTWxBSGplNlNXbmNnbnJEUDlvN3VKbNIBQkFVX3lxTFB0SVgyTmxPMm9abzJINDFEeDNtY05PcXhoQ0N5YkpVa0pkbkpTWU1CTndOdzlEenc5MVR1X011UmpaUQ?oc=5",
-      "titre": "BNI présente wondrZ, un compte d'épargne pour enfants et adolescents pour apprendre à gérer les finances dès le plus jeune âge",
-      "source": "VOI.ID",
-      "date": "2026-08-24",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-24"
-    },
     {
       "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYlZTT3dETDhNUTk4c2Z4YW4tdWZwdm1Qb1ZiS3l2T1htNndXVDVHX0RDcnlMODAwQXNpb3R6UWU5R3pwUndja1RVQXZxOGhndzR1VTV5cFhmQ19teFI0YnNhejhISWJEYUVuMGM2NWpyWERMM2g4VjZSMjRUa0pUR3F1T3M3TXQ1ZDhfUDlWQllJTFRYU0JfMGs2bTgzT2x2MHpPUHdnaw?oc=5",
       "titre": "L'importance des réseaux sociaux pour votre entreprise (guide 2026)",
@@ -287,6 +275,18 @@
       "ancre": "réseaux-sociaux",
       "section": "📱 Réseaux sociaux",
       "sujet": "📢 Marketing Digital — Débutant",
+      "publie": "2026-08-24"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPUmhYRHI5UUhETDZ0UzlBRVA0cDc2a0NhcXpEZ0dBM3JzYTZqNWp2UUJZcUMxc0dSZ1B2UlJOclQxYUZfUjFiOTdhTUNnMHZxRy1LbGlLU1NMTTl0dDV5UkdIT1NzNWQyWmlqMmZ1X2VYcVZscjloQWlqWWVrYm1LeUZHU3BvSTVRbmVzZ3dxVXNfRlJ6X20wZ0UxeUZvWG1lbl96X042QWdqeDQyemdzdjhYQk1hZXc5WmNVMWJWQQ?oc=5",
+      "titre": "Couleurs, influenceurs et algorithmes: Comment le marketing digital cible les enfants",
+      "source": "SNRTnews",
+      "date": "2026-08-14",
+      "guide": "marketing",
+      "page": "avance.html",
+      "ancre": "cadre-juridique",
+      "section": "⚖️ Le cadre juridique",
+      "sujet": "📢 Marketing Digital — Avancé",
       "publie": "2026-08-24"
     }
   ]
