@@ -1,5 +1,107 @@
 # Changelog — Clicked
 
+## 2026-08-25 — Le nom du parcours servait de laissez-passer
+
+### Deux articles retirés, et ce que le second a révélé
+
+Ludo a fait retirer « BNI présente wondrZ, un compte d'épargne pour enfants »,
+publié sous **📊 L'épargne**. Un communiqué de presse produit, bien rangé et
+correctement écrit : aucun des filets existants ne pouvait le voir. Retiré à la
+source — la case décochée dans l'issue #52, non le JSON édité à la main : la
+case est la vérité, le JSON n'en est que le produit. Décocher évite qu'il
+revienne au passage suivant.
+
+En relisant les vingt-quatre articles restants, un second est apparu — et
+celui-là accusait le filtre lui-même :
+
+> « Couleurs, influenceurs et algorithmes : comment le marketing digital cible
+> les enfants »  →  publié sous **⚖️ Le cadre juridique**
+
+### Compter deux mots ne dit pas d'où ils viennent
+
+Le filtre de pertinence, posé le 23, exigeait deux mots communs entre le titre
+et la recherche. Il ne regardait pas leur **provenance**. Or la recherche est
+faite de deux morceaux de valeur très inégale :
+
+| | |
+|---|---|
+| le **sujet**, nom du parcours | « Marketing Digital » — vaut pour ses quinze sections |
+| la **section**, intitulé du chapitre | « Le cadre juridique » — ne vaut que pour elle |
+
+L'article avait bien ses deux mots, « marketing » et « digital » — **tous deux
+venant du nom du parcours, aucun de la section**. Le nom du parcours devenait
+un laissez-passer : n'importe quel article de marketing entrait sous n'importe
+quelle section de marketing. Ce n'est pas un mauvais article, il est mal rangé ;
+sur une page classée par chapitre, pour qui lit, cela revient au même.
+
+**La règle ajoutée : au moins un mot commun doit venir de la section.** C'est
+elle qui discrimine ; le sujet ne fait que confirmer.
+
+### Mesuré avant d'être adopté, sur l'historique entier
+
+Les cinquante et un rapports de veille conservent, pour chaque article, la
+section qui l'a accueilli et la requête exacte qui l'a fait remonter. De quoi
+éprouver la règle sur du réel plutôt que sur une intuition — **685 couples
+(article, section)** depuis le 6 août :
+
+```
+admis par la règle à deux mots seule ....... 175
+admis en exigeant un mot de la section ..... 139
+écartés en plus ............................  36   (20,6 %)
+```
+
+Les trente-six ont été relus un par un. Presque tous étaient effectivement mal
+rangés : « Directeur Marketing Digital : études, missions, salaires » sous
+**SEO**, « 7 Popular Data Analytics Certifications » sous **Les tests A/B**,
+« Guerre en Iran : le plan de négociation avancé par Téhéran » sous **Savoir
+s'arrêter**.
+
+Deux ou trois méritaient de rester, et il faut le dire aussi :
+
+> « Quelle IA pour quel usage ? Le guide 2026 »  sous **Choisir un modèle**
+
+qui parle précisément de choisir un modèle, sans jamais employer ces mots-là.
+C'est la limite assumée d'un filtre lexical : il compare des mots, pas des sens.
+Une trentaine d'absurdités évitées contre deux bons articles perdus — et ces
+deux-là peuvent reparaître sous une section dont ils portent les mots.
+
+Une section dont l'intitulé ne contiendrait aucun mot utile — « Les bases »,
+« Le pourquoi » — désactive la règle : sinon elle serait impossible à
+satisfaire et la section se viderait **en silence**. Aucun des 129 intitulés
+existants n'est dans ce cas ; le prochain pourrait l'être.
+
+### Le témoin compte autant que le refus
+
+Le test 11 vérifie les deux sens : que l'article mal rangé est refusé, et qu'un
+titre portant « juridique » — un mot de la section — **passe**. Sans ce second
+cas, une règle qui refuserait tout aurait l'air de fonctionner.
+
+Éprouvé en réinjectant le défaut dans les deux directions, seuil à 0 puis à 2 :
+la suite passe au rouge et sort en code 1 les deux fois. À 2 elle casse dès le
+test 2, l'excès de sévérité étant attrapé lui aussi.
+
+### Deux corrections plus courtes
+
+**Une introduction audio en tête du parcours Finance**, l'épisode que Ludo a
+fourni. Le lecteur ne charge rien tant qu'on ne l'a pas lancé : `preload="none"`
+évite de faire payer 1,1 Mo à qui vient seulement lire.
+
+**Le fuseau des dates, fixé à Paris des deux côtés.** Le contrôle de cohérence
+comparait les dates à *aujourd'hui selon la machine* : passé minuit à Paris, le
+hook estampillait « 25 août » pendant que l'intégration continue, en UTC, était
+encore le 24 — et refusait une date qu'elle jugeait future. Les deux lisent
+désormais `Europe/Paris`. Vérifié qu'une date réellement future reste refusée :
+un contrôle assoupli pour faire passer un cas gênant ne contrôle plus rien.
+
+### La leçon
+
+Un seuil chiffré dit *combien*, jamais *quoi*. « Deux mots communs » avait l'air
+d'une règle ; c'en était une à moitié, parce qu'elle traitait comme équivalents
+un mot qui distingue et un mot qui ne distingue rien.
+
+**Quand une règle agrège des sources de valeur inégale, le seuil se satisfait
+par la plus facile.**
+
 ## 2026-08-24 — Ce qui échappe aux contrôles du dépôt
 
 Ludo, après trois épisodes de podcast livrés comme prêts et trois défauts qu'il
