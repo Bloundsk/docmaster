@@ -97,6 +97,128 @@ function crie(titre) {
 }
 
 /* --------------------------------------------------------------------------
+   LE COMMUNIQUE PRODUIT
+
+   Le 25 aout, Ludo fait retirer :
+
+     « BNI presente wondrZ, un compte d epargne pour enfants et adolescents
+       pour apprendre a gerer les finances des le plus jeune age »
+
+   Aucun des filets ne pouvait le voir. Il n a pas de tournure promotionnelle —
+   ni « meilleur », ni « comparatif », ni « top 10 ». Il ne crie pas. Sa source
+   n etait pas connue. Il est bien range sous « L epargne », et la regle de
+   pertinence le trouve legitime. C est un communique de presse produit, ecrit
+   correctement, et c est exactement de la publicite sur un site dont les
+   mentions legales promettent « aucune publicite, aucun lien remunere ».
+
+   POURQUOI LE VERBE NE SUFFIT PAS
+
+   Le reflexe serait d ecarter « presente », « lance », « devoile ». Mesure sur
+   l historique : 18 titres les portent, et la majorite est du vrai journalisme.
+
+     « Bercy devoile son plan pour renforcer la cybersecurite »
+     « le gouvernement annonce une simplification de la procedure »
+     « Les erreurs fatales a eviter quand on se lance dans l entrepreneuriat »
+
+   Ecarter sur le verbe seul supprimerait ces trois-la. Le verbe dit qu il se
+   passe quelque chose, pas que c est de la publicite.
+
+   CE QUI DISTINGUE REELLEMENT LE COMMUNIQUE
+
+   Trois elements ENSEMBLE, et c est leur conjonction qui fait la preuve :
+
+     une MARQUE en tete       « BNI »        (pas « le gouvernement »)
+     un VERBE d annonce       « presente »
+     un PRODUIT NOMME en objet « wondrZ »    (pas « son plan »)
+
+   Le troisieme porte l essentiel. Une institution annonce des noms communs —
+   un plan, une campagne, une simplification. Une marque qui annonce un NOM
+   PROPRE annonce un produit. C est la difference entre informer et vendre.
+
+   MESURE, avant adoption, sur les 685 couples de l historique :
+
+     titres « marque + verbe d annonce » .......... 12
+     ... dont l objet est un produit nomme ........  6   ← ecartes
+
+   Les six : wondrZ (BNI), un VPN souverain (EHO.LINK), « Gladiator Training
+   Data Analytics » (Thales), Claude Sonnet 4.5 (Anthropic), AI Futures
+   (OpenAI), « Personal Computer » (Perplexity).
+
+   Les six autres sont epargnes parce que leur objet est un nom commun :
+   Microsoft « un nouvel outil », Google Analytics « un nouveau filtre »,
+   Google « sa vision du futur », BANK OF AFRICA « une campagne de
+   recrutement », l Iran « la fin des discussions ».
+
+   CE QUE CELA COUTE, ET QUI DOIT LE SAVOIR
+
+   Trois des six sont des annonces d editeurs qu on pourrait vouloir garder —
+   une sortie de modele interesse un site qui parle des competences de demain.
+   Le filtre ne fait pas de difference entre BNI et Anthropic, et c est
+   volontaire : la nature de l ecrit est la meme, seule la notoriete change.
+   Ce serait a Ludo de trancher s il veut les reintroduire ; en attendant, la
+   promesse « aucune publicite » l emporte.
+   -------------------------------------------------------------------------- */
+
+const VERBES_D_ANNONCE =
+    "présente|presente|lance|dévoile|devoile|annonce|déploie|deploie|" +
+    "introduit|inaugure|commercialise";
+
+/* Les mots qui interdisent de prendre un groupe pour une marque. « le
+   gouvernement », « la CNIL » : l article revele le nom commun ou l entite
+   designee, pas la marque qui communique. */
+const MOTS_OUTILS = /^(le|la|les|l|un|une|des|du|de|d|au|aux|ce|cet|cette|ces|son|sa|ses|leur|leurs|en|pour|avec|dans|sur|par|apres|après|quand|comment|pourquoi|qui|que|et|ou|mais|face|plus|moins)$/i;
+
+/* Les determinants a franchir pour atteindre l objet reel du verbe :
+   « lance UN NOUVEAU filtre » — ce qui compte est « filtre ». */
+const DETERMINANTS = /^(le|la|les|l|un|une|des|du|de|d|au|aux|ce|cet|cette|ces|son|sa|ses|leur|leurs|mon|ma|mes|notre|nos|votre|vos|nouveau|nouvelle|nouveaux|nouvelles|premier|première|premiere)$/i;
+
+// « L Iran », « D Alembert » : l apostrophe trahit un article accroche au mot.
+// Sans cela « L Iran annonce » passait pour une marque annoncant quelque chose.
+const COMMENCE_PAR_UN_ARTICLE = /^(l|d|n|j|c|s|m|t|qu)['’]/i;
+
+function estUneMarque(mots) {
+    if (!mots.length || mots.length > 3) return false;
+    if (mots.some((m) => MOTS_OUTILS.test(m) || COMMENCE_PAR_UN_ARTICLE.test(m))) return false;
+    return mots.every((m) => /^[\p{Lu}\p{N}]/u.test(m));
+}
+
+/* Le premier mot utile apres le verbe. Un nom propre, un sigle ou une casse
+   interne designent un produit ; un nom commun designe une action. On ne
+   regarde QUE ce premier mot : chercher plus loin ferait prendre « un plan
+   RGPD » pour un produit a cause du sigle, alors que l objet est « plan ». */
+function produitAnnonce(reste) {
+    const r = reste.trim();
+    if (/^[«"“'‘]/.test(r)) return "(entre guillemets)";
+    for (const mot of r.split(/\s+/)) {
+        if (DETERMINANTS.test(mot)) continue;
+        const propre = mot.replace(/[,.;:!?)»"”]+$/, "");
+        if (/^\p{Lu}[\p{Lu}\p{N}.&-]+$/u.test(propre)) return propre;   // VPN, ETF
+        if (/\p{Ll}[\p{Lu}]/u.test(propre)) return propre;              // wondrZ
+        if (/^\p{Lu}/u.test(propre)) return propre;                     // Claude
+        return null;                                                     // nom commun
+    }
+    return null;
+}
+
+/* Renvoie le nom du produit annonce, ou null. Le titre est decoupe aux deux
+   points : un communique se glisse souvent derriere une accroche redactionnelle
+   — « Premiere mondiale : X lance Y ». */
+function communiqueProduit(titre) {
+    const MOT = "[\\p{L}][\\p{L}\\p{N}.'’&-]*";
+    const forme = new RegExp(
+        `^\\s*((?:${MOT}\\s+){0,2}${MOT})\\s+(?:${VERBES_D_ANNONCE})\\b(.*)$`, "iu");
+
+    for (const segment of titre.split(/\s*[:–—]\s*/).filter(Boolean)) {
+        const m = segment.match(forme);
+        if (!m) continue;
+        if (!estUneMarque(m[1].split(/\s+/))) continue;
+        const produit = produitAnnonce(m[2]);
+        if (produit) return produit;
+    }
+    return null;
+}
+
+/* --------------------------------------------------------------------------
    LA PERTINENCE
 
    Le filtre precedent traquait la PUBLICITE. Il ne voyait pas le hors-sujet,
@@ -255,6 +377,13 @@ function admissible(article, recherche, section) {
         if (motif.test(titre)) return { ok: false, raison: quoi };
     }
 
+    // Le communique produit se juge sur la nature de l ecrit, comme les
+    // tournures ci-dessus : il vient donc avec elles, avant la pertinence.
+    const produit = communiqueProduit(titre);
+    if (produit) {
+        return { ok: false, raison: `communiqué produit (« ${produit} »)` };
+    }
+
     // La pertinence en dernier : c est la regle la plus severe, autant qu elle
     // s applique a ce qui a passe tout le reste. La raison nomme les mots
     // trouves, sans quoi un refus serait indiscutable faute d etre lisible.
@@ -287,4 +416,5 @@ function admissible(article, recherche, section) {
 
 module.exports = { AGE_MAX_JOURS, assezRecent, admissible, motsCommuns,
                    MINIMUM_MOTS_COMMUNS, MINIMUM_MOTS_SECTION,
-                   TOURNURES_PROMOTIONNELLES, SOURCES_ECARTEES };
+                   communiqueProduit, TOURNURES_PROMOTIONNELLES,
+                   SOURCES_ECARTEES };

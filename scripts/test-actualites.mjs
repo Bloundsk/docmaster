@@ -345,5 +345,52 @@ verifier("un mot de la section suffit à faire passer l'article",
 verifier("le refus dit que l'article est mal rangé", /mal rangé/.test(sortie11),
     sortie11.trim().slice(0, 200));
 
+/* --- 12. Le communique produit -----------------------------------------------
+ *
+ * Cas reel, retire par Ludo le 25 aout. Il passait tous les filets : pas de
+ * tournure promotionnelle, pas de majuscules, source inconnue, bien range sous
+ * « L'épargne ». Seule sa forme le trahit — une marque, un verbe d'annonce, et
+ * un produit NOMME en objet.
+ *
+ * Le second cas est le temoin, et il est le plus important des deux : « Bercy
+ * dévoile son plan » a exactement la meme forme, au produit pres. Son objet est
+ * un nom commun, donc il informe au lieu de vendre, et il DOIT passer. Une
+ * regle qui ecarterait les deux serait un filtre a verbes, pas a communiques. */
+console.log("\n=== 12. LE COMMUNIQUE PRODUIT EST REFUSE ===");
+
+const communique = {
+    "https://news.google.com/cp1": {
+        // Le titre REEL, entier. Tronque, il perdait « finances » et se
+        // faisait refuser des la regle de pertinence — le test aurait alors
+        // ete vert sans jamais eprouver le filtre a communiques.
+        titre: "BNI présente wondrZ, un compte d'épargne pour enfants et adolescents " +
+               "pour apprendre à gérer les finances dès le plus jeune âge",
+        source: "VOI.ID", date: new Date().toISOString().slice(0, 10),
+        guide: "finance", page: "debutant.html", ancre: "lépargne",
+        section: "L'épargne", sujet: "💰 Finance — Débutant",
+    },
+    "https://news.google.com/cp2": {
+        // Deux mots communs, dont « épargne » qui vient de la section : le
+        // temoin doit franchir les regles PRECEDENTES pour eprouver celle-ci.
+        titre: "Finance et épargne : Bercy dévoile son plan pour relancer le livret",
+        source: "Les Echos", date: new Date().toISOString().slice(0, 10),
+        guide: "finance", page: "debutant.html", ancre: "lépargne",
+        section: "L'épargne", sujet: "💰 Finance — Débutant",
+    },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(communique).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(communique)}\n-->\n`,
+}];
+const sortie12 = lancer();
+const e12 = lireEtat().articles;
+verifier("« BNI présente wondrZ » est refusé",
+    !e12.some((a) => a.lien.endsWith("/cp1")), JSON.stringify(e12.map((a) => a.lien)));
+verifier("« Bercy dévoile son plan » passe : son objet est un nom commun",
+    e12.some((a) => a.lien.endsWith("/cp2")), JSON.stringify(e12.map((a) => a.lien)));
+verifier("le refus nomme le produit annoncé", /communiqué produit.*wondrZ/.test(sortie12),
+    sortie12.trim().slice(0, 200));
+
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);
