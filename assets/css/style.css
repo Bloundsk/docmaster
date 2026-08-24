@@ -1074,6 +1074,27 @@ html { background: var(--background); }
 .actu-vide { color: var(--muted); font-style: italic; }
 
 /* ---------------------------------------------------------------
+   Introduction audio en tete d un parcours.
+
+   Volontairement plus sobre que la carte des podcasts : une page de
+   cours n a pas a etre decoree, et un bloc trop present ferait
+   passer l ecoute pour l essentiel alors que le contenu est ecrit.
+   Pas de carte, pas d ombre — un simple liseré et de l air.
+   --------------------------------------------------------------- */
+.intro-audio {
+    border-left: 3px solid var(--secondary);
+    padding-left: 18px;
+}
+.intro-audio h2 { margin-top: 0; }
+
+/* Largeur pleine : le lecteur natif est plus etroit que la colonne, et
+   un lecteur decentre a l air casse. « display: block » parce que
+   <audio> est en ligne par defaut, ce qui laisse un blanc dessous. */
+.intro-audio audio { width: 100%; display: block; margin: 14px 0 10px; }
+
+.intro-audio-mention { font-size: .82rem; color: var(--muted); margin: 0; }
+
+/* ---------------------------------------------------------------
    Podcasts. Meme carte que les actualites, liseré compris — mais en
    secondaire : un episode renvoie a l interieur du site, une actualite
    en sort. La couleur porte donc la meme information que la fleche
