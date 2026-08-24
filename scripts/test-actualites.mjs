@@ -377,6 +377,17 @@ const communique = {
         guide: "finance", page: "debutant.html", ancre: "lépargne",
         section: "L'épargne", sujet: "💰 Finance — Débutant",
     },
+    /* Meme forme exactement que wondrZ — marque, verbe, produit nomme — mais
+       l editeur est de ceux dont le site enseigne les produits. Ludo a demande
+       le 25 aout que ces annonces-la restent : une sortie de modele est au
+       parcours IA ce qu une nouvelle loi est au parcours Droit. Sans ce cas,
+       supprimer la liste des editeurs ne casserait aucun test. */
+    "https://news.google.com/cp3": {
+        titre: "Anthropic dévoile Claude Sonnet 4.5 : comment choisir un modèle adapté",
+        source: "ActuIA", date: new Date().toISOString().slice(0, 10),
+        guide: "ia", page: "intermediaire.html", ancre: "choisir-un-modele",
+        section: "Choisir un modèle", sujet: "🤖 Intelligence Artificielle — Intermédiaire",
+    },
 };
 etatIssues = [{
     number: 1,
@@ -391,6 +402,8 @@ verifier("« Bercy dévoile son plan » passe : son objet est un nom commun",
     e12.some((a) => a.lien.endsWith("/cp2")), JSON.stringify(e12.map((a) => a.lien)));
 verifier("le refus nomme le produit annoncé", /communiqué produit.*wondrZ/.test(sortie12),
     sortie12.trim().slice(0, 200));
+verifier("l'annonce d'un éditeur enseigné par le site passe",
+    e12.some((a) => a.lien.endsWith("/cp3")), JSON.stringify(e12.map((a) => a.lien)));
 
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

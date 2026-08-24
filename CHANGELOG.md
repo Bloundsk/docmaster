@@ -135,11 +135,38 @@ campagne de recrutement ». Deux pièges absents du corpus ont été fabriqués 
 l'éprouver — « Le gouvernement lance un plan RGPD », « La CNIL dévoile ses
 recommandations » — tous deux épargnés.
 
-**Ce que cela coûte est dit, et la décision revient à Ludo.** Trois des six sont
-des annonces d'éditeurs qu'on pourrait vouloir garder : une sortie de modèle
-intéresse un site qui parle des compétences de demain. Le filtre ne distingue
-pas BNI d'Anthropic — la nature de l'écrit est la même, seule la notoriété
-change. La promesse « aucune publicité » l'emporte en attendant.
+### Ce que le site enseigne n'est pas ce qu'on lui vend
+
+Le filtre ne distinguait pas BNI d'Anthropic : même forme, même nature d'écrit,
+seule la notoriété changeait. Le coût a été présenté à Ludo, qui a tranché
+autrement le jour même — **garder les annonces d'éditeurs**. Sa distinction
+tient debout, et elle est plus juste que la mienne :
+
+> Un **compte d'épargne** est un produit proposé au lecteur : le mentionner,
+> c'est faire de la publicité.
+> Un **modèle de langage** est un sujet que le site enseigne : le parcours IA
+> explique ce qu'est un modèle, comment en choisir un, ce qu'il coûte.
+
+Qu'une nouvelle version sorte est alors une information pédagogique, au même
+titre qu'une nouvelle loi pour le parcours Droit. Le critère n'est pas la
+notoriété de la marque, c'est **le rapport entre le produit annoncé et ce que
+le site apprend**.
+
+D'où une liste courte et explicite — OpenAI, Anthropic, Mistral, Google,
+Microsoft, Meta, Perplexity, Hugging Face — chacune avec sa raison écrite en
+face. Les écartés retombent de six à **trois** : wondrZ, le VPN d'ÉHO.LINK, le
+Gladiator de Thales. Un cas de banque fabriqué pour l'occasion, « Boursorama
+lance Bourso+, une offre de placement », reste refusé.
+
+Le danger de cette liste est écrit à côté d'elle : le critère n'est ni « cette
+marque est connue » ni « ce produit est bon ». **Le jour où un guide parlerait
+d'une banque en ligne, ajouter cette banque ici rouvrirait exactement le trou
+que wondrZ a montré.**
+
+L'exemption est gardée par son propre cas de test — sans lui, supprimer la
+liste ne casserait rien. Éprouvé dans les deux sens : liste vidée, l'annonce
+d'Anthropic disparaît et le test rougit ; exemption étendue à tout le monde,
+wondrZ repasse et le test rougit aussi.
 
 ### Un test vert qui n'éprouvait rien
 

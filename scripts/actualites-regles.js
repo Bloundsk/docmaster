@@ -149,15 +149,50 @@ function crie(titre) {
    Google « sa vision du futur », BANK OF AFRICA « une campagne de
    recrutement », l Iran « la fin des discussions ».
 
-   CE QUE CELA COUTE, ET QUI DOIT LE SAVOIR
+   LES EDITEURS QUE LE SITE ENSEIGNE — decision de Ludo, le 25 aout
 
-   Trois des six sont des annonces d editeurs qu on pourrait vouloir garder —
-   une sortie de modele interesse un site qui parle des competences de demain.
-   Le filtre ne fait pas de difference entre BNI et Anthropic, et c est
-   volontaire : la nature de l ecrit est la meme, seule la notoriete change.
-   Ce serait a Ludo de trancher s il veut les reintroduire ; en attendant, la
-   promesse « aucune publicite » l emporte.
+   Le filtre ne faisait au depart aucune difference entre BNI et Anthropic :
+   meme forme, meme nature d ecrit. Ludo a tranche autrement, et la distinction
+   qu il demande tient debout.
+
+   Un compte d epargne est un PRODUIT PROPOSE AU LECTEUR : le mentionner, c est
+   faire de la publicite. Un modele de langage est un SUJET QUE LE SITE
+   ENSEIGNE : le parcours IA explique ce qu est un modele, comment en choisir
+   un, ce qu il coute. Qu une nouvelle version sorte est une information
+   pedagogique, au meme titre qu une nouvelle loi pour le parcours Droit.
+
+   La difference n est pas la notoriete de la marque, c est le rapport entre le
+   produit et ce que le site apprend. D ou une liste — courte, explicite, et
+   qui ne grandit que pour une raison ecrite.
+
+   ATTENTION en y ajoutant un nom : le critere n est pas « cette marque est
+   connue » ni « ce produit est bon », mais « les guides enseignent cette
+   chose-la ». Le jour ou un guide parlerait d une banque en ligne, ajouter
+   cette banque ici rouvrirait exactement le trou que wondrZ a montre.
    -------------------------------------------------------------------------- */
+
+const EDITEURS_SUIVIS = [
+    "OpenAI",        // le parcours IA enseigne les modeles et leur choix
+    "Anthropic",     // idem
+    "Mistral",       // idem, et c est l editeur francais de reference
+    "Google",        // modeles, mais aussi analytics et referencement
+    "Microsoft",     // idem
+    "Meta",          // modeles ouverts, cites dans le parcours IA
+    "Perplexity",    // moteur de recherche par IA, meme metier que ci-dessus
+    "Hugging Face",  // la plateforme ou vivent les modeles ouverts
+];
+
+/* Le nom detecte en tete de titre est-il un editeur suivi ? On compare aussi
+   le premier mot seul, « Google Analytics » devant valoir « Google ». */
+function estUnEditeurSuivi(marque) {
+    const reduit = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").trim();
+    const nom = reduit(marque);
+    const premier = reduit(marque.split(/\s+/)[0]);
+    return EDITEURS_SUIVIS.some((e) => {
+        const c = reduit(e);
+        return c === nom || c === premier;
+    });
+}
 
 const VERBES_D_ANNONCE =
     "présente|presente|lance|dévoile|devoile|annonce|déploie|deploie|" +
@@ -212,6 +247,8 @@ function communiqueProduit(titre) {
         const m = segment.match(forme);
         if (!m) continue;
         if (!estUneMarque(m[1].split(/\s+/))) continue;
+        // Un editeur dont le site enseigne les produits informe, il ne vend pas.
+        if (estUnEditeurSuivi(m[1])) continue;
         const produit = produitAnnonce(m[2]);
         if (produit) return produit;
     }
@@ -417,4 +454,4 @@ function admissible(article, recherche, section) {
 module.exports = { AGE_MAX_JOURS, assezRecent, admissible, motsCommuns,
                    MINIMUM_MOTS_COMMUNS, MINIMUM_MOTS_SECTION,
                    communiqueProduit, TOURNURES_PROMOTIONNELLES,
-                   SOURCES_ECARTEES };
+                   SOURCES_ECARTEES, EDITEURS_SUIVIS };
