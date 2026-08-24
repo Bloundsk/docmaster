@@ -248,7 +248,23 @@ const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
               "août", "septembre", "octobre", "novembre", "décembre"];
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july",
                 "august", "september", "october", "november", "december"];
-const aujourdhui = new Date();
+/* La date du jour A PARIS, et non celle de la machine.
+
+   Les guides sont dates par le hook pre-commit, sur l heure locale de l auteur.
+   L integration continue, elle, tourne en UTC. Un commit fait apres minuit a
+   Paris — donc encore la veille en UTC — produisait une page datee « 25 août »
+   que le controle, se croyant le 24, declarait future. L echec etait certain et
+   la page parfaitement correcte.
+
+   Ni l un ni l autre n avait tort : ils ne parlaient pas du meme jour. On fixe
+   donc le fuseau, celui du site et de son auteur. */
+const aujourdhuiAParis = () => {
+    const [j, m, a] = new Intl.DateTimeFormat("fr-FR", {
+        timeZone: "Europe/Paris", day: "numeric", month: "numeric", year: "numeric",
+    }).format(new Date()).split("/").map(Number);
+    return new Date(a, m - 1, j);
+};
+const aujourdhui = aujourdhuiAParis();
 let datees = 0;
 for (const page of toutes) {
     const m = page.html.match(/(?:Dernière mise à jour|Last updated)\s*:\s*(\d+)\s+(\S+)\s+(\d{4})/);

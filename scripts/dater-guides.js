@@ -129,7 +129,15 @@ function dater(relatif, date) {
 
 const demandes = process.argv.slice(2).map(f => f.replace(/\\/g, "/"));
 const cibles = demandes.length ? demandes : listerGuides();
-const aujourdhui = new Date();
+/* Le jour A PARIS, et non celui de la machine. Le controle de coherence
+   compare desormais sur ce meme fuseau : sans cela, dater depuis un autre
+   fuseau produirait une page que l audit declarerait future ou perimee. */
+const aujourdhui = (() => {
+    const [j, m, a] = new Intl.DateTimeFormat("fr-FR", {
+        timeZone: "Europe/Paris", day: "numeric", month: "numeric", year: "numeric",
+    }).format(new Date()).split("/").map(Number);
+    return new Date(a, m - 1, j);
+})();
 
 let modifies = 0;
 let ignores = 0;
