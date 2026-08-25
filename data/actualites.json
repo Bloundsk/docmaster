@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-25T09:21:36.753Z",
+  "maj": "2026-08-25T19:19:33.588Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPamRUOEhLeDhmRFBXZV9FTmV2M3hHRVZ1MHdXWi1oSWtHcnJOU0dUdDZnaUlPeEp3MmlBWWdRZmEySmtfaTNfRU04TFFKTzN1bEs2aGRRRzlwUHN1ZmoyTENId19ZMmtHM0VfczdiTFE3aFlNNXhmZG5MX290ak1Lem95OEhHSjJBdmhMQ0JpM2RlTGxPcHUxX3NDU3RoTllwLVhvMVpxLW56MFFXUnBKTE1R?oc=5",
@@ -23,6 +23,30 @@
       "ancre": "réseaux-sociaux",
       "section": "📱 Réseaux sociaux",
       "sujet": "📢 Marketing Digital — Débutant",
+      "publie": "2026-08-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTVlJb3NfRXUtQ2RIU3hXVVBVQ3JZS0taZEdZbVF3NEJOdXJIajBRUFhlRExreFM0akFSS01mTXJ4cWtZRExpTzkyTXBjeUV1dlBYbERMbW0wdmZOZjF4eWx6djRTbWdWQ1RoYmZyYTNRYjhBdUFjSWxZeUwzWjdvQ2lGdXBiWGstMEdyWk5WekZ1SFEwQkdtWDJmZXhFeXJkQ09Qdnp0UlNjUQ?oc=5",
+      "titre": "Emil Frey France : une fuite de données expose des leads et des collaborateurs",
+      "source": "Cyberattaque.org",
+      "date": "2026-08-25",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-08-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQUd4Y1hpM1hkRTJ3d0szZ2Y1STl4SjhKZlJEU2x3ampTTGhTVXg5S0pRRDF4TDlCbE1RVExVcXkxLXQxUUtPSFlIVXRWc1RDX0xlRUVsYXE1Vkw3bDFkd01DNGpiNGJPRVpmTmRYYjcyV3hMalQwWkk0cE1rem45eWV1TG13WWtqdlRxQ1hRXzlhV2Y5c0NGejVUU0N0Q1oxN3pVejZCU1ItYnh5ZjZN?oc=5",
+      "titre": "Salarié et droit d’accès RGPD : quelles données l’employeur doit-il communiquer depuis la messagerie professionnelle",
+      "source": "Kohen Avocats",
+      "date": "2026-08-25",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "vos-donnees-personnelles",
+      "section": "🔐 Tes données personnelles",
+      "sujet": "⚖️ Droit & démarches — Avancé",
       "publie": "2026-08-25"
     },
     {
@@ -60,6 +84,18 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-08-24"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9lOHhLcUZWRFJna19nYk9QT0E1TVBmSW9XeGxYT3F2V191R2puaVBXbTVhWW5taEw0UkpySjBya1NHSWRPbzZqYVNyWEhJZENqbl91YQ?oc=5",
+      "titre": "Applied Finance IVS International Large ETF (IVSI)",
+      "source": "Investing.com France",
+      "date": "2026-08-24",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "les-etf",
+      "section": "📦 Les ETF",
+      "sujet": "💰 Finance — Débutant",
+      "publie": "2026-08-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWngzVkgxTWZzX1VJem0yRGZmQkJqN05IOC1KVW5VYk54YTJaeWdoTGRIU1czME9vUk9FNzd4VmNVTFNJTUVtVno3RVZTXzlVSVVRQUlwcTVNMWVrMGRqaVFZV0xJZHBJSmQ1T21UNHpsd29NSnQzOXhHSkdaaXlQclJkdlNlZDNIR3NxR2NVUFM?oc=5",
@@ -206,6 +242,18 @@
       "publie": "2026-08-24"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNdmdkLU9ZeUllWmJTSU00eGpuSlQxSDJ2a3kyeG5VeXlCM0RnLXJTbWR0N2dpa1I0RGtSQ3hhZEtNczh4TWZKLUJtTGFtSjlGVXBIVzF1czlPTkxRQUJLdzYtZ0c4Z0daUWswRnZrRDlZejNUWkx2azV1YzNCb3M0TjFvU05GQURPem1JUFlTRm5CTzBlbG5jSG8xVmNiNmIxWUdPY0tSUVFUcHg1OVJ6azdfbjRwdmhON2hnSlBmS29QSGFRVFpiMVNQdzctSEVCRjVCUy14Z2JLSlgzaXFjVGhxNzZHRmhiNVlGdkxJOWM2eXJ4VTZWc0UwU2lybnRpX1BWaGN4eG1qNkpGdUJFS2pMOFZZSWs?oc=5",
+      "titre": "« Nos systèmes d'information ont des faiblesses » : après les multiples piratages, les pistes à l'étude pour combler la « dette technique » de l'Etat",
+      "source": "Les Echos",
+      "date": "2026-08-19",
+      "guide": "dev-web",
+      "page": "avance.html",
+      "ancre": "dette-technique",
+      "section": "🏗️ La dette technique",
+      "sujet": "💻 Développement Web — Avancé",
+      "publie": "2026-08-25"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcVVhbjVKREdOOXluUzJ3bldOTzNhQVZoY2w2WlZYOUw1bFYxV3pkRzZrNUQwYTJ6WVBHcVc2RzJES2tkS1NRZHI3OElVREwzMDBQcWRPeUJ1T1NhWGFNZmptZVFnbklsRGhfSGV5QjY0WlpNSndoQXBsOGtCSlVITVFYNUUzWkFKTHAxVFdZT00xNnJQREtmUFhpR1d0bTFGajZxNThhYmlGaGtqdnFhcWZ4YlJoUWFvcllpcQ?oc=5",
       "titre": "Vol de données : « Dans les ministères, on fait de la cybersécurité quand on y pense »",
       "source": "Mediapart",
@@ -239,54 +287,6 @@
       "ancre": "double-authentification",
       "section": "📱 La double authentification",
       "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixwJBVV95cUxPQVhXbi0zUHR6bEkyb1RodkdzOEl5ZzA4R3JMOXRiN3l6M2N2NEMyUHV5N2ZodXhUMi1XaExPeEJsbVlfWWk1VmJBTXMwak1uS2ZGeXc4TjZjV3kwWDNZeEM5eWdhUmZGOGcySkNrWXQ4MThtWndKU0xhTU13WEwyVm8xaWtBeVY4TXpLNTdjN3ptck45NnRFeHBDcnppWEpVZWVrV3ZYVUF2RU1sYlRTdTFWWG9DUzdON0JnUmNyWHN3MXVXSnVMalV0VUN6RXdaZFNyMVdLbzg1ZTdpR1FHcVlhUkhhRGt1andGQVRxamZyc210a3pTZHcxYXBua0FYLTBMcjlMS3RTZ0ZHQ3dtQ2R1NXY3ZktHZXh4Yk9nVG1oU192Yy1OVlBWV3pzb3VtRE00blgyOVhtMENxb2VnV1FEcUhTcUU?oc=5",
-      "titre": "Double authentification généralisée, campagnes internes et \"bug bounty\": le gouvernement détaille son plan pour renforcer la cybersécurité de l'administration fiscale",
-      "source": "BFM",
-      "date": "2026-08-18",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "double-authentification",
-      "section": "📱 La double authentification",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQb0F5S3EyeUNaVnNBc3dRa3RVck9adjlNdzk2Rk9uOGtBZ0QzSkJSRk9DZjZTdml4bExVVFNtUXU3RjJiSXlYd3ZCN3lCYXJoT2tYRUZZZHpyT1IxNUg4V1pXYnBhYzRVbWFjWnVOaFdGQmQ5SlN0djFERFplMnVKRTJBRU9BQ1NxLVBTUEtsVUh2d1lWcUdRTzREcDdhUG5rZDJ4LVRWbFNDdVRJWkJ4MGV1bjd0M3hkSDFGRjhyUElWSjd1X2cwczlJb1FVVGJmUUY3dTJWRWFUc0E?oc=5",
-      "titre": "Piratage du fisc : une nouvelle fuite concernant des données liées aux successions, depuis \"coupée\"",
-      "source": "RTL",
-      "date": "2026-08-18",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPNWNqbXdRRVVuUVRSQXlKTkQ1RHZmTUJuYzVLUHNOOFZkcFM0VDVjRXBtSmoxUE1Td2RHS3pPRURMd0JqUm9sNWJITUJDWGcycXBUTUQ4WTk0enBfbzl5Z1BfdkM1cjd1clRsLVpLdmRYcHE4MUhXLUtLT05aRkhkZ1RmYWRNRDlORVYydDA2bVhWMU5SNkh0b1g5eHBuU2FFWFRiSE13RlRCd2x4bVprNTNkSXJhWFNqYWhadlZlVEllM0o2UDVxSzduc2VQdncteXZiNUVyNnJnYzVWMWVNTHZaSkFRTFJvWnJ6d3phalVMRWZHVnktZ1plQ0ZEWl9YcXBsa093ejZ4dw?oc=5",
-      "titre": "\"La cybersécurité n’a pas été une priorité\" : les syndicats dénoncent une gestion exposant les données de milliers de Français",
-      "source": "lanouvellerepublique.fr",
-      "date": "2026-08-18",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOeXhJZFc0SENYaTdQY2wydEd6X2N6NXNGZ0hFOUcxUGJITlUyMTlhak1UamJmdkVkUTJFeWg4MXhDVWhWaVQwTWxSVDh5MnZxYURPc0g1LWlFbXNnbE8zRExuWWVlYXEwMW9iWERaQkNiUTM4TzRLWUhpSG94TmFjZjhTV3RwZFdobnVHVEt4X3hsMzB3cERvalFaVG1CVTRVV3E1QWtySEVNOVR4cUxaeFlKXzZ1MUJSNTJ0VTJVSVhhZVdHV2U5Zzh1c1I3SENQUDh3T21uMG90WkxpWVVwNTVqTGw2RDNiMC1xcmFsZ1h6SHJlSms3Zkt6Vk1Ldw?oc=5",
-      "titre": "Livret A, LDD, LEP... Une partie de votre épargne finance déjà la transition écologique",
-      "source": "TF1 Info",
-      "date": "2026-08-17",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
       "publie": "2026-08-24"
     }
   ]
