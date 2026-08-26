@@ -39,6 +39,18 @@ import sys
 import time
 from pathlib import Path
 
+# La console Windows ecrit en cp1252, qui ne connait ni « ✓ » ni les accents.
+# Sans cette ligne, le script fabriquait tout l audio PUIS mourait sur son
+# dernier print — UnicodeEncodeError. Le fichier etait bon, le script en echec,
+# et un appel automatise n aurait vu que l echec. On force donc l UTF-8, en
+# remplacant ce qui ne passe pas plutot qu en s arretant : un compte rendu
+# illisible vaut mieux qu un traitement perdu.
+for flux in (sys.stdout, sys.stderr):
+    try:
+        flux.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 RACINE = Path(__file__).resolve().parent.parent
 EPISODES = RACINE / "podcasts"
 SORTIE = EPISODES / "brut"
