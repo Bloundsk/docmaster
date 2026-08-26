@@ -49,6 +49,13 @@ const BRUT = path.join(RACINE, "podcasts", "brut");
 const SORTIE = path.join(RACINE, "assets", "audio");
 const tout = process.argv.includes("--tout");
 
+/* Le releve des durees, relu puis reecrit. On repart de l existant pour qu un
+   traitement partiel — un seul parcours — ne fasse pas disparaitre les autres. */
+const DUREES = path.join(RACINE, "podcasts", "durees.json");
+const dureesRelevees = fs.existsSync(DUREES)
+    ? JSON.parse(fs.readFileSync(DUREES, "utf8"))
+    : {};
+
 const EXTENSIONS = [".wav", ".flac", ".m4a", ".mp3", ".aac", ".ogg", ".opus"];
 
 const bac = { window: {} };
@@ -344,6 +351,12 @@ for (const fichier of fs.readdirSync(BRUT)) {
         continue;
     }
 
+    /* La duree part dans le depot. La publication ne peut pas la relever
+       elle-meme : ffprobe n existe pas sur le runner d integration continue, et
+       la page s y fabriquait donc autrement qu ici. Ce script, lui, a ffmpeg
+       sous la main par construction — il vient de s en servir. */
+    dureesRelevees[sujet] = Math.round(secondes(cible));
+
     const ko = Math.round(fs.statSync(cible).size / 1024);
     console.log(`  ✓ ${sujet.padEnd(16)} ${duree(cible).padStart(12)}   ${String(ko).padStart(6)} Ko${m ? "" : "   (mesure illisible, passe simple)"}`);
     traites++;
@@ -352,5 +365,15 @@ for (const fichier of fs.readdirSync(BRUT)) {
 console.log(`\n${traites} fichier(s) préparé(s)` +
     (ignores ? `, ${ignores} inchangé(s)` : "") +
     (refuses ? `, ${refuses} refusé(s)` : "") + ".");
+/* Ecrit trie : sans cela l ordre suivrait celui du dossier, et le fichier
+   changerait sans raison d une machine a l autre. */
+const ordonnees = Object.fromEntries(Object.keys(dureesRelevees).sort()
+    .map((k) => [k, dureesRelevees[k]]));
+const rendu = JSON.stringify(ordonnees, null, 2) + "\n";
+if (!fs.existsSync(DUREES) || fs.readFileSync(DUREES, "utf8") !== rendu) {
+    fs.writeFileSync(DUREES, rendu);
+    console.log("Durées relevées : podcasts/durees.json");
+}
+
 if (traites) console.log("Puis :  node scripts/publier-podcasts.js");
 process.exit(refuses ? 1 : 0);

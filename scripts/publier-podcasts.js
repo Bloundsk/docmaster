@@ -43,7 +43,33 @@ const MOTS_PAR_MINUTE = 150;
 /* La duree exacte d un fichier, en secondes, ou null si ffprobe est absent.
    ffprobe vient avec ffmpeg ; le site n en depend pas pour s afficher, ce
    script s en passe donc plutot que d echouer. */
-function dureeReelle(fichier) {
+/* Les durees, relevees a la masterisation et ECRITES DANS LE DEPOT.
+
+   Pourquoi pas simplement ffprobe ici : parce que ffprobe n existe pas sur le
+   runner d integration continue. La page etait donc fabriquee differemment
+   selon la machine — « 2 min » ici, « 1 min » la-bas, l estimation par le
+   nombre de mots ayant pris le relais — et le controle de conformite echouait
+   sans que le depot soit en faute. Un fichier genere ne doit dependre que de
+   ce que le depot contient.
+
+   Le fichier est ecrit par scripts/preparer-audio.js, qui connait la duree au
+   moment ou il fabrique le MP3. C est le seul chemin par lequel un MP3 arrive
+   dans assets/audio/ : la valeur ne peut donc pas se desynchroniser. */
+const DUREES = path.join(RACINE, "podcasts", "durees.json");
+
+function dureesConnues() {
+    if (!fs.existsSync(DUREES)) return {};
+    try {
+        return JSON.parse(fs.readFileSync(DUREES, "utf8"));
+    } catch (e) {
+        console.error(`  podcasts/durees.json est illisible : ${e.message}`);
+        return {};
+    }
+}
+
+/* ffprobe reste un secours, pour le cas ou un MP3 serait depose a la main sans
+   passer par la masterisation. Il ne sert jamais quand la duree est connue. */
+function dureeParFfprobe(fichier) {
     try {
         const s = require("child_process").execFileSync("ffprobe", [
             "-v", "error", "-show_entries", "format=duration",
@@ -127,7 +153,10 @@ function lireEpisode(fichier) {
        et annoncer huit minutes pour un fichier d une minute se voit tout de
        suite. Si ffprobe manque, on retombe sur l estimation — mais on cesse
        alors de la presenter comme une certitude. */
-    const secondes = audio ? dureeReelle(cheminAudio) : null;
+    const relevees = dureesConnues();
+    const secondes = audio
+        ? (Number.isFinite(relevees[sujet]) ? relevees[sujet] : dureeParFfprobe(cheminAudio))
+        : null;
 
     return {
         secondes,
