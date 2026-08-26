@@ -1,5 +1,134 @@
 # Changelog — Clicked
 
+## 2026-08-26 — Le bruit n'était pas là où je le cherchais
+
+### Quatre versions rejetées, trois correctifs à côté
+
+Ludo, sur la quatrième : *« non ça ne va pas, il y a toujours des bruits de
+fond. »* Les trois fois précédentes, j'avais corrigé l'écrêtage, les coupures
+entre phrases, les sigles mal prononcés. De vrais défauts — mais aucun n'était
+celui-là, et je le déclarais réglé à chaque fois.
+
+Cette fois j'ai mesuré avant de toucher à quoi que ce soit. Il a fallu trois
+instruments pour trouver, et **les deux premiers m'ont donné tort**.
+
+**Le plancher de bruit** : mon fichier à −68 dB contre −64 dB pour la version
+NotebookLM que Ludo accepte. Le mien est plus silencieux. Sauf que la mesure
+était fausse : les 10 % de trames les plus calmes tombaient sur les **blancs
+que j'insère entre les paragraphes**, du silence numérique pur. Je mesurais mon
+propre silence.
+
+**Les trames de bruit audible**, repérées par platitude spectrale : 1,1 % du
+temps chez moi, 5,3 % chez NotebookLM. Encore à mon avantage. Donc le bruit
+n'était pas *ajouté par-dessus* la voix.
+
+**Le rapport harmonique/bruit**, mesuré à l'intérieur des voyelles — là où un
+souffle se mêle à la voix plutôt que de l'accompagner :
+
+```
+voix par défaut du modèle ....... 4,1 dB
+la même, clonant la référence ... 1,1 dB
+NotebookLM (jugé acceptable) .... 5,3 dB
+la référence de Ludo ............ 0,5 dB
+```
+
+**Le modèle sait produire une voix nette.** Ce qui la dégrade, c'est la
+référence : le clonage ne copie pas que le timbre, il copie les conditions
+d'enregistrement — la pièce, la distance au micro, la réverbération. Le clone
+hérite de 0,5 dB et rend 1,1.
+
+Le bruit n'était pas *sur* la voix, il était **dedans**. Aucun débruitage ne
+l'en sort : un `afftdn` fort ne fait passer le rapport que de 1,3 à 1,6 dB, en
+assombrissant le son au passage.
+
+### Une expérience qui ne prouvait rien
+
+La première version de la comparaison « avec ta voix / sans ta voix » a donné
+deux fichiers **identiques** — mêmes 89 trames, même rapport. Chatterbox garde
+en cache le conditionnement de voix : l'appel « sans référence » réutilisait
+celle chargée juste avant. Refaite dans un processus neuf, elle donne l'écart
+ci-dessus.
+
+Une expérience dont les deux branches donnent le même résultat ne dit pas que
+la cause est ailleurs — elle dit d'abord de vérifier le montage.
+
+### `scripts/verifier-voix.py`
+
+Trois secondes de mesure plutôt que quatre minutes de calcul suivies d'une
+déception. Il note un enregistrement — netteté, durée, saturation, plafond
+spectral — et dit ce qui changerait le plus : la pièce d'abord, la distance
+ensuite, et couper toute « amélioration vocale » de l'application, qui abîme
+précisément les harmoniques qu'on veut cloner.
+
+Éprouvé sur deux cas connus : refuse la référence actuelle (0,52 dB), accepte un
+enregistrement propre (5,28 dB).
+
+### La décision : NotebookLM
+
+Ludo tranche — *« crée-les avec NotebookLM »*. Le clonage de voix est abandonné.
+Ce qui manquait pour que ce soit tenable à quatorze parcours :
+
+- **`scripts/exporter-parcours.js`** écrit un texte propre par parcours, depuis
+  les guides. Régénéré et non recopié : un texte figé raconterait une version du
+  parcours qui n'existe plus, sans que rien ne le signale. L'export exclut le
+  bloc de l'intro audio — sinon on donne à NotebookLM la présentation de
+  l'épisode qu'il doit produire, et **l'épisode se met à parler de lui-même**.
+- **`podcasts/CONSIGNE-NOTEBOOKLM.md`**, tirée de la transcription de l'épisode
+  validé : une seule voix, tutoiement, « Premièrement / Deuxièmement / Enfin »,
+  aucun sigle, et le nom du site — sans lui, la première version disait
+  « CliqueFed ».
+- Le lecteur audio est désormais **écrit dans chaque guide** par le script,
+  entre deux marqueurs, avec la durée lue sur le fichier. Un seul fichier sert
+  le flux et le guide ; `assets/audio/intro/` disparaît.
+
+### Cinq défauts, trouvés en passant un vrai fichier dans la chaîne
+
+**1. Les deux passes de loudnorm ne mesuraient pas la même chose.** La mesure
+portait sur la source brute, la correction appliquait compresseur et égaliseur
+*avant* loudnorm : il corrigeait un signal qui n'existait plus. Les deux passes
+visaient même des cibles différentes, ce qui rend inutilisable l'offset rendu
+par la première. Le fichier NotebookLM est sorti à −20,7 LUFS et le barrage l'a
+supprimé. Avec la voix générée, l'écart tombait par chance dans la tolérance :
+**le réglage était faux depuis le début et rien ne le disait.**
+
+**2. Le barrage de sortie était aveugle au cas qu'il doit attraper.** Sa lecture
+du nombre, `-?[\d.]+`, ne sait pas lire un positif : une crête à `+0.1`
+devenait illisible, et la règle « une mesure absente n'est pas une mesure
+ratée » — écrite le 24 août pour de bonnes raisons — faisait alors taire le
+contrôle. Un MP3 saturant est passé ainsi. Corrigé, puis éprouvé en le laissant
+refuser le fichier, puis plafond abaissé. Sortie : −16,5 LUFS, −2,3 dBTP.
+
+**3. La publication lisait toute la documentation comme des épisodes** et
+échouait entièrement. Un épisode est désormais `<parcours>.md`, et les fichiers
+ignorés sont annoncés — un `finances.md` au pluriel serait sinon écarté en
+silence.
+
+**4. La page mentait.** Elle annonçait « Lire le texte de l'épisode » en montrant
+un script écrit, alors que l'audio vient du parcours. C'est devenu « Ce que
+raconte l'épisode », présenté comme un résumé.
+
+**5. Celui-là, c'est l'intégration continue qui l'a trouvé, pas moi.** Le push
+est passé au rouge alors que tout était vert en local : **ffprobe n'existe pas
+sur le runner**. La durée retombait sur une estimation par le nombre de mots —
+« ~1 min » là-bas, « ~2 min » ici — et la page se fabriquait différemment selon
+la machine. La durée est maintenant relevée à la masterisation et **écrite dans
+le dépôt**. Vérifié en simulant le runner, `PATH` réduit au dossier de node :
+sortie identique, contrôle vert. Et vérifié que ffprobe y était bien introuvable
+— sans quoi le test n'aurait rien prouvé.
+
+### La leçon
+
+Trois fois j'ai corrigé un défaut réel en croyant corriger celui dont on me
+parlait. Chaque correctif était juste ; aucun ne répondait à la plainte. Ce qui
+manquait n'était pas de la rigueur sur le correctif, c'était **un instrument qui
+mesure ce dont on se plaint** — et il a fallu en jeter deux avant d'en trouver
+un qui voie quelque chose.
+
+**Une mesure qui me donne raison mérite plus de méfiance qu'une mesure qui me
+donne tort.** Les deux premières disaient que mon fichier était plus propre que
+celui qu'on préférait : c'était le signe qu'elles regardaient à côté, pas que
+l'oreille se trompait.
+
 ## 2026-08-25 — Ce qui passait encore le filtre des actualités
 
 ### Deux articles retirés, et ce que le second a révélé
