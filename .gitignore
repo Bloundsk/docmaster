@@ -30,6 +30,13 @@ podcasts/voix/
 podcasts/ecoute/
 podcasts/intro/
 
+# L export des parcours en texte, donne a NotebookLM comme source. Il est
+# REGENERE par scripts/exporter-parcours.js et n a rien a faire dans le depot :
+# GitHub Pages servirait ces fichiers, et le contenu entier des guides se
+# retrouverait publie une seconde fois en texte brut, a une autre adresse.
+# Deux versions du meme cours en ligne, dont une que personne ne maintient.
+podcasts/sources/
+
 # Cache de compilation Python, produit par py_compile. Machine-dependant,
 # regenere a la volee, et sans interet pour qui relit le depot.
 __pycache__/

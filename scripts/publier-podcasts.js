@@ -15,7 +15,7 @@
 // 2. Il ne met dans le FLUX que les episodes dont l audio existe reellement
 //    sur le disque. Un podcast sans fichier audio n est pas un episode : une
 //    application de podcast qui recoit une <enclosure> vide affiche une erreur
-//    a l auditeur. Le texte, lui, parait des qu il est ecrit.
+//    a l auditeur. Le resume ecrit, lui, parait des qu il est ecrit.
 //
 // 3. Il ne calcule pas la duree depuis l audio. Tant que le fichier n existe
 //    pas, la duree est estimee depuis le nombre de mots — et annoncee comme
@@ -148,10 +148,24 @@ function lireEpisode(fichier) {
     };
 }
 
+/* Un episode est un fichier « <parcours>.md », et rien d autre. Le dossier
+   contient aussi de la documentation — la marche a suivre pour NotebookLM —
+   qui n a pas d en-tete et faisait echouer toute la publication. Le nom du
+   parcours vient de parcours.js : c est deja lui qui nomme les fichiers audio,
+   les pages et les dossiers de guides.
+
+   Les fichiers ignores sont ANNONCES. Un « finances.md » au pluriel serait
+   sinon ecarte en silence, et l episode manquerait sans que rien ne le dise. */
 function lireEpisodes() {
     if (!fs.existsSync(DOSSIER)) return [];
-    return fs.readdirSync(DOSSIER)
-        .filter((f) => f.endsWith(".md"))
+    const tous = fs.readdirSync(DOSSIER).filter((f) => f.endsWith(".md"));
+    const retenus = tous.filter((f) => PARCOURS[path.basename(f, ".md")]);
+    const ignores = tous.filter((f) => !PARCOURS[path.basename(f, ".md")]);
+    if (ignores.length) {
+        console.log(`Ignoré${ignores.length > 1 ? "s" : ""}, nom sans parcours ` +
+                    `correspondant : ${ignores.join(", ")}`);
+    }
+    return retenus
         .map(lireEpisode)
         .sort((a, b) => (b.publie || "").localeCompare(a.publie || ""));
 }
@@ -185,7 +199,7 @@ function rendreEpisode(e) {
     const lien = `guides/${e.sujet}/index.html`;
     const ecoute = e.audio
         ? `                <audio controls preload="none" src="assets/audio/${e.fichierAudio}"></audio>\n`
-        : `                <p class="podcast-attente">🎧 <strong>L'audio n'est pas encore enregistré.</strong> Le texte ci-dessous est celui de l'épisode, il se lit dès maintenant.</p>\n`;
+        : `                <p class="podcast-attente">🎧 <strong>L'audio n'est pas encore en ligne.</strong> Le résumé ci-dessous se lit dès maintenant.</p>\n`;
 
     return `            <article class="podcast" id="${e.sujet}">
                 <h3>${echapper(sansEmoji(e.parcours))} — ${echapper(e.titre)}</h3>
@@ -193,7 +207,7 @@ function rendreEpisode(e) {
                 <p>${echapper(e.resume)}</p>
 ${ecoute}                <p><a href="${lien}">Ouvrir le parcours ${echapper(sansEmoji(e.parcours))} →</a></p>
                 <details class="podcast-texte">
-                    <summary>Lire le texte de l'épisode</summary>
+                    <summary>Ce que raconte l'épisode</summary>
 ${enHTML(e.corps)}                </details>
             </article>
 `;
@@ -280,7 +294,7 @@ ${episodes.map(rendreEpisode).join("")}<!-- PODCASTS:FIN -->
         <section>
             <h2 id="methode">Comment ils sont faits</h2>
             <p>Chaque épisode reprend les idées d'un parcours du site, dans l'ordre où elles comptent. Il ne remplace pas le parcours écrit : les calculs, les simulateurs et les quiz n'ont pas d'équivalent à l'oral.</p>
-            <p>Le texte lu est publié avec l'épisode. Il sert de transcription, et il se lit plus vite qu'il ne s'écoute.</p>
+            <p>Chaque épisode est accompagné d'un résumé écrit. Ce n'est pas une transcription mot à mot : l'audio est produit à partir du parcours, le résumé en dit la même chose en plus court.</p>
 
             <div class="piege">
                 <span class="titre">La voix est synthétique</span>
@@ -341,6 +355,73 @@ ${items}    </channel>
 `;
 }
 
+/* --- L introduction audio en tete de chaque parcours -------------------------
+ *
+ * Le meme fichier sert deux fois : il est un episode dans le flux, et il est
+ * l introduction du parcours pour qui arrive sur le guide. Deux endroits, un
+ * seul fichier — un deuxieme exemplaire dans assets/audio/intro/ finirait par
+ * diverger du premier sans que personne le remarque.
+ *
+ * Le bloc est ECRIT dans les pages, entre deux marqueurs, et non pose par
+ * JavaScript : un guide doit rester lisible sans JS, et un lecteur pose apres
+ * coup n apparaitrait pas pour les moteurs de recherche.
+ *
+ * Quand l audio n existe pas encore, l espace entre les marqueurs reste vide.
+ * Un lecteur qui ne joue rien est pire que pas de lecteur du tout.
+ */
+const INTRO_DEBUT = "        <!-- INTRO-AUDIO:DEBUT -->";
+const INTRO_FIN = "        <!-- INTRO-AUDIO:FIN -->";
+
+const ANCIEN_BLOC = /\n?[ \t]*<section class="intro-audio">[\s\S]*?<\/section>[ \t]*\n/i;
+const OUVERTURE_MAIN = /<main id="main-content">\r?\n/;
+
+function dureeParlee(secondes) {
+    const m = Math.floor(secondes / 60);
+    const s = Math.round(secondes % 60);
+    if (!m) return `${s} secondes`;
+    return s < 10 ? `${m} minute${m > 1 ? "s" : ""}` : `${m} min ${String(s).padStart(2, "0")}`;
+}
+
+function blocIntro(e) {
+    if (!e.audio) return "";
+    return `
+        <section class="intro-audio">
+            <h2 id="ecouter">🎧 En un mot, avant de commencer</h2>
+            <p>${dureeParlee(e.secondes)} pour savoir ce que ce parcours propose, et dans quel ordre.</p>
+            <audio controls preload="none" src="../../assets/audio/${e.fichierAudio}"></audio>
+            <p class="intro-audio-mention">Voix de synthèse. Le texte des guides, lui, est écrit à la main.</p>
+        </section>
+`;
+}
+
+/* Renvoie [chemin relatif, contenu] pour le guide d un parcours, ou null si la
+   page est introuvable. Pose les marqueurs la premiere fois. */
+function guideAvecIntro(e) {
+    const relatif = `guides/${e.sujet}/index.html`;
+    const complet = path.join(RACINE, relatif);
+    if (!fs.existsSync(complet)) return null;
+
+    let html = fs.readFileSync(complet, "utf8");
+
+    /* Le bloc ecrit a la main sur Finance, avant que ce script existe. On le
+       retire pour que la version generee prenne sa place, sinon la page en
+       porterait deux. */
+    if (!html.includes(INTRO_DEBUT)) html = html.replace(ANCIEN_BLOC, "\n");
+
+    if (!html.includes(INTRO_DEBUT)) {
+        const ouverture = html.match(OUVERTURE_MAIN);
+        if (!ouverture) return null;
+        const pos = ouverture.index + ouverture[0].length;
+        html = html.slice(0, pos) + INTRO_DEBUT + "\n" + INTRO_FIN + "\n" + html.slice(pos);
+    }
+
+    const debut = html.indexOf(INTRO_DEBUT) + INTRO_DEBUT.length;
+    const fin = html.indexOf(INTRO_FIN);
+    if (fin < debut) return null;
+
+    return [relatif, html.slice(0, debut) + blocIntro(e) + html.slice(fin)];
+}
+
 // --- Ecriture ---------------------------------------------------------------
 function ecrireSiDifferent(relatif, contenu) {
     const complet = path.join(RACINE, relatif);
@@ -363,6 +444,14 @@ if (!episodes.length) {
 const ecrits = [rendrePage(episodes), rendreFlux(episodes)]
     .map((c, i) => ecrireSiDifferent(["podcasts.html", "podcast.xml"][i], c))
     .filter(Boolean);
+
+// Puis les guides : chaque parcours qui a un episode porte son lecteur.
+for (const e of episodes) {
+    const resultat = guideAvecIntro(e);
+    if (!resultat) continue;
+    const ecrit = ecrireSiDifferent(resultat[0], resultat[1]);
+    if (ecrit) ecrits.push(ecrit);
+}
 
 const avecAudio = episodes.filter((e) => e.audio).length;
 console.log(`${episodes.length} épisode(s) sur ${Object.keys(PARCOURS).length} parcours, ${avecAudio} avec audio.`);

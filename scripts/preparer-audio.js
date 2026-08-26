@@ -120,6 +120,50 @@ function mesurer(fichier, filtre, clefs) {
 // fichier est ecrete : ce sont autant de craquements.
 const ECRETAGE_TOLERE = 8;
 
+/* Les cibles de mise a niveau. EN CONSTANTES, et non recopiees dans chaque
+   passe : les deux passes de loudnorm DOIVENT viser exactement la meme chose.
+   Elles ne le faisaient pas — la mesure visait TP=-1,5 et LRA=11, la
+   correction TP=-2 et LRA=9. L « offset » rendu par la premiere est calcule
+   pour SES cibles ; le donner a une passe qui en vise d autres revient a
+   corriger de travers. */
+const CIBLE_I = -16;
+const CIBLE_TP = -4;
+const CIBLE_LRA = 9;
+
+/* La masterisation, avant la mise a niveau. Trois traitements, et chacun
+   repond a un defaut entendu :
+
+     highpass 80 Hz   le grondement, les bruits de manipulation, le souffle
+                      de la piece. Rien d utile ne vit sous 80 Hz dans une
+                      voix parlee.
+     acompressor      resserre l ecart entre les passages forts et faibles.
+                      C est CE traitement qui donne l impression que la voix
+                      est PROCHE, comme quelqu un assis en face — l effet que
+                      cherche un podcast d explication.
+     equalizer 3 kHz  la bande de l intelligibilite. +2,5 dB, et on comprend
+                      sans effort, meme en marchant dans la rue.
+
+   Ce qui n y est PAS : aucun debruitage. Il durcit les consonnes, et sur un
+   enregistrement dont les silences sont deja vides il ne gagne rien.
+
+   Et surtout : rien de tout cela ne rend une voix expressive. Un filtre
+   deplace des frequences, il n invente pas une montee de voix sur une
+   question.
+
+   POURQUOI ELLE EST AUSSI DANS LA PASSE DE MESURE — corrige le 26 aout 2026.
+
+   La mesure portait sur la source BRUTE, puis la correction appliquait le
+   compresseur et l egaliseur AVANT loudnorm. loudnorm corrigeait donc un
+   signal qui n existait plus : le compresseur et ses +2,5 dB avaient deja
+   deplace le niveau. Le defaut ne s est vu qu en donnant a la chaine une
+   source deja compressee — un fichier NotebookLM est sorti a -20,7 LUFS au
+   lieu de -16, et le barrage de sortie l a supprime. Avec la voix generee,
+   l ecart tombait par chance dans la tolerance de 2,5 LU : le reglage etait
+   faux depuis le debut, et rien ne le disait. */
+const MASTERISATION = "highpass=f=80," +
+    "acompressor=threshold=-20dB:ratio=3:attack=15:release=200:makeup=1," +
+    "equalizer=f=3000:width_type=o:width=1.2:g=2.5,";
+
 function verifierEntree(source) {
     const { satures } = mesurer(source, "astats=metadata=1",
         { satures: /Abs Peak count:\s*([\d.]+)/ });
@@ -133,8 +177,14 @@ function verifierEntree(source) {
 
 function verifierSortie(cible, secondesSource) {
     const m = mesurer(cible, "loudnorm=print_format=summary", {
-        niveau: /Input Integrated:\s*(-?[\d.]+)/,
-        crete: /Input True Peak:\s*(-?[\d.]+)/,
+        /* Le SIGNE est capture, « + » compris. Sans lui, le controle devenait
+           aveugle exactement au cas qu il doit attraper : ffmpeg ecrit une
+           crete positive « +0.1 », que « -?[\d.]+ » ne sait pas lire. La
+           mesure sortait nulle, et la regle « une mesure absente n est pas
+           une mesure ratee » faisait taire le barrage. Un MP3 a +0,1 dBTP est
+           passe ainsi, saturant, alors que le barrage existe pour cela. */
+        niveau: /Input Integrated:\s*([+-]?[\d.]+)/,
+        crete: /Input True Peak:\s*([+-]?[\d.]+)/,
     });
     /* Chaque mesure est testee SEPAREMENT, et une mesure absente n est pas une
        mesure ratee. Le premier jet sortait tot des que le niveau manquait, puis
@@ -251,7 +301,8 @@ for (const fichier of fs.readdirSync(BRUT)) {
        sans que personne le remarque. D ou spawnSync, qui rend les deux flux. */
     const mesure = spawnSync("ffmpeg", [
         "-hide_banner", "-nostats", "-i", source,
-        "-af", "loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json",
+        "-af", MASTERISATION +
+            `loudnorm=I=${CIBLE_I}:TP=${CIBLE_TP}:LRA=${CIBLE_LRA}:print_format=json`,
         "-f", "null", "-",
     ], { encoding: "utf8" });
 
@@ -260,29 +311,6 @@ for (const fichier of fs.readdirSync(BRUT)) {
     let m = null;
     try { m = JSON.parse(bloc); } catch (e) { /* on retombe sur une passe simple */ }
 
-    /* La masterisation, avant la mise a niveau. Trois traitements, et chacun
-       repond a un defaut entendu :
-
-         highpass 80 Hz   le grondement, les bruits de manipulation, le
-                          souffle de la piece. Rien d utile ne vit sous 80 Hz
-                          dans une voix parlee.
-         acompressor      resserre l ecart entre les passages forts et faibles.
-                          C est CE traitement qui donne l impression que la
-                          voix est PROCHE, comme quelqu un assis en face —
-                          l effet que cherche un podcast d explication.
-         equalizer 3 kHz  la bande de l intelligibilite. +2,5 dB, et on
-                          comprend sans effort, meme en marchant dans la rue.
-
-       Ce qui n y est PAS : aucun debruitage. Il durcit les consonnes, et sur
-       un enregistrement dont les silences sont deja vides il ne gagne rien —
-       mesure sur la prise retenue : plancher a -inf avec comme sans.
-
-       Et surtout : rien de tout cela ne rend une voix expressive. Un filtre
-       deplace des frequences, il n invente pas une montee de voix sur une
-       question. L expressivite se joue a la generation. */
-    const MASTERISATION = "highpass=f=80," +
-        "acompressor=threshold=-20dB:ratio=3:attack=15:release=200:makeup=1," +
-        "equalizer=f=3000:width_type=o:width=1.2:g=2.5,";
 
     /* Un limiteur EN DERNIER, et il n est pas decoratif.
        Mesure sans lui : +0,5 dBTP, c est-a-dire au-dessus de zero — ca sature,
@@ -292,10 +320,11 @@ for (const fichier of fs.readdirSync(BRUT)) {
        respecte alors la cible de NIVEAU en manquant celle de CRETE.
        Le limiteur rattrape ce que le gain constant laisse passer. */
     const filtre = MASTERISATION + (m
-        ? `loudnorm=I=-16:TP=-2:LRA=9:measured_I=${m.input_i}:measured_TP=${m.input_tp}` +
+        ? `loudnorm=I=${CIBLE_I}:TP=${CIBLE_TP}:LRA=${CIBLE_LRA}` +
+          `:measured_I=${m.input_i}:measured_TP=${m.input_tp}` +
           `:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}`
-        : "loudnorm=I=-16:TP=-2:LRA=9") +
-        ",alimiter=limit=0.891:attack=5:release=50:level=disabled";   // filet, ≈ -1 dBFS
+        : `loudnorm=I=${CIBLE_I}:TP=${CIBLE_TP}:LRA=${CIBLE_LRA}`) +
+        ",alimiter=limit=0.501:attack=5:release=50:level=disabled";   // filet, ≈ -6 dBFS
 
     execFileSync("ffmpeg", [
         "-y", "-loglevel", "error", "-i", source,
