@@ -29,8 +29,27 @@ rien ne le signalerait.
 2. Ajouter le `.txt` du parcours comme **seule** source. Une seule : deux
    sources et l'épisode mélange deux parcours.
 3. Choisir **Résumé audio**, puis **Personnaliser**.
-4. Coller la consigne ci-dessous, en remplaçant le nom du parcours.
-5. Générer, puis télécharger le `.m4a`.
+4. Régler les quatre champs comme suit — le premier est le plus important :
+
+   | Champ | Choix | Pourquoi |
+   |---|---|---|
+   | Format | **Briefing** | le seul format à une voix |
+   | Langue | **français** | |
+   | Longueur | **Court** | ~90 s, la durée câblée dans les guides |
+   | Sources | **1 source** | deux sources mélangent deux parcours |
+
+   **Ne pas laisser « Analyse approfondie »**, qui est proposé par défaut : sa
+   définition dit « une conversation animée entre deux hôtes ». Le format impose
+   alors deux voix, et la consigne écrite en dessous lui demande l'inverse.
+   Quand les deux se contredisent, c'est le format qui gagne — il choisit le
+   gabarit avant que la consigne soit lue.
+
+   « Débat » met lui aussi deux hôtes. « Critique » examine les sources pour
+   *aider à améliorer le contenu* : il commenterait le parcours au lieu de
+   l'expliquer.
+
+5. Coller la consigne ci-dessous, en remplaçant le nom du parcours.
+6. Générer, puis télécharger le `.m4a`.
 
 ## 3. La consigne à coller
 
