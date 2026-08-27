@@ -75,6 +75,27 @@ function texteDe(html) {
             .trim();
 }
 
+/* Le texte a coller dans « Personnaliser » de NotebookLM. Un seul endroit ou
+   il est ecrit, pour les quatorze parcours. */
+function consigne(nom) {
+    return `Produis un résumé audio en français d'environ 90 secondes, avec une seule voix — pas de dialogue entre deux animateurs.
+
+Le parcours s'appelle « ${nom} ». C'est de CE parcours que tu parles, et d'aucun autre : ne mentionne jamais un autre parcours du site.
+
+Le site s'appelle Clicked. Prononce-le à l'anglaise, « klikt », et non « cliquet ».
+
+Tutoie l'auditeur du début à la fin. Jamais de « vous ».
+
+Structure : annonce à voix haute « Premièrement », « Deuxièmement », « Enfin » pour marquer les trois temps du parcours. Termine par une phrase de synthèse qui donne l'idée forte à retenir.
+
+Registre parlé, vivant, avec des analogies concrètes du quotidien. Pas de tableau, pas de chiffre qu'on ne puisse retenir en l'entendant une fois.
+
+N'emploie aucun sigle : dis « fonds indiciels » et non « ETF », « plan d'épargne en actions » et non « PEA ». Un sigle se prononce mal à l'oral et l'auditeur décroche.
+
+Rappelle en une phrase, vers la fin, qu'il s'agit de pédagogie et non de conseil personnalisé.
+`;
+}
+
 function exporter(sujet) {
     const meta = PARCOURS[sujet];
     if (!meta) {
@@ -103,8 +124,22 @@ function exporter(sujet) {
     const cible = path.join(SORTIE, `${sujet}.txt`);
     fs.writeFileSync(cible, `${entete}\n${morceaux.join("\n\n")}\n`, "utf8");
 
+    /* La consigne A COLLER, ecrite ici avec le nom du parcours DEJA DEDANS.
+
+       Elle etait auparavant un modele unique, dans lequel il fallait remplacer
+       « Finance » a la main. Deux episodes sur trois sont partis en gardant le
+       nom de l exemple : « Voici l essentiel sur la protection de ta vie
+       numerique, tiree de notre PARCOURS FINANCE ». Le defaut est dans la
+       premiere phrase, donc impossible a rattraper au montage.
+
+       Demander a quelqu un de tenir deux choses d accord, c est le defaut que
+       ce depot corrige partout ailleurs. Il n y a plus rien a remplacer : un
+       fichier par parcours, on copie, on colle. */
+    const nom = meta.titre.replace(/^[^\p{L}]+/u, "").trim();
+    fs.writeFileSync(path.join(SORTIE, `${sujet}-consigne.txt`), consigne(nom), "utf8");
+
     const mots = morceaux.join(" ").split(/\s+/).length;
-    console.log(`  ✓ ${sujet.padEnd(16)} ${String(mots).padStart(6)} mots  →  podcasts/sources/${sujet}.txt`);
+    console.log(`  ✓ ${sujet.padEnd(16)} ${String(mots).padStart(6)} mots  →  ${sujet}.txt + ${sujet}-consigne.txt`);
     return true;
 }
 

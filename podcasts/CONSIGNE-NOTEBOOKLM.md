@@ -53,29 +53,26 @@ rien ne le signalerait.
 
 ## 3. La consigne à coller
 
-> Produis un résumé audio en français d'environ 90 secondes, avec **une seule
-> voix** — pas de dialogue entre deux animateurs.
->
-> Tutoie l'auditeur du début à la fin. Jamais de « vous ».
->
-> Structure : annonce à voix haute « Premièrement », « Deuxièmement », « Enfin »
-> pour marquer les trois temps du parcours. Termine par une phrase de synthèse
-> qui donne l'idée forte à retenir.
->
-> Registre parlé, vivant, avec des analogies concrètes du quotidien. Pas de
-> tableau, pas de chiffre qu'on ne puisse retenir en l'entendant une fois.
->
-> N'emploie aucun sigle : dis « fonds indiciels » et non « ETF », « plan
-> d'épargne en actions » et non « PEA ». Un sigle se prononce mal à l'oral et
-> l'auditeur décroche.
->
-> Rappelle en une phrase, vers la fin, qu'il s'agit de pédagogie et non de
-> conseil personnalisé.
->
-> Le parcours s'appelle **Finance** et le site s'appelle **Clicked**.
+Elle est **déjà écrite, avec le nom du parcours dedans**, dans un fichier à
+côté de la source :
 
-Le nom du site compte : sans lui, le résumé dit « la plateforme » ou invente un
-nom. La toute première version disait « CliqueFed ».
+```
+podcasts/sources/apprendre-consigne.txt
+podcasts/sources/cybersecurite-consigne.txt
+…
+```
+
+Ouvrir, tout copier, coller dans « Sur quoi les hôtes IA devraient-ils se
+concentrer ? ». **Il n'y a rien à remplacer.**
+
+Auparavant la consigne était un modèle unique où il fallait changer « Finance »
+à la main. Deux épisodes sur trois sont partis en gardant le nom de l'exemple —
+« Voici l'essentiel sur la protection de ta vie numérique, tirée de notre
+**parcours finance** ». Le défaut tombe dans la première phrase, donc
+impossible à rattraper autrement qu'en régénérant.
+
+Ces fichiers sont produits par `node scripts/exporter-parcours.js`, en même
+temps que les sources.
 
 ## 4. Me redonner les fichiers
 
