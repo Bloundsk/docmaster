@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-28T21:49:57.813Z",
+  "maj": "2026-08-28T22:00:59.756Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTDV4ckZNNDVlc2FkMV9FbTVrYlZId01xX0RPc2xZYkU1YXFYM2ZGMktqRXRiVjdZTHNoeUdSeXRnanVzdEgwUnM2elprU0cwdWoxamFjN1NOSnctWWVNR3pVa1NOcV95UUdDMzE3ZVdkaWR0TGxKR0FHMWVnalJiM3N4V2dRcUJKbmg3UUdwX0E?oc=5",
@@ -101,6 +101,18 @@
       "lien": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQYThEWUswQV9TUlYxNWVoenhZV3dYOVM3aDg5NGFqY29hWGJNNTVGMkg0RWNpVGhsYUhmWXVTTlBSZDVXenZQeTNfMGstbWprMFFCU2l4YUpnSFI1c0F4YWVkdFhlT2ZMb0J5RWNzX000azNuYTVFRHQzU1dLeE93NzBpZ21mX2hBVmtVQlRweEVRaUk0VTF4aEZKLVpCQmFzMGpHNjdaZll6dm8yVzZhZmw4bFFvS2o3ckVWejFMd0JBRnlNRThRWHlQd3Vja2g1ZGJ0dlJuUW8yZ01CX2t0dVZ5T0FoQmYzWG9KODJPVktQem5OSjM2X0FNVFRhV1hXdUNkRUtWdVhTOGtOejVxRXFB?oc=5",
       "titre": "Fuites de données : « La France souffre d’une mauvaise perception des enjeux cyber, y compris au plus haut niveau de l’Etat »",
       "source": "Le Monde.fr",
+      "date": "2026-08-26",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-08-28"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNU0JKQ3dRSzU1bm5hc0liSmtLU2N5bGNvSllrTFJHMWtpNFdMelBYRU54VURFSnhhVlBha2lvZWpMbHVnaE5IZUhmWEtMV2JHZ1hweTlWU3FRZkZlclhvNnRnR3VBQ0RrM0NNVFpJLTFTbmJXU3lIWUczRGpEakZZZS1B?oc=5",
+      "titre": "Fuite de données E.Leclerc : des clients touchés après le piratage d’un...",
+      "source": "French Breaches",
       "date": "2026-08-26",
       "guide": "cybersecurite",
       "page": "avance.html",
@@ -230,6 +242,18 @@
       "publie": "2026-08-23"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5Ha3pVeHdIRl8wNUZwRllrVzd4cXdpS04yVVZGZVZleEQ2eUpiUXA2MEhyU1hwRTZ5Q3hnc0dUakRsWS1tLXpWWkN4aF81RnM?oc=5",
+      "titre": "Ousmane Bamba : l'entrepreneur ivoirien qui réinvente le modèle économique africain 0 photos",
+      "source": "opentroc.com",
+      "date": "2026-08-23",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "modele-economique",
+      "section": "💰 Le modèle économique",
+      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
+      "publie": "2026-08-28"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZUlWZGxPU1huQ2RLamY1RHd6V2FjNXpLcTJ2TGNuMFBBYWxZSFRxUWxkTjBzbGVKVmhpSUdkdFJOb19IX1ZsNlQ3WW9PclN2MENkSE5ybnhmTHZLU2hmeFF1UlVUazlBNmF0WXp5UmhyRld5QUh6MkE1ZC1yTXNLVVJVMjRid0FOVkIwWHlvNGpTWE1QOFFfek40VjJlNW9rRlFtdDd4ZjQ?oc=5",
       "titre": "PARIS : Sobriété numérique - L'ADEME alerte sur l'impact environnemental de nos écrans",
       "source": "Presse Agence",
@@ -264,30 +288,6 @@
       "section": "🧪 Les tests A/B",
       "sujet": "📊 Data & Analytics — Avancé",
       "publie": "2026-08-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQTmpPZGtnbGUtbDlYODdzcWpTbzd3aFFGVXI3cEwxVDFtZmFJdW5zdzRZVVRBQUFobWFNeGVVdjlLajJJOVoxME56bmFVMlpqOHB3dHlWcnZaMjZibjRpSVBCYUNoa1VkdkNZaGRMS05uWklaQmZ2SVJIX2tFMVY3bk5XZ0E3RTR5dm4wSnNSb3dsMzR3SDRHQlJlUkliNUdaSU1vS19nbGtreGJJNy15YVJNQUp1STVIVkZ2dWxjZFNxMmY1clAwUmhITG5pd3J2RUhRTDhZRDlVSmY4?oc=5",
-      "titre": "« Vous perdez la notion du temps à un certain moment » : les réseaux sociaux sont-ils conçus pour nous rendre accros ?",
-      "source": "RTL Info",
-      "date": "2026-08-20",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOdWxhNG5wc2F6cUgzWG9MS0tHcXRYN1UzTnY1RldhRUpzNjFDYlN4M0JOSTJjMllGWlN3RmJybE10dlpIM3lLZVFnLWxMR2x3a1BWaEhFZms0TTFDY3czamVzdnM5cGR2bGJQaHc3ZTFPT0w5Skg3SE55b3NpYmR2eWVMY0NFamRNZ2tXWTVHX0JrV3RGRURsOEF5OG4wcVloZXhuaXpsOUNDaDY0UGtYWVgza0RiTFY3WktLSzU0NkM?oc=5",
-      "titre": "Piratage : une fuite de données a touché les abonnés fibre de SFR",
-      "source": "Sud Ouest",
-      "date": "2026-08-20",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-24"
     }
   ]
 }
