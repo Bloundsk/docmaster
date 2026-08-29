@@ -20,6 +20,26 @@
             <itunes:explicit>false</itunes:explicit>
         </item>
         <item>
+            <title>Intelligence Artificielle — Un moteur de déduction, pas un oracle</title>
+            <description>Comprendre comment la technologie fonctionne sous le capot pour cesser d'y voir de la magie. Intelligence Artificielle en une minute quarante.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#ia</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#ia</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/ia.mp3" length="1176274" type="audio/mpeg"/>
+            <itunes:duration>98</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Marketing Digital — Ton audience, louée ou possédée</title>
+            <description>Attirer et retenir des clients sans jargon, en réparant les fuites avant d'acheter du trafic. Marketing Digital en une minute trente.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#marketing</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#marketing</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/marketing.mp3" length="1096966" type="audio/mpeg"/>
+            <itunes:duration>91</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Négociation &amp; communication — Ton pouvoir vient de la porte de sortie</title>
             <description>La négociation ne repose pas sur le tchatche, mais sur ce qui se prépare avant de s'asseoir à la table. Négociation &amp; communication en une minute vingt.</description>
             <link>https://bloundsk.github.io/docmaster/podcasts.html#negociation</link>
@@ -37,6 +57,16 @@
             <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
             <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/productivite.mp3" length="978788" type="audio/mpeg"/>
             <itunes:duration>82</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Santé au travail — Ajuster avant que la douleur s'installe</title>
+            <description>Le but n'est pas de te rendre plus productif, mais d'apprendre à travailler sans t'abîmer. Santé au travail en une minute trente.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#sante</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#sante</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/sante.mp3" length="1082546" type="audio/mpeg"/>
+            <itunes:duration>90</itunes:duration>
             <itunes:explicit>false</itunes:explicit>
         </item>
         <item>

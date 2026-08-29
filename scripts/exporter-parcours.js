@@ -82,7 +82,7 @@ function consigne(nom) {
 
 Le parcours s'appelle « ${nom} ». C'est de CE parcours que tu parles, et d'aucun autre : ne mentionne jamais un autre parcours du site.
 
-Le site s'appelle Clicked. Prononce-le à l'anglaise, « klikt », et non « cliquet ».
+Le site s'appelle Clicked. À l'oral ce nom se dit à l'anglaise, « klikt », jamais « cliquet ». N'explique pas cette prononciation à l'auditeur : contente-toi de la respecter.
 
 Tutoie l'auditeur du début à la fin. Jamais de « vous ».
 
