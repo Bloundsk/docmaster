@@ -10,6 +10,36 @@
         <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/podcast.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title>Sobriété numérique — Tout se joue au moment de l'achat</title>
+            <description>Supprimer ses vieux courriels ne sauve rien. L'impact du numérique est dans la fabrication, pas dans l'usage. Sobriété numérique en une minute vingt.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#ecologie</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#ecologie</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/ecologie.mp3" length="987565" type="audio/mpeg"/>
+            <itunes:duration>82</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Négociation &amp; communication — Ton pouvoir vient de la porte de sortie</title>
+            <description>La négociation ne repose pas sur le tchatche, mais sur ce qui se prépare avant de s'asseoir à la table. Négociation &amp; communication en une minute vingt.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#negociation</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#negociation</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/negociation.mp3" length="970324" type="audio/mpeg"/>
+            <itunes:duration>81</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>⏱ Productivité &amp; Organisation — Gérer son énergie, pas son temps</title>
+            <description>Ce parcours ne sert pas à travailler plus vite, mais à éliminer ce qui fatigue inutilement. Productivité &amp; Organisation en une minute vingt.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#productivite</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#productivite</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/productivite.mp3" length="978788" type="audio/mpeg"/>
+            <itunes:duration>82</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Développement Web — Trois piliers qui ne se démodent pas</title>
             <description>Créer un site paraît facile, parce qu'on voit le résultat tout de suite. Sécurité, économie des ressources, clarté : le parcours Développement Web en une minute quarante.</description>
             <link>https://bloundsk.github.io/docmaster/podcasts.html#dev-web</link>
