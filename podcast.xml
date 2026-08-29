@@ -10,6 +10,26 @@
         <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/podcast.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title>Design UX/UI — Le bon design est invisible</title>
+            <description>Personne ne complimente une porte qui s'ouvre toute seule ; tout le monde peste contre celle qu'on pousse alors qu'il fallait tirer. Design UX/UI en une minute quarante.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#design</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#design</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/design.mp3" length="1194141" type="audio/mpeg"/>
+            <itunes:duration>99</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Droit &amp; démarches — Avoir raison ne suffit pas, il faut le prouver</title>
+            <description>Les réflexes juridiques du quotidien, sans jargon : ce qui se garantit, ce qui se prouve, et ce qu'on peut obtenir sans procès. Droit &amp; démarches en une minute trente.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#droit</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#droit</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/droit.mp3" length="1095399" type="audio/mpeg"/>
+            <itunes:duration>91</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Sobriété numérique — Tout se joue au moment de l'achat</title>
             <description>Supprimer ses vieux courriels ne sauve rien. L'impact du numérique est dans la fabrication, pas dans l'usage. Sobriété numérique en une minute vingt.</description>
             <link>https://bloundsk.github.io/docmaster/podcasts.html#ecologie</link>
@@ -17,6 +37,16 @@
             <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
             <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/ecologie.mp3" length="987565" type="audio/mpeg"/>
             <itunes:duration>82</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Entrepreneuriat — Le seul test valable est une carte bancaire</title>
+            <description>Valider et financer un projet avant d'y consacrer des mois. Entrepreneuriat en une minute vingt-cinq.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#entrepreneuriat</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#entrepreneuriat</guid>
+            <pubDate>Sat, 29 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/entrepreneuriat.mp3" length="1040855" type="audio/mpeg"/>
+            <itunes:duration>87</itunes:duration>
             <itunes:explicit>false</itunes:explicit>
         </item>
         <item>
