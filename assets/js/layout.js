@@ -70,6 +70,7 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
                 <a href="${lien("index.html")}" class="logo">${logoHTML}</a>
                 <ul class="nav-links">
                     <li><a href="${lien("index.html")}">${t("accueil")}</a></li>
+                    <li><a href="${lien("guides.html")}">${t("guides")}</a></li>
                     <li><a href="${lien("actualites.html")}">${t("actualites")}</a></li>
                     <li><a href="${lien("podcasts.html")}">${t("podcasts")}</a></li>
                     <li><a href="${lien("glossaire.html")}">${t("glossaire")}</a></li>
@@ -92,6 +93,7 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
                  le logo y mène déjà. Les mentions légales ferment la liste,
                  comme il est d'usage. -->
             <nav aria-label="${t("mentions")}">
+                <a href="${lien("guides.html")}">${t("guides")}</a>·
                 <a href="${lien("actualites.html")}">${t("actualites")}</a>·
                 <a href="${lien("podcasts.html")}">${t("podcasts")}</a>·
                 <a href="${lien("glossaire.html")}">${t("glossaire")}</a>·

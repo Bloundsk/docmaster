@@ -128,7 +128,12 @@ verifier("l'accueil français reste français", lirePage("index.html").includes(
 const accueil2 = lirePage("index.html");
 verifier("l'accueil montre la rubrique", accueil2.includes("À lire ailleurs"));
 verifier("l'accueil renvoie vers la page", accueil2.includes('href="actualites.html"'));
-verifier("l'accueil garde ses catégories", accueil2.includes("Nos catégories") && accueil2.includes("guides/design/index.html"));
+/* Les parcours ont quitte l accueil pour guides.html le 29 aout 2026. Ce que
+   la publication des actualites ne doit pas casser, ce sont donc les blocs qui
+   restent : le renvoi vers les guides, et les marqueurs des nouveautes. */
+verifier("l'accueil garde son renvoi vers les guides", accueil2.includes('href="guides.html"'));
+verifier("l'accueil garde le bloc des nouveautés",
+    accueil2.includes("NOUVEAUTES:DEBUT") && accueil2.includes("NOUVEAUTES:FIN"));
 
 // --- 3. Une case decochee ---------------------------------------------------
 console.log("\n=== 3. UNE CASE DECOCHEE ===");

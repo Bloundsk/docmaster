@@ -437,9 +437,11 @@
      * qu elles y existent bien : une faute de frappe afficherait sinon une
      * chaine vide, sans que rien ne le signale. */
     const PROPOS = {
-        // Sur l accueil, le lien descend aux categories : renvoyer a l accueil
-        // depuis l accueil ne menerait nulle part.
-        "index.html":           { texte: "mascotteBulleAccueil", ancre: "#categories" },
+        /* Depuis le 29 aout 2026, les parcours ne sont plus sur l accueil mais
+           sur guides.html. La mascotte y envoie : son ancre « #categories »
+           pointait sur une section qui avait demenage, donc sur rien. */
+        "index.html":           { texte: "mascotteBulleAccueil", ancre: "guides.html" },
+        "guides.html":          { texte: "mascotteBulleGuides", ancre: "#categories" },
         "actualites.html":      { texte: "mascotteBulleActualites" },
         "podcasts.html":        { texte: "mascotteBullePodcasts", ancre: "#episodes" },
         "glossaire.html":       { texte: "mascotteBulleGlossaire" },

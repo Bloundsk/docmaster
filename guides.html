@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Les guides - Clicked</title>
+    <meta name="description" content="Les quatorze parcours de Clicked, du niveau débutant au niveau avancé : finance, intelligence artificielle, développement web, cybersécurité, droit, santé au travail et sept autres. Gratuits, sans inscription.">
+
+    <meta name="google-site-verification" content="eoBswD8a-8KWcCksH9GwsL1hCZ-XPqV0o9CjJjK4jd8" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        /* Applique le theme AVANT le premier affichage, sans quoi la page
+           apparaitrait dans le mauvais theme une fraction de seconde avant de
+           basculer. Doit rester inline : un fichier externe imposerait un
+           aller-retour reseau, pendant lequel la page serait deja peinte.
+
+           Regle : le choix explicite du visiteur, fait via le bouton, prime
+           sur tout. En son absence, on suit le reglage de son systeme. */
+        (function () {
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/guides.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Les guides - Clicked">
+    <meta property="og:description" content="Clicked est une bibliothèque de guides pédagogiques gratuits sur la finance, l'intelligence artificielle, le développement web, le marketing, la cybersécurité, l'entrepreneuriat, la productivité, la data, le design, l'apprentissage, le droit, la santé au travail, la sobriété numérique et la négociation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/guides.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Les guides - Clicked">
+    <meta name="twitter:description" content="Clicked est une bibliothèque de guides pédagogiques gratuits sur la finance, l'intelligence artificielle, le développement web, le marketing, la cybersécurité, l'entrepreneuriat, la productivité, la data, le design, l'apprentissage, le droit, la santé au travail, la sobriété numérique et la négociation.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "";</script>
+    <script src="assets/js/identite.js"></script>
+    <script src="assets/js/langues.js"></script>
+    <script src="assets/js/layout.js"></script>
+
+    <header>
+        <h1>Les guides</h1>
+        <p>Quatorze parcours, chacun en trois niveaux. Choisis un sujet, ou cherche directement ce qui t'intéresse.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="🔍 Rechercher un guide, un sujet..." autocomplete="off">
+        <span class="search-hint">/</span>
+        <div id="search-results" class="search-results"></div>
+    </div>
+
+    <main id="main-content">
+        <section id="categories">
+            <h2>Tous les parcours</h2>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">💰</span>Finance</h3>
+                <p>Apprendre les bases de l'investissement financier.</p>
+                <a href="guides/finance/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🤖</span>Intelligence artificielle</h3>
+                <p>Découvrir la création d'agents IA et les technologies associées.</p>
+                <a href="guides/ia/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">💻</span>Développement Web</h3>
+                <p>Apprendre à créer des sites et applications web modernes.</p>
+                <a href="guides/dev-web/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">📢</span>Marketing Digital</h3>
+                <p>Comprendre les leviers pour promouvoir un produit ou une marque en ligne.</p>
+                <a href="guides/marketing/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🔒</span>Cybersécurité</h3>
+                <p>Comprendre les bases pour se protéger et protéger ses données en ligne.</p>
+                <a href="guides/cybersecurite/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🚀</span>Entrepreneuriat</h3>
+                <p>Apprendre à structurer et lancer un projet d'entreprise.</p>
+                <a href="guides/entrepreneuriat/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">⏱️</span>Productivité & Organisation</h3>
+                <p>Mieux s'organiser pour gagner en efficacité au quotidien.</p>
+                <a href="guides/productivite/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">📊</span>Data & Analytics</h3>
+                <p>Apprendre à collecter, analyser et interpréter des données.</p>
+                <a href="guides/data/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🎨</span>Design UX/UI</h3>
+                <p>Comprendre comment créer des interfaces claires et agréables à utiliser.</p>
+                <a href="guides/design/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">⚖️</span>Droit &amp; démarches</h3>
+                <p>Se repérer dans les démarches, connaître ses délais et faire valoir ses droits.</p>
+                <a href="guides/droit/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🩺</span>Santé au travail</h3>
+                <p>Régler son poste, comprendre la charge mentale, connaître ses recours.</p>
+                <a href="guides/sante/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🌱</span>Sobriété numérique</h3>
+                <p>Où est vraiment l'impact du numérique, et quels chiffres tiennent.</p>
+                <a href="guides/ecologie/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🤝</span>Négociation &amp; communication</h3>
+                <p>Se faire comprendre, et savoir ce qui se calcule avant de négocier.</p>
+                <a href="guides/negociation/index.html">Voir le guide →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🎓</span>Apprendre à apprendre</h3>
+                <p>Retenir ce qu'on lit, réviser au bon moment, et trier les méthodes.</p>
+                <a href="guides/apprendre/index.html">Voir le guide →</a>
+            </article>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/search-data.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/favoris.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/enhance.js"></script>
+    <script src="assets/js/mascotte.js"></script>
+
+    <!-- Les statistiques d'audience (GoatCounter) sont chargées par assets/js/layout.js,
+         présent sur toutes les pages du site. Rien à ajouter ici. -->
+</body>
+</html>

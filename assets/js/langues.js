@@ -150,8 +150,8 @@
            y compris sous « /en/ » : une copie traduite ne serait jamais
            affichée. Cette page traduit donc son propre texte, à partir des
            libellés ci-dessous. */
-        en: ["index.html", "actualites.html", "glossaire.html", "idees.html",
-             "faq.html", "a-propos.html", "mentions-legales.html",
+        en: ["index.html", "guides.html", "actualites.html", "glossaire.html",
+             "idees.html", "faq.html", "a-propos.html", "mentions-legales.html",
              "mon-espace.html"],
         es: [], de: [], it: [], zh: [], ru: [],
     };
@@ -164,6 +164,7 @@
     const TEXTES = {
         // --- Navigation ----------------------------------------------------
         accueil:    { fr: "Accueil", en: "Home", es: "Inicio", de: "Startseite", it: "Home", zh: "首页", ru: "Главная" },
+        guides:     { fr: "Guides", en: "Guides", es: "Guías", de: "Kurse", it: "Guide", zh: "指南", ru: "Курсы" },
         actualites: { fr: "Actualités", en: "News", es: "Actualidad", de: "Aktuelles", it: "Attualità", zh: "资讯", ru: "Новости" },
         glossaire:  { fr: "Glossaire", en: "Glossary", es: "Glosario", de: "Glossar", it: "Glossario", zh: "术语表", ru: "Глоссарий" },
         podcasts:   { fr: "Podcasts", en: "Podcasts", es: "Podcasts", de: "Podcasts", it: "Podcast", zh: "播客", ru: "Подкасты" },
@@ -212,6 +213,7 @@
            idees, « Une question ? » sur la FAQ. Le repli sur « mascotteBulle »
            reste en place pour toute page qui n aurait pas le sien. */
         mascotteBulleAccueil:    { fr: "Satisferas-tu ta curiosité ?", en: "Will you satisfy your curiosity?", es: "¿Satisfará su curiosidad?", de: "Stillen Sie Ihre Neugier?", it: "Soddisferai la tua curiosità?", zh: "要满足你的好奇心吗？", ru: "Утолите своё любопытство?" },
+        mascotteBulleGuides:     { fr: "Par lequel commences-tu ?", en: "Which one will you start with?", es: "¿Por cuál empiezas?", de: "Womit fangen Sie an?", it: "Da quale cominci?", zh: "先从哪一个开始？", ru: "С чего начнёте?" },
         mascotteBulleActualites: { fr: "Une lecture ?", en: "Something to read?", es: "¿Una lectura?", de: "Etwas zu lesen?", it: "Una lettura?", zh: "想读点什么？", ru: "Что почитать?" },
         mascotteBullePodcasts:   { fr: "Une oreille libre ?", en: "Got a free ear?", es: "¿Un rato para escuchar?", de: "Ein Ohr frei?", it: "Un orecchio libero?", zh: "有空听听吗？", ru: "Найдётся минутка послушать?" },
         mascotteBulleGlossaire:  { fr: "Un mot à éclaircir ?", en: "A word to clear up?", es: "¿Una palabra que aclarar?", de: "Ein Wort klären?", it: "Una parola da chiarire?", zh: "有词不懂？", ru: "Непонятное слово?" },

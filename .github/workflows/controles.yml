@@ -59,6 +59,12 @@ jobs:
       - name: Pages de podcasts conformes à leur source
         run: node scripts/publier-podcasts.js --verifier
 
+      # L accueil annonce les guides mis a jour et les derniers episodes. Ecrit
+      # a la main, ce bloc deviendrait faux au premier guide modifie sans que
+      # personne le voie : la page resterait plausible.
+      - name: Accueil conforme aux guides et aux podcasts
+        run: node scripts/publier-accueil.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le
