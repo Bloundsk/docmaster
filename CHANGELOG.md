@@ -1,5 +1,94 @@
 # Changelog — Clicked
 
+## 2026-08-29 — Neuf épisodes de plus, et un instrument trop méfiant
+
+### Onze parcours sur quatorze ont leur épisode
+
+| parcours | durée | niveau | crête |
+|---|---|---|---|
+| Développement Web | 1 min 46 | −16,6 LUFS | −2,5 dBTP |
+| Intelligence Artificielle | 1 min 38 | −16,5 LUFS | −2,7 dBTP |
+| Design UX/UI | 1 min 39 | −16,5 LUFS | −2,6 dBTP |
+| Marketing Digital | 1 min 31 | −16,5 LUFS | −3,0 dBTP |
+| Droit & démarches | 1 min 31 | −16,8 LUFS | −2,6 dBTP |
+| Santé au travail | 1 min 30 | −17,2 LUFS | −2,2 dBTP |
+| Entrepreneuriat | 1 min 27 | −17,1 LUFS | −2,5 dBTP |
+| Sobriété numérique | 1 min 22 | −16,9 LUFS | −2,5 dBTP |
+| Productivité & Organisation | 1 min 22 | −17,3 LUFS | −1,9 dBTP |
+| Négociation & communication | 1 min 21 | −16,7 LUFS | −2,6 dBTP |
+| Finance | 1 min 21 | −16,6 LUFS | −3,0 dBTP |
+
+Chacun vérifié avant publication puis en ligne, taille comparée octet par octet
+au fichier local. Restent Cybersécurité, Data et Apprendre à apprendre.
+
+### La consigne générée a réglé le problème d'un coup
+
+Avant les consignes par parcours : **un épisode sur sept** annonçait le bon
+parcours. Après : **neuf sur neuf**, tutoiement compris. Le défaut n'était donc
+ni dans NotebookLM ni dans la façon de s'en servir — il était dans le fait de
+demander une substitution manuelle.
+
+Deux épisodes méritent d'être signalés pour ce qu'ils réussissent. **IA**
+explique la récupération de documents sans jamais dire « RAG », et le modèle
+statistique sans dire « LLM » : c'était le sujet où l'interdiction des sigles
+risquait de casser, et elle tient. **Droit** porte l'avertissement qui compte,
+et sa chute vaut le parcours entier — *« la vraie question n'est jamais de
+savoir si tu as raison, mais si tu peux le prouver »*.
+
+### La consigne se faisait lire à voix haute
+
+L'épisode Marketing dit : *« Sur le site Clicked, et ça se prononce Clict, on
+décortique… »*. Ma note de prononciation, destinée au modèle, est passée dans
+le texte prononcé.
+
+À l'écoute l'incise passe pour une clarification, et rend même service — les
+épisodes concernés partent tels quels. Mais répétée quatorze fois elle
+deviendrait un tic. La consigne précise désormais : *« n'explique pas cette
+prononciation à l'auditeur, contente-toi de la respecter »*.
+
+Une instruction donnée à un modèle est du texte comme un autre : rien ne
+l'empêche de finir dans la sortie.
+
+### Six fausses alertes, toutes de moi
+
+Je ne peux pas écouter. Pour vérifier les épisodes, je les transcris et je
+compare au parcours. Sur onze épisodes, cette méthode m'a fait signaler **six
+défauts qui n'existaient pas** :
+
+```
+negociation   « C'est ça ? » répété vingt-cinq fois      hallucination
+sante         une boucle sur « l'élection de… »          hallucination
+droit         une boucle sur « que j'ai dit que… »       hallucination
+ecologie      « Baissez / Regardez » pris pour du vous   -er et -ez sont homophones
+sante         « soyons honnêtes » pris pour du vous      c'est un nous inclusif
+negociation   « dites-toi » au lieu de « dis-toi »       artefact d'extrait long
+```
+
+La dernière est la pire : **j'ai demandé à Ludo d'aller écouter la quinzième
+seconde d'un épisode qui n'avait rien**. Je ne m'en suis aperçu qu'en retrouvant
+la même tournure dans un autre épisode, ce qui m'a poussé à revérifier — sur
+extrait court, les deux disent « dis-toi », correctement.
+
+Le modèle de transcription utilisé est petit, et il a deux défaillances connues :
+il boucle sur les silences en fin de bloc, et il ne peut pas distinguer des
+homophones. Les six erreurs viennent de là, et **toutes vont dans le même
+sens** : trop de méfiance, jamais un défaut manqué.
+
+La discipline qui en sort : ne jamais alerter sur la foi d'une transcription
+longue. Le découpage en blocs de trente secondes est le régime où l'instrument
+déraille ; sur un extrait court il est fiable. Vérifier avant de parler coûte
+dix secondes.
+
+### La leçon
+
+Un instrument qui se trompe toujours dans le même sens n'est pas prudent, il est
+**biaisé** — et un biais connu se corrige, il ne s'excuse pas. Le mien produisait
+des alarmes, je les transmettais telles quelles, et Ludo a lu six inquiétudes
+inutiles dont une l'envoyait vérifier lui-même.
+
+**Une alerte n'est pas une observation.** Tant qu'elle n'a pas été confirmée
+dans le régime où l'instrument est fiable, elle ne vaut pas d'être transmise.
+
 ## 2026-08-29 — Les premiers épisodes, et la consigne qui se faisait oublier
 
 ### Le format l'emporte sur la consigne
