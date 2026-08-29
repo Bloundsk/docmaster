@@ -1,5 +1,116 @@
 # Changelog — Clicked
 
+## 2026-08-29 — Les premiers épisodes, et la consigne qui se faisait oublier
+
+### Le format l'emporte sur la consigne
+
+Devant l'écran de NotebookLM, Ludo demande quoi choisir. « Analyse approfondie »
+est proposé par défaut, et sa définition dit : *« une conversation animée entre
+deux hôtes »*. La consigne collée en dessous, elle, demande une seule voix.
+
+Quand les deux se contredisent, **c'est le format qui gagne** : il choisit le
+gabarit avant que la consigne soit lue. « Briefing » est le seul format
+monologue — c'est celui de l'épisode que Ludo avait validé. Avec « Court », pour
+les quatre-vingt-dix secondes câblées dans les guides.
+
+Les réglages sont notés dans la marche à suivre, sous forme de tableau, avec la
+raison de chaque choix. « Débat » met lui aussi deux hôtes ; « Critique »
+examine les sources *pour aider à améliorer le contenu* — il commenterait le
+parcours au lieu de l'expliquer.
+
+### Deux épisodes en ligne
+
+| parcours | durée | après masterisation |
+|---|---|---|
+| **Finance** | 1 min 21 | −16,6 LUFS / −3,0 dBTP |
+| **Développement Web** | 1 min 46 | −16,6 LUFS / −2,5 dBTP |
+
+Vérifiés avant publication et non après : une seule voix, tutoiement tenu,
+structure en trois temps, rappel pédagogique, aucun sigle. Puis vérifiés en
+ligne, octet par octet contre le fichier local.
+
+Le parcours Développement Web méritait une mention : la consigne interdit les
+sigles, ce qui n'était pas gagné sur ce sujet. L'épisode parle de « code
+visuel » et de « mémoire temporaire » plutôt que de HTML ou d'API, et les
+analogies portent — le restaurant dont la salle est ouverte et la cuisine non,
+les allers-retours qui fatiguent plus que le poids des sacs, la dette technique
+comme un emprunt qu'on rembourse en heures perdues.
+
+La chaîne a tout propagé seule : durée relevée à la masterisation, puis écrite
+dans le guide, la page et le flux. Rien à la main.
+
+### Cinq épisodes refusés, une seule cause — la mienne
+
+Sur sept fichiers reçus, cinq n'ont pas été publiés :
+
+```
+apprendre        annonce « parcours finance »
+cybersecurite    annonce « parcours finance »
+data             annonce « parcours finance »
+design           annonce « parcours finance »
+entreprenariat   vouvoie de bout en bout, et ne nomme aucun parcours
+```
+
+Quatre sur cinq portent la même erreur, dans leur **première phrase** — donc
+impossible à rattraper autrement qu'en régénérant. *« Voici l'essentiel sur la
+protection de ta vie numérique, tirée de notre parcours finance. »*
+
+La cause n'est pas dans NotebookLM. Ma marche à suivre donnait **un modèle
+unique** avec « Finance » dedans, suivi de la mention « en remplaçant le nom du
+parcours ». C'est-à-dire : une invitation à oublier, placée exactement là où
+l'oubli s'entend le plus.
+
+Demander à quelqu'un de tenir deux choses d'accord de tête est précisément le
+défaut que ce dépôt corrige partout ailleurs — c'est la raison d'être de
+`parcours.js`, d'`identite.js`, de `durees.json`. Je l'avais appliqué au code et
+oublié pour les instructions données à un humain.
+
+`exporter-parcours.js` écrit donc désormais, à côté de chaque source, la
+**consigne complète avec le nom déjà dedans**, pris dans `parcours.js`. On
+copie, on colle, il n'y a plus rien à remplacer.
+
+Deux ajouts que ces épisodes ont révélés : l'interdiction explicite de
+mentionner un autre parcours, et la prononciation du nom du site — les trois
+premiers disaient « Cliquet » là où il faut entendre « klikt ».
+
+### `node scripts/etat-podcasts.js`
+
+Un épisode traverse quatre états, et il fallait regarder quatre endroits pour
+savoir lequel. La commande les rassemble, et signale les fichiers de
+`podcasts/brut/` dont le nom ne correspond à aucun parcours, en proposant le
+plus proche : deux sont déjà arrivés mal nommés, `aprendre` et
+`entreprenariat`. La masterisation les refusait, mais au bout de la chaîne.
+
+**Elle sort toujours en succès et n'est pas branchée sur l'intégration
+continue.** La faire échouer parce qu'il reste douze épisodes à enregistrer
+rendrait les contrôles rouges en permanence sans que rien soit en faute — et un
+voyant rouge permanent finit par ne plus être regardé. Les barrages restent là
+où ils mordent : refus d'un son saturé, refus d'une page qui ne correspond plus
+à sa source.
+
+### Une mesure dont je dois dire la limite
+
+La netteté varie fortement d'un épisode à l'autre : 4,5 à 4,9 dB pour Finance,
+Développement Web, Cybersécurité et Design ; 0,45 à 1,5 dB pour Entrepreneuriat,
+Data et Apprendre. NotebookLM ne donne pas la même voix à tous.
+
+Mais `verifier-voix.py` a été calibré pour juger **un enregistrement à cloner**,
+et ses conseils — la pièce, la distance au micro — n'ont aucun sens pour un
+fichier de synthèse. Le score reste un signal, c'est lui qui avait vu juste sur
+le bruit de fond ; son verdict, lui, sort de son domaine. Signalé à Ludo comme
+tel plutôt que présenté comme un jugement.
+
+### La leçon
+
+Le dépôt applique partout la même règle : une donnée n'est saisie qu'une fois,
+et ce qui en dérive est produit par un script. Je l'ai appliquée au code,
+aux pages, aux durées, aux identités — et pas aux instructions que je donne à
+la personne qui travaille avec moi.
+
+**Une consigne qui demande de remplacer un mot à la main est une consigne qui
+sera oubliée.** Elle mérite exactement le même traitement qu'une constante
+recopiée dans deux fichiers : la générer, pas la rappeler.
+
 ## 2026-08-26 — Le bruit n'était pas là où je le cherchais
 
 ### Quatre versions rejetées, trois correctifs à côté
