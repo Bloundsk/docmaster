@@ -162,10 +162,26 @@ h1, h2, h3, .logo { font-family: 'Poppins', Arial, sans-serif; }
 
 /* Navigation */
 .navbar { background: var(--surface); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
-.nav-container { max-width: 1100px; margin: 0 auto; padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
+/* « nowrap » et non « wrap » : avec le neuvieme onglet, la barre demandait
+   1121 px pour 1060 disponibles, et les outils — langue et theme — basculaient
+   sur une deuxieme ligne, a gauche. Ils doivent rester en haut a droite. Ce
+   sont les LIENS qui cedent maintenant, en defilant, comme ils le font deja
+   sur telephone. */
+.nav-container { max-width: 1100px; margin: 0 auto; padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 15px; }
 .logo { font-size: 1.5rem; font-weight: bold; color: var(--text); text-decoration: none; }
 .logo span { color: var(--primary); }
-.nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 30px; }
+/* L ecart passe de 30 a 22 px : le francais tient alors sur une ligne sans
+   defilement. « min-width: 0 » est indispensable — sans lui, un element flex
+   refuse de devenir plus etroit que son contenu, et la barre deborderait au
+   lieu de defiler. Le defilement ne se declenche donc que pour les langues aux
+   libelles plus longs, ou si un onglet s ajoute. */
+.nav-links {
+    list-style: none; display: flex; flex-wrap: nowrap; gap: 22px;
+    min-width: 0; overflow-x: auto;
+    scrollbar-width: none; -ms-overflow-style: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links li { flex-shrink: 0; }
 .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: var(--primary); }
 .theme-toggle { background: none; border: 2px solid var(--muted); border-radius: 50%; width: 40px; height: 40px; font-size: 1.1rem; cursor: pointer; transition: transform .3s, border-color .3s; flex-shrink: 0; }
@@ -977,7 +993,9 @@ html { background: var(--background); }
        Rangee 1 : le logo et le bouton de theme, aux deux extremites.
        Rangee 2 : les liens sur une seule ligne, qui defile horizontalement
        si l'ecran est trop etroit plutot que de repousser le contenu vers le bas. */
-    .nav-container { flex-direction: row; padding: 10px 16px; gap: 8px; align-items: center; }
+    /* On retablit le passage a la ligne : ici les liens forment une troisieme
+       rangee pleine largeur, sous le logo et les outils. */
+    .nav-container { flex-direction: row; flex-wrap: wrap; padding: 10px 16px; gap: 8px; align-items: center; }
     .logo { font-size: 1.25rem; }
     .theme-toggle { width: 34px; height: 34px; font-size: .95rem; }
 
