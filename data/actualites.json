@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-28T22:00:59.756Z",
+  "maj": "2026-08-29T07:28:56.901Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTDV4ckZNNDVlc2FkMV9FbTVrYlZId01xX0RPc2xZYkU1YXFYM2ZGMktqRXRiVjdZTHNoeUdSeXRnanVzdEgwUnM2elprU0cwdWoxamFjN1NOSnctWWVNR3pVa1NOcV95UUdDMzE3ZVdkaWR0TGxKR0FHMWVnalJiM3N4V2dRcUJKbmg3UUdwX0E?oc=5",
@@ -36,6 +36,18 @@
       "section": "⚖️ La gestion du risque",
       "sujet": "💰 Finance — Débutant",
       "publie": "2026-08-28"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNeDU3STc3N1QwdUdVZkhQSlBYR2dGbzVrdVR2WjhIeUtWZ0ctM0lyT0hFeE5tMTFWcnpuZ2g1VUFuZmNSOHJoNGRQWnJ1R2FlRnFvb2hlZFY0YXl0bnVsRGozRjE0N1RQNmxSQTJ4a3R3SGlDcTN3SkYtc3d0WUZLWmkyOXBfUXJvQ2M5WjNQZ052aVRZcG1yc0RWdkVyX20xSE1YeWpVU0NTSkFqWWYweTNvbElwUlFZYmplNFZ2VGtWbWdwWmtMUExHTVNjXzNuT21FQllVd0N2TDMxYzlUaE5jV0dITzRNMEZLZXoxczJoWV9NZWpiY25JWUtrUEIz?oc=5",
+      "titre": "46 heures par semaine : ce que le temps de travail des médecins généralistes révèle des besoins d'emploi dans la santé",
+      "source": "Aladom",
+      "date": "2026-08-28",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 La médecine du travail",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "publie": "2026-08-29"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMHBBeDFUTDJFZXJ3QkJwbUw3dkhyRnpxWVhIWjU2ZTNvUFAydmpnSWVvU3VuOWNNVlg2TkhuYmpBb3dhM0xyZ3NHRzVodW1kSnJCdzU0aWVMb1Q5ZXVXZDRTUWFKZXlwMHZFamE0enJaRXZ4cW1SekM5eDNwRHZMdzhROFZsSmczSnRLalVXODZ0NWFNamhWVnNSbFBJYnBhYlBhT0VuZmprTzFuS1ktQVBXRDMyUTZEVGZNVWt0RDAza05Fc2NKWDB4YkxrckpqQkR3MzNJOWY?oc=5",
@@ -276,18 +288,6 @@
       "section": "📱 La double authentification",
       "sujet": "🔒 Cybersécurité — Intermédiaire",
       "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNalVLeWkyWU8zUGxEYmdyTHJmd2VaV0RrWWN5NzVvaGk5cm1tNkJLTmRxRGpYdFI1LWxPSEZ3bXFJRkFzQ3VzR1ViMzBDSEcwWWFfVFJrTzJjZndJNUlvX21KYTFhRWlIYWNBZXUzUjJCLTdFSWhpSGFGTUQteWlrT2U0cHQ4MENVZVpydHItdzktVHU3QXJpTjRYd3QxcVBUTGN2VjhwMm1QdS0wZjBQd0pZQUo?oc=5",
-      "titre": "Japanese Yen: Support test as Japan data firm – BBH",
-      "source": "tmgm.com",
-      "date": "2026-08-21",
-      "guide": "data",
-      "page": "avance.html",
-      "ancre": "tests-ab",
-      "section": "🧪 Les tests A/B",
-      "sujet": "📊 Data & Analytics — Avancé",
-      "publie": "2026-08-25"
     }
   ]
 }
