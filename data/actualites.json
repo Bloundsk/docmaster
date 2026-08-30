@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-30T07:29:01.879Z",
+  "maj": "2026-08-30T17:32:06.351Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmFsazJzNzFYZ0NJel9DTlR0d2JPRXFIeEJtSDVpVDA0UlNwYVYwZ1VycVU1LVdhMUJ2NUV0WlBOT3BXQjVfb3ptbU5tWFBORnM5Zi1QSEtsNjl1d1JWd21sdHlEbncyRDZJelZNZE13NFFyUUcycEZSYlZpZGsxRi1VZXdiMFVfaUJ0WFFTT3dxbHdiUGl6ZEZXX0sxYllN?oc=5",
@@ -11,6 +11,30 @@
       "ancre": "obligations-et-taux",
       "section": "📉 Obligations et taux d'intérêt",
       "sujet": "💰 Finance — Avancé",
+      "publie": "2026-08-30"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kZjY3UG1GZFdKT2J4ZXBNTkJleF80UnRXQ0k0dkUwa1BDa1k4VG1kbElZZ0I2R3Z1QTEzeWtTY1BPOVZXaU9oSXNrbHhYNWdLajVtUGJzYmRMOThVQ1JOSHFQX2tGaE51d0Rlb1NLaXN4UVRJbVJZ?oc=5",
+      "titre": "Fuite de données CarteDePeche.fr : les données personnelles d’adhérents...",
+      "source": "French Breaches",
+      "date": "2026-08-30",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-08-30"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNa2tmTHZHU3Ayam1BdnozMEFYNkhUUnNBQ1ZvNFpKN1VoMFEzTWUtbnFvU1BQZHFtaUJ6cjJFT1NZWVBxSmFXTVRfb2NVMFh2QnlnYWU1dWQxSkIzOERBZUwtZlJqbnc5ZFRrcWxPbEY2ejJjWlBTNWJpOVBkeFZKQy1URG13MUkzOUp4SUVZOA?oc=5",
+      "titre": "Le Japon teste un modèle combinant humains et intelligence artificielle pour jouer aux échecs.",
+      "source": "Vietnam.vn",
+      "date": "2026-08-29",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "choisir-un-modele",
+      "section": "⚖️ Choisir un modèle",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
       "publie": "2026-08-30"
     },
     {
@@ -264,30 +288,6 @@
       "section": "🏥 La médecine du travail",
       "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-08-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5Ha3pVeHdIRl8wNUZwRllrVzd4cXdpS04yVVZGZVZleEQ2eUpiUXA2MEhyU1hwRTZ5Q3hnc0dUakRsWS1tLXpWWkN4aF81RnM?oc=5",
-      "titre": "Ousmane Bamba : l'entrepreneur ivoirien qui réinvente le modèle économique africain 0 photos",
-      "source": "opentroc.com",
-      "date": "2026-08-23",
-      "guide": "entrepreneuriat",
-      "page": "intermediaire.html",
-      "ancre": "modele-economique",
-      "section": "💰 Le modèle économique",
-      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZUlWZGxPU1huQ2RLamY1RHd6V2FjNXpLcTJ2TGNuMFBBYWxZSFRxUWxkTjBzbGVKVmhpSUdkdFJOb19IX1ZsNlQ3WW9PclN2MENkSE5ybnhmTHZLU2hmeFF1UlVUazlBNmF0WXp5UmhyRld5QUh6MkE1ZC1yTXNLVVJVMjRid0FOVkIwWHlvNGpTWE1QOFFfek40VjJlNW9rRlFtdDd4ZjQ?oc=5",
-      "titre": "PARIS : Sobriété numérique - L'ADEME alerte sur l'impact environnemental de nos écrans",
-      "source": "Presse Agence",
-      "date": "2026-08-21",
-      "guide": "ecologie",
-      "page": "debutant.html",
-      "ancre": "limpact-est-dans-la-fabrication",
-      "section": "🏭 L'impact est dans la fabrication",
-      "sujet": "🌱 Sobriété numérique — Débutant",
-      "publie": "2026-08-22"
     }
   ]
 }
