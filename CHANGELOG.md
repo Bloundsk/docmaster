@@ -114,6 +114,37 @@ Une troisième vérification s'ajoute aux deux existantes : dans le bundle, la
 branche courante doit pointer sur HEAD. Éprouvée dans les deux régimes — marche
 normale, puis HEAD détaché, où la sauvegarde n'est pas remplacée.
 
+### Ce que la sauvegarde ne couvrait pas non plus
+
+La restauration a été éprouvée pour de vrai, depuis la copie sur clé : `git
+clone`, même branche, même HEAD, **même arbre** — donc chaque fichier identique
+au bit près. Les dix contrôles du site passent dans la copie restaurée, son
+serveur sert toutes les pages, l'audio compris, et le rendu est correct dans un
+navigateur.
+
+Mais cette vérification a révélé l'autre moitié du problème : le bundle
+sauvegarde le **dépôt**, donc rien de ce que git ignore. Trente-six mégaoctets
+irremplaçables n'avaient aucune sauvegarde :
+
+```
+podcasts/brut/   31 Mo   les onze .m4a produits par NotebookLM
+podcasts/voix/  4,6 Mo   les enregistrements de voix de l'auteur
+```
+
+Ils sont ignorés par git pour de bonnes raisons — une voix n'a rien à faire
+dans un dépôt public — mais cela les laissait sans filet : le disque perdu, il
+fallait tout refaire.
+
+`scripts/copier-sur-cle.ps1` les copie désormais sur la clé, qui est un support
+personnel, chaque fichier vérifié par empreinte. Il ne recopie pas ce qui est
+déjà identique, et il **ne supprime jamais** de la clé ce qui a disparu en
+local : il le signale. Une sauvegarde qui efface d'elle-même n'est plus une
+sauvegarde.
+
+Éprouvé sur les trois branches : seize fichiers copiés et vérifiés
+indépendamment du script, seize reconnus identiques au passage suivant, et un
+témoin déposé sur la clé correctement signalé sans être effacé.
+
 ### La leçon
 
 Deux fois en deux jours, un instrument m'a donné des chiffres faux dans un

@@ -148,7 +148,84 @@ if ($aOrigine -ne $aCopie) {
 
 Write-Host "`n   Copie conforme." -ForegroundColor Green
 
-Titre "5. Copies presentes sur la cle"
+Titre "5. Fichiers hors depot"
+
+# ---------------------------------------------------------------------------
+# Le bundle sauvegarde le DEPOT. Deux dossiers en sont volontairement absents,
+# et ils sont irremplacables :
+#
+#   podcasts/brut/   les .m4a produits par NotebookLM, un par parcours
+#   podcasts/voix/   les enregistrements de la voix de l'auteur
+#
+# Ils sont ignores par git pour de bonnes raisons — la voix de l'auteur n'a
+# rien a faire dans un depot public — mais cela les laissait sans aucune
+# sauvegarde. Le disque perdu, il fallait tout refaire dans NotebookLM.
+#
+# La cle est un support personnel : ils y ont leur place. On les copie donc
+# ici, verifies un par un.
+#
+# On ne SUPPRIME jamais sur la cle ce qui a disparu en local : on le signale.
+# Une sauvegarde qui efface d'elle-meme n'est plus une sauvegarde.
+# ---------------------------------------------------------------------------
+
+$DossiersHorsDepot = @("podcasts/brut", "podcasts/voix")
+$RacineProjet = $Parent
+$CibleHorsDepot = Join-Path $dossier "fichiers-hors-depot"
+
+$copies = 0; $identiques = 0; $echecs = 0; $orphelins = @()
+
+foreach ($relatif in $DossiersHorsDepot) {
+    $source = Join-Path $RacineProjet $relatif
+    if (-not (Test-Path $source)) {
+        Write-Host ("   {0} : absent ici, rien a copier" -f $relatif) -ForegroundColor Yellow
+        continue
+    }
+    $cible = Join-Path $CibleHorsDepot (Split-Path $relatif -Leaf)
+    if (-not (Test-Path $cible)) { New-Item -ItemType Directory -Path $cible -Force | Out-Null }
+
+    foreach ($f in Get-ChildItem $source -File) {
+        $dest = Join-Path $cible $f.Name
+        $empreinteSource = (Get-FileHash $f.FullName -Algorithm SHA256).Hash
+
+        # Deja la et identique : on ne recopie pas 3 Mo pour rien.
+        if (Test-Path $dest) {
+            if ((Get-FileHash $dest -Algorithm SHA256).Hash -eq $empreinteSource) {
+                $identiques++
+                continue
+            }
+        }
+        Copy-Item $f.FullName $dest -Force
+        if ((Get-FileHash $dest -Algorithm SHA256).Hash -eq $empreinteSource) {
+            $copies++
+        } else {
+            Write-Host ("   ECHEC : {0} differe apres copie" -f $f.Name) -ForegroundColor Red
+            $echecs++
+        }
+    }
+
+    # Ce qui est sur la cle sans exister ici. Signale, jamais efface.
+    foreach ($f in Get-ChildItem $cible -File) {
+        if (-not (Test-Path (Join-Path $source $f.Name))) {
+            $orphelins += (Join-Path (Split-Path $relatif -Leaf) $f.Name)
+        }
+    }
+}
+
+Write-Host ("   {0} copie(s), {1} deja identique(s)" -f $copies, $identiques)
+if ($orphelins.Count -gt 0) {
+    Write-Host "   Sur la cle mais plus ici (conserves) :" -ForegroundColor Yellow
+    $orphelins | ForEach-Object { Write-Host ("     - {0}" -f $_) }
+}
+if ($echecs -gt 0) {
+    Write-Host ("   {0} fichier(s) mal copie(s). Ne pas s'y fier." -f $echecs) -ForegroundColor Red
+    Attendre; exit 1
+}
+if ((Test-Path $CibleHorsDepot)) {
+    $poids = (Get-ChildItem $CibleHorsDepot -Recurse -File | Measure-Object -Property Length -Sum).Sum
+    Write-Host ("   Total sur la cle : {0:N0} Ko" -f ($poids / 1KB)) -ForegroundColor Green
+}
+
+Titre "6. Copies presentes sur la cle"
 Get-ChildItem $dossier -Filter "*.bundle" | Sort-Object LastWriteTime -Descending |
     ForEach-Object { Write-Host ("   {0}  ({1:N0} Ko)" -f $_.Name, ($_.Length / 1KB)) }
 
