@@ -10,6 +10,36 @@
         <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/podcast.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title>Apprendre à apprendre — Si réviser est confortable, tu n'apprends pas</title>
+            <description>Le surlignage et la relecture donnent une illusion de maîtrise. Ce qui fait tenir l'information, c'est l'effort de la retrouver. Apprendre à apprendre en une minute trente.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#apprendre</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#apprendre</guid>
+            <pubDate>Sun, 30 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/apprendre.mp3" length="1083173" type="audio/mpeg"/>
+            <itunes:duration>90</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Cybersécurité — Des procédures, pas de l'intuition</title>
+            <description>La cybersécurité n'est pas une affaire de génies en sweat à capuche, mais d'habitudes qui évitent d'être une cible facile. Cybersécurité en une minute trente-cinq.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#cybersecurite</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#cybersecurite</guid>
+            <pubDate>Sun, 30 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/cybersecurite.mp3" length="1131134" type="audio/mpeg"/>
+            <itunes:duration>94</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Data &amp; Analytics — Une donnée mal lue est pire que pas de donnée</title>
+            <description>Faire parler les chiffres sans se faire manipuler : choisir le bon indicateur, se méfier de la moyenne, et accepter l'incertitude. Data &amp; Analytics en une minute quinze.</description>
+            <link>https://bloundsk.github.io/docmaster/podcasts.html#data</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/podcasts.html#data</guid>
+            <pubDate>Sun, 30 Aug 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/data.mp3" length="886001" type="audio/mpeg"/>
+            <itunes:duration>74</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Design UX/UI — Le bon design est invisible</title>
             <description>Personne ne complimente une porte qui s'ouvre toute seule ; tout le monde peste contre celle qu'on pousse alors qu'il fallait tirer. Design UX/UI en une minute quarante.</description>
             <link>https://bloundsk.github.io/docmaster/podcasts.html#design</link>
