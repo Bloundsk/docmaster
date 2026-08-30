@@ -124,4 +124,20 @@ fi
 # celle d avant, et la date corrigee n entrerait dans le depot qu au commit suivant.
 git add $GUIDES
 
+# L accueil annonce « Guides mis a jour recemment » en lisant ces dates-la. Les
+# redater sans le regenerer laisse dans le MEME commit des guides au 31 aout et
+# un accueil bati sur le 30 — et le controle d integration continue le refuse,
+# a juste titre.
+#
+# Constate le 31 aout 2026 : le commit des trois derniers episodes est parti
+# rouge pour cette seule raison. En local tout passait, parce que j avais
+# regenere l accueil AVANT que ce hook ne redate les guides.
+if command -v node >/dev/null 2>&1 && [ -f scripts/publier-accueil.js ]; then
+    if node scripts/publier-accueil.js >/dev/null 2>&1; then
+        git add index.html en/index.html 2>/dev/null
+    else
+        echo "[dates] accueil non regenere, le controle le signalera" >&2
+    fi
+fi
+
 exit 0
