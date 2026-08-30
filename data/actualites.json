@@ -1,6 +1,18 @@
 {
-  "maj": "2026-08-29T07:28:56.901Z",
+  "maj": "2026-08-30T07:29:01.879Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmFsazJzNzFYZ0NJel9DTlR0d2JPRXFIeEJtSDVpVDA0UlNwYVYwZ1VycVU1LVdhMUJ2NUV0WlBOT3BXQjVfb3ptbU5tWFBORnM5Zi1QSEtsNjl1d1JWd21sdHlEbncyRDZJelZNZE13NFFyUUcycEZSYlZpZGsxRi1VZXdiMFVfaUJ0WFFTT3dxbHdiUGl6ZEZXX0sxYllN?oc=5",
+      "titre": "Les obligations immobilières offrent des taux d'intérêt pouvant atteindre 13 % par an, la pression pour arriver à échéance s'accentuant vers la fin de l'année.",
+      "source": "Vietnam.vn",
+      "date": "2026-08-30",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "publie": "2026-08-30"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTDV4ckZNNDVlc2FkMV9FbTVrYlZId01xX0RPc2xZYkU1YXFYM2ZGMktqRXRiVjdZTHNoeUdSeXRnanVzdEgwUnM2elprU0cwdWoxamFjN1NOSnctWWVNR3pVa1NOcV95UUdDMzE3ZVdkaWR0TGxKR0FHMWVnalJiM3N4V2dRcUJKbmg3UUdwX0E?oc=5",
       "titre": "L’illusion de maîtrise : redonner du sens à la littératie numérique en classe",
@@ -276,18 +288,6 @@
       "section": "🏭 L'impact est dans la fabrication",
       "sujet": "🌱 Sobriété numérique — Débutant",
       "publie": "2026-08-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQOUxPMnJMTE5MZHFmYWpSc2xQYXh2TnllbktEVm9sLVY1TkhoWnRYVFJJX1lmSk9QNElURHFyODhYcGdxTlhSTlBMeW1uX0x1SUlyeUpMbjZ3MzBxc1FnSkg1WkxsblFMMnJibF9qZkJkclhXTDZnZ0N1YzFtUkxpWVBpNjlRbTN2Y1d4Nm9CNUFnRlhlM0RpV0RsTE8xb0kxZC1tN3RkazJFTFNmYzliSW1SeFQwWnl0QVVIRmN0aF9xWTNYZnRhQUNrSWVhX0s4cnpkbVVrbzRxR0QxcWE4?oc=5",
-      "titre": "Piratage du fisc : le gouvernement veut accélèrer la double authentification et lance un plan cyber avec « bug bounty »",
-      "source": "epochtimes.fr",
-      "date": "2026-08-21",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "double-authentification",
-      "section": "📱 La double authentification",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "publie": "2026-08-23"
     }
   ]
 }
