@@ -1,5 +1,100 @@
 # Changelog — Clicked
 
+## 2026-08-30 — Les guides sortent de l'accueil
+
+### « On ne sait pas où les trouver »
+
+Les quatorze parcours vivaient tout en bas de l'accueil, sous les actualités, et
+rien dans la navigation n'y menait. Le reproche de Ludo est exact : le site
+n'avait pas d'entrée vers son propre contenu.
+
+| | avant | maintenant |
+|---|---|---|
+| **Accueil** | actualités, puis les quatorze cartes tout en bas | ce qui a bougé : guides mis à jour, derniers épisodes, lectures repérées |
+| **Guides** | n'existait pas | onglet dédié, les quatorze parcours et la recherche |
+
+L'onglet **Guides** est en deuxième position, juste après Accueil, dans la barre
+et dans le pied de page, et il existe dans les sept langues de l'interface.
+
+Les cartes ont été **déplacées par extraction**, pas retapées : quatorze
+recopies à la main, ce sont quatorze occasions de faute.
+
+La recherche reste **sur les deux pages**. La retirer de l'accueil aurait été
+contraire au problème qu'on corrige : on se plaint de ne pas trouver.
+
+### Les nouveautés sont produites, pas écrites
+
+`scripts/publier-accueil.js` écrit les deux blocs entre marqueurs, avec un mode
+`--verifier` branché sur l'intégration continue.
+
+« Dernières mises à jour » tenu à la main devient faux au premier guide modifié,
+et **personne ne s'en aperçoit** : la page reste plausible. Les dates sont donc
+lues **dans les guides eux-mêmes**, là où le lecteur les voit — deux sources
+donneraient deux vérités.
+
+### Trois défauts attrapés par les contrôles
+
+**La mascotte pointait dans le vide.** Son ancre `#categories` sur l'accueil
+visait une section qui venait de déménager. Elle renvoie maintenant vers la page
+des guides, qui a son propre message.
+
+**L'accueil anglais renvoyait vers une page inexistante.** Il annonçait les
+épisodes en pointant vers `podcasts.html` sous `en/`, qui n'existe pas. Le bloc
+ne paraît donc que là où la page existe. Pointer vers la version française
+aurait été pire : cela éjecte le lecteur anglophone hors de sa langue sans rien
+lui dire.
+
+**Un test vérifiait que l'accueil « garde ses catégories ».** Il vérifie
+désormais ce qui doit y rester : le renvoi vers les guides et les marqueurs.
+
+### Le neuvième onglet a chassé les outils de leur coin
+
+Ludo, aussitôt après : le sélecteur de langue et le bouton clair/sombre doivent
+rester en haut à droite. Ils étaient passés à la ligne, alignés à gauche.
+
+La mesure dit pourquoi : la barre demandait **1121 px pour 1060 disponibles**, et
+`flex-wrap: wrap` renvoyait alors le seul bloc restant — les outils — sur une
+deuxième ligne.
+
+Ce sont désormais les **liens** qui cèdent, en défilant, comme ils le font déjà
+sur téléphone :
+
+```
+.nav-container   flex-wrap: nowrap    les outils ne quittent plus la ligne
+.nav-links       gap 30 -> 22 px      le français tient sans défiler
+                 min-width: 0         sans quoi un élément flex refuse d'être
+                                      plus étroit que son contenu, et la barre
+                                      déborderait au lieu de défiler
+media 700px      flex-wrap: wrap      rétabli, sinon les liens perdaient leur
+                                      rangée pleine largeur
+```
+
+Vérifié à 1280, 1100 et 900 px, sur téléphone, puis en ligne. Audit de
+géométrie : 732 mesures, 27 gabarits, 5 largeurs, aucune anomalie.
+
+### Deux mesures jetées, et pourquoi
+
+Deux relevés ont annoncé une barre cassée — 126 px de haut, marge droite
+négative. C'était faux : **le volet du navigateur était replié, `innerWidth`
+valait 0**, et toute géométrie mesurée dans ce régime est absurde. Le défaut
+était déjà consigné en mémoire ; je m'y suis repris deux fois avant de le
+reconnaître.
+
+Sans cette vérification, j'aurais « corrigé » un défaut inexistant et cassé ce
+qui marchait.
+
+### La leçon
+
+Deux fois en deux jours, un instrument m'a donné des chiffres faux dans un
+régime où il ne mesure rien — le transcripteur sur les extraits longs, le
+navigateur volet replié. Dans les deux cas, l'alarme était plus convaincante que
+la réalité.
+
+**Un instrument a un domaine de validité, et c'est la première chose à
+vérifier** — avant la valeur qu'il affiche, et surtout avant d'agir dessus. Une
+mesure hors domaine ne vaut pas moins qu'une mesure absente : elle vaut pire,
+parce qu'elle a l'air d'une mesure.
+
 ## 2026-08-29 — Neuf épisodes de plus, et un instrument trop méfiant
 
 ### Onze parcours sur quatorze ont leur épisode
