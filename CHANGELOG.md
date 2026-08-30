@@ -83,6 +83,37 @@ reconnaître.
 Sans cette vérification, j'aurais « corrigé » un défaut inexistant et cassé ce
 qui marchait.
 
+### La sauvegarde était fausse depuis des jours
+
+En vérifiant le bundle après ce chantier, un écart : son `HEAD` portait bien le
+dernier commit, mais son `refs/heads/main` pointait deux commits en arrière.
+Restaurée par `git clone`, cette sauvegarde aurait rendu une **branche fausse** —
+plausible, vérifiée par `git bundle verify`, et fausse.
+
+La cause tient à l'enchaînement utilisé à chaque publication : `git commit` puis
+`git pull --rebase`. Le rebase rejoue le commit, ce qui déclenche `post-commit`
+**en HEAD détaché**, alors que `main` n'a pas encore bougé ; puis il déplace
+`main` sans déclencher quoi que ce soit. La dernière sauvegarde écrite était
+donc celle prise au milieu du rebase.
+
+Les deux vérifications du hook ne pouvaient pas le voir : elles regardaient
+HEAD, qui était juste.
+
+Le correctif tient en trois points :
+
+- la logique et ses vérifications passent dans le dépôt,
+  `scripts/sauvegarder-depot.sh`, pour être relues et suivies ; seuls les
+  chemins locaux restent dans les hooks, réduits à trois lignes ;
+- **on ne sauvegarde pas en HEAD détaché** — la photo montrerait des branches à
+  leur ancienne position ;
+- **deux hooks de plus**, `post-rewrite` et `post-merge` : la sauvegarde se
+  refait à la fin d'un rebase et après une fusion, moments où `post-commit` ne
+  passe jamais.
+
+Une troisième vérification s'ajoute aux deux existantes : dans le bundle, la
+branche courante doit pointer sur HEAD. Éprouvée dans les deux régimes — marche
+normale, puis HEAD détaché, où la sauvegarde n'est pas remplacée.
+
 ### La leçon
 
 Deux fois en deux jours, un instrument m'a donné des chiffres faux dans un
