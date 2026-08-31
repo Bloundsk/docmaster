@@ -1,5 +1,5 @@
 {
-  "maj": "2026-08-31T07:29:02.486Z",
+  "maj": "2026-08-31T21:58:13.358Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPX1pRbG5iWEZqQ0NLVzQ4MHFGR0ZiUXJjd3YtT1VpTmNIaGlVeTRyY2pXUS03U2ZnRGpKRFE2enVpWnpBRDlETTdwbjBnU29mdDh0NHo0eVA0N0NMVEZsSGptSXZUSEo5YjJjVGplN0FsV09HZjBMbEo1ZUJLQXJQcGJPWGdZaGNDMG1QVGkyaUZyel9MdEdDUHJlN2w2aC1IdDNEVk5OU0JianZhaUV1d3ZWR054LTR0U2hXZVh1Vm5TWVVNQUNVRzBWUHdheXdBaW9RT1hOUE9aV21jX0o2VmtVME9mc3JxWDdkY0JFWE9zVFRBUkRFWnZoMS1mN0M1eWFXZkxjVk5nLXdSNFpmdldLQWtxZ0w0ZHBDcU80YmZXdFZNTkhqTEtkWWI4eEtLMUJEYjBvaFhGQQ?oc=5",
@@ -11,6 +11,30 @@
       "ancre": "fuites-de-donnees",
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-08-31"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPVTc0VjFCS1lWN3lHbnR0M1c2WGFWb0NsQ0cxZ2dvRWFuTHZqT2pBNFJpOTk5bEpZSUFGOXF5aWtWWnhaanlpaXNHcmcySUZxNzVhQmZWMDdqenNnOUlJTHRNR25XdmFWNC1vQVNxd2d1bFVzR2lTM2xTeTJkV0tjaEd0Z1RFZE9RYWJnWmxMWUtBdjVhWHgwT2I1azFYY0lYQnIxclVMY2MwNkdRV2otOGZQamlYOVZfWjFYQjZxLUdKWExwNXc?oc=5",
+      "titre": "\"Face aux fuites de données, l'Anssi et la Cnil agissent beaucoup mais n'ont pas assez d'agents\"",
+      "source": "journaldunet.com",
+      "date": "2026-08-31",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-08-31"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN3FOTTd2cG9SVU4tcDExendKQmIyUUdINzhpWmI2Si1GRVY3U3lsSE5MQUVNYUJWaUo1YjFpUDhBaUFVY0M3MG0wTjJvajc1a2tFSE9EbWJZTFdENm4xek41NTEwMnJTeEJXeVBDY3dra1Q5S2pUX2J2NEhzNWZmbm9rZ2NfV08xd0ZPRGdWN1EySVFhc3QyYWo0aTU0UjQ1M0Q0bTBKaWJxRHFuYWdHZDRBQnVUQQ?oc=5",
+      "titre": "Loi \"anti fast-fashion\" : un nouveau cadre juridique pour la mode ultra-express [Tribune]",
+      "source": "lsa-conso.fr",
+      "date": "2026-08-31",
+      "guide": "marketing",
+      "page": "avance.html",
+      "ancre": "cadre-juridique",
+      "section": "⚖️ Le cadre juridique",
+      "sujet": "📢 Marketing Digital — Avancé",
       "publie": "2026-08-31"
     },
     {
@@ -264,30 +288,6 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9lOHhLcUZWRFJna19nYk9QT0E1TVBmSW9XeGxYT3F2V191R2puaVBXbTVhWW5taEw0UkpySjBya1NHSWRPbzZqYVNyWEhJZENqbl91YQ?oc=5",
-      "titre": "Applied Finance IVS International Large ETF (IVSI)",
-      "source": "Investing.com France",
-      "date": "2026-08-24",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "les-etf",
-      "section": "📦 Les ETF",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNRXVveHJERlp5M3dPSDkwOFE2T09mUUtob0F3U0Q0VlNaTnpfSkxWa2hMRzM5Y0VielNMUFhqTGVUMTE3eS10WmlVdjg2R0E2ZldmVGkxRXdWQy1oNGQ0c0Q5bHJPQTlyd3VmM3c3VVhVbGNfVklOcFgybGFzZmJTX2VTR1FOM2VaV3haQXlaQ1QydHpzOENjcEI3aGxrRzQ1TjVSVEt6bVdiaUo5VE4xOEVtME54Z2tlbVJJa2ttLWtQa1hFb0lxZzdFM1NQRlh3QUxzSzJKMEdmb0lJ?oc=5",
-      "titre": "Fuite de données : une nouvelle mutuelle, Solimut, victime d’une cyberattaque",
-      "source": "Libération",
-      "date": "2026-08-24",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-26"
     }
   ]
 }
