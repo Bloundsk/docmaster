@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-01T12:38:53.818Z",
+  "maj": "2026-09-01T20:01:08.931Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeERvX2xPdkkzQUc4N2UzdXZvMGFIWGJFUFBzTThWbmVuUzdjWDI5bEd4YzhKbXpQQjB1S1JzaDZwcEFreHFFYWxSTWlqQlRCZDM3NmxiSTlIR2RaZFdKMWFEVzN5U3prbnF5TV9QM0M1QXROSUlhQWdETDVMQzRxeXZEeWN2cWdkSWotaWE2bk9fVzdBaVlMNndSYW15bTA?oc=5",
@@ -50,6 +50,18 @@
       "publie": "2026-09-01"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxOeEhaUmE3RVVQcnZCdjE5ZE1ZWU1VSHBfUlItak5RbzJZWENpNC1XM2Eyc2ZQWGRUbDFPWmdKdzF4RmFfX0l3MFFqU0ppdm1wTm5CeGxmc2xZdmplcGZXODRlaV9OdEhWc3pqcEdlbzNFOVd3U3lGRkJ2NXpQRlZMYWYwbFp0M1JJT0I3RHliVE03WTFFV3RGS0U5OXNLS0NOYVltUXJ6X0dNYm1DaTBzdURteng1UkdfaGJDLVJkLVJOWTgzQnRPZ0JCc0hzVjJFb3hTVF83bzZrbnk0ZDFhNVNxRlREVnpvSFhlOWJLdG1qOWVPOHczbnliRlJISVFfR1poWFFnNGtJQ0lIZWpzVzA5RGcyYnJKekk4azJic2tJb1AxNFFBNGI2TXlhQ1RUWHlLUHZlMWNuWVZ4aUpnbEtSZXpES0pWNGFMUGZJdEpJRTBhRXlpaw?oc=5",
+      "titre": "Fin de la pension complémentaire, épargne-pension… Comment gérer ses finances à la retraite, un moment de la vie parfois synonyme d’appauvrissement",
+      "source": "moustique.be",
+      "date": "2026-09-01",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "lépargne",
+      "section": "📊 L'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "publie": "2026-09-01"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPX1pRbG5iWEZqQ0NLVzQ4MHFGR0ZiUXJjd3YtT1VpTmNIaGlVeTRyY2pXUS03U2ZnRGpKRFE2enVpWnpBRDlETTdwbjBnU29mdDh0NHo0eVA0N0NMVEZsSGptSXZUSEo5YjJjVGplN0FsV09HZjBMbEo1ZUJLQXJQcGJPWGdZaGNDMG1QVGkyaUZyel9MdEdDUHJlN2w2aC1IdDNEVk5OU0JianZhaUV1d3ZWR054LTR0U2hXZVh1Vm5TWVVNQUNVRzBWUHdheXdBaW9RT1hOUE9aV21jX0o2VmtVME9mc3JxWDdkY0JFWE9zVFRBUkRFWnZoMS1mN0M1eWFXZkxjVk5nLXdSNFpmdldLQWtxZ0w0ZHBDcU80YmZXdFZNTkhqTEtkWWI4eEtLMUJEYjBvaFhGQQ?oc=5",
       "titre": "Après une série de fuites de données dans le secteur public, la cybersécurité s’invite au cœur du lancement de la facturation électronique",
       "source": "L'Usine Digitale",
@@ -84,6 +96,18 @@
       "section": "⚖️ Le cadre juridique",
       "sujet": "📢 Marketing Digital — Avancé",
       "publie": "2026-08-31"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOY19KbjY2Q0FkUnpVdHFVR2NWN0xfa3pjY0p2Vk9yb0ZFUGlqQXpORnhiQ3dJeDNuWGFnNmRQZEpqNGxkcHhRcUZzMVpxMG5PT1NkV21wbDIzdGlUV1psOHllLU5TN0lEVWNhSU80MHVDaW5EOW1tTmE0VDVZV2ZBLXlNQ3dMRjZDaFlabHIwQzJKbTdGVEkzb09JdWdGOExZVEVMZzd2TmhTMGdibWkyQWx0ZFhaWTdsSDRmSVJjTzFVSDBEZXc?oc=5",
+      "titre": "McKesson confirme un incident de cybersécurité après que ShinyHunters a affirmé qu'il s'agissait d'un vol de données de patients.",
+      "source": "Malwarebytes",
+      "date": "2026-08-31",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-01"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmFsazJzNzFYZ0NJel9DTlR0d2JPRXFIeEJtSDVpVDA0UlNwYVYwZ1VycVU1LVdhMUJ2NUV0WlBOT3BXQjVfb3ptbU5tWFBORnM5Zi1QSEtsNjl1d1JWd21sdHlEbncyRDZJelZNZE13NFFyUUcycEZSYlZpZGsxRi1VZXdiMFVfaUJ0WFFTT3dxbHdiUGl6ZEZXX0sxYllN?oc=5",
@@ -257,30 +281,6 @@
       "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPamRUOEhLeDhmRFBXZV9FTmV2M3hHRVZ1MHdXWi1oSWtHcnJOU0dUdDZnaUlPeEp3MmlBWWdRZmEySmtfaTNfRU04TFFKTzN1bEs2aGRRRzlwUHN1ZmoyTENId19ZMmtHM0VfczdiTFE3aFlNNXhmZG5MX290ak1Lem95OEhHSjJBdmhMQ0JpM2RlTGxPcHUxX3NDU3RoTllwLVhvMVpxLW56MFFXUnBKTE1R?oc=5",
       "titre": "Après les fuites de données, restaurer la confiance numérique",
       "source": "journaldunet.com",
-      "date": "2026-08-25",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVVBqZTRQejc2VG91Z1dmeWR5QUl2RXpYZnRDSlJzRzl5RW1Wdnh4TWt1dVBxSXhFSlZXVGtoVUx0XzdoeExqSEpiZHZfb29ITjNRQTNtdHA0MmtwUGk2cEU2M0x0U1hUb29mSGdDcF9RdWhDUnJnTFpSeFd4S2MybHJoZ3RNMnFNczlzTE8xS1dpVFpPdl9Gbmk0U0lMZm5QZkJ3YV9CQlllbC11QVBTdXdLdVhjT0k?oc=5",
-      "titre": "geo ET INFLUENCE : ce que L’histoire des réseaux sociaux peut (et devrait) nous enseigner",
-      "source": "frenchweb.fr",
-      "date": "2026-08-25",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "publie": "2026-08-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPTVlJb3NfRXUtQ2RIU3hXVVBVQ3JZS0taZEdZbVF3NEJOdXJIajBRUFhlRExreFM0akFSS01mTXJ4cWtZRExpTzkyTXBjeUV1dlBYbERMbW0wdmZOZjF4eWx6djRTbWdWQ1RoYmZyYTNRYjhBdUFjSWxZeUwzWjdvQ2lGdXBiWGstMEdyWk5WekZ1SFEwQkdtWDJmZXhFeXJkQ09Qdnp0UlNjUQ?oc=5",
-      "titre": "Emil Frey France : une fuite de données expose des leads et des collaborateurs",
-      "source": "Cyberattaque.org",
       "date": "2026-08-25",
       "guide": "cybersecurite",
       "page": "avance.html",
