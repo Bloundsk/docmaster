@@ -1,6 +1,54 @@
 {
-  "maj": "2026-08-31T21:58:13.358Z",
+  "maj": "2026-09-01T12:38:53.818Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeERvX2xPdkkzQUc4N2UzdXZvMGFIWGJFUFBzTThWbmVuUzdjWDI5bEd4YzhKbXpQQjB1S1JzaDZwcEFreHFFYWxSTWlqQlRCZDM3NmxiSTlIR2RaZFdKMWFEVzN5U3prbnF5TV9QM0M1QXROSUlhQWdETDVMQzRxeXZEeWN2cWdkSWotaWE2bk9fVzdBaVlMNndSYW15bTA?oc=5",
+      "titre": "Fuites de données : Lecornu donne « quinze jours » à ses ministres pour riposter",
+      "source": "01net.com",
+      "date": "2026-09-01",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-01"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNcGhhLWplNXNadXAzdlZEX2lOZ3IxN21HQXhXeVVnYi1saDNvWHRWU2VCTVhqX2M1SG5xdnp6cEdLMmpNQVB2aUZ1dGMteDhIWU5SMlhDNU5zTmZMSF9xOXE1SFQxa0VVdEdycTBWVi15ZG9BWDIyN1pzZEJGTXV2MkZURVVFMEp5cEM5UUpqWl8ySC1kR202ZkJrdlBfOURtaG5fTG0zYlBySnBSdGZiV2VERld6UnZaZ19rbmdYS29TXzg?oc=5",
+      "titre": "Pourquoi les entreprises doivent arrêter de choisir un seul modèle d’IA",
+      "source": "Le Quotidien du Tourisme",
+      "date": "2026-09-01",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "choisir-un-modele",
+      "section": "⚖️ Choisir un modèle",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "publie": "2026-09-01"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPcjRIbEEzYVh2UkZRdGRFV1FSazlxY3BDSUNpbzNKQ1R5bTB4eW1fR2dFZTg3Wjg5ZVkxQnVZQ2lvSDhxeDktTkl3dExJb2xyemZLLTA2bkNWeThzcWFFbk94ZTlkVU9CbTFWSHB3SWRjTC1kYm1lc1luY0xsRWpXTzZQOA?oc=5",
+      "titre": "Adieu Notion et Jira : Super Productivity remet la gestion de tâches en local",
+      "source": "GoodTechInfo",
+      "date": "2026-09-01",
+      "guide": "productivite",
+      "page": "debutant.html",
+      "ancre": "les-outils-de-gestion-de-tâches",
+      "section": "🛠️ Les outils de gestion de tâches",
+      "sujet": "⏱️ Productivité & Organisation — Débutant",
+      "publie": "2026-09-01"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNc0I3R0cwUkEtbVZ0RmNaU1V3SVBQTldraGdzUEUzaXYwV0Z4ZjMxbmhtaTdDbHhfaFhqZ3FSZ0xBcGRlNURnY2x3SnVPT3FjaFVmWUhoUXBTcnNSSXdfZVoyWnpZTDFlVGZUZXpFSUl4YzJmMXlxVFdGOWNBOU1lYXp3dDRiZ3dUeVpuWjRTQ0l6eHh1OXgwYVY1T2htRzd6V1hEcFp6VVg2aF95c2JzdXZjQ1FSTFlSN3lXLUgyREdnSnI0?oc=5",
+      "titre": "Médecine du travail : Luc Baijot reconduit à la présidence de Présoa dans l’Aisne",
+      "source": "L'Union",
+      "date": "2026-09-01",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 La médecine du travail",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "publie": "2026-09-01"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPX1pRbG5iWEZqQ0NLVzQ4MHFGR0ZiUXJjd3YtT1VpTmNIaGlVeTRyY2pXUS03U2ZnRGpKRFE2enVpWnpBRDlETTdwbjBnU29mdDh0NHo0eVA0N0NMVEZsSGptSXZUSEo5YjJjVGplN0FsV09HZjBMbEo1ZUJLQXJQcGJPWGdZaGNDMG1QVGkyaUZyel9MdEdDUHJlN2w2aC1IdDNEVk5OU0JianZhaUV1d3ZWR054LTR0U2hXZVh1Vm5TWVVNQUNVRzBWUHdheXdBaW9RT1hOUE9aV21jX0o2VmtVME9mc3JxWDdkY0JFWE9zVFRBUkRFWnZoMS1mN0M1eWFXZkxjVk5nLXdSNFpmdldLQWtxZ0w0ZHBDcU80YmZXdFZNTkhqTEtkWWI4eEtLMUJEYjBvaFhGQQ?oc=5",
       "titre": "Après une série de fuites de données dans le secteur public, la cybersécurité s’invite au cœur du lancement de la facturation électronique",
@@ -240,54 +288,6 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-08-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQUd4Y1hpM1hkRTJ3d0szZ2Y1STl4SjhKZlJEU2x3ampTTGhTVXg5S0pRRDF4TDlCbE1RVExVcXkxLXQxUUtPSFlIVXRWc1RDX0xlRUVsYXE1Vkw3bDFkd01DNGpiNGJPRVpmTmRYYjcyV3hMalQwWkk0cE1rem45eWV1TG13WWtqdlRxQ1hRXzlhV2Y5c0NGejVUU0N0Q1oxN3pVejZCU1ItYnh5ZjZN?oc=5",
-      "titre": "Salarié et droit d’accès RGPD : quelles données l’employeur doit-il communiquer depuis la messagerie professionnelle",
-      "source": "Kohen Avocats",
-      "date": "2026-08-25",
-      "guide": "droit",
-      "page": "avance.html",
-      "ancre": "vos-donnees-personnelles",
-      "section": "🔐 Tes données personnelles",
-      "sujet": "⚖️ Droit & démarches — Avancé",
-      "publie": "2026-08-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNYlZTT3dETDhNUTk4c2Z4YW4tdWZwdm1Qb1ZiS3l2T1htNndXVDVHX0RDcnlMODAwQXNpb3R6UWU5R3pwUndja1RVQXZxOGhndzR1VTV5cFhmQ19teFI0YnNhejhISWJEYUVuMGM2NWpyWERMM2g4VjZSMjRUa0pUR3F1T3M3TXQ1ZDhfUDlWQllJTFRYU0JfMGs2bTgzT2x2MHpPUHdnaw?oc=5",
-      "titre": "L'importance des réseaux sociaux pour votre entreprise (guide 2026)",
-      "source": "Algerie Patriotique",
-      "date": "2026-08-24",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQWxqV0o4bUtIX2pUaWljOG9JenpTM3NXT0g5dElHbE1qb01XUkpkcmhfX2JnUXl5TVpzd2ZnZzRZRGJJQXNGSmhDTlRrYV92SlgtTXE3cHJINHBSZDlpVy1RUmg2WTFzWnRJSzlCVFF3Qk04SXZvc0pEazJXSzIyS1hrbldhRDVyd3BsNQ?oc=5",
-      "titre": "Du web au magasin, l’IA redessine tout le parcours d’achat",
-      "source": "Comarketing-News",
-      "date": "2026-08-24",
-      "guide": "marketing",
-      "page": "intermediaire.html",
-      "ancre": "parcours-achat",
-      "section": "🎯 Le parcours d'achat",
-      "sujet": "📢 Marketing Digital — Intermédiaire",
-      "publie": "2026-08-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPeEppamJCdF9obVhJbWRNRExGa2dJMzZVeDNPLUROcFpuejlJN0U4QmJkNVlBX2M4b0FreEZLNDQ2TE02TnV0MGxFT2MxdHREbFJkM003X3Y2ZnFfT0gwWEFsenIwQ1lCdlRNd194aW1aOXZ2VVdkT2hQT21JbllNeWVncFB3a1l2NkRzUGxvUTRwQVJ5Mm1jQlJ6RE1MMHJjVE1tV211bUtDUndPZXpkcG1sd0pmT085dEhrQUpMcEZGd3NqNUpKUXoxb1JxLUpxdnFPV1VzVmlkUjdTeFRBX2JR?oc=5",
-      "titre": "Rouen. Face aux vols de données personnelles, ce spécialiste de la cybersécurité appelle à la vigilance",
-      "source": "tendanceouest.com",
-      "date": "2026-08-24",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-24"
     }
   ]
 }
