@@ -1,6 +1,18 @@
 {
-  "maj": "2026-09-01T20:01:08.931Z",
+  "maj": "2026-09-02T12:10:57.915Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPd19abkxWY1lnMFloZDI0WkFqUURzeFVCaElzdFJTX0gzY3ppOGJxcURWekNpdkJfWlpKaFNUUWlWU3VrTW5wbUNTY3hWS1c5UUxlWTFtdVQxWFcwekxsdGlWMWhmTmtDQWxvQ0FVbXJpcU9xcWdKMVNLQ2hUc09OaHJfel9nOHJtNlU4a2llZE1YRk5FTlFrdTlGMkI0YUxac1dMeF9tMXdfZ0s3TVRfRjN0NWZna3FqcnpURTVDTV9YVVBTb2J3UU5ORFZXWDdmc2ZkT0hxaXVIbkk?oc=5",
+      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
+      "source": "Ouest-France",
+      "date": "2026-09-02",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "quest-ce-quun-llm",
+      "section": "🧠 Qu'est-ce qu'un LLM ?",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-02"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeERvX2xPdkkzQUc4N2UzdXZvMGFIWGJFUFBzTThWbmVuUzdjWDI5bEd4YzhKbXpQQjB1S1JzaDZwcEFreHFFYWxSTWlqQlRCZDM3NmxiSTlIR2RaZFdKMWFEVzN5U3prbnF5TV9QM0M1QXROSUlhQWdETDVMQzRxeXZEeWN2cWdkSWotaWE2bk9fVzdBaVlMNndSYW15bTA?oc=5",
       "titre": "Fuites de données : Lecornu donne « quinze jours » à ses ministres pour riposter",
@@ -62,6 +74,30 @@
       "publie": "2026-09-01"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdmJEcHVxLTRXa2lSNnZ3cFIwam94TEd3NU5NUl9PUFNNQ3QtS2YtemJRLUVWdkFlMHZ2REVYQjhGb0x2b3dRbGo3cWtETlZ5TnFKQTlHcEFYTC1XUEp0SFFQeElYd0JXaVZWV3BHXzZvVy1Tck5uLU9rbnE5QUJ1NnoyVXZNZXU5RldQaXgyV2VoQXk3MzF4cFI0Mzc4anNFYlBnaTNDQkxrUDRHX1g1eElFN1ZmTXoyOHNzbGFpeC1fcG96aG0wd0lCTWpaVUZQQ1ZHbmhVUzlYbkdjQXBTLVBlaWZhb2VJVEJ3ZEQwTUhBeFd3MUNxUkpyR2JBUl82SDBz?oc=5",
+      "titre": "Le meilleur OLED de Samsung gagne une version spectaculaire qui cache son design controversé et ajoute un énorme système Hi-Fi",
+      "source": "TechRadar",
+      "date": "2026-09-01",
+      "guide": "design",
+      "page": "intermediaire.html",
+      "ancre": "systeme-de-design",
+      "section": "🧱 Le système de design",
+      "sujet": "🎨 Design UX/UI — Intermédiaire",
+      "publie": "2026-09-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1tSWNETWM1R1pJY1ZWandjZnh5OGM4dDR1Ml80R0FNN3lDWjNVLXVMa09fQ0xTOVNuQWNlZ0tpTU83OGptSVRobzVHazhlLWdGWVVXdmFnejJ2S3liRmQtZXVWeFlHRFhhUU5yNEJWQQ?oc=5",
+      "titre": "Binance renforce sa présence dans la finance traditionnelle avec des options sur 1 000 actions et ETF américains",
+      "source": "TradingView",
+      "date": "2026-09-01",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "les-etf",
+      "section": "📦 Les ETF",
+      "sujet": "💰 Finance — Débutant",
+      "publie": "2026-09-02"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPX1pRbG5iWEZqQ0NLVzQ4MHFGR0ZiUXJjd3YtT1VpTmNIaGlVeTRyY2pXUS03U2ZnRGpKRFE2enVpWnpBRDlETTdwbjBnU29mdDh0NHo0eVA0N0NMVEZsSGptSXZUSEo5YjJjVGplN0FsV09HZjBMbEo1ZUJLQXJQcGJPWGdZaGNDMG1QVGkyaUZyel9MdEdDUHJlN2w2aC1IdDNEVk5OU0JianZhaUV1d3ZWR054LTR0U2hXZVh1Vm5TWVVNQUNVRzBWUHdheXdBaW9RT1hOUE9aV21jX0o2VmtVME9mc3JxWDdkY0JFWE9zVFRBUkRFWnZoMS1mN0M1eWFXZkxjVk5nLXdSNFpmdldLQWtxZ0w0ZHBDcU80YmZXdFZNTkhqTEtkWWI4eEtLMUJEYjBvaFhGQQ?oc=5",
       "titre": "Après une série de fuites de données dans le secteur public, la cybersécurité s’invite au cœur du lancement de la facturation électronique",
       "source": "L'Usine Digitale",
@@ -108,6 +144,18 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-01"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWVlUS205Zk5maWZJMTZteE9JOWpsOEZUVERIdzJScjA2aEl3OWNOVHh0ZVBQRU9XXzhkbFNqTWVGTm01eUQ5QzVVMTZiaEYzZndGalptQWlpM0tWcVR1MmFkcXNrcEtJYTBTcEdWX1E2aDlCWks1ZzdzS2dkcy1DRGcwNGVpZDEzZG1SX0h4SURneXpVanotOE9TdFBlZE0zd2ZqanlNMGRtQy1ZMHc?oc=5",
+      "titre": "Cybersécurité de l'État : nouvelle fuite massive de données ce week-end",
+      "source": "Planet.fr",
+      "date": "2026-08-31",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-02"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmFsazJzNzFYZ0NJel9DTlR0d2JPRXFIeEJtSDVpVDA0UlNwYVYwZ1VycVU1LVdhMUJ2NUV0WlBOT3BXQjVfb3ptbU5tWFBORnM5Zi1QSEtsNjl1d1JWd21sdHlEbncyRDZJelZNZE13NFFyUUcycEZSYlZpZGsxRi1VZXdiMFVfaUJ0WFFTT3dxbHdiUGl6ZEZXX0sxYllN?oc=5",
@@ -240,54 +288,6 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQTFNaVHotSG9wYkdwNHpZcnFlRHhZdjdBcHVxaGEzNVFSTEY0aERXMVU3dW1oOUlGeXZNcGphOXBFVWoyYmEzY193MkVDclV1WmVBcnNDZzBidDRLOVRtNGRMVC1lNHJFajNvOTVNQjJxcWEzV1RUNmRXdGRjVEx3SlFVYjdxYW44a3FENGVTeHZJaFNlMnNSc3VMc25rQjVqcjhCYXFOZw?oc=5",
-      "titre": "De jeunes entrepreneurs transforment le potentiel de leur ville natale en un modèle économique durable.",
-      "source": "Vietnam.vn",
-      "date": "2026-08-26",
-      "guide": "entrepreneuriat",
-      "page": "intermediaire.html",
-      "ancre": "modele-economique",
-      "section": "💰 Le modèle économique",
-      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQYThEWUswQV9TUlYxNWVoenhZV3dYOVM3aDg5NGFqY29hWGJNNTVGMkg0RWNpVGhsYUhmWXVTTlBSZDVXenZQeTNfMGstbWprMFFCU2l4YUpnSFI1c0F4YWVkdFhlT2ZMb0J5RWNzX000azNuYTVFRHQzU1dLeE93NzBpZ21mX2hBVmtVQlRweEVRaUk0VTF4aEZKLVpCQmFzMGpHNjdaZll6dm8yVzZhZmw4bFFvS2o3ckVWejFMd0JBRnlNRThRWHlQd3Vja2g1ZGJ0dlJuUW8yZ01CX2t0dVZ5T0FoQmYzWG9KODJPVktQem5OSjM2X0FNVFRhV1hXdUNkRUtWdVhTOGtOejVxRXFB?oc=5",
-      "titre": "Fuites de données : « La France souffre d’une mauvaise perception des enjeux cyber, y compris au plus haut niveau de l’Etat »",
-      "source": "Le Monde.fr",
-      "date": "2026-08-26",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNU0JKQ3dRSzU1bm5hc0liSmtLU2N5bGNvSllrTFJHMWtpNFdMelBYRU54VURFSnhhVlBha2lvZWpMbHVnaE5IZUhmWEtMV2JHZ1hweTlWU3FRZkZlclhvNnRnR3VBQ0RrM0NNVFpJLTFTbmJXU3lIWUczRGpEakZZZS1B?oc=5",
-      "titre": "Fuite de données E.Leclerc : des clients touchés après le piratage d’un...",
-      "source": "French Breaches",
-      "date": "2026-08-26",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPamRUOEhLeDhmRFBXZV9FTmV2M3hHRVZ1MHdXWi1oSWtHcnJOU0dUdDZnaUlPeEp3MmlBWWdRZmEySmtfaTNfRU04TFFKTzN1bEs2aGRRRzlwUHN1ZmoyTENId19ZMmtHM0VfczdiTFE3aFlNNXhmZG5MX290ak1Lem95OEhHSjJBdmhMQ0JpM2RlTGxPcHUxX3NDU3RoTllwLVhvMVpxLW56MFFXUnBKTE1R?oc=5",
-      "titre": "Après les fuites de données, restaurer la confiance numérique",
-      "source": "journaldunet.com",
-      "date": "2026-08-25",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-25"
     }
   ]
 }
