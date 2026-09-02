@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-02T12:10:57.915Z",
+  "maj": "2026-09-02T19:54:59.498Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPd19abkxWY1lnMFloZDI0WkFqUURzeFVCaElzdFJTX0gzY3ppOGJxcURWekNpdkJfWlpKaFNUUWlWU3VrTW5wbUNTY3hWS1c5UUxlWTFtdVQxWFcwekxsdGlWMWhmTmtDQWxvQ0FVbXJpcU9xcWdKMVNLQ2hUc09OaHJfel9nOHJtNlU4a2llZE1YRk5FTlFrdTlGMkI0YUxac1dMeF9tMXdfZ0s3TVRfRjN0NWZna3FqcnpURTVDTV9YVVBTb2J3UU5ORFZXWDdmc2ZkT0hxaXVIbkk?oc=5",
@@ -11,6 +11,42 @@
       "ancre": "quest-ce-quun-llm",
       "section": "🧠 Qu'est-ce qu'un LLM ?",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONzdoM2pvVnNJcUZfbkJheWFTUGZUMkFvZ0kwZG9oV043el84RG1NcnppN1FFa0xKa1l4M1UtdXZ2M09GdHdxUkJQV3FfWVNiS05FTEZ2TTRFV09tNS10ZnBYb0VVaDNVREVwVm54ejVfVlRTVjNoX1VFcWx2bG5LaE1HQjc1SVExOHA1ZmRRelQ4bExIVUJack91OFJIbHBZaThhUHdoS0haUm9oSkdz?oc=5",
+      "titre": "Fuites de données : pourquoi le tourisme doit sécuriser toute sa chaîne [ABO]",
+      "source": "tourmag.com",
+      "date": "2026-09-02",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVDhNcElxUENrYjc3RHZPcVJJbW00bUF1RWYzczN6dTd2anZzWkFtdDd3UDFTWVptTEZSVVhrS2ZuTm94T2w0Q0lBSVpsdVlPT2xzUUo2dHdiMGk1MzhMcFItdnoxRDhOZDd5Wjlkc0huRkQ3SzBfY09kVzdEdEwwcm05b1FqcVFEVTFlU1NySVg3a0VoVUlYbFdPR1Jrbi1VVVREa3VqRUZNRXA3?oc=5",
+      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
+      "source": "- Alençon.maville.com",
+      "date": "2026-09-02",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "quest-ce-quun-llm",
+      "section": "🧠 Qu'est-ce qu'un LLM ?",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPZVAwT19lVWFzZzBxU2t2Mjg1ck1MWndRbkltclZTb0psNVVQSDE2ZUNXc1pyYzF1WjZ6bnJWLUFJVUJfVTFHZ20tYk93QkVfOGRSWVhESkEyQWFCT2I0YnkwY3cyblZvMTlwd1F2STBZdnlaMkdEQlFHdG85VktHdjR5RmQyMmFGN0YzYnFHQ2d0WjZkZ3VIRXFLTXU2V2xNSk5raDJYQ0IxNGhSa3d1RWhqV3JrTEVPYm9fVncyUGlCTmNJQ3lCeERnOTRvUFZKeEloZTdnQW5OWWJlTWcxRWFqaGZPVDRjY0puRUszcXcxcGdVcWNZ?oc=5",
+      "titre": "Nocif pour la santé, le travail en horaires atypiques doit être encadré, voire évité, alerte l'Anses",
+      "source": "lequotidiendumedecin.fr",
+      "date": "2026-09-02",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 La médecine du travail",
+      "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-09-02"
     },
     {
@@ -251,42 +287,6 @@
       "ancre": "bien-acheter",
       "section": "🛒 Bien acheter",
       "sujet": "🌱 Sobriété numérique — Débutant",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSHFPZm53cHdTSU9MY1daTHh4aTljb0VXWmJGUXdZZm5GYVo5c0RxSVhiemZMNTVuZFllclRsSGVjX1JpQ0Z6aElncnlWM1BNNHpzTU1TOVluYmJCMGRhTllBWTQ5TmNkNkhwWGZMZVotQmluLWswZUdWdGR1SUFvbjh0X0VZeHliU2ZuQU9yQlJzdndMblViU3lITXZ0QjYtc29SQmpWb2laWUVtX2Rzd1A0Z2lTMWFCQ1E?oc=5",
-      "titre": "Pourquoi 90 % des investisseurs échouent : ce que la science dit de la gestion du risque en bourse",
-      "source": "Sciencepost",
-      "date": "2026-08-27",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPbVo5NnBOTDJiTVNpVC1ybnpOUE1idmlydkJnYlFkZ0Z1VU91NFQzTkhVbHJ5dWVQY3hZX1A1YmNOUWZyNVNrR3Rmc25rZGdFNWxSczV6QWkzR0g4OHoxd3dwVkVQU3dWeW5PMXBGdU1hVHJidk9tZEs1ZEpBUFJveElJXzZNdkxrV0FPekt4dGdUVG5XamRMVlZ2c1MxTHd0ZUgzQ3VCWTlHNkVqZlpkaXlZZnlsQTJtTkJaTHNlM3huOFNvQ213Q25oYw?oc=5",
-      "titre": "La Louvière Centre, qui vient d’apprendre qu’elle ne sera pas réintégrée en D3 FFA, annonce un transfert venu de France ! « Un joueur rapide, percutant et ambidextre »",
-      "source": "Sudinfo",
-      "date": "2026-08-26",
-      "guide": "apprendre",
-      "page": "avance.html",
-      "ancre": "le-transfert",
-      "section": "🎯 Le transfert",
-      "sujet": "🎓 Apprendre à apprendre — Avancé",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiigNBVV95cUxNQ1Uyb3dpa0tLaHNzNmdKVldGUGlmTk9iQW5vaC1wZHp5Q2phOEVJSFgwQTNqQnJudm95bS00SFdxTl9sRTVsNVFaTlR2T0xHbWUwSW5VeHl4Rjg4M092eGFQSlhWUmNRWWRGcG1GejBhSEI3ZUNOcGcydHd2anNzZWpxdjZTUHJhd3BoQnlfQTNpZ25SZE5Ca09IX0oxMDBhTlRvOVdic2llenQ4ZUF4WHIzd0t2UnFkZ0dRUU1MZVlINk1BLUpvQ291TDloODBFOVdHNVAzNXlMc3ZkZldMeG9sRkxEaU1PWVU0TzI4MGhnYm14dDV2eXF5TjFlc2RoTGh4cGxzWjJ1T3p2WVpmamdMNjNGc1J4LVFGS1JMWXgwNGdxMkV3bU5ZblZUemd4ME1yT3hpSEJGUG9Vemk3RG1idnpyWVpULVFOZFNBcmpPTDF5dHdWYWwyT1MzV002OG5hM1FPZENtdEh0OU5fRGE3MWY0Y3RscDlmSkpuMGJlNVB5SnZtQ0JB?oc=5",
-      "titre": "\"Les exigences en cybersécurité sont les plus élevées en Europe\": quelques jours après le piratage du fisc, Bercy rassure sur les risques de fuites de données liées à la mise en place de la facturation électronique",
-      "source": "BFM",
-      "date": "2026-08-26",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-08-28"
     }
   ]
