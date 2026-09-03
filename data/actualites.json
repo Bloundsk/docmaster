@@ -1,6 +1,18 @@
 {
-  "maj": "2026-09-02T19:54:59.498Z",
+  "maj": "2026-09-03T12:10:48.782Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRWVkdmx0NlBpdkRtVGJHN21FZkJjSWxwaUNkbXJ0SElWa2lDV19VNjdUQldzaks1VUp2eG00cXZSVjRtalZ2RzZ6d0J1bG5RWmI2ZUExNXRnZHY5aUFSVkRwS0ZiZUMtOExwc0h0LTVLc3pFTHkteVlIVmhtWFYzMndNNW04dTVkbXVIYnNPR1poZHh4MHplakE4SUNfcTdEdjdjZzc2ZDFBR3FQTWdMMV9hYnE3TmZvWlI2UDFJZ2tCMUZOa19uZ0xacjR6MThkQkdhQVFkTHpwTDVQS0E?oc=5",
+      "titre": "Cybersécurité : une clinique de Saint-Étienne condamnée à 500 000 euros d’amende après un vol de données",
+      "source": "Sud Ouest",
+      "date": "2026-09-03",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-03"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPd19abkxWY1lnMFloZDI0WkFqUURzeFVCaElzdFJTX0gzY3ppOGJxcURWekNpdkJfWlpKaFNUUWlWU3VrTW5wbUNTY3hWS1c5UUxlWTFtdVQxWFcwekxsdGlWMWhmTmtDQWxvQ0FVbXJpcU9xcWdKMVNLQ2hUc09OaHJfel9nOHJtNlU4a2llZE1YRk5FTlFrdTlGMkI0YUxac1dMeF9tMXdfZ0s3TVRfRjN0NWZna3FqcnpURTVDTV9YVVBTb2J3UU5ORFZXWDdmc2ZkT0hxaXVIbkk?oc=5",
       "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
@@ -48,6 +60,30 @@
       "section": "🏥 La médecine du travail",
       "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-09-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWW1ON0k2YnFKUXd4RWlxMURwcGxYUjktVGx5OXptRzJ4UXEzQXMxVVdDNUdXU3JIMGNxYVdPQ0VuSXROQ1ZhaldvblpQYXE3WHFqQm0tU3VpczNIbldfa0YwblpDenBfRmpKZEJHc2c0WUNOUE1Objhnd2dNSzN5WnBLcXR6NEs1OUlIOTE1X2xNZUx2VG42V2NfOHRTTjRJUC1wQWZzeFJEcTR0SHVzT1hwWnFqdw?oc=5",
+      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
+      "source": "MaVille.com",
+      "date": "2026-09-02",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "quest-ce-quun-llm",
+      "section": "🧠 Qu'est-ce qu'un LLM ?",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRzVKQjJNZ0RGdXk1dTJvcDNXcHJrSTRTT0Y2WWFoeGZuc0hDdHd2MGNGcUNOdVFQZEd2QXdSdmdpZXJCZGlSNWpGYy1JdTQ5U296dEZxcllDVmhrbzRXYkJqSURoUktabWZFZGpXZ1pqUEtRcWpDRjBscVZEWWg3azNqWDhjejIwTlNNVWt1QzN1eVFHLUFJM0pTcEMxQ0dVay04eUdrdDlxMVptUml0WXBnUWNyNkFtdW9odXZkQmhEUDZId1dSdERBOEszOE9zRjJBTDhVc2ZHQQ?oc=5",
+      "titre": "Claude ou Gemini : faut-il choisir l’intelligence ou la polyvalence ?",
+      "source": "Android MT",
+      "date": "2026-09-02",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "choisir-un-modele",
+      "section": "⚖️ Choisir un modèle",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "publie": "2026-09-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeERvX2xPdkkzQUc4N2UzdXZvMGFIWGJFUFBzTThWbmVuUzdjWDI5bEd4YzhKbXpQQjB1S1JzaDZwcEFreHFFYWxSTWlqQlRCZDM3NmxiSTlIR2RaZFdKMWFEVzN5U3prbnF5TV9QM0M1QXROSUlhQWdETDVMQzRxeXZEeWN2cWdkSWotaWE2bk9fVzdBaVlMNndSYW15bTA?oc=5",
@@ -251,42 +287,6 @@
       "ancre": "lépargne",
       "section": "📊 L'épargne",
       "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPZXZ0UEhVaWJEcHR6N0wybUZEU3R2ZjRwMjNBc3F3QUJodEdJRkYzSTEyLXVKb1lOMVJZVzZZQ3ZqaUFjejFrUi1SQ2lpcE1YMmtoNEE3bEpYTkgxdmliRjc2Q2tkU3E0TGVMVVdlRGNuSVhDQ2ZXb3hKSDVVLVlDWGYxcXQ1Z05DbFFVRDFkX0JkTi1fUUJMWUs5NThzMU5ESkE2RnhDaTQyV2tYSU4tNEJUbE92T0s5NzE1dkNaTWFPNlg4cy1nalQyWFVPX05PUTdNSjEyUVlYdnBEeFF2RjZyYnc3Q1NGVE1GOEc4OHhnV0NLUWVIYzRyaktpZmI1?oc=5",
-      "titre": "« Le private equity peut se démocratiser s'il répond aux attentes des épargnants : gestion du risque, lisibilité, transparence »",
-      "source": "Les Echos",
-      "date": "2026-08-28",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNeDU3STc3N1QwdUdVZkhQSlBYR2dGbzVrdVR2WjhIeUtWZ0ctM0lyT0hFeE5tMTFWcnpuZ2g1VUFuZmNSOHJoNGRQWnJ1R2FlRnFvb2hlZFY0YXl0bnVsRGozRjE0N1RQNmxSQTJ4a3R3SGlDcTN3SkYtc3d0WUZLWmkyOXBfUXJvQ2M5WjNQZ052aVRZcG1yc0RWdkVyX20xSE1YeWpVU0NTSkFqWWYweTNvbElwUlFZYmplNFZ2VGtWbWdwWmtMUExHTVNjXzNuT21FQllVd0N2TDMxYzlUaE5jV0dITzRNMEZLZXoxczJoWV9NZWpiY25JWUtrUEIz?oc=5",
-      "titre": "46 heures par semaine : ce que le temps de travail des médecins généralistes révèle des besoins d'emploi dans la santé",
-      "source": "Aladom",
-      "date": "2026-08-28",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "publie": "2026-08-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNMHBBeDFUTDJFZXJ3QkJwbUw3dkhyRnpxWVhIWjU2ZTNvUFAydmpnSWVvU3VuOWNNVlg2TkhuYmpBb3dhM0xyZ3NHRzVodW1kSnJCdzU0aWVMb1Q5ZXVXZDRTUWFKZXlwMHZFamE0enJaRXZ4cW1SekM5eDNwRHZMdzhROFZsSmczSnRLalVXODZ0NWFNamhWVnNSbFBJYnBhYlBhT0VuZmprTzFuS1ktQVBXRDMyUTZEVGZNVWt0RDAza05Fc2NKWDB4YkxrckpqQkR3MzNJOWY?oc=5",
-      "titre": "Concentration, mémoire, bien-être : ce célèbre jeu de cartes aide à déconnecter du stress numérique",
-      "source": "europe-infos.fr",
-      "date": "2026-08-27",
-      "guide": "ecologie",
-      "page": "debutant.html",
-      "ancre": "bien-acheter",
-      "section": "🛒 Bien acheter",
-      "sujet": "🌱 Sobriété numérique — Débutant",
       "publie": "2026-08-28"
     }
   ]
