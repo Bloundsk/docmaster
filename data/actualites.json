@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-03T12:10:48.782Z",
+  "maj": "2026-09-03T19:59:18.083Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRWVkdmx0NlBpdkRtVGJHN21FZkJjSWxwaUNkbXJ0SElWa2lDV19VNjdUQldzaks1VUp2eG00cXZSVjRtalZ2RzZ6d0J1bG5RWmI2ZUExNXRnZHY5aUFSVkRwS0ZiZUMtOExwc0h0LTVLc3pFTHkteVlIVmhtWFYzMndNNW04dTVkbXVIYnNPR1poZHh4MHplakE4SUNfcTdEdjdjZzc2ZDFBR3FQTWdMMV9hYnE3TmZvWlI2UDFJZ2tCMUZOa19uZ0xacjR6MThkQkdhQVFkTHpwTDVQS0E?oc=5",
@@ -11,6 +11,66 @@
       "ancre": "fuites-de-donnees",
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQdE9XaGxheEt1ZTU0Slg5SHFLU0M0bW4wZEZsNXRvbF9BWFlwbjAtX3NkRWsxQVRhcEh2U3p5VHpCSGJ6dTg5ZGluZTJUMlhPWjdGT3JGY25wS0lwa2lHOVEtdDdhbG41UjlsTkI1MUlMbU1UdVZrcGhnclNmOF9adkRjdXE0bUFXdGFxYzZCVzRmLXVIMXFUQ2UxZF9lanpnOWlnMVBmUXdQcGItTU9ueTcwWTVxOUx6a0wya2ZzeUlZQU5PWG1sZkZEQQ?oc=5",
+      "titre": "Cybersécurité : face à la multiplication des fuites de données, le gouvernement cherche à accélérer sa riposte",
+      "source": "Banque des Territoires",
+      "date": "2026-09-03",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSlVGQm9xV2Q1RGUtemNNQVZDbVN4LXp2WjlBQ3R4U25VeUFqMEVnMWtsRmhmbU8yVWpQSF9oQ3pvcUtNOHF4Q2ZxdTUwb0xNbmF3VTdKYi0wYkMxUEp2aDl6T1VXVWdwZnFKUVdGeEk3ZEc3Q01rbUlKZUlISmcyT29ncUdZdw?oc=5",
+      "titre": "Le Dyson CameraJet met une caméra dans votre bouche, et trois surfaces d'attaque",
+      "source": "Pasquale Pillitteri",
+      "date": "2026-09-03",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "surface-attaque",
+      "section": "🗺️ Ta surface d'attaque",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5TbW53MnNYX2g5X2J0UmR5MldjMGN1c2FhRTNwbk1pWnBya1VBQ1BZZ0hTNDdpVjRrVGgtb21mdFpvdDFnQ2JfU2xDbktUV21zRDlfX19BUktLaUFqWkE?oc=5",
+      "titre": "HTEC Momentum renforce son palmarès exceptionnel en matière d'expérience utilisateur avec deux distinctions aux UX Design Awards.",
+      "source": "Lelezard",
+      "date": "2026-09-03",
+      "guide": "design",
+      "page": "debutant.html",
+      "ancre": "les-tests-utilisateurs",
+      "section": "🧪 Les tests utilisateurs",
+      "sujet": "🎨 Design UX/UI — Débutant",
+      "publie": "2026-09-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNakxJOTdHZ283VnZwaEo3RkJFcmxYMDJBb3RtX2JSUjZ2dUdHMDVreUZVc3REZ2p6RjJfc3hLUVB1Nkk0RklKVEJIck9CRFBKT1BoMDhFSG9pdGs0RVVSOXRZRTZULWN4RkRJRmdULTJsc1ZOeXZ5QlltOWYtSmZUUXVPMzI2U3F1c1RJUlJteEJDaWZpLUlrcUd2Q1dobFZNLV9ENVhuVm9QLUx6MldVTm5YT0cteXlWNmZTWjJqcUhKTkE0Y1E?oc=5",
+      "titre": "Rentrée dans le supérieur : comment conserver le droit aux allocations pour un enfant majeur",
+      "source": "RTBF",
+      "date": "2026-09-03",
+      "guide": "droit",
+      "page": "debutant.html",
+      "ancre": "conserver-ses-documents",
+      "section": "🗂️ Conserver ses documents",
+      "sujet": "⚖️ Droit & démarches — Débutant",
+      "publie": "2026-09-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSnFBdms2dlRUY0JyVmx1UG1aaFBMOW9YRGN4NWM3Y2FOSXl4S3VLVDBsZFNmX0pfa0ZrQkk5b29qZE92S2xjNnZnZjBqZ3JjbXJJcWsxSU12Q2xGWmV1WlV1UjlwNmJGNGlydG1NSzNxV0NRVjNyRjJfVHVCOWhYMnBrZ3c1U2dsUHAzQ3VRMERUTGlNY05zQWw5aHZBSWlGR25kTWItcGlrRFNZTUIyWA?oc=5",
+      "titre": "Gestion des risques : l’IA gagne du terrain chez les gestionnaires d’actifs",
+      "source": "Finance et Investissement",
+      "date": "2026-09-03",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
       "publie": "2026-09-03"
     },
     {
@@ -83,6 +143,18 @@
       "ancre": "choisir-un-modele",
       "section": "⚖️ Choisir un modèle",
       "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "publie": "2026-09-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOcFktTTE2VTZlM01jdzNxVFU5VC1ReXFUQXFaS1cyMF9IbTFHNTJYWGRFSlo4NndOaVh0MnhGZ0k2Mk56aGl0anVUTXJXaXJVLUJSV2owNEl1Y21XeUNDejFZTjFZODhMazhRQnhaTlMySVVMVVI4MlNSMEg5aENUSGNsN2h1bzVEbUw5V0thTEFSTVNmbDIxa3NOT1JRbzJ6ZG5IeWlxMTBwakhtTFVqdEZPTUR6X3gwOTNHdWRvc3FuLWNkMldyMlBBLUYzbFVnb1BBZjQxdXJzX3NlYmNQb280ZFdzbFhqOHZ5cTBfbVFCV3Rxa3J1MGpUNVJvdw?oc=5",
+      "titre": "La liquidation des obligations à l’échelle mondiale se poursuit alors que les anticipations de hausse des taux s’intensifient",
+      "source": "Morningstar",
+      "date": "2026-09-02",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
       "publie": "2026-09-03"
     },
     {
@@ -216,78 +288,6 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNWVlUS205Zk5maWZJMTZteE9JOWpsOEZUVERIdzJScjA2aEl3OWNOVHh0ZVBQRU9XXzhkbFNqTWVGTm01eUQ5QzVVMTZiaEYzZndGalptQWlpM0tWcVR1MmFkcXNrcEtJYTBTcEdWX1E2aDlCWks1ZzdzS2dkcy1DRGcwNGVpZDEzZG1SX0h4SURneXpVanotOE9TdFBlZE0zd2ZqanlNMGRtQy1ZMHc?oc=5",
-      "titre": "Cybersécurité de l'État : nouvelle fuite massive de données ce week-end",
-      "source": "Planet.fr",
-      "date": "2026-08-31",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-02"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmFsazJzNzFYZ0NJel9DTlR0d2JPRXFIeEJtSDVpVDA0UlNwYVYwZ1VycVU1LVdhMUJ2NUV0WlBOT3BXQjVfb3ptbU5tWFBORnM5Zi1QSEtsNjl1d1JWd21sdHlEbncyRDZJelZNZE13NFFyUUcycEZSYlZpZGsxRi1VZXdiMFVfaUJ0WFFTT3dxbHdiUGl6ZEZXX0sxYllN?oc=5",
-      "titre": "Les obligations immobilières offrent des taux d'intérêt pouvant atteindre 13 % par an, la pression pour arriver à échéance s'accentuant vers la fin de l'année.",
-      "source": "Vietnam.vn",
-      "date": "2026-08-30",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "publie": "2026-08-30"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9kZjY3UG1GZFdKT2J4ZXBNTkJleF80UnRXQ0k0dkUwa1BDa1k4VG1kbElZZ0I2R3Z1QTEzeWtTY1BPOVZXaU9oSXNrbHhYNWdLajVtUGJzYmRMOThVQ1JOSHFQX2tGaE51d0Rlb1NLaXN4UVRJbVJZ?oc=5",
-      "titre": "Fuite de données CarteDePeche.fr : les données personnelles d’adhérents...",
-      "source": "French Breaches",
-      "date": "2026-08-30",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-08-30"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNa2tmTHZHU3Ayam1BdnozMEFYNkhUUnNBQ1ZvNFpKN1VoMFEzTWUtbnFvU1BQZHFtaUJ6cjJFT1NZWVBxSmFXTVRfb2NVMFh2QnlnYWU1dWQxSkIzOERBZUwtZlJqbnc5ZFRrcWxPbEY2ejJjWlBTNWJpOVBkeFZKQy1URG13MUkzOUp4SUVZOA?oc=5",
-      "titre": "Le Japon teste un modèle combinant humains et intelligence artificielle pour jouer aux échecs.",
-      "source": "Vietnam.vn",
-      "date": "2026-08-29",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "choisir-un-modele",
-      "section": "⚖️ Choisir un modèle",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "publie": "2026-08-30"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTDV4ckZNNDVlc2FkMV9FbTVrYlZId01xX0RPc2xZYkU1YXFYM2ZGMktqRXRiVjdZTHNoeUdSeXRnanVzdEgwUnM2elprU0cwdWoxamFjN1NOSnctWWVNR3pVa1NOcV95UUdDMzE3ZVdkaWR0TGxKR0FHMWVnalJiM3N4V2dRcUJKbmg3UUdwX0E?oc=5",
-      "titre": "L’illusion de maîtrise : redonner du sens à la littératie numérique en classe",
-      "source": "L'École branchée",
-      "date": "2026-08-28",
-      "guide": "apprendre",
-      "page": "debutant.html",
-      "ancre": "les-illusions-de-maitrise",
-      "section": "🪞 Les illusions de maîtrise",
-      "sujet": "🎓 Apprendre à apprendre — Débutant",
-      "publie": "2026-08-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNdDJKNGJ3OXFid1dmRU9Gd1NteW5CdWNqZ2tyM0VhaEFYWmhKSThKOEFyNmlWRXZFYndzQzNobmp4RGoySjBOODl4VTNWNTI5MXFKRlNVV1JCYVhGa2w4c0dScEU2U19MVURfdmFKRWpCLUFZUkRIbmMxOFFZTmZrckliVm9JOW9fbUdfWTdGNTl4cTNQdzhoSGtVSTJPekxWUHBXNDgtb2JDYzNlZFFJQjFLdkhEZ0R0N1lMQmU5bjN5b3oxQWdVeVhwUWNOOTRaS1FWbEFodHR4ZG5sWlFUeTlqblR3YmxuVGlhRExSemNFTEo4?oc=5",
-      "titre": "« 95 % des Français veulent mieux comprendre la finance, mais un sur trois seulement sait quoi faire de son épargne »",
-      "source": "Les Echos",
-      "date": "2026-08-28",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-08-28"
     }
   ]
 }
