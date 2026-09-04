@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-04T12:12:07.467Z",
+  "maj": "2026-09-04T19:43:54.370Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNcVhpWlFaVkFuNW9aWTlBdGx4bmR6UW92TFJITDlCbmt1clZYM0Q3b0hybVlrRlZCX3BqcGFfRl9TZ3FlT3VvMWhidVNCVVAtdElxekFSLTJsRFhZNERDaGRBeG01dkhvbnM4TTVEOVVOLVJYanUxTGZRSzRuU3pqbGFFYVoxaTAwZVN2cWRwVEdrUXNMR1I3R1JraG5TLTgzVHhQaVhSdjFNWnV4eUNJUWZ2dWliZDBqWFg2R28yeG5sS2k2amprRmE1cXp3aW9INGI3WHR6QjZhall3c01yQlNsMm0xUWhHekJFYw?oc=5",
@@ -23,6 +23,18 @@
       "ancre": "les-agents-ia",
       "section": "⚙️ Les agents IA",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-04"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTV9mQ21Sc21fVmZxdjhBX1pDdF94cEJrM2pFbXR1NFBhNjdKWDQ2SHRuTzlINjZmcFhLenFfd2Y0WHB0cjhwdXdRWUx5a3ZuX3EwSXRVMXJQSmFhM040NWJ6bTN0RVYtSFZya3VIMmszMkVCNGt1VEZtcXVPOGxwWFAtQXY3eWVXTnc5dU5YUnZqMmlSaUgyM2Q2MXRqS0hmejRwS3hLaGdERzJqb2ExZnlMdndCUV91VUhIdDNrdks?oc=5",
+      "titre": "Fuite DGFIP : le malentendu français qui fragilise notre cybersécurité",
+      "source": "journaldunet.com",
+      "date": "2026-09-04",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-04"
     },
     {
@@ -218,6 +230,18 @@
       "publie": "2026-09-03"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNWUlHRWZ0Z3pEcVVDTzRlOUlNZlYybENvU3oyTk1TU3JaYl9takgtMlFmbldZR0xLc3RBYVpPZXpuMjdsZEVlaEJwTTZtTTVaaEQxb183Smw3UFZTOFQ1ZjhaQVFvSzBlbWxqWFBwOXF5WTNnaUZFWVRuenR2ak4zMFNpVVdUcjIydmJJMFV5MlBLdjF6QWRlUUd2eFdDWmZkaGpzdmktd2N1OEEz?oc=5",
+      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
+      "source": "- La Baule.maville.com",
+      "date": "2026-09-02",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "quest-ce-quun-llm",
+      "section": "🧠 Qu'est-ce qu'un LLM ?",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-04"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeERvX2xPdkkzQUc4N2UzdXZvMGFIWGJFUFBzTThWbmVuUzdjWDI5bEd4YzhKbXpQQjB1S1JzaDZwcEFreHFFYWxSTWlqQlRCZDM3NmxiSTlIR2RaZFdKMWFEVzN5U3prbnF5TV9QM0M1QXROSUlhQWdETDVMQzRxeXZEeWN2cWdkSWotaWE2bk9fVzdBaVlMNndSYW15bTA?oc=5",
       "titre": "Fuites de données : Lecornu donne « quinze jours » à ses ministres pour riposter",
       "source": "01net.com",
@@ -264,30 +288,6 @@
       "section": "🏥 La médecine du travail",
       "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-09-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxOeEhaUmE3RVVQcnZCdjE5ZE1ZWU1VSHBfUlItak5RbzJZWENpNC1XM2Eyc2ZQWGRUbDFPWmdKdzF4RmFfX0l3MFFqU0ppdm1wTm5CeGxmc2xZdmplcGZXODRlaV9OdEhWc3pqcEdlbzNFOVd3U3lGRkJ2NXpQRlZMYWYwbFp0M1JJT0I3RHliVE03WTFFV3RGS0U5OXNLS0NOYVltUXJ6X0dNYm1DaTBzdURteng1UkdfaGJDLVJkLVJOWTgzQnRPZ0JCc0hzVjJFb3hTVF83bzZrbnk0ZDFhNVNxRlREVnpvSFhlOWJLdG1qOWVPOHczbnliRlJISVFfR1poWFFnNGtJQ0lIZWpzVzA5RGcyYnJKekk4azJic2tJb1AxNFFBNGI2TXlhQ1RUWHlLUHZlMWNuWVZ4aUpnbEtSZXpES0pWNGFMUGZJdEpJRTBhRXlpaw?oc=5",
-      "titre": "Fin de la pension complémentaire, épargne-pension… Comment gérer ses finances à la retraite, un moment de la vie parfois synonyme d’appauvrissement",
-      "source": "moustique.be",
-      "date": "2026-09-01",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "publie": "2026-09-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdmJEcHVxLTRXa2lSNnZ3cFIwam94TEd3NU5NUl9PUFNNQ3QtS2YtemJRLUVWdkFlMHZ2REVYQjhGb0x2b3dRbGo3cWtETlZ5TnFKQTlHcEFYTC1XUEp0SFFQeElYd0JXaVZWV3BHXzZvVy1Tck5uLU9rbnE5QUJ1NnoyVXZNZXU5RldQaXgyV2VoQXk3MzF4cFI0Mzc4anNFYlBnaTNDQkxrUDRHX1g1eElFN1ZmTXoyOHNzbGFpeC1fcG96aG0wd0lCTWpaVUZQQ1ZHbmhVUzlYbkdjQXBTLVBlaWZhb2VJVEJ3ZEQwTUhBeFd3MUNxUkpyR2JBUl82SDBz?oc=5",
-      "titre": "Le meilleur OLED de Samsung gagne une version spectaculaire qui cache son design controversé et ajoute un énorme système Hi-Fi",
-      "source": "TechRadar",
-      "date": "2026-09-01",
-      "guide": "design",
-      "page": "intermediaire.html",
-      "ancre": "systeme-de-design",
-      "section": "🧱 Le système de design",
-      "sujet": "🎨 Design UX/UI — Intermédiaire",
-      "publie": "2026-09-02"
     }
   ]
 }
