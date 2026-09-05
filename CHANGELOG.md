@@ -1,5 +1,91 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Les titres disent enfin ce qu'il y a dans la page
+
+### Ce qui n'allait pas
+
+Les 112 pages de guides portaient un titre construit sur le même gabarit :
+`Cybersécurité — Débutant`, `Intelligence Artificielle — Avancé`,
+`Data & Analytics — Intermédiaire`. C'est une **étiquette de classement**. Elle
+dit où la page se range dans le site ; elle ne dit pas ce qu'on y apprend, et
+personne ne la tape dans un moteur de recherche.
+
+Les mots que quelqu'un tape sont déjà dans la page, un cran plus bas, dans les
+titres de sections : *mots de passe*, *hameçonnage*, *ETF*, *répétition
+espacée*, *effet rebond*. Le `<title>` — la ligne bleue d'un résultat de
+recherche, l'onglet du navigateur, le texte d'un partage — ne les portait pas.
+
+### La règle appliquée
+
+**La substance d'abord, la taxonomie à la fin.**
+
+```
+avant   Cybersécurité — Débutant
+après   Mots de passe, hameçonnage et antivirus — Cybersécurité débutant
+```
+
+Le niveau reste, en queue : il distingue trois pages du même parcours, et sans
+lui on ne saurait plus laquelle on regarde.
+
+Chaque titre est composé à partir des `<h3>` réels de **sa** page, jamais d'un
+gabarit rempli automatiquement. Ça compte pour l'anglais : les sections
+anglaises ne sont pas la traduction mot à mot des françaises, donc les deux
+versions divergent là où le contenu diverge.
+
+### En deux temps, pas en un
+
+Un parcours d'abord — Finance, huit pages — soumis au jugement avant d'aller
+plus loin. Le ton validé, les treize autres ont suivi : **104 pages**, index
+plus trois niveaux, français et anglais.
+
+Un déroulé de 104 pages sur un ton qui n'aurait pas convenu aurait coûté un
+revert de 104 pages.
+
+### Ce qui n'a pas bougé, et pourquoi
+
+**Les ancres.** `#lépargne` sert de clé au quiz, aux articles rattachés, aux
+liens du sommaire, aux chemins de mesure — et aux **favoris enregistrés dans le
+navigateur des visiteurs**. Les renommer aurait effacé leurs favoris sans que
+personne le voie. L'ancre est une clé opaque ; l'étiquette est du texte pour un
+lecteur. Les deux se découplent.
+
+**Les descriptions.** Elles portent déjà de la substance, et les anglaises
+contiennent l'avertissement sur les enveloppes fiscales françaises, qui n'existe
+nulle part ailleurs.
+
+**Les `h1`, le sommaire, la recherche et les renvois d'actualités.** Ils gardent
+l'étiquette de classement, qui reste la bonne pour se repérer *dans* le site. Le
+`<title>` s'adresse à quelqu'un qui n'y est pas encore entré : deux publics, deux
+formulations.
+
+### Ce qui le prouve
+
+Le diff, plutôt que l'affirmation : 104 fichiers, exactement trois lignes
+chacun — `<title>`, `og:title`, `twitter:title`. Aucune ligne portant un `id` ou
+un lien d'ancre n'a changé. Les dix contrôles passent, et les titres ont été
+relus **sur le site en ligne**, pas sur la copie locale.
+
+`dater-guides` a jugé les 104 pages « inchangées sur le fond » et a conservé
+leur date de mise à jour. C'est le bon comportement : réécrire un titre n'est
+pas une mise à jour de contenu pour le lecteur, et faire remonter 104 guides en
+tête des « récemment mis à jour » aurait été un faux signal.
+
+### Ce qu'on ne saura pas avant plusieurs semaines
+
+Il faut que le moteur repasse et que les impressions s'accumulent. Le rapport
+d'usage du lundi est l'endroit où ça se verra — au même endroit que l'effet des
+amorces de leçons posées la veille. **Les deux expériences se chevauchent, donc
+leurs effets ne seront pas séparables** : on saura « ça monte » ou « ça ne monte
+pas », pas lequel des deux y est pour quelque chose. Les démêler demanderait la
+Search Console, qui donne les impressions par requête.
+
+### Au passage
+
+Le heredoc a encore cassé, cette fois sur une simple apostrophe
+(`parcours d'achat`) — troisième fois en trois jours. Bascule immédiate sur
+l'écriture directe du fichier, et relecture des octets écrits plutôt que du
+compte rendu de l'outil.
+
 ## 2026-09-05 — Quatre-vingt-deux pour cent du texte étaient invisibles
 
 ### La question posée, et l'instrument vérifié d'abord
