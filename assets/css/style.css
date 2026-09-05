@@ -542,6 +542,45 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
 /* Trait de separation une fois la section ouverte */
 .lecon[open] > summary { border-bottom: 1px solid var(--background); }
 
+/* --- Ce qu on voit d une lecon repliee ------------------------------------
+   Mesure du 5 septembre 2026 : 82 % du texte d une page de niveau vit derriere
+   ces blocs, et l usage montrait qu ils restaient fermes. Deux reperes pour
+   decider d ouvrir : ce que la section coute (sa duree) et ce qu elle apporte
+   (sa premiere phrase).
+
+   Les deux vivent DANS le summary : un <details> replie masque tous ses autres
+   enfants, une amorce posee a cote serait invisible exactement quand elle sert.
+
+   Le summary passe donc sur deux lignes. « order » remet les elements dans le
+   bon ordre visuel : le chevron ::after est le dernier enfant du summary, et
+   l etoile des favoris y est ajoutee par favoris.js apres coup — sans ces
+   rangs, l amorce se glisserait entre eux. */
+.lecon > summary { flex-wrap: wrap; }
+.lecon > summary h3 { flex: 1; }        /* pousse duree, etoile et chevron a droite */
+
+.lecon-duree {
+    font-size: .82rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.lecon > summary::after { order: 5; }
+
+.lecon-amorce {
+    order: 10;
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--muted);
+    font-size: .93rem;
+    line-height: 1.5;
+}
+
+/* A l ouverture, l amorce disparait : sinon la premiere phrase paraitrait deux
+   fois, dans le summary puis dans le corps. */
+.lecon[open] .lecon-amorce { display: none; }
+
 .lecon-corps { padding: 20px 25px 25px; }
 .lecon-corps p { margin-bottom: 14px; }
 .lecon-corps p:last-child { margin-bottom: 0; }
@@ -1152,9 +1191,11 @@ html { background: var(--background); }
 
 /* Impression */
 @media print {
+    /* « .lecon-amorce » : a l impression tout est deplie, la premiere phrase
+       serait donc imprimee deux fois — en amorce puis dans le corps. */
     .navbar, .search-container, #back-to-top, .theme-toggle, .quiz-box, .mark-read-box,
     .guide-nav, .related-guides, #reading-progress, .copy-link-btn, footer nav,
-    .lecon-controles { display: none !important; }
+    .lecon-controles, .lecon-amorce { display: none !important; }
     body { background: white; color: black; }
     header { background: none !important; color: black; padding: 20px 0; }
     article, .toc, .recap-box, .lecon { box-shadow: none; border: 1px solid #ccc; }

@@ -65,6 +65,12 @@ jobs:
       - name: Accueil conforme aux guides et aux podcasts
         run: node scripts/publier-accueil.js --verifier
 
+      # Une lecon repliee ne montre que son titre. L amorce et la duree sont ce
+      # qui permet de decider d ouvrir — une page ecrite sans elles serait
+      # muette, et du contenu invisible ne proteste jamais.
+      - name: Amorces et durées des leçons à jour
+        run: node scripts/amorcer-lecons.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le
