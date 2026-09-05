@@ -1,5 +1,97 @@
 # Changelog — Clicked
 
+## 2026-09-05 — Quatre-vingt-deux pour cent du texte étaient invisibles
+
+### La question posée, et l'instrument vérifié d'abord
+
+Que coûte le repli des leçons ? Avant de répondre, il fallait s'assurer que le
+compteur d'ouvertures fonctionne — un compteur muet produirait exactement le
+même chiffre qu'un désintérêt réel.
+
+Vérifié sur le site en ligne, en interceptant l'appel : ouvrir une section émet
+un événement, un seul, avec le bon chemin. Deux fausses pistes écartées en
+route — `mesure.js` n'apparaît dans aucune page parce qu'il est injecté par
+`layout.js`, et le magnétophone réseau du navigateur ne voit pas les requêtes
+vers un autre domaine, donc son silence ne prouvait rien.
+
+### Le chiffre
+
+Sur `guides/finance/debutant.html` :
+
+```
+3 286 mots au total
+  589 visibles sans rien ouvrir
+2 697 derrière les blocs repliés ........ 82 %
+```
+
+Et l'usage confirmait que ces 82 % restaient fermés : 29 visiteurs sur cette
+page en trente jours, **5 ouvertures** de sa section la plus consultée. Un
+visiteur qui lit ce qu'il voit et repart a lu un cinquième du guide — et rien ne
+lui disait que le reste existait.
+
+*(Première mesure fausse, corrigée : `innerText` ne rend rien pour un élément
+masqué, donc le caché comptait zéro. C'est `textContent` qui donne le volume.)*
+
+### Ce qui a été ajouté
+
+Le repli reste un bon choix : tout afficher redonne le mur de texte qu'il avait
+écarté. Ce qui manquait, c'était de quoi **décider d'ouvrir**. Sur les 338
+leçons des 84 pages de niveau, dans les deux langues :
+
+| | |
+|---|---|
+| la durée de lecture, à côté du titre | ce que la section coûte |
+| sa première phrase, en amorce | ce qu'elle apporte |
+
+**Tout vit dans le `<summary>`, et ce n'est pas un choix.** Un `<details>`
+replié masque *tous* ses autres enfants : une amorce posée à côté du corps
+aurait été invisible exactement quand elle sert. Elle disparaît à l'ouverture —
+sinon la première phrase paraîtrait deux fois — et à l'impression, qui déplie
+tout.
+
+### Deux défauts commis en construisant
+
+**L'amorce était un `<p>`.** Ce n'est pas valide dans un `summary`, dont le
+contenu admis est du texte en ligne. Un analyseur qui referme le paragraphe fait
+*sortir* l'amorce du summary, donc la cache une fois repliée : l'inverse exact
+du but. Passée en `<span>`.
+
+**La regex d'effacement a perdu sa référence arrière** en traversant mes couches
+d'échappement, et n'a donc plus rien effacé : les amorces se sont **dupliquées
+sur les 84 pages**. Le comptage l'a montré avant la mise en ligne. C'est le
+troisième incident du même genre en deux jours — les séquences `\b`, `\v`,
+`\n` et `\1` ont toutes été mangées à un moment ou un autre. La parade
+appliquée depuis : construire les caractères explicitement, ou supprimer la
+séquence plutôt que de la faire survivre.
+
+### Un débit de lecture, et deux qui existaient déjà
+
+180 mots/minute. Le dépôt en connaissait deux, et aucun ne convenait : 150 dans
+`publier-podcasts.js`, mais c'est un débit de **parole** ; 250 dans
+`pratique.js`, optimiste pour un cours plein de chiffres à vérifier.
+
+À signaler plutôt qu'à corriger en silence : les durées écrites à la main sur
+les sommaires de parcours impliquent entre **130 et 180** selon le niveau. Elles
+n'obéissent à aucune règle unique. C'est un chantier à part.
+
+### Un effet de bord assumé
+
+Les 84 pages ont vu leur date passer au 5 septembre. C'est exact — les fichiers
+ont changé — mais c'est une modification de **forme**. L'accueil annonce donc
+des guides « mis à jour récemment » qui n'ont rien appris de neuf. Distinguer la
+forme du fond demanderait de marquer les commits ; ce n'est pas fait.
+
+### La leçon
+
+Le repli était documenté, motivé, et personne ne l'avait remis en cause depuis
+sa mise en place. Il fallait le **chiffrer** pour voir qu'il coûtait quatre
+cinquièmes du texte.
+
+**Une décision de conception juste au moment où on la prend n'est pas vérifiée
+pour autant.** Elle a un coût, ce coût se mesure, et rien ne le mesure tout seul
+— le contenu invisible ne proteste jamais. D'où le contrôle ajouté : une page
+écrite plus tard sans amorce serait muette, et muette en silence.
+
 ## 2026-09-05 — Les trois documents du dépôt, relus
 
 Après les pages du site, les documents. Deux relectures, deux verdicts opposés —
