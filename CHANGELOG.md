@@ -1,5 +1,76 @@
 # Changelog — Clicked
 
+## 2026-09-05 — La prose qui décrit le site avait pris six jours de retard
+
+La leçon de l'entrée précédente disait que rien ne protège le texte qui explique
+comment le site fonctionne. Ludo a demandé la suite logique : vérifier les autres
+pages. Elle était méritée — **six affirmations fausses**, dans quatre pages, dans
+les deux langues.
+
+### Ce qui envoyait le lecteur au mauvais endroit
+
+Les parcours ont quitté l'accueil pour `guides.html` le 30 août. Trois phrases ne
+l'avaient pas suivi :
+
+| page | ce qu'elle affirmait |
+|---|---|
+| À propos | « La **page d'accueil** en donne la liste complète » |
+| FAQ | « … c'est le **seul endroit** où elle est tenue à jour » |
+| FAQ | « une étoile sur chaque carte de la **page d'accueil** » |
+
+La troisième est la pire : un lecteur qui suivait la FAQ pour mettre un guide en
+favori arrivait sur une page qui n'a plus une seule carte.
+
+### Ce qui décrivait un fonctionnement disparu
+
+> « Une veille automatique parcourt chaque jour l'actualité … et **signale ce qui
+> mériterait une mise à jour**. »
+
+Elle ne signale plus, elle publie, et sans intervention, depuis le 21 août. La
+phrase décrivait l'époque où il fallait cocher des cases.
+
+### Et un commentaire de code qui pointait à côté
+
+Il expliquait pourquoi la liste des domaines ne doit pas être recopiée à la main —
+« elle vit désormais à un seul endroit : la page d'accueil » — en désignant le
+mauvais endroit. Une consigne qui se trompe de cible finit par faire recopier ce
+qu'elle voulait éviter.
+
+### Ce qui manquait, et qui n'était pas une erreur
+
+Aucune des quatre pages ne mentionnait les podcasts. Zéro occurrence, alors que
+quatorze épisodes existent depuis le 31 août et ont leur onglet. Ce n'est pas
+faux, c'est incomplet — donc c'était un choix de contenu, présenté comme tel
+plutôt que corrigé d'autorité.
+
+Ludo a tranché : une section **« Un épisode par parcours »** dans À propos, placée
+après la construction des guides et avant l'automatisation — un épisode prolonge
+un guide, il ne le remplace pas, et l'ordre du texte doit le dire. Et une entrée
+de FAQ **« D'où viennent les podcasts ? »**, juste avant celle des actualités,
+parce que les deux répondent à la même inquiétude : *d'où vient ce que je vois
+ici, et est-ce que quelqu'un l'a relu ?*
+
+Ce qui y est affirmé est vrai et rien de plus : voix synthétique produite à partir
+du texte du parcours, textes écrits à la main, et un épisode qui ne remplace pas
+le guide. La version anglaise précise en outre que les épisodes sont en français —
+un lecteur anglophone l'apprend dans la phrase qui les lui annonce, et non en
+cliquant.
+
+### La leçon
+
+Aucun de ces six défauts n'était détectable. Un contrôle compare une page à sa
+source ; ces phrases n'en ont pas — elles décrivent le site de l'extérieur, et
+elles restent grammaticalement irréprochables en devenant fausses.
+
+Ce qui les a trouvées, c'est de les **relire pour les traduire**, puis de les
+relire une fois de plus quand on me l'a demandé. Deux passages, deux récoltes.
+
+**Le texte qui décrit un système est une dépendance de ce système.** Il ne casse
+pas quand le système change — il ment, ce qui est plus long à voir et plus coûteux
+à réparer. La seule protection connue est de le relire quand ce qu'il décrit
+bouge, et cette relecture n'a pas d'automatisme : elle se déclenche à la main, ou
+pas du tout.
+
 ## 2026-09-05 — La page anglaise des podcasts, et deux mensonges de la page française
 
 ### Ce qui reste en français, et pourquoi
