@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
     <title>Podcasts - Clicked</title>
-    <meta name="description" content="Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.">
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="alternate" type="application/rss+xml" title="Podcasts Clicked" href="podcast.xml">
+    <meta name="description" content="One episode per learning path: the essentials of a topic in a few minutes. The episodes are in French.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <link rel="alternate" type="application/rss+xml" title="Podcasts Clicked" href="../podcast.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -29,52 +29,53 @@
             if (sombre) document.documentElement.classList.add('dark-mode');
         })();
     </script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="canonical" href="https://bloundsk.github.io/docmaster/podcasts.html">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/en/podcasts.html">
     <meta property="og:site_name" content="Clicked">
     <meta property="og:title" content="Podcasts - Clicked">
-    <meta property="og:description" content="Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.">
+    <meta property="og:description" content="One episode per learning path: the essentials of a topic in a few minutes. The episodes are in French.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bloundsk.github.io/docmaster/podcasts.html">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/en/podcasts.html">
     <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Clicked — 14 guides gratuits pour apprendre les compétences de demain">
-    <meta property="og:locale" content="fr_FR">
+    <meta property="og:image:alt" content="Clicked — 14 free guides to learn the skills of tomorrow">
+    <meta property="og:locale" content="en_GB">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Podcasts - Clicked">
-    <meta name="twitter:description" content="Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.">
+    <meta name="twitter:description" content="One episode per learning path: the essentials of a topic in a few minutes. The episodes are in French.">
     <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
 </head>
 <body>
-    <script>window.DOCMASTER_BASE = "";</script>
-    <script src="assets/js/identite.js"></script>
-    <script src="assets/js/langues.js"></script>
-    <script src="assets/js/layout.js"></script>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/identite.js"></script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
 
-    <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="index.html">Accueil</a> &gt; <span aria-current="page">Podcasts</span>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a> &gt; <span aria-current="page">Podcasts</span>
     </nav>
 
     <header>
         <h1>🎧 Podcasts</h1>
-        <p>L'essentiel d'un parcours en quelques minutes, à écouter ou à lire.</p>
+        <p>The essentials of a learning path in a few minutes.</p>
     </header>
 
     <main id="main-content">
         <section>
-            <h2 id="episodes">Les épisodes</h2>
-            <p>Un épisode par parcours. Ils s'écoutent ici, ou dans n'importe quelle application de podcast avec <a href="podcast.xml">le flux</a>.</p>
+            <h2 id="episodes">The episodes</h2>
+            <p>One episode per learning path. Listen here, or in any podcast app through <a href="../podcast.xml">the feed</a>.</p>
+            <div class="piege"><span class="titre">These episodes are in French</span><p>The audio and the written summaries below are in French. The learning paths themselves are fully translated — <a href="guides.html">browse the guides</a> if you would rather read them in English.</p></div>
 
 <!-- PODCASTS:DEBUT -->
             <article class="podcast" id="apprendre">
                 <h3>Apprendre à apprendre — Si réviser est confortable, tu n'apprends pas</h3>
-                <p class="podcast-duree">2 minutes · 30 août 2026</p>
+                <p class="podcast-duree">2 minutes · 30 August 2026</p>
                 <p>Le surlignage et la relecture donnent une illusion de maîtrise. Ce qui fait tenir l'information, c'est l'effort de la retrouver. Apprendre à apprendre en une minute trente.</p>
-                <audio controls preload="none" src="assets/audio/apprendre.mp3"></audio>
-                <p><a href="guides/apprendre/index.html">Ouvrir le parcours Apprendre à apprendre →</a></p>
+                <audio controls preload="none" src="../assets/audio/apprendre.mp3"></audio>
+                <p><a href="guides/apprendre/index.html">Open the Apprendre à apprendre path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Ce parcours démonte les vieilles habitudes scolaires pour montrer ce qui fait réellement tenir une information dans la tête.</p>
                 <p><strong>D'abord oublier le surlignage et la relecture.</strong> L'oubli est brutal dès le premier jour : ce qui marche, c'est la répétition espacée et le fait de se tester. Si une révision te paraît confortable, c'est une illusion d'apprentissage — chercher la réponse doit coûter, comme un muscle qui brûle à l'entraînement. À résultat égal, la révision espacée demande bien moins de temps que des relectures acharnées.</p>
@@ -86,12 +87,12 @@
             </article>
             <article class="podcast" id="cybersecurite">
                 <h3>Cybersécurité — Des procédures, pas de l'intuition</h3>
-                <p class="podcast-duree">2 minutes · 30 août 2026</p>
+                <p class="podcast-duree">2 minutes · 30 August 2026</p>
                 <p>La cybersécurité n'est pas une affaire de génies en sweat à capuche, mais d'habitudes qui évitent d'être une cible facile. Cybersécurité en une minute trente-cinq.</p>
-                <audio controls preload="none" src="assets/audio/cybersecurite.mp3"></audio>
-                <p><a href="guides/cybersecurite/index.html">Ouvrir le parcours Cybersécurité →</a></p>
+                <audio controls preload="none" src="../assets/audio/cybersecurite.mp3"></audio>
+                <p><a href="guides/cybersecurite/index.html">Open the Cybersécurité path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Oublie l'image du génie de l'informatique en sweat à capuche. La cybersécurité, c'est adopter quelques habitudes pour cesser d'être une cible facile.</p>
                 <p><strong>D'abord les mots de passe.</strong> Le vrai danger n'est pas leur manque de complexité, c'est de les <strong>réutiliser</strong>. C'est comme une même clé pour ta maison, ta voiture et ton casier : une seule volée, et tu perds tout d'un coup. S'y ajoute l'hameçonnage, qui joue toujours sur l'urgence pour t'empêcher de réfléchir.</p>
@@ -102,12 +103,12 @@
             </article>
             <article class="podcast" id="data">
                 <h3>Data &amp; Analytics — Une donnée mal lue est pire que pas de donnée</h3>
-                <p class="podcast-duree">1 minute · 30 août 2026</p>
+                <p class="podcast-duree">1 minute · 30 August 2026</p>
                 <p>Faire parler les chiffres sans se faire manipuler : choisir le bon indicateur, se méfier de la moyenne, et accepter l'incertitude. Data &amp; Analytics en une minute quinze.</p>
-                <audio controls preload="none" src="assets/audio/data.mp3"></audio>
-                <p><a href="guides/data/index.html">Ouvrir le parcours Data &amp; Analytics →</a></p>
+                <audio controls preload="none" src="../assets/audio/data.mp3"></audio>
+                <p><a href="guides/data/index.html">Open the Data &amp; Analytics path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Ce parcours apprend à faire parler les chiffres sans se faire manipuler — pour décider, au lieu de contempler de jolis graphiques.</p>
                 <p><strong>D'abord choisir le bon indicateur.</strong> Face à un déluge de données, une seule question compte : si ce chiffre baissait demain, que ferais-tu différemment ? Si la réponse est « rien », ce n'est pas un indicateur, c'est de la décoration.</p>
@@ -119,12 +120,12 @@
             </article>
             <article class="podcast" id="design">
                 <h3>Design UX/UI — Le bon design est invisible</h3>
-                <p class="podcast-duree">2 minutes · 29 août 2026</p>
+                <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Personne ne complimente une porte qui s'ouvre toute seule ; tout le monde peste contre celle qu'on pousse alors qu'il fallait tirer. Design UX/UI en une minute quarante.</p>
-                <audio controls preload="none" src="assets/audio/design.mp3"></audio>
-                <p><a href="guides/design/index.html">Ouvrir le parcours Design UX/UI →</a></p>
+                <audio controls preload="none" src="../assets/audio/design.mp3"></audio>
+                <p><a href="guides/design/index.html">Open the Design UX/UI path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Le bon design n'est pas une question de goût, c'est d'abord une question d'invisibilité. Personne ne complimente une porte qui s'ouvre toute seule ; tout le monde peste contre celle qu'on pousse alors qu'il fallait tirer.</p>
                 <p><strong>D'abord séparer l'expérience de l'apparence.</strong> Un panneau magnifique qui mène à une porte condamnée, c'est l'erreur fatale : belle apparence, expérience ratée. D'où les brouillons volontairement moches, faits à la main : se tromper sur papier coûte cinq minutes, corriger un produit fini prend des semaines.</p>
@@ -135,12 +136,12 @@
             </article>
             <article class="podcast" id="droit">
                 <h3>Droit &amp; démarches — Avoir raison ne suffit pas, il faut le prouver</h3>
-                <p class="podcast-duree">2 minutes · 29 août 2026</p>
+                <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Les réflexes juridiques du quotidien, sans jargon : ce qui se garantit, ce qui se prouve, et ce qu'on peut obtenir sans procès. Droit &amp; démarches en une minute trente.</p>
-                <audio controls preload="none" src="assets/audio/droit.mp3"></audio>
-                <p><a href="guides/droit/index.html">Ouvrir le parcours Droit &amp; démarches →</a></p>
+                <audio controls preload="none" src="../assets/audio/droit.mp3"></audio>
+                <p><a href="guides/droit/index.html">Open the Droit &amp; démarches path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p><strong>D'abord savoir sur quoi s'appuyer.</strong> Les quatorze jours de rétractation ne valent qu'en vente à distance ; la garantie légale de conformité, elle, court deux ans. Si l'appareil lâche après un an, c'est au vendeur de prouver qu'il fonctionnait à l'achat, pas à toi. Et un courrier utile n'est pas un long discours : il est daté, chiffré, fondé sur la loi, et prouvable.</p>
                 <p><strong>Ensuite les contrats du quotidien.</strong> Pour un logement, photographier chaque rayure à l'état des lieux d'entrée peut sauver des centaines d'euros de dépôt de garantie à la sortie. Côté travail, une période d'essai ne se renouvelle jamais toute seule. En micro-entreprise, l'impôt porte sur ce qui est encaissé, pas sur le bénéfice réel.</p>
@@ -150,12 +151,12 @@
             </article>
             <article class="podcast" id="ecologie">
                 <h3>Sobriété numérique — Tout se joue au moment de l'achat</h3>
-                <p class="podcast-duree">1 minute · 29 août 2026</p>
+                <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>Supprimer ses vieux courriels ne sauve rien. L'impact du numérique est dans la fabrication, pas dans l'usage. Sobriété numérique en une minute vingt.</p>
-                <audio controls preload="none" src="assets/audio/ecologie.mp3"></audio>
-                <p><a href="guides/ecologie/index.html">Ouvrir le parcours Sobriété numérique →</a></p>
+                <audio controls preload="none" src="../assets/audio/ecologie.mp3"></audio>
+                <p><a href="guides/ecologie/index.html">Open the Sobriété numérique path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Ce parcours bouscule ce qu'on croit savoir sur la pollution numérique, en expliquant pourquoi les petits gestes ne pèsent presque rien, et ce qui compte vraiment.</p>
                 <p><strong>D'abord la fabrication.</strong> Le prix écologique de ton téléphone est déjà payé à la seconde où tu l'allumes : sa fabrication écrase sa consommation électrique. Supprimer ses vieux courriels pour sauver la planète, c'est écoper l'océan à la petite cuillère. Le geste qui compte, c'est de garder son appareil deux ans de plus, ou d'acheter reconditionné.</p>
@@ -166,12 +167,12 @@
             </article>
             <article class="podcast" id="entrepreneuriat">
                 <h3>Entrepreneuriat — Le seul test valable est une carte bancaire</h3>
-                <p class="podcast-duree">1 minute · 29 août 2026</p>
+                <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>Valider et financer un projet avant d'y consacrer des mois. Entrepreneuriat en une minute vingt-cinq.</p>
-                <audio controls preload="none" src="assets/audio/entrepreneuriat.mp3"></audio>
-                <p><a href="guides/entrepreneuriat/index.html">Ouvrir le parcours Entrepreneuriat →</a></p>
+                <audio controls preload="none" src="../assets/audio/entrepreneuriat.mp3"></audio>
+                <p><a href="guides/entrepreneuriat/index.html">Open the Entrepreneuriat path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p><strong>D'abord valider.</strong> Inutile de tout construire si personne ne veut de l'offre : on valide le problème avant d'inventer la solution. Le plan d'affaires ne sert pas à séduire un banquier, il sert à tester si les hypothèses tiennent. C'est comme une maison : on ne choisit pas les rideaux avant d'avoir vérifié que les fondations ne reposent pas sur du sable.</p>
                 <p><strong>Ensuite survivre.</strong> Une entreprise rentable peut mourir si sa trésorerie est à sec et qu'elle ne peut plus payer ses factures. Les premiers clients se trouvent à la main, en leur parlant, pas à coups de campagnes. Et le « oui » de ta famille ne vaut rien : le seul test de marché valable, c'est un inconnu qui sort sa carte bancaire.</p>
@@ -181,12 +182,12 @@
             </article>
             <article class="podcast" id="ia">
                 <h3>Intelligence Artificielle — Un moteur de déduction, pas un oracle</h3>
-                <p class="podcast-duree">2 minutes · 29 août 2026</p>
+                <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Comprendre comment la technologie fonctionne sous le capot pour cesser d'y voir de la magie. Intelligence Artificielle en une minute quarante.</p>
-                <audio controls preload="none" src="assets/audio/ia.mp3"></audio>
-                <p><a href="guides/ia/index.html">Ouvrir le parcours Intelligence Artificielle →</a></p>
+                <audio controls preload="none" src="../assets/audio/ia.mp3"></audio>
+                <p><a href="guides/ia/index.html">Open the Intelligence Artificielle path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Comprendre comment cette technologie fonctionne sous le capot, pour cesser d'y voir de la magie et l'utiliser sans se faire avoir.</p>
                 <p><strong>D'abord la base.</strong> Un grand modèle de langage n'est pas une base de données qui saurait des choses : c'est un moteur statistique qui devine le mot suivant. Le clavier prédictif de ton téléphone, sous stéroïdes. S'il paraît intelligent, c'est par les probabilités — d'où l'importance de consignes très précises sur le contexte et le format attendu.</p>
@@ -197,12 +198,12 @@
             </article>
             <article class="podcast" id="marketing">
                 <h3>Marketing Digital — Ton audience, louée ou possédée</h3>
-                <p class="podcast-duree">2 minutes · 29 août 2026</p>
+                <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Attirer et retenir des clients sans jargon, en réparant les fuites avant d'acheter du trafic. Marketing Digital en une minute trente.</p>
-                <audio controls preload="none" src="assets/audio/marketing.mp3"></audio>
-                <p><a href="guides/marketing/index.html">Ouvrir le parcours Marketing Digital →</a></p>
+                <audio controls preload="none" src="../assets/audio/marketing.mp3"></audio>
+                <p><a href="guides/marketing/index.html">Open the Marketing Digital path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p><strong>D'abord la différence entre louer et posséder son audience.</strong> Les réseaux sociaux sont un appartement en location : l'algorithme peut te mettre dehors demain matin. Ta liste de courriels, elle, est ta maison. Même logique pour le trafic : le référencement naturel met du temps, la publicité en ligne est immédiate mais s'arrête net dès que le budget s'arrête.</p>
                 <p><strong>Ensuite le système.</strong> Tu attires du monde, et pourtant personne n'achète. Regarde ton parcours d'achat comme un tuyau percé : quatre étapes qui perdent chacune la moitié des visiteurs, et il n'en reste que six pour cent à la fin. Plutôt que de payer pour injecter davantage d'eau, répare la fuite — en répondant à ce que les gens cherchent vraiment.</p>
@@ -212,12 +213,12 @@
             </article>
             <article class="podcast" id="negociation">
                 <h3>Négociation &amp; communication — Ton pouvoir vient de la porte de sortie</h3>
-                <p class="podcast-duree">1 minute · 29 août 2026</p>
+                <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>La négociation ne repose pas sur le tchatche, mais sur ce qui se prépare avant de s'asseoir à la table. Négociation &amp; communication en une minute vingt.</p>
-                <audio controls preload="none" src="assets/audio/negociation.mp3"></audio>
-                <p><a href="guides/negociation/index.html">Ouvrir le parcours Négociation &amp; communication →</a></p>
+                <audio controls preload="none" src="../assets/audio/negociation.mp3"></audio>
+                <p><a href="guides/negociation/index.html">Open the Négociation &amp; communication path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Négocier ne repose ni sur le tchatche ni sur l'improvisation, mais sur une méthode qui s'applique avant même de s'asseoir à la table.</p>
                 <p><strong>D'abord ce qui se joue avant de parler.</strong> La question la plus puissante n'est pas « qu'est-ce que je veux ? » mais « que se passe-t-il si je ne l'obtiens pas ? ». C'est la solution de rechange, et c'est elle qui fixe ton pouvoir. Côté communication, même logique : donne ta conclusion dès le début du message, comme on donne l'adresse de destination avant d'expliquer la route.</p>
@@ -228,12 +229,12 @@
             </article>
             <article class="podcast" id="productivite">
                 <h3>⏱ Productivité &amp; Organisation — Gérer son énergie, pas son temps</h3>
-                <p class="podcast-duree">1 minute · 29 août 2026</p>
+                <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>Ce parcours ne sert pas à travailler plus vite, mais à éliminer ce qui fatigue inutilement. Productivité &amp; Organisation en une minute vingt.</p>
-                <audio controls preload="none" src="assets/audio/productivite.mp3"></audio>
-                <p><a href="guides/productivite/index.html">Ouvrir le parcours ⏱ Productivité &amp; Organisation →</a></p>
+                <audio controls preload="none" src="../assets/audio/productivite.mp3"></audio>
+                <p><a href="guides/productivite/index.html">Open the ⏱ Productivité &amp; Organisation path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Ce parcours ne cherche pas à te faire travailler plus vite. Il cherche à supprimer ce qui te fatigue sans rien produire.</p>
                 <p><strong>D'abord poser les fondations.</strong> Travailler par blocs ininterrompus, et surtout noter ses tâches sur un support extérieur au lieu de tout garder en tête. Garder ses tâches en mémoire, c'est comme laisser cinquante applications ouvertes en arrière-plan : ça consomme sans rien produire.</p>
@@ -244,12 +245,12 @@
             </article>
             <article class="podcast" id="sante">
                 <h3>Santé au travail — Ajuster avant que la douleur s'installe</h3>
-                <p class="podcast-duree">2 minutes · 29 août 2026</p>
+                <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Le but n'est pas de te rendre plus productif, mais d'apprendre à travailler sans t'abîmer. Santé au travail en une minute trente.</p>
-                <audio controls preload="none" src="assets/audio/sante.mp3"></audio>
-                <p><a href="guides/sante/index.html">Ouvrir le parcours Santé au travail →</a></p>
+                <audio controls preload="none" src="../assets/audio/sante.mp3"></audio>
+                <p><a href="guides/sante/index.html">Open the Santé au travail path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Le but de ce parcours n'est pas de te rendre plus productif, mais de te permettre de travailler sans t'abîmer. La prévention commence par la machine la plus élémentaire : ton propre corps.</p>
                 <p><strong>D'abord l'installation.</strong> Un ordinateur portable posé à plat est une catastrophe ergonomique. Et le footing du samedi n'annule pas deux mille heures passées avachi sur une chaise. Régler son écran à la bonne hauteur, c'est comme régler ses rétroviseurs : deux minutes, une fois, et le dos est sauvé.</p>
@@ -260,12 +261,12 @@
             </article>
             <article class="podcast" id="dev-web">
                 <h3>Développement Web — Trois piliers qui ne se démodent pas</h3>
-                <p class="podcast-duree">2 minutes · 26 août 2026</p>
+                <p class="podcast-duree">2 minutes · 26 August 2026</p>
                 <p>Créer un site paraît facile, parce qu'on voit le résultat tout de suite. Sécurité, économie des ressources, clarté : le parcours Développement Web en une minute quarante.</p>
-                <audio controls preload="none" src="assets/audio/dev-web.mp3"></audio>
-                <p><a href="guides/dev-web/index.html">Ouvrir le parcours Développement Web →</a></p>
+                <audio controls preload="none" src="../assets/audio/dev-web.mp3"></audio>
+                <p><a href="guides/dev-web/index.html">Open the Développement Web path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Créer un site a l'air facile : on voit le résultat presque tout de suite. Mais les outils à la mode passent, et ce qui reste, ce sont les fondations.</p>
                 <p><strong>D'abord séparer le public du privé.</strong> Un site, c'est un restaurant : la salle est ouverte à tous, la cuisine ne l'est pas. Le code visible par le visiteur est la salle — on n'y cache jamais un secret, puisqu'un simple clic droit permet à n'importe qui d'y fouiller. Les règles et la sécurité vivent côté serveur.</p>
@@ -276,12 +277,12 @@
             </article>
             <article class="podcast" id="finance">
                 <h3>Finance — L'ordre des étapes bat la Bourse</h3>
-                <p class="podcast-duree">1 minute · 26 août 2026</p>
+                <p class="podcast-duree">1 minute · 26 August 2026</p>
                 <p>Pas besoin d'un diplôme ni d'un héritage : une méthode, de la patience, et savoir dans quel ordre faire les choses. Le parcours Finance en une minute vingt.</p>
-                <audio controls preload="none" src="assets/audio/finance.mp3"></audio>
-                <p><a href="guides/finance/index.html">Ouvrir le parcours Finance →</a></p>
+                <audio controls preload="none" src="../assets/audio/finance.mp3"></audio>
+                <p><a href="guides/finance/index.html">Open the Finance path →</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>What the episode covers</summary>
                 <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
                 <p>Il ne faut ni diplôme en mathématiques ni héritage pour faire fructifier son argent. Il faut une méthode, du temps, et le bon ordre.</p>
                 <p><strong>D'abord l'épargne de précaution.</strong> Trois à six mois de dépenses, disponibles immédiatement, avant d'investir quoi que ce soit. C'est ce qui évite d'avoir à tout revendre à perte au premier imprévu.</p>
@@ -294,28 +295,28 @@
         </section>
 
         <section>
-            <h2 id="methode">Comment ils sont faits</h2>
-            <p>Chaque épisode reprend les idées d'un parcours du site, dans l'ordre où elles comptent. Il ne remplace pas le parcours écrit : les calculs, les simulateurs et les quiz n'ont pas d'équivalent à l'oral.</p>
-            <p>Chaque épisode est accompagné d'un résumé écrit. Ce n'est pas une transcription mot à mot : l'audio est produit à partir du parcours, le résumé en dit la même chose en plus court.</p>
+            <h2 id="methode">How they are made</h2>
+            <p>Each episode takes the ideas of one learning path, in the order that matters. It does not replace the written path: the calculations, simulators and quizzes have no spoken equivalent.</p>
+            <p>Each episode comes with a written summary. It is not a word-for-word transcript: the audio is produced from the path itself, and the summary says the same thing in fewer words.</p>
 
             <div class="piege">
-                <span class="titre">La voix est synthétique</span>
-                <p><strong>Personne ne lit ces épisodes.</strong> La voix est synthétique : chaque épisode est produit automatiquement à partir du texte du parcours.</p>
-                <p>C'est ce qui les rend possibles : quatorze lectures représenteraient plusieurs heures, à refaire à chaque correction d'un guide. Les textes, eux, sont écrits à la main — et ce sont eux qui portent le contenu.</p>
+                <span class="titre">The voice is synthetic</span>
+                <p><strong>Nobody reads these episodes aloud.</strong> The voice is synthetic: each episode is produced automatically from the text of the learning path.</p>
+                <p>That is what makes them possible: fourteen readings would take hours, to be redone every time a guide is corrected. The written texts are written by hand — and they are what carries the content.</p>
             </div>
 
             <div class="piege">
-                <span class="titre">Ce qu'un épisode n'est pas</span>
-                <p>Un épisode est un cours, pas un conseil. Il explique des mécanismes ; il ne connaît ni ta situation, ni tes projets. Les parcours qui touchent à l'argent, au droit ou à la santé le rappellent en toutes lettres, et l'épisode le rappelle aussi.</p>
+                <span class="titre">What an episode is not</span>
+                <p>An episode is a lesson, not advice. It explains mechanisms; it knows nothing about your situation or your plans. The paths that touch money, law or health say so in full, and the episode says it too.</p>
             </div>
         </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="assets/js/favoris.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/enhance.js"></script>
-    <script src="assets/js/mascotte.js"></script>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script src="../assets/js/mascotte.js"></script>
 </body>
 </html>

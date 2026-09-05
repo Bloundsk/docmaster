@@ -150,9 +150,9 @@
            y compris sous « /en/ » : une copie traduite ne serait jamais
            affichée. Cette page traduit donc son propre texte, à partir des
            libellés ci-dessous. */
-        en: ["index.html", "guides.html", "actualites.html", "glossaire.html",
-             "idees.html", "faq.html", "a-propos.html", "mentions-legales.html",
-             "mon-espace.html"],
+        en: ["index.html", "guides.html", "actualites.html", "podcasts.html",
+             "glossaire.html", "idees.html", "faq.html", "a-propos.html",
+             "mentions-legales.html", "mon-espace.html"],
         es: [], de: [], it: [], zh: [], ru: [],
     };
 

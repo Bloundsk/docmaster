@@ -224,39 +224,127 @@ function enHTML(markdown) {
 }
 
 // --- La page ----------------------------------------------------------------
-function rendreEpisode(e) {
+/* --- Les deux langues -------------------------------------------------------
+ *
+ * La page existe en francais et en anglais. Ce qui change, c est ce que le SITE
+ * ecrit autour : titres, intitules, liens. Le titre et le resume d un episode
+ * restent en francais, et c est voulu — l audio est en francais. Les traduire
+ * laisserait croire a une version anglaise qui n existe pas.
+ *
+ * C est la meme regle que pour les actualites : le titre d article ne se
+ * traduit pas, le texte du site qui l entoure suit la langue de la page.
+ */
+const MOIS_EN = ["January", "February", "March", "April", "May", "June", "July",
+                 "August", "September", "October", "November", "December"];
+
+/* Formate a la main plutot que par toLocaleDateString : le rendu de cette
+   derniere depend des donnees de localisation installees, donc de la machine.
+   Une page generee differemment ici et sur le runner ferait echouer le controle
+   de conformite sans que le depot soit en faute — deja vu avec ffprobe. */
+function dateLisible(iso, langue) {
+    if (langue === "fr") return enFrancais(iso);
+    const [a, m, j] = String(iso).split("-").map(Number);
+    if (!a || !m || !j) return String(iso);
+    return `${j} ${MOIS_EN[m - 1]} ${a}`;
+}
+
+const PAGES = {
+    fr: {
+        lang: "fr", locale: "fr_FR", prefixe: "", adresse: "podcasts.html",
+        titre: `Podcasts - ${ID.nom}`,
+        description: "Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.",
+        filAriane: ["Fil d'Ariane", "Accueil", "Podcasts"],
+        h1: "🎧 Podcasts",
+        chapo: "L'essentiel d'un parcours en quelques minutes, à écouter ou à lire.",
+        avis: null,
+        titreEpisodes: "Les épisodes",
+        introAvec: (flux) => `<p>Un épisode par parcours. Ils s'écoutent ici, ou dans n'importe quelle application de podcast avec <a href="${flux}">le flux</a>.</p>`,
+        introSans: `<p>Un épisode par parcours, en cours d'enregistrement. Les textes sont déjà là et se lisent.</p>`,
+        minute: (n) => `${n} minute${n > 1 ? "s" : ""}`,
+        environ: "environ ",
+        attente: `🎧 <strong>L'audio n'est pas encore en ligne.</strong> Le résumé ci-dessous se lit dès maintenant.`,
+        ouvrir: (parcours) => `Ouvrir le parcours ${parcours} →`,
+        replier: "Ce que raconte l'épisode",
+        titreMethode: "Comment ils sont faits",
+        methode: [
+            "Chaque épisode reprend les idées d'un parcours du site, dans l'ordre où elles comptent. Il ne remplace pas le parcours écrit : les calculs, les simulateurs et les quiz n'ont pas d'équivalent à l'oral.",
+            "Chaque épisode est accompagné d'un résumé écrit. Ce n'est pas une transcription mot à mot : l'audio est produit à partir du parcours, le résumé en dit la même chose en plus court.",
+        ],
+        voixTitre: "La voix est synthétique",
+        voix: [
+            "<strong>Personne ne lit ces épisodes.</strong> La voix est synthétique : chaque épisode est produit automatiquement à partir du texte du parcours.",
+            "C'est ce qui les rend possibles : quatorze lectures représenteraient plusieurs heures, à refaire à chaque correction d'un guide. Les textes, eux, sont écrits à la main — et ce sont eux qui portent le contenu.",
+        ],
+        limiteTitre: "Ce qu'un épisode n'est pas",
+        limite: "Un épisode est un cours, pas un conseil. Il explique des mécanismes ; il ne connaît ni ta situation, ni tes projets. Les parcours qui touchent à l'argent, au droit ou à la santé le rappellent en toutes lettres, et l'épisode le rappelle aussi.",
+    },
+    en: {
+        lang: "en", locale: "en_GB", prefixe: "../", adresse: "en/podcasts.html",
+        titre: `Podcasts - ${ID.nom}`,
+        description: "One episode per learning path: the essentials of a topic in a few minutes. The episodes are in French.",
+        filAriane: ["Breadcrumb", "Home", "Podcasts"],
+        h1: "🎧 Podcasts",
+        chapo: "The essentials of a learning path in a few minutes.",
+        /* Dit en tete, et non en note de bas de page : un lecteur anglophone
+           doit savoir avant de lancer un fichier qu il ne comprendra pas. */
+        avis: `<div class="piege"><span class="titre">These episodes are in French</span><p>The audio and the written summaries below are in French. The learning paths themselves are fully translated — <a href="guides.html">browse the guides</a> if you would rather read them in English.</p></div>`,
+        titreEpisodes: "The episodes",
+        introAvec: (flux) => `<p>One episode per learning path. Listen here, or in any podcast app through <a href="${flux}">the feed</a>.</p>`,
+        introSans: `<p>One episode per learning path, still being recorded. The written summaries are already here.</p>`,
+        minute: (n) => `${n} minute${n > 1 ? "s" : ""}`,
+        environ: "about ",
+        attente: `🎧 <strong>The audio is not online yet.</strong> The summary below can be read right now.`,
+        ouvrir: (parcours) => `Open the ${parcours} path →`,
+        replier: "What the episode covers",
+        titreMethode: "How they are made",
+        methode: [
+            "Each episode takes the ideas of one learning path, in the order that matters. It does not replace the written path: the calculations, simulators and quizzes have no spoken equivalent.",
+            "Each episode comes with a written summary. It is not a word-for-word transcript: the audio is produced from the path itself, and the summary says the same thing in fewer words.",
+        ],
+        voixTitre: "The voice is synthetic",
+        voix: [
+            "<strong>Nobody reads these episodes aloud.</strong> The voice is synthetic: each episode is produced automatically from the text of the learning path.",
+            "That is what makes them possible: fourteen readings would take hours, to be redone every time a guide is corrected. The written texts are written by hand — and they are what carries the content.",
+        ],
+        limiteTitre: "What an episode is not",
+        limite: "An episode is a lesson, not advice. It explains mechanisms; it knows nothing about your situation or your plans. The paths that touch money, law or health say so in full, and the episode says it too.",
+    },
+};
+
+function rendreEpisode(e, T) {
     const lien = `guides/${e.sujet}/index.html`;
     const ecoute = e.audio
-        ? `                <audio controls preload="none" src="assets/audio/${e.fichierAudio}"></audio>\n`
-        : `                <p class="podcast-attente">🎧 <strong>L'audio n'est pas encore en ligne.</strong> Le résumé ci-dessous se lit dès maintenant.</p>\n`;
+        ? `                <audio controls preload="none" src="${T.prefixe}assets/audio/${e.fichierAudio}"></audio>\n`
+        : `                <p class="podcast-attente">${T.attente}</p>\n`;
 
     return `            <article class="podcast" id="${e.sujet}">
                 <h3>${echapper(sansEmoji(e.parcours))} — ${echapper(e.titre)}</h3>
-                <p class="podcast-duree">${e.exacte ? "" : "environ "}${e.minutes} minute${e.minutes > 1 ? "s" : ""} · ${echapper(enFrancais(e.publie))}</p>
+                <p class="podcast-duree">${e.exacte ? "" : T.environ}${T.minute(e.minutes)} · ${echapper(dateLisible(e.publie, T.lang))}</p>
                 <p>${echapper(e.resume)}</p>
-${ecoute}                <p><a href="${lien}">Ouvrir le parcours ${echapper(sansEmoji(e.parcours))} →</a></p>
+${ecoute}                <p><a href="${lien}">${echapper(T.ouvrir(sansEmoji(e.parcours)))}</a></p>
                 <details class="podcast-texte">
-                    <summary>Ce que raconte l'épisode</summary>
+                    <summary>${T.replier}</summary>
 ${enHTML(e.corps)}                </details>
             </article>
 `;
 }
 
-function rendrePage(episodes) {
+function rendrePage(episodes, T) {
     const avecAudio = episodes.filter((e) => e.audio).length;
-    const intro = avecAudio
-        ? `<p>Un épisode par parcours. Ils s'écoutent ici, ou dans n'importe quelle application de podcast avec <a href="podcast.xml">le flux</a>.</p>`
-        : `<p>Un épisode par parcours, en cours d'enregistrement. Les textes sont déjà là et se lisent.</p>`;
+    const flux = `${T.prefixe}podcast.xml`;
+    const intro = avecAudio ? T.introAvec(flux) : T.introSans;
+    const partage = ID.textePartage(Object.keys(PARCOURS).length)[T.lang];
+    const avis = T.avis ? `            ${T.avis}\n` : "";
 
     return `<!DOCTYPE html>
-<html lang="fr">
+<html lang="${T.lang}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
-    <title>Podcasts - ${ID.nom}</title>
-    <meta name="description" content="Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.">
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-    <link rel="alternate" type="application/rss+xml" title="Podcasts ${ID.nom}" href="podcast.xml">
+    <title>${T.titre}</title>
+    <meta name="description" content="${echapper(T.description)}">
+    <link rel="icon" type="image/svg+xml" href="${T.prefixe}assets/img/favicon.svg">
+    <link rel="alternate" type="application/rss+xml" title="Podcasts ${ID.nom}" href="${flux}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -279,71 +367,69 @@ function rendrePage(episodes) {
             if (sombre) document.documentElement.classList.add('dark-mode');
         })();
     </script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="canonical" href="${ID.base}podcasts.html">
+    <link rel="stylesheet" href="${T.prefixe}assets/css/style.css">
+    <link rel="canonical" href="${ID.base}${T.adresse}">
     <meta property="og:site_name" content="${ID.nom}">
-    <meta property="og:title" content="Podcasts - ${ID.nom}">
-    <meta property="og:description" content="Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.">
+    <meta property="og:title" content="${T.titre}">
+    <meta property="og:description" content="${echapper(T.description)}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="${ID.base}podcasts.html">
+    <meta property="og:url" content="${ID.base}${T.adresse}">
     <meta property="og:image" content="${ID.base}${ID.imagePartage}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="${echapper(ID.textePartage(Object.keys(PARCOURS).length).fr)}">
-    <meta property="og:locale" content="fr_FR">
+    <meta property="og:image:alt" content="${echapper(partage)}">
+    <meta property="og:locale" content="${T.locale}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Podcasts - ${ID.nom}">
-    <meta name="twitter:description" content="Un épisode par parcours : l'essentiel d'un sujet en quelques minutes, à écouter ou à lire.">
+    <meta name="twitter:title" content="${T.titre}">
+    <meta name="twitter:description" content="${echapper(T.description)}">
     <meta name="twitter:image" content="${ID.base}${ID.imagePartage}">
 </head>
 <body>
-    <script>window.DOCMASTER_BASE = "";</script>
-    <script src="assets/js/identite.js"></script>
-    <script src="assets/js/langues.js"></script>
-    <script src="assets/js/layout.js"></script>
+    <script>window.DOCMASTER_BASE = "${T.prefixe}";</script>
+    <script src="${T.prefixe}assets/js/identite.js"></script>
+    <script src="${T.prefixe}assets/js/langues.js"></script>
+    <script src="${T.prefixe}assets/js/layout.js"></script>
 
-    <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="index.html">Accueil</a> &gt; <span aria-current="page">Podcasts</span>
+    <nav class="breadcrumb" aria-label="${T.filAriane[0]}">
+        <a href="index.html">${T.filAriane[1]}</a> &gt; <span aria-current="page">${T.filAriane[2]}</span>
     </nav>
 
     <header>
-        <h1>🎧 Podcasts</h1>
-        <p>L'essentiel d'un parcours en quelques minutes, à écouter ou à lire.</p>
+        <h1>${T.h1}</h1>
+        <p>${T.chapo}</p>
     </header>
 
     <main id="main-content">
         <section>
-            <h2 id="episodes">Les épisodes</h2>
+            <h2 id="episodes">${T.titreEpisodes}</h2>
             ${intro}
-
+${avis}
 <!-- PODCASTS:DEBUT -->
-${episodes.map(rendreEpisode).join("")}<!-- PODCASTS:FIN -->
+${episodes.map((e) => rendreEpisode(e, T)).join("")}<!-- PODCASTS:FIN -->
         </section>
 
         <section>
-            <h2 id="methode">Comment ils sont faits</h2>
-            <p>Chaque épisode reprend les idées d'un parcours du site, dans l'ordre où elles comptent. Il ne remplace pas le parcours écrit : les calculs, les simulateurs et les quiz n'ont pas d'équivalent à l'oral.</p>
-            <p>Chaque épisode est accompagné d'un résumé écrit. Ce n'est pas une transcription mot à mot : l'audio est produit à partir du parcours, le résumé en dit la même chose en plus court.</p>
+            <h2 id="methode">${T.titreMethode}</h2>
+${T.methode.map((t) => `            <p>${t}</p>`).join("\n")}
 
             <div class="piege">
-                <span class="titre">La voix est synthétique</span>
-                <p><strong>Personne ne lit ces épisodes.</strong> La voix est celle de l'auteur, mais elle est <em>synthétisée</em> : un modèle a appris son timbre à partir d'un enregistrement, et lit les textes à sa place. Chaque fichier porte un filigrane inaudible qui l'identifie comme généré.</p>
-                <p>C'est ce qui rend les épisodes possibles : quatorze lectures représenteraient plusieurs heures, à refaire à chaque correction d'un guide. Les textes, eux, sont écrits à la main — et ce sont eux qui portent le contenu.</p>
+                <span class="titre">${T.voixTitre}</span>
+${T.voix.map((t) => `                <p>${t}</p>`).join("\n")}
             </div>
 
             <div class="piege">
-                <span class="titre">Ce qu'un épisode n'est pas</span>
-                <p>Un épisode est un cours, pas un conseil. Il explique des mécanismes ; il ne connaît ni ta situation, ni tes projets. Les parcours qui touchent à l'argent, au droit ou à la santé le rappellent en toutes lettres, et l'épisode le rappelle aussi.</p>
+                <span class="titre">${T.limiteTitre}</span>
+                <p>${T.limite}</p>
             </div>
         </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="assets/js/favoris.js"></script>
-    <script src="assets/js/theme.js"></script>
-    <script src="assets/js/enhance.js"></script>
-    <script src="assets/js/mascotte.js"></script>
+    <script src="${T.prefixe}assets/js/favoris.js"></script>
+    <script src="${T.prefixe}assets/js/theme.js"></script>
+    <script src="${T.prefixe}assets/js/enhance.js"></script>
+    <script src="${T.prefixe}assets/js/mascotte.js"></script>
 </body>
 </html>
 `;
@@ -470,9 +556,13 @@ if (!episodes.length) {
     process.exit(0);
 }
 
-const ecrits = [rendrePage(episodes), rendreFlux(episodes)]
-    .map((c, i) => ecrireSiDifferent(["podcasts.html", "podcast.xml"][i], c))
-    .filter(Boolean);
+/* Le FLUX reste unique et francais : il n y a qu une bande-son. Deux flux
+   pointant sur les memes fichiers ne feraient que dedoubler les abonnements. */
+const ecrits = [
+    ecrireSiDifferent("podcasts.html", rendrePage(episodes, PAGES.fr)),
+    ecrireSiDifferent("en/podcasts.html", rendrePage(episodes, PAGES.en)),
+    ecrireSiDifferent("podcast.xml", rendreFlux(episodes)),
+].filter(Boolean);
 
 // Puis les guides : chaque parcours qui a un episode porte son lecteur.
 for (const e of episodes) {
