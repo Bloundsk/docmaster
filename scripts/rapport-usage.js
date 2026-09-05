@@ -77,11 +77,39 @@ function entetes(token) {
     return { "Authorization": "Bearer " + token, "Content-Type": "application/json" };
 }
 
+/* Combien de fois reessayer avant d abandonner, et l attente entre deux essais.
+
+   Le rapport a echoue trois lundis d affilee sur « GoatCounter a repondu 404 »,
+   et la cle etait pourtant valide : releve le 5 septembre 2026, deux appels a
+   deux minutes d intervalle, le premier refuse et le second accepte avec
+   « Cle acceptee ». La panne est PASSAGERE.
+
+   Sans reprise, une seconde de mauvaise humeur cote serveur coute une semaine
+   entiere de donnees — et l echec est silencieux, personne ne regarde un
+   workflow hebdomadaire qui rate. */
+const ESSAIS = 3;
+const ATTENTE_MS = 5000;
+
+const patienter = (ms) => new Promise((r) => setTimeout(r, ms));
+
 // Verifie la cle avant de s en servir. Sans ce controle, une cle sans droit sur
 // le site produit un « 404 not found » sur les statistiques, message qui laisse
 // croire a une mauvaise adresse alors que le probleme est ailleurs.
 async function verifierCle(token) {
-    const reponse = await fetch(`${SITE}/api/v0/me`, { headers: entetes(token) });
+    let reponse;
+    for (let essai = 1; essai <= ESSAIS; essai++) {
+        reponse = await fetch(`${SITE}/api/v0/me`, { headers: entetes(token) });
+
+        /* On ne reessaie PAS un 401 : la cle est refusee, elle le restera. Ne
+           reessayer que ce qui peut changer d un instant a l autre. */
+        if (reponse.ok || reponse.status === 401) break;
+
+        if (essai < ESSAIS) {
+            console.warn(`Cle : GoatCounter a repondu ${reponse.status}, essai `
+                + `${essai}/${ESSAIS}. Nouvelle tentative dans ${ATTENTE_MS / 1000} s.`);
+            await patienter(ATTENTE_MS);
+        }
+    }
 
     if (reponse.status === 401) {
         throw new Error("Cle refusee (401). Verifier que l adresse electronique du compte "
@@ -343,8 +371,20 @@ async function principal() {
     await verifierCle(token);
 
     const donnees = await recupererHits(token, iso(debut), iso(fin));
+
+    /* « more » dit qu il reste des chemins que l API n a pas rendus. Le message
+       annoncait « plus de 500 chemins » — la limite demandee — alors que
+       GoatCounter en rend cent au maximum par appel, quoi qu on demande. Il
+       affirmait donc un chiffre faux sur l ampleur de ce qui manque.
+
+       Ce script NE PAGINE PAS : le classement ne porte que sur les chemins
+       rendus. Les plus consultes y sont, puisque l API trie par frequentation,
+       mais la longue traine manque. A corriger le jour ou la pagination de
+       GoatCounter sera verifiee sur leur documentation — pas devinee. */
+    const rendus = Array.isArray(donnees.hits) ? donnees.hits.length : 0;
     if (donnees.more) {
-        console.warn(`Attention : plus de ${LIMITE} chemins, le rapport est incomplet.`);
+        console.warn(`Attention : ${rendus} chemins analyses, et il en reste. `
+            + "Le classement ne porte que sur ceux-la (les plus consultes).");
     }
 
     const guides = lireGuides();
