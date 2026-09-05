@@ -1,5 +1,85 @@
 # Changelog — Clicked
 
+## 2026-09-05 — Les trois documents du dépôt, relus
+
+Après les pages du site, les documents. Deux relectures, deux verdicts opposés —
+et c'est la différence entre les deux qui vaut d'être retenue.
+
+### `ARCHITECTURE.md` décrivait un site qui n'existe plus
+
+Le document qui prétend expliquer comment tout fonctionne avait pris le plus de
+retard. **Neuf passages corrigés.**
+
+Sa section sur les podcasts décrivait la **chaîne de clonage en entier** : trois
+commandes autour de `generer-voix.py`, la graine fixe, l'unité de génération au
+paragraphe, les fondus de 15 ms, « le plafond fixé par l'enregistrement de
+référence », un filigrane Perth, des épisodes « d'une dizaine de minutes » pesant
+6,6 Mo. Rien de tout cela n'existe depuis le 29 août.
+
+Elle est réécrite autour de la chaîne NotebookLM — et le clonage y reste, mais
+**comme histoire**, avec la mesure qui l'a fait abandonner. Il est instructif ; il
+ne devait plus se lire comme une description du présent.
+
+Le reste, vérifié chiffre par chiffre contre le dépôt :
+
+| ce qu'il affirmait | la réalité |
+|---|---|
+| un dossier `actualites/`, une page par article | une page unique générée ; ni `guides.html` ni le flux n'étaient mentionnés |
+| « les **deux** hooks » | ils sont quatre |
+| 6 gabarits, 4 largeurs, 92 mesures | **27 gabarits, 5 largeurs, 732 mesures** |
+| trois workflows | il y en a six |
+| la veille sur **157** sous-sections | 169 |
+| des cases « à cocher » | elles arrivent **cochées** depuis le 21 août — l'inverse |
+
+S'y ajoute ce que le document ne disait pas et qui vient de coûter un commit
+rouge : **l'ordre du `pre-commit` fait partie du contrat**, l'accueil lisant les
+dates que la datation vient d'écrire.
+
+### `SPECIFICATION.md` n'avait rien de faux
+
+Verdict opposé, et il fallait s'en apercevoir avant de corriger quoi que ce soit.
+Tout y est **au futur** — « devra contenir », « seront ». C'est le brief du 7 août
+2026, retouché seulement deux fois pour les renommages. **Un brief ne devient pas
+faux quand le projet avance ; il devient historique.**
+
+Le réécrire aurait détruit le seul document qui dit ce qui a été demandé au
+départ. Corriger un brief pour qu'il décrive le résultat obtenu est une
+malhonnêteté d'un autre genre.
+
+Restait un vrai risque : rien n'indiquait s'il fallait le lire comme une
+spécification à respecter ou comme une archive — la même ambiguïté qui rendait
+`ARCHITECTURE.md` dangereux. Quelqu'un pouvait lire sa section 8 et **ajouter une
+FAQ et un glossaire à chacun des cinquante-six guides**.
+
+Deux ajouts, aucune ligne d'origine touchée : un en-tête qui date le document et
+renvoie vers l'état actuel, et une section 13 qui recense les écarts **comme des
+décisions** — glossaire et FAQ à l'échelle du site, structure de guide resserrée,
+`assets/img/`, répartition des rôles entre IA dépassée. Avec la consigne
+explicite de ne pas « corriger » le site pour le faire ressembler au brief.
+
+### Une affirmation adoucie après vérification
+
+J'avais écrit que l'alerte de déploiement « n'a encore jamais eu à se
+déclencher ». Vérification : **102 exécutions, dont 100 que l'API rend, toutes
+ignorées.** Deux cas non vus. La phrase dit désormais « sur ses cent derniers
+passages » — ce qui se prouve, et rien de plus.
+
+C'est un petit ajustement, et il est le sujet même de ces deux relectures : un
+document qui décrit un système n'a pas le droit d'arrondir.
+
+### La leçon
+
+Les deux documents décrivent le projet, et un seul avait besoin d'être corrigé.
+La différence n'est pas leur âge, c'est leur **temps grammatical**.
+
+Ce qui est écrit au présent prétend décrire l'état des choses : cela se périme, et
+cela ment sans prévenir. Ce qui est écrit au futur énonce une intention à une
+date : cela ne se périme pas, cela s'accomplit ou non.
+
+**Avant de corriger un document, se demander s'il décrit ou s'il engage.** Un
+document qui décrit se met à jour ; un document qui engage se date, et on note à
+côté ce qui en a divergé — et pourquoi.
+
 ## 2026-09-05 — La prose qui décrit le site avait pris six jours de retard
 
 La leçon de l'entrée précédente disait que rien ne protège le texte qui explique
