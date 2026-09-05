@@ -1,5 +1,102 @@
 # Changelog — Clicked
 
+## 2026-09-05 — Cinq jours sans personne
+
+Aucune intervention depuis le 31 août. Le site a tourné seul, et c'est la
+première fois qu'on peut le dire sur une durée qui compte.
+
+```
+Veille quotidienne .............  9 exécutions,  9 réussies
+Publication des actualités ..... 13 exécutions, 13 réussies
+Déploiement des pages ..........  9 exécutions,  9 réussies
+Alerte de déploiement ..........  9 fois ignorée — elle n'a jamais eu à parler
+```
+
+Trente et une exécutions automatiques, aucune en échec. Vingt-quatre articles en
+ligne, renouvelés deux fois par jour, triés par les trois filtres. Les neuf
+contrôles bloquants passent toujours.
+
+Un **état des lieux** a été publié à part, en page : les chiffres relevés sur le
+dépôt et sur le site, ce qui a été construit, et les mesures qui ont contredit
+mes intuitions. Il ne remplace pas ce changelog — il en donne la synthèse.
+
+### Une mémoire périmée est pire qu'une mémoire absente
+
+En reprenant, ma mémoire de reprise annonçait encore *« podcasts en pause à
+11/14, restent Cybersécurité, Data et Apprendre »* et un état arrêté au 21 août.
+Les quatorze épisodes sont publiés depuis le 31.
+
+Sans vérification, j'aurais reproposé à Ludo un chantier terminé — exactement ce
+que cette mémoire existe pour éviter. Corrigée, comme l'avait été la note qui
+parlait encore de « 220 cases de veille à cocher » alors que la veille publie
+d'elle-même depuis le 21 août.
+
+**Ce qui vaut pour les pages vaut pour ce que je retiens :** une donnée dérivée
+qu'on n'a pas régénérée finit par mentir, et elle ment d'autant mieux qu'elle
+reste plausible.
+
+## 2026-08-31 — Les quatorze parcours ont leur épisode
+
+### Le chantier est bouclé
+
+```
+apprendre      1 min 30   −16,8 LUFS / −2,3 dBTP
+cybersecurite  1 min 34   −17,0 LUFS / −2,3 dBTP
+data           1 min 14   −16,7 LUFS / −2,6 dBTP
+```
+
+Les trois derniers annoncent le bon parcours, tutoient, portent le rappel
+pédagogique et n'emploient aucun sigle. Aucun ne lit la note de prononciation à
+voix haute : le correctif de consigne tient sur toute la série.
+
+`apprendre` va plus loin que demandé — il précise de lui-même que l'épisode ne
+remplace pas un avis professionnel en cas de trouble de l'apprentissage.
+
+Quatorze parcours sur quatorze ont désormais leur épisode, dans le flux et en
+tête de leur guide.
+
+### L'ordre des opérations, et un commit parti rouge
+
+Le commit de ces trois épisodes a échoué à l'intégration continue, et le
+contrôle avait raison.
+
+Le hook de pré-commit redate les guides depuis la date du dernier commit, puis
+les ajoute au commit. Mais rien ne régénérait l'accueil derrière — alors que sa
+rubrique « Guides mis à jour récemment » lit précisément ces dates. Le **même
+commit** contenait donc des guides au 31 août et un accueil bâti sur le 30, qui
+ignorait les trois nouveaux parcours.
+
+En local, tout passait. Parce que j'avais régénéré l'accueil **avant** que le
+hook ne redate les guides : l'ordre faisait toute la différence, et je ne
+l'avais pas vu.
+
+Le hook enchaîne désormais dater, indexer, régénérer l'accueil, indexer. Si node
+manque ou si la génération échoue, le commit passe quand même et le contrôle le
+signalera — un commit impossible est pire qu'une page à régénérer.
+
+### La sauvegarde réparée a fait ses preuves le jour même
+
+Dans le journal de ce commit :
+
+```
+[sauvegarde] ignoree : HEAD detache (rebase en cours).
+[sauvegarde] a jour : 231 commits
+```
+
+C'est exactement le trou bouché quelques heures plus tôt : la sauvegarde ne se
+fige plus au milieu d'un rebase, et se refait à la fin. Un correctif éprouvé sur
+un cas fabriqué, puis confirmé par le cas réel.
+
+### La leçon
+
+Un contrôle vert en local ne dit pas que le dépôt est cohérent — il dit que
+**l'ordre dans lequel je viens de travailler** produisait un dépôt cohérent.
+L'intégration continue, elle, repart d'un état propre et sans mémoire de mes
+gestes.
+
+**Quand un script écrit ce qu'un autre lit, l'ordre fait partie du contrat.**
+Et le seul endroit où cet ordre tient vraiment, c'est le hook qui les enchaîne.
+
 ## 2026-08-30 — Les guides sortent de l'accueil
 
 ### « On ne sait pas où les trouver »
