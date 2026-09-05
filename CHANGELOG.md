@@ -1,5 +1,71 @@
 # Changelog — Clicked
 
+## 2026-09-05 — La page anglaise des podcasts, et deux mensonges de la page française
+
+### Ce qui reste en français, et pourquoi
+
+`en/podcasts.html` existe : navigation, intitulés et dates en anglais, les
+quatorze épisodes, le flux et les liens vers les parcours anglais.
+
+Le **titre et le résumé de chaque épisode restent en français**. C'est le choix
+qui structure la page : l'audio est en français, et traduire ce qui l'entoure
+laisserait croire à une version anglaise qui n'existe pas. C'est la règle déjà
+suivie pour les actualités — le titre d'un contenu ne se traduit pas, le texte
+que le site écrit autour suit la langue de la page.
+
+Un encadré le dit **avant la liste**, et non en note de bas de page : un lecteur
+anglophone doit le savoir avant de lancer un fichier qu'il ne comprendra pas. Il
+est renvoyé vers les guides, eux entièrement traduits.
+
+### La page affirmait deux choses devenues fausses
+
+En la relisant pour la traduire, deux affirmations en ligne depuis le 23 août :
+
+> « La voix est celle de l'auteur, mais elle est synthétisée : un modèle a appris
+> son timbre à partir d'un enregistrement. »
+>
+> « Chaque fichier porte un filigrane inaudible qui l'identifie comme généré. »
+
+**Les deux décrivaient la chaîne de clonage, abandonnée le 29 août.** L'audio
+vient de NotebookLM : ce n'est pas la voix de Ludo, et il n'y a pas de
+filigrane — le filigrane venait de la bibliothèque de clonage, qui ne sert plus.
+
+Aucun contrôle ne pouvait le voir. Un texte de présentation n'a pas de source
+dont il dériverait : il reste vrai tant que quelqu'un le relit. Il a fallu
+traduire la page pour la relire.
+
+Les deux pages disent désormais que la voix est synthétique et produite à partir
+du texte du parcours — ce qui est vrai, et suffit au lecteur.
+
+### Un piège déjà connu, évité cette fois
+
+Les dates anglaises sont formatées à la main plutôt que par
+`toLocaleDateString`, dont le rendu dépend des données de localisation
+installées. Une page générée autrement ici et sur le runner ferait échouer le
+contrôle de conformité sans que le dépôt soit en faute.
+
+C'est exactement ce que ffprobe avait provoqué le 26 août. Le défaut n'a pas eu
+besoin de se reproduire pour être évité.
+
+### Le contrôle des liens s'est débloqué tout seul
+
+L'accueil anglais n'annonçait aucun épisode : le bloc ne paraissait que là où
+une page de podcasts existe, parce que l'audit avait refusé un renvoi vers
+`podcasts.html` sous `en/`, qui n'existait pas. La page créée, la condition est
+satisfaite et le bloc apparaît — sans qu'on ait rien à changer.
+
+Un garde-fou bien écrit ne bloque pas une évolution : il attend qu'elle arrive.
+
+### La leçon
+
+Le dépôt protège bien ce qui **dérive** d'une source : un titre, une durée, une
+date, une liste. Rien ne protège la **prose** qui décrit comment le site
+fonctionne — elle vieillit en silence, et elle reste plausible en vieillissant.
+
+**Quand une chaîne de production change, le texte qui la décrit fait partie de
+ce qu'il faut corriger.** Le 29 août, j'ai remplacé le clonage par NotebookLM
+sans toucher à la page qui expliquait le clonage.
+
 ## 2026-09-05 — Cinq jours sans personne
 
 Aucune intervention depuis le 31 août. Le site a tourné seul, et c'est la
