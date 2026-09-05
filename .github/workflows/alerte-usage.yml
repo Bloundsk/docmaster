@@ -1,0 +1,78 @@
+# ---------------------------------------------------------------------------
+# Ouvre une Issue quand le rapport d usage echoue.
+#
+# Il a echoue trois lundis d affilee — les 17, 24 et 31 aout 2026 — sur
+# « GoatCounter a repondu 404 » : la cle d API stockee dans les secrets n etait
+# plus acceptee. Personne ne l a vu. On ne regarde pas les executions ratees
+# d un workflow hebdomadaire, et rien sur le site ne change quand il echoue.
+#
+# Consequence : trois semaines sans aucune donnee d usage, et des decisions de
+# contenu prises a l aveugle sans savoir qu on etait aveugle. C est plus grave
+# qu un rapport manquant — c est un instrument qu on croit encore avoir.
+#
+# Meme principe que l alerte de deploiement : ce qui echoue en silence doit
+# faire du bruit quelque part.
+# ---------------------------------------------------------------------------
+name: Alerte du rapport d'usage
+
+on:
+  workflow_run:
+    workflows: ["Rapport d'usage Clicked"]
+    types: [completed]
+
+jobs:
+  signaler:
+    # On ne fait rien quand tout va bien.
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Ouvrir une Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URL: ${{ github.event.workflow_run.html_url }}
+          DEPOT: ${{ github.repository }}
+        run: |
+          # L etiquette doit exister, sinon « gh issue create » echoue et
+          # l alerte censee attraper un echec silencieux echoue a son tour.
+          # « || true » : elle existe deja la deuxieme fois.
+          gh label create usage --repo "$DEPOT" --color 0E8A16 --description "Rapport d'usage" 2>/dev/null || true
+
+          # Une Issue par semaine serait vite illisible si la panne dure : on
+          # complete celle qui est ouverte plutot que d en empiler.
+          existante=$(gh issue list --repo "$DEPOT" --label usage --state open \
+                      --limit 1 --json number -q '.[0].number')
+
+          corps=$(printf '%s\n' \
+            "Le rapport d'usage hebdomadaire a échoué." \
+            "" \
+            "- **Journal** : $URL" \
+            "" \
+            "Tant qu'il échoue, **aucune donnée d'usage n'est collectée** : ni pages consultées," \
+            "ni sections ouvertes, ni guides terminés. Le site continue de fonctionner" \
+            "normalement — c'est ce qui rend cet échec facile à ne pas voir." \
+            "" \
+            "**Cause la plus fréquente : la clé GoatCounter.** Si le journal indique" \
+            "\`GoatCounter a répondu 404\` ou \`401\`, le jeton stocké dans les secrets du dépôt" \
+            "n'est plus accepté. Il se renouvelle sur GoatCounter, puis se remplace dans" \
+            "**Settings → Secrets and variables → Actions → \`GOATCOUNTER_TOKEN\`**." \
+            "" \
+            "Une fois le jeton remis, relancer sans attendre lundi :" \
+            "" \
+            '```bash' \
+            "gh workflow run rapport-usage.yml" \
+            '```' \
+            "" \
+            "_Issue ouverte automatiquement. À refermer une fois un rapport produit._")
+
+          if [ -n "$existante" ]; then
+            gh issue comment "$existante" --repo "$DEPOT" --body "$corps"
+            echo "Commentaire ajouté à l'Issue #$existante."
+          else
+            gh issue create --repo "$DEPOT" \
+              --title "📊 Le rapport d'usage ne tourne plus" \
+              --label usage \
+              --body "$corps"
+          fi
