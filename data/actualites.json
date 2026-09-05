@@ -1,6 +1,30 @@
 {
-  "maj": "2026-09-04T19:43:54.370Z",
+  "maj": "2026-09-05T11:19:57.224Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQby13MnNpOGlEX0lWRXRVZEdoeGNkOUNWY3lfaUZQZk5xUzBQci02TTN6bUF0djlYWmEzUmJxRFFHX3BDcXRKcThHemdFV3VjRnlBUm80eUY1cXJPZjNOZWhFbldDWXd3WFhnb1FON0dvV2p5Zkw0SmRaQ2lfYV96cGlFWVRjektLTTU0eGhrcTd4VzhpdzR1TE1GOXMyX3F0ZGpLN1Jodzhrb1dWeFpZT0hfNTJKazhHUTBwWnlvamhHaDBvVngtSlUwZTJRQkhjUEVpUnRtTQ?oc=5",
+      "titre": "Un homme réclamait ses données personnelles auprès de son département, le juge refuse de l'aider",
+      "source": "Clubic",
+      "date": "2026-09-05",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "vos-donnees-personnelles",
+      "section": "🔐 Tes données personnelles",
+      "sujet": "⚖️ Droit & démarches — Avancé",
+      "publie": "2026-09-05"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPb2JqaExpUW5wazkzV3dwMGNnN1F4M0dCMFp1UEhfbzRpSDdXbzVXRHZQSW5BTEd1QWlKSUFuWlFpd1RWMTdUeV9nZlhEVklRNkxlZHpZQlRNZU54YjFxSjR1Um8tVHZEcG1YeERISVhvUWN1NkZlckN6cHJGbTNsNndFZ2NieTVMWGNsRDhjanBCN2NhTnB6bnloMTl0WEZvV2ZlTVdLWFM4UzlVbkhEX0YtTFRFbDBrby12d3ZGdlhOcXVqaTk0eDNrTzNKNmthUnJHUHRnTzhLZDNpd3NNNnRLYjY3cUVtcmRGbWZiZk5BSkVuYkZRS1RxTy1sSWhJLVhz?oc=5",
+      "titre": "Intelligence artificielle : des agents d’OpenAI se seraient coordonnés tout seuls bien avant la cyberattaque de Hugging Face",
+      "source": "sudouest.fr",
+      "date": "2026-09-05",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "les-agents-ia",
+      "section": "⚙️ Les agents IA",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-05"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNcVhpWlFaVkFuNW9aWTlBdGx4bmR6UW92TFJITDlCbmt1clZYM0Q3b0hybVlrRlZCX3BqcGFfRl9TZ3FlT3VvMWhidVNCVVAtdElxekFSLTJsRFhZNERDaGRBeG01dkhvbnM4TTVEOVVOLVJYanUxTGZRSzRuU3pqbGFFYVoxaTAwZVN2cWRwVEdrUXNMR1I3R1JraG5TLTgzVHhQaVhSdjFNWnV4eUNJUWZ2dWliZDBqWFg2R28yeG5sS2k2amprRmE1cXp3aW9INGI3WHR6QjZhall3c01yQlNsMm0xUWhHekJFYw?oc=5",
       "titre": "Quand une arnaque connaît déjà vos informations personnelles : comment rester vigilant après une fuite de données",
@@ -36,6 +60,42 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-04"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdzItRFFZZVRzRnlBSzhRYW0tM25KR3RHRHUyaktkbS1JbWY3cEZNaVZNd0hWOW03ODFTMVhZMnl1U1dVbGhSNHlTTEktTnFMSUQ1Y0l0NlN0UUdVNEJTX1VQeW5WZU5RVTU4bjdKWEo5c2pxZ2N5SkhvMmdpZDdwOWJuX3dwMi0yOW83eWFZdzJic1E4YTh0RDd1M3c0dzQ5ZWg5d1BTMnhUemEyYlA1Uk1LRTcwQ3VRVkduaFV3?oc=5",
+      "titre": "Fuite de données chez Micromania, la vague d'arnaques au colis qui menace ses clients",
+      "source": "Capital.fr",
+      "date": "2026-09-04",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-05"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQcEN1OWItMjFNQWFHMnhHS2dNQjJWYUs4M1I0cnBpdXBOR1NHUEUyaWJmdzdxSjR1aFdwTHROT01ZRWlITy03X09CSExNSjRBYnhJTTJXWlBEd0taYmlTa2ZacVhTZlJqOWg2eEplYTFnNUdIYVprdHJ4eE1rQUZvYkt2MDZsOEpoTHdNRVlzRjdNN1EtbVZ2LVRDNUFuVUtJOHRLdGhGdE1JamVQYzRlYXk3dlJCRE12UUptZ2MzUV9ZWnZWRjFUTkEyai1qU3F1ZnJJUGln?oc=5",
+      "titre": "Cybersécurité dans l’iGaming : comment les plateformes protègent les données des joueurs et les transactions",
+      "source": "toulouse7.com",
+      "date": "2026-09-04",
+      "guide": "cybersecurite",
+      "page": "debutant.html",
+      "ancre": "le-chiffrement-des-données",
+      "section": "🔐 Le chiffrement des données",
+      "sujet": "🔒 Cybersécurité — Débutant",
+      "publie": "2026-09-05"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORVpnel84UjJ6bGd1ck52QXpXOTdTRzBXaTNKSlRPV0gzSjMtRUFXZmFqM0Uxdm1hRnJsdHlOb1lfdlV2b21fS1Q3Z3o3OU5MVl95SFVKTi1PeWwtVG84aFNzWFU5bjdBS08tZHhoZ3pHeVdtVXhyckNxMkpTYV9HUmU0WndkRXVkWWdRTS1lUktCYmE3dE9lTmUwQmtCYlotRnNBSjZaMjVqakRQa0p4SUlQYWFkcURfUzM0VV9HZHY?oc=5",
+      "titre": "Pourquoi l’email reste le canal marketing le plus rentable pour les petites entreprises",
+      "source": "infos-it.fr",
+      "date": "2026-09-04",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "email-marketing",
+      "section": "✉️ Email marketing",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "publie": "2026-09-05"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRWVkdmx0NlBpdkRtVGJHN21FZkJjSWxwaUNkbXJ0SElWa2lDV19VNjdUQldzaks1VUp2eG00cXZSVjRtalZ2RzZ6d0J1bG5RWmI2ZUExNXRnZHY5aUFSVkRwS0ZiZUMtOExwc0h0LTVLc3pFTHkteVlIVmhtWFYzMndNNW04dTVkbXVIYnNPR1poZHh4MHplakE4SUNfcTdEdjdjZzc2ZDFBR3FQTWdMMV9hYnE3TmZvWlI2UDFJZ2tCMUZOa19uZ0xacjR6MThkQkdhQVFkTHpwTDVQS0E?oc=5",
@@ -228,66 +288,6 @@
       "section": "📉 Obligations et taux d'intérêt",
       "sujet": "💰 Finance — Avancé",
       "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNWUlHRWZ0Z3pEcVVDTzRlOUlNZlYybENvU3oyTk1TU3JaYl9takgtMlFmbldZR0xLc3RBYVpPZXpuMjdsZEVlaEJwTTZtTTVaaEQxb183Smw3UFZTOFQ1ZjhaQVFvSzBlbWxqWFBwOXF5WTNnaUZFWVRuenR2ak4zMFNpVVdUcjIydmJJMFV5MlBLdjF6QWRlUUd2eFdDWmZkaGpzdmktd2N1OEEz?oc=5",
-      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
-      "source": "- La Baule.maville.com",
-      "date": "2026-09-02",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "quest-ce-quun-llm",
-      "section": "🧠 Qu'est-ce qu'un LLM ?",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-09-04"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeERvX2xPdkkzQUc4N2UzdXZvMGFIWGJFUFBzTThWbmVuUzdjWDI5bEd4YzhKbXpQQjB1S1JzaDZwcEFreHFFYWxSTWlqQlRCZDM3NmxiSTlIR2RaZFdKMWFEVzN5U3prbnF5TV9QM0M1QXROSUlhQWdETDVMQzRxeXZEeWN2cWdkSWotaWE2bk9fVzdBaVlMNndSYW15bTA?oc=5",
-      "titre": "Fuites de données : Lecornu donne « quinze jours » à ses ministres pour riposter",
-      "source": "01net.com",
-      "date": "2026-09-01",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNcGhhLWplNXNadXAzdlZEX2lOZ3IxN21HQXhXeVVnYi1saDNvWHRWU2VCTVhqX2M1SG5xdnp6cEdLMmpNQVB2aUZ1dGMteDhIWU5SMlhDNU5zTmZMSF9xOXE1SFQxa0VVdEdycTBWVi15ZG9BWDIyN1pzZEJGTXV2MkZURVVFMEp5cEM5UUpqWl8ySC1kR202ZkJrdlBfOURtaG5fTG0zYlBySnBSdGZiV2VERld6UnZaZ19rbmdYS29TXzg?oc=5",
-      "titre": "Pourquoi les entreprises doivent arrêter de choisir un seul modèle d’IA",
-      "source": "Le Quotidien du Tourisme",
-      "date": "2026-09-01",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "choisir-un-modele",
-      "section": "⚖️ Choisir un modèle",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "publie": "2026-09-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPcjRIbEEzYVh2UkZRdGRFV1FSazlxY3BDSUNpbzNKQ1R5bTB4eW1fR2dFZTg3Wjg5ZVkxQnVZQ2lvSDhxeDktTkl3dExJb2xyemZLLTA2bkNWeThzcWFFbk94ZTlkVU9CbTFWSHB3SWRjTC1kYm1lc1luY0xsRWpXTzZQOA?oc=5",
-      "titre": "Adieu Notion et Jira : Super Productivity remet la gestion de tâches en local",
-      "source": "GoodTechInfo",
-      "date": "2026-09-01",
-      "guide": "productivite",
-      "page": "debutant.html",
-      "ancre": "les-outils-de-gestion-de-tâches",
-      "section": "🛠️ Les outils de gestion de tâches",
-      "sujet": "⏱️ Productivité & Organisation — Débutant",
-      "publie": "2026-09-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNc0I3R0cwUkEtbVZ0RmNaU1V3SVBQTldraGdzUEUzaXYwV0Z4ZjMxbmhtaTdDbHhfaFhqZ3FSZ0xBcGRlNURnY2x3SnVPT3FjaFVmWUhoUXBTcnNSSXdfZVoyWnpZTDFlVGZUZXpFSUl4YzJmMXlxVFdGOWNBOU1lYXp3dDRiZ3dUeVpuWjRTQ0l6eHh1OXgwYVY1T2htRzd6V1hEcFp6VVg2aF95c2JzdXZjQ1FSTFlSN3lXLUgyREdnSnI0?oc=5",
-      "titre": "Médecine du travail : Luc Baijot reconduit à la présidence de Présoa dans l’Aisne",
-      "source": "L'Union",
-      "date": "2026-09-01",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "publie": "2026-09-01"
     }
   ]
 }
