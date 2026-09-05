@@ -59,9 +59,20 @@ guides/<sujet>/debutant.html       niveau 1
 guides/<sujet>/intermediaire.html  niveau 2
 guides/<sujet>/avance.html         niveau 3
 
-actualites/index.html              liste des actualités
-actualites/<aaaa-mm-jj>-<titre>.html
+index.html                         les nouveautés : guides mis à jour,
+                                   derniers épisodes, lectures repérées
+guides.html                        la liste des quatorze parcours
+actualites.html                    les articles retenus, page unique générée
+podcasts.html / podcast.xml        les épisodes, et leur flux
 ```
+
+**Une seule page d'actualités, générée.** Une page par article aurait multiplié
+les adresses pour du contenu qui n'est pas le nôtre, et qui disparaît au bout de
+quelques mois.
+
+**Les parcours ne sont plus sur l'accueil** depuis le 30 août 2026 : rien dans la
+navigation n'y menait, et on ne savait pas où les trouver. L'accueil montre ce
+qui a bougé ; `guides.html` porte la liste.
 
 Un fichier par niveau plutôt qu'une page unique très longue. Trois raisons :
 
@@ -163,81 +174,104 @@ traitant, médecin du travail, et le **3114**.
 
 ### Les podcasts
 
-Un épisode par parcours, une dizaine de minutes. La chaîne va du texte au flux
-RSS en trois commandes, chacune faisant une seule chose :
+Un épisode par parcours, environ une minute et demie. **L'audio est produit par
+NotebookLM** à partir du texte du parcours : le site ne fabrique pas la voix, il
+prépare la matière et intègre le résultat.
 
-| Commande | De | Vers |
+| Étape | De | Vers |
 |---|---|---|
-| `python scripts/generer-voix.py <sujet>` | `podcasts/<sujet>.md` | `podcasts/brut/<sujet>.wav` |
-| `node scripts/preparer-audio.js` | `podcasts/brut/*.wav` | `assets/audio/<sujet>.mp3` |
-| `node scripts/publier-podcasts.js` | les deux | `podcasts.html`, `podcast.xml` |
+| `node scripts/exporter-parcours.js` | `guides/<sujet>/*.html` | `podcasts/sources/<sujet>.txt` et sa consigne |
+| NotebookLM, à la main | ce texte | un `.m4a` déposé dans `podcasts/brut/` |
+| `node scripts/preparer-audio.js` | `podcasts/brut/<sujet>.*` | `assets/audio/<sujet>.mp3` et `podcasts/durees.json` |
+| `node scripts/publier-podcasts.js` | `podcasts/<sujet>.md` et l'audio | `podcasts.html`, `en/podcasts.html`, `podcast.xml`, le lecteur en tête de chaque guide |
 
-**L'en-tête et le texte vivent dans le même fichier.** Un épisode est une
-unité ; séparer son titre de son texte créerait deux endroits à tenir d'accord.
+**Le texte source est régénéré, jamais recopié.** Un texte copié à la main serait
+figé au jour de la copie, et l'épisode raconterait une version du parcours qui
+n'existe plus, sans que rien ne le signale. L'export exclut le bloc du lecteur
+audio : sans cela on donne à NotebookLM la présentation de l'épisode qu'il doit
+produire, et l'épisode se met à parler de lui-même.
 
-**L'unité de génération est le paragraphe.** Le premier jet découpait à la
-phrase, pour empêcher la voix de dériver sur huit minutes. Il empêchait la
-dérive et produisait pire : chaque phrase repartait à zéro — même hauteur, même
-attaque — séparée de la suivante par un blanc mécanique. À l'écoute, on
-entendait le montage, et personne ne tient neuf minutes là-dessus.
+**La consigne est écrite par parcours, le nom dedans.** Elle était un modèle
+unique où il fallait remplacer « Finance » à la main : **quatre épisodes sur cinq
+sont partis en gardant le nom de l'exemple**, dans leur première phrase. Demander
+à quelqu'un de tenir deux choses d'accord est le défaut que ce dépôt corrige
+partout ailleurs ; il n'y a plus rien à remplacer.
 
-La preuve était pourtant disponible : le seul extrait validé à l'oreille avait
-été généré **d'un seul tenant**. Le découpage était le défaut, pas le modèle.
+**Deux barrages, et le fichier fautif est supprimé.** À l'entrée, un son déjà
+saturé est refusé — baisser le volume d'un son saturé ne le désature pas. À la
+sortie, le MP3 doit tenir ses promesses de niveau, de crête et de durée ; s'il
+échoue il est **effacé**, parce qu'un fichier qui sature est pire qu'un fichier
+absent : il part en ligne sans que personne le réécoute.
 
-Un paragraphe fait deux à cinq phrases : assez long pour que le modèle enchaîne
-et fasse varier son intonation d'une phrase à l'autre, assez court pour ne pas
-dériver. **C'est l'unité de sens, c'est donc l'unité de génération.** Chaque
-segment reçoit un fondu de 15 ms — sans lui, la coupure nette du modèle laisse
-un clic à chaque raccord.
+Ce barrage de sortie a été aveugle un temps : sa lecture du nombre ne gérait pas
+le signe `+`, donc une crête à `+0.1` devenait illisible, et la règle « une
+mesure absente n'est pas une mesure ratée » le faisait taire — exactement dans le
+cas qu'il existait pour attraper.
 
-**Ce qu'aucun traitement ne rattrape.** Un filtre déplace des fréquences ; il
-n'invente pas une montée de voix sur une question. L'expressivité se joue à la
-génération, et son plafond est fixé par l'enregistrement de référence : une
-référence lue à plat donne un clone à plat, quel que soit le réglage.
+**Le niveau est le même partout** : −16 LUFS, en deux passes. Les deux passes
+doivent viser les mêmes cibles et voir la même chaîne de traitement ; elles ne le
+faisaient pas, et le défaut ne s'est vu qu'en donnant à la chaîne une source déjà
+compressée, sortie à −20,7 LUFS.
 
-**La graine est fixe.** Deux exécutions sur le même texte donnent le même
-résultat ; sans cela, corriger une phrase changerait aussi toutes les autres.
+La masterisation ajoute un coupe-bas à 80 Hz, une compression douce — c'est elle
+qui donne l'impression que la voix est *proche* — et une présence à 3 kHz, la
+bande de l'intelligibilité. Pas de débruitage : il durcit les consonnes.
 
-**Le niveau sonore est le même partout** : -16 LUFS, en deux passes. Un auditeur
-qui enchaîne deux épisodes et doit toucher au volume entend le défaut
-immédiatement. C'est pour ça que ces réglages sont dans un script et non dans
-une commande à retaper quatorze fois.
+**La durée est relevée à la masterisation et écrite dans `podcasts/durees.json`.**
+La publication la lit là, et non par `ffprobe` : ffprobe n'existe pas sur le
+runner d'intégration continue, et la page s'y fabriquait autrement qu'en local.
+Un fichier généré ne doit dépendre que de ce que le dépôt contient.
 
-La masterisation ajoute un coupe-bas à 80 Hz, une compression douce — c'est
-elle qui donne l'impression que la voix est *proche*, comme quelqu'un assis en
-face — et une présence à 3 kHz, la bande de l'intelligibilité. Pas de
-débruitage : il durcit les consonnes, et sur un enregistrement aux silences
-déjà vides il ne gagne rien.
-
-**Le MP3 est encodé à 96 kb/s, et ce chiffre est le fruit d'une mesure.** À
-64 kb/s l'encodeur ajoutait 2 dB de dépassement de crête : le WAV sortait à
--2,4 dBTP et le MP3 à -0,4, c'est-à-dire au bord de la saturation. Deux
-tentatives de correction — baisser le rattrapage du compresseur, ajouter un
-limiteur — ont *empiré* la mesure avant que la comparaison avant/après
-encodage ne désigne le vrai coupable. Le poids passe de 4,4 à 6,6 Mo par
-épisode : le prix de ne pas saturer.
+**Le résumé écrit n'est pas une transcription.** L'audio venant du parcours et
+non d'un script, la page ne promet pas les mots exacts : elle dit « ce que
+raconte l'épisode ».
 
 **Le flux ne contient que les épisodes dont l'audio existe.** Une pièce jointe
-annoncée mais absente fait afficher une erreur dans l'application de
-l'auditeur, loin du site — le pire endroit pour se tromper. Le texte, lui,
-paraît dès qu'il est écrit et sert de transcription.
+annoncée mais absente fait afficher une erreur dans l'application de l'auditeur,
+loin du site — le pire endroit pour se tromper. **Le flux reste unique et
+français**, même si la page existe dans les deux langues : il n'y a qu'une
+bande-son, et deux flux ne feraient que dédoubler les abonnements.
 
-**La durée annoncée est lue dans le fichier** dès qu'il existe. L'estimation
-par le nombre de mots ne sert que tant qu'il n'y en a pas, et le mot
-« environ » le dit.
+#### Le clonage de voix, essayé puis abandonné
+
+La première chaîne clonait la voix de l'auteur. Quatre versions ont été rejetées
+à l'écoute, dont trois pour du bruit. Trois correctifs ont visé à côté —
+écrêtage, coupures entre phrases, sigles mal prononcés — avant que la mesure ne
+tranche, sur la même phrase et le même modèle :
+
+```
+NotebookLM, jugé acceptable ......... 5,3 dB de netteté
+voix par défaut du modèle ........... 4,1 dB
+la même, clonant la référence ....... 1,1 dB
+l'enregistrement de référence ....... 0,5 dB
+```
+
+Le modèle sait produire une voix nette ; ce qui la dégrade est la **référence**.
+Le clonage ne copie pas que le timbre, il copie les conditions d'enregistrement —
+la pièce, la distance au micro, la réverbération. Le bruit n'est pas *sur* la
+voix, il est *dedans*, et aucun débruitage ne l'en sort : un `afftdn` fort ne fait
+passer le rapport que de 1,3 à 1,6 dB, en assombrissant le son.
+
+`scripts/verifier-voix.py` note un enregistrement en trois secondes plutôt que de
+découvrir le problème après quatre minutes de calcul. Il reste utile si le
+clonage est un jour repris : **ne pas le reprendre sans un enregistrement qu'il
+accepte.**
 
 #### Ce qui ne doit jamais entrer dans le dépôt
 
-`podcasts/brut/` est ignoré par git, et ce n'est pas qu'une question de poids.
-Il contient **la voix de l'auteur** : l'enregistrement source et l'extrait de
-référence qui sert au clonage. Le dépôt est public et le site publié sous
-pseudonyme — une voix est une donnée qui identifie. Seul le MP3 produit est
-versionné.
+| Dossier | Contenu | Pourquoi il est ignoré |
+|---|---|---|
+| `podcasts/voix/` | la voix de l'auteur | le dépôt est public et le site publié sous pseudonyme ; une voix identifie |
+| `podcasts/brut/` | les `.m4a` de NotebookLM | sources lourdes, régénérables, sans intérêt public |
+| `podcasts/sources/` | l'export des parcours en texte | GitHub Pages les servirait : tout le contenu des guides publié une seconde fois, en clair, à une autre adresse |
 
-L'audio généré porte un **filigrane inaudible** (Perth, inclus dans
-Chatterbox), qui l'identifie comme synthétique. Il n'est pas désactivé : sur un
-site dont l'argument est l'honnêteté, publier une voix synthétique sans
-marqueur serait contradictoire.
+Seul le MP3 produit est versionné. Les deux premiers dossiers sont **sauvegardés
+sur la clé** depuis le 30 août : ignorés par git, ils n'avaient aucun filet.
+
+L'audio ne porte **pas** de filigrane. La chaîne de clonage en posait un (Perth,
+inclus dans Chatterbox) ; elle ne sert plus, et rien ne le remplace côté
+NotebookLM. Les pages qui présentent les podcasts disent donc simplement que la
+voix est synthétique.
 
 ### Ce qui compte les sujets
 
@@ -519,19 +553,38 @@ semi-transparents, ni les états produits par le JavaScript.
 
 ## 8. Contrôles automatiques
 
-Les deux hooks vivent dans `.git/hooks/`, qui **n'est pas versionné** : recréés à la
-main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le dépôt.
+Les quatre hooks vivent dans `.git/hooks/`, qui **n'est pas versionné** : recréés à
+la main en cas de nouveau clone. Les scripts qu'ils appellent, eux, sont dans le
+dépôt — les hooks ne portent que les chemins locaux.
 
 | Hook | Script | Effet |
 |---|---|---|
 | `pre-commit` | `scripts/valider-js.js` | **Bloque** le commit si `search-data.js`, `parcours.js`, `pratique.js` ou une banque de questions ne se charge plus, contient une clé répétée, ou renvoie vers un fichier absent |
 | `pre-commit` | `scripts/dater-guides.js` | Date les pages de `guides/` réellement commitées |
-| `post-commit` | — | Met à jour la sauvegarde `.bundle` |
+| `pre-commit` | `scripts/publier-accueil.js` | Régénère l'accueil **après** la datation, et l'indexe |
+| `post-commit` | `scripts/sauvegarder-depot.sh` | Met à jour la sauvegarde `.bundle` |
+| `post-rewrite` | idem | Refait la sauvegarde après un rebase ou un `commit --amend` |
+| `post-merge` | idem | Refait la sauvegarde après une fusion |
+
+**L'ordre du `pre-commit` fait partie du contrat.** L'accueil annonce les guides
+mis à jour en lisant les dates que `dater-guides.js` vient d'écrire. Sans la
+troisième ligne, un commit contenait des guides datés d'aujourd'hui et un accueil
+bâti sur hier — et l'intégration continue le refusait, à juste titre. En local
+tout passait, parce que l'accueil avait été régénéré *avant* la datation.
+
+**Neuf contrôles bloquants tournent par ailleurs à chaque poussée**, dans
+`controles.yml` et `identite.yml` : `valider-js`, `audit-coherence`,
+`verifier-identite`, `verifier-registre`, `appliquer-identite --verifier`,
+`publier-accueil --verifier`, `publier-podcasts --verifier`, `test-recherche` et
+`test-actualites`. Les trois `--verifier` ne touchent à rien : ils refont la
+génération en mémoire et refusent si le résultat diffère du dépôt.
 
 ### La géométrie, elle, se mesure
 
-`scripts/audit-geometrie.html` — **à lancer à la main après toute modification de
-la mise en page.** Il ne se déclenche pas au commit, et c'est une limite assumée :
+`scripts/audit-geometrie.html` — **à lancer après toute modification de la mise en
+page.** Deux façons : `node scripts/lancer-audit-geometrie.mjs`, qui pilote un
+Chrome sans interface s'il en trouve un sur la machine, ou à la main dans un
+navigateur. Il ne se déclenche pas au commit, et c'est une limite assumée :
 
 ```bash
 node scripts/serveur.js
@@ -546,7 +599,7 @@ interface et les dépendances qui vont avec — dans un projet qui n'en a aucune
 Le navigateur est donc le moteur, et le prix est que le contrôle se lance à la
 main.
 
-Il mesure 6 gabarits à 4 largeurs, soit 92 mesures, et vérifie :
+Il mesure **27 gabarits à 5 largeurs, soit 732 mesures**, et vérifie :
 
 | Contrôle | Défaut qui l'a fait naître |
 |---|---|
@@ -554,7 +607,7 @@ Il mesure 6 gabarits à 4 largeurs, soit 92 mesures, et vérifie :
 | Aucun élément hors de la fenêtre | — |
 | Les grilles occupent leur largeur | limite de lecture écrasant `.actu-liste` et `.parcours` à 59 % |
 | Le nombre de colonnes annoncé | repli mobile écrasé par la cascade, 2 colonnes de 155 px |
-| Un titre ne prend pas une case de grille | « Nos catégories » mangeait la place d'un guide |
+| Un titre ne prend pas une case de grille | le titre de la liste des parcours mangeait la place d'un guide |
 | Texte sous 85 signes par ligne | 130 signes avant la passe visuelle |
 
 **Les quatre familles de contrôle ont été éprouvées en réinjectant les vraies
@@ -564,9 +617,20 @@ du contrôle de zoom.
 
 ### Sauvegardes
 
-Le `.bundle` se régénère à chaque commit dans `Desktop\Sauvegardes-DocMaster\`. La
-copie sur clé se fait avec `scripts/copier-sur-cle.ps1`, qui vérifie la sauvegarde
-avant de la copier, puis compare les empreintes après.
+Le `.bundle` se régénère à chaque commit dans `Desktop\Sauvegardes-DocMaster\`, par
+`scripts/sauvegarder-depot.sh` — versionné pour être relu, appelé par trois hooks.
+La copie sur clé se fait avec `scripts/copier-sur-cle.ps1`, qui vérifie la
+sauvegarde avant de la copier, puis compare les empreintes après. Elle emporte
+aussi `podcasts/brut/` et `podcasts/voix/`, que git ignore et qui n'avaient donc
+aucune sauvegarde.
+
+**Trois hooks et non un seul, et pas de sauvegarde en HEAD détaché.** Le bundle
+a porté pendant des jours le bon commit sous `HEAD` mais une branche `main` en
+retard de deux commits : restauré, il aurait rendu un dépôt faux. La cause est
+l'enchaînement `git commit` puis `git pull --rebase` — le rebase rejoue le commit,
+ce qui déclenchait la sauvegarde **au milieu** du rebase, puis déplaçait `main`
+sans rien déclencher. Les vérifications d'alors ne regardaient que `HEAD`, qui
+était juste.
 
 Deux pièges de ce script, corrigés le 15 août et à ne pas réintroduire :
 `git bundle verify` **exige d'être dans un dépôt** (il s'exécute donc dans un dépôt
@@ -574,17 +638,28 @@ vide temporaire), et il écrit son compte rendu sur la **sortie d'erreur** même
 de succès — sous PowerShell 5.1, seul le code de retour est fiable.
 
 Une copie ne vaut que testée : `git clone <bundle>` puis comparaison de
-`rev-parse HEAD^{tree}` avec le projet.
+`rev-parse HEAD^{tree}` avec le projet. Fait le 5 septembre 2026 depuis la clé —
+même arbre au bit près, les neuf contrôles verts dans la copie restaurée, et son
+serveur servant toutes les pages, audio compris.
 
 ### Workflows
 
 | Workflow | Quand | Effet |
 |---|---|---|
-| `veille.yml` | 07h23 et 17h23 UTC | Une recherche par sous-section, une Issue de propositions à cocher |
-| `actualites.yml` | à chaque case cochée | Publie les articles retenus, commite les pages |
+| `controles.yml` | à chaque poussée | Les contrôles bloquants ; un échec arrête la mise en ligne |
+| `identite.yml` | à chaque poussée | Vérifie que rien ne s'écarte de `identite.js` |
+| `veille.yml` | 07h23 et 17h23 UTC | Une recherche par sous-section, une Issue dont les cases arrivent **déjà cochées** |
+| `actualites.yml` | après la veille, ou à chaque case décochée | Publie les articles retenus, commite les pages |
 | `rapport-usage.yml` | lundi 06h37 UTC | Classements d'usage, en Issue |
+| `alerte-deploiement.yml` | si un déploiement échoue | Ouvre une Issue ; sur ses cent derniers passages, il n'a jamais eu à se déclencher |
 
-La veille couvre 157 sous-sections et prend une quinzaine de minutes. La pause de
+**Les cases arrivent cochées, et décocher retire l'article.** C'est l'inverse du
+fonctionnement d'origine, où rien ne paraissait sans relecture humaine. La
+relecture a disparu ; ce qu'elle attrapait est passé aux filtres d'admission de
+`scripts/actualites-regles.js` — tournures promotionnelles, pertinence par
+rapport à la section, communiqués produit.
+
+La veille couvre 169 sous-sections et prend une quinzaine de minutes. La pause de
 250 ms entre deux requêtes est délibérée : elle évite de marteler Google News, et
 rien ne dépend de la rapidité.
 
