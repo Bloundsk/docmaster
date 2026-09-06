@@ -1,5 +1,70 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Le robots.txt n'est lu par personne, et j'avais tort sur la Search Console
+
+### La décision
+
+Ludo a tranché : **l'indexation reste ouverte** avant la mise en ligne
+officielle. Rien à changer — c'était déjà l'état du site. Mais la vérification a
+sorti deux choses, dont une qui me contredit.
+
+### Le fichier ne fait pas ce qu'il dit
+
+`robots.txt` existe, il dit `Allow: /` et il déclare le sitemap. Il est servi à
+`bloundsk.github.io/docmaster/robots.txt` — et **un robots.txt ne fait autorité
+qu'à la racine du domaine**. Vérifié :
+
+```
+https://bloundsk.github.io/robots.txt ............ 404
+https://bloundsk.github.io/docmaster/robots.txt .. 200, et ignoré
+```
+
+Le site vit dans un sous-dossier d'un domaine partagé par tous les dépôts
+GitHub Pages du compte. La racine ne lui appartient pas.
+
+**Deux conséquences, l'une inoffensive et l'autre pas :**
+
+- La ligne `Sitemap:` ne sert à rien. Le sitemap est complet et bien servi
+  (132 URL, 200), mais aucun moteur ne sait qu'il existe. Il faut le déclarer
+  **dans la Search Console**, à la main, une fois.
+- Surtout : **bloquer l'indexation par ce fichier aurait été impossible.** Si
+  Ludo avait choisi l'inverse, je lui aurais fait modifier un fichier sans effet
+  et nous aurions cru le site protégé. Il aurait fallu une balise `noindex` dans
+  les pages. Le choix retenu est gratuit à tenir ; l'autre ne l'était pas.
+
+Le fichier est conservé — il ne coûte rien et deviendrait utile si le site
+déménageait sur un domaine à lui — mais il porte désormais un commentaire qui
+dit qu'il n'est pas lu ici, pour que personne ne s'appuie dessus.
+
+### Ce sur quoi je me suis trompé
+
+J'ai écrit, hier et ce matin, que l'effet des amorces de leçons et celui des
+titres réécrits seraient **indémêlables**, faute de Search Console.
+
+C'est faux : la balise `google-site-verification` est dans `index.html` et
+`guides.html`. **Le site a une propriété Search Console.** Je ne l'avais pas
+cherchée avant d'affirmer son absence.
+
+Les deux effets se mesurent donc séparément, avec deux instruments différents :
+
+| Instrument | Ce qu'il mesure | Quelle expérience |
+|---|---|---|
+| Search Console | impressions et clics par requête | les **titres** réécrits |
+| GoatCounter | ouvertures de sections | les **amorces** de leçons |
+
+Le rapport d'usage du lundi, seul, ne distingue toujours rien — il dira « ça
+monte » sans dire pourquoi. C'est en regardant les deux sources qu'on tranche.
+
+La mémoire de reprise est corrigée, titre de paragraphe compris : il annonçait
+encore « leurs effets ne seront pas séparables » au-dessus d'un texte qui
+expliquait comment les séparer.
+
+### Ce qui reste à faire, et qui ne se code pas
+
+Déclarer `https://bloundsk.github.io/docmaster/sitemap.xml` dans la Search
+Console. Deux minutes, une seule fois, et c'est ce qui remplace la ligne sans
+effet du `robots.txt`.
+
 ## 2026-09-06 — L'accueil s'adressait à ceux qui connaissaient déjà le site
 
 ### Comparé avant de proposer

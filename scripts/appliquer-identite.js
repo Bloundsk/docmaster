@@ -198,8 +198,34 @@ ${lignes.join("\n")}
     return ecrireSiDifferent("sitemap.xml", contenu);
 }
 
+/* Ce fichier n'est PAS lu par les moteurs tant que le site vit dans un
+   sous-dossier : un robots.txt ne fait autorité qu'à la RACINE d'un domaine, et
+   celle de bloundsk.github.io appartient au compte, pas à ce dépôt. Vérifié le
+   6 septembre 2026 — la racine répond 404, notre chemin répond 200 et est
+   ignoré.
+
+   On le produit quand même : il ne coûte rien, et il redeviendra valable le jour
+   où le site aura son propre domaine, sans qu'on ait à y penser. L'avertissement
+   est écrit DANS le fichier produit, parce que c'est là qu'on le lira — et
+   l'écrire ici est le seul moyen qu'il survive à la génération suivante. */
 function ecrireRobots() {
-    const contenu = `User-agent: *
+    const contenu = `# ATTENTION : ce fichier n'est pas lu par les moteurs de recherche.
+#
+# Un robots.txt ne fait autorite qu'a la RACINE d'un domaine. Le site vit dans
+# un sous-dossier, et la racine appartient au compte GitHub :
+#
+#   ${ID.base.replace(/^(https?:\/\/[^/]+\/).*$/, "$1")}robots.txt  -> 404
+#   ${ID.base}robots.txt  -> 200, et ignore
+#
+# Deux consequences, verifiees le 6 septembre 2026 :
+#   - la ligne Sitemap ci-dessous ne sert a rien ; le sitemap doit etre declare
+#     a la main dans la Search Console ;
+#   - interdire l'indexation ICI serait sans effet. Il faudrait une balise
+#     <meta name="robots" content="noindex"> dans les pages.
+#
+# Produit par scripts/appliquer-identite.js. Ne pas modifier a la main.
+
+User-agent: *
 Allow: /
 
 Sitemap: ${ID.base}sitemap.xml

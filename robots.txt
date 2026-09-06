@@ -1,3 +1,19 @@
+# ATTENTION : ce fichier n'est pas lu par les moteurs de recherche.
+#
+# Un robots.txt ne fait autorite qu'a la RACINE d'un domaine. Le site vit dans
+# un sous-dossier, et la racine appartient au compte GitHub :
+#
+#   https://bloundsk.github.io/robots.txt  -> 404
+#   https://bloundsk.github.io/docmaster/robots.txt  -> 200, et ignore
+#
+# Deux consequences, verifiees le 6 septembre 2026 :
+#   - la ligne Sitemap ci-dessous ne sert a rien ; le sitemap doit etre declare
+#     a la main dans la Search Console ;
+#   - interdire l'indexation ICI serait sans effet. Il faudrait une balise
+#     <meta name="robots" content="noindex"> dans les pages.
+#
+# Produit par scripts/appliquer-identite.js. Ne pas modifier a la main.
+
 User-agent: *
 Allow: /
 
