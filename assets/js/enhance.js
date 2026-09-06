@@ -136,4 +136,90 @@ document.addEventListener("DOMContentLoaded", () => {
         lien.textContent = adresse;
         el.replaceWith(lien);
     });
+
+
+    // --- Les emojis, animés ---------------------------------------------
+    //
+    // Un emoji est du TEXTE, pas un élément : pour l'animer il lui faut une
+    // balise. Ce parcours en pose une autour de chacun, à l'affichage. Aucune
+    // des 133 pages n'est modifiée, et retirer ce bloc rend le site à son état
+    // d'avant — c'est ce qui rend le choix réversible en une minute.
+    //
+    // MOUVEMENT PERMANENT, ET C'EST UN CHOIX DE LUDO, pris en connaissance de
+    // cause le 7 septembre 2026 : la page Actualités en compte 49, qui bougent
+    // tous en même temps. Le régime « une seule fois à l'arrivée » lui a été
+    // montré à côté, il a préféré celui-ci.
+    //
+    // La contrepartie est tenue juste en dessous : qui a demandé moins de
+    // mouvement à son système n'en reçoit AUCUN, et le parcours ne s'exécute
+    // même pas — inutile de poser 49 balises pour ne rien animer.
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    /* La plage, et surtout CE QU'ELLE EXCLUT VOLONTAIREMENT.
+
+       Elle couvre les pictogrammes : 1F300-1FAFF, 2600-27BF, 2B00-2BFF, plus
+       231A-231B et 23E9-23FA — cette dernière tranche a été ajoutée après
+       comptage, elle porte le chronomètre ⏱ qui apparaît 77 fois (durées de
+       leçon, carte Productivité) et le sablier ⏳.
+
+       Elle ne couvre PAS, et c'est le point :
+         → ← ↑   402 occurrences, dans « Voir le guide → » et les liens de
+                 navigation. Ce sont des signes de ponctuation, pas des emojis ;
+                 les faire flotter ferait croire à un défaut d'affichage.
+         − ≈ ∞   des signes mathématiques, dans les exemples chiffrés.
+         ▾       le chevron du sélecteur de langue, qui tourne déjà.
+         🇫🇷      un drapeau est une PAIRE d'indicateurs régionaux : envelopper
+                 l'un sans l'autre le casserait en deux lettres. Celui de la
+                 barre est de toute façon un SVG.
+
+       Le sélecteur de variante U+FE0F et le liant U+200D restent DANS la même
+       balise : ⚖️ et 👁️ perdraient leurs couleurs si on les coupait, et une
+       famille 👨‍👩‍👧 se briserait en trois personnages. */
+    const EMOJI = /([\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{231A}-\u{231B}\u{23E9}-\u{23FA}][\u{FE0F}\u{200D}]?)+/gu;
+
+    /* Ce qu'on ne touche pas. Le code, parce qu'un emoji y serait un caractère
+       de données ; la mascotte, qui a déjà ses propres animations et se
+       mettrait à trembler deux fois ; les zones réservées aux lecteurs
+       d'écran. */
+    const EPARGNES = "code, pre, .mascotte, .emo, [aria-hidden='true'] .emo";
+
+    const marcheur = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(n) {
+            if (!n.nodeValue) return NodeFilter.FILTER_REJECT;
+            EMOJI.lastIndex = 0;
+            if (!EMOJI.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+            const p = n.parentElement;
+            if (!p || p.closest(EPARGNES)) return NodeFilter.FILTER_REJECT;
+            return NodeFilter.FILTER_ACCEPT;
+        }
+    });
+
+    /* On récolte d'abord, on remplace ensuite : modifier l'arbre pendant qu'on
+       le parcourt fait sauter des nœuds. */
+    const aTraiter = [];
+    let noeud;
+    while ((noeud = marcheur.nextNode())) aTraiter.push(noeud);
+
+    let rang = 0;
+    for (const n of aTraiter) {
+        const frag = document.createDocumentFragment();
+        const texte = n.nodeValue;
+        let dernier = 0, m;
+        EMOJI.lastIndex = 0;
+        while ((m = EMOJI.exec(texte))) {
+            if (m.index > dernier) frag.appendChild(document.createTextNode(texte.slice(dernier, m.index)));
+            const s = document.createElement("span");
+            s.className = "emo";
+            s.textContent = m[0];
+            /* Le retard fait une vague plutôt qu'un sursaut d'ensemble. Il est
+               plafonné : sans cela, le dernier emoji d'une page longue
+               attendrait plusieurs secondes avant de bouger. */
+            s.style.animationDelay = Math.min(rang * 0.045, 1.2) + "s";
+            frag.appendChild(s);
+            rang++;
+            dernier = m.index + m[0].length;
+        }
+        if (dernier < texte.length) frag.appendChild(document.createTextNode(texte.slice(dernier)));
+        n.parentNode.replaceChild(frag, n);
+    }
 });

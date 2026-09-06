@@ -1883,3 +1883,46 @@ html.confort-police-1 {
 /* Sur papier, les réglages d'écran n'ont plus lieu d'être, et le panneau
    n'a rien à y faire. */
 @media print { .confort { display: none; } }
+
+/* ---------------------------------------------------------------
+   LES EMOJIS ANIMÉS
+
+   La balise vient de enhance.js, qui enveloppe chaque emoji à
+   l'affichage : le HTML des 133 pages n'en sait rien.
+
+   « inline-block » est indispensable — une transformation ne
+   s'applique pas à un élément en ligne — et il ne coûte RIEN à la mise
+   en page. Mesuré sur une page de leçon : titre à 29,44 px et page à
+   4 613 px, que l'emoji soit en « inline » ou en « inline-block ».
+
+   Un « vertical-align: -.06em » avait d'abord été ajouté pour corriger
+   un décalage supposé. Il était la seule cause du décalage : il
+   portait le titre à 30,53 px et la page à 4 631. Rien à corriger, donc
+   rien à écrire.
+
+   L'amplitude est volontairement faible, 5 px et 5 degrés : au-delà,
+   un emoji collé à un titre en décolle visiblement et le mot d'à côté
+   semble bouger avec lui.
+   --------------------------------------------------------------- */
+.emo {
+    display: inline-block;
+    animation: emojiFlotte 2.8s ease-in-out infinite;
+}
+
+@keyframes emojiFlotte {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-5px) rotate(-5deg); }
+}
+
+/* Même règle que la mascotte et les illustrations : qui a demandé moins de
+   mouvement à son système n'en reçoit aucun. enhance.js s'abstient déjà de
+   poser les balises dans ce cas ; cette règle est le filet, pour le jour où
+   une balise .emo arriverait par un autre chemin. */
+@media (prefers-reduced-motion: reduce) {
+    .emo { animation: none !important; }
+}
+
+/* Sur papier, un emoji ne bouge pas et n'a pas à occuper sa propre boîte. */
+@media print {
+    .emo { display: inline; animation: none; }
+}
