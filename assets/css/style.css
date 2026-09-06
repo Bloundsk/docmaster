@@ -1172,8 +1172,20 @@ html.dark-mode {
     --secondary: #c4b5fd;        /* 7,9:1 sur une carte — etait 2,57:1 */
     --secondary-fond: #7c3aed;
 
-    --succes: #34d399;
-    --alerte: #f87171;
+    /* Les deux etats du quiz, corriges le 6 septembre 2026 — seule exception
+       demandee a la regle « le mode sombre ne bouge pas ».
+
+       Le defaut ne se voyait pas en mesurant sur la carte : il naissait sur la
+       TUILE de reponse, dont le fond est la carte teintee de rouge ou de vert a
+       12 %. #f87171 y tombait a 4,78:1 et #34d399 a 6,16 — la ou une reponse
+       fausse est precisement ce qu'on relit le plus attentivement.
+
+       Les valeurs retenues sont les plus saturees disponibles a la clarte
+       qu'exige 7:1 sur ce fond : le rouge est a saturation 1,00. Il tire vers le
+       rose, et c'est le prix de l'arithmetique, pas un choix esthetique — aucun
+       rouge franc ne tient 7:1 sur un fond sombre. */
+    --succes: #6ee7b7;    /* 7,77 sur la tuile · 9,60 sur une carte */
+    --alerte: #ffb0b0;    /* 7,61 sur la tuile · 8,42 sur une carte */
     --attention: #fbbf24;
     --favori: #fbbf24;
 
