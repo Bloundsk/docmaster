@@ -984,8 +984,29 @@ code {
    Le symbole est pousse a droite, hors du flux du libelle. */
 .quiz-option.correct,
 .quiz-option.incorrect { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+/* Le glyphe est AGRANDI, et c'est ce qui rend sa couleur possible.
+
+   A 15,2 px il comptait comme du texte courant : il lui fallait 7:1 sur sa
+   tuile, ce que ne tient aucun rouge franc sur un fond sombre — d'ou un rose
+   pale, essaye puis abandonne. Au-dela de 18,66 px en gras, le seuil tombe a
+   4,5 : le rouge d'origine passe alors (4,78), et le marqueur se voit de plus
+   loin. Corriger par le dessin plutot que par la couleur.
+
+   1.3rem fait 20,8 px a la taille de police par defaut, et suit celle du
+   visiteur comme le reste du fichier.
+
+   L'interligne de 0,8 n'est pas cosmetique : mesure faite, un glyphe plus haut
+   que la ligne de texte AGRANDIT la case de 3 px, si bien que repondre faisait
+   sauter la liste. Ni « align-items: center » ni « align-self: center » n'y
+   changeaient rien — c'est la hauteur de ligne du signe qui commande. A 0,8, la
+   case repondue et la case vierge font exactement la meme hauteur. */
 .quiz-option.correct::after,
-.quiz-option.incorrect::after { font-weight: 700; flex-shrink: 0; }
+.quiz-option.incorrect::after {
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: .8;
+    flex-shrink: 0;
+}
 .quiz-option.correct { border-color: var(--succes); background: var(--fond-juste); }
 .quiz-option.correct::after { content: "✓"; color: var(--succes); }
 .quiz-option.incorrect { border-color: var(--alerte); background: var(--fond-faux); }
@@ -1172,20 +1193,19 @@ html.dark-mode {
     --secondary: #c4b5fd;        /* 7,9:1 sur une carte — etait 2,57:1 */
     --secondary-fond: #7c3aed;
 
-    /* Les deux etats du quiz, corriges le 6 septembre 2026 — seule exception
-       demandee a la regle « le mode sombre ne bouge pas ».
+    /* Le rouge et le vert d'origine, RENDUS a leur valeur le 6 septembre 2026.
 
-       Le defaut ne se voyait pas en mesurant sur la carte : il naissait sur la
-       TUILE de reponse, dont le fond est la carte teintee de rouge ou de vert a
-       12 %. #f87171 y tombait a 4,78:1 et #34d399 a 6,16 — la ou une reponse
-       fausse est precisement ce qu'on relit le plus attentivement.
+       Ils avaient ete pales pour que le glyphe ✓ ou ✗ du quiz tienne 7:1 sur sa
+       tuile : #f87171 y donnait 4,78. Mais paler la couleur n'etait pas la
+       seule sortie. Le seuil de 7:1 vaut pour le TEXTE COURANT ; au-dela de
+       18,66 px en gras, il tombe a 4,5. Le glyphe faisait 15,2 px, soit juste
+       en dessous de la limite.
 
-       Les valeurs retenues sont les plus saturees disponibles a la clarte
-       qu'exige 7:1 sur ce fond : le rouge est a saturation 1,00. Il tire vers le
-       rose, et c'est le prix de l'arithmetique, pas un choix esthetique — aucun
-       rouge franc ne tient 7:1 sur un fond sombre. */
-    --succes: #6ee7b7;    /* 7,77 sur la tuile · 9,60 sur une carte */
-    --alerte: #ffb0b0;    /* 7,61 sur la tuile · 8,42 sur une carte */
+       Il a donc ete agrandi plutot que delave — voir .quiz-option::after. Le
+       rouge franc revient, et le marqueur se voit de plus loin : la couleur ET
+       le dessin y gagnent, ce qu'un compromis chromatique n'aurait pas fait. */
+    --succes: #34d399;
+    --alerte: #f87171;
     --attention: #fbbf24;
     --favori: #fbbf24;
 
