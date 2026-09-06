@@ -1500,3 +1500,128 @@ header { position: relative; overflow: visible; }
         animation: none !important;
     }
 }
+
+/* ---------------------------------------------------------------
+   CONFORT DE LECTURE
+
+   Trois réglages, choisis sur un seul principe : n'offrir QUE ce que le
+   navigateur ne sait pas faire.
+
+   La taille du texte n'est donc pas ici. Le réglage de police du
+   navigateur la commande déjà, et le site le suit — aucune taille en
+   pixels dans ce fichier, 84 en rem. Mesuré avant d'écrire ces lignes :
+   une racine passée de 16 à 24 px fait suivre le texte et élargit la
+   colonne de 626 à 740 px, sans le moindre débordement. Un bouton « A+ »
+   n'aurait fait que doubler, moins bien, un réglage qui existe et que le
+   visiteur garde d'un site à l'autre.
+
+   Reste ce que le navigateur ignore. L'espacement vient en premier parce
+   que c'est celui dont l'effet est le mieux établi sur la lecture
+   dyslexique — davantage que les polices dites « pour dyslexiques »,
+   dont les études se contredisent. La police est offerte quand même,
+   mais en dernier et sans promesse.
+
+   Les réglages ne portent que sur le contenu : les appliquer à la
+   navigation l'aurait déformée sans rien apporter à la lecture.
+   --------------------------------------------------------------- */
+
+html.confort-interligne-1 main p, html.confort-interligne-1 main li,
+html.confort-interligne-1 main dd, html.confort-interligne-1 main blockquote {
+    line-height: 1.95;
+}
+html.confort-interligne-2 main p, html.confort-interligne-2 main li,
+html.confort-interligne-2 main dd, html.confort-interligne-2 main blockquote {
+    line-height: 2.4;
+}
+
+html.confort-espacement-1 main p, html.confort-espacement-1 main li,
+html.confort-espacement-1 main dd, html.confort-espacement-1 main blockquote {
+    word-spacing: .18em; letter-spacing: .035em;
+}
+html.confort-espacement-2 main p, html.confort-espacement-2 main li,
+html.confort-espacement-2 main dd, html.confort-espacement-2 main blockquote {
+    word-spacing: .34em; letter-spacing: .07em;
+}
+
+/* Verdana et Tahoma sont installées partout et ont des lettres larges et
+   ouvertes : elles agissent AVANT qu'Atkinson Hyperlegible soit
+   téléchargée, et si le téléchargement échoue, le visiteur garde
+   l'essentiel du gain au lieu de ne rien voir changer. */
+html.confort-police-1 body,
+html.confort-police-1 h1, html.confort-police-1 h2, html.confort-police-1 h3,
+html.confort-police-1 h4, html.confort-police-1 .logo {
+    font-family: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+}
+
+/* Le panneau. Bâti sur <details>, comme le sélecteur de langue : il
+   s'ouvre et se ferme au clavier et s'annonce aux lecteurs d'écran sans
+   une ligne de JavaScript. */
+.confort { position: relative; }
+.confort > summary {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px;
+    background: none; border: 2px solid var(--muted); border-radius: 50%;
+    font-size: 1.05rem; cursor: pointer;
+    list-style: none; transition: border-color .3s;
+}
+.confort > summary::-webkit-details-marker { display: none; }
+.confort > summary:hover { border-color: var(--primary); }
+
+.confort-panneau {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 120;
+    width: 264px;
+    padding: 14px;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow-fort);
+    text-align: left;
+}
+.confort-panneau > p {
+    margin: 0 0 12px;
+    font-size: .78rem;
+    line-height: 1.45;
+    color: var(--muted);
+}
+.confort-groupe { margin-bottom: 12px; }
+.confort-groupe > span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--text);
+}
+.confort-choix { display: flex; gap: 6px; }
+.confort-choix button {
+    flex: 1;
+    padding: 7px 4px;
+    font-family: inherit;
+    font-size: .78rem;
+    color: var(--text);
+    background: none;
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.confort-choix button:hover { background: var(--teinte); }
+/* L'option retenue se signale par un fond, un cadre ET une coche. La
+   couleur seule ne suffit pas à qui distingue mal les teintes — même
+   règle que pour la langue active, quelques centaines de lignes plus
+   haut. C'est aussi la seule réponse honnête aux « filtres daltonisme »
+   des surcouches d'accessibilité : ne jamais dire par la couleur seule
+   vaut mieux que recolorer la page de quelqu'un. */
+.confort-choix button[aria-pressed="true"] {
+    background: var(--teinte);
+    border-color: var(--primary);
+    font-weight: 600;
+}
+.confort-choix button[aria-pressed="true"]::before {
+    content: "✓ ";
+    color: var(--primary);
+}
+
+/* Sur papier, les réglages d'écran n'ont plus lieu d'être, et le panneau
+   n'a rien à y faire. */
+@media print { .confort { display: none; } }

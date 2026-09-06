@@ -64,6 +64,37 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
                     </ul>
                 </details>` : "";
 
+    /* Confort de lecture. Bâti comme le sélecteur de langue : un <details>,
+       donc ouvrable au clavier et annoncé aux lecteurs d'écran sans JavaScript.
+
+       Le libellé du déclencheur est « Aa » et non un pictogramme : il se
+       comprend dans les sept langues, et il change de dessin quand la police
+       lisible est active, ce qui donne un aperçu du réglage sur le bouton
+       lui-même.
+
+       Les trois groupes portent un role="group" relié à leur intitulé : sans
+       cela, un lecteur d'écran annoncerait six boutons « Normal » sans dire
+       de quoi. Le comportement est dans theme.js, qui gère déjà la règle
+       « le choix du visiteur prime sur le système ». */
+    const groupeConfort = (clef, intitule, options) => `
+                        <div class="confort-groupe">
+                            <span id="confort-l-${clef}">${intitule}</span>
+                            <div class="confort-choix" role="group" aria-labelledby="confort-l-${clef}">
+${options.map((o, i) => `                                <button type="button" data-confort="${clef}" data-valeur="${i}" aria-pressed="false">${o}</button>`).join("\n")}
+                            </div>
+                        </div>`;
+
+    const confortHTML = `
+                <details class="confort">
+                    <summary aria-label="${t("confort")}">Aa</summary>
+                    <div class="confort-panneau">
+                        <p>${t("confortIntro")}</p>${
+        groupeConfort("interligne", t("confortInterligne"), [t("confortNormal"), t("confortGrand"), t("confortMax")])}${
+        groupeConfort("espacement", t("confortEspacement"), [t("confortNormal"), t("confortGrand"), t("confortMax")])}${
+        groupeConfort("police", t("confortPolice"), [t("confortNormal"), t("confortLisible")])}
+                    </div>
+                </details>`;
+
     const navbarHTML = `
         <nav class="navbar">
             <div class="nav-container">
@@ -79,7 +110,7 @@ ${L.LANGUES.map((l) => `                        <li><button type="button" data-l
                     <li><a href="${lien("a-propos.html")}">${t("aPropos")}</a></li>
                     <li><a href="${lien("mon-espace.html")}">⭐ ${t("monEspace")}</a></li>
                 </ul>
-                <div class="nav-outils">${selecteurHTML}
+                <div class="nav-outils">${selecteurHTML}${confortHTML}
                     <button id="theme-toggle" class="theme-toggle" aria-label="${t("theme")}">🌙</button>
                 </div>
             </div>

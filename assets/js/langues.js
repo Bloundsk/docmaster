@@ -177,6 +177,20 @@
         // --- Commandes -----------------------------------------------------
         allerContenu: { fr: "Aller au contenu principal", en: "Skip to main content", es: "Ir al contenido principal", de: "Zum Hauptinhalt springen", it: "Vai al contenuto principale", zh: "跳到主要内容", ru: "Перейти к основному содержанию" },
         theme:        { fr: "Activer ou désactiver le mode sombre", en: "Toggle dark mode", es: "Activar o desactivar el modo oscuro", de: "Dunkelmodus umschalten", it: "Attiva o disattiva la modalità scura", zh: "切换深色模式", ru: "Переключить тёмную тему" },
+
+        /* Confort de lecture. L'intro dit franchement que la taille du texte
+           n'est pas là et où elle se règle : sans cette phrase, un visiteur
+           ouvrirait le panneau pour agrandir le texte, ne trouverait pas, et
+           repartirait en croyant que le site n'y peut rien. */
+        confort:            { fr: "Confort de lecture", en: "Reading comfort", es: "Comodidad de lectura", de: "Lesekomfort", it: "Comfort di lettura", zh: "阅读舒适度", ru: "Комфорт чтения" },
+        confortIntro:       { fr: "La taille du texte se règle dans ton navigateur. Ces réglages-ci font ce qu'il ne sait pas faire.", en: "Text size is set in your browser. These settings do what it cannot.", es: "El tamaño del texto se ajusta en tu navegador. Estos ajustes hacen lo que él no puede.", de: "Die Schriftgröße stellst du im Browser ein. Diese Optionen ergänzen, was er nicht kann.", it: "La dimensione del testo si regola nel browser. Queste opzioni fanno ciò che non sa fare.", zh: "文字大小请在浏览器中设置。以下选项补充浏览器做不到的部分。", ru: "Размер текста задаётся в браузере. Эти настройки делают то, чего он не умеет." },
+        confortInterligne:  { fr: "Interligne", en: "Line spacing", es: "Interlineado", de: "Zeilenabstand", it: "Interlinea", zh: "行距", ru: "Межстрочный интервал" },
+        confortEspacement:  { fr: "Espacement du texte", en: "Text spacing", es: "Espaciado del texto", de: "Textabstand", it: "Spaziatura del testo", zh: "字间距", ru: "Интервалы в тексте" },
+        confortPolice:      { fr: "Police", en: "Typeface", es: "Tipografía", de: "Schriftart", it: "Carattere", zh: "字体", ru: "Шрифт" },
+        confortNormal:      { fr: "Normal", en: "Normal", es: "Normal", de: "Normal", it: "Normale", zh: "标准", ru: "Обычный" },
+        confortGrand:       { fr: "Grand", en: "Wide", es: "Amplio", de: "Groß", it: "Ampio", zh: "较大", ru: "Больше" },
+        confortMax:         { fr: "Maximum", en: "Widest", es: "Máximo", de: "Maximal", it: "Massimo", zh: "最大", ru: "Максимум" },
+        confortLisible:     { fr: "Lisible", en: "Legible", es: "Legible", de: "Lesbar", it: "Leggibile", zh: "易读", ru: "Читаемый" },
         rechercher:   { fr: "🔍 Rechercher un guide, un sujet...", en: "🔍 Search for a guide or topic…", es: "🔍 Buscar una guía o un tema…", de: "🔍 Leitfaden oder Thema suchen…", it: "🔍 Cerca una guida o un argomento…", zh: "🔍 搜索指南或主题…", ru: "🔍 Искать руководство или тему…" },
         aucunResultat:{ fr: "Aucun résultat trouvé.", en: "No results found.", es: "No se ha encontrado ningún resultado.", de: "Keine Ergebnisse gefunden.", it: "Nessun risultato trovato.", zh: "没有找到结果。", ru: "Ничего не найдено." },
         recherchesRecentes:{ fr: "Recherches récentes :", en: "Recent searches:", es: "Búsquedas recientes:", de: "Letzte Suchanfragen:", it: "Ricerche recenti:", zh: "最近的搜索：", ru: "Недавние запросы:" },

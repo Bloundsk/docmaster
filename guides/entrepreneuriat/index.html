@@ -11,14 +11,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <script>
-        /* Applique le theme AVANT le premier affichage, sans quoi la page
-           apparaitrait dans le mauvais theme une fraction de seconde avant de
-           basculer. Doit rester inline : un fichier externe imposerait un
-           aller-retour reseau, pendant lequel la page serait deja peinte.
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
 
-           Regle : le choix explicite du visiteur, fait via le bouton, prime
-           sur tout. En son absence, on suit le reglage de son systeme. */
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
         (function () {
+            var racine = document.documentElement;
+
             var choix = null;
             try { choix = localStorage.getItem('theme'); } catch (e) {}
 
@@ -26,7 +37,21 @@
                 ? choix === 'dark'
                 : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-            if (sombre) document.documentElement.classList.add('dark-mode');
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
         })();
     </script>
     <link rel="stylesheet" href="../../assets/css/style.css">

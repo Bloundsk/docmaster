@@ -71,6 +71,14 @@ jobs:
       - name: Amorces et durées des leçons à jour
         run: node scripts/amorcer-lecons.js --verifier
 
+      # Le bloc qui applique le theme et le confort de lecture avant le premier
+      # affichage est duplique dans les 133 pages — il doit l'etre, sans quoi la
+      # page sauterait au chargement. Une page restee a l'ancienne version ne
+      # provoque aucune erreur : elle s'affiche simplement dans le mauvais
+      # interlignage, ce que personne ne remarque en relisant du HTML.
+      - name: Bloc de préférences d'affichage identique partout
+        run: node scripts/amorcer-preferences.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le

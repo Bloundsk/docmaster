@@ -572,12 +572,18 @@ troisième ligne, un commit contenait des guides datés d'aujourd'hui et un accu
 bâti sur hier — et l'intégration continue le refusait, à juste titre. En local
 tout passait, parce que l'accueil avait été régénéré *avant* la datation.
 
-**Neuf contrôles bloquants tournent par ailleurs à chaque poussée**, dans
+**Onze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
 `controles.yml` et `identite.yml` : `valider-js`, `audit-coherence`,
 `verifier-identite`, `verifier-registre`, `appliquer-identite --verifier`,
-`publier-accueil --verifier`, `publier-podcasts --verifier`, `test-recherche` et
-`test-actualites`. Les trois `--verifier` ne touchent à rien : ils refont la
+`publier-accueil --verifier`, `publier-podcasts --verifier`,
+`amorcer-lecons --verifier`, `amorcer-preferences --verifier`, `test-recherche`
+et `test-actualites`. Les cinq `--verifier` ne touchent à rien : ils refont la
 génération en mémoire et refusent si le résultat diffère du dépôt.
+
+**Ce paragraphe annonçait neuf contrôles alors qu'il y en avait dix.** Une
+liste écrite à la main dérive dès qu'on ajoute un contrôle sans y penser ; s'il
+en manque encore un ici, la vérité est dans `controles.yml`, pas dans cette
+phrase.
 
 ### La géométrie, elle, se mesure
 

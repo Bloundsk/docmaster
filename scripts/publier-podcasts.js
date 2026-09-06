@@ -30,6 +30,12 @@ const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
 
+/* Le bloc qui applique le theme et le confort de lecture avant le premier
+   affichage. Il en existait ici une COPIE, et elle a diverge des la premiere
+   modification du bloc — le controle des podcasts l'a signale sur-le-champ.
+   Une seule source, desormais : amorcer-preferences.js. */
+const { BLOC: BLOC_PREFERENCES } = require("./amorcer-preferences.js");
+
 const RACINE = path.join(__dirname, "..");
 const DOSSIER = path.join(RACINE, "podcasts");
 const AUDIO = path.join(RACINE, "assets", "audio");
@@ -348,25 +354,7 @@ function rendrePage(episodes, T) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <script>
-        /* Applique le theme AVANT le premier affichage, sans quoi la page
-           apparaitrait dans le mauvais theme une fraction de seconde avant de
-           basculer. Doit rester inline : un fichier externe imposerait un
-           aller-retour reseau, pendant lequel la page serait deja peinte.
-
-           Regle : le choix explicite du visiteur, fait via le bouton, prime
-           sur tout. En son absence, on suit le reglage de son systeme. */
-        (function () {
-            var choix = null;
-            try { choix = localStorage.getItem('theme'); } catch (e) {}
-
-            var sombre = choix
-                ? choix === 'dark'
-                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-            if (sombre) document.documentElement.classList.add('dark-mode');
-        })();
-    </script>
+${BLOC_PREFERENCES}
     <link rel="stylesheet" href="${T.prefixe}assets/css/style.css">
     <link rel="canonical" href="${ID.base}${T.adresse}">
     <meta property="og:site_name" content="${ID.nom}">
