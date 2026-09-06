@@ -572,13 +572,21 @@ troisième ligne, un commit contenait des guides datés d'aujourd'hui et un accu
 bâti sur hier — et l'intégration continue le refusait, à juste titre. En local
 tout passait, parce que l'accueil avait été régénéré *avant* la datation.
 
-**Onze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
+**Douze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
 `controles.yml` et `identite.yml` : `valider-js`, `audit-coherence`,
 `verifier-identite`, `verifier-registre`, `appliquer-identite --verifier`,
 `publier-accueil --verifier`, `publier-podcasts --verifier`,
-`amorcer-lecons --verifier`, `amorcer-preferences --verifier`, `test-recherche`
-et `test-actualites`. Les cinq `--verifier` ne touchent à rien : ils refont la
-génération en mémoire et refusent si le résultat diffère du dépôt.
+`amorcer-lecons --verifier`, `amorcer-preferences --verifier`,
+`poser-selecteur-niveau --verifier`, `test-recherche` et `test-actualites`. Les
+six `--verifier` ne touchent à rien : ils refont la génération en mémoire et
+refusent si le résultat diffère du dépôt.
+
+**S'y ajoute l'audit de géométrie**, décrit juste en dessous, qui est bloquant
+lui aussi — donc **treize en tout**. Il ne figure pas dans la liste ci-dessus
+parce qu'il ne se lance pas comme les autres, et c'est précisément le piège :
+le 6 septembre 2026, douze contrôles ont été lancés en local, pas celui-là, et
+l'intégration continue est passée au rouge sur une poussée annoncée verte.
+**Le lancer avant de pousser**, pas après.
 
 **Ce paragraphe annonçait neuf contrôles alors qu'il y en avait dix.** Une
 liste écrite à la main dérive dès qu'on ajoute un contrôle sans y penser ; s'il

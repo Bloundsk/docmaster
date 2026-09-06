@@ -1,5 +1,95 @@
 # Changelog — Clicked
 
+## 2026-09-06 — L'accueil s'adressait à ceux qui connaissaient déjà le site
+
+### Comparé avant de proposer
+
+Ludo a demandé de comparer Clicked à des sites offrant la même chose, puis
+d'améliorer. La comparaison a d'abord servi à constater qu'**il n'y a pas de
+concurrent au même format**.
+
+| Famille | Exemples | Différence |
+|---|---|---|
+| Plateformes à compte | OpenClassrooms, Coursera, IBM SkillsBuild, FUN-MOOC | Inscription obligatoire, cours longs, certificats |
+| Blogs et sites thématiques | un domaine chacun | Pas de progression par niveaux |
+| Même idée, un seul sujet | [lecerveau.ca](https://www.lecerveau.ca/) | Le seul site à offrir le même contenu à trois niveaux — en neurosciences uniquement |
+
+Le format de Clicked est rare. Encore fallait-il que le site le dise.
+
+### Trois mesures, pas trois impressions
+
+**L'accueil** : 290 mots, quatre sections, toutes tournées vers *ce qui a
+changé*. Cinq liens vers des guides, choisis parce qu'ils ont été modifiés
+récemment. Le catalogue n'y figurait plus depuis le 29 août. **Aucun chiffre.**
+
+**Une page de guide** : haute de 4 550 px, et le seul lien permettant de changer
+de niveau se trouvait à **4 108 px**. L'idée maîtresse du site — le même sujet à
+trois niveaux — était invisible pendant toute la lecture.
+
+**Les voisins** : [Elements of AI](https://www.elementsofai.fr/) annonce 950 000
+étudiants et 170 pays au-dessus de la ligne de flottaison, avec un seul bouton.
+[Cybermalveillance](https://www.cybermalveillance.gouv.fr/) annonce deux millions
+de demandes et propose une entrée par profil. Clicked n'offrait qu'une **barre de
+recherche** — laquelle suppose que le visiteur sait déjà ce qu'il cherche.
+
+### Ce qui a été fait
+
+1. **Une promesse sur l'accueil** : ce que le site est, sa taille, un bouton.
+2. **Les quatorze cartes de retour**, au-dessus des nouveautés.
+3. **Un sélecteur de niveau permanent** sous la bannière des 112 pages de guide.
+4. **La phrase qu'aucun concurrent ne peut écrire**, désormais en deuxième
+   ligne : « Gratuit, sans compte, sans publicité et sans cookie. »
+
+### Ce qui n'a pas été recopié
+
+Les chiffres sont **comptés à chaque génération**, jamais saisis : 42 guides,
+169 leçons, 1 266 questions, 14 épisodes. Comptés **par langue** pour les
+leçons — il y en a 169 de chaque côté, et afficher 338 sur une page française
+aurait été un mensonge par addition.
+
+Les quatorze cartes ne sont pas dupliquées : `publier-accueil.js` les **relit**
+dans `guides.html`, qui reste leur source unique, et refuse de produire la page
+si leur nombre ne correspond plus aux parcours déclarés.
+
+Le sélecteur de niveau est écrit dans le HTML servi plutôt qu'injecté au
+chargement : c'est un choix de lecture, il doit être indexé et fonctionner sans
+script. Le prix est la duplication sur 112 pages ; `poser-selecteur-niveau.js
+--verifier` la rend sûre, et le contrôle a été prouvé avant d'être annoncé —
+faute réinjectée, échec, code de sortie 1.
+
+### Deux jetons de palette, et une exception renommée
+
+`--sur-hero` et `--sur-hero-texte` portent ce qui se pose sur la bannière. Ils
+ne sont **volontairement pas** redéfinis en mode sombre : le dégradé, lui, ne
+change pas de camp, et inverser le bouton le rendrait illisible. L'audit
+exigeait la redéfinition ; sa liste d'exceptions, qui ne couvrait que les
+ombres, a été **renommée et documentée** — `IDENTIQUES_DANS_LES_DEUX_THEMES` —
+plutôt que contournée.
+
+### J'ai poussé une intégration continue rouge
+
+Annoncé « douze contrôles verts », poussé, et la CI a échoué. Il existe un
+**treizième contrôle** — l'audit de géométrie — que je n'avais pas lancé en
+local, alors qu'il mesure 760 points sur 27 gabarits et cinq largeurs.
+
+Il avait raison : à 320 px, la dernière pastille du sélecteur dépasse de la
+fenêtre. Mais c'est un défilement horizontal voulu, exactement comme
+`.nav-links` et `.table-scroll`, que l'audit exempte déjà sous ce motif.
+`.niveaux` les a rejointes, et l'audit relancé en local ne signale rien.
+
+La leçon n'est pas le correctif, elle est dans l'ordre : **l'instrument le plus
+sévère du dépôt doit tourner avant la poussée, pas après.**
+
+*(Et une mesure de contraste de mon cru a donné 1,03 quand la capture montrait
+du texte blanc parfaitement lisible. Remesurée : 16,30. C'était mon script qui
+mentait, pas le site.)*
+
+### Vérifié
+
+Français et anglais, thème clair et sombre, 375 px et 1 440 px. Aucun
+débordement, aucune erreur de console. Sélecteur passé de 4 108 px à 408 px.
+Treize contrôles, tous verts.
+
 ## 2026-09-06 — Correction : les visiteurs mesurés étaient les testeurs
 
 Ludo l'a précisé ce soir : **le site n'est pas lancé.** Il ne sera rendu public
