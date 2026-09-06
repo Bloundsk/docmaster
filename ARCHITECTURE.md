@@ -550,8 +550,44 @@ effet en sombre :
 | `--bord-carte` | `1px solid #c6cfdf` | `none` | Remplace l'ombre. En sombre la valeur suffit déjà. |
 | `--shadow-flottant` | discrète | l'ancien `--shadow` | Quatre éléments survolent vraiment la page : barre, champ et liste de recherche, retour en haut. Sans ce jeton, retirer les ombres les décollait du contenu. |
 
-**Le rayon, les polices et les emojis restent partagés** par les deux thèmes :
-y toucher modifierait le sombre. C'est une décision séparée, pas un oubli.
+**Le rayon et les emojis restent partagés** par les deux thèmes : y toucher
+modifierait le sombre. C'est une décision séparée, pas un oubli.
+
+## 7 bis. Les deux écritures
+
+`--police-titre` (**Literata 700**) et `--police-texte` (**Inter**), déclarées
+dans `:root` et **jamais redéfinies en mode sombre** : une police n'a pas de
+thème. Un changement de typographie se voit donc dans les deux, à la différence
+de la palette.
+
+Poppins a été retirée le 6 septembre 2026. Elle et Inter étaient deux sans-serif
+neutres : aucun contraste de voix, si bien que la hiérarchie ne tenait qu'à la
+taille et à la graisse. Un serif de titre donne une voix *différente* du texte.
+
+| | Fichiers | Poids latin mesuré |
+|---|---|---|
+| Avant : Inter + Poppins 400/500/600/700 | 5 | 77 Ko |
+| Après : Inter variable + Literata 700 | 2 | **68 Ko** |
+
+Literata n'est demandée qu'en 700, la seule graisse que les titres emploient.
+
+**Tout passe par ces deux variables, et c'est la règle à ne pas rouvrir.** Une
+déclaration `font-family` posée sur un élément bat **toujours** l'héritage. Le
+réglage « police lisible » du panneau de confort agissait sur `body` et les
+titres en comptant sur l'héritage : les vingt-deux règles qui déclaraient une
+police lui échappaient. Mesuré, réglage actif : **dix types d'éléments**
+gardaient l'ancienne police — boutons, étiquettes d'encadré, en-têtes de
+tableau, surtitres de quiz. Le réglage réécrit désormais les deux variables, et
+plus rien ne peut lui échapper.
+
+S'y ajoute une remise à zéro indispensable : `button, input, select, textarea
+{ font-family: inherit }`. Un `<button>` n'hérite pas de la police — la feuille
+du navigateur lui impose la sienne — et quatre boutons restaient en Arial.
+
+**Le lien vers les polices a une source unique**, `POLICES` dans
+`amorcer-preferences.js`. Il était écrit à la main dans les 133 pages, plus une
+copie dans `publier-podcasts.js` : 134 endroits à corriger pour changer de
+typographie, et aucun contrôle pour le dire.
 
 Ce qui s'écrit s'éclaircit en mode sombre, donc tout texte devient lisible d'un
 coup — **y compris ce qui sera ajouté plus tard**. Les aplats gardent le bleu

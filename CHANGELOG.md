@@ -1,5 +1,91 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Deux écritures au lieu de deux sans-serif, et un réglage qui ne marchait qu'à moitié
+
+### Ce qui n'allait pas
+
+Poppins aux titres, Inter au texte : **deux sans-serif neutres**. Aucun contraste
+de voix entre elles, si bien que la hiérarchie ne tenait qu'à la taille et à la
+graisse. Poppins est par ailleurs la géométrique par défaut des sites de
+gabarit — c'est elle qui portait l'essentiel de cet air-là, davantage que les
+couleurs.
+
+### Ce qui a été fait
+
+**Literata 700 aux titres, Inter au texte.** Un serif de titre donne une voix
+*différente* du texte : c'est le contraste qui hiérarchise, pas seulement la
+taille. Literata est dessinée pour l'écran.
+
+| | Fichiers | Poids latin mesuré |
+|---|---|---|
+| Avant | 5 | 77 Ko |
+| Après | **2** | **68 Ko** |
+
+Inter en variable couvre 400 à 700 d'un seul fichier ; Literata n'est demandée
+qu'en 700, la seule graisse que les titres emploient. Lui demander le 400
+aurait ajouté 17 Ko que personne n'afficherait.
+
+### Le vrai défaut était ailleurs
+
+**Le réglage « police lisible » du panneau de confort ne marchait qu'à moitié**,
+et c'est un défaut livré l'avant-veille avec le panneau lui-même.
+
+Une déclaration `font-family` posée sur un élément bat **toujours** l'héritage.
+Le réglage agissait sur `body` et sur les titres, en comptant sur l'héritage
+pour le reste : les vingt-deux règles qui déclaraient une police lui
+échappaient. Mesuré sur la page, réglage actif :
+
+```
+avant  10 types d'éléments gardaient Poppins ou Inter
+       — boutons, étiquettes « Exemple chiffré », en-têtes de tableau,
+         surtitres de quiz
+après   0
+```
+
+Tout passe désormais par `--police-titre` et `--police-texte`, que le réglage
+réécrit. Plus rien ne peut lui échapper, **y compris ce qui sera ajouté plus
+tard** — c'est le même raisonnement que la séparation `--primary` /
+`--primary-fond` du mode sombre.
+
+**Quatre boutons résistaient encore, pour une autre cause.** Un `<button>`
+n'hérite pas de la police : la feuille du navigateur lui impose la sienne, et
+l'héritage ne l'atteint jamais. D'où la remise à zéro
+`button, input, select, textarea { font-family: inherit }`. Sans elle, le thème,
+« Copier le lien », l'étoile des favoris et le retour en haut restaient en Arial.
+
+### Le lien vers les polices avait 134 copies
+
+Écrit à la main dans les 133 pages, plus une copie dans `publier-podcasts.js` :
+134 endroits à corriger pour changer de typographie, et aucun contrôle pour le
+dire. Il a maintenant une source unique — `POLICES` dans
+`amorcer-preferences.js`, le module qui détient déjà ce qui doit être identique
+dans chaque `<head>`. `appliquer-identite.js` le pose sur les pages existantes,
+`publier-podcasts.js` l'écrit dans celles qu'il crée, et le `--verifier`
+existant le surveille.
+
+### Deux choses assumées
+
+**Le mode sombre change aussi**, cette fois — une police n'a pas de thème. La
+règle « le sombre ne bouge pas » portait sur la palette ; elle ne pouvait pas
+s'appliquer ici, et c'était dit avant le choix.
+
+**L'interlettrage de −0,008 em** que l'aperçu appliquait aux titres n'a pas été
+repris : à cette valeur c'est invisible — 0,19 px sur un titre de 24 px — et le
+fichier est plus simple sans.
+
+### Ce qui a été écarté
+
+Deux autres directions avaient été rendues et mesurées : **une seule voix**
+(Inter partout, 47 Ko, −30) et **la bibliothèque** (Literata dans le corps du
+texte, interface en police système, 58 Ko). La seconde était la plus « livre »
+et la plus risquée sur des pages qui portent des tableaux, du code et des quiz.
+
+### Vérifié
+
+Treize contrôles, géométrie comprise, lancés avant la poussée : 760 mesures,
+aucune anomalie. Polices réellement chargées, relevées sur la page : Inter 400,
+500, 700 et Literata 700 — rien d'autre.
+
 ## 2026-09-06 — Le signe agrandi plutôt que la couleur délavée
 
 Ludo a pris la sortie que je lui avais décrite sans la prendre moi-même.
