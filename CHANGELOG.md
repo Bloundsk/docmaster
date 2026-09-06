@@ -1,5 +1,54 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Correction : les visiteurs mesurés étaient les testeurs
+
+Ludo l'a précisé ce soir : **le site n'est pas lancé.** Il ne sera rendu public
+que lorsque le travail sera fini. Les seules personnes qui y passent aujourd'hui
+sont **ses testeurs**, chargés de vérifier que tout fonctionne.
+
+Cela invalide des conclusions écrites ici et répétées à l'oral. Elles sont
+corrigées, pas effacées : l'entrée du 5 septembre reste ce qu'elle était, avec
+un renvoi vers celle-ci à l'endroit fautif.
+
+### Ce qui tombe
+
+**« L'usage confirmait que ces 82 % restaient fermés — 29 visiteurs, 5
+ouvertures. »** Vingt-neuf testeurs qui vérifient des boutons ne se comportent
+pas comme vingt-neuf lecteurs. Ce chiffre ne prouvait rien sur l'intérêt du
+contenu replié.
+
+**« Zéro guide terminé, deux favoris. »** Présenté deux fois comme *le* problème
+du site. Un testeur ne termine pas un parcours de trois niveaux : ce n'est pas
+son travail. Le chiffre ne mesure aucun désintérêt.
+
+**« On verra dans le rapport de lundi si les amorces et les titres font
+effet. »** Non : personne n'arrive encore par un moteur de recherche. Il n'y a
+rien à observer avant la mise en ligne réelle, et attendre octobre pour lire une
+courbe plate aurait été du temps perdu à en tirer des conclusions.
+
+### Ce qui tient quand même
+
+Les amorces de leçons restent justifiées, mais **par l'autre mesure** — celle
+qui ne dépendait pas des visiteurs : sur une page de niveau, 3 286 mots au
+total, 589 visibles sans rien ouvrir, **2 697 derrière les blocs repliés, soit
+82 %**. Ce fait-là se mesure sur le document, pas sur le public. Il ne bouge pas.
+
+De même pour les titres : les réécrire pour qu'ils portent les mots que
+quelqu'un tape reste juste, et c'est même *avant* le lancement qu'il fallait le
+faire. Simplement, l'effet ne se mesurera qu'après.
+
+### Ce qu'il faut en retenir pour la suite
+
+**Une mesure d'usage ne vaut que si l'on sait qui l'a produite.** J'avais le
+chiffre, l'outil et la méthode ; il me manquait de savoir qui étaient ces
+visiteurs — et je ne l'ai pas demandé. C'est la même faute que celle des cibles
+cliquables plus haut dans la journée : la valeur était juste, ce qu'on lui
+faisait dire ne l'était pas.
+
+Tant que le site n'est pas public, les Issues étiquetées `usage` servent à
+vérifier que **la chaîne de mesure fonctionne**, rien de plus. Aucun chantier ne
+doit être justifié par l'audience avant le lancement.
+
 ## 2026-09-06 — Trois réglages de confort, après avoir mesuré que sept étaient inutiles
 
 ### Le point de départ
@@ -227,6 +276,15 @@ Et l'usage confirmait que ces 82 % restaient fermés : 29 visiteurs sur cette
 page en trente jours, **5 ouvertures** de sa section la plus consultée. Un
 visiteur qui lit ce qu'il voit et repart a lu un cinquième du guide — et rien ne
 lui disait que le reste existait.
+
+> **Correction du 6 septembre 2026.** Ces vingt-neuf visiteurs étaient les
+> **testeurs** de Ludo, pas des lecteurs : le site n'était pas encore public.
+> Ce paragraphe ne prouve donc rien, et il est conservé tel quel parce qu'il dit
+> fidèlement ce que je croyais ce jour-là. Ce qui justifie les amorces reste la
+> mesure du dessus — 82 % du texte invisible — qui porte sur le document et non
+> sur son public. Voir l'entrée « Correction : les visiteurs mesurés étaient les
+> testeurs ».
+
 
 *(Première mesure fausse, corrigée : `innerText` ne rend rien pour un élément
 masqué, donc le caché comptait zéro. C'est `textContent` qui donne le volume.)*
