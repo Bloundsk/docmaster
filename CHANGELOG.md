@@ -1,5 +1,56 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Les deux états du quiz en mode sombre, et deux erreurs de mesure
+
+Seule exception demandée à la règle « le mode sombre ne bouge pas », posée le
+jour même avec la refonte du mode clair.
+
+### Le défaut, et pourquoi il ne se voyait pas
+
+Il ne naissait pas là où je l'avais cherché. Trois erreurs de cadrage, dans
+l'ordre où elles ont été corrigées :
+
+**J'avais mesuré contre le mauvais fond.** L'annonce faite à Ludo — 6,45:1 —
+comparait la couleur à `--teinte`. Or la tuile de réponse a son propre fond : la
+carte teintée de rouge ou de vert à 12 %, soit `#372c3c`. Le vrai écart était
+**4,78**.
+
+**Je visais le mauvais élément.** Je croyais que `--alerte` colorait le libellé
+de la réponse. Non : le libellé reste en `--text`, à 12,07 — il allait très
+bien. `--alerte` colore **la bordure et le glyphe ✗**. C'est ce glyphe de
+15,2 px qui était illisible. À cette taille, même en gras, c'est du texte
+courant : il lui faut 7:1, pas 4,5.
+
+**Le « juste » avait le même défaut**, à 6,16, et je ne l'avais pas signalé.
+Corrigé avec : même composant, même cause. En réparer un et laisser l'autre
+aurait donné un quiz dont un état est lisible et l'autre non.
+
+Rien de tout cela n'est apparu dans le calcul. Les trois se sont vus en
+mesurant **sur une vraie page de quiz, en mode sombre**, après avoir posé les
+classes `.correct` et `.incorrect` sur de vrais boutons.
+
+### La correction
+
+| | Avant | Après | Sur la tuile |
+|---|---|---|---|
+| Glyphe ✗ | `#f87171` | `#ffb0b0` | 4,78 → **7,61** |
+| Glyphe ✓ | `#34d399` | `#6ee7b7` | 6,16 → **7,77** |
+| Bordures | — | — | 8,42 et 9,60 (seuil 3) |
+
+### Ce qu'il faut assumer
+
+**Le rouge tire vers le rose.** La valeur retenue est la plus saturée
+disponible — saturation 1,00 — à la clarté qu'exige 7:1 sur ce fond. Aucun rouge
+franc ne tient ce seuil sur un fond sombre : c'est l'arithmétique, pas un choix
+esthétique. La seule autre sortie serait d'accepter AA sur ce glyphe.
+
+### Vérifié
+
+Les contrôles passent. La capture d'écran, elle, n'a rien donné : le volet rend
+une image vide après un défilement programmé — artefact déjà consigné. La
+mesure a donc porté sur le composant réel plutôt que sur une image, ce qui vaut
+mieux, mais le rendu du rose reste à juger à l'œil.
+
 ## 2026-09-06 — Le mode clair refait, le sombre intact
 
 ### Ce qui a été demandé, et ce qui a été écarté
