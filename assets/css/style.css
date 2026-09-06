@@ -32,6 +32,13 @@
     --hero-de: #2563eb;
     --hero-a: #7c3aed;
 
+    /* Ce qui se pose SUR la banniere. Ces deux jetons ne sont pas redefinis en
+       mode sombre, et c est voulu : le degrade, lui, ne change pas de camp. Un
+       bouton blanc a texte sombre reste lisible dessus dans les deux themes,
+       la ou --text s inverserait et deviendrait illisible. */
+    --sur-hero: #ffffff;
+    --sur-hero-texte: #1e293b;
+
     /* Couleurs de statut. Les valeurs d origine — #059669, #d97706 — tombaient
        a 3,8:1 et 3,2:1 sur fond blanc : elles sont assombries ici, et eclaircies
        en mode sombre. */
@@ -312,11 +319,116 @@ header h1 { font-size: 3rem; margin-bottom: 15px; }
 header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
 .header-text header p { margin: 0; }
 
+/* ---------------------------------------------------------------
+   La promesse de l'accueil.
+
+   Trois lignes et un bouton, dans cet ordre : ce que le site est, ce
+   qu'il ne fait pas, sa taille, puis une seule porte d'entrée.
+
+   L'ordre n'est pas décoratif. La comparaison avec des sites voisins
+   — Elements of AI, Cybermalveillance — a montré qu'ils annoncent
+   tous leur taille au-dessus de la ligne de flottaison, et offrent UN
+   bouton. L'accueil, lui, n'offrait qu'une barre de recherche : elle
+   suppose que le visiteur sait déjà ce qu'il cherche.
+
+   Les couleurs sont fixes et non tokenisées : ce bloc est posé sur le
+   dégradé bleu-violet de la bannière, qui ne change pas avec le
+   thème. Un jeton de texte y deviendrait illisible en mode sombre.
+   --------------------------------------------------------------- */
+.hero-gratuit {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: .95;
+}
+.hero-chiffres {
+    margin-top: 6px;
+    font-size: .92rem;
+    opacity: .8;
+    font-variant-numeric: tabular-nums;
+}
+.hero-bouton {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 13px 28px;
+    background: var(--sur-hero);
+    color: var(--sur-hero-texte);
+    font-size: 1.02rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: transform .2s, box-shadow .2s;
+}
+.hero-bouton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .22);
+}
+/* Le bouton est une cible principale : il garde un contour visible au
+   clavier, que le fond blanc sur bleu ne suffirait pas à signaler. */
+.hero-bouton:focus-visible {
+    outline: 3px solid var(--sur-hero);
+    outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-bouton { transition: none; }
+    .hero-bouton:hover { transform: none; }
+}
+@media (max-width: 700px) {
+    .hero-bouton { width: 100%; max-width: 340px; }
+}
+
 /* Fil d'Ariane */
 .breadcrumb { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; font-size: .9rem; color: var(--muted); }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--primary); }
 .breadcrumb span[aria-current] { color: var(--text); font-weight: 500; }
+
+/* ---------------------------------------------------------------
+   Sélecteur de niveau, sous la bannière d'un guide.
+
+   Posé sur les 112 pages de guide par scripts/poser-selecteur-niveau.js.
+   Il existe parce qu'une mesure l'a réclamé : le seul lien pour changer
+   de niveau se trouvait à 4 108 px sur une page haute de 4 550. L'idée
+   maîtresse du site — le même sujet à trois niveaux — était invisible
+   pendant la lecture.
+
+   Il défile horizontalement sur petit écran plutôt que de passer à la
+   ligne : quatre pastilles sur deux rangées feraient croire à deux
+   groupes distincts.
+   --------------------------------------------------------------- */
+.niveaux {
+    display: flex;
+    gap: 8px;
+    max-width: 1100px;
+    margin: 22px auto 0;
+    padding: 0 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.niveaux::-webkit-scrollbar { display: none; }
+.niveaux a {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border: 1px solid var(--muted);
+    border-radius: 999px;
+    font-size: .9rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: background .2s, border-color .2s;
+}
+.niveaux a:hover { background: var(--teinte); border-color: var(--primary); }
+/* Le niveau courant se signale par un fond, un cadre ET une puce — jamais
+   par la couleur seule, comme la langue active et les boutons de confort. */
+.niveaux a[aria-current] {
+    background: var(--teinte);
+    border-color: var(--primary);
+    font-weight: 600;
+}
+.niveaux a[aria-current]::before { content: "● "; color: var(--primary); }
+@media (prefers-reduced-motion: reduce) { .niveaux a { transition: none; } }
+/* Sur papier, on a déjà la page qu'on a imprimée. */
+@media print { .niveaux { display: none; } }
 
 /* Contenu principal */
 main { max-width: 1100px; margin: 40px auto; padding: 20px; }

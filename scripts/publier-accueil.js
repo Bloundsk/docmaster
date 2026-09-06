@@ -37,6 +37,27 @@ const verifierSeulement = process.argv.includes("--verifier");
 const MARQUE_DEBUT = "<!-- NOUVEAUTES:DEBUT -->";
 const MARQUE_FIN = "<!-- NOUVEAUTES:FIN -->";
 
+/* Deux blocs se sont ajoutes le 6 septembre 2026, apres comparaison avec des
+   sites comparables (Elements of AI, Cybermalveillance, Le Cerveau a tous les
+   niveaux). Le constat : l accueil s adressait a quelqu un qui connait deja le
+   site — il repondait a « qu est-ce qui a change ? » — alors qu au lancement
+   presque tous les visiteurs arriveront pour la premiere fois et se demandent
+   « qu est-ce que c est, et qu y a-t-il dedans ? ».
+
+   PROMESSE : la phrase qui dit ce qu est le site, les chiffres qui disent sa
+   taille, et UN bouton. Les concurrents annoncent tous leur taille en premier ;
+   l accueil n en donnait aucun chiffre.
+
+   PARCOURS : les quatorze cartes, que l accueil ne montrait plus depuis le
+   29 aout. Elles ne sont pas recopiees : elles sont RELUES dans guides.html,
+   qui reste leur unique source. Modifier une description la-bas la met a jour
+   ici a la prochaine generation, et --verifier refuse toute derive. */
+const BLOCS = [
+    ["<!-- PROMESSE:DEBUT -->", "<!-- PROMESSE:FIN -->", blocPromesse, "    "],
+    ["<!-- PARCOURS:DEBUT -->", "<!-- PARCOURS:FIN -->", blocParcours, "        "],
+    [MARQUE_DEBUT, MARQUE_FIN, blocNouveautes, "        "],
+];
+
 const NB_GUIDES = 5;     // au-dela, ce n est plus une nouveaute
 const NB_EPISODES = 3;
 
@@ -55,14 +76,69 @@ const NIVEAUX = {
     en: { index: "Overview", debutant: "Beginner", intermediaire: "Intermediate", avance: "Advanced" },
 };
 
+/* Les chiffres annonces sur l accueil sont COMPTES, jamais saisis. Un nombre
+   ecrit a la main devient faux au premier ajout et reste plausible : personne
+   ne le verifie. Les lecons sont comptees par langue — il y en a 169 de chaque
+   cote, et annoncer 338 sur une page francaise serait un mensonge par addition. */
+function chiffres(langue) {
+    const dossier = path.join(RACINE, langue === "fr" ? "" : "en", "guides");
+    let lecons = 0;
+    let niveaux = 0;
+    for (const [sujet, meta] of Object.entries(PARCOURS)) {
+        for (const page of meta.niveaux) {
+            const chemin = path.join(dossier, sujet, page + ".html");
+            if (!fs.existsSync(chemin)) continue;
+            niveaux++;
+            lecons += (fs.readFileSync(chemin, "utf8").match(/<summary><h3/g) || []).length;
+        }
+    }
+
+    /* Les banques de questions sont communes aux deux langues : le total ne
+       depend donc pas de la langue affichee. */
+    let questions = 0;
+    const dossierQuiz = path.join(RACINE, "assets/js/quiz");
+    for (const f of fs.readdirSync(dossierQuiz)) {
+        if (!f.endsWith(".js")) continue;
+        const q = fs.readFileSync(path.join(dossierQuiz, f), "utf8").match(/^\s*q:/gm);
+        questions += q ? q.length : 0;
+    }
+
+    const episodes = fs.readdirSync(path.join(RACINE, "podcasts"))
+        .filter((f) => f.endsWith(".md") && PARCOURS[path.basename(f, ".md")]).length;
+
+    return { parcours: Object.keys(PARCOURS).length, niveaux, lecons, questions, episodes };
+}
+
+/* Les milliers separes par une espace insecable fine, comme partout en
+   francais : « 1 266 » et non « 1266 ». */
+const nombre = (n, langue) => n.toLocaleString(langue === "fr" ? "fr-FR" : "en-GB");
+
 const LIBELLES = {
     fr: {
+        promesse: (n) => n.parcours + " parcours, trois niveaux chacun — du premier pas "
+                       + "jusqu'aux détails qui comptent.",
+        gratuit: "Gratuit, sans compte, sans publicité et sans cookie.",
+        chiffres: (n, l) => [nombre(n.niveaux, l) + " guides",
+                             nombre(n.lecons, l) + " leçons",
+                             nombre(n.questions, l) + " questions",
+                             nombre(n.episodes, l) + " épisodes audio"].join(" · "),
+        bouton: "Parcourir les quatorze parcours →",
+        parcours: "Tous les parcours",
         guides: "🕒 Guides mis à jour récemment",
         episodes: "🎧 Derniers épisodes",
         tousGuides: "Tous les guides →",
         tousEpisodes: "Tous les épisodes →",
     },
     en: {
+        promesse: (n) => n.parcours + " learning paths, three levels each — from the first "
+                       + "step to the details that matter.",
+        gratuit: "Free, no account, no ads, no cookies.",
+        chiffres: (n, l) => [nombre(n.niveaux, l) + " guides",
+                             nombre(n.lecons, l) + " lessons",
+                             nombre(n.questions, l) + " questions",
+                             nombre(n.episodes, l) + " audio episodes"].join(" · "),
+        bouton: "Browse the fourteen paths →",
+        parcours: "All the paths",
         guides: "🕒 Recently updated guides",
         episodes: "🎧 Latest episodes",
         tousGuides: "All guides →",
@@ -154,7 +230,50 @@ function duree(s, langue) {
                            : " · " + m + "m " + deux + "s";
 }
 
-function bloc(langue) {
+/* La promesse : ce que le site est, sa taille, et un seul bouton. Un visiteur
+   qui arrive ne sait pas ce qu il cherche — la barre de recherche, seule, lui
+   demandait de le savoir deja. */
+function blocPromesse(langue) {
+    const L = LIBELLES[langue];
+    const n = chiffres(langue);
+    let html = "";
+    html += "        <p>" + L.promesse(n) + "</p>\n";
+    html += '        <p class="hero-gratuit">' + L.gratuit + "</p>\n";
+    html += '        <p class="hero-chiffres">' + L.chiffres(n, langue) + "</p>\n";
+    html += '        <p><a class="hero-bouton" href="guides.html">' + L.bouton + "</a></p>\n";
+    return html;
+}
+
+/* Les quatorze cartes, RELUES dans guides.html plutot que recopiees. Les liens
+   y sont deja relatifs a la racine de la langue, et index.html vit au meme
+   endroit que guides.html : ils fonctionnent tels quels, sans reecriture. */
+function blocParcours(langue) {
+    const source = path.join(RACINE, langue === "fr" ? "" : "en", "guides.html");
+    const html = fs.readFileSync(source, "utf8");
+
+    const debut = html.indexOf('<section id="categories">');
+    if (debut === -1) throw new Error("guides.html : section #categories introuvable");
+    const fin = html.indexOf("</section>", debut);
+    const articles = html.slice(debut, fin).match(/<article>[\s\S]*?<\/article>/g) || [];
+
+    /* Garde-fou : si une carte disparaissait de guides.html, l accueil en
+       montrerait treize sans que rien ne proteste. */
+    const attendu = Object.keys(PARCOURS).length;
+    if (articles.length !== attendu) {
+        throw new Error("guides.html : " + articles.length + " carte(s) pour "
+                      + attendu + " parcours");
+    }
+
+    let sortie = '        <section id="categories">\n';
+    sortie += "            <h2>" + LIBELLES[langue].parcours + "</h2>\n";
+    for (const article of articles) {
+        sortie += "\n            " + article.replace(/\n {12}/g, "\n            ") + "\n";
+    }
+    sortie += "        </section>\n";
+    return sortie;
+}
+
+function blocNouveautes(langue) {
     const L = LIBELLES[langue];
     const guides = guidesRecents(langue);
 
@@ -210,16 +329,21 @@ function bloc(langue) {
 function ecrire(chemin, langue) {
     const complet = path.join(RACINE, chemin);
     const avant = fs.readFileSync(complet, "utf8");
-    const d = avant.indexOf(MARQUE_DEBUT);
-    const f = avant.indexOf(MARQUE_FIN);
-    if (d === -1 || f === -1) {
-        console.error("  " + chemin + " : marqueurs NOUVEAUTES absents");
-        return { erreur: true };
+    let texte = avant;
+
+    for (const [marqueDebut, marqueFin, produire, retrait] of BLOCS) {
+        const d = texte.indexOf(marqueDebut);
+        const f = texte.indexOf(marqueFin);
+        if (d === -1 || f === -1) {
+            console.error("  " + chemin + " : marqueurs " + marqueDebut + " absents");
+            return { erreur: true };
+        }
+        texte = texte.slice(0, d + marqueDebut.length) + "\n"
+              + produire(langue) + retrait + texte.slice(f);
     }
-    const apres = avant.slice(0, d + MARQUE_DEBUT.length) + "\n"
-                + bloc(langue) + "        " + avant.slice(f);
-    if (apres === avant) return { ecrit: null };
-    if (!verifierSeulement) fs.writeFileSync(complet, apres);
+
+    if (texte === avant) return { ecrit: null };
+    if (!verifierSeulement) fs.writeFileSync(complet, texte);
     return { ecrit: chemin };
 }
 

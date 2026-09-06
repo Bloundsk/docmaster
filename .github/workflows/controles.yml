@@ -79,6 +79,13 @@ jobs:
       - name: Bloc de préférences d'affichage identique partout
         run: node scripts/amorcer-preferences.js --verifier
 
+      # Le sélecteur de niveau est dupliqué sur les 112 pages de guide, et
+      # chacune doit marquer SON niveau comme courant. Une page qui en
+      # marquerait un autre resterait parfaitement lisible : le défaut ne se
+      # voit qu'en comparant, ce que personne ne fait à la main.
+      - name: Sélecteur de niveau à jour sur les guides
+        run: node scripts/poser-selecteur-niveau.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le

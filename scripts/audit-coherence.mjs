@@ -405,14 +405,25 @@ const valeurDe = (jeton) => {
 };
 const contientUneCouleur = (v) => /#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(|\b(white|black|transparent|currentColor)\b/i.test(v);
 
-/* Les deux ombres font exception dans l autre sens : elles CONTIENNENT une
-   couleur, mais restent volontairement identiques dans les deux themes — une
-   ombre portee noire translucide fonctionne sur clair comme sur sombre. */
-const OMBRES_VOLONTAIREMENT_NEUTRES = ["--shadow", "--shadow-fort"];
+/* Font exception dans l autre sens : ces jetons CONTIENNENT une couleur, mais
+   restent volontairement identiques dans les deux themes.
+
+   - Les deux ombres : une ombre portee noire translucide fonctionne sur clair
+     comme sur sombre.
+   - Les deux jetons « sur la banniere » : le degrade bleu-violet de l en-tete
+     ne change pas avec le theme, donc ce qui se pose dessus ne doit pas changer
+     non plus. Les inverser en mode sombre rendrait le bouton illisible.
+
+   Ajouter un jeton ici est une decision, pas un raccourci : il faut que la
+   SURFACE sous le jeton soit elle-meme insensible au theme. */
+const IDENTIQUES_DANS_LES_DEUX_THEMES = [
+    "--shadow", "--shadow-fort",
+    "--sur-hero", "--sur-hero-texte",
+];
 
 if (blocSombre) {
     for (const j of jetons) {
-        if (OMBRES_VOLONTAIREMENT_NEUTRES.includes(j)) continue;
+        if (IDENTIQUES_DANS_LES_DEUX_THEMES.includes(j)) continue;
         if (!contientUneCouleur(valeurDe(j))) continue;      // une distance, pas une teinte
         if (!blocSombre[0].includes(j + ":")) {
             signaler("COULEURS", `${j} n'est pas redéfini en mode sombre`);
