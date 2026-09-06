@@ -21,16 +21,39 @@
    reproduire : en mode sombre --primary devient clair, donc tout ce qui s ecrit
    avec devient lisible, y compris ce qui sera ajoute plus tard. Les aplats, eux,
    gardent le bleu franc dont le texte blanc a besoin.
+
+   ---------------------------------------------------------------------------
+   MODE CLAIR « ENCRE DOUCE », 6 septembre 2026.
+
+   Le mode SOMBRE n a pas bouge : le bloc html.dark-mode plus bas garde ses
+   valeurs, et les trois jetons ajoutes ici y recoivent une valeur qui ne change
+   rien a son rendu. C etait la demande, et elle se verifie : barre #1e293b,
+   ombre de carte 0 10px 25px rgba(0,0,0,.4), bord 0px, corps 13,35:1.
+
+   CE QUI N ALLAIT PAS, mesure avant de toucher a quoi que ce soit : en sombre
+   les plans se distinguent par la VALEUR — sol #0f172a contre carte #1e293b,
+   soit 1,22:1 — et l ombre portee n y est pas visible. En clair la carte etait
+   #ffffff sur un sol #f8fafc, soit 1,05:1 : elle n avait aucun bord, et c est
+   l ombre qui faisait tout le travail. De la venait l air de gabarit tout fait.
+
+   Le clair reprend donc le principe du sombre : on creuse l ecart de valeur
+   (1,24:1), on retire les ombres des cartes, et un bord d un pixel prend le
+   relais. Toutes les couleurs qui portent du texte tiennent 7:1 — AAA — sur les
+   trois fonds ou elles peuvent se poser. Elles ont ete obtenues en FONCANT a
+   teinte et saturation constantes : le bleu reste un bleu, il ne pâlit pas.
    --------------------------------------------------------------------------- */
 :root {
-    --primary: #2563eb;
-    --primary-fond: #2563eb;
-    --secondary: #7c3aed;
-    --secondary-fond: #7c3aed;
+    --primary: #0e3a9b;          /* 9,75:1 sur une carte — etait 5,17 */
+    --primary-fond: #134dcd;     /* 7,07:1 avec du blanc dessus */
+    --secondary: #4f11b9;
+    --secondary-fond: #691eea;   /* 7,06:1 avec du blanc dessus */
     /* Le degrade de banniere. Il s assombrit en mode sombre — un bandeau vif
-       en haut d une page sombre eblouit. */
-    --hero-de: #2563eb;
-    --hero-a: #7c3aed;
+       en haut d une page sombre eblouit — et il s assombrit desormais AUSSI en
+       clair : a #2563eb, son sous-titre blanc ne tenait que 5,17:1, et la ligne
+       de chiffres de l accueil, posee a 80 % d opacite, tombait a 3,89 — sous le
+       seuil AA. Les valeurs ci-dessous donnent 9,50 et 9,82. */
+    --hero-de: #31456f;
+    --hero-a: #4a3a72;
 
     /* Ce qui se pose SUR la banniere. Ces deux jetons ne sont pas redefinis en
        mode sombre, et c est voulu : le degrade, lui, ne change pas de camp. Un
@@ -40,25 +63,36 @@
     --sur-hero-texte: #1e293b;
 
     /* Couleurs de statut. Les valeurs d origine — #059669, #d97706 — tombaient
-       a 3,8:1 et 3,2:1 sur fond blanc : elles sont assombries ici, et eclaircies
-       en mode sombre. */
-    --succes: #047857;
-    --alerte: #b91c1c;
-    --attention: #a94e08;
+       a 3,8:1 et 3,2:1 sur fond blanc ; celles qui les ont remplacees tenaient
+       AA sans atteindre AAA. Elles sont assombries ici jusqu a 7:1 sur les trois
+       fonds clairs, et restent eclaircies en mode sombre. */
+    --succes: #034c37;
+    --alerte: #851414;
+    --attention: #6d3205;
     /* L or des favoris. #f59e0b ne donnait que 2,15:1 sur du blanc : une etoile
-       pleine qu on distinguait mal d une etoile vide. */
-    --favori: #d97706;
+       pleine qu on distinguait mal d une etoile vide. #d97706 tenait 3,19, ce
+       qui echouait encore pour du texte. */
+    --favori: #653703;
 
-    --background: #f8fafc;
-    --surface: #ffffff;
+    /* Les trois plans du mode clair. L ecart sol/carte vaut 1,24:1, celui-la
+       meme que le mode sombre pratique depuis toujours (1,22) — c est lui qui
+       donne son bord a une carte, sans ombre portee. */
+    --background: #dfe4ee;
+    --surface: #fbfcfe;
     /* Fond legerement teinte, pose SUR une carte : encadres d exemple, pieges,
        cases de quiz, blocs d exercice. --background n y convenait pas — #f8fafc
        sur du blanc, c est 1,05 de rapport, soit une bordure sans boite. */
-    --teinte: #eef2f7;
-    --text: #1e293b;
-    /* Assombri : sur la teinte des encadres, #64748b tombait a 4,23:1.
-       Cette valeur tient 4,83:1 sur la teinte et 5,43:1 sur une carte. */
-    --muted: #5c6b80;
+    --teinte: #d2d9e6;
+    --text: #151a24;
+    /* Le texte secondaire etait le seul corps de texte du site sous AAA :
+       4,83:1 sur la teinte des encadres. Il tient maintenant 7,05 au pire des
+       trois fonds, et 9,73 sur une carte. */
+    --muted: #3a4351;
+
+    /* La barre de navigation a son propre plan. Elle prenait --surface, donc
+       exactement la couleur des cartes — ecart 1,00 : une bande claire qui ne
+       se distinguait de rien et tirait l oeil en haut de chaque page. */
+    --barre: #eaeff6;
 
     /* --- Le coin bas-droit, partagé ------------------------------------
        Deux éléments flottants s'y installent : le bouton de retour en haut
@@ -75,9 +109,30 @@
     --flottant-ecart: 24px;      /* respiration entre deux flottants */
 
     --radius: 16px;
-    --shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    /* --- Elevation ----------------------------------------------------
+       En clair, les cartes ne flottent plus : c est l ecart de valeur et un
+       bord d un pixel qui les posent. C est le changement le plus visible de
+       cette palette, et le moins couteux a annuler — il tient dans ces trois
+       lignes.
+
+       --shadow-flottant reste, lui, une vraie ombre : il sert aux quatre
+       elements qui SURVOLENT reellement la page — barre collee, champ de
+       recherche, liste de resultats, bouton de retour en haut. Sans cette
+       distinction, retirer les ombres decollait les menus deroulants du
+       contenu qu ils recouvrent. */
+    --shadow: none;
+    --bord-carte: 1px solid #c6cfdf;
+    --shadow-flottant: 0 2px 10px rgba(21,26,36,0.10);
     /* Une ombre plus franche, pour ce qui doit se detacher au survol. */
-    --shadow-fort: 0 18px 40px rgba(15,23,42,0.14);
+    --shadow-fort: 0 12px 28px rgba(21,26,36,0.18);
+
+    /* --- Trois teintes posees SUR un fond, ecrites en dur faute de pouvoir
+       calculer une transparence a partir d un jeton. Elles suivent donc la
+       palette a la main, et le mode sombre garde les siennes. */
+    --surlignage: rgba(14,58,155,0.20);   /* le mot trouve, dans la recherche */
+    --fond-juste: rgba(3,76,55,0.10);     /* case de quiz correcte */
+    --fond-faux: rgba(133,20,20,0.10);    /* case de quiz erronee */
     color-scheme: light;
 }
 
@@ -168,7 +223,7 @@ body {
 h1, h2, h3, .logo { font-family: 'Poppins', Arial, sans-serif; }
 
 /* Navigation */
-.navbar { background: var(--surface); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+.navbar { background: var(--barre); box-shadow: var(--shadow-flottant); border-bottom: var(--bord-carte); position: sticky; top: 0; z-index: 100; }
 /* « nowrap » et non « wrap » : avec le neuvieme onglet, la barre demandait
    1121 px pour 1060 disponibles, et les outils — langue et theme — basculaient
    sur une deuxieme ligne, a gauche. Ils doivent rester en haut a droite. Ce
@@ -295,15 +350,15 @@ html.dark-mode .langue-drapeau { box-shadow: 0 0 0 1px rgba(255, 255, 255, .22);
 
 /* Recherche */
 .search-container { max-width: 600px; margin: -25px auto 0; padding: 0 20px; position: relative; z-index: 50; }
-#search-input { width: 100%; padding: 16px 20px; border: none; border-radius: var(--radius); box-shadow: var(--shadow); font-family: 'Inter', Arial, sans-serif; font-size: 1rem; background: var(--surface); color: var(--text); outline: none; transition: box-shadow .2s; }
+#search-input { width: 100%; padding: 16px 20px; border: var(--bord-carte); border-radius: var(--radius); box-shadow: var(--shadow-flottant); font-family: 'Inter', Arial, sans-serif; font-size: 1rem; background: var(--surface); color: var(--text); outline: none; transition: box-shadow .2s; }
 #search-input:focus { box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
-.search-results { display: none; position: absolute; top: calc(100% + 8px); left: 20px; right: 20px; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; max-height: 300px; overflow-y: auto; }
+.search-results { display: none; position: absolute; top: calc(100% + 8px); left: 20px; right: 20px; background: var(--surface); border: var(--bord-carte); border-radius: var(--radius); box-shadow: var(--shadow-flottant); overflow: hidden; max-height: 300px; overflow-y: auto; }
 .search-results.active { display: block; }
 .search-result-item { display: block; padding: 14px 20px; text-decoration: none; color: var(--text); border-bottom: 1px solid var(--background); transition: background .2s; }
 .search-result-item:last-child { border-bottom: none; }
 .search-result-item:hover { background: var(--background); }
 .search-result-item strong { color: var(--primary); display: block; margin-bottom: 4px; }
-.search-result-item mark { background: rgba(37,99,235,0.25); color: inherit; border-radius: 3px; }
+.search-result-item mark { background: var(--surlignage); color: inherit; border-radius: 3px; }
 .search-result-item p { font-size: .9rem; color: var(--muted); margin: 0; }
 .no-results { padding: 14px 20px; color: var(--muted); }
 .search-hint { position: absolute; right: 34px; top: 16px; font-size: .75rem; color: var(--muted); border: 1px solid var(--muted); border-radius: 4px; padding: 1px 6px; pointer-events: none; }
@@ -344,7 +399,9 @@ header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
 .hero-chiffres {
     margin-top: 6px;
     font-size: .92rem;
-    opacity: .8;
+    /* .8 donnait 3,89:1 sur l ancienne banniere : sous le seuil AA, pour du
+       texte courant. Sur la banniere assombrie, .92 donne 8,33. */
+    opacity: .92;
     font-variant-numeric: tabular-nums;
 }
 .hero-bouton {
@@ -492,20 +549,20 @@ main > section li a:not([class]):hover,
 .lecon-corps a:not([class]):hover { text-decoration-thickness: 2px; }
 
 /* Sommaire (table des matières) */
-.toc { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 25px; margin-bottom: 40px; }
+.toc { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 20px 25px; margin-bottom: 40px; }
 .toc h2 { font-size: 1.1rem; margin-bottom: 12px; }
 .toc ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .toc a { color: var(--primary); text-decoration: none; font-size: .95rem; }
 .toc a:hover { text-decoration: underline; }
 
 /* Encadré "Points clés" */
-.recap-box { background: var(--surface); border-left: 4px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 25px; margin-bottom: 40px; }
+.recap-box { background: var(--surface); border-left: 4px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 22px 25px; margin-bottom: 40px; }
 .recap-box h2 { font-size: 1.1rem; margin-bottom: 12px; }
 .recap-box ul { padding-left: 20px; }
 .recap-box li { margin-bottom: 6px; }
 
 /* Cartes */
-article { background: var(--surface); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 20px; transition: transform .3s, box-shadow .3s; animation: fadeUp .6s ease backwards; }
+article { background: var(--surface); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); margin-bottom: 20px; transition: transform .3s, box-shadow .3s; animation: fadeUp .6s ease backwards; }
 article:hover { transform: translateY(-8px); box-shadow: var(--shadow-fort); }
 article h3 { color: var(--primary); margin-bottom: 10px; }
 
@@ -622,6 +679,7 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: var(--bord-carte);
     margin-bottom: 16px;
     overflow: hidden;
 }
@@ -815,6 +873,7 @@ main section li { margin-bottom: 8px; }
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: var(--bord-carte);
     padding: 20px 22px;
     text-align: center;
 }
@@ -832,6 +891,7 @@ main section li { margin-bottom: 8px; }
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: var(--bord-carte);
     padding: 20px 24px;
     margin-bottom: 16px;
 }
@@ -863,6 +923,7 @@ main section li { margin-bottom: 8px; }
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: var(--bord-carte);
     padding: 34px 28px;
     text-align: center;
     color: var(--muted);
@@ -897,12 +958,12 @@ code {
 .copy-link-btn:hover { border-color: var(--primary); color: var(--primary); }
 
 /* Marquer comme lu */
-.mark-read-box { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px 25px; margin: 40px 0; display: flex; align-items: center; gap: 12px; }
+.mark-read-box { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 20px 25px; margin: 40px 0; display: flex; align-items: center; gap: 12px; }
 .mark-read-box input { width: 20px; height: 20px; accent-color: var(--primary-fond); cursor: pointer; }
 .mark-read-box label { cursor: pointer; font-weight: 500; }
 
 /* Quiz */
-.quiz-box { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 25px; margin: 40px 0; }
+.quiz-box { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 25px; margin: 40px 0; }
 .quiz-box h2 { font-size: 1.4rem; margin-bottom: 20px; }
 .quiz-question { margin-bottom: 24px; }
 .quiz-question p { font-weight: 600; margin-bottom: 10px; }
@@ -925,9 +986,9 @@ code {
 .quiz-option.incorrect { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .quiz-option.correct::after,
 .quiz-option.incorrect::after { font-weight: 700; flex-shrink: 0; }
-.quiz-option.correct { border-color: var(--succes); background: rgba(34,197,94,0.12); }
+.quiz-option.correct { border-color: var(--succes); background: var(--fond-juste); }
 .quiz-option.correct::after { content: "✓"; color: var(--succes); }
-.quiz-option.incorrect { border-color: var(--alerte); background: rgba(239,68,68,0.12); }
+.quiz-option.incorrect { border-color: var(--alerte); background: var(--fond-faux); }
 .quiz-option.incorrect::after { content: "✗"; color: var(--alerte); }
 .quiz-score { font-weight: 600; margin-top: 10px; }
 
@@ -982,7 +1043,7 @@ code {
 
 /* Navigation précédent/suivant + guides similaires */
 .guide-nav { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin: 40px 0; }
-.guide-nav a { flex: 1; min-width: 200px; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 20px; text-decoration: none; color: var(--text); transition: transform .2s; }
+.guide-nav a { flex: 1; min-width: 200px; background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 18px 20px; text-decoration: none; color: var(--text); transition: transform .2s; }
 .guide-nav a:hover { transform: translateY(-4px); }
 .guide-nav .label { font-size: .8rem; color: var(--muted); display: block; margin-bottom: 4px; }
 .guide-nav .next { text-align: right; }
@@ -990,7 +1051,7 @@ code {
 .related-guides { margin: 40px 0; }
 .related-guides h2 { font-size: 1.4rem; margin-bottom: 16px; }
 .related-list { display: flex; gap: 16px; flex-wrap: wrap; }
-.related-list a { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 18px; text-decoration: none; color: var(--text); font-weight: 500; transition: transform .2s; }
+.related-list a { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 14px 18px; text-decoration: none; color: var(--text); font-weight: 500; transition: transform .2s; }
 .related-list a:hover { transform: translateY(-4px); color: var(--primary); }
 
 /* Exercices et simulateurs.
@@ -1065,7 +1126,7 @@ code {
    chaque niveau suppose le precedent acquis, et un lecteur d'ecran doit
    l'entendre. Le numero visible vient de <ol>, pas d'un texte decoratif. */
 .parcours { list-style: none; counter-reset: etape; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 20px; }
-.parcours .etape { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 24px; border-left: 5px solid var(--primary); }
+.parcours .etape { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 22px 24px; border-left: 5px solid var(--primary); }
 .parcours .etape-lien { display: block; text-decoration: none; color: inherit; }
 .parcours .etape-lien:hover .etape-titre { color: var(--primary); text-decoration: underline; }
 .parcours .etape-rang { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; }
@@ -1091,7 +1152,7 @@ code {
 /* Bouton retour en haut */
 /* Ses distances viennent des jetons du coin bas-droit, qu'il partage avec la
    mascotte : voir la note en tête de la palette. */
-#back-to-top { position: fixed; bottom: var(--flottant-marge); right: var(--flottant-marge); width: var(--flottant-taille); height: var(--flottant-taille); border-radius: 50%; background: var(--primary-fond); color: white; border: none; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow); display: none; align-items: center; justify-content: center; z-index: 90; }
+#back-to-top { position: fixed; bottom: var(--flottant-marge); right: var(--flottant-marge); width: var(--flottant-taille); height: var(--flottant-taille); border-radius: 50%; background: var(--primary-fond); color: white; border: none; font-size: 1.2rem; cursor: pointer; box-shadow: var(--shadow-flottant); display: none; align-items: center; justify-content: center; z-index: 90; }
 #back-to-top.visible { display: flex; }
 
 /* Footer */
@@ -1125,6 +1186,25 @@ html.dark-mode {
     --hero-de: #1e3a8a;
     --hero-a: #4c1d95;
     --shadow-fort: 0 18px 40px rgba(0,0,0,0.55);
+
+    /* Les jetons apparus avec le mode clair « encre douce ». Ils sont regles
+       ici pour que le sombre rende EXACTEMENT comme avant leur arrivee :
+
+         --barre           reprend --surface, la valeur qu il avait en dur ;
+         --bord-carte      aucun bord : ici les cartes se detachent deja par la
+                           valeur, un liseré serait un ajout visible ;
+         --shadow-flottant reprend mot pour mot l ancien --shadow ;
+         les trois teintes reprennent les rgba qui etaient ecrits dans les
+         regles, et qui valaient donc pour les deux themes.
+
+       Verifie a la bascule : barre #1e293b, ombre 0 10px 25px rgba(0,0,0,.4),
+       bord 0px, corps 13,35:1, titre de lecon 7,00:1. */
+    --barre: var(--surface);
+    --bord-carte: none;
+    --shadow-flottant: 0 10px 25px rgba(0,0,0,0.4);
+    --surlignage: rgba(37,99,235,0.25);
+    --fond-juste: rgba(34,197,94,0.12);
+    --fond-faux: rgba(239,68,68,0.12);
     color-scheme: dark;
 }
 html.dark-mode .theme-toggle { border-color: var(--muted); color: var(--text); }
@@ -1219,6 +1299,7 @@ html { background: var(--background); }
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: var(--bord-carte);
     padding: 16px 20px;
     /* Un liseré sur la tranche : il distingue d'un coup d'œil un lien qui
        sort du site des liens internes, sans ajouter de pictogramme. */
@@ -1273,6 +1354,7 @@ html { background: var(--background); }
     background: var(--surface);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    border: var(--bord-carte);
     padding: 18px 22px;
     border-left: 3px solid var(--secondary);
     margin-bottom: 18px;
