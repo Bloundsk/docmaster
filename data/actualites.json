@@ -1,6 +1,18 @@
 {
-  "maj": "2026-09-05T11:19:57.224Z",
+  "maj": "2026-09-06T11:43:06.918Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
+      "titre": "Mots de passe, identifiants, emails... une nouvelle fuite massive de données secoue la France",
+      "source": "01net.com",
+      "date": "2026-09-06",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-06"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQby13MnNpOGlEX0lWRXRVZEdoeGNkOUNWY3lfaUZQZk5xUzBQci02TTN6bUF0djlYWmEzUmJxRFFHX3BDcXRKcThHemdFV3VjRnlBUm80eUY1cXJPZjNOZWhFbldDWXd3WFhnb1FON0dvV2p5Zkw0SmRaQ2lfYV96cGlFWVRjektLTTU0eGhrcTd4VzhpdzR1TE1GOXMyX3F0ZGpLN1Jodzhrb1dWeFpZT0hfNTJKazhHUTBwWnlvamhHaDBvVngtSlUwZTJRQkhjUEVpUnRtTQ?oc=5",
       "titre": "Un homme réclamait ses données personnelles auprès de son département, le juge refuse de l'aider",
@@ -275,18 +287,6 @@
       "ancre": "choisir-un-modele",
       "section": "⚖️ Choisir un modèle",
       "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOcFktTTE2VTZlM01jdzNxVFU5VC1ReXFUQXFaS1cyMF9IbTFHNTJYWGRFSlo4NndOaVh0MnhGZ0k2Mk56aGl0anVUTXJXaXJVLUJSV2owNEl1Y21XeUNDejFZTjFZODhMazhRQnhaTlMySVVMVVI4MlNSMEg5aENUSGNsN2h1bzVEbUw5V0thTEFSTVNmbDIxa3NOT1JRbzJ6ZG5IeWlxMTBwakhtTFVqdEZPTUR6X3gwOTNHdWRvc3FuLWNkMldyMlBBLUYzbFVnb1BBZjQxdXJzX3NlYmNQb280ZFdzbFhqOHZ5cTBfbVFCV3Rxa3J1MGpUNVJvdw?oc=5",
-      "titre": "La liquidation des obligations à l’échelle mondiale se poursuit alors que les anticipations de hausse des taux s’intensifient",
-      "source": "Morningstar",
-      "date": "2026-09-02",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
       "publie": "2026-09-03"
     }
   ]
