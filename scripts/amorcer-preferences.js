@@ -81,11 +81,34 @@ const BLOC = `    <script>
    version, qui est exactement ce que ce controle doit attraper. */
 const MOTIF = /[ \t]*<script>\s*\/\* Applique le theme[\s\S]*?<\/script>/;
 
+/* LES POLICES DU SITE, en un seul endroit.
+
+   Ce lien etait ecrit a la main dans les 133 pages, toutes identiques : 133
+   endroits a corriger le jour ou la typographie change, et aucun controle pour
+   le dire. Il vit ici parce que ce module est deja celui qui detient ce qui
+   doit etre IDENTIQUE dans chaque <head> ; appliquer-identite.js le pose sur
+   les pages existantes, publier-podcasts.js l'ecrit dans celles qu'il cree.
+
+   Deux familles, et le moins de graisses possible — c'est ce qui decide du
+   poids reellement telecharge, mesure sur le sous-ensemble latin :
+
+     Inter, variable ..... 47 Ko, un seul fichier pour 400 a 700
+     Literata 700 ........ 21 Ko
+     ----------------------------
+     total ............... 68 Ko    (Poppins seule en pesait 30, en 4 fichiers)
+
+   Literata n'est demandee qu'en 700 : c'est la seule graisse que les titres
+   emploient. Lui demander le 400 ajouterait 17 Ko que personne n'afficherait. */
+const POLICES = "https://fonts.googleapis.com/css2"
+    + "?family=Inter:wght@400;500;700"
+    + "&family=Literata:wght@700"
+    + "&display=swap";
+
 /* Ce fichier est AUSSI la source du bloc pour publier-podcasts.js, qui ecrit
    les pages de podcasts de zero et en avait sa propre copie. Deux copies, c'est
    deux versions le jour ou l'une bouge : c'est arrive des la premiere
    modification, et le controle des podcasts l'a signale immediatement. */
-module.exports = { BLOC };
+module.exports = { BLOC, POLICES };
 
 if (require.main !== module) return;
 

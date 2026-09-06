@@ -108,6 +108,32 @@
     --flottant-taille: 46px;     /* côté du bouton de retour en haut */
     --flottant-ecart: 24px;      /* respiration entre deux flottants */
 
+    /* --- Les deux ecritures --------------------------------------------
+       Literata aux titres, Inter au texte. Poppins est retiree : c etait une
+       geometrique neutre, de la meme famille de voix qu Inter, si bien que la
+       hierarchie ne tenait qu a la taille et a la graisse. Un serif de titre
+       donne une voix DIFFERENTE du texte — c est le contraste qui hierarchise.
+       Literata est dessinee pour l ecran, et seule sa graisse 700 est chargee :
+       21 Ko contre les 30 de Poppins.
+
+       TOUT passe par ces deux variables, et c est le point important. Une
+       declaration « font-family » posee sur un element bat TOUJOURS l heritage.
+       Le reglage « police lisible » du panneau de confort agissait sur body et
+       sur les titres, en comptant sur l heritage pour le reste : les vingt-deux
+       regles qui declaraient une police lui echappaient. Mesure sur la page en
+       ligne, reglage actif : DIX types d elements gardaient Poppins ou Inter —
+       boutons, etiquettes d encadre, en-tetes de tableau, surtitres de quiz.
+
+       Le reglage de confort reecrit desormais ces deux variables, en bas de
+       fichier. Plus rien ne peut lui echapper, y compris ce qui sera ajoute
+       plus tard.
+
+       Elles ne sont PAS redefinies en mode sombre : une police n a pas de
+       theme. C est aussi pourquoi ce changement-ci se voit dans les deux, a la
+       difference de la palette. */
+    --police-titre: 'Literata', Georgia, serif;
+    --police-texte: 'Inter', Arial, sans-serif;
+
     --radius: 16px;
 
     /* --- Elevation ----------------------------------------------------
@@ -208,8 +234,15 @@ input:focus-visible {
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Les champs et les boutons n'heritent PAS de la police : la feuille de style
+   du navigateur leur impose la sienne, et l'heritage ne les atteint jamais.
+   Mesure faite avec le reglage « police lisible » actif : quatre boutons
+   restaient en Arial — le theme, « Copier le lien », l'etoile des favoris et le
+   retour en haut. Cette ligne les rend au reste du site, et au reglage. */
+button, input, select, textarea { font-family: inherit; }
+
 body {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: var(--police-texte);
     background: var(--background);
     color: var(--text);
     line-height: 1.6;
@@ -220,7 +253,7 @@ body {
     position: relative;
 }
 
-h1, h2, h3, .logo { font-family: 'Poppins', Arial, sans-serif; }
+h1, h2, h3, .logo { font-family: var(--police-titre); }
 
 /* Navigation */
 .navbar { background: var(--barre); box-shadow: var(--shadow-flottant); border-bottom: var(--bord-carte); position: sticky; top: 0; z-index: 100; }
@@ -350,7 +383,7 @@ html.dark-mode .langue-drapeau { box-shadow: 0 0 0 1px rgba(255, 255, 255, .22);
 
 /* Recherche */
 .search-container { max-width: 600px; margin: -25px auto 0; padding: 0 20px; position: relative; z-index: 50; }
-#search-input { width: 100%; padding: 16px 20px; border: var(--bord-carte); border-radius: var(--radius); box-shadow: var(--shadow-flottant); font-family: 'Inter', Arial, sans-serif; font-size: 1rem; background: var(--surface); color: var(--text); outline: none; transition: box-shadow .2s; }
+#search-input { width: 100%; padding: 16px 20px; border: var(--bord-carte); border-radius: var(--radius); box-shadow: var(--shadow-flottant); font-family: var(--police-texte); font-size: 1rem; background: var(--surface); color: var(--text); outline: none; transition: box-shadow .2s; }
 #search-input:focus { box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
 .search-results { display: none; position: absolute; top: calc(100% + 8px); left: 20px; right: 20px; background: var(--surface); border: var(--bord-carte); border-radius: var(--radius); box-shadow: var(--shadow-flottant); overflow: hidden; max-height: 300px; overflow-y: auto; }
 .search-results.active { display: block; }
@@ -756,7 +789,7 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
 .lecon-corps p:last-child { margin-bottom: 0; }
 .lecon-corps ul, .lecon-corps ol { margin: 0 0 14px 22px; }
 .lecon-corps li { margin-bottom: 7px; }
-.lecon-corps h4 { margin: 22px 0 10px; font-family: 'Poppins', sans-serif; font-size: 1.02rem; }
+.lecon-corps h4 { margin: 22px 0 10px; font-family: var(--police-titre); font-size: 1.02rem; }
 .lecon-corps > *:first-child { margin-top: 0; }
 
 /* Commande "tout deplier" */
@@ -767,7 +800,7 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
     color: var(--muted);
     border-radius: 999px;
     padding: 6px 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--police-texte);
     font-size: .85rem;
     cursor: pointer;
     transition: color .2s, border-color .2s;
@@ -776,11 +809,11 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
 
 /* Exemple chiffre : le passage du concept au concret */
 .exemple { background: var(--teinte); border-left: 4px solid var(--secondary); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
-.exemple .titre { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--secondary); margin-bottom: 8px; }
+.exemple .titre { display: block; font-family: var(--police-titre); font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--secondary); margin-bottom: 8px; }
 
 /* Erreur frequente */
 .piege { background: var(--teinte); border-left: 4px solid var(--attention); border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
-.piege .titre { display: block; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--attention); margin-bottom: 8px; }
+.piege .titre { display: block; font-family: var(--police-titre); font-weight: 600; font-size: .82rem; text-transform: uppercase; letter-spacing: .05em; color: var(--attention); margin-bottom: 8px; }
 
 /* A retenir : la phrase que le lecteur doit garder */
 .retenir { background: linear-gradient(135deg, var(--primary-fond), var(--secondary-fond)); color: white; border-radius: 10px; padding: 14px 20px; margin: 18px 0 0; font-weight: 500; }
@@ -791,7 +824,7 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
 article.lecon table, .table-scroll table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: .94rem; }
 article.lecon th, article.lecon td,
 .table-scroll th, .table-scroll td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--background); vertical-align: top; }
-article.lecon th, .table-scroll th { font-family: 'Poppins', sans-serif; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+article.lecon th, .table-scroll th { font-family: var(--police-titre); font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
 /* Tableaux en deux colonnes libelle/valeur : le libelle ne doit pas s'etirer */
 .table-scroll th { white-space: nowrap; }
 .table-scroll { overflow-x: auto; }
@@ -811,7 +844,7 @@ main [id] { scroll-margin-top: var(--decalage-ancre); }
 }
 
 /* Sous-titres hors blocs de cours (sections des pages legales) */
-main section h3 { color: var(--primary); font-family: 'Poppins', sans-serif; font-size: 1.05rem; margin: 22px 0 10px; }
+main section h3 { color: var(--primary); font-family: var(--police-titre); font-size: 1.05rem; margin: 22px 0 10px; }
 main section ul { margin: 12px 0 12px 22px; }
 main section li { margin-bottom: 8px; }
 
@@ -851,7 +884,7 @@ main section li { margin-bottom: 8px; }
     border: 1px solid var(--muted);
     padding: 6px 12px;
     border-radius: 999px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--police-texte);
 }
 .btn-favori-guide:hover,
 .btn-favori-carte:hover { border-color: var(--favori); transform: none; }
@@ -879,7 +912,7 @@ main section li { margin-bottom: 8px; }
 }
 .espace-stat .nombre {
     display: block;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--police-titre);
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary);
@@ -1026,7 +1059,7 @@ code {
 }
 
 .quiz-surtitre {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--police-titre);
     font-weight: 700;
     font-size: 1.35rem;
     color: var(--primary);
@@ -1035,7 +1068,7 @@ code {
 }
 
 .quiz-titre {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--police-titre);
     font-weight: 600;
     font-size: .95rem;
     color: var(--muted);
@@ -1081,7 +1114,7 @@ code {
    le fond distinct et la bordure, sur le modèle du bloc de quiz. */
 .pratique { background: var(--teinte); border: 2px solid var(--primary); border-radius: var(--radius); padding: 22px 24px; margin: 26px 0; }
 .pratique-surtitre { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); margin-bottom: 4px; }
-.pratique-entete h4 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin: 0 0 6px; }
+.pratique-entete h4 { font-family: var(--police-titre); font-size: 1.2rem; margin: 0 0 6px; }
 .pratique-intro { margin: 0 0 16px; color: var(--muted); font-size: .95rem; }
 
 .pratique-champs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px 20px; margin-bottom: 18px; }
@@ -1151,7 +1184,7 @@ code {
 .parcours .etape-lien { display: block; text-decoration: none; color: inherit; }
 .parcours .etape-lien:hover .etape-titre { color: var(--primary); text-decoration: underline; }
 .parcours .etape-rang { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; }
-.parcours .etape-titre { display: block; font-family: 'Poppins', sans-serif; font-size: 1.45rem; font-weight: 700; margin-bottom: 6px; }
+.parcours .etape-titre { display: block; font-family: var(--police-titre); font-size: 1.45rem; font-weight: 700; margin-bottom: 6px; }
 .parcours .etape-resume { display: block; color: var(--muted); margin-bottom: 14px; }
 .parcours .etape-contenu { margin: 0 0 14px; padding-left: 22px; }
 .parcours .etape-contenu li { margin-bottom: 5px; }
@@ -1338,7 +1371,7 @@ html { background: var(--background); }
     border-left: 3px solid var(--primary);
 }
 .actu-titre {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--police-titre);
     font-weight: 600;
     color: var(--text);
     text-decoration: none;
@@ -1773,10 +1806,9 @@ html.confort-espacement-2 main dd, html.confort-espacement-2 main blockquote {
    ouvertes : elles agissent AVANT qu'Atkinson Hyperlegible soit
    téléchargée, et si le téléchargement échoue, le visiteur garde
    l'essentiel du gain au lieu de ne rien voir changer. */
-html.confort-police-1 body,
-html.confort-police-1 h1, html.confort-police-1 h2, html.confort-police-1 h3,
-html.confort-police-1 h4, html.confort-police-1 .logo {
-    font-family: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+html.confort-police-1 {
+    --police-titre: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+    --police-texte: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
 }
 
 /* Le panneau. Bâti sur <details>, comme le sélecteur de langue : il
