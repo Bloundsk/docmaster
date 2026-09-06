@@ -1,5 +1,61 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Le signe agrandi plutôt que la couleur délavée
+
+Ludo a pris la sortie que je lui avais décrite sans la prendre moi-même.
+
+### Ce que j'avais manqué
+
+Le seuil de **7:1 vaut pour le texte courant**. Au-delà de **18,66 px en gras**,
+il tombe à **4,5**. Le glyphe ✓ / ✗ du quiz faisait 15,2 px — juste sous la
+limite. Autrement dit : **c'est le dessin qui était trop petit, pas la couleur
+qui était trop foncée.**
+
+J'avais délavé le rouge et le vert pour atteindre 7:1, et écrit dans l'entrée
+précédente qu'« aucun rouge franc ne tient ce seuil sur un fond sombre ». C'était
+vrai *à taille de texte courant*, et faux dès qu'on agrandit le signe. La
+conclusion était trop large ; elle est corrigée là-bas.
+
+### Ce qui a été fait
+
+| | Avant | Après |
+|---|---|---|
+| `--alerte` sombre | `#ffb0b0` | **`#f87171`** — la valeur d'origine |
+| `--succes` sombre | `#6ee7b7` | **`#34d399`** — la valeur d'origine |
+| Glyphe | 15,2 px | **20,8 px**, gras — grand texte, seuil 4,5 |
+| Ratios en sombre | — | ✗ **4,78** · ✓ **6,16** |
+| Ratios en clair | — | ✗ **8,33** · ✓ **8,82** |
+
+Le marqueur se voit de plus loin **et** garde sa couleur. Un compromis
+chromatique n'aurait donné ni l'un ni l'autre.
+
+### Un défaut introduit, puis corrigé
+
+À `1.35rem` avec un interligne de 1, le signe agrandissait la case de **3 px** :
+répondre faisait sauter la liste sous le doigt. Ni `align-items: center` ni
+`align-self: center` n'y changeaient rien — c'est la **hauteur de ligne du
+signe** qui commande la hauteur de la case.
+
+Douze combinaisons taille / interligne mesurées. **`1.3rem` avec un interligne
+de `.8`** donne un saut de **zéro** tout en restant à 20,8 px, donc au-dessus du
+seuil de grand texte même si le visiteur réduit la police de son navigateur.
+
+Le défaut n'apparaissait pas au calcul. Il s'est vu en comparant la hauteur
+d'une case répondue à celle d'une case vierge, sur la page réelle.
+
+### Ce qu'il faut en retenir
+
+**Quand une couleur ne passe pas, regarder la taille avant de délaver la
+couleur.** Les seuils de contraste dépendent du corps et de la graisse : un
+élément qui échoue à 15 px peut passer à 19 px sans changer de teinte. C'est
+presque toujours la meilleure correction — elle sert aussi ceux qui voient bien.
+
+### Vérifié
+
+Treize contrôles, géométrie comprise, lancés avant la poussée : 760 mesures,
+aucune anomalie. Ratios et hauteurs mesurés sur une vraie page de quiz, dans les
+deux thèmes.
+
 ## 2026-09-06 — Les deux états du quiz en mode sombre, et deux erreurs de mesure
 
 Seule exception demandée à la règle « le mode sombre ne bouge pas », posée le
@@ -43,6 +99,15 @@ classes `.correct` et `.incorrect` sur de vrais boutons.
 disponible — saturation 1,00 — à la clarté qu'exige 7:1 sur ce fond. Aucun rouge
 franc ne tient ce seuil sur un fond sombre : c'est l'arithmétique, pas un choix
 esthétique. La seule autre sortie serait d'accepter AA sur ce glyphe.
+
+> **Correction du 6 septembre 2026, plus tard dans la journée.** Ce paragraphe
+> conclut trop large. « Aucun rouge franc ne tient ce seuil sur un fond sombre »
+> n'est vrai qu'à **taille de texte courant** : au-delà de 18,66 px en gras, le
+> seuil tombe à 4,5, et `#f87171` y passe avec 4,78. Ludo a demandé cette
+> solution — le signe a été agrandi à 20,8 px et **les deux couleurs d'origine
+> sont revenues**. Le rose décrit ci-dessus n'existe plus. Voir l'entrée « Le
+> signe agrandi plutôt que la couleur délavée ».
+
 
 ### Vérifié
 

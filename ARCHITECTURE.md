@@ -566,6 +566,13 @@ Trois pièges à ne pas rouvrir :
 - **Une couleur ne doit jamais porter seule une information.** Les quiz ne
   signalaient juste et faux que par du vert et du rouge ; un ✓ et un ✗ doublent
   désormais le signal.
+- **Quand une couleur ne passe pas, regarder la TAILLE avant de la délaver.**
+  Le seuil de 7:1 vaut pour le texte courant ; au-delà de 18,66 px en gras il
+  tombe à 4,5. Le ✓ / ✗ du quiz faisait 15,2 px et échouait : agrandi à 20,8 px,
+  il passe avec les couleurs d'origine. Délaver aurait coûté la couleur *et*
+  laissé un signe minuscule. Attention au revers : un glyphe plus haut que la
+  ligne de texte agrandit sa case — d'où l'interligne de `.8` sur ce
+  pseudo-élément, sans lequel répondre faisait sauter la liste de 3 px.
 
 La vérification se fait sur le DOM réel, dans un navigateur, les deux thèmes et
 quiz répondus : le calcul statique ne voit ni les fonds hérités, ni les voiles
