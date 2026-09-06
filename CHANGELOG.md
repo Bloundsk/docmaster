@@ -1,5 +1,118 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Trois réglages de confort, après avoir mesuré que sept étaient inutiles
+
+### Le point de départ
+
+Une capture d'écran de FACIL'iti, surcouche d'accessibilité commerciale, et sa
+liste de dix profils : dyslexie, fatigue visuelle, mode nuit, trois daltonismes,
+senior, cataracte, malvoyance, geste imprécis. La demande : faire ces
+ajustements, et laisser le visiteur choisir **ou** suivre les réglages de son
+ordinateur.
+
+### Le « ou » n'en était pas un
+
+Le site avait déjà tranché, et c'est écrit dans `theme.js` depuis des mois :
+
+> le choix explicite du visiteur, fait via le bouton, prime sur tout. En son
+> absence, on suit le réglage de son système.
+
+Les deux, donc, avec le choix qui gagne. Il fallait étendre cette règle, pas en
+inventer une autre.
+
+### Ce qui marchait déjà, mesuré et non déduit
+
+| Profil demandé | État réel |
+|---|---|
+| Mode nuit | Fait : bouton, plus suivi du système en direct |
+| Senior, Malvoyance | Fait : le site suit la taille de police du navigateur |
+| Fatigue visuelle, Cataracte | Rien à réparer : contrastes de 5,17 à 16,3 |
+| *(non demandé)* Mouvement réduit | Fait, en CSS et en JS |
+
+La taille du texte méritait une vérification, pas une déduction. `style.css`
+n'a **aucune** taille en pixels et 84 en `rem` — mais un CSS peut être écrit en
+`rem` et casser quand même. Mesuré sur le site en ligne : racine passée de 16 à
+24 px, le paragraphe suit, la colonne de texte passe de 626 à 740 px, **zéro
+débordement**.
+
+Les contrastes ont été calculés sur les cinq styles de texte, dans les deux
+thèmes. Le plus faible — les liens en mode clair — tient **5,17** quand le seuil
+exigé est 4,5. Il n'y avait pas de problème de contraste à régler.
+
+### Une fausse alerte, rattrapée avant d'avoir cassé quoi que ce soit
+
+J'ai d'abord annoncé **27 cibles cliquables trop petites**, donc un vrai défaut
+derrière « geste imprécis », et j'ai écrit que je le corrigerais dans tous les
+cas.
+
+C'était faux. La norme prévoit une **exception d'espacement** : une cible plus
+petite que 24 px passe si ses voisines sont assez éloignées. Exception
+appliquée : **zéro échec** sur grand écran.
+
+Restaient trois échecs au téléphone. Faux aussi : leurs « voisines » étaient des
+liens de contenu situés **sous** la barre de navigation, qui est collante,
+opaque et au premier plan. Vérifié en demandant au navigateur ce qui est
+réellement cliquable à ces coordonnées — deux des trois n'étaient même pas dans
+la fenêtre.
+
+Sans cette contre-vérification, le CSS des 133 pages était modifié pour rien.
+
+### Ce qui a été ajouté
+
+Trois réglages, choisis sur un seul principe : **n'offrir que ce que le
+navigateur ne sait pas faire.**
+
+| Réglage | Valeurs |
+|---|---|
+| Interligne | normal · grand · maximum |
+| Espacement des mots et des lettres | normal · grand · maximum |
+| Police plus lisible | normal · lisible |
+
+L'espacement vient en premier parce que c'est celui dont l'effet est le mieux
+établi sur la lecture dyslexique — davantage que les polices dites « pour
+dyslexiques », dont les études se contredisent. La police est offerte quand
+même, en dernier, et sans promesse.
+
+**Pas de réglage de taille du texte.** Le navigateur le fait déjà, mieux, et le
+visiteur l'emporte de site en site. Le panneau le dit en une phrase : sans elle,
+quelqu'un l'ouvrirait pour agrandir le texte, ne trouverait pas, et repartirait
+en croyant que le site n'y peut rien.
+
+**Pas de filtre daltonisme.** Recolorer la page de quelqu'un qui voit ses
+couleurs de façon stable ne l'aide pas. La seule réponse honnête est que le site
+ne dise jamais une information par la couleur seule — ce qu'il faisait déjà pour
+la langue active. Les nouveaux boutons suivent la même règle : fond, cadre **et**
+coche.
+
+### Le détail qui coûte le plus cher et qui ne se voit pas
+
+Les réglages doivent s'appliquer **avant le premier affichage**, sinon le texte
+s'affiche serré puis saute — précisément chez les gens qui en ont besoin. Ça
+impose un bloc de code inline dans les 133 pages, donc un générateur et son
+contrôle : `scripts/amorcer-preferences.js`, branché dans `controles.yml`.
+
+Le contrôle a été prouvé avant d'être annoncé : défaut réinjecté dans une page,
+il échoue, code de sortie 1.
+
+Il a servi dans la minute. `publier-podcasts.js` avait sa **propre copie** du
+bloc, qui a divergé dès la première modification. Les deux copies sont ramenées
+à une source unique.
+
+Mesure finale : **cumul de décalage de mise en page à 0** au chargement, réglages
+conservés d'une page à l'autre.
+
+### Vérifié où
+
+Français et anglais, thème clair et sombre, 375 px et grand écran, page normale
+et page générée, puis sur le site public une fois déployé.
+
+### Au passage
+
+`ARCHITECTURE.md` annonçait neuf contrôles bloquants alors qu'il y en avait dix.
+Ils sont onze désormais, la liste est corrigée, et la dérive est signalée dans le
+fichier : une liste tenue à la main se périme dès qu'on ajoute un contrôle sans
+y penser. La vérité est dans `controles.yml`.
+
 ## 2026-09-06 — Les titres disent enfin ce qu'il y a dans la page
 
 ### Ce qui n'allait pas
