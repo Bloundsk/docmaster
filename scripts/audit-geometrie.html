@@ -146,7 +146,7 @@ async function controler(d, w, largeur, nomPage) {
     const sortants = [...d.querySelectorAll("body *")].filter((e) => {
         const b = e.getBoundingClientRect();
         if (b.width === 0) return false;
-        if (e.closest(".table-scroll, .nav-links")) return false;   // défilement prévu
+        if (e.closest(".table-scroll, .nav-links, .niveaux")) return false;   // défilement prévu
         if (getComputedStyle(e).position === "absolute") return false;  // lien d'évitement
         return b.right > largeur + 1;
     });
