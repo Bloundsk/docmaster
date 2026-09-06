@@ -527,11 +527,31 @@ Deux familles de bleu, et c'est la clef :
 
 | Jeton | Rôle | Clair | Sombre |
 |---|---|---|---|
-| `--primary` | ce qui s'**écrit** : liens, titres de cartes, chiffres | `#2563eb` | `#8ab4ff` |
-| `--primary-fond` | les **aplats**, qui portent du texte blanc | `#2563eb` | `#2563eb` |
-| `--hero-de` / `--hero-a` | le dégradé de bannière | bleu → violet | bleus assombris |
-| `--teinte` | fond posé **sur** une carte : exemples, pièges, quiz | `#eef2f7` | `#0f172a` |
+| `--primary` | ce qui s'**écrit** : liens, titres de cartes, chiffres | `#0e3a9b` | `#8ab4ff` |
+| `--primary-fond` | les **aplats**, qui portent du texte blanc | `#134dcd` | `#2563eb` |
+| `--hero-de` / `--hero-a` | le dégradé de bannière | bleus assombris | bleus assombris |
+| `--teinte` | fond posé **sur** une carte : exemples, pièges, quiz | `#d2d9e6` | `#0f172a` |
 | `--succes` `--alerte` `--attention` `--favori` | les statuts | foncés | éclaircis |
+
+**Le mode clair a été refait le 6 septembre 2026 ; le sombre n'a pas bougé.**
+Le diagnostic n'était pas chromatique : en sombre les plans se distinguent par
+la **valeur** — sol `#0f172a` contre carte `#1e293b`, soit 1,22:1 — et l'ombre
+portée n'y est pas visible. En clair, la carte était `#ffffff` sur un sol
+`#f8fafc` : **1,05:1**, aucun bord, et l'ombre faisait tout le travail. Le clair
+suit désormais le même principe : écart porté à 1,24:1, ombres retirées des
+cartes, un bord d'un pixel à la place. Tout texte y tient **7:1 (AAA)**.
+
+Trois jetons portent ce changement, et chacun a un miroir qui neutralise son
+effet en sombre :
+
+| Jeton | Clair | Sombre | Pourquoi |
+|---|---|---|---|
+| `--barre` | `#eaeff6` | `var(--surface)` | La barre prenait `--surface`, donc la couleur exacte des cartes : écart 1,00. |
+| `--bord-carte` | `1px solid #c6cfdf` | `none` | Remplace l'ombre. En sombre la valeur suffit déjà. |
+| `--shadow-flottant` | discrète | l'ancien `--shadow` | Quatre éléments survolent vraiment la page : barre, champ et liste de recherche, retour en haut. Sans ce jeton, retirer les ombres les décollait du contenu. |
+
+**Le rayon, les polices et les emojis restent partagés** par les deux thèmes :
+y toucher modifierait le sombre. C'est une décision séparée, pas un oubli.
 
 Ce qui s'écrit s'éclaircit en mode sombre, donc tout texte devient lisible d'un
 coup — **y compris ce qui sera ajouté plus tard**. Les aplats gardent le bleu

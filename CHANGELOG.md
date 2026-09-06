@@ -1,5 +1,108 @@
 # Changelog — Clicked
 
+## 2026-09-06 — Le mode clair refait, le sombre intact
+
+### Ce qui a été demandé, et ce qui a été écarté
+
+Ludo ne reconnaissait plus son site : « bleu et violet en dégradé, cartes
+blanches à coins de 16 px avec ombres portées, Inter, emojis en guise d'icônes —
+l'esthétique par défaut des générateurs de sites ». Il a d'abord demandé une
+direction japonisante, et **a rejeté les trois propositions** (estampe,
+minimalisme, wabi-sabi). Puis il a tranché autrement : garder son mode sombre
+tel quel, ne retravailler que le clair.
+
+Ce refus a bien servi : la contrainte « le sombre ne bouge pas » a fourni la
+référence qui manquait aux trois propositions précédentes.
+
+### Le périmètre exact, lu dans le fichier
+
+Tout ce qui est redéfini dans `html.dark-mode` peut changer en clair sans
+toucher au sombre — **les couleurs, mais aussi les ombres et le dégradé de
+bannière**, qui y ont déjà leurs valeurs propres. Ne le peuvent pas :
+`--radius`, les polices et les emojis, partagés par les deux thèmes.
+
+### Le diagnostic, qui ne portait pas sur les couleurs
+
+| | Sol | Carte | Écart |
+|---|---|---|---|
+| Sombre | `#0f172a` | `#1e293b` | **1,22:1** |
+| Clair, avant | `#f8fafc` | `#ffffff` | **1,05:1** |
+
+**En sombre, les plans se distinguent par la valeur, et l'ombre portée n'y est
+pas visible. En clair, la carte n'avait aucun bord et l'ombre faisait tout le
+travail.** C'est de là que venait l'air de gabarit tout fait, davantage que du
+choix des teintes. Le clair applique donc le principe du sombre : écart porté à
+**1,24:1**, ombres retirées des cartes, un bord d'un pixel prend le relais.
+
+La barre de navigation, elle, prenait `--surface` — donc exactement la couleur
+des cartes, écart **1,00**. Une bande claire qui ne se distinguait de rien.
+
+### Trois jetons nouveaux, et leur miroir
+
+```
+--barre            #eaeff6                    sombre : var(--surface)
+--bord-carte       1px solid #c6cfdf          sombre : none
+--shadow-flottant  0 2px 10px rgba(…,.10)     sombre : l'ancien --shadow
+```
+
+`--shadow-flottant` existe parce que **quatre éléments survolent réellement la
+page** : barre collée, champ de recherche, liste de résultats, retour en haut.
+Retirer les ombres sans cette distinction décollait les menus déroulants du
+contenu qu'ils recouvrent.
+
+S'y ajoutent `--surlignage`, `--fond-juste` et `--fond-faux` : trois teintes qui
+étaient écrites en dur dans les règles et portaient l'ancien bleu.
+
+### Tout le texte passe AAA, sans délaver
+
+Les couleurs ont été obtenues en **fonçant à teinte et saturation constantes** :
+un bleu reste un bleu. Mesuré sur le rendu, mode clair :
+
+```
+corps ................ 16,98      entête de tableau ..... 9,73
+titre de leçon ....... 9,75  (5,17)   quiz juste ........ 7,08
+texte atténué ........ 9,73  (5,43)   quiz faux ......... 7,03
+sous-titre bannière .. 9,50  (5,17)   « à retenir » ..... 7,07
+```
+
+### Un défaut trouvé au passage, et il était du matin même
+
+La ligne de chiffres de l'accueil — « 42 guides · 169 leçons… » — était posée à
+80 % d'opacité sur la bannière vive : **3,89:1**. Sous le seuil AA, pas seulement
+AAA, pour du texte courant. Sur la bannière assombrie et à 92 %, elle donne
+**8,33**. Elle avait été ajoutée quelques heures plus tôt, dans l'entrée
+« L'accueil s'adressait à ceux qui connaissaient déjà le site ».
+
+### Ce que ça a coûté en fausses pistes
+
+**Une mesure de contraste absurde**, 1,29:1 sur le niveau actif en mode sombre,
+là où on attendait 16. Ni le CSS ni la palette : la transition
+`background .2s` fige la valeur calculée quand on bascule le thème par script
+trop vite. Rechargement propre en sombre : **16,30**. Troisième instrument
+menteur de la journée — et cette fois la vérification a précédé l'alerte.
+
+**Un push refusé** : la publication automatique des actualités avait poussé
+entre-temps. Rebase, aucun conflit, elle ne touche pas au CSS.
+
+### Vérifié
+
+Treize contrôles, géométrie comprise, lancés **avant** la poussée — la règle
+écrite le matin même après avoir poussé une CI rouge. 760 mesures, 27 gabarits,
+aucune anomalie.
+
+Et le sombre, mesuré sur le site après application : barre `#1e293b`, ombre
+`0 10px 25px rgba(0,0,0,.4)`, bord `0px`, corps 13,35, titre de leçon 7,00,
+niveau actif 16,30. **Les valeurs d'avant, à l'identique.**
+
+### Ce qui n'a pas bougé, et pourquoi
+
+Le rayon de 16 px, Inter et Poppins, les emojis de catégorie : partagés avec le
+mode sombre. Les toucher l'aurait modifié, ce qui était exclu. Ce sera une
+décision séparée — et il faudra alors accepter que le sombre change aussi.
+
+Le changement de structure tient dans trois déclarations — `--shadow`,
+`--bord-carte`, `--barre` : revenir en arrière ne demande pas davantage.
+
 ## 2026-09-06 — Le robots.txt n'est lu par personne, et j'avais tort sur la Search Console
 
 ### La décision
