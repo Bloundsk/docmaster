@@ -112,7 +112,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -136,15 +136,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Un modèle ne « se souvient » de rien : tout ce qu'il sait de la conversation est renvoyé à chaque tour.</li>
-                <li>Le RAG ne rend pas le modèle plus intelligent : il lui met les bons documents sous les yeux.</li>
-                <li>Un agent n'agit que par les outils qu'on lui donne — c'est là que se décide ce qu'il peut casser.</li>
-                <li>Le modèle le plus performant est rarement le bon choix pour une tâche simple et répétée.</li>
-                <li>Le coût se calcule par million de jetons, pas par requête : le contexte pèse plus que la réponse.</li>
+                <li>Comment un modèle « se souvient »-il de la conversation ?</li>
+                <li>Le RAG rend-il le modèle plus intelligent ?</li>
+                <li>Qu'est-ce qui décide de ce qu'un agent peut casser ?</li>
+                <li>Faut-il toujours prendre le modèle le plus performant ?</li>
+                <li>Sur quoi se calcule le coût : la requête, ou autre chose ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -301,6 +305,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Un modèle ne « se souvient » de rien : tout ce qu'il sait de la conversation est renvoyé à chaque tour.</li>
+                <li>Le RAG ne rend pas le modèle plus intelligent : il lui met les bons documents sous les yeux.</li>
+                <li>Un agent n'agit que par les outils qu'on lui donne — c'est là que se décide ce qu'il peut casser.</li>
+                <li>Le modèle le plus performant est rarement le bon choix pour une tâche simple et répétée.</li>
+                <li>Le coût se calcule par million de jetons, pas par requête : le contexte pèse plus que la réponse.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

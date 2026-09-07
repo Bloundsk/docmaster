@@ -112,7 +112,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -136,15 +136,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Le cache est le seul levier qui améliore la performance sans rien alléger.</li>
-                <li>Toute donnée venant de l'extérieur est hostile jusqu'à preuve du contraire.</li>
-                <li>Un test qui échoue au hasard est pire qu'un test absent : il apprend à ignorer les alertes.</li>
-                <li>La dette technique n'est pas un défaut moral, c'est un emprunt — le problème sont les intérêts.</li>
-                <li>Une réécriture complète échoue plus souvent qu'elle ne réussit.</li>
+                <li>Quel levier améliore la performance sans rien alléger ?</li>
+                <li>Quelle confiance accorder à une donnée reçue de l'extérieur ?</li>
+                <li>Qu'est-ce qui est pire qu'un test absent ?</li>
+                <li>La dette technique : une faute, ou un emprunt ?</li>
+                <li>Une réécriture complète réussit-elle plus souvent qu'elle n'échoue ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -305,6 +309,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Le cache est le seul levier qui améliore la performance sans rien alléger.</li>
+                <li>Toute donnée venant de l'extérieur est hostile jusqu'à preuve du contraire.</li>
+                <li>Un test qui échoue au hasard est pire qu'un test absent : il apprend à ignorer les alertes.</li>
+                <li>La dette technique n'est pas un défaut moral, c'est un emprunt — le problème sont les intérêts.</li>
+                <li>Une réécriture complète échoue plus souvent qu'elle ne réussit.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

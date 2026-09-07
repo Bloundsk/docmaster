@@ -112,7 +112,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -136,15 +136,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Une API est un contrat : ce qu'on envoie, ce qu'on reçoit, ce qui se passe en cas d'erreur.</li>
-                <li>Le temps d'une page dépend souvent du nombre d'allers-retours, pas de la vitesse du serveur.</li>
-                <li>Une requête dans une boucle transforme une page rapide en page inutilisable.</li>
-                <li>Un secret placé dans le code du navigateur n'est plus un secret.</li>
-                <li>Git ne sert pas à sauvegarder : il sert à pouvoir revenir en arrière et à travailler à plusieurs.</li>
+                <li>Que faut-il lire dans une API avant de s'en servir ?</li>
+                <li>De quoi dépend le plus souvent le temps d'affichage d'une page ?</li>
+                <li>Que se passe-t-il quand une requête est lancée dans une boucle ?</li>
+                <li>Peut-on cacher une clé dans le code envoyé au navigateur ?</li>
+                <li>À quoi sert Git, si ce n'est pas à sauvegarder ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -298,6 +302,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Une API est un contrat : ce qu'on envoie, ce qu'on reçoit, ce qui se passe en cas d'erreur.</li>
+                <li>Le temps d'une page dépend souvent du nombre d'allers-retours, pas de la vitesse du serveur.</li>
+                <li>Une requête dans une boucle transforme une page rapide en page inutilisable.</li>
+                <li>Un secret placé dans le code du navigateur n'est plus un secret.</li>
+                <li>Git ne sert pas à sauvegarder : il sert à pouvoir revenir en arrière et à travailler à plusieurs.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

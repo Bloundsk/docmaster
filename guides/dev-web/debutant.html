@@ -112,7 +112,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -136,15 +136,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>HTML structure le contenu, CSS définit son apparence visuelle.</li>
-                <li>JavaScript rend une page interactive en réagissant aux actions de l'utilisateur.</li>
-                <li>Le frontend est ce que l'utilisateur voit, le backend gère la logique invisible côté serveur.</li>
-                <li>Le responsive design garantit un bon affichage sur tous les écrans.</li>
-                <li>L'approche mobile-first est de plus en plus recommandée.</li>
+                <li>Que fait HTML, et que fait CSS ?</li>
+                <li>Qu'ajoute JavaScript à une page ?</li>
+                <li>Frontend, backend : lequel tourne où ?</li>
+                <li>À quoi sert le responsive design ?</li>
+                <li>Par quel écran vaut-il mieux commencer une conception ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -335,6 +339,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>HTML structure le contenu, CSS définit son apparence visuelle.</li>
+                <li>JavaScript rend une page interactive en réagissant aux actions de l'utilisateur.</li>
+                <li>Le frontend est ce que l'utilisateur voit, le backend gère la logique invisible côté serveur.</li>
+                <li>Le responsive design garantit un bon affichage sur tous les écrans.</li>
+                <li>L'approche mobile-first est de plus en plus recommandée.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

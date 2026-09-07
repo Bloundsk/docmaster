@@ -112,7 +112,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -136,15 +136,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Un LLM prédit du texte statistiquement probable, pas nécessairement toujours vrai.</li>
-                <li>Les agents IA enchaînent plusieurs étapes de façon autonome, contrairement à un simple chatbot.</li>
-                <li>Un bon prompt est précis, contextuel, et précise le format attendu.</li>
-                <li>Les hallucinations et les biais sont des limites réelles à garder en tête.</li>
-                <li>Ne partage jamais d'informations sensibles avec une IA en ligne.</li>
+                <li>Un modèle de langue dit-il le vrai, ou le probable ?</li>
+                <li>Qu'est-ce qu'un agent fait qu'un simple assistant ne fait pas ?</li>
+                <li>Qu'est-ce qui distingue une consigne efficace d'une consigne vague ?</li>
+                <li>Quelles limites d'une IA ne s'oublient jamais ?</li>
+                <li>Que ne faut-il jamais confier à une IA en ligne ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -327,6 +331,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Un LLM prédit du texte statistiquement probable, pas nécessairement toujours vrai.</li>
+                <li>Les agents IA enchaînent plusieurs étapes de façon autonome, contrairement à un simple chatbot.</li>
+                <li>Un bon prompt est précis, contextuel, et précise le format attendu.</li>
+                <li>Les hallucinations et les biais sont des limites réelles à garder en tête.</li>
+                <li>Ne partage jamais d'informations sensibles avec une IA en ligne.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

@@ -111,7 +111,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -135,15 +135,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Active la double authentification (2FA) sur tous tes comptes importants.</li>
-                <li>Ne clique jamais directement sur un lien reçu par email en cas de doute.</li>
-                <li>Un antivirus ne remplace pas la vigilance humaine.</li>
-                <li>Vérifie toujours la présence du cadenas (HTTPS) avant de saisir des informations sensibles.</li>
-                <li>N'utilise jamais le même mot de passe sur plusieurs services.</li>
+                <li>Quelle protection ajouter en premier sur tes comptes importants ?</li>
+                <li>Que faire d'un lien reçu par email quand tu as un doute ?</li>
+                <li>Qu'est-ce qu'un antivirus ne fera jamais à ta place ?</li>
+                <li>Que vérifier avant de saisir une information sensible sur un site ?</li>
+                <li>Pourquoi ne jamais réutiliser un mot de passe d'un service à l'autre ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -351,6 +355,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Active la double authentification (2FA) sur tous tes comptes importants.</li>
+                <li>Ne clique jamais directement sur un lien reçu par email en cas de doute.</li>
+                <li>Un antivirus ne remplace pas la vigilance humaine.</li>
+                <li>Vérifie toujours la présence du cadenas (HTTPS) avant de saisir des informations sensibles.</li>
+                <li>N'utilise jamais le même mot de passe sur plusieurs services.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

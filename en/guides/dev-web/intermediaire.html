@@ -139,15 +139,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Key points</h2>
+        <!-- The questions BEFORE the text, the answers after. Putting the
+             statements here gave the answer before the question: the reader
+             then read familiar ground, with no effort of recall. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ What you will be able to answer</h2>
             <ul>
-                <li>An API is a contract: what you send, what you get back, what happens on error.</li>
-                <li>A page's timing often depends on the number of round trips, not on the server's speed.</li>
-                <li>A query inside a loop turns a fast page into an unusable one.</li>
-                <li>A secret placed in browser code is no longer a secret.</li>
-                <li>Git is not for backups: it is for going back, and for working together.</li>
+                <li>What must you read in an API before using it?</li>
+                <li>What does a page's timing usually depend on?</li>
+                <li>What happens when a query is run inside a loop?</li>
+                <li>Can a key be hidden in the code sent to the browser?</li>
+                <li>What is Git for, if not for backups?</li>
             </ul>
+            <p class="recap-note">Try answering now, even badly. The answers are at the end of the guide.</p>
         </div>
 
         <section>
@@ -301,6 +305,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- The original statements, moved here: after the reading they
+             verify; before it, they excused the reader from reading. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ What you take away</h2>
+            <ul>
+                <li>An API is a contract: what you send, what you get back, what happens on error.</li>
+                <li>A page's timing often depends on the number of round trips, not on the server's speed.</li>
+                <li>A query inside a loop turns a fast page into an unusable one.</li>
+                <li>A secret placed in browser code is no longer a secret.</li>
+                <li>Git is not for backups: it is for going back, and for working together.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

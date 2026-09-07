@@ -111,7 +111,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -135,15 +135,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Un mot de passe réutilisé transforme une fuite unique en compromission générale.</li>
-                <li>La boîte mail se protège avant tout le reste : elle réinitialise tous les autres comptes.</li>
-                <li>Le second facteur par SMS est le plus faible des seconds facteurs — mais bien meilleur que rien.</li>
-                <li>Une sauvegarde branchée en permanence est chiffrée en même temps que l'original.</li>
-                <li>Un VPN déplace la confiance vers son fournisseur ; il ne la supprime pas.</li>
+                <li>Que devient une fuite unique quand le mot de passe est réutilisé ailleurs ?</li>
+                <li>Quel compte protéger avant tous les autres, et pourquoi ?</li>
+                <li>Le second facteur par SMS : à éviter, ou mieux que rien ?</li>
+                <li>Que devient une sauvegarde restée branchée quand un rançongiciel passe ?</li>
+                <li>Qu'est-ce qu'un VPN supprime, et qu'est-ce qu'il ne fait que déplacer ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -294,6 +298,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Un mot de passe réutilisé transforme une fuite unique en compromission générale.</li>
+                <li>La boîte mail se protège avant tout le reste : elle réinitialise tous les autres comptes.</li>
+                <li>Le second facteur par SMS est le plus faible des seconds facteurs — mais bien meilleur que rien.</li>
+                <li>Une sauvegarde branchée en permanence est chiffrée en même temps que l'original.</li>
+                <li>Un VPN déplace la confiance vers son fournisseur ; il ne la supprime pas.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

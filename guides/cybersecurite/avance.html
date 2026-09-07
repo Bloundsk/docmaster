@@ -111,7 +111,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -135,15 +135,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Une fuite ne se voit pas : elle se découvre en moyenne des mois après les faits.</li>
-                <li>Changer son mot de passe ne suffit pas à reprendre un compte — une règle de transfert lui survit.</li>
-                <li>Une attaque ciblée ne présente aucun des signaux grossiers du hameçonnage de masse.</li>
-                <li>Le chiffrement de bout en bout protège le contenu, jamais les métadonnées.</li>
-                <li>La récupération de compte est souvent le maillon le plus faible, et le moins surveillé.</li>
+                <li>Au bout de combien de temps découvre-t-on, en moyenne, qu'on a fuité ?</li>
+                <li>Pourquoi changer son mot de passe ne suffit-il pas à reprendre un compte ?</li>
+                <li>Qu'est-ce qui manque à une attaque ciblée, par rapport au hameçonnage de masse ?</li>
+                <li>Que protège le chiffrement de bout en bout, et que laisse-t-il visible ?</li>
+                <li>Par où entre-t-on le plus souvent dans un compte bien protégé ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -297,6 +301,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Une fuite ne se voit pas : elle se découvre en moyenne des mois après les faits.</li>
+                <li>Changer son mot de passe ne suffit pas à reprendre un compte — une règle de transfert lui survit.</li>
+                <li>Une attaque ciblée ne présente aucun des signaux grossiers du hameçonnage de masse.</li>
+                <li>Le chiffrement de bout en bout protège le contenu, jamais les métadonnées.</li>
+                <li>La récupération de compte est souvent le maillon le plus faible, et le moins surveillé.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">

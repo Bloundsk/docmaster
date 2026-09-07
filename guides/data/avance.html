@@ -112,7 +112,7 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Dernière mise à jour : 7 septembre 2026</span>
+        <span>🕒 Dernière mise à jour : 8 septembre 2026</span>
         <button class="copy-link-btn">🔗 Copier le lien</button>
     </div>
 
@@ -136,15 +136,19 @@
             </ul>
         </div>
 
-        <div class="recap-box">
-            <h2>⚡ Points clés à retenir</h2>
+        <!-- Les questions AVANT le texte, les réponses après. Poser les
+             affirmations ici donnait la réponse avant la question : on lisait
+             ensuite en terrain connu, sans effort de rappel. -->
+        <div class="recap-box recap-questions">
+            <h2>⚡ Ce que tu sauras répondre</h2>
             <ul>
-                <li>Tout chiffre issu d'un échantillon porte une incertitude, qu'on l'affiche ou non.</li>
-                <li>Diviser la marge d'erreur par deux demande quatre fois plus d'observations.</li>
-                <li>Regarder un test A/B tous les jours jusqu'à ce qu'il soit favorable garantit de le trouver favorable.</li>
-                <li>Une tendance peut s'inverser une fois les données regroupées : c'est le paradoxe de Simpson.</li>
-                <li>Une donnée fausse en amont produit un tableau de bord parfaitement présenté et parfaitement faux.</li>
+                <li>Que porte tout chiffre tiré d'un échantillon, même quand on ne l'affiche pas ?</li>
+                <li>Combien d'observations faut-il pour diviser une marge d'erreur par deux ?</li>
+                <li>Que garantit le fait de regarder un test A/B chaque jour jusqu'à ce qu'il soit favorable ?</li>
+                <li>Une tendance peut-elle s'inverser quand on regroupe les données ?</li>
+                <li>Que donne une donnée fausse en amont d'un tableau de bord soigné ?</li>
             </ul>
+            <p class="recap-note">Essaie d'y répondre maintenant, même mal. Les réponses sont en fin de guide.</p>
         </div>
 
         <section>
@@ -300,6 +304,19 @@
                 </div>
             </details>
         </section>
+
+        <!-- Les affirmations d'origine, deplacees ici : apres la lecture,
+             elles verifient ; avant, elles dispensaient de lire. -->
+        <div class="recap-box recap-reponses">
+            <h2>✅ Ce que tu retiens</h2>
+            <ul>
+                <li>Tout chiffre issu d'un échantillon porte une incertitude, qu'on l'affiche ou non.</li>
+                <li>Diviser la marge d'erreur par deux demande quatre fois plus d'observations.</li>
+                <li>Regarder un test A/B tous les jours jusqu'à ce qu'il soit favorable garantit de le trouver favorable.</li>
+                <li>Une tendance peut s'inverser une fois les données regroupées : c'est le paradoxe de Simpson.</li>
+                <li>Une donnée fausse en amont produit un tableau de bord parfaitement présenté et parfaitement faux.</li>
+            </ul>
+        </div>
 
         <div class="mark-read-box">
             <input type="checkbox" id="mark-read-checkbox">
