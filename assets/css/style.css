@@ -588,6 +588,63 @@ main > section li a:not([class]):hover,
 .toc a { color: var(--primary); text-decoration: none; font-size: .95rem; }
 .toc a:hover { text-decoration: underline; }
 
+/* ---------------------------------------------------------------
+   L'OBJECTIF DU NIVEAU, en tête de page.
+
+   Il n'existait que sur le sommaire du parcours. Or une page de niveau
+   est une porte d'entrée à part entière : c'est là qu'atterrit un
+   lecteur venu d'un moteur de recherche, et il n'y voyait jamais ce
+   qu'il allait savoir faire — donc aucun critère pour doser son
+   attention ni pour savoir s'il a réussi.
+
+   Volontairement sobre : un filet, pas une carte. Ce bloc précède le
+   sommaire et les points clés, il ne doit pas leur disputer le regard.
+   --------------------------------------------------------------- */
+.objectif {
+    border-left: 4px solid var(--primary);
+    padding: 4px 0 4px 18px;
+    margin-bottom: 28px;
+}
+.objectif h2 {
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+.objectif p { margin: 0; }
+.objectif-prerequis {
+    margin-top: 8px !important;
+    font-size: .9rem;
+    color: var(--muted);
+}
+
+/* ---------------------------------------------------------------
+   UNE CHOSE À FAIRE CETTE SEMAINE.
+
+   Le guide se terminait par une case à cocher : rien ne faisait passer
+   le lecteur de « j'ai compris » à « j'ai fait ». Or appliquer hors du
+   contexte où l'on a appris ne se produit presque jamais tout seul — il
+   faut le demander, une fois, précisément.
+
+   D'où le fond plein : c'est le seul endroit de la page qui demande une
+   action, il doit se distinguer de tout ce qui demande une lecture.
+   --------------------------------------------------------------- */
+.action-semaine {
+    background: var(--teinte);
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    margin: 40px 0;
+}
+.action-semaine h2 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+.action-semaine p { margin: 0; max-width: 62ch; }
+
+/* Sur papier, l'action garde tout son sens : c'est même la seule partie
+   qu'on aurait envie d'emporter. */
+
 /* Encadré "Points clés" */
 .recap-box { background: var(--surface); border-left: 4px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 22px 25px; margin-bottom: 40px; }
 .recap-box h2 { font-size: 1.1rem; margin-bottom: 12px; }
@@ -639,6 +696,23 @@ article h3 { color: var(--primary); margin-bottom: 10px; }
 }
 #categories > article h3 { font-size: 1.15rem; margin-bottom: 8px; }
 #categories > article > p { color: var(--muted); font-size: .93rem; flex: 1; margin-bottom: 14px; }
+
+/* Ce que coûte un parcours, avant d'y entrer.
+
+   Les quatorze cartes étaient rigoureusement équivalentes : emoji, titre, une
+   phrase, un lien. Le lecteur qui savait ce qu'il cherchait s'en sortait ; les
+   autres choisissaient sans critère. Trois chiffres suffisent à décider, et ils
+   sont calculés par scripts/chiffrer-parcours.js — jamais saisis.
+
+   « flex: 0 » annule le « flex: 1 » de la description au-dessus : c'est elle
+   qui doit s'étirer pour aligner les liens d'une même rangée, pas cette ligne. */
+#categories > article > .carte-chiffres {
+    flex: 0;
+    margin-bottom: 14px;
+    font-size: .82rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
 
 /* La pastille d'icone : l'emoji seul flottait devant le titre. Isole dans
    un carre teinte, il donne a chaque carte un point d'entree pour le regard. */

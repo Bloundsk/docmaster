@@ -86,6 +86,13 @@ jobs:
       - name: Sélecteur de niveau à jour sur les guides
         run: node scripts/poser-selecteur-niveau.js --verifier
 
+      # Les durées et le nombre de sections annoncés sur les sommaires étaient
+      # saisis à la main, et avaient dérivé : le niveau avancé de Finance
+      # annonçait 11 minutes pour 7,9 de texte. Un chiffre faux mais plausible
+      # ne se voit jamais — sauf en le recalculant.
+      - name: Chiffres des parcours conformes au texte
+        run: node scripts/chiffrer-parcours.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le
