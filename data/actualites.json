@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-07T13:35:25.599Z",
+  "maj": "2026-09-07T20:41:48.849Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMirwJBVV95cUxOSWE3emRIdjJ2eTNhSXJVZjBqQnVzN29Pd2hPODhhb2R4blNlZG5MdHRFcTdGSTlnaDlObjVqR3FYRWRlN2lPaW9uNUtObDJIdWtKQldqOU5wc3VBSFdyR1E4WjB4N1ZjenY0TE5VMl8yd2ptRGtYckVIdS1RcE45YjhMMDNZNDBKbG9lSl9ZdGdLVHZQSDAtTDNsOWNONnl1X2puenhuclhqQWNqM1FCQVBiS0dMcUtFWklZQkJSNkJqTHotOFVZOWR3Zm9ac1dKM3RwaE9LdkZVMjc5ako1RGdCeXozdV9rWXI1blNjNUlwYlpyLXN1eFJRRThOUGJsMnRIX29DTTluSnBJZXJtWEVtNEhDZ3dkT3VxYk9Wcm5PX2ZOakVicXpINjBhZzQ?oc=5",
@@ -23,6 +23,42 @@
       "ancre": "les-agents-ia",
       "section": "⚙️ Les agents IA",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdl82ZjhjbTNXcG92S1FJV3hyV2ZhRy1HZi1rVkRUNFBmT2h3NVY4MFNMWUFKWGJLZjhpTk1wUjVQSHlnQ01MVHJUVWxkLWhCREpZMU9Sa3pNMEdXTHBWU251WERfUmhtc2w2TVFtWDJVRkdnSE04UGlka3lCNDFMNzJWWXBWWUJrUTJqYTQ1TnllRUFaSndkVGM5M2xhaXBWcDBCX0hMY3lSTjVqcEg4VEVOaEFOUkEzSE5MMEdkTWZXSE1QWFE?oc=5",
+      "titre": "Cybersécurité : face aux fuites de données, l'Anssi renforce sa capacité d'intervention",
+      "source": "Le Figaro",
+      "date": "2026-09-07",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQcjZ0ZWFsczRSaVpNSnZ1cUFaVXR4YzdaaDM3Ti02LTlWaUNzZGRyMEhBSHNteVVFdDlrbTVRdmtkcThaZjRHeDVSNDN5UklkNmp6NEJfeVV1NFdHQVhUUTQzYzRteDJnNDRaMHdTMmVjRnRHamp1V1NEUy1oMml3Skl3d3FPX2drR0hrZWIxY2xZUjNjMnFrSG1kZjVsWHNhNGJNWTNwR1FBNkI0?oc=5",
+      "titre": "STRASBOURG : Vapodil - Le modèle économique qui transforme ses clients en entrepreneurs",
+      "source": "Presse Agence",
+      "date": "2026-09-07",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "modele-economique",
+      "section": "💰 Le modèle économique",
+      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
+      "publie": "2026-09-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQdFVHb2lmZTRRaGlidXBtdkl2bGlUeTNxeEVlaEpXdklVcWtBTTJuYW9WTXA0VGVHMFVEOWZYbUVoZGlvQkctaWdjZVJtSEFNcWtIWVJIaFF6SC1FdFB4ZUpZelhtNW9haU1kZDBVVTUwdzJWV3RrZmhIa1BnZUh1WnpUY21IVHUyVXVEcTFmSWVDMzVYV2ZDaHQtay1kc0lsZEtDUnFqT1FWeWphQkRDeVJscVgzYlVzeGfSAb8BQVVfeXFMT0NCaXE1X3pUYm90MEJzWW1OM1N1VGVRSkRwTGQ2b2JMdkZtaFFmcU5uMHFvZXRqZUxPVUJlbVBKcDA1OC03NHB5Y1JZdkpheko0cGROcnVza1dNeVF0NkR2MGtDLXNfNnFPUmU2OHZsUC1vZ3cxdTZsdFkzbzM5MDBaR1VzMF9XSkJGZ3BVUEstUHo4ZzN5NFZvRlZ4VWdlMTRWNEd4WFJ6UVNkek1RTEE0eUhoRGZaVUV4eUtSdjQ?oc=5",
+      "titre": "Montre connectée 2026 : quel modèle choisir pour le sport, la santé et l’autonomie ?",
+      "source": "CNews",
+      "date": "2026-09-07",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "choisir-un-modele",
+      "section": "⚖️ Choisir un modèle",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
       "publie": "2026-09-07"
     },
     {
@@ -251,42 +287,6 @@
       "ancre": "quest-ce-quun-llm",
       "section": "🧠 Qu'est-ce qu'un LLM ?",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-09-02"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONzdoM2pvVnNJcUZfbkJheWFTUGZUMkFvZ0kwZG9oV043el84RG1NcnppN1FFa0xKa1l4M1UtdXZ2M09GdHdxUkJQV3FfWVNiS05FTEZ2TTRFV09tNS10ZnBYb0VVaDNVREVwVm54ejVfVlRTVjNoX1VFcWx2bG5LaE1HQjc1SVExOHA1ZmRRelQ4bExIVUJack91OFJIbHBZaThhUHdoS0haUm9oSkdz?oc=5",
-      "titre": "Fuites de données : pourquoi le tourisme doit sécuriser toute sa chaîne [ABO]",
-      "source": "tourmag.com",
-      "date": "2026-09-02",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-02"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVDhNcElxUENrYjc3RHZPcVJJbW00bUF1RWYzczN6dTd2anZzWkFtdDd3UDFTWVptTEZSVVhrS2ZuTm94T2w0Q0lBSVpsdVlPT2xzUUo2dHdiMGk1MzhMcFItdnoxRDhOZDd5Wjlkc0huRkQ3SzBfY09kVzdEdEwwcm05b1FqcVFEVTFlU1NySVg3a0VoVUlYbFdPR1Jrbi1VVVREa3VqRUZNRXA3?oc=5",
-      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
-      "source": "- Alençon.maville.com",
-      "date": "2026-09-02",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "quest-ce-quun-llm",
-      "section": "🧠 Qu'est-ce qu'un LLM ?",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-09-02"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPZVAwT19lVWFzZzBxU2t2Mjg1ck1MWndRbkltclZTb0psNVVQSDE2ZUNXc1pyYzF1WjZ6bnJWLUFJVUJfVTFHZ20tYk93QkVfOGRSWVhESkEyQWFCT2I0YnkwY3cyblZvMTlwd1F2STBZdnlaMkdEQlFHdG85VktHdjR5RmQyMmFGN0YzYnFHQ2d0WjZkZ3VIRXFLTXU2V2xNSk5raDJYQ0IxNGhSa3d1RWhqV3JrTEVPYm9fVncyUGlCTmNJQ3lCeERnOTRvUFZKeEloZTdnQW5OWWJlTWcxRWFqaGZPVDRjY0puRUszcXcxcGdVcWNZ?oc=5",
-      "titre": "Nocif pour la santé, le travail en horaires atypiques doit être encadré, voire évité, alerte l'Anses",
-      "source": "lequotidiendumedecin.fr",
-      "date": "2026-09-02",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-09-02"
     }
   ]
