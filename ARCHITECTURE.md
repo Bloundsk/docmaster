@@ -92,6 +92,32 @@ La trame actuelle est conservée — c'est l'atout du site : explication, exempl
 chiffré, erreur fréquente, à retenir. S'y ajoute, par section, un espace réservé
 à la pratique (exercice ou simulateur), et le quiz existant.
 
+**Deux blocs encadrent cette trame depuis le 8 septembre 2026, sur les 84 pages
+de niveau des deux langues.**
+
+- `.objectif`, juste après `<main>` : ce que le niveau rend capable de faire,
+  et son prérequis. Il existait déjà sur le sommaire du parcours — que **ne voit
+  jamais** un lecteur arrivé par un moteur de recherche, qui atterrit directement
+  sur la page de niveau. Sans objectif annoncé, il n'a aucun critère pour savoir
+  s'il a réussi.
+- `.action-semaine`, juste avant « Pour aller plus loin » : **une seule** chose
+  à faire, chiffrée, sous dix minutes. Le guide se terminait sur une case à
+  cocher ; rien ne faisait passer de « j'ai compris » à « j'ai fait ». Une liste
+  ne se fait pas — d'où la contrainte d'une action unique.
+
+Ces textes sont **écrits page par page**, à partir des sections et des points
+clés de la page concernée. Un objectif rempli depuis un gabarit ne donne aucun
+critère de réussite, et une action générique ne se fait pas : c'est ce qui rend
+ce travail non automatisable, là où tout le reste du site l'est.
+
+**Le texte ajouté compte dans le temps de lecture annoncé.** Après toute
+modification du corps d'un guide, relancer `node scripts/chiffrer-parcours.js` :
+il recompte sections et minutes sur l'ensemble du `<main>`, à 180 mots/minute,
+et réécrit les `.etape-duree` des 28 sommaires ainsi que les `.carte-chiffres`
+de `guides.html` et `en/guides.html`. Le prérequis écrit à la main est conservé
+comme troisième champ. Le contrôle `chiffrer-parcours --verifier` refuse une
+poussée où les chiffres ne correspondent plus.
+
 ---
 
 ## 4. Ce qu'il faut adapter, et une seule fois
@@ -644,17 +670,18 @@ troisième ligne, un commit contenait des guides datés d'aujourd'hui et un accu
 bâti sur hier — et l'intégration continue le refusait, à juste titre. En local
 tout passait, parce que l'accueil avait été régénéré *avant* la datation.
 
-**Douze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
+**Quatorze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
 `controles.yml` et `identite.yml` : `valider-js`, `audit-coherence`,
-`verifier-identite`, `verifier-registre`, `appliquer-identite --verifier`,
-`publier-accueil --verifier`, `publier-podcasts --verifier`,
-`amorcer-lecons --verifier`, `amorcer-preferences --verifier`,
-`poser-selecteur-niveau --verifier`, `test-recherche` et `test-actualites`. Les
-six `--verifier` ne touchent à rien : ils refont la génération en mémoire et
+`verifier-identite`, `verifier-registre`, `verifier-traduction`,
+`appliquer-identite --verifier`, `publier-accueil --verifier`,
+`publier-podcasts --verifier`, `amorcer-lecons --verifier`,
+`amorcer-preferences --verifier`, `poser-selecteur-niveau --verifier`,
+`chiffrer-parcours --verifier`, `test-recherche` et `test-actualites`. Les
+sept `--verifier` ne touchent à rien : ils refont la génération en mémoire et
 refusent si le résultat diffère du dépôt.
 
 **S'y ajoute l'audit de géométrie**, décrit juste en dessous, qui est bloquant
-lui aussi — donc **treize en tout**. Il ne figure pas dans la liste ci-dessus
+lui aussi — donc **quinze en tout**. Il ne figure pas dans la liste ci-dessus
 parce qu'il ne se lance pas comme les autres, et c'est précisément le piège :
 le 6 septembre 2026, douze contrôles ont été lancés en local, pas celui-là, et
 l'intégration continue est passée au rouge sur une poussée annoncée verte.

@@ -1,5 +1,97 @@
 # Changelog — Clicked
 
+## 2026-09-08 — Un objectif au début, une action à la fin, sur les 84 pages de niveau
+
+### Ce que l'audit pédagogique avait trouvé
+
+Deux manques revenaient sur **toutes** les pages de niveau, dans les deux
+langues.
+
+Le premier : **l'objectif n'existait que sur le sommaire du parcours**. Or un
+lecteur venu d'un moteur de recherche atterrit directement sur
+`guides/finance/debutant.html` — il ne passe jamais par le sommaire, et ne voit
+donc jamais ce que le niveau prétend lui apprendre. Sans objectif annoncé, il
+n'a aucun critère pour savoir s'il a réussi, ni pour doser son attention.
+
+Le second : **le guide se terminait sur une case à cocher**. Rien ne faisait
+passer de « j'ai compris » à « j'ai fait ». C'est le point où un site
+pédagogique perd ce qu'il a construit.
+
+### Ce qui a été posé
+
+| Bloc | Où | Contrainte |
+|---|---|---|
+| `.objectif` | juste après `<main>`, avant le sommaire de page | ce que le niveau rend **capable de faire**, plus le prérequis |
+| `.action-semaine` | juste avant « Pour aller plus loin » | **une seule** action, chiffrée, faisable en dix minutes |
+
+L'action est unique par construction : une liste ne se fait pas. « Débranche ton
+disque de sauvegarde », « compte les allers-retours dans l'onglet Réseau »,
+« relève tes dépenses réelles des trois derniers mois » — chacune se termine
+dans la journée, ou ne sert à rien.
+
+### Le travail que rien n'automatise
+
+Les 84 textes sont **écrits page par page**, à partir des sections et des points
+clés de *cette* page. C'est délibéré : un objectif rempli depuis un gabarit ne
+donne aucun critère de réussite, et une action générique ne se fait pas. Tout le
+reste du site est généré ; ces deux blocs sont exactement ce qui ne pouvait pas
+l'être.
+
+Côté anglais, ce ne sont pas des traductions mécaniques. Là où le français nomme
+le PEA et l'assurance-vie, l'anglais dit *wrapper* — le mot qu'emploie déjà le
+corps de la page. Les guillemets et le format de l'euro suivent la convention du
+dossier `en/`, vérifiée avant d'écrire.
+
+### Un quatorzième contrôle : `chiffrer-parcours`
+
+Le texte ajouté **compte dans le temps de lecture annoncé**. Les durées étaient
+écrites à la main dans les 28 sommaires, donc fausses dès la première retouche.
+`scripts/chiffrer-parcours.js` les recompte sur l'ensemble du `<main>`, à 180
+mots par minute, et réécrit aussi les cartes du catalogue. Le prérequis, lui,
+reste écrit à la main : c'est un jugement, pas un calcul.
+
+Effet mesuré de l'ajout : **une à deux minutes par parcours**. Apprendre passe
+de 31 à 32 minutes, Santé de 31 à 33, Marketing de 29 à 31 ; Finance ne bouge
+pas, ses blocs ayant été posés avant la mesure.
+
+`chiffrer-parcours --verifier` refuse désormais une poussée où les chiffres ne
+correspondent plus au texte. Sans lui, les durées auraient recommencé à dériver
+dès la modification suivante.
+
+### Deux contradictions réparées au passage
+
+**Le prérequis se contredisait d'une page à l'autre.** Le sommaire annonçait
+« aucun prérequis » et le niveau intermédiaire supposait le débutant acquis. La
+page « À propos » tranche maintenant dans les deux langues : chaque *parcours*
+part de zéro, mais **à l'intérieur d'un parcours, les niveaux se suivent**.
+
+**Un vouvoiement s'était glissé** dans `dev-web/intermediaire.html` — « sans vous
+marcher dessus ». Le contrôle de registre l'a vu avant le dépôt, sur une seule
+occurrence noyée dans 84 textes neufs. C'est précisément ce pour quoi il avait
+été écrit.
+
+### Une erreur qui aurait été destructrice
+
+La première version du calcul des cartes de `guides.html` cherchait
+`(<article>[\s\S]*?)…(<a href="…")`. Le `<article>` capturé était **le premier
+du document**, pas celui de la carte : les quatorze cartes ont fusionné en une
+seule, et la carte Finance pointait vers Apprendre.
+
+Restauré par `git checkout --`, puis corrigé en **découpant en blocs
+`<article>…</article>` avant de chercher dedans**. Rien n'a été poussé dans cet
+état. La leçon tient en une ligne : un `[\s\S]*?` non gourmand n'est pas borné
+par la balise ouvrante qu'on croit — il l'est par ce qui suit.
+
+### Ce qui reste de l'audit
+
+Cette entrée ne couvre que la première vague, celle qui ne demandait pas
+d'arbitrage. Restent posées : transformer les « points clés » en questions
+placées **avant** le texte, avec les réponses en fin de page ; un bloc « à
+revoir » différé sur Mon espace ; les mauvaises réponses de quiz trop
+invraisemblables pour faire réfléchir ; et le renvoi systématique au glossaire au
+premier emploi d'un terme.
+
+
 ## 2026-09-07 — Tous les emojis animés, sauf ceux qui disent quelque chose
 
 ### La demande, et la réserve
