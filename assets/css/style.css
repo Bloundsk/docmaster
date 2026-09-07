@@ -646,10 +646,20 @@ main > section li a:not([class]):hover,
    qu'on aurait envie d'emporter. */
 
 /* Encadré "Points clés" */
-.recap-box { background: var(--surface); border-left: 4px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 22px 25px; margin-bottom: 40px; }
+/* L'ordre compte : « border » est un raccourci qui REMET border-left a zero.
+   Pose apres, comme il l'etait depuis la refonte du mode clair, il effacait
+   le liseré de 4 px — dans les deux themes, sans que rien ne le signale. */
+.recap-box { background: var(--surface); border: var(--bord-carte); border-left: 4px solid var(--primary); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 25px; margin-bottom: 40px; }
 .recap-box h2 { font-size: 1.1rem; margin-bottom: 12px; }
 .recap-box ul { padding-left: 20px; }
 .recap-box li { margin-bottom: 6px; }
+/* Les points cles ouvrent desormais par des QUESTIONS, et les affirmations
+   descendent en fin de guide. Donner la reponse avant la question faisait lire
+   en terrain connu : aucun effort de rappel, et l'impression d'avoir appris.
+   Le bloc de fin se distingue par la couleur de succes, pas par une forme
+   nouvelle : c'est le meme objet, a un autre moment de la lecture. */
+.recap-note { margin-top: 12px; font-size: .92rem; color: var(--muted); }
+.recap-reponses { border-left-color: var(--succes); }
 
 /* Cartes */
 article { background: var(--surface); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); margin-bottom: 20px; transition: transform .3s, box-shadow .3s; animation: fadeUp .6s ease backwards; }
