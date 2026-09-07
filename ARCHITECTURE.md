@@ -110,6 +110,20 @@ clés de la page concernée. Un objectif rempli depuis un gabarit ne donne aucun
 critère de réussite, et une action générique ne se fait pas : c'est ce qui rend
 ce travail non automatisable, là où tout le reste du site l'est.
 
+**Les points clés sont des QUESTIONS, et leurs réponses sont en fin de guide.**
+Depuis le 8 septembre 2026, `.recap-questions` ouvre la page (cinq questions,
+plus la note « les réponses sont en fin de guide ») et `.recap-reponses` la
+ferme, juste avant le bloc « J'ai lu et compris ». Les affirmations n'ont pas été
+réécrites : elles sont **déplacées mot pour mot**. La question de rang *n* a pour
+réponse l'affirmation de rang *n* — si l'une des deux change, l'autre doit
+suivre.
+
+**Piège CSS à ne pas rouvrir : `border` est un raccourci qui remet `border-left`
+à zéro.** `.recap-box` déclarait `border-left: 4px solid var(--primary)` puis
+`border: var(--bord-carte)` : le liseré n'existait plus, ni en clair (un trait
+gris d'un pixel) ni en sombre (`none`). L'ordre est désormais `border` **d'abord**,
+`border-left` ensuite. Aucune autre règle du fichier n'a cet ordre — vérifié.
+
 **Le texte ajouté compte dans le temps de lecture annoncé.** Après toute
 modification du corps d'un guide, relancer `node scripts/chiffrer-parcours.js` :
 il recompte sections et minutes sur l'ensemble du `<main>`, à 180 mots/minute,

@@ -1,5 +1,62 @@
 # Changelog — Clicked
 
+## 2026-09-08, soir — La question avant la réponse, sur les 84 pages de niveau
+
+### Ce qui n'allait pas
+
+Chaque page de niveau s'ouvrait sur cinq **affirmations** : « Constitue toujours
+une épargne de précaution avant d'investir », « Corrélation n'est pas
+causalité ». Le lecteur avait donc la réponse **avant** la question. Il lisait
+ensuite en terrain connu, sans effort de rappel, et ressortait avec l'impression
+d'avoir appris — celle-là même que la relecture produit, et que le parcours
+Apprendre passe trois niveaux à dénoncer.
+
+### Ce qui a été fait
+
+Les cinq idées sont posées **en questions**, à la place exacte du bloc
+précédent : « De quoi dépend le niveau de risque que tu peux te permettre ? ».
+Les affirmations descendent en fin de guide, sous « ✅ Ce que tu retiens », juste
+avant le quiz. La lecture suit donc : *je me demande — je lis — je vérifie — je
+me teste*.
+
+**Aucune affirmation n'a été réécrite.** Elles sont déplacées mot pour mot, et un
+contrôle les a comparées une à une à leur version d'origine avant la poussée :
+**83 pages, zéro différence**. La seule chose écrite ici, ce sont les **415
+questions**, une par affirmation, page par page.
+
+Côté anglais, elles suivent les affirmations **anglaises** — qui ne sont pas
+toujours la traduction mot pour mot des françaises. Santé avancé et Écologie
+intermédiaire disent autre chose : traduire les questions françaises y aurait
+posé des questions sans réponse dans la page.
+
+### Un liseré mort depuis la refonte du mode clair
+
+En mesurant le rendu de l'échantillon, le liseré de 4 px de `.recap-box`
+**n'existait plus — dans aucun des deux thèmes**. La refonte du mode clair avait
+ajouté `border: var(--bord-carte)` **après** `border-left` :
+
+```css
+/* avant, cassé */    border-left: 4px solid var(--primary);  …  border: var(--bord-carte);
+/* après, réparé */   border: var(--bord-carte);  border-left: 4px solid var(--primary);
+```
+
+`border` est un raccourci : il remet `border-left` à zéro. En clair le liseré
+devenait un trait gris d'un pixel, en sombre (`--bord-carte: none`) il
+disparaissait tout court. Remis dans l'ordre, il revient tel qu'il était avant la
+refonte — ce n'est pas une retouche du mode sombre, c'est une réparation, et le
+dépôt le prouve : la règle d'avant la refonte ne contenait aucun `border`.
+
+Le bloc de fin se distingue par la couleur de succès plutôt que par une forme
+nouvelle : c'est le même objet, à un autre moment de la lecture.
+
+### Ce qu'on saura, et ce qu'on ne saura pas
+
+Ce changement ne se mesurera pas avant le lancement : les visiteurs actuels sont
+des testeurs. Ce qu'on pourra regarder ensuite, c'est le **taux d'ouverture des
+sections** — si poser une question fait ouvrir davantage, l'effet sera là, et il
+se distinguera de celui des amorces parce qu'il porte sur une autre partie de la
+page.
+
 ## 2026-09-08 — Un objectif au début, une action à la fin, sur les 84 pages de niveau
 
 ### Ce que l'audit pédagogique avait trouvé
