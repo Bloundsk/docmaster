@@ -177,11 +177,18 @@ document.addEventListener("DOMContentLoaded", () => {
        famille 👨‍👩‍👧 se briserait en trois personnages. */
     const EMOJI = /([\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{231A}-\u{231B}\u{23E9}-\u{23FA}][\u{FE0F}\u{200D}]?)+/gu;
 
-    /* Ce qu'on ne touche pas. Le code, parce qu'un emoji y serait un caractère
-       de données ; la mascotte, qui a déjà ses propres animations et se
-       mettrait à trembler deux fois ; les zones réservées aux lecteurs
-       d'écran. */
-    const EPARGNES = "code, pre, .mascotte, .emo, [aria-hidden='true'] .emo";
+    /* Ce qu'on ne touche pas.
+
+       Le code, parce qu'un emoji y serait un caractère de données. La mascotte,
+       qui a déjà ses propres animations et se mettrait à trembler deux fois.
+
+       Et les BOUTONS DE FAVORI. Leur étoile n'est pas une décoration : c'est
+       l'état, ☆ ou ★, et une étoile qui bouge ne se lit plus. Le défaut était
+       même pire que gênant : favoris.js réécrit le contenu du bouton à chaque
+       clic, ce qui détruisait l'enveloppe — l'étoile flottait donc tant qu'on
+       n'y touchait pas, puis s'immobilisait une fois cochée. Deux états, deux
+       comportements, sans que rien ne le justifie. */
+    const EPARGNES = "code, pre, .mascotte, .btn-favori, .emo";
 
     const marcheur = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
         acceptNode(n) {
