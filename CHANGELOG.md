@@ -1,5 +1,96 @@
 # Changelog — Clicked
 
+## 2026-09-07 — Tous les emojis animés, sauf ceux qui disent quelque chose
+
+### La demande, et la réserve
+
+« Il faut animer tous les emojis du site, il ne fait pas assez vivant. »
+
+La réserve a été posée avant de construire, puis maintenue par Ludo : sur la
+page Actualités, **51 emojis bougent en même temps, sans fin**. Le CSS du site
+dit lui-même qu'« un mouvement permanent provoque nausées et vertiges chez les
+personnes souffrant de troubles vestibulaires ». Trois régimes lui ont été
+rendus côte à côte, à la vraie densité — permanent, une fois à l'arrivée, au
+survol. Il a choisi le permanent en connaissance de cause.
+
+### Comment, et pourquoi c'est réversible en une minute
+
+Un emoji est du **texte**, pas un élément : pour l'animer il lui faut une
+balise. `enhance.js` — déjà chargé par les 133 pages, et nommé « améliorations
+partagées » — en pose une autour de chacun **à l'affichage**. Aucun fichier de
+contenu n'est modifié ; retirer le bloc rend le site à son état d'avant.
+
+Le retard croissant fait une vague plutôt qu'un sursaut d'ensemble, et il est
+plafonné à 1,2 s : sans cela, le dernier emoji d'une page longue attendrait
+plusieurs secondes avant de bouger.
+
+### Ce qui est exclu, et c'est le vrai contenu de ce travail
+
+| | | Pourquoi |
+|---|---|---|
+| Flèches | `→ ← ↑` — **402 occurrences** | « Voir le guide → » et toute la navigation. De la ponctuation, pas des emojis : les faire flotter aurait ressemblé à un défaut d'affichage. |
+| Maths | `− ≈ ∞` | Dans les exemples chiffrés. |
+| Chevron | `▾` | Il tourne déjà. |
+| Drapeau | `🇫🇷` | Un drapeau est une **paire** d'indicateurs régionaux ; en envelopper un seul le casse en deux lettres. |
+| Code, mascotte | | Le premier porte des données, la seconde s'anime déjà. |
+| **Étoile de favori** | `☆ ★` | Voir plus bas. |
+
+### Deux mesures ont changé le code
+
+**La plage ratait ⏱, présent 77 fois** — les durées de leçon et la carte
+Productivité. Treize cartes sur quatorze s'animaient ; la quatorzième restait
+immobile. Ça ne s'est pas vu à l'œil, mais en comptant les caractères
+pictographiques que la plage ne couvrait pas.
+
+**Un correctif qui était le défaut.** `inline-block` est indispensable — une
+transformation ne s'applique pas à un élément en ligne — et j'avais ajouté un
+`vertical-align: -.06em` pour compenser un décalage supposé. Mesuré :
+
+```
+texte simple (inline) ........... titre 29,44 px · page 4 613 px
+inline-block seul ............... titre 29,44 px · page 4 613 px
+inline-block + mon correctif .... titre 30,53 px · page 4 631 px
+```
+
+`inline-block` ne coûte rien. Mon correctif ajoutait un pixel par titre et
+18 px à la page. Retiré.
+
+### L'étoile des favoris — une incohérence, pas seulement une gêne
+
+Ludo l'a signalée juste après : **une étoile qui bouge ne se lit plus**, `☆` ou
+`★` étant l'information elle-même.
+
+Le défaut allait plus loin. `favoris.js` réécrit le contenu du bouton à chaque
+clic, ce qui **détruisait l'enveloppe** : l'étoile flottait tant qu'on n'y
+touchait pas, puis s'immobilisait une fois cochée. Deux états, deux
+comportements, sans que rien ne le justifie.
+
+**La règle qui en sort : un emoji qui porte un état ne s'anime pas.** Elle vaut
+au-delà des favoris — c'est elle qu'il faudra appliquer à tout indicateur ajouté
+plus tard.
+
+Deux autres emojis vivent dans des boutons, et ont été soumis à Ludo :
+
+- **🌙 du sélecteur de thème** — même cas exactement, il indique un état et
+  `theme.js` le réécrit à chaque bascule. **Ludo a demandé de le laisser en
+  mouvement.** Il s'immobilisera donc au premier clic, et c'est un écart connu
+  et accepté, pas un oubli.
+- **🔗 de « Copier le lien »** — décoratif, il accompagne un libellé. Rien ne
+  s'oppose à ce qu'il bouge.
+
+### Mouvement réduit
+
+Qui l'a demandé à son système ne reçoit rien, et **le parcours ne s'exécute même
+pas** : inutile de poser 51 balises pour ne rien animer. Une règle CSS sert de
+filet. À l'impression, l'emoji redevient du texte simple et immobile.
+
+### Vérifié
+
+Trois pages : 41 emojis sur l'accueil, 51 sur Actualités, 34 sur une leçon.
+Aucune balise vide, aucun débordement, aucune erreur de console, les ancres
+intactes, et les caractères à variante — ⚖️ 👁️ ⚙️ — gardent leurs couleurs.
+Treize contrôles, géométrie comprise, lancés avant chaque poussée.
+
 ## 2026-09-06 — Deux écritures au lieu de deux sans-serif, et un réglage qui ne marchait qu'à moitié
 
 ### Ce qui n'allait pas

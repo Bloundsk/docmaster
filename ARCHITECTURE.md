@@ -602,6 +602,15 @@ Trois pièges à ne pas rouvrir :
 - **Une couleur ne doit jamais porter seule une information.** Les quiz ne
   signalaient juste et faux que par du vert et du rouge ; un ✓ et un ✗ doublent
   désormais le signal.
+- **Un emoji qui porte un ÉTAT ne s'anime pas.** Depuis le 7 septembre 2026,
+  `enhance.js` enveloppe chaque emoji de la page pour le faire flotter. L'étoile
+  des favoris en est exclue : `☆` ou `★` est l'information elle-même, et une
+  étoile qui bouge ne se lit plus. Le défaut était double — `favoris.js`
+  réécrivant le bouton à chaque clic, l'étoile flottait avant d'être cochée et
+  s'immobilisait après. Sont exclus au même titre le code, la mascotte, les
+  flèches `→ ←` (402 occurrences, c'est de la ponctuation) et le drapeau, qui
+  est une paire de caractères indissociables. *Exception assumée : le 🌙 du
+  thème porte lui aussi un état, mais Ludo a demandé qu'il reste en mouvement.*
 - **Quand une couleur ne passe pas, regarder la TAILLE avant de la délaver.**
   Le seuil de 7:1 vaut pour le texte courant ; au-delà de 18,66 px en gras il
   tombe à 4,5. Le ✓ / ✗ du quiz faisait 15,2 px et échouait : agrandi à 20,8 px,
