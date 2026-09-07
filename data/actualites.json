@@ -1,6 +1,30 @@
 {
-  "maj": "2026-09-06T11:43:06.918Z",
+  "maj": "2026-09-07T13:35:25.599Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwJBVV95cUxOSWE3emRIdjJ2eTNhSXJVZjBqQnVzN29Pd2hPODhhb2R4blNlZG5MdHRFcTdGSTlnaDlObjVqR3FYRWRlN2lPaW9uNUtObDJIdWtKQldqOU5wc3VBSFdyR1E4WjB4N1ZjenY0TE5VMl8yd2ptRGtYckVIdS1RcE45YjhMMDNZNDBKbG9lSl9ZdGdLVHZQSDAtTDNsOWNONnl1X2puenhuclhqQWNqM1FCQVBiS0dMcUtFWklZQkJSNkJqTHotOFVZOWR3Zm9ac1dKM3RwaE9LdkZVMjc5ako1RGdCeXozdV9rWXI1blNjNUlwYlpyLXN1eFJRRThOUGJsMnRIX29DTTluSnBJZXJtWEVtNEhDZ3dkT3VxYk9Wcm5PX2ZOakVicXpINjBhZzQ?oc=5",
+      "titre": "Multiplication des cyber-attaques et fuites de données : le gouvernement n'a toujours pas fait voter la directive NIS 2 pour les éviter",
+      "source": "france3-regions.franceinfo.fr",
+      "date": "2026-09-07",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOem9rd3RXVTNzTTIwb1pXaE1wa0VyaVBCV3UtRG0zbVZWa3dCMmFDd1AzcHh5c1ExN0dQMGI4NE1zQTJHMmZhWTItWWxEX3NSNmJ0QVpQMXB3Uk50dUlic053VWJacmZQUmw0dE1VNGpueTc2V1hXNS1FR2xjbzN2M3NRZy1KanpwWk13MU51dGVtWDE0NUNBclZuc09KZENDVjRtVW44MmpwNHZmLTFaZnFCNWZlOW96QmpVYUpYQXR5SkFYNGNQNmd4TlFoWUNDSXkwZ2F3WEowR1Vwcl94b3g3X18?oc=5",
+      "titre": "Intelligence artificielle : l’UE enquête sur une nouvelle perte de contrôle d’agents OpenAI",
+      "source": "Sud Ouest",
+      "date": "2026-09-07",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "les-agents-ia",
+      "section": "⚙️ Les agents IA",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
+      "publie": "2026-09-07"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
       "titre": "Mots de passe, identifiants, emails... une nouvelle fuite massive de données secoue la France",
@@ -264,30 +288,6 @@
       "section": "🏥 La médecine du travail",
       "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-09-02"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWW1ON0k2YnFKUXd4RWlxMURwcGxYUjktVGx5OXptRzJ4UXEzQXMxVVdDNUdXU3JIMGNxYVdPQ0VuSXROQ1ZhaldvblpQYXE3WHFqQm0tU3VpczNIbldfa0YwblpDenBfRmpKZEJHc2c0WUNOUE1Objhnd2dNSzN5WnBLcXR6NEs1OUlIOTE1X2xNZUx2VG42V2NfOHRTTjRJUC1wQWZzeFJEcTR0SHVzT1hwWnFqdw?oc=5",
-      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
-      "source": "MaVille.com",
-      "date": "2026-09-02",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "quest-ce-quun-llm",
-      "section": "🧠 Qu'est-ce qu'un LLM ?",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRzVKQjJNZ0RGdXk1dTJvcDNXcHJrSTRTT0Y2WWFoeGZuc0hDdHd2MGNGcUNOdVFQZEd2QXdSdmdpZXJCZGlSNWpGYy1JdTQ5U296dEZxcllDVmhrbzRXYkJqSURoUktabWZFZGpXZ1pqUEtRcWpDRjBscVZEWWg3azNqWDhjejIwTlNNVWt1QzN1eVFHLUFJM0pTcEMxQ0dVay04eUdrdDlxMVptUml0WXBnUWNyNkFtdW9odXZkQmhEUDZId1dSdERBOEszOE9zRjJBTDhVc2ZHQQ?oc=5",
-      "titre": "Claude ou Gemini : faut-il choisir l’intelligence ou la polyvalence ?",
-      "source": "Android MT",
-      "date": "2026-09-02",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "choisir-un-modele",
-      "section": "⚖️ Choisir un modèle",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "publie": "2026-09-03"
     }
   ]
 }
