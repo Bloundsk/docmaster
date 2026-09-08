@@ -35,9 +35,9 @@ window.QUIZ = {
             {
                 q: "Compared with an occupied wait of the same length, an empty wait feels:",
                 options: [
-                    "Shorter",
+                    "Shorter, since you do not endure it",
                     "About twice as long",
-                    "The same"
+                    "The same, the duration is identical"
                 ],
                 a: 1,
                 explication: "Hence content skeletons and immediate feedback on click."
@@ -47,7 +47,7 @@ window.QUIZ = {
                 q: "What is optimistic display?",
                 options: [
                     "Hiding errors from the user",
-                    "Preloading every page of the site",
+                    "Preloading every page of the site in the background",
                     "Showing the expected result before the server confirms"
                 ],
                 a: 2,
@@ -56,7 +56,7 @@ window.QUIZ = {
             {
                 q: "What is wrong with a loading animation that shows no progress?",
                 options: [
-                    "It drains the battery",
+                    "It drains the battery and the display resources for almost nothing",
                     "It informs of nothing and feels longer for being indeterminate",
                     "It is not accessible"
                 ],
@@ -81,7 +81,7 @@ window.QUIZ = {
             {
                 q: "How does decision time grow according to Hick's law?",
                 options: [
-                    "Linearly with the number of options",
+                    "Linearly with the number of options offered",
                     "Exponentially",
                     "With the logarithm of the number of options"
                 ],
@@ -91,7 +91,7 @@ window.QUIZ = {
             {
                 q: "Applied as it stands, what does Hick's law conclude about submenus?",
                 options: [
-                    "That they always speed up navigation",
+                    "That they always speed up navigation, whatever the number of entries and sub-levels",
                     "That a flat list beats a two-tier navigation, since it makes you decide only once",
                     "That they have no effect"
                 ],
@@ -101,7 +101,7 @@ window.QUIZ = {
             {
                 q: "So what makes grouping win?",
                 options: [
-                    "Hick's law",
+                    "Hick's law, which counts the number of options",
                     "Visual scanning: finding without reading",
                     "User habit"
                 ],
@@ -113,7 +113,7 @@ window.QUIZ = {
                 q: "What does the time to reach a target depend on, under Fitts's law?",
                 options: [
                     "Its distance and its size",
-                    "Its colour and contrast",
+                    "Its colour and its contrast",
                     "The number of elements on screen"
                 ],
                 a: 0,
@@ -132,7 +132,7 @@ window.QUIZ = {
             {
                 q: "What does confusing simple with minimal consist of?",
                 options: [
-                    "Adding too many explanations",
+                    "Adding too many explanations, to the point of drowning the user under walls of text",
                     "Using too many colours",
                     "Removing labels and landmarks: the screen looks cleaner, the mental load goes up"
                 ],
@@ -147,7 +147,7 @@ window.QUIZ = {
             {
                 q: "What is a dark pattern?",
                 options: [
-                    "An interface in night mode",
+                    "An interface in night mode, designed to tire the eyes less when it is used at night",
                     "An interface designed to obtain what the user would not have chosen knowingly",
                     "An ergonomic mistake"
                 ],
@@ -169,7 +169,7 @@ window.QUIZ = {
                 options: [
                     "Thirty days' notice",
                     "A means as simple as the one used to subscribe",
-                    "Confirmation by post"
+                    "Confirmation by registered post"
                 ],
                 a: 1,
                 explication: "Signing up in thirty seconds and having to hunt for a hidden page to leave is not compliant."
@@ -180,7 +180,7 @@ window.QUIZ = {
                 options: [
                     "The gain is immediate and measured, the cost deferred and diffuse",
                     "They do not work",
-                    "They are technically complex"
+                    "They are technically complex to build and then to maintain over time"
                 ],
                 a: 0,
                 explication: "Cancellations, refunds, negative reviews and distrust do not appear on the conversion dashboard."
@@ -189,7 +189,7 @@ window.QUIZ = {
                 q: "Which test identifies an unintentional dark pattern?",
                 options: [
                     "If the user discovered this mechanism, would they feel cheated?",
-                    "Checking legal compliance",
+                    "Checking legal compliance with the company's lawyers before shipping",
                     "Asking the sales team"
                 ],
                 a: 0,
@@ -199,7 +199,7 @@ window.QUIZ = {
                 q: "“No thanks, I'd rather pay more” is an example of:",
                 options: [
                     "A deliberate brand tone",
-                    "A useful clarification",
+                    "A useful clarification, which stops the user refusing by mistake",
                     "Shaming the refusal: wording written to be unpleasant to click"
                 ],
                 a: 2,
@@ -214,7 +214,7 @@ window.QUIZ = {
                 q: "What is the most important measure in a usability test?",
                 options: [
                     "Success rate",
-                    "Task time",
+                    "The time taken on the task",
                     "Declared satisfaction"
                 ],
                 a: 0,
@@ -225,7 +225,7 @@ window.QUIZ = {
                 options: [
                     "Faster is not always better, particularly on an important decision",
                     "It is hard to measure",
-                    "It varies too much between participants"
+                    "It varies too much between participants to compare one test with another"
                 ],
                 a: 0,
                 explication: "On a significant purchase, a longer time can signal careful reading."
@@ -233,8 +233,8 @@ window.QUIZ = {
             {
                 q: "A usability test mainly shows:",
                 options: [
-                    "Why people fail",
-                    "What people prefer",
+                    "Why people fail, in some detail",
+                    "What people say they prefer",
                     "Where people fail, rarely why"
                 ],
                 a: 2,
@@ -244,7 +244,7 @@ window.QUIZ = {
             {
                 q: "What is an isolated figure worth in design?",
                 options: [
-                    "It is enough if measured rigorously",
+                    "It is enough if it has been measured rigorously enough",
                     "It is better than nothing",
                     "Nothing: it is the comparison that produces the information"
                 ],
@@ -256,7 +256,7 @@ window.QUIZ = {
                 options: [
                     "It is hard to collect",
                     "It is ambiguous: interest or confusion?",
-                    "It varies between browsers"
+                    "It varies between browsers and between devices"
                 ],
                 a: 1,
                 explication: "A convenient but uninterpretable indicator is worse than none: it gives the impression of knowing."
@@ -265,7 +265,7 @@ window.QUIZ = {
                 q: "How do you turn an improvement into a budgetary argument?",
                 options: [
                     "By citing sector best practice",
-                    "By showing before-and-after mock-ups",
+                    "By showing before-and-after mock-ups to the committee",
                     "By counting the hours saved per year across all users"
                 ],
                 a: 2,
@@ -280,8 +280,8 @@ window.QUIZ = {
             q: "What is this level about, compared with the previous ones?",
             options: [
                 "What happens in the person opposite",
-                "Design tools",
-                "Front-end implementation"
+                "Design tools and how to use them well",
+                "Front-end implementation and code"
             ],
             a: 0,
             explication: "How long they think they are waiting, how many options their attention can take, and what makes them give up."
@@ -291,7 +291,7 @@ window.QUIZ = {
             options: [
                 "Should user behaviour be measured?",
                 "Should this knowledge be used to help, or to manipulate?",
-                "Should users be told about psychological laws?"
+                "Should users be told about the psychological laws at work?"
             ],
             a: 1,
             explication: "The same mechanisms serve to smooth a journey or to trap a consent."
@@ -300,8 +300,8 @@ window.QUIZ = {
             q: "Two levers act on perceived waiting. Which?",
             options: [
                 "Cutting weight, and occupying the wait",
-                "Raising bandwidth, and hiding errors",
-                "Preloading, and compressing"
+                "Raising bandwidth, and hiding the errors",
+                "Preloading, and compressing the images"
             ],
             a: 0,
             explication: "The first acts on real time, the second on felt time. Both count."
@@ -310,7 +310,7 @@ window.QUIZ = {
             q: "Why does this level insist on measurement?",
             options: [
                 "Because regulation requires it",
-                "Because the tools make it easy",
+                "Because the tools available today make it easy and inexpensive to do",
                 "Because without measurement a design does not improve: it changes"
             ],
             a: 2,
@@ -320,7 +320,7 @@ window.QUIZ = {
             q: "What separates a simple interface from a minimal one?",
             options: [
                 "The simple one takes little effort, the minimal one shows few things",
-                "Nothing, they are two words for the same thing",
+                "Nothing at all: they are simply two different words for the same thing",
                 "The minimal one is more accessible"
             ],
             a: 0,
@@ -329,7 +329,7 @@ window.QUIZ = {
         {
             q: "A countdown that resets on every visit is an example of:",
             options: [
-                "An accepted conversion technique",
+                "An accepted conversion technique in the trade",
                 "A technical fault",
                 "False urgency, therefore a dark pattern"
             ],

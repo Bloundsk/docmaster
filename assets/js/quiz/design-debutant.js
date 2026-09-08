@@ -13,7 +13,7 @@ window.QUIZ = {
             {
                 q: "Que traite l'UX, par opposition à l'UI ?",
                 options: [
-                    "Les couleurs et la typographie",
+                    "Les couleurs, la typographie et l'ensemble de l'habillage visuel",
                     "Ce que vit la personne : comprend-elle, atteint-elle son but ?",
                     "La vitesse de chargement"
                 ],
@@ -23,8 +23,8 @@ window.QUIZ = {
             {
                 q: "Un panneau de sortie de secours magnifique menant à une porte condamnée illustre quoi ?",
                 options: [
-                    "Une excellente UX",
-                    "Un problème purement technique",
+                    "Une excellente UX, puisque le panneau se voit de loin",
+                    "Un problème purement technique, sans rapport avec le design",
                     "Une excellente UI et une UX catastrophique"
                 ],
                 a: 2,
@@ -33,7 +33,7 @@ window.QUIZ = {
             {
                 q: "Où se joue l'essentiel du travail UX ?",
                 options: [
-                    "Dans le choix de la palette de couleurs",
+                    "Dans le choix de la palette de couleurs, de la typographie et des illustrations",
                     "En amont : à qui s'adresse-t-on, quel problème résout-on, dans quel ordre ?",
                     "Au moment des tests finaux"
                 ],
@@ -44,9 +44,9 @@ window.QUIZ = {
             {
                 q: "Que ne peut-on pas rattraper par l'esthétique ?",
                 options: [
-                    "Le choix de la police",
+                    "Le choix de la police et de sa taille",
                     "Le nombre d'étapes d'un formulaire",
-                    "La taille des marges"
+                    "La taille des marges autour du texte"
                 ],
                 a: 1,
                 explication: "Chaque étape supplémentaire fait perdre une partie des utilisateurs. Aucune animation ne compense douze champs."
@@ -54,7 +54,7 @@ window.QUIZ = {
             {
                 q: "Quel message d'erreur est utile ?",
                 options: [
-                    "« Une erreur est survenue »",
+                    "« Une erreur est survenue, merci de réessayer plus tard »",
                     "« Erreur 500 »",
                     "« Ce code postal ne correspond à aucune commune »"
                 ],
@@ -66,7 +66,7 @@ window.QUIZ = {
                 options: [
                     "Est-ce que ça plaît en capture d'écran ?",
                     "Est-ce que quelqu'un qui découvre y arrive du premier coup ?",
-                    "Est-ce conforme aux tendances actuelles ?"
+                    "Est-ce conforme aux tendances actuelles du métier et du secteur ?"
                 ],
                 a: 1,
                 explication: "Les tendances produisent régulièrement des interfaces séduisantes et pénibles à utiliser."
@@ -80,7 +80,7 @@ window.QUIZ = {
                 q: "Pourquoi un wireframe est-il volontairement laid ?",
                 options: [
                     "Pour aller plus vite",
-                    "Parce que les outils sont limités",
+                    "Parce que les outils de maquettage sont encore trop limités pour cela",
                     "Pour qu'on critique la structure au lieu de la couleur d'un bouton"
                 ],
                 a: 2,
@@ -96,7 +96,7 @@ window.QUIZ = {
                 q: "Que permet la basse fidélité ?",
                 options: [
                     "Présenter au client final",
-                    "Transmettre au développement",
+                    "Transmettre directement au développement, sans étape intermédiaire",
                     "Explorer plusieurs pistes et décider de la structure"
                 ],
                 a: 2,
@@ -108,7 +108,7 @@ window.QUIZ = {
                 options: [
                     "Un nom de produit réel fait parfois trois lignes là où l'exemple en faisait une",
                     "C'est plus agréable à lire",
-                    "Cela accélère la validation"
+                    "Cela accélère la validation par le client, qui se projette bien mieux dans le résultat"
                 ],
                 a: 0,
                 explication: "Ces débordements se découvrent sinon en développement — trop tard."
@@ -117,7 +117,7 @@ window.QUIZ = {
                 q: "Que se passe-t-il si l'on passe une journée à soigner un wireframe ?",
                 options: [
                     "On s'y attache et on cesse de le remettre en cause",
-                    "Le résultat final est meilleur",
+                    "Le résultat final est meilleur, parce que mieux préparé",
                     "Le développement va plus vite"
                 ],
                 a: 0,
@@ -126,9 +126,9 @@ window.QUIZ = {
             {
                 q: "Quelle erreur classique fait perdre le bénéfice du wireframe ?",
                 options: [
-                    "Le faire sur papier",
+                    "Le faire sur papier plutôt qu'à l'écran",
                     "Sauter directement en haute fidélité",
-                    "Le montrer trop tôt à l'équipe"
+                    "Le montrer trop tôt à l'équipe, avant d'être sûr"
                 ],
                 a: 1,
                 explication: "On y gagne une impression d'avance rapide, on y perd la possibilité de se tromper à bas coût."
@@ -142,7 +142,7 @@ window.QUIZ = {
                 q: "Comment l'œil aborde-t-il une page ?",
                 options: [
                     "Il balaie et classe les éléments par importance apparente",
-                    "Il lit de gauche à droite, ligne par ligne",
+                    "Il lit de gauche à droite et ligne par ligne, comme un livre",
                     "Il se pose d'abord au centre"
                 ],
                 a: 0,
@@ -151,7 +151,7 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il si tous les éléments d'une page sont mis en avant ?",
                 options: [
-                    "L'utilisateur a plus de choix",
+                    "L'utilisateur a plus de choix et peut décider lui-même de ce qui compte pour lui",
                     "Plus rien ne l'est : il doit tout lire pour décider, et la plupart renoncent",
                     "La page paraît plus riche"
                 ],
@@ -241,7 +241,7 @@ window.QUIZ = {
                 q: "À quel moment tester ?",
                 options: [
                     "Une semaine avant la mise en ligne",
-                    "Après le lancement, avec de vrais utilisateurs",
+                    "Après le lancement, avec de vrais utilisateurs et de vraies données",
                     "Sur le wireframe, quand tout peut encore changer sans coût"
                 ],
                 a: 2,
@@ -251,8 +251,8 @@ window.QUIZ = {
                 q: "Un utilisateur se trompe pendant un test. Qui n'a pas compris ?",
                 options: [
                     "L'interface, qui n'a pas été claire",
-                    "L'utilisateur",
-                    "Le concepteur du test"
+                    "L'utilisateur, qui n'a pas lu jusqu'au bout",
+                    "Le concepteur du test, qui a mal formulé la consigne"
                 ],
                 a: 0,
                 explication: "Ce renversement est le fondement du métier."
@@ -268,7 +268,7 @@ window.QUIZ = {
         {
             q: "Quelle est la caractéristique des meilleures interfaces ?",
             options: [
-                "Elles marquent les esprits",
+                "Elles marquent durablement les esprits",
                 "Elles suivent les dernières tendances",
                 "Elles ne se remarquent pas"
             ],
@@ -299,7 +299,7 @@ window.QUIZ = {
         {
             q: "Ton équipe trouve un bouton « évident ». Comment le vérifier ?",
             options: [
-                "Demander l'avis d'un autre designer",
+                "Demander l'avis d'un autre designer, extérieur à l'équipe projet",
                 "Comparer avec des sites concurrents",
                 "Regarder cinq personnes tenter la tâche, sans les aider"
             ],
@@ -309,7 +309,7 @@ window.QUIZ = {
         {
             q: "Tu dois livrer vite. Sur quoi ne pas rogner ?",
             options: [
-                "Le soin apporté aux wireframes",
+                "Le soin apporté aux wireframes et à leur présentation devant le client",
                 "Les tests utilisateurs, même informels sur une maquette papier",
                 "La palette de couleurs"
             ],

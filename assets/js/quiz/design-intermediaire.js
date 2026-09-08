@@ -35,8 +35,8 @@ window.QUIZ = {
                 q: "Que ne faut-il jamais supprimer sur un élément actif au clavier ?",
                 options: [
                     "Son contour de focus",
-                    "Son libellé",
-                    "Son animation"
+                    "Son libellé, visible à côté",
+                    "Son animation au survol"
                 ],
                 a: 0,
                 explication: "Le retirer parce qu'il est jugé disgracieux rend le site inutilisable pour qui ne peut pas viser à la souris."
@@ -55,7 +55,7 @@ window.QUIZ = {
             {
                 q: "Une image purement décorative doit être :",
                 options: [
-                    "Décrite en détail",
+                    "Décrite en détail, exactement comme toutes les autres images",
                     "Marquée comme décorative, pour ne pas être lue inutilement",
                     "Supprimée"
                 ],
@@ -101,7 +101,7 @@ window.QUIZ = {
                 q: "Comment juger un libellé de menu ?",
                 options: [
                     "À sa concision",
-                    "À sa cohérence avec la charte éditoriale",
+                    "À sa cohérence avec la charte éditoriale, qui fixe le vocabulaire de la marque",
                     "Quelqu'un qui découvre le site sait-il ce qu'il trouvera derrière ?"
                 ],
                 a: 2,
@@ -111,8 +111,8 @@ window.QUIZ = {
             {
                 q: "Que reprocher à « Nos solutions » comme entrée de menu ?",
                 options: [
-                    "C'est trop long",
-                    "C'est trop commercial",
+                    "C'est trop long pour une entrée de menu",
+                    "C'est trop commercial pour un site public",
                     "Cela ne dit rien de ce qu'on trouvera"
                 ],
                 a: 2,
@@ -122,7 +122,7 @@ window.QUIZ = {
                 q: "Que produit la présence simultanée de « Espace client » et « Mon compte » ?",
                 options: [
                     "Une hésitation à chaque visite : le visiteur doit deviner",
-                    "Une meilleure couverture des besoins",
+                    "Une meilleure couverture des besoins de chacun des visiteurs",
                     "Rien, les deux se comprennent"
                 ],
                 a: 0,
@@ -131,8 +131,8 @@ window.QUIZ = {
             {
                 q: "Au-delà de combien d'entrées de premier niveau faut-il regrouper ?",
                 options: [
-                    "Trois",
-                    "Quinze",
+                    "Trois entrées au maximum",
+                    "Quinze entrées, sans regrouper",
                     "Sept environ"
                 ],
                 a: 2,
@@ -146,7 +146,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi concevoir d'abord pour le petit écran ?",
                 options: [
-                    "Parce que c'est plus rapide à dessiner",
+                    "Parce que c'est bien plus rapide à dessiner que la version de bureau",
                     "Parce que les outils le recommandent",
                     "Parce que la contrainte force à identifier ce qui compte vraiment"
                 ],
@@ -156,7 +156,7 @@ window.QUIZ = {
             {
                 q: "Sur quoi les points de rupture doivent-ils être calés ?",
                 options: [
-                    "Sur les modèles de téléphones du moment",
+                    "Sur les modèles de téléphones les plus vendus au moment du projet",
                     "Sur le contenu, là où la mise en page commence à mal vieillir",
                     "Sur des valeurs standard universelles"
                 ],
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "Des erreurs de manipulation, que l'utilisateur s'attribuera",
                     "Une interface compacte et efficace",
-                    "Un problème uniquement sur les petits téléphones"
+                    "Un problème uniquement sur les petits téléphones, donc marginal"
                 ],
                 a: 0,
                 explication: "L'utilisateur croira s'être trompé lui-même. C'est le concepteur qui a fauté."
@@ -197,9 +197,9 @@ window.QUIZ = {
             {
                 q: "Que faut-il vérifier en plus de la taille d'une cible ?",
                 options: [
-                    "Sa couleur",
+                    "Sa couleur, pour qu'elle ressorte du fond",
                     "L'espacement avec les cibles voisines",
-                    "Son animation au survol"
+                    "Son animation au survol, sur les écrans tactiles"
                 ],
                 a: 1,
                 explication: "Deux grandes cibles collées l'une à l'autre produisent autant d'erreurs qu'une petite."
@@ -212,9 +212,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qu'un système de design, essentiellement ?",
                 options: [
-                    "Une bibliothèque de composants",
+                    "Une bibliothèque de composants réutilisables",
                     "Un ensemble de décisions prises une fois",
-                    "Une charte graphique"
+                    "Une charte graphique, avec ses couleurs et ses polices"
                 ],
                 a: 1,
                 explication: "Les composants ne sont que la matérialisation de ces décisions."
@@ -223,7 +223,7 @@ window.QUIZ = {
                 q: "À quoi sert principalement un système de design ?",
                 options: [
                     "À faire plus joli",
-                    "À accélérer le développement",
+                    "À accélérer le développement, en évitant de redessiner chaque écran",
                     "À fermer des questions, pour ne plus les reprendre à chaque écran"
                 ],
                 a: 2,
@@ -254,8 +254,8 @@ window.QUIZ = {
                 q: "Que faire d'une exception acceptée ?",
                 options: [
                     "L'intégrer au système, ou la corriger",
-                    "La documenter comme cas particulier",
-                    "La laisser vivre, c'est marginal"
+                    "La documenter comme un cas particulier assumé",
+                    "La laisser vivre : elle reste marginale"
                 ],
                 a: 0,
                 explication: "La laisser vivre à côté est le début de la fin."
@@ -292,7 +292,7 @@ window.QUIZ = {
             q: "Quel test révèle le plus de problèmes d'accessibilité en cinq minutes ?",
             options: [
                 "Naviguer sur son propre site au clavier seul",
-                "Vérifier les contrastes",
+                "Vérifier les contrastes de couleur sur toute la page",
                 "Lire le code source"
             ],
             a: 0,

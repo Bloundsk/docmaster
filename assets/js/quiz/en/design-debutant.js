@@ -15,7 +15,7 @@ window.QUIZ = {
             {
                 q: "What does UX deal with, as opposed to UI?",
                 options: [
-                    "Colours and typography",
+                    "Colours, typography, and everything that makes up the visual styling of a page",
                     "What the person goes through: do they understand, do they reach their goal?",
                     "Loading speed"
                 ],
@@ -25,8 +25,8 @@ window.QUIZ = {
             {
                 q: "A magnificent emergency exit sign leading to a sealed door illustrates what?",
                 options: [
-                    "Excellent UX",
-                    "A purely technical problem",
+                    "Excellent UX, since the sign can be seen from afar",
+                    "A purely technical problem, nothing to do with design",
                     "Excellent UI and catastrophic UX"
                 ],
                 a: 2,
@@ -35,7 +35,7 @@ window.QUIZ = {
             {
                 q: "Where does most of the UX work happen?",
                 options: [
-                    "In the choice of colour palette",
+                    "In the choice of the colour palette, the typography and the illustrations",
                     "Upstream: who is this for, what problem does it solve, in what order?",
                     "At the final testing stage"
                 ],
@@ -46,9 +46,9 @@ window.QUIZ = {
             {
                 q: "What cannot be rescued by aesthetics?",
                 options: [
-                    "The choice of typeface",
+                    "The choice of typeface and its size",
                     "The number of steps in a form",
-                    "The size of the margins"
+                    "The size of the margins around the text"
                 ],
                 a: 1,
                 explication: "Every extra step loses a share of users. No animation compensates for twelve fields."
@@ -56,8 +56,8 @@ window.QUIZ = {
             {
                 q: "Which error message is useful?",
                 options: [
-                    "“An error has occurred”",
-                    "“Error 500”",
+                    "“An error has occurred, please try again later”",
+                    "“Error 500: the server did not respond in time”",
                     "“This postcode does not match any town”"
                 ],
                 a: 2,
@@ -68,7 +68,7 @@ window.QUIZ = {
                 options: [
                     "Does it look good in a screenshot?",
                     "Does somebody seeing it for the first time get there straight away?",
-                    "Does it match current trends?"
+                    "Does it match the trends of the moment in this trade and this sector?"
                 ],
                 a: 1,
                 explication: "Trends regularly produce interfaces that are attractive and painful to use."
@@ -82,7 +82,7 @@ window.QUIZ = {
                 q: "Why is a wireframe deliberately ugly?",
                 options: [
                     "To go faster",
-                    "Because the tools are limited",
+                    "Because the mock-up tools available today are still too limited for that",
                     "So that people criticise the structure instead of a button's colour"
                 ],
                 a: 2,
@@ -101,7 +101,7 @@ window.QUIZ = {
             {
                 q: "What does low fidelity allow?",
                 options: [
-                    "Presenting to the final client",
+                    "Presenting to the final client, who can picture the result",
                     "Handing over to development",
                     "Exploring several routes and deciding the structure"
                 ],
@@ -123,7 +123,7 @@ window.QUIZ = {
                 q: "What happens if you spend a day polishing a wireframe?",
                 options: [
                     "You become attached to it and stop questioning it",
-                    "The final result is better",
+                    "The final result is better, because it was better prepared",
                     "Development goes faster"
                 ],
                 a: 0,
@@ -132,9 +132,9 @@ window.QUIZ = {
             {
                 q: "Which classic mistake wastes the benefit of the wireframe?",
                 options: [
-                    "Doing it on paper",
+                    "Doing it on paper rather than on screen",
                     "Jumping straight to high fidelity",
-                    "Showing it to the team too early"
+                    "Showing it to the team too early, before it holds"
                 ],
                 a: 1,
                 explication: "You gain an impression of fast progress, you lose the ability to be wrong cheaply."
@@ -148,7 +148,7 @@ window.QUIZ = {
                 q: "How does the eye approach a page?",
                 options: [
                     "It scans and ranks elements by apparent importance",
-                    "It reads left to right, line by line",
+                    "It reads from left to right, line by line, as in a book",
                     "It settles in the centre first"
                 ],
                 a: 0,
@@ -157,7 +157,7 @@ window.QUIZ = {
             {
                 q: "What happens if every element on a page is emphasised?",
                 options: [
-                    "The user has more choice",
+                    "The user has more choice and can decide for themselves what matters most",
                     "Nothing is: they have to read everything to decide, and most give up",
                     "The page looks richer"
                 ],
@@ -169,7 +169,7 @@ window.QUIZ = {
                 options: [
                     "Shrinking the browser window",
                     "Squinting until the text becomes unreadable and seeing what stands out",
-                    "Printing the page in black and white"
+                    "Printing the page in black and white, then looking at it from a distance"
                 ],
                 a: 1,
                 explication: "If the main action is not part of it, the hierarchy needs revisiting."
@@ -179,7 +179,7 @@ window.QUIZ = {
                 q: "What does the principle of proximity mean?",
                 options: [
                     "Elements that are close together are perceived as related",
-                    "Elements should be grouped by colour",
+                    "Elements should be grouped by colour, never by position",
                     "Margins must be identical everywhere"
                 ],
                 a: 0,
@@ -214,7 +214,7 @@ window.QUIZ = {
                 q: "Why can you not evaluate your own interface?",
                 options: [
                     "For lack of emotional objectivity",
-                    "Because it requires a certification",
+                    "Because it requires a formal certification that very few people actually have",
                     "Because you know where everything is, and that knowledge cannot be undone"
                 ],
                 a: 2,
@@ -234,7 +234,7 @@ window.QUIZ = {
                 q: "What instruction should you give a participant?",
                 options: [
                     "“Find the price of an annual subscription and start signing up”",
-                    "“What do you think of this page?”",
+                    "“What do you think of this page, and of its overall look?”",
                     "“Browse freely for a few minutes”"
                 ],
                 a: 0,
@@ -245,8 +245,8 @@ window.QUIZ = {
                 q: "What is the hardest behaviour to keep up during a test?",
                 options: [
                     "Saying nothing",
-                    "Taking notes",
-                    "Timing"
+                    "Taking notes as you go",
+                    "Timing every step"
                 ],
                 a: 0,
                 explication: "The moment you help, the test is over: the real user will have nobody beside them."
@@ -255,7 +255,7 @@ window.QUIZ = {
                 q: "When should you test?",
                 options: [
                     "A week before launch",
-                    "After launch, with real users",
+                    "After launch, with real users and real data to look at",
                     "On the wireframe, while everything can still change at no cost"
                 ],
                 a: 2,
@@ -266,7 +266,7 @@ window.QUIZ = {
                 options: [
                     "The interface, which failed to be clear",
                     "The user",
-                    "The person who designed the test"
+                    "The person who designed the test, and worded the task"
                 ],
                 a: 0,
                 explication: "That reversal is the foundation of the trade."
@@ -309,7 +309,7 @@ window.QUIZ = {
         {
             q: "Your team finds a button “obvious”. How do you check?",
             options: [
-                "Ask another designer's opinion",
+                "Ask another designer's opinion, from outside the project team",
                 "Compare with competitor sites",
                 "Watch five people attempt the task, without helping them"
             ],
@@ -319,7 +319,7 @@ window.QUIZ = {
         {
             q: "You have to ship fast. What should you not cut?",
             options: [
-                "The care taken over wireframes",
+                "The care taken over wireframes and their presentation",
                 "User testing, even informally on a paper mock-up",
                 "The colour palette"
             ],
@@ -329,7 +329,7 @@ window.QUIZ = {
         {
             q: "Light grey text on white, elegant on your screen. What is the problem?",
             options: [
-                "It uses more ink when printed",
+                "It uses more ink when the page is printed out on paper",
                 "It becomes unreadable in the sun or for someone over fifty",
                 "It slows down loading"
             ],

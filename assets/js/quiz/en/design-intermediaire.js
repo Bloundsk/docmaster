@@ -17,7 +17,7 @@ window.QUIZ = {
                 options: [
                     "A small minority of disabled people",
                     "Everyone: disability is often temporary or situational",
-                    "Only public services, which are obliged to provide it"
+                    "Only public services, which are obliged to provide it by law"
                 ],
                 a: 1,
                 explication: "A plastered arm, a screen in bright sun, a child in your arms: all put you in the position accessibility accounts for."
@@ -36,8 +36,8 @@ window.QUIZ = {
                 q: "What must never be removed from an element focused by the keyboard?",
                 options: [
                     "Its focus outline",
-                    "Its label",
-                    "Its animation"
+                    "Its label, shown beside it",
+                    "Its hover animation"
                 ],
                 a: 0,
                 explication: "Removing it because it is judged unsightly makes the site unusable for anyone who cannot aim a mouse."
@@ -56,7 +56,7 @@ window.QUIZ = {
             {
                 q: "A purely decorative image must be:",
                 options: [
-                    "Described in detail",
+                    "Described in detail, exactly like every other image on the page",
                     "Marked as decorative, so it is not read out pointlessly",
                     "Removed"
                 ],
@@ -93,7 +93,7 @@ window.QUIZ = {
                 options: [
                     "Ranking pages by traffic",
                     "Asking participants to group content and name the groups",
-                    "Sorting content by publication date"
+                    "Sorting content by publication date, newest at the top"
                 ],
                 a: 1,
                 explication: "The groupings that recur across most participants indicate the expected structure."
@@ -113,7 +113,7 @@ window.QUIZ = {
                 q: "What is wrong with “Our solutions” as a menu entry?",
                 options: [
                     "It is too long",
-                    "It is too commercial",
+                    "It is too commercial for a public-facing site",
                     "It says nothing about what you will find"
                 ],
                 a: 2,
@@ -123,7 +123,7 @@ window.QUIZ = {
                 q: "What does having both “Customer area” and “My account” produce?",
                 options: [
                     "Hesitation at every visit: the visitor has to guess",
-                    "Better coverage of user needs",
+                    "Better coverage of the needs of every kind of visitor",
                     "Nothing, both are understood"
                 ],
                 a: 0,
@@ -132,8 +132,8 @@ window.QUIZ = {
             {
                 q: "Beyond how many top-level entries should you group?",
                 options: [
-                    "Three",
-                    "Fifteen",
+                    "Three entries at most",
+                    "Fifteen, with no grouping",
                     "About seven"
                 ],
                 a: 2,
@@ -157,7 +157,7 @@ window.QUIZ = {
             {
                 q: "What should breakpoints be set on?",
                 options: [
-                    "The phone models of the moment",
+                    "The phone models that sell best at the time of the project",
                     "The content, where the layout starts to age badly",
                     "Universal standard values"
                 ],
@@ -189,7 +189,7 @@ window.QUIZ = {
                 q: "A 24-pixel link surrounded by other tightly packed links produces:",
                 options: [
                     "Handling errors, which the user will blame on themselves",
-                    "A compact and effective interface",
+                    "A compact and effective interface, dense but usable",
                     "A problem only on small phones"
                 ],
                 a: 0,
@@ -198,9 +198,9 @@ window.QUIZ = {
             {
                 q: "What must be checked besides the size of a target?",
                 options: [
-                    "Its colour",
+                    "Its colour, so that it stands out from the background",
                     "The spacing to neighbouring targets",
-                    "Its hover animation"
+                    "Its hover animation, on touch screens as well"
                 ],
                 a: 1,
                 explication: "Two large targets stuck together produce as many errors as one small one."
@@ -213,9 +213,9 @@ window.QUIZ = {
             {
                 q: "What is a design system, essentially?",
                 options: [
-                    "A component library",
+                    "A library of reusable components",
                     "A set of decisions taken once",
-                    "A brand style guide"
+                    "A brand style guide, with its colours and fonts"
                 ],
                 a: 1,
                 explication: "Components are only the embodiment of those decisions."
@@ -224,7 +224,7 @@ window.QUIZ = {
                 q: "What is a design system mainly for?",
                 options: [
                     "Making things prettier",
-                    "Speeding up development",
+                    "Speeding up development, by avoiding redrawing every screen",
                     "Closing questions, so they are not retaken on every screen"
                 ],
                 a: 2,
@@ -255,8 +255,8 @@ window.QUIZ = {
                 q: "What should be done with an accepted exception?",
                 options: [
                     "Absorb it into the system, or fix it",
-                    "Document it as a special case",
-                    "Leave it be, it is marginal"
+                    "Document it as a special case, and move on",
+                    "Leave it be, since it stays marginal anyway"
                 ],
                 a: 0,
                 explication: "Leaving it to live alongside is the beginning of the end."
@@ -291,7 +291,7 @@ window.QUIZ = {
             options: [
                 "Navigating your own site with the keyboard alone",
                 "Checking contrast",
-                "Reading the source code"
+                "Reading the source code looking for missing attributes"
             ],
             a: 0,
             explication: "Without a mouse, the blocking obstacles jump out immediately."
@@ -310,7 +310,7 @@ window.QUIZ = {
             q: "A button measures 32 pixels on a side. What should you make of that?",
             options: [
                 "It is below the 44-pixel recommendation",
-                "It is compliant",
+                "It is compliant with the guidelines",
                 "Size does not matter if the contrast is good"
             ],
             a: 0,

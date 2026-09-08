@@ -34,9 +34,9 @@ window.QUIZ = {
             {
                 q: "Une attente vide paraît, par rapport à une attente occupée de même durée :",
                 options: [
-                    "Plus courte",
+                    "Plus courte, car on ne la subit pas",
                     "Environ deux fois plus longue",
-                    "Identique"
+                    "Identique, la durée est la même"
                 ],
                 a: 1,
                 explication: "D'où l'intérêt des squelettes de contenu et du retour immédiat au clic."
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que l'affichage optimiste ?",
                 options: [
-                    "Masquer les erreurs à l'utilisateur",
+                    "Masquer les erreurs à l'utilisateur, pour ne pas l'inquiéter",
                     "Précharger toutes les pages du site",
                     "Afficher le résultat attendu avant confirmation du serveur"
                 ],
@@ -55,7 +55,7 @@ window.QUIZ = {
             {
                 q: "Que reprocher à une animation de chargement sans progression ?",
                 options: [
-                    "Elle consomme de la batterie",
+                    "Elle consomme de la batterie et des ressources d'affichage, sans rien apporter au lecteur",
                     "Elle n'informe de rien et paraît d'autant plus longue qu'elle est indéterminée",
                     "Elle n'est pas accessible"
                 ],
@@ -80,8 +80,8 @@ window.QUIZ = {
             {
                 q: "Comment croît le temps de décision selon la loi de Hick ?",
                 options: [
-                    "Linéairement avec le nombre d'options",
-                    "De façon exponentielle",
+                    "Linéairement avec le nombre d'options proposées",
+                    "De façon exponentielle avec le nombre d'options",
                     "Avec le logarithme du nombre d'options"
                 ],
                 a: 2,
@@ -90,7 +90,7 @@ window.QUIZ = {
             {
                 q: "Appliquée telle quelle, que conclut la loi de Hick sur les sous-menus ?",
                 options: [
-                    "Qu'ils accélèrent toujours la navigation",
+                    "Qu'ils accélèrent toujours la navigation, quel que soit le nombre d'entrées et de sous-niveaux",
                     "Qu'une liste plate bat une navigation à deux étages, puisqu'elle fait décider une seule fois",
                     "Qu'ils sont sans effet"
                 ],
@@ -100,9 +100,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui rend alors le regroupement gagnant ?",
                 options: [
-                    "La loi de Hick",
+                    "La loi de Hick, qui compte le nombre d'options",
                     "Le balayage visuel : trouver sans lire",
-                    "L'habitude des utilisateurs"
+                    "L'habitude des utilisateurs, qui connaissent le site"
                 ],
                 a: 1,
                 explication: "Un visiteur qui découvre un menu ne choisit pas, il cherche — et ce parcours coûte à peu près linéairement."
@@ -131,7 +131,7 @@ window.QUIZ = {
             {
                 q: "Quelle erreur consiste à confondre simple et minimal ?",
                 options: [
-                    "Ajouter trop d'explications",
+                    "Ajouter trop d'explications, au point de noyer l'utilisateur sous le texte",
                     "Utiliser trop de couleurs",
                     "Retirer libellés et repères : l'écran s'épure, la charge mentale augmente"
                 ],
@@ -157,7 +157,7 @@ window.QUIZ = {
                 q: "Que dit le droit européen sur le consentement ?",
                 options: [
                     "Il doit être aussi facile à refuser qu'à accepter",
-                    "Il suffit qu'un lien de refus existe quelque part",
+                    "Il suffit qu'un lien de refus existe quelque part sur la page",
                     "Il n'est pas encadré sur ce point"
                 ],
                 a: 0,
@@ -168,7 +168,7 @@ window.QUIZ = {
                 options: [
                     "Un préavis de trente jours",
                     "Un moyen aussi simple que celui de la souscription",
-                    "Une confirmation par courrier"
+                    "Une confirmation par courrier recommandé avec accusé"
                 ],
                 a: 1,
                 explication: "S'inscrire en trente secondes et devoir chercher une page cachée pour partir n'est pas conforme."
@@ -179,7 +179,7 @@ window.QUIZ = {
                 options: [
                     "Le gain est immédiat et mesuré, le coût différé et diffus",
                     "Ils ne fonctionnent pas",
-                    "Ils sont techniquement complexes"
+                    "Ils sont techniquement complexes à mettre en place et à maintenir"
                 ],
                 a: 0,
                 explication: "Résiliations, remboursements, avis négatifs et méfiance n'apparaissent pas dans le tableau de bord des conversions."
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "Si l'utilisateur découvrait ce mécanisme, se sentirait-il floué ?",
                     "Vérifier la conformité juridique",
-                    "Demander l'avis de l'équipe commerciale"
+                    "Demander l'avis de l'équipe commerciale, qui connaît les objectifs"
                 ],
                 a: 0,
                 explication: "L'intention ne change rien au résultat pour l'utilisateur."
@@ -198,7 +198,7 @@ window.QUIZ = {
                 q: "« Non merci, je préfère payer plus cher » relève de :",
                 options: [
                     "Un ton de marque assumé",
-                    "Une clarification utile",
+                    "Une clarification utile, qui évite à l'utilisateur de refuser par erreur",
                     "La honte du refus : un libellé rédigé pour être désagréable à cliquer"
                 ],
                 a: 2,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Quelle est la mesure la plus importante d'un test d'utilisabilité ?",
                 options: [
                     "Le taux de réussite",
-                    "Le temps de tâche",
+                    "Le temps passé sur la tâche",
                     "La satisfaction déclarée"
                 ],
                 a: 0,
@@ -224,7 +224,7 @@ window.QUIZ = {
                 options: [
                     "Plus rapide n'est pas toujours mieux, notamment sur une décision importante",
                     "Il est difficile à mesurer",
-                    "Il varie trop d'un participant à l'autre"
+                    "Il varie trop d'un participant à l'autre pour être comparable d'un test à l'autre"
                 ],
                 a: 0,
                 explication: "Sur un achat engageant, un temps plus long peut signaler une lecture attentive."
@@ -232,7 +232,7 @@ window.QUIZ = {
             {
                 q: "Un test d'utilisabilité montre surtout :",
                 options: [
-                    "Pourquoi les gens échouent",
+                    "Pourquoi les gens échouent, dans le détail",
                     "Ce que les gens préfèrent",
                     "Où les gens échouent, rarement pourquoi"
                 ],
@@ -243,7 +243,7 @@ window.QUIZ = {
             {
                 q: "Que vaut un chiffre isolé en matière de design ?",
                 options: [
-                    "Il suffit s'il est mesuré rigoureusement",
+                    "Il suffit s'il est mesuré rigoureusement et régulièrement",
                     "Il vaut mieux que rien",
                     "Rien : c'est la comparaison qui produit l'information"
                 ],
@@ -253,9 +253,9 @@ window.QUIZ = {
             {
                 q: "Pourquoi le temps passé sur une page est-il un mauvais indicateur ?",
                 options: [
-                    "Il est difficile à collecter",
+                    "Il est difficile à collecter de façon fiable",
                     "Il est ambigu : intérêt ou confusion ?",
-                    "Il varie selon les navigateurs"
+                    "Il varie selon les navigateurs et les appareils"
                 ],
                 a: 1,
                 explication: "Un indicateur commode mais ininterprétable est pire qu'une absence de mesure : il donne l'impression de savoir."
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "Comment convertir une amélioration en argument budgétaire ?",
                 options: [
-                    "En citant les bonnes pratiques du secteur",
+                    "En citant les bonnes pratiques du secteur et les études les plus citées",
                     "En montrant des maquettes avant-après",
                     "En comptant les heures gagnées par an sur l'ensemble des utilisateurs"
                 ],
@@ -283,7 +283,7 @@ window.QUIZ = {
             options: [
                 "Sur ce qui se passe chez la personne en face",
                 "Sur les outils de conception",
-                "Sur la technique d'intégration"
+                "Sur la technique d'intégration et le code produit"
             ],
             a: 0,
             explication: "Combien de temps elle croit attendre, combien d'options son attention supporte, et ce qui la fait renoncer."
@@ -313,7 +313,7 @@ window.QUIZ = {
             q: "Pourquoi ce niveau insiste-t-il sur la mesure ?",
             options: [
                 "Parce que la réglementation l'exige",
-                "Parce que les outils la rendent facile",
+                "Parce que les outils la rendent aujourd'hui facile et peu coûteuse",
                 "Parce que sans mesure, un design ne s'améliore pas : il change"
             ],
             a: 2,
@@ -332,7 +332,7 @@ window.QUIZ = {
         {
             q: "Un compte à rebours qui se réinitialise à chaque visite relève de :",
             options: [
-                "Une technique de conversion admise",
+                "Une technique de conversion admise par le métier",
                 "Un défaut technique",
                 "Une fausse urgence, donc un schéma sombre"
             ],
