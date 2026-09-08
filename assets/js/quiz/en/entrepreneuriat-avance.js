@@ -35,7 +35,7 @@ window.QUIZ = {
                 q: "What does a lifetime value / acquisition cost ratio below 1 mean?",
                 options: [
                     "That growth is too slow",
-                    "That the price is too high",
+                    "That the price is too high for the market being addressed",
                     "That you are paying to lose money on every customer"
                 ],
                 a: 2,
@@ -47,7 +47,7 @@ window.QUIZ = {
                 options: [
                     "How long before the customer has repaid their acquisition cost",
                     "The average length of a subscription",
-                    "The time before the business becomes profitable"
+                    "The time left before the whole business becomes profitable"
                 ],
                 a: 0,
                 explication: "It drives the cash requirement directly: the longer it is, the more money you have to advance."
@@ -66,7 +66,7 @@ window.QUIZ = {
                 q: "What does growth produce with negative unit economics?",
                 options: [
                     "It amplifies the loss while giving the appearance of success",
-                    "It eventually fixes them through economies of scale",
+                    "It always ends up fixing them, through economies of scale",
                     "It has no effect on profitability"
                 ],
                 a: 0,
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "What does a founder really sell in a funding round?",
                 options: [
-                    "Shares in their company",
+                    "Shares in their own company",
                     "A licence to use their technology",
                     "A promise of fast growth"
                 ],
@@ -100,9 +100,9 @@ window.QUIZ = {
             {
                 q: "A profitable business growing 15% a year is:",
                 options: [
-                    "An excellent investment for a fund",
+                    "An excellent investment for a fund, which looks for exactly that profile",
                     "An excellent affair for its founder, and a bad investment for a fund",
-                    "A classic fundraising case"
+                    "A classic fundraising case, of the kind funds see every week"
                 ],
                 a: 1,
                 explication: "The two logics do not meet. That is why raising suits a minority of projects."
@@ -111,8 +111,8 @@ window.QUIZ = {
             {
                 q: "Which alternative finances without diluting and validates demand?",
                 options: [
-                    "A bank loan",
-                    "Grants",
+                    "A bank loan, guaranteed by the founder's own personal contribution",
+                    "Grants and subsidies from public bodies, applied for at the start",
                     "Financing by customers: deposits, pre-sales, annual subscriptions"
                 ],
                 a: 2,
@@ -123,7 +123,7 @@ window.QUIZ = {
                 options: [
                     "The founder keeps 40%",
                     "The founder drops below 52%, and loses control of decisions needing a majority",
-                    "The dilution adds up to 60%"
+                    "The dilution adds up to 60%, but the founder still keeps control of decisions"
                 ],
                 a: 1,
                 explication: "Dilution multiplies, it does not add: 0.8 to the power of 3."
@@ -133,7 +133,7 @@ window.QUIZ = {
                 options: [
                     "Money accelerates what exists: it finances a loss for longer, with pressure on top",
                     "Investors would refuse",
-                    "The valuation would be too low"
+                    "The valuation would be too low to interest any serious investor at this stage"
                 ],
                 a: 0,
                 explication: "Many failures look exactly like that."
@@ -167,8 +167,8 @@ window.QUIZ = {
                 q: "What does successful delegation assume?",
                 options: [
                     "A defined, documented and measurable task",
-                    "A competent person",
-                    "A permanent contract"
+                    "A competent person, available straight away",
+                    "A permanent contract signed by both sides"
                 ],
                 a: 0,
                 explication: "Handing over a vague problem — “take care of marketing” — mostly produces frustration."
@@ -188,7 +188,7 @@ window.QUIZ = {
                 q: "Is being overloaded a reason to hire?",
                 options: [
                     "Yes, it is the main signal",
-                    "Yes, if the overload lasts more than six months",
+                    "Yes, if the overload lasts more than six months and shows no sign of easing",
                     "No: without the corresponding margin, an employee turns overwork into a cash problem"
                 ],
                 a: 2,
@@ -197,8 +197,8 @@ window.QUIZ = {
             {
                 q: "Which forms of work are reversible?",
                 options: [
-                    "A permanent contract",
-                    "None",
+                    "A permanent contract, which can be ended at any time",
+                    "None of them: every commitment binds the company for good",
                     "A one-off contractor, an apprentice, part-time work"
                 ],
                 a: 2,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Where do a young company's legal difficulties come from?",
                 options: [
                     "What was never written down, at a time when everyone was getting along",
-                    "An obscure regulation",
+                    "An obscure regulation that nobody really understands at the outset",
                     "Administrative inspections"
                 ],
                 a: 0,
@@ -223,7 +223,7 @@ window.QUIZ = {
                 q: "Does what a contractor produces belong to you automatically?",
                 options: [
                     "No: a written assignment of rights is needed",
-                    "Yes, as soon as you have paid for it",
+                    "Yes, as soon as you have paid the invoice for it",
                     "Yes, if it was commissioned work"
                 ],
                 a: 0,
@@ -232,8 +232,8 @@ window.QUIZ = {
             {
                 q: "From when does the GDPR apply?",
                 options: [
-                    "From 250 employees",
-                    "Only for online shops",
+                    "From 250 employees in the company",
+                    "Only for online shops that sell",
                     "From the very first customer file"
                 ],
                 a: 2,
@@ -244,7 +244,7 @@ window.QUIZ = {
                 q: "What must an agreement between partners cover?",
                 options: [
                     "Who decides what, what happens if one leaves, how the shares are valued",
-                    "Only how the capital is split",
+                    "Only how the capital is split between the partners at the start",
                     "The level of pay"
                 ],
                 a: 0,
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "Which check is free before choosing a brand name?",
                 options: [
-                    "A provisional filing",
+                    "A provisional filing made with a notary before the launch",
                     "A prior-rights search on the trade mark office database",
                     "A lawyer's opinion"
                 ],
@@ -282,7 +282,7 @@ window.QUIZ = {
             q: "What do the four decisions of this level have in common?",
             options: [
                 "They are all about financing",
-                "They all happen in the first year",
+                "They all happen during the first year of trading",
                 "They commit you for the long term and are hard to undo"
             ],
             a: 2,
@@ -291,9 +291,9 @@ window.QUIZ = {
         {
             q: "Which lever improves unit economics most without spending more?",
             options: [
-                "Advertising optimisation",
+                "Optimisation of the advertising campaigns",
                 "Retention of existing customers",
-                "Lowering prices"
+                "Lowering prices in order to sell more"
             ],
             a: 1,
             explication: "Almost always more profitable than work on acquisition, and almost always done less because it is less visible."
@@ -314,7 +314,7 @@ window.QUIZ = {
             options: [
                 "Wait until you are profitable",
                 "Cost the commitment before taking it, and check it is bearable if it goes wrong",
-                "Consult a professional in every case"
+                "Consult a professional in every case, before taking any decision at all"
             ],
             a: 1,
             explication: "Write down the downside scenario: if it is bearable, go ahead; if not, reduce the commitment."
@@ -324,7 +324,7 @@ window.QUIZ = {
             options: [
                 "They arise from the commitments made: partners, contractors, customers, employees",
                 "They only exist above a certain size",
-                "They are too technical for a beginner"
+                "They are far too technical for a beginner to handle without help"
             ],
             a: 0,
             explication: "Each committing decision at this level creates a corresponding need to write something down."
@@ -332,7 +332,7 @@ window.QUIZ = {
         {
             q: "What do a missing shareholders' agreement and uncalculated unit economics have in common?",
             options: [
-                "Both are matters for legal advice",
+                "Both are matters for legal advice that founders put off paying for",
                 "Both cost dearly at the exact moment you can least afford it",
                 "Both are easily fixed"
             ],

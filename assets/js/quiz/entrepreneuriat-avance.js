@@ -16,7 +16,7 @@ window.QUIZ = {
                 options: [
                     "Sur le chiffre d'affaires qu'il génère",
                     "Sur la marge qu'il rapporte",
-                    "Sur le prix de l'abonnement"
+                    "Sur le prix de l'abonnement mensuel"
                 ],
                 a: 1,
                 explication: "Calculée sur le chiffre d'affaires, elle est fantaisiste et conduit à surinvestir en acquisition."
@@ -34,7 +34,7 @@ window.QUIZ = {
             {
                 q: "Que signifie un ratio valeur vie / coût d'acquisition inférieur à 1 ?",
                 options: [
-                    "Que la croissance est trop lente",
+                    "Que la croissance est trop lente pour rentabiliser l'acquisition",
                     "Que le prix est trop élevé",
                     "Qu'on paie pour perdre de l'argent sur chaque client"
                 ],
@@ -46,8 +46,8 @@ window.QUIZ = {
                 q: "Qu'indique la période de récupération ?",
                 options: [
                     "Le délai avant que le client ait remboursé son coût d'acquisition",
-                    "La durée moyenne d'un abonnement",
-                    "Le temps avant la rentabilité de l'entreprise"
+                    "La durée moyenne d'un abonnement, tous clients confondus",
+                    "Le temps qui reste avant que l'entreprise entière devienne rentable"
                 ],
                 a: 0,
                 explication: "Elle détermine directement le besoin de trésorerie : plus elle est longue, plus il faut avancer d'argent."
@@ -66,7 +66,7 @@ window.QUIZ = {
                 q: "Que produit la croissance avec des unit economics négatifs ?",
                 options: [
                     "Elle amplifie la perte tout en donnant l'apparence du succès",
-                    "Elle finit par les corriger par les économies d'échelle",
+                    "Elle finit toujours par les corriger, par les économies d'échelle",
                     "Elle est sans effet sur la rentabilité"
                 ],
                 a: 0,
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Que vend réellement un fondateur lors d'une levée ?",
                 options: [
-                    "Des parts de son entreprise",
+                    "Des parts de son entreprise, tout simplement",
                     "Un droit d'usage de sa technologie",
                     "Une promesse de croissance rapide"
                 ],
@@ -100,7 +100,7 @@ window.QUIZ = {
             {
                 q: "Une entreprise rentable qui croît de 15 % par an est :",
                 options: [
-                    "Un excellent investissement pour un fonds",
+                    "Un excellent investissement pour un fonds, puisque c'est exactement le profil recherché",
                     "Une excellente affaire pour son fondateur, et un mauvais investissement pour un fonds",
                     "Un cas classique de levée de fonds"
                 ],
@@ -111,7 +111,7 @@ window.QUIZ = {
             {
                 q: "Quelle alternative finance sans diluer et valide la demande ?",
                 options: [
-                    "Le prêt bancaire",
+                    "Le prêt bancaire classique, garanti par un apport personnel du fondateur",
                     "Les subventions",
                     "Le financement par les clients : acomptes, prévente, abonnements annuels"
                 ],
@@ -123,7 +123,7 @@ window.QUIZ = {
                 options: [
                     "Le fondateur conserve 40 %",
                     "Le fondateur passe sous les 52 %, et perd le contrôle des décisions à la majorité",
-                    "La dilution s'additionne à 60 %"
+                    "La dilution s'additionne à 60 %, et le fondateur garde malgré tout la main sur les décisions"
                 ],
                 a: 1,
                 explication: "La dilution se multiplie, elle ne s'additionne pas : 0,8 puissance 3."
@@ -167,8 +167,8 @@ window.QUIZ = {
                 q: "Que suppose une délégation réussie ?",
                 options: [
                     "Une tâche définie, documentée et mesurable",
-                    "Une personne compétente",
-                    "Un contrat à durée indéterminée"
+                    "Une personne compétente et disponible tout de suite",
+                    "Un contrat à durée indéterminée signé des deux côtés"
                 ],
                 a: 0,
                 explication: "Confier un problème flou — « occupe-toi du marketing » — produit surtout de la frustration."
@@ -197,8 +197,8 @@ window.QUIZ = {
             {
                 q: "Quelles formes d'emploi sont réversibles ?",
                 options: [
-                    "Le contrat à durée indéterminée",
-                    "Aucune",
+                    "Le contrat à durée indéterminée, qui se rompt à tout moment",
+                    "Aucune : chaque embauche engage durablement l'entreprise",
                     "La prestation ponctuelle, l'alternance, le temps partiel"
                 ],
                 a: 2,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "D'où viennent les difficultés juridiques d'une jeune entreprise ?",
                 options: [
                     "De ce qui n'a pas été écrit, à un moment où tout le monde s'entendait bien",
-                    "D'une réglementation obscure",
+                    "D'une réglementation obscure, que personne ne comprend vraiment au départ",
                     "De contrôles administratifs"
                 ],
                 a: 0,
@@ -224,7 +224,7 @@ window.QUIZ = {
                 options: [
                     "Non : il faut une cession de droits écrite",
                     "Oui, dès lors que tu l'as payé",
-                    "Oui, s'il s'agit d'un travail sur commande"
+                    "Oui, s'il s'agit clairement d'un travail sur commande"
                 ],
                 a: 0,
                 explication: "Sans elle, le logo, le code ou les textes restent à leur auteur."
@@ -232,7 +232,7 @@ window.QUIZ = {
             {
                 q: "À partir de quand le RGPD s'applique-t-il ?",
                 options: [
-                    "À partir de 250 salariés",
+                    "À partir de 250 salariés dans l'entreprise",
                     "Uniquement pour les sites marchands",
                     "Dès le premier fichier de clients"
                 ],
@@ -244,7 +244,7 @@ window.QUIZ = {
                 q: "Que doit prévoir un accord entre associés ?",
                 options: [
                     "Qui décide quoi, ce qui se passe si l'un part, comment les parts sont valorisées",
-                    "Uniquement la répartition du capital",
+                    "Uniquement la répartition du capital entre les différents associés, à la création",
                     "Le montant des rémunérations"
                 ],
                 a: 0,
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "Quelle vérification est gratuite avant de choisir un nom de marque ?",
                 options: [
-                    "Le dépôt provisoire",
+                    "Le dépôt provisoire du nom auprès d'un notaire",
                     "La recherche d'antériorité sur la base de l'INPI",
                     "L'avis d'un avocat"
                 ],
@@ -281,7 +281,7 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun les quatre décisions de ce niveau ?",
             options: [
-                "Elles concernent toutes le financement",
+                "Elles concernent toutes le financement de l'entreprise et son capital",
                 "Elles interviennent la première année",
                 "Elles engagent durablement et sont difficiles à défaire"
             ],
@@ -291,9 +291,9 @@ window.QUIZ = {
         {
             q: "Quel levier améliore le plus les unit economics sans dépenser davantage ?",
             options: [
-                "L'optimisation publicitaire",
+                "L'optimisation des campagnes publicitaires",
                 "La rétention des clients existants",
-                "La baisse des prix"
+                "La baisse des prix pour vendre plus"
             ],
             a: 1,
             explication: "Presque toujours plus rentable que le travail sur l'acquisition, et presque toujours moins fait car moins visible."
@@ -332,7 +332,7 @@ window.QUIZ = {
         {
             q: "Quel est le point commun entre un pacte d'associés absent et des unit economics non calculées ?",
             options: [
-                "Les deux relèvent du conseil juridique",
+                "Les deux relèvent du conseil juridique, qu'on repousse faute de budget",
                 "Les deux coûtent cher au moment précis où l'on peut le moins se le permettre",
                 "Les deux se corrigent facilement"
             ],

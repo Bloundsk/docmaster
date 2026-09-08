@@ -14,7 +14,7 @@ window.QUIZ = {
             {
                 q: "Quelle est la cause la plus fréquente d'échec d'un projet ?",
                 options: [
-                    "Un produit mal réalisé",
+                    "Un produit mal réalisé, livré beaucoup trop vite sur le marché",
                     "Avoir construit quelque chose dont personne n'avait besoin",
                     "Le manque de financement"
                 ],
@@ -35,7 +35,7 @@ window.QUIZ = {
                 q: "Quel signal indique un besoin réel ?",
                 options: [
                     "La personne trouve l'idée intéressante",
-                    "La personne connaît des gens que ça intéresserait",
+                    "La personne connaît des gens que ce produit intéresserait sûrement",
                     "La personne a déjà bricolé une solution de son côté"
                 ],
                 a: 2,
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qu'un produit minimum viable ?",
                 options: [
-                    "Une version bâclée du produit final",
+                    "Une version bâclée du produit final, livrée trop tôt aux clients",
                     "La première version vendable",
                     "Le moyen le plus économique de répondre à une question"
                 ],
@@ -56,7 +56,7 @@ window.QUIZ = {
                 q: "Pourquoi ne pas valider auprès de ses proches ?",
                 options: [
                     "Ils veulent t'encourager : leur retour est affectueux et sans valeur",
-                    "Ils ne sont pas la cible",
+                    "Ils ne sont pas la cible du produit, et ne l'achèteront donc jamais",
                     "Ils manquent de compétence"
                 ],
                 a: 0,
@@ -65,7 +65,7 @@ window.QUIZ = {
             {
                 q: "Quel signal vaut cinquante entretiens polis ?",
                 options: [
-                    "Un « c'est une super idée »",
+                    "Un « c'est vraiment une super idée »",
                     "Un « je peux payer maintenant ? »",
                     "Une inscription à une liste d'attente"
                 ],
@@ -133,7 +133,7 @@ window.QUIZ = {
                 options: [
                     "Une perte qui grandit avec le volume",
                     "Un client gagné qu'on rentabilisera plus tard",
-                    "Un investissement commercial"
+                    "Un investissement commercial qui se rattrape"
                 ],
                 a: 0,
                 explication: "Le volume n'a jamais corrigé une marge négative."
@@ -166,7 +166,7 @@ window.QUIZ = {
             {
                 q: "Combien de canaux d'acquisition ouvrir au démarrage ?",
                 options: [
-                    "Le plus possible, pour multiplier les chances",
+                    "Le plus possible, pour multiplier les chances d'en trouver un bon",
                     "Trois, pour comparer",
                     "Un seul, poussé jusqu'à savoir s'il fonctionne"
                 ],
@@ -177,7 +177,7 @@ window.QUIZ = {
             {
                 q: "Quel est le bon canal d'acquisition ?",
                 options: [
-                    "Celui qui est à la mode",
+                    "Celui qui est à la mode et dont tout le monde parle en ce moment",
                     "Le moins cher",
                     "Celui où tes clients sont déjà, en train de chercher une solution"
                 ],
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "Il faut attendre que la notoriété se transforme",
                     "L'audience n'est pas la clientèle",
-                    "Le produit est mal présenté"
+                    "Le produit est mal présenté sur la page"
                 ],
                 a: 1,
                 explication: "Le seul indicateur qui compte au démarrage est le nombre de personnes qui paient."
@@ -244,7 +244,7 @@ window.QUIZ = {
                 q: "Quel réflexe simple améliore le plus la trésorerie ?",
                 options: [
                     "Facturer immédiatement plutôt qu'en fin de mois",
-                    "Négocier des délais fournisseurs plus longs",
+                    "Négocier des délais de paiement plus longs avec les fournisseurs",
                     "Augmenter les prix"
                 ],
                 a: 0,
@@ -282,7 +282,7 @@ window.QUIZ = {
             q: "Dans quel ordre traiter les quatre questions de ce niveau ?",
             options: [
                 "Besoin réel, marge, clients, trésorerie",
-                "Clients, marge, trésorerie, besoin",
+                "Clients, marge, trésorerie, puis besoin réel",
                 "L'ordre n'a pas d'importance"
             ],
             a: 0,
@@ -292,7 +292,7 @@ window.QUIZ = {
             q: "Quel point commun entre l'entretien de validation et le suivi de trésorerie ?",
             options: [
                 "Les deux reposent sur des faits, non sur des intentions",
-                "Les deux demandent un logiciel spécialisé",
+                "Les deux demandent un logiciel spécialisé et un peu de formation",
                 "Les deux se font une fois par an"
             ],
             a: 0,
@@ -303,7 +303,7 @@ window.QUIZ = {
             options: [
                 "Augmenter le volume",
                 "Corriger le prix ou le coût variable",
-                "Chercher un financement"
+                "Chercher un financement complémentaire"
             ],
             a: 1,
             explication: "Le volume amplifie une marge négative, il ne la corrige jamais."
@@ -314,7 +314,7 @@ window.QUIZ = {
             options: [
                 "Parce qu'elle augmente le besoin en fonds de roulement",
                 "Parce qu'elle attire la concurrence",
-                "Parce qu'elle complique la comptabilité"
+                "Parce qu'elle complique la comptabilité et les déclarations"
             ],
             a: 0,
             explication: "Plus tu vends, plus tu avances d'argent avant d'être payé."
@@ -323,7 +323,7 @@ window.QUIZ = {
             q: "Quel indicateur regarder chaque semaine au démarrage ?",
             options: [
                 "Le nombre de visiteurs",
-                "Le chiffre d'affaires cumulé",
+                "Le chiffre d'affaires cumulé depuis l'ouverture",
                 "Le solde disponible et le nombre de mois d'autonomie"
             ],
             a: 2,
@@ -332,8 +332,8 @@ window.QUIZ = {
         {
             q: "Qu'est-ce qui distingue une audience d'une clientèle ?",
             options: [
-                "La taille",
-                "La fidélité",
+                "La taille du groupe",
+                "La fidélité au fil du temps",
                 "Le fait de payer"
             ],
             a: 2,

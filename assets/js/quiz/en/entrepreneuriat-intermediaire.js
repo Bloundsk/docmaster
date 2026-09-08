@@ -14,7 +14,7 @@ window.QUIZ = {
             {
                 q: "What is the most frequent cause of a project failing?",
                 options: [
-                    "A badly made product",
+                    "A badly made product, shipped far too early",
                     "Having built something nobody needed",
                     "Lack of funding"
                 ],
@@ -24,7 +24,7 @@ window.QUIZ = {
             {
                 q: "Which question produces usable information in an interview?",
                 options: [
-                    "“Would you use a service that did this?”",
+                    "“Would you use a service that did exactly this for you?”",
                     "“Tell me about the last time you had this problem”",
                     "“How much would you be ready to pay?”"
                 ],
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "What is a minimum viable product?",
                 options: [
-                    "A rushed version of the final product",
+                    "A rushed version of the final product, shipped too soon",
                     "The first sellable version",
                     "The cheapest way to answer a question"
                 ],
@@ -56,7 +56,7 @@ window.QUIZ = {
                 q: "Why not validate with the people close to you?",
                 options: [
                     "They want to encourage you: their feedback is affectionate and worthless",
-                    "They are not the target",
+                    "They are not the target of the product, and will never buy it",
                     "They lack the expertise"
                 ],
                 a: 0,
@@ -65,7 +65,7 @@ window.QUIZ = {
             {
                 q: "Which signal is worth fifty polite interviews?",
                 options: [
-                    "A “great idea”",
+                    "A “that is a really great idea”",
                     "A “can I pay now?”",
                     "A sign-up to a waiting list"
                 ],
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Which approach lets you be paid properly?",
                 options: [
-                    "Setting the price on cost, adding a margin",
+                    "Setting the price on the cost, and adding a margin on top",
                     "Matching the competition",
                     "Setting the price on the value to the customer"
                 ],
@@ -133,7 +133,7 @@ window.QUIZ = {
                 options: [
                     "A loss that grows with volume",
                     "A customer won who will be made profitable later",
-                    "A commercial investment"
+                    "A commercial investment that pays off"
                 ],
                 a: 0,
                 explication: "Volume has never fixed a negative margin."
@@ -146,7 +146,7 @@ window.QUIZ = {
             {
                 q: "Where do the first ten customers come from?",
                 options: [
-                    "Well-targeted advertising campaigns",
+                    "Well-targeted advertising campaigns, run on the right platforms",
                     "Natural word of mouth",
                     "Things that do not scale: contacts one by one, travelling, service delivered by hand"
                 ],
@@ -166,7 +166,7 @@ window.QUIZ = {
             {
                 q: "How many acquisition channels should you open at the start?",
                 options: [
-                    "As many as possible, to multiply the chances",
+                    "As many as possible, so as to multiply the chances of finding one",
                     "Three, to compare",
                     "One only, pushed until you know whether it works"
                 ],
@@ -177,7 +177,7 @@ window.QUIZ = {
             {
                 q: "What is the right acquisition channel?",
                 options: [
-                    "The fashionable one",
+                    "The fashionable one that everybody is talking about right now",
                     "The cheapest one",
                     "The one where your customers already are, looking for a solution"
                 ],
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "You have to wait for the visibility to convert",
                     "An audience is not a customer base",
-                    "The product is badly presented"
+                    "The product is badly presented on the page"
                 ],
                 a: 1,
                 explication: "The only indicator that counts at the start is the number of people who pay."
@@ -199,7 +199,7 @@ window.QUIZ = {
                 options: [
                     "It is cheaper",
                     "That is where you learn what will need automating later",
-                    "It is quicker to set up"
+                    "It is quicker to set up than any automated process would be"
                 ],
                 a: 1,
                 explication: "No advertising campaign supplies the information that ten direct conversations bring."
@@ -212,7 +212,7 @@ window.QUIZ = {
             {
                 q: "Can a profitable business disappear?",
                 options: [
-                    "No, profitability guarantees survival",
+                    "No, profitability on paper guarantees the survival of the business",
                     "Only in a case of fraud",
                     "Yes, for lack of cash: profit and the bank balance measure two different things"
                 ],
@@ -222,7 +222,7 @@ window.QUIZ = {
             {
                 q: "What is the working capital requirement?",
                 options: [
-                    "The amount of share capital",
+                    "The amount of share capital put in at the start",
                     "The lag between money in and money out",
                     "The safety cash buffer"
                 ],
@@ -244,7 +244,7 @@ window.QUIZ = {
                 q: "Which simple habit improves cash the most?",
                 options: [
                     "Invoicing immediately rather than at the end of the month",
-                    "Negotiating longer supplier terms",
+                    "Negotiating longer payment terms with the suppliers",
                     "Raising prices"
                 ],
                 a: 0,
@@ -255,7 +255,7 @@ window.QUIZ = {
                 options: [
                     "Without waiting, within a few days",
                     "At 60 days, once the delay is established",
-                    "Only by recorded delivery"
+                    "Only by recorded delivery, with proof"
                 ],
                 a: 0,
                 explication: "Chased early, it often settles itself. At 60 days it becomes very hard to recover."
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "What is wrong with “we did €12,000 this month”?",
                 options: [
-                    "Nothing, it is the reference indicator",
+                    "Nothing at all, it is the reference indicator that everyone follows",
                     "It says nothing about the money available: receipts, VAT and costs already incurred",
                     "The figure is too small"
                 ],
@@ -282,7 +282,7 @@ window.QUIZ = {
             q: "In what order should the four questions of this level be handled?",
             options: [
                 "Real need, margin, customers, cash",
-                "Customers, margin, cash, need",
+                "Customers, margin, cash, and then the real need",
                 "The order does not matter"
             ],
             a: 0,
@@ -292,7 +292,7 @@ window.QUIZ = {
             q: "What do the validation interview and cash monitoring have in common?",
             options: [
                 "Both rest on facts, not on intentions",
-                "Both require specialised software",
+                "Both require specialised software and some training",
                 "Both are done once a year"
             ],
             a: 0,
@@ -301,7 +301,7 @@ window.QUIZ = {
         {
             q: "A project has enthusiastic customers and loses money on every sale. What should be done first?",
             options: [
-                "Increase the volume",
+                "Increase the volume of sales quickly",
                 "Fix the price or the variable cost",
                 "Look for funding"
             ],
@@ -314,7 +314,7 @@ window.QUIZ = {
             options: [
                 "Because it increases the working capital requirement",
                 "Because it attracts competition",
-                "Because it complicates the accounting"
+                "Because it complicates the accounting and the tax returns"
             ],
             a: 0,
             explication: "The more you sell, the more you advance before being paid."
@@ -323,7 +323,7 @@ window.QUIZ = {
             q: "Which indicator should you look at each week at the start?",
             options: [
                 "The number of visitors",
-                "Cumulative revenue",
+                "Cumulative revenue since the business opened its doors",
                 "The balance available and the number of months of runway"
             ],
             a: 2,

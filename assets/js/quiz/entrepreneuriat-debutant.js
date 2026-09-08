@@ -15,7 +15,7 @@ window.QUIZ = {
                 options: [
                     "Te faire réfléchir, quitte à découvrir que tes hypothèses ne tiennent pas",
                     "Convaincre un banquier",
-                    "Respecter une obligation légale"
+                    "Respecter une obligation légale imposée à toute entreprise lors de sa création"
                 ],
                 a: 0,
                 explication: "Un plan qui ne t'a rien appris ni fait douter de rien a été écrit pour plaire, pas pour éprouver."
@@ -24,8 +24,8 @@ window.QUIZ = {
                 q: "Qu'est-ce que le seuil de rentabilité ?",
                 options: [
                     "Le chiffre d'affaires à partir duquel tu cesses de perdre de l'argent",
-                    "Le montant minimum à investir au départ",
-                    "Le bénéfice visé la première année"
+                    "Le montant minimum qu'il faut investir au départ pour lancer l'activité",
+                    "Le bénéfice que tu vises pour la toute première année d'activité"
                 ],
                 a: 0,
                 explication: "C'est le chiffre que tout lecteur cherche en premier dans un business plan."
@@ -42,7 +42,7 @@ window.QUIZ = {
                 options: [
                     "Parce que les impôts sont prélevés d'avance",
                     "Parce que les clients paient à 30 ou 60 jours quand les charges tombent immédiatement",
-                    "Parce que les banques ferment les comptes déficitaires"
+                    "Parce que les banques ferment automatiquement les comptes déficitaires au bout de quelques mois"
                 ],
                 a: 1,
                 explication: "Un tableau de trésorerie mois par mois est plus utile qu'un compte de résultat prévisionnel."
@@ -50,7 +50,7 @@ window.QUIZ = {
             {
                 q: "Qu'appelle-t-on la « courbe en crosse de hockey » ?",
                 options: [
-                    "Une croissance régulière et prudente",
+                    "Une croissance régulière et prudente, année après année, sans à-coups",
                     "Une baisse suivie d'une reprise",
                     "Des prévisions plates puis une explosion soudaine, sans justification"
                 ],
@@ -60,9 +60,9 @@ window.QUIZ = {
             {
                 q: "Quel concurrent est le plus souvent oublié dans un business plan ?",
                 options: [
-                    "Les grandes entreprises du secteur",
+                    "Les grandes entreprises du secteur, déjà installées et bien financées",
                     "« Ne rien faire », c'est-à-dire la situation actuelle du client",
-                    "Les concurrents étrangers"
+                    "Les concurrents étrangers, souvent moins chers et déjà installés"
                 ],
                 a: 1,
                 explication: "Beaucoup de clients potentiels s'accommodent très bien de leur solution actuelle, aussi imparfaite soit-elle."
@@ -76,7 +76,7 @@ window.QUIZ = {
                 q: "Quel est l'objectif d'une étude de marché ?",
                 options: [
                     "Confirmer que l'idée est bonne",
-                    "Estimer le chiffre d'affaires de la première année",
+                    "Estimer le chiffre d'affaires de la première année, mois par mois",
                     "Essayer de démolir l'idée : si elle résiste, tu tiens quelque chose"
                 ],
                 a: 2,
@@ -95,9 +95,9 @@ window.QUIZ = {
             {
                 q: "Pourquoi l'avis de tes proches est-il peu utile ?",
                 options: [
-                    "Ils ne connaissent pas le secteur",
+                    "Ils ne connaissent pas le secteur, ni les clients auxquels tu penses",
                     "Ils veulent t'encourager : leur avis est affectueux, pas informatif",
-                    "Ils n'ont pas le temps de répondre sérieusement"
+                    "Ils n'ont pas le temps de répondre sérieusement à ce genre de question"
                 ],
                 a: 1,
                 explication: "Un « non » argumenté vaut dix « c'est génial »."
@@ -106,7 +106,7 @@ window.QUIZ = {
             {
                 q: "Que vaut l'argument « le marché du bien-être pèse 4 milliards » ?",
                 options: [
-                    "C'est un excellent argument de crédibilité",
+                    "C'est un excellent argument de crédibilité devant un investisseur",
                     "C'est suffisant si la source est fiable",
                     "Rien pour toi : il faut descendre au marché réellement atteignable"
                 ],
@@ -116,9 +116,9 @@ window.QUIZ = {
             {
                 q: "Quel est le test de validation le plus probant ?",
                 options: [
-                    "Un questionnaire avec 300 réponses positives",
+                    "Un questionnaire en ligne avec 300 réponses positives",
                     "Une prévente : quelqu'un sort sa carte bancaire",
-                    "L'accord de principe d'un futur associé"
+                    "L'accord de principe d'un futur associé sur le projet"
                 ],
                 a: 1,
                 explication: "Tant que personne n'a payé, tu as des encouragements, pas un marché."
@@ -142,8 +142,8 @@ window.QUIZ = {
                 q: "Le choix du statut juridique est-il définitif ?",
                 options: [
                     "Non : il se modifie, mieux vaut démarrer que retarder le projet",
-                    "Oui, il engage pour la vie de l'entreprise",
-                    "Oui, sauf en cas de liquidation"
+                    "Oui, il engage pour toute la vie de l'entreprise et ne se change pas",
+                    "Oui, sauf en cas de liquidation ou de cession de l'entreprise"
                 ],
                 a: 0,
                 explication: "Ne bloque pas ton projet sur ce choix : changer de statut est prévu et courant."
@@ -153,7 +153,7 @@ window.QUIZ = {
                 options: [
                     "Elle permet de déduire tous ses frais",
                     "Création en ligne immédiate, aucun capital, aucun frais si le chiffre d'affaires est nul",
-                    "Elle offre la meilleure protection sociale"
+                    "Elle offre la meilleure protection sociale de tous les statuts existants"
                 ],
                 a: 1,
                 explication: "On bascule vers une société quand on approche les plafonds ou quand un associé arrive."
@@ -163,7 +163,7 @@ window.QUIZ = {
                 options: [
                     "Les frais professionnels ne se déduisent pas",
                     "Elle interdit d'avoir des clients à l'étranger",
-                    "Elle impose un capital minimum"
+                    "Elle impose un capital minimum au moment de la création"
                 ],
                 a: 0,
                 explication: "Une activité nécessitant des achats importants y est vite pénalisée."
@@ -174,21 +174,21 @@ window.QUIZ = {
                 options: [
                     "La micro-entreprise, plus simple",
                     "Une société : en micro, les charges se calculent sur les 40 000 € encaissés",
-                    "Peu importe, le résultat est identique"
+                    "Peu importe, le résultat après impôts est finalement identique"
                 ],
                 a: 1,
                 explication: "Plus tes charges réelles sont élevées, moins la micro-entreprise convient."
             },
             {
                 q: "Quel statut facilite le plus l'entrée d'investisseurs au capital ?",
-                options: ["La micro-entreprise", "L'EURL", "La SASU / SAS"],
+                options: ["La micro-entreprise", "L'EURL, plus souple", "La SASU / SAS"],
                 a: 2,
                 explication: "Sa grande liberté statutaire en fait le choix habituel des projets destinés à croître."
             },
             {
                 q: "Pourquoi ouvrir un compte bancaire dédié dès le premier euro encaissé ?",
                 options: [
-                    "C'est une obligation légale pour tous les statuts",
+                    "C'est une obligation légale qui s'impose à tous les statuts d'entreprise sans exception",
                     "Pour obtenir un meilleur taux de crédit",
                     "Mélanger les comptes rend la comptabilité pénible et brouille la vision des résultats"
                 ],
@@ -204,8 +204,8 @@ window.QUIZ = {
                 q: "Que coûte réellement une levée de fonds ?",
                 options: [
                     "Une part du capital et du pouvoir de décision",
-                    "Des intérêts élevés",
-                    "Une commission fixe"
+                    "Des intérêts élevés, remboursés sur plusieurs années",
+                    "Une commission fixe, versée à l'investisseur au départ"
                 ],
                 a: 0,
                 explication: "Tu acquiers des associés qui auront leur mot à dire, y compris sur ton maintien à la direction."
@@ -214,7 +214,7 @@ window.QUIZ = {
                 q: "Qu'est-ce qu'un prêt d'honneur ?",
                 options: [
                     "Un prêt personnel à taux zéro, sans garantie, qui compte comme des fonds propres",
-                    "Un prêt accordé sans document écrit",
+                    "Un prêt accordé sans aucun document écrit, uniquement sur la confiance de la banque",
                     "Un prêt réservé aux entreprises déjà rentables"
                 ],
                 a: 0,
@@ -230,7 +230,7 @@ window.QUIZ = {
             {
                 q: "Lever des fonds est-il une réussite en soi ?",
                 options: [
-                    "Oui, c'est la consécration d'un projet",
+                    "Oui, c'est la consécration d'un projet et la preuve qu'il tient debout",
                     "Oui, si le montant dépasse 500 000 €",
                     "Non : c'est un engagement à croître très vite, en échange d'une part de l'entreprise"
                 ],
@@ -252,7 +252,7 @@ window.QUIZ = {
                 options: [
                     "La cohérence des hypothèses et ton expérience du secteur",
                     "Le design du business plan",
-                    "Le nombre de pages du dossier"
+                    "Le nombre de pages du dossier et le soin de sa présentation"
                 ],
                 a: 0,
                 explication: "Des hypothèses explicites valent mieux que des chiffres flatteurs. Bpifrance peut aussi se porter garant."
@@ -269,7 +269,7 @@ window.QUIZ = {
             q: "Quelle est la cause d'échec la plus fréquente d'une jeune entreprise ?",
             options: [
                 "L'absence de marché : on construit ce que personne n'avait demandé",
-                "Le manque de travail du fondateur",
+                "Le manque de travail du fondateur, qui ne s'y consacre pas assez",
                 "Une mauvaise gestion comptable"
             ],
             a: 0,
@@ -278,7 +278,7 @@ window.QUIZ = {
         {
             q: "Par quoi commencer un projet d'entreprise ?",
             options: [
-                "Le nom, le logo et le statut juridique",
+                "Le nom, le logo et le statut juridique de l'entreprise que tu comptes créer",
                 "La recherche de financement",
                 "Vérifier que quelqu'un est prêt à payer pour que le problème disparaisse"
             ],
@@ -289,8 +289,8 @@ window.QUIZ = {
             q: "Quel document est le plus utile pour piloter la première année ?",
             options: [
                 "Un tableau de trésorerie mois par mois",
-                "Un compte de résultat prévisionnel",
-                "Une étude de marché détaillée"
+                "Un compte de résultat prévisionnel sur trois ans",
+                "Une étude de marché détaillée et chiffrée"
             ],
             a: 0,
             explication: "Une entreprise rentable sur le papier peut disparaître faute de liquidités."
@@ -319,8 +319,8 @@ window.QUIZ = {
         {
             q: "Quel accompagnement gratuit est le plus sous-utilisé par les créateurs ?",
             options: [
-                "Les cabinets de conseil privés",
-                "Les forums en ligne",
+                "Les cabinets de conseil privés spécialisés",
+                "Les forums en ligne entre créateurs",
                 "Les CCI et chambres de métiers"
             ],
             a: 2,
