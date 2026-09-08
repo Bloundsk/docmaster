@@ -17,7 +17,7 @@ window.QUIZ = {
                 options: [
                     "Colours, typography, and everything that makes up the visual styling of a page",
                     "What the person goes through: do they understand, do they reach their goal?",
-                    "Loading speed"
+                    "Loading speed, and the number of seconds a page takes before it becomes usable"
                 ],
                 a: 1,
                 explication: "UI is what you see, UX is what you live. You can get the first right and miss the second."
@@ -81,7 +81,7 @@ window.QUIZ = {
             {
                 q: "Why is a wireframe deliberately ugly?",
                 options: [
-                    "To go faster",
+                    "To go faster, since a rough sketch takes less time than a finished screen",
                     "Because the mock-up tools available today are still too limited for that",
                     "So that people criticise the structure instead of a button's colour"
                 ],
@@ -159,7 +159,7 @@ window.QUIZ = {
                 options: [
                     "The user has more choice and can decide for themselves what matters most",
                     "Nothing is: they have to read everything to decide, and most give up",
-                    "The page looks richer"
+                    "The page looks richer, and gives the impression of a well-stocked site"
                 ],
                 a: 1,
                 explication: "Choosing what matters means accepting that the rest stays quiet."

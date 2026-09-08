@@ -25,8 +25,8 @@ window.QUIZ = {
             {
                 q: "Quelle différence entre <div class=\"titre-gros\"> et <h2> ?",
                 options: [
-                    "Aucune, seul le style change",
-                    "Le <div> est plus rapide à afficher",
+                    "Aucune : seul le style change à l'écran, et non le sens donné au contenu",
+                    "Le <div> est plus rapide à afficher, car plus simple pour le navigateur",
                     "Le <h2> est compris comme un titre par Google et les lecteurs d'écran"
                 ],
                 a: 2,
@@ -37,7 +37,7 @@ window.QUIZ = {
                 options: [
                     "Celle écrite en dernier",
                     "Celle dont le sélecteur est le plus spécifique",
-                    "Celle qui contient le plus de propriétés"
+                    "Celle qui contient le plus de propriétés déclarées"
                 ],
                 a: 1,
                 explication: "Un identifiant bat une classe, qui bat une balise. La plupart des « ce CSS ne marche pas » viennent de là."
@@ -45,7 +45,7 @@ window.QUIZ = {
             // Série 2
             {
                 q: "Quel outil CSS choisir pour aligner des éléments sur une seule ligne ?",
-                options: ["Grid", "Les tableaux", "Flexbox"],
+                options: ["Grid, en deux dimensions", "Les tableaux", "Flexbox"],
                 a: 2,
                 explication: "Flexbox pour une dimension, Grid pour une grille à deux dimensions."
             },
@@ -54,7 +54,7 @@ window.QUIZ = {
                 options: [
                     "À centraliser les valeurs répétées en un seul endroit",
                     "À accélérer le chargement de la page",
-                    "À masquer les couleurs dans le code source"
+                    "À masquer les couleurs dans le code source livré au navigateur"
                 ],
                 a: 0,
                 explication: "Changer la charte du site revient alors à modifier une seule ligne, au lieu de chercher un code dans quarante fichiers."
@@ -64,7 +64,7 @@ window.QUIZ = {
                 options: [
                     "Parce que cela ne fonctionne pas",
                     "Parce que chaque modification impose ensuite de rouvrir tous les fichiers",
-                    "Parce que les navigateurs l'interdisent"
+                    "Parce que les navigateurs modernes l'interdisent depuis quelques années déjà"
                 ],
                 a: 1,
                 explication: "Cette discipline coûte cinq minutes au début et fait gagner des journées ensuite."
@@ -88,8 +88,8 @@ window.QUIZ = {
                 q: "Comment conserver une information après un rechargement de page ?",
                 options: [
                     "En utilisant localStorage ou un serveur",
-                    "En la stockant dans le DOM",
-                    "Ce n'est pas possible en JavaScript"
+                    "En la stockant dans le DOM, sur un attribut caché",
+                    "Ce n'est pas possible en JavaScript, il faut un serveur"
                 ],
                 a: 0,
                 explication: "Le DOM est reconstruit à chaque chargement : ce qu'on y écrit disparaît."
@@ -98,7 +98,7 @@ window.QUIZ = {
                 q: "Quel est le schéma de base de la plupart du JavaScript d'un site ?",
                 options: [
                     "Sélectionner un élément, écouter un événement, modifier une classe",
-                    "Calculer, afficher, enregistrer",
+                    "Calculer une valeur, l'afficher, puis enregistrer le résultat obtenu",
                     "Charger, compiler, exécuter"
                 ],
                 a: 0,
@@ -108,7 +108,7 @@ window.QUIZ = {
             {
                 q: "Que signifie le mot-clé await ?",
                 options: [
-                    "Mets le programme en pause pendant une seconde",
+                    "Mets le programme entier en pause pendant une seconde environ",
                     "Attends le résultat avant de poursuivre cette fonction",
                     "Répète l'opération jusqu'au succès"
                 ],
@@ -120,7 +120,7 @@ window.QUIZ = {
                 options: [
                     "Le script s'exécute avant que le HTML n'existe",
                     "L'identifiant est mal orthographié",
-                    "Le navigateur bloque les scripts du <head>"
+                    "Le navigateur bloque les scripts placés dans le <head>"
                 ],
                 a: 0,
                 explication: "Deux solutions : placer le script juste avant </body>, ou ajouter l'attribut defer."
@@ -141,7 +141,7 @@ window.QUIZ = {
                 options: [
                     "Le code est-il écrit en JavaScript ?",
                     "Le code s'exécute-t-il chez le visiteur ou sur un serveur ?",
-                    "Le code est-il visible dans l'éditeur ?"
+                    "Le code est-il visible dans les outils du navigateur ou non ?"
                 ],
                 a: 1,
                 explication: "Tout ce qui part vers le navigateur est lisible par le visiteur, code et commentaires compris."
@@ -159,7 +159,7 @@ window.QUIZ = {
             {
                 q: "Une vérification d'accès faite en JavaScript côté navigateur, c'est :",
                 options: [
-                    "Suffisant si le code est minifié",
+                    "Suffisant si le code est bien minifié",
                     "Aussi sûr qu'une vérification serveur",
                     "Contournable en quelques secondes"
                 ],
@@ -171,7 +171,7 @@ window.QUIZ = {
                 q: "Quel type de projet n'a pas besoin de backend ?",
                 options: [
                     "Un site de documentation ou un portfolio",
-                    "Une boutique avec paiements",
+                    "Une boutique avec paiements en ligne et livraison",
                     "Une application avec comptes utilisateurs"
                 ],
                 a: 0,
@@ -180,8 +180,8 @@ window.QUIZ = {
             {
                 q: "Quel problème React, Vue ou Angular résolvent-ils ?",
                 options: [
-                    "Le référencement d'un site",
-                    "La compatibilité entre navigateurs",
+                    "Le référencement du site sur les moteurs de recherche les plus utilisés du marché",
+                    "La compatibilité entre les différents navigateurs et leurs versions successives",
                     "Synchroniser une interface complexe avec des données qui changent sans arrêt"
                 ],
                 a: 2,
@@ -206,7 +206,7 @@ window.QUIZ = {
                 q: "Que se passe-t-il si la balise viewport est absente ?",
                 options: [
                     "Le mobile affiche une version miniature du site en 980 px",
-                    "Le site ne s'affiche pas du tout sur mobile",
+                    "Le site ne s'affiche plus du tout sur les téléphones récents",
                     "Les images disparaissent"
                 ],
                 a: 0,
@@ -217,7 +217,7 @@ window.QUIZ = {
                 options: [
                     "Elles ralentissent l'affichage",
                     "Elles débordent forcément sur un écran plus étroit",
-                    "Elles sont interdites par les normes"
+                    "Elles sont désormais interdites par les normes du web"
                 ],
                 a: 1,
                 explication: "Préfère %, rem, fr et max-width, qui s'adaptent à la place disponible."
@@ -243,8 +243,8 @@ window.QUIZ = {
                 q: "Pourquoi un menu qui s'ouvre au survol pose-t-il problème ?",
                 options: [
                     "Le survol n'existe pas sur écran tactile",
-                    "Il est trop lent",
-                    "Il consomme trop de mémoire"
+                    "Il est trop lent à s'ouvrir sur un téléphone",
+                    "Il consomme trop de mémoire sur les petits appareils"
                 ],
                 a: 0,
                 explication: "Le menu devient alors inaccessible pour la majorité des visiteurs."
@@ -252,7 +252,7 @@ window.QUIZ = {
             {
                 q: "Comment empêcher un tableau de déborder sur mobile ?",
                 options: [
-                    "Réduire la taille de la police",
+                    "Réduire la taille de la police jusqu'à ce qu'il tienne",
                     "Le placer dans un conteneur en overflow-x: auto",
                     "Supprimer des colonnes"
                 ],
@@ -290,7 +290,7 @@ window.QUIZ = {
         {
             q: "Quelle affirmation sur la sécurité d'un site est exacte ?",
             options: [
-                "Un code minifié est suffisamment protégé",
+                "Un code minifié est suffisamment protégé du regard",
                 "Le HTTPS empêche de lire le code source",
                 "Tout ce qui arrive dans le navigateur est public"
             ],
@@ -301,7 +301,7 @@ window.QUIZ = {
         {
             q: "Tu dois créer un portfolio de dix pages. Quelle approche privilégier ?",
             options: [
-                "Un framework moderne, pour être à jour",
+                "Un framework moderne, pour rester à jour et gagner en employabilité",
                 "Un CMS avec base de données",
                 "Des fichiers HTML, CSS et JavaScript simples, servis tels quels"
             ],
@@ -311,9 +311,9 @@ window.QUIZ = {
         {
             q: "Quel est le meilleur moyen de progresser en développement web ?",
             options: [
-                "Enchaîner les tutoriels",
+                "Enchaîner les tutoriels, à raison d'un par semaine",
                 "Mener un projet réel qui te tient à cœur",
-                "Apprendre les frameworks avant les bases"
+                "Apprendre les frameworks avant les bases du langage"
             ],
             a: 1,
             explication: "Un site réel confronte à des problèmes réels — et c'est en cherchant à les résoudre qu'on retient."
@@ -321,8 +321,8 @@ window.QUIZ = {
         {
             q: "Un site utilise <div class=\"gros-titre\"> partout au lieu de <h1> et <h2>. Quelle conséquence ?",
             options: [
-                "Le site s'affiche mal",
-                "Le site charge plus lentement",
+                "Le site s'affiche mal sur les navigateurs anciens et sur les mobiles",
+                "Le site charge nettement plus lentement sur une connexion mobile lente",
                 "Google et les lecteurs d'écran ne comprennent plus sa structure"
             ],
             a: 2,

@@ -57,7 +57,7 @@ window.QUIZ = {
                 options: [
                     "Décrite en détail, exactement comme toutes les autres images",
                     "Marquée comme décorative, pour ne pas être lue inutilement",
-                    "Supprimée"
+                    "Supprimée de la page, puisqu'elle n'apporte aucune information"
                 ],
                 a: 1,
                 explication: "Seules les images porteuses d'information ont besoin d'une description."
@@ -100,7 +100,7 @@ window.QUIZ = {
             {
                 q: "Comment juger un libellé de menu ?",
                 options: [
-                    "À sa concision",
+                    "À sa concision, et à sa capacité à tenir sur une seule ligne dans le menu",
                     "À sa cohérence avec la charte éditoriale, qui fixe le vocabulaire de la marque",
                     "Quelqu'un qui découvre le site sait-il ce qu'il trouvera derrière ?"
                 ],

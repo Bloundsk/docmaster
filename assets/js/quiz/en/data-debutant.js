@@ -134,7 +134,7 @@ window.QUIZ = {
                 options: [
                     "Who produced this figure, when was it published, and in which country?",
                     "Who was measured and who was left out, how, and over what period?",
-                    "Does it match what I expected?"
+                    "Does it match what I was expecting before I even started to look at it?"
                 ],
                 a: 1,
                 explication: "A week of school holidays does not predict an ordinary week."
@@ -169,7 +169,7 @@ window.QUIZ = {
                 options: [
                     "A bar for A three times taller: the 4% gap looks crushing",
                     "Two bars that are almost identical, which is the faithful picture",
-                    "An unreadable chart"
+                    "An unreadable chart that nobody in the room manages to interpret"
                 ],
                 a: 0,
                 explication: "No figure was falsified. Only the scale changed."
@@ -245,7 +245,7 @@ window.QUIZ = {
                 q: "“Our customers who use the app buy 3 times more.” What can you conclude?",
                 options: [
                     "The app drives the purchase: it is worth investing to get it installed everywhere",
-                    "The app should be made compulsory",
+                    "The app should be made compulsory for every customer who buys anything at all",
                     "Nothing certain: the already loyal customers may be the ones who install it"
                 ],
                 a: 2,

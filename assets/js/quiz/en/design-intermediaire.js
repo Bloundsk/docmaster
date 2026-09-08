@@ -58,7 +58,7 @@ window.QUIZ = {
                 options: [
                     "Described in detail, exactly like every other image on the page",
                     "Marked as decorative, so it is not read out pointlessly",
-                    "Removed"
+                    "Removed from the page, since it carries no real information"
                 ],
                 a: 1,
                 explication: "Only images that carry information need a description."

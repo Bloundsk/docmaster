@@ -15,7 +15,7 @@ window.QUIZ = {
                 q: "Par quoi commencer pour optimiser une page ?",
                 options: [
                     "Mesurer, et s'attaquer à la plus grosse barre",
-                    "Minifier le JavaScript",
+                    "Minifier le JavaScript et les feuilles de style",
                     "Changer de cadriciel"
                 ],
                 a: 0,
@@ -24,7 +24,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi le cache est-il un levier particulier ?",
                 options: [
-                    "Il réduit la taille des fichiers",
+                    "Il réduit la taille des fichiers transférés au navigateur",
                     "Il accélère le serveur",
                     "Il améliore la performance sans rien alléger"
                 ],
@@ -35,8 +35,8 @@ window.QUIZ = {
                 q: "Comment modifier un fichier fortement mis en cache ?",
                 options: [
                     "En changeant son nom : style.a3f9.css",
-                    "En vidant le cache des visiteurs",
-                    "En réduisant la durée de cache"
+                    "En vidant le cache des visiteurs à distance",
+                    "En réduisant la durée de cache déclarée"
                 ],
                 a: 0,
                 explication: "Une modification change le nom, donc l'adresse, donc le cache est contourné naturellement."
@@ -45,9 +45,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui pèse le plus lourd, dans l'immense majorité des cas ?",
                 options: [
-                    "Le code de l'application",
+                    "Le code de l'application elle-même",
                     "Les images mal dimensionnées",
-                    "Les feuilles de style"
+                    "Les feuilles de style et les polices"
                 ],
                 a: 1,
                 explication: "Puis les scripts tiers — statistiques, widgets, bandeaux — et enfin le code de l'application."
@@ -66,7 +66,7 @@ window.QUIZ = {
                 q: "Que provoque une image sans dimensions déclarées ?",
                 options: [
                     "Un décalage du contenu pendant le chargement",
-                    "Un chargement plus lent",
+                    "Un chargement nettement plus lent de la page entière",
                     "Une perte de qualité"
                 ],
                 a: 0,
@@ -80,9 +80,9 @@ window.QUIZ = {
             {
                 q: "Quel principe règle l'essentiel de la sécurité applicative ?",
                 options: [
-                    "Chiffrer toutes les données",
+                    "Chiffrer toutes les données, aussi bien en transit qu'au repos sur le disque",
                     "Toute donnée venant de l'extérieur est hostile jusqu'à preuve du contraire",
-                    "Limiter les droits des utilisateurs"
+                    "Limiter au strict nécessaire les droits de chacun des utilisateurs de la base"
                 ],
                 a: 1,
                 explication: "Formulaire, adresse, en-tête, fichier envoyé, réponse d'une API tierce."
@@ -113,7 +113,7 @@ window.QUIZ = {
                 options: [
                     "Non : elle se contourne en trois secondes, seul le serveur compte",
                     "Oui, si elle est bien écrite",
-                    "Oui, pour les formulaires simples"
+                    "Oui, pour les formulaires simples qui ne portent aucune donnée sensible"
                 ],
                 a: 0,
                 explication: "Elle améliore le confort. Elle ne protège rien."
@@ -121,9 +121,9 @@ window.QUIZ = {
             {
                 q: "Par où passe la majorité des compromissions ?",
                 options: [
-                    "Des failles inédites",
+                    "Des failles inédites, inconnues des éditeurs",
                     "Une bibliothèque connue et non mise à jour",
-                    "Des attaques par force brute"
+                    "Des attaques par force brute sur les mots de passe"
                 ],
                 a: 1,
                 explication: "Mettre à jour ses dépendances est la défense au meilleur rapport effort-résultat."
@@ -168,7 +168,7 @@ window.QUIZ = {
                 options: [
                     "La logique métier et les parcours critiques",
                     "L'apparence des écrans",
-                    "Le code des bibliothèques utilisées"
+                    "Le code des bibliothèques tierces que tu utilises"
                 ],
                 a: 0,
                 explication: "Calculs, règles, cas limites, puis inscription, paiement, envoi."
@@ -197,7 +197,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui ne mérite pas d'être testé ?",
                 options: [
-                    "Les cas limites d'un calcul",
+                    "Les cas limites d'un calcul, dès qu'il devient complexe",
                     "Les getters triviaux et l'apparence exacte d'un écran",
                     "Le parcours de paiement"
                 ],
@@ -224,7 +224,7 @@ window.QUIZ = {
                 options: [
                     "La dette choisie est assumée, documentée et datée",
                     "Son montant",
-                    "La dette subie coûte moins cher"
+                    "La dette subie coûte finalement moins cher à corriger"
                 ],
                 a: 0,
                 explication: "La première se gère. La seconde s'accumule silencieusement."
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "Comment obtenir du temps pour corriger une dette technique ?",
                 options: [
-                    "En expliquant que le code est mal écrit",
+                    "En expliquant que le code est mal écrit et illisible",
                     "En attendant une panne",
                     "En chiffrant les heures perdues par semaine"
                 ],
@@ -281,9 +281,9 @@ window.QUIZ = {
         {
             q: "Sur quoi porte ce niveau, par rapport au précédent ?",
             options: [
-                "Sur le choix des technologies",
+                "Sur le choix des technologies employées",
                 "Sur la durée de vie de l'application",
-                "Sur l'organisation des équipes"
+                "Sur l'organisation des équipes de développement"
             ],
             a: 1,
             explication: "Tenir la charge, résister aux attaques, pouvoir être modifié sans peur, vieillir sans devenir illisible."
@@ -292,7 +292,7 @@ window.QUIZ = {
             q: "Quel point commun entre les tests et la mise à jour des dépendances ?",
             options: [
                 "Les deux rendent le changement possible plus tard",
-                "Les deux sont exigés par la réglementation",
+                "Les deux sont exigés par la réglementation en vigueur",
                 "Les deux ralentissent le développement"
             ],
             a: 0,
@@ -303,7 +303,7 @@ window.QUIZ = {
             options: [
                 "Traiter l'image en premier",
                 "Optimiser d'abord le code de l'application",
-                "Ajouter du cache"
+                "Ajouter du cache sur les images"
             ],
             a: 0,
             explication: "Commencer par son propre code alors qu'une image énorme attend est une erreur de priorité fréquente."
@@ -312,7 +312,7 @@ window.QUIZ = {
         {
             q: "Quel raisonnement s'applique à la fois à la sécurité et aux tests ?",
             options: [
-                "Automatiser au maximum",
+                "Automatiser au maximum tout ce qui peut l'être dans la chaîne de production",
                 "Supposer que ça va mal se passer, et concevoir en conséquence",
                 "Documenter chaque décision"
             ],
@@ -322,8 +322,8 @@ window.QUIZ = {
         {
             q: "Pourquoi le cache impose-t-il de versionner les noms de fichiers ?",
             options: [
-                "Pour économiser de l'espace",
-                "Pour respecter les standards HTTP",
+                "Pour économiser de l'espace de stockage sur le serveur qui héberge le site",
+                "Pour respecter les standards HTTP et les recommandations des navigateurs",
                 "Parce qu'un fichier fortement caché ne peut plus être modifié en place"
             ],
             a: 2,
@@ -332,9 +332,9 @@ window.QUIZ = {
         {
             q: "Quel indicateur transforme une demande de refonte en décision ?",
             options: [
-                "Le nombre de lignes de code",
+                "Le nombre total de lignes de code accumulées dans le projet",
                 "Les heures perdues chaque semaine à cause du code actuel",
-                "L'âge du projet"
+                "L'âge du projet, compté depuis sa toute première ligne de code"
             ],
             a: 1,
             explication: "Le chiffre change la conversation, parce qu'il se compare au coût de la correction."

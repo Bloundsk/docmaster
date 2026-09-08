@@ -93,7 +93,7 @@ window.QUIZ = {
                 options: [
                     "That they always speed up navigation, whatever the number of entries and sub-levels",
                     "That a flat list beats a two-tier navigation, since it makes you decide only once",
-                    "That they have no effect"
+                    "That they have no measurable effect on the time a visitor needs to find anything at all"
                 ],
                 a: 1,
                 explication: "That is the opposite of what is usually written — and it is what the formula says."
@@ -133,7 +133,7 @@ window.QUIZ = {
                 q: "What does confusing simple with minimal consist of?",
                 options: [
                     "Adding too many explanations, to the point of drowning the user under walls of text",
-                    "Using too many colours",
+                    "Using too many colours, to the point where nothing on the screen stands out any more",
                     "Removing labels and landmarks: the screen looks cleaner, the mental load goes up"
                 ],
                 a: 2,
@@ -149,7 +149,7 @@ window.QUIZ = {
                 options: [
                     "An interface in night mode, designed to tire the eyes less when it is used at night",
                     "An interface designed to obtain what the user would not have chosen knowingly",
-                    "An ergonomic mistake"
+                    "An ergonomic mistake, made by a team in a hurry and with no bad intention at all"
                 ],
                 a: 1,
                 explication: "These are not clumsy mistakes: they are deliberate decisions, often tested and optimised."
@@ -179,7 +179,7 @@ window.QUIZ = {
                 q: "Why are dark patterns a bad bet?",
                 options: [
                     "The gain is immediate and measured, the cost deferred and diffuse",
-                    "They do not work",
+                    "They simply do not work on people who have already seen them once before",
                     "They are technically complex to build and then to maintain over time"
                 ],
                 a: 0,
@@ -224,7 +224,7 @@ window.QUIZ = {
                 q: "Why must task time be read with care?",
                 options: [
                     "Faster is not always better, particularly on an important decision",
-                    "It is hard to measure",
+                    "It is hard to measure properly under the real conditions of everyday use",
                     "It varies too much between participants to compare one test with another"
                 ],
                 a: 0,

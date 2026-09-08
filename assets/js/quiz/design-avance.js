@@ -57,7 +57,7 @@ window.QUIZ = {
                 options: [
                     "Elle consomme de la batterie et des ressources d'affichage, sans rien apporter au lecteur",
                     "Elle n'informe de rien et paraît d'autant plus longue qu'elle est indéterminée",
-                    "Elle n'est pas accessible"
+                    "Elle n'est pas accessible aux lecteurs d'écran, lesquels ne savent pas l'annoncer"
                 ],
                 a: 1,
                 explication: "Sur une opération courte, un squelette vaut mieux qu'un tourniquet."
@@ -92,7 +92,7 @@ window.QUIZ = {
                 options: [
                     "Qu'ils accélèrent toujours la navigation, quel que soit le nombre d'entrées et de sous-niveaux",
                     "Qu'une liste plate bat une navigation à deux étages, puisqu'elle fait décider une seule fois",
-                    "Qu'ils sont sans effet"
+                    "Qu'ils sont sans effet mesurable sur le temps que met un visiteur pour trouver ce qu'il cherche"
                 ],
                 a: 1,
                 explication: "C'est le contre-pied de ce qu'on lit habituellement — et c'est ce que dit la formule."
@@ -132,7 +132,7 @@ window.QUIZ = {
                 q: "Quelle erreur consiste à confondre simple et minimal ?",
                 options: [
                     "Ajouter trop d'explications, au point de noyer l'utilisateur sous le texte",
-                    "Utiliser trop de couleurs",
+                    "Utiliser trop de couleurs, au point que plus rien ne ressort vraiment à l'écran",
                     "Retirer libellés et repères : l'écran s'épure, la charge mentale augmente"
                 ],
                 a: 2,
@@ -223,7 +223,7 @@ window.QUIZ = {
                 q: "Pourquoi le temps de tâche s'interprète-t-il avec prudence ?",
                 options: [
                     "Plus rapide n'est pas toujours mieux, notamment sur une décision importante",
-                    "Il est difficile à mesurer",
+                    "Il est difficile à mesurer proprement, dans les conditions réelles d'utilisation",
                     "Il varie trop d'un participant à l'autre pour être comparable d'un test à l'autre"
                 ],
                 a: 0,

@@ -93,7 +93,7 @@ window.QUIZ = {
                 q: "An overall rate of 3% hiding 5.2% on desktop and 1.4% on mobile: what should you conclude?",
                 options: [
                     "It masks a mobile problem, while mobile makes up two thirds of the traffic",
-                    "The overall rate is wrong",
+                    "The overall rate is simply wrong and should be recalculated from the raw data",
                     "The overall rate should no longer be tracked, since it hides the two audiences"
                 ],
                 a: 0,
@@ -114,7 +114,7 @@ window.QUIZ = {
                 q: "What is the limit of splitting into segments?",
                 options: [
                     "Groups that are too small produce noise that gets taken for a signal",
-                    "The tools cannot keep up",
+                    "The tools cannot keep up as soon as the number of segments starts to grow",
                     "It becomes unreadable beyond three segments, and nobody reads the table"
                 ],
                 a: 0,
@@ -124,7 +124,7 @@ window.QUIZ = {
                 q: "“Sales rose by 12% after the redesign.” What is missing?",
                 options: [
                     "A point of comparison: an equivalent period or a control group",
-                    "The amount in euros",
+                    "The amount in euros that actually lies behind that percentage increase",
                     "The name of the person responsible for the redesign and its budget"
                 ],
                 a: 0,
@@ -149,7 +149,7 @@ window.QUIZ = {
                 q: "How many explanations can a correlation have?",
                 options: [
                     "Four: A causes B, B causes A, a third variable causes both, or chance",
-                    "Only one: A causes B",
+                    "Only one: A causes B, which is exactly what the figures are showing here",
                     "Two only: either A causes B, or it is a coincidence, and common sense decides"
                 ],
                 a: 0,
@@ -224,7 +224,7 @@ window.QUIZ = {
             {
                 q: "Why are most dashboards abandoned?",
                 options: [
-                    "They are too slow",
+                    "They are too slow to open, and people quietly give up waiting for them to load",
                     "They answer “what can we display?” instead of “what decision should we take?”",
                     "The data behind them is not reliable enough for anyone to base a decision on it"
                 ],
@@ -315,7 +315,7 @@ window.QUIZ = {
             q: "Why does cleaning determine the validity of an analysis?",
             options: [
                 "Because it governs how fast the calculations run, and therefore the deadlines",
-                "Because the tools require it",
+                "Because the tools require it before anything at all can be loaded into them",
                 "Because the choices made change the result, and are rarely documented"
             ],
             a: 2,

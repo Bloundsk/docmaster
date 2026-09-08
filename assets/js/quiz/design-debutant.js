@@ -35,7 +35,7 @@ window.QUIZ = {
                 options: [
                     "Dans le choix de la palette de couleurs, de la typographie et des illustrations",
                     "En amont : à qui s'adresse-t-on, quel problème résout-on, dans quel ordre ?",
-                    "Au moment des tests finaux"
+                    "Au moment des tests finaux, lorsque l'interface est déjà pratiquement terminée"
                 ],
                 a: 1,
                 explication: "Une refonte graphique ne répare jamais un parcours mal conçu : elle rend plus élégant le fait de s'y perdre."
@@ -107,7 +107,7 @@ window.QUIZ = {
                 q: "Pourquoi utiliser de vrais contenus plutôt que du faux texte latin ?",
                 options: [
                     "Un nom de produit réel fait parfois trois lignes là où l'exemple en faisait une",
-                    "C'est plus agréable à lire",
+                    "C'est plus agréable à lire, et cela rend la maquette bien plus convaincante en réunion",
                     "Cela accélère la validation par le client, qui se projette bien mieux dans le résultat"
                 ],
                 a: 0,
@@ -153,7 +153,7 @@ window.QUIZ = {
                 options: [
                     "L'utilisateur a plus de choix et peut décider lui-même de ce qui compte pour lui",
                     "Plus rien ne l'est : il doit tout lire pour décider, et la plupart renoncent",
-                    "La page paraît plus riche"
+                    "La page paraît plus riche, et donne le sentiment d'un site vraiment bien fourni"
                 ],
                 a: 1,
                 explication: "Choisir ce qui compte suppose d'accepter que le reste soit discret."

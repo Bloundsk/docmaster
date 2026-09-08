@@ -246,7 +246,7 @@ window.QUIZ = {
                 q: "Two dashboards give two different figures for “the number of customers”. Where does the problem come from?",
                 options: [
                     "A calculation error somewhere in one of the two pipelines",
-                    "An update lag",
+                    "An update lag between the two dashboards being compared",
                     "Diverging definitions that were never written down"
                 ],
                 a: 2,
