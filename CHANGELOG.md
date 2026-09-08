@@ -1,5 +1,75 @@
 # Changelog — Clicked
 
+## 2026-09-08, tard — La bonne réponse n'est plus toujours au même endroit
+
+### Le chiffre qui a lancé ce travail
+
+Sur les **2 532 questions** du site, la bonne réponse était en **troisième
+position 12 fois**. Zéro pour cent, à l'arrondi près. Soixante-quatorze banques
+sur quatre-vingt-quatre n'en avaient aucune.
+
+Ce que ça donnait pour un visiteur qui ne lit pas :
+
+| Stratégie aveugle | Avant | Après |
+|---|---|---|
+| Écarter la troisième, puis tirer au sort | 49,8 % | **34,4 %** |
+| Écarter la troisième, puis la plus longue des deux | **86,4 %** | 59,1 % |
+| Prendre la plus longue des trois | 81,1 % | 81,1 % |
+
+Le hasard vaut 33,3 %. `quiz.js` affiche les options dans l'ordre du fichier —
+vérifié, il n'y a aucun mélange à l'affichage. Le défaut était donc visible par
+tout visiteur ayant fait dix quiz.
+
+**Ce défaut n'existait qu'à l'échelle du fichier.** Chaque question, prise
+seule, est irréprochable : trois options plausibles, une bonne réponse, une
+explication juste. C'est exactement ce qu'un contrôle voit et qu'un relecteur ne
+voit pas.
+
+### Ce qui a été fait, et ce qui n'a pas bougé
+
+794 questions déplacées, la **même permutation** appliquée à la question
+anglaise de même rang — un lecteur qui change de drapeau ne doit pas retrouver
+la page réarrangée.
+
+**Aucun texte n'a été touché.** Les littéraux sont déplacés tels quels, avec
+leurs échappements ; seul l'index `a:` suit. Un contrôle a comparé l'état avant
+et après, question par question : **0 énoncé, 0 jeu d'options, 0 bonne réponse,
+0 explication** modifiés.
+
+**Les 50 échelles ordonnées gardent leur ordre.** « 2 ans / 5 ans / 10 ans » se
+lit dans le sens croissant ; le mélanger ferait du bruit pour rien. Elles
+concentrent ce qui reste de tell — la valeur juste y est encadrée par une plus
+petite et une plus grande — soit 4 % des questions. C'est un choix, pas un
+oubli.
+
+### Un tirage aléatoire ne suffisait pas
+
+Le premier passage, équilibré sur l'ensemble, avait produit **sept « deuxième
+option » d'affilée** dans Design avancé. Équilibré globalement, et parfaitement
+visible à la lecture. La contrainte limite désormais les suites à trois, en
+comptant les échelles restées en place — sinon la suite se calculerait sur une
+séquence trouée.
+
+### Le garde-fou, écrit en même temps
+
+`scripts/verifier-positions-quiz.mjs`, **seizième contrôle bloquant**. Il refuse
+un déséquilibre global, une banque hors bornes, plus de cinq réponses de suite
+au même endroit, et un désaccord entre les deux langues.
+
+Vérifié en le lançant sur les banques d'origine — c'est-à-dire en lui
+réinjectant le vrai défaut : **279 anomalies**, dont une suite de **21 questions
+consécutives** dans Apprendre avancé. Les bornes sont larges à dessein : la
+banque la plus déséquilibrée après correction est à 26,7 / 43,3 %.
+
+### Ce qui reste, et qui est plus lourd
+
+La longueur. La bonne réponse dépasse le plus long distracteur de **17
+caractères en médiane**, et « prendre la plus longue » rapporte toujours 81 %.
+Ce n'est pas un réordonnancement : c'est 2 500 options à réécrire. Et environ
+**20 % des questions** portent un distracteur qu'un lecteur élimine sans rien
+savoir — mesuré sur un échantillon de 60 questions lues une à une, intervalle
+10-30 %.
+
 ## 2026-09-08, nuit — Les leçons terminées reviennent, au lieu de disparaître dans une liste
 
 ### Comprendre **et** agir

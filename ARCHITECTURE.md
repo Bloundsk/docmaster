@@ -124,6 +124,20 @@ suivre.
 gris d'un pixel) ni en sombre (`none`). L'ordre est désormais `border` **d'abord**,
 `border-left` ensuite. Aucune autre règle du fichier n'a cet ordre — vérifié.
 
+**La bonne réponse d'un quiz ne doit pas être devinable à sa place.** Avant le
+8 septembre 2026, elle était en troisième position 12 fois sur 2 532 : écarter
+la dernière option puis prendre la plus longue des deux restantes donnait 86,4 %
+de bonnes réponses sans rien lire. `verifier-positions-quiz.mjs` refuse
+désormais un déséquilibre, une suite de plus de cinq réponses au même endroit,
+et un désaccord entre les deux langues — **le français et l'anglais doivent
+présenter la même question dans le même ordre**. Les échelles ordonnées
+(« 2 ans / 5 ans / 10 ans ») gardent volontairement leur ordre.
+
+**Ce défaut n'existait qu'à l'échelle du fichier.** Chaque question, prise
+seule, était irréprochable. C'est le type même de ce qu'un contrôle voit et
+qu'une relecture ne voit pas : quand un défaut ne se lit que dans la
+*distribution*, il faut le compter, pas le chercher à l'œil.
+
 **Une leçon terminée revient : l'échéancier vit dans `assets/js/revisions.js`.**
 `enhance.js` note la date au moment où « J'ai lu et compris » est coché ;
 `Mon espace` la relit. Les deux fichiers écrivent donc **la même clef**,
@@ -699,19 +713,19 @@ troisième ligne, un commit contenait des guides datés d'aujourd'hui et un accu
 bâti sur hier — et l'intégration continue le refusait, à juste titre. En local
 tout passait, parce que l'accueil avait été régénéré *avant* la datation.
 
-**Quinze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
+**Seize contrôles bloquants tournent par ailleurs à chaque poussée**, dans
 `controles.yml` et `identite.yml` : `valider-js`, `audit-coherence`,
 `verifier-identite`, `verifier-registre`, `verifier-traduction`,
 `appliquer-identite --verifier`, `publier-accueil --verifier`,
 `publier-podcasts --verifier`, `amorcer-lecons --verifier`,
 `amorcer-preferences --verifier`, `poser-selecteur-niveau --verifier`,
-`chiffrer-parcours --verifier`, `test-recherche`, `test-revisions` et
-`test-actualites`. Les
+`chiffrer-parcours --verifier`, `verifier-positions-quiz`, `test-recherche`,
+`test-revisions` et `test-actualites`. Les
 sept `--verifier` ne touchent à rien : ils refont la génération en mémoire et
 refusent si le résultat diffère du dépôt.
 
 **S'y ajoute l'audit de géométrie**, décrit juste en dessous, qui est bloquant
-lui aussi — donc **seize en tout**. Il ne figure pas dans la liste ci-dessus
+lui aussi — donc **dix-sept en tout**. Il ne figure pas dans la liste ci-dessus
 parce qu'il ne se lance pas comme les autres, et c'est précisément le piège :
 le 6 septembre 2026, douze contrôles ont été lancés en local, pas celui-là, et
 l'intégration continue est passée au rouge sur une poussée annoncée verte.
