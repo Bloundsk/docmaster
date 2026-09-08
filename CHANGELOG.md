@@ -1,5 +1,70 @@
 # Changelog — Clicked
 
+## 2026-09-08, nuit — Les leçons terminées reviennent, au lieu de disparaître dans une liste
+
+### Comprendre **et** agir
+
+C'est la réponse de Ludo à la question restée ouverte depuis l'audit : le site
+ne choisit pas entre les deux. L'objectif en tête de page et l'action de la
+semaine restent donc tels quels — et il manquait la pièce qui relie les deux
+dans le temps.
+
+### Ce que le site enseignait sans le faire
+
+Le parcours « Apprendre à apprendre » passe trois niveaux à démontrer que
+l'essentiel de l'oubli a lieu dans les deux premiers jours, et que se tester
+vaut mieux que relire. Puis, une fois la case « J'ai lu et compris » cochée, la
+leçon disparaissait dans **Mes guides terminés** — une liste que personne ne
+rouvre.
+
+`Mon espace` porte maintenant un bloc **🔁 À revoir**. Une leçon terminée y
+revient au bout d'un jour, puis de trois, puis d'une semaine, puis de trois
+semaines. L'échelle n'est pas inventée : c'est celle qu'énonce le guide,
+« ce qui tenait un jour tient ensuite trois jours, puis une semaine, puis
+trois ».
+
+**Revoir ne veut pas dire relire.** Le bloc le dit en toutes lettres : rouvrir
+la page et répondre aux questions du début *sans lire*. C'est exactement ce que
+la vague 2 a rendu possible — les questions sont en haut depuis ce matin.
+
+**Après le quatrième rappel, le site se tait.** Un rappel qui ne s'arrête jamais
+finit par être ignoré, et c'est alors tous les rappels qu'on ignore.
+
+Tout tient dans le navigateur, comme le reste : aucune date n'est envoyée nulle
+part. Pour les leçons terminées avant ce dispositif, le compte démarre
+aujourd'hui — le site n'avait pas noté la date, et il ne l'invente pas ; la page
+le dit au lecteur.
+
+### Un défaut trouvé en chemin, et qui durait depuis cinq parcours
+
+`mon-espace.html` tenait **sa propre table** des titres de parcours. Elle était
+restée à neuf sujets quand le site en compte quatorze : un guide terminé en
+Droit, Santé, Écologie, Négociation ou Apprendre s'affichait « droit »,
+« sante » — en minuscules, sans accent, sans emoji.
+
+Une copie ne prévient pas qu'elle a vieilli. Les titres viennent désormais de
+`parcours.js`, la source unique, et un contrôle **interdit d'en reposer une**.
+
+### Deux garde-fous, construits en même temps
+
+Cette panne-là aurait été **silencieuse**. Une clef mal formée, une échéance mal
+calculée : la page s'affiche normalement et le rappel n'arrive simplement
+jamais. Personne ne s'en aperçoit avant plusieurs jours, et rien ne dit alors ce
+qui a échoué.
+
+| Garde-fou | Ce qu'il attrape |
+|---|---|
+| `scripts/test-revisions.mjs` | 22 vérifications qui **font défiler le temps à la main** : les quatre paliers, le silence après le dernier, un stockage abîmé, une leçon décochée |
+| `audit-coherence.mjs` | `enhance.js` et `revisions.js` doivent écrire **la même clef** ; la table anglaise doit couvrir les quatorze parcours ; la page française ne doit pas reposer de copie |
+
+Chacun des cinq nouveaux contrôles a été vérifié **en y réinjectant le
+défaut** : un contrôle qu'on n'a pas vu rougir ne prouve rien.
+
+### Ce qui suit
+
+La FAQ et l'index de recherche ont suivi, dans les deux langues — un ajout n'est
+fini que quand ce qui y renvoie a suivi.
+
 ## 2026-09-08, soir — La question avant la réponse, sur les 84 pages de niveau
 
 ### Ce qui n'allait pas

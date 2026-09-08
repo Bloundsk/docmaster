@@ -124,6 +124,21 @@ suivre.
 gris d'un pixel) ni en sombre (`none`). L'ordre est désormais `border` **d'abord**,
 `border-left` ensuite. Aucune autre règle du fichier n'a cet ordre — vérifié.
 
+**Une leçon terminée revient : l'échéancier vit dans `assets/js/revisions.js`.**
+`enhance.js` note la date au moment où « J'ai lu et compris » est coché ;
+`Mon espace` la relit. Les deux fichiers écrivent donc **la même clef**,
+`docmaster-revision-guides/<sujet>/<niveau>.html`, et un contrôle le vérifie :
+deux clefs différentes ne produiraient aucune erreur, juste un rappel qui
+n'arrive jamais. L'échelle — 1, 3, 7, 21 jours, puis silence — est celle
+qu'énonce le guide *Apprendre à apprendre* ; la changer ici oblige à changer le
+guide, et réciproquement. `scripts/test-revisions.mjs` fait défiler le temps
+pour le prouver.
+
+**Aucune page ne redéclare les titres de parcours.** `mon-espace.html` en tenait
+une copie, restée à neuf sujets quand le site en comptait quatorze. La page
+anglaise, elle, garde légitimement sa table — `parcours.js` nomme les sujets en
+français — mais elle doit les couvrir tous. Les deux règles sont contrôlées.
+
 **Le texte ajouté compte dans le temps de lecture annoncé.** Après toute
 modification du corps d'un guide, relancer `node scripts/chiffrer-parcours.js` :
 il recompte sections et minutes sur l'ensemble du `<main>`, à 180 mots/minute,
@@ -684,18 +699,19 @@ troisième ligne, un commit contenait des guides datés d'aujourd'hui et un accu
 bâti sur hier — et l'intégration continue le refusait, à juste titre. En local
 tout passait, parce que l'accueil avait été régénéré *avant* la datation.
 
-**Quatorze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
+**Quinze contrôles bloquants tournent par ailleurs à chaque poussée**, dans
 `controles.yml` et `identite.yml` : `valider-js`, `audit-coherence`,
 `verifier-identite`, `verifier-registre`, `verifier-traduction`,
 `appliquer-identite --verifier`, `publier-accueil --verifier`,
 `publier-podcasts --verifier`, `amorcer-lecons --verifier`,
 `amorcer-preferences --verifier`, `poser-selecteur-niveau --verifier`,
-`chiffrer-parcours --verifier`, `test-recherche` et `test-actualites`. Les
+`chiffrer-parcours --verifier`, `test-recherche`, `test-revisions` et
+`test-actualites`. Les
 sept `--verifier` ne touchent à rien : ils refont la génération en mémoire et
 refusent si le résultat diffère du dépôt.
 
 **S'y ajoute l'audit de géométrie**, décrit juste en dessous, qui est bloquant
-lui aussi — donc **quinze en tout**. Il ne figure pas dans la liste ci-dessus
+lui aussi — donc **seize en tout**. Il ne figure pas dans la liste ci-dessus
 parce qu'il ne se lance pas comme les autres, et c'est précisément le piège :
 le 6 septembre 2026, douze contrôles ont été lancés en local, pas celui-là, et
 l'intégration continue est passée au rouge sur une poussée annoncée verte.
