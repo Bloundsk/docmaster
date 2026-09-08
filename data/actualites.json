@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-08T12:13:12.347Z",
+  "maj": "2026-09-08T20:00:20.347Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV202ZFYxaDgxclp4RlhvMkt2c3hmeEVjaDBlRmdkOXZueU5iMzlMVWxQVmZueDhBWV9qb2UzM3F0STNqU0I3S2lxekN3Yk00dTlLSDhETnVtbTMwQ3c1bWwyamVEc2FXRjB6LWNjcUR2bGpfRnB4RzF3bWpqbm9NM0tUOFhMUF8xWTRfcWJlUEpCOUxy?oc=5",
@@ -47,6 +47,18 @@
       "ancre": "la-sedentarite",
       "section": "🚶 La sédentarité",
       "sujet": "🩺 Santé au travail — Débutant",
+      "publie": "2026-09-08"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOX20zLVJocmZlRFRQOGhndFhZSjh4aXhmMldsMlN0eGxrNmJMT1pHckdWek1pOFMtMkxNb3pWczAxYjV6dzV4bU13N1FZRXlvcnRpeXN5QzZtZWl0UnJya2Y4UXFQY1luSVg3UkRibnVCLVg1Y3NqeFh0SER2cWFSSkFwT1hjTC03b1UtN1NWLUozc1RDeVExY3NMM1dtbXdMRG5OclVoQkVrbWI5YVhidDQtM0NOOU0zWlBRZNIBwgFBVV95cUxOMEFNLXpaRHZIcTFLclY3WDNEaTgtdHpNbG1EMWxCdFlGbTdkM285U1hKWGJocHVuRGZrQW13aWxiTFJDdkItNFRBN2c5ZEZ4R0lZYVNjWEZ4bk5Qbk4xTUQzNWphOEt4Rlh2UFZCa2dsM0NCdHhGUHU0MnRyWHo0UGE1dmdTSXVBcE5qdFY0NU5XdXZVWXNlc3JObmV1eTljd0dyVkthQVhCT29WSm82ZVBFdUlJMGNZZExTZm0tem1rUQ?oc=5",
+      "titre": "L'ONU demande des limites urgentes à l'IA face aux risques existentiels et aux armes autonomes",
+      "source": "Demócrata",
+      "date": "2026-09-08",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "les-limites-et-risques-de-lia",
+      "section": "⚠️ Les limites et risques de l'IA",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
       "publie": "2026-09-08"
     },
     {
@@ -108,6 +120,18 @@
       "section": "⚖️ Choisir un modèle",
       "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
       "publie": "2026-09-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQOHYwSHNSdi1nRzhJZnBDbzVPMVU2cnlZNWxwRzEwVkJkRUpxWDdYZXcxenY3ZnU3N0k5SXM0eEs0UzhybXpwWDJfcm5MLWVDeUktN05GTXktVEpReExmTGFHLUp6dDFqelJvRHlIM2dhNDBvd19Kd0s2UGRyLUpRQnYtdlZQSGItdndZSzJTVUxDNlk1eFY5U2ZvQ1hEdHdlWmFBUHhtWllVQUhOZjJhNlNab0hXbE4yTk85aXNhemtUM19fU3Jlb3hScFNRRUgtcE8wTUN1Wjd3MXMwNXF6R0FpNzZ6dkYyMjZ5LVhFQVVTOVJkYnAwMU4xdWtjQmVj?oc=5",
+      "titre": "L’AMF visée par une fuite de données après une attaque contre son site internet",
+      "source": "lagazettedescommunes.com",
+      "date": "2026-09-07",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-08"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
@@ -263,30 +287,6 @@
       "ancre": "les-tests-utilisateurs",
       "section": "🧪 Les tests utilisateurs",
       "sujet": "🎨 Design UX/UI — Débutant",
-      "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNakxJOTdHZ283VnZwaEo3RkJFcmxYMDJBb3RtX2JSUjZ2dUdHMDVreUZVc3REZ2p6RjJfc3hLUVB1Nkk0RklKVEJIck9CRFBKT1BoMDhFSG9pdGs0RVVSOXRZRTZULWN4RkRJRmdULTJsc1ZOeXZ5QlltOWYtSmZUUXVPMzI2U3F1c1RJUlJteEJDaWZpLUlrcUd2Q1dobFZNLV9ENVhuVm9QLUx6MldVTm5YT0cteXlWNmZTWjJqcUhKTkE0Y1E?oc=5",
-      "titre": "Rentrée dans le supérieur : comment conserver le droit aux allocations pour un enfant majeur",
-      "source": "RTBF",
-      "date": "2026-09-03",
-      "guide": "droit",
-      "page": "debutant.html",
-      "ancre": "conserver-ses-documents",
-      "section": "🗂️ Conserver ses documents",
-      "sujet": "⚖️ Droit & démarches — Débutant",
-      "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSnFBdms2dlRUY0JyVmx1UG1aaFBMOW9YRGN4NWM3Y2FOSXl4S3VLVDBsZFNmX0pfa0ZrQkk5b29qZE92S2xjNnZnZjBqZ3JjbXJJcWsxSU12Q2xGWmV1WlV1UjlwNmJGNGlydG1NSzNxV0NRVjNyRjJfVHVCOWhYMnBrZ3c1U2dsUHAzQ3VRMERUTGlNY05zQWw5aHZBSWlGR25kTWItcGlrRFNZTUIyWA?oc=5",
-      "titre": "Gestion des risques : l’IA gagne du terrain chez les gestionnaires d’actifs",
-      "source": "Finance et Investissement",
-      "date": "2026-09-03",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
       "publie": "2026-09-03"
     }
   ]
