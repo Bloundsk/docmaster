@@ -15,7 +15,7 @@ window.QUIZ = {
                 q: "Quel est le principal risque d'un mot de passe réutilisé ?",
                 options: [
                     "Une seule fuite ouvre tous les comptes qui l'utilisent",
-                    "Il est plus facile à deviner",
+                    "Il est plus facile à deviner pour un attaquant un peu patient",
                     "Il expire plus vite"
                 ],
                 a: 0,
@@ -34,9 +34,9 @@ window.QUIZ = {
             {
                 q: "Que faut-il retenir pour utiliser un gestionnaire de mots de passe ?",
                 options: [
-                    "Un mot de passe par catégorie de site",
+                    "Un mot de passe par catégorie de site visité",
                     "Un seul mot de passe, celui du coffre",
-                    "Rien, tout est automatique"
+                    "Rien du tout : tout est automatique une fois installé"
                 ],
                 a: 1,
                 explication: "Chaque site reçoit une valeur unique que tu ne connais même pas. Tu n'en mémorises qu'une."
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "Que répondre à l'objection « tous les œufs dans le même panier » ?",
                 options: [
-                    "Elle est infondée, le coffre est inviolable",
+                    "Elle est infondée : le coffre est réputé techniquement inviolable",
                     "Il vaut mieux tout noter sur papier",
                     "Le risque est concentré, mais sur un point réellement protégé"
                 ],
@@ -57,7 +57,7 @@ window.QUIZ = {
                 options: [
                     "Oui, c'est son rôle principal",
                     "Il rend surtout leur réutilisation inutile",
-                    "Non, il ne change rien à la sécurité"
+                    "Non, il ne change rien à la sécurité réelle des comptes"
                 ],
                 a: 1,
                 explication: "Un mot de passe long reste volé si le service qui le détenait fuite. Ce que le gestionnaire supprime, c'est la propagation."
@@ -80,8 +80,8 @@ window.QUIZ = {
             {
                 q: "Que vérifie un second facteur d'authentification ?",
                 options: [
-                    "Quelque chose que l'on sait",
-                    "La force du mot de passe",
+                    "Quelque chose que l'on sait déjà",
+                    "La force du mot de passe choisi",
                     "Quelque chose que l'on possède"
                 ],
                 a: 2,
@@ -101,8 +101,8 @@ window.QUIZ = {
                 q: "Quel compte protéger en priorité ?",
                 options: [
                     "La boîte mail principale",
-                    "Les réseaux sociaux",
-                    "Le compte de streaming"
+                    "Les réseaux sociaux d'abord",
+                    "Le compte de streaming familial"
                 ],
                 a: 0,
                 explication: "C'est elle qui reçoit les liens de réinitialisation de tous les autres. Qui la contrôle contrôle l'ensemble."
@@ -132,8 +132,8 @@ window.QUIZ = {
                 q: "Un code généré par application transite-t-il sur le réseau ?",
                 options: [
                     "Non, il est calculé sur l'appareil",
-                    "Oui, par le serveur du service",
-                    "Oui, par SMS chiffré"
+                    "Oui, par le serveur du service concerné",
+                    "Oui, par SMS chiffré de bout en bout"
                 ],
                 a: 0,
                 explication: "Il n'y a donc rien à intercepter, ce qui explique sa supériorité sur le SMS."
@@ -158,7 +158,7 @@ window.QUIZ = {
                 options: [
                     "Il s'use trop vite",
                     "Un rançongiciel chiffre tout ce que la session peut écrire",
-                    "Il n'a pas assez de capacité"
+                    "Il n'a pas assez de capacité pour conserver plusieurs versions"
                 ],
                 a: 1,
                 explication: "Le disque branché, le dossier synchronisé, le lecteur réseau : tout y passe, souvent en quelques minutes."
@@ -167,8 +167,8 @@ window.QUIZ = {
                 q: "Quelle est la seule réponse qui fonctionne à coup sûr contre un rançongiciel ?",
                 options: [
                     "Une sauvegarde qu'il n'a pas pu atteindre",
-                    "Un bon antivirus",
-                    "Payer la rançon"
+                    "Un bon antivirus, tenu à jour chaque semaine",
+                    "Payer la rançon demandée, en dernier recours"
                 ],
                 a: 0,
                 explication: "L'antivirus est une barrière parmi d'autres. Payer ne garantit rien, ni la clé ni l'absence de copie des données."
@@ -177,7 +177,7 @@ window.QUIZ = {
             {
                 q: "Que couvre spécifiquement la copie « hors du logement » ?",
                 options: [
-                    "Les erreurs de manipulation",
+                    "Les erreurs de manipulation et les suppressions",
                     "Les pannes de disque",
                     "L'incendie, le dégât des eaux, le cambriolage"
                 ],
@@ -199,7 +199,7 @@ window.QUIZ = {
                 options: [
                     "Environ une fois par trimestre",
                     "Jamais, si le logiciel affiche un succès",
-                    "Uniquement après un incident"
+                    "Uniquement après un incident réel"
                 ],
                 a: 0,
                 explication: "Restaurer un fichier au hasard suffit à vérifier que la chaîne complète fonctionne."
@@ -222,7 +222,7 @@ window.QUIZ = {
             {
                 q: "Un VPN protège-t-il du hameçonnage ?",
                 options: [
-                    "Oui, il bloque les sites frauduleux",
+                    "Oui, il bloque l'accès aux sites frauduleux connus",
                     "Oui, s'il est payant",
                     "Non, il transporte le trafic sans l'inspecter"
                 ],
@@ -233,7 +233,7 @@ window.QUIZ = {
                 q: "Un VPN rend-il anonyme sur un service où l'on est connecté ?",
                 options: [
                     "Oui, l'adresse IP est masquée",
-                    "Oui, si l'on efface les cookies",
+                    "Oui, à condition d'effacer les cookies avant de s'y rendre",
                     "Non, le compte connecté t'identifie de lui-même"
                 ],
                 a: 2,
@@ -301,7 +301,7 @@ window.QUIZ = {
         {
             q: "Un attaquant obtient ton mot de passe de messagerie. Qu'est-ce qui l'arrête ?",
             options: [
-                "Un antivirus à jour",
+                "Un antivirus à jour, doublé d'un pare-feu bien réglé",
                 "Une double authentification par application ou clé",
                 "Un VPN actif"
             ],
@@ -312,7 +312,7 @@ window.QUIZ = {
         {
             q: "Quelle protection agit encore quand l'attaque a déjà réussi ?",
             options: [
-                "Le pare-feu",
+                "Le pare-feu intégré au système",
                 "La sauvegarde déconnectée",
                 "Le gestionnaire de mots de passe"
             ],
@@ -334,7 +334,7 @@ window.QUIZ = {
             options: [
                 "Il ralentit l'appareil",
                 "Il fait baisser la garde là où elle compte vraiment",
-                "Il entre en conflit avec l'antivirus"
+                "Il entre en conflit avec l'antivirus déjà en place sur le poste"
             ],
             a: 1,
             explication: "Croire son navigateur protégé par un VPN conduit à cliquer plus facilement sur les liens et à ouvrir les fichiers sans réfléchir."

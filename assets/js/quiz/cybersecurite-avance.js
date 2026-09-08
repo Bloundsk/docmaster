@@ -47,7 +47,7 @@ window.QUIZ = {
                 options: [
                     "Sécuriser la boîte mail de secours",
                     "Changer le mot de passe du service concerné",
-                    "Prévenir ses contacts"
+                    "Prévenir ses contacts et ses proches"
                 ],
                 a: 0,
                 explication: "Tant qu'un attaquant contrôle la messagerie de secours, il reprend tout ce que tu viens de changer."
@@ -66,7 +66,7 @@ window.QUIZ = {
                 q: "Que signifie recevoir une notification de fuite ?",
                 options: [
                     "Une alerte : l'attaque est en cours",
-                    "Une simple précaution légale sans conséquence",
+                    "Une simple précaution légale, sans conséquence réelle",
                     "Un constat : les données circulent depuis un moment"
                 ],
                 a: 2,
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui distingue une attaque ciblée d'un hameçonnage de masse ?",
                 options: [
-                    "Elle vise uniquement les grandes entreprises",
+                    "Elle ne vise que les grandes entreprises et leurs dirigeants",
                     "Elle ne présente aucun des signaux grossiers habituels",
                     "Elle utilise toujours une pièce jointe"
                 ],
@@ -92,7 +92,7 @@ window.QUIZ = {
                 options: [
                     "D'un piratage préalable",
                     "De sources publiques : profils, annonces, organigrammes",
-                    "De listes vendues par les opérateurs"
+                    "De listes revendues par des opérateurs et des courtiers de données"
                 ],
                 a: 1,
                 explication: "Rien n'est piraté pour construire le message. Tout est simplement lu."
@@ -100,8 +100,8 @@ window.QUIZ = {
             {
                 q: "Quels leviers agissent ensemble dans le scénario classique ?",
                 options: [
-                    "Peur, récompense et curiosité",
-                    "Technique, juridique et financier",
+                    "La peur, la récompense et la curiosité",
+                    "Le technique, le juridique et le financier",
                     "Autorité, urgence et confidentialité"
                 ],
                 a: 2,
@@ -113,7 +113,7 @@ window.QUIZ = {
                 options: [
                     "Lire le message plus attentivement",
                     "Vérifier par un autre canal, avec un numéro déjà connu",
-                    "Installer un filtre antispam plus strict"
+                    "Installer un filtre antispam beaucoup plus strict que le réglage par défaut"
                 ],
                 a: 1,
                 explication: "Un message bien fait ne se distingue pas d'un vrai. Se croire capable de repérer l'imposture est précisément ce qui rend vulnérable."
@@ -121,8 +121,8 @@ window.QUIZ = {
             {
                 q: "Que montrent les études sur les personnes formées à ces attaques ?",
                 options: [
-                    "Elles ne se font plus jamais prendre",
-                    "La formation n'a aucun effet mesurable",
+                    "Elles ne se font plus jamais prendre par ce genre d'attaque",
+                    "La formation n'a aucun effet mesurable sur le taux de clic",
                     "Elles se font prendre aussi, mais moins souvent"
                 ],
                 a: 2,
@@ -131,9 +131,9 @@ window.QUIZ = {
             {
                 q: "Pourquoi une règle écrite protège-t-elle mieux que la vigilance ?",
                 options: [
-                    "Elle est plus rapide à appliquer",
+                    "Elle est plus rapide à appliquer qu'un examen au cas par cas",
                     "Elle agit même les jours où l'attention manque",
-                    "Elle est exigée par la loi"
+                    "Elle est exigée par la loi dans la plupart des entreprises"
                 ],
                 a: 1,
                 explication: "« Aucun virement sans confirmation vocale » ne dépend pas de l'état de forme de la personne qui reçoit le message."
@@ -148,7 +148,7 @@ window.QUIZ = {
                 options: [
                     "Que personne ne sait avec qui tu échanges",
                     "Que seuls les correspondants peuvent lire le contenu",
-                    "Que les messages sont supprimés automatiquement"
+                    "Que les messages sont supprimés automatiquement après lecture"
                 ],
                 a: 1,
                 explication: "Ni le service, ni un intermédiaire, ni quiconque interceptant le trafic ne peut lire le contenu."
@@ -157,7 +157,7 @@ window.QUIZ = {
                 q: "Qu'appelle-t-on métadonnées dans une messagerie ?",
                 options: [
                     "Qui écrit à qui, quand, à quelle fréquence, depuis où",
-                    "Le texte des messages",
+                    "Le texte des messages, une fois déchiffré par le service",
                     "Les fichiers joints"
                 ],
                 a: 0,
@@ -166,7 +166,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi les métadonnées sont-elles sensibles ?",
                 options: [
-                    "Elles contiennent des extraits de messages",
+                    "Elles contiennent des extraits des messages les plus récents",
                     "Elles permettent de déchiffrer le contenu",
                     "Elles suffisent souvent à reconstituer une situation"
                 ],
@@ -198,8 +198,8 @@ window.QUIZ = {
                 q: "Que peut faire ton correspondant, quel que soit le chiffrement ?",
                 options: [
                     "Une capture d'écran, ou transmettre le contenu",
-                    "Rien de particulier",
-                    "Déchiffrer tes autres conversations"
+                    "Rien de particulier, le chiffrement l'en empêche",
+                    "Déchiffrer tes autres conversations avec ce contact"
                 ],
                 a: 0,
                 explication: "Le chiffrement protège le trajet, pas la confiance accordée à l'autre extrémité."
@@ -232,8 +232,8 @@ window.QUIZ = {
             {
                 q: "Quel est souvent le maillon le plus faible d'un compte ?",
                 options: [
-                    "Le mot de passe",
-                    "Le nom d'utilisateur",
+                    "Le mot de passe, s'il est court",
+                    "Le nom d'utilisateur affiché",
                     "Le chemin de récupération"
                 ],
                 a: 2,
@@ -282,7 +282,7 @@ window.QUIZ = {
             q: "Quel point commun entre les fuites de données et les attaques ciblées ?",
             options: [
                 "Elles visent uniquement les entreprises",
-                "Elles exploitent toutes une faille logicielle",
+                "Elles exploitent toutes une faille logicielle non corrigée",
                 "Aucun outil ne les empêche du côté de l'utilisateur"
             ],
             a: 2,
@@ -302,7 +302,7 @@ window.QUIZ = {
             q: "Pourquoi la procédure l'emporte-t-elle sur le discernement ?",
             options: [
                 "Parce qu'elle fonctionne aussi les jours de fatigue",
-                "Parce qu'elle est plus rapide",
+                "Parce qu'elle est plus rapide à appliquer sous pression",
                 "Parce qu'elle est obligatoire"
             ],
             a: 0,
@@ -313,7 +313,7 @@ window.QUIZ = {
             q: "Qu'est-ce qui, dans ce niveau, ne dépend pas du tout de toi ?",
             options: [
                 "Le choix de tes mots de passe",
-                "L'activation de la double authentification",
+                "L'activation de la double authentification sur tes comptes",
                 "La sécurité des services auxquels tu confies des données"
             ],
             a: 2,
@@ -323,7 +323,7 @@ window.QUIZ = {
             q: "Quelle action réduit la surface d'attaque de façon définitive ?",
             options: [
                 "Supprimer les comptes inutilisés",
-                "Changer tous ses mots de passe",
+                "Changer tous ses mots de passe d'un coup",
                 "Installer un antivirus supplémentaire"
             ],
             a: 0,

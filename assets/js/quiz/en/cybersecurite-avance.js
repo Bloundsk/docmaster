@@ -49,7 +49,7 @@ window.QUIZ = {
                 options: [
                     "Securing the recovery mailbox",
                     "Changing the password of the service concerned",
-                    "Warning your contacts"
+                    "Warning your contacts and your family"
                 ],
                 a: 0,
                 explication: "As long as an attacker controls the recovery mailbox, they take back everything you have just changed."
@@ -59,7 +59,7 @@ window.QUIZ = {
                 options: [
                     "An automatic forwarding rule set in the mailbox",
                     "The previous password",
-                    "Nothing, the change cuts everything off"
+                    "Nothing, the change cuts every access off at once"
                 ],
                 a: 0,
                 explication: "Every message received keeps being copied to the attacker, including future reset links."
@@ -82,9 +82,9 @@ window.QUIZ = {
             {
                 q: "What separates a targeted attack from mass phishing?",
                 options: [
-                    "It only goes after large companies",
+                    "It only goes after large companies and their directors",
                     "It shows none of the usual crude signs",
-                    "It always uses an attachment"
+                    "It always uses an attachment of some kind"
                 ],
                 a: 1,
                 explication: "It is written for you, from real information, and asks for an action that makes sense in your context."
@@ -94,7 +94,7 @@ window.QUIZ = {
                 options: [
                     "A prior hack",
                     "Public sources: profiles, job adverts, org charts",
-                    "Lists sold by operators"
+                    "Lists resold by operators and by data brokers"
                 ],
                 a: 1,
                 explication: "Nothing is hacked to build the message. Everything is simply read."
@@ -102,8 +102,8 @@ window.QUIZ = {
             {
                 q: "Which levers act together in the classic scenario?",
                 options: [
-                    "Fear, reward and curiosity",
-                    "Technical, legal and financial",
+                    "Fear, reward and plain curiosity together",
+                    "The technical, the legal and the financial",
                     "Authority, urgency and confidentiality"
                 ],
                 a: 2,
@@ -123,8 +123,8 @@ window.QUIZ = {
             {
                 q: "What do studies show about people trained against these attacks?",
                 options: [
-                    "They never get caught again",
-                    "Training has no measurable effect",
+                    "They never get caught by that kind of attack again",
+                    "Training has no measurable effect on the click rate",
                     "They get caught too, but less often"
                 ],
                 a: 2,
@@ -133,7 +133,7 @@ window.QUIZ = {
             {
                 q: "Why does a written rule protect better than vigilance?",
                 options: [
-                    "It is quicker to apply",
+                    "It is quicker to apply than a case-by-case examination",
                     "It acts even on the days attention is lacking",
                     "It is required by law"
                 ],
@@ -159,7 +159,7 @@ window.QUIZ = {
                 q: "What is called metadata in a messaging service?",
                 options: [
                     "Who writes to whom, when, how often, from where",
-                    "The text of the messages",
+                    "The text of the messages, once decrypted by the service",
                     "The attached files"
                 ],
                 a: 0,
@@ -169,7 +169,7 @@ window.QUIZ = {
                 q: "Why is metadata sensitive?",
                 options: [
                     "It contains extracts of messages",
-                    "It allows the content to be decrypted",
+                    "It allows the content of the messages to be decrypted",
                     "It is often enough to reconstruct a situation"
                 ],
                 a: 2,
@@ -179,7 +179,7 @@ window.QUIZ = {
             {
                 q: "What can cancel the effect of end-to-end encryption?",
                 options: [
-                    "A password that is too short",
+                    "A password that is far too short to resist an attack",
                     "An unencrypted cloud backup of the conversations",
                     "Using public wifi"
                 ],
@@ -201,7 +201,7 @@ window.QUIZ = {
                 options: [
                     "Take a screenshot, or pass the content on",
                     "Nothing in particular",
-                    "Decrypt your other conversations"
+                    "Decrypt your other conversations with that contact"
                 ],
                 a: 0,
                 explication: "Encryption protects the journey, not the trust placed in the other end."
@@ -226,7 +226,7 @@ window.QUIZ = {
                 options: [
                     "They cost money",
                     "They keep an old password and you are not told if they leak",
-                    "They slow the browser down"
+                    "They slow the browser down and clutter up the whole interface"
                 ],
                 a: 1,
                 explication: "Often signed up to at a time when the same password served everywhere, and with no two-factor authentication."
@@ -234,8 +234,8 @@ window.QUIZ = {
             {
                 q: "What is often the weakest link of an account?",
                 options: [
-                    "The password",
-                    "The username",
+                    "The password, if it is short",
+                    "The username on display",
                     "The recovery route"
                 ],
                 a: 2,
@@ -255,9 +255,9 @@ window.QUIZ = {
             {
                 q: "What is the point of deleting an unused account?",
                 options: [
-                    "It improves network speed",
+                    "It improves the speed of the network at home",
                     "A deleted account does not leak",
-                    "It frees up your email address"
+                    "It frees up your email address for another use"
                 ],
                 a: 1,
                 explication: "It is the only permanent reduction in risk: the door no longer exists."
@@ -266,7 +266,7 @@ window.QUIZ = {
                 q: "What should you check about third-party applications?",
                 options: [
                     "Which ones keep permanent access to your main accounts",
-                    "Their rating in the store",
+                    "Their rating in the app store and their number of reviews",
                     "Their size on disk"
                 ],
                 a: 0,
@@ -284,7 +284,7 @@ window.QUIZ = {
             q: "What do data breaches and targeted attacks have in common?",
             options: [
                 "They only go after companies",
-                "They all exploit a software flaw",
+                "They all exploit a software flaw left uncorrected",
                 "No tool prevents them on the user's side"
             ],
             a: 2,
@@ -294,7 +294,7 @@ window.QUIZ = {
             q: "Somebody has a unique password, two-factor authentication and a VPN. What is still exposed?",
             options: [
                 "Metadata, recovery routes and plausible requests",
-                "Nothing, the protection is complete",
+                "Nothing, the protection is complete at that point",
                 "Local files only"
             ],
             a: 0,
@@ -304,8 +304,8 @@ window.QUIZ = {
             q: "Why does procedure beat judgement?",
             options: [
                 "Because it also works on the tired days",
-                "Because it is faster",
-                "Because it is compulsory"
+                "Because it is faster to apply under pressure",
+                "Because it is compulsory in most companies"
             ],
             a: 0,
             explication: "It is the same reasoning as for the previous level's arrangements: whatever depends on daily vigilance gives way in the end."
@@ -315,7 +315,7 @@ window.QUIZ = {
             q: "What, at this level, does not depend on you at all?",
             options: [
                 "The choice of your passwords",
-                "Switching on two-factor authentication",
+                "Switching on two-factor authentication on your accounts",
                 "The security of the services you entrust data to"
             ],
             a: 2,

@@ -48,7 +48,7 @@ window.QUIZ = {
                 options: [
                     "The vocabulary of a theme you like",
                     "Frequency lists",
-                    "Reading novels"
+                    "Reading novels in the original"
                 ],
                 a: 1,
                 explication: "The first thousand pays as much as the next nine thousand combined."
@@ -56,8 +56,8 @@ window.QUIZ = {
             {
                 q: "Beyond 2,000 words, what becomes more profitable than lists?",
                 options: [
-                    "Longer lists",
-                    "Grammar",
+                    "Longer lists, up to five thousand words",
+                    "Grammar and conjugation, learned separately",
                     "Reading accessible texts"
                 ],
                 a: 2,
@@ -81,7 +81,7 @@ window.QUIZ = {
             {
                 q: "What is transfer?",
                 options: [
-                    "The passage from short-term to long-term memory",
+                    "The passage from short-term to long-term memory, by repetition",
                     "The act of changing method",
                     "The ability to use elsewhere what you learned here"
                 ],
@@ -102,7 +102,7 @@ window.QUIZ = {
                 q: "What do brain-training games actually improve?",
                 options: [
                     "Mostly those games, and very close tasks",
-                    "Memory in general",
+                    "Memory in general, and attention along with it",
                     "Attention at work"
                 ],
                 a: 0,
@@ -113,8 +113,8 @@ window.QUIZ = {
                 q: "What is the strongest lever for encouraging transfer?",
                 options: [
                     "Varying the contexts",
-                    "Repeating more",
-                    "Taking better notes"
+                    "Repeating the same exercise more",
+                    "Taking better notes in class"
                 ],
                 a: 0,
                 explication: "The same idea met in four settings detaches itself from each of them."
@@ -124,7 +124,7 @@ window.QUIZ = {
                 options: [
                     "Because it is shorter",
                     "Because a recipe does not travel, a principle does",
-                    "Because it is easier to remember"
+                    "Because a principle is easier to remember than a recipe"
                 ],
                 a: 1,
                 explication: "Hence the use of the question “what is this a particular case of?”."
@@ -147,9 +147,9 @@ window.QUIZ = {
             {
                 q: "What is the decisive question when judging a learning method?",
                 options: [
-                    "On how many people?",
+                    "On how many people, and in which country?",
                     "Measured how long afterwards?",
-                    "Published in which journal?"
+                    "Published in which journal, and by whom?"
                 ],
                 a: 1,
                 explication: "Almost every pleasant method wins the immediate test and loses the one a week later."
@@ -157,7 +157,7 @@ window.QUIZ = {
             {
                 q: "What is a method compared with “doing nothing” worth?",
                 options: [
-                    "That is a sufficient comparison",
+                    "That is a sufficient comparison to decide between methods",
                     "Nothing: it has to do better than another method",
                     "It depends on the duration"
                 ],
@@ -214,8 +214,8 @@ window.QUIZ = {
                 q: "What flaw do all the techniques in this path share?",
                 options: [
                     "They assume you think of them",
-                    "They are expensive",
-                    "They require software"
+                    "They are expensive in time and equipment",
+                    "They require dedicated software to hold"
                 ],
                 a: 0,
                 explication: "Motivation falls, weeks get heavy, and a method requiring daily thought gives way."
@@ -225,7 +225,7 @@ window.QUIZ = {
                 options: [
                     "As well-written notes",
                     "As questions",
-                    "As summaries"
+                    "As short summaries"
                 ],
                 a: 1,
                 explication: "Otherwise, on the day, you will reread instead of testing yourself."
@@ -235,7 +235,7 @@ window.QUIZ = {
                 options: [
                     "Keeping the streak unbroken on impossible days",
                     "Making faster progress",
-                    "Catching up on a backlog"
+                    "Catching up on the backlog after a long break away"
                 ],
                 a: 0,
                 explication: "Its purpose is not to make progress."
@@ -244,7 +244,7 @@ window.QUIZ = {
             {
                 q: "What does a card failed ten times in a row tell you?",
                 options: [
-                    "That it is difficult",
+                    "That it is hard to remember",
                     "That it should come up more often",
                     "That it is badly written"
                 ],
@@ -256,7 +256,7 @@ window.QUIZ = {
                 options: [
                     "Will I need this from memory?",
                     "Is it interesting?",
-                    "Is it on the syllabus?"
+                    "Is it on the syllabus this year?"
                 ],
                 a: 0,
                 explication: "If the answer is no, it belongs in a note you can look up, not on a card."
@@ -266,7 +266,7 @@ window.QUIZ = {
                 options: [
                     "Two hours on Sunday",
                     "Fifteen minutes daily, by a long way",
-                    "The two are equivalent"
+                    "The two are equivalent over a whole month"
                 ],
                 a: 1,
                 explication: "What is not in the calendar does not happen; and spacing does the rest."
@@ -280,7 +280,7 @@ window.QUIZ = {
             q: "What is the thread running through this level?",
             options: [
                 "Stopping applying methods and starting to judge them",
-                "Learning faster",
+                "Learning faster than the usual methods allow anyone to",
                 "Memorising more"
             ],
             a: 0,
@@ -301,7 +301,7 @@ window.QUIZ = {
             options: [
                 "The promise contradicts the known mechanism of memory",
                 "It is plausible with a good method",
-                "You should check the number of users"
+                "You should check the number of users and read their reviews"
             ],
             a: 0,
             explication: "Retrieval effort is precisely what strengthens the trace."
@@ -330,7 +330,7 @@ window.QUIZ = {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
                 "Asking “measured how long afterwards?” of any method",
-                "Learning vocabulary by frequency",
+                "Learning vocabulary by frequency, one list after another",
                 "Doing a monthly review"
             ],
             a: 0,

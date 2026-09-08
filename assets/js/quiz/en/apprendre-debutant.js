@@ -20,7 +20,7 @@ window.QUIZ = {
                 options: [
                     "A steady decline",
                     "Very fast at first, then slower and slower",
-                    "Slow at first, then brutal"
+                    "Slow at first, then suddenly brutal after a week"
                 ],
                 a: 1,
                 explication: "It is this shape, not the average speed, that dictates when to review."
@@ -59,8 +59,8 @@ window.QUIZ = {
             {
                 q: "Forgetting something seen only once is a sign of what?",
                 options: [
-                    "Badly done learning",
-                    "A lack of attention",
+                    "Badly done learning, or a poor method",
+                    "A lack of attention when you first read it",
                     "The normal working of memory"
                 ],
                 a: 2,
@@ -69,7 +69,7 @@ window.QUIZ = {
             {
                 q: "What share of the total loss happens in the first two days?",
                 options: [
-                    "About a tenth",
+                    "About a tenth of it",
                     "More than half",
                     "It is spread evenly across the month"
                 ],
@@ -84,7 +84,7 @@ window.QUIZ = {
             {
                 q: "What does a successful review do to the forgetting curve?",
                 options: [
-                    "It only lifts it back up",
+                    "It only lifts it back up, without changing its slope",
                     "It does not change it",
                     "It lifts it back up and flattens it"
                 ],
@@ -105,8 +105,8 @@ window.QUIZ = {
                 q: "For 60 terms to hold for six months, at 8 seconds per term, what does spacing cost?",
                 options: [
                     "48 minutes in total",
-                    "3 h 20 in total",
-                    "An hour a week"
+                    "3 h 20 in total, spread over six months",
+                    "An hour a week, every week"
                 ],
                 a: 0,
                 explication: "Against 3 h 20 rereading everything weekly: four times less time."
@@ -125,8 +125,8 @@ window.QUIZ = {
             {
                 q: "What do flashcard programs such as Anki do?",
                 options: [
-                    "They memorise for you",
-                    "They write the cards",
+                    "They memorise for you, by repeating the content",
+                    "They write the cards from your notes",
                     "They keep the review schedule"
                 ],
                 a: 2,
@@ -152,7 +152,7 @@ window.QUIZ = {
                 options: [
                     "It is the learning itself",
                     "It checks what has been learned",
-                    "It is mainly for marking"
+                    "It is mainly there for marking"
                 ],
                 a: 0,
                 explication: "Searching your memory for an answer strengthens the trace far more than rereading it."
@@ -182,8 +182,8 @@ window.QUIZ = {
                 q: "What should you do with a section heading in order to test yourself?",
                 options: [
                     "Turn it into a question",
-                    "Highlight it",
-                    "Copy it out"
+                    "Highlight it to come back to later",
+                    "Copy it out neatly into your notes"
                 ],
                 a: 0,
                 explication: "“The forgetting curve” becomes “what shape does it have, and what does that change?”."
@@ -202,7 +202,7 @@ window.QUIZ = {
                 q: "What does a comfortable revision session signal?",
                 options: [
                     "That it is probably not doing much",
-                    "That the topic is well chosen",
+                    "That the topic is well chosen and the pace right",
                     "That you are on good form"
                 ],
                 a: 0,
@@ -228,7 +228,7 @@ window.QUIZ = {
                 options: [
                     "Because it is effective",
                     "Because it is rewarding at the time",
-                    "Because studies recommend it"
+                    "Because studies have recommended it for years"
                 ],
                 a: 1,
                 explication: "The bill arrives later, when you have to produce without the text in front of you."
@@ -293,7 +293,7 @@ window.QUIZ = {
             q: "What do spacing and the testing effect have in common?",
             options: [
                 "Both take more time",
-                "Both work only in writing",
+                "Both work only in writing, never out loud",
                 "Both exploit the effort of retrieval"
             ],
             a: 2,
@@ -333,7 +333,7 @@ window.QUIZ = {
             q: "You learned something this morning. When will a review pay most?",
             options: [
                 "Today or tomorrow",
-                "In two weeks",
+                "In two weeks, once forgetting has done its work",
                 "Just before you need it"
             ],
             a: 0,

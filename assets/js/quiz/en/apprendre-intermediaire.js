@@ -15,7 +15,7 @@ window.QUIZ = {
             {
                 q: "Why does doing twenty exercises of the same type in a row deceive you?",
                 options: [
-                    "Because the exercises are too easy",
+                    "Because the exercises are far too easy for your level",
                     "Because you never have to identify which type it is",
                     "Because it takes too long"
                 ],
@@ -36,8 +36,8 @@ window.QUIZ = {
                 q: "Which part of the work does blocked practice leave out?",
                 options: [
                     "Recognising the type of problem",
-                    "Applying the method",
-                    "The calculation itself"
+                    "Applying the method once it is chosen",
+                    "The calculation itself, which takes longest"
                 ],
                 a: 0,
                 explication: "On the day of the test nobody announces the type — and that is the hard part."
@@ -93,7 +93,7 @@ window.QUIZ = {
                 options: [
                     "Because it is shorter",
                     "Because it becomes reachable by several routes",
-                    "Because it is more interesting"
+                    "Because it is more interesting, so easier to hold"
                 ],
                 a: 1,
                 explication: "Only one route needs to work for you to find it."
@@ -102,7 +102,7 @@ window.QUIZ = {
                 q: "Neatly copying out a definition exercises what?",
                 options: [
                     "The hand",
-                    "Memory",
+                    "Your memory",
                     "Understanding"
                 ],
                 a: 0,
@@ -112,7 +112,7 @@ window.QUIZ = {
             {
                 q: "What is an example you found yourself worth?",
                 options: [
-                    "Less than the one in the course",
+                    "Less than the one in the course, chosen by a specialist",
                     "It mainly serves to illustrate",
                     "It is the proof that you hold the idea"
                 ],
@@ -133,7 +133,7 @@ window.QUIZ = {
                 q: "What counts in a reading session is:",
                 options: [
                     "What you put the content through during that time",
-                    "The time spent on the content",
+                    "The time spent on the content, page after page and line by line",
                     "The number of pages covered"
                 ],
                 a: 0,
@@ -158,7 +158,7 @@ window.QUIZ = {
                 q: "Over 5 h a week for 12 weeks, what does moving from 20% to 60% of time on weak points change?",
                 options: [
                     "12 useful hours against 36",
-                    "A negligible gap",
+                    "A negligible gap, over a term",
                     "You have to work three times longer"
                 ],
                 a: 0,
@@ -167,7 +167,7 @@ window.QUIZ = {
             {
                 q: "Why can someone drive for twenty years without driving better?",
                 options: [
-                    "Because age degrades reflexes",
+                    "Because age gradually degrades reflexes and attention",
                     "Because the roads change",
                     "Because practice alone does not produce improvement"
                 ],
@@ -180,7 +180,7 @@ window.QUIZ = {
                 options: [
                     "It runs without a single error",
                     "It leaves a trail of mistakes",
-                    "It is long"
+                    "It is long, and covers the whole syllabus"
                 ],
                 a: 1,
                 explication: "A faultless session mainly signals that you stayed on familiar ground."
@@ -189,7 +189,7 @@ window.QUIZ = {
                 q: "What is “I spent six hours on it” worth as an indicator?",
                 options: [
                     "It is the best indicator available",
-                    "It depends on the subject",
+                    "It depends on the subject studied",
                     "Nothing, until you know what on"
                 ],
                 a: 2,
@@ -214,8 +214,8 @@ window.QUIZ = {
                 q: "When does most of the consolidation happen?",
                 options: [
                     "During the sleep that follows",
-                    "During learning",
-                    "During the next day's review"
+                    "During the learning session itself",
+                    "During the review the next day"
                 ],
                 a: 0,
                 explication: "The night after learning is not neutral time, it is working time."
@@ -244,7 +244,7 @@ window.QUIZ = {
             {
                 q: "Is checking your phone during a break a break?",
                 options: [
-                    "Yes, as long as you are not working",
+                    "Yes, as long as you have stopped working on the main task",
                     "No: it is a change of subject, not a break for memory",
                     "Yes, if it is short"
                 ],
@@ -301,7 +301,7 @@ window.QUIZ = {
             options: [
                 "That they have mastered the topic",
                 "That they are practising applying, not choosing",
-                "That they should move on to the next type"
+                "That they are ready to move on to the next exercise type"
             ],
             a: 1,
             explication: "The hard part — recognising the type — has not been practised once."
@@ -329,7 +329,7 @@ window.QUIZ = {
         {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
-                "Recopying your notes more carefully",
+                "Recopying your notes more carefully, neatly and in colour",
                 "Mixing the types of exercise instead of grouping them",
                 "Making the sessions longer"
             ],

@@ -13,8 +13,8 @@ window.QUIZ = {
             {
                 q: "Quel est le principal danger lié aux mots de passe ?",
                 options: [
-                    "Leur complexité insuffisante",
-                    "Leur longueur excessive",
+                    "Leur complexité insuffisante face aux outils actuels",
+                    "Leur longueur excessive, qui pousse à les noter",
                     "Leur réutilisation d'un site à l'autre"
                 ],
                 a: 2,
@@ -46,7 +46,7 @@ window.QUIZ = {
                 options: [
                     "La messagerie principale",
                     "Le compte d'un forum de loisirs",
-                    "Un compte de streaming"
+                    "Un compte de streaming partagé"
                 ],
                 a: 0,
                 explication: "C'est par elle que passent toutes les réinitialisations de mot de passe : si elle tombe, tout suit."
@@ -81,7 +81,7 @@ window.QUIZ = {
                 options: [
                     "Une autorité, une urgence et une action immédiate",
                     "Une pièce jointe, un lien et une image",
-                    "Une faute d'orthographe, un lien et un logo"
+                    "Une faute d'orthographe, un lien douteux et un logo copié"
                 ],
                 a: 0,
                 explication: "L'urgence n'est pas un détail : elle sert précisément à empêcher la vérification."
@@ -90,7 +90,7 @@ window.QUIZ = {
                 q: "Pourquoi les fautes d'orthographe ne sont-elles plus un bon signal d'alerte ?",
                 options: [
                     "Les outils de rédaction automatique ont supprimé ce signal",
-                    "Les escrocs recrutent des correcteurs",
+                    "Les escrocs recrutent désormais des correcteurs professionnels",
                     "Elles n'ont jamais été un signal"
                 ],
                 a: 0,
@@ -116,7 +116,7 @@ window.QUIZ = {
             {
                 q: "Un conseiller bancaire t'appelle et demande un code de validation. Que faire ?",
                 options: [
-                    "Le donner s'il connaît tes coordonnées",
+                    "Le donner s'il connaît déjà tes coordonnées bancaires",
                     "Raccrocher et rappeler le numéro au dos de ta carte",
                     "Demander son matricule puis le donner"
                 ],
@@ -193,7 +193,7 @@ window.QUIZ = {
                 q: "Qu'est-ce qui rend une sauvegarde réellement valable ?",
                 options: [
                     "Sa taille",
-                    "Sa fréquence",
+                    "Sa fréquence, quotidienne et automatique de préférence",
                     "Le fait de l'avoir restaurée au moins une fois"
                 ],
                 a: 2,
@@ -217,7 +217,7 @@ window.QUIZ = {
             {
                 q: "Quelle différence entre chiffrement en transit et au repos ?",
                 options: [
-                    "Le premier est plus sûr que le second",
+                    "Le premier est bien plus sûr que le second, qui reste optionnel",
                     "Ils désignent la même chose",
                     "Le premier protège pendant le trajet, le second sur le disque"
                 ],
@@ -240,7 +240,7 @@ window.QUIZ = {
                 options: [
                     "Qui a parlé à qui, quand et combien de temps",
                     "Rien, tout est protégé",
-                    "Le contenu partiel des messages"
+                    "Le contenu partiel des messages, sur les serveurs"
                 ],
                 a: 0,
                 explication: "Ces informations sont souvent aussi parlantes que le contenu lui-même."
@@ -249,7 +249,7 @@ window.QUIZ = {
                 q: "Un VPN protège-t-il du phishing ?",
                 options: [
                     "Non : il chiffre le trajet, rien de plus",
-                    "Oui, il bloque les sites frauduleux",
+                    "Oui, il bloque les sites frauduleux connus",
                     "Oui, s'il est payant"
                 ],
                 a: 0,
@@ -259,7 +259,7 @@ window.QUIZ = {
                 q: "Quelle précaution reste utile sur un Wi-Fi public ?",
                 options: [
                     "Ne jamais s'y connecter",
-                    "Désactiver le HTTPS pour aller plus vite",
+                    "Désactiver le HTTPS pour rendre la connexion plus rapide encore",
                     "Vérifier le nom exact du réseau auprès de l'établissement"
                 ],
                 a: 2,
@@ -298,7 +298,7 @@ window.QUIZ = {
             options: [
                 "Non, par aucun canal, sans exception",
                 "Oui, s'il s'agit du service de sécurité",
-                "Oui, par téléphone uniquement"
+                "Oui, par téléphone uniquement, jamais par écrit"
             ],
             a: 0,
             explication: "Cette règle n'a pas d'exception : ni mot de passe, ni code de validation."
@@ -307,7 +307,7 @@ window.QUIZ = {
         {
             q: "Tu reçois un SMS annonçant un colis bloqué, avec un lien. Que faire ?",
             options: [
-                "Cliquer, puisque tu attends effectivement un colis",
+                "Cliquer, puisque tu attends effectivement un colis cette semaine",
                 "Répondre au SMS pour demander des précisions",
                 "Ouvrir toi-même le site du transporteur que tu connais"
             ],

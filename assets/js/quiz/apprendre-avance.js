@@ -47,7 +47,7 @@ window.QUIZ = {
                 options: [
                     "Le vocabulaire d'un thème qui plaît",
                     "Les listes de fréquence",
-                    "La lecture de romans"
+                    "La lecture de romans en version originale"
                 ],
                 a: 1,
                 explication: "Le premier millier rapporte autant que les neuf suivants réunis."
@@ -55,8 +55,8 @@ window.QUIZ = {
             {
                 q: "Au-delà de 2 000 mots, qu'est-ce qui devient plus rentable que les listes ?",
                 options: [
-                    "Les listes plus longues",
-                    "La grammaire",
+                    "Les listes plus longues, jusqu'à cinq mille mots",
+                    "La grammaire et la conjugaison, apprises à part",
                     "La lecture de textes accessibles"
                 ],
                 a: 2,
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que le transfert ?",
                 options: [
-                    "Le passage de la mémoire courte à la mémoire longue",
+                    "Le passage de la mémoire courte à la mémoire longue, par la répétition",
                     "Le fait de changer de méthode",
                     "La capacité d'utiliser ailleurs ce qu'on a appris ici"
                 ],
@@ -91,7 +91,7 @@ window.QUIZ = {
                 q: "Pourquoi un élève bloque-t-il en physique sur une équation qu'il résout en mathématiques ?",
                 options: [
                     "Parce qu'il a oublié la méthode",
-                    "Parce que la physique est plus difficile",
+                    "Parce que la physique est plus difficile que les mathématiques",
                     "Parce que rien dans le nouveau décor n'appelle le souvenir"
                 ],
                 a: 2,
@@ -102,7 +102,7 @@ window.QUIZ = {
                 options: [
                     "Surtout ces jeux, et des tâches très proches",
                     "La mémoire en général",
-                    "L'attention au travail"
+                    "L'attention au travail, et la concentration en général"
                 ],
                 a: 0,
                 explication: "Ce n'est pas anecdotique : c'est la règle générale du transfert."
@@ -112,7 +112,7 @@ window.QUIZ = {
                 q: "Quel est le levier le plus fort pour favoriser le transfert ?",
                 options: [
                     "Varier les contextes",
-                    "Répéter davantage",
+                    "Répéter davantage le même exercice",
                     "Prendre de meilleures notes"
                 ],
                 a: 0,
@@ -123,7 +123,7 @@ window.QUIZ = {
                 options: [
                     "Parce que c'est plus court",
                     "Parce qu'une recette ne se transporte pas, un principe si",
-                    "Parce que c'est plus facile à retenir"
+                    "Parce qu'un principe est plus facile à retenir qu'une recette"
                 ],
                 a: 1,
                 explication: "D'où l'utilité de la question « de quoi est-ce un cas particulier ? »."
@@ -131,7 +131,7 @@ window.QUIZ = {
             {
                 q: "Réviser un oral en le lisant dans sa tête, quel est le problème ?",
                 options: [
-                    "Cela prend trop de temps",
+                    "Cela prend beaucoup trop de temps, comparé à une lecture à voix haute",
                     "Il n'y en a pas",
                     "L'entraînement porte sur autre chose que ce qui sera demandé"
                 ],
@@ -148,7 +148,7 @@ window.QUIZ = {
                 options: [
                     "Sur combien de personnes ?",
                     "Mesurée combien de temps après ?",
-                    "Publiée dans quelle revue ?"
+                    "Publiée dans quelle revue, et par qui ?"
                 ],
                 a: 1,
                 explication: "Presque toutes les méthodes agréables gagnent le test immédiat et perdent celui à une semaine."
@@ -156,7 +156,7 @@ window.QUIZ = {
             {
                 q: "Que vaut une méthode comparée à « ne rien faire » ?",
                 options: [
-                    "C'est une comparaison suffisante",
+                    "C'est une comparaison suffisante pour trancher entre deux méthodes",
                     "Rien : elle doit faire mieux qu'une autre méthode",
                     "Cela dépend de la durée"
                 ],
@@ -213,8 +213,8 @@ window.QUIZ = {
                 q: "Quel défaut partagent toutes les techniques de ce parcours ?",
                 options: [
                     "Elles supposent qu'on y pense",
-                    "Elles coûtent cher",
-                    "Elles demandent un logiciel"
+                    "Elles coûtent cher en temps et en matériel",
+                    "Elles demandent un logiciel dédié pour tenir"
                 ],
                 a: 0,
                 explication: "La motivation baisse, les semaines chargent, et une méthode qui demande d'y penser cède."
@@ -224,7 +224,7 @@ window.QUIZ = {
                 options: [
                     "Sous forme de notes bien rédigées",
                     "Sous forme de questions",
-                    "Sous forme de résumés"
+                    "Sous forme de résumés courts"
                 ],
                 a: 1,
                 explication: "Sans quoi, le jour venu, on relira au lieu de se tester."
@@ -233,7 +233,7 @@ window.QUIZ = {
                 q: "À quoi sert la version de cinq minutes ?",
                 options: [
                     "À ne pas rompre la série les jours impossibles",
-                    "À progresser plus vite",
+                    "À progresser plus vite que par une séance longue",
                     "À rattraper le retard"
                 ],
                 a: 0,
@@ -243,7 +243,7 @@ window.QUIZ = {
             {
                 q: "Que révèle une carte ratée dix fois de suite ?",
                 options: [
-                    "Qu'elle est difficile",
+                    "Qu'elle est difficile à retenir",
                     "Qu'il faut la revoir plus souvent",
                     "Qu'elle est mal écrite"
                 ],
@@ -254,8 +254,8 @@ window.QUIZ = {
                 q: "Quel critère appliquer avant d'ajouter quelque chose au système ?",
                 options: [
                     "En aurai-je besoin de tête ?",
-                    "Est-ce intéressant ?",
-                    "Est-ce au programme ?"
+                    "Est-ce intéressant, et digne d'être noté ?",
+                    "Est-ce au programme de l'année ?"
                 ],
                 a: 0,
                 explication: "Si la réponse est non, cela relève d'une note à retrouver, pas d'une carte à mémoriser."
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "Quinze minutes quotidiennes ou deux heures le dimanche ?",
                 options: [
-                    "Deux heures le dimanche",
+                    "Deux heures le dimanche matin, dans le calme",
                     "Quinze minutes quotidiennes, et de loin",
                     "Les deux se valent"
                 ],
@@ -300,7 +300,7 @@ window.QUIZ = {
             options: [
                 "La promesse contredit le mécanisme connu de la mémoire",
                 "C'est plausible avec une bonne méthode",
-                "Il faut vérifier le nombre d'utilisateurs"
+                "Il faut vérifier le nombre d'utilisateurs et lire les avis"
             ],
             a: 0,
             explication: "L'effort de récupération est précisément ce qui renforce la trace."

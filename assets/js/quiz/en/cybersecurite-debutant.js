@@ -16,7 +16,7 @@ window.QUIZ = {
             {
                 q: "What is the main danger around passwords?",
                 options: [
-                    "They are not complex enough",
+                    "They are not complex enough for today's cracking tools",
                     "They are excessively long",
                     "They get reused from one site to another"
                 ],
@@ -67,7 +67,7 @@ window.QUIZ = {
             {
                 q: "What does forcing a password change every 90 days produce?",
                 options: [
-                    "Markedly stronger security",
+                    "Markedly stronger security, since the password changes often",
                     "Better memorisation",
                     "Tiny variants of the same password, so the opposite effect"
                 ],
@@ -84,7 +84,7 @@ window.QUIZ = {
                 options: [
                     "An authority, an urgency and an immediate action",
                     "An attachment, a link and an image",
-                    "A spelling mistake, a link and a logo"
+                    "A spelling mistake, a suspicious link and a copied logo"
                 ],
                 a: 0,
                 explication: "The urgency is not a detail: it exists precisely to prevent checking."
@@ -93,7 +93,7 @@ window.QUIZ = {
                 q: "Why are spelling mistakes no longer a good warning sign?",
                 options: [
                     "Automatic writing tools removed that signal",
-                    "Fraudsters hire proofreaders",
+                    "Fraudsters now hire professional proofreaders for it",
                     "They were never a signal"
                 ],
                 a: 0,
@@ -109,7 +109,7 @@ window.QUIZ = {
             {
                 q: "What does the HTTPS padlock prove about a site?",
                 options: [
-                    "That the site is honest and vetted",
+                    "That the site is honest and has been vetted by someone",
                     "That the site belongs to a registered company",
                     "Only that the connection is encrypted"
                 ],
@@ -121,7 +121,7 @@ window.QUIZ = {
                 options: [
                     "Give it if they know your details",
                     "Hang up and call the number on the back of your card",
-                    "Ask for their staff number, then give it"
+                    "Ask for their staff number, then give it to them"
                 ],
                 a: 1,
                 explication: "A real adviser will understand; a fraudster will try to talk you out of it."
@@ -144,9 +144,9 @@ window.QUIZ = {
             {
                 q: "What does an antivirus not protect against?",
                 options: [
-                    "Known malicious software",
+                    "Known malicious software already in its database",
                     "Phishing and a stolen password",
-                    "Infected files downloaded"
+                    "Infected files downloaded from the internet"
                 ],
                 a: 1,
                 explication: "It sees nothing when you deliberately type your password into a fake site."
@@ -164,7 +164,7 @@ window.QUIZ = {
             {
                 q: "On Windows, is Defender enough for personal use?",
                 options: [
-                    "No, you always need a paid suite",
+                    "No, you always need a paid security suite for real protection",
                     "No, it only detects old viruses",
                     "Yes: it is free and regularly comes top in independent tests"
                 ],
@@ -195,8 +195,8 @@ window.QUIZ = {
             {
                 q: "What makes a backup genuinely worth having?",
                 options: [
-                    "Its size",
-                    "Its frequency",
+                    "Its size, and the number of files it holds",
+                    "Its frequency, ideally daily and automatic",
                     "Having restored from it at least once"
                 ],
                 a: 2,
@@ -232,7 +232,7 @@ window.QUIZ = {
                 options: [
                     "The message is encrypted twice",
                     "Only the sender and recipient can read the content, not even the provider",
-                    "The message deletes itself after reading"
+                    "The message deletes itself once it has been read, on the two devices and the server"
                 ],
                 a: 1,
                 explication: "Many conventional email services do not apply it: the host can read your messages."
@@ -243,7 +243,7 @@ window.QUIZ = {
                 options: [
                     "Who spoke to whom, when and for how long",
                     "Nothing, everything is protected",
-                    "Part of the content of the messages"
+                    "Part of the content of the messages, on the servers"
                 ],
                 a: 0,
                 explication: "That information is often as telling as the content itself."
@@ -252,7 +252,7 @@ window.QUIZ = {
                 q: "Does a VPN protect against phishing?",
                 options: [
                     "No: it encrypts the journey, nothing more",
-                    "Yes, it blocks fraudulent sites",
+                    "Yes, it blocks the fraudulent sites it knows about",
                     "Yes, if it is a paid one"
                 ],
                 a: 0,
@@ -262,7 +262,7 @@ window.QUIZ = {
                 q: "Which precaution is still worth taking on public Wi-Fi?",
                 options: [
                     "Never connecting to it",
-                    "Turning off HTTPS to go faster",
+                    "Turning off HTTPS so that the connection goes faster still",
                     "Checking the exact name of the network with the venue"
                 ],
                 a: 2,
@@ -279,7 +279,7 @@ window.QUIZ = {
         {
             q: "What does the overwhelming majority of compromises rest on?",
             options: [
-                "Sophisticated technical flaws",
+                "Sophisticated technical flaws, the kind only specialists find",
                 "A reused password, a well-imitated email, unpatched software",
                 "Targeted attacks by states"
             ],
@@ -300,7 +300,7 @@ window.QUIZ = {
             q: "Can a legitimate organisation ask you for your password?",
             options: [
                 "No, through no channel, without exception",
-                "Yes, if it is the security team",
+                "Yes, if it is the security team calling you",
                 "Yes, by phone only"
             ],
             a: 0,
@@ -310,7 +310,7 @@ window.QUIZ = {
         {
             q: "You get a text about a held parcel, with a link. What do you do?",
             options: [
-                "Click, since you are indeed expecting a parcel",
+                "Click, since you are indeed expecting a parcel this week",
                 "Reply to the text asking for details",
                 "Open the carrier's site yourself, the one you know"
             ],
@@ -321,7 +321,7 @@ window.QUIZ = {
             q: "What comes first if you think an account has been compromised?",
             options: [
                 "Running a full antivirus scan",
-                "Deleting the account concerned",
+                "Deleting the account concerned before anything else happens",
                 "Changing your main mailbox password from a clean device"
             ],
             a: 2,

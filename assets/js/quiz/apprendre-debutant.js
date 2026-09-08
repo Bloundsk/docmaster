@@ -55,7 +55,7 @@ window.QUIZ = {
             {
                 q: "Oublier ce qu'on n'a vu qu'une fois est le signe de quoi ?",
                 options: [
-                    "D'un apprentissage mal fait",
+                    "D'un apprentissage mal fait, ou d'une méthode inadaptée",
                     "D'un manque d'attention",
                     "Du fonctionnement normal de la mémoire"
                 ],
@@ -80,8 +80,8 @@ window.QUIZ = {
             {
                 q: "Que fait une révision réussie à la courbe de l'oubli ?",
                 options: [
-                    "Elle la remonte seulement",
-                    "Elle ne la change pas",
+                    "Elle la remonte, sans en changer la pente",
+                    "Elle ne la change pas, elle retarde seulement",
                     "Elle la remonte et l'aplatit"
                 ],
                 a: 2,
@@ -101,7 +101,7 @@ window.QUIZ = {
                 q: "Pour 60 termes à tenir six mois, à 8 secondes par terme, combien coûte l'espacement ?",
                 options: [
                     "48 minutes au total",
-                    "3 h 20 au total",
+                    "3 h 20 au total, réparties sur six mois",
                     "Une heure par semaine"
                 ],
                 a: 0,
@@ -111,9 +111,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui rend la répétition espacée difficile à tenir ?",
                 options: [
-                    "L'effort qu'elle demande",
+                    "L'effort qu'elle demande à chaque séance",
                     "Le calendrier qu'elle suppose",
-                    "Le matériel nécessaire"
+                    "Le matériel nécessaire pour la tenir"
                 ],
                 a: 1,
                 explication: "Personne ne retient de tête que tel terme est à revoir dans 21 jours et tel autre dans 3."
@@ -121,7 +121,7 @@ window.QUIZ = {
             {
                 q: "Que font les logiciels de cartes mémoire comme Anki ?",
                 options: [
-                    "Ils mémorisent à ta place",
+                    "Ils mémorisent à ta place, en répétant le contenu",
                     "Ils rédigent les fiches",
                     "Ils tiennent le calendrier des révisions"
                 ],
@@ -133,7 +133,7 @@ window.QUIZ = {
                 options: [
                     "Que les intervalles sont trop courts",
                     "Que le sujet est acquis",
-                    "Que les questions sont bien posées"
+                    "Que les questions sont bien posées, et le cours bien fait"
                 ],
                 a: 0,
                 explication: "Une bonne séance est celle où l'on se trompe régulièrement."
@@ -147,8 +147,8 @@ window.QUIZ = {
                 q: "Quel est le rôle du contrôle dans l'apprentissage ?",
                 options: [
                     "Il est l'apprentissage lui-même",
-                    "Il vérifie ce qui a été appris",
-                    "Il sert surtout à noter"
+                    "Il vérifie ce qui a été appris avant",
+                    "Il sert surtout à noter et à classer"
                 ],
                 a: 0,
                 explication: "Chercher une réponse dans sa mémoire renforce le souvenir bien plus que le relire."
@@ -178,8 +178,8 @@ window.QUIZ = {
                 q: "Que faire d'un titre de section pour se tester ?",
                 options: [
                     "Le transformer en question",
-                    "Le surligner",
-                    "Le recopier"
+                    "Le surligner pour y revenir plus tard",
+                    "Le recopier proprement dans ses fiches"
                 ],
                 a: 0,
                 explication: "« La courbe de l'oubli » devient « quelle forme a-t-elle, et qu'est-ce que cela change ? »."
@@ -198,7 +198,7 @@ window.QUIZ = {
                 q: "Que signale une séance de révision confortable ?",
                 options: [
                     "Qu'elle ne sert probablement pas à grand-chose",
-                    "Que le sujet est bien choisi",
+                    "Que le sujet est bien choisi et que le rythme convient",
                     "Qu'on est en forme"
                 ],
                 a: 0,
@@ -232,7 +232,7 @@ window.QUIZ = {
             {
                 q: "Quel test tranche entre savoir et reconnaître ?",
                 options: [
-                    "Relire une dernière fois",
+                    "Relire une dernière fois, en soulignant l'essentiel",
                     "Fermer tout et écrire dix lignes de mémoire",
                     "Se dire qu'on a compris"
                 ],
@@ -255,7 +255,7 @@ window.QUIZ = {
                 options: [
                     "À la fin de la séance",
                     "Une semaine plus tard, sur ce qui reste",
-                    "Dès les premiers jours, à la sensation"
+                    "Dès les premiers jours, à la sensation d'aisance"
                 ],
                 a: 1,
                 explication: "« Cette méthode ne me convient pas » se dit au moment où toute bonne méthode paraît moins efficace."
@@ -289,7 +289,7 @@ window.QUIZ = {
             q: "Qu'ont en commun l'espacement et l'effet test ?",
             options: [
                 "Les deux demandent plus de temps",
-                "Les deux fonctionnent seulement à l'écrit",
+                "Les deux ne fonctionnent qu'à l'écrit, jamais à l'oral",
                 "Les deux exploitent l'effort de récupération"
             ],
             a: 2,
@@ -329,7 +329,7 @@ window.QUIZ = {
             q: "Tu as appris quelque chose ce matin. Quand la révision rapportera-t-elle le plus ?",
             options: [
                 "Aujourd'hui ou demain",
-                "Dans deux semaines",
+                "Dans deux semaines, quand l'oubli aura fait son œuvre",
                 "Juste avant d'en avoir besoin"
             ],
             a: 0,

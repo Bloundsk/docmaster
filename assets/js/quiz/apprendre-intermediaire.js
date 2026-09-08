@@ -35,8 +35,8 @@ window.QUIZ = {
                 q: "Quelle partie du travail la pratique groupée laisse-t-elle de côté ?",
                 options: [
                     "La reconnaissance du type de problème",
-                    "L'application de la méthode",
-                    "Le calcul lui-même"
+                    "L'application de la méthode une fois choisie",
+                    "Le calcul lui-même, qui prend le plus de temps"
                 ],
                 a: 0,
                 explication: "Le jour du contrôle, personne n'annonce le type — et c'est la partie difficile."
@@ -45,9 +45,9 @@ window.QUIZ = {
             {
                 q: "Quelle sensation produit l'entrelacement pendant la séance ?",
                 options: [
-                    "Celle de mieux s'en sortir",
+                    "Celle de mieux s'en sortir qu'en groupant",
                     "Celle de moins bien s'en sortir",
-                    "Aucune différence"
+                    "Aucune différence perceptible sur le moment"
                 ],
                 a: 1,
                 explication: "Cette sensation est exacte — sur le moment. Elle s'inverse au test différé."
@@ -81,7 +81,7 @@ window.QUIZ = {
                 q: "Quelle question résume l'élaboration ?",
                 options: [
                     "Combien de temps cela va-t-il me prendre ?",
-                    "Est-ce au programme ?",
+                    "Est-ce au programme de l'examen ?",
                     "Pourquoi est-ce vrai ?"
                 ],
                 a: 2,
@@ -92,7 +92,7 @@ window.QUIZ = {
                 options: [
                     "Parce qu'elle est plus courte",
                     "Parce qu'elle devient accessible par plusieurs chemins",
-                    "Parce qu'elle est plus intéressante"
+                    "Parce qu'elle est plus intéressante, donc plus facile à retenir"
                 ],
                 a: 1,
                 explication: "Il suffit qu'un seul chemin fonctionne pour la retrouver."
@@ -111,7 +111,7 @@ window.QUIZ = {
             {
                 q: "Quelle est la valeur d'un exemple trouvé soi-même ?",
                 options: [
-                    "Il vaut moins que celui du cours",
+                    "Il vaut moins que celui du cours, choisi par un spécialiste",
                     "Il sert surtout à illustrer",
                     "C'est la preuve qu'on tient la notion"
                 ],
@@ -132,7 +132,7 @@ window.QUIZ = {
                 q: "Ce qui compte dans une séance de lecture, c'est :",
                 options: [
                     "Ce qu'on fait subir au contenu pendant ce temps",
-                    "Le temps passé sur le contenu",
+                    "Le temps passé sur le contenu, ligne après ligne",
                     "Le nombre de pages parcourues"
                 ],
                 a: 0,
@@ -157,7 +157,7 @@ window.QUIZ = {
                 q: "Sur 5 h par semaine pendant 12 semaines, que change le passage de 20 % à 60 % du temps sur ses points faibles ?",
                 options: [
                     "12 h utiles contre 36 h",
-                    "Un écart négligeable",
+                    "Un écart négligeable, à l'échelle d'un trimestre",
                     "Il faut travailler trois fois plus longtemps"
                 ],
                 a: 0,
@@ -166,7 +166,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi peut-on conduire vingt ans sans mieux conduire ?",
                 options: [
-                    "Parce que l'âge dégrade les réflexes",
+                    "Parce que l'âge dégrade peu à peu les réflexes et l'attention",
                     "Parce que les routes changent",
                     "Parce que la pratique seule ne fait pas progresser"
                 ],
@@ -177,9 +177,9 @@ window.QUIZ = {
             {
                 q: "À quoi ressemble une bonne séance de pratique ?",
                 options: [
-                    "Elle se déroule sans faute",
+                    "Elle se déroule sans faute, du début à la fin",
                     "Elle laisse une trace d'erreurs",
-                    "Elle est longue"
+                    "Elle est longue, et couvre tout le programme"
                 ],
                 a: 1,
                 explication: "Une séance sans faute signale surtout qu'on est resté en terrain connu."
@@ -197,7 +197,7 @@ window.QUIZ = {
             {
                 q: "Un exercice trop difficile fait-il progresser ?",
                 options: [
-                    "Oui, plus c'est dur mieux c'est",
+                    "Oui : plus l'exercice est dur, plus on progresse vite",
                     "Oui, à condition d'insister",
                     "Non : trop facile n'apprend rien, trop dur non plus"
                 ],
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Quand a lieu l'essentiel de la consolidation ?",
                 options: [
                     "Pendant le sommeil qui suit",
-                    "Pendant l'apprentissage",
+                    "Pendant l'apprentissage lui-même",
                     "Pendant la révision du lendemain"
                 ],
                 a: 0,
@@ -223,7 +223,7 @@ window.QUIZ = {
                 q: "À temps égal, que vaut réviser le soir puis dormir ?",
                 options: [
                     "Mieux que réviser le matin d'un contrôle du lendemain",
-                    "Moins bien que réviser le matin",
+                    "Moins bien que réviser le matin du contrôle, l'esprit reposé",
                     "La même chose"
                 ],
                 a: 0,
@@ -265,7 +265,7 @@ window.QUIZ = {
                 options: [
                     "La régularité des horaires",
                     "Le nombre total d'heures dans la semaine",
-                    "L'heure du lever"
+                    "L'heure du lever, plus que celle du coucher"
                 ],
                 a: 0,
                 explication: "C'est aussi la partie la plus facile à corriger."
@@ -300,7 +300,7 @@ window.QUIZ = {
             options: [
                 "Qu'il maîtrise le sujet",
                 "Qu'il s'entraîne à appliquer, pas à choisir",
-                "Qu'il doit passer au type suivant"
+                "Qu'il est prêt à passer au type d'exercice suivant"
             ],
             a: 1,
             explication: "La partie difficile — reconnaître le type — n'a pas été travaillée une seule fois."
@@ -328,7 +328,7 @@ window.QUIZ = {
         {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
-                "Recopier ses notes plus soigneusement",
+                "Recopier ses notes plus soigneusement, au propre et en couleur",
                 "Mélanger les types d'exercices au lieu de les grouper",
                 "Allonger les séances"
             ],
