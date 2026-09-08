@@ -92,6 +92,45 @@ for (const cle of Object.keys(PARCOURS)) {
 }
 console.log(`  ${Object.keys(PARCOURS).length} parcours déclarés, ${sujets.length} dossiers`);
 
+/* « Mon espace » est le seul endroit du site qui reconstruise le nom d un
+   parcours a partir de son dossier. La page francaise en tenait une copie,
+   restee a neuf sujets quand le site en comptait quatorze : cinq parcours
+   termines s affichaient « droit » ou « apprendre », en minuscules et sans
+   emoji. Une copie ne previent pas qu elle a vieilli — d ou ce controle. */
+const espaceFr = lire(path.join(RACINE, "mon-espace.html"));
+if (/const NOMS\s*=/.test(espaceFr)) {
+    signaler("STRUCTURE", "mon-espace.html redéclare les titres de parcours : les lire dans parcours.js");
+}
+if (!espaceFr.includes("DOCMASTER_PARCOURS")) {
+    signaler("STRUCTURE", "mon-espace.html ne lit plus les titres dans parcours.js");
+}
+
+/* La page anglaise, elle, DOIT tenir sa propre table : parcours.js nomme les
+   sujets en francais. Ce qui se verifie est qu elle les couvre tous. */
+const espaceEn = lire(path.join(RACINE, "en/mon-espace.html"));
+const tableEn = espaceEn.match(/const NOMS\s*=\s*\{[\s\S]*?\};/);
+if (!tableEn) {
+    signaler("STRUCTURE", "en/mon-espace.html : la table des titres anglais est introuvable");
+} else {
+    const nommes = new Set([...tableEn[0].matchAll(/["{,\s]"?([a-z-]+)"?\s*:/g)].map((m) => m[1]));
+    for (const cle of Object.keys(PARCOURS)) {
+        if (!nommes.has(cle)) signaler("STRUCTURE", `en/mon-espace.html : « ${cle} » n'a pas de titre anglais`);
+    }
+}
+
+/* La clef des echeances de revision est ecrite dans DEUX fichiers : enhance.js
+   la pose au moment ou la case est cochee, revisions.js la relit. Deux clefs
+   differentes ne produiraient aucune erreur — juste un rappel qui n arrive
+   jamais, ce qui ne se remarque pas avant plusieurs jours. */
+const poseur = lire(path.join(RACINE, "assets/js/enhance.js"));
+const lecteur = lire(path.join(RACINE, "assets/js/revisions.js"));
+if (!poseur.includes('"docmaster-revision-guides/"')) {
+    signaler("STRUCTURE", "enhance.js ne pose plus la clef « docmaster-revision-guides/ »");
+}
+if (!lecteur.includes('const CLEF = "docmaster-revision-"')) {
+    signaler("STRUCTURE", "revisions.js ne lit plus la clef « docmaster-revision- »");
+}
+
 // --- 3. Anneau de navigation ----------------------------------------------
 console.log("\n=== 3. ANNEAU DE NAVIGATION ===");
 

@@ -123,6 +123,13 @@ jobs:
       - name: Tests de la recherche
         run: node scripts/test-recherche.mjs
 
+      # L echeancier de revision est le seul dispositif du site dont la panne
+      # est SILENCIEUSE : une clef mal formee ou une echeance mal calculee ne
+      # produit aucune erreur, juste un rappel qui n arrive jamais. Le test
+      # fait defiler le temps a la main pour le dire tout de suite.
+      - name: Tests des rappels de révision
+        run: node scripts/test-revisions.mjs
+
       # Le seul controle qui MESURE des pages affichees : une largeur, un
       # nombre de colonnes, un debordement ne se deduisent pas du CSS. Il
       # tournait donc uniquement a la main.

@@ -1056,6 +1056,29 @@ main section li { margin-bottom: 8px; }
     font-size: .92rem;
 }
 
+/* ---------------------------------------------------------------
+   Les rappels de revision de « Mon espace ».
+
+   La consigne compte autant que la liste : sans elle, « revoir »
+   veut dire relire — exactement ce que le parcours Apprendre passe
+   trois niveaux a deconseiller.
+   --------------------------------------------------------------- */
+.revoir-consigne { margin-bottom: 14px; color: var(--muted); font-size: .95rem; }
+.revoir-quand { flex-shrink: 0; font-size: .85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.revoir-fait {
+    flex-shrink: 0;
+    background: none;
+    border: 1px solid var(--muted);
+    border-radius: 999px;
+    color: var(--text);
+    cursor: pointer;
+    font: inherit;
+    font-size: .85rem;
+    padding: 6px 14px;
+}
+.revoir-fait:hover { border-color: var(--primary); color: var(--primary); }
+.revoir-note { margin-top: 12px; font-size: .88rem; color: var(--muted); }
+
 /* Extraits de code dans les guides */
 code {
     font-family: Consolas, Monaco, 'Courier New', monospace;

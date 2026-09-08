@@ -93,6 +93,14 @@
 
         <div class="espace-stats" id="espace-stats"></div>
 
+        <!-- The site teaches spaced repetition, then did nothing with it: a
+             finished lesson vanished into a list. This block brings it back
+             when it is due. -->
+        <section>
+            <h2>🔁 To review</h2>
+            <div id="espace-revoir"></div>
+        </section>
+
         <section>
             <h2>My favourites</h2>
             <div id="espace-favoris"></div>
@@ -125,6 +133,7 @@
 
     <div id="footer-placeholder"></div>
     <script src="../assets/js/parcours.js"></script>
+    <script src="../assets/js/revisions.js"></script>
     <script src="../assets/js/favoris.js"></script>
     <script src="../assets/js/theme.js"></script>
     <script src="../assets/js/enhance.js"></script>
@@ -219,6 +228,9 @@
                         </div>`).join("");
                 }
 
+                // --- A revoir : l'echeancier tenu par revisions.js
+                rendreRevoir(lus);
+
                 // --- Guides termines
                 const zoneLus = document.getElementById("espace-lus");
                 if (!lus.length) {
@@ -242,6 +254,74 @@
                 });
             }
 
+            // Le rendu du bloc « To review ». Separe parce qu'il se redessine
+            // seul quand on declare avoir revu une lecon.
+            function rendreRevoir(lus) {
+                const zone = document.getElementById("espace-revoir");
+                const R = window.DocMasterRevisions;
+
+                if (!lus.length) {
+                    zone.innerHTML = `<div class="espace-vide">
+                        <p><strong>Nothing to review yet.</strong></p>
+                        <p>Tick “I have read and understood” at the bottom of a guide: it will
+                           come back here after a day, then three, then a week, then three.</p>
+                    </div>`;
+                    return;
+                }
+
+                let amorcees = 0, acquises = 0;
+                const dues = [], attente = [];
+                for (const g of lus) {
+                    if (R.amorcer(g.chemin)) amorcees++;
+                    const e = R.etat(g.chemin);
+                    if (!e) continue;
+                    if (e.acquise) { acquises++; continue; }
+                    (e.due ? dues : attente).push({ page: g, etat: e });
+                }
+                dues.sort((a, b) => a.etat.jours - b.etat.jours);
+                attente.sort((a, b) => a.etat.jours - b.etat.jours);
+
+                const retard = (j) => j === 0 ? "today"
+                    : j === -1 ? "since yesterday" : `for ${-j} days`;
+
+                let html = "";
+                if (dues.length) {
+                    html += `<p class="revoir-consigne">Reopen the page and answer the questions
+                        at the top <strong>without reading</strong>. Two minutes is enough: it is
+                        the recall that counts, not the rereading.</p>
+                        <div class="espace-groupe"><ul class="espace-liste">` +
+                        dues.map(d => `<li>
+                            <a href="${d.page.chemin}">${nomComplet(d.page)}</a>
+                            <span class="revoir-quand">${retard(d.etat.jours)}</span>
+                            <button type="button" class="revoir-fait" data-chemin="${d.page.chemin}">I have reviewed it</button>
+                        </li>`).join("") + `</ul></div>`;
+                } else {
+                    const p = attente[0];
+                    html += `<div class="espace-vide">
+                        <p><strong>Nothing to review today.</strong></p>
+                        <p>${p ? `Next reminder: ${nomComplet(p.page)}, in ${p.etat.jours} day${p.etat.jours > 1 ? "s" : ""}.`
+                               : "All your finished lessons have passed their four reminders."}</p>
+                    </div>`;
+                }
+                if (acquises) {
+                    html += `<p class="revoir-note">${acquises} lesson${acquises > 1 ? "s have" : " has"}
+                        passed the four reminders: the site does not bring ${acquises > 1 ? "them" : "it"} back.</p>`;
+                }
+                if (amorcees) {
+                    html += `<p class="revoir-note">${amorcees} lesson${amorcees > 1 ? "s were" : " was"} finished
+                        before this reminder existed. The site had not recorded the date, and will not
+                        invent one: the count starts today.</p>`;
+                }
+                zone.innerHTML = html;
+
+                zone.querySelectorAll(".revoir-fait").forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        R.revue(btn.dataset.chemin);
+                        rendre();
+                    });
+                });
+            }
+
             rendre();
 
             document.getElementById("espace-effacer").addEventListener("click", () => {
@@ -250,7 +330,9 @@
                 const aSupprimer = [];
                 for (let i = 0; i < localStorage.length; i++) {
                     const c = localStorage.key(i);
-                    if (c && c.startsWith("docmaster-read-")) aSupprimer.push(c);
+                    // Les echeances de revision partent avec la progression :
+                    // « erase everything » doit tout effacer.
+                    if (c && (c.startsWith("docmaster-read-") || c.startsWith(window.DocMasterRevisions.CLEF))) aSupprimer.push(c);
                 }
                 aSupprimer.forEach(c => localStorage.removeItem(c));
                 rendre();

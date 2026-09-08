@@ -257,5 +257,7 @@ const searchIndex = [
     { title: "Proposer une catégorie", description: "Suggérer un domaine entier qui manque encore sur le site.", url: "idees.html", keywords: "nouvelle catégorie domaine thème manquant proposition vote" },
 
     { title: "Mon espace", description: "Tes favoris, tes guides terminés et ta progression.", url: "mon-espace.html", keywords: "mon espace favoris progression compte connexion inscription profil" },
-    { title: "Mes favoris", description: "Retrouver les guides et sections mis en favori.", url: "mon-espace.html", keywords: "favoris étoile marque-page enregistrer sauvegarder retrouver" }
+    { title: "Mes favoris", description: "Retrouver les guides et sections mis en favori.", url: "mon-espace.html", keywords: "favoris étoile marque-page enregistrer sauvegarder retrouver" },
+    { title: "À revoir", description: "Les leçons terminées reviennent au bout d'un jour, trois, une semaine, trois semaines.", url: "mon-espace.html", keywords: "revoir révision répétition espacée rappel mémoire oubli échéance revoir plus tard" },
+    { title: "Rappels de révision", description: "Pourquoi une leçon terminée revient, et ce que « revoir » veut dire.", url: "faq.html", keywords: "rappel révision espacée oubli relire se tester échéance quatre rappels" }
 ];

@@ -90,6 +90,14 @@
 
         <div class="espace-stats" id="espace-stats"></div>
 
+        <!-- Le site enseigne la répétition espacée, puis n'en faisait rien :
+             une leçon cochée disparaissait dans une liste. Ce bloc la rappelle
+             quand son échéance tombe. -->
+        <section>
+            <h2>🔁 À revoir</h2>
+            <div id="espace-revoir"></div>
+        </section>
+
         <section>
             <h2>Mes favoris</h2>
             <div id="espace-favoris"></div>
@@ -122,6 +130,7 @@
 
     <div id="footer-placeholder"></div>
     <script src="assets/js/parcours.js"></script>
+    <script src="assets/js/revisions.js"></script>
     <script src="assets/js/favoris.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/enhance.js"></script>
@@ -157,17 +166,14 @@
                 return lus;
             }
 
-            const NOMS = {
-                finance: "💰 Finance", ia: "🤖 Intelligence Artificielle",
-                "dev-web": "💻 Développement Web", marketing: "📢 Marketing Digital",
-                cybersecurite: "🔒 Cybersécurité", entrepreneuriat: "🚀 Entrepreneuriat",
-                productivite: "⏱️ Productivité & Organisation", data: "📊 Data & Analytics",
-                design: "🎨 Design UX/UI"
-            };
-
-            // « 💰 Finance — Débutant » pour un sujet à niveaux, « 🤖 IA » sinon.
+            // Les titres viennent de parcours.js, source unique. Cette page en
+            // tenait une copie, restée à neuf sujets alors que le site en compte
+            // quatorze : cinq parcours terminés s'affichaient « apprendre » ou
+            // « droit », en minuscules et sans emoji. Une copie ne prévient pas
+            // qu'elle a vieilli — un contrôle interdit désormais d'en reposer une.
             function nomComplet(page) {
-                const nom = NOMS[page.dossier] || page.dossier;
+                const declares = window.DOCMASTER_PARCOURS || {};
+                const nom = (declares[page.dossier] || {}).titre || page.dossier;
                 if (!page.niveau) return nom;
                 const niveaux = window.DOCMASTER_NIVEAUX || {};
                 return nom + " — " + (niveaux[page.niveau] || page.niveau);
@@ -207,6 +213,9 @@
                         </div>`).join("");
                 }
 
+                // --- A revoir : l'echeancier tenu par revisions.js
+                rendreRevoir(lus);
+
                 // --- Guides termines
                 const zoneLus = document.getElementById("espace-lus");
                 if (!lus.length) {
@@ -230,6 +239,74 @@
                 });
             }
 
+            // Le rendu du bloc « À revoir ». Separe parce qu'il se redessine
+            // seul quand on declare avoir revu une lecon.
+            function rendreRevoir(lus) {
+                const zone = document.getElementById("espace-revoir");
+                const R = window.DocMasterRevisions;
+
+                if (!lus.length) {
+                    zone.innerHTML = `<div class="espace-vide">
+                        <p><strong>Rien à revoir pour l'instant.</strong></p>
+                        <p>Coche « J'ai lu et compris » en bas d'un guide : il reviendra ici
+                           au bout d'un jour, puis de trois, puis d'une semaine, puis de trois.</p>
+                    </div>`;
+                    return;
+                }
+
+                let amorcees = 0, acquises = 0;
+                const dues = [], attente = [];
+                for (const g of lus) {
+                    if (R.amorcer(g.chemin)) amorcees++;
+                    const e = R.etat(g.chemin);
+                    if (!e) continue;
+                    if (e.acquise) { acquises++; continue; }
+                    (e.due ? dues : attente).push({ page: g, etat: e });
+                }
+                dues.sort((a, b) => a.etat.jours - b.etat.jours);
+                attente.sort((a, b) => a.etat.jours - b.etat.jours);
+
+                const retard = (j) => j === 0 ? "aujourd'hui"
+                    : j === -1 ? "depuis hier" : `depuis ${-j} jours`;
+
+                let html = "";
+                if (dues.length) {
+                    html += `<p class="revoir-consigne">Rouvre la page et réponds aux questions
+                        du début <strong>sans lire</strong>. Deux minutes suffisent : c'est le
+                        rappel qui compte, pas la relecture.</p>
+                        <div class="espace-groupe"><ul class="espace-liste">` +
+                        dues.map(d => `<li>
+                            <a href="${d.page.chemin}">${nomComplet(d.page)}</a>
+                            <span class="revoir-quand">${retard(d.etat.jours)}</span>
+                            <button type="button" class="revoir-fait" data-chemin="${d.page.chemin}">Je l'ai revu</button>
+                        </li>`).join("") + `</ul></div>`;
+                } else {
+                    const p = attente[0];
+                    html += `<div class="espace-vide">
+                        <p><strong>Rien à revoir aujourd'hui.</strong></p>
+                        <p>${p ? `Prochain rappel : ${nomComplet(p.page)}, dans ${p.etat.jours} jour${p.etat.jours > 1 ? "s" : ""}.`
+                               : "Toutes tes leçons terminées ont passé leurs quatre rappels."}</p>
+                    </div>`;
+                }
+                if (acquises) {
+                    html += `<p class="revoir-note">${acquises} leçon${acquises > 1 ? "s ont" : " a"}
+                        passé les quatre rappels : le site n'y revient plus.</p>`;
+                }
+                if (amorcees) {
+                    html += `<p class="revoir-note">${amorcees} leçon${amorcees > 1 ? "s étaient terminées" : " était terminée"}
+                        avant l'arrivée de ce rappel. Le site n'avait pas noté la date, et ne va pas
+                        l'inventer : le compte démarre aujourd'hui.</p>`;
+                }
+                zone.innerHTML = html;
+
+                zone.querySelectorAll(".revoir-fait").forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        R.revue(btn.dataset.chemin);
+                        rendre();
+                    });
+                });
+            }
+
             rendre();
 
             document.getElementById("espace-effacer").addEventListener("click", () => {
@@ -238,7 +315,10 @@
                 const aSupprimer = [];
                 for (let i = 0; i < localStorage.length; i++) {
                     const c = localStorage.key(i);
-                    if (c && c.startsWith("docmaster-read-")) aSupprimer.push(c);
+                    // Les echeances de revision partent avec la progression :
+                    // « tout effacer » doit tout effacer, sinon un rappel
+                    // reapparaitrait pour une lecon que le site a oubliee.
+                    if (c && (c.startsWith("docmaster-read-") || c.startsWith(window.DocMasterRevisions.CLEF))) aSupprimer.push(c);
                 }
                 aSupprimer.forEach(c => localStorage.removeItem(c));
                 rendre();

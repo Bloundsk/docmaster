@@ -63,9 +63,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const markReadCheckbox = document.getElementById("mark-read-checkbox");
     if (markReadCheckbox) {
         const storageKey = "docmaster-read-" + window.location.pathname;
+        // La DATE compte autant que la case : sans elle, « Mon espace » ne peut
+        // pas rappeler une lecon au bon moment. Le decoupage de la clef est le
+        // meme que dans revisions.js — un controle verifie qu'ils ne divergent
+        // pas, car deux clefs differentes ne produiraient aucune erreur : juste
+        // un rappel qui n'arrive jamais.
+        const cheminLecon = (window.location.pathname.match(/guides\/([^/]+)\/([^/.]+)\.html/) || null);
+        const clefRevision = cheminLecon
+            ? "docmaster-revision-guides/" + cheminLecon[1] + "/" + cheminLecon[2] + ".html"
+            : null;
+
         markReadCheckbox.checked = localStorage.getItem(storageKey) === "true";
         markReadCheckbox.addEventListener("change", () => {
             localStorage.setItem(storageKey, markReadCheckbox.checked);
+            if (!clefRevision) return;
+            try {
+                if (markReadCheckbox.checked) {
+                    if (!localStorage.getItem(clefRevision)) {
+                        localStorage.setItem(clefRevision,
+                            JSON.stringify({ le: Date.now(), rang: 0 }));
+                    }
+                } else {
+                    localStorage.removeItem(clefRevision);
+                }
+            } catch (e) {}
         });
     }
 
