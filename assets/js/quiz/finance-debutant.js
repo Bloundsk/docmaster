@@ -15,20 +15,20 @@ window.QUIZ = {
                 q: "À quoi correspond l'épargne de précaution ?",
                 options: [
                     "3 à 6 mois de revenus",
-                    "3 à 6 mois de dépenses courantes",
-                    "10 % de son salaire annuel"
+                    "10 % de son salaire annuel",
+                    "3 à 6 mois de dépenses courantes"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ce sont bien les dépenses, pas les revenus. L'écart entre les deux représente souvent 30 %."
             },
             {
                 q: "Pourquoi constituer cette réserve avant d'investir ?",
                 options: [
-                    "Parce que la loi l'impose",
                     "Pour ne pas être contraint de vendre ses placements au mauvais moment",
+                    "Parce que la loi l'impose",
                     "Parce qu'elle rapporte davantage que la bourse"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Les imprévus financiers surviennent souvent quand l'économie va mal, c'est-à-dire quand les marchés sont bas."
             },
             {
@@ -52,20 +52,20 @@ window.QUIZ = {
                 q: "Quelle méthode d'épargne se révèle la plus efficace dans la durée ?",
                 options: [
                     "Mettre de côté ce qui reste à la fin du mois",
-                    "Un virement automatique le lendemain de la paie",
-                    "Épargner une grosse somme une fois par an"
+                    "Épargner une grosse somme une fois par an",
+                    "Un virement automatique le lendemain de la paie"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Il ne reste jamais rien : les dépenses s'ajustent naturellement à ce qui est disponible."
             },
             {
                 q: "Pourquoi est-il déconseillé de chercher à optimiser le rendement de cette réserve ?",
                 options: [
-                    "Parce que les gains y sont imposés à 100 %",
                     "Parce que le gain possible est négligeable et le risque, lui, ne l'est pas",
+                    "Parce que les gains y sont imposés à 100 %",
                     "Parce que c'est interdit sur un livret réglementé"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Prendre du risque sur son matelas de sécurité revient à supprimer sa raison d'être."
             }
         ],
@@ -96,22 +96,22 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que l'intérêt composé ?",
                 options: [
-                    "Un impôt sur les plus-values",
                     "Le rendement qui produit à son tour du rendement",
+                    "Un impôt sur les plus-values",
                     "Le cumul de plusieurs comptes d'épargne"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Discret sur quelques années, il devient le facteur dominant sur plusieurs décennies."
             },
             // Série 2
             {
                 q: "Amélie place 200 €/mois dès 25 ans, Bruno dès 35 ans, tous deux jusqu'à 65 ans à 5 %. Que verse Bruno en moins, et que perd-il ?",
                 options: [
-                    "24 000 € de moins, environ 139 000 € de résultat en moins",
                     "24 000 € de moins, environ 24 000 € de résultat en moins",
+                    "24 000 € de moins, environ 139 000 € de résultat en moins",
                     "Rien, il rattrape en versant davantage"
                 ],
-                a: 0,
+                a: 1,
                 explication: "L'écart de résultat représente près de six fois l'écart d'effort. Ces dix ans ne se rattrapent pas."
             },
             {
@@ -149,20 +149,20 @@ window.QUIZ = {
                 q: "Qu'achète-t-on avec une part d'ETF répliquant le MSCI World ?",
                 options: [
                     "Une action d'une grande entreprise mondiale",
-                    "Une fraction de plus de 1 500 entreprises de 23 pays développés",
-                    "Une obligation d'État internationale"
+                    "Une obligation d'État internationale",
+                    "Une fraction de plus de 1 500 entreprises de 23 pays développés"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Reconstituer cette répartition ligne par ligne serait hors de portée d'un particulier, ne serait-ce qu'en frais."
             },
             {
                 q: "Un ETF protège-t-il d'une baisse générale des marchés ?",
                 options: [
                     "Oui, c'est tout l'intérêt de la diversification",
-                    "Non : il protège du risque lié à une entreprise, pas du risque de marché",
-                    "Oui, au-delà de 8 ans de détention"
+                    "Oui, au-delà de 8 ans de détention",
+                    "Non : il protège du risque lié à une entreprise, pas du risque de marché"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un ETF actions mondiales a perdu plus de 30 % lors de crises passées. C'est son fonctionnement normal."
             },
             // Série 2
@@ -179,21 +179,21 @@ window.QUIZ = {
             {
                 q: "Quelle différence entre un ETF capitalisant et un ETF distribuant ?",
                 options: [
-                    "Le capitalisant réinvestit automatiquement les dividendes",
                     "Le distribuant est réservé aux professionnels",
-                    "Le capitalisant est garanti en capital"
+                    "Le capitalisant est garanti en capital",
+                    "Le capitalisant réinvestit automatiquement les dividendes"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le réinvestissement automatique sert directement l'intérêt composé."
             },
             {
                 q: "Que montrent les études comparant fonds actifs et indices sur 10 ans ?",
                 options: [
                     "Les fonds actifs battent presque toujours leur indice",
-                    "La majorité des fonds actifs font moins bien, une fois les frais déduits",
-                    "Les deux se valent exactement"
+                    "Les deux se valent exactement",
+                    "La majorité des fonds actifs font moins bien, une fois les frais déduits"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Cela ne signifie pas qu'aucun gérant ne bat le marché, mais qu'identifier lesquels à l'avance est une autre affaire."
             }
         ],
@@ -204,21 +204,21 @@ window.QUIZ = {
             {
                 q: "En finance, que désigne le mot « risque » ?",
                 options: [
-                    "La probabilité de tout perdre",
                     "L'ampleur des variations, à la hausse comme à la baisse",
+                    "La probabilité de tout perdre",
                     "Le montant des frais prélevés"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Plus un placement peut monter fort, plus il peut descendre bas. Les deux vont toujours ensemble."
             },
             {
                 q: "Quelle question détermine le niveau de risque acceptable ?",
                 options: [
                     "Quel rendement je vise ?",
-                    "Dans combien de temps aurai-je besoin de cet argent ?",
-                    "Quel est mon âge ?"
+                    "Quel est mon âge ?",
+                    "Dans combien de temps aurai-je besoin de cet argent ?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est l'horizon qui commande, pas l'ambition de rendement."
             },
             {
@@ -236,30 +236,30 @@ window.QUIZ = {
                 q: "Détenir dix actions du même secteur, est-ce diversifier ?",
                 options: [
                     "Oui, dix lignes suffisent",
-                    "Non : une vraie répartition joue sur plusieurs classes d'actifs, zones et secteurs",
-                    "Oui, à condition qu'elles soient étrangères"
+                    "Oui, à condition qu'elles soient étrangères",
+                    "Non : une vraie répartition joue sur plusieurs classes d'actifs, zones et secteurs"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un secteur entier peut chuter d'un bloc. La diversification se joue à plusieurs niveaux."
             },
             {
                 q: "Quel test appliquer avant de choisir sa répartition ?",
                 options: [
-                    "Vérifier le rendement des trois dernières années",
                     "Se demander si l'on tiendrait sans vendre après une baisse de 35 %",
+                    "Vérifier le rendement des trois dernières années",
                     "Comparer les frais de trois courtiers"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le bon niveau de risque est celui qui te laisse dormir et tenir ta stratégie dans la tempête."
             },
             {
                 q: "Quand une baisse devient-elle une perte réelle ?",
                 options: [
-                    "Dès qu'elle apparaît sur le relevé",
                     "Au moment de la vente",
+                    "Dès qu'elle apparaît sur le relevé",
                     "Au bout d'un an"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Tant qu'on ne vend pas, la baisse reste virtuelle. D'où l'importance de ne jamais être contraint de vendre."
             }
         ],
@@ -270,11 +270,11 @@ window.QUIZ = {
             {
                 q: "Qu'appelle-t-on une « enveloppe » fiscale ?",
                 options: [
-                    "Le contenant dans lequel on loge ses placements",
                     "Un type de placement à part entière",
-                    "Le document envoyé par l'administration fiscale"
+                    "Le document envoyé par l'administration fiscale",
+                    "Le contenant dans lequel on loge ses placements"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Deux placements identiques peuvent laisser des sommes très différentes selon leur contenant."
             },
             {
@@ -298,8 +298,8 @@ window.QUIZ = {
             },
             {
                 q: "Sur 10 000 € de plus-value, quel écart entre un compte-titres et un PEA de plus de 5 ans ?",
-                options: ["Environ 300 €", "Environ 1 280 €", "Aucun"],
-                a: 1,
+                options: ["Environ 1 280 €", "Environ 300 €", "Aucun"],
+                a: 0,
                 explication: "3 000 € d'impôt contre 1 720 € de prélèvements sociaux, pour exactement les mêmes placements."
             },
             {
@@ -332,25 +332,25 @@ window.QUIZ = {
         },
         {
             q: "Quel facteur pèse le plus sur le résultat d'un placement à très long terme ?",
-            options: ["Le choix du bon moment d'entrée", "Le temps passé investi", "Le nombre de supports détenus"],
-            a: 1,
+            options: ["Le choix du bon moment d'entrée", "Le nombre de supports détenus", "Le temps passé investi"],
+            a: 2,
             explication: "Commencer modestement et tôt bat largement commencer fort et tard."
         },
         {
             q: "Parmi ces éléments, lequel maîtrises-tu totalement à l'avance ?",
-            options: ["Le rendement", "Les frais", "La durée d'une crise"],
-            a: 1,
+            options: ["Les frais", "Le rendement", "La durée d'une crise"],
+            a: 0,
             explication: "Le rendement ne se commande pas ; les frais, si. D'où leur importance disproportionnée."
         },
         // Série 2
         {
             q: "Un ami te propose un placement à 12 % par an garanti sans risque. Que faire ?",
             options: [
-                "Investir une petite somme pour tester",
                 "Refuser : rendement élevé et absence de risque sont incompatibles",
+                "Investir une petite somme pour tester",
                 "Demander un rendement plus élevé"
             ],
-            a: 1,
+            a: 0,
             explication: "Vérifie systématiquement l'enregistrement de l'intermédiaire auprès de l'ORIAS ou de l'ACPR."
         },
         {
@@ -366,11 +366,11 @@ window.QUIZ = {
         {
             q: "Quel ordre de raisonnement suivre pour choisir un placement ?",
             options: [
-                "L'enveloppe fiscale, puis le placement, puis le besoin",
                 "Le besoin, puis l'horizon, puis le placement, puis l'enveloppe",
+                "L'enveloppe fiscale, puis le placement, puis le besoin",
                 "Le rendement affiché, puis le reste"
             ],
-            a: 1,
+            a: 0,
             explication: "Un avantage fiscal ne compense jamais des frais élevés ou un placement inadapté."
         }
     ]

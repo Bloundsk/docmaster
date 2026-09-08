@@ -14,11 +14,11 @@ window.QUIZ = {
             {
                 q: "Quel est le principal risque d'un mot de passe réutilisé ?",
                 options: [
-                    "Il est plus facile à deviner",
                     "Une seule fuite ouvre tous les comptes qui l'utilisent",
+                    "Il est plus facile à deviner",
                     "Il expire plus vite"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Les listes issues de fuites sont rejouées automatiquement sur des centaines d'autres services. La longueur du mot de passe n'y change rien : il n'est pas deviné, il est connu."
             },
             {
@@ -34,11 +34,11 @@ window.QUIZ = {
             {
                 q: "Que faut-il retenir pour utiliser un gestionnaire de mots de passe ?",
                 options: [
-                    "Un seul mot de passe, celui du coffre",
                     "Un mot de passe par catégorie de site",
+                    "Un seul mot de passe, celui du coffre",
                     "Rien, tout est automatique"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Chaque site reçoit une valeur unique que tu ne connais même pas. Tu n'en mémorises qu'une."
             },
             // Série 2
@@ -46,10 +46,10 @@ window.QUIZ = {
                 q: "Que répondre à l'objection « tous les œufs dans le même panier » ?",
                 options: [
                     "Elle est infondée, le coffre est inviolable",
-                    "Le risque est concentré, mais sur un point réellement protégé",
-                    "Il vaut mieux tout noter sur papier"
+                    "Il vaut mieux tout noter sur papier",
+                    "Le risque est concentré, mais sur un point réellement protégé"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sans gestionnaire, le risque n'est pas réparti : c'est le même risque, étalé sur des dizaines de services dont tu ne maîtrises ni la sécurité ni les fuites."
             },
             {
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Quelle précaution prendre si l'on se contente du carnet du navigateur ?",
                 options: [
-                    "Activer la double authentification sur le compte de synchronisation",
                     "Changer de navigateur chaque année",
+                    "Activer la double authentification sur le compte de synchronisation",
                     "Désactiver la synchronisation"
                 ],
-                a: 0,
+                a: 1,
                 explication: "La synchronisation est souvent liée à un compte protégé par un simple mot de passe, et une session ouverte suffit parfois à tout lire en clair."
             }
         ],
@@ -81,30 +81,30 @@ window.QUIZ = {
                 q: "Que vérifie un second facteur d'authentification ?",
                 options: [
                     "Quelque chose que l'on sait",
-                    "Quelque chose que l'on possède",
-                    "La force du mot de passe"
+                    "La force du mot de passe",
+                    "Quelque chose que l'on possède"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le mot de passe est une chose que l'on sait, donc qui peut être volée ou lue dans une fuite. Le second facteur ajoute un objet qu'un attaquant distant n'a pas."
             },
             {
                 q: "Quelle forme de second facteur est la plus fragile ?",
                 options: [
-                    "Le SMS",
                     "L'application d'authentification",
+                    "Le SMS",
                     "La clé physique"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le détournement de carte SIM permet de recevoir les codes à ta place. Le SMS reste néanmoins très supérieur à l'absence de second facteur."
             },
             {
                 q: "Quel compte protéger en priorité ?",
                 options: [
-                    "Les réseaux sociaux",
                     "La boîte mail principale",
+                    "Les réseaux sociaux",
                     "Le compte de streaming"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est elle qui reçoit les liens de réinitialisation de tous les autres. Qui la contrôle contrôle l'ensemble."
             },
             // Série 2
@@ -112,30 +112,30 @@ window.QUIZ = {
                 q: "Pourquoi une clé physique résiste-t-elle au hameçonnage ?",
                 options: [
                     "Elle chiffre le mot de passe",
-                    "Elle vérifie l'adresse du site et refuse de répondre à un imitateur",
-                    "Elle change de code toutes les secondes"
+                    "Elle change de code toutes les secondes",
+                    "Elle vérifie l'adresse du site et refuse de répondre à un imitateur"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est la seule forme de second facteur qui protège contre un site imitant parfaitement l'original."
             },
             {
                 q: "Où conserver ses codes de secours ?",
                 options: [
                     "Sur le téléphone qui porte l'application d'authentification",
-                    "Ailleurs : imprimés, ou dans le gestionnaire de mots de passe",
-                    "Dans un courriel adressé à soi-même"
+                    "Dans un courriel adressé à soi-même",
+                    "Ailleurs : imprimés, ou dans le gestionnaire de mots de passe"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les laisser sur l'appareil concerné rend le compte inaccessible le jour où ce téléphone est perdu, volé ou remplacé."
             },
             {
                 q: "Un code généré par application transite-t-il sur le réseau ?",
                 options: [
-                    "Oui, par le serveur du service",
                     "Non, il est calculé sur l'appareil",
+                    "Oui, par le serveur du service",
                     "Oui, par SMS chiffré"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Il n'y a donc rien à intercepter, ce qui explique sa supériorité sur le SMS."
             }
         ],
@@ -166,11 +166,11 @@ window.QUIZ = {
             {
                 q: "Quelle est la seule réponse qui fonctionne à coup sûr contre un rançongiciel ?",
                 options: [
-                    "Un bon antivirus",
                     "Une sauvegarde qu'il n'a pas pu atteindre",
+                    "Un bon antivirus",
                     "Payer la rançon"
                 ],
-                a: 1,
+                a: 0,
                 explication: "L'antivirus est une barrière parmi d'autres. Payer ne garantit rien, ni la clé ni l'absence de copie des données."
             },
             // Série 2
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "Que couvre spécifiquement la copie « hors du logement » ?",
                 options: [
                     "Les erreurs de manipulation",
-                    "L'incendie, le dégât des eaux, le cambriolage",
-                    "Les pannes de disque"
+                    "Les pannes de disque",
+                    "L'incendie, le dégât des eaux, le cambriolage"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tout ce qui est au même endroit disparaît ensemble. C'est le seul risque que la multiplication des copies locales ne couvre pas."
             },
             {
@@ -197,11 +197,11 @@ window.QUIZ = {
             {
                 q: "À quelle fréquence tester une restauration ?",
                 options: [
-                    "Jamais, si le logiciel affiche un succès",
                     "Environ une fois par trimestre",
+                    "Jamais, si le logiciel affiche un succès",
                     "Uniquement après un incident"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Restaurer un fichier au hasard suffit à vérifier que la chaîne complète fonctionne."
             }
         ],
@@ -223,51 +223,51 @@ window.QUIZ = {
                 q: "Un VPN protège-t-il du hameçonnage ?",
                 options: [
                     "Oui, il bloque les sites frauduleux",
-                    "Non, il transporte le trafic sans l'inspecter",
-                    "Oui, s'il est payant"
+                    "Oui, s'il est payant",
+                    "Non, il transporte le trafic sans l'inspecter"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un site de hameçonnage reste un site de hameçonnage, et un fichier malveillant reste malveillant."
             },
             {
                 q: "Un VPN rend-il anonyme sur un service où l'on est connecté ?",
                 options: [
                     "Oui, l'adresse IP est masquée",
-                    "Non, le compte connecté t'identifie de lui-même",
-                    "Oui, si l'on efface les cookies"
+                    "Oui, si l'on efface les cookies",
+                    "Non, le compte connecté t'identifie de lui-même"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tu t'es identifié toi-même en te connectant. Le VPN n'y change rien."
             },
             // Série 2
             {
                 q: "Quel est l'effet principal d'un VPN sur la confiance ?",
                 options: [
-                    "Il la supprime",
                     "Il la déplace du fournisseur d'accès vers le fournisseur de VPN",
+                    "Il la supprime",
                     "Il la renforce des deux côtés"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La question devient : ce fournisseur mérite-t-il plus de confiance que le précédent ?"
             },
             {
                 q: "Jusqu'où HTTPS chiffre-t-il, comparé à un VPN ?",
                 options: [
-                    "Jusqu'au site visité, alors que le VPN s'arrête à son serveur",
                     "Jusqu'au serveur VPN uniquement",
-                    "Les deux protègent exactement la même portion"
+                    "Les deux protègent exactement la même portion",
+                    "Jusqu'au site visité, alors que le VPN s'arrête à son serveur"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ce sont deux protections complémentaires, qui ne couvrent pas le même trajet."
             },
             {
                 q: "Quel risque particulier présente un VPN gratuit financé par la publicité ?",
                 options: [
                     "Une vitesse réduite seulement",
-                    "Il reçoit la totalité de ton trafic et doit se rémunérer autrement",
-                    "Aucun, le chiffrement est identique"
+                    "Aucun, le chiffrement est identique",
+                    "Il reçoit la totalité de ton trafic et doit se rémunérer autrement"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Avant d'installer un outil de sécurité, chercher qui le finance est un réflexe utile."
             }
         ]
@@ -291,11 +291,11 @@ window.QUIZ = {
         {
             q: "Quel point commun entre le gestionnaire de mots de passe et la sauvegarde déconnectée ?",
             options: [
-                "Ils coûtent cher",
                 "Ils se mettent en place une fois et travaillent ensuite sans toi",
+                "Ils coûtent cher",
                 "Ils demandent des compétences techniques"
             ],
-            a: 1,
+            a: 0,
             explication: "C'est le critère qui les fait figurer à ce niveau : un effort ponctuel, une protection permanente."
         },
         {

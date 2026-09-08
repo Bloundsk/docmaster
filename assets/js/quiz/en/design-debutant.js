@@ -26,10 +26,10 @@ window.QUIZ = {
                 q: "A magnificent emergency exit sign leading to a sealed door illustrates what?",
                 options: [
                     "Excellent UX",
-                    "Excellent UI and catastrophic UX",
-                    "A purely technical problem"
+                    "A purely technical problem",
+                    "Excellent UI and catastrophic UX"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A handwritten note pointing to the right exit: poor UI, successful UX. The second saves lives."
             },
             {
@@ -46,21 +46,21 @@ window.QUIZ = {
             {
                 q: "What cannot be rescued by aesthetics?",
                 options: [
-                    "The number of steps in a form",
                     "The choice of typeface",
+                    "The number of steps in a form",
                     "The size of the margins"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Every extra step loses a share of users. No animation compensates for twelve fields."
             },
             {
                 q: "Which error message is useful?",
                 options: [
                     "“An error has occurred”",
-                    "“This postcode does not match any town”",
-                    "“Error 500”"
+                    "“Error 500”",
+                    "“This postcode does not match any town”"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The first helps nobody; the second lets you act."
             },
             {
@@ -82,10 +82,10 @@ window.QUIZ = {
                 q: "Why is a wireframe deliberately ugly?",
                 options: [
                     "To go faster",
-                    "So that people criticise the structure instead of a button's colour",
-                    "Because the tools are limited"
+                    "Because the tools are limited",
+                    "So that people criticise the structure instead of a button's colour"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Faced with a finished mock-up, feedback lands on visual detail. Faced with grey rectangles, people finally discuss substance."
             },
             {
@@ -102,31 +102,31 @@ window.QUIZ = {
                 q: "What does low fidelity allow?",
                 options: [
                     "Presenting to the final client",
-                    "Exploring several routes and deciding the structure",
-                    "Handing over to development"
+                    "Handing over to development",
+                    "Exploring several routes and deciding the structure"
                 ],
-                a: 1,
+                a: 2,
                 explication: "High fidelity is for handing over and presenting, not for exploring."
             },
             // Series 2
             {
                 q: "Why use real content rather than Latin placeholder text?",
                 options: [
-                    "It is more pleasant to read",
                     "A real product name sometimes runs to three lines where the example ran to one",
+                    "It is more pleasant to read",
                     "It speeds up sign-off"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Otherwise those overflows are discovered during development — too late."
             },
             {
                 q: "What happens if you spend a day polishing a wireframe?",
                 options: [
-                    "The final result is better",
                     "You become attached to it and stop questioning it",
+                    "The final result is better",
                     "Development goes faster"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A wireframe must stay ugly enough that you dare to throw it away."
             },
             {
@@ -147,11 +147,11 @@ window.QUIZ = {
             {
                 q: "How does the eye approach a page?",
                 options: [
-                    "It reads left to right, line by line",
                     "It scans and ranks elements by apparent importance",
+                    "It reads left to right, line by line",
                     "It settles in the centre first"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Size, contrast, position and surrounding space set that order in a fraction of a second."
             },
             {
@@ -199,10 +199,10 @@ window.QUIZ = {
                 q: "Why should information never be carried by colour alone?",
                 options: [
                     "Because screens render colours badly",
-                    "Because a field marked red with no message stays invisible to someone with colour blindness",
-                    "Because it makes the code heavier"
+                    "Because it makes the code heavier",
+                    "Because a field marked red with no message stays invisible to someone with colour blindness"
                 ],
-                a: 1,
+                a: 2,
                 explication: "That is roughly one man in twelve."
             }
         ],
@@ -214,10 +214,10 @@ window.QUIZ = {
                 q: "Why can you not evaluate your own interface?",
                 options: [
                     "For lack of emotional objectivity",
-                    "Because you know where everything is, and that knowledge cannot be undone",
-                    "Because it requires a certification"
+                    "Because it requires a certification",
+                    "Because you know where everything is, and that knowledge cannot be undone"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The only way to find out is to watch somebody else try."
             },
             {
@@ -233,42 +233,42 @@ window.QUIZ = {
             {
                 q: "What instruction should you give a participant?",
                 options: [
-                    "“What do you think of this page?”",
                     "“Find the price of an annual subscription and start signing up”",
+                    "“What do you think of this page?”",
                     "“Browse freely for a few minutes”"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Give a task, not a guided tour. What people do is worth more than what they declare."
             },
             // Series 2
             {
                 q: "What is the hardest behaviour to keep up during a test?",
                 options: [
-                    "Taking notes",
                     "Saying nothing",
+                    "Taking notes",
                     "Timing"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The moment you help, the test is over: the real user will have nobody beside them."
             },
             {
                 q: "When should you test?",
                 options: [
                     "A week before launch",
-                    "On the wireframe, while everything can still change at no cost",
-                    "After launch, with real users"
+                    "After launch, with real users",
+                    "On the wireframe, while everything can still change at no cost"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A late test no longer helps you decide: it documents problems you cannot fix in time."
             },
             {
                 q: "A user gets it wrong during a test. Who failed to understand?",
                 options: [
-                    "The user",
                     "The interface, which failed to be clear",
+                    "The user",
                     "The person who designed the test"
                 ],
-                a: 1,
+                a: 0,
                 explication: "That reversal is the foundation of the trade."
             }
         ]
@@ -280,40 +280,40 @@ window.QUIZ = {
             q: "What characterises the best interfaces?",
             options: [
                 "They leave an impression",
-                "They go unnoticed",
-                "They follow the latest trends"
+                "They follow the latest trends",
+                "They go unnoticed"
             ],
-            a: 1,
+            a: 2,
             explication: "Nobody compliments a door for opening the right way."
         },
         {
             q: "Is interface design a matter of personal taste?",
             options: [
-                "Yes, everyone has their own sensibility",
                 "No: it is a discipline with rules that come from how vision and attention work",
+                "Yes, everyone has their own sensibility",
                 "Yes, except for institutional sites"
             ],
-            a: 1,
+            a: 0,
             explication: "Those rules can be checked, and they can be learned."
         },
         {
             q: "What does successful design do?",
             options: [
-                "It adds distinctive visual elements",
                 "It subtracts more than it adds",
+                "It adds distinctive visual elements",
                 "It reproduces the codes of the sector"
             ],
-            a: 1,
+            a: 0,
             explication: "Before adding an element, ask what it helps to understand. If it helps with nothing, it adds noise."
         },
         {
             q: "Your team finds a button “obvious”. How do you check?",
             options: [
                 "Ask another designer's opinion",
-                "Watch five people attempt the task, without helping them",
-                "Compare with competitor sites"
+                "Compare with competitor sites",
+                "Watch five people attempt the task, without helping them"
             ],
-            a: 1,
+            a: 2,
             explication: "None of these problems is visible from inside the project."
         },
         {

@@ -16,21 +16,21 @@ window.QUIZ = {
             {
                 q: "Where do the factors of ten most often hide in an impact figure?",
                 options: [
-                    "In the scope: manufacturing included, or usage only?",
                     "In the rounding",
+                    "In the scope: manufacturing included, or usage only?",
                     "In the currency used"
                 ],
-                a: 0,
+                a: 1,
                 explication: "That is the first of the five questions to ask."
             },
             {
                 q: "Why does the country change everything?",
                 options: [
-                    "French electricity emits five to ten times less than the European average",
                     "The networks are different",
-                    "The devices are not the same"
+                    "The devices are not the same",
+                    "French electricity emits five to ten times less than the European average"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The same calculation gives a completely different result depending on the country."
             },
             {
@@ -57,11 +57,11 @@ window.QUIZ = {
             {
                 q: "Why be wary of a 2015 figure in this field?",
                 options: [
-                    "Digital's energy intensities are falling fast",
                     "The calculation methods were banned",
+                    "Digital's energy intensities are falling fast",
                     "The data was not public"
                 ],
-                a: 0,
+                a: 1,
                 explication: "An old figure is often out of date, with nothing to signal it."
             },
             {
@@ -82,42 +82,42 @@ window.QUIZ = {
             {
                 q: "What can be calculated with certainty about streaming?",
                 options: [
-                    "The device's consumption: its power multiplied by the time",
                     "The network cost per gigabyte",
+                    "The device's consumption: its power multiplied by the time",
                     "The data centres' share"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The rest is smaller and far more uncertain."
             },
             {
                 q: "Two hours of video a day, on a 100 W television against a 3 W phone:",
                 options: [
-                    "4.4 kg against 0.13 kg CO₂e a year — a factor of 33",
                     "A negligible gap",
-                    "4.4 kg against 2 kg"
+                    "4.4 kg against 2 kg",
+                    "4.4 kg against 0.13 kg CO₂e a year — a factor of 33"
                 ],
-                a: 0,
+                a: 2,
                 explication: "For exactly the same content and the same duration."
             },
             {
                 q: "Why does a file twice as heavy not consume twice as much on the network?",
                 options: [
-                    "A network consumes mainly because it is switched on, not because it carries traffic",
                     "Because compression makes up for it",
+                    "A network consumes mainly because it is switched on, not because it carries traffic",
                     "Because the files are cached"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The equipment runs whether traffic is heavy or light."
             },
             // Series 2
             {
                 q: "Lowering the video quality: what effect?",
                 options: [
-                    "Real, but on the smallest and most uncertain share",
                     "The most important of all",
+                    "Real, but on the smallest and most uncertain share",
                     "None"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The choice of screen has an effect tens of times larger."
             },
             {
@@ -133,11 +133,11 @@ window.QUIZ = {
             {
                 q: "What does a laptop consume, as an order of magnitude?",
                 options: [
-                    "About 30 W",
                     "About 3 W",
+                    "About 30 W",
                     "About 300 W"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Against 100 W for a television and 3 W for a phone."
             }
         ],
@@ -148,21 +148,21 @@ window.QUIZ = {
             {
                 q: "Which item dominates digital's impact in France?",
                 options: [
-                    "Devices",
                     "Data centres",
-                    "Networks"
+                    "Networks",
+                    "Devices"
                 ],
-                a: 0,
+                a: 2,
                 explication: "And within devices, it is manufacturing that dominates."
             },
             {
                 q: "Why do data centres take up all the space in discussions?",
                 options: [
-                    "They are visible, concentrated, and belong to companies you can name",
                     "They consume the most",
-                    "They are the most measured"
+                    "They are the most measured",
+                    "They are visible, concentrated, and belong to companies you can name"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Whatever is easy to point at is taken for the main culprit."
             },
             {
@@ -179,11 +179,11 @@ window.QUIZ = {
             {
                 q: "What dominates networks' consumption?",
                 options: [
-                    "Equipment permanently switched on",
                     "The volume of data carried",
-                    "The number of connected users"
+                    "The number of connected users",
+                    "Equipment permanently switched on"
                 ],
-                a: 0,
+                a: 2,
                 explication: "That is what makes “per gigabyte” reasoning so misleading."
             },
             {
@@ -199,11 +199,11 @@ window.QUIZ = {
             {
                 q: "Why does the sum of devices exceed the data centres?",
                 options: [
-                    "Billions of small objects manufactured and replaced weigh more than a few thousand buildings",
                     "Devices use more electricity",
-                    "There are few data centres in France"
+                    "There are few data centres in France",
+                    "Billions of small objects manufactured and replaced weigh more than a few thousand buildings"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is an effect of numbers, not of consumption per unit."
             }
         ],
@@ -214,11 +214,11 @@ window.QUIZ = {
             {
                 q: "A meeting 400 km away, return by plane against a video call:",
                 options: [
-                    "184 kg against 3.6 grams",
                     "184 kg against 3.6 kg",
-                    "18 kg against 3.6 grams"
+                    "18 kg against 3.6 grams",
+                    "184 kg against 3.6 grams"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A ratio above 50,000. No other trade-off in the guide comes close."
             },
             {
@@ -245,21 +245,21 @@ window.QUIZ = {
             {
                 q: "What does home working do to the balance, strictly speaking?",
                 options: [
-                    "It shifts consumption as much as it removes it",
                     "It removes it entirely",
-                    "It always increases it"
+                    "It always increases it",
+                    "It shifts consumption as much as it removes it"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Home heating, duplicated equipment: the balance stays favourable but is far tighter."
             },
             {
                 q: "What is the classic weakness of “avoidance” accounting?",
                 options: [
-                    "It compares against a hypothetical scenario nobody checks",
                     "It underestimates digital",
-                    "It ignores manufacturing"
+                    "It ignores manufacturing",
+                    "It compares against a hypothetical scenario nobody checks"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The honest question is about the total: has the number of journeys gone down?"
             },
             {
@@ -280,31 +280,31 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "Knowing how to discard a bad figure is worth more than knowing ten good habits",
                 "Cutting your video consumption",
+                "Knowing how to discard a bad figure is worth more than knowing ten good habits",
                 "Choosing a responsible host"
             ],
-            a: 0,
+            a: 1,
             explication: "It is a more methodological level than a practical one, and deliberately so."
         },
         {
             q: "What do “10 g per email” and “3.2 kg per hour of video” have in common?",
             options: [
-                "Both circulated for years before being corrected by a factor of ten",
                 "Both were inventions",
+                "Both circulated for years before being corrected by a factor of ten",
                 "Both concerned data centres"
             ],
-            a: 0,
+            a: 1,
             explication: "And both came from estimates repeated without their assumptions."
         },
         {
             q: "Somebody quotes you a German study on how the impact splits. What is the caveat?",
             options: [
-                "German electricity is far more carbon-intensive: the split does not transfer",
                 "German studies are less reliable",
-                "None, the methods are harmonised"
+                "None, the methods are harmonised",
+                "German electricity is far more carbon-intensive: the split does not transfer"
             ],
-            a: 0,
+            a: 2,
             explication: "That is the second of the five questions, and the most often forgotten."
         },
         {
@@ -320,21 +320,21 @@ window.QUIZ = {
         {
             q: "Which trade-off in this level deserves to be known before all the others?",
             options: [
-                "The journey avoided",
                 "The choice of video resolution",
+                "The journey avoided",
                 "The choice of host"
             ],
-            a: 0,
+            a: 1,
             explication: "It is the only one where the order of magnitude flips."
         },
         {
             q: "What do you do when an impact figure strikes you?",
             options: [
-                "Look for its original source: half the time it does not exist or says something else",
                 "Check it against a second article",
+                "Look for its original source: half the time it does not exist or says something else",
                 "Pass it on with “according to some studies”"
             ],
-            a: 0,
+            a: 1,
             explication: "Two articles citing each other do not make two sources."
         }
     ]

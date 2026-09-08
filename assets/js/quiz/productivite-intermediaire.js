@@ -46,10 +46,10 @@ window.QUIZ = {
                 q: "Couper les notifications suffit-il à protéger sa concentration ?",
                 options: [
                     "Oui, c'est la mesure décisive",
-                    "Non, si l'on va vérifier soi-même toutes les dix minutes",
-                    "Oui, à condition de les couper toute la journée"
+                    "Oui, à condition de les couper toute la journée",
+                    "Non, si l'on va vérifier soi-même toutes les dix minutes"
                 ],
-                a: 1,
+                a: 2,
                 explication: "L'auto-interruption produit exactement le même coût de reprise."
             },
             {
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi annoncer une plage d'indisponibilité ?",
                 options: [
-                    "Pour que les autres n'aient pas à interrompre",
                     "Pour faire respecter son statut",
+                    "Pour que les autres n'aient pas à interrompre",
                     "Pour éviter d'avoir à répondre ensuite"
                 ],
-                a: 0,
+                a: 1,
                 explication: "L'interruption devient inutile plutôt que d'être seulement refusée."
             }
         ],
@@ -80,21 +80,21 @@ window.QUIZ = {
             {
                 q: "Que dit une liste de tâches que l'agenda dit mieux ?",
                 options: [
-                    "Elle dit quoi faire, mais pas quand",
                     "Elle dit quand, mais pas quoi",
-                    "Elle dit combien de temps cela prendra"
+                    "Elle dit combien de temps cela prendra",
+                    "Elle dit quoi faire, mais pas quand"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une liste de vingt éléments face à un agenda vide produit surtout de la culpabilité."
             },
             {
                 q: "Sur une journée de 8 h avec 2 h 30 de réunions, 1 h 15 de messages et 1 h d'imprévus, que reste-t-il ?",
                 options: [
                     "5 heures",
-                    "3 h 15",
-                    "6 heures"
+                    "6 heures",
+                    "3 h 15"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Planifier six heures de production sur cette journée échoue par arithmétique, pas par manque de discipline."
             },
             {
@@ -111,11 +111,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi un créneau tient-il mieux qu'une intention ?",
                 options: [
-                    "Parce qu'un créneau se défend, une intention ne se défend pas",
                     "Parce qu'il est plus long",
-                    "Parce qu'il est visible par les collègues"
+                    "Parce qu'il est visible par les collègues",
+                    "Parce qu'un créneau se défend, une intention ne se défend pas"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La différence est psychologique autant que pratique."
             },
             {
@@ -156,11 +156,11 @@ window.QUIZ = {
             {
                 q: "Comment régler la crainte de rater une urgence en traitant par lots ?",
                 options: [
-                    "En vérifiant quand même toutes les heures",
                     "En convenant d'un canal réservé aux vraies urgences",
+                    "En vérifiant quand même toutes les heures",
                     "En prévenant chaque expéditeur individuellement"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le téléphone, généralement. Cela suffit à débloquer la crainte."
             },
             {
@@ -177,31 +177,31 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui fait déborder une boîte de réception ?",
                 options: [
-                    "Le volume de messages reçus",
                     "Le fait de lire des messages sans rien en faire, puis de les relire",
+                    "Le volume de messages reçus",
                     "L'absence de dossiers de classement"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ce n'est pas le nombre de messages qui coûte cher, c'est le nombre de fois qu'on les regarde."
             },
             {
                 q: "Pourquoi ne pas commencer la journée par ses messages ?",
                 options: [
-                    "Parce que cela donne son meilleur créneau aux priorités des autres",
                     "Parce que les messages du matin sont moins importants",
-                    "Parce qu'il vaut mieux attendre les réponses de la veille"
+                    "Parce qu'il vaut mieux attendre les réponses de la veille",
+                    "Parce que cela donne son meilleur créneau aux priorités des autres"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La première heure est généralement celle où l'attention est la plus disponible."
             },
             {
                 q: "Combien de passages dédiés aux messages suffisent dans la plupart des métiers ?",
                 options: [
-                    "Un seul, en fin de journée",
                     "Deux",
+                    "Un seul, en fin de journée",
                     "Un toutes les heures"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Deux créneaux par jour couvrent la grande majorité des situations."
             }
         ],
@@ -213,10 +213,10 @@ window.QUIZ = {
                 q: "En quoi consiste réellement la priorisation ?",
                 options: [
                     "Ranger les tâches par ordre d'importance",
-                    "En abandonner",
-                    "Les répartir sur plusieurs semaines"
+                    "Les répartir sur plusieurs semaines",
+                    "En abandonner"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tant qu'aucune tâche n'est écartée, il n'y a pas eu de priorisation, seulement un tri."
             },
             {
@@ -243,11 +243,11 @@ window.QUIZ = {
             {
                 q: "Que permet la formulation « je peux le faire, mais cela décale le projet X d'une semaine » ?",
                 options: [
-                    "Elle rend le coût visible et renvoie la décision à qui la demande",
                     "Elle évite d'avoir à répondre",
-                    "Elle transforme un refus en promesse"
+                    "Elle transforme un refus en promesse",
+                    "Elle rend le coût visible et renvoie la décision à qui la demande"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'arbitrage explicite : ni refus sec, ni oui qui masque le coût."
             },
             {
@@ -278,21 +278,21 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Remplir l'agenda plus efficacement",
                 "Protéger l'attention plutôt que multiplier les tâches",
+                "Remplir l'agenda plus efficacement",
                 "Adopter le bon outil de gestion"
             ],
-            a: 1,
+            a: 0,
             explication: "L'attention est la ressource rare ; le temps ne l'est qu'en apparence."
         },
         {
             q: "Qu'ont en commun le traitement au fil de l'eau et le travail prétendument parallèle ?",
             options: [
-                "Les deux paient un coût de bascule répété",
                 "Les deux économisent du temps",
-                "Les deux supposent un bon outil"
+                "Les deux supposent un bon outil",
+                "Les deux paient un coût de bascule répété"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est le même mécanisme, appliqué aux messages dans un cas et aux tâches dans l'autre."
         },
         {
@@ -308,11 +308,11 @@ window.QUIZ = {
         {
             q: "Quelle mesure de ce niveau coûte le moins et rapporte le plus ?",
             options: [
-                "Changer d'outil de gestion de tâches",
                 "Une heure de travail de fond avant d'ouvrir sa messagerie",
+                "Changer d'outil de gestion de tâches",
                 "Allonger la journée de deux heures"
             ],
-            a: 1,
+            a: 0,
             explication: "Rien d'important ne se perd en soixante minutes, et la journée entière en est changée."
         },
         {

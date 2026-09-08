@@ -14,52 +14,52 @@ window.QUIZ = {
             {
                 q: "What is taxed when you make a withdrawal?",
                 options: [
-                    "The whole amount withdrawn",
                     "Only the share of gains contained in the withdrawal",
+                    "The whole amount withdrawn",
                     "The capital originally paid in"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A withdrawal is deemed to consist of capital — never taxed — and gains. A contract containing 20% of gains triggers tax on only a fifth of the amount."
             },
             {
                 q: "What happens to the annual allowance of a French assurance-vie if it is not used?",
                 options: [
-                    "It carries over to the following year",
                     "It is permanently lost",
+                    "It carries over to the following year",
                     "It is converted into a tax credit"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It renews every year but does not carry forward. Closing a contract in one go wastes all the following years' allowances."
             },
             {
                 q: "Why does the order of withdrawal change the net amount received?",
                 options: [
-                    "Because each wrapper has its own exit tax",
                     "Because banks apply different fees",
-                    "Because the tax rate changes with the day of the month"
+                    "Because the tax rate changes with the day of the month",
+                    "Because each wrapper has its own exit tax"
                 ],
-                a: 0,
+                a: 2,
                 explication: "On identical capital and performance, drawing from one wrapper rather than another changes the tax — sometimes by more than €1,200 on €20,000 withdrawn."
             },
             // Set 2
             {
                 q: "What is the point of spreading a withdrawal over two calendar years?",
                 options: [
-                    "Reducing brokerage fees",
                     "Using the annual allowance twice",
+                    "Reducing brokerage fees",
                     "Avoiding social levies"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Concentrating the gains into a single tax year takes you past the allowance, and everything above is taxed at full rate."
             },
             {
                 q: "A withdrawal from a French PEA held over five years is subject to what?",
                 options: [
-                    "Nothing at all",
                     "Social levies, but not income tax",
+                    "Nothing at all",
                     "Income tax, but not social levies"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The advantage applies to income tax. The 17.2% of social levies remain due in every case."
             },
             {
@@ -80,21 +80,21 @@ window.QUIZ = {
             {
                 q: "What happens to a bond you already hold when rates rise?",
                 options: [
-                    "Its price falls",
                     "Its price rises",
+                    "Its price falls",
                     "Its price does not move"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A security paying 1% becomes unsellable at its original price if new issues pay 3%. Its price falls until its yield becomes comparable."
             },
             {
                 q: "What does a bond's duration measure?",
                 options: [
-                    "The time left before it is repaid",
                     "Its sensitivity to changes in rates",
+                    "The time left before it is repaid",
                     "The financial strength of the borrower"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Rule of thumb: a rate rise of 1 point pushes the price down by about 1% per year of duration."
             },
             {
@@ -121,11 +121,11 @@ window.QUIZ = {
             {
                 q: "What is the difference between holding a bond directly and holding a bond fund?",
                 options: [
-                    "The fund has no maturity and continually rolls its holdings",
                     "The fund guarantees the capital, the bond does not",
-                    "None, they are two words for the same thing"
+                    "None, they are two words for the same thing",
+                    "The fund has no maturity and continually rolls its holdings"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A bond held to maturity repays its face value: the fall is erased. In a fund it is real, and is offset over a period close to its duration."
             },
             {
@@ -147,10 +147,10 @@ window.QUIZ = {
                 q: "What characterises real diversification?",
                 options: [
                     "The number of holdings owned",
-                    "The fact that the assets do not fall at the same time",
-                    "Having at least ten different funds"
+                    "Having at least ten different funds",
+                    "The fact that the assets do not fall at the same time"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Twenty shares from the same country and the same sector form a single position cut into twenty pieces."
             },
             {
@@ -166,42 +166,42 @@ window.QUIZ = {
             {
                 q: "What happens to correlations during a crisis?",
                 options: [
-                    "They fall, and diversification protects better",
                     "They rise, and assets fall together more",
+                    "They fall, and diversification protects better",
                     "They stay stable"
                 ],
-                a: 1,
+                a: 0,
                 explication: "At the precise moment you are counting on diversification, it works less well. It softens, it does not protect."
             },
             // Set 2
             {
                 q: "What is home bias?",
                 options: [
-                    "The tendency to overweight companies from your own country",
                     "Investing from home",
+                    "The tendency to overweight companies from your own country",
                     "A tax on foreign investments"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The saver then concentrates their wealth on the economy that already holds their job and often their home."
             },
             {
                 q: "An American index gains 10% in dollars. What does an investor in euros receive?",
                 options: [
                     "10%, the currency has no effect",
-                    "It depends on how the dollar moved against the euro",
-                    "Always less than 10%"
+                    "Always less than 10%",
+                    "It depends on how the dollar moved against the euro"
                 ],
-                a: 1,
+                a: 2,
                 explication: "If the dollar has fallen by as much, the gain in euros is nil. Over a few years, this effect can dominate the result."
             },
             {
                 q: "How do you check that funds do not overlap?",
                 options: [
                     "By comparing their past performance",
-                    "By comparing their main holdings",
-                    "By checking that they have different names"
+                    "By checking that they have different names",
+                    "By comparing their main holdings"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A “world” fund, a “North America” fund and a “technology” fund often contain the same large companies three times over."
             }
         ],
@@ -233,41 +233,41 @@ window.QUIZ = {
                 q: "Where are the best market sessions most often located?",
                 options: [
                     "In calm, rising periods",
-                    "Immediately alongside the worst ones, in the middle of the turmoil",
-                    "Spread evenly through the year"
+                    "Spread evenly through the year",
+                    "Immediately alongside the worst ones, in the middle of the turmoil"
                 ],
-                a: 1,
+                a: 2,
                 explication: "That is why stepping out to “wait for things to calm down” almost always means missing the rebound."
             },
             // Set 2
             {
                 q: "How does loss aversion show itself?",
                 options: [
-                    "A loss is felt about twice as strongly as an equivalent gain",
                     "You refuse any risky investment",
-                    "You quickly forget your losses"
+                    "You quickly forget your losses",
+                    "A loss is felt about twice as strongly as an equivalent gain"
                 ],
-                a: 0,
+                a: 2,
                 explication: "This asymmetry explains why a 20% fall prompts selling while a 20% rise does not prompt buying."
             },
             {
                 q: "What remedy does the guide propose against decisions taken in the heat of the moment?",
                 options: [
-                    "Trusting your intuition more",
                     "Writing down, in the calm, your allocation and what you plan to do in a fall",
+                    "Trusting your intuition more",
                     "Handing the management to a third party"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The remedy is not strength of character: a document written in the calm holds up better than a resolution taken in the heat."
             },
             {
                 q: "Why do people overestimate their ability to withstand a sharp fall?",
                 options: [
-                    "Because the real thing comes with an anxious context absent from the theoretical exercise",
                     "Because falls are sharper than expected",
-                    "Because the statistics are misleading"
+                    "Because the statistics are misleading",
+                    "Because the real thing comes with an anxious context absent from the theoretical exercise"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Alarming headlines, worried people around you, sometimes a job under threat: none of that exists when you merely imagine the scene."
             }
         ]
@@ -291,21 +291,21 @@ window.QUIZ = {
         {
             q: "Two people hold the same portfolio and withdraw the same sum. What can make their net amounts differ?",
             options: [
-                "The wrapper they draw from and how the withdrawal is spread",
                 "Their bank",
+                "The wrapper they draw from and how the withdrawal is spread",
                 "Nothing, the net amount is identical"
             ],
-            a: 0,
+            a: 1,
             explication: "The order of withdrawal is a lever in its own right, and one of the few that works without taking any extra risk."
         },
         {
             q: "What information should you look at before adding a bond fund?",
             options: [
                 "Its performance last year",
-                "Its duration",
-                "The number of bonds it holds"
+                "The number of bonds it holds",
+                "Its duration"
             ],
-            a: 1,
+            a: 2,
             explication: "It indicates the size of the fall to expect if rates rise — the most useful piece of information, ahead of the yield on display."
         },
         // Set 2

@@ -15,10 +15,10 @@ window.QUIZ = {
                 q: "Qu'est-ce qu'un jeton pour un modèle de langage ?",
                 options: [
                     "Un mot complet",
-                    "Un fragment de texte, souvent une syllabe ou un mot court",
-                    "Une phrase entière"
+                    "Une phrase entière",
+                    "Un fragment de texte, souvent une syllabe ou un mot court"
                 ],
-                a: 1,
+                a: 2,
                 explication: "En français, compte environ trois jetons pour deux mots."
             },
             {
@@ -34,11 +34,11 @@ window.QUIZ = {
                         {
                 q: "Comment un modèle se souvient-il d'une conversation ?",
                 options: [
-                    "Il enregistre l'historique de son côté",
                     "Il ne se souvient de rien : l'historique lui est renvoyé à chaque tour",
+                    "Il enregistre l'historique de son côté",
                     "Il conserve un résumé automatique"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est ce renvoi permanent qui donne l'illusion d'une mémoire — et qui fait grimper le coût."
             },
             // Série 2
@@ -55,21 +55,21 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il quand la fenêtre de contexte déborde ?",
                 options: [
-                    "L'appel échoue, ou le début est silencieusement tronqué",
                     "Le modèle compresse automatiquement l'historique",
+                    "L'appel échoue, ou le début est silencieusement tronqué",
                     "Rien, la fenêtre s'agrandit"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le second cas est le plus perfide : le modèle continue de répondre, mais a « oublié » les consignes du départ."
             },
             {
                 q: "Une très grande fenêtre de contexte règle-t-elle tout ?",
                 options: [
-                    "Oui, il suffit d'envoyer tous ses documents",
                     "Non : la qualité de l'attention se dégrade sur les très longs textes",
+                    "Oui, il suffit d'envoyer tous ses documents",
                     "Oui, et cela coûte moins cher"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Envoyer les trois pages pertinentes donne presque toujours de meilleurs résultats, et coûte cent fois moins."
             }
         ],
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Que fait le RAG, en une phrase ?",
                 options: [
                     "Il entraîne le modèle sur tes documents",
-                    "Il cherche les passages pertinents puis les donne au modèle avec la question",
-                    "Il compresse les documents pour les faire tenir en mémoire"
+                    "Il compresse les documents pour les faire tenir en mémoire",
+                    "Il cherche les passages pertinents puis les donne au modèle avec la question"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le modèle répond en s'appuyant sur ces passages, et non sur sa mémoire d'entraînement."
             },
             {
@@ -100,11 +100,11 @@ window.QUIZ = {
             {
                 q: "Le RAG rend-il le modèle plus intelligent ?",
                 options: [
-                    "Oui, il augmente ses capacités de raisonnement",
                     "Non, il lui met simplement le bon document sous les yeux",
+                    "Oui, il augmente ses capacités de raisonnement",
                     "Oui, il ajoute des connaissances à ses poids"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La différence entre une bonne et une mauvaise réponse tient souvent à cela seul."
             },
             // Série 2
@@ -121,21 +121,21 @@ window.QUIZ = {
             {
                 q: "Le RAG supprime-t-il les inventions ?",
                 options: [
-                    "Oui, complètement",
                     "Non : si la recherche ne remonte rien de pertinent, le modèle répond quand même",
+                    "Oui, complètement",
                     "Oui, si les documents sont à jour"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Il faut instruire explicitement le modèle de dire qu'il ne trouve pas, et afficher les sources pour permettre la vérification."
             },
             {
                 q: "Que perd un fragment trop petit ?",
                 options: [
-                    "Sa lisibilité",
                     "Son contexte — « ce délai est de quatorze jours » ne dit pas de quel délai",
+                    "Sa lisibilité",
                     "Sa position dans le document"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est pourquoi le découpage doit suivre la structure réelle des documents, pas une taille arbitraire."
             }
         ],
@@ -156,21 +156,21 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui transforme un assistant en agent ?",
                 options: [
-                    "Un modèle plus performant",
                     "La capacité d'appeler des outils",
+                    "Un modèle plus performant",
                     "Une fenêtre de contexte plus grande"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un modèle seul ne fait que produire du texte."
             },
             {
                 q: "Pourquoi préférer des outils étroits à un outil général ?",
                 options: [
                     "Ils sont plus rapides",
-                    "Ils limitent ce qu'un agent manipulé peut faire",
-                    "Ils coûtent moins cher"
+                    "Ils coûtent moins cher",
+                    "Ils limitent ce qu'un agent manipulé peut faire"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un outil « exécuter une requête quelconque » revient à confier les clés de la base à un système manipulable par le texte qu'il lit."
             },
             // Série 2
@@ -178,20 +178,20 @@ window.QUIZ = {
                 q: "Dans le déroulé d'un appel d'outil, quelle étape t'appartient ?",
                 options: [
                     "La décision d'appeler l'outil",
-                    "La vérification et l'exécution de l'appel",
-                    "La rédaction de la réponse finale"
+                    "La rédaction de la réponse finale",
+                    "La vérification et l'exécution de l'appel"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sur quatre étapes, celle du milieu est entièrement de ton ressort."
             },
             {
                 q: "Comment traiter les outils qui produisent des effets irréversibles ?",
                 options: [
-                    "Les séparer des outils de lecture et les soumettre à confirmation",
                     "Les désactiver en production",
+                    "Les séparer des outils de lecture et les soumettre à confirmation",
                     "Les confier à un modèle plus fiable"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Une consigne ambiguë suffit à déclencher une action à tort, sans aucune malveillance."
             },
             {
@@ -213,20 +213,20 @@ window.QUIZ = {
                 q: "Quel est généralement le bon choix de modèle ?",
                 options: [
                     "Le plus performant disponible",
-                    "Le plus petit qui réussit ta tâche",
-                    "Le moins cher, toujours"
+                    "Le moins cher, toujours",
+                    "Le plus petit qui réussit ta tâche"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sur une tâche simple et répétée, un modèle plus petit répond aussi bien, plus vite et pour une fraction du prix."
             },
             {
                 q: "Comment le coût d'un modèle est-il facturé ?",
                 options: [
                     "Par requête",
-                    "Par million de jetons, en distinguant entrée et sortie",
-                    "Par minute d'utilisation"
+                    "Par minute d'utilisation",
+                    "Par million de jetons, en distinguant entrée et sortie"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La sortie est généralement plusieurs fois plus chère que l'entrée."
             },
             {
@@ -244,20 +244,20 @@ window.QUIZ = {
                 q: "Que valent les classements publics de modèles pour ton projet ?",
                 options: [
                     "Ils donnent la réponse directement",
-                    "Ils mesurent des capacités générales, pas ton cas particulier",
-                    "Ils sont sans aucun intérêt"
+                    "Ils sont sans aucun intérêt",
+                    "Ils mesurent des capacités générales, pas ton cas particulier"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les modèles finissent d'ailleurs par être optimisés pour ces tests."
             },
             {
                 q: "Comment choisir sérieusement entre deux modèles ?",
                 options: [
-                    "En lisant les annonces des fournisseurs",
                     "En faisant passer vingt exemples représentatifs de sa tâche réelle",
+                    "En lisant les annonces des fournisseurs",
                     "En comparant le nombre de paramètres"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Une demi-journée de travail, et une réponse qui te concerne vraiment."
             },
             {
@@ -281,52 +281,52 @@ window.QUIZ = {
         {
             q: "Quel est le point commun entre la fenêtre de contexte et le coût d'un projet ?",
             options: [
-                "Le volume de jetons lus détermine les deux",
                 "Ils dépendent tous deux du nombre d'utilisateurs",
-                "Ils sont indépendants"
+                "Ils sont indépendants",
+                "Le volume de jetons lus détermine les deux"
             ],
-            a: 0,
+            a: 2,
             explication: "Comprendre les jetons, c'est comprendre à la fois la limite technique et la facture."
         },
         {
             q: "Une entreprise veut que le modèle connaisse ses procédures internes. Que faut-il faire ?",
             options: [
-                "Entraîner un modèle sur ses documents",
                 "Mettre en place une récupération de documents",
+                "Entraîner un modèle sur ses documents",
                 "Choisir un modèle plus performant"
             ],
-            a: 1,
+            a: 0,
             explication: "Le RAG met le bon document sous les yeux du modèle, et se met à jour immédiatement."
         },
         {
             q: "Qu'est-ce qui détermine ce qu'un agent peut casser ?",
             options: [
                 "La performance du modèle choisi",
-                "Le périmètre des outils qu'on lui a donnés",
-                "La taille de sa fenêtre de contexte"
+                "La taille de sa fenêtre de contexte",
+                "Le périmètre des outils qu'on lui a donnés"
             ],
-            a: 1,
+            a: 2,
             explication: "Rien de plus, rien de moins : c'est pourquoi des outils étroits valent mieux qu'un outil général."
         },
         // Série 2
         {
             q: "Pourquoi envoyer un livre entier à un modèle est-il rarement une bonne idée ?",
             options: [
-                "C'est techniquement impossible",
                 "L'attention se dégrade et le coût explose",
+                "C'est techniquement impossible",
                 "Le modèle refuse les textes longs"
             ],
-            a: 1,
+            a: 0,
             explication: "Les trois pages pertinentes font mieux, et cent fois moins cher."
         },
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Chaque choix technique se traduit en coût et en risque mesurables",
                 "Les modèles progressent trop vite pour être maîtrisés",
-                "Il faut toujours privilégier les modèles ouverts"
+                "Il faut toujours privilégier les modèles ouverts",
+                "Chaque choix technique se traduit en coût et en risque mesurables"
             ],
-            a: 0,
+            a: 2,
             explication: "Contexte, récupération, outils et choix de modèle : quatre décisions qui se chiffrent et s'arbitrent."
         },
         {

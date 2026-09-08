@@ -14,20 +14,20 @@ window.QUIZ = {
                 q: "Quel est le rythme de base de la méthode Pomodoro ?",
                 options: [
                     "50 minutes de travail, 10 de pause",
-                    "25 minutes sans interruption, puis 5 minutes de pause",
-                    "90 minutes de travail, 20 de pause"
+                    "90 minutes de travail, 20 de pause",
+                    "25 minutes sans interruption, puis 5 minutes de pause"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Après quatre cycles, une pause longue de 15 à 30 minutes."
             },
             {
                 q: "Contre quoi la méthode agit-elle en premier lieu ?",
                 options: [
                     "La fatigue de fin de journée",
-                    "La procrastination : un engagement court est facile à prendre",
-                    "Le manque de compétences"
+                    "Le manque de compétences",
+                    "La procrastination : un engagement court est facile à prendre"
                 ],
-                a: 1,
+                a: 2,
                 explication: "« Travailler sur ce dossier » est vague et angoissant ; « y consacrer 25 minutes » est faisable."
             },
             {
@@ -44,21 +44,21 @@ window.QUIZ = {
             {
                 q: "D'où vient réellement le gain de la méthode ?",
                 options: [
-                    "D'une vitesse de travail accrue",
                     "De la suppression du temps perdu à recommencer après chaque interruption",
+                    "D'une vitesse de travail accrue",
                     "D'une meilleure concentration innée"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un travail interrompu six fois dans l'heure n'avance pas lentement : il ne démarre jamais."
             },
             {
                 q: "Faut-il enchaîner sans pause quand le travail avance bien ?",
                 options: [
-                    "Oui, il faut profiter de l'élan",
                     "Non : les pauses font partie du dispositif et permettent au quatrième bloc d'être aussi bon que le premier",
+                    "Oui, il faut profiter de l'élan",
                     "Oui, à condition de s'arrêter avant deux heures"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est ce qui produit l'épuisement en fin de journée."
             },
             {
@@ -80,20 +80,20 @@ window.QUIZ = {
                 q: "Sur quel constat repose la méthode GTD ?",
                 options: [
                     "La mémoire est excellente pour stocker",
-                    "La mémoire est bonne pour réfléchir et mauvaise pour stocker",
-                    "Il faut travailler plus longtemps"
+                    "Il faut travailler plus longtemps",
+                    "La mémoire est bonne pour réfléchir et mauvaise pour stocker"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tant qu'une tâche n'est notée nulle part, l'esprit y revient sans cesse pour vérifier qu'elle n'est pas oubliée."
             },
             {
                 q: "Quelles sont les cinq étapes de GTD ?",
                 options: [
                     "Planifier, déléguer, exécuter, contrôler, archiver",
-                    "Collecter, clarifier, organiser, réviser, agir",
-                    "Lister, prioriser, découper, faire, célébrer"
+                    "Lister, prioriser, découper, faire, célébrer",
+                    "Collecter, clarifier, organiser, réviser, agir"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La clarification consiste à définir, pour chaque élément, la prochaine action physique concrète."
             },
             {
@@ -110,11 +110,11 @@ window.QUIZ = {
             {
                 q: "« Organiser le séminaire » est repoussé depuis des semaines. Pourquoi ?",
                 options: [
-                    "Par manque de motivation",
                     "Ce n'est pas une action mais un projet : le cerveau ne sait pas par où commencer",
+                    "Par manque de motivation",
                     "Parce que l'échéance est lointaine"
                 ],
-                a: 1,
+                a: 0,
                 explication: "« Appeler le traiteur au 01 23 45 67 89 pour un devis 30 personnes » se fait sans y penser."
             },
             {
@@ -145,11 +145,11 @@ window.QUIZ = {
             {
                 q: "Sur quelles deux dimensions repose la matrice d'Eisenhower ?",
                 options: [
-                    "La difficulté et la durée",
                     "L'urgence et l'importance",
+                    "La difficulté et la durée",
                     "Le coût et le bénéfice"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Quatre cases : faire maintenant, planifier, déléguer, supprimer."
             },
             {
@@ -176,31 +176,31 @@ window.QUIZ = {
             {
                 q: "Quelle question poser face à une tâche présentée comme urgente ?",
                 options: [
-                    "Combien de temps cela prendra-t-il ?",
                     "Urgent pour qui ?",
+                    "Combien de temps cela prendra-t-il ?",
                     "Qui l'a demandé en premier ?"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Beaucoup d'urgences sont celles de quelqu'un d'autre, transférées par un message insistant."
             },
             {
                 q: "Comment protéger concrètement le quadrant important non urgent ?",
                 options: [
-                    "En y pensant chaque matin",
                     "En bloquant un créneau récurrent dans l'agenda, traité comme un rendez-vous",
+                    "En y pensant chaque matin",
                     "En le plaçant en tête de sa liste de tâches"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ce qui n'est pas dans l'agenda sera toujours absorbé par une urgence."
             },
             {
                 q: "Que signifie un quadrant « supprimer » resté vide ?",
                 options: [
                     "Que tu es bien organisé",
-                    "Que tu n'as renoncé à rien : l'exercice n'a pas joué son rôle",
-                    "Que tes tâches sont toutes utiles"
+                    "Que tes tâches sont toutes utiles",
+                    "Que tu n'as renoncé à rien : l'exercice n'a pas joué son rôle"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La matrice force un arbitrage, et un arbitrage suppose que certaines choses ne seront pas faites."
             }
         ],
@@ -211,31 +211,31 @@ window.QUIZ = {
             {
                 q: "Qu'apporte réellement un outil de gestion de tâches ?",
                 options: [
-                    "Il rend organisé",
                     "Il rend visible une organisation qui existe déjà, ou son absence",
+                    "Il rend organisé",
                     "Il remplace la méthode"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Aucun outil ne compense l'absence de système."
             },
             {
                 q: "Quel critère compte le plus dans le choix d'un outil ?",
                 options: [
                     "Le nombre de fonctionnalités",
-                    "La vitesse de saisie : au-delà de cinq secondes, tu cesseras de noter",
-                    "Son intégration avec d'autres logiciels"
+                    "Son intégration avec d'autres logiciels",
+                    "La vitesse de saisie : au-delà de cinq secondes, tu cesseras de noter"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le système s'effondre à l'instant précis où noter devient pénible."
             },
             {
                 q: "Que produisent trois applications de tâches utilisées en parallèle ?",
                 options: [
-                    "Une couverture plus complète",
                     "La certitude qu'aucune n'est à jour",
+                    "Une couverture plus complète",
                     "Une meilleure répartition par contexte"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un système imparfait mais unique bat trois systèmes parfaits."
             },
             // Série 2
@@ -253,20 +253,20 @@ window.QUIZ = {
                 q: "Quelle est la principale limite de Notion pour la gestion de tâches ?",
                 options: [
                     "Il est payant",
-                    "Sa souplesse est un piège : on aménage au lieu de faire",
-                    "Il ne fonctionne pas hors ligne"
+                    "Il ne fonctionne pas hors ligne",
+                    "Sa souplesse est un piège : on aménage au lieu de faire"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Réorganiser ses listes ressemble à du travail sans en être."
             },
             {
                 q: "Tu as changé d'outil trois fois cette année. Quel est le signal ?",
                 options: [
                     "Tu affines ta méthode",
-                    "Le problème n'est probablement pas l'outil",
-                    "Le marché évolue vite"
+                    "Le marché évolue vite",
+                    "Le problème n'est probablement pas l'outil"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Comparer des applications est une forme de procrastination particulièrement confortable."
             }
         ]
@@ -300,11 +300,11 @@ window.QUIZ = {
         {
             q: "Quel est le principal risque du domaine de la productivité lui-même ?",
             options: [
-                "Les méthodes se contredisent",
                 "On passe plus de temps à choisir une méthode qu'à faire le travail",
+                "Les méthodes se contredisent",
                 "Les outils coûtent cher"
             ],
-            a: 1,
+            a: 0,
             explication: "Installer un nouvel outil procure une satisfaction très proche de celle d'avoir avancé — sans avoir avancé."
         },
         // Série 2
@@ -322,20 +322,20 @@ window.QUIZ = {
             q: "Une tâche traîne sur ta liste depuis un mois. Quelle est la cause la plus probable ?",
             options: [
                 "Un manque de motivation",
-                "Elle est mal formulée : ce n'est pas une action concrète",
-                "Elle n'est pas assez importante"
+                "Elle n'est pas assez importante",
+                "Elle est mal formulée : ce n'est pas une action concrète"
             ],
-            a: 1,
+            a: 2,
             explication: "La reformuler en prochaine action physique suffit souvent à la débloquer."
         },
         {
             q: "Quel est le meilleur outil de gestion de tâches ?",
             options: [
-                "Celui qui a le plus de fonctionnalités",
                 "Celui que tu ouvriras encore dans trois semaines",
+                "Celui qui a le plus de fonctionnalités",
                 "Celui utilisé par les professionnels du secteur"
             ],
-            a: 1,
+            a: 0,
             explication: "Tous les autres critères viennent loin derrière. Une feuille de papier tenue sérieusement bat un système abandonné."
         }
     ]

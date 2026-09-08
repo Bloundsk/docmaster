@@ -20,62 +20,62 @@ window.QUIZ = {
             {
                 q: "What is the right starting point for an everyday legal question?",
                 options: [
-                    "A specialist forum",
                     "Your government's official portal",
+                    "A specialist forum",
                     "The first search result"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The official explanation, in plain language, with the procedures and the forms."
             },
             {
                 q: "What is the official legal database for, rather than the government portal?",
                 options: [
-                    "Reading the text of the law itself and checking it is in force",
                     "Doing your paperwork online",
-                    "Asking a lawyer a question"
+                    "Asking a lawyer a question",
+                    "Reading the text of the law itself and checking it is in force"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Useful when you need to cite an article, or make sure a rule still exists."
             },
             {
                 q: "Which trap awaits a legal search in your own language?",
                 options: [
                     "The results are too technical",
-                    "A good share come from other countries that share the language",
-                    "There are too few results"
+                    "There are too few results",
+                    "A good share come from other countries that share the language"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The rules there are often close — and sometimes exactly the opposite."
             },
             // Series 2
             {
                 q: "How do you tell an obligation from a mere custom?",
                 options: [
-                    "Does the claim cite a text you can check?",
                     "The custom is always older",
+                    "Does the claim cite a text you can check?",
                     "An obligation is always written in capitals"
                 ],
-                a: 0,
+                a: 1,
                 explication: "With no text it is a practice — sometimes an excellent one, but binding on nobody."
             },
             {
                 q: "A well-written AI answer on a legal question:",
                 options: [
-                    "Can be perfectly wrong: form is not a sign of reliability",
                     "Is reliable if it is detailed",
-                    "Is as good as an official source"
+                    "Is as good as an official source",
+                    "Can be perfectly wrong: form is not a sign of reliability"
                 ],
-                a: 0,
+                a: 2,
                 explication: "To be checked against an official source before drawing any decision from it."
             },
             {
                 q: "Can a contract take away a right granted by law?",
                 options: [
                     "Yes, once you have signed it",
-                    "No: the clause has no effect even signed",
-                    "Yes, if the clause is in bold"
+                    "Yes, if the clause is in bold",
+                    "No: the clause has no effect even signed"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Signing is not giving up. That is the subject of the advanced level."
             }
         ],
@@ -106,11 +106,11 @@ window.QUIZ = {
             {
                 q: "During the presumption period, who must prove what?",
                 options: [
-                    "It is for the seller to prove the goods conformed",
                     "It is for the buyer to prove the defect",
+                    "It is for the seller to prove the goods conformed",
                     "Each side brings its own evidence"
                 ],
-                a: 0,
+                a: 1,
                 explication: "That is the most useful point of all, and the least known."
             },
             // Series 2
@@ -128,10 +128,10 @@ window.QUIZ = {
                 q: "When does the withdrawal period start running?",
                 options: [
                     "From the order",
-                    "From receipt of the goods",
-                    "From payment"
+                    "From payment",
+                    "From receipt of the goods"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A period almost always starts from a precise event: receipt, or discovery of a defect."
             },
             {
@@ -163,10 +163,10 @@ window.QUIZ = {
                 q: "What makes a letter a formal demand?",
                 options: [
                     "A lawyer drafting it",
-                    "The usual five elements, and using the words “formal demand”",
-                    "An official stamp"
+                    "An official stamp",
+                    "The usual five elements, and using the words “formal demand”"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It is not a solemn act: it is an ordinary letter, correctly written."
             },
             {
@@ -183,31 +183,31 @@ window.QUIZ = {
             {
                 q: "Why avoid adjectives in a letter of complaint?",
                 options: [
-                    "They weaken the letter rather than strengthening it",
                     "They lengthen the processing time",
-                    "They are forbidden"
+                    "They are forbidden",
+                    "They weaken the letter rather than strengthening it"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The department receiving it looks for a request and a date. If it does not find them, the file waits."
             },
             {
                 q: "What is the point of writing a deadline to reply?",
                 options: [
-                    "It starts something running; implied, it does nothing",
                     "It is polite",
+                    "It starts something running; implied, it does nothing",
                     "It gets a more detailed answer"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Fifteen days is reasonable and usual."
             },
             {
                 q: "What will a conciliator or a judge ask for first?",
                 options: [
-                    "Did you send a formal demand?",
                     "Do you have a lawyer?",
-                    "Did you phone?"
+                    "Did you phone?",
+                    "Did you send a formal demand?"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is the file's starting document — and it costs a few euros."
             }
         ],
@@ -219,10 +219,10 @@ window.QUIZ = {
                 q: "How long should payslips be kept?",
                 options: [
                     "3 years",
-                    "10 years",
-                    "Indefinitely"
+                    "Indefinitely",
+                    "10 years"
                 ],
-                a: 2,
+                a: 1,
                 explication: "They are used to calculate the pension, sometimes decades later."
             },
             {
@@ -284,31 +284,31 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "Knowing where to look, how long is left, and what to write",
                 "Knowing the civil code",
+                "Knowing where to look, how long is left, and what to write",
                 "Finding a lawyer"
             ],
-            a: 0,
+            a: 1,
             explication: "Three reflexes that settle most everyday difficulties."
         },
         {
             q: "What do an undated source and a document thrown away too soon have in common?",
             options: [
-                "Both make a position indefensible on the day it has to be defended",
                 "Both are forbidden",
-                "Both concern consumer law"
+                "Both concern consumer law",
+                "Both make a position indefensible on the day it has to be defended"
             ],
-            a: 0,
+            a: 2,
             explication: "A right you can neither ground nor prove is not a usable right."
         },
         {
             q: "An appliance bought online three months ago breaks down. Which right do you rely on?",
             options: [
-                "The right to withdraw",
                 "The legal guarantee of conformity",
+                "The right to withdraw",
                 "None, the deadline has passed"
             ],
-            a: 1,
+            a: 0,
             explication: "Withdrawal expired long ago; in France the guarantee still runs for nearly two years."
         },
         {

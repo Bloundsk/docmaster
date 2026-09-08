@@ -35,10 +35,10 @@ window.QUIZ = {
                 q: "What does a lifetime value / acquisition cost ratio below 1 mean?",
                 options: [
                     "That growth is too slow",
-                    "That you are paying to lose money on every customer",
-                    "That the price is too high"
+                    "That the price is too high",
+                    "That you are paying to lose money on every customer"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Every new customer then makes things worse."
             },
             // Set 2
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "What does growth produce with negative unit economics?",
                 options: [
-                    "It eventually fixes them through economies of scale",
                     "It amplifies the loss while giving the appearance of success",
+                    "It eventually fixes them through economies of scale",
                     "It has no effect on profitability"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Revenue goes up, cash goes down faster."
             }
         ],
@@ -81,20 +81,20 @@ window.QUIZ = {
                 q: "What does a founder really sell in a funding round?",
                 options: [
                     "Shares in their company",
-                    "A promise of fast growth",
-                    "A licence to use their technology"
+                    "A licence to use their technology",
+                    "A promise of fast growth"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The investor is looking for an exit within five to ten years at a substantial multiple."
             },
             {
                 q: "A round of €300,000 on a pre-money valuation of €1,200,000: what share is given up?",
                 options: [
                     "25%",
-                    "20%",
-                    "30%"
+                    "30%",
+                    "20%"
                 ],
-                a: 1,
+                a: 2,
                 explication: "300,000 measured against the post-money valuation, that is €1,500,000."
             },
             {
@@ -112,10 +112,10 @@ window.QUIZ = {
                 q: "Which alternative finances without diluting and validates demand?",
                 options: [
                     "A bank loan",
-                    "Financing by customers: deposits, pre-sales, annual subscriptions",
-                    "Grants"
+                    "Grants",
+                    "Financing by customers: deposits, pre-sales, annual subscriptions"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The money comes from those with a real need, which is itself a validation."
             },
             {
@@ -131,11 +131,11 @@ window.QUIZ = {
             {
                 q: "Why not raise before you have a model that works?",
                 options: [
-                    "Investors would refuse",
                     "Money accelerates what exists: it finances a loss for longer, with pressure on top",
+                    "Investors would refuse",
                     "The valuation would be too low"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Many failures look exactly like that."
             }
         ],
@@ -166,42 +166,42 @@ window.QUIZ = {
             {
                 q: "What does successful delegation assume?",
                 options: [
-                    "A competent person",
                     "A defined, documented and measurable task",
+                    "A competent person",
                     "A permanent contract"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Handing over a vague problem — “take care of marketing” — mostly produces frustration."
             },
             // Set 2
             {
                 q: "Which test comes before delegating?",
                 options: [
-                    "Could you explain in ten minutes what has to be done and what a good result looks like?",
                     "Do you have the budget?",
+                    "Could you explain in ten minutes what has to be done and what a good result looks like?",
                     "Does the person have experience?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "If not, the task is not ready to be delegated."
             },
             {
                 q: "Is being overloaded a reason to hire?",
                 options: [
                     "Yes, it is the main signal",
-                    "No: without the corresponding margin, an employee turns overwork into a cash problem",
-                    "Yes, if the overload lasts more than six months"
+                    "Yes, if the overload lasts more than six months",
+                    "No: without the corresponding margin, an employee turns overwork into a cash problem"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A hire is decided on identified extra revenue."
             },
             {
                 q: "Which forms of work are reversible?",
                 options: [
                     "A permanent contract",
-                    "A one-off contractor, an apprentice, part-time work",
-                    "None"
+                    "None",
+                    "A one-off contractor, an apprentice, part-time work"
                 ],
-                a: 1,
+                a: 2,
                 explication: "To be considered before a commitment you cannot undo."
             }
         ],
@@ -212,62 +212,62 @@ window.QUIZ = {
             {
                 q: "Where do a young company's legal difficulties come from?",
                 options: [
-                    "An obscure regulation",
                     "What was never written down, at a time when everyone was getting along",
+                    "An obscure regulation",
                     "Administrative inspections"
                 ],
-                a: 1,
+                a: 0,
                 explication: "These questions are easy to settle at the start and become conflicts later."
             },
             {
                 q: "Does what a contractor produces belong to you automatically?",
                 options: [
-                    "Yes, as soon as you have paid for it",
                     "No: a written assignment of rights is needed",
+                    "Yes, as soon as you have paid for it",
                     "Yes, if it was commissioned work"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Without it, the logo, the code or the copy stays with whoever made it."
             },
             {
                 q: "From when does the GDPR apply?",
                 options: [
-                    "From the very first customer file",
                     "From 250 employees",
-                    "Only for online shops"
+                    "Only for online shops",
+                    "From the very first customer file"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A record of processing, informing the people concerned, retention periods. It applies across the European Union."
             },
             // Set 2
             {
                 q: "What must an agreement between partners cover?",
                 options: [
-                    "Only how the capital is split",
                     "Who decides what, what happens if one leaves, how the shares are valued",
+                    "Only how the capital is split",
                     "The level of pay"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A disagreement two years later, with nothing written down, is not settled amicably — and blocks every decision."
             },
             {
                 q: "How does the cost of a shareholders' agreement compare with that of a conflict?",
                 options: [
-                    "A few thousand euros against several tens of thousands and two years of proceedings",
                     "The two are comparable",
+                    "A few thousand euros against several tens of thousands and two years of proceedings",
                     "The agreement costs more"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is one of the rare expenses whose return is measured in multiples."
             },
             {
                 q: "Which check is free before choosing a brand name?",
                 options: [
-                    "A prior-rights search on the trade mark office database",
                     "A provisional filing",
+                    "A prior-rights search on the trade mark office database",
                     "A lawyer's opinion"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It takes a few minutes and avoids having to rename everything after a year of trading."
             }
         ]
@@ -281,11 +281,11 @@ window.QUIZ = {
         {
             q: "What do the four decisions of this level have in common?",
             options: [
-                "They commit you for the long term and are hard to undo",
                 "They are all about financing",
-                "They all happen in the first year"
+                "They all happen in the first year",
+                "They commit you for the long term and are hard to undo"
             ],
-            a: 0,
+            a: 2,
             explication: "Whether to accelerate, with whose money, with whom, and under what constraints."
         },
         {
@@ -301,42 +301,42 @@ window.QUIZ = {
         {
             q: "A company has a lifetime value to acquisition cost ratio of 0.8 and wants to raise money to grow. What should you think?",
             options: [
-                "It is the right moment, the round will finance the growth",
                 "Raising would mean financing a loss for longer, with pressure on top",
+                "It is the right moment, the round will finance the growth",
                 "They should raise a larger amount"
             ],
-            a: 1,
+            a: 0,
             explication: "Outside money accelerates what exists. It does not replace a model that does not work yet."
         },
         // Set 2
         {
             q: "Which reasoning applies equally to hiring and to raising money?",
             options: [
-                "Cost the commitment before taking it, and check it is bearable if it goes wrong",
                 "Wait until you are profitable",
+                "Cost the commitment before taking it, and check it is bearable if it goes wrong",
                 "Consult a professional in every case"
             ],
-            a: 0,
+            a: 1,
             explication: "Write down the downside scenario: if it is bearable, go ahead; if not, reduce the commitment."
         },
         {
             q: "Why are legal risks covered at this level rather than at the start?",
             options: [
-                "They only exist above a certain size",
                 "They arise from the commitments made: partners, contractors, customers, employees",
+                "They only exist above a certain size",
                 "They are too technical for a beginner"
             ],
-            a: 1,
+            a: 0,
             explication: "Each committing decision at this level creates a corresponding need to write something down."
         },
         {
             q: "What do a missing shareholders' agreement and uncalculated unit economics have in common?",
             options: [
-                "Both cost dearly at the exact moment you can least afford it",
                 "Both are matters for legal advice",
+                "Both cost dearly at the exact moment you can least afford it",
                 "Both are easily fixed"
             ],
-            a: 0,
+            a: 1,
             explication: "One blows up when the company becomes interesting, the other when it accelerates."
         }
     ]

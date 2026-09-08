@@ -13,11 +13,11 @@ window.QUIZ = {
             {
                 q: "Quelles sont les trois conditions d'un bon indicateur ?",
                 options: [
-                    "Impressionnant, facile à calculer, en hausse",
                     "Lié à un objectif précis, mesurable dans le temps, actionnable",
+                    "Impressionnant, facile à calculer, en hausse",
                     "Simple, visuel et partageable"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le critère actionnable est le plus discriminant, et le plus souvent oublié."
             },
             {
@@ -34,10 +34,10 @@ window.QUIZ = {
                 q: "Le trafic passe de 100 000 à 180 000 visiteurs, les ventes de 1 200 à 1 300. Que conclure ?",
                 options: [
                     "Une belle progression : +80 % de trafic",
-                    "Le taux de conversion chute de 40 % : la campagne a mal ciblé",
-                    "Les deux indicateurs sont également utiles"
+                    "Les deux indicateurs sont également utiles",
+                    "Le taux de conversion chute de 40 % : la campagne a mal ciblé"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les deux chiffres sont exacts. Un seul mène à une décision : revoir le ciblage."
             },
             // Série 2
@@ -55,20 +55,20 @@ window.QUIZ = {
                 q: "Un tableau de bord utile contient...",
                 options: [
                     "Le maximum d'indicateurs disponibles",
-                    "Des indicateurs de résultat et des indicateurs avancés",
-                    "Uniquement des indicateurs financiers"
+                    "Uniquement des indicateurs financiers",
+                    "Des indicateurs de résultat et des indicateurs avancés"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sans indicateur avancé, on ne constate les problèmes qu'une fois qu'il est trop tard pour agir."
             },
             {
                 q: "Que faire avant de commencer à suivre un indicateur ?",
                 options: [
                     "Choisir l'outil de visualisation",
-                    "Écrire la décision qu'il servira à prendre",
-                    "Comparer avec le secteur"
+                    "Comparer avec le secteur",
+                    "Écrire la décision qu'il servira à prendre"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La difficulté n'est pas de collecter, c'est de trier."
             }
         ],
@@ -90,10 +90,10 @@ window.QUIZ = {
                 q: "5 000 clients sollicités, 200 réponses, note moyenne 4,3/5. Que mesure ce chiffre ?",
                 options: [
                     "La satisfaction des clients",
-                    "La satisfaction des personnes qui ont répondu",
-                    "La qualité du service"
+                    "La qualité du service",
+                    "La satisfaction des personnes qui ont répondu"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les 4 800 silencieux, dont ceux partis à la concurrence, ne sont pas dans le calcul."
             },
             {
@@ -121,10 +121,10 @@ window.QUIZ = {
                 q: "Que produit la stratégie « collectons tout, on verra plus tard » ?",
                 options: [
                     "Une base riche et exploitable",
-                    "Des bases énormes où l'on ne trouve rien, et des corrélations dues au hasard",
-                    "Un avantage concurrentiel"
+                    "Un avantage concurrentiel",
+                    "Des bases énormes où l'on ne trouve rien, et des corrélations dues au hasard"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La question précède la collecte, jamais l'inverse."
             },
             {
@@ -155,21 +155,21 @@ window.QUIZ = {
             {
                 q: "Quelle forme choisir pour comparer des quantités entre elles ?",
                 options: [
-                    "Un camembert",
                     "Des barres horizontales triées",
+                    "Un camembert",
                     "Une courbe"
                 ],
-                a: 1,
+                a: 0,
                 explication: "L'œil compare mal des angles : le camembert se limite à trois parts, pour des proportions."
             },
             {
                 q: "A = 51 ventes, B = 49. Avec un axe partant de 48, que voit le lecteur ?",
                 options: [
-                    "Deux barres presque identiques, ce qui est fidèle",
                     "Une barre de A trois fois plus haute : l'écart de 4 % paraît écrasant",
+                    "Deux barres presque identiques, ce qui est fidèle",
                     "Un graphique illisible"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Aucun chiffre n'a été falsifié. Seule l'échelle a changé."
             },
             // Série 2
@@ -187,20 +187,20 @@ window.QUIZ = {
                 q: "Quel titre donner à un graphique ?",
                 options: [
                     "« Ventes 2026 »",
-                    "« Les ventes ont doublé en 6 mois »",
-                    "Aucun, les axes suffisent"
+                    "Aucun, les axes suffisent",
+                    "« Les ventes ont doublé en 6 mois »"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un bon titre énonce la conclusion. Un bon visuel se lit en trois secondes."
             },
             {
                 q: "Que révèle un graphique qui nécessite de consulter la légende pour être compris ?",
                 options: [
                     "Qu'il est riche en informations",
-                    "Qu'il a raté son office",
-                    "Qu'il s'adresse à des experts"
+                    "Qu'il s'adresse à des experts",
+                    "Qu'il a raté son office"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Une seule idée par graphique, des axes nommés avec leur unité."
             }
         ],
@@ -221,11 +221,11 @@ window.QUIZ = {
             {
                 q: "Quand privilégier la médiane à la moyenne ?",
                 options: [
-                    "Quand l'échantillon est petit",
                     "Dès qu'il existe des valeurs extrêmes : salaires, prix immobiliers, temps de réponse",
+                    "Quand l'échantillon est petit",
                     "Quand les données sont anciennes"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Publier les deux est encore mieux : leur écart révèle à lui seul l'inégalité de la distribution."
             },
             {
@@ -243,30 +243,30 @@ window.QUIZ = {
                 q: "« Nos clients qui utilisent l'application achètent 3 fois plus. » Que conclure ?",
                 options: [
                     "L'application déclenche l'achat, il faut y investir",
-                    "Rien de certain : les clients déjà fidèles sont peut-être ceux qui l'installent",
-                    "L'application doit être rendue obligatoire"
+                    "L'application doit être rendue obligatoire",
+                    "Rien de certain : les clients déjà fidèles sont peut-être ceux qui l'installent"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Décider d'investir des millions sur cette base est un pari, pas une déduction."
             },
             {
                 q: "Passer de 2 % à 3 %, c'est combien ?",
                 options: [
-                    "+1 point ou +50 %, les deux sont exacts",
                     "+1 % uniquement",
-                    "+50 % uniquement"
+                    "+50 % uniquement",
+                    "+1 point ou +50 %, les deux sont exacts"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La seconde formulation est spectaculaire et souvent choisie pour cette raison. Cherchez la valeur absolue."
             },
             {
                 q: "Que garantit le fait d'arrêter un test le jour où l'écart devient favorable ?",
                 options: [
-                    "Un gain de temps précieux",
                     "De trouver un gagnant, même entre deux versions identiques",
+                    "Un gain de temps précieux",
                     "Une conclusion plus fiable"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La durée du test se fixe avant de le lancer."
             }
         ]
@@ -280,11 +280,11 @@ window.QUIZ = {
         {
             q: "À quoi sert la data, fondamentalement ?",
             options: [
-                "À produire des tableaux de bord impressionnants",
                 "À répondre à une question précise avec un degré de certitude connu",
+                "À produire des tableaux de bord impressionnants",
                 "À justifier des décisions déjà prises"
             ],
-            a: 1,
+            a: 0,
             explication: "Une donnée mal collectée est pire qu'une absence de donnée : elle donne une fausse confiance."
         },
         {
@@ -300,11 +300,11 @@ window.QUIZ = {
         {
             q: "Un rapport affiche « +50 % de conversions ». Que demander ?",
             options: [
-                "Sur quelle période ?",
                 "Quelle est la valeur absolue derrière ce pourcentage ?",
+                "Sur quelle période ?",
                 "Qui a réalisé la mesure ?"
             ],
-            a: 1,
+            a: 0,
             explication: "Passer de 2 à 3 conversions est aussi une hausse de 50 %."
         },
         // Série 2
@@ -331,11 +331,11 @@ window.QUIZ = {
         {
             q: "Quel ordre suivre dans une démarche data ?",
             options: [
-                "Collecter largement, puis chercher ce que les données racontent",
                 "Formuler la question, puis collecter ce qui permet d'y répondre",
+                "Collecter largement, puis chercher ce que les données racontent",
                 "Choisir l'outil, puis définir les indicateurs"
             ],
-            a: 1,
+            a: 0,
             explication: "Sur un grand volume, on finit toujours par dénicher une corrélation spectaculaire due au seul hasard."
         }
     ]

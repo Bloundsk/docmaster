@@ -46,30 +46,30 @@ window.QUIZ = {
                 q: "Pourquoi le bachotage de la veille fonctionne-t-il pour l'examen ?",
                 options: [
                     "Parce qu'il ancre durablement",
-                    "Parce que la courbe part de haut et que l'examen tombe avant qu'elle ne descende",
-                    "Parce que le stress améliore la mémoire"
+                    "Parce que le stress améliore la mémoire",
+                    "Parce que la courbe part de haut et que l'examen tombe avant qu'elle ne descende"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Elle descend ensuite exactement pareil : trois semaines après, il ne reste presque rien."
             },
             {
                 q: "Oublier ce qu'on n'a vu qu'une fois est le signe de quoi ?",
                 options: [
                     "D'un apprentissage mal fait",
-                    "Du fonctionnement normal de la mémoire",
-                    "D'un manque d'attention"
+                    "D'un manque d'attention",
+                    "Du fonctionnement normal de la mémoire"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La question utile n'est pas « comment mieux apprendre du premier coup » mais « quand y revenir »."
             },
             {
                 q: "Quelle part de la perte totale a lieu dans les deux premiers jours ?",
                 options: [
-                    "Plus de la moitié",
                     "Environ un dixième",
+                    "Plus de la moitié",
                     "Elle est répartie également sur le mois"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Attendre le week-end pour réviser, c'est arriver après la bataille."
             }
         ],
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Que fait une révision réussie à la courbe de l'oubli ?",
                 options: [
                     "Elle la remonte seulement",
-                    "Elle la remonte et l'aplatit",
-                    "Elle ne la change pas"
+                    "Elle ne la change pas",
+                    "Elle la remonte et l'aplatit"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ce qui tenait un jour tient ensuite trois jours, puis une semaine, puis trois."
             },
             {
@@ -121,21 +121,21 @@ window.QUIZ = {
             {
                 q: "Que font les logiciels de cartes mémoire comme Anki ?",
                 options: [
-                    "Ils tiennent le calendrier des révisions",
                     "Ils mémorisent à ta place",
-                    "Ils rédigent les fiches"
+                    "Ils rédigent les fiches",
+                    "Ils tiennent le calendrier des révisions"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une boîte à fiches et cinq intercalaires font le même travail, sans écran."
             },
             {
                 q: "Une séance de révision où tout tombe juste indique quoi ?",
                 options: [
-                    "Que le sujet est acquis",
                     "Que les intervalles sont trop courts",
+                    "Que le sujet est acquis",
                     "Que les questions sont bien posées"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Une bonne séance est celle où l'on se trompe régulièrement."
             }
         ],
@@ -146,42 +146,42 @@ window.QUIZ = {
             {
                 q: "Quel est le rôle du contrôle dans l'apprentissage ?",
                 options: [
-                    "Il vérifie ce qui a été appris",
                     "Il est l'apprentissage lui-même",
+                    "Il vérifie ce qui a été appris",
                     "Il sert surtout à noter"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Chercher une réponse dans sa mémoire renforce le souvenir bien plus que le relire."
             },
             {
                 q: "Testés une semaine plus tard, quels résultats obtiennent relecteurs et testeurs ?",
                 options: [
-                    "Environ 40 % contre environ 61 %",
                     "Des résultats équivalents",
-                    "Environ 61 % contre environ 40 %"
+                    "Environ 61 % contre environ 40 %",
+                    "Environ 40 % contre environ 61 %"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Pour un temps de travail identique. Testés immédiatement, le rapport est inversé — d'où l'illusion."
             },
             {
                 q: "Pourquoi se tester en gardant le cours ouvert ne marche pas ?",
                 options: [
                     "Cela prend plus de temps",
-                    "Cela supprime l'effort de récupération qui fait effet",
-                    "Cela fatigue davantage"
+                    "Cela fatigue davantage",
+                    "Cela supprime l'effort de récupération qui fait effet"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Reconnaître une réponse et la retrouver sont deux opérations différentes."
             },
             // Série 2
             {
                 q: "Que faire d'un titre de section pour se tester ?",
                 options: [
-                    "Le surligner",
                     "Le transformer en question",
+                    "Le surligner",
                     "Le recopier"
                 ],
-                a: 1,
+                a: 0,
                 explication: "« La courbe de l'oubli » devient « quelle forme a-t-elle, et qu'est-ce que cela change ? »."
             },
             {
@@ -213,10 +213,10 @@ window.QUIZ = {
                 q: "Que mesure la facilité à relire un texte déjà lu quatre fois ?",
                 options: [
                     "La maîtrise du contenu",
-                    "La familiarité avec sa mise en page et ses tournures",
-                    "La qualité du texte"
+                    "La qualité du texte",
+                    "La familiarité avec sa mise en page et ses tournures"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le cerveau interprète cette fluidité comme un signe de maîtrise. C'est le piège central."
             },
             {
@@ -243,11 +243,11 @@ window.QUIZ = {
             {
                 q: "Qu'ont en commun espacer, se tester et entrelacer ?",
                 options: [
-                    "Les trois dégradent les performances immédiates et améliorent celles à distance",
                     "Les trois rendent l'apprentissage plus rapide",
-                    "Les trois demandent un logiciel"
+                    "Les trois demandent un logiciel",
+                    "Les trois dégradent les performances immédiates et améliorent celles à distance"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est le paradoxe des difficultés utiles, et la raison pour laquelle on les abandonne."
             },
             {
@@ -263,11 +263,11 @@ window.QUIZ = {
             {
                 q: "Nos jugements sur notre propre maîtrise sont-ils fiables ?",
                 options: [
-                    "Oui, chacun sait ce qu'il sait",
                     "Non : ils sont systématiquement trop optimistes juste après avoir travaillé",
+                    "Oui, chacun sait ce qu'il sait",
                     "Oui, à condition d'être attentif"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le vrai obstacle n'est pas la difficulté d'apprendre, c'est la difficulté de savoir ce qu'on sait."
             }
         ]
@@ -288,11 +288,11 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun l'espacement et l'effet test ?",
             options: [
-                "Les deux exploitent l'effort de récupération",
                 "Les deux demandent plus de temps",
-                "Les deux fonctionnent seulement à l'écrit"
+                "Les deux fonctionnent seulement à l'écrit",
+                "Les deux exploitent l'effort de récupération"
             ],
-            a: 0,
+            a: 2,
             explication: "Chercher dans sa mémoire, juste avant d'oublier : c'est le même mécanisme vu sous deux angles."
         },
         {
@@ -308,11 +308,11 @@ window.QUIZ = {
         {
             q: "Pourquoi savoir que la relecture trompe ne suffit-il pas à s'en passer ?",
             options: [
-                "Parce que l'illusion de fluidité persiste malgré la connaissance de son existence",
                 "Parce qu'il n'existe pas d'alternative",
+                "Parce que l'illusion de fluidité persiste malgré la connaissance de son existence",
                 "Parce que les autres méthodes prennent trop de temps"
             ],
-            a: 0,
+            a: 1,
             explication: "Seule une mesure la corrige : se tester à distance et regarder le résultat, pas l'impression."
         },
         {

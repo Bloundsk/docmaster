@@ -16,11 +16,11 @@ window.QUIZ = {
             {
                 q: "Que devient une clause abusive dans un contrat signé ?",
                 options: [
-                    "Elle est réputée non écrite : elle ne s'applique pas",
                     "Elle s'applique puisqu'elle a été acceptée",
+                    "Elle est réputée non écrite : elle ne s'applique pas",
                     "Elle annule tout le contrat"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le reste du contrat, lui, continue de s'appliquer."
             },
             {
@@ -47,11 +47,11 @@ window.QUIZ = {
             {
                 q: "Quel est le premier endroit à lire dans un contrat avant de signer ?",
                 options: [
-                    "La durée et les conditions de résiliation",
                     "Le préambule",
+                    "La durée et les conditions de résiliation",
                     "L'identité des parties"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Comment sort-on, avec quel préavis, à quel coût : c'est là que sont les surprises."
             },
             {
@@ -92,52 +92,52 @@ window.QUIZ = {
             {
                 q: "Une mise en demeure interrompt-elle la prescription ?",
                 options: [
-                    "Non, même en recommandé",
                     "Oui, c'est son objet principal",
+                    "Non, même en recommandé",
                     "Oui, si elle est signée par un avocat"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est l'erreur la plus coûteuse du domaine : elle donne le sentiment d'avoir agi."
             },
             {
                 q: "Qu'est-ce qui interrompt la prescription ?",
                 options: [
-                    "Une assignation en justice, une mesure d'exécution, ou la reconnaissance de la dette",
                     "Un courriel de relance",
-                    "Un appel téléphonique enregistré"
+                    "Un appel téléphonique enregistré",
+                    "Une assignation en justice, une mesure d'exécution, ou la reconnaissance de la dette"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'interruption fait repartir un délai entier à zéro."
             },
             // Série 2
             {
                 q: "Quel délai s'applique à un professionnel qui réclame une somme à un particulier ?",
                 options: [
-                    "2 ans",
                     "5 ans",
+                    "2 ans",
                     "3 ans"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le délai dépend de qui réclame à qui, et cela change tout."
             },
             {
                 q: "Quelle est la différence entre suspendre et interrompre la prescription ?",
                 options: [
-                    "La suspension met le délai en pause ; l'interruption le fait repartir à zéro",
                     "Ce sont deux mots pour la même chose",
+                    "La suspension met le délai en pause ; l'interruption le fait repartir à zéro",
                     "La suspension annule le délai"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Une demande de médiation suspend ; une assignation interrompt."
             },
             {
                 q: "À quelle date la prescription s'apprécie-t-elle ?",
                 options: [
-                    "Au jour où l'on saisit le juge",
                     "Au jour où l'on écrit à l'adversaire",
-                    "Au jour où l'on consulte un avocat"
+                    "Au jour où l'on consulte un avocat",
+                    "Au jour où l'on saisit le juge"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Négocier jusqu'à l'échéance profite également à l'adversaire de bonne et de mauvaise foi."
             }
         ],
@@ -158,11 +158,11 @@ window.QUIZ = {
             {
                 q: "Où trouver les coordonnées du médiateur de la consommation d'une entreprise ?",
                 options: [
-                    "Dans ses conditions générales",
                     "Auprès du tribunal",
-                    "Il faut les demander à la CNIL"
+                    "Il faut les demander à la CNIL",
+                    "Dans ses conditions générales"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Les professionnels sont tenus de le proposer, et c'est gratuit pour le consommateur."
             },
             {
@@ -179,31 +179,31 @@ window.QUIZ = {
             {
                 q: "1 500 € réclamés, 1 200 € de frais, 60 % de chances : que dit le calcul ?",
                 options: [
-                    "Un résultat moyen attendu négatif : l'accord amiable rapporte davantage",
                     "Une espérance de gain positive",
+                    "Un résultat moyen attendu négatif : l'accord amiable rapporte davantage",
                     "Un résultat nul"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Et cela sans compter les mois d'attente ni le temps passé."
             },
             {
                 q: "Qu'est-ce que l'aide juridictionnelle ?",
                 options: [
-                    "Une prise en charge de tout ou partie des frais selon les ressources",
                     "Une consultation gratuite en mairie",
+                    "Une prise en charge de tout ou partie des frais selon les ressources",
                     "Un prêt remboursable après le procès"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Les plafonds sont révisés chaque année : à vérifier sur service-public.fr."
             },
             {
                 q: "Quelle question se poser avant d'engager une action ?",
                 options: [
-                    "En face, y a-t-il de quoi payer ?",
                     "Ai-je moralement raison ?",
-                    "Le tribunal est-il proche ?"
+                    "Le tribunal est-il proche ?",
+                    "En face, y a-t-il de quoi payer ?"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Gagner et être payé sont deux étapes distinctes, et l'exécution a son propre coût."
             }
         ],
@@ -214,21 +214,21 @@ window.QUIZ = {
             {
                 q: "Quel délai a un organisme pour répondre à une demande d'accès ?",
                 options: [
-                    "Un mois, prolongeable de deux si la demande est complexe",
                     "Une semaine",
-                    "Six mois"
+                    "Six mois",
+                    "Un mois, prolongeable de deux si la demande est complexe"
                 ],
-                a: 0,
+                a: 2,
                 explication: "S'il prolonge, il doit t'en informer."
             },
             {
                 q: "Faut-il justifier une demande d'accès à ses données ?",
                 options: [
-                    "Non, aucun motif n'est à donner",
                     "Oui, il faut invoquer un intérêt légitime",
+                    "Non, aucun motif n'est à donner",
                     "Oui, en cas de litige seulement"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un courriel de trois lignes suffit."
             },
             {
@@ -245,21 +245,21 @@ window.QUIZ = {
             {
                 q: "Le droit à l'effacement est-il absolu ?",
                 options: [
-                    "Non : il cède devant une obligation légale de conservation",
                     "Oui, sans exception",
-                    "Oui, sauf pour les banques"
+                    "Oui, sauf pour les banques",
+                    "Non : il cède devant une obligation légale de conservation"
                 ],
-                a: 0,
+                a: 2,
                 explication: "En revanche, l'opposition à la prospection commerciale ne souffre aucune exception."
             },
             {
                 q: "Que faire si l'organisme ne répond pas dans le délai ?",
                 options: [
-                    "Déposer une plainte gratuite auprès de la CNIL",
                     "Saisir directement le tribunal",
-                    "Attendre encore un mois"
+                    "Attendre encore un mois",
+                    "Déposer une plainte gratuite auprès de la CNIL"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le silence est lui-même un motif recevable."
             },
             {
@@ -280,11 +280,11 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Faire valoir ses droits, et savoir quand cela en vaut la peine",
                 "Éviter tout contrat écrit",
-                "Connaître les codes par cœur"
+                "Connaître les codes par cœur",
+                "Faire valoir ses droits, et savoir quand cela en vaut la peine"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est le niveau où l'on regarde en face une question que le droit ne pose jamais."
         },
         {
@@ -300,31 +300,31 @@ window.QUIZ = {
         {
             q: "Deux mois d'échanges de courriers avec l'adversaire : quel risque ?",
             options: [
-                "Le délai de prescription continue de courir pendant ce temps",
                 "L'adversaire peut se rétracter",
-                "Les courriers perdent leur valeur"
+                "Les courriers perdent leur valeur",
+                "Le délai de prescription continue de courir pendant ce temps"
             ],
-            a: 0,
+            a: 2,
             explication: "Si l'échéance approche, il faut saisir le juge ou engager formellement une médiation."
         },
         {
             q: "Un contrat contient une clause qui supprime la garantie légale. Que faire ?",
             options: [
-                "Rien de particulier : elle est réputée non écrite et ne s'applique pas",
                 "Demander au juge de l'annuler",
+                "Rien de particulier : elle est réputée non écrite et ne s'applique pas",
                 "Refuser de signer, sinon elle vaudra"
             ],
-            a: 0,
+            a: 1,
             explication: "Il n'y a rien à faire annuler — elle n'a juridiquement jamais existé."
         },
         {
             q: "Quelles deux questions décident plus souvent que le fond du dossier ?",
             options: [
-                "Suis-je encore dans les délais, et l'adversaire a-t-il de quoi payer ?",
                 "Quel est le tribunal compétent, et quel avocat choisir ?",
+                "Suis-je encore dans les délais, et l'adversaire a-t-il de quoi payer ?",
                 "Ai-je un contrat écrit, et est-il signé ?"
             ],
-            a: 0,
+            a: 1,
             explication: "Elles se posent avant d'engager quoi que ce soit."
         },
         {

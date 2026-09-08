@@ -14,21 +14,21 @@ window.QUIZ = {
             {
                 q: "Qu'appelle-t-on le rejeu d'identifiants ?",
                 options: [
-                    "Deviner un mot de passe par force brute",
                     "Essayer automatiquement des identifiants fuités sur d'autres services",
+                    "Deviner un mot de passe par force brute",
                     "Réutiliser un mot de passe volontairement"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le taux de réussite est faible, mais appliqué à des millions de couples il suffit largement. Aucun attaquant humain n'intervient."
             },
             {
                 q: "Pourquoi la longueur du mot de passe ne protège-t-elle pas d'une fuite ?",
                 options: [
-                    "Parce qu'il n'est pas deviné, il est connu",
                     "Parce que les fuites cassent le chiffrement",
-                    "Parce que la longueur n'a jamais d'effet"
+                    "Parce que la longueur n'a jamais d'effet",
+                    "Parce qu'il n'est pas deviné, il est connu"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La force protège contre la recherche exhaustive, pas contre le vol de la base qui le contenait."
             },
             {
@@ -45,11 +45,11 @@ window.QUIZ = {
             {
                 q: "Quel geste vient en premier après une fuite ?",
                 options: [
-                    "Changer le mot de passe du service concerné",
                     "Sécuriser la boîte mail de secours",
+                    "Changer le mot de passe du service concerné",
                     "Prévenir ses contacts"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Tant qu'un attaquant contrôle la messagerie de secours, il reprend tout ce que tu viens de changer."
             },
             {
@@ -66,10 +66,10 @@ window.QUIZ = {
                 q: "Que signifie recevoir une notification de fuite ?",
                 options: [
                     "Une alerte : l'attaque est en cours",
-                    "Un constat : les données circulent depuis un moment",
-                    "Une simple précaution légale sans conséquence"
+                    "Une simple précaution légale sans conséquence",
+                    "Un constat : les données circulent depuis un moment"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Entre l'intrusion, sa détection et la notification, plusieurs mois se sont généralement écoulés."
             }
         ],
@@ -80,11 +80,11 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui distingue une attaque ciblée d'un hameçonnage de masse ?",
                 options: [
-                    "Elle ne présente aucun des signaux grossiers habituels",
                     "Elle vise uniquement les grandes entreprises",
+                    "Elle ne présente aucun des signaux grossiers habituels",
                     "Elle utilise toujours une pièce jointe"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Elle est rédigée pour toi, à partir d'informations réelles, et demande une action qui a du sens dans ton contexte."
             },
             {
@@ -100,11 +100,11 @@ window.QUIZ = {
             {
                 q: "Quels leviers agissent ensemble dans le scénario classique ?",
                 options: [
-                    "Autorité, urgence et confidentialité",
                     "Peur, récompense et curiosité",
-                    "Technique, juridique et financier"
+                    "Technique, juridique et financier",
+                    "Autorité, urgence et confidentialité"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La confidentialité sert à empêcher la seule chose qui déjouerait l'attaque : demander à quelqu'un d'autre."
             },
             // Série 2
@@ -122,20 +122,20 @@ window.QUIZ = {
                 q: "Que montrent les études sur les personnes formées à ces attaques ?",
                 options: [
                     "Elles ne se font plus jamais prendre",
-                    "Elles se font prendre aussi, mais moins souvent",
-                    "La formation n'a aucun effet mesurable"
+                    "La formation n'a aucun effet mesurable",
+                    "Elles se font prendre aussi, mais moins souvent"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La fatigue, la charge de travail et le contexte font le reste. D'où l'intérêt d'une règle écrite."
             },
             {
                 q: "Pourquoi une règle écrite protège-t-elle mieux que la vigilance ?",
                 options: [
-                    "Elle agit même les jours où l'attention manque",
                     "Elle est plus rapide à appliquer",
+                    "Elle agit même les jours où l'attention manque",
                     "Elle est exigée par la loi"
                 ],
-                a: 0,
+                a: 1,
                 explication: "« Aucun virement sans confirmation vocale » ne dépend pas de l'état de forme de la personne qui reçoit le message."
             }
         ],
@@ -146,62 +146,62 @@ window.QUIZ = {
             {
                 q: "Que garantit le chiffrement de bout en bout ?",
                 options: [
-                    "Que seuls les correspondants peuvent lire le contenu",
                     "Que personne ne sait avec qui tu échanges",
+                    "Que seuls les correspondants peuvent lire le contenu",
                     "Que les messages sont supprimés automatiquement"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ni le service, ni un intermédiaire, ni quiconque interceptant le trafic ne peut lire le contenu."
             },
             {
                 q: "Qu'appelle-t-on métadonnées dans une messagerie ?",
                 options: [
-                    "Le texte des messages",
                     "Qui écrit à qui, quand, à quelle fréquence, depuis où",
+                    "Le texte des messages",
                     "Les fichiers joints"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Elles circulent en clair chez la plupart des services, chiffrement ou non."
             },
             {
                 q: "Pourquoi les métadonnées sont-elles sensibles ?",
                 options: [
                     "Elles contiennent des extraits de messages",
-                    "Elles suffisent souvent à reconstituer une situation",
-                    "Elles permettent de déchiffrer le contenu"
+                    "Elles permettent de déchiffrer le contenu",
+                    "Elles suffisent souvent à reconstituer une situation"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Savoir qu'une personne a joint un service d'urgence, puis un avocat, puis sa banque le même après-midi ne demande de lire aucun message."
             },
             // Série 2
             {
                 q: "Qu'est-ce qui peut annuler l'effet d'un chiffrement de bout en bout ?",
                 options: [
-                    "Une sauvegarde des conversations non chiffrée dans le nuage",
                     "Un mot de passe trop court",
+                    "Une sauvegarde des conversations non chiffrée dans le nuage",
                     "L'utilisation du wifi public"
                 ],
-                a: 0,
+                a: 1,
                 explication: "La protection du transport reste intacte, et parfaitement inutile : les échanges redeviennent lisibles à qui accède au stockage."
             },
             {
                 q: "Le chiffrement protège-t-il les terminaux ?",
                 options: [
-                    "Oui, l'appareil est chiffré par la messagerie",
                     "Non, il protège le transport ; le message s'affiche en clair à l'écran",
+                    "Oui, l'appareil est chiffré par la messagerie",
                     "Oui, tant que l'application est fermée"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un appareil compromis lit les messages après déchiffrement, comme leur destinataire légitime."
             },
             {
                 q: "Que peut faire ton correspondant, quel que soit le chiffrement ?",
                 options: [
-                    "Rien de particulier",
                     "Une capture d'écran, ou transmettre le contenu",
+                    "Rien de particulier",
                     "Déchiffrer tes autres conversations"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le chiffrement protège le trajet, pas la confiance accordée à l'autre extrémité."
             }
         ],
@@ -233,10 +233,10 @@ window.QUIZ = {
                 q: "Quel est souvent le maillon le plus faible d'un compte ?",
                 options: [
                     "Le mot de passe",
-                    "Le chemin de récupération",
-                    "Le nom d'utilisateur"
+                    "Le nom d'utilisateur",
+                    "Le chemin de récupération"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Questions de sécurité, adresse de secours, numéro de téléphone : ces chemins parallèles sont fréquemment moins protégés que la porte principale."
             },
             // Série 2
@@ -244,30 +244,30 @@ window.QUIZ = {
                 q: "Comment traiter les questions de sécurité ?",
                 options: [
                     "Répondre honnêtement pour ne pas les oublier",
-                    "Comme un second mot de passe : réponse arbitraire, conservée dans le gestionnaire",
-                    "Les désactiver systématiquement"
+                    "Les désactiver systématiquement",
+                    "Comme un second mot de passe : réponse arbitraire, conservée dans le gestionnaire"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le nom de jeune fille de ta mère ou ta ville de naissance sont publics ou faciles à deviner pour un proche."
             },
             {
                 q: "Quel intérêt à supprimer un compte inutilisé ?",
                 options: [
-                    "Un compte supprimé ne fuite pas",
                     "Cela améliore la vitesse du réseau",
+                    "Un compte supprimé ne fuite pas",
                     "Cela libère ton adresse électronique"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est la seule réduction de risque définitive : la porte n'existe plus."
             },
             {
                 q: "Que faut-il vérifier concernant les applications tierces ?",
                 options: [
-                    "Leur note dans la boutique",
                     "Celles qui gardent un accès permanent à tes comptes principaux",
+                    "Leur note dans la boutique",
                     "Leur taille sur le disque"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Beaucoup conservent une autorisation longtemps après avoir cessé d'être utilisées."
             }
         ]
@@ -281,52 +281,52 @@ window.QUIZ = {
         {
             q: "Quel point commun entre les fuites de données et les attaques ciblées ?",
             options: [
-                "Aucun outil ne les empêche du côté de l'utilisateur",
                 "Elles visent uniquement les entreprises",
-                "Elles exploitent toutes une faille logicielle"
+                "Elles exploitent toutes une faille logicielle",
+                "Aucun outil ne les empêche du côté de l'utilisateur"
             ],
-            a: 0,
+            a: 2,
             explication: "L'une dépend de la sécurité d'un tiers, l'autre d'une décision humaine. Ce niveau porte précisément sur ce que les outils ne couvrent pas."
         },
         {
             q: "Une personne a un mot de passe unique, une double authentification et un VPN. Que reste-t-il d'exposé ?",
             options: [
-                "Rien, la protection est complète",
                 "Les métadonnées, les chemins de récupération et les demandes plausibles",
+                "Rien, la protection est complète",
                 "Uniquement les fichiers locaux"
             ],
-            a: 1,
+            a: 0,
             explication: "Le risque ne disparaît pas quand les protections évidentes sont en place : il se déplace vers ce qui n'est pas filtrable."
         },
         {
             q: "Pourquoi la procédure l'emporte-t-elle sur le discernement ?",
             options: [
-                "Parce qu'elle est plus rapide",
                 "Parce qu'elle fonctionne aussi les jours de fatigue",
+                "Parce qu'elle est plus rapide",
                 "Parce qu'elle est obligatoire"
             ],
-            a: 1,
+            a: 0,
             explication: "C'est le même raisonnement que pour les dispositifs du niveau précédent : ce qui dépend de la vigilance quotidienne finit par céder."
         },
         // Série 2
         {
             q: "Qu'est-ce qui, dans ce niveau, ne dépend pas du tout de toi ?",
             options: [
-                "La sécurité des services auxquels tu confies des données",
                 "Le choix de tes mots de passe",
-                "L'activation de la double authentification"
+                "L'activation de la double authentification",
+                "La sécurité des services auxquels tu confies des données"
             ],
-            a: 0,
+            a: 2,
             explication: "Tu ne peux pas empêcher une fuite. Tu peux seulement empêcher sa propagation."
         },
         {
             q: "Quelle action réduit la surface d'attaque de façon définitive ?",
             options: [
-                "Changer tous ses mots de passe",
                 "Supprimer les comptes inutilisés",
+                "Changer tous ses mots de passe",
                 "Installer un antivirus supplémentaire"
             ],
-            a: 1,
+            a: 0,
             explication: "Les autres mesures protègent une porte existante. Celle-ci la fait disparaître."
         },
         {

@@ -50,30 +50,30 @@ window.QUIZ = {
                 q: "Why does cramming the night before work for the exam?",
                 options: [
                     "Because it anchors things durably",
-                    "Because the curve starts high and the exam falls before it comes down",
-                    "Because stress improves memory"
+                    "Because stress improves memory",
+                    "Because the curve starts high and the exam falls before it comes down"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It then comes down exactly the same: three weeks later, almost nothing is left."
             },
             {
                 q: "Forgetting something seen only once is a sign of what?",
                 options: [
                     "Badly done learning",
-                    "The normal working of memory",
-                    "A lack of attention"
+                    "A lack of attention",
+                    "The normal working of memory"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The useful question is not “how do I learn better first time” but “when do I come back to it”."
             },
             {
                 q: "What share of the total loss happens in the first two days?",
                 options: [
-                    "More than half",
                     "About a tenth",
+                    "More than half",
                     "It is spread evenly across the month"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Waiting for the weekend to review is arriving after the battle."
             }
         ],
@@ -85,10 +85,10 @@ window.QUIZ = {
                 q: "What does a successful review do to the forgetting curve?",
                 options: [
                     "It only lifts it back up",
-                    "It lifts it back up and flattens it",
-                    "It does not change it"
+                    "It does not change it",
+                    "It lifts it back up and flattens it"
                 ],
-                a: 1,
+                a: 2,
                 explication: "What lasted a day then lasts three days, then a week, then three."
             },
             {
@@ -125,21 +125,21 @@ window.QUIZ = {
             {
                 q: "What do flashcard programs such as Anki do?",
                 options: [
-                    "They keep the review schedule",
                     "They memorise for you",
-                    "They write the cards"
+                    "They write the cards",
+                    "They keep the review schedule"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A card box and five dividers do the same job, without a screen."
             },
             {
                 q: "What does a review session where everything comes out right tell you?",
                 options: [
-                    "That the topic is learned",
                     "That the intervals are too short",
+                    "That the topic is learned",
                     "That the questions are well written"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A good session is one where you make mistakes regularly."
             }
         ],
@@ -150,42 +150,42 @@ window.QUIZ = {
             {
                 q: "What is the role of the test in learning?",
                 options: [
-                    "It checks what has been learned",
                     "It is the learning itself",
+                    "It checks what has been learned",
                     "It is mainly for marking"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Searching your memory for an answer strengthens the trace far more than rereading it."
             },
             {
                 q: "Tested a week later, what results do rereaders and self-testers get?",
                 options: [
-                    "About 40% against about 61%",
                     "Equivalent results",
-                    "About 61% against about 40%"
+                    "About 61% against about 40%",
+                    "About 40% against about 61%"
                 ],
-                a: 0,
+                a: 2,
                 explication: "For identical study time. Tested immediately the ratio is reversed — hence the illusion."
             },
             {
                 q: "Why does testing yourself with the course open not work?",
                 options: [
                     "It takes longer",
-                    "It removes the retrieval effort that produces the effect",
-                    "It is more tiring"
+                    "It is more tiring",
+                    "It removes the retrieval effort that produces the effect"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Recognising an answer and retrieving it are two different operations."
             },
             // Series 2
             {
                 q: "What should you do with a section heading in order to test yourself?",
                 options: [
-                    "Highlight it",
                     "Turn it into a question",
+                    "Highlight it",
                     "Copy it out"
                 ],
-                a: 1,
+                a: 0,
                 explication: "“The forgetting curve” becomes “what shape does it have, and what does that change?”."
             },
             {
@@ -217,10 +217,10 @@ window.QUIZ = {
                 q: "What does the ease of rereading a text read four times measure?",
                 options: [
                     "Mastery of the content",
-                    "Familiarity with its layout and its phrasing",
-                    "The quality of the text"
+                    "The quality of the text",
+                    "Familiarity with its layout and its phrasing"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The brain reads that fluency as a sign of mastery. That is the central trap."
             },
             {
@@ -247,11 +247,11 @@ window.QUIZ = {
             {
                 q: "What do spacing, self-testing and interleaving have in common?",
                 options: [
-                    "All three degrade immediate performance and improve performance at a distance",
                     "All three make learning faster",
-                    "All three require software"
+                    "All three require software",
+                    "All three degrade immediate performance and improve performance at a distance"
                 ],
-                a: 0,
+                a: 2,
                 explication: "That is the paradox of useful difficulties, and the reason people give them up."
             },
             {
@@ -267,11 +267,11 @@ window.QUIZ = {
             {
                 q: "Are our judgements about our own mastery reliable?",
                 options: [
-                    "Yes, everyone knows what they know",
                     "No: they are systematically too optimistic just after studying",
+                    "Yes, everyone knows what they know",
                     "Yes, provided you pay attention"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The real obstacle is not the difficulty of learning, it is the difficulty of knowing what you know."
             }
         ]
@@ -292,11 +292,11 @@ window.QUIZ = {
         {
             q: "What do spacing and the testing effect have in common?",
             options: [
-                "Both exploit the effort of retrieval",
                 "Both take more time",
-                "Both work only in writing"
+                "Both work only in writing",
+                "Both exploit the effort of retrieval"
             ],
-            a: 0,
+            a: 2,
             explication: "Searching your memory, just before forgetting: the same mechanism seen from two angles."
         },
         {
@@ -312,11 +312,11 @@ window.QUIZ = {
         {
             q: "Why is knowing that rereading deceives not enough to give it up?",
             options: [
-                "Because the illusion of fluency persists despite knowing it exists",
                 "Because there is no alternative",
+                "Because the illusion of fluency persists despite knowing it exists",
                 "Because the other methods take too long"
             ],
-            a: 0,
+            a: 1,
             explication: "Only a measurement corrects it: test yourself at a distance and look at the result, not the impression."
         },
         {

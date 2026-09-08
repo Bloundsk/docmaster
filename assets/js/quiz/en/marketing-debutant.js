@@ -26,21 +26,21 @@ window.QUIZ = {
             {
                 q: "What does search intent mean?",
                 options: [
-                    "How many times a word is typed",
                     "The real expectation behind the query: understand, compare or act",
+                    "How many times a word is typed",
                     "The position you are aiming for in the results"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Offering a sales page to somebody who wants to understand drives them away, and search engines measure that departure."
             },
             {
                 q: "Should a brand-new site target “car insurance” (100,000 searches/month)?",
                 options: [
                     "Yes, that is where the volume is",
-                    "No: the competition is out of reach, better to go for long, specific queries",
-                    "Yes, provided it publishes daily"
+                    "Yes, provided it publishes daily",
+                    "No: the competition is out of reach, better to go for long, specific queries"
                 ],
-                a: 1,
+                a: 2,
                 explication: "90 qualified visitors are worth infinitely more than 0 visitors on an unreachable keyword."
             },
             // Series 2
@@ -64,10 +64,10 @@ window.QUIZ = {
                 q: "What is the main strength of search ranking?",
                 options: [
                     "It gives immediate results",
-                    "The traffic obtained does not stop when you stop paying",
-                    "It requires no content work"
+                    "It requires no content work",
+                    "The traffic obtained does not stop when you stop paying"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Its weakness is symmetrical: it takes months before you see anything."
             }
         ],
@@ -94,11 +94,11 @@ window.QUIZ = {
             {
                 q: "Which lever cuts the acquisition cost most effectively?",
                 options: [
-                    "Lowering the cost per click",
                     "Improving the site's conversion rate",
+                    "Lowering the cost per click",
                     "Raising the budget"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Going from 2% to 3% brings the cost from €59 to €39, without spending a euro more on advertising."
             },
             // Series 2
@@ -125,11 +125,11 @@ window.QUIZ = {
             {
                 q: "What happens to an advertising campaign when the budget runs out?",
                 options: [
-                    "It carries on with reduced reach",
                     "It stops dead",
+                    "It carries on with reduced reach",
                     "It automatically switches to organic ranking"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It is the exact complement of SEO: instant and measurable, but with no residual effect."
             }
         ],
@@ -147,20 +147,20 @@ window.QUIZ = {
                 q: "Is it better to be everywhere or on one single platform?",
                 options: [
                     "Everywhere, to maximise reach",
-                    "One, kept up properly, produces more",
-                    "Three at a minimum, never fewer"
+                    "Three at a minimum, never fewer",
+                    "One, kept up properly, produces more"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The same recycled content everywhere gives a mediocre presence everywhere."
             },
             {
                 q: "Why is free reach shrinking on every platform?",
                 options: [
-                    "Because users post less",
                     "Because they cut free visibility in order to sell advertising",
+                    "Because users post less",
                     "For technical storage reasons"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Strong visibility at launch to attract creators, then a gradual reduction."
             },
             // Series 2
@@ -178,20 +178,20 @@ window.QUIZ = {
                 q: "What is an account with 50,000 inactive followers worth?",
                 options: [
                     "A lot: the number impresses",
-                    "Less than an account with 800 engaged followers",
-                    "The same as an engaged account"
+                    "The same as an engaged account",
+                    "Less than an account with 800 engaged followers"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Prize draws attract people who came for the prize, and who drag the engagement rate down."
             },
             {
                 q: "What works best over time?",
                 options: [
-                    "Ten posts in one week then nothing",
                     "Two posts a week kept up for six months",
+                    "Ten posts in one week then nothing",
                     "One perfect post per quarter"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Replying to comments counts too: platforms reward exchanges."
             }
         ],
@@ -213,51 +213,51 @@ window.QUIZ = {
                 q: "What does a bought address list produce?",
                 options: [
                     "A welcome saving of time",
-                    "Spam reports in bulk that ruin your sender reputation for a long time",
-                    "The same results as a list you built"
+                    "The same results as a list you built",
+                    "Spam reports in bulk that ruin your sender reputation for a long time"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Explicit consent is a legal obligation, and above all the condition for it to work."
             },
             {
                 q: "Which metric is the most reliable today?",
                 options: [
                     "The open rate",
-                    "The click rate",
-                    "The number of subscribers"
+                    "The number of subscribers",
+                    "The click rate"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The open rate has been distorted since some services preload images."
             },
             // Series 2
             {
                 q: "A list of 5,000 subscribers goes from 1.8% to 4% clicks. What changed?",
                 options: [
-                    "The sending frequency was doubled",
                     "The list was segmented and the message adapted to each group",
+                    "The sending frequency was doubled",
                     "The sending provider was changed"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Same list, same product, a little more writing work: the result doubles."
             },
             {
                 q: "Which signal is the most serious for a sender?",
                 options: [
                     "A falling open rate",
-                    "Spam reports",
-                    "Unsubscribes"
+                    "Unsubscribes",
+                    "Spam reports"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A handful of reports is enough to degrade deliverability for all your following sends."
             },
             {
                 q: "Should the unsubscribe link be made clearly visible?",
                 options: [
                     "No, it encourages people to leave",
-                    "Yes: somebody who cannot find it clicks “spam”, which costs far more",
-                    "It does not matter, it is a detail"
+                    "It does not matter, it is a detail",
+                    "Yes: somebody who cannot find it clicks “spam”, which costs far more"
                 ],
-                a: 1,
+                a: 2,
                 explication: "An unsubscribe loses one contact; a report damages your whole list."
             }
         ]
@@ -271,11 +271,11 @@ window.QUIZ = {
         {
             q: "What sets digital marketing apart from billboards or radio?",
             options: [
-                "It always costs less",
                 "Almost everything in it is measurable: you can compare a customer's cost to what they bring in",
+                "It always costs less",
                 "It reaches a wider public"
             ],
-            a: 1,
+            a: 0,
             explication: "It is the only valid judge — and paradoxically the one many people avoid consulting."
         },
         {
@@ -291,42 +291,42 @@ window.QUIZ = {
         {
             q: "Which channel genuinely belongs to you?",
             options: [
-                "Your Instagram account",
                 "Your email list",
+                "Your Instagram account",
                 "Your Facebook page"
             ],
-            a: 1,
+            a: 0,
             explication: "You rent your audience from the platforms. The list you extract from it is the only lasting asset."
         },
         // Series 2
         {
             q: "You are torn between doubling your ad budget and improving your sales page. Which first?",
             options: [
-                "Double the budget, the effect is immediate",
                 "Improve conversion: the gain then benefits every channel",
+                "Double the budget, the effect is immediate",
                 "Both at the same time"
             ],
-            a: 1,
+            a: 0,
             explication: "Doubling the conversion rate often costs less than doubling the traffic."
         },
         {
             q: "A contractor guarantees first position on Google within a month. How do you read that?",
             options: [
                 "Ambitious but credible if they are experienced",
-                "A warning sign: SEO takes 6 to 12 months",
-                "Normal for a new site"
+                "Normal for a new site",
+                "A warning sign: SEO takes 6 to 12 months"
             ],
-            a: 1,
+            a: 2,
             explication: "Nobody controls Google's ranking, and certainly not on that timescale."
         },
         {
             q: "SEO and paid advertising: how do they relate to each other?",
             options: [
-                "They are interchangeable",
                 "SEO is slow but lasting, advertising immediate but stops with the budget",
+                "They are interchangeable",
                 "Advertising replaces SEO to advantage"
             ],
-            a: 1,
+            a: 0,
             explication: "They are complementary: one builds an asset, the other buys visibility."
         }
     ]

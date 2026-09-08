@@ -17,21 +17,21 @@ window.QUIZ = {
             {
                 q: "Pour un téléphone ou un ordinateur, où se trouve l'essentiel de l'empreinte ?",
                 options: [
-                    "Dans la fabrication",
                     "Dans l'électricité consommée à l'usage",
+                    "Dans la fabrication",
                     "Dans le transport"
                 ],
-                a: 0,
+                a: 1,
                 explication: "L'électricité consommée pendant des années d'usage pèse bien moins."
             },
             {
                 q: "Pourquoi la fabrication pèse-t-elle autant ?",
                 options: [
-                    "Extraction, salles blanches, assemblage — une chaîne longue et très énergivore",
                     "Parce que les appareils sont lourds",
-                    "À cause de l'emballage"
+                    "À cause de l'emballage",
+                    "Extraction, salles blanches, assemblage — une chaîne longue et très énergivore"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Et située dans des pays dont l'électricité est bien plus carbonée que la française."
             },
             {
@@ -48,11 +48,11 @@ window.QUIZ = {
             {
                 q: "Remplacer un appareil qui fonctionne par un modèle qui consomme 30 % de moins :",
                 options: [
-                    "Est presque toujours perdant : les 30 % portent sur la petite part",
                     "Est rentable dès la première année",
+                    "Est presque toujours perdant : les 30 % portent sur la petite part",
                     "Dépend de la marque"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Et la fabrication du nouvel appareil est immédiate et entière."
             },
             {
@@ -83,42 +83,42 @@ window.QUIZ = {
             {
                 q: "Quelle est la première cause de remplacement d'un téléphone ?",
                 options: [
-                    "La casse",
                     "La panne électronique",
-                    "Le manque de mémoire"
+                    "Le manque de mémoire",
+                    "La casse"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Et la moins fatale : une coque et une protection d'écran coûtent quelques euros."
             },
             {
                 q: "Que vaut un appareil rangé dans un tiroir « au cas où » ?",
                 options: [
-                    "Il a la même empreinte de fabrication qu'un appareil utilisé",
                     "Il n'a plus d'impact une fois éteint",
-                    "Il compte pour moitié"
+                    "Il compte pour moitié",
+                    "Il a la même empreinte de fabrication qu'un appareil utilisé"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Elle est déjà dépensée. Le revendre ou le donner évite une autre fabrication."
             },
             {
                 q: "Qu'est-ce qui détermine souvent la fin de vie, avant toute panne ?",
                 options: [
-                    "La fin des mises à jour de sécurité",
                     "L'usure de l'écran",
+                    "La fin des mises à jour de sécurité",
                     "La garantie expirée"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un appareil sans correctifs devient difficile à garder, quel que soit son état matériel."
             },
             // Série 2
             {
                 q: "Remplacer une batterie plutôt que l'appareil :",
                 options: [
-                    "Coûte une fraction du prix, et évite toute une fabrication",
                     "N'est pas rentable",
+                    "Coûte une fraction du prix, et évite toute une fabrication",
                     "Réduit les performances"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est le geste au meilleur rapport, et le plus souvent écarté."
             },
             {
@@ -134,11 +134,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi le logiciel écourte-t-il la vie du matériel ?",
                 options: [
-                    "Applications et sites deviennent plus exigeants, et rendent l'appareil inconfortable",
                     "Il use les composants",
+                    "Applications et sites deviennent plus exigeants, et rendent l'appareil inconfortable",
                     "Il consomme plus d'électricité"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est le sujet de l'écoconception, au niveau avancé."
             }
         ],
@@ -169,11 +169,11 @@ window.QUIZ = {
             {
                 q: "Vider le cache de son navigateur, quel effet ?",
                 options: [
-                    "Aucun, voire négatif : il faut retélécharger ce qui était déjà là",
                     "Un gain modéré",
-                    "Un gain important sur la durée"
+                    "Un gain important sur la durée",
+                    "Aucun, voire négatif : il faut retélécharger ce qui était déjà là"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est l'exemple le plus net d'un geste qui donne le sentiment d'agir."
             },
             // Série 2
@@ -190,21 +190,21 @@ window.QUIZ = {
             {
                 q: "Quel est le vrai problème d'un geste inefficace ?",
                 options: [
-                    "Il consomme l'attention et la bonne volonté disponibles, qui sont limitées",
                     "Il coûte de l'argent",
+                    "Il consomme l'attention et la bonne volonté disponibles, qui sont limitées",
                     "Il est difficile à tenir"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Trier ses courriels tous les mois et changer de téléphone tous les deux ans est un mauvais échange."
             },
             {
                 q: "Quelle question poser avant d'adopter un geste ?",
                 options: [
-                    "Porte-t-il sur le matériel ou sur l'usage ?",
                     "Est-il facile à tenir ?",
-                    "Combien de personnes le font ?"
+                    "Combien de personnes le font ?",
+                    "Porte-t-il sur le matériel ou sur l'usage ?"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le premier compte, le second presque pas."
             }
         ],
@@ -215,52 +215,52 @@ window.QUIZ = {
             {
                 q: "Quel est le levier le plus puissant à disposition d'un particulier ?",
                 options: [
-                    "Acheter reconditionné",
                     "Choisir un modèle basse consommation",
+                    "Acheter reconditionné",
                     "Recycler l'ancien appareil"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Il évite la quasi-totalité d'une fabrication. Aucun geste d'usage n'approche cet ordre de grandeur."
             },
             {
                 q: "Quel critère détermine le plus souvent la fin de vie d'un appareil neuf ?",
                 options: [
-                    "Le nombre d'années de mises à jour garanties",
                     "La capacité de la batterie",
+                    "Le nombre d'années de mises à jour garanties",
                     "La taille de l'écran"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est un critère d'achat, pas un détail."
             },
             {
                 q: "Quelle est la hiérarchie utile, dans l'ordre ?",
                 options: [
-                    "Garder, réparer, reconditionner — l'achat neuf en dernier",
                     "Recycler, acheter neuf, réparer",
-                    "Acheter écologique, puis recycler"
+                    "Acheter écologique, puis recycler",
+                    "Garder, réparer, reconditionner — l'achat neuf en dernier"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'achat neuf vient quand les trois premiers sont épuisés."
             },
             // Série 2
             {
                 q: "À quoi sert l'indice affiché à la vente ?",
                 options: [
-                    "À comparer la réparabilité ou la durabilité entre modèles",
                     "À indiquer la consommation électrique",
+                    "À comparer la réparabilité ou la durabilité entre modèles",
                     "À garantir une origine européenne"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Avec la durée de disponibilité des pièces détachées, c'est l'information la plus utile."
             },
             {
                 q: "Un appareil surdimensionné par rapport au besoin :",
                 options: [
-                    "Coûte plus cher à fabriquer sans servir davantage",
                     "Dure plus longtemps",
-                    "Consomme moins par usage"
+                    "Consomme moins par usage",
+                    "Coûte plus cher à fabriquer sans servir davantage"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Choisir la taille et la puissance nécessaires, pas au-dessus."
             },
             {
@@ -291,11 +291,11 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun réparer, garder et acheter reconditionné ?",
             options: [
-                "Les trois évitent une fabrication",
                 "Les trois réduisent la consommation électrique",
-                "Les trois coûtent plus cher"
+                "Les trois coûtent plus cher",
+                "Les trois évitent une fabrication"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est ce qui les sépare de tous les gestes d'usage."
         },
         {
@@ -311,31 +311,31 @@ window.QUIZ = {
         {
             q: "Pourquoi ce parcours commence-t-il par des chiffres faux célèbres ?",
             options: [
-                "Parce que savoir écarter un mauvais chiffre vaut mieux que connaître dix bons gestes",
                 "Pour dédramatiser le sujet",
+                "Parce que savoir écarter un mauvais chiffre vaut mieux que connaître dix bons gestes",
                 "Parce que les bons chiffres n'existent pas"
             ],
-            a: 0,
+            a: 1,
             explication: "Le domaine a diffusé des estimations fausses d'un facteur dix, reprises de bonne foi."
         },
         {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
-                "Garder ses appareils plus longtemps",
                 "Trier ses fichiers régulièrement",
-                "Choisir des modèles économes"
+                "Choisir des modèles économes",
+                "Garder ses appareils plus longtemps"
             ],
-            a: 0,
+            a: 2,
             explication: "Chaque année gagnée fait plus que tous les gestes d'usage réunis."
         },
         {
             q: "Un ami veut remplacer son ordinateur de quatre ans, qui fonctionne, par un modèle plus sobre. Que lui dire ?",
             options: [
-                "La fabrication du neuf sera immédiate et entière ; le gain de consommation porte sur la petite part",
                 "C'est un bon calcul si l'écart de consommation dépasse 20 %",
-                "Cela dépend du prix"
+                "Cela dépend du prix",
+                "La fabrication du neuf sera immédiate et entière ; le gain de consommation porte sur la petite part"
             ],
-            a: 0,
+            a: 2,
             explication: "Remplacer un appareil qui marche est presque toujours perdant, et souvent de loin."
         }
     ]

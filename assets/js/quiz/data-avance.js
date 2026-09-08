@@ -14,11 +14,11 @@ window.QUIZ = {
             {
                 q: "De quoi dépend principalement la marge d'erreur d'un sondage ?",
                 options: [
-                    "De la taille de la population",
                     "De la taille de l'échantillon",
+                    "De la taille de la population",
                     "Du nombre de questions posées"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est ce qui rend les sondages possibles : 1 000 personnes donnent la même précision pour une ville que pour un pays."
             },
             {
@@ -35,41 +35,41 @@ window.QUIZ = {
                 q: "Que faut-il pour diviser une marge d'erreur par deux ?",
                 options: [
                     "Doubler l'échantillon",
-                    "Le multiplier par quatre",
-                    "Le multiplier par dix"
+                    "Le multiplier par dix",
+                    "Le multiplier par quatre"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est pourquoi les sondages nationaux s'arrêtent autour de 1 000 personnes : aller plus loin coûte beaucoup pour gagner très peu."
             },
             // Série 2
             {
                 q: "Version A à 42 %, version B à 45 %, marge de ± 5 points. Que conclure ?",
                 options: [
-                    "B est meilleure",
                     "Rien : l'écart est inférieur à la marge",
+                    "B est meilleure",
                     "Il faut refaire la mesure"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Annoncer que B l'emporte reviendrait à présenter du bruit comme un résultat."
             },
             {
                 q: "Que la marge d'erreur ne couvre-t-elle pas ?",
                 options: [
                     "Le hasard de l'échantillonnage",
-                    "Un questionnaire mal formulé ou une population mal choisie",
-                    "La taille de l'échantillon"
+                    "La taille de l'échantillon",
+                    "Un questionnaire mal formulé ou une population mal choisie"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ces biais ne se réduisent pas en interrogeant davantage de monde : ils s'amplifient."
             },
             {
                 q: "Que manque-t-il à « 42 % des utilisateurs préfèrent la version B » ?",
                 options: [
-                    "L'effectif et la méthode de recueil",
                     "La date de la mesure",
+                    "L'effectif et la méthode de recueil",
                     "Le nom de l'outil"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Sans ces informations, le chiffre n'est pas faux : il est invérifiable."
             }
         ],
@@ -90,11 +90,11 @@ window.QUIZ = {
             {
                 q: "Quand faut-il calculer la taille d'échantillon nécessaire ?",
                 options: [
-                    "Avant de lancer le test",
                     "Quand les premiers résultats arrivent",
-                    "À la fin, pour vérifier"
+                    "À la fin, pour vérifier",
+                    "Avant de lancer le test"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Après, il est trop tard pour se demander si le test pouvait conclure."
             },
             {
@@ -112,30 +112,30 @@ window.QUIZ = {
                 q: "Pourquoi consulter un test A/B chaque jour est-il une faute ?",
                 options: [
                     "Cela ralentit le test",
-                    "À force de regarder, l'écart franchit le seuil par hasard",
-                    "Cela fausse la collecte"
+                    "Cela fausse la collecte",
+                    "À force de regarder, l'écart franchit le seuil par hasard"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un test qu'on arrête quand il donne raison ne teste plus rien."
             },
             {
                 q: "Détecter un effet deux fois plus petit demande :",
                 options: [
-                    "Deux fois plus de trafic",
                     "Quatre fois plus de trafic",
+                    "Deux fois plus de trafic",
                     "Le même trafic, plus longtemps"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est ce qui rend les petits gains si coûteux à démontrer."
             },
             {
                 q: "Pourquoi ne pas changer plusieurs éléments dans une même version B ?",
                 options: [
-                    "Le test devient trop long",
                     "On ne saura pas lequel a joué, ni si l'un dégrade",
+                    "Le test devient trop long",
                     "Les outils ne le permettent pas"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le test répond alors à « l'ensemble est-il meilleur ? » et à aucune autre question."
             }
         ],
@@ -146,42 +146,42 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que le paradoxe de Simpson ?",
                 options: [
-                    "Une tendance présente dans chaque groupe peut s'inverser une fois les groupes réunis",
                     "Une corrélation qui disparaît avec le temps",
+                    "Une tendance présente dans chaque groupe peut s'inverser une fois les groupes réunis",
                     "Un biais dû à la taille de l'échantillon"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Cela se produit dès que les groupes ont des tailles très différentes."
             },
             {
                 q: "Qu'est-ce que le biais du survivant ?",
                 options: [
-                    "Analyser seulement ceux qui sont restés, alors que les partis ont la réponse",
                     "Surestimer les valeurs extrêmes",
-                    "Conserver trop longtemps les anciennes données"
+                    "Conserver trop longtemps les anciennes données",
+                    "Analyser seulement ceux qui sont restés, alors que les partis ont la réponse"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Analyser les clients actuels pour comprendre pourquoi les gens restent est le cas type."
             },
             {
                 q: "Qu'est-ce que la régression vers la moyenne ?",
                 options: [
-                    "Un calcul statistique de tendance",
                     "Un mois exceptionnellement mauvais est généralement suivi d'un meilleur, sans intervention",
+                    "Un calcul statistique de tendance",
                     "La convergence de deux séries de données"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Toute action prise après un point bas paraîtra donc efficace."
             },
             // Série 2
             {
                 q: "Comment détecter un paradoxe de Simpson ?",
                 options: [
-                    "En augmentant la taille de l'échantillon",
                     "En segmentant et en vérifiant la composition des groupes comparés",
+                    "En augmentant la taille de l'échantillon",
                     "En recalculant les moyennes"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un résultat global qui contredit chaque segment signale un déséquilibre de répartition, pas une découverte."
             },
             {
@@ -197,11 +197,11 @@ window.QUIZ = {
             {
                 q: "Une action corrective suit un mois catastrophique, et le mois suivant s'améliore. Que conclure ?",
                 options: [
-                    "L'action a fonctionné",
                     "Rien : l'amélioration serait probablement survenue sans intervention",
+                    "L'action a fonctionné",
                     "L'action a été insuffisante"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est l'illusion la plus fréquente dans les bilans d'actions correctives."
             }
         ],
@@ -212,11 +212,11 @@ window.QUIZ = {
             {
                 q: "Quelles sont les quatre propriétés à surveiller sur une chaîne de données ?",
                 options: [
-                    "Fraîcheur, complétude, cohérence, traçabilité",
                     "Vitesse, volume, variété, véracité",
-                    "Coût, sécurité, performance, disponibilité"
+                    "Coût, sécurité, performance, disponibilité",
+                    "Fraîcheur, complétude, cohérence, traçabilité"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une erreur sur n'importe quel maillon produit un tableau de bord impeccablement présenté et faux."
             },
             {
@@ -232,11 +232,11 @@ window.QUIZ = {
             {
                 q: "Quel contrôle simple détecte la majorité des incidents réels ?",
                 options: [
-                    "Une alerte si le volume de lignes s'écarte fortement de l'habitude",
                     "Un contrôle manuel hebdomadaire",
+                    "Une alerte si le volume de lignes s'écarte fortement de l'habitude",
                     "Une vérification des permissions"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Source coupée, doublons massifs, changement de format en amont : ce test trivial les attrape."
             },
             // Série 2
@@ -244,10 +244,10 @@ window.QUIZ = {
                 q: "Deux tableaux de bord donnent deux chiffres différents pour « le nombre de clients ». D'où vient le problème ?",
                 options: [
                     "D'une erreur de calcul",
-                    "De définitions divergentes, jamais écrites",
-                    "D'un décalage de mise à jour"
+                    "D'un décalage de mise à jour",
+                    "De définitions divergentes, jamais écrites"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Et l'effet est de détruire la confiance dans les deux tableaux à la fois."
             },
             {
@@ -264,10 +264,10 @@ window.QUIZ = {
                 q: "Quelle est la protection la moins coûteuse contre la panne silencieuse ?",
                 options: [
                     "Doubler les traitements",
-                    "Afficher la date de dernière mise à jour à côté des chiffres",
-                    "Sauvegarder les données brutes"
+                    "Sauvegarder les données brutes",
+                    "Afficher la date de dernière mise à jour à côté des chiffres"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un traitement en échec laisse sinon le tableau de bord afficher les dernières valeurs connues."
             }
         ]
@@ -281,42 +281,42 @@ window.QUIZ = {
         {
             q: "Quelle question ce niveau apprend-il à poser ?",
             options: [
-                "Quel outil utiliser ?",
                 "Quelle confiance accorder au chiffre obtenu ?",
+                "Quel outil utiliser ?",
                 "Comment présenter les résultats ?"
             ],
-            a: 1,
+            a: 0,
             explication: "Un écart de 2 % est-il un résultat ou du bruit ? Combien d'observations faudrait-il pour trancher ?"
         },
         {
             q: "Un test A/B affiche +3 % après deux jours. Que faire ?",
             options: [
-                "Déployer la version gagnante",
                 "Attendre l'effectif prévu avant de conclure",
+                "Déployer la version gagnante",
                 "Arrêter le test, l'effet est démontré"
             ],
-            a: 1,
+            a: 0,
             explication: "L'écart franchit le seuil par hasard si l'on regarde assez souvent, puis repart."
         },
         {
             q: "Quel point commun entre la marge d'erreur et la taille d'un test A/B ?",
             options: [
-                "Les deux évoluent comme la racine de l'effectif",
                 "Les deux dépendent de la population totale",
+                "Les deux évoluent comme la racine de l'effectif",
                 "Les deux sont fixées par convention"
             ],
-            a: 0,
+            a: 1,
             explication: "D'où la même conséquence : diviser par deux l'incertitude ou l'effet détectable coûte quatre fois plus d'observations."
         },
         // Série 2
         {
             q: "Le résultat global contredit ce qu'on observe dans chaque sous-groupe. Que croire ?",
             options: [
-                "Le total, qui porte sur plus d'observations",
                 "Les sous-groupes, et vérifier la répartition",
+                "Le total, qui porte sur plus d'observations",
                 "Ni l'un ni l'autre, refaire la collecte"
             ],
-            a: 1,
+            a: 0,
             explication: "Quand le total dit l'inverse de chaque partie, ce n'est pas le total qu'il faut croire."
         },
         {
@@ -333,10 +333,10 @@ window.QUIZ = {
             q: "Quel document protège d'une conclusion hâtive sur un test ?",
             options: [
                 "Le rapport final",
-                "Les hypothèses écrites avant le lancement : durée, effectif, seuil",
-                "La documentation de l'outil"
+                "La documentation de l'outil",
+                "Les hypothèses écrites avant le lancement : durée, effectif, seuil"
             ],
-            a: 1,
+            a: 2,
             explication: "Ce document te protège de toi-même au bout de trois jours."
         }
     ]

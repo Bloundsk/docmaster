@@ -24,10 +24,10 @@ window.QUIZ = {
                 q: "Un panneau de sortie de secours magnifique menant à une porte condamnée illustre quoi ?",
                 options: [
                     "Une excellente UX",
-                    "Une excellente UI et une UX catastrophique",
-                    "Un problème purement technique"
+                    "Un problème purement technique",
+                    "Une excellente UI et une UX catastrophique"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un écriteau manuscrit indiquant la bonne sortie : UI médiocre, UX réussie. C'est la seconde qui sauve des vies."
             },
             {
@@ -44,21 +44,21 @@ window.QUIZ = {
             {
                 q: "Que ne peut-on pas rattraper par l'esthétique ?",
                 options: [
-                    "Le nombre d'étapes d'un formulaire",
                     "Le choix de la police",
+                    "Le nombre d'étapes d'un formulaire",
                     "La taille des marges"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Chaque étape supplémentaire fait perdre une partie des utilisateurs. Aucune animation ne compense douze champs."
             },
             {
                 q: "Quel message d'erreur est utile ?",
                 options: [
                     "« Une erreur est survenue »",
-                    "« Ce code postal ne correspond à aucune commune »",
-                    "« Erreur 500 »"
+                    "« Erreur 500 »",
+                    "« Ce code postal ne correspond à aucune commune »"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le premier n'aide personne ; le second permet d'agir."
             },
             {
@@ -80,10 +80,10 @@ window.QUIZ = {
                 q: "Pourquoi un wireframe est-il volontairement laid ?",
                 options: [
                     "Pour aller plus vite",
-                    "Pour qu'on critique la structure au lieu de la couleur d'un bouton",
-                    "Parce que les outils sont limités"
+                    "Parce que les outils sont limités",
+                    "Pour qu'on critique la structure au lieu de la couleur d'un bouton"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Devant une maquette aboutie, les retours portent sur le détail visuel. Devant des rectangles gris, on discute enfin du fond."
             },
             {
@@ -96,31 +96,31 @@ window.QUIZ = {
                 q: "Que permet la basse fidélité ?",
                 options: [
                     "Présenter au client final",
-                    "Explorer plusieurs pistes et décider de la structure",
-                    "Transmettre au développement"
+                    "Transmettre au développement",
+                    "Explorer plusieurs pistes et décider de la structure"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La haute fidélité sert à transmettre et présenter, pas à explorer."
             },
             // Série 2
             {
                 q: "Pourquoi utiliser de vrais contenus plutôt que du faux texte latin ?",
                 options: [
-                    "C'est plus agréable à lire",
                     "Un nom de produit réel fait parfois trois lignes là où l'exemple en faisait une",
+                    "C'est plus agréable à lire",
                     "Cela accélère la validation"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ces débordements se découvrent sinon en développement — trop tard."
             },
             {
                 q: "Que se passe-t-il si l'on passe une journée à soigner un wireframe ?",
                 options: [
-                    "Le résultat final est meilleur",
                     "On s'y attache et on cesse de le remettre en cause",
+                    "Le résultat final est meilleur",
                     "Le développement va plus vite"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un wireframe doit rester assez laid pour qu'on ose le jeter."
             },
             {
@@ -141,11 +141,11 @@ window.QUIZ = {
             {
                 q: "Comment l'œil aborde-t-il une page ?",
                 options: [
-                    "Il lit de gauche à droite, ligne par ligne",
                     "Il balaie et classe les éléments par importance apparente",
+                    "Il lit de gauche à droite, ligne par ligne",
                     "Il se pose d'abord au centre"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Taille, contraste, position et espace environnant déterminent cet ordre en une fraction de seconde."
             },
             {
@@ -189,10 +189,10 @@ window.QUIZ = {
                 q: "Pourquoi ne jamais transmettre une information par la seule couleur ?",
                 options: [
                     "Parce que les écrans rendent mal les couleurs",
-                    "Parce qu'un champ en rouge sans message reste invisible pour une personne daltonienne",
-                    "Parce que cela alourdit le code"
+                    "Parce que cela alourdit le code",
+                    "Parce qu'un champ en rouge sans message reste invisible pour une personne daltonienne"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Soit environ un homme sur douze."
             }
         ],
@@ -204,10 +204,10 @@ window.QUIZ = {
                 q: "Pourquoi ne peux-tu pas évaluer ta propre interface ?",
                 options: [
                     "Par manque d'objectivité émotionnelle",
-                    "Parce que tu sais où se trouve chaque chose, et cette connaissance est irréversible",
-                    "Parce qu'il faut une certification"
+                    "Parce qu'il faut une certification",
+                    "Parce que tu sais où se trouve chaque chose, et cette connaissance est irréversible"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le seul moyen de savoir, c'est de regarder quelqu'un d'autre essayer."
             },
             {
@@ -219,42 +219,42 @@ window.QUIZ = {
             {
                 q: "Quelle consigne donner à un participant ?",
                 options: [
-                    "« Que pensez-vous de cette page ? »",
                     "« Trouvez le prix d'un abonnement annuel et lancez la souscription »",
+                    "« Que pensez-vous de cette page ? »",
                     "« Naviguez librement quelques minutes »"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Donne une tâche, pas une visite guidée. Ce que les gens font vaut plus que ce qu'ils déclarent."
             },
             // Série 2
             {
                 q: "Quel est le comportement le plus difficile à tenir pendant un test ?",
                 options: [
-                    "Prendre des notes",
                     "Se taire",
+                    "Prendre des notes",
                     "Chronométrer"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Dès que tu aides, le test est terminé : l'utilisateur réel n'aura personne à côté de lui."
             },
             {
                 q: "À quel moment tester ?",
                 options: [
                     "Une semaine avant la mise en ligne",
-                    "Sur le wireframe, quand tout peut encore changer sans coût",
-                    "Après le lancement, avec de vrais utilisateurs"
+                    "Après le lancement, avec de vrais utilisateurs",
+                    "Sur le wireframe, quand tout peut encore changer sans coût"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un test tardif ne sert plus à décider : il documente les problèmes qu'on n'aura pas le temps de corriger."
             },
             {
                 q: "Un utilisateur se trompe pendant un test. Qui n'a pas compris ?",
                 options: [
-                    "L'utilisateur",
                     "L'interface, qui n'a pas été claire",
+                    "L'utilisateur",
                     "Le concepteur du test"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ce renversement est le fondement du métier."
             }
         ]
@@ -269,30 +269,30 @@ window.QUIZ = {
             q: "Quelle est la caractéristique des meilleures interfaces ?",
             options: [
                 "Elles marquent les esprits",
-                "Elles ne se remarquent pas",
-                "Elles suivent les dernières tendances"
+                "Elles suivent les dernières tendances",
+                "Elles ne se remarquent pas"
             ],
-            a: 1,
+            a: 2,
             explication: "Personne ne complimente une porte pour s'être ouverte du bon côté."
         },
         {
             q: "Le design d'interface relève-t-il du goût personnel ?",
             options: [
-                "Oui, chacun a sa sensibilité",
                 "Non : c'est une discipline avec des règles issues du fonctionnement de la vision et de l'attention",
+                "Oui, chacun a sa sensibilité",
                 "Oui, sauf pour les sites institutionnels"
             ],
-            a: 1,
+            a: 0,
             explication: "Ces règles sont vérifiables, et elles s'apprennent."
         },
         {
             q: "Que fait un design réussi ?",
             options: [
-                "Il ajoute des éléments visuels distinctifs",
                 "Il soustrait plus qu'il n'ajoute",
+                "Il ajoute des éléments visuels distinctifs",
                 "Il reproduit les codes du secteur"
             ],
-            a: 1,
+            a: 0,
             explication: "Avant d'ajouter un élément, demande ce qu'il aide à comprendre. S'il n'aide à rien, il ajoute du bruit."
         },
         // Série 2
@@ -300,10 +300,10 @@ window.QUIZ = {
             q: "Ton équipe trouve un bouton « évident ». Comment le vérifier ?",
             options: [
                 "Demander l'avis d'un autre designer",
-                "Regarder cinq personnes tenter la tâche, sans les aider",
-                "Comparer avec des sites concurrents"
+                "Comparer avec des sites concurrents",
+                "Regarder cinq personnes tenter la tâche, sans les aider"
             ],
-            a: 1,
+            a: 2,
             explication: "Aucun de ces problèmes n'est visible depuis l'intérieur du projet."
         },
         {

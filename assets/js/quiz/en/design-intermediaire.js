@@ -66,11 +66,11 @@ window.QUIZ = {
             {
                 q: "When should accessibility be dealt with?",
                 options: [
-                    "From the mock-ups onwards",
                     "At the end, during acceptance testing",
-                    "After launch, if a user complains"
+                    "After launch, if a user complains",
+                    "From the mock-ups onwards"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Picked up at the end it becomes an overhaul: contrast, palette, markup. Taken on at the start it costs almost nothing."
             }
         ],
@@ -82,10 +82,10 @@ window.QUIZ = {
                 q: "What should navigation be built on?",
                 options: [
                     "The org chart of the organisation",
-                    "The users' tasks",
-                    "The chronological order of the content"
+                    "The chronological order of the content",
+                    "The users' tasks"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A visitor is not looking for “the membership department”: they are looking for “how do I sign up”."
             },
             {
@@ -102,10 +102,10 @@ window.QUIZ = {
                 q: "How do you judge a menu label?",
                 options: [
                     "By how concise it is",
-                    "Does someone new to the site know what they will find behind it?",
-                    "By how well it fits the editorial guidelines"
+                    "By how well it fits the editorial guidelines",
+                    "Does someone new to the site know what they will find behind it?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "In-house vocabulary almost always fails that test."
             },
             // Series 2
@@ -113,30 +113,30 @@ window.QUIZ = {
                 q: "What is wrong with “Our solutions” as a menu entry?",
                 options: [
                     "It is too long",
-                    "It says nothing about what you will find",
-                    "It is too commercial"
+                    "It is too commercial",
+                    "It says nothing about what you will find"
                 ],
-                a: 1,
+                a: 2,
                 explication: "“Pricing” says everything, in one word."
             },
             {
                 q: "What does having both “Customer area” and “My account” produce?",
                 options: [
-                    "Better coverage of user needs",
                     "Hesitation at every visit: the visitor has to guess",
+                    "Better coverage of user needs",
                     "Nothing, both are understood"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Two entries that can be confused cost more than they bring in."
             },
             {
                 q: "Beyond how many top-level entries should you group?",
                 options: [
                     "Three",
-                    "About seven",
-                    "Fifteen"
+                    "Fifteen",
+                    "About seven"
                 ],
-                a: 1,
+                a: 2,
                 explication: "And the grouping must come from users, not from an internal arbitration."
             }
         ],
@@ -148,10 +148,10 @@ window.QUIZ = {
                 q: "Why design for the small screen first?",
                 options: [
                     "Because it is quicker to draw",
-                    "Because the constraint forces you to identify what really matters",
-                    "Because the tools recommend it"
+                    "Because the tools recommend it",
+                    "Because the constraint forces you to identify what really matters"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Widening afterwards is easy; cutting in a hurry produces amputated mobile versions."
             },
             {
@@ -188,11 +188,11 @@ window.QUIZ = {
             {
                 q: "A 24-pixel link surrounded by other tightly packed links produces:",
                 options: [
-                    "A compact and effective interface",
                     "Handling errors, which the user will blame on themselves",
+                    "A compact and effective interface",
                     "A problem only on small phones"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The user will think they got it wrong. It is the designer who was at fault."
             },
             {
@@ -224,20 +224,20 @@ window.QUIZ = {
                 q: "What is a design system mainly for?",
                 options: [
                     "Making things prettier",
-                    "Closing questions, so they are not retaken on every screen",
-                    "Speeding up development"
+                    "Speeding up development",
+                    "Closing questions, so they are not retaken on every screen"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Every time a designer wonders “what size for this heading?”, the system should have answered beforehand."
             },
             {
                 q: "Why prefer a spacing scale to free values?",
                 options: [
-                    "Free values are technically heavier",
                     "The constraint reduces decisions and makes consistency automatic",
+                    "Free values are technically heavier",
                     "The scale is imposed by browsers"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Without a scale, spacing comes out at 12, 15, 18, 20, 24 depending on the day. Nothing is wrong, the whole looks slapdash."
             },
             // Series 2
@@ -265,10 +265,10 @@ window.QUIZ = {
                 q: "What becomes of a design system with no owner?",
                 options: [
                     "It stabilises by itself",
-                    "It becomes wrong within months, and teams stop consulting it",
-                    "It keeps working if the documentation is good"
+                    "It keeps working if the documentation is good",
+                    "It becomes wrong within months, and teams stop consulting it"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A design system is a product in its own right. Without someone to arbitrate it, it does not survive."
             }
         ]
@@ -279,51 +279,51 @@ window.QUIZ = {
         {
             q: "What common problem do these four topics address?",
             options: [
-                "What appears when a project grows beyond an isolated mock-up",
                 "The aesthetics of interfaces",
+                "What appears when a project grows beyond an isolated mock-up",
                 "Technical performance"
             ],
-            a: 0,
+            a: 1,
             explication: "Users who are not like you, dozens of screens to hold together, very different screen sizes."
         },
         {
             q: "Which test reveals the most accessibility problems in five minutes?",
             options: [
-                "Checking contrast",
                 "Navigating your own site with the keyboard alone",
+                "Checking contrast",
                 "Reading the source code"
             ],
-            a: 1,
+            a: 0,
             explication: "Without a mouse, the blocking obstacles jump out immediately."
         },
         {
             q: "What do a menu built on the org chart and a system with no owner have in common?",
             options: [
-                "Both are perfectly clear from inside, and unusable from outside",
                 "Both are expensive to produce",
-                "Both are forbidden by regulation"
+                "Both are forbidden by regulation",
+                "Both are perfectly clear from inside, and unusable from outside"
             ],
-            a: 0,
+            a: 2,
             explication: "The internal point of view is the shared trap of this level."
         },
         {
             q: "A button measures 32 pixels on a side. What should you make of that?",
             options: [
-                "It is compliant",
                 "It is below the 44-pixel recommendation",
+                "It is compliant",
                 "Size does not matter if the contrast is good"
             ],
-            a: 1,
+            a: 0,
             explication: "About 8.5 mm on screen, against the 9 mm a finger covers: the errors are predictable."
         },
         {
             q: "Why must accessibility be considered at the mock-up stage?",
             options: [
-                "To respect deadlines",
                 "Because afterwards the palette and the markup have to be revisited: it becomes an overhaul",
+                "To respect deadlines",
                 "Because the tools require it"
             ],
-            a: 1,
+            a: 0,
             explication: "At the start it is mostly a matter of choosing the right colours and sizes."
         },
         {

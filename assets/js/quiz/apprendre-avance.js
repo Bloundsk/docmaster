@@ -45,21 +45,21 @@ window.QUIZ = {
             {
                 q: "Par quoi commencer quand on est sous les 2 000 mots ?",
                 options: [
-                    "Les listes de fréquence",
                     "Le vocabulaire d'un thème qui plaît",
+                    "Les listes de fréquence",
                     "La lecture de romans"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le premier millier rapporte autant que les neuf suivants réunis."
             },
             {
                 q: "Au-delà de 2 000 mots, qu'est-ce qui devient plus rentable que les listes ?",
                 options: [
-                    "La lecture de textes accessibles",
                     "Les listes plus longues",
-                    "La grammaire"
+                    "La grammaire",
+                    "La lecture de textes accessibles"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Elle apporte les mots dans leur contexte, et c'est le contexte qui distingue les emplois."
             },
             {
@@ -80,31 +80,31 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que le transfert ?",
                 options: [
-                    "La capacité d'utiliser ailleurs ce qu'on a appris ici",
                     "Le passage de la mémoire courte à la mémoire longue",
-                    "Le fait de changer de méthode"
+                    "Le fait de changer de méthode",
+                    "La capacité d'utiliser ailleurs ce qu'on a appris ici"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est le but implicite de tout apprentissage, et il se produit moins souvent qu'on ne le suppose."
             },
             {
                 q: "Pourquoi un élève bloque-t-il en physique sur une équation qu'il résout en mathématiques ?",
                 options: [
                     "Parce qu'il a oublié la méthode",
-                    "Parce que rien dans le nouveau décor n'appelle le souvenir",
-                    "Parce que la physique est plus difficile"
+                    "Parce que la physique est plus difficile",
+                    "Parce que rien dans le nouveau décor n'appelle le souvenir"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La connaissance est là ; l'indice qui la déclenche, non."
             },
             {
                 q: "Qu'améliorent réellement les jeux d'entraînement cérébral ?",
                 options: [
-                    "La mémoire en général",
                     "Surtout ces jeux, et des tâches très proches",
+                    "La mémoire en général",
                     "L'attention au travail"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ce n'est pas anecdotique : c'est la règle générale du transfert."
             },
             // Série 2
@@ -121,21 +121,21 @@ window.QUIZ = {
             {
                 q: "Pourquoi remonter au principe plutôt qu'à la recette ?",
                 options: [
-                    "Parce qu'une recette ne se transporte pas, un principe si",
                     "Parce que c'est plus court",
+                    "Parce qu'une recette ne se transporte pas, un principe si",
                     "Parce que c'est plus facile à retenir"
                 ],
-                a: 0,
+                a: 1,
                 explication: "D'où l'utilité de la question « de quoi est-ce un cas particulier ? »."
             },
             {
                 q: "Réviser un oral en le lisant dans sa tête, quel est le problème ?",
                 options: [
-                    "L'entraînement porte sur autre chose que ce qui sera demandé",
                     "Cela prend trop de temps",
-                    "Il n'y en a pas"
+                    "Il n'y en a pas",
+                    "L'entraînement porte sur autre chose que ce qui sera demandé"
                 ],
-                a: 0,
+                a: 2,
                 explication: "On devient bon à ce qu'on pratique, pas à ce qui y ressemble."
             }
         ],
@@ -146,62 +146,62 @@ window.QUIZ = {
             {
                 q: "Quelle est la question décisive pour évaluer une méthode d'apprentissage ?",
                 options: [
-                    "Mesurée combien de temps après ?",
                     "Sur combien de personnes ?",
+                    "Mesurée combien de temps après ?",
                     "Publiée dans quelle revue ?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Presque toutes les méthodes agréables gagnent le test immédiat et perdent celui à une semaine."
             },
             {
                 q: "Que vaut une méthode comparée à « ne rien faire » ?",
                 options: [
-                    "Rien : elle doit faire mieux qu'une autre méthode",
                     "C'est une comparaison suffisante",
+                    "Rien : elle doit faire mieux qu'une autre méthode",
                     "Cela dépend de la durée"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Presque tout bat l'absence de travail. Ce n'est pas ce qu'on cherche à savoir."
             },
             {
                 q: "Que dit l'état des travaux sur les styles d'apprentissage ?",
                 options: [
-                    "Adapter l'enseignement au style supposé ne produit pas l'effet annoncé",
                     "Ils sont confirmés depuis les années 2000",
-                    "Ils ne concernent que les enfants"
+                    "Ils ne concernent que les enfants",
+                    "Adapter l'enseignement au style supposé ne produit pas l'effet annoncé"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'idée reste populaire chez les enseignants ; les études qui la testent correctement ne la trouvent pas."
             },
             // Série 2
             {
                 q: "D'où vient la pyramide « on retient 10 % de ce qu'on lit, 90 % de ce qu'on enseigne » ?",
                 options: [
-                    "D'aucune source identifiable : les nombres n'ont jamais été mesurés",
                     "D'une étude américaine des années 1960",
-                    "Des travaux d'Ebbinghaus"
+                    "Des travaux d'Ebbinghaus",
+                    "D'aucune source identifiable : les nombres n'ont jamais été mesurés"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Des chiffres ronds qui circulent depuis des décennies sans support."
             },
             {
                 q: "Que montrait réellement l'étude à l'origine de « l'effet Mozart » ?",
                 options: [
-                    "Un effet très limité, sur une tâche précise, pendant quelques minutes",
                     "Une hausse durable du QI",
+                    "Un effet très limité, sur une tâche précise, pendant quelques minutes",
                     "Un effet chez les nourrissons"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le reste est un emballement médiatique."
             },
             {
                 q: "Pourquoi les méthodes qui résistent à l'examen sont-elles inconfortables ?",
                 options: [
-                    "Parce que l'effort de récupération est ce qui renforce la trace",
                     "Par hasard",
-                    "Parce qu'elles sont mal conçues"
+                    "Parce qu'elles sont mal conçues",
+                    "Parce que l'effort de récupération est ce qui renforce la trace"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une méthode qui promet de retenir sans effort contredit le mécanisme connu."
             }
         ],
@@ -222,11 +222,11 @@ window.QUIZ = {
             {
                 q: "Sous quelle forme le contenu doit-il entrer dans le système ?",
                 options: [
-                    "Sous forme de questions",
                     "Sous forme de notes bien rédigées",
+                    "Sous forme de questions",
                     "Sous forme de résumés"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Sans quoi, le jour venu, on relira au lieu de se tester."
             },
             {
@@ -243,11 +243,11 @@ window.QUIZ = {
             {
                 q: "Que révèle une carte ratée dix fois de suite ?",
                 options: [
-                    "Qu'elle est mal écrite",
                     "Qu'elle est difficile",
-                    "Qu'il faut la revoir plus souvent"
+                    "Qu'il faut la revoir plus souvent",
+                    "Qu'elle est mal écrite"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La revue mensuelle sert précisément à reformuler ce qui revient toujours faux."
             },
             {
@@ -263,11 +263,11 @@ window.QUIZ = {
             {
                 q: "Quinze minutes quotidiennes ou deux heures le dimanche ?",
                 options: [
-                    "Quinze minutes quotidiennes, et de loin",
                     "Deux heures le dimanche",
+                    "Quinze minutes quotidiennes, et de loin",
                     "Les deux se valent"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ce qui n'est pas dans l'agenda n'a pas lieu ; et l'espacement fait le reste."
             }
         ]
@@ -288,11 +288,11 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun la fréquence lexicale et le choix de ses points faibles ?",
             options: [
-                "Les deux disent que l'effort doit être placé, pas seulement fourni",
                 "Les deux concernent les langues",
-                "Les deux demandent un logiciel"
+                "Les deux demandent un logiciel",
+                "Les deux disent que l'effort doit être placé, pas seulement fourni"
             ],
-            a: 0,
+            a: 2,
             explication: "Un petit nombre d'éléments porte l'essentiel du résultat, dans les deux cas."
         },
         {
@@ -308,11 +308,11 @@ window.QUIZ = {
         {
             q: "Pourquoi un système d'apprentissage a-t-il besoin d'une revue ?",
             options: [
-                "Parce qu'il dérive : cartes inutiles, questions mal posées, sujets abandonnés",
                 "Parce que les logiciels changent",
+                "Parce qu'il dérive : cartes inutiles, questions mal posées, sujets abandonnés",
                 "Parce que la mémoire évolue"
             ],
-            a: 0,
+            a: 1,
             explication: "Un quart d'heure par mois suffit à l'empêcher d'être abandonné en bloc."
         },
         {

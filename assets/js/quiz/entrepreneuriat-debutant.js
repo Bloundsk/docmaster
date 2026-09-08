@@ -13,11 +13,11 @@ window.QUIZ = {
             {
                 q: "Quelle est la fonction la plus importante d'un business plan ?",
                 options: [
-                    "Convaincre un banquier",
                     "Te faire réfléchir, quitte à découvrir que tes hypothèses ne tiennent pas",
+                    "Convaincre un banquier",
                     "Respecter une obligation légale"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un plan qui ne t'a rien appris ni fait douter de rien a été écrit pour plaire, pas pour éprouver."
             },
             {
@@ -51,10 +51,10 @@ window.QUIZ = {
                 q: "Qu'appelle-t-on la « courbe en crosse de hockey » ?",
                 options: [
                     "Une croissance régulière et prudente",
-                    "Des prévisions plates puis une explosion soudaine, sans justification",
-                    "Une baisse suivie d'une reprise"
+                    "Une baisse suivie d'une reprise",
+                    "Des prévisions plates puis une explosion soudaine, sans justification"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tout financeur a vu ce graphique des centaines de fois. Mieux vaut des chiffres modestes adossés à des hypothèses explicites."
             },
             {
@@ -76,10 +76,10 @@ window.QUIZ = {
                 q: "Quel est l'objectif d'une étude de marché ?",
                 options: [
                     "Confirmer que l'idée est bonne",
-                    "Essayer de démolir l'idée : si elle résiste, tu tiens quelque chose",
-                    "Estimer le chiffre d'affaires de la première année"
+                    "Estimer le chiffre d'affaires de la première année",
+                    "Essayer de démolir l'idée : si elle résiste, tu tiens quelque chose"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Chercher la confirmation revient à ne rien apprendre."
             },
             {
@@ -107,10 +107,10 @@ window.QUIZ = {
                 q: "Que vaut l'argument « le marché du bien-être pèse 4 milliards » ?",
                 options: [
                     "C'est un excellent argument de crédibilité",
-                    "Rien pour toi : il faut descendre au marché réellement atteignable",
-                    "C'est suffisant si la source est fiable"
+                    "C'est suffisant si la source est fiable",
+                    "Rien pour toi : il faut descendre au marché réellement atteignable"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un chiffre petit et défendable inspire plus confiance qu'un chiffre énorme et hors de portée."
             },
             {
@@ -141,11 +141,11 @@ window.QUIZ = {
             {
                 q: "Le choix du statut juridique est-il définitif ?",
                 options: [
-                    "Oui, il engage pour la vie de l'entreprise",
                     "Non : il se modifie, mieux vaut démarrer que retarder le projet",
+                    "Oui, il engage pour la vie de l'entreprise",
                     "Oui, sauf en cas de liquidation"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ne bloque pas ton projet sur ce choix : changer de statut est prévu et courant."
             },
             {
@@ -161,11 +161,11 @@ window.QUIZ = {
             {
                 q: "Quelle est la principale limite de la micro-entreprise ?",
                 options: [
-                    "Elle interdit d'avoir des clients à l'étranger",
                     "Les frais professionnels ne se déduisent pas",
+                    "Elle interdit d'avoir des clients à l'étranger",
                     "Elle impose un capital minimum"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Une activité nécessitant des achats importants y est vite pénalisée."
             },
             // Série 2
@@ -181,18 +181,18 @@ window.QUIZ = {
             },
             {
                 q: "Quel statut facilite le plus l'entrée d'investisseurs au capital ?",
-                options: ["La micro-entreprise", "La SASU / SAS", "L'EURL"],
-                a: 1,
+                options: ["La micro-entreprise", "L'EURL", "La SASU / SAS"],
+                a: 2,
                 explication: "Sa grande liberté statutaire en fait le choix habituel des projets destinés à croître."
             },
             {
                 q: "Pourquoi ouvrir un compte bancaire dédié dès le premier euro encaissé ?",
                 options: [
                     "C'est une obligation légale pour tous les statuts",
-                    "Mélanger les comptes rend la comptabilité pénible et brouille la vision des résultats",
-                    "Pour obtenir un meilleur taux de crédit"
+                    "Pour obtenir un meilleur taux de crédit",
+                    "Mélanger les comptes rend la comptabilité pénible et brouille la vision des résultats"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Cinq minutes d'ouverture, des heures épargnées ensuite."
             }
         ],
@@ -203,21 +203,21 @@ window.QUIZ = {
             {
                 q: "Que coûte réellement une levée de fonds ?",
                 options: [
-                    "Des intérêts élevés",
                     "Une part du capital et du pouvoir de décision",
+                    "Des intérêts élevés",
                     "Une commission fixe"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Tu acquiers des associés qui auront leur mot à dire, y compris sur ton maintien à la direction."
             },
             {
                 q: "Qu'est-ce qu'un prêt d'honneur ?",
                 options: [
-                    "Un prêt accordé sans document écrit",
                     "Un prêt personnel à taux zéro, sans garantie, qui compte comme des fonds propres",
+                    "Un prêt accordé sans document écrit",
                     "Un prêt réservé aux entreprises déjà rentables"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Les banques le prennent en compte : il en débloque fréquemment un autre, plus important."
             },
             {
@@ -231,10 +231,10 @@ window.QUIZ = {
                 q: "Lever des fonds est-il une réussite en soi ?",
                 options: [
                     "Oui, c'est la consécration d'un projet",
-                    "Non : c'est un engagement à croître très vite, en échange d'une part de l'entreprise",
-                    "Oui, si le montant dépasse 500 000 €"
+                    "Oui, si le montant dépasse 500 000 €",
+                    "Non : c'est un engagement à croître très vite, en échange d'une part de l'entreprise"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Pour la majorité des projets, se développer grâce aux revenus des clients laisse plus de liberté."
             },
             {
@@ -250,11 +250,11 @@ window.QUIZ = {
             {
                 q: "Que regarde une banque au-delà des chiffres ?",
                 options: [
-                    "Le design du business plan",
                     "La cohérence des hypothèses et ton expérience du secteur",
+                    "Le design du business plan",
                     "Le nombre de pages du dossier"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Des hypothèses explicites valent mieux que des chiffres flatteurs. Bpifrance peut aussi se porter garant."
             }
         ]
@@ -268,31 +268,31 @@ window.QUIZ = {
         {
             q: "Quelle est la cause d'échec la plus fréquente d'une jeune entreprise ?",
             options: [
-                "Le manque de travail du fondateur",
                 "L'absence de marché : on construit ce que personne n'avait demandé",
+                "Le manque de travail du fondateur",
                 "Une mauvaise gestion comptable"
             ],
-            a: 1,
+            a: 0,
             explication: "D'où l'ordre recommandé : vérifier que le problème existe avant tout le reste."
         },
         {
             q: "Par quoi commencer un projet d'entreprise ?",
             options: [
                 "Le nom, le logo et le statut juridique",
-                "Vérifier que quelqu'un est prêt à payer pour que le problème disparaisse",
-                "La recherche de financement"
+                "La recherche de financement",
+                "Vérifier que quelqu'un est prêt à payer pour que le problème disparaisse"
             ],
-            a: 1,
+            a: 2,
             explication: "Tout le reste vient après, et devient beaucoup plus simple une fois cette réponse obtenue."
         },
         {
             q: "Quel document est le plus utile pour piloter la première année ?",
             options: [
-                "Un compte de résultat prévisionnel",
                 "Un tableau de trésorerie mois par mois",
+                "Un compte de résultat prévisionnel",
                 "Une étude de marché détaillée"
             ],
-            a: 1,
+            a: 0,
             explication: "Une entreprise rentable sur le papier peut disparaître faute de liquidités."
         },
         // Série 2
@@ -300,30 +300,30 @@ window.QUIZ = {
             q: "Tu hésites entre créer ta société maintenant ou trouver d'abord un client. Que faire ?",
             options: [
                 "Créer la structure : c'est plus sérieux vis-à-vis des clients",
-                "Chercher un premier client payant : cela valide le projet et rassure les financeurs",
-                "Les deux en parallèle"
+                "Les deux en parallèle",
+                "Chercher un premier client payant : cela valide le projet et rassure les financeurs"
             ],
-            a: 1,
+            a: 2,
             explication: "Cela évite parfois de créer une entreprise dont on découvrirait trop tard qu'elle n'a pas de marché."
         },
         {
             q: "Vingt personnes te disent que ton idée est excellente. Que peux-tu en conclure ?",
             options: [
-                "Que le marché est validé",
                 "Rien : aucune n'a payé",
+                "Que le marché est validé",
                 "Que tu peux lever des fonds"
             ],
-            a: 1,
+            a: 0,
             explication: "Interroge le passé plutôt que le futur, et cherche des personnes qui n'ont aucune raison de te ménager."
         },
         {
             q: "Quel accompagnement gratuit est le plus sous-utilisé par les créateurs ?",
             options: [
-                "Les CCI et chambres de métiers",
                 "Les cabinets de conseil privés",
-                "Les forums en ligne"
+                "Les forums en ligne",
+                "Les CCI et chambres de métiers"
             ],
-            a: 0,
+            a: 2,
             explication: "Financé par tes futures cotisations, et souvent accompagné de prêts d'honneur via Initiative France ou Réseau Entreprendre."
         }
     ]

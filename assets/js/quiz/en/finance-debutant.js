@@ -15,20 +15,20 @@ window.QUIZ = {
                 q: "What does the emergency fund correspond to?",
                 options: [
                     "3 to 6 months of income",
-                    "3 to 6 months of everyday spending",
-                    "10% of your annual salary"
+                    "10% of your annual salary",
+                    "3 to 6 months of everyday spending"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It really is spending, not income. The gap between the two is often 30%."
             },
             {
                 q: "Why build this reserve before investing?",
                 options: [
-                    "Because the law requires it",
                     "So as not to be forced to sell your investments at the wrong moment",
+                    "Because the law requires it",
                     "Because it pays more than the stock market"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Financial shocks often happen when the economy is doing badly — that is, when markets are low."
             },
             {
@@ -52,20 +52,20 @@ window.QUIZ = {
                 q: "Which saving method proves the most effective over time?",
                 options: [
                     "Setting aside whatever is left at the end of the month",
-                    "An automatic transfer the day after payday",
-                    "Saving one large sum once a year"
+                    "Saving one large sum once a year",
+                    "An automatic transfer the day after payday"
                 ],
-                a: 1,
+                a: 2,
                 explication: "There is never anything left: spending naturally adjusts to whatever is available."
             },
             {
                 q: "Why is it unwise to try to boost the return on this reserve?",
                 options: [
-                    "Because the gains are taxed at 100%",
                     "Because the possible gain is negligible while the risk is not",
+                    "Because the gains are taxed at 100%",
                     "Because it is forbidden on a regulated savings account"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Taking risk with your safety cushion removes the very reason it exists."
             }
         ],
@@ -96,22 +96,22 @@ window.QUIZ = {
             {
                 q: "What is compound interest?",
                 options: [
-                    "A tax on capital gains",
                     "Return that itself produces further return",
+                    "A tax on capital gains",
                     "The total of several savings accounts"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Discreet over a few years, it becomes the dominant factor over several decades."
             },
             // Set 2
             {
                 q: "Amélie invests €200 a month from age 25, Bruno from age 35, both until 65 at 5%. What does Bruno pay in less, and what does he lose?",
                 options: [
-                    "€24,000 less paid in, about €139,000 less in the result",
                     "€24,000 less paid in, about €24,000 less in the result",
+                    "€24,000 less paid in, about €139,000 less in the result",
                     "Nothing, he catches up by paying in more"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The gap in the result is nearly six times the gap in effort. Those ten years cannot be made up."
             },
             {
@@ -149,20 +149,20 @@ window.QUIZ = {
                 q: "What are you buying with a unit of an ETF tracking the MSCI World?",
                 options: [
                     "A share in one large global company",
-                    "A fraction of more than 1,500 companies across 23 developed countries",
-                    "An international government bond"
+                    "An international government bond",
+                    "A fraction of more than 1,500 companies across 23 developed countries"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Rebuilding that spread holding by holding would be out of reach for an individual, if only on fees."
             },
             {
                 q: "Does an ETF protect you from a general market fall?",
                 options: [
                     "Yes, that is the whole point of diversification",
-                    "No: it protects from the risk tied to one company, not from market risk",
-                    "Yes, beyond 8 years of holding"
+                    "Yes, beyond 8 years of holding",
+                    "No: it protects from the risk tied to one company, not from market risk"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A global equity ETF has lost more than 30% in past crises. That is its normal behaviour."
             },
             // Set 2
@@ -179,21 +179,21 @@ window.QUIZ = {
             {
                 q: "What is the difference between an accumulating and a distributing ETF?",
                 options: [
-                    "The accumulating one automatically reinvests the dividends",
                     "The distributing one is reserved for professionals",
-                    "The accumulating one guarantees the capital"
+                    "The accumulating one guarantees the capital",
+                    "The accumulating one automatically reinvests the dividends"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Automatic reinvestment serves compound interest directly."
             },
             {
                 q: "What do studies comparing active funds and indices over 10 years show?",
                 options: [
                     "Active funds almost always beat their index",
-                    "The majority of active funds do worse, once fees are deducted",
-                    "The two are exactly equivalent"
+                    "The two are exactly equivalent",
+                    "The majority of active funds do worse, once fees are deducted"
                 ],
-                a: 1,
+                a: 2,
                 explication: "This does not mean no manager beats the market, but that identifying which ones in advance is another matter."
             }
         ],
@@ -204,21 +204,21 @@ window.QUIZ = {
             {
                 q: "In finance, what does the word “risk” mean?",
                 options: [
-                    "The probability of losing everything",
                     "The size of the swings, upwards as well as downwards",
+                    "The probability of losing everything",
                     "The amount of fees taken"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The higher an investment can rise, the lower it can fall. The two always go together."
             },
             {
                 q: "Which question determines the acceptable level of risk?",
                 options: [
                     "What return am I aiming for?",
-                    "How long before I need this money?",
-                    "How old am I?"
+                    "How old am I?",
+                    "How long before I need this money?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It is the horizon that commands, not the ambition for return."
             },
             {
@@ -236,30 +236,30 @@ window.QUIZ = {
                 q: "Is holding ten shares from the same sector diversifying?",
                 options: [
                     "Yes, ten holdings are enough",
-                    "No: real spreading works across several asset classes, regions and sectors",
-                    "Yes, provided they are foreign"
+                    "Yes, provided they are foreign",
+                    "No: real spreading works across several asset classes, regions and sectors"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A whole sector can fall as one block. Diversification plays out at several levels."
             },
             {
                 q: "What test should you apply before choosing your allocation?",
                 options: [
-                    "Check the return over the last three years",
                     "Ask yourself whether you would hold without selling after a 35% fall",
+                    "Check the return over the last three years",
                     "Compare the fees of three brokers"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The right level of risk is the one that lets you sleep and hold your strategy in the storm."
             },
             {
                 q: "When does a fall become a real loss?",
                 options: [
-                    "As soon as it appears on the statement",
                     "At the moment of the sale",
+                    "As soon as it appears on the statement",
                     "After a year"
                 ],
-                a: 1,
+                a: 0,
                 explication: "As long as you do not sell, the fall stays notional. Hence the importance of never being forced to sell."
             }
         ],
@@ -270,11 +270,11 @@ window.QUIZ = {
             {
                 q: "What is a tax “wrapper”?",
                 options: [
-                    "The container in which you house your investments",
                     "A type of investment in its own right",
-                    "The document sent by the tax authority"
+                    "The document sent by the tax authority",
+                    "The container in which you house your investments"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Two identical investments can leave very different sums depending on their container."
             },
             {
@@ -298,8 +298,8 @@ window.QUIZ = {
             },
             {
                 q: "On €10,000 of gains, what is the gap between a securities account and a PEA held over 5 years?",
-                options: ["About €300", "About €1,280", "None"],
-                a: 1,
+                options: ["About €1,280", "About €300", "None"],
+                a: 0,
                 explication: "€3,000 of tax against €1,720 of social levies, for exactly the same investments."
             },
             {
@@ -332,25 +332,25 @@ window.QUIZ = {
         },
         {
             q: "Which factor weighs most on the result of a very long-term investment?",
-            options: ["Choosing the right moment to enter", "The time spent invested", "The number of holdings owned"],
-            a: 1,
+            options: ["Choosing the right moment to enter", "The number of holdings owned", "The time spent invested"],
+            a: 2,
             explication: "Starting modestly and early beats starting big and late by a wide margin."
         },
         {
             q: "Among these, which do you control entirely in advance?",
-            options: ["The return", "The fees", "How long a crisis lasts"],
-            a: 1,
+            options: ["The fees", "The return", "How long a crisis lasts"],
+            a: 0,
             explication: "Return cannot be ordered; fees can. Hence their disproportionate importance."
         },
         // Set 2
         {
             q: "A friend offers you an investment paying 12% a year, guaranteed and risk-free. What should you do?",
             options: [
-                "Invest a small sum to test it",
                 "Refuse: a high return and the absence of risk are incompatible",
+                "Invest a small sum to test it",
                 "Ask for a higher return"
             ],
-            a: 1,
+            a: 0,
             explication: "Always check that the intermediary is registered with your country's financial regulator."
         },
         {
@@ -366,11 +366,11 @@ window.QUIZ = {
         {
             q: "In what order should you reason when choosing an investment?",
             options: [
-                "The wrapper, then the investment, then the need",
                 "The need, then the horizon, then the investment, then the wrapper",
+                "The wrapper, then the investment, then the need",
                 "The return on display, then the rest"
             ],
-            a: 1,
+            a: 0,
             explication: "A tax advantage never makes up for high fees or an unsuitable investment."
         }
     ]

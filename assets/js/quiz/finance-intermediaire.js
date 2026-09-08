@@ -14,21 +14,21 @@ window.QUIZ = {
             {
                 q: "Sur quoi se fonde d'abord le choix d'une allocation ?",
                 options: [
-                    "Le tempérament de l'investisseur",
                     "L'horizon, c'est-à-dire la date du besoin",
+                    "Le tempérament de l'investisseur",
                     "Le niveau actuel des marchés"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un tempérament ne change pas le temps qu'un marché met à se remettre d'une chute. C'est la date du besoin qui détermine ce qu'on peut supporter."
             },
             {
                 q: "Une même personne peut-elle avoir plusieurs allocations en même temps ?",
                 options: [
                     "Non, une seule par personne",
-                    "Oui : une par poche, selon l'échéance de chaque projet",
-                    "Oui, mais seulement après 50 ans"
+                    "Oui, mais seulement après 50 ans",
+                    "Oui : une par poche, selon l'échéance de chaque projet"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un achat dans 2 ans et une retraite dans 25 ans n'appellent pas la même exposition. Ce sont trois poches d'une même personne, chacune avec son échéance."
             },
             {
@@ -66,10 +66,10 @@ window.QUIZ = {
                 q: "Quand faut-il réviser son allocation ?",
                 options: [
                     "Quand les marchés montent ou baissent fortement",
-                    "Quand les échéances des projets changent",
-                    "Tous les mois, pour rester réactif"
+                    "Tous les mois, pour rester réactif",
+                    "Quand les échéances des projets changent"
                 ],
-                a: 1,
+                a: 2,
                 explication: "L'allocation se fixe à froid, en fonction de dates connues. La réviser selon l'actualité revient à acheter cher et vendre bas."
             }
         ],
@@ -91,20 +91,20 @@ window.QUIZ = {
                 q: "Sur 30 ans et 20 000 € placés à 6 %, que coûte un point de frais annuel supplémentaire ?",
                 options: [
                     "Environ 2 000 €",
-                    "Environ 29 000 €, soit un quart du résultat",
-                    "Environ 6 000 €"
+                    "Environ 6 000 €",
+                    "Environ 29 000 €, soit un quart du résultat"
                 ],
-                a: 1,
+                a: 2,
                 explication: "113 000 € avec 0,2 % de frais, contre 84 000 € avec 1,2 %. L'écart dépasse le capital initialement investi."
             },
             {
                 q: "Comment sont prélevés les frais de gestion d'un fonds ?",
                 options: [
                     "Par facture annuelle envoyée au client",
-                    "Silencieusement, sur l'encours, déduits de la performance affichée",
-                    "Uniquement au moment de la revente"
+                    "Uniquement au moment de la revente",
+                    "Silencieusement, sur l'encours, déduits de la performance affichée"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ils n'apparaissent jamais comme une ligne de débit. C'est précisément ce qui les rend difficiles à percevoir."
             },
             // Série 2
@@ -122,20 +122,20 @@ window.QUIZ = {
                 q: "Quel critère comparer en premier entre deux supports équivalents ?",
                 options: [
                     "Leur performance de l'an dernier",
-                    "Leurs frais annuels",
-                    "Le nombre d'étoiles attribué par les comparateurs"
+                    "Le nombre d'étoiles attribué par les comparateurs",
+                    "Leurs frais annuels"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La performance passée ne se reproduit pas de façon fiable ; les frais, eux, se reproduisent à l'identique chaque année."
             },
             {
                 q: "Quels frais s'ajoutent à ceux du support dans un contrat d'assurance-vie ?",
                 options: [
-                    "Aucun, le support inclut tout",
                     "Des frais annuels d'enveloppe sur les unités de compte",
+                    "Aucun, le support inclut tout",
                     "Une taxe d'État de 2 %"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Les frais se superposent : ceux du fonds, ceux du contrat, parfois des frais d'entrée sur chaque versement. Il faut demander le total."
             }
         ],
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "Quand démarre le compteur des cinq ans du PEA ?",
                 options: [
                     "Au premier versement significatif",
-                    "À l'ouverture du plan",
-                    "Au premier achat de titres"
+                    "Au premier achat de titres",
+                    "À l'ouverture du plan"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ouvrir un PEA avec une somme modeste fait courir l'horloge. Attendre « d'avoir assez » revient à perdre des années d'antériorité gratuites."
             },
             {
@@ -213,10 +213,10 @@ window.QUIZ = {
                 q: "Qu'apportent réellement les versements programmés ?",
                 options: [
                     "Un rendement moyen supérieur",
-                    "La suppression de la question du moment d'entrée",
-                    "Une garantie contre les pertes"
+                    "Une garantie contre les pertes",
+                    "La suppression de la question du moment d'entrée"
                 ],
-                a: 1,
+                a: 2,
                 explication: "En moyenne, ils rapportent même légèrement moins qu'un investissement en une fois. Leur bénéfice est de rendre l'attente tenable et d'éviter le report indéfini."
             },
             {
@@ -282,10 +282,10 @@ window.QUIZ = {
             q: "Quelle décision explique la plus grande part de la variation des résultats ?",
             options: [
                 "Le choix des supports individuels",
-                "L'allocation entre actifs risqués et stables",
-                "Le moment précis de l'achat"
+                "Le moment précis de l'achat",
+                "L'allocation entre actifs risqués et stables"
             ],
-            a: 1,
+            a: 2,
             explication: "L'allocation est la décision la plus structurante, bien avant le choix de tel ou tel fonds."
         },
         {
@@ -301,11 +301,11 @@ window.QUIZ = {
         {
             q: "Pourquoi la durée compte-t-elle plus que le montant investi ?",
             options: [
-                "Parce que les frais baissent avec le temps",
                 "Parce que les intérêts produisent eux-mêmes des intérêts",
+                "Parce que les frais baissent avec le temps",
                 "Parce que les marchés montent toujours"
             ],
-            a: 1,
+            a: 0,
             explication: "Doubler la durée ne double pas le capital : dans l'exemple du guide, elle le triple presque."
         },
         // Série 2

@@ -15,21 +15,21 @@ window.QUIZ = {
             {
                 q: "Where does power in a negotiation come from?",
                 options: [
-                    "From what you get if you walk away",
                     "From the quality of your arguments",
+                    "From what you get if you walk away",
                     "From your confidence"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is what explains why two equally skilled people do not have the same power."
             },
             {
                 q: "What is a BATNA?",
                 options: [
-                    "The best alternative to a negotiated agreement",
                     "The minimum amount the other side will accept",
-                    "The average of the offers received"
+                    "The average of the offers received",
+                    "The best alternative to a negotiated agreement"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It sets your walk-away point: no offer below it deserves accepting."
             },
             {
@@ -46,31 +46,31 @@ window.QUIZ = {
             {
                 q: "When do you strengthen your position?",
                 options: [
-                    "Before the negotiation, by improving your alternative",
                     "During it, through firmness",
+                    "Before the negotiation, by improving your alternative",
                     "At the end, by threatening to leave"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Getting a second proposal moves the walk-away point."
             },
             {
                 q: "What does the other side's alternative tell you?",
                 options: [
-                    "How far they can go",
                     "What they think of you",
-                    "Their exact budget"
+                    "Their exact budget",
+                    "How far they can go"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A supplier who has only you as a customer does not negotiate like one with twenty."
             },
             {
                 q: "What is “I can easily go elsewhere” worth when it is not true?",
                 options: [
-                    "It works once, and is paid for if the other side calls the bluff",
                     "It is a proven technique",
-                    "It has no effect at all"
+                    "It has no effect at all",
+                    "It works once, and is paid for if the other side calls the bluff"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A real alternative, however modest, beats a threat credible for five minutes."
             }
         ],
@@ -91,21 +91,21 @@ window.QUIZ = {
             {
                 q: "What should you do when there is no zone of agreement on price?",
                 options: [
-                    "Add a variable: timing, volume, warranty, services",
                     "Insist and repeat the arguments",
-                    "Drag it out to wear the other side down"
+                    "Drag it out to wear the other side down",
+                    "Add a variable: timing, volume, warranty, services"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A single-variable negotiation is a split; with two, trades become possible."
             },
             {
                 q: "Should you announce your maximum limit?",
                 options: [
-                    "No: announcing it amounts to offering it",
                     "Yes, to save time",
-                    "Yes, if the other side asks"
+                    "Yes, if the other side asks",
+                    "No: announcing it amounts to offering it"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The limit is there to help you decide, not to be communicated."
             },
             // Series 2
@@ -132,11 +132,11 @@ window.QUIZ = {
             {
                 q: "Why does a single variable make the negotiation zero-sum?",
                 options: [
-                    "What one side gains on that variable, the other necessarily loses",
                     "Because the parties dig in",
-                    "Because price is always the hard point"
+                    "Because price is always the hard point",
+                    "What one side gains on that variable, the other necessarily loses"
                 ],
-                a: 0,
+                a: 2,
                 explication: "That is why adding a variable unblocks stuck situations."
             }
         ],
@@ -147,31 +147,31 @@ window.QUIZ = {
             {
                 q: "Target €29,000, expected offer from them €27,000: what opening offer?",
                 options: [
-                    "€31,000",
                     "€29,000",
+                    "€31,000",
                     "€35,000"
                 ],
-                a: 0,
+                a: 1,
                 explication: "That is €2,000 above the target, so that the midpoint lands on it."
             },
             {
                 q: "Is the advice “never state the first number” sound?",
                 options: [
-                    "No: whoever opens steers the discussion, provided they stay plausible",
                     "Yes, always",
-                    "Yes, except between professionals"
+                    "Yes, except between professionals",
+                    "No: whoever opens steers the discussion, provided they stay plausible"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The work on anchoring contradicts it."
             },
             {
                 q: "When is it better to let the other side open?",
                 options: [
-                    "When you do not know what the thing being negotiated is worth",
                     "When you are in a strong position",
-                    "When the relationship must last"
+                    "When the relationship must last",
+                    "When you do not know what the thing being negotiated is worth"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Opening without information exposes you to anchoring against yourself."
             },
             // Series 2
@@ -198,11 +198,11 @@ window.QUIZ = {
             {
                 q: "Does the anchoring effect disappear when everyone knows the number is negotiable?",
                 options: [
-                    "No: it is one of the best replicated effects in the psychology of decision",
                     "Yes, between professionals",
+                    "No: it is one of the best replicated effects in the psychology of decision",
                     "Yes, if the number is announced as indicative"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It has been measured in experts warned about the set-up."
             }
         ],
@@ -213,21 +213,21 @@ window.QUIZ = {
             {
                 q: "What is the difference between a position and an interest?",
                 options: [
-                    "The position is what you ask for, the interest is why you ask for it",
                     "The position is firm, the interest negotiable",
+                    "The position is what you ask for, the interest is why you ask for it",
                     "The position is written, the interest implicit"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Positions clash; interests, often, do not."
             },
             {
                 q: "What happens as long as you discuss positions?",
                 options: [
-                    "Only a split exists",
                     "Each side defends its arguments",
-                    "The deal gets closer"
+                    "The deal gets closer",
+                    "Only a split exists"
                 ],
-                a: 0,
+                a: 2,
                 explication: "As soon as you know the interests, other solutions appear."
             },
             {
@@ -254,21 +254,21 @@ window.QUIZ = {
             {
                 q: "The assumption “what one gains, the other loses” is:",
                 options: [
-                    "True for a single variable, false as soon as there are several",
                     "Always true",
+                    "True for a single variable, false as soon as there are several",
                     "Always false"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is nonetheless almost everyone's default assumption."
             },
             {
                 q: "What should be prepared before every negotiation, beyond your objective?",
                 options: [
-                    "What costs me little and is worth a lot to them",
                     "Three fallback arguments",
+                    "What costs me little and is worth a lot to them",
                     "The point at which I will give in"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A deadline, a reference, an exclusivity, flexibility on the schedule."
             }
         ]
@@ -279,31 +279,31 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "A negotiation can largely be worked out before it starts",
                 "You have to hold your position",
-                "The best negotiator is the most patient"
+                "The best negotiator is the most patient",
+                "A negotiation can largely be worked out before it starts"
             ],
-            a: 0,
+            a: 2,
             explication: "Four ideas are enough, and they all translate into figures."
         },
         {
             q: "What do your alternative and your maximum limit have in common?",
             options: [
-                "Both are there to help you decide, not to be communicated",
                 "Both should be announced early",
+                "Both are there to help you decide, not to be communicated",
                 "Both are worked out after the first offer"
             ],
-            a: 0,
+            a: 1,
             explication: "Announcing them amounts to offering them."
         },
         {
             q: "Someone accepts a deal after six months, citing the time invested. What do you say?",
             options: [
-                "The time spent is lost whatever happens; only the comparison with the alternative counts",
                 "Six months justify closing",
+                "The time spent is lost whatever happens; only the comparison with the alternative counts",
                 "A deadline should have been set"
             ],
-            a: 0,
+            a: 1,
             explication: "That is the sunk cost bias, developed at the advanced level."
         },
         {
@@ -319,11 +319,11 @@ window.QUIZ = {
         {
             q: "What should a deal be compared with to judge it?",
             options: [
-                "Your alternative",
                 "What you hoped for at the start",
+                "Your alternative",
                 "What the other side got"
             ],
-            a: 0,
+            a: 1,
             explication: "It is the only comparison that corresponds to a reality."
         },
         {

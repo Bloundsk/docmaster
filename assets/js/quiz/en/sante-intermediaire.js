@@ -19,21 +19,21 @@ window.QUIZ = {
             {
                 q: "Is stress a pathology?",
                 options: [
-                    "No: it is an adaptive response, useful and normal",
                     "Yes, as soon as it appears",
+                    "No: it is an adaptive response, useful and normal",
                     "Yes, if it is frequent"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The problem is not that it fires, it is that it no longer stops."
             },
             {
                 q: "What separates chronic stress from acute stress?",
                 options: [
-                    "The absence of a return to normal",
                     "Its intensity",
-                    "Its cause"
+                    "Its cause",
+                    "The absence of a return to normal"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is not “a lot of acute stress”: it is a different state."
             },
             {
@@ -50,31 +50,31 @@ window.QUIZ = {
             {
                 q: "Why is chronic stress settling in hard to see in yourself?",
                 options: [
-                    "The adaptation is gradual and moves the point of comparison",
                     "People refuse to admit it",
+                    "The adaptation is gradual and moves the point of comparison",
                     "The symptoms are invisible"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Hence “it is fine, it is just a busy patch” held for eight months."
             },
             {
                 q: "Who often notices the situation first?",
                 options: [
-                    "The people around you",
                     "The person concerned",
+                    "The people around you",
                     "The employer"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is more visible from the outside than from within."
             },
             {
                 q: "What does “I handle stress badly” assume?",
                 options: [
-                    "That the load is a given and coping is a skill",
                     "That the person lacks method",
-                    "That the job is badly defined"
+                    "That the job is badly defined",
+                    "That the load is a given and coping is a skill"
                 ],
-                a: 0,
+                a: 2,
                 explication: "But organisational factors are documented and are the employer's responsibility."
             }
         ],
@@ -105,22 +105,22 @@ window.QUIZ = {
             {
                 q: "What effect does social support have in this model?",
                 options: [
-                    "It changes the effect of everything else",
                     "It has no measured effect",
-                    "It replaces latitude"
+                    "It replaces latitude",
+                    "It changes the effect of everything else"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The most unfavourable situation combines high demand, low latitude and low support."
             },
             // Series 2
             {
                 q: "A job called “active” in this model is:",
                 options: [
-                    "Demanding, with room to manoeuvre",
                     "Undemanding and autonomous",
+                    "Demanding, with room to manoeuvre",
                     "Very demanding and constrained"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Demanding but sustainable, often stimulating."
             },
             {
@@ -151,11 +151,11 @@ window.QUIZ = {
             {
                 q: "What is the minimum daily rest between two working days, in French law?",
                 options: [
-                    "11 consecutive hours",
                     "8 consecutive hours",
+                    "11 consecutive hours",
                     "9 consecutive hours"
                 ],
-                a: 0,
+                a: 1,
                 explication: "And 35 consecutive hours per week. In France these are enforceable minimums; check your own country."
             },
             {
@@ -182,11 +182,11 @@ window.QUIZ = {
             {
                 q: "What does “enforceable minimums” mean?",
                 options: [
-                    "They are not comfort recommendations: they are binding",
                     "That they are advised",
+                    "They are not comfort recommendations: they are binding",
                     "That they vary by company"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Regularly falling below them engages the employer's liability."
             },
             {
@@ -202,11 +202,11 @@ window.QUIZ = {
             {
                 q: "What is psychological detachment?",
                 options: [
-                    "No longer thinking about it, and not just no longer doing it",
                     "Keeping your distance from colleagues",
-                    "Reducing your involvement at work"
+                    "Reducing your involvement at work",
+                    "No longer thinking about it, and not just no longer doing it"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is the most often missing of the three conditions."
             }
         ],
@@ -227,52 +227,52 @@ window.QUIZ = {
             {
                 q: "What effect does a work message sent at 11 pm have?",
                 options: [
-                    "It signals to the recipients what is expected",
                     "None, if you say not to reply",
+                    "It signals to the recipients what is expected",
                     "It lightens the following day"
                 ],
-                a: 0,
+                a: 1,
                 explication: "That is why scheduled sending changes habits more than a charter on the wall."
             },
             {
                 q: "Staying reachable “just in case” without receiving anything: what is the cost?",
                 options: [
-                    "The expectation prevents detachment, and so recovery",
                     "None, if nothing comes in",
-                    "Only the tiredness from the phone"
+                    "Only the tiredness from the phone",
+                    "The expectation prevents detachment, and so recovery"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is not the number of messages received that weighs, it is the possibility of receiving one."
             },
             // Series 2
             {
                 q: "What must French companies define on this subject?",
                 options: [
-                    "How the right to disconnect is exercised, by agreement or by charter",
                     "A time at which the servers shut down",
-                    "Nothing, it is an individual matter"
+                    "Nothing, it is an individual matter",
+                    "How the right to disconnect is exercised, by agreement or by charter"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The arrangements range from no obligation to reply to scheduled sending."
             },
             {
                 q: "What replaces separation by place, when working from home?",
                 options: [
-                    "Markers: an end time, a dedicated space, a closing ritual",
                     "A completely separate room, without which nothing works",
+                    "Markers: an end time, a dedicated space, a closing ritual",
                     "Hours imposed by the employer"
                 ],
-                a: 0,
+                a: 1,
                 explication: "These signals are artificial and they work: the brain uses context to change mode."
             },
             {
                 q: "Is disconnecting purely an individual matter?",
                 options: [
-                    "No: it plays out largely in what each person sends",
                     "Yes, everybody manages their own boundaries",
+                    "No: it plays out largely in what each person sends",
                     "Yes, except where there is a company agreement"
                 ],
-                a: 0,
+                a: 1,
                 explication: "What you send in the evening sets what others believe they must do."
             }
         ]
@@ -283,21 +283,21 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "What makes a load sustainable, or stops it being so",
                 "How to reduce your workload",
-                "How to withstand stress better"
+                "How to withstand stress better",
+                "What makes a load sustainable, or stops it being so"
             ],
-            a: 0,
+            a: 2,
             explication: "The distinction is not between stressful and not stressful."
         },
         {
             q: "What do latitude and support have in common?",
             options: [
-                "Both change the effect of the same workload",
                 "Both depend on the employee",
+                "Both change the effect of the same workload",
                 "Both are measured in hours"
             ],
-            a: 0,
+            a: 1,
             explication: "Two equally loaded jobs do not have the same effect."
         },
         {
@@ -313,31 +313,31 @@ window.QUIZ = {
         {
             q: "Why write down, dated, how you are at work today?",
             options: [
-                "Because adaptation erases the points of comparison",
                 "To build legal evidence",
-                "To show it to your employer"
+                "To show it to your employer",
+                "Because adaptation erases the points of comparison"
             ],
-            a: 0,
+            a: 2,
             explication: "Re-read in six months, that piece of paper will say what memory will not."
         },
         {
             q: "Which measure in this level costs least and changes most for a team?",
             options: [
-                "Scheduling late messages instead of sending them",
                 "Cutting the number of meetings",
-                "Adding a disconnection charter"
+                "Adding a disconnection charter",
+                "Scheduling late messages instead of sending them"
             ],
-            a: 0,
+            a: 2,
             explication: "One click, and it changes everybody's expectations."
         },
         {
             q: "A colleague says they have not recovered for weeks. What is the useful response?",
             options: [
-                "Point them to a doctor or an occupational doctor, both bound by confidentiality",
                 "Advise them to manage their stress better",
-                "Suggest they take some holiday"
+                "Suggest they take some holiday",
+                "Point them to a doctor or an occupational doctor, both bound by confidentiality"
             ],
-            a: 0,
+            a: 2,
             explication: "Neither this guide nor somebody close can go further than naming and directing."
         }
     ]

@@ -15,31 +15,31 @@ window.QUIZ = {
             {
                 q: "Where should you start when optimising a page?",
                 options: [
-                    "Minifying the JavaScript",
                     "Measuring, and attacking the biggest bar",
+                    "Minifying the JavaScript",
                     "Changing framework"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Optimising without measuring is guessing. The cause is almost never the one you imagine."
             },
             {
                 q: "Why is caching a particular kind of lever?",
                 options: [
-                    "It improves performance without slimming anything down",
                     "It reduces file sizes",
-                    "It speeds up the server"
+                    "It speeds up the server",
+                    "It improves performance without slimming anything down"
                 ],
-                a: 0,
+                a: 2,
                 explication: "One line of configuration removes the download entirely for returning visitors."
             },
             {
                 q: "How do you change a heavily cached file?",
                 options: [
-                    "By clearing visitors' caches",
                     "By changing its name: style.a3f9.css",
+                    "By clearing visitors' caches",
                     "By reducing the cache duration"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A change alters the name, therefore the address, so the cache is bypassed naturally."
             },
             // Series 2
@@ -66,11 +66,11 @@ window.QUIZ = {
             {
                 q: "What does an image with no declared dimensions cause?",
                 options: [
-                    "Slower loading",
                     "Content shifting while the page loads",
+                    "Slower loading",
                     "A loss of quality"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The user clicks the wrong thing. Declaring dimensions removes the fault without speeding anything up."
             }
         ],
@@ -91,32 +91,32 @@ window.QUIZ = {
             {
                 q: "What do prepared statements protect against?",
                 options: [
-                    "SQL injection",
                     "Injected scripts",
-                    "Forged requests"
+                    "Forged requests",
+                    "SQL injection"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Values are passed separately from the query text."
             },
             {
                 q: "What are “validate on input” and “escape on output”?",
                 options: [
                     "Two names for the same operation",
-                    "Two distinct acts: refuse what has the wrong shape, neutralise what is displayed",
-                    "Two stages of encryption"
+                    "Two stages of encryption",
+                    "Two distinct acts: refuse what has the wrong shape, neutralise what is displayed"
                 ],
-                a: 1,
+                a: 2,
                 explication: "One does not replace the other."
             },
             // Series 2
             {
                 q: "Is a browser-side check enough?",
                 options: [
-                    "Yes, if it is well written",
                     "No: it can be bypassed in three seconds, only the server counts",
+                    "Yes, if it is well written",
                     "Yes, for simple forms"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It improves comfort. It protects nothing."
             },
             {
@@ -147,31 +147,31 @@ window.QUIZ = {
             {
                 q: "What are automated tests for?",
                 options: [
-                    "Proving the code is correct",
                     "Being able to change the code without fear",
+                    "Proving the code is correct",
                     "Satisfying a quality requirement"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A project with no tests becomes a project nobody dares touch, and that is how it dies."
             },
             {
                 q: "What proportion between the three levels of tests?",
                 options: [
-                    "Many unit, a few integration, very few end-to-end",
                     "As many of each",
+                    "Many unit, a few integration, very few end-to-end",
                     "Mostly end-to-end, closer to reality"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The reverse produces a slow suite nobody waits for any more."
             },
             {
                 q: "What should be tested first?",
                 options: [
-                    "The appearance of the screens",
                     "Business logic and critical journeys",
+                    "The appearance of the screens",
                     "The code of the libraries used"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Calculations, rules, edge cases, then sign-up, payment, sending."
             },
             // Series 2
@@ -179,20 +179,20 @@ window.QUIZ = {
                 q: "What should be done with a test that fails one time in ten for no reason?",
                 options: [
                     "Rerun it until it passes",
-                    "Fix it or delete it",
-                    "Disable it temporarily"
+                    "Disable it temporarily",
+                    "Fix it or delete it"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It teaches the team to ignore alerts. The day it detects a real problem, nobody believes it."
             },
             {
                 q: "400 unit at 5 ms, 60 integration at 200 ms, 12 end-to-end at 8 s: what share of the time for the last ones?",
                 options: [
                     "About 25%",
-                    "About 87%",
-                    "About 50%"
+                    "About 50%",
+                    "About 87%"
                 ],
-                a: 1,
+                a: 2,
                 explication: "For 2.5% of the tests. It is this handful that decides whether the suite runs on every change."
             },
             {
@@ -214,20 +214,20 @@ window.QUIZ = {
                 q: "What does the technical debt metaphor actually say?",
                 options: [
                     "The code is badly written",
-                    "You borrow time today and repay it later, with interest",
-                    "The project is behind schedule"
+                    "The project is behind schedule",
+                    "You borrow time today and repay it later, with interest"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The problem is not borrowing, it is never repaying."
             },
             {
                 q: "What separates chosen debt from inherited debt?",
                 options: [
-                    "Its size",
                     "Chosen debt is owned, documented and dated",
+                    "Its size",
                     "Inherited debt is cheaper"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The first can be managed. The second builds up silently."
             },
             {
@@ -244,31 +244,31 @@ window.QUIZ = {
             {
                 q: "Why does a complete rewrite often fail?",
                 options: [
-                    "It costs too much",
                     "The existing code contains years of fixes for special cases nobody remembers",
+                    "It costs too much",
                     "Teams lack motivation"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Gradual refactoring is less gratifying and far safer."
             },
             {
                 q: "What becomes of a library not updated for two years?",
                 options: [
                     "It keeps working without trouble",
-                    "It becomes hard to move forward: the breaking changes pile up",
-                    "It is replaced automatically"
+                    "It is replaced automatically",
+                    "It becomes hard to move forward: the breaking changes pile up"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Updating in small steps costs far less than one big jump every three years."
             },
             {
                 q: "How do you get time to fix technical debt?",
                 options: [
                     "By explaining that the code is badly written",
-                    "By putting a figure on the hours lost per week",
-                    "By waiting for an outage"
+                    "By waiting for an outage",
+                    "By putting a figure on the hours lost per week"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Put that way, the trade-off is no longer a matter of taste but of payback period."
             }
         ]
@@ -279,11 +279,11 @@ window.QUIZ = {
         {
             q: "What is this level about, compared with the previous one?",
             options: [
-                "The lifespan of the application",
                 "The choice of technologies",
+                "The lifespan of the application",
                 "How teams are organised"
             ],
-            a: 0,
+            a: 1,
             explication: "Holding up under load, resisting attacks, being changeable without fear, ageing without becoming unreadable."
         },
         {
@@ -299,31 +299,31 @@ window.QUIZ = {
         {
             q: "A page is slow and a 4 MB image sits at the top. What do you do?",
             options: [
-                "Optimise the application code first",
                 "Deal with the image first",
+                "Optimise the application code first",
                 "Add caching"
             ],
-            a: 1,
+            a: 0,
             explication: "Starting with your own code while a huge image waits is a frequent error of priority."
         },
         {
             q: "Which reasoning applies to both security and testing?",
             options: [
-                "Assume things will go wrong, and design accordingly",
                 "Automate as much as possible",
+                "Assume things will go wrong, and design accordingly",
                 "Document every decision"
             ],
-            a: 0,
+            a: 1,
             explication: "Never trust outside data; never assume a change has no effect."
         },
         {
             q: "Why does caching force you to version file names?",
             options: [
                 "To save space",
-                "Because a heavily cached file can no longer be changed in place",
-                "To comply with HTTP standards"
+                "To comply with HTTP standards",
+                "Because a heavily cached file can no longer be changed in place"
             ],
-            a: 1,
+            a: 2,
             explication: "Changing the name changes the address, which bypasses the cache naturally."
         },
         {

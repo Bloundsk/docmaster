@@ -17,20 +17,20 @@ window.QUIZ = {
                 q: "What does an HTML tag describe?",
                 options: [
                     "The visual appearance of an element",
-                    "The nature and role of a piece of content",
-                    "The element's position on screen"
+                    "The element's position on screen",
+                    "The nature and role of a piece of content"
                 ],
-                a: 1,
+                a: 2,
                 explication: "<h1> does not mean “big text” but “main heading of this page”."
             },
             {
                 q: "What is the difference between <div class=\"big-title\"> and <h2>?",
                 options: [
                     "None, only the styling changes",
-                    "The <h2> is understood as a heading by Google and screen readers",
-                    "The <div> renders faster"
+                    "The <div> renders faster",
+                    "The <h2> is understood as a heading by Google and screen readers"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Visually identical after a few lines of CSS. Functionally, worlds apart."
             },
             {
@@ -48,20 +48,20 @@ window.QUIZ = {
                 q: "Which CSS tool should you choose to align elements along a single line?",
                 options: [
                     "Grid",
-                    "Flexbox",
-                    "Tables"
+                    "Tables",
+                    "Flexbox"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Flexbox for one dimension, Grid for a two-dimensional grid."
             },
             {
                 q: "What are CSS variables such as --primary for?",
                 options: [
-                    "Speeding up page loading",
                     "Centralising repeated values in one place",
+                    "Speeding up page loading",
                     "Hiding colours from the source code"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Changing the site's palette then means editing one line, instead of hunting a code through forty files."
             },
             {
@@ -92,21 +92,21 @@ window.QUIZ = {
             {
                 q: "How do you keep information after a page reload?",
                 options: [
-                    "By storing it in the DOM",
                     "By using localStorage or a server",
+                    "By storing it in the DOM",
                     "It is not possible in JavaScript"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The DOM is rebuilt on every load: whatever you write into it disappears."
             },
             {
                 q: "What is the basic pattern of most of a site's JavaScript?",
                 options: [
-                    "Calculate, display, save",
                     "Select an element, listen for an event, change a class",
+                    "Calculate, display, save",
                     "Load, compile, run"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The styling stays in the CSS: JavaScript merely adds or removes the class."
             },
             // Series 2
@@ -123,21 +123,21 @@ window.QUIZ = {
             {
                 q: "A script in the <head> fails with getElementById returning null. Why?",
                 options: [
-                    "The id is misspelled",
                     "The script runs before the HTML exists",
+                    "The id is misspelled",
                     "Browsers block scripts in the <head>"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Two solutions: put the script just before </body>, or add the defer attribute."
             },
             {
                 q: "Which developer-tools tab shows files returning a 404?",
                 options: [
-                    "Console",
                     "Network",
+                    "Console",
                     "Elements"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The Console shows JavaScript errors, Elements shows the DOM and the CSS actually applied."
             }
         ],
@@ -158,42 +158,42 @@ window.QUIZ = {
             {
                 q: "Where should an API key be kept so that it stays secret?",
                 options: [
-                    "In a JavaScript file, under a different name",
                     "On the server only",
+                    "In a JavaScript file, under a different name",
                     "In an HTML comment"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Robots constantly scan public sites for those keys; the delay before exploitation is measured in minutes."
             },
             {
                 q: "An access check performed in browser-side JavaScript is:",
                 options: [
                     "Sufficient if the code is minified",
-                    "Bypassable in seconds",
-                    "As safe as a server-side check"
+                    "As safe as a server-side check",
+                    "Bypassable in seconds"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The browser-side check is only there for convenience. What counts is checked on the server."
             },
             // Series 2
             {
                 q: "Which kind of project does not need a backend?",
                 options: [
-                    "A shop with payments",
                     "A documentation site or a portfolio",
+                    "A shop with payments",
                     "An application with user accounts"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Faster, free to host, and practically unattackable: there is no database to breach."
             },
             {
                 q: "What problem do React, Vue and Angular solve?",
                 options: [
                     "A site's search visibility",
-                    "Keeping a complex interface in step with constantly changing data",
-                    "Compatibility between browsers"
+                    "Compatibility between browsers",
+                    "Keeping a complex interface in step with constantly changing data"
                 ],
-                a: 1,
+                a: 2,
                 explication: "On a ten-page site they mostly add complexity and weight."
             },
             {
@@ -214,11 +214,11 @@ window.QUIZ = {
             {
                 q: "What happens if the viewport tag is missing?",
                 options: [
-                    "The site does not display at all on mobile",
                     "The phone shows a miniature version of the site at 980 px",
+                    "The site does not display at all on mobile",
                     "Images disappear"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It is the first thing to check when a site looks tiny on a phone."
             },
             {
@@ -234,11 +234,11 @@ window.QUIZ = {
             {
                 q: "What does the mobile-first approach consist of?",
                 options: [
-                    "Building a mobile app before the site",
                     "Writing the small-screen style first, then adding for larger ones",
+                    "Building a mobile app before the site",
                     "Testing on mobile after finishing the desktop version"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A narrow screen forces prioritising: there is room only for the essentials."
             },
             // Series 2
@@ -255,11 +255,11 @@ window.QUIZ = {
             {
                 q: "Why is a menu that opens on hover a problem?",
                 options: [
-                    "It is too slow",
                     "Hover does not exist on a touch screen",
+                    "It is too slow",
                     "It uses too much memory"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The menu then becomes unreachable for the majority of visitors."
             },
             {
@@ -281,10 +281,10 @@ window.QUIZ = {
             q: "What are the three foundations of a web page?",
             options: [
                 "React, Node.js and a database",
-                "HTML for structure, CSS for appearance, JavaScript for interactivity",
-                "A server, a domain and a certificate"
+                "A server, a domain and a certificate",
+                "HTML for structure, CSS for appearance, JavaScript for interactivity"
             ],
-            a: 1,
+            a: 2,
             explication: "They have not changed in twenty years, and every framework ends up producing those three things."
         },
         {
@@ -301,20 +301,20 @@ window.QUIZ = {
             q: "Which statement about a site's security is accurate?",
             options: [
                 "Minified code is protected well enough",
-                "Everything that reaches the browser is public",
-                "HTTPS prevents reading the source code"
+                "HTTPS prevents reading the source code",
+                "Everything that reaches the browser is public"
             ],
-            a: 1,
+            a: 2,
             explication: "Security is never written on the frontend: a right-click is enough to read everything."
         },
         {
             q: "You have to build a ten-page portfolio. Which approach should you favour?",
             options: [
                 "A modern framework, to stay current",
-                "Plain HTML, CSS and JavaScript files, served as they are",
-                "A CMS with a database"
+                "A CMS with a database",
+                "Plain HTML, CSS and JavaScript files, served as they are"
             ],
-            a: 1,
+            a: 2,
             explication: "Faster, free to host, and with no database to breach."
         },
         {
@@ -331,10 +331,10 @@ window.QUIZ = {
             q: "A site uses <div class=\"big-title\"> everywhere instead of <h1> and <h2>. What follows?",
             options: [
                 "The site displays badly",
-                "Google and screen readers no longer understand its structure",
-                "The site loads more slowly"
+                "The site loads more slowly",
+                "Google and screen readers no longer understand its structure"
             ],
-            a: 1,
+            a: 2,
             explication: "The appearance can be identical; the meaning has gone."
         }
     ]

@@ -16,21 +16,21 @@ window.QUIZ = {
             {
                 q: "Le stress est-il une pathologie ?",
                 options: [
-                    "Non : c'est une réponse d'adaptation, utile et normale",
                     "Oui, dès qu'il apparaît",
+                    "Non : c'est une réponse d'adaptation, utile et normale",
                     "Oui, s'il est fréquent"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le problème n'est pas qu'elle se déclenche, c'est qu'elle ne s'arrête plus."
             },
             {
                 q: "Qu'est-ce qui distingue le stress chronique du stress aigu ?",
                 options: [
-                    "L'absence de retour à la normale",
                     "Son intensité",
-                    "Sa cause"
+                    "Sa cause",
+                    "L'absence de retour à la normale"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ce n'est pas « beaucoup de stress aigu » : c'est un état différent."
             },
             {
@@ -47,31 +47,31 @@ window.QUIZ = {
             {
                 q: "Pourquoi voit-on mal l'installation d'un stress chronique sur soi ?",
                 options: [
-                    "L'adaptation est progressive et déplace le point de comparaison",
                     "On refuse de l'admettre",
+                    "L'adaptation est progressive et déplace le point de comparaison",
                     "Les symptômes sont invisibles"
                 ],
-                a: 0,
+                a: 1,
                 explication: "D'où « ça va, c'est juste une période » tenu pendant huit mois."
             },
             {
                 q: "Qui remarque souvent la situation en premier ?",
                 options: [
-                    "L'entourage",
                     "La personne concernée",
+                    "L'entourage",
                     "L'employeur"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est plus visible de l'extérieur que de l'intérieur."
             },
             {
                 q: "Que suppose la phrase « je gère mal le stress » ?",
                 options: [
-                    "Que la charge est une donnée et l'adaptation une compétence",
                     "Que la personne manque de méthode",
-                    "Que le poste est mal défini"
+                    "Que le poste est mal défini",
+                    "Que la charge est une donnée et l'adaptation une compétence"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Or les facteurs organisationnels sont documentés et relèvent de l'employeur."
             }
         ],
@@ -102,22 +102,22 @@ window.QUIZ = {
             {
                 q: "Quel est l'effet du soutien social dans ce modèle ?",
                 options: [
-                    "Il modifie l'effet de tout le reste",
                     "Il n'a pas d'effet mesuré",
-                    "Il remplace la latitude"
+                    "Il remplace la latitude",
+                    "Il modifie l'effet de tout le reste"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La situation la plus défavorable cumule forte exigence, faible latitude et faible soutien."
             },
             // Série 2
             {
                 q: "Un poste dit « actif » dans ce modèle, c'est :",
                 options: [
-                    "Exigeant, avec de la marge de manœuvre",
                     "Peu exigeant et autonome",
+                    "Exigeant, avec de la marge de manœuvre",
                     "Très exigeant et contraint"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Exigeant mais tenable, souvent stimulant."
             },
             {
@@ -148,11 +148,11 @@ window.QUIZ = {
             {
                 q: "Quel est le repos quotidien minimal entre deux journées ?",
                 options: [
-                    "11 heures consécutives",
                     "8 heures consécutives",
+                    "11 heures consécutives",
                     "9 heures consécutives"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Et 35 heures consécutives par semaine. Ce sont des minimums opposables."
             },
             {
@@ -179,11 +179,11 @@ window.QUIZ = {
             {
                 q: "Que signifie « minimums opposables » ?",
                 options: [
-                    "Ce ne sont pas des recommandations de confort : ils s'imposent",
                     "Qu'ils sont conseillés",
+                    "Ce ne sont pas des recommandations de confort : ils s'imposent",
                     "Qu'ils varient selon les entreprises"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Passer en dessous régulièrement engage la responsabilité de l'employeur."
             },
             {
@@ -199,11 +199,11 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que le détachement psychologique ?",
                 options: [
-                    "Ne plus y penser, et pas seulement ne plus le faire",
                     "Prendre de la distance avec ses collègues",
-                    "Réduire son implication au travail"
+                    "Réduire son implication au travail",
+                    "Ne plus y penser, et pas seulement ne plus le faire"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est la condition la plus souvent manquante des trois."
             }
         ],
@@ -224,52 +224,52 @@ window.QUIZ = {
             {
                 q: "Quel effet a un message professionnel envoyé à 23 h ?",
                 options: [
-                    "Il indique aux destinataires ce qui est attendu",
                     "Aucun, si l'on précise de ne pas répondre",
+                    "Il indique aux destinataires ce qui est attendu",
                     "Il allège la journée du lendemain"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est pourquoi l'envoi différé change plus les habitudes qu'une charte affichée."
             },
             {
                 q: "Rester joignable « au cas où » sans rien recevoir, quel est le coût ?",
                 options: [
-                    "L'attente empêche le détachement, donc la récupération",
                     "Aucun, s'il n'y a pas de sollicitation",
-                    "Seulement la fatigue du téléphone"
+                    "Seulement la fatigue du téléphone",
+                    "L'attente empêche le détachement, donc la récupération"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ce n'est pas le nombre de messages reçus qui pèse, c'est la possibilité d'en recevoir."
             },
             // Série 2
             {
                 q: "Que doivent définir les entreprises sur ce sujet ?",
                 options: [
-                    "Les modalités d'exercice du droit à la déconnexion, par accord ou par charte",
                     "Un horaire de fermeture des serveurs",
-                    "Rien, c'est une affaire individuelle"
+                    "Rien, c'est une affaire individuelle",
+                    "Les modalités d'exercice du droit à la déconnexion, par accord ou par charte"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Les dispositifs vont de l'absence d'obligation de répondre à l'envoi différé."
             },
             {
                 q: "Qu'est-ce qui remplace la séparation par le lieu, en télétravail ?",
                 options: [
-                    "Des marqueurs : heure de fin, espace dédié, rituel de clôture",
                     "Une pièce entièrement séparée, sans quoi rien ne marche",
+                    "Des marqueurs : heure de fin, espace dédié, rituel de clôture",
                     "Des horaires imposés par l'employeur"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ces signaux sont artificiels et fonctionnent : le cerveau utilise le contexte pour changer de mode."
             },
             {
                 q: "La déconnexion est-elle une affaire uniquement individuelle ?",
                 options: [
-                    "Non : elle se joue en grande partie dans ce que chacun envoie",
                     "Oui, chacun gère ses frontières",
+                    "Non : elle se joue en grande partie dans ce que chacun envoie",
                     "Oui, sauf en cas d'accord d'entreprise"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ce qu'on envoie le soir fixe ce que les autres croient devoir faire."
             }
         ]
@@ -280,21 +280,21 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Ce qui fait qu'une charge reste tenable, ou cesse de l'être",
                 "Comment réduire sa charge de travail",
-                "Comment mieux résister au stress"
+                "Comment mieux résister au stress",
+                "Ce qui fait qu'une charge reste tenable, ou cesse de l'être"
             ],
-            a: 0,
+            a: 2,
             explication: "La distinction n'est pas entre stressant et pas stressant."
         },
         {
             q: "Qu'ont en commun la latitude et le soutien ?",
             options: [
-                "Les deux modifient l'effet d'une même charge de travail",
                 "Les deux dépendent du salarié",
+                "Les deux modifient l'effet d'une même charge de travail",
                 "Les deux se mesurent en heures"
             ],
-            a: 0,
+            a: 1,
             explication: "Deux postes également chargés n'ont pas le même effet."
         },
         {
@@ -310,31 +310,31 @@ window.QUIZ = {
         {
             q: "Pourquoi noter par écrit, daté, comment on va au travail aujourd'hui ?",
             options: [
-                "Parce que l'adaptation efface les points de comparaison",
                 "Pour constituer une preuve juridique",
-                "Pour le montrer à son employeur"
+                "Pour le montrer à son employeur",
+                "Parce que l'adaptation efface les points de comparaison"
             ],
-            a: 0,
+            a: 2,
             explication: "Relu dans six mois, ce papier dira ce que la mémoire ne dira pas."
         },
         {
             q: "Quelle mesure de ce niveau coûte le moins et change le plus pour une équipe ?",
             options: [
-                "Différer l'envoi des messages tardifs",
                 "Réduire le nombre de réunions",
-                "Ajouter une charte de déconnexion"
+                "Ajouter une charte de déconnexion",
+                "Différer l'envoi des messages tardifs"
             ],
-            a: 0,
+            a: 2,
             explication: "Un clic, et cela modifie les attentes de tout le monde."
         },
         {
             q: "Un collègue dit ne pas avoir récupéré depuis des semaines. Quelle est la réponse utile ?",
             options: [
-                "L'orienter vers un médecin ou le médecin du travail, tenus au secret",
                 "Lui conseiller de mieux gérer son stress",
-                "Lui suggérer de prendre des congés"
+                "Lui suggérer de prendre des congés",
+                "L'orienter vers un médecin ou le médecin du travail, tenus au secret"
             ],
-            a: 0,
+            a: 2,
             explication: "Ni ce guide ni un proche ne peuvent aller plus loin que nommer et orienter."
         }
     ]

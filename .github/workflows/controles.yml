@@ -130,6 +130,13 @@ jobs:
       - name: Tests des rappels de révision
         run: node scripts/test-revisions.mjs
 
+      # La place de la bonne reponse. Le defaut qu il attrape n existe qu a
+      # l echelle du fichier : chaque question, prise seule, est irreprochable.
+      # Avant correction, la bonne reponse etait en troisieme position 12 fois
+      # sur 2 532 — et personne ne l avait vu.
+      - name: Place de la bonne réponse dans les quiz
+        run: node scripts/verifier-positions-quiz.mjs
+
       # Le seul controle qui MESURE des pages affichees : une largeur, un
       # nombre de colonnes, un debordement ne se deduisent pas du CSS. Il
       # tournait donc uniquement a la main.

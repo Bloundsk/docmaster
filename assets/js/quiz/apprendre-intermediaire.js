@@ -14,31 +14,31 @@ window.QUIZ = {
             {
                 q: "Pourquoi faire vingt exercices du même type à la suite trompe-t-il ?",
                 options: [
-                    "Parce qu'on n'a pas à identifier de quel type il s'agit",
                     "Parce que les exercices sont trop faciles",
+                    "Parce qu'on n'a pas à identifier de quel type il s'agit",
                     "Parce que cela prend trop de temps"
                 ],
-                a: 0,
+                a: 1,
                 explication: "On applique la méthode qu'on vient de lire, et cela tombe juste. La série s'enchaîne."
             },
             {
                 q: "Sur 48 exercices de quatre types, quel écart sépare la pratique groupée de l'entrelacée au test différé ?",
                 options: [
-                    "Environ 10 réussis contre environ 30",
                     "Un écart négligeable",
+                    "Environ 10 réussis contre environ 30",
                     "Environ 30 contre environ 10"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Même nombre d'exercices, même temps. Seul l'ordre change."
             },
             {
                 q: "Quelle partie du travail la pratique groupée laisse-t-elle de côté ?",
                 options: [
-                    "L'application de la méthode",
                     "La reconnaissance du type de problème",
+                    "L'application de la méthode",
                     "Le calcul lui-même"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le jour du contrôle, personne n'annonce le type — et c'est la partie difficile."
             },
             // Série 2
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Comment aborder une méthode qu'on vient de découvrir ?",
                 options: [
-                    "Deux ou trois exercices groupés, puis un mélange de tout ce qui a été vu",
                     "Vingt exercices groupés avant de passer à autre chose",
-                    "Directement en mélange, sans exercice dédié"
+                    "Directement en mélange, sans exercice dédié",
+                    "Deux ou trois exercices groupés, puis un mélange de tout ce qui a été vu"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le temps de comprendre la méthode, puis on la met en concurrence avec les autres."
             }
         ],
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Quelle question résume l'élaboration ?",
                 options: [
                     "Combien de temps cela va-t-il me prendre ?",
-                    "Pourquoi est-ce vrai ?",
-                    "Est-ce au programme ?"
+                    "Est-ce au programme ?",
+                    "Pourquoi est-ce vrai ?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Puis : en quoi est-ce cohérent, ou non, avec ce que je sais déjà ?"
             },
             {
@@ -100,42 +100,42 @@ window.QUIZ = {
             {
                 q: "Recopier proprement une définition, qu'est-ce que cela fait travailler ?",
                 options: [
-                    "La mémoire",
                     "La main",
+                    "La mémoire",
                     "La compréhension"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Reformuler avec ses propres mots oblige à construire le sens — et révèle si on ne l'a pas compris."
             },
             // Série 2
             {
                 q: "Quelle est la valeur d'un exemple trouvé soi-même ?",
                 options: [
-                    "C'est la preuve qu'on tient la notion",
                     "Il vaut moins que celui du cours",
-                    "Il sert surtout à illustrer"
+                    "Il sert surtout à illustrer",
+                    "C'est la preuve qu'on tient la notion"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Celui du cours a été lu, il ne prouve rien."
             },
             {
                 q: "À quoi ressemble une fiche utile ?",
                 options: [
-                    "Une fiche de questions, souvent laide",
                     "Une fiche de réponses, bien mise en couleurs",
-                    "Un résumé exhaustif du cours"
+                    "Un résumé exhaustif du cours",
+                    "Une fiche de questions, souvent laide"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Recopier un cours en couleurs occupe des heures, produit un bel objet et laisse peu de traces."
             },
             {
                 q: "Ce qui compte dans une séance de lecture, c'est :",
                 options: [
-                    "Le temps passé sur le contenu",
                     "Ce qu'on fait subir au contenu pendant ce temps",
+                    "Le temps passé sur le contenu",
                     "Le nombre de pages parcourues"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Une lecture élaborée prend trois fois plus de temps et laisse dix fois plus."
             }
         ],
@@ -146,11 +146,11 @@ window.QUIZ = {
             {
                 q: "Quelles sont les trois conditions de la pratique délibérée ?",
                 options: [
-                    "Travailler ce qu'on rate, rester au bord de sa capacité, obtenir un retour rapide",
                     "Travailler longtemps, régulièrement, et en silence",
-                    "Réviser, réviser, réviser"
+                    "Réviser, réviser, réviser",
+                    "Travailler ce qu'on rate, rester au bord de sa capacité, obtenir un retour rapide"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La première est la plus simple et la moins respectée."
             },
             {
@@ -166,42 +166,42 @@ window.QUIZ = {
             {
                 q: "Pourquoi peut-on conduire vingt ans sans mieux conduire ?",
                 options: [
-                    "Parce que la pratique seule ne fait pas progresser",
                     "Parce que l'âge dégrade les réflexes",
-                    "Parce que les routes changent"
+                    "Parce que les routes changent",
+                    "Parce que la pratique seule ne fait pas progresser"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Il y faut les trois conditions : points faibles, bonne difficulté, retour rapide."
             },
             // Série 2
             {
                 q: "À quoi ressemble une bonne séance de pratique ?",
                 options: [
-                    "Elle laisse une trace d'erreurs",
                     "Elle se déroule sans faute",
+                    "Elle laisse une trace d'erreurs",
                     "Elle est longue"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Une séance sans faute signale surtout qu'on est resté en terrain connu."
             },
             {
                 q: "Que vaut « j'ai passé six heures dessus » comme indicateur ?",
                 options: [
-                    "Rien, tant qu'on ne sait pas sur quoi",
                     "C'est le meilleur indicateur disponible",
-                    "Cela dépend du sujet"
+                    "Cela dépend du sujet",
+                    "Rien, tant qu'on ne sait pas sur quoi"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Compter les heures est commode et trompeur ; compter les erreurs corrigées est honnête."
             },
             {
                 q: "Un exercice trop difficile fait-il progresser ?",
                 options: [
                     "Oui, plus c'est dur mieux c'est",
-                    "Non : trop facile n'apprend rien, trop dur non plus",
-                    "Oui, à condition d'insister"
+                    "Oui, à condition d'insister",
+                    "Non : trop facile n'apprend rien, trop dur non plus"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le bord de sa capacité : se tromper régulièrement, réussir la plupart du temps."
             }
         ],
@@ -212,31 +212,31 @@ window.QUIZ = {
             {
                 q: "Quand a lieu l'essentiel de la consolidation ?",
                 options: [
-                    "Pendant l'apprentissage",
                     "Pendant le sommeil qui suit",
+                    "Pendant l'apprentissage",
                     "Pendant la révision du lendemain"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La nuit qui suit un apprentissage n'est pas du temps neutre, c'est du temps de travail."
             },
             {
                 q: "À temps égal, que vaut réviser le soir puis dormir ?",
                 options: [
-                    "Moins bien que réviser le matin",
                     "Mieux que réviser le matin d'un contrôle du lendemain",
+                    "Moins bien que réviser le matin",
                     "La même chose"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le contenu passe immédiatement par la phase qui le fixe."
             },
             {
                 q: "Qu'échange-t-on dans une nuit blanche de révision ?",
                 options: [
-                    "Trois heures de relecture contre la consolidation de toute la journée",
                     "Du sommeil contre de la mémoire supplémentaire",
+                    "Trois heures de relecture contre la consolidation de toute la journée",
                     "Rien, si l'on récupère ensuite"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Trois heures de la pire méthode contre le rangement de toute la journée."
             },
             // Série 2
@@ -254,10 +254,10 @@ window.QUIZ = {
                 q: "Une nuit courte se rattrape-t-elle le week-end ?",
                 options: [
                     "Oui, intégralement",
-                    "Non : ce qui n'a pas été consolidé ne l'est pas rétroactivement",
-                    "Oui, si l'on dort deux heures de plus"
+                    "Oui, si l'on dort deux heures de plus",
+                    "Non : ce qui n'a pas été consolidé ne l'est pas rétroactivement"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La régularité des horaires pèse davantage que le total hebdomadaire d'heures dormies."
             },
             {
@@ -288,11 +288,11 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun l'entrelacement et la pratique délibérée ?",
             options: [
-                "Les deux dégradent le confort de la séance et améliorent le résultat à distance",
                 "Les deux demandent plus d'heures",
-                "Les deux ne valent que pour les mathématiques"
+                "Les deux ne valent que pour les mathématiques",
+                "Les deux dégradent le confort de la séance et améliorent le résultat à distance"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est la marque des difficultés utiles, déjà rencontrée au niveau débutant."
         },
         {
@@ -308,11 +308,11 @@ window.QUIZ = {
         {
             q: "Pourquoi recopier ses notes est-il si populaire ?",
             options: [
-                "Parce que cela ressemble à du travail et produit un objet visible",
                 "Parce que c'est efficace",
+                "Parce que cela ressemble à du travail et produit un objet visible",
                 "Parce que c'est rapide"
             ],
-            a: 0,
+            a: 1,
             explication: "La main travaille, pas la mémoire. Une fiche de questions est laide et elle sert."
         },
         {
@@ -328,11 +328,11 @@ window.QUIZ = {
         {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
-                "Mélanger les types d'exercices au lieu de les grouper",
                 "Recopier ses notes plus soigneusement",
+                "Mélanger les types d'exercices au lieu de les grouper",
                 "Allonger les séances"
             ],
-            a: 0,
+            a: 1,
             explication: "Tu te tromperas davantage. C'est le signe que cela marche."
         }
     ]

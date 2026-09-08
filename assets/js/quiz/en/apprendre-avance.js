@@ -46,21 +46,21 @@ window.QUIZ = {
             {
                 q: "Where should you start when you are below 2,000 words?",
                 options: [
-                    "Frequency lists",
                     "The vocabulary of a theme you like",
+                    "Frequency lists",
                     "Reading novels"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The first thousand pays as much as the next nine thousand combined."
             },
             {
                 q: "Beyond 2,000 words, what becomes more profitable than lists?",
                 options: [
-                    "Reading accessible texts",
                     "Longer lists",
-                    "Grammar"
+                    "Grammar",
+                    "Reading accessible texts"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It brings words in their context, and context is what distinguishes their uses."
             },
             {
@@ -81,31 +81,31 @@ window.QUIZ = {
             {
                 q: "What is transfer?",
                 options: [
-                    "The ability to use elsewhere what you learned here",
                     "The passage from short-term to long-term memory",
-                    "The act of changing method"
+                    "The act of changing method",
+                    "The ability to use elsewhere what you learned here"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is the implicit goal of all learning, and it happens less often than people assume."
             },
             {
                 q: "Why does a pupil get stuck in physics on an equation they solve in maths?",
                 options: [
                     "Because they have forgotten the method",
-                    "Because nothing in the new setting calls for the memory",
-                    "Because physics is harder"
+                    "Because physics is harder",
+                    "Because nothing in the new setting calls for the memory"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The knowledge is there; the cue that triggers it is not."
             },
             {
                 q: "What do brain-training games actually improve?",
                 options: [
-                    "Memory in general",
                     "Mostly those games, and very close tasks",
+                    "Memory in general",
                     "Attention at work"
                 ],
-                a: 1,
+                a: 0,
                 explication: "This is not anecdotal: it is the general rule of transfer."
             },
             // Series 2
@@ -122,21 +122,21 @@ window.QUIZ = {
             {
                 q: "Why go back to the principle rather than the recipe?",
                 options: [
-                    "Because a recipe does not travel, a principle does",
                     "Because it is shorter",
+                    "Because a recipe does not travel, a principle does",
                     "Because it is easier to remember"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Hence the use of the question “what is this a particular case of?”."
             },
             {
                 q: "Revising for an oral exam by reading it in your head — what is the problem?",
                 options: [
-                    "The practice is on something other than what will be asked",
                     "It takes too long",
-                    "There isn't one"
+                    "There isn't one",
+                    "The practice is on something other than what will be asked"
                 ],
-                a: 0,
+                a: 2,
                 explication: "You get good at what you practise, not at what resembles it."
             }
         ],
@@ -147,62 +147,62 @@ window.QUIZ = {
             {
                 q: "What is the decisive question when judging a learning method?",
                 options: [
-                    "Measured how long afterwards?",
                     "On how many people?",
+                    "Measured how long afterwards?",
                     "Published in which journal?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Almost every pleasant method wins the immediate test and loses the one a week later."
             },
             {
                 q: "What is a method compared with “doing nothing” worth?",
                 options: [
-                    "Nothing: it has to do better than another method",
                     "That is a sufficient comparison",
+                    "Nothing: it has to do better than another method",
                     "It depends on the duration"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Almost anything beats not working. That is not what we are trying to find out."
             },
             {
                 q: "What does the state of the research say about learning styles?",
                 options: [
-                    "Matching teaching to the supposed style does not produce the announced effect",
                     "They have been confirmed since the 2000s",
-                    "They only concern children"
+                    "They only concern children",
+                    "Matching teaching to the supposed style does not produce the announced effect"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The idea stays popular among teachers; studies that test it properly do not find it."
             },
             // Series 2
             {
                 q: "Where does the “we remember 10% of what we read, 90% of what we teach” pyramid come from?",
                 options: [
-                    "No identifiable source: the numbers were never measured",
                     "An American study from the 1960s",
-                    "Ebbinghaus's work"
+                    "Ebbinghaus's work",
+                    "No identifiable source: the numbers were never measured"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Round numbers that have circulated for decades with no support."
             },
             {
                 q: "What did the study behind the “Mozart effect” actually show?",
                 options: [
-                    "A very limited effect, on one specific task, for a few minutes",
                     "A lasting rise in IQ",
+                    "A very limited effect, on one specific task, for a few minutes",
                     "An effect in infants"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The rest is a media stampede."
             },
             {
                 q: "Why are the methods that survive scrutiny uncomfortable?",
                 options: [
-                    "Because retrieval effort is what strengthens the trace",
                     "By coincidence",
-                    "Because they are badly designed"
+                    "Because they are badly designed",
+                    "Because retrieval effort is what strengthens the trace"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A method promising retention without effort contradicts the known mechanism."
             }
         ],
@@ -223,11 +223,11 @@ window.QUIZ = {
             {
                 q: "In what form should content enter the system?",
                 options: [
-                    "As questions",
                     "As well-written notes",
+                    "As questions",
                     "As summaries"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Otherwise, on the day, you will reread instead of testing yourself."
             },
             {
@@ -244,11 +244,11 @@ window.QUIZ = {
             {
                 q: "What does a card failed ten times in a row tell you?",
                 options: [
-                    "That it is badly written",
                     "That it is difficult",
-                    "That it should come up more often"
+                    "That it should come up more often",
+                    "That it is badly written"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The monthly review exists precisely to rephrase what always comes back wrong."
             },
             {
@@ -264,11 +264,11 @@ window.QUIZ = {
             {
                 q: "Fifteen minutes daily or two hours on Sunday?",
                 options: [
-                    "Fifteen minutes daily, by a long way",
                     "Two hours on Sunday",
+                    "Fifteen minutes daily, by a long way",
                     "The two are equivalent"
                 ],
-                a: 0,
+                a: 1,
                 explication: "What is not in the calendar does not happen; and spacing does the rest."
             }
         ]
@@ -289,11 +289,11 @@ window.QUIZ = {
         {
             q: "What do lexical frequency and the choice of your weak points have in common?",
             options: [
-                "Both say the effort must be placed, not merely supplied",
                 "Both concern languages",
-                "Both require software"
+                "Both require software",
+                "Both say the effort must be placed, not merely supplied"
             ],
-            a: 0,
+            a: 2,
             explication: "A small number of elements carries most of the result, in both cases."
         },
         {
@@ -309,11 +309,11 @@ window.QUIZ = {
         {
             q: "Why does a learning system need a review?",
             options: [
-                "Because it drifts: useless cards, badly framed questions, abandoned topics",
                 "Because software changes",
+                "Because it drifts: useless cards, badly framed questions, abandoned topics",
                 "Because memory evolves"
             ],
-            a: 0,
+            a: 1,
             explication: "A quarter of an hour a month is enough to stop it being abandoned wholesale."
         },
         {

@@ -23,21 +23,21 @@ window.QUIZ = {
             {
                 q: "Que désigne l'intention de recherche ?",
                 options: [
-                    "Le nombre de fois qu'un mot est tapé",
                     "L'attente réelle derrière la requête : comprendre, comparer ou agir",
+                    "Le nombre de fois qu'un mot est tapé",
                     "La position visée dans les résultats"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Proposer une page de vente à quelqu'un qui veut comprendre le fait fuir, et Google mesure ce départ."
             },
             {
                 q: "Un site naissant doit-il viser « assurance auto » (100 000 recherches/mois) ?",
                 options: [
                     "Oui, c'est là qu'est le volume",
-                    "Non : la concurrence y est inaccessible, mieux vaut des requêtes longues et précises",
-                    "Oui, à condition de publier chaque jour"
+                    "Oui, à condition de publier chaque jour",
+                    "Non : la concurrence y est inaccessible, mieux vaut des requêtes longues et précises"
                 ],
-                a: 1,
+                a: 2,
                 explication: "90 visiteurs qualifiés valent infiniment mieux que 0 visiteur sur un mot-clé hors de portée."
             },
             // Série 2
@@ -61,10 +61,10 @@ window.QUIZ = {
                 q: "Quelle est la force principale du référencement naturel ?",
                 options: [
                     "Il donne des résultats immédiats",
-                    "Le trafic obtenu ne s'arrête pas quand on cesse de payer",
-                    "Il ne demande aucun travail de contenu"
+                    "Il ne demande aucun travail de contenu",
+                    "Le trafic obtenu ne s'arrête pas quand on cesse de payer"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sa faiblesse est symétrique : il faut des mois avant d'en voir la couleur."
             }
         ],
@@ -91,11 +91,11 @@ window.QUIZ = {
             {
                 q: "Quel levier réduit le plus efficacement le coût d'acquisition ?",
                 options: [
-                    "Baisser le coût par clic",
                     "Améliorer le taux de conversion du site",
+                    "Baisser le coût par clic",
                     "Augmenter le budget"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Passer de 2 % à 3 % ramène le coût de 59 € à 39 €, sans dépenser un euro de plus en publicité."
             },
             // Série 2
@@ -122,11 +122,11 @@ window.QUIZ = {
             {
                 q: "Que devient une campagne publicitaire quand le budget s'épuise ?",
                 options: [
-                    "Elle continue à portée réduite",
                     "Elle s'arrête net",
+                    "Elle continue à portée réduite",
                     "Elle bascule automatiquement en référencement naturel"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est l'exact complément du SEO : instantanée et mesurable, mais sans effet résiduel."
             }
         ],
@@ -144,20 +144,20 @@ window.QUIZ = {
                 q: "Vaut-il mieux être présent partout ou sur une seule plateforme ?",
                 options: [
                     "Partout, pour maximiser la portée",
-                    "Une seule, bien tenue, produit davantage",
-                    "Trois au minimum, jamais moins"
+                    "Trois au minimum, jamais moins",
+                    "Une seule, bien tenue, produit davantage"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le même contenu recyclé partout donne une présence médiocre partout."
             },
             {
                 q: "Pourquoi la portée gratuite diminue-t-elle sur toutes les plateformes ?",
                 options: [
-                    "Parce que les utilisateurs publient moins",
                     "Parce qu'elles réduisent la visibilité gratuite pour vendre de la publicité",
+                    "Parce que les utilisateurs publient moins",
                     "Pour des raisons techniques de stockage"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Forte visibilité au lancement pour attirer les créateurs, puis réduction progressive."
             },
             // Série 2
@@ -175,20 +175,20 @@ window.QUIZ = {
                 q: "Que vaut un compte de 50 000 abonnés inactifs ?",
                 options: [
                     "Beaucoup : le nombre impressionne",
-                    "Moins qu'un compte de 800 abonnés engagés",
-                    "La même chose qu'un compte engagé"
+                    "La même chose qu'un compte engagé",
+                    "Moins qu'un compte de 800 abonnés engagés"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les jeux-concours attirent des profils venus pour le lot, qui font chuter le taux d'engagement."
             },
             {
                 q: "Qu'est-ce qui fonctionne le mieux sur la durée ?",
                 options: [
-                    "Dix publications en une semaine puis plus rien",
                     "Deux publications par semaine tenues six mois",
+                    "Dix publications en une semaine puis plus rien",
                     "Une publication parfaite par trimestre"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Répondre aux commentaires compte aussi : les plateformes valorisent les échanges."
             }
         ],
@@ -210,51 +210,51 @@ window.QUIZ = {
                 q: "Que produit une liste d'adresses achetée ?",
                 options: [
                     "Un gain de temps appréciable",
-                    "Des signalements en masse qui ruinent durablement ta réputation d'expéditeur",
-                    "Les mêmes résultats qu'une liste construite"
+                    "Les mêmes résultats qu'une liste construite",
+                    "Des signalements en masse qui ruinent durablement ta réputation d'expéditeur"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le consentement explicite est une obligation légale, et surtout la condition d'efficacité."
             },
             {
                 q: "Quel indicateur est le plus fiable aujourd'hui ?",
                 options: [
                     "Le taux d'ouverture",
-                    "Le taux de clic",
-                    "Le nombre d'abonnés"
+                    "Le nombre d'abonnés",
+                    "Le taux de clic"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le taux d'ouverture est faussé depuis que certains services préchargent les images."
             },
             // Série 2
             {
                 q: "Une liste de 5 000 abonnés passe de 1,8 % à 4 % de clics. Qu'a-t-on changé ?",
                 options: [
-                    "On a doublé la fréquence d'envoi",
                     "On a segmenté la liste et adapté le message à chaque groupe",
+                    "On a doublé la fréquence d'envoi",
                     "On a changé de fournisseur d'envoi"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Même liste, même produit, un peu plus de travail de rédaction : le résultat double."
             },
             {
                 q: "Quel signal est le plus grave pour un expéditeur ?",
                 options: [
                     "Un taux d'ouverture en baisse",
-                    "Les signalements en spam",
-                    "Les désabonnements"
+                    "Les désabonnements",
+                    "Les signalements en spam"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Quelques signalements suffisent à dégrader la délivrabilité de tous tes envois suivants."
             },
             {
                 q: "Faut-il rendre le lien de désabonnement bien visible ?",
                 options: [
                     "Non, cela encourage les départs",
-                    "Oui : quelqu'un qui ne le trouve pas clique sur « spam », ce qui coûte bien plus cher",
-                    "Peu importe, c'est un détail"
+                    "Peu importe, c'est un détail",
+                    "Oui : quelqu'un qui ne le trouve pas clique sur « spam », ce qui coûte bien plus cher"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un désabonnement est une perte d'un contact ; un signalement abîme toute ta liste."
             }
         ]
@@ -268,11 +268,11 @@ window.QUIZ = {
         {
             q: "Quelle particularité distingue le marketing digital de l'affichage ou de la radio ?",
             options: [
-                "Il coûte toujours moins cher",
                 "Presque tout y est mesurable : on peut comparer le coût d'un client à ce qu'il rapporte",
+                "Il coûte toujours moins cher",
                 "Il touche un public plus large"
             ],
-            a: 1,
+            a: 0,
             explication: "C'est le seul juge valable — et paradoxalement celui que beaucoup évitent de consulter."
         },
         {
@@ -288,42 +288,42 @@ window.QUIZ = {
         {
             q: "Quel canal t'appartient réellement ?",
             options: [
-                "Ton compte Instagram",
                 "Ta liste de courriels",
+                "Ton compte Instagram",
                 "Ta page Facebook"
             ],
-            a: 1,
+            a: 0,
             explication: "Tu loues ton audience aux plateformes. La liste que tu en extrais est le seul actif durable."
         },
         // Série 2
         {
             q: "Tu hésites entre doubler ton budget publicitaire ou améliorer ta page de vente. Que faire d'abord ?",
             options: [
-                "Doubler le budget, l'effet est immédiat",
                 "Améliorer la conversion : le gain profite ensuite à tous tes canaux",
+                "Doubler le budget, l'effet est immédiat",
                 "Les deux en même temps"
             ],
-            a: 1,
+            a: 0,
             explication: "Doubler le taux de conversion coûte souvent moins cher que doubler le trafic."
         },
         {
             q: "Un prestataire garantit la première position sur Google en un mois. Comment l'interpréter ?",
             options: [
                 "C'est ambitieux mais crédible s'il est expérimenté",
-                "C'est un signal d'alerte : le SEO demande 6 à 12 mois",
-                "C'est normal pour un site neuf"
+                "C'est normal pour un site neuf",
+                "C'est un signal d'alerte : le SEO demande 6 à 12 mois"
             ],
-            a: 1,
+            a: 2,
             explication: "Personne ne contrôle le classement de Google, et surtout pas sur ce délai."
         },
         {
             q: "SEO et publicité payante : comment les situer l'un par rapport à l'autre ?",
             options: [
-                "Ils sont interchangeables",
                 "Le SEO est lent mais durable, la publicité immédiate mais s'arrête avec le budget",
+                "Ils sont interchangeables",
                 "La publicité remplace avantageusement le SEO"
             ],
-            a: 1,
+            a: 0,
             explication: "Ils sont complémentaires : l'un construit un actif, l'autre achète de la visibilité."
         }
     ]

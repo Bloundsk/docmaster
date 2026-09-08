@@ -14,21 +14,21 @@ window.QUIZ = {
             {
                 q: "What does the choice of an allocation rest on first?",
                 options: [
-                    "The investor's temperament",
                     "The horizon, that is, the date of the need",
+                    "The investor's temperament",
                     "The current level of the markets"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A temperament does not change how long a market takes to recover from a fall. It is the date of the need that determines what you can bear."
             },
             {
                 q: "Can one person have several allocations at the same time?",
                 options: [
                     "No, one per person",
-                    "Yes: one per pocket, according to each plan's deadline",
-                    "Yes, but only after 50"
+                    "Yes, but only after 50",
+                    "Yes: one per pocket, according to each plan's deadline"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A purchase in 2 years and retirement in 25 years do not call for the same exposure. These are three pockets of the same person, each with its own deadline."
             },
             {
@@ -66,10 +66,10 @@ window.QUIZ = {
                 q: "When should an allocation be revised?",
                 options: [
                     "When markets rise or fall sharply",
-                    "When the deadlines of your plans change",
-                    "Every month, to stay responsive"
+                    "Every month, to stay responsive",
+                    "When the deadlines of your plans change"
                 ],
-                a: 1,
+                a: 2,
                 explication: "An allocation is set calmly, from known dates. Revising it with the news means buying dear and selling low."
             }
         ],
@@ -91,20 +91,20 @@ window.QUIZ = {
                 q: "Over 30 years on €20,000 invested at 6%, what does one extra point of annual fees cost?",
                 options: [
                     "About €2,000",
-                    "About €29,000, a quarter of the result",
-                    "About €6,000"
+                    "About €6,000",
+                    "About €29,000, a quarter of the result"
                 ],
-                a: 1,
+                a: 2,
                 explication: "€113,000 with 0.2% of fees, against €84,000 with 1.2%. The gap exceeds the capital invested at the start."
             },
             {
                 q: "How are a fund's management fees taken?",
                 options: [
                     "By an annual invoice sent to the client",
-                    "Silently, from the assets, deducted from the performance shown",
-                    "Only at the moment of selling"
+                    "Only at the moment of selling",
+                    "Silently, from the assets, deducted from the performance shown"
                 ],
-                a: 1,
+                a: 2,
                 explication: "They never appear as a debit line. That is precisely what makes them hard to notice."
             },
             // Set 2
@@ -122,20 +122,20 @@ window.QUIZ = {
                 q: "Which criterion should you compare first between two equivalent products?",
                 options: [
                     "Their performance last year",
-                    "Their annual fees",
-                    "The number of stars given by comparison sites"
+                    "The number of stars given by comparison sites",
+                    "Their annual fees"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Past performance does not repeat reliably; fees repeat identically every year."
             },
             {
                 q: "What fees are added to the fund's own inside a French assurance-vie contract?",
                 options: [
-                    "None, the fund includes everything",
                     "Annual wrapper fees on unit-linked funds",
+                    "None, the fund includes everything",
                     "A state tax of 2%"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Fees stack: the fund's, the contract's, sometimes entry fees on every contribution. You have to ask for the total."
             }
         ],
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "When does the PEA's five-year clock start?",
                 options: [
                     "At the first significant contribution",
-                    "At the opening of the plan",
-                    "At the first purchase of securities"
+                    "At the first purchase of securities",
+                    "At the opening of the plan"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Opening a PEA with a modest sum starts the clock. Waiting until you “have enough” means giving up years of free seniority."
             },
             {
@@ -213,10 +213,10 @@ window.QUIZ = {
                 q: "What do regular contributions really bring?",
                 options: [
                     "A higher average return",
-                    "The removal of the question of when to enter",
-                    "A guarantee against losses"
+                    "A guarantee against losses",
+                    "The removal of the question of when to enter"
                 ],
-                a: 1,
+                a: 2,
                 explication: "On average they even return slightly less than investing everything at once. Their benefit is to make the wait bearable and to avoid endless postponement."
             },
             {
@@ -282,10 +282,10 @@ window.QUIZ = {
             q: "Which decision explains the largest share of the variation in results?",
             options: [
                 "The choice of individual funds",
-                "The allocation between risky and stable assets",
-                "The precise moment of purchase"
+                "The precise moment of purchase",
+                "The allocation between risky and stable assets"
             ],
-            a: 1,
+            a: 2,
             explication: "Allocation is the most structural decision, well ahead of the choice of this or that fund."
         },
         {
@@ -301,11 +301,11 @@ window.QUIZ = {
         {
             q: "Why does duration count for more than the amount invested?",
             options: [
-                "Because fees fall over time",
                 "Because interest itself produces interest",
+                "Because fees fall over time",
                 "Because markets always go up"
             ],
-            a: 1,
+            a: 0,
             explication: "Doubling the duration does not double the capital: in the guide's example, it nearly triples it."
         },
         // Set 2

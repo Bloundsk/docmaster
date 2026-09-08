@@ -15,30 +15,30 @@ window.QUIZ = {
                 q: "Que définit une API bien conçue ?",
                 options: [
                     "Uniquement l'adresse à appeler",
-                    "L'adresse, ce qu'on envoie, ce qu'on reçoit, et ce qui se passe en cas d'erreur",
-                    "Le format des données uniquement"
+                    "Le format des données uniquement",
+                    "L'adresse, ce qu'on envoie, ce qu'on reçoit, et ce qui se passe en cas d'erreur"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le dernier point est celui qu'on oublie, et c'est celui qui fait tomber les applications en production."
             },
             {
                 q: "Que signifie un code de retour 401 ?",
                 options: [
                     "La ressource n'existe pas",
-                    "Il faut s'identifier",
-                    "Le serveur a échoué"
+                    "Le serveur a échoué",
+                    "Il faut s'identifier"
                 ],
-                a: 1,
+                a: 2,
                 explication: "404 pour une ressource absente, 500 pour un échec serveur, 400 pour une demande mal formée."
             },
             {
                 q: "8 appels à 150 ms chacun : combien de temps en séquence ?",
                 options: [
-                    "150 ms",
                     "1 200 ms",
+                    "150 ms",
                     "600 ms"
                 ],
-                a: 1,
+                a: 0,
                 explication: "En parallèle, quand les appels sont indépendants, environ 150 ms. Le serveur n'est pas plus rapide : l'organisation change."
             },
             // Série 2
@@ -46,10 +46,10 @@ window.QUIZ = {
                 q: "Que reprocher à une API qui renvoie 200 avec un message d'erreur dans le corps ?",
                 options: [
                     "Rien, c'est plus simple",
-                    "Elle oblige chaque client à deviner qu'il y a eu une erreur",
-                    "Elle consomme plus de bande passante"
+                    "Elle consomme plus de bande passante",
+                    "Elle oblige chaque client à deviner qu'il y a eu une erreur"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les codes de retour existent précisément pour éviter cette ambiguïté."
             },
             {
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Quel facteur domine le temps de chargement d'une page qui appelle une API ?",
                 options: [
-                    "La vitesse du serveur",
                     "Le nombre d'allers-retours",
+                    "La vitesse du serveur",
                     "La taille des réponses"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est pourquoi paralléliser les appels indépendants change tout."
             }
         ],
@@ -81,30 +81,30 @@ window.QUIZ = {
                 q: "Qu'apporte une base relationnelle par rapport à une base documentaire ?",
                 options: [
                     "Plus de rapidité",
-                    "La garantie de cohérence : impossible d'enregistrer une commande sans client existant",
-                    "Moins de configuration"
+                    "Moins de configuration",
+                    "La garantie de cohérence : impossible d'enregistrer une commande sans client existant"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les données finissent presque toujours par avoir des relations, et il vaut mieux que la base les fasse respecter."
             },
             {
                 q: "Afficher 50 articles avec une requête par auteur, à 4 ms : combien de temps ?",
                 options: [
                     "4 ms",
-                    "204 ms",
-                    "50 ms"
+                    "50 ms",
+                    "204 ms"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Contre environ 6 ms avec une seule requête et une jointure. Un rapport de 34 pour 1."
             },
             {
                 q: "À quoi sert un index ?",
                 options: [
-                    "À aller directement au bon endroit plutôt que parcourir toutes les lignes",
                     "À compresser les données",
+                    "À aller directement au bon endroit plutôt que parcourir toutes les lignes",
                     "À garantir l'unicité des enregistrements"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Son prix : il ralentit un peu les écritures et occupe de l'espace."
             },
             // Série 2
@@ -112,20 +112,20 @@ window.QUIZ = {
                 q: "Quelles colonnes faut-il indexer ?",
                 options: [
                     "Toutes, par précaution",
-                    "Celles utilisées dans les filtres et les jointures",
-                    "Aucune, la base optimise seule"
+                    "Aucune, la base optimise seule",
+                    "Celles utilisées dans les filtres et les jointures"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Chaque index a un coût en écriture et en espace."
             },
             {
                 q: "Comment se protège-t-on de l'injection SQL ?",
                 options: [
-                    "En filtrant les caractères spéciaux",
                     "En utilisant des requêtes préparées, où les valeurs sont transmises séparément",
+                    "En filtrant les caractères spéciaux",
                     "En chiffrant la base"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La parade est simple et systématique. Aucune raison de faire autrement, jamais."
             },
             {
@@ -146,11 +146,11 @@ window.QUIZ = {
             {
                 q: "Quels sont les quatre éléments d'une mise en ligne ?",
                 options: [
-                    "Nom de domaine, hébergement, certificat, moyen de déployer",
                     "Serveur, base de données, cache, sauvegarde",
-                    "Code, tests, documentation, monitoring"
+                    "Code, tests, documentation, monitoring",
+                    "Nom de domaine, hébergement, certificat, moyen de déployer"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Pour un site sans code serveur, l'hébergement statique suffit — souvent gratuit et très rapide."
             },
             {
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "Que reprocher au déploiement par copie manuelle de quelques fichiers ?",
                 options: [
                     "C'est trop lent",
-                    "On finit par en oublier un, et le site casse pour tout le monde",
-                    "Cela ne fonctionne pas en HTTPS"
+                    "Cela ne fonctionne pas en HTTPS",
+                    "On finit par en oublier un, et le site casse pour tout le monde"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Déploie toujours l'ensemble, depuis une source unique — idéalement automatiquement."
             },
             {
@@ -197,11 +197,11 @@ window.QUIZ = {
             {
                 q: "Le HTTPS est-il compliqué à mettre en place aujourd'hui ?",
                 options: [
-                    "Oui, il faut acheter un certificat",
                     "Non, il est gratuit et automatique chez la plupart des hébergeurs",
+                    "Oui, il faut acheter un certificat",
                     "Il n'est nécessaire que pour les sites marchands"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Il n'y a plus aucune raison de s'en passer."
             }
         ],
@@ -232,11 +232,11 @@ window.QUIZ = {
             {
                 q: "Quel est le principe des branches ?",
                 options: [
-                    "La branche principale reste toujours fonctionnelle",
                     "Chaque développeur a sa branche permanente",
-                    "Une branche par fichier modifié"
+                    "Une branche par fichier modifié",
+                    "La branche principale reste toujours fonctionnelle"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Chaque chantier vit à côté jusqu'à être prêt."
             },
             // Série 2
@@ -253,21 +253,21 @@ window.QUIZ = {
             {
                 q: "Un mot de passe commité puis supprimé est-il en sécurité ?",
                 options: [
-                    "Oui, la suppression l'efface",
                     "Non : il reste dans l'historique et doit être considéré comme compromis",
+                    "Oui, la suppression l'efface",
                     "Oui, si le dépôt est privé"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Il faut le changer, pas seulement le retirer."
             },
             {
                 q: "Que reprocher à un commit qui mélange correction, fonctionnalité et remise en forme ?",
                 options: [
-                    "Il est trop long à relire",
                     "Il est impossible d'annuler l'un sans les autres",
+                    "Il est trop long à relire",
                     "Il fait grossir le dépôt"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un commit, une intention. C'est ce qui rend l'historique utilisable."
             }
         ]
@@ -291,11 +291,11 @@ window.QUIZ = {
         {
             q: "Une page est lente. Par quoi commencer ?",
             options: [
-                "Optimiser le code du serveur",
                 "Compter le nombre de requêtes qu'elle déclenche",
+                "Optimiser le code du serveur",
                 "Changer d'hébergeur"
             ],
-            a: 1,
+            a: 0,
             explication: "Allers-retours d'API et requêtes en boucle expliquent la majorité des lenteurs."
         },
         {
@@ -332,11 +332,11 @@ window.QUIZ = {
         {
             q: "Que faut-il vérifier après chaque déploiement ?",
             options: [
-                "Le site dans une fenêtre privée, pour contourner le cache",
                 "Les journaux du serveur",
-                "La taille des fichiers envoyés"
+                "La taille des fichiers envoyés",
+                "Le site dans une fenêtre privée, pour contourner le cache"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est le seul moyen de voir ce que voient réellement les visiteurs."
         }
     ]

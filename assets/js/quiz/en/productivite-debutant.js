@@ -16,20 +16,20 @@ window.QUIZ = {
                 q: "What is the basic rhythm of the Pomodoro technique?",
                 options: [
                     "50 minutes of work, 10 of break",
-                    "25 minutes with no interruption, then 5 minutes of break",
-                    "90 minutes of work, 20 of break"
+                    "90 minutes of work, 20 of break",
+                    "25 minutes with no interruption, then 5 minutes of break"
                 ],
-                a: 1,
+                a: 2,
                 explication: "After four cycles, a long break of 15 to 30 minutes."
             },
             {
                 q: "What does the method act against first of all?",
                 options: [
                     "End-of-day tiredness",
-                    "Procrastination: a short commitment is easy to make",
-                    "A lack of skills"
+                    "A lack of skills",
+                    "Procrastination: a short commitment is easy to make"
                 ],
-                a: 1,
+                a: 2,
                 explication: "“Work on this file” is vague and daunting; “give it 25 minutes” is doable."
             },
             {
@@ -46,21 +46,21 @@ window.QUIZ = {
             {
                 q: "Where does the method's gain really come from?",
                 options: [
-                    "From working faster",
                     "From removing the time lost restarting after each interruption",
+                    "From working faster",
                     "From innate concentration"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Work interrupted six times an hour does not advance slowly: it never starts."
             },
             {
                 q: "Should you skip breaks when the work is going well?",
                 options: [
-                    "Yes, ride the momentum",
                     "No: breaks are part of the mechanism and let the fourth block be as good as the first",
+                    "Yes, ride the momentum",
                     "Yes, provided you stop before two hours"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It is what produces exhaustion by the end of the day."
             },
             {
@@ -82,20 +82,20 @@ window.QUIZ = {
                 q: "What observation is the GTD method based on?",
                 options: [
                     "Memory is excellent for storing",
-                    "Memory is good for thinking and bad for storing",
-                    "You have to work for longer"
+                    "You have to work for longer",
+                    "Memory is good for thinking and bad for storing"
                 ],
-                a: 1,
+                a: 2,
                 explication: "As long as a task is written nowhere, the mind keeps returning to check it is not forgotten."
             },
             {
                 q: "What are the five steps of GTD?",
                 options: [
                     "Plan, delegate, execute, control, archive",
-                    "Capture, clarify, organise, review, engage",
-                    "List, prioritise, break down, do, celebrate"
+                    "List, prioritise, break down, do, celebrate",
+                    "Capture, clarify, organise, review, engage"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Clarifying means defining, for each item, the next concrete physical action."
             },
             {
@@ -112,11 +112,11 @@ window.QUIZ = {
             {
                 q: "“Organise the seminar” has been put off for weeks. Why?",
                 options: [
-                    "Lack of motivation",
                     "It is not an action but a project: the brain does not know where to start",
+                    "Lack of motivation",
                     "Because the deadline is far off"
                 ],
-                a: 1,
+                a: 0,
                 explication: "“Call the caterer for a quote for 30 people” gets done without thinking."
             },
             {
@@ -147,11 +147,11 @@ window.QUIZ = {
             {
                 q: "Which two dimensions is the Eisenhower matrix built on?",
                 options: [
-                    "Difficulty and duration",
                     "Urgency and importance",
+                    "Difficulty and duration",
                     "Cost and benefit"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Four boxes: do now, schedule, delegate, drop."
             },
             {
@@ -178,31 +178,31 @@ window.QUIZ = {
             {
                 q: "What question should you ask about a task presented as urgent?",
                 options: [
-                    "How long will it take?",
                     "Urgent for whom?",
+                    "How long will it take?",
                     "Who asked first?"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Many emergencies are someone else's, transferred by an insistent message."
             },
             {
                 q: "How do you concretely protect the important-but-not-urgent quadrant?",
                 options: [
-                    "By thinking about it every morning",
                     "By blocking a recurring slot in the calendar, treated as an appointment",
+                    "By thinking about it every morning",
                     "By putting it at the top of your task list"
                 ],
-                a: 1,
+                a: 0,
                 explication: "What is not in the calendar will always be absorbed by an emergency."
             },
             {
                 q: "What does an empty “drop” quadrant mean?",
                 options: [
                     "That you are well organised",
-                    "That you have given nothing up: the exercise did not do its job",
-                    "That all your tasks are useful"
+                    "That all your tasks are useful",
+                    "That you have given nothing up: the exercise did not do its job"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The matrix forces a trade-off, and a trade-off means some things will not be done."
             }
         ],
@@ -213,31 +213,31 @@ window.QUIZ = {
             {
                 q: "What does a task management tool actually bring?",
                 options: [
-                    "It makes you organised",
                     "It makes visible an organisation that already exists, or its absence",
+                    "It makes you organised",
                     "It replaces the method"
                 ],
-                a: 1,
+                a: 0,
                 explication: "No tool makes up for the absence of a system."
             },
             {
                 q: "Which criterion matters most when choosing a tool?",
                 options: [
                     "The number of features",
-                    "Speed of capture: past five seconds, you will stop noting things",
-                    "Its integration with other software"
+                    "Its integration with other software",
+                    "Speed of capture: past five seconds, you will stop noting things"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The system collapses at the precise moment noting becomes tiresome."
             },
             {
                 q: "What do three task apps used in parallel produce?",
                 options: [
-                    "Fuller coverage",
                     "The certainty that none is up to date",
+                    "Fuller coverage",
                     "A better split by context"
                 ],
-                a: 1,
+                a: 0,
                 explication: "An imperfect but single system beats three perfect ones."
             },
             // Series 2
@@ -255,20 +255,20 @@ window.QUIZ = {
                 q: "What is Notion's main limitation for task management?",
                 options: [
                     "It costs money",
-                    "Its flexibility is a trap: you tinker instead of doing",
-                    "It does not work offline"
+                    "It does not work offline",
+                    "Its flexibility is a trap: you tinker instead of doing"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Reorganising your lists looks like work without being it."
             },
             {
                 q: "You have changed tool three times this year. What is the signal?",
                 options: [
                     "You are refining your method",
-                    "The problem is probably not the tool",
-                    "The market moves fast"
+                    "The market moves fast",
+                    "The problem is probably not the tool"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Comparing apps is a particularly comfortable form of procrastination."
             }
         ]
@@ -299,11 +299,11 @@ window.QUIZ = {
         {
             q: "What is the main risk of the productivity field itself?",
             options: [
-                "The methods contradict each other",
                 "You spend more time choosing a method than doing the work",
+                "The methods contradict each other",
                 "The tools are expensive"
             ],
-            a: 1,
+            a: 0,
             explication: "Installing a new tool feels very close to having made progress — without having made any."
         },
         {
@@ -320,20 +320,20 @@ window.QUIZ = {
             q: "A task has been lingering on your list for a month. What is the likeliest cause?",
             options: [
                 "A lack of motivation",
-                "It is badly phrased: it is not a concrete action",
-                "It is not important enough"
+                "It is not important enough",
+                "It is badly phrased: it is not a concrete action"
             ],
-            a: 1,
+            a: 2,
             explication: "Rephrasing it as a next physical action is often enough to unblock it."
         },
         {
             q: "What is the best task management tool?",
             options: [
-                "The one with the most features",
                 "The one you will still open in three weeks",
+                "The one with the most features",
                 "The one used by professionals in the field"
             ],
-            a: 1,
+            a: 0,
             explication: "Every other criterion comes far behind. Paper kept seriously beats an abandoned system."
         }
     ]

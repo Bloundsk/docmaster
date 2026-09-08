@@ -16,11 +16,11 @@ window.QUIZ = {
             {
                 q: "What is the main risk of a reused password?",
                 options: [
-                    "It is easier to guess",
                     "A single breach opens every account using it",
+                    "It is easier to guess",
                     "It expires faster"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Lists from breaches are replayed automatically against hundreds of other services. The length of the password changes nothing: it is not guessed, it is known."
             },
             {
@@ -36,11 +36,11 @@ window.QUIZ = {
             {
                 q: "What do you have to remember in order to use a password manager?",
                 options: [
-                    "One single password, the vault's",
                     "One password per category of site",
+                    "One single password, the vault's",
                     "Nothing, it is all automatic"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Each site gets a unique value you do not even know. You memorise only one."
             },
             // Series 2
@@ -48,10 +48,10 @@ window.QUIZ = {
                 q: "How do you answer the “all your eggs in one basket” objection?",
                 options: [
                     "It is unfounded, the vault cannot be broken",
-                    "The risk is concentrated, but on a point that is genuinely protected",
-                    "It is better to write everything on paper"
+                    "It is better to write everything on paper",
+                    "The risk is concentrated, but on a point that is genuinely protected"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Without a manager the risk is not spread: it is the same risk, laid across dozens of services whose security and breaches you control not at all."
             },
             {
@@ -67,11 +67,11 @@ window.QUIZ = {
             {
                 q: "Which precaution should you take if you settle for the browser's own list?",
                 options: [
-                    "Switch on two-factor authentication on the sync account",
                     "Change browser every year",
+                    "Switch on two-factor authentication on the sync account",
                     "Turn off synchronisation"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Synchronisation is often tied to an account protected by a plain password, and an open session is sometimes enough to read everything in clear."
             }
         ],
@@ -83,30 +83,30 @@ window.QUIZ = {
                 q: "What does a second authentication factor check?",
                 options: [
                     "Something you know",
-                    "Something you have",
-                    "The strength of the password"
+                    "The strength of the password",
+                    "Something you have"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The password is something you know, so it can be stolen or read in a breach. The second factor adds an object a remote attacker does not have."
             },
             {
                 q: "Which form of second factor is the most fragile?",
                 options: [
-                    "SMS",
                     "The authenticator app",
+                    "SMS",
                     "The physical key"
                 ],
-                a: 0,
+                a: 1,
                 explication: "SIM swapping lets somebody receive the codes in your place. SMS nonetheless remains far better than no second factor at all."
             },
             {
                 q: "Which account should be protected first?",
                 options: [
-                    "Social accounts",
                     "The main mailbox",
+                    "Social accounts",
                     "The streaming account"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It receives the reset links for all the others. Whoever controls it controls the lot."
             },
             // Series 2
@@ -114,30 +114,30 @@ window.QUIZ = {
                 q: "Why does a physical key resist phishing?",
                 options: [
                     "It encrypts the password",
-                    "It checks the site's address and refuses to answer a copycat",
-                    "It changes its code every second"
+                    "It changes its code every second",
+                    "It checks the site's address and refuses to answer a copycat"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It is the only form of second factor that protects against a site imitating the original perfectly."
             },
             {
                 q: "Where should you keep your backup codes?",
                 options: [
                     "On the phone that carries the authenticator app",
-                    "Elsewhere: printed, or in the password manager",
-                    "In an email to yourself"
+                    "In an email to yourself",
+                    "Elsewhere: printed, or in the password manager"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Leaving them on the device concerned makes the account unreachable the day that phone is lost, stolen or replaced."
             },
             {
                 q: "Does a code generated by an app travel over the network?",
                 options: [
-                    "Yes, through the service's server",
                     "No, it is worked out on the device",
+                    "Yes, through the service's server",
                     "Yes, by encrypted SMS"
                 ],
-                a: 1,
+                a: 0,
                 explication: "There is therefore nothing to intercept, which explains its superiority over SMS."
             }
         ],
@@ -168,11 +168,11 @@ window.QUIZ = {
             {
                 q: "What is the one answer that reliably works against ransomware?",
                 options: [
-                    "A good antivirus",
                     "A backup it could not reach",
+                    "A good antivirus",
                     "Paying the ransom"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The antivirus is one barrier among others. Paying guarantees nothing, neither the key nor that no copy of the data was kept."
             },
             // Series 2
@@ -180,10 +180,10 @@ window.QUIZ = {
                 q: "What does the “outside the home” copy specifically cover?",
                 options: [
                     "Mishandling",
-                    "Fire, flood, burglary",
-                    "Disk failures"
+                    "Disk failures",
+                    "Fire, flood, burglary"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Everything in the same place disappears together. It is the one risk that multiplying local copies does not cover."
             },
             {
@@ -199,11 +199,11 @@ window.QUIZ = {
             {
                 q: "How often should you test a restore?",
                 options: [
-                    "Never, if the software reports success",
                     "About once a quarter",
+                    "Never, if the software reports success",
                     "Only after an incident"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Restoring a file at random is enough to check that the whole chain works."
             }
         ],
@@ -225,51 +225,51 @@ window.QUIZ = {
                 q: "Does a VPN protect against phishing?",
                 options: [
                     "Yes, it blocks fraudulent sites",
-                    "No, it carries the traffic without inspecting it",
-                    "Yes, if it is a paid one"
+                    "Yes, if it is a paid one",
+                    "No, it carries the traffic without inspecting it"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A phishing site remains a phishing site, and a malicious file remains malicious."
             },
             {
                 q: "Does a VPN make you anonymous on a service you are logged into?",
                 options: [
                     "Yes, the IP address is hidden",
-                    "No, the logged-in account identifies you by itself",
-                    "Yes, if you clear the cookies"
+                    "Yes, if you clear the cookies",
+                    "No, the logged-in account identifies you by itself"
                 ],
-                a: 1,
+                a: 2,
                 explication: "You identified yourself by logging in. The VPN changes nothing about that."
             },
             // Series 2
             {
                 q: "What is a VPN's main effect on trust?",
                 options: [
-                    "It removes it",
                     "It moves it from the internet provider to the VPN provider",
+                    "It removes it",
                     "It strengthens it on both sides"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The question becomes: does this provider deserve more trust than the last one?"
             },
             {
                 q: "How far does HTTPS encrypt, compared with a VPN?",
                 options: [
-                    "All the way to the site visited, whereas the VPN stops at its server",
                     "As far as the VPN server only",
-                    "Both protect exactly the same stretch"
+                    "Both protect exactly the same stretch",
+                    "All the way to the site visited, whereas the VPN stops at its server"
                 ],
-                a: 0,
+                a: 2,
                 explication: "They are two complementary protections, covering different parts of the journey."
             },
             {
                 q: "What particular risk does a free, advertising-funded VPN carry?",
                 options: [
                     "Reduced speed only",
-                    "It receives all your traffic and has to make its money some other way",
-                    "None, the encryption is identical"
+                    "None, the encryption is identical",
+                    "It receives all your traffic and has to make its money some other way"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Before installing a security tool, looking up who funds it is a useful habit."
             }
         ]
@@ -293,11 +293,11 @@ window.QUIZ = {
         {
             q: "What do the password manager and the disconnected backup have in common?",
             options: [
-                "They are expensive",
                 "You set them up once and they then work without you",
+                "They are expensive",
                 "They require technical skills"
             ],
-            a: 1,
+            a: 0,
             explication: "That is the criterion that puts them at this level: a one-off effort, permanent protection."
         },
         {

@@ -15,11 +15,11 @@ window.QUIZ = {
             {
                 q: "What are the three conditions for a good metric?",
                 options: [
-                    "Impressive, easy to calculate, going up",
                     "Tied to a specific goal, measurable over time, actionable",
+                    "Impressive, easy to calculate, going up",
                     "Simple, visual and shareable"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Being actionable is the most discriminating criterion, and the one most often forgotten."
             },
             {
@@ -36,10 +36,10 @@ window.QUIZ = {
                 q: "Traffic goes from 100,000 to 180,000 visitors, sales from 1,200 to 1,300. What do you conclude?",
                 options: [
                     "A fine result: +80% traffic",
-                    "The conversion rate falls by 40%: the campaign targeted badly",
-                    "Both metrics are equally useful"
+                    "Both metrics are equally useful",
+                    "The conversion rate falls by 40%: the campaign targeted badly"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Both figures are accurate. Only one leads to a decision: review the targeting."
             },
             // Series 2
@@ -57,20 +57,20 @@ window.QUIZ = {
                 q: "A useful dashboard contains…",
                 options: [
                     "As many metrics as are available",
-                    "Both lagging and leading indicators",
-                    "Financial metrics only"
+                    "Financial metrics only",
+                    "Both lagging and leading indicators"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Without a leading indicator you only see problems once it is too late to act."
             },
             {
                 q: "What should you do before you start tracking a metric?",
                 options: [
                     "Choose the visualisation tool",
-                    "Write down the decision it will serve",
-                    "Compare against the industry"
+                    "Compare against the industry",
+                    "Write down the decision it will serve"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The hard part is not collecting, it is sorting."
             }
         ],
@@ -92,10 +92,10 @@ window.QUIZ = {
                 q: "5,000 customers contacted, 200 replies, average score 4.3/5. What does that figure measure?",
                 options: [
                     "Customer satisfaction",
-                    "The satisfaction of the people who replied",
-                    "The quality of the service"
+                    "The quality of the service",
+                    "The satisfaction of the people who replied"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The 4,800 who stayed silent, including those who left for a competitor, are not in the calculation."
             },
             {
@@ -123,10 +123,10 @@ window.QUIZ = {
                 q: "What does the “collect everything, we will see later” strategy produce?",
                 options: [
                     "A rich, usable database",
-                    "Huge databases where nothing can be found, and correlations due to chance",
-                    "A competitive advantage"
+                    "A competitive advantage",
+                    "Huge databases where nothing can be found, and correlations due to chance"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The question comes before the collection, never the other way round."
             },
             {
@@ -157,21 +157,21 @@ window.QUIZ = {
             {
                 q: "Which format should you choose to compare quantities with each other?",
                 options: [
-                    "A pie chart",
                     "Sorted horizontal bars",
+                    "A pie chart",
                     "A line chart"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The eye compares angles badly: keep the pie chart to three slices, for proportions."
             },
             {
                 q: "A = 51 sales, B = 49. With an axis starting at 48, what does the reader see?",
                 options: [
-                    "Two almost identical bars, which is faithful",
                     "A bar for A three times taller: the 4% gap looks crushing",
+                    "Two almost identical bars, which is faithful",
                     "An unreadable chart"
                 ],
-                a: 1,
+                a: 0,
                 explication: "No figure was falsified. Only the scale changed."
             },
             // Series 2
@@ -189,20 +189,20 @@ window.QUIZ = {
                 q: "What title should you give a chart?",
                 options: [
                     "“2026 sales”",
-                    "“Sales have doubled in 6 months”",
-                    "None, the axes are enough"
+                    "None, the axes are enough",
+                    "“Sales have doubled in 6 months”"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A good title states the conclusion. A good visual reads in three seconds."
             },
             {
                 q: "What does a chart that needs its legend to be understood tell you?",
                 options: [
                     "That it is rich in information",
-                    "That it has failed at its job",
-                    "That it is aimed at experts"
+                    "That it is aimed at experts",
+                    "That it has failed at its job"
                 ],
-                a: 1,
+                a: 2,
                 explication: "One idea per chart, axes named with their unit."
             }
         ],
@@ -223,11 +223,11 @@ window.QUIZ = {
             {
                 q: "When should you prefer the median to the mean?",
                 options: [
-                    "When the sample is small",
                     "As soon as extreme values exist: salaries, property prices, response times",
+                    "When the sample is small",
                     "When the data is old"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Publishing both is better still: the gap between them reveals the skew of the distribution on its own."
             },
             {
@@ -245,30 +245,30 @@ window.QUIZ = {
                 q: "“Our customers who use the app buy 3 times more.” What can you conclude?",
                 options: [
                     "The app triggers the purchase, we should invest in it",
-                    "Nothing certain: the already loyal customers may be the ones who install it",
-                    "The app should be made compulsory"
+                    "The app should be made compulsory",
+                    "Nothing certain: the already loyal customers may be the ones who install it"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Deciding to invest millions on that basis is a bet, not a deduction."
             },
             {
                 q: "Going from 2% to 3% is how much?",
                 options: [
-                    "+1 point or +50%, both are accurate",
                     "+1% only",
-                    "+50% only"
+                    "+50% only",
+                    "+1 point or +50%, both are accurate"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The second wording is spectacular and often chosen for that reason. Look for the absolute value."
             },
             {
                 q: "What does stopping a test on the day the gap turns favourable guarantee?",
                 options: [
-                    "Valuable time saved",
                     "Finding a winner, even between two identical versions",
+                    "Valuable time saved",
                     "A more reliable conclusion"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The duration of a test is fixed before launching it."
             }
         ]
@@ -282,11 +282,11 @@ window.QUIZ = {
         {
             q: "What is data for, fundamentally?",
             options: [
-                "Producing impressive dashboards",
                 "Answering a specific question with a known degree of certainty",
+                "Producing impressive dashboards",
                 "Justifying decisions already taken"
             ],
-            a: 1,
+            a: 0,
             explication: "Badly collected data is worse than no data: it gives false confidence."
         },
         {
@@ -302,11 +302,11 @@ window.QUIZ = {
         {
             q: "A report shows “+50% conversions”. What should you ask?",
             options: [
-                "Over what period?",
                 "What is the absolute value behind that percentage?",
+                "Over what period?",
                 "Who took the measurement?"
             ],
-            a: 1,
+            a: 0,
             explication: "Going from 2 to 3 conversions is also a 50% rise."
         },
         // Series 2
@@ -333,11 +333,11 @@ window.QUIZ = {
         {
             q: "What order should a data approach follow?",
             options: [
-                "Collect broadly, then look for what the data says",
                 "Frame the question, then collect what answers it",
+                "Collect broadly, then look for what the data says",
                 "Choose the tool, then define the metrics"
             ],
-            a: 1,
+            a: 0,
             explication: "On a large volume you always end up digging out a spectacular correlation due to chance alone."
         }
     ]

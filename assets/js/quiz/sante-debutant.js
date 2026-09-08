@@ -16,21 +16,21 @@ window.QUIZ = {
             {
                 q: "Où placer le haut de l'écran ?",
                 options: [
-                    "À hauteur des yeux, ou juste en dessous",
                     "Nettement au-dessus des yeux",
-                    "Le plus bas possible"
+                    "Le plus bas possible",
+                    "À hauteur des yeux, ou juste en dessous"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Un écran trop bas fait pencher la tête en avant pendant sept heures."
             },
             {
                 q: "Pourquoi un portable posé sur un bureau ne peut-il pas être bien placé ?",
                 options: [
-                    "L'écran est solidaire du clavier : l'un des deux est forcément mal placé",
                     "Il est trop petit",
+                    "L'écran est solidaire du clavier : l'un des deux est forcément mal placé",
                     "Il chauffe trop"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le support et le clavier séparé résolvent une contradiction, pas un inconfort."
             },
             {
@@ -58,10 +58,10 @@ window.QUIZ = {
                 q: "Qu'est-ce qui abîme sur un poste de bureau ?",
                 options: [
                     "L'effort intense",
-                    "La position maintenue pendant des heures",
-                    "Le nombre de frappes au clavier"
+                    "Le nombre de frappes au clavier",
+                    "La position maintenue pendant des heures"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est aussi une bonne nouvelle : une position, ça se règle."
             },
             {
@@ -82,21 +82,21 @@ window.QUIZ = {
             {
                 q: "Activité physique et sédentarité, est-ce la même chose ?",
                 options: [
-                    "Oui, l'une est l'inverse de l'autre",
                     "Non : on peut être sportif et sédentaire",
+                    "Oui, l'une est l'inverse de l'autre",
                     "Oui, si l'on compte en heures"
                 ],
-                a: 1,
+                a: 0,
                 explication: "L'une se mesure en minutes d'effort, l'autre en heures passées assis."
             },
             {
                 q: "Quel est le repère de l'OMS pour un adulte ?",
                 options: [
-                    "150 minutes d'activité modérée par semaine",
                     "30 minutes par jour de sport intense",
-                    "10 000 pas par jour"
+                    "10 000 pas par jour",
+                    "150 minutes d'activité modérée par semaine"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Et ce repère ne dit rien de la durée passée assis, qui est un second levier."
             },
             {
@@ -123,11 +123,11 @@ window.QUIZ = {
             {
                 q: "Une heure de sport le samedi annule-t-elle huit heures assises quotidiennes ?",
                 options: [
-                    "Non : elle améliore l'activité sans changer la sédentarité",
                     "Oui, entièrement",
+                    "Non : elle améliore l'activité sans changer la sédentarité",
                     "Oui, si le sport est intense"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Les deux comptent, et le second est plus facile à corriger."
             },
             {
@@ -148,62 +148,62 @@ window.QUIZ = {
             {
                 q: "Que dit la règle dite « des trois vingt » ?",
                 options: [
-                    "Toutes les 20 minutes, regarder à 6 mètres pendant 20 secondes",
                     "20 minutes de pause toutes les 20 heures",
+                    "Toutes les 20 minutes, regarder à 6 mètres pendant 20 secondes",
                     "20 clignements par minute pendant 20 minutes"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Les chiffres exacts importent peu : le principe est de relâcher le muscle qui accommode."
             },
             {
                 q: "Que se passe-t-il au clignement devant un écran ?",
                 options: [
-                    "Sa fréquence chute nettement",
                     "Il augmente",
-                    "Il ne change pas"
+                    "Il ne change pas",
+                    "Sa fréquence chute nettement"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le film lacrymal s'évapore plus vite qu'il n'est renouvelé — d'où les yeux secs."
             },
             {
                 q: "Que dit l'état des preuves sur les filtres anti-lumière bleue ?",
                 options: [
-                    "Ils n'ont pas démontré grand-chose sur la fatigue visuelle",
                     "Ils la réduisent nettement",
+                    "Ils n'ont pas démontré grand-chose sur la fatigue visuelle",
                     "Ils protègent la rétine"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ce qui est mieux établi concerne le sommeil, et dépend surtout de l'heure d'arrêt."
             },
             // Série 2
             {
                 q: "Faut-il travailler dans le noir avec un écran allumé ?",
                 options: [
-                    "Non : le contraste est mal supporté sur la durée",
                     "Oui, cela repose les yeux",
+                    "Non : le contraste est mal supporté sur la durée",
                     "Cela n'a aucun effet"
                 ],
-                a: 0,
+                a: 1,
                 explication: "La luminosité de l'écran gagne à être proche de celle de la pièce."
             },
             {
                 q: "Une gêne visuelle qui persiste plusieurs jours relève de quoi ?",
                 options: [
-                    "D'un examen",
                     "D'un filtre logiciel",
-                    "D'une pause plus longue"
+                    "D'une pause plus longue",
+                    "D'un examen"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une correction visuelle inadaptée est une cause fréquente, et aucun réglage d'écran ne la corrige."
             },
             {
                 q: "Pourquoi l'œil se fatigue-t-il devant un écran ?",
                 options: [
-                    "Il fixe un plan rapproché sans relâchement",
                     "L'écran émet trop de chaleur",
-                    "Les couleurs sont trop vives"
+                    "Les couleurs sont trop vives",
+                    "Il fixe un plan rapproché sans relâchement"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Regarder au loin quelques secondes suffit à relâcher le muscle qui accommode."
             }
         ],
@@ -224,21 +224,21 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui protège le mieux : un bloc ou plusieurs coupures ?",
                 options: [
-                    "Plusieurs coupures courtes",
                     "Un seul bloc de vingt minutes",
+                    "Plusieurs coupures courtes",
                     "Les deux se valent"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un repère ergonomique usuel est d'environ cinq minutes par heure travaillée."
             },
             {
                 q: "Faire défiler un fil d'actualité pendant la pause, est-ce une pause ?",
                 options: [
-                    "Non : c'est la même ressource sollicitée autrement",
                     "Oui, puisqu'on ne travaille pas",
+                    "Non : c'est la même ressource sollicitée autrement",
                     "Oui, si elle est courte"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Attention soutenue, plan rapproché, écran : rien n'a changé."
             },
             // Série 2
@@ -255,21 +255,21 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui distingue une pause qui récupère ?",
                 options: [
-                    "Elle change de registre",
                     "Elle dure au moins dix minutes",
+                    "Elle change de registre",
                     "Elle a lieu à heure fixe"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Se lever, bouger, regarder ailleurs, parler d'autre chose."
             },
             {
                 q: "Le déjeuner pris devant l'écran coupe-t-il la journée ?",
                 options: [
-                    "Non : il dure une heure et ne coupe rien",
                     "Oui, c'est une pause complète",
-                    "Oui, si l'on ne travaille pas pendant"
+                    "Oui, si l'on ne travaille pas pendant",
+                    "Non : il dure une heure et ne coupe rien"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Même logique que le téléphone pendant la pause : le registre ne change pas."
             }
         ]
@@ -280,11 +280,11 @@ window.QUIZ = {
         {
             q: "Quelle question ce parcours pose-t-il, que le guide Productivité ne pose pas ?",
             options: [
-                "Comment ne pas s'abîmer au travail",
                 "Comment produire davantage",
-                "Comment mieux s'organiser"
+                "Comment mieux s'organiser",
+                "Comment ne pas s'abîmer au travail"
             ],
-            a: 0,
+            a: 2,
             explication: "Deux sujets voisins, deux questions différentes."
         },
         {
@@ -300,11 +300,11 @@ window.QUIZ = {
         {
             q: "Quelqu'un court trois fois par semaine et reste assis neuf heures par jour. Que dire ?",
             options: [
-                "L'activité est bonne, la sédentarité reste entière — ce sont deux leviers distincts",
                 "Tout va bien, le sport compense",
-                "Le sport est inutile dans ce cas"
+                "Le sport est inutile dans ce cas",
+                "L'activité est bonne, la sédentarité reste entière — ce sont deux leviers distincts"
             ],
-            a: 0,
+            a: 2,
             explication: "Les 2 025 heures assises annuelles ne bougent pas d'un pouce."
         },
         {

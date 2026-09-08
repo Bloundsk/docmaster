@@ -34,11 +34,11 @@ window.QUIZ = {
             {
                 q: "Que faire du point faible de son propre dossier ?",
                 options: [
-                    "L'énoncer soi-même, ou préparer la réponse",
                     "Espérer qu'il passe inaperçu",
-                    "Le nier s'il est soulevé"
+                    "Le nier s'il est soulevé",
+                    "L'énoncer soi-même, ou préparer la réponse"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'autre le trouvera de toute façon : mieux vaut l'avoir vu venir."
             },
             // Série 2
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Quelle est la partie la moins utile d'une préparation classique ?",
                 options: [
-                    "Lister ce qu'on va dire",
                     "Estimer ce que cherche l'autre",
+                    "Lister ce qu'on va dire",
                     "Chiffrer son objectif"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Elle suppose que l'échange consiste à convaincre par accumulation."
             }
         ],
@@ -90,52 +90,52 @@ window.QUIZ = {
             {
                 q: "Que produit un silence de trois secondes après une réponse ?",
                 options: [
-                    "Très souvent une seconde réponse, plus précise",
                     "Un malaise inutile",
-                    "Une reprise du sujet précédent"
+                    "Une reprise du sujet précédent",
+                    "Très souvent une seconde réponse, plus précise"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Il est désagréable à tenir : c'est pour cela qu'il fonctionne, et qu'il est si peu utilisé."
             },
             {
                 q: "Quelle est la question la plus rentable du domaine ?",
                 options: [
-                    "« Pourquoi est-ce important pour vous ? »",
                     "« Êtes-vous d'accord ? »",
+                    "« Pourquoi est-ce important pour vous ? »",
                     "« Quel est votre budget ? »"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Elle fait passer de ce que l'autre demande à la raison pour laquelle il le demande."
             },
             // Série 2
             {
                 q: "Quel remède mécanique empêche de préparer sa réponse pendant que l'autre parle ?",
                 options: [
-                    "Prendre des notes de ce qu'il dit",
                     "Se répéter d'écouter",
+                    "Prendre des notes de ce qu'il dit",
                     "Attendre plus longtemps avant de répondre"
                 ],
-                a: 0,
+                a: 1,
                 explication: "La main occupée à transcrire ne peut pas rédiger la réponse en même temps."
             },
             {
                 q: "Quelle différence entre une question ouverte et une question fermée ?",
                 options: [
-                    "L'ouverte appelle une explication, la fermée un mot",
                     "L'ouverte est plus polie",
-                    "La fermée est plus efficace"
+                    "La fermée est plus efficace",
+                    "L'ouverte appelle une explication, la fermée un mot"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Et c'est l'explication qui est utile."
             },
             {
                 q: "Écouter est présenté comme une qualité morale. Qu'est-ce d'abord ?",
                 options: [
-                    "Une technique de collecte d'information",
                     "Une marque de respect",
-                    "Une façon de gagner du temps"
+                    "Une façon de gagner du temps",
+                    "Une technique de collecte d'information"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La plupart des informations utiles sont dites, et ne sont pas entendues."
             }
         ],
@@ -166,42 +166,42 @@ window.QUIZ = {
             {
                 q: "Quelle conséquence pratique tirer de cette correction ?",
                 options: [
-                    "Le contenu compte, et il compte beaucoup",
                     "Il faut travailler sa gestuelle avant tout",
-                    "Le ton prime toujours sur les mots"
+                    "Le ton prime toujours sur les mots",
+                    "Le contenu compte, et il compte beaucoup"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est l'inverse de ce qu'on tire habituellement du chiffre de 93 %."
             },
             // Série 2
             {
                 q: "Quel effet secondaire a le fait de commencer par la conclusion ?",
                 options: [
-                    "Cela oblige à savoir ce qu'on veut dire",
                     "Cela raccourcit le message",
+                    "Cela oblige à savoir ce qu'on veut dire",
                     "Cela évite les questions"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Beaucoup d'exposés qui finissent par une conclusion floue n'en avaient pas."
             },
             {
                 q: "Quel repère signale une phrase trop longue ?",
                 options: [
-                    "Elle ne peut pas être dite d'un seul souffle",
                     "Elle dépasse trente mots",
+                    "Elle ne peut pas être dite d'un seul souffle",
                     "Elle contient plus de deux virgules"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Elle contient alors probablement deux idées."
             },
             {
                 q: "Un message bien tourné qui n'obtient rien : quelle cause probable ?",
                 options: [
-                    "La demande y est diluée par politesse ou reportée à la fin",
                     "Il est trop court",
-                    "Le ton est trop direct"
+                    "Le ton est trop direct",
+                    "La demande y est diluée par politesse ou reportée à la fin"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La politesse tient en une formule ; la demande doit être en évidence."
             }
         ],
@@ -212,21 +212,21 @@ window.QUIZ = {
             {
                 q: "Que doit dire un bon objet de courriel ?",
                 options: [
-                    "De quoi il s'agit ET ce qui est attendu",
                     "Le sujet en un mot",
+                    "De quoi il s'agit ET ce qui est attendu",
                     "Le degré d'urgence"
                 ],
-                a: 0,
+                a: 1,
                 explication: "« Budget 2027 — votre validation avant vendredi » se traite ; « Point budget » se reporte."
             },
             {
                 q: "Un message de 400 mots envoyé à 8 personnes mobilise combien de temps ?",
                 options: [
-                    "Environ 13 minutes",
                     "Environ 1,6 minute",
+                    "Environ 13 minutes",
                     "Environ 3 minutes"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ramené à 200 mots : 6,4 minutes. Sept minutes récupérées, à chaque message."
             },
             {
@@ -253,11 +253,11 @@ window.QUIZ = {
             {
                 q: "Quel repère signale qu'un sujet ne devait pas être écrit ?",
                 options: [
-                    "Relire son message une troisième fois pour ajuster le ton",
                     "Dépasser une page",
+                    "Relire son message une troisième fois pour ajuster le ton",
                     "Devoir joindre un document"
                 ],
-                a: 0,
+                a: 1,
                 explication: "L'écrit sert ensuite, pour acter ce qui a été dit."
             },
             {
@@ -278,51 +278,51 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Se préparer, écouter et structurer — avant toute technique de négociation",
                 "Apprendre à convaincre",
-                "Maîtriser son langage corporel"
+                "Maîtriser son langage corporel",
+                "Se préparer, écouter et structurer — avant toute technique de négociation"
             ],
-            a: 0,
+            a: 2,
             explication: "Le niveau intermédiaire porte sur la négociation ; celui-ci pose ce sans quoi elle ne sert à rien."
         },
         {
             q: "Qu'ont en commun la reformulation et la conclusion placée au début ?",
             options: [
-                "Les deux évitent qu'on parle de deux choses différentes",
                 "Les deux raccourcissent l'échange",
-                "Les deux relèvent de la politesse"
+                "Les deux relèvent de la politesse",
+                "Les deux évitent qu'on parle de deux choses différentes"
             ],
-            a: 0,
+            a: 2,
             explication: "L'une vérifie la compréhension, l'autre la garantit d'emblée."
         },
         {
             q: "Quelqu'un affirme que « le non-verbal, c'est 93 % du message ». Que répondre ?",
             options: [
-                "L'étude portait sur des mots isolés dont le ton contredisait le sens",
                 "C'est exact, mais seulement à l'oral",
+                "L'étude portait sur des mots isolés dont le ton contredisait le sens",
                 "Le chiffre est de 70 %"
             ],
-            a: 0,
+            a: 1,
             explication: "Elle mesurait la perception d'une attitude, pas la transmission d'une information."
         },
         {
             q: "Pourquoi écrire court prend-il plus de temps ?",
             options: [
-                "Il faut trier, et le tri est un travail",
                 "Il faut relire davantage",
-                "C'est un mythe : cela va plus vite"
+                "C'est un mythe : cela va plus vite",
+                "Il faut trier, et le tri est un travail"
             ],
-            a: 0,
+            a: 2,
             explication: "Cela en fait gagner à tous les autres — l'arbitrage est presque toujours tranché dans le mauvais sens."
         },
         {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
-                "Reformuler une fois, puis se taire trois secondes",
                 "Préparer davantage d'arguments",
+                "Reformuler une fois, puis se taire trois secondes",
                 "Raccourcir tous ses messages"
             ],
-            a: 0,
+            a: 1,
             explication: "Aucune technique du guide ne demande moins d'effort et n'en rapporte autant."
         },
         {

@@ -19,21 +19,21 @@ window.QUIZ = {
             {
                 q: "Where should the top of the screen sit?",
                 options: [
-                    "At eye level, or just below",
                     "Clearly above eye level",
-                    "As low as possible"
+                    "As low as possible",
+                    "At eye level, or just below"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A screen too low tips the head forward for seven hours."
             },
             {
                 q: "Why can a laptop on a desk not be well placed?",
                 options: [
-                    "The screen is fixed to the keyboard: one of the two is necessarily badly placed",
                     "It is too small",
+                    "The screen is fixed to the keyboard: one of the two is necessarily badly placed",
                     "It runs too hot"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A stand and a separate keyboard resolve a contradiction, not a discomfort."
             },
             {
@@ -61,10 +61,10 @@ window.QUIZ = {
                 q: "What causes harm at a desk job?",
                 options: [
                     "Intense effort",
-                    "The position held for hours",
-                    "The number of keystrokes"
+                    "The number of keystrokes",
+                    "The position held for hours"
                 ],
-                a: 1,
+                a: 2,
                 explication: "That is also good news: a position can be adjusted."
             },
             {
@@ -85,21 +85,21 @@ window.QUIZ = {
             {
                 q: "Are physical activity and sedentary behaviour the same thing?",
                 options: [
-                    "Yes, one is the opposite of the other",
                     "No: you can be athletic and sedentary",
+                    "Yes, one is the opposite of the other",
                     "Yes, if you count in hours"
                 ],
-                a: 1,
+                a: 0,
                 explication: "One is measured in minutes of effort, the other in hours spent sitting."
             },
             {
                 q: "What is the WHO benchmark for an adult?",
                 options: [
-                    "150 minutes of moderate activity per week",
                     "30 minutes a day of intense sport",
-                    "10,000 steps a day"
+                    "10,000 steps a day",
+                    "150 minutes of moderate activity per week"
                 ],
-                a: 0,
+                a: 2,
                 explication: "And that benchmark says nothing about time spent sitting, which is a second lever."
             },
             {
@@ -126,11 +126,11 @@ window.QUIZ = {
             {
                 q: "Does an hour of sport on Saturday cancel eight hours of daily sitting?",
                 options: [
-                    "No: it improves activity without changing sedentary time",
                     "Yes, entirely",
+                    "No: it improves activity without changing sedentary time",
                     "Yes, if the sport is intense"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Both count, and the second is easier to correct."
             },
             {
@@ -151,62 +151,62 @@ window.QUIZ = {
             {
                 q: "What does the so-called “three twenties” rule say?",
                 options: [
-                    "Every 20 minutes, look 6 metres away for 20 seconds",
                     "20 minutes of break every 20 hours",
+                    "Every 20 minutes, look 6 metres away for 20 seconds",
                     "20 blinks a minute for 20 minutes"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The exact numbers matter little: the principle is to release the focusing muscle."
             },
             {
                 q: "What happens to blinking in front of a screen?",
                 options: [
-                    "Its rate drops markedly",
                     "It increases",
-                    "It does not change"
+                    "It does not change",
+                    "Its rate drops markedly"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The tear film evaporates faster than it is renewed — hence dry eyes."
             },
             {
                 q: "What does the evidence say about blue-light filters?",
                 options: [
-                    "They have not demonstrated much on eye strain",
                     "They reduce it markedly",
+                    "They have not demonstrated much on eye strain",
                     "They protect the retina"
                 ],
-                a: 0,
+                a: 1,
                 explication: "What is better established concerns sleep, and depends mostly on the hour you stop."
             },
             // Series 2
             {
                 q: "Should you work in the dark with a lit screen?",
                 options: [
-                    "No: the contrast is tolerated badly over time",
                     "Yes, it rests the eyes",
+                    "No: the contrast is tolerated badly over time",
                     "It has no effect"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Screen brightness is better close to that of the room."
             },
             {
                 q: "Visual discomfort lasting several days calls for what?",
                 options: [
-                    "An examination",
                     "A software filter",
-                    "A longer break"
+                    "A longer break",
+                    "An examination"
                 ],
-                a: 0,
+                a: 2,
                 explication: "An unsuitable prescription is a frequent cause, and no display setting corrects it."
             },
             {
                 q: "Why does the eye tire in front of a screen?",
                 options: [
-                    "It fixes on a close plane with no release",
                     "The screen gives off too much heat",
-                    "The colours are too bright"
+                    "The colours are too bright",
+                    "It fixes on a close plane with no release"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Looking into the distance for a few seconds is enough to release the focusing muscle."
             }
         ],
@@ -227,21 +227,21 @@ window.QUIZ = {
             {
                 q: "Which protects better: one block or several breaks?",
                 options: [
-                    "Several short breaks",
                     "A single twenty-minute block",
+                    "Several short breaks",
                     "The two are equivalent"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A usual ergonomic marker is about five minutes per hour worked."
             },
             {
                 q: "Is scrolling a feed during a break a break?",
                 options: [
-                    "No: it is the same resource used differently",
                     "Yes, since you are not working",
+                    "No: it is the same resource used differently",
                     "Yes, if it is short"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Sustained attention, close plane, screen: nothing has changed."
             },
             // Series 2
@@ -258,21 +258,21 @@ window.QUIZ = {
             {
                 q: "What makes a break restorative?",
                 options: [
-                    "It changes register",
                     "It lasts at least ten minutes",
+                    "It changes register",
                     "It happens at a fixed time"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Stand up, move, look elsewhere, talk about something else."
             },
             {
                 q: "Does lunch taken at the screen break up the day?",
                 options: [
-                    "No: it lasts an hour and breaks nothing",
                     "Yes, it is a complete break",
-                    "Yes, if you do not work during it"
+                    "Yes, if you do not work during it",
+                    "No: it lasts an hour and breaks nothing"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Same logic as the phone during a break: the register does not change."
             }
         ]
@@ -283,11 +283,11 @@ window.QUIZ = {
         {
             q: "Which question does this path ask that the Productivity guide does not?",
             options: [
-                "How not to harm yourself at work",
                 "How to produce more",
-                "How to organise yourself better"
+                "How to organise yourself better",
+                "How not to harm yourself at work"
             ],
-            a: 0,
+            a: 2,
             explication: "Two neighbouring subjects, two different questions."
         },
         {
@@ -303,11 +303,11 @@ window.QUIZ = {
         {
             q: "Somebody runs three times a week and sits nine hours a day. What can you say?",
             options: [
-                "The activity is good, the sedentary time is untouched — two distinct levers",
                 "All is well, sport makes up for it",
-                "Sport is pointless in that case"
+                "Sport is pointless in that case",
+                "The activity is good, the sedentary time is untouched — two distinct levers"
             ],
-            a: 0,
+            a: 2,
             explication: "The 2,025 annual hours of sitting do not move an inch."
         },
         {

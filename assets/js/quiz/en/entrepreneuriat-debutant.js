@@ -13,11 +13,11 @@ window.QUIZ = {
             {
                 q: "What is the most important function of a business plan?",
                 options: [
-                    "Convincing a banker",
                     "Making you think, even if you discover your assumptions do not hold",
+                    "Convincing a banker",
                     "Meeting a legal obligation"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A plan that taught you nothing and made you doubt nothing was written to please, not to test."
             },
             {
@@ -51,10 +51,10 @@ window.QUIZ = {
                 q: "What is the “hockey stick”?",
                 options: [
                     "Steady, prudent growth",
-                    "Flat forecasts then a sudden explosion, with no justification",
-                    "A fall followed by a recovery"
+                    "A fall followed by a recovery",
+                    "Flat forecasts then a sudden explosion, with no justification"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Every financier has seen that graph hundreds of times. Modest figures backed by explicit assumptions are worth more."
             },
             {
@@ -76,10 +76,10 @@ window.QUIZ = {
                 q: "What is the aim of market research?",
                 options: [
                     "Confirming the idea is good",
-                    "Trying to demolish the idea: if it resists, you have something",
-                    "Estimating the first year's revenue"
+                    "Estimating the first year's revenue",
+                    "Trying to demolish the idea: if it resists, you have something"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Looking for confirmation means learning nothing."
             },
             {
@@ -107,10 +107,10 @@ window.QUIZ = {
                 q: "What is the argument “the wellbeing market is worth 4 billion” worth?",
                 options: [
                     "It is an excellent credibility argument",
-                    "Nothing for you: you have to come down to the market you can genuinely reach",
-                    "It is enough if the source is reliable"
+                    "It is enough if the source is reliable",
+                    "Nothing for you: you have to come down to the market you can genuinely reach"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A small, defensible number inspires more confidence than a huge, unreachable one."
             },
             {
@@ -141,11 +141,11 @@ window.QUIZ = {
             {
                 q: "Is the choice of legal form final?",
                 options: [
-                    "Yes, it commits you for the life of the business",
                     "No: it can be changed, better to start than to delay the project",
+                    "Yes, it commits you for the life of the business",
                     "Yes, except in liquidation"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Do not stall your project on this choice: changing form is expected and common."
             },
             {
@@ -161,11 +161,11 @@ window.QUIZ = {
             {
                 q: "What is the main limit of the micro regime?",
                 options: [
-                    "It forbids having customers abroad",
                     "Business expenses are not deductible",
+                    "It forbids having customers abroad",
                     "It requires a minimum capital"
                 ],
-                a: 1,
+                a: 0,
                 explication: "An activity requiring significant purchases is quickly penalised there."
             },
             // Set 2
@@ -181,18 +181,18 @@ window.QUIZ = {
             },
             {
                 q: "Which French form makes it easiest for investors to come into the capital?",
-                options: ["The micro-entreprise", "The SASU / SAS", "The EURL"],
-                a: 1,
+                options: ["The micro-entreprise", "The EURL", "The SASU / SAS"],
+                a: 2,
                 explication: "Its great freedom in the articles makes it the usual choice for projects meant to grow."
             },
             {
                 q: "Why open a dedicated bank account from the first euro received?",
                 options: [
                     "It is a legal obligation for every form",
-                    "Mixing accounts makes the accounting painful and blurs the view of results",
-                    "To get a better lending rate"
+                    "To get a better lending rate",
+                    "Mixing accounts makes the accounting painful and blurs the view of results"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Five minutes to open, hours saved afterwards."
             }
         ],
@@ -203,21 +203,21 @@ window.QUIZ = {
             {
                 q: "What does an equity round really cost?",
                 options: [
-                    "High interest",
                     "A share of the capital and of the power to decide",
+                    "High interest",
                     "A fixed commission"
                 ],
-                a: 1,
+                a: 0,
                 explication: "You acquire partners who will have their say, including on whether you stay in charge."
             },
             {
                 q: "What is an honour loan?",
                 options: [
-                    "A loan granted with no written document",
                     "An interest-free personal loan, without security, which counts as your own funds",
+                    "A loan granted with no written document",
                     "A loan reserved for already profitable businesses"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Banks take it into account: it frequently unlocks another, larger loan."
             },
             {
@@ -231,10 +231,10 @@ window.QUIZ = {
                 q: "Is raising money a success in itself?",
                 options: [
                     "Yes, it is the crowning of a project",
-                    "No: it is a commitment to grow very fast, in exchange for part of the company",
-                    "Yes, if the amount exceeds €500,000"
+                    "Yes, if the amount exceeds €500,000",
+                    "No: it is a commitment to grow very fast, in exchange for part of the company"
                 ],
-                a: 1,
+                a: 2,
                 explication: "For the majority of projects, growing on customer revenue leaves more freedom."
             },
             {
@@ -250,11 +250,11 @@ window.QUIZ = {
             {
                 q: "What does a bank look at beyond the figures?",
                 options: [
-                    "The design of the business plan",
                     "The coherence of the assumptions and your experience of the sector",
+                    "The design of the business plan",
                     "The number of pages in the file"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Explicit assumptions beat flattering figures. A public guarantee scheme can also back part of the loan."
             }
         ]
@@ -268,31 +268,31 @@ window.QUIZ = {
         {
             q: "What is the most frequent cause of failure in a young company?",
             options: [
-                "The founder not working hard enough",
                 "The absence of a market: something is built that nobody had asked for",
+                "The founder not working hard enough",
                 "Poor bookkeeping"
             ],
-            a: 1,
+            a: 0,
             explication: "Hence the recommended order: check the problem exists before anything else."
         },
         {
             q: "What should a business project start with?",
             options: [
                 "The name, the logo and the legal form",
-                "Checking that somebody is ready to pay for the problem to go away",
-                "Looking for financing"
+                "Looking for financing",
+                "Checking that somebody is ready to pay for the problem to go away"
             ],
-            a: 1,
+            a: 2,
             explication: "Everything else comes after, and becomes much simpler once that answer is in."
         },
         {
             q: "Which document is most useful for steering the first year?",
             options: [
-                "A forecast profit and loss account",
                 "A month-by-month cash table",
+                "A forecast profit and loss account",
                 "A detailed market study"
             ],
-            a: 1,
+            a: 0,
             explication: "A company profitable on paper can disappear for lack of cash."
         },
         // Set 2
@@ -300,30 +300,30 @@ window.QUIZ = {
             q: "You hesitate between setting up your company now and finding a customer first. What should you do?",
             options: [
                 "Set up the structure: it looks more serious to customers",
-                "Look for a first paying customer: it validates the project and reassures financiers",
-                "Both in parallel"
+                "Both in parallel",
+                "Look for a first paying customer: it validates the project and reassures financiers"
             ],
-            a: 1,
+            a: 2,
             explication: "It sometimes saves you from creating a company you would have discovered too late had no market."
         },
         {
             q: "Twenty people tell you your idea is excellent. What can you conclude?",
             options: [
-                "That the market is validated",
                 "Nothing: none of them has paid",
+                "That the market is validated",
                 "That you can raise money"
             ],
-            a: 1,
+            a: 0,
             explication: "Ask about the past rather than the future, and look for people who have no reason to spare your feelings."
         },
         {
             q: "Which free support is most under-used by founders?",
             options: [
-                "Chambers of commerce and trade",
                 "Private consulting firms",
-                "Online forums"
+                "Online forums",
+                "Chambers of commerce and trade"
             ],
-            a: 0,
+            a: 2,
             explication: "Funded by the contributions you will pay, and often coupled with interest-free honour loans through local networks."
         }
     ]

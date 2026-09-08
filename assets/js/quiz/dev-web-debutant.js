@@ -14,10 +14,10 @@ window.QUIZ = {
                 q: "Que décrit une balise HTML ?",
                 options: [
                     "L'apparence visuelle d'un élément",
-                    "La nature et le rôle d'un contenu",
-                    "La position de l'élément sur l'écran"
+                    "La position de l'élément sur l'écran",
+                    "La nature et le rôle d'un contenu"
                 ],
-                a: 1,
+                a: 2,
                 // Les chevrons s'ecrivent tels quels : le moteur affiche via
                 // textContent, qui les traite comme du texte sans risque.
                 explication: "<h1> ne veut pas dire « gros texte » mais « titre principal de cette page »."
@@ -26,10 +26,10 @@ window.QUIZ = {
                 q: "Quelle différence entre <div class=\"titre-gros\"> et <h2> ?",
                 options: [
                     "Aucune, seul le style change",
-                    "Le <h2> est compris comme un titre par Google et les lecteurs d'écran",
-                    "Le <div> est plus rapide à afficher"
+                    "Le <div> est plus rapide à afficher",
+                    "Le <h2> est compris comme un titre par Google et les lecteurs d'écran"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Visuellement identiques après quelques lignes de CSS. Fonctionnellement, sans commune mesure."
             },
             {
@@ -45,18 +45,18 @@ window.QUIZ = {
             // Série 2
             {
                 q: "Quel outil CSS choisir pour aligner des éléments sur une seule ligne ?",
-                options: ["Grid", "Flexbox", "Les tableaux"],
-                a: 1,
+                options: ["Grid", "Les tableaux", "Flexbox"],
+                a: 2,
                 explication: "Flexbox pour une dimension, Grid pour une grille à deux dimensions."
             },
             {
                 q: "À quoi servent les variables CSS comme --primary ?",
                 options: [
-                    "À accélérer le chargement de la page",
                     "À centraliser les valeurs répétées en un seul endroit",
+                    "À accélérer le chargement de la page",
                     "À masquer les couleurs dans le code source"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Changer la charte du site revient alors à modifier une seule ligne, au lieu de chercher un code dans quarante fichiers."
             },
             {
@@ -87,21 +87,21 @@ window.QUIZ = {
             {
                 q: "Comment conserver une information après un rechargement de page ?",
                 options: [
-                    "En la stockant dans le DOM",
                     "En utilisant localStorage ou un serveur",
+                    "En la stockant dans le DOM",
                     "Ce n'est pas possible en JavaScript"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le DOM est reconstruit à chaque chargement : ce qu'on y écrit disparaît."
             },
             {
                 q: "Quel est le schéma de base de la plupart du JavaScript d'un site ?",
                 options: [
-                    "Calculer, afficher, enregistrer",
                     "Sélectionner un élément, écouter un événement, modifier une classe",
+                    "Calculer, afficher, enregistrer",
                     "Charger, compiler, exécuter"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le style reste dans le CSS : JavaScript se contente d'ajouter ou de retirer la classe."
             },
             // Série 2
@@ -118,17 +118,17 @@ window.QUIZ = {
             {
                 q: "Un script placé dans le <head> échoue avec getElementById qui renvoie null. Pourquoi ?",
                 options: [
-                    "L'identifiant est mal orthographié",
                     "Le script s'exécute avant que le HTML n'existe",
+                    "L'identifiant est mal orthographié",
                     "Le navigateur bloque les scripts du <head>"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Deux solutions : placer le script juste avant </body>, ou ajouter l'attribut defer."
             },
             {
                 q: "Quel onglet des outils de développement affiche les fichiers en erreur 404 ?",
-                options: ["Console", "Réseau", "Éléments"],
-                a: 1,
+                options: ["Réseau", "Console", "Éléments"],
+                a: 0,
                 explication: "La Console affiche les erreurs JavaScript, Éléments montre le DOM et le CSS réellement appliqué."
             }
         ],
@@ -149,42 +149,42 @@ window.QUIZ = {
             {
                 q: "Où placer une clé d'API pour qu'elle reste secrète ?",
                 options: [
-                    "Dans un fichier JavaScript, en la renommant",
                     "Côté serveur uniquement",
+                    "Dans un fichier JavaScript, en la renommant",
                     "Dans un commentaire HTML"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Des robots parcourent en permanence les sites publics à la recherche de ces clés ; le délai avant exploitation se compte en minutes."
             },
             {
                 q: "Une vérification d'accès faite en JavaScript côté navigateur, c'est :",
                 options: [
                     "Suffisant si le code est minifié",
-                    "Contournable en quelques secondes",
-                    "Aussi sûr qu'une vérification serveur"
+                    "Aussi sûr qu'une vérification serveur",
+                    "Contournable en quelques secondes"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le contrôle côté navigateur n'est là que pour le confort d'usage. Ce qui compte se vérifie côté serveur."
             },
             // Série 2
             {
                 q: "Quel type de projet n'a pas besoin de backend ?",
                 options: [
-                    "Une boutique avec paiements",
                     "Un site de documentation ou un portfolio",
+                    "Une boutique avec paiements",
                     "Une application avec comptes utilisateurs"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Plus rapide, gratuit à héberger, et pratiquement inattaquable : il n'y a pas de base de données à pirater."
             },
             {
                 q: "Quel problème React, Vue ou Angular résolvent-ils ?",
                 options: [
                     "Le référencement d'un site",
-                    "Synchroniser une interface complexe avec des données qui changent sans arrêt",
-                    "La compatibilité entre navigateurs"
+                    "La compatibilité entre navigateurs",
+                    "Synchroniser une interface complexe avec des données qui changent sans arrêt"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sur un site de dix pages, ils ajoutent surtout de la complexité et du poids."
             },
             {
@@ -205,11 +205,11 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il si la balise viewport est absente ?",
                 options: [
-                    "Le site ne s'affiche pas du tout sur mobile",
                     "Le mobile affiche une version miniature du site en 980 px",
+                    "Le site ne s'affiche pas du tout sur mobile",
                     "Les images disparaissent"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est la première chose à vérifier quand un site paraît minuscule sur téléphone."
             },
             {
@@ -225,11 +225,11 @@ window.QUIZ = {
             {
                 q: "En quoi consiste l'approche mobile-first ?",
                 options: [
-                    "Créer une application mobile avant le site",
                     "Écrire d'abord le style pour petit écran, puis ajouter pour les grands",
+                    "Créer une application mobile avant le site",
                     "Tester sur mobile après avoir terminé la version bureau"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un écran étroit oblige à hiérarchiser : il n'y a de place que pour l'essentiel."
             },
             // Série 2
@@ -242,11 +242,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi un menu qui s'ouvre au survol pose-t-il problème ?",
                 options: [
-                    "Il est trop lent",
                     "Le survol n'existe pas sur écran tactile",
+                    "Il est trop lent",
                     "Il consomme trop de mémoire"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le menu devient alors inaccessible pour la majorité des visiteurs."
             },
             {
@@ -271,10 +271,10 @@ window.QUIZ = {
             q: "Quelles sont les trois fondations d'une page web ?",
             options: [
                 "React, Node.js et une base de données",
-                "HTML pour la structure, CSS pour l'apparence, JavaScript pour l'interactivité",
-                "Un serveur, un domaine et un certificat"
+                "Un serveur, un domaine et un certificat",
+                "HTML pour la structure, CSS pour l'apparence, JavaScript pour l'interactivité"
             ],
-            a: 1,
+            a: 2,
             explication: "Elles n'ont pas changé depuis vingt ans, et tous les frameworks finissent par produire ces trois choses-là."
         },
         {
@@ -291,10 +291,10 @@ window.QUIZ = {
             q: "Quelle affirmation sur la sécurité d'un site est exacte ?",
             options: [
                 "Un code minifié est suffisamment protégé",
-                "Tout ce qui arrive dans le navigateur est public",
-                "Le HTTPS empêche de lire le code source"
+                "Le HTTPS empêche de lire le code source",
+                "Tout ce qui arrive dans le navigateur est public"
             ],
-            a: 1,
+            a: 2,
             explication: "La sécurité ne s'écrit jamais côté frontend : un clic droit suffit à tout lire."
         },
         // Série 2
@@ -302,10 +302,10 @@ window.QUIZ = {
             q: "Tu dois créer un portfolio de dix pages. Quelle approche privilégier ?",
             options: [
                 "Un framework moderne, pour être à jour",
-                "Des fichiers HTML, CSS et JavaScript simples, servis tels quels",
-                "Un CMS avec base de données"
+                "Un CMS avec base de données",
+                "Des fichiers HTML, CSS et JavaScript simples, servis tels quels"
             ],
-            a: 1,
+            a: 2,
             explication: "Plus rapide, gratuit à héberger, et sans base de données à pirater."
         },
         {
@@ -322,10 +322,10 @@ window.QUIZ = {
             q: "Un site utilise <div class=\"gros-titre\"> partout au lieu de <h1> et <h2>. Quelle conséquence ?",
             options: [
                 "Le site s'affiche mal",
-                "Google et les lecteurs d'écran ne comprennent plus sa structure",
-                "Le site charge plus lentement"
+                "Le site charge plus lentement",
+                "Google et les lecteurs d'écran ne comprennent plus sa structure"
             ],
-            a: 1,
+            a: 2,
             explication: "L'apparence peut être identique ; le sens, lui, a disparu."
         }
     ]

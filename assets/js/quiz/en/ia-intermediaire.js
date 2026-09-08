@@ -17,10 +17,10 @@ window.QUIZ = {
                 q: "What is a token to a language model?",
                 options: [
                     "A complete word",
-                    "A fragment of text, often a syllable or a short word",
-                    "A whole sentence"
+                    "A whole sentence",
+                    "A fragment of text, often a syllable or a short word"
                 ],
-                a: 1,
+                a: 2,
                 explication: "As a rule of thumb, count about three tokens for every two words."
             },
             {
@@ -36,11 +36,11 @@ window.QUIZ = {
             {
                 q: "How does a model remember a conversation?",
                 options: [
-                    "It saves the history on its side",
                     "It remembers nothing: the history is sent back to it on every turn",
+                    "It saves the history on its side",
                     "It keeps an automatic summary"
                 ],
-                a: 1,
+                a: 0,
                 explication: "That constant resending is what creates the illusion of memory — and what drives the cost up."
             },
             // Series 2
@@ -57,21 +57,21 @@ window.QUIZ = {
             {
                 q: "What happens when the context window overflows?",
                 options: [
-                    "The call fails, or the beginning is silently truncated",
                     "The model automatically compresses the history",
+                    "The call fails, or the beginning is silently truncated",
                     "Nothing, the window grows"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The second case is the more treacherous: the model carries on answering, but has “forgotten” the initial instructions."
             },
             {
                 q: "Does a very large context window settle everything?",
                 options: [
-                    "Yes, just send all your documents",
                     "No: the quality of attention degrades over very long texts",
+                    "Yes, just send all your documents",
                     "Yes, and it costs less"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Sending the three relevant pages almost always gives better results, and costs a hundred times less."
             }
         ],
@@ -83,10 +83,10 @@ window.QUIZ = {
                 q: "What does RAG do, in one sentence?",
                 options: [
                     "It trains the model on your documents",
-                    "It finds the relevant passages then hands them to the model with the question",
-                    "It compresses documents to make them fit in memory"
+                    "It compresses documents to make them fit in memory",
+                    "It finds the relevant passages then hands them to the model with the question"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The model answers on the strength of those passages, not on its training memory."
             },
             {
@@ -102,11 +102,11 @@ window.QUIZ = {
             {
                 q: "Does RAG make the model cleverer?",
                 options: [
-                    "Yes, it increases its reasoning ability",
                     "No, it simply puts the right document in front of it",
+                    "Yes, it increases its reasoning ability",
                     "Yes, it adds knowledge to its weights"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The difference between a good and a bad answer often comes down to that alone."
             },
             // Series 2
@@ -123,21 +123,21 @@ window.QUIZ = {
             {
                 q: "Does RAG remove invention?",
                 options: [
-                    "Yes, completely",
                     "No: if the search brings back nothing relevant, the model answers anyway",
+                    "Yes, completely",
                     "Yes, if the documents are up to date"
                 ],
-                a: 1,
+                a: 0,
                 explication: "You have to instruct the model explicitly to say it cannot find it, and show the sources so the user can check."
             },
             {
                 q: "What does a chunk that is too small lose?",
                 options: [
-                    "Its readability",
                     "Its context — “this period is fourteen days” does not say which period",
+                    "Its readability",
                     "Its position in the document"
                 ],
-                a: 1,
+                a: 0,
                 explication: "That is why chunking should follow the real structure of the documents, not an arbitrary size."
             }
         ],
@@ -158,21 +158,21 @@ window.QUIZ = {
             {
                 q: "What turns an assistant into an agent?",
                 options: [
-                    "A better-performing model",
                     "The ability to call tools",
+                    "A better-performing model",
                     "A larger context window"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A model on its own only produces text."
             },
             {
                 q: "Why prefer narrow tools to a general one?",
                 options: [
                     "They are faster",
-                    "They limit what a manipulated agent can do",
-                    "They cost less"
+                    "They cost less",
+                    "They limit what a manipulated agent can do"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A “run any query” tool amounts to handing the keys to the database to a system that can be manipulated by the text it reads."
             },
             // Series 2
@@ -180,20 +180,20 @@ window.QUIZ = {
                 q: "In the sequence of a tool call, which step belongs to you?",
                 options: [
                     "The decision to call the tool",
-                    "Checking and running the call",
-                    "Writing the final answer"
+                    "Writing the final answer",
+                    "Checking and running the call"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Of four steps, the middle one is entirely yours."
             },
             {
                 q: "How should tools with irreversible effects be handled?",
                 options: [
-                    "Separate them from the reading tools and put them behind a confirmation",
                     "Disable them in production",
+                    "Separate them from the reading tools and put them behind a confirmation",
                     "Hand them to a more reliable model"
                 ],
-                a: 0,
+                a: 1,
                 explication: "An ambiguous instruction is enough to trigger a wrong action, with no malice at all."
             },
             {
@@ -215,20 +215,20 @@ window.QUIZ = {
                 q: "Which model is generally the right choice?",
                 options: [
                     "The best-performing one available",
-                    "The smallest one that succeeds at your task",
-                    "The cheapest, always"
+                    "The cheapest, always",
+                    "The smallest one that succeeds at your task"
                 ],
-                a: 1,
+                a: 2,
                 explication: "On a simple, repeated task, a smaller model answers just as well, faster and for a fraction of the price."
             },
             {
                 q: "How is the cost of a model billed?",
                 options: [
                     "Per request",
-                    "Per million tokens, separating input from output",
-                    "Per minute of use"
+                    "Per minute of use",
+                    "Per million tokens, separating input from output"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Output is generally several times more expensive than input."
             },
             {
@@ -246,20 +246,20 @@ window.QUIZ = {
                 q: "What are public model leaderboards worth for your project?",
                 options: [
                     "They give the answer directly",
-                    "They measure general capabilities, not your particular case",
-                    "They are of no interest at all"
+                    "They are of no interest at all",
+                    "They measure general capabilities, not your particular case"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Models do end up being optimised for those tests."
             },
             {
                 q: "How do you seriously choose between two models?",
                 options: [
-                    "By reading the vendors' announcements",
                     "By running twenty examples representative of your real task past them",
+                    "By reading the vendors' announcements",
                     "By comparing the number of parameters"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Half a day's work, and an answer that genuinely concerns you."
             },
             {
@@ -283,52 +283,52 @@ window.QUIZ = {
         {
             q: "What do the context window and the cost of a project have in common?",
             options: [
-                "The volume of tokens read determines both",
                 "They both depend on the number of users",
-                "They are independent"
+                "They are independent",
+                "The volume of tokens read determines both"
             ],
-            a: 0,
+            a: 2,
             explication: "Understanding tokens means understanding both the technical limit and the bill."
         },
         {
             q: "A company wants the model to know its internal procedures. What should it do?",
             options: [
-                "Train a model on its documents",
                 "Set up document retrieval",
+                "Train a model on its documents",
                 "Choose a better-performing model"
             ],
-            a: 1,
+            a: 0,
             explication: "RAG puts the right document in front of the model, and updates immediately."
         },
         {
             q: "What determines how much an agent can break?",
             options: [
                 "The performance of the model chosen",
-                "The scope of the tools it has been given",
-                "The size of its context window"
+                "The size of its context window",
+                "The scope of the tools it has been given"
             ],
-            a: 1,
+            a: 2,
             explication: "Nothing more, nothing less: which is why narrow tools beat a general one."
         },
         // Series 2
         {
             q: "Why is sending a model an entire book rarely a good idea?",
             options: [
-                "It is technically impossible",
                 "Attention degrades and the cost explodes",
+                "It is technically impossible",
                 "The model refuses long texts"
             ],
-            a: 1,
+            a: 0,
             explication: "The three relevant pages do better, and a hundred times cheaper."
         },
         {
             q: "What is the thread running through this level?",
             options: [
-                "Every technical choice translates into measurable cost and risk",
                 "Models move too fast to be mastered",
-                "Open models should always be preferred"
+                "Open models should always be preferred",
+                "Every technical choice translates into measurable cost and risk"
             ],
-            a: 0,
+            a: 2,
             explication: "Context, retrieval, tools and choice of model: four decisions that can be costed and weighed."
         },
         {

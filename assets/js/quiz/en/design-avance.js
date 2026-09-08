@@ -46,11 +46,11 @@ window.QUIZ = {
             {
                 q: "What is optimistic display?",
                 options: [
-                    "Showing the expected result before the server confirms",
                     "Hiding errors from the user",
-                    "Preloading every page of the site"
+                    "Preloading every page of the site",
+                    "Showing the expected result before the server confirms"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Correcting it if it fails. This is what makes modern messaging apps feel so fluid."
             },
             {
@@ -82,10 +82,10 @@ window.QUIZ = {
                 q: "How does decision time grow according to Hick's law?",
                 options: [
                     "Linearly with the number of options",
-                    "With the logarithm of the number of options",
-                    "Exponentially"
+                    "Exponentially",
+                    "With the logarithm of the number of options"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Going from 2 to 4 choices costs as much as going from 4 to 8. Adding options to an already long list costs almost nothing."
             },
             {
@@ -101,42 +101,42 @@ window.QUIZ = {
             {
                 q: "So what makes grouping win?",
                 options: [
-                    "Visual scanning: finding without reading",
                     "Hick's law",
+                    "Visual scanning: finding without reading",
                     "User habit"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A visitor discovering a menu is not choosing, they are searching — and that run costs roughly linearly."
             },
             // Series 2
             {
                 q: "What does the time to reach a target depend on, under Fitts's law?",
                 options: [
-                    "Its colour and contrast",
                     "Its distance and its size",
+                    "Its colour and contrast",
                     "The number of elements on screen"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Hence the value of edges and corners: the cursor stops there by itself."
             },
             {
                 q: "How many items does working memory hold at once?",
                 options: [
-                    "Around four",
                     "Exactly seven",
+                    "Around four",
                     "About fifteen"
                 ],
-                a: 0,
+                a: 1,
                 explication: "That is the order of magnitude commonly accepted today, not the seven long quoted."
             },
             {
                 q: "What does confusing simple with minimal consist of?",
                 options: [
                     "Adding too many explanations",
-                    "Removing labels and landmarks: the screen looks cleaner, the mental load goes up",
-                    "Using too many colours"
+                    "Using too many colours",
+                    "Removing labels and landmarks: the screen looks cleaner, the mental load goes up"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A simple interface is not the one that shows least, it is the one that takes least effort."
             }
         ],
@@ -178,31 +178,31 @@ window.QUIZ = {
             {
                 q: "Why are dark patterns a bad bet?",
                 options: [
-                    "They do not work",
                     "The gain is immediate and measured, the cost deferred and diffuse",
+                    "They do not work",
                     "They are technically complex"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Cancellations, refunds, negative reviews and distrust do not appear on the conversion dashboard."
             },
             {
                 q: "Which test identifies an unintentional dark pattern?",
                 options: [
-                    "Checking legal compliance",
                     "If the user discovered this mechanism, would they feel cheated?",
+                    "Checking legal compliance",
                     "Asking the sales team"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Intent changes nothing about the result for the user."
             },
             {
                 q: "“No thanks, I'd rather pay more” is an example of:",
                 options: [
                     "A deliberate brand tone",
-                    "Shaming the refusal: wording written to be unpleasant to click",
-                    "A useful clarification"
+                    "A useful clarification",
+                    "Shaming the refusal: wording written to be unpleasant to click"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It is one of the most widespread dark patterns, and one of the easiest to fix."
             }
         ],
@@ -213,42 +213,42 @@ window.QUIZ = {
             {
                 q: "What is the most important measure in a usability test?",
                 options: [
-                    "Task time",
                     "Success rate",
+                    "Task time",
                     "Declared satisfaction"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It is also the most often forgotten."
             },
             {
                 q: "Why must task time be read with care?",
                 options: [
-                    "It is hard to measure",
                     "Faster is not always better, particularly on an important decision",
+                    "It is hard to measure",
                     "It varies too much between participants"
                 ],
-                a: 1,
+                a: 0,
                 explication: "On a significant purchase, a longer time can signal careful reading."
             },
             {
                 q: "A usability test mainly shows:",
                 options: [
-                    "Where people fail, rarely why",
                     "Why people fail",
-                    "What people prefer"
+                    "What people prefer",
+                    "Where people fail, rarely why"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The why comes from observation and from the questions asked afterwards."
             },
             // Series 2
             {
                 q: "What is an isolated figure worth in design?",
                 options: [
-                    "Nothing: it is the comparison that produces the information",
                     "It is enough if measured rigorously",
-                    "It is better than nothing"
+                    "It is better than nothing",
+                    "Nothing: it is the comparison that produces the information"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Before and after, version A and version B: with no reference, a score says nothing."
             },
             {
@@ -264,11 +264,11 @@ window.QUIZ = {
             {
                 q: "How do you turn an improvement into a budgetary argument?",
                 options: [
-                    "By counting the hours saved per year across all users",
                     "By citing sector best practice",
-                    "By showing before-and-after mock-ups"
+                    "By showing before-and-after mock-ups",
+                    "By counting the hours saved per year across all users"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Five seconds on three daily tasks for two hundred people is about 183 hours a year."
             }
         ]
@@ -289,11 +289,11 @@ window.QUIZ = {
         {
             q: "What ethical question does this level raise?",
             options: [
-                "Should this knowledge be used to help, or to manipulate?",
                 "Should user behaviour be measured?",
+                "Should this knowledge be used to help, or to manipulate?",
                 "Should users be told about psychological laws?"
             ],
-            a: 0,
+            a: 1,
             explication: "The same mechanisms serve to smooth a journey or to trap a consent."
         },
         {
@@ -309,11 +309,11 @@ window.QUIZ = {
         {
             q: "Why does this level insist on measurement?",
             options: [
-                "Because without measurement a design does not improve: it changes",
                 "Because regulation requires it",
-                "Because the tools make it easy"
+                "Because the tools make it easy",
+                "Because without measurement a design does not improve: it changes"
             ],
-            a: 0,
+            a: 2,
             explication: "“It's prettier” is not an admissible argument, and “the client prefers it” even less so."
         },
         {
@@ -329,11 +329,11 @@ window.QUIZ = {
         {
             q: "A countdown that resets on every visit is an example of:",
             options: [
-                "False urgency, therefore a dark pattern",
                 "An accepted conversion technique",
-                "A technical fault"
+                "A technical fault",
+                "False urgency, therefore a dark pattern"
             ],
-            a: 0,
+            a: 2,
             explication: "Like “3 people are looking at this item” with no basis at all."
         }
     ]

@@ -16,21 +16,21 @@ window.QUIZ = {
             {
                 q: "What is credential stuffing?",
                 options: [
-                    "Guessing a password by brute force",
                     "Automatically trying leaked credentials on other services",
+                    "Guessing a password by brute force",
                     "Reusing a password deliberately"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The success rate is low, but applied to millions of pairs it is more than enough. No human attacker is involved."
             },
             {
                 q: "Why does the length of the password not protect against a breach?",
                 options: [
-                    "Because it is not guessed, it is known",
                     "Because breaches break the encryption",
-                    "Because length never has any effect"
+                    "Because length never has any effect",
+                    "Because it is not guessed, it is known"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Strength protects against exhaustive search, not against the theft of the database holding it."
             },
             {
@@ -47,11 +47,11 @@ window.QUIZ = {
             {
                 q: "Which step comes first after a breach?",
                 options: [
-                    "Changing the password of the service concerned",
                     "Securing the recovery mailbox",
+                    "Changing the password of the service concerned",
                     "Warning your contacts"
                 ],
-                a: 1,
+                a: 0,
                 explication: "As long as an attacker controls the recovery mailbox, they take back everything you have just changed."
             },
             {
@@ -68,10 +68,10 @@ window.QUIZ = {
                 q: "What does receiving a breach notification mean?",
                 options: [
                     "An alert: the attack is under way",
-                    "A statement of fact: the data has been circulating for a while",
-                    "A mere legal precaution with no consequence"
+                    "A mere legal precaution with no consequence",
+                    "A statement of fact: the data has been circulating for a while"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Between the intrusion, its detection and the notification, several months have generally passed."
             }
         ],
@@ -82,11 +82,11 @@ window.QUIZ = {
             {
                 q: "What separates a targeted attack from mass phishing?",
                 options: [
-                    "It shows none of the usual crude signs",
                     "It only goes after large companies",
+                    "It shows none of the usual crude signs",
                     "It always uses an attachment"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is written for you, from real information, and asks for an action that makes sense in your context."
             },
             {
@@ -102,11 +102,11 @@ window.QUIZ = {
             {
                 q: "Which levers act together in the classic scenario?",
                 options: [
-                    "Authority, urgency and confidentiality",
                     "Fear, reward and curiosity",
-                    "Technical, legal and financial"
+                    "Technical, legal and financial",
+                    "Authority, urgency and confidentiality"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Confidentiality is there to prevent the one thing that would defeat the attack: asking somebody else."
             },
             // Series 2
@@ -124,20 +124,20 @@ window.QUIZ = {
                 q: "What do studies show about people trained against these attacks?",
                 options: [
                     "They never get caught again",
-                    "They get caught too, but less often",
-                    "Training has no measurable effect"
+                    "Training has no measurable effect",
+                    "They get caught too, but less often"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tiredness, workload and context do the rest. Hence the value of a written rule."
             },
             {
                 q: "Why does a written rule protect better than vigilance?",
                 options: [
-                    "It acts even on the days attention is lacking",
                     "It is quicker to apply",
+                    "It acts even on the days attention is lacking",
                     "It is required by law"
                 ],
-                a: 0,
+                a: 1,
                 explication: "“No transfer without voice confirmation” does not depend on the state of the person receiving the message."
             }
         ],
@@ -148,62 +148,62 @@ window.QUIZ = {
             {
                 q: "What does end-to-end encryption guarantee?",
                 options: [
-                    "That only the correspondents can read the content",
                     "That nobody knows who you exchange messages with",
+                    "That only the correspondents can read the content",
                     "That messages are deleted automatically"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Neither the service, nor an intermediary, nor anybody intercepting the traffic can read the content."
             },
             {
                 q: "What is called metadata in a messaging service?",
                 options: [
-                    "The text of the messages",
                     "Who writes to whom, when, how often, from where",
+                    "The text of the messages",
                     "The attached files"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It travels in clear on most services, encryption or not."
             },
             {
                 q: "Why is metadata sensitive?",
                 options: [
                     "It contains extracts of messages",
-                    "It is often enough to reconstruct a situation",
-                    "It allows the content to be decrypted"
+                    "It allows the content to be decrypted",
+                    "It is often enough to reconstruct a situation"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Knowing that somebody contacted an emergency service, then a lawyer, then their bank the same afternoon requires reading no message at all."
             },
             // Series 2
             {
                 q: "What can cancel the effect of end-to-end encryption?",
                 options: [
-                    "An unencrypted cloud backup of the conversations",
                     "A password that is too short",
+                    "An unencrypted cloud backup of the conversations",
                     "Using public wifi"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The protection of the transport stays intact, and perfectly useless: the exchanges become readable again to whoever reaches the storage."
             },
             {
                 q: "Does encryption protect the devices?",
                 options: [
-                    "Yes, the device is encrypted by the messaging app",
                     "No, it protects the transport; the message appears in clear on screen",
+                    "Yes, the device is encrypted by the messaging app",
                     "Yes, as long as the app is closed"
                 ],
-                a: 1,
+                a: 0,
                 explication: "A compromised device reads the messages after decryption, just like their rightful recipient."
             },
             {
                 q: "What can your correspondent do, whatever the encryption?",
                 options: [
-                    "Nothing in particular",
                     "Take a screenshot, or pass the content on",
+                    "Nothing in particular",
                     "Decrypt your other conversations"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Encryption protects the journey, not the trust placed in the other end."
             }
         ],
@@ -235,10 +235,10 @@ window.QUIZ = {
                 q: "What is often the weakest link of an account?",
                 options: [
                     "The password",
-                    "The recovery route",
-                    "The username"
+                    "The username",
+                    "The recovery route"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Security questions, recovery address, phone number: those parallel routes are frequently less protected than the front door."
             },
             // Series 2
@@ -246,30 +246,30 @@ window.QUIZ = {
                 q: "How should security questions be handled?",
                 options: [
                     "Answer honestly so as not to forget them",
-                    "Like a second password: an arbitrary answer, kept in the manager",
-                    "Disable them systematically"
+                    "Disable them systematically",
+                    "Like a second password: an arbitrary answer, kept in the manager"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Your mother's maiden name or your town of birth are public or easy for someone close to you to guess."
             },
             {
                 q: "What is the point of deleting an unused account?",
                 options: [
-                    "A deleted account does not leak",
                     "It improves network speed",
+                    "A deleted account does not leak",
                     "It frees up your email address"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is the only permanent reduction in risk: the door no longer exists."
             },
             {
                 q: "What should you check about third-party applications?",
                 options: [
-                    "Their rating in the store",
                     "Which ones keep permanent access to your main accounts",
+                    "Their rating in the store",
                     "Their size on disk"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Many keep an authorisation long after they stopped being used."
             }
         ]
@@ -283,52 +283,52 @@ window.QUIZ = {
         {
             q: "What do data breaches and targeted attacks have in common?",
             options: [
-                "No tool prevents them on the user's side",
                 "They only go after companies",
-                "They all exploit a software flaw"
+                "They all exploit a software flaw",
+                "No tool prevents them on the user's side"
             ],
-            a: 0,
+            a: 2,
             explication: "One depends on a third party's security, the other on a human decision. This level is precisely about what the tools do not cover."
         },
         {
             q: "Somebody has a unique password, two-factor authentication and a VPN. What is still exposed?",
             options: [
-                "Nothing, the protection is complete",
                 "Metadata, recovery routes and plausible requests",
+                "Nothing, the protection is complete",
                 "Local files only"
             ],
-            a: 1,
+            a: 0,
             explication: "Risk does not disappear once the obvious protections are in place: it moves to what cannot be filtered."
         },
         {
             q: "Why does procedure beat judgement?",
             options: [
-                "Because it is faster",
                 "Because it also works on the tired days",
+                "Because it is faster",
                 "Because it is compulsory"
             ],
-            a: 1,
+            a: 0,
             explication: "It is the same reasoning as for the previous level's arrangements: whatever depends on daily vigilance gives way in the end."
         },
         // Series 2
         {
             q: "What, at this level, does not depend on you at all?",
             options: [
-                "The security of the services you entrust data to",
                 "The choice of your passwords",
-                "Switching on two-factor authentication"
+                "Switching on two-factor authentication",
+                "The security of the services you entrust data to"
             ],
-            a: 0,
+            a: 2,
             explication: "You cannot prevent a breach. You can only prevent its spread."
         },
         {
             q: "Which action reduces the attack surface permanently?",
             options: [
-                "Changing all your passwords",
                 "Deleting unused accounts",
+                "Changing all your passwords",
                 "Installing an extra antivirus"
             ],
-            a: 1,
+            a: 0,
             explication: "The other measures protect an existing door. This one makes it disappear."
         },
         {

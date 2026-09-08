@@ -14,31 +14,31 @@ window.QUIZ = {
             {
                 q: "Quel modèle d'attribution est le réglage par défaut de la plupart des outils ?",
                 options: [
-                    "Le dernier clic",
                     "Le premier clic",
-                    "L'attribution répartie"
+                    "L'attribution répartie",
+                    "Le dernier clic"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est aussi le plus trompeur : il récompense systématiquement ce qui intervient en fin de parcours."
             },
             {
                 q: "Que récompense mécaniquement le dernier clic ?",
                 options: [
-                    "Le canal de découverte",
                     "La recherche de marque et le courriel",
+                    "Le canal de découverte",
                     "Les réseaux sociaux"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ils interviennent juste avant l'achat, sans forcément avoir convaincu."
             },
             {
                 q: "Un modèle d'attribution est-il « vrai » ?",
                 options: [
                     "Oui, s'il est bien paramétré",
-                    "Non : aucun ne sait ce qui s'est passé dans la tête de l'acheteur",
-                    "Oui, le modèle réparti"
+                    "Oui, le modèle réparti",
+                    "Non : aucun ne sait ce qui s'est passé dans la tête de l'acheteur"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tous sont conventionnels. Le choix change les budgets, pas la réalité."
             },
             // Série 2
@@ -46,10 +46,10 @@ window.QUIZ = {
                 q: "Quelle est la seule méthode fiable pour connaître l'apport d'un canal ?",
                 options: [
                     "Changer de modèle d'attribution",
-                    "L'arrêter ou le réduire, et observer l'effet sur le total",
-                    "Comparer avec le secteur"
+                    "Comparer avec le secteur",
+                    "L'arrêter ou le réduire, et observer l'effet sur le total"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est la seule approche causale, exactement comme un test contrôlé."
             },
             {
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Sur un parcours à quatre points de contact, que donne l'attribution répartie ?",
                 options: [
-                    "100 % au dernier",
                     "25 % à chacun",
+                    "100 % au dernier",
                     "50 % au premier et 50 % au dernier"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Plus juste, plus complexe, et toujours conventionnel."
             }
         ],
@@ -111,31 +111,31 @@ window.QUIZ = {
             {
                 q: "Quels sont les trois leviers de rétention, par coût croissant ?",
                 options: [
-                    "Tenir sa promesse, accompagner le début, reprendre contact avant l'oubli",
                     "Remises, programme de fidélité, service client",
-                    "Publicité de rappel, parrainage, cadeaux"
+                    "Publicité de rappel, parrainage, cadeaux",
+                    "Tenir sa promesse, accompagner le début, reprendre contact avant l'oubli"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le premier ne coûte rien de plus : il s'agit que la première commande se passe comme annoncé."
             },
             {
                 q: "Que produit une remise réservée aux nouveaux clients ?",
                 options: [
-                    "Une croissance saine",
                     "Un message clair aux fidèles : leur fidélité ne vaut rien",
+                    "Une croissance saine",
                     "Un meilleur bouche-à-oreille"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le calcul est perdant deux fois : on paie plus cher un client moins rentable, et on démotive celui qui rapportait le plus."
             },
             {
                 q: "Quatre points de rétention en plus valent :",
                 options: [
-                    "Une amélioration marginale",
                     "Plus que quatre fois le budget publicitaire",
+                    "Une amélioration marginale",
                     "L'équivalent d'une campagne bien optimisée"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Aucune optimisation publicitaire ne produit un effet de cette ampleur."
             }
         ],
@@ -147,20 +147,20 @@ window.QUIZ = {
                 q: "Quel critère sépare la persuasion de la manipulation ?",
                 options: [
                     "L'intensité du message",
-                    "La véracité de l'information, et l'accord du client s'il découvrait le mécanisme",
-                    "Le canal utilisé"
+                    "Le canal utilisé",
+                    "La véracité de l'information, et l'accord du client s'il découvrait le mécanisme"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le texte peut être identique. Ce qui change, c'est la vérité."
             },
             {
                 q: "« Plus que 3 en stock » avec un stock réel de 3 :",
                 options: [
-                    "Est une manipulation",
                     "Est légitime : la personne remercierait presque d'avoir été prévenue",
+                    "Est une manipulation",
                     "Est interdit"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le même message avec 400 unités disponibles serait une tromperie."
             },
             {
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "Pourquoi les techniques trompeuses sont-elles un mauvais calcul économique ?",
                 options: [
                     "Elles ne fonctionnent pas",
-                    "Le gain apparaît ce mois-ci, le coût se répartit sur deux ans sans être attribué",
-                    "Elles coûtent cher à mettre en place"
+                    "Elles coûtent cher à mettre en place",
+                    "Le gain apparaît ce mois-ci, le coût se répartit sur deux ans sans être attribué"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Remboursements, avis négatifs et réputation n'apparaissent jamais dans le tableau de bord de la campagne."
             },
             {
@@ -197,11 +197,11 @@ window.QUIZ = {
             {
                 q: "Toute communication emploie-t-elle des leviers de persuasion ?",
                 options: [
-                    "Oui : la question est où passe la limite",
                     "Non, seules les publicités en utilisent",
-                    "Uniquement dans la vente en ligne"
+                    "Uniquement dans la vente en ligne",
+                    "Oui : la question est où passe la limite"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ces mécanismes sont documentés depuis des décennies et fonctionnent réellement."
             }
         ],
@@ -223,20 +223,20 @@ window.QUIZ = {
                 q: "Que doit contenir tout message de prospection ?",
                 options: [
                     "Une offre commerciale",
-                    "L'identité de l'expéditeur, un objet non trompeur, et une désinscription en un clic",
-                    "Les mentions légales complètes"
+                    "Les mentions légales complètes",
+                    "L'identité de l'expéditeur, un objet non trompeur, et une désinscription en un clic"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La désinscription doit en outre être effective rapidement."
             },
             {
                 q: "Quel document est demandé en premier lors d'un contrôle ?",
                 options: [
-                    "Le registre des traitements",
                     "La liste des clients",
-                    "Les statuts de l'entreprise"
+                    "Les statuts de l'entreprise",
+                    "Le registre des traitements"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Il décrit ce que tu collectes, pourquoi, et pendant combien de temps."
             },
             // Série 2
@@ -281,31 +281,31 @@ window.QUIZ = {
         {
             q: "Sur quoi porte ce niveau ?",
             options: [
-                "Les angles morts : ce que les outils attribuent mal et ce que la loi encadre",
                 "Les techniques les plus récentes",
+                "Les angles morts : ce que les outils attribuent mal et ce que la loi encadre",
                 "L'optimisation des budgets"
             ],
-            a: 0,
+            a: 1,
             explication: "Ce que les équipes négligent parce que c'est moins visible, et les règles qui s'appliquent qu'on les connaisse ou non."
         },
         {
             q: "Quel point commun entre l'attribution et la rétention ?",
             options: [
-                "Les deux sont mal servies par les tableaux de bord de campagne",
                 "Les deux relèvent du service juridique",
+                "Les deux sont mal servies par les tableaux de bord de campagne",
                 "Les deux se mesurent quotidiennement"
             ],
-            a: 0,
+            a: 1,
             explication: "L'une est faussée par le modèle, l'autre n'y figure simplement pas."
         },
         {
             q: "Quelle question résume le test éthique d'une campagne ?",
             options: [
-                "Est-elle rentable ?",
                 "Que répondrais-je si un client découvrait exactement comment elle fonctionne ?",
+                "Est-elle rentable ?",
                 "Est-elle conforme aux usages du secteur ?"
             ],
-            a: 1,
+            a: 0,
             explication: "Ce test attrape aussi les manipulations involontaires, où personne n'a voulu tromper."
         },
         // Série 2
@@ -322,21 +322,21 @@ window.QUIZ = {
         {
             q: "Pourquoi le juridique figure-t-il dans un guide marketing ?",
             options: [
-                "Parce que les sanctions visent l'entreprise, pas le prestataire qui a exécuté",
                 "Parce que c'est une contrainte imposée par la direction",
-                "Parce que cela rassure les clients"
+                "Parce que cela rassure les clients",
+                "Parce que les sanctions visent l'entreprise, pas le prestataire qui a exécuté"
             ],
-            a: 0,
+            a: 2,
             explication: "Les règles s'appliquent qu'on les connaisse ou non."
         },
         {
             q: "Qu'ont en commun un faux compte à rebours et une liste achetée ?",
             options: [
-                "Les deux produisent un gain immédiat et un coût différé bien plus élevé",
                 "Les deux sont efficaces à long terme",
+                "Les deux produisent un gain immédiat et un coût différé bien plus élevé",
                 "Les deux sont sans conséquence"
             ],
-            a: 0,
+            a: 1,
             explication: "Et dans les deux cas, le coût n'est jamais attribué à sa cause dans les tableaux de bord."
         }
     ]

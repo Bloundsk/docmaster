@@ -16,11 +16,11 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il en l'absence d'état des lieux d'entrée ?",
                 options: [
-                    "Le logement est présumé avoir été remis en bon état",
                     "Le bail est nul",
+                    "Le logement est présumé avoir été remis en bon état",
                     "Le dépôt de garantie est rendu automatiquement"
                 ],
-                a: 0,
+                a: 1,
                 explication: "La charge se retourne contre le locataire, qui ne peut plus rien comparer."
             },
                         {
@@ -57,21 +57,21 @@ window.QUIZ = {
             {
                 q: "Le bailleur peut-il retenir une somme sans pièce justificative ?",
                 options: [
-                    "Non : devis, facture ou constat sont nécessaires",
                     "Oui, s'il l'annonce dans un courrier",
+                    "Non : devis, facture ou constat sont nécessaires",
                     "Oui, dans la limite du dépôt"
                 ],
-                a: 0,
+                a: 1,
                 explication: "« Remise en état : 400 € » sans pièce jointe ne suffit pas."
             },
             {
                 q: "Que doit prendre en compte le bailleur avant de facturer une remise en état ?",
                 options: [
-                    "La vétusté",
                     "Le prix du neuf",
-                    "La durée du bail seulement"
+                    "La durée du bail seulement",
+                    "La vétusté"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une moquette de dix ans n'est pas facturable au prix du neuf."
             }
         ],
@@ -93,20 +93,20 @@ window.QUIZ = {
                 q: "À partir de quand court le préavis ?",
                 options: [
                     "De l'envoi du courrier",
-                    "De sa réception par le bailleur",
-                    "De la date inscrite dans la lettre"
+                    "De la date inscrite dans la lettre",
+                    "De sa réception par le bailleur"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Deux jours d'acheminement peuvent décaler la sortie, et donc un loyer entier."
             },
             {
                 q: "Que se passe-t-il si l'on invoque un préavis réduit sans en donner le motif par écrit ?",
                 options: [
-                    "Le préavis reste de trois mois",
                     "Le motif peut être donné oralement ensuite",
-                    "Le congé est nul"
+                    "Le congé est nul",
+                    "Le préavis reste de trois mois"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La phrase manquante coûte deux loyers, même si la condition était remplie."
             },
             // Série 2
@@ -123,21 +123,21 @@ window.QUIZ = {
             {
                 q: "Le loyer reste-t-il dû pendant tout le préavis ?",
                 options: [
-                    "Oui, sauf si le logement est reloué avant avec l'accord du bailleur",
                     "Non, il cesse dès l'envoi du congé",
-                    "Oui, sans exception"
+                    "Oui, sans exception",
+                    "Oui, sauf si le logement est reloué avant avec l'accord du bailleur"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Dans ce cas, il cesse d'être dû à compter de la nouvelle location."
             },
             {
                 q: "Pourquoi indiquer sa nouvelle adresse dans la lettre de congé ?",
                 options: [
-                    "Le dépôt de garantie doit y être restitué",
                     "C'est une obligation légale",
-                    "Pour le suivi du courrier"
+                    "Pour le suivi du courrier",
+                    "Le dépôt de garantie doit y être restitué"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Sans elle, la restitution s'enlise."
             }
         ],
@@ -168,11 +168,11 @@ window.QUIZ = {
             {
                 q: "La période d'essai peut-elle se renouveler tacitement ?",
                 options: [
-                    "Non : il faut un accord de branche, une clause au contrat et ton accord écrit",
                     "Oui, si l'employeur le décide",
+                    "Non : il faut un accord de branche, une clause au contrat et ton accord écrit",
                     "Oui, une seule fois"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Sans ces trois conditions, elle s'arrête à sa durée initiale."
             },
             // Série 2
@@ -189,21 +189,21 @@ window.QUIZ = {
             {
                 q: "Où trouve-t-on le nom de sa convention collective ?",
                 options: [
-                    "Sur le bulletin de paie",
                     "Sur la carte vitale",
+                    "Sur le bulletin de paie",
                     "Nulle part, il faut la demander"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Elle prévoit très souvent mieux que le code du travail : préavis, primes, classification."
             },
             {
                 q: "Une clause de non-concurrence sans contrepartie financière est :",
                 options: [
-                    "Nulle",
                     "Valable si elle est limitée dans le temps",
+                    "Nulle",
                     "Valable puisqu'elle a été signée"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Beaucoup de contrats en contiennent encore."
             }
         ],
@@ -214,31 +214,31 @@ window.QUIZ = {
             {
                 q: "Existe-t-il un montant en dessous duquel une activité régulière n'a pas à être déclarée ?",
                 options: [
-                    "Non : un chiffre d'affaires nul se déclare aussi",
                     "Oui, un seuil annuel",
-                    "Oui, si l'activité est occasionnelle"
+                    "Oui, si l'activité est occasionnelle",
+                    "Non : un chiffre d'affaires nul se déclare aussi"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ce qui existe, ce sont des régimes plus simples selon le montant — d'où la confusion."
             },
             {
                 q: "En micro-entreprise, comment sont traitées les charges réelles ?",
                 options: [
-                    "Elles ne sont pas déductibles : l'abattement est forfaitaire",
                     "Elles se déduisent sur justificatif",
+                    "Elles ne sont pas déductibles : l'abattement est forfaitaire",
                     "Elles se déduisent à hauteur de la moitié"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Une activité à fortes dépenses y est pénalisée, quel que soit son chiffre d'affaires."
             },
             {
                 q: "Quelle question décide du choix entre micro et régime réel ?",
                 options: [
-                    "Quelle part de mes recettes part en dépenses ?",
                     "Combien de clients ai-je ?",
-                    "Depuis combien de temps j'exerce ?"
+                    "Depuis combien de temps j'exerce ?",
+                    "Quelle part de mes recettes part en dépenses ?"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est la seule qui compte au moment de choisir."
             },
             // Série 2
@@ -265,11 +265,11 @@ window.QUIZ = {
             {
                 q: "Une association permet-elle d'échapper aux règles fiscales d'une activité lucrative ?",
                 options: [
-                    "Non : si l'activité est en réalité lucrative, elle est imposée comme telle",
                     "Oui, c'est son intérêt principal",
-                    "Oui, en dessous d'un certain montant"
+                    "Oui, en dessous d'un certain montant",
+                    "Non : si l'activité est en réalité lucrative, elle est imposée comme telle"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'association vise une activité sans partage de bénéfices, pas une exonération."
             }
         ]
@@ -290,11 +290,11 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun l'état des lieux d'entrée et la convention collective ?",
             options: [
-                "Les deux existent déjà et sont simplement ignorés",
                 "Les deux sont facultatifs",
+                "Les deux existent déjà et sont simplement ignorés",
                 "Les deux se demandent à l'administration"
             ],
-            a: 0,
+            a: 1,
             explication: "Les droits les plus utiles sont souvent ceux qu'on ne pense pas à consulter."
         },
         {
@@ -320,21 +320,21 @@ window.QUIZ = {
         {
             q: "Quelle vérification, faite une fois, rapporte le plus dans ce niveau ?",
             options: [
-                "Lire les articles de sa convention collective sur le préavis et la classification",
                 "Relire son bail chaque année",
+                "Lire les articles de sa convention collective sur le préavis et la classification",
                 "Changer de statut juridique"
             ],
-            a: 0,
+            a: 1,
             explication: "Dix minutes qui révèlent souvent des droits ignorés."
         },
         {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
-                "Prendre son temps sur l'état des lieux d'entrée, et le photographier",
                 "Signer plus vite",
-                "Choisir la micro-entreprise par défaut"
+                "Choisir la micro-entreprise par défaut",
+                "Prendre son temps sur l'état des lieux d'entrée, et le photographier"
             ],
-            a: 0,
+            a: 2,
             explication: "Vingt minutes à l'entrée valent plusieurs centaines d'euros à la sortie."
         }
     ]

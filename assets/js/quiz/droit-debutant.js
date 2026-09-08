@@ -18,62 +18,62 @@ window.QUIZ = {
             {
                 q: "Quel est le bon point de départ pour une question de droit courant ?",
                 options: [
-                    "Un forum spécialisé",
                     "service-public.fr",
+                    "Un forum spécialisé",
                     "Le premier résultat d'une recherche"
                 ],
-                a: 1,
+                a: 0,
                 explication: "L'explication officielle, en français courant, avec les démarches et les formulaires."
             },
             {
                 q: "À quoi sert Légifrance plutôt que service-public.fr ?",
                 options: [
-                    "À lire le texte de loi lui-même et vérifier qu'il est en vigueur",
                     "À faire ses démarches en ligne",
-                    "À poser une question à un juriste"
+                    "À poser une question à un juriste",
+                    "À lire le texte de loi lui-même et vérifier qu'il est en vigueur"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Utile quand il faut citer un article, ou s'assurer qu'une règle existe toujours."
             },
             {
                 q: "Quel piège guette une recherche juridique en français ?",
                 options: [
                     "Les résultats sont trop techniques",
-                    "Une bonne partie sont belges, suisses ou québécois",
-                    "Il y a trop peu de résultats"
+                    "Il y a trop peu de résultats",
+                    "Une bonne partie sont belges, suisses ou québécois"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les règles y sont souvent proches — et parfois exactement inverses."
             },
             // Série 2
             {
                 q: "Comment distinguer une obligation d'un simple usage ?",
                 options: [
-                    "L'affirmation cite-t-elle un texte qu'on peut vérifier ?",
                     "L'usage est toujours plus ancien",
+                    "L'affirmation cite-t-elle un texte qu'on peut vérifier ?",
                     "L'obligation est toujours écrite en majuscules"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Sans texte, c'est une pratique — parfois excellente, mais qui ne s'impose à personne."
             },
             {
                 q: "Une réponse d'IA bien rédigée sur une question de droit :",
                 options: [
-                    "Peut être parfaitement fausse : la forme n'est pas un indice de fiabilité",
                     "Est fiable si elle est détaillée",
-                    "Vaut une source officielle"
+                    "Vaut une source officielle",
+                    "Peut être parfaitement fausse : la forme n'est pas un indice de fiabilité"
                 ],
-                a: 0,
+                a: 2,
                 explication: "À vérifier sur une source officielle avant d'en tirer une décision."
             },
             {
                 q: "Un contrat peut-il retirer un droit accordé par la loi ?",
                 options: [
                     "Oui, dès lors qu'on l'a signé",
-                    "Non : la clause est sans effet même signée",
-                    "Oui, si la clause est écrite en gras"
+                    "Oui, si la clause est écrite en gras",
+                    "Non : la clause est sans effet même signée"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Signer n'est pas renoncer. C'est l'objet du niveau avancé."
             }
         ],
@@ -104,11 +104,11 @@ window.QUIZ = {
             {
                 q: "Pendant la période de présomption, qui doit prouver quoi ?",
                 options: [
-                    "C'est au vendeur de prouver que le bien était conforme",
                     "C'est à l'acheteur de prouver le défaut",
+                    "C'est au vendeur de prouver que le bien était conforme",
                     "Chacun apporte ses preuves"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est le point le plus utile de tous, et le moins connu."
             },
             // Série 2
@@ -126,10 +126,10 @@ window.QUIZ = {
                 q: "À partir de quand court le délai de rétractation ?",
                 options: [
                     "De la commande",
-                    "De la réception du bien",
-                    "Du paiement"
+                    "Du paiement",
+                    "De la réception du bien"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un délai part presque toujours d'un événement précis : réception, ou découverte d'un défaut."
             },
             {
@@ -161,10 +161,10 @@ window.QUIZ = {
                 q: "Qu'est-ce qui fait d'un courrier une mise en demeure ?",
                 options: [
                     "Un avocat qui le rédige",
-                    "Les cinq éléments habituels, et l'emploi des mots « mise en demeure »",
-                    "Un timbre fiscal"
+                    "Un timbre fiscal",
+                    "Les cinq éléments habituels, et l'emploi des mots « mise en demeure »"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ce n'est pas un acte solennel : c'est un courrier ordinaire, correctement rédigé."
             },
             {
@@ -181,31 +181,31 @@ window.QUIZ = {
             {
                 q: "Pourquoi éviter les adjectifs dans un courrier de réclamation ?",
                 options: [
-                    "Ils affaiblissent le courrier au lieu de le renforcer",
                     "Ils allongent le délai de traitement",
-                    "Ils sont interdits"
+                    "Ils sont interdits",
+                    "Ils affaiblissent le courrier au lieu de le renforcer"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le service qui reçoit cherche une demande et une date. S'il ne les trouve pas, le dossier attend."
             },
             {
                 q: "À quoi sert d'écrire un délai de réponse ?",
                 options: [
-                    "À faire courir quelque chose ; sous-entendu, il ne fait rien",
                     "À être poli",
+                    "À faire courir quelque chose ; sous-entendu, il ne fait rien",
                     "À obtenir une réponse plus détaillée"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Quinze jours est raisonnable et usuel."
             },
             {
                 q: "Que demandera en premier un conciliateur ou un juge ?",
                 options: [
-                    "Avez-vous mis en demeure ?",
                     "Avez-vous un avocat ?",
-                    "Avez-vous téléphoné ?"
+                    "Avez-vous téléphoné ?",
+                    "Avez-vous mis en demeure ?"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est la pièce de départ du dossier — et elle coûte quelques euros."
             }
         ],
@@ -217,10 +217,10 @@ window.QUIZ = {
                 q: "Combien de temps garder ses bulletins de paie ?",
                 options: [
                     "3 ans",
-                    "10 ans",
-                    "Sans limite de durée"
+                    "Sans limite de durée",
+                    "10 ans"
                 ],
-                a: 2,
+                a: 1,
                 explication: "Ils servent au calcul de la retraite, parfois des décennies plus tard."
             },
             {
@@ -282,31 +282,31 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Savoir où regarder, combien de temps il reste, et quoi écrire",
                 "Connaître le code civil",
+                "Savoir où regarder, combien de temps il reste, et quoi écrire",
                 "Trouver un avocat"
             ],
-            a: 0,
+            a: 1,
             explication: "Trois réflexes qui règlent la majorité des difficultés du quotidien."
         },
         {
             q: "Qu'ont en commun une source non datée et un document jeté trop tôt ?",
             options: [
-                "Les deux rendent une position indéfendable le jour où il faut la défendre",
                 "Les deux sont interdits",
-                "Les deux concernent la consommation"
+                "Les deux concernent la consommation",
+                "Les deux rendent une position indéfendable le jour où il faut la défendre"
             ],
-            a: 0,
+            a: 2,
             explication: "Un droit qu'on ne peut ni fonder ni prouver n'est pas un droit utilisable."
         },
         {
             q: "Un appareil acheté en ligne il y a trois mois tombe en panne. Quel droit invoquer ?",
             options: [
-                "La rétractation",
                 "La garantie légale de conformité",
+                "La rétractation",
                 "Aucun, le délai est passé"
             ],
-            a: 1,
+            a: 0,
             explication: "La rétractation est expirée depuis longtemps ; la garantie court encore près de deux ans."
         },
         {

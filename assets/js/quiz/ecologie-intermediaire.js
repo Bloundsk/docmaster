@@ -14,21 +14,21 @@ window.QUIZ = {
             {
                 q: "Où se cachent le plus souvent les facteurs dix dans un chiffre d'impact ?",
                 options: [
-                    "Dans le périmètre : fabrication comprise, ou usage seul ?",
                     "Dans l'arrondi",
+                    "Dans le périmètre : fabrication comprise, ou usage seul ?",
                     "Dans la devise utilisée"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est la première des cinq questions à poser."
             },
             {
                 q: "Pourquoi le pays change-t-il tout ?",
                 options: [
-                    "L'électricité française émet cinq à dix fois moins que la moyenne européenne",
                     "Les réseaux sont différents",
-                    "Les appareils ne sont pas les mêmes"
+                    "Les appareils ne sont pas les mêmes",
+                    "L'électricité française émet cinq à dix fois moins que la moyenne européenne"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le même calcul change complètement de résultat selon le pays."
             },
             {
@@ -55,11 +55,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi se méfier d'un chiffre de 2015 dans ce domaine ?",
                 options: [
-                    "Les intensités énergétiques du numérique baissent vite",
                     "Les méthodes de calcul étaient interdites",
+                    "Les intensités énergétiques du numérique baissent vite",
                     "Les données n'étaient pas publiques"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un chiffre ancien est souvent périmé, sans que rien ne le signale."
             },
             {
@@ -80,42 +80,42 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui se calcule avec certitude dans le streaming ?",
                 options: [
-                    "La consommation de l'appareil : sa puissance multipliée par la durée",
                     "Le coût du réseau par gigaoctet",
+                    "La consommation de l'appareil : sa puissance multipliée par la durée",
                     "La part des centres de données"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le reste est plus petit et beaucoup plus incertain."
             },
             {
                 q: "Deux heures de vidéo par jour, sur téléviseur de 100 W contre téléphone de 3 W :",
                 options: [
-                    "4,4 kg contre 0,13 kg CO₂e par an — un facteur 33",
                     "Un écart négligeable",
-                    "4,4 kg contre 2 kg"
+                    "4,4 kg contre 2 kg",
+                    "4,4 kg contre 0,13 kg CO₂e par an — un facteur 33"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Pour exactement le même contenu et la même durée."
             },
             {
                 q: "Pourquoi un fichier deux fois plus lourd ne consomme-t-il pas deux fois plus sur le réseau ?",
                 options: [
-                    "Un réseau consomme surtout parce qu'il est allumé, pas parce qu'il transporte",
                     "Parce que la compression le compense",
+                    "Un réseau consomme surtout parce qu'il est allumé, pas parce qu'il transporte",
                     "Parce que les fichiers sont mis en cache"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Les équipements tournent que le trafic soit fort ou faible."
             },
             // Série 2
             {
                 q: "Baisser la qualité vidéo, quel effet ?",
                 options: [
-                    "Réel, mais sur la part la plus petite et la plus incertaine",
                     "Le plus important de tous",
+                    "Réel, mais sur la part la plus petite et la plus incertaine",
                     "Aucun"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le choix de l'écran a un effet des dizaines de fois plus grand."
             },
             {
@@ -131,11 +131,11 @@ window.QUIZ = {
             {
                 q: "Que consomme un ordinateur portable, en ordre de grandeur ?",
                 options: [
-                    "Environ 30 W",
                     "Environ 3 W",
+                    "Environ 30 W",
                     "Environ 300 W"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Contre 100 W pour un téléviseur et 3 W pour un téléphone."
             }
         ],
@@ -146,21 +146,21 @@ window.QUIZ = {
             {
                 q: "Quel poste domine l'impact du numérique en France ?",
                 options: [
-                    "Les terminaux",
                     "Les centres de données",
-                    "Les réseaux"
+                    "Les réseaux",
+                    "Les terminaux"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Et au sein des terminaux, c'est la fabrication qui domine."
             },
             {
                 q: "Pourquoi les centres de données occupent-ils toute la place dans les discussions ?",
                 options: [
-                    "Ils sont visibles, concentrés, et appartiennent à des entreprises qu'on peut nommer",
                     "Ils consomment le plus",
-                    "Ils sont les plus mesurés"
+                    "Ils sont les plus mesurés",
+                    "Ils sont visibles, concentrés, et appartiennent à des entreprises qu'on peut nommer"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ce qui est facile à désigner passe pour le principal responsable."
             },
             {
@@ -177,11 +177,11 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui domine la consommation des réseaux ?",
                 options: [
-                    "Les équipements allumés en permanence",
                     "Le volume de données transporté",
-                    "Le nombre d'utilisateurs connectés"
+                    "Le nombre d'utilisateurs connectés",
+                    "Les équipements allumés en permanence"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est ce qui rend les raisonnements « par gigaoctet » si trompeurs."
             },
             {
@@ -197,11 +197,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi l'addition des terminaux dépasse-t-elle les centres de données ?",
                 options: [
-                    "Des milliards de petits objets fabriqués et remplacés pèsent plus que quelques milliers de bâtiments",
                     "Les terminaux consomment plus d'électricité",
-                    "Les centres de données sont peu nombreux en France"
+                    "Les centres de données sont peu nombreux en France",
+                    "Des milliards de petits objets fabriqués et remplacés pèsent plus que quelques milliers de bâtiments"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est un effet de nombre, pas de consommation unitaire."
             }
         ],
@@ -212,11 +212,11 @@ window.QUIZ = {
             {
                 q: "Une réunion à 400 km, aller-retour en avion contre visioconférence :",
                 options: [
-                    "184 kg contre 3,6 grammes",
                     "184 kg contre 3,6 kg",
-                    "18 kg contre 3,6 grammes"
+                    "18 kg contre 3,6 grammes",
+                    "184 kg contre 3,6 grammes"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Un rapport supérieur à 50 000. Aucun autre arbitrage du guide n'approche cet écart."
             },
             {
@@ -243,21 +243,21 @@ window.QUIZ = {
             {
                 q: "Que fait le télétravail au bilan, en toute rigueur ?",
                 options: [
-                    "Il déplace des consommations autant qu'il en supprime",
                     "Il les supprime intégralement",
-                    "Il les augmente toujours"
+                    "Il les augmente toujours",
+                    "Il déplace des consommations autant qu'il en supprime"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Chauffage du domicile, équipements dédoublés : le bilan reste favorable mais bien plus serré."
             },
             {
                 q: "Quelle est la faiblesse classique des bilans « d'évitement » ?",
                 options: [
-                    "Ils comparent à un scénario hypothétique que personne ne vérifie",
                     "Ils sous-estiment le numérique",
-                    "Ils ignorent la fabrication"
+                    "Ils ignorent la fabrication",
+                    "Ils comparent à un scénario hypothétique que personne ne vérifie"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La question honnête est celle du total : le nombre de déplacements a-t-il baissé ?"
             },
             {
@@ -278,31 +278,31 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Savoir écarter un mauvais chiffre vaut mieux que connaître dix bons gestes",
                 "Réduire sa consommation de vidéo",
+                "Savoir écarter un mauvais chiffre vaut mieux que connaître dix bons gestes",
                 "Choisir un hébergeur responsable"
             ],
-            a: 0,
+            a: 1,
             explication: "C'est un niveau plus méthodologique que pratique, et c'est voulu."
         },
         {
             q: "Qu'ont en commun le « 10 g par courriel » et le « 3,2 kg par heure de vidéo » ?",
             options: [
-                "Les deux ont circulé des années avant d'être corrigés d'un facteur dix",
                 "Les deux étaient des inventions",
+                "Les deux ont circulé des années avant d'être corrigés d'un facteur dix",
                 "Les deux concernaient les centres de données"
             ],
-            a: 0,
+            a: 1,
             explication: "Et les deux venaient d'estimations reprises sans leurs hypothèses."
         },
         {
             q: "Quelqu'un te cite une étude allemande sur la répartition de l'impact. Quelle réserve ?",
             options: [
-                "L'électricité allemande est bien plus carbonée : la répartition n'est pas transposable",
                 "Les études allemandes sont moins fiables",
-                "Aucune, les méthodes sont harmonisées"
+                "Aucune, les méthodes sont harmonisées",
+                "L'électricité allemande est bien plus carbonée : la répartition n'est pas transposable"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est la deuxième des cinq questions, et la plus souvent oubliée."
         },
         {
@@ -318,21 +318,21 @@ window.QUIZ = {
         {
             q: "Quel arbitrage de ce niveau mérite d'être connu avant tous les autres ?",
             options: [
-                "Le déplacement évité",
                 "Le choix de la résolution vidéo",
+                "Le déplacement évité",
                 "Le choix de l'hébergeur"
             ],
-            a: 0,
+            a: 1,
             explication: "C'est le seul où l'ordre de grandeur bascule."
         },
         {
             q: "Que faire quand un chiffre d'impact te frappe ?",
             options: [
-                "Chercher sa source d'origine : dans la moitié des cas, elle n'existe pas ou dit autre chose",
                 "Le vérifier auprès d'un deuxième article",
+                "Chercher sa source d'origine : dans la moitié des cas, elle n'existe pas ou dit autre chose",
                 "Le relayer avec la mention « selon certaines études »"
             ],
-            a: 0,
+            a: 1,
             explication: "Deux articles qui se citent l'un l'autre ne font pas deux sources."
         }
     ]

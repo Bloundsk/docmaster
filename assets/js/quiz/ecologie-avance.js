@@ -14,52 +14,52 @@ window.QUIZ = {
             {
                 q: "Quel est le pire effet d'un service numérique lourd ?",
                 options: [
-                    "Rendre obsolète un appareil qui fonctionnait",
                     "Sa consommation de bande passante",
-                    "Son temps de chargement"
+                    "Son temps de chargement",
+                    "Rendre obsolète un appareil qui fonctionnait"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Comme la fabrication domine, un renouvellement provoqué coûte plus cher que des années de transfert."
             },
             {
                 q: "Quelle est la bonne question de conception ?",
                 options: [
-                    "À partir de quel âge d'appareil ma page devient-elle inutilisable ?",
                     "Combien pèse ma page en kilo-octets ?",
+                    "À partir de quel âge d'appareil ma page devient-elle inutilisable ?",
                     "Quel est mon score sur un outil de mesure ?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Les deux sont liées, mais la première est celle qui compte."
             },
             {
                 q: "Un site à 3 Mo, 10 000 visites par mois : que donne l'allègement de moitié ?",
                 options: [
-                    "Environ 0,6 kg CO₂e par an au lieu de 1,3 — moins qu'un dixième de téléphone",
                     "Une économie de plusieurs centaines de kilos",
+                    "Environ 0,6 kg CO₂e par an au lieu de 1,3 — moins qu'un dixième de téléphone",
                     "Aucune différence"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Cela ne rend pas l'allègement inutile : sa justification est ailleurs."
             },
             // Série 2
             {
                 q: "Pourquoi le défilement infini pose-t-il problème ?",
                 options: [
-                    "C'est un mécanisme conçu pour allonger le temps passé",
                     "Il consomme trop de mémoire",
-                    "Il empêche le référencement"
+                    "Il empêche le référencement",
+                    "C'est un mécanisme conçu pour allonger le temps passé"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Augmenter l'usage sans rien apporter à l'utilisateur est l'inverse de la sobriété."
             },
             {
                 q: "Que recoupent presque entièrement les critères de sobriété d'un service ?",
                 options: [
-                    "Ceux de l'accessibilité et de la performance",
                     "Ceux du référencement",
+                    "Ceux de l'accessibilité et de la performance",
                     "Ceux de la sécurité"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Bonne nouvelle : ils se défendent en réunion sans invoquer l'écologie."
             },
             {
@@ -80,62 +80,62 @@ window.QUIZ = {
             {
                 q: "100 postes à 200 kg CO₂e, renouvellement porté de 3 à 5 ans :",
                 options: [
-                    "2 667 kg CO₂e économisés chaque année",
                     "Une économie ponctuelle de 2 667 kg",
+                    "2 667 kg CO₂e économisés chaque année",
                     "Aucun effet, le matériel est déjà acheté"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Une décision, une fois, et un effet reconduit tous les ans."
             },
             {
                 q: "Qu'est-ce qui déclenche le plus souvent le renouvellement d'un poste ?",
                 options: [
-                    "Le logiciel qui devient exigeant, pas la panne",
                     "L'usure du clavier",
-                    "La fin de garantie"
+                    "La fin de garantie",
+                    "Le logiciel qui devient exigeant, pas la panne"
                 ],
-                a: 0,
+                a: 2,
                 explication: "D'où l'importance de choisir des logiciels qui n'imposent pas le renouvellement."
             },
             {
                 q: "Un amortissement comptable sur trois ans oblige-t-il à remplacer au bout de trois ans ?",
                 options: [
-                    "Non : c'est une règle comptable, pas une obligation de remplacer",
                     "Oui, c'est une obligation fiscale",
+                    "Non : c'est une règle comptable, pas une obligation de remplacer",
                     "Oui, sauf dérogation"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Sortir le parc du cycle comptable automatique est l'un des leviers les plus simples."
             },
             // Série 2
             {
                 q: "Que vaut une campagne de tri des courriels comparée à l'allongement du parc ?",
                 options: [
-                    "Elle est visible, peu coûteuse et sans effet mesurable",
                     "Elle est équivalente",
-                    "Elle est plus efficace car collective"
+                    "Elle est plus efficace car collective",
+                    "Elle est visible, peu coûteuse et sans effet mesurable"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Faire la première sans la seconde relève de la communication, pas de l'environnement."
             },
             {
                 q: "Que faire d'un poste rendu par un utilisateur exigeant ?",
                 options: [
-                    "Le reconditionner en interne pour un autre usage",
                     "Le revendre systématiquement",
-                    "Le mettre au rebut"
+                    "Le mettre au rebut",
+                    "Le reconditionner en interne pour un autre usage"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Il sert très bien à un poste moins gourmand."
             },
             {
                 q: "Pourquoi la durée de renouvellement est-elle un levier si efficace ?",
                 options: [
-                    "C'est une décision unique, prise par quelques personnes, qui s'applique à tout le parc",
                     "Parce qu'elle réduit la consommation électrique",
+                    "C'est une décision unique, prise par quelques personnes, qui s'applique à tout le parc",
                     "Parce qu'elle est obligatoire"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Aucune campagne de sensibilisation n'a ce rapport effort-résultat."
             }
         ],
@@ -166,32 +166,32 @@ window.QUIZ = {
             {
                 q: "Que perd-on quand un appareil en fin de vie n'entre dans aucune filière ?",
                 options: [
-                    "Deux fois : la pollution du déchet, et l'extraction à recommencer",
                     "Seulement le bénéfice du recyclage",
+                    "Deux fois : la pollution du déchet, et l'extraction à recommencer",
                     "Rien de significatif"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ces appareils contiennent des métaux dont l'extraction est le poste le plus lourd."
             },
             // Série 2
             {
                 q: "Un distributeur doit-il reprendre l'ancien appareil lors d'une vente ?",
                 options: [
-                    "Oui, lors de la vente d'un équivalent — mais il le rappelle rarement",
                     "Non, c'est un service commercial facultatif",
+                    "Oui, lors de la vente d'un équivalent — mais il le rappelle rarement",
                     "Oui, contre paiement"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est une obligation peu connue et peu appliquée."
             },
             {
                 q: "Où se situe le recyclage dans la hiérarchie ?",
                 options: [
-                    "En dernier, après réduire, réemployer et réparer",
                     "En premier",
-                    "Au même niveau que la réparation"
+                    "Au même niveau que la réparation",
+                    "En dernier, après réduire, réemployer et réparer"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Il récupère une partie des matières, jamais la totalité, et consomme lui-même de l'énergie."
             },
             {
@@ -222,11 +222,11 @@ window.QUIZ = {
             {
                 q: "Quelle est la seule question qui compte devant un gain annoncé ?",
                 options: [
-                    "Le total a-t-il baissé ?",
                     "De combien de pourcents ?",
+                    "Le total a-t-il baissé ?",
                     "Sur quelle période ?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Elle est rarement posée, parce que la réponse est souvent non."
             },
             {
@@ -253,11 +253,11 @@ window.QUIZ = {
             {
                 q: "Que faut-il mesurer dans un tableau de bord environnemental ?",
                 options: [
-                    "Les totaux, pas les ratios",
                     "Les intensités par utilisateur",
+                    "Les totaux, pas les ratios",
                     "Les pourcentages d'amélioration"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un tableau de bord d'intensités progressera indéfiniment pendant que l'absolu augmente."
             },
             {
@@ -278,21 +278,21 @@ window.QUIZ = {
         {
             q: "À qui s'adresse ce niveau, contrairement aux deux premiers ?",
             options: [
-                "À ceux qui décident : concevoir un service, gérer un parc, arbitrer",
                 "Aux spécialistes du climat",
-                "Aux développeurs uniquement"
+                "Aux développeurs uniquement",
+                "À ceux qui décident : concevoir un service, gérer un parc, arbitrer"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est là que les leviers changent d'échelle, et que les raisonnements faux coûtent le plus cher."
         },
         {
             q: "Qu'ont en commun l'écoconception et l'allongement d'un parc ?",
             options: [
-                "Les deux agissent sur le poste dominant : la fabrication des terminaux",
                 "Les deux réduisent la consommation électrique",
-                "Les deux relèvent d'une obligation légale"
+                "Les deux relèvent d'une obligation légale",
+                "Les deux agissent sur le poste dominant : la fabrication des terminaux"
             ],
-            a: 0,
+            a: 2,
             explication: "L'un en repoussant un renouvellement, l'autre en le décidant."
         },
         {
@@ -308,21 +308,21 @@ window.QUIZ = {
         {
             q: "Pourquoi les critères de sobriété d'un service sont-ils faciles à défendre ?",
             options: [
-                "Ils recoupent l'accessibilité et la performance, qui ont leurs propres arguments",
                 "Ils sont imposés par la loi",
-                "Ils réduisent les coûts d'hébergement"
+                "Ils réduisent les coûts d'hébergement",
+                "Ils recoupent l'accessibilité et la performance, qui ont leurs propres arguments"
             ],
-            a: 0,
+            a: 2,
             explication: "On peut les obtenir sans jamais invoquer l'écologie."
         },
         {
             q: "Que reste-t-il si l'on ne retient qu'une chose de ce niveau ?",
             options: [
-                "Chercher le total plutôt que le pourcentage",
                 "Alléger ses pages",
-                "Choisir un hébergeur décarboné"
+                "Choisir un hébergeur décarboné",
+                "Chercher le total plutôt que le pourcentage"
             ],
-            a: 0,
+            a: 2,
             explication: "S'il n'est pas donné, c'est en général qu'il ne va pas dans le bon sens."
         },
         {

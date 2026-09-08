@@ -45,11 +45,11 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que l'affichage optimiste ?",
                 options: [
-                    "Afficher le résultat attendu avant confirmation du serveur",
                     "Masquer les erreurs à l'utilisateur",
-                    "Précharger toutes les pages du site"
+                    "Précharger toutes les pages du site",
+                    "Afficher le résultat attendu avant confirmation du serveur"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Quitte à corriger en cas d'échec. C'est ce qui rend les messageries modernes si fluides."
             },
             {
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Comment croît le temps de décision selon la loi de Hick ?",
                 options: [
                     "Linéairement avec le nombre d'options",
-                    "Avec le logarithme du nombre d'options",
-                    "De façon exponentielle"
+                    "De façon exponentielle",
+                    "Avec le logarithme du nombre d'options"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Passer de 2 à 4 choix coûte autant que passer de 4 à 8. Ajouter des options à une liste déjà longue ne coûte presque rien."
             },
             {
@@ -100,42 +100,42 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui rend alors le regroupement gagnant ?",
                 options: [
-                    "Le balayage visuel : trouver sans lire",
                     "La loi de Hick",
+                    "Le balayage visuel : trouver sans lire",
                     "L'habitude des utilisateurs"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un visiteur qui découvre un menu ne choisit pas, il cherche — et ce parcours coûte à peu près linéairement."
             },
             // Série 2
             {
                 q: "De quoi dépend le temps pour atteindre une cible, selon la loi de Fitts ?",
                 options: [
-                    "De sa couleur et de son contraste",
                     "De sa distance et de sa taille",
+                    "De sa couleur et de son contraste",
                     "Du nombre d'éléments à l'écran"
                 ],
-                a: 1,
+                a: 0,
                 explication: "D'où l'intérêt des bords et des coins : le curseur s'y arrête tout seul."
             },
             {
                 q: "Combien d'éléments la mémoire de travail retient-elle simultanément ?",
                 options: [
-                    "Autour de quatre",
                     "Exactement sept",
+                    "Autour de quatre",
                     "Une quinzaine"
                 ],
-                a: 0,
+                a: 1,
                 explication: "L'ordre de grandeur communément retenu aujourd'hui, et non les sept longtemps cités."
             },
             {
                 q: "Quelle erreur consiste à confondre simple et minimal ?",
                 options: [
                     "Ajouter trop d'explications",
-                    "Retirer libellés et repères : l'écran s'épure, la charge mentale augmente",
-                    "Utiliser trop de couleurs"
+                    "Utiliser trop de couleurs",
+                    "Retirer libellés et repères : l'écran s'épure, la charge mentale augmente"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Une interface simple n'est pas celle qui montre le moins, c'est celle qui demande le moins d'efforts."
             }
         ],
@@ -177,31 +177,31 @@ window.QUIZ = {
             {
                 q: "Pourquoi les schémas sombres sont-ils un mauvais calcul ?",
                 options: [
-                    "Ils ne fonctionnent pas",
                     "Le gain est immédiat et mesuré, le coût différé et diffus",
+                    "Ils ne fonctionnent pas",
                     "Ils sont techniquement complexes"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Résiliations, remboursements, avis négatifs et méfiance n'apparaissent pas dans le tableau de bord des conversions."
             },
             {
                 q: "Quel test permet d'identifier un schéma sombre involontaire ?",
                 options: [
-                    "Vérifier la conformité juridique",
                     "Si l'utilisateur découvrait ce mécanisme, se sentirait-il floué ?",
+                    "Vérifier la conformité juridique",
                     "Demander l'avis de l'équipe commerciale"
                 ],
-                a: 1,
+                a: 0,
                 explication: "L'intention ne change rien au résultat pour l'utilisateur."
             },
             {
                 q: "« Non merci, je préfère payer plus cher » relève de :",
                 options: [
                     "Un ton de marque assumé",
-                    "La honte du refus : un libellé rédigé pour être désagréable à cliquer",
-                    "Une clarification utile"
+                    "Une clarification utile",
+                    "La honte du refus : un libellé rédigé pour être désagréable à cliquer"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est l'un des schémas sombres les plus répandus, et les plus faciles à corriger."
             }
         ],
@@ -212,42 +212,42 @@ window.QUIZ = {
             {
                 q: "Quelle est la mesure la plus importante d'un test d'utilisabilité ?",
                 options: [
-                    "Le temps de tâche",
                     "Le taux de réussite",
+                    "Le temps de tâche",
                     "La satisfaction déclarée"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est aussi la plus souvent oubliée."
             },
             {
                 q: "Pourquoi le temps de tâche s'interprète-t-il avec prudence ?",
                 options: [
-                    "Il est difficile à mesurer",
                     "Plus rapide n'est pas toujours mieux, notamment sur une décision importante",
+                    "Il est difficile à mesurer",
                     "Il varie trop d'un participant à l'autre"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Sur un achat engageant, un temps plus long peut signaler une lecture attentive."
             },
             {
                 q: "Un test d'utilisabilité montre surtout :",
                 options: [
-                    "Où les gens échouent, rarement pourquoi",
                     "Pourquoi les gens échouent",
-                    "Ce que les gens préfèrent"
+                    "Ce que les gens préfèrent",
+                    "Où les gens échouent, rarement pourquoi"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le pourquoi vient de l'observation et des questions posées après coup."
             },
             // Série 2
             {
                 q: "Que vaut un chiffre isolé en matière de design ?",
                 options: [
-                    "Rien : c'est la comparaison qui produit l'information",
                     "Il suffit s'il est mesuré rigoureusement",
-                    "Il vaut mieux que rien"
+                    "Il vaut mieux que rien",
+                    "Rien : c'est la comparaison qui produit l'information"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Avant et après, version A et version B : sans référence, un score ne dit rien."
             },
             {
@@ -263,11 +263,11 @@ window.QUIZ = {
             {
                 q: "Comment convertir une amélioration en argument budgétaire ?",
                 options: [
-                    "En comptant les heures gagnées par an sur l'ensemble des utilisateurs",
                     "En citant les bonnes pratiques du secteur",
-                    "En montrant des maquettes avant-après"
+                    "En montrant des maquettes avant-après",
+                    "En comptant les heures gagnées par an sur l'ensemble des utilisateurs"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Cinq secondes sur trois tâches quotidiennes pour deux cents personnes font environ 183 heures par an."
             }
         ]
@@ -291,11 +291,11 @@ window.QUIZ = {
         {
             q: "Quelle question éthique ce niveau pose-t-il ?",
             options: [
-                "Faut-il utiliser ces connaissances pour aider, ou pour manipuler ?",
                 "Faut-il mesurer le comportement des utilisateurs ?",
+                "Faut-il utiliser ces connaissances pour aider, ou pour manipuler ?",
                 "Faut-il informer les utilisateurs des lois psychologiques ?"
             ],
-            a: 0,
+            a: 1,
             explication: "Les mêmes mécanismes servent à fluidifier un parcours ou à piéger un consentement."
         },
         {
@@ -312,11 +312,11 @@ window.QUIZ = {
         {
             q: "Pourquoi ce niveau insiste-t-il sur la mesure ?",
             options: [
-                "Parce que sans mesure, un design ne s'améliore pas : il change",
                 "Parce que la réglementation l'exige",
-                "Parce que les outils la rendent facile"
+                "Parce que les outils la rendent facile",
+                "Parce que sans mesure, un design ne s'améliore pas : il change"
             ],
-            a: 0,
+            a: 2,
             explication: "« C'est plus joli » n'est pas un argument recevable, et « le client préfère » encore moins."
         },
         {
@@ -332,11 +332,11 @@ window.QUIZ = {
         {
             q: "Un compte à rebours qui se réinitialise à chaque visite relève de :",
             options: [
-                "Une fausse urgence, donc un schéma sombre",
                 "Une technique de conversion admise",
-                "Un défaut technique"
+                "Un défaut technique",
+                "Une fausse urgence, donc un schéma sombre"
             ],
-            a: 0,
+            a: 2,
             explication: "Comme « 3 personnes regardent cet article » sans aucun fondement."
         }
     ]

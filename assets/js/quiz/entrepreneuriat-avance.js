@@ -35,10 +35,10 @@ window.QUIZ = {
                 q: "Que signifie un ratio valeur vie / coût d'acquisition inférieur à 1 ?",
                 options: [
                     "Que la croissance est trop lente",
-                    "Qu'on paie pour perdre de l'argent sur chaque client",
-                    "Que le prix est trop élevé"
+                    "Que le prix est trop élevé",
+                    "Qu'on paie pour perdre de l'argent sur chaque client"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Chaque nouveau client aggrave alors la situation."
             },
             // Série 2
@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Que produit la croissance avec des unit economics négatifs ?",
                 options: [
-                    "Elle finit par les corriger par les économies d'échelle",
                     "Elle amplifie la perte tout en donnant l'apparence du succès",
+                    "Elle finit par les corriger par les économies d'échelle",
                     "Elle est sans effet sur la rentabilité"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le chiffre d'affaires monte, la trésorerie descend plus vite."
             }
         ],
@@ -81,20 +81,20 @@ window.QUIZ = {
                 q: "Que vend réellement un fondateur lors d'une levée ?",
                 options: [
                     "Des parts de son entreprise",
-                    "Une promesse de croissance rapide",
-                    "Un droit d'usage de sa technologie"
+                    "Un droit d'usage de sa technologie",
+                    "Une promesse de croissance rapide"
                 ],
-                a: 1,
+                a: 2,
                 explication: "L'investisseur cherche une sortie dans cinq à dix ans avec un multiple important."
             },
             {
                 q: "Levée de 300 000 € sur une valorisation avant opération de 1 200 000 € : quelle part cédée ?",
                 options: [
                     "25 %",
-                    "20 %",
-                    "30 %"
+                    "30 %",
+                    "20 %"
                 ],
-                a: 1,
+                a: 2,
                 explication: "300 000 rapportés à la valorisation après opération, soit 1 500 000 €."
             },
             {
@@ -112,10 +112,10 @@ window.QUIZ = {
                 q: "Quelle alternative finance sans diluer et valide la demande ?",
                 options: [
                     "Le prêt bancaire",
-                    "Le financement par les clients : acomptes, prévente, abonnements annuels",
-                    "Les subventions"
+                    "Les subventions",
+                    "Le financement par les clients : acomptes, prévente, abonnements annuels"
                 ],
-                a: 1,
+                a: 2,
                 explication: "L'argent vient de ceux qui ont un besoin réel, ce qui constitue en soi une validation."
             },
             {
@@ -131,11 +131,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi ne pas lever avant d'avoir un modèle qui fonctionne ?",
                 options: [
-                    "Les investisseurs refuseraient",
                     "L'argent accélère ce qui existe : il finance une perte plus longtemps, avec une pression en plus",
+                    "Les investisseurs refuseraient",
                     "La valorisation serait trop basse"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Beaucoup d'échecs ressemblent exactement à cela."
             }
         ],
@@ -166,42 +166,42 @@ window.QUIZ = {
             {
                 q: "Que suppose une délégation réussie ?",
                 options: [
-                    "Une personne compétente",
                     "Une tâche définie, documentée et mesurable",
+                    "Une personne compétente",
                     "Un contrat à durée indéterminée"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Confier un problème flou — « occupe-toi du marketing » — produit surtout de la frustration."
             },
             // Série 2
             {
                 q: "Quel test précède une délégation ?",
                 options: [
-                    "Saurais-tu expliquer en dix minutes ce qu'il faut faire et à quoi ressemble un bon résultat ?",
                     "As-tu le budget ?",
+                    "Saurais-tu expliquer en dix minutes ce qu'il faut faire et à quoi ressemble un bon résultat ?",
                     "La personne a-t-elle de l'expérience ?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Si non, la tâche n'est pas prête à être déléguée."
             },
             {
                 q: "Être débordé est-il un motif de recrutement ?",
                 options: [
                     "Oui, c'est le signal principal",
-                    "Non : sans la marge correspondante, un salarié transforme une surcharge en difficulté de trésorerie",
-                    "Oui, si la surcharge dure plus de six mois"
+                    "Oui, si la surcharge dure plus de six mois",
+                    "Non : sans la marge correspondante, un salarié transforme une surcharge en difficulté de trésorerie"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un recrutement se décide sur un chiffre d'affaires supplémentaire identifié."
             },
             {
                 q: "Quelles formes d'emploi sont réversibles ?",
                 options: [
                     "Le contrat à durée indéterminée",
-                    "La prestation ponctuelle, l'alternance, le temps partiel",
-                    "Aucune"
+                    "Aucune",
+                    "La prestation ponctuelle, l'alternance, le temps partiel"
                 ],
-                a: 1,
+                a: 2,
                 explication: "À envisager avant un engagement que l'on ne peut pas défaire."
             }
         ],
@@ -212,62 +212,62 @@ window.QUIZ = {
             {
                 q: "D'où viennent les difficultés juridiques d'une jeune entreprise ?",
                 options: [
-                    "D'une réglementation obscure",
                     "De ce qui n'a pas été écrit, à un moment où tout le monde s'entendait bien",
+                    "D'une réglementation obscure",
                     "De contrôles administratifs"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Ces questions sont faciles à trancher au départ et deviennent des conflits ensuite."
             },
             {
                 q: "Ce qu'un prestataire produit t'appartient-il automatiquement ?",
                 options: [
-                    "Oui, dès lors que tu l'as payé",
                     "Non : il faut une cession de droits écrite",
+                    "Oui, dès lors que tu l'as payé",
                     "Oui, s'il s'agit d'un travail sur commande"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Sans elle, le logo, le code ou les textes restent à leur auteur."
             },
             {
                 q: "À partir de quand le RGPD s'applique-t-il ?",
                 options: [
-                    "Dès le premier fichier de clients",
                     "À partir de 250 salariés",
-                    "Uniquement pour les sites marchands"
+                    "Uniquement pour les sites marchands",
+                    "Dès le premier fichier de clients"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Registre des traitements, information des personnes, durée de conservation."
             },
             // Série 2
             {
                 q: "Que doit prévoir un accord entre associés ?",
                 options: [
-                    "Uniquement la répartition du capital",
                     "Qui décide quoi, ce qui se passe si l'un part, comment les parts sont valorisées",
+                    "Uniquement la répartition du capital",
                     "Le montant des rémunérations"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un désaccord deux ans plus tard, sans rien d'écrit, ne se résout pas à l'amiable — et bloque toute décision."
             },
             {
                 q: "Comment comparer le coût d'un pacte d'associés à celui d'un conflit ?",
                 options: [
-                    "Quelques milliers d'euros contre plusieurs dizaines de milliers et deux ans de procédure",
                     "Les deux sont comparables",
+                    "Quelques milliers d'euros contre plusieurs dizaines de milliers et deux ans de procédure",
                     "Le pacte coûte plus cher"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est l'une des rares dépenses dont le rendement se mesure en multiples."
             },
             {
                 q: "Quelle vérification est gratuite avant de choisir un nom de marque ?",
                 options: [
-                    "La recherche d'antériorité sur la base de l'INPI",
                     "Le dépôt provisoire",
+                    "La recherche d'antériorité sur la base de l'INPI",
                     "L'avis d'un avocat"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Elle prend quelques minutes et évite de devoir tout renommer après un an d'activité."
             }
         ]
@@ -281,11 +281,11 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun les quatre décisions de ce niveau ?",
             options: [
-                "Elles engagent durablement et sont difficiles à défaire",
                 "Elles concernent toutes le financement",
-                "Elles interviennent la première année"
+                "Elles interviennent la première année",
+                "Elles engagent durablement et sont difficiles à défaire"
             ],
-            a: 0,
+            a: 2,
             explication: "Accélérer ou non, avec quel argent, avec qui, et sous quelles contraintes."
         },
         {
@@ -301,42 +301,42 @@ window.QUIZ = {
         {
             q: "Une entreprise a un ratio valeur vie sur coût d'acquisition de 0,8 et veut lever pour croître. Qu'en penser ?",
             options: [
-                "C'est le bon moment, la levée financera la croissance",
                 "Lever reviendrait à financer une perte plus longtemps, avec une pression en plus",
+                "C'est le bon moment, la levée financera la croissance",
                 "Il faut lever un montant plus important"
             ],
-            a: 1,
+            a: 0,
             explication: "L'argent extérieur accélère ce qui existe. Il ne remplace pas un modèle qui ne fonctionne pas encore."
         },
         // Série 2
         {
             q: "Quel raisonnement s'applique aussi bien au recrutement qu'à la levée de fonds ?",
             options: [
-                "Chiffrer l'engagement avant de le prendre, et vérifier qu'il est supportable s'il tourne mal",
                 "Attendre d'être rentable",
+                "Chiffrer l'engagement avant de le prendre, et vérifier qu'il est supportable s'il tourne mal",
                 "Consulter un professionnel dans tous les cas"
             ],
-            a: 0,
+            a: 1,
             explication: "Écrire le scénario dégradé : s'il est supportable, avancer ; sinon, réduire l'engagement."
         },
         {
             q: "Pourquoi les risques juridiques sont-ils traités dans ce niveau plutôt qu'au démarrage ?",
             options: [
-                "Ils n'existent qu'à partir d'une certaine taille",
                 "Ils naissent des engagements pris : associés, prestataires, clients, salariés",
+                "Ils n'existent qu'à partir d'une certaine taille",
                 "Ils sont trop techniques pour un débutant"
             ],
-            a: 1,
+            a: 0,
             explication: "Chaque décision engageante de ce niveau crée un besoin d'écrit correspondant."
         },
         {
             q: "Quel est le point commun entre un pacte d'associés absent et des unit economics non calculées ?",
             options: [
-                "Les deux coûtent cher au moment précis où l'on peut le moins se le permettre",
                 "Les deux relèvent du conseil juridique",
+                "Les deux coûtent cher au moment précis où l'on peut le moins se le permettre",
                 "Les deux se corrigent facilement"
             ],
-            a: 0,
+            a: 1,
             explication: "L'un éclate quand l'entreprise devient intéressante, l'autre quand elle accélère."
         }
     ]

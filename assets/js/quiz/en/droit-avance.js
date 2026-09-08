@@ -20,11 +20,11 @@ window.QUIZ = {
             {
                 q: "What becomes of an unfair term in a signed contract?",
                 options: [
-                    "It is deemed unwritten: it does not apply",
                     "It applies since it was accepted",
+                    "It is deemed unwritten: it does not apply",
                     "It voids the whole contract"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The rest of the contract goes on applying."
             },
             {
@@ -51,11 +51,11 @@ window.QUIZ = {
             {
                 q: "What is the first place to read in a contract before signing?",
                 options: [
-                    "The term and the cancellation conditions",
                     "The preamble",
+                    "The term and the cancellation conditions",
                     "The identity of the parties"
                 ],
-                a: 0,
+                a: 1,
                 explication: "How you get out, with what notice, at what cost: that is where the surprises are."
             },
             {
@@ -96,52 +96,52 @@ window.QUIZ = {
             {
                 q: "Does a formal demand interrupt limitation?",
                 options: [
-                    "No, not even by recorded delivery",
                     "Yes, that is its main purpose",
+                    "No, not even by recorded delivery",
                     "Yes, if signed by a lawyer"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is the costliest mistake in the field: it gives the feeling of having acted."
             },
             {
                 q: "What does interrupt limitation?",
                 options: [
-                    "Issuing court proceedings, an enforcement measure, or acknowledgement of the debt",
                     "A chasing email",
-                    "A recorded phone call"
+                    "A recorded phone call",
+                    "Issuing court proceedings, an enforcement measure, or acknowledgement of the debt"
                 ],
-                a: 0,
+                a: 2,
                 explication: "An interruption restarts a whole fresh period from zero."
             },
             // Series 2
             {
                 q: "Which period applies to a trader claiming a sum from a consumer?",
                 options: [
-                    "2 years",
                     "5 years",
+                    "2 years",
                     "3 years"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The period depends on who is claiming from whom, and that changes everything."
             },
             {
                 q: "What is the difference between suspending and interrupting limitation?",
                 options: [
-                    "Suspension pauses the period; interruption restarts it from zero",
                     "They are two words for the same thing",
+                    "Suspension pauses the period; interruption restarts it from zero",
                     "Suspension cancels the period"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A request for mediation suspends; a claim form interrupts."
             },
             {
                 q: "At what date is limitation judged?",
                 options: [
-                    "The day the court is seised",
                     "The day you write to the other side",
-                    "The day you consult a lawyer"
+                    "The day you consult a lawyer",
+                    "The day the court is seised"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Negotiating up to the deadline benefits the other side equally, in good faith or bad."
             }
         ],
@@ -162,11 +162,11 @@ window.QUIZ = {
             {
                 q: "Where do you find a company's consumer ombudsman?",
                 options: [
-                    "In its terms and conditions",
                     "From the court",
-                    "You have to ask the data protection authority"
+                    "You have to ask the data protection authority",
+                    "In its terms and conditions"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Traders must offer one, and it is free for the consumer."
             },
             {
@@ -183,31 +183,31 @@ window.QUIZ = {
             {
                 q: "€1,500 claimed, €1,200 of costs, 60% chance: what does the calculation say?",
                 options: [
-                    "A negative average expected outcome: settling brings in more",
                     "A positive expected gain",
+                    "A negative average expected outcome: settling brings in more",
                     "A nil result"
                 ],
-                a: 0,
+                a: 1,
                 explication: "And that leaves aside the months of waiting and the time spent."
             },
             {
                 q: "What is legal aid?",
                 options: [
-                    "Cover of all or part of the costs depending on means",
                     "A free consultation at the town hall",
+                    "Cover of all or part of the costs depending on means",
                     "A loan repayable after the case"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The ceilings are revised each year: check them on the official portal."
             },
             {
                 q: "Which question should you ask before starting an action?",
                 options: [
-                    "On the other side, is there anything to pay with?",
                     "Am I morally right?",
-                    "Is the court nearby?"
+                    "Is the court nearby?",
+                    "On the other side, is there anything to pay with?"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Winning and being paid are two distinct stages, and enforcement has its own cost."
             }
         ],
@@ -218,21 +218,21 @@ window.QUIZ = {
             {
                 q: "How long does an organisation have to answer an access request?",
                 options: [
-                    "One month, extendable by two if the request is complex",
                     "One week",
-                    "Six months"
+                    "Six months",
+                    "One month, extendable by two if the request is complex"
                 ],
-                a: 0,
+                a: 2,
                 explication: "If it extends, it must tell you."
             },
             {
                 q: "Do you have to justify a request to access your data?",
                 options: [
-                    "No, no reason has to be given",
                     "Yes, you must show a legitimate interest",
+                    "No, no reason has to be given",
                     "Yes, in the event of a dispute only"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A three-line email is enough."
             },
             {
@@ -249,21 +249,21 @@ window.QUIZ = {
             {
                 q: "Is the right to erasure absolute?",
                 options: [
-                    "No: it gives way to a legal retention obligation",
                     "Yes, without exception",
-                    "Yes, except for banks"
+                    "Yes, except for banks",
+                    "No: it gives way to a legal retention obligation"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Objecting to marketing, by contrast, admits no exception."
             },
             {
                 q: "What do you do if the organisation does not answer in time?",
                 options: [
-                    "File a free complaint with your data protection authority",
                     "Go straight to court",
-                    "Wait another month"
+                    "Wait another month",
+                    "File a free complaint with your data protection authority"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Silence is itself admissible grounds."
             },
             {
@@ -284,11 +284,11 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "Enforcing your rights, and knowing when it is worth it",
                 "Avoiding all written contracts",
-                "Knowing the codes by heart"
+                "Knowing the codes by heart",
+                "Enforcing your rights, and knowing when it is worth it"
             ],
-            a: 0,
+            a: 2,
             explication: "It is the level where we face a question the law never asks."
         },
         {
@@ -304,31 +304,31 @@ window.QUIZ = {
         {
             q: "Two months of exchanging letters with the other side: what is the risk?",
             options: [
-                "The limitation period keeps running throughout",
                 "The other side can withdraw",
-                "The letters lose their value"
+                "The letters lose their value",
+                "The limitation period keeps running throughout"
             ],
-            a: 0,
+            a: 2,
             explication: "If the deadline is approaching, you must go to court or formally start a mediation."
         },
         {
             q: "A contract contains a clause removing the legal guarantee. What do you do?",
             options: [
-                "Nothing in particular: it is deemed unwritten and does not apply",
                 "Ask a judge to annul it",
+                "Nothing in particular: it is deemed unwritten and does not apply",
                 "Refuse to sign, otherwise it will hold"
             ],
-            a: 0,
+            a: 1,
             explication: "There is nothing to have annulled — legally it never existed."
         },
         {
             q: "Which two questions decide more often than the merits of the file?",
             options: [
-                "Am I still within the deadline, and does the other side have anything to pay with?",
                 "Which court has jurisdiction, and which lawyer to choose?",
+                "Am I still within the deadline, and does the other side have anything to pay with?",
                 "Do I have a written contract, and is it signed?"
             ],
-            a: 0,
+            a: 1,
             explication: "They are asked before starting anything."
         },
         {

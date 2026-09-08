@@ -14,21 +14,21 @@ window.QUIZ = {
             {
                 q: "D'où vient le pouvoir dans une négociation ?",
                 options: [
-                    "De ce que tu obtiens si tu pars",
                     "De la qualité de tes arguments",
+                    "De ce que tu obtiens si tu pars",
                     "De ton assurance"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est ce qui explique que deux personnes également habiles n'aient pas le même pouvoir."
             },
             {
                 q: "Qu'est-ce que la MESORE ?",
                 options: [
-                    "La meilleure solution de rechange en l'absence d'accord",
                     "Le montant minimal acceptable fixé par l'autre",
-                    "La moyenne des offres reçues"
+                    "La moyenne des offres reçues",
+                    "La meilleure solution de rechange en l'absence d'accord"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Elle fixe ton point de rupture : aucune offre inférieure ne mérite d'être acceptée."
             },
             {
@@ -45,31 +45,31 @@ window.QUIZ = {
             {
                 q: "Quand renforce-t-on sa position ?",
                 options: [
-                    "Avant la négociation, en améliorant sa solution de rechange",
                     "Pendant, par la fermeté",
+                    "Avant la négociation, en améliorant sa solution de rechange",
                     "À la fin, en menaçant de partir"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Obtenir une deuxième proposition déplace le point de rupture."
             },
             {
                 q: "Que dit la solution de rechange de l'autre ?",
                 options: [
-                    "Jusqu'où il peut aller",
                     "Ce qu'il pense de toi",
-                    "Son budget exact"
+                    "Son budget exact",
+                    "Jusqu'où il peut aller"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Un fournisseur qui n'a que toi comme client ne négocie pas comme un fournisseur qui en a vingt."
             },
             {
                 q: "Que vaut « je peux très bien aller ailleurs » sans que ce soit vrai ?",
                 options: [
-                    "Cela fonctionne une fois, et se paie si l'autre appelle le bluff",
                     "C'est une technique éprouvée",
-                    "Cela n'a aucun effet"
+                    "Cela n'a aucun effet",
+                    "Cela fonctionne une fois, et se paie si l'autre appelle le bluff"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une solution de rechange réelle, même modeste, vaut mieux qu'une menace crédible cinq minutes."
             }
         ],
@@ -90,21 +90,21 @@ window.QUIZ = {
             {
                 q: "Que faire quand il n'existe aucune zone d'accord sur le prix ?",
                 options: [
-                    "Ajouter une variable : délai, volume, garantie, services",
                     "Insister et répéter les arguments",
-                    "Faire durer pour user l'autre"
+                    "Faire durer pour user l'autre",
+                    "Ajouter une variable : délai, volume, garantie, services"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Une négociation à une seule variable est un partage ; dès qu'il y en a deux, des échanges deviennent possibles."
             },
             {
                 q: "Faut-il annoncer sa limite maximale ?",
                 options: [
-                    "Non : l'annoncer revient à l'offrir",
                     "Oui, pour gagner du temps",
-                    "Oui, si l'autre le demande"
+                    "Oui, si l'autre le demande",
+                    "Non : l'annoncer revient à l'offrir"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La limite sert à décider, pas à communiquer."
             },
             // Série 2
@@ -131,11 +131,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi une seule variable rend-elle la négociation à somme nulle ?",
                 options: [
-                    "Ce que l'un gagne sur cette variable, l'autre le perd nécessairement",
                     "Parce que les parties campent sur leurs positions",
-                    "Parce que le prix est toujours le point dur"
+                    "Parce que le prix est toujours le point dur",
+                    "Ce que l'un gagne sur cette variable, l'autre le perd nécessairement"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est la raison pour laquelle ajouter une variable débloque les situations bloquées."
             }
         ],
@@ -146,31 +146,31 @@ window.QUIZ = {
             {
                 q: "Objectif 29 000 €, offre attendue de l'autre 27 000 € : quelle première offre ?",
                 options: [
-                    "31 000 €",
                     "29 000 €",
+                    "31 000 €",
                     "35 000 €"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Soit 2 000 € au-dessus de l'objectif, pour que le point médian y tombe."
             },
             {
                 q: "Le conseil « ne jamais annoncer le premier chiffre » est-il fondé ?",
                 options: [
-                    "Non : celui qui ouvre oriente la discussion, à condition de rester plausible",
                     "Oui, toujours",
-                    "Oui, sauf entre professionnels"
+                    "Oui, sauf entre professionnels",
+                    "Non : celui qui ouvre oriente la discussion, à condition de rester plausible"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Les travaux sur l'ancrage le contredisent."
             },
             {
                 q: "Quand vaut-il mieux laisser l'autre ouvrir ?",
                 options: [
-                    "Quand on ignore la valeur de ce qui se négocie",
                     "Quand on est en position de force",
-                    "Quand la relation doit durer"
+                    "Quand la relation doit durer",
+                    "Quand on ignore la valeur de ce qui se négocie"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ouvrir sans information expose à ancrer contre soi-même."
             },
             // Série 2
@@ -197,11 +197,11 @@ window.QUIZ = {
             {
                 q: "L'effet d'ancrage disparaît-il quand chacun sait que le chiffre est négociable ?",
                 options: [
-                    "Non : c'est l'un des effets les mieux répliqués de la psychologie de la décision",
                     "Oui, entre professionnels",
+                    "Non : c'est l'un des effets les mieux répliqués de la psychologie de la décision",
                     "Oui, si le chiffre est annoncé comme indicatif"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Il a été mesuré chez des experts prévenus du dispositif."
             }
         ],
@@ -212,21 +212,21 @@ window.QUIZ = {
             {
                 q: "Quelle est la différence entre une position et un intérêt ?",
                 options: [
-                    "La position est ce qu'on demande, l'intérêt la raison pour laquelle on le demande",
                     "La position est ferme, l'intérêt négociable",
+                    "La position est ce qu'on demande, l'intérêt la raison pour laquelle on le demande",
                     "La position est écrite, l'intérêt implicite"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Les positions s'opposent ; les intérêts, souvent, non."
             },
             {
                 q: "Que se passe-t-il tant qu'on discute des positions ?",
                 options: [
-                    "Il n'existe qu'un partage",
                     "Chacun défend ses arguments",
-                    "L'accord se rapproche"
+                    "L'accord se rapproche",
+                    "Il n'existe qu'un partage"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Dès qu'on connaît les intérêts, d'autres solutions apparaissent."
             },
             {
@@ -253,21 +253,21 @@ window.QUIZ = {
             {
                 q: "L'hypothèse « ce que l'un gagne, l'autre le perd » est :",
                 options: [
-                    "Exacte pour une variable unique, fausse dès qu'il y en a plusieurs",
                     "Toujours vraie",
+                    "Exacte pour une variable unique, fausse dès qu'il y en a plusieurs",
                     "Toujours fausse"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est pourtant l'hypothèse par défaut de presque tout le monde."
             },
             {
                 q: "Que faut-il préparer avant chaque négociation, au-delà de son objectif ?",
                 options: [
-                    "Ce qui me coûte peu et lui rapporte beaucoup",
                     "Trois arguments de repli",
+                    "Ce qui me coûte peu et lui rapporte beaucoup",
                     "Le moment où je vais céder"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un délai, une référence, une exclusivité, une souplesse de calendrier."
             }
         ]
@@ -278,31 +278,31 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Une négociation se calcule en grande partie avant de commencer",
                 "Il faut savoir tenir sa position",
-                "Le meilleur négociateur est le plus patient"
+                "Le meilleur négociateur est le plus patient",
+                "Une négociation se calcule en grande partie avant de commencer"
             ],
-            a: 0,
+            a: 2,
             explication: "Quatre notions suffisent, et elles se traduisent toutes en chiffres."
         },
         {
             q: "Qu'ont en commun la solution de rechange et la limite maximale ?",
             options: [
-                "Les deux servent à décider, pas à communiquer",
                 "Les deux doivent être annoncées tôt",
+                "Les deux servent à décider, pas à communiquer",
                 "Les deux se calculent après la première offre"
             ],
-            a: 0,
+            a: 1,
             explication: "Les annoncer revient à les offrir."
         },
         {
             q: "Quelqu'un accepte un accord après six mois de discussions, en invoquant le temps investi. Que dire ?",
             options: [
-                "Le temps passé est perdu quoi qu'il arrive ; seule compte la comparaison avec sa solution de rechange",
                 "Six mois justifient de conclure",
+                "Le temps passé est perdu quoi qu'il arrive ; seule compte la comparaison avec sa solution de rechange",
                 "Il fallait fixer une échéance"
             ],
-            a: 0,
+            a: 1,
             explication: "C'est le biais du coût irrécupérable, développé au niveau avancé."
         },
         {
@@ -318,11 +318,11 @@ window.QUIZ = {
         {
             q: "À quoi doit-on comparer un accord pour le juger ?",
             options: [
-                "À sa solution de rechange",
                 "À ce qu'on espérait au départ",
+                "À sa solution de rechange",
                 "À ce que l'autre a obtenu"
             ],
-            a: 0,
+            a: 1,
             explication: "C'est la seule comparaison qui corresponde à une réalité."
         },
         {

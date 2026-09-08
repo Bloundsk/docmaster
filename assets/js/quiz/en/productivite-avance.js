@@ -25,21 +25,21 @@ window.QUIZ = {
             {
                 q: "How do you spot your own rhythm?",
                 options: [
-                    "By noting your concentration level three times a day for two weeks",
                     "By trusting your general impression",
+                    "By noting your concentration level three times a day for two weeks",
                     "By comparing with the average of your colleagues"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The pattern usually appears after ten days — and does not always match what you believed."
             },
             {
                 q: "What does adding two evening hours to an already full day produce?",
                 options: [
                     "A net gain of two hours of work",
-                    "Hours of low output, and a degraded next day",
-                    "A gain, provided you make up for it at the weekend"
+                    "A gain, provided you make up for it at the weekend",
+                    "Hours of low output, and a degraded next day"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Across a week, total output goes down. It is heavily documented."
             },
             // Series 2
@@ -47,30 +47,30 @@ window.QUIZ = {
                 q: "What makes a break effective?",
                 options: [
                     "Its length",
-                    "The fact that it changes register",
-                    "The fact that it is taken at a fixed time"
+                    "The fact that it is taken at a fixed time",
+                    "The fact that it changes register"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Checking your phone is not a break for attention: it is the same resource, called on differently."
             },
             {
                 q: "What is the practical consequence of the daily rhythm, rarely applied?",
                 options: [
-                    "Put deep work in the peak, mechanical tasks in the dip",
                     "Start earlier in the morning",
+                    "Put deep work in the peak, mechanical tasks in the dip",
                     "Spread tasks evenly"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Yet the peak is very often given to messages and meetings."
             },
             {
                 q: "Why does the drop in output from skipping breaks go unnoticed?",
                 options: [
                     "Because it is small",
-                    "Because you stay busy while producing less",
-                    "Because it only appears after several weeks"
+                    "Because it only appears after several weeks",
+                    "Because you stay busy while producing less"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The activity stays visible; it is the result that falls."
             }
         ],
@@ -82,10 +82,10 @@ window.QUIZ = {
                 q: "Why does a method that requires thinking of it every day eventually give way?",
                 options: [
                     "Because it is badly designed",
-                    "Because willpower is a limited resource, already largely consumed",
-                    "Because it takes too much time"
+                    "Because it takes too much time",
+                    "Because willpower is a limited resource, already largely consumed"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It is not a question of personal weakness."
             },
             {
@@ -101,32 +101,32 @@ window.QUIZ = {
             {
                 q: "What does anchoring a habit consist of?",
                 options: [
-                    "Attaching it to an already automatic action",
                     "Noting it in your calendar",
-                    "Committing to it publicly"
+                    "Committing to it publicly",
+                    "Attaching it to an already automatic action"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The trigger already exists: there is nothing to remember."
             },
             // Series 2
             {
                 q: "Which restart rule separates a lasting habit from an aborted attempt?",
                 options: [
-                    "Making up the next day for what was missed",
                     "Never miss twice in a row",
+                    "Making up the next day for what was missed",
                     "Starting the streak again from zero"
                 ],
-                a: 1,
+                a: 0,
                 explication: "One missed day is an accident; two is the start of giving up."
             },
             {
                 q: "What is the “minimal version” of a habit for?",
                 options: [
                     "Getting a quick result",
-                    "Never breaking the streak",
-                    "Measuring your progress"
+                    "Measuring your progress",
+                    "Never breaking the streak"
                 ],
-                a: 1,
+                a: 2,
                 explication: "“Write one sentence”, “open the file”: the goal is not the result."
             },
             {
@@ -157,21 +157,21 @@ window.QUIZ = {
             {
                 q: "What are the three cumulative conditions of a useful meeting?",
                 options: [
-                    "An agenda, minutes, a fixed time",
                     "Something to decide, the right people, preparation read beforehand",
+                    "An agenda, minutes, a fixed time",
                     "A room, a chair, a time limit"
                 ],
-                a: 1,
+                a: 0,
                 explication: "An information meeting can be a message."
             },
             {
                 q: "Why does writing cost less than synchronous communication?",
                 options: [
                     "Because it is faster to produce",
-                    "Because each person reads when they can, without fragmenting their day",
-                    "Because it commits the author less"
+                    "Because it commits the author less",
+                    "Because each person reads when they can, without fragmenting their day"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It costs the sender more and all the recipients far less."
             },
             // Series 2
@@ -179,10 +179,10 @@ window.QUIZ = {
                 q: "A weekly 1 h 30 meeting with 7 people, at €45/h loaded: what cost per session?",
                 options: [
                     "€68",
-                    "€473",
-                    "€315"
+                    "€315",
+                    "€473"
                 ],
-                a: 1,
+                a: 2,
                 explication: "10 h 30 of work per session, that is about €22,700 a year."
             },
             {
@@ -213,21 +213,21 @@ window.QUIZ = {
             {
                 q: "What happens without a regular moment for stepping back?",
                 options: [
-                    "The system stabilises by itself",
                     "The drift accumulates until it is abandoned wholesale",
+                    "The system stabilises by itself",
                     "Tasks sort themselves naturally"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Commitments made six months ago no longer make sense, and nobody decides to drop them."
             },
             {
                 q: "What question should you ask about each current project?",
                 options: [
-                    "How much time have I already invested?",
                     "If this did not exist yet, would I start it today?",
+                    "How much time have I already invested?",
                     "Who else could take it over?"
                 ],
-                a: 1,
+                a: 0,
                 explication: "If the answer is no, the project survives only through inertia."
             },
             {
@@ -254,11 +254,11 @@ window.QUIZ = {
             {
                 q: "What does the rule “nothing new without taking something out” force?",
                 options: [
-                    "The trade-off at the moment of adding, rather than six months later in a hurry",
                     "A permanent reduction in workload",
+                    "The trade-off at the moment of adding, rather than six months later in a hurry",
                     "Systematic delegation"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Adding is easy and gratifying; stopping means owning a renunciation."
             },
             {
@@ -279,21 +279,21 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "What lasts for years does not depend on motivation",
                 "The strictest methods are the most effective",
-                "The tool determines whether a system succeeds"
+                "The tool determines whether a system succeeds",
+                "What lasts for years does not depend on motivation"
             ],
-            a: 0,
+            a: 2,
             explication: "Body rhythm, environment, collective rules, regular review: none of it needs daily willpower."
         },
         {
             q: "What do arranging the environment and moving to asynchronous have in common?",
             options: [
-                "Both remove an effort instead of demanding more discipline",
                 "Both require dedicated software",
-                "Both work only in a team"
+                "Both work only in a team",
+                "Both remove an effort instead of demanding more discipline"
             ],
-            a: 0,
+            a: 2,
             explication: "One removes friction for the individual, the other for the group."
         },
         {
@@ -309,21 +309,21 @@ window.QUIZ = {
         {
             q: "Someone fails for the third time to keep a habit. Which hypothesis is likeliest?",
             options: [
-                "They lack discipline",
                 "The habit rests on motivation rather than on the environment",
+                "They lack discipline",
                 "They chose the wrong habit"
             ],
-            a: 1,
+            a: 0,
             explication: "Anchoring, minimal version, friction removed, restart rule: these are what is almost always missing."
         },
         {
             q: "Why does a new system work for a few weeks before drifting in its turn?",
             options: [
-                "Because you have just reset everything, not because it is better",
                 "Because novelty motivates durably",
+                "Because you have just reset everything, not because it is better",
                 "Because it is better suited at the start"
             ],
-            a: 0,
+            a: 1,
             explication: "It was not the method that was missing, it was the review."
         },
         {

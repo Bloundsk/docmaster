@@ -65,11 +65,11 @@ window.QUIZ = {
             {
                 q: "Quand faut-il traiter l'accessibilité ?",
                 options: [
-                    "Dès les maquettes",
                     "À la fin, lors de la recette",
-                    "Après la mise en ligne, si un utilisateur se plaint"
+                    "Après la mise en ligne, si un utilisateur se plaint",
+                    "Dès les maquettes"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Reprise à la fin, elle devient une refonte : contraste, charte, balisage. Prise en compte au départ, elle ne coûte presque rien."
             }
         ],
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Sur quoi la navigation doit-elle être construite ?",
                 options: [
                     "Sur l'organigramme de la structure",
-                    "Sur les tâches des utilisateurs",
-                    "Sur l'ordre chronologique des contenus"
+                    "Sur l'ordre chronologique des contenus",
+                    "Sur les tâches des utilisateurs"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un visiteur ne cherche pas « le service des adhésions » : il cherche « comment m'inscrire »."
             },
             {
@@ -101,10 +101,10 @@ window.QUIZ = {
                 q: "Comment juger un libellé de menu ?",
                 options: [
                     "À sa concision",
-                    "Quelqu'un qui découvre le site sait-il ce qu'il trouvera derrière ?",
-                    "À sa cohérence avec la charte éditoriale"
+                    "À sa cohérence avec la charte éditoriale",
+                    "Quelqu'un qui découvre le site sait-il ce qu'il trouvera derrière ?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le vocabulaire interne échoue presque toujours à ce test."
             },
             // Série 2
@@ -112,30 +112,30 @@ window.QUIZ = {
                 q: "Que reprocher à « Nos solutions » comme entrée de menu ?",
                 options: [
                     "C'est trop long",
-                    "Cela ne dit rien de ce qu'on trouvera",
-                    "C'est trop commercial"
+                    "C'est trop commercial",
+                    "Cela ne dit rien de ce qu'on trouvera"
                 ],
-                a: 1,
+                a: 2,
                 explication: "« Tarifs » dit tout, en un mot."
             },
             {
                 q: "Que produit la présence simultanée de « Espace client » et « Mon compte » ?",
                 options: [
-                    "Une meilleure couverture des besoins",
                     "Une hésitation à chaque visite : le visiteur doit deviner",
+                    "Une meilleure couverture des besoins",
                     "Rien, les deux se comprennent"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Deux entrées qui peuvent être confondues coûtent plus qu'elles ne rapportent."
             },
             {
                 q: "Au-delà de combien d'entrées de premier niveau faut-il regrouper ?",
                 options: [
                     "Trois",
-                    "Sept environ",
-                    "Quinze"
+                    "Quinze",
+                    "Sept environ"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Et le regroupement doit venir des utilisateurs, pas d'un arbitrage interne."
             }
         ],
@@ -147,10 +147,10 @@ window.QUIZ = {
                 q: "Pourquoi concevoir d'abord pour le petit écran ?",
                 options: [
                     "Parce que c'est plus rapide à dessiner",
-                    "Parce que la contrainte force à identifier ce qui compte vraiment",
-                    "Parce que les outils le recommandent"
+                    "Parce que les outils le recommandent",
+                    "Parce que la contrainte force à identifier ce qui compte vraiment"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Élargir ensuite est facile ; retrancher dans l'urgence produit des versions mobiles amputées."
             },
             {
@@ -187,11 +187,11 @@ window.QUIZ = {
             {
                 q: "Un lien de 24 pixels entouré d'autres liens serrés produit :",
                 options: [
-                    "Une interface compacte et efficace",
                     "Des erreurs de manipulation, que l'utilisateur s'attribuera",
+                    "Une interface compacte et efficace",
                     "Un problème uniquement sur les petits téléphones"
                 ],
-                a: 1,
+                a: 0,
                 explication: "L'utilisateur croira s'être trompé lui-même. C'est le concepteur qui a fauté."
             },
             {
@@ -223,20 +223,20 @@ window.QUIZ = {
                 q: "À quoi sert principalement un système de design ?",
                 options: [
                     "À faire plus joli",
-                    "À fermer des questions, pour ne plus les reprendre à chaque écran",
-                    "À accélérer le développement"
+                    "À accélérer le développement",
+                    "À fermer des questions, pour ne plus les reprendre à chaque écran"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Chaque fois qu'un designer se demande « quelle taille pour ce titre ? », le système doit avoir répondu avant."
             },
             {
                 q: "Pourquoi préférer une échelle d'espacements à des valeurs libres ?",
                 options: [
-                    "Les valeurs libres sont techniquement plus lourdes",
                     "La contrainte réduit les décisions et rend la cohérence automatique",
+                    "Les valeurs libres sont techniquement plus lourdes",
                     "L'échelle est imposée par les navigateurs"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Sans échelle, les espacements valent 12, 15, 18, 20, 24 selon l'écran et le jour. Rien n'est faux, l'ensemble paraît bâclé."
             },
             // Série 2
@@ -264,10 +264,10 @@ window.QUIZ = {
                 q: "Que devient un système de design sans propriétaire ?",
                 options: [
                     "Il se stabilise de lui-même",
-                    "Il devient faux en quelques mois, et les équipes cessent de le consulter",
-                    "Il continue de fonctionner si la documentation est bonne"
+                    "Il continue de fonctionner si la documentation est bonne",
+                    "Il devient faux en quelques mois, et les équipes cessent de le consulter"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un système de design est un produit à part entière. Sans quelqu'un pour l'arbitrer, il ne survit pas."
             }
         ]
@@ -281,52 +281,52 @@ window.QUIZ = {
         {
             q: "Quel problème commun ces quatre sujets adressent-ils ?",
             options: [
-                "Ce qui apparaît quand un projet grandit au-delà d'une maquette isolée",
                 "L'esthétique des interfaces",
+                "Ce qui apparaît quand un projet grandit au-delà d'une maquette isolée",
                 "La performance technique"
             ],
-            a: 0,
+            a: 1,
             explication: "Des utilisateurs qui ne te ressemblent pas, des dizaines d'écrans à faire tenir ensemble, des tailles d'écran très différentes."
         },
         {
             q: "Quel test révèle le plus de problèmes d'accessibilité en cinq minutes ?",
             options: [
-                "Vérifier les contrastes",
                 "Naviguer sur son propre site au clavier seul",
+                "Vérifier les contrastes",
                 "Lire le code source"
             ],
-            a: 1,
+            a: 0,
             explication: "Sans souris, les obstacles bloquants sautent aux yeux immédiatement."
         },
         {
             q: "Qu'ont en commun un menu construit sur l'organigramme et un système sans propriétaire ?",
             options: [
-                "Les deux sont parfaitement clairs de l'intérieur, et inutilisables de l'extérieur",
                 "Les deux coûtent cher à produire",
-                "Les deux sont interdits par la réglementation"
+                "Les deux sont interdits par la réglementation",
+                "Les deux sont parfaitement clairs de l'intérieur, et inutilisables de l'extérieur"
             ],
-            a: 0,
+            a: 2,
             explication: "Le point de vue interne est le piège commun de ce niveau."
         },
         // Série 2
         {
             q: "Un bouton mesure 32 pixels de côté. Que faut-il en penser ?",
             options: [
-                "C'est conforme",
                 "C'est en dessous de la recommandation de 44 pixels",
+                "C'est conforme",
                 "La taille n'a pas d'importance si le contraste est bon"
             ],
-            a: 1,
+            a: 0,
             explication: "Environ 8,5 mm à l'écran, contre 9 mm couverts par un doigt : les erreurs sont prévisibles."
         },
         {
             q: "Pourquoi l'accessibilité doit-elle être pensée au moment des maquettes ?",
             options: [
-                "Pour respecter les délais",
                 "Parce qu'après, il faut revoir la charte et le balisage : c'est une refonte",
+                "Pour respecter les délais",
                 "Parce que les outils l'imposent"
             ],
-            a: 1,
+            a: 0,
             explication: "Au départ, il s'agit surtout de choisir les bonnes couleurs et les bonnes tailles."
         },
         {

@@ -48,30 +48,30 @@ window.QUIZ = {
                 q: "Why is deleting incomplete rows risky?",
                 options: [
                     "It shrinks the file too much",
-                    "Missing values are rarely spread at random",
-                    "It distorts the mean"
+                    "It distorts the mean",
+                    "Missing values are rarely spread at random"
                 ],
-                a: 1,
+                a: 2,
                 explication: "An optional income field is filled in mostly by those the question does not bother."
             },
             {
                 q: "What are the three possible courses of action for a missing value?",
                 options: [
-                    "Delete the row, estimate the value, or treat the absence as information",
                     "Delete, ignore, or start the collection again",
+                    "Delete the row, estimate the value, or treat the absence as information",
                     "Put zero, put the mean, or put the median"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The choice changes the result and should be written down somewhere."
             },
             {
                 q: "Why document your cleaning decisions?",
                 options: [
                     "The GDPR requires it",
-                    "Without them the analysis becomes unverifiable, even by its author",
-                    "To speed up later processing"
+                    "To speed up later processing",
+                    "Without them the analysis becomes unverifiable, even by its author"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Three months later nobody remembers what was removed or why."
             }
         ],
@@ -82,62 +82,62 @@ window.QUIZ = {
             {
                 q: "What does an overall average do to a mixed population?",
                 options: [
-                    "It gives a good overview",
                     "It blends different behaviours and describes nobody",
+                    "It gives a good overview",
                     "It systematically overestimates"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The figure is not wrong, it is useless."
             },
             {
                 q: "An overall rate of 3% hiding 5.2% on desktop and 1.4% on mobile: what should you conclude?",
                 options: [
-                    "The overall rate is wrong",
                     "It masks a mobile problem, while mobile makes up two thirds of the traffic",
+                    "The overall rate is wrong",
                     "The overall rate should no longer be tracked"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Segmenting means looking for the places where two groups behave differently."
             },
             {
                 q: "What should always be shown next to a percentage?",
                 options: [
-                    "The sample size",
                     "The date it was calculated",
+                    "The sample size",
                     "The data source"
                 ],
-                a: 0,
+                a: 1,
                 explication: "“40%” out of five people is two people."
             },
             // Series 2
             {
                 q: "What is the limit of splitting into segments?",
                 options: [
-                    "The tools cannot keep up",
                     "Groups that are too small produce noise that gets taken for a signal",
+                    "The tools cannot keep up",
                     "It becomes unreadable beyond three segments"
                 ],
-                a: 1,
+                a: 0,
                 explication: "In a group of fifteen people, one special case moves the percentage by seven points."
             },
             {
                 q: "“Sales rose by 12% after the redesign.” What is missing?",
                 options: [
-                    "The amount in euros",
                     "A point of comparison: an equivalent period or a control group",
+                    "The amount in euros",
                     "The name of the person responsible"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Without a reference, a change cannot be told apart from ordinary fluctuation."
             },
             {
                 q: "What is the goal of segmentation?",
                 options: [
                     "Producing more detailed tables",
-                    "Finding where behaviour changes, because that is where the decisions hide",
-                    "Splitting the data evenly"
+                    "Splitting the data evenly",
+                    "Finding where behaviour changes, because that is where the decisions hide"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A split that reveals no difference brings nothing."
             }
         ],
@@ -148,21 +148,21 @@ window.QUIZ = {
             {
                 q: "How many explanations can a correlation have?",
                 options: [
-                    "Only one: A causes B",
                     "Four: A causes B, B causes A, a third variable causes both, or chance",
+                    "Only one: A causes B",
                     "Two: a direct link or chance"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The third is the most frequent, and the one considered least."
             },
             {
                 q: "What is a confounding variable?",
                 options: [
-                    "A badly measured variable",
                     "A third variable that causes both A and B",
+                    "A badly measured variable",
                     "A variable that varies for no reason"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Loyalty causes both the app install and the high basket."
             },
             {
@@ -179,11 +179,11 @@ window.QUIZ = {
             {
                 q: "Which method genuinely establishes causation?",
                 options: [
-                    "A correlation above 0.9",
                     "Experimentation, with random assignment",
+                    "A correlation above 0.9",
                     "A convincing business argument"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Everything else stays a hypothesis, however plausible."
             },
             {
@@ -215,10 +215,10 @@ window.QUIZ = {
                 q: "Which test tells you whether a metric deserves its place?",
                 options: [
                     "Is it easy to calculate?",
-                    "If this number doubled tomorrow, what would I do differently?",
-                    "Has management asked for it?"
+                    "Has management asked for it?",
+                    "If this number doubled tomorrow, what would I do differently?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "If the answer is “nothing”, the metric dilutes attention and creates the illusion of steering."
             },
             {
@@ -246,30 +246,30 @@ window.QUIZ = {
                 q: "What does an “average response time of 1.2s” hide?",
                 options: [
                     "Nothing, it is a good measure",
-                    "That 5% of users may be waiting eight seconds",
-                    "That the measurement is distorted"
+                    "That the measurement is distorted",
+                    "That 5% of users may be waiting eight seconds"
                 ],
-                a: 1,
+                a: 2,
                 explication: "And they are the ones who leave. On service quality, an extreme value says more than the mean."
             },
             {
                 q: "What happens if the definition of a metric changes along the way?",
                 options: [
                     "Nothing, as long as it is documented",
-                    "The series becomes unusable",
-                    "The history has to be recalculated"
+                    "The history has to be recalculated",
+                    "The series becomes unusable"
                 ],
-                a: 1,
+                a: 2,
                 explication: "A stable definition is one of the criteria for a good metric."
             },
             {
                 q: "Which tracking frequency should you choose for a metric?",
                 options: [
-                    "The highest possible",
                     "The one that matches how fast it moves",
+                    "The highest possible",
                     "Once a month, always"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Watching a figure daily when it moves quarterly produces nothing but noise."
             }
         ]
@@ -284,30 +284,30 @@ window.QUIZ = {
             q: "Where do most analyses go wrong?",
             options: [
                 "In the calculations",
-                "In the data processing and the reasoning",
-                "In the choice of tools"
+                "In the choice of tools",
+                "In the data processing and the reasoning"
             ],
-            a: 1,
+            a: 2,
             explication: "That is the thread of this level: what to do to data before believing it, and the errors that turn an accurate figure into a false conclusion."
         },
         {
             q: "What do a too-small segment and an extreme value have in common?",
             options: [
-                "A small number of observations weighs disproportionately on the result",
                 "Both come from a collection error",
-                "Both are fixed by deleting the data concerned"
+                "Both are fixed by deleting the data concerned",
+                "A small number of observations weighs disproportionately on the result"
             ],
-            a: 0,
+            a: 2,
             explication: "Hence the importance of showing sample sizes and preferring the median on skewed distributions."
         },
         {
             q: "An analysis concludes that the app increases basket size. What should you ask first?",
             options: [
-                "The sample size",
                 "Which third variable could cause both",
+                "The sample size",
                 "The name of the tool used"
             ],
-            a: 1,
+            a: 0,
             explication: "The confounding variable is the most frequent explanation, and the least considered."
         },
         // Series 2
@@ -315,30 +315,30 @@ window.QUIZ = {
             q: "Why does cleaning determine the validity of an analysis?",
             options: [
                 "Because it governs how fast the calculations run",
-                "Because the choices made change the result, and are rarely documented",
-                "Because the tools require it"
+                "Because the tools require it",
+                "Because the choices made change the result, and are rarely documented"
             ],
-            a: 1,
+            a: 2,
             explication: "Deleting, estimating or keeping a missing value leads to three different results."
         },
         {
             q: "What separates a useful dashboard from a decorative one?",
             options: [
-                "The number of charts",
                 "The number of decisions it has triggered",
+                "The number of charts",
                 "How often it is updated"
             ],
-            a: 1,
+            a: 0,
             explication: "Every metric has to pass the “if this number doubled, what would I do?” test."
         },
         {
             q: "What should accompany any percentage you present?",
             options: [
-                "The sample size and a point of comparison",
                 "The formula used",
+                "The sample size and a point of comparison",
                 "The name of the analyst"
             ],
-            a: 0,
+            a: 1,
             explication: "Without a sample size the percentage is an impression; without a comparison it says nothing."
         }
     ]

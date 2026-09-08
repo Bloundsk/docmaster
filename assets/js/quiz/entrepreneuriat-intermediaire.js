@@ -35,10 +35,10 @@ window.QUIZ = {
                 q: "Quel signal indique un besoin réel ?",
                 options: [
                     "La personne trouve l'idée intéressante",
-                    "La personne a déjà bricolé une solution de son côté",
-                    "La personne connaît des gens que ça intéresserait"
+                    "La personne connaît des gens que ça intéresserait",
+                    "La personne a déjà bricolé une solution de son côté"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le problème est assez douloureux pour qu'elle y ait consacré du temps."
             },
             // Série 2
@@ -46,20 +46,20 @@ window.QUIZ = {
                 q: "Qu'est-ce qu'un produit minimum viable ?",
                 options: [
                     "Une version bâclée du produit final",
-                    "Le moyen le plus économique de répondre à une question",
-                    "La première version vendable"
+                    "La première version vendable",
+                    "Le moyen le plus économique de répondre à une question"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Souvent ce n'est même pas un produit : une page de présentation, un service rendu à la main, un tableur."
             },
             {
                 q: "Pourquoi ne pas valider auprès de ses proches ?",
                 options: [
-                    "Ils ne sont pas la cible",
                     "Ils veulent t'encourager : leur retour est affectueux et sans valeur",
+                    "Ils ne sont pas la cible",
                     "Ils manquent de compétence"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La validation suppose des inconnus qui n'ont aucune raison d'être aimables."
             },
             {
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Quelle approche permet de se faire payer correctement ?",
                 options: [
                     "Fixer le prix par les coûts, en ajoutant une marge",
-                    "Fixer le prix par la valeur pour le client",
-                    "S'aligner sur la concurrence"
+                    "S'aligner sur la concurrence",
+                    "Fixer le prix par la valeur pour le client"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Si ton service fait gagner deux heures par semaine, la référence est la valeur de ces deux heures, pas ton coût de revient."
             },
             {
@@ -100,42 +100,42 @@ window.QUIZ = {
             {
                 q: "Pourquoi baisser son prix au démarrage est-il risqué ?",
                 options: [
-                    "Cela attire trop de clients d'un coup",
                     "Il faut vendre bien plus, on attire les clients les plus sensibles au prix, et remonter est difficile",
+                    "Cela attire trop de clients d'un coup",
                     "Cela n'a aucun inconvénient"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Il est presque toujours plus facile de baisser un prix que de l'augmenter."
             },
             // Série 2
             {
                 q: "Que faut-il inclure dans les charges fixes dès le départ ?",
                 options: [
-                    "Une provision pour imprévus",
                     "La rémunération du fondateur",
+                    "Une provision pour imprévus",
                     "Le coût des futurs recrutements"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Sans elle, l'activité paraît rentable alors qu'elle repose sur un travail gratuit qui ne durera pas."
             },
             {
                 q: "Quand faut-il travailler son modèle économique ?",
                 options: [
-                    "Avant d'avoir des clients",
                     "Une fois les premiers clients acquis",
+                    "Avant d'avoir des clients",
                     "Au moment de lever des fonds"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Beaucoup de projets attendent d'avoir des clients pour s'y intéresser. C'est l'ordre inverse qui fonctionne."
             },
             {
                 q: "Une vente sans marge, c'est :",
                 options: [
-                    "Un client gagné qu'on rentabilisera plus tard",
                     "Une perte qui grandit avec le volume",
+                    "Un client gagné qu'on rentabilisera plus tard",
                     "Un investissement commercial"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le volume n'a jamais corrigé une marge négative."
             }
         ],
@@ -147,10 +147,10 @@ window.QUIZ = {
                 q: "D'où viennent les dix premiers clients ?",
                 options: [
                     "De campagnes publicitaires bien ciblées",
-                    "D'actions qui ne passent pas à l'échelle : contacts un par un, déplacements, service rendu à la main",
-                    "Du bouche-à-oreille naturel"
+                    "Du bouche-à-oreille naturel",
+                    "D'actions qui ne passent pas à l'échelle : contacts un par un, déplacements, service rendu à la main"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est inefficace, et c'est exactement ce qu'il faut faire : ces échanges apprennent le vocabulaire et les objections réelles."
             },
             {
@@ -166,11 +166,11 @@ window.QUIZ = {
             {
                 q: "Combien de canaux d'acquisition ouvrir au démarrage ?",
                 options: [
-                    "Un seul, poussé jusqu'à savoir s'il fonctionne",
                     "Le plus possible, pour multiplier les chances",
-                    "Trois, pour comparer"
+                    "Trois, pour comparer",
+                    "Un seul, poussé jusqu'à savoir s'il fonctionne"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Cinq canaux à la fois garantissent de n'en maîtriser aucun et de ne rien pouvoir mesurer."
             },
             // Série 2
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "Quel est le bon canal d'acquisition ?",
                 options: [
                     "Celui qui est à la mode",
-                    "Celui où tes clients sont déjà, en train de chercher une solution",
-                    "Le moins cher"
+                    "Le moins cher",
+                    "Celui où tes clients sont déjà, en train de chercher une solution"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La mode change ; la présence de tes clients quelque part est un fait."
             },
             {
@@ -213,10 +213,10 @@ window.QUIZ = {
                 q: "Une entreprise rentable peut-elle disparaître ?",
                 options: [
                     "Non, la rentabilité garantit la survie",
-                    "Oui, faute de trésorerie : le résultat et le solde bancaire mesurent deux choses différentes",
-                    "Seulement en cas de fraude"
+                    "Seulement en cas de fraude",
+                    "Oui, faute de trésorerie : le résultat et le solde bancaire mesurent deux choses différentes"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Tu factures en janvier, tu es payé en mars, mais les salaires sont dus entre-temps."
             },
             {
@@ -253,11 +253,11 @@ window.QUIZ = {
             {
                 q: "Une facture impayée doit être relancée :",
                 options: [
-                    "À 60 jours, quand le retard est établi",
                     "Sans attendre, à quelques jours",
+                    "À 60 jours, quand le retard est établi",
                     "Uniquement par lettre recommandée"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Relancée tôt, elle se règle souvent d'elle-même. À 60 jours, elle devient très difficile à recouvrer."
             },
             {
@@ -323,20 +323,20 @@ window.QUIZ = {
             q: "Quel indicateur regarder chaque semaine au démarrage ?",
             options: [
                 "Le nombre de visiteurs",
-                "Le solde disponible et le nombre de mois d'autonomie",
-                "Le chiffre d'affaires cumulé"
+                "Le chiffre d'affaires cumulé",
+                "Le solde disponible et le nombre de mois d'autonomie"
             ],
-            a: 1,
+            a: 2,
             explication: "Il indique combien de temps il reste pour atteindre l'équilibre, donc quand il faudra décider autre chose."
         },
         {
             q: "Qu'est-ce qui distingue une audience d'une clientèle ?",
             options: [
                 "La taille",
-                "Le fait de payer",
-                "La fidélité"
+                "La fidélité",
+                "Le fait de payer"
             ],
-            a: 1,
+            a: 2,
             explication: "Des centaines d'abonnés et zéro vente est un cas très courant."
         }
     ]

@@ -47,10 +47,10 @@ window.QUIZ = {
                 q: "Is turning off notifications enough to protect concentration?",
                 options: [
                     "Yes, it is the decisive measure",
-                    "No, if you check for yourself every ten minutes",
-                    "Yes, provided you turn them off all day"
+                    "Yes, provided you turn them off all day",
+                    "No, if you check for yourself every ten minutes"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Self-interruption produces exactly the same restart cost."
             },
             {
@@ -66,11 +66,11 @@ window.QUIZ = {
             {
                 q: "Why announce a window of unavailability?",
                 options: [
-                    "So that others do not have to interrupt",
                     "To assert your status",
+                    "So that others do not have to interrupt",
                     "To avoid having to reply afterwards"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The interruption becomes unnecessary rather than merely refused."
             }
         ],
@@ -81,21 +81,21 @@ window.QUIZ = {
             {
                 q: "What does a calendar say better than a task list?",
                 options: [
-                    "The list says what to do, but not when",
                     "The list says when, but not what",
-                    "The list says how long it will take"
+                    "The list says how long it will take",
+                    "The list says what to do, but not when"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A list of twenty items facing an empty calendar mostly produces guilt."
             },
             {
                 q: "On an 8-hour day with 2 h 30 of meetings, 1 h 15 of messages and 1 h of unplanned events, what is left?",
                 options: [
                     "5 hours",
-                    "3 h 15",
-                    "6 hours"
+                    "6 hours",
+                    "3 h 15"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Planning six hours of output for that day fails by arithmetic, not for lack of discipline."
             },
             {
@@ -112,11 +112,11 @@ window.QUIZ = {
             {
                 q: "Why does a slot hold better than an intention?",
                 options: [
-                    "Because a slot can be defended, an intention cannot",
                     "Because it is longer",
-                    "Because colleagues can see it"
+                    "Because colleagues can see it",
+                    "Because a slot can be defended, an intention cannot"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The difference is as much psychological as practical."
             },
             {
@@ -157,11 +157,11 @@ window.QUIZ = {
             {
                 q: "How do you settle the fear of missing an emergency when batching?",
                 options: [
-                    "By checking every hour anyway",
                     "By agreeing on a channel reserved for real emergencies",
+                    "By checking every hour anyway",
                     "By warning each sender individually"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The phone, usually. That is enough to defuse the fear."
             },
             {
@@ -178,31 +178,31 @@ window.QUIZ = {
             {
                 q: "What makes an inbox overflow?",
                 options: [
-                    "The volume of messages received",
                     "Reading messages without doing anything with them, then rereading them",
+                    "The volume of messages received",
                     "The absence of folders"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It is not the number of messages that costs, it is how often you look at them."
             },
             {
                 q: "Why not start the day with your messages?",
                 options: [
-                    "Because it gives your best window to other people's priorities",
                     "Because morning messages are less important",
-                    "Because it is better to wait for yesterday's replies"
+                    "Because it is better to wait for yesterday's replies",
+                    "Because it gives your best window to other people's priorities"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The first hour is generally when attention is most available."
             },
             {
                 q: "How many dedicated passes at messages are enough in most jobs?",
                 options: [
-                    "One, at the end of the day",
                     "Two",
+                    "One, at the end of the day",
                     "One every hour"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Two slots a day cover the great majority of situations."
             }
         ],
@@ -214,10 +214,10 @@ window.QUIZ = {
                 q: "What does prioritising really consist of?",
                 options: [
                     "Ordering tasks by importance",
-                    "Giving some up",
-                    "Spreading them over several weeks"
+                    "Spreading them over several weeks",
+                    "Giving some up"
                 ],
-                a: 1,
+                a: 2,
                 explication: "As long as no task is dropped, there has been no prioritising, only sorting."
             },
             {
@@ -244,11 +244,11 @@ window.QUIZ = {
             {
                 q: "What does “I can do it, but it pushes project X back a week” achieve?",
                 options: [
-                    "It makes the cost visible and returns the decision to whoever is asking",
                     "It avoids having to answer",
-                    "It turns a refusal into a promise"
+                    "It turns a refusal into a promise",
+                    "It makes the cost visible and returns the decision to whoever is asking"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The explicit trade-off: neither a flat refusal, nor a yes that hides the cost."
             },
             {
@@ -279,21 +279,21 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "Filling the calendar more efficiently",
                 "Protecting attention rather than multiplying tasks",
+                "Filling the calendar more efficiently",
                 "Adopting the right management tool"
             ],
-            a: 1,
+            a: 0,
             explication: "Attention is the scarce resource; time only appears to be."
         },
         {
             q: "What do handling messages as they come and supposedly parallel work have in common?",
             options: [
-                "Both pay a repeated switching cost",
                 "Both save time",
-                "Both require a good tool"
+                "Both require a good tool",
+                "Both pay a repeated switching cost"
             ],
-            a: 0,
+            a: 2,
             explication: "It is the same mechanism, applied to messages in one case and tasks in the other."
         },
         {
@@ -309,11 +309,11 @@ window.QUIZ = {
         {
             q: "Which measure in this level costs least and pays most?",
             options: [
-                "Changing task management tool",
                 "An hour of deep work before opening your mail",
+                "Changing task management tool",
                 "Adding two hours to the day"
             ],
-            a: 1,
+            a: 0,
             explication: "Nothing important is lost in sixty minutes, and the whole day is changed by it."
         },
         {

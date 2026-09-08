@@ -16,52 +16,52 @@ window.QUIZ = {
             {
                 q: "What is the worst effect of a heavy digital service?",
                 options: [
-                    "Making a device that was working obsolete",
                     "Its bandwidth consumption",
-                    "Its loading time"
+                    "Its loading time",
+                    "Making a device that was working obsolete"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Since manufacturing dominates, a replacement you caused costs more than years of transfer."
             },
             {
                 q: "What is the right design question?",
                 options: [
-                    "At what device age does my page become unusable?",
                     "How many kilobytes does my page weigh?",
+                    "At what device age does my page become unusable?",
                     "What is my score on a measurement tool?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The two are linked, but the first is the one that counts."
             },
             {
                 q: "A 3 MB site, 10,000 visits a month: what does halving the weight give?",
                 options: [
-                    "About 0.6 kg CO₂e a year instead of 1.3 — less than a tenth of a phone",
                     "A saving of several hundred kilos",
+                    "About 0.6 kg CO₂e a year instead of 1.3 — less than a tenth of a phone",
                     "No difference"
                 ],
-                a: 0,
+                a: 1,
                 explication: "That does not make lightening pointless: its justification lies elsewhere."
             },
             // Series 2
             {
                 q: "Why is infinite scroll a problem?",
                 options: [
-                    "It is a mechanism designed to stretch time spent",
                     "It uses too much memory",
-                    "It blocks search ranking"
+                    "It blocks search ranking",
+                    "It is a mechanism designed to stretch time spent"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Increasing usage without giving the user anything is the opposite of frugality."
             },
             {
                 q: "Which criteria do a service's frugality criteria almost entirely overlap with?",
                 options: [
-                    "Those of accessibility and performance",
                     "Those of search ranking",
+                    "Those of accessibility and performance",
                     "Those of security"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Good news: they can be argued in a meeting without invoking the environment."
             },
             {
@@ -82,62 +82,62 @@ window.QUIZ = {
             {
                 q: "100 machines at 200 kg CO₂e, cycle extended from 3 to 5 years:",
                 options: [
-                    "2,667 kg CO₂e saved every year",
                     "A one-off saving of 2,667 kg",
+                    "2,667 kg CO₂e saved every year",
                     "No effect, the hardware is already bought"
                 ],
-                a: 0,
+                a: 1,
                 explication: "One decision, once, and an effect renewed every year."
             },
             {
                 q: "What most often triggers a machine's replacement?",
                 options: [
-                    "Software becoming demanding, not a breakdown",
                     "Keyboard wear",
-                    "The warranty ending"
+                    "The warranty ending",
+                    "Software becoming demanding, not a breakdown"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Hence the importance of choosing software that does not force replacement."
             },
             {
                 q: "Does depreciation over three years oblige you to replace after three years?",
                 options: [
-                    "No: it is an accounting rule, not an obligation to replace",
                     "Yes, it is a tax obligation",
+                    "No: it is an accounting rule, not an obligation to replace",
                     "Yes, barring an exemption"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Taking the fleet out of the automatic accounting cycle is one of the simplest levers."
             },
             // Series 2
             {
                 q: "What is an email-sorting campaign worth against extending the fleet's life?",
                 options: [
-                    "It is visible, cheap and has no measurable effect",
                     "It is equivalent",
-                    "It is more effective because it is collective"
+                    "It is more effective because it is collective",
+                    "It is visible, cheap and has no measurable effect"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Doing the first without the second is communication, not environmental action."
             },
             {
                 q: "What should you do with a machine handed back by a demanding user?",
                 options: [
-                    "Refurbish it internally for another role",
                     "Always sell it on",
-                    "Scrap it"
+                    "Scrap it",
+                    "Refurbish it internally for another role"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It serves a less demanding role perfectly well."
             },
             {
                 q: "Why is the replacement cycle such an effective lever?",
                 options: [
-                    "It is a single decision, taken by a few people, that applies to the whole fleet",
                     "Because it cuts electricity consumption",
+                    "It is a single decision, taken by a few people, that applies to the whole fleet",
                     "Because it is compulsory"
                 ],
-                a: 0,
+                a: 1,
                 explication: "No awareness campaign has that effort-to-result ratio."
             }
         ],
@@ -168,32 +168,32 @@ window.QUIZ = {
             {
                 q: "What is lost when an end-of-life device enters no scheme?",
                 options: [
-                    "Twice over: the pollution of the waste, and the extraction to be done again",
                     "Only the benefit of recycling",
+                    "Twice over: the pollution of the waste, and the extraction to be done again",
                     "Nothing significant"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Those devices contain metals whose extraction is the heaviest item."
             },
             // Series 2
             {
                 q: "Must a retailer take back the old device when selling one?",
                 options: [
-                    "Yes, when selling an equivalent — but it rarely mentions it",
                     "No, it is an optional commercial service",
+                    "Yes, when selling an equivalent — but it rarely mentions it",
                     "Yes, for a fee"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is a little-known and little-applied obligation."
             },
             {
                 q: "Where does recycling sit in the hierarchy?",
                 options: [
-                    "Last, after reduce, reuse and repair",
                     "First",
-                    "On the same level as repair"
+                    "On the same level as repair",
+                    "Last, after reduce, reuse and repair"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It recovers some of the materials, never all, and consumes energy itself."
             },
             {
@@ -224,11 +224,11 @@ window.QUIZ = {
             {
                 q: "What is the only question that counts when a gain is announced?",
                 options: [
-                    "Has the total gone down?",
                     "By what percentage?",
+                    "Has the total gone down?",
                     "Over what period?"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It is rarely asked, because the answer is often no."
             },
             {
@@ -255,11 +255,11 @@ window.QUIZ = {
             {
                 q: "What should an environmental dashboard measure?",
                 options: [
-                    "Totals, not ratios",
                     "Intensities per user",
+                    "Totals, not ratios",
                     "Percentage improvements"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A dashboard of intensities will improve indefinitely while the absolute rises."
             },
             {
@@ -280,21 +280,21 @@ window.QUIZ = {
         {
             q: "Who is this level for, unlike the first two?",
             options: [
-                "Those who decide: designing a service, managing a fleet, weighing choices",
                 "Climate specialists",
-                "Developers only"
+                "Developers only",
+                "Those who decide: designing a service, managing a fleet, weighing choices"
             ],
-            a: 0,
+            a: 2,
             explication: "That is where the levers change scale, and where faulty reasoning costs the most."
         },
         {
             q: "What do frugal design and extending a fleet's life have in common?",
             options: [
-                "Both act on the dominant item: the manufacturing of devices",
                 "Both cut electricity consumption",
-                "Both are legal obligations"
+                "Both are legal obligations",
+                "Both act on the dominant item: the manufacturing of devices"
             ],
-            a: 0,
+            a: 2,
             explication: "One by pushing a replacement back, the other by deciding it."
         },
         {
@@ -310,21 +310,21 @@ window.QUIZ = {
         {
             q: "Why are a service's frugality criteria easy to argue for?",
             options: [
-                "They overlap with accessibility and performance, which have their own arguments",
                 "They are required by law",
-                "They cut hosting costs"
+                "They cut hosting costs",
+                "They overlap with accessibility and performance, which have their own arguments"
             ],
-            a: 0,
+            a: 2,
             explication: "You can obtain them without ever invoking the environment."
         },
         {
             q: "If you keep only one thing from this level, what should it be?",
             options: [
-                "Look for the total rather than the percentage",
                 "Lighten your pages",
-                "Choose a decarbonised host"
+                "Choose a decarbonised host",
+                "Look for the total rather than the percentage"
             ],
-            a: 0,
+            a: 2,
             explication: "If it is not given, that generally means it is not moving the right way."
         },
         {

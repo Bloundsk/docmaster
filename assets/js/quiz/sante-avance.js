@@ -17,11 +17,11 @@ window.QUIZ = {
             {
                 q: "Le médecin du travail est-il tenu au secret médical ?",
                 options: [
-                    "Oui, comme tout médecin",
                     "Non, il rend compte à l'employeur",
-                    "Seulement si le salarié le demande"
+                    "Seulement si le salarié le demande",
+                    "Oui, comme tout médecin"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'employeur n'a accès qu'aux conclusions sur l'aptitude, jamais au contenu."
             },
             {
@@ -37,22 +37,22 @@ window.QUIZ = {
             {
                 q: "Quelle est la portée d'une proposition d'aménagement de poste ?",
                 options: [
-                    "Elle s'impose à l'employeur, sauf impossibilité justifiée",
                     "C'est un simple avis consultatif",
-                    "Elle ne vaut qu'après un arrêt de travail"
+                    "Elle ne vaut qu'après un arrêt de travail",
+                    "Elle s'impose à l'employeur, sauf impossibilité justifiée"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Il peut aussi demander une étude du poste et des conditions de travail."
             },
             // Série 2
             {
                 q: "Quel est le rôle du médecin du travail ?",
                 options: [
-                    "Exclusivement préventif : éviter que le travail n'altère la santé",
                     "Soigner les salariés",
+                    "Exclusivement préventif : éviter que le travail n'altère la santé",
                     "Contrôler les arrêts maladie"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Il ne soigne pas. C'est une confusion fréquente."
             },
             {
@@ -83,52 +83,52 @@ window.QUIZ = {
             {
                 q: "Sur quoi porte l'obligation de sécurité de l'employeur ?",
                 options: [
-                    "Sur la prévention, pas seulement sur la réparation",
                     "Sur l'indemnisation des accidents",
+                    "Sur la prévention, pas seulement sur la réparation",
                     "Sur la fourniture d'équipements"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Évaluer les risques, les éviter à la source, adapter le travail à l'homme."
             },
             {
                 q: "La santé mentale est-elle couverte par cette obligation ?",
                 options: [
-                    "Oui, la mention est explicite dans le code du travail",
                     "Non, seulement la santé physique",
-                    "Seulement dans les grandes entreprises"
+                    "Seulement dans les grandes entreprises",
+                    "Oui, la mention est explicite dans le code du travail"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le document unique doit d'ailleurs inclure les risques psychosociaux."
             },
             {
                 q: "À partir de combien de salariés le document unique est-il obligatoire ?",
                 options: [
-                    "Dès le premier salarié",
                     "À partir de onze",
-                    "À partir de cinquante"
+                    "À partir de cinquante",
+                    "Dès le premier salarié"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Il est accessible aux salariés, et le demander est légitime."
             },
             // Série 2
             {
                 q: "Quelles sont les deux conditions du droit de retrait ?",
                 options: [
-                    "Un danger grave et imminent, et un retrait qui ne met pas autrui en danger",
                     "Un accord du CSE et un écrit préalable",
+                    "Un danger grave et imminent, et un retrait qui ne met pas autrui en danger",
                     "Une autorisation de l'inspection du travail"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Aucune sanction ni retenue de salaire n'est possible pour ce seul motif."
             },
             {
                 q: "Que faire en l'absence de CSE dans l'entreprise ?",
                 options: [
-                    "Le service de santé au travail et l'inspection du travail restent joignables directement",
                     "Rien n'est possible sans représentants",
-                    "Il faut d'abord en faire élire un"
+                    "Il faut d'abord en faire élire un",
+                    "Le service de santé au travail et l'inspection du travail restent joignables directement"
                 ],
-                a: 0,
+                a: 2,
                 explication: "L'obligation de sécurité existe quelle que soit la taille de l'entreprise."
             },
             {
@@ -159,32 +159,32 @@ window.QUIZ = {
             {
                 q: "L'épuisement professionnel figure-t-il comme maladie autonome dans les classifications internationales ?",
                 options: [
-                    "Non : il y est décrit comme un phénomène lié au travail",
                     "Oui, depuis 2019",
+                    "Non : il y est décrit comme un phénomène lié au travail",
                     "Oui, comme trouble anxieux"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ce qui n'enlève rien à sa réalité ni à sa gravité."
             },
             {
                 q: "Pourquoi aucun test en ligne ne convient-il ?",
                 options: [
-                    "Un score sans cadre peut rassurer à tort ou inquiéter durablement",
                     "Parce que les questionnaires n'existent pas",
+                    "Un score sans cadre peut rassurer à tort ou inquiéter durablement",
                     "Parce que c'est interdit"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Des questionnaires validés existent, mais dans un cadre, avec un entretien et une interprétation."
             },
             // Série 2
             {
                 q: "Qu'est-ce qui distingue l'épuisement d'une période difficile ?",
                 options: [
-                    "La durée, l'absence de récupération, et l'installation",
                     "L'intensité de la charge",
-                    "Le secteur d'activité"
+                    "Le secteur d'activité",
+                    "La durée, l'absence de récupération, et l'installation"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ce n'est plus une réaction à un événement, c'est devenu l'état de base."
             },
             {
@@ -200,11 +200,11 @@ window.QUIZ = {
             {
                 q: "Traiter la question comme un défaut de résistance personnelle, quel est le problème ?",
                 options: [
-                    "Cela laisse la cause en place et fait porter à la personne ce qui relève de l'organisation",
                     "Cela n'a aucune conséquence",
+                    "Cela laisse la cause en place et fait porter à la personne ce qui relève de l'organisation",
                     "Cela retarde le diagnostic médical"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Surcharge durable, absence de marge, manque de reconnaissance, conflits de valeurs : ce sont des facteurs documentés."
             }
         ],
@@ -215,21 +215,21 @@ window.QUIZ = {
             {
                 q: "L'intention de nuire est-elle nécessaire pour qualifier un harcèlement moral ?",
                 options: [
-                    "Non : l'effet suffit",
                     "Oui, elle doit être démontrée",
+                    "Non : l'effet suffit",
                     "Oui, sauf entre collègues"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le lien hiérarchique n'est pas nécessaire non plus."
             },
             {
                 q: "Quelle est la première démarche à engager ?",
                 options: [
-                    "Écrire les faits, datés, au fur et à mesure",
                     "Saisir le conseil de prud'hommes",
-                    "En parler à ses collègues"
+                    "En parler à ses collègues",
+                    "Écrire les faits, datés, au fur et à mesure"
                 ],
-                a: 0,
+                a: 2,
                 explication: "C'est la première chose que demanderont tous les interlocuteurs, et la plus difficile à reconstituer après."
             },
             {
@@ -246,21 +246,21 @@ window.QUIZ = {
             {
                 q: "Comment la charge de la preuve est-elle organisée en matière de harcèlement ?",
                 options: [
-                    "Le salarié présente des éléments, l'employeur doit démontrer qu'ils s'expliquent autrement",
                     "Le salarié doit tout prouver",
+                    "Le salarié présente des éléments, l'employeur doit démontrer qu'ils s'expliquent autrement",
                     "L'employeur doit tout prouver seul"
                 ],
-                a: 0,
+                a: 1,
                 explication: "C'est une différence considérable avec le régime ordinaire."
             },
             {
                 q: "Un salarié qui relate des faits de harcèlement peut-il être sanctionné pour ce motif ?",
                 options: [
-                    "Non : un licenciement fondé là-dessus est nul",
                     "Oui, si les faits ne sont pas établis",
-                    "Oui, en cas de dénonciation publique"
+                    "Oui, en cas de dénonciation publique",
+                    "Non : un licenciement fondé là-dessus est nul"
                 ],
-                a: 0,
+                a: 2,
                 explication: "La protection couvre aussi les témoins."
             },
             {
@@ -281,21 +281,21 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Ce qui ne se règle pas seul : les acteurs, les obligations, les recours",
                 "Les techniques de gestion du stress",
+                "Ce qui ne se règle pas seul : les acteurs, les obligations, les recours",
                 "L'aménagement du poste de travail"
             ],
-            a: 0,
+            a: 1,
             explication: "C'est le niveau le plus utile à lire avant d'en avoir besoin."
         },
         {
             q: "Qu'ont en commun la visite à la demande et l'écrit daté des faits ?",
             options: [
-                "Les deux sont gratuits, à l'initiative du salarié, et très peu utilisés",
                 "Les deux demandent l'accord de l'employeur",
+                "Les deux sont gratuits, à l'initiative du salarié, et très peu utilisés",
                 "Les deux supposent un avocat"
             ],
-            a: 0,
+            a: 1,
             explication: "Et les deux rendent possibles toutes les suites."
         },
         {
@@ -321,21 +321,21 @@ window.QUIZ = {
         {
             q: "Quelle démarche préparer avant d'en avoir besoin ?",
             options: [
-                "Noter les coordonnées de son service de santé au travail",
                 "Rédiger une lettre type de démission",
-                "Constituer un dossier prud'homal"
+                "Constituer un dossier prud'homal",
+                "Noter les coordonnées de son service de santé au travail"
             ],
-            a: 0,
+            a: 2,
             explication: "Ce n'est pas au moment où l'on en a besoin qu'on a l'énergie de les chercher."
         },
         {
             q: "Que reste-t-il si l'on ne retient qu'une chose de ce niveau ?",
             options: [
-                "La visite au médecin du travail est un droit, confidentielle, sans passer par l'employeur",
                 "Il faut saisir l'inspection du travail au moindre problème",
-                "Le droit de retrait s'exerce librement"
+                "Le droit de retrait s'exerce librement",
+                "La visite au médecin du travail est un droit, confidentielle, sans passer par l'employeur"
             ],
-            a: 0,
+            a: 2,
             explication: "C'est le levier le plus puissant du domaine, et l'un des plus mal compris."
         }
     ]

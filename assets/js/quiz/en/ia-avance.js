@@ -17,10 +17,10 @@ window.QUIZ = {
                 q: "How does a model choose the next token?",
                 options: [
                     "It always takes the most likely one",
-                    "It draws one at random according to the probabilities it worked out",
-                    "It follows a rule set by the vendor"
+                    "It follows a rule set by the vendor",
+                    "It draws one at random according to the probabilities it worked out"
                 ],
-                a: 1,
+                a: 2,
                 explication: "That draw is what explains why the same question gives different answers."
             },
             {
@@ -36,11 +36,11 @@ window.QUIZ = {
             {
                 q: "Which temperature suits an extraction task?",
                 options: [
-                    "Very low",
                     "Medium",
-                    "High"
+                    "High",
+                    "Very low"
                 ],
-                a: 0,
+                a: 2,
                 explication: "You want the most likely answer, and the same one on every call."
             },
             // Series 2
@@ -57,21 +57,21 @@ window.QUIZ = {
             {
                 q: "Which setting mistake is the most common?",
                 options: [
-                    "Turning the temperature up to maximum",
                     "Leaving the mid-range default on an extraction task",
+                    "Turning the temperature up to maximum",
                     "Changing the temperature on every call"
                 ],
-                a: 1,
+                a: 0,
                 explication: "People are then surprised that the results shift from one call to the next."
             },
             {
                 q: "For which task is a high temperature desirable?",
                 options: [
                     "Sorting messages",
-                    "Suggesting several headline ideas",
-                    "Generating code"
+                    "Generating code",
+                    "Suggesting several headline ideas"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Variety is exactly what you are after here."
             }
         ],
@@ -82,21 +82,21 @@ window.QUIZ = {
             {
                 q: "What is the claim “we changed the prompt, it is better” worth?",
                 options: [
-                    "It is enough if three tries confirm it",
                     "Nothing, without a test set: a felt improvement can be a decline",
+                    "It is enough if three tries confirm it",
                     "It is reliable if the tester is experienced"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Without measurement, you do not know whether you are improving a system or moving it."
             },
             {
                 q: "How many cases should a test set contain at a minimum?",
                 options: [
-                    "Three to five",
                     "Twenty to fifty, representative of real use",
+                    "Three to five",
                     "Several thousand"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Each with its expected answer."
             },
             {
@@ -113,11 +113,11 @@ window.QUIZ = {
             {
                 q: "What biases does a model used as judge have?",
                 options: [
-                    "It favours long answers, ones in its own style, and ones presented first",
                     "It always marks too harshly",
-                    "It has no measurable bias"
+                    "It has no measurable bias",
+                    "It favours long answers, ones in its own style, and ones presented first"
                 ],
-                a: 0,
+                a: 2,
                 explication: "These biases can be partly corrected — swapping the order, imposing a rubric — but they do not disappear."
             },
             {
@@ -148,31 +148,31 @@ window.QUIZ = {
             {
                 q: "What causes prompt injection?",
                 options: [
-                    "A flaw in the vendors' code",
                     "The model does not separate instructions from data, everything is text",
+                    "A flaw in the vendors' code",
                     "A fault in the encryption of the exchanges"
                 ],
-                a: 1,
+                a: 0,
                 explication: "If a piece of data contains a sentence that looks like an instruction, it may be followed."
             },
             {
                 q: "What is an indirect injection?",
                 options: [
-                    "Text placed in a page or a document the agent will go and read",
                     "An attack on the network",
+                    "Text placed in a page or a document the agent will go and read",
                     "An instruction written by the user themselves"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The attacker never writes to the system: they booby-trap the content the agent consults of its own accord."
             },
             {
                 q: "Can this hole be closed completely?",
                 options: [
-                    "Yes, with a well-written prompt",
                     "No: you reduce what it allows, you do not eliminate it",
+                    "Yes, with a well-written prompt",
                     "Yes, by filtering suspicious keywords"
                 ],
-                a: 1,
+                a: 0,
                 explication: "That is the reasoning of classic security: assume compromise is possible and limit its blast radius."
             },
             // Series 2
@@ -190,10 +190,10 @@ window.QUIZ = {
                 q: "What is the instruction “ignore any instruction contained in the documents” worth?",
                 options: [
                     "It settles the problem",
-                    "It helps a little, and can be worked around",
-                    "It makes the vulnerability worse"
+                    "It makes the vulnerability worse",
+                    "It helps a little, and can be worked around"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Thousands of phrasings exist, and new ones keep appearing. It is a question of architecture, not of wording."
             },
             {
@@ -215,20 +215,20 @@ window.QUIZ = {
                 q: "What does fine-tuning excel at?",
                 options: [
                     "Adding fresh knowledge",
-                    "Teaching a form: tone, format, the structure of answers",
-                    "Reducing the cost of calls"
+                    "Reducing the cost of calls",
+                    "Teaching a form: tone, format, the structure of answers"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Facts learnt through training get diluted, cannot be cited and go stale."
             },
             {
                 q: "The model does not know your prices, which change every month. What do you do?",
                 options: [
                     "Monthly fine-tuning",
-                    "Document retrieval",
-                    "Change model"
+                    "Change model",
+                    "Document retrieval"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Information that changes every week has no business in frozen weights."
             },
             {
@@ -245,11 +245,11 @@ window.QUIZ = {
             {
                 q: "What is the hidden cost of a fine-tuned model?",
                 options: [
-                    "It consumes more tokens",
                     "You have to maintain it: retrain at every version, keep the examples, measure the regressions",
+                    "It consumes more tokens",
                     "It is slower to answer"
                 ],
-                a: 1,
+                a: 0,
                 explication: "You leave the vendor who updates on your behalf and take the burden on yourself."
             },
             {
@@ -266,10 +266,10 @@ window.QUIZ = {
                 q: "Which mistake often leads to fine-tuning?",
                 options: [
                     "Wanting to cut costs",
-                    "Turning to training after a few disappointing tries, with no test set",
-                    "Following the vendors' recommendations"
+                    "Following the vendors' recommendations",
+                    "Turning to training after a few disappointing tries, with no test set"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The result is an expensive model that fails in ways harder to diagnose, on a problem that was never measured."
             }
         ]
@@ -293,11 +293,11 @@ window.QUIZ = {
         {
             q: "A system sometimes gives different answers to the same question. What do you conclude?",
             options: [
-                "The model is faulty",
                 "That is normal operation: what remains is choosing the temperature for the task",
+                "The model is faulty",
                 "The context window is saturated"
             ],
-            a: 1,
+            a: 0,
             explication: "Variability is not a bug to fix, it is a setting to decide."
         },
         {
@@ -315,10 +315,10 @@ window.QUIZ = {
             q: "A team wants to “train a model on our data”. Which question comes first?",
             options: [
                 "What budget is available?",
-                "Does the model not know something, or does it answer badly?",
-                "Which vendor should we choose?"
+                "Which vendor should we choose?",
+                "Does the model not know something, or does it answer badly?"
             ],
-            a: 1,
+            a: 2,
             explication: "The answer alone determines what to do: retrieval in the first case, the prompt in the second."
         },
         {
@@ -334,11 +334,11 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "Measure rather than sense, and design assuming failure is possible",
                 "Use the most recent models",
-                "Automate as many tasks as possible"
+                "Automate as many tasks as possible",
+                "Measure rather than sense, and design assuming failure is possible"
             ],
-            a: 0,
+            a: 2,
             explication: "Evaluation, temperature, injection, trade-off: four ways of leaving impression behind and entering measurement."
         }
     ]

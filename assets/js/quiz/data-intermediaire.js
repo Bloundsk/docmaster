@@ -46,30 +46,30 @@ window.QUIZ = {
                 q: "Pourquoi supprimer les lignes incomplètes est-il risqué ?",
                 options: [
                     "Cela réduit trop la taille du fichier",
-                    "Les valeurs manquantes se répartissent rarement au hasard",
-                    "Cela fausse les calculs de moyenne"
+                    "Cela fausse les calculs de moyenne",
+                    "Les valeurs manquantes se répartissent rarement au hasard"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un champ facultatif sur les revenus est surtout rempli par ceux que la question ne gêne pas."
             },
             {
                 q: "Quelles sont les trois conduites possibles face à une valeur manquante ?",
                 options: [
-                    "Supprimer la ligne, estimer la valeur, ou traiter l'absence comme une information",
                     "Supprimer, ignorer, ou recommencer la collecte",
+                    "Supprimer la ligne, estimer la valeur, ou traiter l'absence comme une information",
                     "Mettre zéro, mettre la moyenne, ou mettre la médiane"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le choix change le résultat et doit être écrit quelque part."
             },
             {
                 q: "Pourquoi documenter ses décisions de nettoyage ?",
                 options: [
                     "C'est exigé par le RGPD",
-                    "Sans cela l'analyse devient invérifiable, même par son auteur",
-                    "Pour accélérer les traitements suivants"
+                    "Pour accélérer les traitements suivants",
+                    "Sans cela l'analyse devient invérifiable, même par son auteur"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Trois mois plus tard, personne ne se souvient de ce qui a été retiré ni pourquoi."
             }
         ],
@@ -80,62 +80,62 @@ window.QUIZ = {
             {
                 q: "Que fait une moyenne globale sur une population hétérogène ?",
                 options: [
-                    "Elle donne une bonne vue d'ensemble",
                     "Elle mélange des comportements différents et ne décrit personne",
+                    "Elle donne une bonne vue d'ensemble",
                     "Elle surestime systématiquement"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le chiffre n'est pas faux, il est inutile."
             },
                         {
                 q: "Un taux global de 3 % qui cache 5,2 % sur ordinateur et 1,4 % sur mobile : que faut-il en conclure ?",
                 options: [
-                    "Le taux global est erroné",
                     "Il masque un problème mobile, alors que le mobile fait les deux tiers du trafic",
+                    "Le taux global est erroné",
                     "Il faut abandonner le suivi du taux global"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Segmenter, c'est chercher les endroits où deux groupes se comportent différemment."
             },
             {
                 q: "Que faut-il toujours afficher à côté d'un pourcentage ?",
                 options: [
-                    "L'effectif",
                     "La date de calcul",
+                    "L'effectif",
                     "La source des données"
                 ],
-                a: 0,
+                a: 1,
                 explication: "« 40 % » sur cinq personnes, ce sont deux personnes."
             },
             // Série 2
             {
                 q: "Quelle est la limite du découpage en segments ?",
                 options: [
-                    "Les outils ne suivent pas",
                     "Des groupes trop petits produisent du bruit qu'on prend pour un signal",
+                    "Les outils ne suivent pas",
                     "Cela devient illisible au-delà de trois segments"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Dans un groupe de quinze personnes, un cas particulier déplace le pourcentage de sept points."
             },
             {
                 q: "« Les ventes ont augmenté de 12 % après la refonte. » Que manque-t-il ?",
                 options: [
-                    "Le montant en euros",
                     "Un point de comparaison : période équivalente ou groupe témoin",
+                    "Le montant en euros",
                     "Le nom du responsable"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Sans référence, une variation ne se distingue pas d'une fluctuation ordinaire."
             },
             {
                 q: "Quel est l'objectif d'une segmentation ?",
                 options: [
                     "Produire des tableaux plus détaillés",
-                    "Trouver où le comportement change, car c'est là que se cachent les décisions",
-                    "Répartir les données équitablement"
+                    "Répartir les données équitablement",
+                    "Trouver où le comportement change, car c'est là que se cachent les décisions"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un découpage qui ne révèle aucune différence n'apporte rien."
             }
         ],
@@ -146,21 +146,21 @@ window.QUIZ = {
             {
                 q: "Combien d'explications peut avoir une corrélation ?",
                 options: [
-                    "Une seule : A cause B",
                     "Quatre : A cause B, B cause A, une troisième variable cause les deux, ou le hasard",
+                    "Une seule : A cause B",
                     "Deux : le lien direct ou le hasard"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La troisième est la plus fréquente, et c'est celle qu'on envisage le moins."
             },
             {
                 q: "Qu'est-ce qu'une variable confondante ?",
                 options: [
-                    "Une variable mal mesurée",
                     "Une troisième variable qui cause à la fois A et B",
+                    "Une variable mal mesurée",
                     "Une variable qui varie sans raison"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La fidélité cause à la fois l'installation de l'application et le panier élevé."
             },
             {
@@ -177,11 +177,11 @@ window.QUIZ = {
             {
                 q: "Quelle méthode établit vraiment une causalité ?",
                 options: [
-                    "Une corrélation supérieure à 0,9",
                     "L'expérimentation, avec attribution aléatoire",
+                    "Une corrélation supérieure à 0,9",
                     "Un raisonnement métier convaincant"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Tout le reste reste une hypothèse, même très plausible."
             },
             {
@@ -213,10 +213,10 @@ window.QUIZ = {
                 q: "Quel test permet de savoir si un indicateur mérite sa place ?",
                 options: [
                     "Est-il facile à calculer ?",
-                    "Si ce nombre doublait demain, que ferais-je différemment ?",
-                    "Est-il demandé par la direction ?"
+                    "Est-il demandé par la direction ?",
+                    "Si ce nombre doublait demain, que ferais-je différemment ?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Si la réponse est « rien », l'indicateur dilue l'attention et donne l'illusion du pilotage."
             },
             {
@@ -244,30 +244,30 @@ window.QUIZ = {
                 q: "Que cache un « temps de réponse moyen de 1,2 s » ?",
                 options: [
                     "Rien, c'est une bonne mesure",
-                    "Que 5 % des utilisateurs attendent peut-être huit secondes",
-                    "Que la mesure est faussée"
+                    "Que la mesure est faussée",
+                    "Que 5 % des utilisateurs attendent peut-être huit secondes"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ce sont pourtant eux qui partent. Sur la qualité de service, une valeur extrême en dit plus que la moyenne."
             },
             {
                 q: "Que se passe-t-il si la définition d'un indicateur change en cours de route ?",
                 options: [
                     "Rien, tant que c'est documenté",
-                    "La série devient inexploitable",
-                    "Il faut recalculer l'historique"
+                    "Il faut recalculer l'historique",
+                    "La série devient inexploitable"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La stabilité de la définition fait partie des critères d'un bon indicateur."
             },
             {
                 q: "Quelle fréquence de suivi choisir pour un indicateur ?",
                 options: [
-                    "La plus élevée possible",
                     "Celle qui correspond à sa vitesse d'évolution",
+                    "La plus élevée possible",
                     "Une fois par mois, toujours"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Surveiller quotidiennement une donnée qui bouge par trimestre ne produit que du bruit."
             }
         ]
@@ -282,30 +282,30 @@ window.QUIZ = {
             q: "Où se perdent la plupart des analyses ?",
             options: [
                 "Dans les calculs",
-                "Dans le traitement des données et le raisonnement",
-                "Dans le choix des outils"
+                "Dans le choix des outils",
+                "Dans le traitement des données et le raisonnement"
             ],
-            a: 1,
+            a: 2,
             explication: "C'est le fil de ce niveau : ce qu'il faut faire aux données avant de les croire, et les erreurs qui transforment un chiffre juste en conclusion fausse."
         },
         {
             q: "Quel point commun entre le segment trop petit et la valeur extrême ?",
             options: [
-                "Un petit nombre d'observations pèse démesurément sur le résultat",
                 "Les deux viennent d'une erreur de collecte",
-                "Les deux se corrigent en supprimant les données concernées"
+                "Les deux se corrigent en supprimant les données concernées",
+                "Un petit nombre d'observations pèse démesurément sur le résultat"
             ],
-            a: 0,
+            a: 2,
             explication: "D'où l'importance d'afficher les effectifs et de préférer la médiane sur les distributions étirées."
         },
         {
             q: "Une analyse conclut que l'application augmente le panier. Que demander en priorité ?",
             options: [
-                "La taille de l'échantillon",
                 "Quelle troisième variable pourrait causer les deux",
+                "La taille de l'échantillon",
                 "Le nom de l'outil utilisé"
             ],
-            a: 1,
+            a: 0,
             explication: "La variable confondante est l'explication la plus fréquente, et la moins envisagée."
         },
         // Série 2
@@ -313,30 +313,30 @@ window.QUIZ = {
             q: "Pourquoi le nettoyage détermine-t-il la validité d'une analyse ?",
             options: [
                 "Parce qu'il conditionne la vitesse des calculs",
-                "Parce que les choix faits changent le résultat, et sont rarement documentés",
-                "Parce qu'il est exigé par les outils"
+                "Parce qu'il est exigé par les outils",
+                "Parce que les choix faits changent le résultat, et sont rarement documentés"
             ],
-            a: 1,
+            a: 2,
             explication: "Supprimer, estimer ou conserver une valeur manquante conduit à trois résultats différents."
         },
         {
             q: "Qu'est-ce qui distingue un tableau de bord utile d'un tableau de bord décoratif ?",
             options: [
-                "Le nombre de graphiques",
                 "Le nombre de décisions qu'il a déclenchées",
+                "Le nombre de graphiques",
                 "La fréquence de mise à jour"
             ],
-            a: 1,
+            a: 0,
             explication: "Chaque indicateur doit passer le test « si ce nombre doublait, que ferais-je ? »."
         },
         {
             q: "Que faut-il joindre à tout pourcentage présenté ?",
             options: [
-                "L'effectif et un point de comparaison",
                 "La formule de calcul",
+                "L'effectif et un point de comparaison",
                 "Le nom de l'analyste"
             ],
-            a: 0,
+            a: 1,
             explication: "Sans effectif, le pourcentage est une impression ; sans comparaison, il ne dit rien."
         }
     ]

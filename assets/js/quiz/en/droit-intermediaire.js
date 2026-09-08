@@ -19,11 +19,11 @@ window.QUIZ = {
             {
                 q: "What happens when there is no check-in inventory?",
                 options: [
-                    "The property is presumed to have been handed over in good condition",
                     "The tenancy agreement is void",
+                    "The property is presumed to have been handed over in good condition",
                     "The deposit is returned automatically"
                 ],
-                a: 0,
+                a: 1,
                 explication: "The burden turns against the tenant, who has nothing left to compare."
             },
             {
@@ -60,21 +60,21 @@ window.QUIZ = {
             {
                 q: "Can the landlord retain a sum with no supporting document?",
                 options: [
-                    "No: a quote, an invoice or a joint report is needed",
                     "Yes, if they announce it in a letter",
+                    "No: a quote, an invoice or a joint report is needed",
                     "Yes, up to the amount of the deposit"
                 ],
-                a: 0,
+                a: 1,
                 explication: "“Making good: €400” with nothing attached is not enough."
             },
             {
                 q: "What must the landlord take into account before charging for making good?",
                 options: [
-                    "Wear and tear",
                     "The price of a new one",
-                    "The length of the tenancy only"
+                    "The length of the tenancy only",
+                    "Wear and tear"
                 ],
-                a: 0,
+                a: 2,
                 explication: "A ten-year-old carpet cannot be charged at the price of a new one."
             }
         ],
@@ -96,20 +96,20 @@ window.QUIZ = {
                 q: "When does notice start running?",
                 options: [
                     "From posting the letter",
-                    "From the landlord's receipt of it",
-                    "From the date written in the letter"
+                    "From the date written in the letter",
+                    "From the landlord's receipt of it"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Two days in the post can shift the move-out, and therefore a whole month's rent."
             },
             {
                 q: "What happens if you claim a shortened notice without giving the reason in writing?",
                 options: [
-                    "The notice stays three months",
                     "The reason can be given orally afterwards",
-                    "The notice is void"
+                    "The notice is void",
+                    "The notice stays three months"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The missing sentence costs two months' rent, even if the condition was met."
             },
             // Series 2
@@ -126,21 +126,21 @@ window.QUIZ = {
             {
                 q: "Does rent stay due throughout the notice period?",
                 options: [
-                    "Yes, unless the property is re-let before then with the landlord's agreement",
                     "No, it stops as soon as notice is sent",
-                    "Yes, without exception"
+                    "Yes, without exception",
+                    "Yes, unless the property is re-let before then with the landlord's agreement"
                 ],
-                a: 0,
+                a: 2,
                 explication: "In that case it stops being due from the new tenancy."
             },
             {
                 q: "Why state your new address in the notice letter?",
                 options: [
-                    "The deposit must be returned there",
                     "It is a legal obligation",
-                    "For forwarding the post"
+                    "For forwarding the post",
+                    "The deposit must be returned there"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Without it, the return bogs down."
             }
         ],
@@ -171,11 +171,11 @@ window.QUIZ = {
             {
                 q: "Can a probation period be renewed tacitly?",
                 options: [
-                    "No: it needs a sector agreement, a clause in the contract and your written agreement",
                     "Yes, if the employer decides so",
+                    "No: it needs a sector agreement, a clause in the contract and your written agreement",
                     "Yes, once only"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Without those three conditions it ends at its initial length."
             },
             // Series 2
@@ -192,21 +192,21 @@ window.QUIZ = {
             {
                 q: "Where do you find the name of your sector agreement?",
                 options: [
-                    "On the payslip",
                     "On your health insurance card",
+                    "On the payslip",
                     "Nowhere, you have to ask for it"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It very often provides better than the labour code: notice, bonuses, grading."
             },
             {
                 q: "A non-compete clause with no financial consideration is:",
                 options: [
-                    "Void",
                     "Valid if limited in time",
+                    "Void",
                     "Valid since it was signed"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Many contracts still contain one."
             }
         ],
@@ -217,31 +217,31 @@ window.QUIZ = {
             {
                 q: "Is there an amount below which a regular activity need not be registered?",
                 options: [
-                    "No: even nil turnover has to be declared",
                     "Yes, an annual threshold",
-                    "Yes, if the activity is occasional"
+                    "Yes, if the activity is occasional",
+                    "No: even nil turnover has to be declared"
                 ],
-                a: 0,
+                a: 2,
                 explication: "What does exist are simpler regimes depending on the amount — hence the confusion."
             },
             {
                 q: "Under the micro-entrepreneur regime, how are actual costs treated?",
                 options: [
-                    "They are not deductible: the allowance is a flat rate",
                     "They are deducted against receipts",
+                    "They are not deductible: the allowance is a flat rate",
                     "They are deducted at half their value"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A high-expense activity is penalised by it, whatever its turnover."
             },
             {
                 q: "Which question decides between the flat-rate and the actual-accounts regime?",
                 options: [
-                    "What share of my receipts goes out in expenses?",
                     "How many customers do I have?",
-                    "How long have I been trading?"
+                    "How long have I been trading?",
+                    "What share of my receipts goes out in expenses?"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is the only one that counts when choosing."
             },
             // Series 2
@@ -268,11 +268,11 @@ window.QUIZ = {
             {
                 q: "Does a non-profit association escape the tax rules of a profit-making activity?",
                 options: [
-                    "No: if the activity is in reality profit-making, it is taxed as such",
                     "Yes, that is its main advantage",
-                    "Yes, below a certain amount"
+                    "Yes, below a certain amount",
+                    "No: if the activity is in reality profit-making, it is taxed as such"
                 ],
-                a: 0,
+                a: 2,
                 explication: "An association is for an activity with no distribution of profits, not an exemption."
             }
         ]
@@ -293,11 +293,11 @@ window.QUIZ = {
         {
             q: "What do the check-in inventory and the sector agreement have in common?",
             options: [
-                "Both already exist and are simply ignored",
                 "Both are optional",
+                "Both already exist and are simply ignored",
                 "Both are requested from the administration"
             ],
-            a: 0,
+            a: 1,
             explication: "The most useful rights are often the ones nobody thinks to look up."
         },
         {
@@ -323,21 +323,21 @@ window.QUIZ = {
         {
             q: "Which one-off check pays off most in this level?",
             options: [
-                "Reading your sector agreement's articles on notice and grading",
                 "Re-reading your tenancy agreement every year",
+                "Reading your sector agreement's articles on notice and grading",
                 "Changing legal form"
             ],
-            a: 0,
+            a: 1,
             explication: "Ten minutes that often reveal rights nobody mentioned."
         },
         {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
-                "Taking your time over the check-in inventory, and photographing it",
                 "Signing faster",
-                "Choosing the simplest regime by default"
+                "Choosing the simplest regime by default",
+                "Taking your time over the check-in inventory, and photographing it"
             ],
-            a: 0,
+            a: 2,
             explication: "Twenty minutes on arrival are worth several hundred euros on departure."
         }
     ]

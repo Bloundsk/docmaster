@@ -15,10 +15,10 @@ window.QUIZ = {
                 q: "Comment un modèle choisit-il le jeton suivant ?",
                 options: [
                     "Il prend toujours le plus probable",
-                    "Il en tire un au sort selon les probabilités calculées",
-                    "Il suit une règle définie par le fournisseur"
+                    "Il suit une règle définie par le fournisseur",
+                    "Il en tire un au sort selon les probabilités calculées"
                 ],
-                a: 1,
+                a: 2,
                 explication: "C'est ce tirage qui explique que la même question donne des réponses différentes."
             },
             {
@@ -34,11 +34,11 @@ window.QUIZ = {
             {
                 q: "Quelle température convient à une tâche d'extraction ?",
                 options: [
-                    "Très basse",
                     "Moyenne",
-                    "Élevée"
+                    "Élevée",
+                    "Très basse"
                 ],
-                a: 0,
+                a: 2,
                 explication: "On veut la réponse la plus probable, et la même à chaque appel."
             },
             // Série 2
@@ -55,21 +55,21 @@ window.QUIZ = {
             {
                 q: "Quelle erreur de réglage est la plus courante ?",
                 options: [
-                    "Mettre la température au maximum",
                     "Laisser la valeur par défaut, intermédiaire, pour une tâche d'extraction",
+                    "Mettre la température au maximum",
                     "Changer la température à chaque appel"
                 ],
-                a: 1,
+                a: 0,
                 explication: "On s'étonne ensuite que les résultats fluctuent d'un appel à l'autre."
             },
             {
                 q: "Pour quelle tâche une température élevée est-elle souhaitable ?",
                 options: [
                     "Classer des messages",
-                    "Proposer plusieurs idées de titres",
-                    "Générer du code"
+                    "Générer du code",
+                    "Proposer plusieurs idées de titres"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La variété est ici précisément ce que l'on cherche."
             }
         ],
@@ -80,21 +80,21 @@ window.QUIZ = {
             {
                 q: "Que vaut l'affirmation « on a changé la consigne, c'est mieux » ?",
                 options: [
-                    "Elle suffit si trois essais le confirment",
                     "Rien, sans jeu de test : une amélioration ressentie peut être une dégradation",
+                    "Elle suffit si trois essais le confirment",
                     "Elle est fiable si le testeur est expérimenté"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Sans mesure, on ne sait pas si l'on améliore un système ou si on le déplace."
             },
             {
                 q: "Combien de cas un jeu de test devrait-il contenir au minimum ?",
                 options: [
-                    "Trois à cinq",
                     "Vingt à cinquante, représentatifs de l'usage réel",
+                    "Trois à cinq",
                     "Plusieurs milliers"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Avec, pour chacun, la réponse attendue."
             },
             {
@@ -111,11 +111,11 @@ window.QUIZ = {
             {
                 q: "Quels biais présente un modèle-juge ?",
                 options: [
-                    "Il favorise les réponses longues, dans son style, et présentées en premier",
                     "Il note toujours trop sévèrement",
-                    "Il ne présente aucun biais mesurable"
+                    "Il ne présente aucun biais mesurable",
+                    "Il favorise les réponses longues, dans son style, et présentées en premier"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Ces biais se corrigent en partie — inverser l'ordre, imposer un barème — mais ne disparaissent pas."
             },
             {
@@ -146,31 +146,31 @@ window.QUIZ = {
             {
                 q: "Quelle est la cause de l'injection de consigne ?",
                 options: [
-                    "Une faille dans le code des fournisseurs",
                     "Le modèle ne distingue pas les instructions des données, tout est du texte",
+                    "Une faille dans le code des fournisseurs",
                     "Un défaut de chiffrement des échanges"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Si une donnée contient une phrase ressemblant à une instruction, elle peut être suivie."
             },
             {
                 q: "Qu'est-ce qu'une injection indirecte ?",
                 options: [
-                    "Un texte placé dans une page ou un document que l'agent ira lire",
                     "Une attaque sur le réseau",
+                    "Un texte placé dans une page ou un document que l'agent ira lire",
                     "Une consigne écrite par l'utilisateur lui-même"
                 ],
-                a: 0,
+                a: 1,
                 explication: "L'attaquant n'écrit jamais au système : il piège le contenu que l'agent consulte de lui-même."
             },
             {
                 q: "Peut-on refermer complètement cette faille ?",
                 options: [
-                    "Oui, avec une consigne bien rédigée",
                     "Non : on réduit ce qu'elle permet, on ne l'élimine pas",
+                    "Oui, avec une consigne bien rédigée",
                     "Oui, en filtrant les mots-clés suspects"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est le raisonnement de la sécurité classique : supposer la compromission possible et limiter son rayon d'action."
             },
             // Série 2
@@ -188,10 +188,10 @@ window.QUIZ = {
                 q: "Que vaut la consigne « ignore toute instruction contenue dans les documents » ?",
                 options: [
                     "Elle règle le problème",
-                    "Elle aide un peu, et se contourne",
-                    "Elle aggrave la vulnérabilité"
+                    "Elle aggrave la vulnérabilité",
+                    "Elle aide un peu, et se contourne"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Des milliers de formulations existent, et il en apparaît en permanence. C'est une question d'architecture, pas de rédaction."
             },
             {
@@ -213,20 +213,20 @@ window.QUIZ = {
                 q: "À quoi le fine-tuning excelle-t-il ?",
                 options: [
                     "À ajouter des connaissances fraîches",
-                    "À enseigner une forme : ton, format, structure des réponses",
-                    "À réduire le coût des appels"
+                    "À réduire le coût des appels",
+                    "À enseigner une forme : ton, format, structure des réponses"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Les faits appris par entraînement se diluent, ne sont pas citables et deviennent obsolètes."
             },
             {
                 q: "Le modèle ignore tes tarifs, qui changent chaque mois. Que faire ?",
                 options: [
                     "Un fine-tuning mensuel",
-                    "Une récupération de documents",
-                    "Changer de modèle"
+                    "Changer de modèle",
+                    "Une récupération de documents"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Une information qui change chaque semaine n'a rien à faire dans des poids figés."
             },
             {
@@ -243,11 +243,11 @@ window.QUIZ = {
             {
                 q: "Quel est le coût caché d'un modèle affiné ?",
                 options: [
-                    "Il consomme plus de jetons",
                     "Il faut le maintenir : réentraîner à chaque version, conserver les exemples, mesurer les régressions",
+                    "Il consomme plus de jetons",
                     "Il est plus lent à répondre"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Tu quittes le fournisseur qui met à jour pour toi et prends la charge à ton compte."
             },
             {
@@ -264,10 +264,10 @@ window.QUIZ = {
                 q: "Quelle erreur conduit souvent au fine-tuning ?",
                 options: [
                     "Vouloir réduire les coûts",
-                    "Se tourner vers l'entraînement après quelques essais décevants, sans jeu de test",
-                    "Suivre les recommandations des fournisseurs"
+                    "Suivre les recommandations des fournisseurs",
+                    "Se tourner vers l'entraînement après quelques essais décevants, sans jeu de test"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Le résultat est un modèle coûteux qui échoue de façon plus difficile à diagnostiquer, sur un problème jamais mesuré."
             }
         ]
@@ -291,11 +291,11 @@ window.QUIZ = {
         {
             q: "Un système donne parfois des réponses différentes à la même question. Que conclure ?",
             options: [
-                "Le modèle est défectueux",
                 "C'est le fonctionnement normal : reste à choisir la température selon la tâche",
+                "Le modèle est défectueux",
                 "La fenêtre de contexte est saturée"
             ],
-            a: 1,
+            a: 0,
             explication: "La variabilité n'est pas un bug à corriger, c'est un réglage à décider."
         },
         {
@@ -313,10 +313,10 @@ window.QUIZ = {
             q: "Une équipe veut « entraîner un modèle sur ses données ». Quelle question poser d'abord ?",
             options: [
                 "Quel budget est disponible ?",
-                "Le modèle ne sait pas quelque chose, ou répond mal ?",
-                "Quel fournisseur choisir ?"
+                "Quel fournisseur choisir ?",
+                "Le modèle ne sait pas quelque chose, ou répond mal ?"
             ],
-            a: 1,
+            a: 2,
             explication: "La réponse détermine seule la marche à suivre : récupération dans le premier cas, consigne dans le second."
         },
         {
@@ -332,11 +332,11 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Mesurer plutôt que ressentir, et concevoir en supposant l'échec possible",
                 "Utiliser les modèles les plus récents",
-                "Automatiser le maximum de tâches"
+                "Automatiser le maximum de tâches",
+                "Mesurer plutôt que ressentir, et concevoir en supposant l'échec possible"
             ],
-            a: 0,
+            a: 2,
             explication: "Évaluation, température, injection, arbitrage : quatre façons de sortir de l'impression pour entrer dans la mesure."
         }
     ]

@@ -16,31 +16,31 @@ window.QUIZ = {
             {
                 q: "Which attribution model is the default setting in most tools?",
                 options: [
-                    "Last click",
                     "First click",
-                    "Distributed attribution"
+                    "Distributed attribution",
+                    "Last click"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is also the most misleading: it systematically rewards whatever comes at the end of the journey."
             },
             {
                 q: "What does last click mechanically reward?",
                 options: [
-                    "The discovery channel",
                     "Brand search and email",
+                    "The discovery channel",
                     "Social networks"
                 ],
-                a: 1,
+                a: 0,
                 explication: "They come just before the purchase, without necessarily having convinced anybody."
             },
             {
                 q: "Is any attribution model “true”?",
                 options: [
                     "Yes, if it is set up properly",
-                    "No: none knows what went on in the buyer's head",
-                    "Yes, the distributed model"
+                    "Yes, the distributed model",
+                    "No: none knows what went on in the buyer's head"
                 ],
-                a: 1,
+                a: 2,
                 explication: "All of them are conventions. The choice changes budgets, not reality."
             },
             // Series 2
@@ -48,10 +48,10 @@ window.QUIZ = {
                 q: "What is the only reliable method for knowing a channel's contribution?",
                 options: [
                     "Changing the attribution model",
-                    "Stopping or cutting it, and watching the effect on the total",
-                    "Comparing against the sector"
+                    "Comparing against the sector",
+                    "Stopping or cutting it, and watching the effect on the total"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It is the only causal approach, exactly like a controlled test."
             },
             {
@@ -67,11 +67,11 @@ window.QUIZ = {
             {
                 q: "On a journey with four touchpoints, what does distributed attribution give?",
                 options: [
-                    "100% to the last",
                     "25% to each",
+                    "100% to the last",
                     "50% to the first and 50% to the last"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Fairer, more complex, and still a convention."
             }
         ],
@@ -113,31 +113,31 @@ window.QUIZ = {
             {
                 q: "What are the three retention levers, in increasing order of cost?",
                 options: [
-                    "Keeping your promise, supporting the start, getting back in touch before you are forgotten",
                     "Discounts, loyalty scheme, customer service",
-                    "Reminder advertising, referrals, gifts"
+                    "Reminder advertising, referrals, gifts",
+                    "Keeping your promise, supporting the start, getting back in touch before you are forgotten"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The first costs nothing extra: it is about the first order going exactly as announced."
             },
             {
                 q: "What does a discount reserved for new customers produce?",
                 options: [
-                    "Healthy growth",
                     "A clear message to the loyal: their loyalty is worth nothing",
+                    "Healthy growth",
                     "Better word of mouth"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The arithmetic loses twice: you pay more for a less profitable customer, and demotivate the one who brought in the most."
             },
             {
                 q: "Four points more retention are worth:",
                 options: [
-                    "A marginal improvement",
                     "More than four times the advertising budget",
+                    "A marginal improvement",
                     "The equivalent of a well-optimised campaign"
                 ],
-                a: 1,
+                a: 0,
                 explication: "No advertising optimisation produces an effect of that size."
             }
         ],
@@ -149,20 +149,20 @@ window.QUIZ = {
                 q: "Which criterion separates persuasion from manipulation?",
                 options: [
                     "How forceful the message is",
-                    "Whether the information is true, and whether the customer would be fine with it knowing the mechanism",
-                    "The channel used"
+                    "The channel used",
+                    "Whether the information is true, and whether the customer would be fine with it knowing the mechanism"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The wording can be identical. What changes is the truth."
             },
             {
                 q: "“Only 3 left in stock” with a real stock of 3:",
                 options: [
-                    "Is manipulation",
                     "Is legitimate: the person would almost thank you for the warning",
+                    "Is manipulation",
                     "Is banned"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The same message with 400 units available would be a deception."
             },
             {
@@ -180,10 +180,10 @@ window.QUIZ = {
                 q: "Why are deceptive techniques bad economics?",
                 options: [
                     "They do not work",
-                    "The gain appears this month, the cost spreads over two years without being attributed",
-                    "They are expensive to set up"
+                    "They are expensive to set up",
+                    "The gain appears this month, the cost spreads over two years without being attributed"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Refunds, negative reviews and reputation never appear in the campaign's dashboard."
             },
             {
@@ -199,11 +199,11 @@ window.QUIZ = {
             {
                 q: "Does all communication use persuasion levers?",
                 options: [
-                    "Yes: the question is where the line runs",
                     "No, only advertising uses them",
-                    "Only in online selling"
+                    "Only in online selling",
+                    "Yes: the question is where the line runs"
                 ],
-                a: 0,
+                a: 2,
                 explication: "These mechanisms have been documented for decades and genuinely work."
             }
         ],
@@ -225,20 +225,20 @@ window.QUIZ = {
                 q: "What must every outreach message contain?",
                 options: [
                     "A commercial offer",
-                    "The sender's identity, a subject line that is not misleading, and one-click unsubscribe",
-                    "The full legal notices"
+                    "The full legal notices",
+                    "The sender's identity, a subject line that is not misleading, and one-click unsubscribe"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The unsubscribe must also take effect quickly."
             },
             {
                 q: "Which document is asked for first in an inspection?",
                 options: [
-                    "The record of processing activities",
                     "The customer list",
-                    "The company's articles of association"
+                    "The company's articles of association",
+                    "The record of processing activities"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It describes what you collect, why, and for how long."
             },
             // Series 2
@@ -283,31 +283,31 @@ window.QUIZ = {
         {
             q: "What is this level about?",
             options: [
-                "The blind spots: what the tools attribute badly and what the law governs",
                 "The most recent techniques",
+                "The blind spots: what the tools attribute badly and what the law governs",
                 "Optimising budgets"
             ],
-            a: 0,
+            a: 1,
             explication: "What teams neglect because it is less visible, and the rules that apply whether you know them or not."
         },
         {
             q: "What do attribution and retention have in common?",
             options: [
-                "Both are badly served by campaign dashboards",
                 "Both belong to the legal department",
+                "Both are badly served by campaign dashboards",
                 "Both are measured daily"
             ],
-            a: 0,
+            a: 1,
             explication: "One is distorted by the model, the other simply does not appear there."
         },
         {
             q: "Which question sums up the ethical test of a campaign?",
             options: [
-                "Is it profitable?",
                 "What would I say if a customer found out exactly how it works?",
+                "Is it profitable?",
                 "Does it match the sector's usual practice?"
             ],
-            a: 1,
+            a: 0,
             explication: "That test also catches unintentional manipulation, where nobody meant to deceive."
         },
         // Series 2
@@ -324,21 +324,21 @@ window.QUIZ = {
         {
             q: "Why does the legal side appear in a marketing guide?",
             options: [
-                "Because the penalties fall on the business, not the contractor who carried the work out",
                 "Because it is a constraint imposed by management",
-                "Because it reassures customers"
+                "Because it reassures customers",
+                "Because the penalties fall on the business, not the contractor who carried the work out"
             ],
-            a: 0,
+            a: 2,
             explication: "The rules apply whether you know them or not."
         },
         {
             q: "What do a fake countdown and a bought list have in common?",
             options: [
-                "Both produce an immediate gain and a far larger deferred cost",
                 "Both are effective in the long run",
+                "Both produce an immediate gain and a far larger deferred cost",
                 "Both are without consequence"
             ],
-            a: 0,
+            a: 1,
             explication: "And in both cases, the cost is never attributed to its cause in the dashboards."
         }
     ]

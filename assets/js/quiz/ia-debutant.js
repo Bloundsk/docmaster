@@ -34,10 +34,10 @@ window.QUIZ = {
                 q: "Pourquoi un LLM invente-t-il parfois des références bibliographiques ?",
                 options: [
                     "Parce qu'il ment délibérément",
-                    "Parce que le format d'une référence est très régulier, son contenu non",
-                    "Parce que sa base de données est incomplète"
+                    "Parce que sa base de données est incomplète",
+                    "Parce que le format d'une référence est très régulier, son contenu non"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Il produit une suite plausible. Rien dans le mécanisme ne distingue « je sais » de « je complète »."
             },
             // Série 2
@@ -45,20 +45,20 @@ window.QUIZ = {
                 q: "Que désigne la « date de connaissance » (knowledge cutoff) ?",
                 options: [
                     "La date d'expiration du modèle",
-                    "La date à laquelle s'arrête son corpus d'entraînement",
-                    "La durée maximale d'une conversation"
+                    "La durée maximale d'une conversation",
+                    "La date à laquelle s'arrête son corpus d'entraînement"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sans outil de recherche, tout événement postérieur lui est inconnu."
             },
             {
                 q: "Que se passe-t-il quand une conversation dépasse la fenêtre de contexte ?",
                 options: [
-                    "Le modèle refuse de répondre",
                     "Le début de la conversation est oublié",
+                    "Le modèle refuse de répondre",
                     "La réponse est automatiquement raccourcie"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le contexte est ce que le modèle « voit » en une fois. Au-delà, l'information sort de son champ."
             },
             {
@@ -79,31 +79,31 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui distingue un agent d'un simple chatbot ?",
                 options: [
-                    "Il répond plus rapidement",
                     "Il dispose d'outils et enchaîne des étapes vers un objectif",
+                    "Il répond plus rapidement",
                     "Il utilise un modèle plus récent"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Un agent agit, observe le résultat, décide de la suite, et recommence jusqu'à atteindre son but."
             },
             {
                 q: "Quelle est la différence la plus importante en cas d'erreur ?",
                 options: [
-                    "Un chatbot produit une réponse fausse à lire, un agent a déjà exécuté l'action",
                     "L'agent s'excuse automatiquement",
+                    "Un chatbot produit une réponse fausse à lire, un agent a déjà exécuté l'action",
                     "Il n'y a aucune différence"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Un chatbot qui se trompe te fait perdre une minute. Un agent a déjà supprimé le fichier ou envoyé le message."
             },
             {
                 q: "Qu'est-ce que l'injection d'instructions ?",
                 options: [
-                    "Une méthode pour accélérer les réponses",
                     "Un texte glissé dans un contenu extérieur, rédigé pour manipuler l'agent",
+                    "Une méthode pour accélérer les réponses",
                     "L'ajout de données d'entraînement supplémentaires"
                 ],
-                a: 1,
+                a: 0,
                 explication: "La parade : ce qu'un agent lit est une donnée, jamais un ordre. Seul l'utilisateur donne des ordres."
             },
             // Série 2
@@ -120,11 +120,11 @@ window.QUIZ = {
             {
                 q: "« Range ma boîte mail » autorise l'agent à faire quoi ?",
                 options: [
-                    "À exécuter ce que demandent les messages qu'il y trouve",
                     "À lire les messages, mais pas à exécuter les consignes qu'ils contiennent",
+                    "À exécuter ce que demandent les messages qu'il y trouve",
                     "À supprimer tout message de plus d'un an"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Une demande de tri autorise la lecture, pas l'exécution du contenu lu."
             },
             {
@@ -145,31 +145,31 @@ window.QUIZ = {
             {
                 q: "Que fait le modèle avec ce que tu n'as pas précisé ?",
                 options: [
-                    "Il te pose la question",
                     "Il le comble par ce qui est statistiquement le plus courant",
+                    "Il te pose la question",
                     "Il laisse un blanc"
                 ],
-                a: 1,
+                a: 0,
                 explication: "C'est-à-dire par du générique. D'où l'importance de préciser le format et le contexte."
             },
             {
                 q: "Quels sont les quatre éléments d'une bonne consigne ?",
                 options: [
                     "Politesse, longueur, urgence, récompense",
-                    "Contexte, tâche, format, contraintes",
-                    "Sujet, verbe, complément, ponctuation"
+                    "Sujet, verbe, complément, ponctuation",
+                    "Contexte, tâche, format, contraintes"
                 ],
-                a: 1,
+                a: 2,
                 explication: "La tâche doit être un verbe précis : « résume », « compare » — pas « parle-moi de »."
             },
             {
                 q: "Quelle technique est la plus efficace pour obtenir le bon format ?",
                 options: [
                     "Décrire le format en détail",
-                    "Donner un exemple du résultat attendu",
-                    "Répéter la consigne deux fois"
+                    "Répéter la consigne deux fois",
+                    "Donner un exemple du résultat attendu"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Un modèle imite bien mieux qu'il ne suit une description."
             },
             // Série 2
@@ -186,21 +186,21 @@ window.QUIZ = {
             {
                 q: "Quel effet a le fait de menacer ou de flatter un modèle ?",
                 options: [
-                    "Il répond nettement mieux",
                     "Aucun effet durable : ce qui compte est la précision de la consigne",
+                    "Il répond nettement mieux",
                     "Il refuse de répondre"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Le reste relève de la superstition. Précision, exemples et format attendu font la différence."
             },
             {
                 q: "Que produit l'ajout de « si tu n'es pas sûr, dis-le » ?",
                 options: [
-                    "Des réponses systématiquement évasives",
                     "Une réduction nette des affirmations inventées",
+                    "Des réponses systématiquement évasives",
                     "Un refus de répondre aux questions difficiles"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Autoriser explicitement l'ignorance est l'une des consignes les plus rentables."
             }
         ],
@@ -212,30 +212,30 @@ window.QUIZ = {
                 q: "Dans quelles zones les hallucinations sont-elles les plus probables ?",
                 options: [
                     "Les explications générales et les définitions",
-                    "Les chiffres précis, dates, citations et références peu connues",
-                    "Les traductions"
+                    "Les traductions",
+                    "Les chiffres précis, dates, citations et références peu connues"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Partout où la réponse est très spécifique et où le corpus d'entraînement était mince."
             },
             {
                 q: "Quel signal doit déclencher une vérification ?",
                 options: [
-                    "Une réponse longue",
                     "Une réponse très précise sur un sujet obscur",
+                    "Une réponse longue",
                     "Une réponse qui commence par « je pense »"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Plus l'affirmation est précise sur un sujet peu documenté, plus elle mérite d'être vérifiée."
             },
             {
                 q: "Quelle question se poser avant de coller un contenu dans une IA grand public ?",
                 options: [
                     "Est-ce que le texte est trop long ?",
-                    "Serais-je à l'aise si ce texte apparaissait dans un document public ?",
-                    "Est-ce que le sujet est intéressant ?"
+                    "Est-ce que le sujet est intéressant ?",
+                    "Serais-je à l'aise si ce texte apparaissait dans un document public ?"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Cela écarte les données de santé, les contrats confidentiels, les mots de passe et les clés d'accès."
             },
             // Série 2
@@ -252,11 +252,11 @@ window.QUIZ = {
             {
                 q: "Pourquoi un LLM est-il peu fiable sur un calcul exact ?",
                 options: [
-                    "Parce qu'il prédit du texte, il ne calcule pas",
                     "Parce que les mathématiques sont exclues de son entraînement",
-                    "Parce qu'il arrondit systématiquement"
+                    "Parce qu'il arrondit systématiquement",
+                    "Parce qu'il prédit du texte, il ne calcule pas"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Sauf s'il dispose d'un outil de calcul. Sinon, un tableur reste supérieur."
             },
             {
@@ -281,10 +281,10 @@ window.QUIZ = {
             q: "Quelle est la façon la plus sûre d'utiliser une IA ?",
             options: [
                 "Sur des sujets qu'on ne maîtrise pas, pour combler ses lacunes",
-                "Sur des sujets qu'on sait évaluer, pour repérer les erreurs",
-                "Sur n'importe quel sujet, en lui faisant confiance"
+                "Sur n'importe quel sujet, en lui faisant confiance",
+                "Sur des sujets qu'on sait évaluer, pour repérer les erreurs"
             ],
-            a: 1,
+            a: 2,
             explication: "Sur un sujet inconnu, tu n'as aucun moyen de voir l'erreur."
         },
         {
@@ -301,41 +301,41 @@ window.QUIZ = {
             q: "Plus un système agit sur le monde réel, quelle question devient prioritaire ?",
             options: [
                 "Quelle est sa performance ?",
-                "Que se passe-t-il s'il se trompe ?",
-                "Combien coûte-t-il ?"
+                "Combien coûte-t-il ?",
+                "Que se passe-t-il s'il se trompe ?"
             ],
-            a: 1,
+            a: 2,
             explication: "C'est ce qui distingue l'évaluation d'un chatbot de celle d'un agent."
         },
         // Série 2
         {
             q: "Tu dois faire rédiger un mémo interne. Quelle demande donnera le meilleur résultat ?",
             options: [
-                "« Écris un texte sur la sécurité informatique »",
                 "Une demande précisant le public, la longueur, le ton et trois exemples attendus",
+                "« Écris un texte sur la sécurité informatique »",
                 "« Fais au mieux, tu sais ce qu'il faut »"
             ],
-            a: 1,
+            a: 0,
             explication: "Trente secondes de plus à écrire la consigne font gagner trois allers-retours."
         },
         {
             q: "Une IA te propose une référence juridique précise avec numéro d'article. Que faire ?",
             options: [
                 "L'utiliser telle quelle, la précision est un gage de fiabilité",
-                "La vérifier à la source : c'est exactement le profil d'une hallucination",
-                "Lui demander si elle est sûre, sa réponse suffira"
+                "Lui demander si elle est sûre, sa réponse suffira",
+                "La vérifier à la source : c'est exactement le profil d'une hallucination"
             ],
-            a: 1,
+            a: 2,
             explication: "Références, dates et chiffres précis sur sujets peu documentés sont les zones les plus risquées."
         },
         {
             q: "Quelle limite aucun progrès technique n'a supprimée à ce jour ?",
             options: [
-                "La capacité à produire un texte fluide",
                 "La responsabilité du jugement, qui reste humaine",
+                "La capacité à produire un texte fluide",
                 "La possibilité de traduire d'une langue à l'autre"
             ],
-            a: 1,
+            a: 0,
             explication: "Un modèle peut lister les arguments d'une décision difficile ; il n'en porte pas la responsabilité. Toi, si."
         }
     ]

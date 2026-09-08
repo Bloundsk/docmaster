@@ -16,30 +16,30 @@ window.QUIZ = {
                 q: "What does a well-designed API define?",
                 options: [
                     "Only the address to call",
-                    "The address, what you send, what you get back, and what happens on error",
-                    "The data format only"
+                    "The data format only",
+                    "The address, what you send, what you get back, and what happens on error"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The last point is the one people forget, and it is the one that brings applications down in production."
             },
             {
                 q: "What does a 401 status code mean?",
                 options: [
                     "The resource does not exist",
-                    "You need to identify yourself",
-                    "The server failed"
+                    "The server failed",
+                    "You need to identify yourself"
                 ],
-                a: 1,
+                a: 2,
                 explication: "404 for a missing resource, 500 for a server failure, 400 for a malformed request."
             },
             {
                 q: "8 calls at 150 ms each: how long in sequence?",
                 options: [
-                    "150 ms",
                     "1,200 ms",
+                    "150 ms",
                     "600 ms"
                 ],
-                a: 1,
+                a: 0,
                 explication: "In parallel, when the calls are independent, about 150 ms. The server is no faster: the arrangement changes."
             },
             // Series 2
@@ -47,10 +47,10 @@ window.QUIZ = {
                 q: "What is wrong with an API that returns 200 with an error message in the body?",
                 options: [
                     "Nothing, it is simpler",
-                    "It forces every client to guess that something went wrong",
-                    "It uses more bandwidth"
+                    "It uses more bandwidth",
+                    "It forces every client to guess that something went wrong"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Status codes exist precisely to avoid that ambiguity."
             },
             {
@@ -66,11 +66,11 @@ window.QUIZ = {
             {
                 q: "Which factor dominates the load time of a page that calls an API?",
                 options: [
-                    "The server's speed",
                     "The number of round trips",
+                    "The server's speed",
                     "The size of the responses"
                 ],
-                a: 1,
+                a: 0,
                 explication: "This is why parallelising independent calls changes everything."
             }
         ],
@@ -82,30 +82,30 @@ window.QUIZ = {
                 q: "What does a relational database bring over a document one?",
                 options: [
                     "More speed",
-                    "A guarantee of consistency: you cannot record an order without an existing customer",
-                    "Less configuration"
+                    "Less configuration",
+                    "A guarantee of consistency: you cannot record an order without an existing customer"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Data almost always ends up having relationships, and it is better for the database to enforce them."
             },
             {
                 q: "Displaying 50 articles with one query per author, at 4 ms: how long?",
                 options: [
                     "4 ms",
-                    "204 ms",
-                    "50 ms"
+                    "50 ms",
+                    "204 ms"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Against about 6 ms with a single query and a join. A ratio of 34 to 1."
             },
             {
                 q: "What is an index for?",
                 options: [
-                    "Going straight to the right place rather than scanning every row",
                     "Compressing the data",
+                    "Going straight to the right place rather than scanning every row",
                     "Guaranteeing that records are unique"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Its price: it slows writes down a little and takes up space."
             },
             // Series 2
@@ -113,20 +113,20 @@ window.QUIZ = {
                 q: "Which columns should be indexed?",
                 options: [
                     "All of them, to be safe",
-                    "Those used in filters and joins",
-                    "None, the database optimises by itself"
+                    "None, the database optimises by itself",
+                    "Those used in filters and joins"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Every index has a cost in writes and in space."
             },
             {
                 q: "How do you protect against SQL injection?",
                 options: [
-                    "By filtering special characters",
                     "By using prepared statements, where values are passed separately",
+                    "By filtering special characters",
                     "By encrypting the database"
                 ],
-                a: 1,
+                a: 0,
                 explication: "The defence is simple and systematic. There is no reason to do otherwise, ever."
             },
             {
@@ -147,11 +147,11 @@ window.QUIZ = {
             {
                 q: "What are the four elements of going live?",
                 options: [
-                    "Domain name, hosting, certificate, a way of deploying",
                     "Server, database, cache, backup",
-                    "Code, tests, documentation, monitoring"
+                    "Code, tests, documentation, monitoring",
+                    "Domain name, hosting, certificate, a way of deploying"
                 ],
-                a: 0,
+                a: 2,
                 explication: "For a site with no server code, static hosting is enough — often free and very fast."
             },
             {
@@ -179,10 +179,10 @@ window.QUIZ = {
                 q: "What is wrong with deploying by manually copying a few files?",
                 options: [
                     "It is too slow",
-                    "You end up forgetting one, and the site breaks for everyone",
-                    "It does not work over HTTPS"
+                    "It does not work over HTTPS",
+                    "You end up forgetting one, and the site breaks for everyone"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Always deploy the whole thing, from a single source — ideally automatically."
             },
             {
@@ -198,11 +198,11 @@ window.QUIZ = {
             {
                 q: "Is HTTPS complicated to set up today?",
                 options: [
-                    "Yes, you have to buy a certificate",
                     "No, it is free and automatic with most hosts",
+                    "Yes, you have to buy a certificate",
                     "It is only needed for shops"
                 ],
-                a: 1,
+                a: 0,
                 explication: "There is no longer any reason to go without it."
             }
         ],
@@ -233,11 +233,11 @@ window.QUIZ = {
             {
                 q: "What is the principle of branches?",
                 options: [
-                    "The main branch always stays working",
                     "Each developer has a permanent branch",
-                    "One branch per changed file"
+                    "One branch per changed file",
+                    "The main branch always stays working"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Each piece of work lives alongside until it is ready."
             },
             // Series 2
@@ -254,21 +254,21 @@ window.QUIZ = {
             {
                 q: "Is a password committed then deleted safe?",
                 options: [
-                    "Yes, deleting removes it",
                     "No: it stays in the history and must be considered compromised",
+                    "Yes, deleting removes it",
                     "Yes, if the repository is private"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It has to be changed, not merely removed."
             },
             {
                 q: "What is wrong with a commit mixing a fix, a feature and a reformat?",
                 options: [
-                    "It takes too long to review",
                     "It is impossible to undo one without the others",
+                    "It takes too long to review",
                     "It makes the repository bigger"
                 ],
-                a: 1,
+                a: 0,
                 explication: "One commit, one intention. That is what makes the history usable."
             }
         ]
@@ -289,11 +289,11 @@ window.QUIZ = {
         {
             q: "A page is slow. Where do you start?",
             options: [
-                "Optimising the server code",
                 "Counting the number of queries it triggers",
+                "Optimising the server code",
                 "Changing host"
             ],
-            a: 1,
+            a: 0,
             explication: "API round trips and queries in a loop explain most slowness."
         },
         {
@@ -329,11 +329,11 @@ window.QUIZ = {
         {
             q: "What should be checked after every deployment?",
             options: [
-                "The site in a private window, to bypass the cache",
                 "The server logs",
-                "The size of the files sent"
+                "The size of the files sent",
+                "The site in a private window, to bypass the cache"
             ],
-            a: 0,
+            a: 2,
             explication: "It is the only way of seeing what visitors actually see."
         }
     ]

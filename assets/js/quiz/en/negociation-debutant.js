@@ -35,11 +35,11 @@ window.QUIZ = {
             {
                 q: "What should you do with the weak point in your own case?",
                 options: [
-                    "State it yourself, or prepare the answer",
                     "Hope it goes unnoticed",
-                    "Deny it if it is raised"
+                    "Deny it if it is raised",
+                    "State it yourself, or prepare the answer"
                 ],
-                a: 0,
+                a: 2,
                 explication: "The other side will find it anyway: better to have seen it coming."
             },
             // Series 2
@@ -66,11 +66,11 @@ window.QUIZ = {
             {
                 q: "What is the least useful part of classic preparation?",
                 options: [
-                    "Listing what you are going to say",
                     "Estimating what the other side wants",
+                    "Listing what you are going to say",
                     "Putting a figure on your objective"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It assumes the exchange is about persuading by accumulation."
             }
         ],
@@ -91,52 +91,52 @@ window.QUIZ = {
             {
                 q: "What does a three-second silence after an answer produce?",
                 options: [
-                    "Very often a second, more precise answer",
                     "Pointless awkwardness",
-                    "A return to the previous subject"
+                    "A return to the previous subject",
+                    "Very often a second, more precise answer"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is unpleasant to hold: that is why it works, and why it is so little used."
             },
             {
                 q: "What is the most profitable question in the field?",
                 options: [
-                    "“Why does that matter to you?”",
                     "“Do you agree?”",
+                    "“Why does that matter to you?”",
                     "“What is your budget?”"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It moves from what the other side asks for to the reason they are asking."
             },
             // Series 2
             {
                 q: "Which mechanical remedy stops you drafting your reply while the other talks?",
                 options: [
-                    "Taking notes of what they say",
                     "Telling yourself to listen",
+                    "Taking notes of what they say",
                     "Waiting longer before answering"
                 ],
-                a: 0,
+                a: 1,
                 explication: "A hand busy transcribing cannot draft the reply at the same time."
             },
             {
                 q: "What is the difference between an open and a closed question?",
                 options: [
-                    "The open one invites an explanation, the closed one a single word",
                     "The open one is more polite",
-                    "The closed one is more efficient"
+                    "The closed one is more efficient",
+                    "The open one invites an explanation, the closed one a single word"
                 ],
-                a: 0,
+                a: 2,
                 explication: "And the explanation is what is useful."
             },
             {
                 q: "Listening is presented as a moral quality. What is it first of all?",
                 options: [
-                    "A technique for collecting information",
                     "A mark of respect",
-                    "A way of saving time"
+                    "A way of saving time",
+                    "A technique for collecting information"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Most of the useful information is said, and is not heard."
             }
         ],
@@ -167,42 +167,42 @@ window.QUIZ = {
             {
                 q: "What practical consequence follows from that correction?",
                 options: [
-                    "Content matters, and it matters a great deal",
                     "You should work on your body language above all",
-                    "Tone always beats words"
+                    "Tone always beats words",
+                    "Content matters, and it matters a great deal"
                 ],
-                a: 0,
+                a: 2,
                 explication: "It is the opposite of what is usually drawn from the 93% figure."
             },
             // Series 2
             {
                 q: "What side effect does starting with the conclusion have?",
                 options: [
-                    "It forces you to know what you want to say",
                     "It shortens the message",
+                    "It forces you to know what you want to say",
                     "It avoids questions"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Many presentations that end on a vague conclusion did not have one."
             },
             {
                 q: "What marks a sentence as too long?",
                 options: [
-                    "It cannot be said in one breath",
                     "It runs past thirty words",
+                    "It cannot be said in one breath",
                     "It has more than two commas"
                 ],
-                a: 0,
+                a: 1,
                 explication: "It then probably contains two ideas."
             },
             {
                 q: "A well-turned message that achieves nothing: what is the likely cause?",
                 options: [
-                    "The request has been diluted out of politeness or pushed to the end",
                     "It is too short",
-                    "The tone is too direct"
+                    "The tone is too direct",
+                    "The request has been diluted out of politeness or pushed to the end"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Politeness fits in one formula; the request must be prominent."
             }
         ],
@@ -213,21 +213,21 @@ window.QUIZ = {
             {
                 q: "What should a good email subject line say?",
                 options: [
-                    "What it is about AND what is expected",
                     "The topic in one word",
+                    "What it is about AND what is expected",
                     "How urgent it is"
                 ],
-                a: 0,
+                a: 1,
                 explication: "“2027 budget — your approval before Friday” gets handled; “Budget update” gets postponed."
             },
             {
                 q: "A 400-word message sent to 8 people takes up how much time?",
                 options: [
-                    "About 13 minutes",
                     "About 1.6 minutes",
+                    "About 13 minutes",
                     "About 3 minutes"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Cut to 200 words: 6.4 minutes. Seven minutes recovered, on every message."
             },
             {
@@ -254,11 +254,11 @@ window.QUIZ = {
             {
                 q: "What signals that a subject should not have been written down?",
                 options: [
-                    "Rereading your message a third time to adjust the tone",
                     "Running past one page",
+                    "Rereading your message a third time to adjust the tone",
                     "Having to attach a document"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Writing comes afterwards, to put on record what was said."
             },
             {
@@ -279,51 +279,51 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "Preparing, listening and structuring — before any negotiation technique",
                 "Learning to persuade",
-                "Mastering your body language"
+                "Mastering your body language",
+                "Preparing, listening and structuring — before any negotiation technique"
             ],
-            a: 0,
+            a: 2,
             explication: "The intermediate level covers negotiation; this one lays down what it is useless without."
         },
         {
             q: "What do restating and putting the conclusion first have in common?",
             options: [
-                "Both stop people talking about two different things",
                 "Both shorten the exchange",
-                "Both are a matter of politeness"
+                "Both are a matter of politeness",
+                "Both stop people talking about two different things"
             ],
-            a: 0,
+            a: 2,
             explication: "One checks understanding, the other guarantees it from the start."
         },
         {
             q: "Someone claims that “non-verbal is 93% of the message”. What do you reply?",
             options: [
-                "The study used isolated words whose tone contradicted their meaning",
                 "That is correct, but only when speaking",
+                "The study used isolated words whose tone contradicted their meaning",
                 "The figure is 70%"
             ],
-            a: 0,
+            a: 1,
             explication: "It measured the perception of an attitude, not the transmission of information."
         },
         {
             q: "Why does writing short take longer?",
             options: [
-                "You have to select, and selecting is work",
                 "You have to reread more",
-                "It is a myth: it is quicker"
+                "It is a myth: it is quicker",
+                "You have to select, and selecting is work"
             ],
-            a: 0,
+            a: 2,
             explication: "It saves everyone else time — the trade-off is almost always settled the wrong way."
         },
         {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
-                "Restate once, then stay quiet for three seconds",
                 "Prepare more arguments",
+                "Restate once, then stay quiet for three seconds",
                 "Shorten all your messages"
             ],
-            a: 0,
+            a: 1,
             explication: "No technique in the guide takes less effort and pays as much."
         },
         {

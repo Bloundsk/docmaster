@@ -24,21 +24,21 @@ window.QUIZ = {
             {
                 q: "Comment repérer son propre rythme ?",
                 options: [
-                    "En notant son niveau de concentration trois fois par jour pendant deux semaines",
                     "En se fiant à son impression générale",
+                    "En notant son niveau de concentration trois fois par jour pendant deux semaines",
                     "En comparant avec la moyenne des collègues"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Le motif apparaît en général au bout de dix jours — et ne correspond pas toujours à ce qu'on croyait."
             },
             {
                 q: "Que produit l'ajout de deux heures le soir à une journée déjà pleine ?",
                 options: [
                     "Un gain net de deux heures de travail",
-                    "Des heures de faible rendement, et un lendemain dégradé",
-                    "Un gain, à condition de compenser le week-end"
+                    "Un gain, à condition de compenser le week-end",
+                    "Des heures de faible rendement, et un lendemain dégradé"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Sur une semaine, le total produit baisse. C'est massivement documenté."
             },
             // Série 2
@@ -46,30 +46,30 @@ window.QUIZ = {
                 q: "Qu'est-ce qui distingue une pause efficace ?",
                 options: [
                     "Sa durée",
-                    "Le fait qu'elle change de registre",
-                    "Le fait qu'elle soit prise à heure fixe"
+                    "Le fait qu'elle soit prise à heure fixe",
+                    "Le fait qu'elle change de registre"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Consulter son téléphone n'est pas une pause pour l'attention : c'est la même ressource, sollicitée autrement."
             },
             {
                 q: "Quelle est la conséquence pratique du rythme journalier, rarement appliquée ?",
                 options: [
-                    "Placer le travail de fond dans le pic, les tâches mécaniques dans le creux",
                     "Commencer plus tôt le matin",
+                    "Placer le travail de fond dans le pic, les tâches mécaniques dans le creux",
                     "Répartir les tâches uniformément"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Or le pic est très souvent consacré aux messages et aux réunions."
             },
             {
                 q: "Pourquoi la baisse de rendement due à l'absence de pause passe-t-elle inaperçue ?",
                 options: [
                     "Parce qu'elle est faible",
-                    "Parce qu'on continue d'être occupé tout en produisant moins",
-                    "Parce qu'elle n'apparaît qu'après plusieurs semaines"
+                    "Parce qu'elle n'apparaît qu'après plusieurs semaines",
+                    "Parce qu'on continue d'être occupé tout en produisant moins"
                 ],
-                a: 1,
+                a: 2,
                 explication: "L'activité reste visible ; c'est le résultat qui diminue."
             }
         ],
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Pourquoi une méthode qui suppose d'y penser chaque jour finit-elle par céder ?",
                 options: [
                     "Parce qu'elle est mal conçue",
-                    "Parce que la volonté est une ressource limitée, déjà largement consommée",
-                    "Parce qu'elle demande trop de temps"
+                    "Parce qu'elle demande trop de temps",
+                    "Parce que la volonté est une ressource limitée, déjà largement consommée"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Ce n'est pas une question de faiblesse personnelle."
             },
             {
@@ -100,32 +100,32 @@ window.QUIZ = {
             {
                 q: "En quoi consiste l'ancrage d'une habitude ?",
                 options: [
-                    "La rattacher à une action déjà automatique",
                     "La noter dans son agenda",
-                    "S'engager publiquement à la tenir"
+                    "S'engager publiquement à la tenir",
+                    "La rattacher à une action déjà automatique"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Le déclencheur existe déjà : il n'y a rien à retenir."
             },
             // Série 2
             {
                 q: "Quelle règle de reprise distingue une habitude durable d'une tentative avortée ?",
                 options: [
-                    "Rattraper le lendemain ce qui a été manqué",
                     "Ne jamais manquer deux fois de suite",
+                    "Rattraper le lendemain ce qui a été manqué",
                     "Recommencer la série depuis zéro"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Une journée manquée est un accident ; deux, c'est le début d'un abandon."
             },
             {
                 q: "À quoi sert la « version minimale » d'une habitude ?",
                 options: [
                     "À obtenir un résultat rapide",
-                    "À ne jamais rompre la série",
-                    "À mesurer sa progression"
+                    "À mesurer sa progression",
+                    "À ne jamais rompre la série"
                 ],
-                a: 1,
+                a: 2,
                 explication: "« Écrire une phrase », « ouvrir le fichier » : l'objectif n'est pas le résultat."
             },
             {
@@ -156,21 +156,21 @@ window.QUIZ = {
             {
                 q: "Quelles sont les trois conditions cumulatives d'une réunion utile ?",
                 options: [
-                    "Un ordre du jour, un compte rendu, un horaire fixe",
                     "Un objet de décision, les bonnes personnes, une préparation lue en amont",
+                    "Un ordre du jour, un compte rendu, un horaire fixe",
                     "Une salle, un animateur, une durée limitée"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Une réunion d'information peut être un message."
             },
             {
                 q: "Pourquoi l'écrit coûte-t-il moins cher que le synchrone ?",
                 options: [
                     "Parce qu'il est plus rapide à produire",
-                    "Parce que chacun lit quand il le peut, sans fragmenter sa journée",
-                    "Parce qu'il engage moins l'auteur"
+                    "Parce qu'il engage moins l'auteur",
+                    "Parce que chacun lit quand il le peut, sans fragmenter sa journée"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Il coûte plus cher à l'émetteur et beaucoup moins à tous les destinataires."
             },
             // Série 2
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "Une réunion hebdomadaire d'1 h 30 à 7 personnes, à 45 €/h chargés : quel coût par séance ?",
                 options: [
                     "68 €",
-                    "473 €",
-                    "315 €"
+                    "315 €",
+                    "473 €"
                 ],
-                a: 1,
+                a: 2,
                 explication: "10 h 30 de travail par séance, soit environ 22 700 € par an."
             },
             {
@@ -212,21 +212,21 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il sans moment de recul régulier ?",
                 options: [
-                    "Le système se stabilise de lui-même",
                     "La dérive s'accumule jusqu'à l'abandon en bloc",
+                    "Le système se stabilise de lui-même",
                     "Les tâches se hiérarchisent naturellement"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Des engagements pris il y a six mois n'ont plus de sens, et personne ne décide de les abandonner."
             },
             {
                 q: "Quelle question poser devant chaque projet en cours ?",
                 options: [
-                    "Combien de temps ai-je déjà investi ?",
                     "Si cela n'existait pas encore, est-ce que je le commencerais aujourd'hui ?",
+                    "Combien de temps ai-je déjà investi ?",
                     "Qui d'autre pourrait le reprendre ?"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Si la réponse est non, le projet ne survit que par inertie."
             },
             {
@@ -253,11 +253,11 @@ window.QUIZ = {
             {
                 q: "Que force la règle « rien de nouveau sans retirer quelque chose » ?",
                 options: [
-                    "L'arbitrage au moment de l'ajout, plutôt que six mois plus tard dans l'urgence",
                     "Une réduction permanente de la charge",
+                    "L'arbitrage au moment de l'ajout, plutôt que six mois plus tard dans l'urgence",
                     "La délégation systématique"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Ajouter est facile et gratifiant ; arrêter demande d'assumer un renoncement."
             },
             {
@@ -278,21 +278,21 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Ce qui tient sur des années ne dépend pas de la motivation",
                 "Les méthodes les plus strictes sont les plus efficaces",
-                "L'outil détermine la réussite d'un système"
+                "L'outil détermine la réussite d'un système",
+                "Ce qui tient sur des années ne dépend pas de la motivation"
             ],
-            a: 0,
+            a: 2,
             explication: "Rythme du corps, environnement, règles collectives, revue régulière : rien de tout cela ne demande de volonté quotidienne."
         },
         {
             q: "Qu'ont en commun le réglage de l'environnement et le passage à l'asynchrone ?",
             options: [
-                "Les deux suppriment un effort au lieu de demander plus de discipline",
                 "Les deux réclament un logiciel dédié",
-                "Les deux fonctionnent seulement en équipe"
+                "Les deux fonctionnent seulement en équipe",
+                "Les deux suppriment un effort au lieu de demander plus de discipline"
             ],
-            a: 0,
+            a: 2,
             explication: "L'un retire de la friction pour l'individu, l'autre pour le collectif."
         },
         {
@@ -308,21 +308,21 @@ window.QUIZ = {
         {
             q: "Une personne échoue pour la troisième fois à tenir une habitude. Quelle hypothèse est la plus probable ?",
             options: [
-                "Elle manque de discipline",
                 "L'habitude repose sur la motivation plutôt que sur l'environnement",
+                "Elle manque de discipline",
                 "Elle a choisi la mauvaise habitude"
             ],
-            a: 1,
+            a: 0,
             explication: "Ancrage, version minimale, friction retirée, règle de reprise : ce sont ces éléments qui manquent presque toujours."
         },
         {
             q: "Pourquoi un nouveau système fonctionne-t-il quelques semaines avant de dériver à son tour ?",
             options: [
-                "Parce qu'on vient de tout remettre à plat, et non parce qu'il est meilleur",
                 "Parce que la nouveauté motive durablement",
+                "Parce qu'on vient de tout remettre à plat, et non parce qu'il est meilleur",
                 "Parce qu'il est mieux adapté au départ"
             ],
-            a: 0,
+            a: 1,
             explication: "Ce n'était pas la méthode qui manquait, c'était la revue."
         },
         {

@@ -35,10 +35,10 @@ window.QUIZ = {
                 q: "Which signal indicates a real need?",
                 options: [
                     "The person finds the idea interesting",
-                    "The person has already rigged up a solution of their own",
-                    "The person knows people who would be interested"
+                    "The person knows people who would be interested",
+                    "The person has already rigged up a solution of their own"
                 ],
-                a: 1,
+                a: 2,
                 explication: "The problem hurts enough for them to have spent time on it."
             },
             // Set 2
@@ -46,20 +46,20 @@ window.QUIZ = {
                 q: "What is a minimum viable product?",
                 options: [
                     "A rushed version of the final product",
-                    "The cheapest way to answer a question",
-                    "The first sellable version"
+                    "The first sellable version",
+                    "The cheapest way to answer a question"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Often it is not even a product: a presentation page, a service delivered by hand, a spreadsheet."
             },
             {
                 q: "Why not validate with the people close to you?",
                 options: [
-                    "They are not the target",
                     "They want to encourage you: their feedback is affectionate and worthless",
+                    "They are not the target",
                     "They lack the expertise"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Validation requires strangers who have no reason to be kind."
             },
             {
@@ -81,10 +81,10 @@ window.QUIZ = {
                 q: "Which approach lets you be paid properly?",
                 options: [
                     "Setting the price on cost, adding a margin",
-                    "Setting the price on the value to the customer",
-                    "Matching the competition"
+                    "Matching the competition",
+                    "Setting the price on the value to the customer"
                 ],
-                a: 1,
+                a: 2,
                 explication: "If your service saves two hours a week, the reference is the value of those two hours, not your cost."
             },
             {
@@ -100,42 +100,42 @@ window.QUIZ = {
             {
                 q: "Why is cutting your price at the start risky?",
                 options: [
-                    "It attracts too many customers at once",
                     "You have to sell far more, you attract the customers most sensitive to price, and putting it back up is hard",
+                    "It attracts too many customers at once",
                     "There is no drawback"
                 ],
-                a: 1,
+                a: 0,
                 explication: "It is almost always easier to lower a price than to raise it."
             },
             // Set 2
             {
                 q: "What must be included in the fixed costs from the start?",
                 options: [
-                    "A provision for the unexpected",
                     "The founder's pay",
+                    "A provision for the unexpected",
                     "The cost of future hires"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Without it, the business looks profitable while resting on unpaid work that will not last."
             },
             {
                 q: "When should you work on your business model?",
                 options: [
-                    "Before having customers",
                     "Once the first customers are won",
+                    "Before having customers",
                     "At the moment of raising money"
                 ],
-                a: 0,
+                a: 1,
                 explication: "Many projects wait until they have customers before taking an interest. The reverse order is what works."
             },
             {
                 q: "A sale without margin is:",
                 options: [
-                    "A customer won who will be made profitable later",
                     "A loss that grows with volume",
+                    "A customer won who will be made profitable later",
                     "A commercial investment"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Volume has never fixed a negative margin."
             }
         ],
@@ -147,10 +147,10 @@ window.QUIZ = {
                 q: "Where do the first ten customers come from?",
                 options: [
                     "Well-targeted advertising campaigns",
-                    "Things that do not scale: contacts one by one, travelling, service delivered by hand",
-                    "Natural word of mouth"
+                    "Natural word of mouth",
+                    "Things that do not scale: contacts one by one, travelling, service delivered by hand"
                 ],
-                a: 1,
+                a: 2,
                 explication: "It is inefficient, and it is exactly what to do: those exchanges teach the vocabulary and the real objections."
             },
             {
@@ -166,11 +166,11 @@ window.QUIZ = {
             {
                 q: "How many acquisition channels should you open at the start?",
                 options: [
-                    "One only, pushed until you know whether it works",
                     "As many as possible, to multiply the chances",
-                    "Three, to compare"
+                    "Three, to compare",
+                    "One only, pushed until you know whether it works"
                 ],
-                a: 0,
+                a: 2,
                 explication: "Five channels at once guarantee mastering none of them and being able to measure nothing."
             },
             // Set 2
@@ -178,10 +178,10 @@ window.QUIZ = {
                 q: "What is the right acquisition channel?",
                 options: [
                     "The fashionable one",
-                    "The one where your customers already are, looking for a solution",
-                    "The cheapest one"
+                    "The cheapest one",
+                    "The one where your customers already are, looking for a solution"
                 ],
-                a: 1,
+                a: 2,
                 explication: "Fashion changes; the presence of your customers somewhere is a fact."
             },
             {
@@ -213,10 +213,10 @@ window.QUIZ = {
                 q: "Can a profitable business disappear?",
                 options: [
                     "No, profitability guarantees survival",
-                    "Yes, for lack of cash: profit and the bank balance measure two different things",
-                    "Only in a case of fraud"
+                    "Only in a case of fraud",
+                    "Yes, for lack of cash: profit and the bank balance measure two different things"
                 ],
-                a: 1,
+                a: 2,
                 explication: "You invoice in January, you are paid in March, but wages fall due in between."
             },
             {
@@ -253,11 +253,11 @@ window.QUIZ = {
             {
                 q: "An unpaid invoice should be chased:",
                 options: [
-                    "At 60 days, once the delay is established",
                     "Without waiting, within a few days",
+                    "At 60 days, once the delay is established",
                     "Only by recorded delivery"
                 ],
-                a: 1,
+                a: 0,
                 explication: "Chased early, it often settles itself. At 60 days it becomes very hard to recover."
             },
             {
@@ -323,20 +323,20 @@ window.QUIZ = {
             q: "Which indicator should you look at each week at the start?",
             options: [
                 "The number of visitors",
-                "The balance available and the number of months of runway",
-                "Cumulative revenue"
+                "Cumulative revenue",
+                "The balance available and the number of months of runway"
             ],
-            a: 1,
+            a: 2,
             explication: "It says how long is left to reach break-even, and therefore when something else will have to be decided."
         },
         {
             q: "What distinguishes an audience from a customer base?",
             options: [
                 "Size",
-                "Paying",
-                "Loyalty"
+                "Loyalty",
+                "Paying"
             ],
-            a: 1,
+            a: 2,
             explication: "Hundreds of followers and zero sales is a very common case."
         }
     ]
