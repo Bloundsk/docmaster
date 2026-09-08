@@ -20,7 +20,7 @@ window.QUIZ = {
             {
                 q: "What becomes of an unfair term in a signed contract?",
                 options: [
-                    "It applies since it was accepted",
+                    "It applies, since it was read and accepted",
                     "It is deemed unwritten: it does not apply",
                     "It voids the whole contract"
                 ],
@@ -32,7 +32,7 @@ window.QUIZ = {
                 options: [
                     "A significant imbalance between the parties' rights and obligations",
                     "A price that is too high",
-                    "Wording that is too technical"
+                    "Wording that is much too technical for an ordinary reader to understand"
                 ],
                 a: 0,
                 explication: "The French consumer code sets out two lists, by strength of presumption."
@@ -53,7 +53,7 @@ window.QUIZ = {
                 options: [
                     "The preamble",
                     "The term and the cancellation conditions",
-                    "The identity of the parties"
+                    "The identity of the parties and their addresses"
                 ],
                 a: 1,
                 explication: "How you get out, with what notice, at what cost: that is where the surprises are."
@@ -62,7 +62,7 @@ window.QUIZ = {
                 q: "Do the terms and conditions form part of the contract?",
                 options: [
                     "Yes, as soon as you were able to read them",
-                    "No, unless signed separately",
+                    "No, unless they are signed separately as well",
                     "Only if attached on paper"
                 ],
                 a: 0,
@@ -96,9 +96,9 @@ window.QUIZ = {
             {
                 q: "Does a formal demand interrupt limitation?",
                 options: [
-                    "Yes, that is its main purpose",
+                    "Yes, that is precisely its main purpose",
                     "No, not even by recorded delivery",
-                    "Yes, if signed by a lawyer"
+                    "Yes, if it is signed by a lawyer"
                 ],
                 a: 1,
                 explication: "It is the costliest mistake in the field: it gives the feeling of having acted."
@@ -127,7 +127,7 @@ window.QUIZ = {
             {
                 q: "What is the difference between suspending and interrupting limitation?",
                 options: [
-                    "They are two words for the same thing",
+                    "They are two words for the same thing, used interchangeably by lawyers",
                     "Suspension pauses the period; interruption restarts it from zero",
                     "Suspension cancels the period"
                 ],
@@ -153,8 +153,8 @@ window.QUIZ = {
                 q: "What does the court conciliator cost in France?",
                 options: [
                     "Nothing: they are a volunteer and free",
-                    "A modest flat fee",
-                    "A percentage of the sum at stake"
+                    "A modest flat fee, set by the court",
+                    "A percentage of the sum actually at stake"
                 ],
                 a: 0,
                 explication: "They are approached by a simple request, and the agreement reached can be approved by a judge."
@@ -162,7 +162,7 @@ window.QUIZ = {
             {
                 q: "Where do you find a company's consumer ombudsman?",
                 options: [
-                    "From the court",
+                    "From the local court office",
                     "You have to ask the data protection authority",
                     "In its terms and conditions"
                 ],
@@ -173,8 +173,8 @@ window.QUIZ = {
                 q: "What do you risk by going to court without attempting settlement, on a small claim?",
                 options: [
                     "Having the claim declared inadmissible",
-                    "A fine",
-                    "Nothing in particular"
+                    "A fine for bringing a claim judged abusive",
+                    "Nothing in particular, the judge will decide"
                 ],
                 a: 0,
                 explication: "In France that attempt is in principle compulsory for small claims."
@@ -193,7 +193,7 @@ window.QUIZ = {
             {
                 q: "What is legal aid?",
                 options: [
-                    "A free consultation at the town hall",
+                    "A free consultation at the town hall, on set days",
                     "Cover of all or part of the costs depending on means",
                     "A loan repayable after the case"
                 ],
@@ -204,7 +204,7 @@ window.QUIZ = {
                 q: "Which question should you ask before starting an action?",
                 options: [
                     "Am I morally right?",
-                    "Is the court nearby?",
+                    "Is the court nearby, and easy to get to?",
                     "On the other side, is there anything to pay with?"
                 ],
                 a: 2,
@@ -240,7 +240,7 @@ window.QUIZ = {
                 options: [
                     "Getting your data back in a reusable format",
                     "Having your data deleted",
-                    "Changing supplier free of charge"
+                    "Changing supplier free of charge, and without notice"
                 ],
                 a: 0,
                 explication: "It is one of the least known rights, and one of the most useful."
@@ -249,7 +249,7 @@ window.QUIZ = {
             {
                 q: "Is the right to erasure absolute?",
                 options: [
-                    "Yes, without exception",
+                    "Yes, without exception of any kind",
                     "Yes, except for banks",
                     "No: it gives way to a legal retention obligation"
                 ],
@@ -259,7 +259,7 @@ window.QUIZ = {
             {
                 q: "What do you do if the organisation does not answer in time?",
                 options: [
-                    "Go straight to court",
+                    "Go straight to court and ask a judge for an order against them",
                     "Wait another month",
                     "File a free complaint with your data protection authority"
                 ],
@@ -271,7 +271,7 @@ window.QUIZ = {
                 options: [
                     "No: it is a supervisory body, not a court",
                     "Yes, it sets the amount",
-                    "Yes, up to the harm declared"
+                    "Yes, up to the amount of harm you declare"
                 ],
                 a: 0,
                 explication: "It intervenes with the organisation, which is enough in a large share of cases."
@@ -295,8 +295,8 @@ window.QUIZ = {
             q: "What do the court conciliator and the data protection authority have in common?",
             options: [
                 "Both are free and largely under-used",
-                "Both hand down judgments",
-                "Both require a lawyer"
+                "Both hand down judgments that bind the parties",
+                "Both require you to instruct a lawyer"
             ],
             a: 0,
             explication: "The cheapest routes are the least travelled."
@@ -305,7 +305,7 @@ window.QUIZ = {
             q: "Two months of exchanging letters with the other side: what is the risk?",
             options: [
                 "The other side can withdraw",
-                "The letters lose their value",
+                "The letters lose their value as evidence",
                 "The limitation period keeps running throughout"
             ],
             a: 2,
@@ -335,7 +335,7 @@ window.QUIZ = {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
                 "Checking the limitation period before anything else",
-                "Reading terms and conditions in full",
+                "Reading the terms and conditions in full",
                 "Always going to court"
             ],
             a: 0,

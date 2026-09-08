@@ -18,7 +18,7 @@ window.QUIZ = {
                 options: [
                     "Le bail est nul",
                     "Le logement est présumé avoir été remis en bon état",
-                    "Le dépôt de garantie est rendu automatiquement"
+                    "Le dépôt de garantie est rendu automatiquement au départ"
                 ],
                 a: 1,
                 explication: "La charge se retourne contre le locataire, qui ne peut plus rien comparer."
@@ -26,9 +26,9 @@ window.QUIZ = {
                         {
                 q: "Une clause du bail interdisant d'héberger un proche est-elle valable ?",
                 options: [
-                    "Oui, si elle est signée",
+                    "Oui, si elle est signée par les deux parties",
                     "Non : elle est réputée non écrite",
-                    "Oui, dans les meublés seulement"
+                    "Oui, dans les logements meublés seulement"
                 ],
                 a: 1,
                 explication: "Certaines clauses sont interdites et sans effet, quelle que soit la signature."
@@ -38,7 +38,7 @@ window.QUIZ = {
                 options: [
                     "10 % du loyer hors charges par mois entamé",
                     "5 % du dépôt par mois",
-                    "Il n'y a pas de majoration"
+                    "Il n'y a pas de majoration prévue par la loi"
                 ],
                 a: 0,
                 explication: "Elle est due de plein droit. Elle ne se négocie pas, elle se réclame."
@@ -57,7 +57,7 @@ window.QUIZ = {
             {
                 q: "Le bailleur peut-il retenir une somme sans pièce justificative ?",
                 options: [
-                    "Oui, s'il l'annonce dans un courrier",
+                    "Oui, s'il l'annonce dans un courrier suffisamment motivé",
                     "Non : devis, facture ou constat sont nécessaires",
                     "Oui, dans la limite du dépôt"
                 ],
@@ -92,7 +92,7 @@ window.QUIZ = {
             {
                 q: "À partir de quand court le préavis ?",
                 options: [
-                    "De l'envoi du courrier",
+                    "De l'envoi du courrier recommandé",
                     "De la date inscrite dans la lettre",
                     "De sa réception par le bailleur"
                 ],
@@ -103,7 +103,7 @@ window.QUIZ = {
                 q: "Que se passe-t-il si l'on invoque un préavis réduit sans en donner le motif par écrit ?",
                 options: [
                     "Le motif peut être donné oralement ensuite",
-                    "Le congé est nul",
+                    "Le congé est nul et doit être refait",
                     "Le préavis reste de trois mois"
                 ],
                 a: 2,
@@ -133,7 +133,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi indiquer sa nouvelle adresse dans la lettre de congé ?",
                 options: [
-                    "C'est une obligation légale",
+                    "C'est une obligation légale prévue par le bail",
                     "Pour le suivi du courrier",
                     "Le dépôt de garantie doit y être restitué"
                 ],
@@ -149,7 +149,7 @@ window.QUIZ = {
                 q: "Quelle est la forme normale du contrat de travail ?",
                 options: [
                     "Le CDI",
-                    "Le CDD",
+                    "Le CDD, plus souple",
                     "Les deux à égalité"
                 ],
                 a: 0,
@@ -159,8 +159,8 @@ window.QUIZ = {
                 q: "Que risque un CDD sans écrit ou sans motif valable ?",
                 options: [
                     "Une requalification en CDI",
-                    "Une amende pour le salarié",
-                    "Rien de particulier"
+                    "Une amende pour le salarié fautif",
+                    "Rien de particulier, le CDD reste valable"
                 ],
                 a: 0,
                 explication: "C'est l'un des contentieux prud'homaux les plus fréquents."
@@ -189,7 +189,7 @@ window.QUIZ = {
             {
                 q: "Où trouve-t-on le nom de sa convention collective ?",
                 options: [
-                    "Sur la carte vitale",
+                    "Sur la carte vitale du salarié",
                     "Sur le bulletin de paie",
                     "Nulle part, il faut la demander"
                 ],
@@ -215,7 +215,7 @@ window.QUIZ = {
                 q: "Existe-t-il un montant en dessous duquel une activité régulière n'a pas à être déclarée ?",
                 options: [
                     "Oui, un seuil annuel",
-                    "Oui, si l'activité est occasionnelle",
+                    "Oui, si l'activité reste tout à fait occasionnelle",
                     "Non : un chiffre d'affaires nul se déclare aussi"
                 ],
                 a: 2,
@@ -226,7 +226,7 @@ window.QUIZ = {
                 options: [
                     "Elles se déduisent sur justificatif",
                     "Elles ne sont pas déductibles : l'abattement est forfaitaire",
-                    "Elles se déduisent à hauteur de la moitié"
+                    "Elles se déduisent à hauteur de la moitié du chiffre d'affaires"
                 ],
                 a: 1,
                 explication: "Une activité à fortes dépenses y est pénalisée, quel que soit son chiffre d'affaires."
@@ -235,7 +235,7 @@ window.QUIZ = {
                 q: "Quelle question décide du choix entre micro et régime réel ?",
                 options: [
                     "Combien de clients ai-je ?",
-                    "Depuis combien de temps j'exerce ?",
+                    "Depuis combien de temps est-ce que j'exerce cette activité ?",
                     "Quelle part de mes recettes part en dépenses ?"
                 ],
                 a: 2,
@@ -247,7 +247,7 @@ window.QUIZ = {
                 options: [
                     "Sur service-public.fr ou le site de l'URSSAF",
                     "Dans un article de blog récent",
-                    "Auprès d'un autre auto-entrepreneur"
+                    "Auprès d'un autre auto-entrepreneur du secteur"
                 ],
                 a: 0,
                 explication: "Ils sont révisés régulièrement : une valeur recopiée ailleurs vieillit sans prévenir."
@@ -292,7 +292,7 @@ window.QUIZ = {
             options: [
                 "Les deux sont facultatifs",
                 "Les deux existent déjà et sont simplement ignorés",
-                "Les deux se demandent à l'administration"
+                "Les deux se demandent à l'administration compétente"
             ],
             a: 1,
             explication: "Les droits les plus utiles sont souvent ceux qu'on ne pense pas à consulter."
@@ -312,7 +312,7 @@ window.QUIZ = {
             options: [
                 "La convention collective",
                 "Le contrat, puisqu'il a été signé",
-                "La plus récente des deux"
+                "La plus récente des deux, par principe"
             ],
             a: 0,
             explication: "Ce que le contrat prévoit de moins favorable que la loi ou la convention ne s'applique pas."

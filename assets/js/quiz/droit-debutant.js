@@ -38,7 +38,7 @@ window.QUIZ = {
             {
                 q: "Quel piège guette une recherche juridique en français ?",
                 options: [
-                    "Les résultats sont trop techniques",
+                    "Les résultats sont trop techniques pour un non-juriste",
                     "Il y a trop peu de résultats",
                     "Une bonne partie sont belges, suisses ou québécois"
                 ],
@@ -51,7 +51,7 @@ window.QUIZ = {
                 options: [
                     "L'usage est toujours plus ancien",
                     "L'affirmation cite-t-elle un texte qu'on peut vérifier ?",
-                    "L'obligation est toujours écrite en majuscules"
+                    "L'obligation est toujours écrite en majuscules dans le texte"
                 ],
                 a: 1,
                 explication: "Sans texte, c'est une pratique — parfois excellente, mais qui ne s'impose à personne."
@@ -70,7 +70,7 @@ window.QUIZ = {
                 q: "Un contrat peut-il retirer un droit accordé par la loi ?",
                 options: [
                     "Oui, dès lors qu'on l'a signé",
-                    "Oui, si la clause est écrite en gras",
+                    "Oui, si la clause est écrite en gras et acceptée",
                     "Non : la clause est sans effet même signée"
                 ],
                 a: 2,
@@ -104,7 +104,7 @@ window.QUIZ = {
             {
                 q: "Pendant la période de présomption, qui doit prouver quoi ?",
                 options: [
-                    "C'est à l'acheteur de prouver le défaut",
+                    "C'est à l'acheteur de prouver le défaut, facture à l'appui",
                     "C'est au vendeur de prouver que le bien était conforme",
                     "Chacun apporte ses preuves"
                 ],
@@ -125,8 +125,8 @@ window.QUIZ = {
             {
                 q: "À partir de quand court le délai de rétractation ?",
                 options: [
-                    "De la commande",
-                    "Du paiement",
+                    "De la commande passée en ligne",
+                    "Du paiement de la commande",
                     "De la réception du bien"
                 ],
                 a: 2,
@@ -135,7 +135,7 @@ window.QUIZ = {
             {
                 q: "Quel est le point de départ du délai pour agir en vice caché ?",
                 options: [
-                    "La date d'achat",
+                    "La date d'achat du bien",
                     "La découverte du vice",
                     "La date de fabrication"
                 ],
@@ -171,8 +171,8 @@ window.QUIZ = {
                 q: "Que prouve le recommandé avec accusé de réception, qu'un courriel ne prouve pas toujours ?",
                 options: [
                     "Que le destinataire a reçu",
-                    "Que tu as écrit",
-                    "La date d'envoi"
+                    "Que tu as bien écrit au vendeur",
+                    "La date d'envoi du courrier"
                 ],
                 a: 0,
                 explication: "Courriel pour une première réclamation, recommandé dès qu'un délai commence à courir."
@@ -181,7 +181,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi éviter les adjectifs dans un courrier de réclamation ?",
                 options: [
-                    "Ils allongent le délai de traitement",
+                    "Ils allongent le délai de traitement du dossier par le service",
                     "Ils sont interdits",
                     "Ils affaiblissent le courrier au lieu de le renforcer"
                 ],
@@ -201,8 +201,8 @@ window.QUIZ = {
             {
                 q: "Que demandera en premier un conciliateur ou un juge ?",
                 options: [
-                    "Avez-vous un avocat ?",
-                    "Avez-vous téléphoné ?",
+                    "Avez-vous consulté un avocat ?",
+                    "Avez-vous téléphoné au service ?",
                     "Avez-vous mis en demeure ?"
                 ],
                 a: 2,
@@ -216,9 +216,9 @@ window.QUIZ = {
             {
                 q: "Combien de temps garder ses bulletins de paie ?",
                 options: [
-                    "3 ans",
+                    "3 ans, comme les factures",
                     "Sans limite de durée",
-                    "10 ans"
+                    "10 ans, comme les travaux"
                 ],
                 a: 1,
                 explication: "Ils servent au calcul de la retraite, parfois des décennies plus tard."
@@ -227,7 +227,7 @@ window.QUIZ = {
                 q: "Pourquoi conserver les factures de travaux dix ans ?",
                 options: [
                     "C'est la durée de la garantie décennale",
-                    "C'est une obligation fiscale",
+                    "C'est une obligation fiscale, comme pour les impôts",
                     "Pour la revente du logement"
                 ],
                 a: 0,
@@ -257,9 +257,9 @@ window.QUIZ = {
             {
                 q: "Quel document rend possible la contestation des retenues sur un dépôt de garantie ?",
                 options: [
-                    "Le bail",
+                    "Le bail signé au moment de l'entrée",
                     "L'état des lieux d'entrée",
-                    "La dernière quittance"
+                    "La dernière quittance de loyer"
                 ],
                 a: 1,
                 explication: "Sans lui, aucune comparaison n'est possible à la sortie."
@@ -304,7 +304,7 @@ window.QUIZ = {
             options: [
                 "La garantie légale de conformité",
                 "La rétractation",
-                "Aucun, le délai est passé"
+                "Aucun, le délai est passé depuis longtemps"
             ],
             a: 0,
             explication: "La rétractation est expirée depuis longtemps ; la garantie court encore près de deux ans."
@@ -313,7 +313,7 @@ window.QUIZ = {
             q: "Pourquoi le téléphone est-il un mauvais moyen de réclamer ?",
             options: [
                 "Il ne laisse aucune trace",
-                "Il coûte cher",
+                "Il coûte cher en temps d'attente",
                 "Les services n'y répondent pas"
             ],
             a: 0,
@@ -323,7 +323,7 @@ window.QUIZ = {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
                 "Vérifier toute règle lue en ligne sur service-public.fr",
-                "Envoyer tout en recommandé",
+                "Envoyer systématiquement les courriers en recommandé avec accusé",
                 "Tout garder indéfiniment"
             ],
             a: 0,

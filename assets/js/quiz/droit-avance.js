@@ -16,7 +16,7 @@ window.QUIZ = {
             {
                 q: "Que devient une clause abusive dans un contrat signé ?",
                 options: [
-                    "Elle s'applique puisqu'elle a été acceptée",
+                    "Elle s'applique, puisqu'elle a bien été lue et acceptée",
                     "Elle est réputée non écrite : elle ne s'applique pas",
                     "Elle annule tout le contrat"
                 ],
@@ -49,7 +49,7 @@ window.QUIZ = {
                 options: [
                     "Le préambule",
                     "La durée et les conditions de résiliation",
-                    "L'identité des parties"
+                    "L'identité exacte des parties et leurs adresses"
                 ],
                 a: 1,
                 explication: "Comment sort-on, avec quel préavis, à quel coût : c'est là que sont les surprises."
@@ -59,7 +59,7 @@ window.QUIZ = {
                 options: [
                     "Oui, dès lors qu'on a pu en prendre connaissance",
                     "Non, sauf si elles sont signées séparément",
-                    "Seulement si elles sont annexées sur papier"
+                    "Seulement si elles sont annexées au contrat papier"
                 ],
                 a: 0,
                 explication: "D'où l'importance de ce qui y est renvoyé."
@@ -68,7 +68,7 @@ window.QUIZ = {
                 q: "« Vous avez signé » est-il un argument recevable pour écarter la garantie légale ?",
                 options: [
                     "Non : ce que le contrat retire à la loi, la loi le reprend",
-                    "Oui, la signature vaut acceptation",
+                    "Oui, la signature vaut acceptation de l'ensemble des clauses",
                     "Oui, si la clause était en gras"
                 ],
                 a: 0,
@@ -149,8 +149,8 @@ window.QUIZ = {
                 q: "Combien coûte le conciliateur de justice ?",
                 options: [
                     "Rien : il est bénévole et gratuit",
-                    "Un forfait modique",
-                    "Un pourcentage de la somme en jeu"
+                    "Un forfait modique, fixé par le tribunal",
+                    "Un pourcentage de la somme réellement en jeu"
                 ],
                 a: 0,
                 explication: "Il se saisit par simple demande, et l'accord obtenu peut être homologué par un juge."
@@ -158,7 +158,7 @@ window.QUIZ = {
             {
                 q: "Où trouver les coordonnées du médiateur de la consommation d'une entreprise ?",
                 options: [
-                    "Auprès du tribunal",
+                    "Auprès du tribunal de proximité",
                     "Il faut les demander à la CNIL",
                     "Dans ses conditions générales"
                 ],
@@ -169,8 +169,8 @@ window.QUIZ = {
                 q: "Que risque-t-on à saisir le juge sans tentative de règlement amiable pour un petit litige ?",
                 options: [
                     "Voir la demande déclarée irrecevable",
-                    "Une amende",
-                    "Rien de particulier"
+                    "Une amende pour procédure jugée abusive",
+                    "Rien de particulier, le juge tranchera"
                 ],
                 a: 0,
                 explication: "Cette tentative est en principe obligatoire pour les petits litiges."
@@ -199,8 +199,8 @@ window.QUIZ = {
             {
                 q: "Quelle question se poser avant d'engager une action ?",
                 options: [
-                    "Ai-je moralement raison ?",
-                    "Le tribunal est-il proche ?",
+                    "Ai-je moralement raison dans ce litige ?",
+                    "Le tribunal est-il proche de chez moi ?",
                     "En face, y a-t-il de quoi payer ?"
                 ],
                 a: 2,
@@ -214,7 +214,7 @@ window.QUIZ = {
             {
                 q: "Quel délai a un organisme pour répondre à une demande d'accès ?",
                 options: [
-                    "Une semaine",
+                    "Une semaine, comme pour n'importe quelle réclamation ordinaire",
                     "Six mois",
                     "Un mois, prolongeable de deux si la demande est complexe"
                 ],
@@ -226,7 +226,7 @@ window.QUIZ = {
                 options: [
                     "Oui, il faut invoquer un intérêt légitime",
                     "Non, aucun motif n'est à donner",
-                    "Oui, en cas de litige seulement"
+                    "Oui, mais en cas de litige seulement"
                 ],
                 a: 1,
                 explication: "Un courriel de trois lignes suffit."
@@ -236,7 +236,7 @@ window.QUIZ = {
                 options: [
                     "Récupérer ses données dans un format réutilisable",
                     "Faire supprimer ses données",
-                    "Changer de fournisseur gratuitement"
+                    "Changer de fournisseur gratuitement, et sans aucun délai"
                 ],
                 a: 0,
                 explication: "C'est l'un des droits les moins connus, et des plus utiles."
@@ -255,7 +255,7 @@ window.QUIZ = {
             {
                 q: "Que faire si l'organisme ne répond pas dans le délai ?",
                 options: [
-                    "Saisir directement le tribunal",
+                    "Saisir directement le tribunal judiciaire compétent",
                     "Attendre encore un mois",
                     "Déposer une plainte gratuite auprès de la CNIL"
                 ],
@@ -267,7 +267,7 @@ window.QUIZ = {
                 options: [
                     "Non : c'est une autorité de contrôle, pas un tribunal",
                     "Oui, elle fixe le montant",
-                    "Oui, à hauteur du préjudice déclaré"
+                    "Oui, à la hauteur du préjudice que tu déclares avoir subi"
                 ],
                 a: 0,
                 explication: "Elle intervient auprès de l'organisme, ce qui suffit dans une grande partie des cas."
@@ -291,7 +291,7 @@ window.QUIZ = {
             q: "Qu'ont en commun le conciliateur de justice et la CNIL ?",
             options: [
                 "Les deux sont gratuits et largement sous-utilisés",
-                "Les deux rendent des jugements",
+                "Les deux rendent des jugements qui s'imposent aux parties",
                 "Les deux exigent un avocat"
             ],
             a: 0,
@@ -331,7 +331,7 @@ window.QUIZ = {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
                 "Vérifier le délai de prescription avant tout le reste",
-                "Lire les conditions générales en entier",
+                "Lire les conditions générales en entier avant de signer",
                 "Saisir systématiquement un juge"
             ],
             a: 0,

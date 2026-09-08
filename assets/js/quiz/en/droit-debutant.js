@@ -22,7 +22,7 @@ window.QUIZ = {
                 options: [
                     "Your government's official portal",
                     "A specialist forum",
-                    "The first search result"
+                    "The first result the search engine returns"
                 ],
                 a: 0,
                 explication: "The official explanation, in plain language, with the procedures and the forms."
@@ -30,7 +30,7 @@ window.QUIZ = {
             {
                 q: "What is the official legal database for, rather than the government portal?",
                 options: [
-                    "Doing your paperwork online",
+                    "Doing all of your paperwork online, on that same government portal",
                     "Asking a lawyer a question",
                     "Reading the text of the law itself and checking it is in force"
                 ],
@@ -62,7 +62,7 @@ window.QUIZ = {
                 q: "A well-written AI answer on a legal question:",
                 options: [
                     "Is reliable if it is detailed",
-                    "Is as good as an official source",
+                    "Is as good as an official source, and often easier to read",
                     "Can be perfectly wrong: form is not a sign of reliability"
                 ],
                 a: 2,
@@ -72,7 +72,7 @@ window.QUIZ = {
                 q: "Can a contract take away a right granted by law?",
                 options: [
                     "Yes, once you have signed it",
-                    "Yes, if the clause is in bold",
+                    "Yes, if the clause is in bold and initialled",
                     "No: the clause has no effect even signed"
                 ],
                 a: 2,
@@ -88,7 +88,7 @@ window.QUIZ = {
                 options: [
                     "Yes, for 14 days",
                     "No: it applies to distance selling only",
-                    "Yes, if the item has not been used"
+                    "Yes, provided the item has not been used at all"
                 ],
                 a: 1,
                 explication: "A retailer taking back an item bought in person is making a commercial gesture, not meeting an obligation."
@@ -106,7 +106,7 @@ window.QUIZ = {
             {
                 q: "During the presumption period, who must prove what?",
                 options: [
-                    "It is for the buyer to prove the defect",
+                    "It is for the buyer to prove the defect, receipt in hand",
                     "It is for the seller to prove the goods conformed",
                     "Each side brings its own evidence"
                 ],
@@ -127,8 +127,8 @@ window.QUIZ = {
             {
                 q: "When does the withdrawal period start running?",
                 options: [
-                    "From the order",
-                    "From payment",
+                    "From the order being placed",
+                    "From payment of the order",
                     "From receipt of the goods"
                 ],
                 a: 2,
@@ -137,9 +137,9 @@ window.QUIZ = {
             {
                 q: "What is the starting point for a hidden defect claim?",
                 options: [
-                    "The purchase date",
+                    "The date of purchase",
                     "Discovery of the defect",
-                    "The manufacturing date"
+                    "The date of manufacture"
                 ],
                 a: 1,
                 explication: "Two years from discovery, which can be well after the purchase."
@@ -162,8 +162,8 @@ window.QUIZ = {
             {
                 q: "What makes a letter a formal demand?",
                 options: [
-                    "A lawyer drafting it",
-                    "An official stamp",
+                    "Having a lawyer draft it on your behalf and then sign it for you",
+                    "An official stamp from the local authority at the top of the page",
                     "The usual five elements, and using the words “formal demand”"
                 ],
                 a: 2,
@@ -173,8 +173,8 @@ window.QUIZ = {
                 q: "What does recorded delivery prove that an email does not always?",
                 options: [
                     "That the recipient received it",
-                    "That you wrote",
-                    "The date of sending"
+                    "That you did write to the trader",
+                    "The date the letter was sent"
                 ],
                 a: 0,
                 explication: "Email for a first complaint, recorded delivery as soon as a period starts running."
@@ -183,7 +183,7 @@ window.QUIZ = {
             {
                 q: "Why avoid adjectives in a letter of complaint?",
                 options: [
-                    "They lengthen the processing time",
+                    "They lengthen the time the department takes to process it",
                     "They are forbidden",
                     "They weaken the letter rather than strengthening it"
                 ],
@@ -195,7 +195,7 @@ window.QUIZ = {
                 options: [
                     "It is polite",
                     "It starts something running; implied, it does nothing",
-                    "It gets a more detailed answer"
+                    "It gets a more detailed answer from the department"
                 ],
                 a: 1,
                 explication: "Fifteen days is reasonable and usual."
@@ -203,8 +203,8 @@ window.QUIZ = {
             {
                 q: "What will a conciliator or a judge ask for first?",
                 options: [
-                    "Do you have a lawyer?",
-                    "Did you phone?",
+                    "Have you consulted a lawyer?",
+                    "Did you phone the department?",
                     "Did you send a formal demand?"
                 ],
                 a: 2,
@@ -218,9 +218,9 @@ window.QUIZ = {
             {
                 q: "How long should payslips be kept?",
                 options: [
-                    "3 years",
+                    "3 years, like invoices",
                     "Indefinitely",
-                    "10 years"
+                    "10 years, like building work"
                 ],
                 a: 1,
                 explication: "They are used to calculate the pension, sometimes decades later."
@@ -230,7 +230,7 @@ window.QUIZ = {
                 options: [
                     "That is the length of the ten-year building guarantee in France",
                     "It is a tax obligation",
-                    "For reselling the property"
+                    "For reselling the property later on, when a buyer asks to see them"
                 ],
                 a: 0,
                 explication: "Ten years during which certain defects stay covered."
@@ -239,8 +239,8 @@ window.QUIZ = {
                 q: "Who generally bears the burden of proof?",
                 options: [
                     "Whoever is claiming",
-                    "The trader",
-                    "It is shared"
+                    "The trader, in every case",
+                    "It is shared between the two"
                 ],
                 a: 0,
                 explication: "Hence the prosaic importance of what you keep."
@@ -270,8 +270,8 @@ window.QUIZ = {
                 q: "What is wrong with a box of ten years of unsorted papers?",
                 options: [
                     "It amounts to having no records: nothing can be found in time",
-                    "It takes up space",
-                    "The documents deteriorate"
+                    "It takes up space in the flat and in the cupboards, for nothing",
+                    "The documents deteriorate over the years and become hard to read"
                 ],
                 a: 0,
                 explication: "An annual sort beats accumulation."
@@ -284,7 +284,7 @@ window.QUIZ = {
         {
             q: "What is the thread running through this level?",
             options: [
-                "Knowing the civil code",
+                "Knowing the civil code and its main articles by heart",
                 "Knowing where to look, how long is left, and what to write",
                 "Finding a lawyer"
             ],
@@ -294,8 +294,8 @@ window.QUIZ = {
         {
             q: "What do an undated source and a document thrown away too soon have in common?",
             options: [
-                "Both are forbidden",
-                "Both concern consumer law",
+                "Both are forbidden by the consumer code and by the settled case law of the courts",
+                "Both concern consumer law and nothing else in the rest of the civil code",
                 "Both make a position indefensible on the day it has to be defended"
             ],
             a: 2,
@@ -306,7 +306,7 @@ window.QUIZ = {
             options: [
                 "The legal guarantee of conformity",
                 "The right to withdraw",
-                "None, the deadline has passed"
+                "None, the deadline passed a while ago"
             ],
             a: 0,
             explication: "Withdrawal expired long ago; in France the guarantee still runs for nearly two years."
@@ -315,7 +315,7 @@ window.QUIZ = {
             q: "Why is the phone a poor way to complain?",
             options: [
                 "It leaves no trace",
-                "It is expensive",
+                "It is expensive in waiting time",
                 "Departments do not answer it"
             ],
             a: 0,

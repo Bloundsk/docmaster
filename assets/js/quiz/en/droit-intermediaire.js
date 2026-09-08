@@ -21,7 +21,7 @@ window.QUIZ = {
                 options: [
                     "The tenancy agreement is void",
                     "The property is presumed to have been handed over in good condition",
-                    "The deposit is returned automatically"
+                    "The deposit is returned automatically at the end of the tenancy period"
                 ],
                 a: 1,
                 explication: "The burden turns against the tenant, who has nothing left to compare."
@@ -29,7 +29,7 @@ window.QUIZ = {
             {
                 q: "Is a clause forbidding you to host a relative valid?",
                 options: [
-                    "Yes, if it is signed",
+                    "Yes, if it is signed by both parties",
                     "No: it is deemed unwritten",
                     "Yes, in furnished lettings only"
                 ],
@@ -40,7 +40,7 @@ window.QUIZ = {
                 q: "By how much is a deposit returned late increased, in France?",
                 options: [
                     "10% of the rent excluding charges per month started",
-                    "5% of the deposit per month",
+                    "5% of the deposit for each month of delay that starts",
                     "There is no increase"
                 ],
                 a: 0,
@@ -60,7 +60,7 @@ window.QUIZ = {
             {
                 q: "Can the landlord retain a sum with no supporting document?",
                 options: [
-                    "Yes, if they announce it in a letter",
+                    "Yes, if they announce it in a sufficiently detailed letter",
                     "No: a quote, an invoice or a joint report is needed",
                     "Yes, up to the amount of the deposit"
                 ],
@@ -95,7 +95,7 @@ window.QUIZ = {
             {
                 q: "When does notice start running?",
                 options: [
-                    "From posting the letter",
+                    "From the posting of the recorded letter",
                     "From the date written in the letter",
                     "From the landlord's receipt of it"
                 ],
@@ -106,7 +106,7 @@ window.QUIZ = {
                 q: "What happens if you claim a shortened notice without giving the reason in writing?",
                 options: [
                     "The reason can be given orally afterwards",
-                    "The notice is void",
+                    "The notice is void and must be redone",
                     "The notice stays three months"
                 ],
                 a: 2,
@@ -136,7 +136,7 @@ window.QUIZ = {
             {
                 q: "Why state your new address in the notice letter?",
                 options: [
-                    "It is a legal obligation",
+                    "It is a legal obligation under the lease",
                     "For forwarding the post",
                     "The deposit must be returned there"
                 ],
@@ -153,7 +153,7 @@ window.QUIZ = {
                 options: [
                     "The permanent contract",
                     "The fixed-term contract",
-                    "Both equally"
+                    "Both equally, depending on the sector"
                 ],
                 a: 0,
                 explication: "A fixed-term contract is an exception, limited to listed cases and its reason must be written."
@@ -162,8 +162,8 @@ window.QUIZ = {
                 q: "What does a fixed-term contract with no writing or no valid reason risk?",
                 options: [
                     "Reclassification as permanent",
-                    "A fine for the employee",
-                    "Nothing in particular"
+                    "A fine for the employee at fault",
+                    "Nothing in particular, it stays valid"
                 ],
                 a: 0,
                 explication: "It is one of the most frequent employment disputes."
@@ -183,8 +183,8 @@ window.QUIZ = {
                 q: "What is the notice period during probation?",
                 options: [
                     "A period to observe when ending probation, growing with length of service",
-                    "The resignation notice",
-                    "The delay before the first payslip"
+                    "The notice period you have to give when you resign from the job that you hold",
+                    "The delay before the very first payslip has to be issued to you by the employer"
                 ],
                 a: 0,
                 explication: "24 hours before 8 days, 48 hours up to a month, 2 weeks after a month, 1 month after three."
@@ -218,7 +218,7 @@ window.QUIZ = {
                 q: "Is there an amount below which a regular activity need not be registered?",
                 options: [
                     "Yes, an annual threshold",
-                    "Yes, if the activity is occasional",
+                    "Yes, if the activity stays genuinely occasional",
                     "No: even nil turnover has to be declared"
                 ],
                 a: 2,
@@ -229,7 +229,7 @@ window.QUIZ = {
                 options: [
                     "They are deducted against receipts",
                     "They are not deductible: the allowance is a flat rate",
-                    "They are deducted at half their value"
+                    "They are deducted at half their value, on production of receipts"
                 ],
                 a: 1,
                 explication: "A high-expense activity is penalised by it, whatever its turnover."
@@ -237,7 +237,7 @@ window.QUIZ = {
             {
                 q: "Which question decides between the flat-rate and the actual-accounts regime?",
                 options: [
-                    "How many customers do I have?",
+                    "How many customers do I have on my books at the moment?",
                     "How long have I been trading?",
                     "What share of my receipts goes out in expenses?"
                 ],
@@ -250,7 +250,7 @@ window.QUIZ = {
                 options: [
                     "On the official government and social security sites",
                     "In a recent blog article",
-                    "From another self-employed person"
+                    "From another self-employed person working in the same trade"
                 ],
                 a: 0,
                 explication: "They are revised regularly: a value copied elsewhere ages without warning."
@@ -259,8 +259,8 @@ window.QUIZ = {
                 q: "What does a single-member company bring over a sole trader?",
                 options: [
                     "Separation of assets and the possibility of taking on partners",
-                    "Fewer formalities",
-                    "An exemption from contributions"
+                    "Fewer formalities when setting the business up in the first place",
+                    "An exemption from social contributions during the first two years"
                 ],
                 a: 0,
                 explication: "In exchange for heavier administration."
@@ -305,7 +305,7 @@ window.QUIZ = {
             options: [
                 "A sum owed as of right, which nobody pays spontaneously",
                 "Nothing, it is paid automatically",
-                "The right to challenge the deductions"
+                "The right to challenge the deductions made on the deposit"
             ],
             a: 0,
             explication: "The increase is not negotiated: it is claimed."
@@ -333,8 +333,8 @@ window.QUIZ = {
         {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
-                "Signing faster",
-                "Choosing the simplest regime by default",
+                "Signing everything faster, so as not to lose the property to another applicant",
+                "Choosing the simplest regime by default, and moving on to something else",
                 "Taking your time over the check-in inventory, and photographing it"
             ],
             a: 2,
