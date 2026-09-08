@@ -18,7 +18,7 @@ window.QUIZ = {
                 options: [
                     "In the rounding",
                     "In the scope: manufacturing included, or usage only?",
-                    "In the currency used"
+                    "In the currency used to convert the costs and the impacts"
                 ],
                 a: 1,
                 explication: "That is the first of the five questions to ask."
@@ -57,7 +57,7 @@ window.QUIZ = {
             {
                 q: "Why be wary of a 2015 figure in this field?",
                 options: [
-                    "The calculation methods were banned",
+                    "The calculation methods were banned from publication then",
                     "Digital's energy intensities are falling fast",
                     "The data was not public"
                 ],
@@ -69,7 +69,7 @@ window.QUIZ = {
                 options: [
                     "No: it is an equally categorical claim in the opposite direction",
                     "Yes, it restores the truth",
-                    "Yes, if it comes from a researcher"
+                    "Yes, provided it comes from a researcher recognised in the field"
                 ],
                 a: 0,
                 explication: "The right answer is an order of magnitude with an uncertainty — which passes on badly."
@@ -82,7 +82,7 @@ window.QUIZ = {
             {
                 q: "What can be calculated with certainty about streaming?",
                 options: [
-                    "The network cost per gigabyte",
+                    "The network cost per gigabyte carried, measured over a full year",
                     "The device's consumption: its power multiplied by the time",
                     "The data centres' share"
                 ],
@@ -93,7 +93,7 @@ window.QUIZ = {
                 q: "Two hours of video a day, on a 100 W television against a 3 W phone:",
                 options: [
                     "A negligible gap",
-                    "4.4 kg against 2 kg",
+                    "4.4 kg against 2 kg, so roughly half as much over the year",
                     "4.4 kg against 0.13 kg CO₂e a year — a factor of 33"
                 ],
                 a: 2,
@@ -113,7 +113,7 @@ window.QUIZ = {
             {
                 q: "Lowering the video quality: what effect?",
                 options: [
-                    "The most important of all",
+                    "The most important of all the gestures anyone can make",
                     "Real, but on the smallest and most uncertain share",
                     "None"
                 ],
@@ -124,7 +124,7 @@ window.QUIZ = {
                 q: "Why are “per gigabyte” calculations misleading?",
                 options: [
                     "Consumption per gigabyte falls as traffic rises",
-                    "Gigabytes cannot be measured",
+                    "Gigabytes cannot be measured reliably across a network",
                     "They ignore compression"
                 ],
                 a: 0,
@@ -169,7 +169,7 @@ window.QUIZ = {
                 q: "Does that ranking hold everywhere?",
                 options: [
                     "No: it is specific to countries with low-carbon electricity",
-                    "Yes, it is universal",
+                    "Yes, it is universal and holds for every country in the world",
                     "Yes, except in Asia"
                 ],
                 a: 0,
@@ -179,8 +179,8 @@ window.QUIZ = {
             {
                 q: "What dominates networks' consumption?",
                 options: [
-                    "The volume of data carried",
-                    "The number of connected users",
+                    "The volume of data carried every day",
+                    "The number of users connected at once",
                     "Equipment permanently switched on"
                 ],
                 a: 2,
@@ -190,8 +190,8 @@ window.QUIZ = {
                 q: "A service “hosted in a green data centre” acts on what?",
                 options: [
                     "On the smallest of the three items",
-                    "On the dominant item",
-                    "On its users' devices"
+                    "On the dominant item of the whole balance",
+                    "On the devices belonging to all its users"
                 ],
                 a: 0,
                 explication: "That is not nothing, and it does not change the ranking."
@@ -245,7 +245,7 @@ window.QUIZ = {
             {
                 q: "What does home working do to the balance, strictly speaking?",
                 options: [
-                    "It removes it entirely",
+                    "It removes them entirely, with nothing in exchange",
                     "It always increases it",
                     "It shifts consumption as much as it removes it"
                 ],
@@ -255,7 +255,7 @@ window.QUIZ = {
             {
                 q: "What is the classic weakness of “avoidance” accounting?",
                 options: [
-                    "It underestimates digital",
+                    "It systematically underestimates the real weight of digital tools",
                     "It ignores manufacturing",
                     "It compares against a hypothetical scenario nobody checks"
                 ],
@@ -311,8 +311,8 @@ window.QUIZ = {
             q: "A company announces it hosts its service in a decarbonised data centre. What is missing?",
             options: [
                 "The dominant item: its users' devices",
-                "The detail of its water consumption",
-                "Its supplier's certification"
+                "The detail of the water its cooling consumes",
+                "The certification held by its hosting supplier"
             ],
             a: 0,
             explication: "The announcement addresses the smallest of the three items."
@@ -322,7 +322,7 @@ window.QUIZ = {
             options: [
                 "The choice of video resolution",
                 "The journey avoided",
-                "The choice of host"
+                "The choice of hosting provider"
             ],
             a: 1,
             explication: "It is the only one where the order of magnitude flips."

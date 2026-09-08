@@ -16,8 +16,8 @@ window.QUIZ = {
             {
                 q: "What is the worst effect of a heavy digital service?",
                 options: [
-                    "Its bandwidth consumption",
-                    "Its loading time",
+                    "Its consumption of bandwidth across the network",
+                    "Its loading time on a slow connection",
                     "Making a device that was working obsolete"
                 ],
                 a: 2,
@@ -28,7 +28,7 @@ window.QUIZ = {
                 options: [
                     "How many kilobytes does my page weigh?",
                     "At what device age does my page become unusable?",
-                    "What is my score on a measurement tool?"
+                    "What score do I get on the various measurement tools available?"
                 ],
                 a: 1,
                 explication: "The two are linked, but the first is the one that counts."
@@ -36,7 +36,7 @@ window.QUIZ = {
             {
                 q: "A 3 MB site, 10,000 visits a month: what does halving the weight give?",
                 options: [
-                    "A saving of several hundred kilos",
+                    "A saving of several hundred kilos of CO₂e over the course of a single year",
                     "About 0.6 kg CO₂e a year instead of 1.3 — less than a tenth of a phone",
                     "No difference"
                 ],
@@ -48,7 +48,7 @@ window.QUIZ = {
                 q: "Why is infinite scroll a problem?",
                 options: [
                     "It uses too much memory",
-                    "It blocks search ranking",
+                    "It blocks search ranking on the pages that follow",
                     "It is a mechanism designed to stretch time spent"
                 ],
                 a: 2,
@@ -57,9 +57,9 @@ window.QUIZ = {
             {
                 q: "Which criteria do a service's frugality criteria almost entirely overlap with?",
                 options: [
-                    "Those of search ranking",
+                    "Those of search ranking in the engines",
                     "Those of accessibility and performance",
-                    "Those of security"
+                    "Those of application and data security"
                 ],
                 a: 1,
                 explication: "Good news: they can be argued in a meeting without invoking the environment."
@@ -69,7 +69,7 @@ window.QUIZ = {
                 options: [
                     "No: it addresses the smallest of the three items",
                     "Yes, it is the main criterion",
-                    "Yes, if the supplier is certified"
+                    "Yes, if the supplier is certified by an independent body"
                 ],
                 a: 0,
                 explication: "It is not useless — it is often all that gets done."
@@ -82,7 +82,7 @@ window.QUIZ = {
             {
                 q: "100 machines at 200 kg CO₂e, cycle extended from 3 to 5 years:",
                 options: [
-                    "A one-off saving of 2,667 kg",
+                    "A one-off saving of 2,667 kg, just once",
                     "2,667 kg CO₂e saved every year",
                     "No effect, the hardware is already bought"
                 ],
@@ -92,8 +92,8 @@ window.QUIZ = {
             {
                 q: "What most often triggers a machine's replacement?",
                 options: [
-                    "Keyboard wear",
-                    "The warranty ending",
+                    "Keyboard wear and worn connectors on the machine",
+                    "The manufacturer's warranty coming to an end",
                     "Software becoming demanding, not a breakdown"
                 ],
                 a: 2,
@@ -102,7 +102,7 @@ window.QUIZ = {
             {
                 q: "Does depreciation over three years oblige you to replace after three years?",
                 options: [
-                    "Yes, it is a tax obligation",
+                    "Yes, it is a tax obligation there is no way around",
                     "No: it is an accounting rule, not an obligation to replace",
                     "Yes, barring an exemption"
                 ],
@@ -114,7 +114,7 @@ window.QUIZ = {
                 q: "What is an email-sorting campaign worth against extending the fleet's life?",
                 options: [
                     "It is equivalent",
-                    "It is more effective because it is collective",
+                    "It is more effective because it involves everybody at once",
                     "It is visible, cheap and has no measurable effect"
                 ],
                 a: 2,
@@ -123,8 +123,8 @@ window.QUIZ = {
             {
                 q: "What should you do with a machine handed back by a demanding user?",
                 options: [
-                    "Always sell it on",
-                    "Scrap it",
+                    "Always sell it on to a refurbisher",
+                    "Scrap it and order a new one",
                     "Refurbish it internally for another role"
                 ],
                 a: 2,
@@ -133,7 +133,7 @@ window.QUIZ = {
             {
                 q: "Why is the replacement cycle such an effective lever?",
                 options: [
-                    "Because it cuts electricity consumption",
+                    "Because it cuts the electricity consumption of every machine in the fleet at once",
                     "It is a single decision, taken by a few people, that applies to the whole fleet",
                     "Because it is compulsory"
                 ],
@@ -149,8 +149,8 @@ window.QUIZ = {
                 q: "What does the durability rating displayed at the point of sale score?",
                 options: [
                     "Repairability and reliability",
-                    "Electricity consumption",
-                    "Geographic origin"
+                    "Yearly electricity consumption",
+                    "The geographic origin of the product"
                 ],
                 a: 0,
                 explication: "In France it succeeded the repairability index on several categories of device."
@@ -168,7 +168,7 @@ window.QUIZ = {
             {
                 q: "What is lost when an end-of-life device enters no scheme?",
                 options: [
-                    "Only the benefit of recycling",
+                    "Only the benefit of recycling every one of the materials that the device contains",
                     "Twice over: the pollution of the waste, and the extraction to be done again",
                     "Nothing significant"
                 ],
@@ -179,7 +179,7 @@ window.QUIZ = {
             {
                 q: "Must a retailer take back the old device when selling one?",
                 options: [
-                    "No, it is an optional commercial service",
+                    "No, it is an optional commercial service some shops offer",
                     "Yes, when selling an equivalent — but it rarely mentions it",
                     "Yes, for a fee"
                 ],
@@ -189,8 +189,8 @@ window.QUIZ = {
             {
                 q: "Where does recycling sit in the hierarchy?",
                 options: [
-                    "First",
-                    "On the same level as repair",
+                    "First, before anything else",
+                    "On the same level as repair and reuse",
                     "Last, after reduce, reuse and repair"
                 ],
                 a: 2,
@@ -200,7 +200,7 @@ window.QUIZ = {
                 q: "What does a message centred on recycling do?",
                 options: [
                     "It moves attention from the purchase to the end of life",
-                    "It makes manufacturers accountable",
+                    "It makes the manufacturers accountable for what they sell",
                     "It reduces waste at source"
                 ],
                 a: 0,
@@ -216,7 +216,7 @@ window.QUIZ = {
                 options: [
                     "Efficiency per unit improves, and the number of units rises more",
                     "A temporary rise after a fall",
-                    "Hardware coming back after repair"
+                    "Hardware coming back into circulation once it has all been repaired"
                 ],
                 a: 0,
                 explication: "The unit gain is real, and the total goes up anyway."
@@ -224,9 +224,9 @@ window.QUIZ = {
             {
                 q: "What is the only question that counts when a gain is announced?",
                 options: [
-                    "By what percentage?",
+                    "By what percentage exactly?",
                     "Has the total gone down?",
-                    "Over what period?"
+                    "Over what period of time?"
                 ],
                 a: 1,
                 explication: "It is rarely asked, because the answer is often no."
@@ -235,8 +235,8 @@ window.QUIZ = {
                 q: "A model twice as efficient used ten times as often:",
                 options: [
                     "Consumes five times more",
-                    "Consumes half as much",
-                    "Consumes the same"
+                    "Consumes half as much as before",
+                    "Consumes exactly the same"
                 ],
                 a: 0,
                 explication: "That is the arithmetic of rebound, and it is stubborn."
@@ -246,7 +246,7 @@ window.QUIZ = {
                 q: "Does the rebound effect mean efficiency is useless?",
                 options: [
                     "No: without it, the growth in usage would cost far more",
-                    "Yes, it is counterproductive",
+                    "Yes, it is counterproductive in almost every case known",
                     "Yes, except in computing"
                 ],
                 a: 0,
@@ -280,8 +280,8 @@ window.QUIZ = {
         {
             q: "Who is this level for, unlike the first two?",
             options: [
-                "Climate specialists",
-                "Developers only",
+                "Climate specialists, and the people whose job it is to advise them on policy",
+                "Developers only, since they are the ones who actually write the code that runs",
                 "Those who decide: designing a service, managing a fleet, weighing choices"
             ],
             a: 2,
@@ -290,7 +290,7 @@ window.QUIZ = {
         {
             q: "What do frugal design and extending a fleet's life have in common?",
             options: [
-                "Both cut electricity consumption",
+                "Both cut the electricity consumed by the equipment",
                 "Both are legal obligations",
                 "Both act on the dominant item: the manufacturing of devices"
             ],
@@ -310,8 +310,8 @@ window.QUIZ = {
         {
             q: "Why are a service's frugality criteria easy to argue for?",
             options: [
-                "They are required by law",
-                "They cut hosting costs",
+                "They are now required by law in an increasing number of countries right across Europe",
+                "They cut the hosting costs, and the finance department notices that very quickly indeed",
                 "They overlap with accessibility and performance, which have their own arguments"
             ],
             a: 2,
@@ -321,7 +321,7 @@ window.QUIZ = {
             q: "If you keep only one thing from this level, what should it be?",
             options: [
                 "Lighten your pages",
-                "Choose a decarbonised host",
+                "Choose a decarbonised host for the service",
                 "Look for the total rather than the percentage"
             ],
             a: 2,
@@ -331,7 +331,7 @@ window.QUIZ = {
             q: "Twenty years of technical progress and a digital footprint that keeps rising: how is that explained?",
             options: [
                 "By the rebound effect: efficiency improves and usage improves more",
-                "By faulty measurements",
+                "By faulty measurements, repeated from one published study to the next",
                 "By population growth"
             ],
             a: 0,

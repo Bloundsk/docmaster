@@ -21,7 +21,7 @@ window.QUIZ = {
                 options: [
                     "In the electricity used while it is in service",
                     "In the manufacturing",
-                    "In the transport"
+                    "In the transport from the factory"
                 ],
                 a: 1,
                 explication: "The electricity used over years of service weighs far less."
@@ -29,8 +29,8 @@ window.QUIZ = {
             {
                 q: "Why does manufacturing weigh so much?",
                 options: [
-                    "Because devices are heavy",
-                    "Because of the packaging",
+                    "Because the devices themselves are heavy and awkward to transport around",
+                    "Because of the packaging and of all the plastic that comes inside the box",
                     "Extraction, clean rooms, assembly — a long and very energy-hungry chain"
                 ],
                 a: 2,
@@ -40,8 +40,8 @@ window.QUIZ = {
                 q: "A phone kept 2½ years costs 29 kg CO₂e a year. And kept two years longer?",
                 options: [
                     "18.3 kg a year, that is 37% less",
-                    "26 kg a year",
-                    "The same total"
+                    "26 kg a year, barely less than before",
+                    "The same total, simply spread differently"
                 ],
                 a: 0,
                 explication: "Without changing anything about how it is used."
@@ -61,7 +61,7 @@ window.QUIZ = {
                 q: "What variable is left once the device is bought?",
                 options: [
                     "How long it will serve",
-                    "How it is charged",
+                    "How it is charged, and how often",
                     "How many apps are installed"
                 ],
                 a: 0,
@@ -71,8 +71,8 @@ window.QUIZ = {
                 q: "What becomes of usage advice in that light?",
                 options: [
                     "It goes after the small share",
-                    "It is the most effective kind",
-                    "It is wrong"
+                    "It is the most effective kind of advice",
+                    "It is wrong, plainly and simply"
                 ],
                 a: 0,
                 explication: "Not wrong — but it occupies attention while the decision that counts is taken elsewhere."
@@ -95,7 +95,7 @@ window.QUIZ = {
             {
                 q: "What is a device kept in a drawer “just in case” worth?",
                 options: [
-                    "It has no impact once switched off",
+                    "It has no impact at all once it has been switched off",
                     "It counts for half",
                     "It has the same manufacturing footprint as one in use"
                 ],
@@ -105,9 +105,9 @@ window.QUIZ = {
             {
                 q: "What often determines end of life, before any breakdown?",
                 options: [
-                    "Screen wear",
+                    "Screen wear and scratches",
                     "The end of security updates",
-                    "The warranty expiring"
+                    "The warranty expiring a few months ago"
                 ],
                 a: 1,
                 explication: "A device with no patches becomes hard to keep, whatever its physical condition."
@@ -116,9 +116,9 @@ window.QUIZ = {
             {
                 q: "Replacing a battery rather than the device:",
                 options: [
-                    "Is not worth it",
+                    "Is not worth doing at all once the device is already a couple of years old",
                     "Costs a fraction of the price, and avoids a whole manufacturing cycle",
-                    "Reduces performance"
+                    "Reduces the overall performance noticeably over the months that follow it"
                 ],
                 a: 1,
                 explication: "It has the best return of any action, and is the most often dismissed."
@@ -127,7 +127,7 @@ window.QUIZ = {
                 q: "A phone replaced after six months comes to how much per year?",
                 options: [
                     "125 kg CO₂e, of which 96% is manufacturing alone",
-                    "29 kg CO₂e",
+                    "29 kg CO₂e, the rate of a replacement every two and a half years",
                     "60 kg CO₂e"
                 ],
                 a: 0,
@@ -152,8 +152,8 @@ window.QUIZ = {
                 q: "What is an ordinary email actually worth?",
                 options: [
                     "A fraction of a gram of CO₂e",
-                    "About 10 grams",
-                    "About 50 grams"
+                    "About 10 grams, as is often written",
+                    "About 50 grams, with the attachment"
                 ],
                 a: 0,
                 explication: "The 10 g figure came from an old estimate, repeated for over ten years without checking."
@@ -202,7 +202,7 @@ window.QUIZ = {
             {
                 q: "Which question should you ask before adopting a habit?",
                 options: [
-                    "Is it easy to keep up?",
+                    "Is it easy to keep up over several months?",
                     "How many people do it?",
                     "Does it concern the hardware or the usage?"
                 ],
@@ -227,7 +227,7 @@ window.QUIZ = {
             {
                 q: "Which criterion most often determines a new device's end of life?",
                 options: [
-                    "The battery capacity",
+                    "The battery capacity at the time of purchase",
                     "The number of years of guaranteed updates",
                     "The screen size"
                 ],
@@ -237,7 +237,7 @@ window.QUIZ = {
             {
                 q: "What is the useful hierarchy, in order?",
                 options: [
-                    "Recycle, buy new, repair",
+                    "Recycle, buy new, then repair what is left",
                     "Buy green, then recycle",
                     "Keep, repair, refurbish — buying new last"
                 ],
@@ -248,7 +248,7 @@ window.QUIZ = {
             {
                 q: "What is the rating displayed at the point of sale for?",
                 options: [
-                    "Indicating electricity consumption",
+                    "Indicating the yearly electricity consumption of the device",
                     "Comparing repairability or durability between models",
                     "Guaranteeing European origin"
                 ],
@@ -259,7 +259,7 @@ window.QUIZ = {
                 q: "A device oversized relative to the need:",
                 options: [
                     "Lasts longer",
-                    "Uses less per task",
+                    "Uses less per task, since it is better dimensioned for the work",
                     "Costs more to manufacture without serving any better"
                 ],
                 a: 2,
@@ -269,7 +269,7 @@ window.QUIZ = {
                 q: "What should you check before any replacement purchase?",
                 options: [
                     "That the old one could not be repaired",
-                    "The price of new against refurbished",
+                    "The price of a new one against a refurbished one",
                     "Availability in shops"
                 ],
                 a: 0,
@@ -293,8 +293,8 @@ window.QUIZ = {
         {
             q: "What do repairing, keeping and buying refurbished have in common?",
             options: [
-                "All three cut electricity consumption",
-                "All three cost more",
+                "All three cut the electricity that is consumed",
+                "All three cost more than buying new",
                 "All three avoid a manufacturing cycle"
             ],
             a: 2,
@@ -305,7 +305,7 @@ window.QUIZ = {
             options: [
                 "They made the wrong trade, without knowing it",
                 "Their balance is even",
-                "The sorting offsets the replacement"
+                "The email sorting offsets the replacement of the phone"
             ],
             a: 0,
             explication: "The effort goes to the small share while the large one is decided elsewhere."
@@ -324,7 +324,7 @@ window.QUIZ = {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
                 "Sorting your files regularly",
-                "Choosing frugal models",
+                "Choosing frugal models when buying",
                 "Keeping your devices longer"
             ],
             a: 2,

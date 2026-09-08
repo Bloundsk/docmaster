@@ -19,7 +19,7 @@ window.QUIZ = {
                 options: [
                     "Dans l'électricité consommée à l'usage",
                     "Dans la fabrication",
-                    "Dans le transport"
+                    "Dans le transport depuis l'usine"
                 ],
                 a: 1,
                 explication: "L'électricité consommée pendant des années d'usage pèse bien moins."
@@ -38,8 +38,8 @@ window.QUIZ = {
                 q: "Un téléphone gardé 2 ans et demi coûte 29 kg CO₂e par an. Et gardé 2 ans de plus ?",
                 options: [
                     "18,3 kg par an, soit 37 % de moins",
-                    "26 kg par an",
-                    "Le même total"
+                    "26 kg par an, soit à peine moins qu'avant",
+                    "Le même total, simplement réparti autrement"
                 ],
                 a: 0,
                 explication: "Sans rien changer à la façon de s'en servir."
@@ -60,7 +60,7 @@ window.QUIZ = {
                 options: [
                     "La durée pendant laquelle il servira",
                     "La façon de le recharger",
-                    "Le nombre d'applications installées"
+                    "Le nombre d'applications installées dessus"
                 ],
                 a: 0,
                 explication: "L'essentiel est déjà payé au moment où on l'allume."
@@ -69,8 +69,8 @@ window.QUIZ = {
                 q: "Que deviennent les conseils portant sur l'usage, dans ce cadre ?",
                 options: [
                     "Ils s'attaquent à la petite part",
-                    "Ils sont les plus efficaces",
-                    "Ils sont faux"
+                    "Ils sont les plus efficaces des trois",
+                    "Ils sont faux, tout simplement, et trompeurs"
                 ],
                 a: 0,
                 explication: "Pas faux — mais ils occupent l'attention pendant que la décision qui compte se prend ailleurs."
@@ -103,9 +103,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui détermine souvent la fin de vie, avant toute panne ?",
                 options: [
-                    "L'usure de l'écran",
+                    "L'usure de l'écran et des boutons physiques",
                     "La fin des mises à jour de sécurité",
-                    "La garantie expirée"
+                    "La garantie qui a expiré depuis quelques mois"
                 ],
                 a: 1,
                 explication: "Un appareil sans correctifs devient difficile à garder, quel que soit son état matériel."
@@ -116,7 +116,7 @@ window.QUIZ = {
                 options: [
                     "N'est pas rentable",
                     "Coûte une fraction du prix, et évite toute une fabrication",
-                    "Réduit les performances"
+                    "Réduit les performances générales de l'appareil sur la durée"
                 ],
                 a: 1,
                 explication: "C'est le geste au meilleur rapport, et le plus souvent écarté."
@@ -125,7 +125,7 @@ window.QUIZ = {
                 q: "Un téléphone remplacé au bout de six mois revient à combien par an ?",
                 options: [
                     "125 kg CO₂e, dont 96 % pour la seule fabrication",
-                    "29 kg CO₂e",
+                    "29 kg CO₂e, soit le rythme d'un renouvellement tous les deux ans et demi",
                     "60 kg CO₂e"
                 ],
                 a: 0,
@@ -150,8 +150,8 @@ window.QUIZ = {
                 q: "Que vaut réellement un courriel ordinaire ?",
                 options: [
                     "Une fraction de gramme de CO₂e",
-                    "Environ 10 grammes",
-                    "Environ 50 grammes"
+                    "Environ 10 grammes, comme on le lit souvent",
+                    "Environ 50 grammes, avec la pièce jointe"
                 ],
                 a: 0,
                 explication: "Le chiffre de 10 g venait d'une estimation ancienne, reprise pendant plus de dix ans sans vérification."
@@ -160,7 +160,7 @@ window.QUIZ = {
                 q: "Quels gestes ont un effet important ?",
                 options: [
                     "Garder plus longtemps, acheter reconditionné, réparer",
-                    "Trier ses courriels, vider son cache, se désabonner",
+                    "Trier ses courriels, vider son cache, se désabonner des listes",
                     "Baisser la luminosité et fermer les onglets"
                 ],
                 a: 0,
@@ -201,7 +201,7 @@ window.QUIZ = {
                 q: "Quelle question poser avant d'adopter un geste ?",
                 options: [
                     "Est-il facile à tenir ?",
-                    "Combien de personnes le font ?",
+                    "Combien de personnes le font autour de moi ?",
                     "Porte-t-il sur le matériel ou sur l'usage ?"
                 ],
                 a: 2,
@@ -225,7 +225,7 @@ window.QUIZ = {
             {
                 q: "Quel critère détermine le plus souvent la fin de vie d'un appareil neuf ?",
                 options: [
-                    "La capacité de la batterie",
+                    "La capacité de la batterie au moment de l'achat",
                     "Le nombre d'années de mises à jour garanties",
                     "La taille de l'écran"
                 ],
@@ -236,7 +236,7 @@ window.QUIZ = {
                 q: "Quelle est la hiérarchie utile, dans l'ordre ?",
                 options: [
                     "Recycler, acheter neuf, réparer",
-                    "Acheter écologique, puis recycler",
+                    "Acheter écologique, puis recycler soigneusement en fin de vie",
                     "Garder, réparer, reconditionner — l'achat neuf en dernier"
                 ],
                 a: 2,
@@ -246,7 +246,7 @@ window.QUIZ = {
             {
                 q: "À quoi sert l'indice affiché à la vente ?",
                 options: [
-                    "À indiquer la consommation électrique",
+                    "À indiquer la consommation électrique annuelle de l'appareil",
                     "À comparer la réparabilité ou la durabilité entre modèles",
                     "À garantir une origine européenne"
                 ],
@@ -257,7 +257,7 @@ window.QUIZ = {
                 q: "Un appareil surdimensionné par rapport au besoin :",
                 options: [
                     "Dure plus longtemps",
-                    "Consomme moins par usage",
+                    "Consomme moins par usage, puisqu'il est mieux dimensionné",
                     "Coûte plus cher à fabriquer sans servir davantage"
                 ],
                 a: 2,
@@ -268,7 +268,7 @@ window.QUIZ = {
                 options: [
                     "Que l'ancien n'était pas réparable",
                     "Le prix du neuf comparé au reconditionné",
-                    "La disponibilité en magasin"
+                    "La disponibilité en magasin près de chez soi"
                 ],
                 a: 0,
                 explication: "Au moins demander le devis, pour comparer."
@@ -292,7 +292,7 @@ window.QUIZ = {
             q: "Qu'ont en commun réparer, garder et acheter reconditionné ?",
             options: [
                 "Les trois réduisent la consommation électrique",
-                "Les trois coûtent plus cher",
+                "Les trois coûtent plus cher que le neuf",
                 "Les trois évitent une fabrication"
             ],
             a: 2,
@@ -303,7 +303,7 @@ window.QUIZ = {
             options: [
                 "Elle a fait le mauvais échange, sans le savoir",
                 "Son bilan est équilibré",
-                "Le tri compense le renouvellement"
+                "Le tri des courriels compense le renouvellement du téléphone"
             ],
             a: 0,
             explication: "L'effort porte sur la petite part pendant que la grande est décidée ailleurs."
@@ -321,8 +321,8 @@ window.QUIZ = {
         {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
-                "Trier ses fichiers régulièrement",
-                "Choisir des modèles économes",
+                "Trier ses fichiers et ses courriels régulièrement",
+                "Choisir des modèles économes en énergie",
                 "Garder ses appareils plus longtemps"
             ],
             a: 2,

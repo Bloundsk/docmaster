@@ -14,8 +14,8 @@ window.QUIZ = {
             {
                 q: "Quel est le pire effet d'un service numérique lourd ?",
                 options: [
-                    "Sa consommation de bande passante",
-                    "Son temps de chargement",
+                    "Sa consommation de bande passante sur le réseau",
+                    "Son temps de chargement sur une connexion lente",
                     "Rendre obsolète un appareil qui fonctionnait"
                 ],
                 a: 2,
@@ -26,7 +26,7 @@ window.QUIZ = {
                 options: [
                     "Combien pèse ma page en kilo-octets ?",
                     "À partir de quel âge d'appareil ma page devient-elle inutilisable ?",
-                    "Quel est mon score sur un outil de mesure ?"
+                    "Quel score est-ce que j'obtiens sur les différents outils de mesure ?"
                 ],
                 a: 1,
                 explication: "Les deux sont liées, mais la première est celle qui compte."
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi le défilement infini pose-t-il problème ?",
                 options: [
-                    "Il consomme trop de mémoire",
+                    "Il consomme beaucoup trop de mémoire sur les appareils anciens",
                     "Il empêche le référencement",
                     "C'est un mécanisme conçu pour allonger le temps passé"
                 ],
@@ -55,9 +55,9 @@ window.QUIZ = {
             {
                 q: "Que recoupent presque entièrement les critères de sobriété d'un service ?",
                 options: [
-                    "Ceux du référencement",
+                    "Ceux du référencement dans les moteurs de recherche",
                     "Ceux de l'accessibilité et de la performance",
-                    "Ceux de la sécurité"
+                    "Ceux de la sécurité des applications et des données"
                 ],
                 a: 1,
                 explication: "Bonne nouvelle : ils se défendent en réunion sans invoquer l'écologie."
@@ -66,8 +66,8 @@ window.QUIZ = {
                 q: "Annoncer un hébergement décarboné suffit-il à qualifier un service de sobre ?",
                 options: [
                     "Non : cela traite le plus petit des trois postes",
-                    "Oui, c'est le critère principal",
-                    "Oui, si le fournisseur est certifié"
+                    "Oui, c'est le critère principal d'un service sobre",
+                    "Oui, si le fournisseur est certifié par un organisme"
                 ],
                 a: 0,
                 explication: "Ce n'est pas inutile — c'est souvent tout ce qui est fait."
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "100 postes à 200 kg CO₂e, renouvellement porté de 3 à 5 ans :",
                 options: [
-                    "Une économie ponctuelle de 2 667 kg",
+                    "Une économie ponctuelle de 2 667 kg, une seule fois",
                     "2 667 kg CO₂e économisés chaque année",
                     "Aucun effet, le matériel est déjà acheté"
                 ],
@@ -90,8 +90,8 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui déclenche le plus souvent le renouvellement d'un poste ?",
                 options: [
-                    "L'usure du clavier",
-                    "La fin de garantie",
+                    "L'usure du clavier et des connecteurs de l'appareil",
+                    "La fin de la garantie constructeur sur le matériel",
                     "Le logiciel qui devient exigeant, pas la panne"
                 ],
                 a: 2,
@@ -100,7 +100,7 @@ window.QUIZ = {
             {
                 q: "Un amortissement comptable sur trois ans oblige-t-il à remplacer au bout de trois ans ?",
                 options: [
-                    "Oui, c'est une obligation fiscale",
+                    "Oui, c'est une obligation fiscale à laquelle on ne peut pas couper",
                     "Non : c'est une règle comptable, pas une obligation de remplacer",
                     "Oui, sauf dérogation"
                 ],
@@ -112,7 +112,7 @@ window.QUIZ = {
                 q: "Que vaut une campagne de tri des courriels comparée à l'allongement du parc ?",
                 options: [
                     "Elle est équivalente",
-                    "Elle est plus efficace car collective",
+                    "Elle est plus efficace parce qu'elle mobilise tout le monde",
                     "Elle est visible, peu coûteuse et sans effet mesurable"
                 ],
                 a: 2,
@@ -121,7 +121,7 @@ window.QUIZ = {
             {
                 q: "Que faire d'un poste rendu par un utilisateur exigeant ?",
                 options: [
-                    "Le revendre systématiquement",
+                    "Le revendre systématiquement à un reconditionneur agréé",
                     "Le mettre au rebut",
                     "Le reconditionner en interne pour un autre usage"
                 ],
@@ -147,8 +147,8 @@ window.QUIZ = {
                 q: "Que note l'indice de durabilité affiché à la vente ?",
                 options: [
                     "La réparabilité et la fiabilité",
-                    "La consommation électrique",
-                    "L'origine géographique"
+                    "La consommation électrique annuelle",
+                    "L'origine géographique du produit"
                 ],
                 a: 0,
                 explication: "Il a succédé à l'indice de réparabilité sur plusieurs catégories d'appareils."
@@ -166,7 +166,7 @@ window.QUIZ = {
             {
                 q: "Que perd-on quand un appareil en fin de vie n'entre dans aucune filière ?",
                 options: [
-                    "Seulement le bénéfice du recyclage",
+                    "Seulement le bénéfice du recyclage de l'ensemble de ses matériaux",
                     "Deux fois : la pollution du déchet, et l'extraction à recommencer",
                     "Rien de significatif"
                 ],
@@ -188,7 +188,7 @@ window.QUIZ = {
                 q: "Où se situe le recyclage dans la hiérarchie ?",
                 options: [
                     "En premier",
-                    "Au même niveau que la réparation",
+                    "Au même niveau que la réparation et que le réemploi",
                     "En dernier, après réduire, réemployer et réparer"
                 ],
                 a: 2,
@@ -199,7 +199,7 @@ window.QUIZ = {
                 options: [
                     "Il déplace l'attention de l'achat vers la fin de vie",
                     "Il responsabilise les fabricants",
-                    "Il réduit les déchets à la source"
+                    "Il réduit les déchets produits directement à la source"
                 ],
                 a: 0,
                 explication: "C'est-à-dire de l'endroit où tout se décide vers celui où il ne reste presque rien à sauver."
@@ -224,7 +224,7 @@ window.QUIZ = {
                 options: [
                     "De combien de pourcents ?",
                     "Le total a-t-il baissé ?",
-                    "Sur quelle période ?"
+                    "Sur quelle période exactement ?"
                 ],
                 a: 1,
                 explication: "Elle est rarement posée, parce que la réponse est souvent non."
@@ -234,7 +234,7 @@ window.QUIZ = {
                 options: [
                     "Consomme cinq fois plus",
                     "Consomme deux fois moins",
-                    "Consomme autant"
+                    "Consomme autant qu'avant"
                 ],
                 a: 0,
                 explication: "C'est l'arithmétique du rebond, et elle est têtue."
@@ -244,7 +244,7 @@ window.QUIZ = {
                 q: "L'effet rebond signifie-t-il que l'efficacité est inutile ?",
                 options: [
                     "Non : sans elle, la croissance des usages coûterait bien davantage",
-                    "Oui, elle est contre-productive",
+                    "Oui : elle est contre-productive dans la quasi-totalité des cas connus",
                     "Oui, sauf en informatique"
                 ],
                 a: 0,
@@ -299,7 +299,7 @@ window.QUIZ = {
             q: "Une entreprise lance une campagne de tri des courriels et renouvelle son parc tous les trois ans. Que dire ?",
             options: [
                 "Le geste visible remplace la décision qui compte",
-                "Les deux actions se complètent",
+                "Les deux actions se complètent bien l'une l'autre",
                 "Le tri compense partiellement"
             ],
             a: 0,
@@ -318,8 +318,8 @@ window.QUIZ = {
         {
             q: "Que reste-t-il si l'on ne retient qu'une chose de ce niveau ?",
             options: [
-                "Alléger ses pages",
-                "Choisir un hébergeur décarboné",
+                "Alléger ses pages et ses images le plus possible",
+                "Choisir un hébergeur décarboné et bien certifié",
                 "Chercher le total plutôt que le pourcentage"
             ],
             a: 2,

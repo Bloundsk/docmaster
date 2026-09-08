@@ -16,7 +16,7 @@ window.QUIZ = {
                 options: [
                     "Dans l'arrondi",
                     "Dans le périmètre : fabrication comprise, ou usage seul ?",
-                    "Dans la devise utilisée"
+                    "Dans la devise utilisée pour convertir les coûts et les impacts"
                 ],
                 a: 1,
                 explication: "C'est la première des cinq questions à poser."
@@ -55,7 +55,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi se méfier d'un chiffre de 2015 dans ce domaine ?",
                 options: [
-                    "Les méthodes de calcul étaient interdites",
+                    "Les méthodes de calcul étaient alors interdites de publication",
                     "Les intensités énergétiques du numérique baissent vite",
                     "Les données n'étaient pas publiques"
                 ],
@@ -67,7 +67,7 @@ window.QUIZ = {
                 options: [
                     "Non : c'est une affirmation inverse tout aussi tranchée",
                     "Oui, elle rétablit la vérité",
-                    "Oui, si elle vient d'un chercheur"
+                    "Oui, si elle vient d'un chercheur reconnu dans le domaine"
                 ],
                 a: 0,
                 explication: "La bonne réponse est un ordre de grandeur assorti d'une incertitude — ce qui se relaie mal."
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui se calcule avec certitude dans le streaming ?",
                 options: [
-                    "Le coût du réseau par gigaoctet",
+                    "Le coût du réseau par gigaoctet transporté, mesuré sur une année entière",
                     "La consommation de l'appareil : sa puissance multipliée par la durée",
                     "La part des centres de données"
                 ],
@@ -90,7 +90,7 @@ window.QUIZ = {
             {
                 q: "Deux heures de vidéo par jour, sur téléviseur de 100 W contre téléphone de 3 W :",
                 options: [
-                    "Un écart négligeable",
+                    "Un écart négligeable, de l'ordre de quelques pourcents",
                     "4,4 kg contre 2 kg",
                     "4,4 kg contre 0,13 kg CO₂e par an — un facteur 33"
                 ],
@@ -111,7 +111,7 @@ window.QUIZ = {
             {
                 q: "Baisser la qualité vidéo, quel effet ?",
                 options: [
-                    "Le plus important de tous",
+                    "C'est le plus important de tous les gestes qu'on puisse faire",
                     "Réel, mais sur la part la plus petite et la plus incertaine",
                     "Aucun"
                 ],
@@ -122,7 +122,7 @@ window.QUIZ = {
                 q: "Pourquoi les calculs « par gigaoctet » sont-ils trompeurs ?",
                 options: [
                     "La consommation par gigaoctet baisse quand le trafic augmente",
-                    "Les gigaoctets ne se mesurent pas",
+                    "Les gigaoctets ne se mesurent pas de façon fiable sur un réseau",
                     "Ils ignorent la compression"
                 ],
                 a: 0,
@@ -147,7 +147,7 @@ window.QUIZ = {
                 q: "Quel poste domine l'impact du numérique en France ?",
                 options: [
                     "Les centres de données",
-                    "Les réseaux",
+                    "Les réseaux mobiles",
                     "Les terminaux"
                 ],
                 a: 2,
@@ -167,7 +167,7 @@ window.QUIZ = {
                 q: "Cette hiérarchie vaut-elle partout ?",
                 options: [
                     "Non : elle est spécifique aux pays à électricité peu carbonée",
-                    "Oui, elle est universelle",
+                    "Oui, elle est universelle et vaut pour l'ensemble des pays du monde",
                     "Oui, sauf en Asie"
                 ],
                 a: 0,
@@ -177,8 +177,8 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui domine la consommation des réseaux ?",
                 options: [
-                    "Le volume de données transporté",
-                    "Le nombre d'utilisateurs connectés",
+                    "Le volume de données transporté chaque jour",
+                    "Le nombre d'utilisateurs connectés en même temps",
                     "Les équipements allumés en permanence"
                 ],
                 a: 2,
@@ -188,8 +188,8 @@ window.QUIZ = {
                 q: "Un service « hébergé dans un centre de données vert » agit sur quoi ?",
                 options: [
                     "Sur le poste le plus petit des trois",
-                    "Sur le poste dominant",
-                    "Sur les terminaux des utilisateurs"
+                    "Sur le poste dominant de l'ensemble du bilan",
+                    "Sur les terminaux de tous ses utilisateurs"
                 ],
                 a: 0,
                 explication: "Ce n'est pas rien, et cela ne change pas la hiérarchie."
@@ -233,7 +233,7 @@ window.QUIZ = {
                 q: "À quelle condition l'argument du déplacement évité tient-il ?",
                 options: [
                     "Que le déplacement soit réellement évité",
-                    "Que la réunion dure moins de deux heures",
+                    "Que la réunion dure moins de deux heures en tout",
                     "Que la visioconférence soit en basse définition"
                 ],
                 a: 0,
@@ -243,7 +243,7 @@ window.QUIZ = {
             {
                 q: "Que fait le télétravail au bilan, en toute rigueur ?",
                 options: [
-                    "Il les supprime intégralement",
+                    "Il les supprime intégralement, sans aucune contrepartie",
                     "Il les augmente toujours",
                     "Il déplace des consommations autant qu'il en supprime"
                 ],
@@ -253,7 +253,7 @@ window.QUIZ = {
             {
                 q: "Quelle est la faiblesse classique des bilans « d'évitement » ?",
                 options: [
-                    "Ils sous-estiment le numérique",
+                    "Ils sous-estiment systématiquement le poids réel des outils numériques",
                     "Ils ignorent la fabrication",
                     "Ils comparent à un scénario hypothétique que personne ne vérifie"
                 ],
@@ -310,7 +310,7 @@ window.QUIZ = {
             options: [
                 "Le poste dominant : les terminaux de ses utilisateurs",
                 "Le détail de sa consommation d'eau",
-                "La certification de son fournisseur"
+                "La certification officielle de son fournisseur d'hébergement"
             ],
             a: 0,
             explication: "L'annonce traite le plus petit des trois postes."
