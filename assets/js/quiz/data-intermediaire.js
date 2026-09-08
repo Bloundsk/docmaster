@@ -34,7 +34,7 @@ window.QUIZ = {
             {
                 q: "Que faire d'une commande à 4 millions dans un fichier de commandes à 80 euros ?",
                 options: [
-                    "La supprimer, c'est forcément une erreur",
+                    "La supprimer : à ce niveau d'écart, c'est forcément une erreur de saisie",
                     "Vérifier : c'est soit une erreur de saisie, soit le plus gros client",
                     "La remplacer par la moyenne"
                 ],
@@ -55,9 +55,9 @@ window.QUIZ = {
             {
                 q: "Quelles sont les trois conduites possibles face à une valeur manquante ?",
                 options: [
-                    "Supprimer, ignorer, ou recommencer la collecte",
+                    "Supprimer la ligne, ignorer le trou, ou recommencer entièrement la collecte des données",
                     "Supprimer la ligne, estimer la valeur, ou traiter l'absence comme une information",
-                    "Mettre zéro, mettre la moyenne, ou mettre la médiane"
+                    "Mettre zéro, mettre la moyenne de la colonne, ou mettre la médiane du même segment"
                 ],
                 a: 1,
                 explication: "Le choix change le résultat et doit être écrit quelque part."
@@ -66,7 +66,7 @@ window.QUIZ = {
                 q: "Pourquoi documenter ses décisions de nettoyage ?",
                 options: [
                     "C'est exigé par le RGPD",
-                    "Pour accélérer les traitements suivants",
+                    "Pour accélérer les traitements suivants, qui repartiront du fichier propre",
                     "Sans cela l'analyse devient invérifiable, même par son auteur"
                 ],
                 a: 2,
@@ -81,8 +81,8 @@ window.QUIZ = {
                 q: "Que fait une moyenne globale sur une population hétérogène ?",
                 options: [
                     "Elle mélange des comportements différents et ne décrit personne",
-                    "Elle donne une bonne vue d'ensemble",
-                    "Elle surestime systématiquement"
+                    "Elle donne une bonne vue d'ensemble, suffisante pour piloter au quotidien",
+                    "Elle surestime systématiquement, en tirant le résultat vers les gros volumes"
                 ],
                 a: 0,
                 explication: "Le chiffre n'est pas faux, il est inutile."
@@ -113,7 +113,7 @@ window.QUIZ = {
                 options: [
                     "Des groupes trop petits produisent du bruit qu'on prend pour un signal",
                     "Les outils ne suivent pas",
-                    "Cela devient illisible au-delà de trois segments"
+                    "Cela devient illisible au-delà de trois segments, et personne ne lit le tableau"
                 ],
                 a: 0,
                 explication: "Dans un groupe de quinze personnes, un cas particulier déplace le pourcentage de sept points."
@@ -131,8 +131,8 @@ window.QUIZ = {
             {
                 q: "Quel est l'objectif d'une segmentation ?",
                 options: [
-                    "Produire des tableaux plus détaillés",
-                    "Répartir les données équitablement",
+                    "Produire des tableaux plus détaillés, que chaque service pourra filtrer à sa guise",
+                    "Répartir les données en groupes de taille équivalente, pour comparer à égalité",
                     "Trouver où le comportement change, car c'est là que se cachent les décisions"
                 ],
                 a: 2,
@@ -148,7 +148,7 @@ window.QUIZ = {
                 options: [
                     "Quatre : A cause B, B cause A, une troisième variable cause les deux, ou le hasard",
                     "Une seule : A cause B",
-                    "Deux : le lien direct ou le hasard"
+                    "Deux seulement : soit A cause B, soit c'est une coïncidence, et le bon sens tranche"
                 ],
                 a: 0,
                 explication: "La troisième est la plus fréquente, et c'est celle qu'on envisage le moins."
@@ -166,9 +166,9 @@ window.QUIZ = {
             {
                 q: "Les utilisateurs de l'application ont un panier deux fois plus élevé. Que conclure ?",
                 options: [
-                    "Il faut pousser l'application pour augmenter les paniers",
+                    "Il faut pousser l'installation de l'application pour faire monter les paniers",
                     "Rien encore : ce sont peut-être les clients déjà fidèles qui l'installent",
-                    "L'application améliore l'expérience d'achat"
+                    "L'application améliore l'expérience d'achat, donc le montant du panier suit"
                 ],
                 a: 1,
                 explication: "Pousser l'application auprès de clients occasionnels ne reproduira pas l'effet, mais dépensera le budget."
@@ -179,7 +179,7 @@ window.QUIZ = {
                 options: [
                     "L'expérimentation, avec attribution aléatoire",
                     "Une corrélation supérieure à 0,9",
-                    "Un raisonnement métier convaincant"
+                    "Un raisonnement métier convaincant, validé par les équipes"
                 ],
                 a: 0,
                 explication: "Tout le reste reste une hypothèse, même très plausible."
@@ -197,9 +197,9 @@ window.QUIZ = {
             {
                 q: "Pourquoi le hasard produit-il parfois des corrélations ?",
                 options: [
-                    "Les données sont mal collectées",
+                    "Les données sont mal collectées, et le bruit finit par ressembler à un signal",
                     "Sur des centaines d'indicateurs comparés, certains coïncident sans lien",
-                    "Les outils statistiques sont imprécis"
+                    "Les outils statistiques sont imprécis dès que le volume de données devient grand"
                 ],
                 a: 1,
                 explication: "C'est pourquoi le nombre d'hypothèses testées doit être connu avant d'interpréter un résultat."
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Quel test permet de savoir si un indicateur mérite sa place ?",
                 options: [
                     "Est-il facile à calculer ?",
-                    "Est-il demandé par la direction ?",
+                    "Est-il demandé par la direction, qui le regarde chaque semaine ?",
                     "Si ce nombre doublait demain, que ferais-je différemment ?"
                 ],
                 a: 2,
@@ -232,9 +232,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qu'un indicateur actionnable ?",
                 options: [
-                    "Un indicateur mis à jour en temps réel",
+                    "Un indicateur mis à jour en temps réel, visible par tous",
                     "Un indicateur dont on sait quoi faire quand il bouge",
-                    "Un indicateur calculé automatiquement"
+                    "Un indicateur calculé automatiquement, sans intervention humaine"
                 ],
                 a: 1,
                 explication: "C'est le premier des quatre critères d'un bon indicateur."
@@ -243,7 +243,7 @@ window.QUIZ = {
             {
                 q: "Que cache un « temps de réponse moyen de 1,2 s » ?",
                 options: [
-                    "Rien, c'est une bonne mesure",
+                    "Rien : c'est une bonne mesure, calculée sur l'ensemble des appels",
                     "Que la mesure est faussée",
                     "Que 5 % des utilisateurs attendent peut-être huit secondes"
                 ],
@@ -264,8 +264,8 @@ window.QUIZ = {
                 q: "Quelle fréquence de suivi choisir pour un indicateur ?",
                 options: [
                     "Celle qui correspond à sa vitesse d'évolution",
-                    "La plus élevée possible",
-                    "Une fois par mois, toujours"
+                    "La plus élevée possible, pour pouvoir réagir sans délai",
+                    "Une fois par mois, au rythme du reporting habituel"
                 ],
                 a: 0,
                 explication: "Surveiller quotidiennement une donnée qui bouge par trimestre ne produit que du bruit."
@@ -291,8 +291,8 @@ window.QUIZ = {
         {
             q: "Quel point commun entre le segment trop petit et la valeur extrême ?",
             options: [
-                "Les deux viennent d'une erreur de collecte",
-                "Les deux se corrigent en supprimant les données concernées",
+                "Les deux viennent d'une erreur de collecte qu'on aurait pu éviter en amont",
+                "Les deux se corrigent en supprimant les données concernées du calcul final",
                 "Un petit nombre d'observations pèse démesurément sur le résultat"
             ],
             a: 2,
@@ -302,7 +302,7 @@ window.QUIZ = {
             q: "Une analyse conclut que l'application augmente le panier. Que demander en priorité ?",
             options: [
                 "Quelle troisième variable pourrait causer les deux",
-                "La taille de l'échantillon",
+                "La taille de l'échantillon, et sa répartition entre les deux groupes",
                 "Le nom de l'outil utilisé"
             ],
             a: 0,
@@ -323,8 +323,8 @@ window.QUIZ = {
             q: "Qu'est-ce qui distingue un tableau de bord utile d'un tableau de bord décoratif ?",
             options: [
                 "Le nombre de décisions qu'il a déclenchées",
-                "Le nombre de graphiques",
-                "La fréquence de mise à jour"
+                "Le nombre de graphiques et d'indicateurs qu'il présente",
+                "La fréquence de mise à jour, idéalement quotidienne"
             ],
             a: 0,
             explication: "Chaque indicateur doit passer le test « si ce nombre doublait, que ferais-je ? »."

@@ -55,8 +55,8 @@ window.QUIZ = {
             {
                 q: "Que la marge d'erreur ne couvre-t-elle pas ?",
                 options: [
-                    "Le hasard de l'échantillonnage",
-                    "La taille de l'échantillon",
+                    "Le hasard de l'échantillonnage, qu'elle chiffre pourtant précisément",
+                    "La taille de l'échantillon, dont elle dépend pourtant directement",
                     "Un questionnaire mal formulé ou une population mal choisie"
                 ],
                 a: 2,
@@ -65,7 +65,7 @@ window.QUIZ = {
             {
                 q: "Que manque-t-il à « 42 % des utilisateurs préfèrent la version B » ?",
                 options: [
-                    "La date de la mesure",
+                    "La date de la mesure, et la période couverte",
                     "L'effectif et la méthode de recueil",
                     "Le nom de l'outil"
                 ],
@@ -80,9 +80,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui fait du test A/B une méthode causale ?",
                 options: [
-                    "La taille des échantillons",
+                    "La taille des échantillons, toujours assez grande pour écraser le hasard",
                     "L'attribution aléatoire des groupes et une seule différence testée",
-                    "La durée du test"
+                    "La durée du test, assez longue pour couvrir toutes les journées de la semaine"
                 ],
                 a: 1,
                 explication: "C'est la seule méthode courante qui établisse une causalité plutôt qu'une corrélation."
@@ -111,8 +111,8 @@ window.QUIZ = {
             {
                 q: "Pourquoi consulter un test A/B chaque jour est-il une faute ?",
                 options: [
-                    "Cela ralentit le test",
-                    "Cela fausse la collecte",
+                    "Cela ralentit le test, qui doit recalculer à chaque consultation",
+                    "Cela fausse la collecte, car l'outil enregistre chaque visite",
                     "À force de regarder, l'écart franchit le seuil par hasard"
                 ],
                 a: 2,
@@ -133,7 +133,7 @@ window.QUIZ = {
                 options: [
                     "On ne saura pas lequel a joué, ni si l'un dégrade",
                     "Le test devient trop long",
-                    "Les outils ne le permettent pas"
+                    "Les outils ne permettent pas de tester deux changements"
                 ],
                 a: 0,
                 explication: "Le test répond alors à « l'ensemble est-il meilleur ? » et à aucune autre question."
@@ -146,9 +146,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que le paradoxe de Simpson ?",
                 options: [
-                    "Une corrélation qui disparaît avec le temps",
+                    "Une corrélation qui finit par disparaître avec le temps, à mesure que les données s'accumulent",
                     "Une tendance présente dans chaque groupe peut s'inverser une fois les groupes réunis",
-                    "Un biais dû à la taille de l'échantillon"
+                    "Un biais dû à la taille de l'échantillon, bien trop petit pour représenter la population"
                 ],
                 a: 1,
                 explication: "Cela se produit dès que les groupes ont des tailles très différentes."
@@ -157,7 +157,7 @@ window.QUIZ = {
                 q: "Qu'est-ce que le biais du survivant ?",
                 options: [
                     "Surestimer les valeurs extrêmes",
-                    "Conserver trop longtemps les anciennes données",
+                    "Conserver trop longtemps les anciennes données, qui finissent par fausser la moyenne",
                     "Analyser seulement ceux qui sont restés, alors que les partis ont la réponse"
                 ],
                 a: 2,
@@ -167,8 +167,8 @@ window.QUIZ = {
                 q: "Qu'est-ce que la régression vers la moyenne ?",
                 options: [
                     "Un mois exceptionnellement mauvais est généralement suivi d'un meilleur, sans intervention",
-                    "Un calcul statistique de tendance",
-                    "La convergence de deux séries de données"
+                    "Un calcul statistique de tendance, qui ramène progressivement une série vers sa valeur centrale",
+                    "La convergence de deux séries de données vers une même valeur moyenne, au fil des mesures répétées"
                 ],
                 a: 0,
                 explication: "Toute action prise après un point bas paraîtra donc efficace."
@@ -178,7 +178,7 @@ window.QUIZ = {
                 q: "Comment détecter un paradoxe de Simpson ?",
                 options: [
                     "En segmentant et en vérifiant la composition des groupes comparés",
-                    "En augmentant la taille de l'échantillon",
+                    "En augmentant la taille de l'échantillon jusqu'à ce que l'écart se stabilise",
                     "En recalculant les moyennes"
                 ],
                 a: 0,
@@ -187,7 +187,7 @@ window.QUIZ = {
             {
                 q: "Ces trois pièges supposent-ils une erreur de calcul ?",
                 options: [
-                    "Oui, ils viennent de formules mal appliquées",
+                    "Oui, ils viennent de formules mal appliquées au moment du calcul",
                     "Non : les données sont exactes, c'est la lecture qui trompe",
                     "Oui, ils viennent d'erreurs de collecte"
                 ],
@@ -198,8 +198,8 @@ window.QUIZ = {
                 q: "Une action corrective suit un mois catastrophique, et le mois suivant s'améliore. Que conclure ?",
                 options: [
                     "Rien : l'amélioration serait probablement survenue sans intervention",
-                    "L'action a fonctionné",
-                    "L'action a été insuffisante"
+                    "L'action a fonctionné, et le redressement observé le mois suivant le prouve",
+                    "L'action a été insuffisante : il faudra la renforcer dès le mois prochain"
                 ],
                 a: 0,
                 explication: "C'est l'illusion la plus fréquente dans les bilans d'actions correctives."
@@ -232,9 +232,9 @@ window.QUIZ = {
             {
                 q: "Quel contrôle simple détecte la majorité des incidents réels ?",
                 options: [
-                    "Un contrôle manuel hebdomadaire",
+                    "Un contrôle manuel hebdomadaire, effectué par l'équipe qui produit les données",
                     "Une alerte si le volume de lignes s'écarte fortement de l'habitude",
-                    "Une vérification des permissions"
+                    "Une vérification des permissions, pour s'assurer que personne n'écrase rien"
                 ],
                 a: 1,
                 explication: "Source coupée, doublons massifs, changement de format en amont : ce test trivial les attrape."
@@ -253,9 +253,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que la traçabilité d'un chiffre ?",
                 options: [
-                    "L'historique de ses valeurs",
+                    "L'historique complet de ses valeurs, conservé pour comparer les mois entre eux",
                     "La possibilité de remonter à sa source et à la transformation qui l'a produit",
-                    "Le journal des consultations"
+                    "Le journal des consultations, qui dit qui a regardé ce chiffre et à quel moment"
                 ],
                 a: 1,
                 explication: "Sans elle, une anomalie ne peut pas être diagnostiquée."
@@ -264,7 +264,7 @@ window.QUIZ = {
                 q: "Quelle est la protection la moins coûteuse contre la panne silencieuse ?",
                 options: [
                     "Doubler les traitements",
-                    "Sauvegarder les données brutes",
+                    "Sauvegarder les données brutes, pour pouvoir tout recalculer au besoin",
                     "Afficher la date de dernière mise à jour à côté des chiffres"
                 ],
                 a: 2,
@@ -322,9 +322,9 @@ window.QUIZ = {
         {
             q: "Qu'est-ce qui plafonne la qualité d'une analyse ?",
             options: [
-                "La compétence de l'analyste",
+                "La compétence de l'analyste, dont dépend tout le reste de la chaîne",
                 "Le maillon le plus faible de la chaîne, qui est rarement l'analyse",
-                "La puissance des outils"
+                "La puissance des outils, qui fixe ce qu'on peut calculer et en combien de temps"
             ],
             a: 1,
             explication: "Collecte, transport, stockage, transformation : une erreur en amont produit un résultat parfaitement présenté et faux."
@@ -332,8 +332,8 @@ window.QUIZ = {
         {
             q: "Quel document protège d'une conclusion hâtive sur un test ?",
             options: [
-                "Le rapport final",
-                "La documentation de l'outil",
+                "Le rapport final, rédigé avec soin une fois tous les résultats connus",
+                "La documentation de l'outil de test, qui décrit ses seuils par défaut",
                 "Les hypothèses écrites avant le lancement : durée, effectif, seuil"
             ],
             a: 2,

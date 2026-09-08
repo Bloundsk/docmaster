@@ -16,8 +16,8 @@ window.QUIZ = {
                 q: "What are the three conditions for a good metric?",
                 options: [
                     "Tied to a specific goal, measurable over time, actionable",
-                    "Impressive, easy to calculate, going up",
-                    "Simple, visual and shareable"
+                    "Impressive to present, easy to calculate, and pointing upwards",
+                    "Simple to read, visual in meetings, and shareable without explanation"
                 ],
                 a: 0,
                 explication: "Being actionable is the most discriminating criterion, and the one most often forgotten."
@@ -25,7 +25,7 @@ window.QUIZ = {
             {
                 q: "Which test lets you spot a vanity metric?",
                 options: [
-                    "Check whether competitors publish it",
+                    "Check whether competitors publish it: what they track is a good guide",
                     "Ask yourself: if this figure dropped by 20%, what would I do differently?",
                     "See whether it goes up every month"
                 ],
@@ -36,7 +36,7 @@ window.QUIZ = {
                 q: "Traffic goes from 100,000 to 180,000 visitors, sales from 1,200 to 1,300. What do you conclude?",
                 options: [
                     "A fine result: +80% traffic",
-                    "Both metrics are equally useful",
+                    "Both metrics are equally useful and should be followed together",
                     "The conversion rate falls by 40%: the campaign targeted badly"
                 ],
                 a: 2,
@@ -47,8 +47,8 @@ window.QUIZ = {
                 q: "What is the difference between a lagging and a leading indicator?",
                 options: [
                     "The first records, the second warns and leaves time to react",
-                    "The first is financial, the second commercial",
-                    "None, they are two names for the same thing"
+                    "The first belongs to finance, the second to sales: two teams, two dashboards",
+                    "None: two names for one thing, one from consulting, the other from management"
                 ],
                 a: 0,
                 explication: "Revenue records; the number of quotes sent this week announces next month's revenue."
@@ -56,7 +56,7 @@ window.QUIZ = {
             {
                 q: "A useful dashboard contains…",
                 options: [
-                    "As many metrics as are available",
+                    "As many metrics as are available, so that everyone finds their own",
                     "Financial metrics only",
                     "Both lagging and leading indicators"
                 ],
@@ -82,8 +82,8 @@ window.QUIZ = {
                 q: "What can quantitative data do, and what can it not do?",
                 options: [
                     "It says how many, where and when, but never why",
-                    "It says why, but not how many",
-                    "It answers every question"
+                    "It says why people act, but never how many are concerned",
+                    "It answers every question, provided you have enough data"
                 ],
                 a: 0,
                 explication: "Quantitative data locates the problem, qualitative data explains it. They complement each other without replacing each other."
@@ -91,7 +91,7 @@ window.QUIZ = {
             {
                 q: "5,000 customers contacted, 200 replies, average score 4.3/5. What does that figure measure?",
                 options: [
-                    "Customer satisfaction",
+                    "Customer satisfaction, measured on a sample of 5,000 people",
                     "The quality of the service",
                     "The satisfaction of the people who replied"
                 ],
@@ -101,9 +101,9 @@ window.QUIZ = {
             {
                 q: "What is the most common collection flaw, and the hardest to see?",
                 options: [
-                    "Data-entry errors",
+                    "Data-entry errors, which go unnoticed and spread into every later calculation",
                     "Selection bias: those who reply are not like those who stayed silent",
-                    "Not enough volume"
+                    "Not enough volume: below a few hundred observations, nothing holds"
                 ],
                 a: 1,
                 explication: "Before trusting a figure, ask who was not counted."
@@ -122,7 +122,7 @@ window.QUIZ = {
             {
                 q: "What does the “collect everything, we will see later” strategy produce?",
                 options: [
-                    "A rich, usable database",
+                    "A rich, usable base to draw on once the questions have become clear",
                     "A competitive advantage",
                     "Huge databases where nothing can be found, and correlations due to chance"
                 ],
@@ -132,7 +132,7 @@ window.QUIZ = {
             {
                 q: "Which questions should you ask before using a figure?",
                 options: [
-                    "Who produced it and when was it published?",
+                    "Who produced this figure, when was it published, and in which country?",
                     "Who was measured and who was left out, how, and over what period?",
                     "Does it match what I expected?"
                 ],
@@ -147,9 +147,9 @@ window.QUIZ = {
             {
                 q: "What is a chart, fundamentally?",
                 options: [
-                    "Decoration placed on top of a table",
+                    "A decoration placed on a table, to make it presentable in a meeting",
                     "An argument: it steers the reading and puts one thing forward",
-                    "A neutral rendering of the data"
+                    "A neutral rendering of the data, saying nothing the table did not"
                 ],
                 a: 1,
                 explication: "The same data, depending on how it is laid out, can lead to two opposite decisions."
@@ -158,7 +158,7 @@ window.QUIZ = {
                 q: "Which format should you choose to compare quantities with each other?",
                 options: [
                     "Sorted horizontal bars",
-                    "A pie chart",
+                    "A pie chart, which shows each share clearly",
                     "A line chart"
                 ],
                 a: 0,
@@ -168,7 +168,7 @@ window.QUIZ = {
                 q: "A = 51 sales, B = 49. With an axis starting at 48, what does the reader see?",
                 options: [
                     "A bar for A three times taller: the 4% gap looks crushing",
-                    "Two almost identical bars, which is faithful",
+                    "Two bars that are almost identical, which is the faithful picture",
                     "An unreadable chart"
                 ],
                 a: 0,
@@ -178,9 +178,9 @@ window.QUIZ = {
             {
                 q: "What is the first reflex to acquire in front of a chart?",
                 options: [
-                    "Read the legend",
+                    "Read the legend, to know what each colour stands for",
                     "Look at where the vertical axis starts",
-                    "Check the source"
+                    "Check the source and the publication date"
                 ],
                 a: 1,
                 explication: "Many tools truncate the axis by default: the manipulation is often unintentional."
@@ -188,7 +188,7 @@ window.QUIZ = {
             {
                 q: "What title should you give a chart?",
                 options: [
-                    "“2026 sales”",
+                    "“Sales 2026”, a neutral title that does not steer the reading",
                     "None, the axes are enough",
                     "“Sales have doubled in 6 months”"
                 ],
@@ -213,7 +213,7 @@ window.QUIZ = {
             {
                 q: "Nine salaries at €2,000 and one at €20,000. What is the mean, and what does it describe?",
                 options: [
-                    "€2,000, it describes the situation of nine people",
+                    "€2,000, and it correctly describes nine people out of ten",
                     "€3,800, it describes the reality of none of the ten employees",
                     "€11,000, it describes the gap between the extremes"
                 ],
@@ -224,8 +224,8 @@ window.QUIZ = {
                 q: "When should you prefer the median to the mean?",
                 options: [
                     "As soon as extreme values exist: salaries, property prices, response times",
-                    "When the sample is small",
-                    "When the data is old"
+                    "When the sample is small: below thirty values, the mean becomes unstable",
+                    "When the data is old: the median ages better than the mean, which drifts"
                 ],
                 a: 0,
                 explication: "Publishing both is better still: the gap between them reveals the skew of the distribution on its own."
@@ -244,7 +244,7 @@ window.QUIZ = {
             {
                 q: "“Our customers who use the app buy 3 times more.” What can you conclude?",
                 options: [
-                    "The app triggers the purchase, we should invest in it",
+                    "The app drives the purchase: it is worth investing to get it installed everywhere",
                     "The app should be made compulsory",
                     "Nothing certain: the already loyal customers may be the ones who install it"
                 ],
@@ -265,8 +265,8 @@ window.QUIZ = {
                 q: "What does stopping a test on the day the gap turns favourable guarantee?",
                 options: [
                     "Finding a winner, even between two identical versions",
-                    "Valuable time saved",
-                    "A more reliable conclusion"
+                    "A precious saving of time, and a decision taken several days earlier",
+                    "A more reliable conclusion, since you stop once the gap is clear"
                 ],
                 a: 0,
                 explication: "The duration of a test is fixed before launching it."
@@ -283,7 +283,7 @@ window.QUIZ = {
             q: "What is data for, fundamentally?",
             options: [
                 "Answering a specific question with a known degree of certainty",
-                "Producing impressive dashboards",
+                "To produce dashboards that impress the executive committee",
                 "Justifying decisions already taken"
             ],
             a: 0,
@@ -303,8 +303,8 @@ window.QUIZ = {
             q: "A report shows “+50% conversions”. What should you ask?",
             options: [
                 "What is the absolute value behind that percentage?",
-                "Over what period?",
-                "Who took the measurement?"
+                "Over what period, and measured from what starting point?",
+                "Who carried out the measurement, and with which tracking tool?"
             ],
             a: 0,
             explication: "Going from 2 to 3 conversions is also a 50% rise."
@@ -313,7 +313,7 @@ window.QUIZ = {
         {
             q: "You have to compare two versions of a page. What do you need before concluding?",
             options: [
-                "A few hundred visitors per version",
+                "A few hundred visitors per version, spread over two weeks",
                 "A few hundred conversions per version, not visitors",
                 "A difference visible to the naked eye"
             ],

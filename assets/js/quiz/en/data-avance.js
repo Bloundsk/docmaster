@@ -49,7 +49,7 @@ window.QUIZ = {
                 options: [
                     "Nothing: the gap is smaller than the margin",
                     "B is better",
-                    "The measurement should be redone"
+                    "The measurement should be redone with a bigger sample"
                 ],
                 a: 0,
                 explication: "Announcing that B wins would mean presenting noise as a result."
@@ -57,8 +57,8 @@ window.QUIZ = {
             {
                 q: "What does the margin of error not cover?",
                 options: [
-                    "The randomness of sampling",
-                    "The size of the sample",
+                    "The randomness of the sampling, which it does put a figure on",
+                    "The size of the sample, on which it nevertheless depends directly",
                     "A badly worded questionnaire or a badly chosen population"
                 ],
                 a: 2,
@@ -67,7 +67,7 @@ window.QUIZ = {
             {
                 q: "What is missing from “42% of users prefer version B”?",
                 options: [
-                    "The date of the measurement",
+                    "The date of the measurement, and the period covered",
                     "The sample size and the collection method",
                     "The name of the tool"
                 ],
@@ -82,9 +82,9 @@ window.QUIZ = {
             {
                 q: "What makes the A/B test a causal method?",
                 options: [
-                    "The size of the samples",
+                    "The size of the samples, always large enough to drown out chance",
                     "Random assignment to groups and a single difference tested",
-                    "The duration of the test"
+                    "The length of the test, long enough to cover every day of the week"
                 ],
                 a: 1,
                 explication: "It is the only everyday method that establishes causation rather than correlation."
@@ -113,8 +113,8 @@ window.QUIZ = {
             {
                 q: "Why is checking an A/B test every day a mistake?",
                 options: [
-                    "It slows the test down",
-                    "It distorts the collection",
+                    "It slows the test down, since it recalculates on every look",
+                    "It distorts the collection, because the tool records every visit",
                     "Look often enough and the gap crosses the threshold by chance"
                 ],
                 a: 2,
@@ -134,8 +134,8 @@ window.QUIZ = {
                 q: "Why not change several elements in the same version B?",
                 options: [
                     "You will not know which one did the work, nor whether one makes things worse",
-                    "The test becomes too long",
-                    "The tools do not allow it"
+                    "The test becomes too long to reach a usable conclusion within a reasonable time",
+                    "The tools do not allow two changes to be tested"
                 ],
                 a: 0,
                 explication: "The test then answers “is the whole thing better?” and no other question."
@@ -148,9 +148,9 @@ window.QUIZ = {
             {
                 q: "What is Simpson's paradox?",
                 options: [
-                    "A correlation that fades over time",
+                    "A correlation that eventually fades with time, as the data accumulates",
                     "A trend present in every group can reverse once the groups are pooled",
-                    "A bias caused by sample size"
+                    "A bias caused by the sample size, far too small to represent the population"
                 ],
                 a: 1,
                 explication: "It happens as soon as the groups differ greatly in size."
@@ -159,7 +159,7 @@ window.QUIZ = {
                 q: "What is survivorship bias?",
                 options: [
                     "Overestimating extreme values",
-                    "Keeping old data for too long",
+                    "Keeping old data for too long, which ends up distorting the average",
                     "Analysing only those who stayed, when those who left hold the answer"
                 ],
                 a: 2,
@@ -169,8 +169,8 @@ window.QUIZ = {
                 q: "What is regression to the mean?",
                 options: [
                     "An exceptionally bad month is usually followed by a better one, with no intervention",
-                    "A statistical trend calculation",
-                    "The convergence of two data series"
+                    "A statistical trend calculation, which gradually pulls a series to its centre",
+                    "Two series of data converging on the same average value, over repeated measurements"
                 ],
                 a: 0,
                 explication: "Any action taken after a low point will therefore look effective."
@@ -180,7 +180,7 @@ window.QUIZ = {
                 q: "How do you detect Simpson's paradox?",
                 options: [
                     "By segmenting and checking the make-up of the groups compared",
-                    "By increasing the sample size",
+                    "By increasing the sample size until the gap becomes stable",
                     "By recalculating the averages"
                 ],
                 a: 0,
@@ -189,7 +189,7 @@ window.QUIZ = {
             {
                 q: "Do these three traps involve a calculation error?",
                 options: [
-                    "Yes, they come from badly applied formulas",
+                    "Yes, they come from formulas wrongly applied at the calculation stage",
                     "No: the data is accurate, it is the reading that misleads",
                     "Yes, they come from collection errors"
                 ],
@@ -200,8 +200,8 @@ window.QUIZ = {
                 q: "A corrective action follows a disastrous month, and the next month improves. What do you conclude?",
                 options: [
                     "Nothing: the improvement would probably have happened without the intervention",
-                    "The action worked",
-                    "The action was not enough"
+                    "The action worked, and the recovery seen the following month proves it",
+                    "The action was not enough: it will have to be stepped up next month"
                 ],
                 a: 0,
                 explication: "It is the most frequent illusion in reviews of corrective action."
@@ -224,7 +224,7 @@ window.QUIZ = {
             {
                 q: "Why is frozen data more dangerous than missing data?",
                 options: [
-                    "It takes up storage space",
+                    "It takes up storage space without anyone noticing",
                     "Nobody notices that it has stopped moving",
                     "It blocks new calculations"
                 ],
@@ -234,9 +234,9 @@ window.QUIZ = {
             {
                 q: "Which simple check catches the majority of real incidents?",
                 options: [
-                    "A weekly manual check",
+                    "A weekly manual check, carried out by the team that produces the data",
                     "An alert if the row volume differs sharply from the usual",
-                    "A permissions review"
+                    "A check on permissions, to make sure nobody overwrites anything"
                 ],
                 a: 1,
                 explication: "A source cut off, massive duplicates, an upstream format change: that trivial test catches them."
@@ -245,7 +245,7 @@ window.QUIZ = {
             {
                 q: "Two dashboards give two different figures for “the number of customers”. Where does the problem come from?",
                 options: [
-                    "A calculation error",
+                    "A calculation error somewhere in one of the two pipelines",
                     "An update lag",
                     "Diverging definitions that were never written down"
                 ],
@@ -255,9 +255,9 @@ window.QUIZ = {
             {
                 q: "What is the traceability of a figure?",
                 options: [
-                    "The history of its values",
+                    "The full history of its values, kept so that months, quarters and years can be compared",
                     "Being able to trace it back to its source and to the transformation that produced it",
-                    "The log of who viewed it"
+                    "The access log, which says who looked at the figure and when"
                 ],
                 a: 1,
                 explication: "Without it, an anomaly cannot be diagnosed."
@@ -266,7 +266,7 @@ window.QUIZ = {
                 q: "What is the cheapest protection against silent failure?",
                 options: [
                     "Running every job twice",
-                    "Backing up the raw data",
+                    "Keeping the raw data, so that everything can be recalculated if needed",
                     "Showing the last-updated date next to the figures"
                 ],
                 a: 2,
@@ -285,7 +285,7 @@ window.QUIZ = {
             options: [
                 "How much confidence does the figure deserve?",
                 "Which tool should I use?",
-                "How should I present the results?"
+                "How should the results be presented to the team?"
             ],
             a: 0,
             explication: "Is a 2% gap a result or noise? How many observations would it take to decide?"
@@ -303,7 +303,7 @@ window.QUIZ = {
         {
             q: "What do the margin of error and the size of an A/B test have in common?",
             options: [
-                "Both depend on the total population",
+                "Both depend on the size of the total population being studied",
                 "Both scale with the square root of the sample size",
                 "Both are set by convention"
             ],
@@ -324,9 +324,9 @@ window.QUIZ = {
         {
             q: "What caps the quality of an analysis?",
             options: [
-                "The skill of the analyst",
+                "The analyst's skill, on which all the rest of the chain depends",
                 "The weakest link in the chain, which is rarely the analysis",
-                "The power of the tools"
+                "The power of the tools, which sets what can be calculated and how fast"
             ],
             a: 1,
             explication: "Collection, transport, storage, transformation: an error upstream produces a perfectly presented and wrong result."
@@ -334,8 +334,8 @@ window.QUIZ = {
         {
             q: "Which document protects you from a hasty conclusion about a test?",
             options: [
-                "The final report",
-                "The tool's documentation",
+                "The final report, written carefully once all the results are known",
+                "The documentation of the testing tool, which describes its default thresholds",
                 "The assumptions written before launch: duration, sample size, threshold"
             ],
             a: 2,

@@ -14,8 +14,8 @@ window.QUIZ = {
                 q: "Quelles sont les trois conditions d'un bon indicateur ?",
                 options: [
                     "Lié à un objectif précis, mesurable dans le temps, actionnable",
-                    "Impressionnant, facile à calculer, en hausse",
-                    "Simple, visuel et partageable"
+                    "Impressionnant à présenter, facile à calculer, et orienté à la hausse",
+                    "Simple à lire, visuel en réunion, et partageable sans explication"
                 ],
                 a: 0,
                 explication: "Le critère actionnable est le plus discriminant, et le plus souvent oublié."
@@ -23,7 +23,7 @@ window.QUIZ = {
             {
                 q: "Quel test permet de reconnaître une métrique de vanité ?",
                 options: [
-                    "Vérifier si elle est publiée par les concurrents",
+                    "Vérifier si les concurrents la publient : ce qu'ils suivent est un bon repère",
                     "Se demander : si ce chiffre baissait de 20 %, que ferais-je différemment ?",
                     "Regarder si elle progresse chaque mois"
                 ],
@@ -45,8 +45,8 @@ window.QUIZ = {
                 q: "Quelle différence entre indicateur de résultat et indicateur avancé ?",
                 options: [
                     "Le premier constate, le second annonce et laisse le temps de réagir",
-                    "Le premier est financier, le second commercial",
-                    "Aucune, ce sont deux noms pour la même chose"
+                    "Le premier relève de la finance, le second du commercial : deux services, deux tableaux",
+                    "Aucune : deux noms pour la même chose, l'un venu du conseil, l'autre de la gestion"
                 ],
                 a: 0,
                 explication: "Le chiffre d'affaires constate ; le nombre de devis envoyés cette semaine annonce celui du mois prochain."
@@ -54,7 +54,7 @@ window.QUIZ = {
             {
                 q: "Un tableau de bord utile contient...",
                 options: [
-                    "Le maximum d'indicateurs disponibles",
+                    "Le maximum d'indicateurs disponibles, pour que chacun y trouve le sien",
                     "Uniquement des indicateurs financiers",
                     "Des indicateurs de résultat et des indicateurs avancés"
                 ],
@@ -80,8 +80,8 @@ window.QUIZ = {
                 q: "Que permet le quantitatif, et que ne permet-il pas ?",
                 options: [
                     "Il dit combien, où et quand, mais jamais pourquoi",
-                    "Il dit pourquoi, mais pas combien",
-                    "Il répond à toutes les questions"
+                    "Il dit pourquoi les gens agissent, mais jamais combien sont concernés",
+                    "Il répond à toutes les questions, à condition d'avoir assez de données"
                 ],
                 a: 0,
                 explication: "Le quantitatif localise le problème, le qualitatif l'explique. Ils se complètent sans se remplacer."
@@ -89,7 +89,7 @@ window.QUIZ = {
             {
                 q: "5 000 clients sollicités, 200 réponses, note moyenne 4,3/5. Que mesure ce chiffre ?",
                 options: [
-                    "La satisfaction des clients",
+                    "La satisfaction des clients, mesurée sur un échantillon de 5 000 personnes",
                     "La qualité du service",
                     "La satisfaction des personnes qui ont répondu"
                 ],
@@ -99,9 +99,9 @@ window.QUIZ = {
             {
                 q: "Quel est le défaut de collecte le plus courant et le plus difficile à voir ?",
                 options: [
-                    "Les erreurs de saisie",
+                    "Les erreurs de saisie, qui passent inaperçues et se propagent dans tous les calculs",
                     "Le biais de sélection : ceux qui répondent ne ressemblent pas à ceux qui se taisent",
-                    "Le manque de volume"
+                    "Le manque de volume : en dessous de quelques centaines d'observations, rien n'est solide"
                 ],
                 a: 1,
                 explication: "Avant de faire confiance à un chiffre, demandez qui n'a pas été compté."
@@ -120,7 +120,7 @@ window.QUIZ = {
             {
                 q: "Que produit la stratégie « collectons tout, on verra plus tard » ?",
                 options: [
-                    "Une base riche et exploitable",
+                    "Une base riche et exploitable, dans laquelle on puisera quand les questions seront claires",
                     "Un avantage concurrentiel",
                     "Des bases énormes où l'on ne trouve rien, et des corrélations dues au hasard"
                 ],
@@ -145,9 +145,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qu'un graphique, fondamentalement ?",
                 options: [
-                    "Une décoration posée sur un tableau",
+                    "Une décoration posée sur un tableau, pour le rendre présentable en réunion",
                     "Un argument : il oriente la lecture et met une chose en avant",
-                    "Une restitution neutre des données"
+                    "Une restitution neutre des données, qui ne dit rien de plus que le tableau"
                 ],
                 a: 1,
                 explication: "La même donnée, selon sa mise en forme, peut mener à deux décisions opposées."
@@ -156,7 +156,7 @@ window.QUIZ = {
                 q: "Quelle forme choisir pour comparer des quantités entre elles ?",
                 options: [
                     "Des barres horizontales triées",
-                    "Un camembert",
+                    "Un camembert, qui montre bien le poids de chacun",
                     "Une courbe"
                 ],
                 a: 0,
@@ -176,9 +176,9 @@ window.QUIZ = {
             {
                 q: "Quel est le premier réflexe à acquérir devant un graphique ?",
                 options: [
-                    "Lire la légende",
+                    "Lire la légende, pour savoir ce que représente chaque couleur",
                     "Regarder d'où part l'axe vertical",
-                    "Vérifier la source"
+                    "Vérifier la source et la date de publication"
                 ],
                 a: 1,
                 explication: "Beaucoup d'outils tronquent l'axe par défaut : la manipulation est souvent involontaire."
@@ -186,7 +186,7 @@ window.QUIZ = {
             {
                 q: "Quel titre donner à un graphique ?",
                 options: [
-                    "« Ventes 2026 »",
+                    "« Ventes 2026 », un titre neutre qui n'oriente pas la lecture",
                     "Aucun, les axes suffisent",
                     "« Les ventes ont doublé en 6 mois »"
                 ],
@@ -211,7 +211,7 @@ window.QUIZ = {
             {
                 q: "Neuf salaires à 2 000 € et un à 20 000 €. Quelle est la moyenne, et que décrit-elle ?",
                 options: [
-                    "2 000 €, elle décrit la situation de neuf personnes",
+                    "2 000 €, elle décrit correctement la situation de neuf personnes sur dix",
                     "3 800 €, elle ne décrit la réalité d'aucun des dix salariés",
                     "11 000 €, elle décrit l'écart entre les extrêmes"
                 ],
@@ -222,8 +222,8 @@ window.QUIZ = {
                 q: "Quand privilégier la médiane à la moyenne ?",
                 options: [
                     "Dès qu'il existe des valeurs extrêmes : salaires, prix immobiliers, temps de réponse",
-                    "Quand l'échantillon est petit",
-                    "Quand les données sont anciennes"
+                    "Quand l'échantillon est petit : en dessous de trente valeurs, la moyenne devient instable",
+                    "Quand les données sont anciennes : la médiane vieillit mieux que la moyenne, qui dérive"
                 ],
                 a: 0,
                 explication: "Publier les deux est encore mieux : leur écart révèle à lui seul l'inégalité de la distribution."
@@ -242,7 +242,7 @@ window.QUIZ = {
             {
                 q: "« Nos clients qui utilisent l'application achètent 3 fois plus. » Que conclure ?",
                 options: [
-                    "L'application déclenche l'achat, il faut y investir",
+                    "L'application déclenche l'achat : il faut donc investir pour la faire installer partout",
                     "L'application doit être rendue obligatoire",
                     "Rien de certain : les clients déjà fidèles sont peut-être ceux qui l'installent"
                 ],
@@ -263,8 +263,8 @@ window.QUIZ = {
                 q: "Que garantit le fait d'arrêter un test le jour où l'écart devient favorable ?",
                 options: [
                     "De trouver un gagnant, même entre deux versions identiques",
-                    "Un gain de temps précieux",
-                    "Une conclusion plus fiable"
+                    "Un gain de temps précieux, et une décision prise plusieurs jours plus tôt",
+                    "Une conclusion plus fiable, puisqu'on s'arrête quand l'écart est net"
                 ],
                 a: 0,
                 explication: "La durée du test se fixe avant de le lancer."
@@ -281,7 +281,7 @@ window.QUIZ = {
             q: "À quoi sert la data, fondamentalement ?",
             options: [
                 "À répondre à une question précise avec un degré de certitude connu",
-                "À produire des tableaux de bord impressionnants",
+                "À produire des tableaux de bord qui impressionnent en comité de direction",
                 "À justifier des décisions déjà prises"
             ],
             a: 0,
@@ -301,8 +301,8 @@ window.QUIZ = {
             q: "Un rapport affiche « +50 % de conversions ». Que demander ?",
             options: [
                 "Quelle est la valeur absolue derrière ce pourcentage ?",
-                "Sur quelle période ?",
-                "Qui a réalisé la mesure ?"
+                "Sur quelle période, et par rapport à quel point de départ ?",
+                "Qui a réalisé la mesure, et avec quel outil de suivi installé ?"
             ],
             a: 0,
             explication: "Passer de 2 à 3 conversions est aussi une hausse de 50 %."
@@ -311,7 +311,7 @@ window.QUIZ = {
         {
             q: "Tu dois comparer deux versions d'une page. Que faut-il avant de conclure ?",
             options: [
-                "Quelques centaines de visiteurs par version",
+                "Quelques centaines de visiteurs par version, réparties sur deux semaines",
                 "Quelques centaines de conversions par version, pas de visiteurs",
                 "Une différence visible à l'œil nu"
             ],

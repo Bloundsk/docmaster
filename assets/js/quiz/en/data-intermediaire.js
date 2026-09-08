@@ -36,7 +36,7 @@ window.QUIZ = {
             {
                 q: "What should you do with a €4 million order in a file of €80 orders?",
                 options: [
-                    "Delete it, it has to be an error",
+                    "Delete it: at that scale, it can only be a data-entry error",
                     "Check: it is either a data-entry error or the biggest customer",
                     "Replace it with the mean"
                 ],
@@ -57,9 +57,9 @@ window.QUIZ = {
             {
                 q: "What are the three possible courses of action for a missing value?",
                 options: [
-                    "Delete, ignore, or start the collection again",
+                    "Delete the row, ignore the gap, or start the whole collection again",
                     "Delete the row, estimate the value, or treat the absence as information",
-                    "Put zero, put the mean, or put the median"
+                    "Put zero, put the column average, or put the median of the same segment"
                 ],
                 a: 1,
                 explication: "The choice changes the result and should be written down somewhere."
@@ -68,7 +68,7 @@ window.QUIZ = {
                 q: "Why document your cleaning decisions?",
                 options: [
                     "The GDPR requires it",
-                    "To speed up later processing",
+                    "To speed up the later processing, which starts from the clean file",
                     "Without them the analysis becomes unverifiable, even by its author"
                 ],
                 a: 2,
@@ -83,8 +83,8 @@ window.QUIZ = {
                 q: "What does an overall average do to a mixed population?",
                 options: [
                     "It blends different behaviours and describes nobody",
-                    "It gives a good overview",
-                    "It systematically overestimates"
+                    "It gives a good overall view, good enough to steer day to day",
+                    "It systematically overstates, pulling the result towards large volumes"
                 ],
                 a: 0,
                 explication: "The figure is not wrong, it is useless."
@@ -94,7 +94,7 @@ window.QUIZ = {
                 options: [
                     "It masks a mobile problem, while mobile makes up two thirds of the traffic",
                     "The overall rate is wrong",
-                    "The overall rate should no longer be tracked"
+                    "The overall rate should no longer be tracked, since it hides the two audiences"
                 ],
                 a: 0,
                 explication: "Segmenting means looking for the places where two groups behave differently."
@@ -115,7 +115,7 @@ window.QUIZ = {
                 options: [
                     "Groups that are too small produce noise that gets taken for a signal",
                     "The tools cannot keep up",
-                    "It becomes unreadable beyond three segments"
+                    "It becomes unreadable beyond three segments, and nobody reads the table"
                 ],
                 a: 0,
                 explication: "In a group of fifteen people, one special case moves the percentage by seven points."
@@ -125,7 +125,7 @@ window.QUIZ = {
                 options: [
                     "A point of comparison: an equivalent period or a control group",
                     "The amount in euros",
-                    "The name of the person responsible"
+                    "The name of the person responsible for the redesign and its budget"
                 ],
                 a: 0,
                 explication: "Without a reference, a change cannot be told apart from ordinary fluctuation."
@@ -133,8 +133,8 @@ window.QUIZ = {
             {
                 q: "What is the goal of segmentation?",
                 options: [
-                    "Producing more detailed tables",
-                    "Splitting the data evenly",
+                    "To produce more detailed tables that each team can filter as it likes",
+                    "To split the data into groups of equal size, so as to compare fairly",
                     "Finding where behaviour changes, because that is where the decisions hide"
                 ],
                 a: 2,
@@ -150,7 +150,7 @@ window.QUIZ = {
                 options: [
                     "Four: A causes B, B causes A, a third variable causes both, or chance",
                     "Only one: A causes B",
-                    "Two: a direct link or chance"
+                    "Two only: either A causes B, or it is a coincidence, and common sense decides"
                 ],
                 a: 0,
                 explication: "The third is the most frequent, and the one considered least."
@@ -168,9 +168,9 @@ window.QUIZ = {
             {
                 q: "App users have a basket twice as large. What can you conclude?",
                 options: [
-                    "The app should be pushed to raise basket sizes",
+                    "You should push installation of the app to bring basket sizes up",
                     "Nothing yet: the already loyal customers may be the ones who install it",
-                    "The app improves the buying experience"
+                    "The app improves the buying experience, so the basket size follows"
                 ],
                 a: 1,
                 explication: "Pushing the app to occasional customers will not reproduce the effect, but it will spend the budget."
@@ -181,7 +181,7 @@ window.QUIZ = {
                 options: [
                     "Experimentation, with random assignment",
                     "A correlation above 0.9",
-                    "A convincing business argument"
+                    "A convincing business rationale, agreed by the teams"
                 ],
                 a: 0,
                 explication: "Everything else stays a hypothesis, however plausible."
@@ -189,7 +189,7 @@ window.QUIZ = {
             {
                 q: "Which kind of correlation is the most dangerous?",
                 options: [
-                    "The absurd one",
+                    "The one that is plainly absurd, with no possible mechanism",
                     "The one you can give a credible explanation for",
                     "The weak one"
                 ],
@@ -199,9 +199,9 @@ window.QUIZ = {
             {
                 q: "Why does chance sometimes produce correlations?",
                 options: [
-                    "The data was badly collected",
+                    "The data is badly collected, and the noise ends up looking like a signal",
                     "Across hundreds of metrics compared, some line up with no link at all",
-                    "Statistical tools are imprecise"
+                    "Statistical tools lose precision as soon as the volume of data grows"
                 ],
                 a: 1,
                 explication: "That is why the number of hypotheses tested must be known before interpreting a result."
@@ -215,7 +215,7 @@ window.QUIZ = {
                 q: "Which test tells you whether a metric deserves its place?",
                 options: [
                     "Is it easy to calculate?",
-                    "Has management asked for it?",
+                    "Is it asked for by management, who look at it every week?",
                     "If this number doubled tomorrow, what would I do differently?"
                 ],
                 a: 2,
@@ -226,7 +226,7 @@ window.QUIZ = {
                 options: [
                     "They are too slow",
                     "They answer “what can we display?” instead of “what decision should we take?”",
-                    "The data is not reliable"
+                    "The data behind them is not reliable enough for anyone to base a decision on it"
                 ],
                 a: 1,
                 explication: "The problem is rarely technical."
@@ -234,9 +234,9 @@ window.QUIZ = {
             {
                 q: "What is an actionable metric?",
                 options: [
-                    "A metric updated in real time",
+                    "A metric updated in real time, visible to everyone",
                     "A metric you know what to do about when it moves",
-                    "A metric calculated automatically"
+                    "A metric calculated automatically, with no human involvement"
                 ],
                 a: 1,
                 explication: "It is the first of the four criteria for a good metric."
@@ -245,7 +245,7 @@ window.QUIZ = {
             {
                 q: "What does an “average response time of 1.2s” hide?",
                 options: [
-                    "Nothing, it is a good measure",
+                    "Nothing: it is a sound measurement, taken across all the calls",
                     "That the measurement is distorted",
                     "That 5% of users may be waiting eight seconds"
                 ],
@@ -266,8 +266,8 @@ window.QUIZ = {
                 q: "Which tracking frequency should you choose for a metric?",
                 options: [
                     "The one that matches how fast it moves",
-                    "The highest possible",
-                    "Once a month, always"
+                    "The highest possible, so as to be able to react without delay",
+                    "Once a month, in step with the usual reporting"
                 ],
                 a: 0,
                 explication: "Watching a figure daily when it moves quarterly produces nothing but noise."
@@ -293,8 +293,8 @@ window.QUIZ = {
         {
             q: "What do a too-small segment and an extreme value have in common?",
             options: [
-                "Both come from a collection error",
-                "Both are fixed by deleting the data concerned",
+                "Both come from a collection error that could have been avoided upstream",
+                "Both are fixed by removing the data concerned from the final calculation",
                 "A small number of observations weighs disproportionately on the result"
             ],
             a: 2,
@@ -304,7 +304,7 @@ window.QUIZ = {
             q: "An analysis concludes that the app increases basket size. What should you ask first?",
             options: [
                 "Which third variable could cause both",
-                "The sample size",
+                "The size of the sample, and how it splits between the two groups",
                 "The name of the tool used"
             ],
             a: 0,
@@ -314,7 +314,7 @@ window.QUIZ = {
         {
             q: "Why does cleaning determine the validity of an analysis?",
             options: [
-                "Because it governs how fast the calculations run",
+                "Because it governs how fast the calculations run, and therefore the deadlines",
                 "Because the tools require it",
                 "Because the choices made change the result, and are rarely documented"
             ],
@@ -325,8 +325,8 @@ window.QUIZ = {
             q: "What separates a useful dashboard from a decorative one?",
             options: [
                 "The number of decisions it has triggered",
-                "The number of charts",
-                "How often it is updated"
+                "The number of charts and metrics it displays",
+                "How often it is refreshed, ideally every day"
             ],
             a: 0,
             explication: "Every metric has to pass the “if this number doubled, what would I do?” test."
