@@ -25,8 +25,8 @@ window.QUIZ = {
             {
                 q: "What does a 401 status code mean?",
                 options: [
-                    "The resource does not exist",
-                    "The server failed",
+                    "The resource does not exist on the server",
+                    "The server failed on its own side",
                     "You need to identify yourself"
                 ],
                 a: 2,
@@ -46,7 +46,7 @@ window.QUIZ = {
             {
                 q: "What is wrong with an API that returns 200 with an error message in the body?",
                 options: [
-                    "Nothing, it is simpler",
+                    "Nothing, it is simpler for everyone who has to call it",
                     "It uses more bandwidth",
                     "It forces every client to guess that something went wrong"
                 ],
@@ -56,7 +56,7 @@ window.QUIZ = {
             {
                 q: "Where should a secret API key be kept?",
                 options: [
-                    "In the JavaScript, minified",
+                    "In the JavaScript, minified so it cannot be read",
                     "On your server, which relays the request",
                     "In a browser variable"
                 ],
@@ -67,8 +67,8 @@ window.QUIZ = {
                 q: "Which factor dominates the load time of a page that calls an API?",
                 options: [
                     "The number of round trips",
-                    "The server's speed",
-                    "The size of the responses"
+                    "The speed of the server being called",
+                    "The size of the responses received"
                 ],
                 a: 0,
                 explication: "This is why parallelising independent calls changes everything."
@@ -112,7 +112,7 @@ window.QUIZ = {
             {
                 q: "Which columns should be indexed?",
                 options: [
-                    "All of them, to be safe",
+                    "All of them, to be on the safe side",
                     "None, the database optimises by itself",
                     "Those used in filters and joins"
                 ],
@@ -148,7 +148,7 @@ window.QUIZ = {
                 q: "What are the four elements of going live?",
                 options: [
                     "Server, database, cache, backup",
-                    "Code, tests, documentation, monitoring",
+                    "Code, tests, documentation and monitoring in production",
                     "Domain name, hosting, certificate, a way of deploying"
                 ],
                 a: 2,
@@ -157,7 +157,7 @@ window.QUIZ = {
             {
                 q: "What is the most frequent failure of a first deployment?",
                 options: [
-                    "A certificate problem",
+                    "A certificate problem, expired or badly installed on the server",
                     "File name casing: the server tells Image.png from image.png",
                     "Exceeding a quota"
                 ],
@@ -169,7 +169,7 @@ window.QUIZ = {
                 options: [
                     "In a versioned configuration file",
                     "In environment variables",
-                    "In the database"
+                    "In the database, in clear or encrypted"
                 ],
                 a: 1,
                 explication: "They can no longer sit in the code once the project is shared."
@@ -199,7 +199,7 @@ window.QUIZ = {
                 q: "Is HTTPS complicated to set up today?",
                 options: [
                     "No, it is free and automatic with most hosts",
-                    "Yes, you have to buy a certificate",
+                    "Yes, you have to buy a certificate and renew it every year",
                     "It is only needed for shops"
                 ],
                 a: 0,
@@ -223,9 +223,9 @@ window.QUIZ = {
             {
                 q: "What should a commit message explain?",
                 options: [
-                    "The what: which files changed",
+                    "The what: the list of files that changed",
                     "The why: the reason for the change",
-                    "The author's name"
+                    "The author's name and the date of the change"
                 ],
                 a: 1,
                 explication: "“Fix VAT calculation on partial refunds” is worth infinitely more than “fix”."
@@ -234,7 +234,7 @@ window.QUIZ = {
                 q: "What is the principle of branches?",
                 options: [
                     "Each developer has a permanent branch",
-                    "One branch per changed file",
+                    "One branch per file that has been changed",
                     "The main branch always stays working"
                 ],
                 a: 2,
@@ -266,7 +266,7 @@ window.QUIZ = {
                 options: [
                     "It is impossible to undo one without the others",
                     "It takes too long to review",
-                    "It makes the repository bigger"
+                    "It makes the repository bigger than it needs to be"
                 ],
                 a: 0,
                 explication: "One commit, one intention. That is what makes the history usable."
@@ -281,7 +281,7 @@ window.QUIZ = {
             options: [
                 "A modern framework",
                 "Pieces that communicate, data that persists, a deployment",
-                "Large amounts of JavaScript"
+                "Large amounts of JavaScript, spread across several files"
             ],
             a: 1,
             explication: "These are the four subjects on which a personal project becomes a real one."
@@ -290,7 +290,7 @@ window.QUIZ = {
             q: "A page is slow. Where do you start?",
             options: [
                 "Counting the number of queries it triggers",
-                "Optimising the server code",
+                "Optimising the server code that produces it first",
                 "Changing host"
             ],
             a: 0,
@@ -301,7 +301,7 @@ window.QUIZ = {
             options: [
                 "What is in the browser belongs to the user",
                 "Exchanges must be encrypted",
-                "JavaScript should be minimised"
+                "The amount of JavaScript should be kept to a minimum"
             ],
             a: 0,
             explication: "Everything the browser receives can be read and changed. The check that counts is on the server."
@@ -320,8 +320,8 @@ window.QUIZ = {
             q: "Which habit protects against both a failed deployment and a Git conflict?",
             options: [
                 "Working in small steps, often",
-                "Documenting more",
-                "Using newer tools"
+                "Documenting each of the steps more carefully",
+                "Using newer and better integrated tools"
             ],
             a: 0,
             explication: "Deploying the whole thing from a single source, merging short branches: the same logic."
@@ -330,7 +330,7 @@ window.QUIZ = {
             q: "What should be checked after every deployment?",
             options: [
                 "The server logs",
-                "The size of the files sent",
+                "The total size of the files that were sent to the server",
                 "The site in a private window, to bypass the cache"
             ],
             a: 2,

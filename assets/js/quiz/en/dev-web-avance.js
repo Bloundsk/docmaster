@@ -16,7 +16,7 @@ window.QUIZ = {
                 q: "Where should you start when optimising a page?",
                 options: [
                     "Measuring, and attacking the biggest bar",
-                    "Minifying the JavaScript",
+                    "Minifying the JavaScript and the style sheets",
                     "Changing framework"
                 ],
                 a: 0,
@@ -25,8 +25,8 @@ window.QUIZ = {
             {
                 q: "Why is caching a particular kind of lever?",
                 options: [
-                    "It reduces file sizes",
-                    "It speeds up the server",
+                    "It reduces the size of every file that has to travel to the browser",
+                    "It speeds up the server, which then answers more requests",
                     "It improves performance without slimming anything down"
                 ],
                 a: 2,
@@ -37,7 +37,7 @@ window.QUIZ = {
                 options: [
                     "By changing its name: style.a3f9.css",
                     "By clearing visitors' caches",
-                    "By reducing the cache duration"
+                    "By reducing the cache duration that is declared"
                 ],
                 a: 0,
                 explication: "A change alters the name, therefore the address, so the cache is bypassed naturally."
@@ -48,7 +48,7 @@ window.QUIZ = {
                 options: [
                     "The application's own code",
                     "Badly sized images",
-                    "Style sheets"
+                    "Style sheets and web fonts"
                 ],
                 a: 1,
                 explication: "Then third-party scripts — analytics, widgets, banners — and only then the application's code."
@@ -68,7 +68,7 @@ window.QUIZ = {
                 options: [
                     "Content shifting while the page loads",
                     "Slower loading",
-                    "A loss of quality"
+                    "A visible loss of quality on the image"
                 ],
                 a: 0,
                 explication: "The user clicks the wrong thing. Declaring dimensions removes the fault without speeding anything up."
@@ -81,9 +81,9 @@ window.QUIZ = {
             {
                 q: "Which principle settles most of application security?",
                 options: [
-                    "Encrypt all data",
+                    "Encrypt all of the data, both in transit and at rest on the disk",
                     "Any data coming from outside is hostile until proven otherwise",
-                    "Restrict user permissions"
+                    "Restrict every user's permissions to the strict minimum they need"
                 ],
                 a: 1,
                 explication: "Forms, addresses, headers, uploaded files, responses from a third-party API."
@@ -113,8 +113,8 @@ window.QUIZ = {
                 q: "Is a browser-side check enough?",
                 options: [
                     "No: it can be bypassed in three seconds, only the server counts",
-                    "Yes, if it is well written",
-                    "Yes, for simple forms"
+                    "Yes, provided that it is well written and checks every single field",
+                    "Yes, at least for the simple forms that carry nothing sensitive at all"
                 ],
                 a: 0,
                 explication: "It improves comfort. It protects nothing."
@@ -122,9 +122,9 @@ window.QUIZ = {
             {
                 q: "Where do most breaches come through?",
                 options: [
-                    "Novel flaws",
+                    "Novel flaws, unknown to the publishers",
                     "A known, un-updated library",
-                    "Brute-force attacks"
+                    "Brute-force attacks on the passwords"
                 ],
                 a: 1,
                 explication: "Updating dependencies is the defence with the best effort-to-result ratio."
@@ -149,7 +149,7 @@ window.QUIZ = {
                 options: [
                     "Being able to change the code without fear",
                     "Proving the code is correct",
-                    "Satisfying a quality requirement"
+                    "Satisfying a quality requirement set by the client"
                 ],
                 a: 0,
                 explication: "A project with no tests becomes a project nobody dares touch, and that is how it dies."
@@ -159,7 +159,7 @@ window.QUIZ = {
                 options: [
                     "As many of each",
                     "Many unit, a few integration, very few end-to-end",
-                    "Mostly end-to-end, closer to reality"
+                    "Mostly end-to-end tests, which are closer to reality"
                 ],
                 a: 1,
                 explication: "The reverse produces a slow suite nobody waits for any more."
@@ -169,7 +169,7 @@ window.QUIZ = {
                 options: [
                     "Business logic and critical journeys",
                     "The appearance of the screens",
-                    "The code of the libraries used"
+                    "The code of the third-party libraries used"
                 ],
                 a: 0,
                 explication: "Calculations, rules, edge cases, then sign-up, payment, sending."
@@ -198,7 +198,7 @@ window.QUIZ = {
             {
                 q: "What does not deserve a test?",
                 options: [
-                    "The edge cases of a calculation",
+                    "The edge cases of a calculation, as soon as it gets complex",
                     "Trivial getters and the exact appearance of a screen",
                     "The payment journey"
                 ],
@@ -225,7 +225,7 @@ window.QUIZ = {
                 options: [
                     "Chosen debt is owned, documented and dated",
                     "Its size",
-                    "Inherited debt is cheaper"
+                    "Inherited debt turns out cheaper to fix later"
                 ],
                 a: 0,
                 explication: "The first can be managed. The second builds up silently."
@@ -264,7 +264,7 @@ window.QUIZ = {
             {
                 q: "How do you get time to fix technical debt?",
                 options: [
-                    "By explaining that the code is badly written",
+                    "By explaining that the code is badly written and unreadable",
                     "By waiting for an outage",
                     "By putting a figure on the hours lost per week"
                 ],
@@ -279,9 +279,9 @@ window.QUIZ = {
         {
             q: "What is this level about, compared with the previous one?",
             options: [
-                "The choice of technologies",
+                "The choice of technologies being used",
                 "The lifespan of the application",
-                "How teams are organised"
+                "How the development teams are organised"
             ],
             a: 1,
             explication: "Holding up under load, resisting attacks, being changeable without fear, ageing without becoming unreadable."
@@ -290,8 +290,8 @@ window.QUIZ = {
             q: "What do tests and dependency updates have in common?",
             options: [
                 "Both make change possible later on",
-                "Both are required by regulation",
-                "Both slow development down"
+                "Both are required by the regulations in force",
+                "Both slow the development work down"
             ],
             a: 0,
             explication: "Neglecting either leads to the same result: a project nobody dares touch."
@@ -301,7 +301,7 @@ window.QUIZ = {
             options: [
                 "Deal with the image first",
                 "Optimise the application code first",
-                "Add caching"
+                "Add caching on the images"
             ],
             a: 0,
             explication: "Starting with your own code while a huge image waits is a frequent error of priority."
@@ -309,7 +309,7 @@ window.QUIZ = {
         {
             q: "Which reasoning applies to both security and testing?",
             options: [
-                "Automate as much as possible",
+                "Automate as much of the whole chain as can be automated",
                 "Assume things will go wrong, and design accordingly",
                 "Document every decision"
             ],
@@ -319,8 +319,8 @@ window.QUIZ = {
         {
             q: "Why does caching force you to version file names?",
             options: [
-                "To save space",
-                "To comply with HTTP standards",
+                "To save storage space on the server that hosts all the site's files",
+                "To comply with the HTTP standards and the browsers' recommendations",
                 "Because a heavily cached file can no longer be changed in place"
             ],
             a: 2,

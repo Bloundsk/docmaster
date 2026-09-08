@@ -16,7 +16,7 @@ window.QUIZ = {
             {
                 q: "What does an HTML tag describe?",
                 options: [
-                    "The visual appearance of an element",
+                    "The visual appearance of an element on the screen",
                     "The element's position on screen",
                     "The nature and role of a piece of content"
                 ],
@@ -26,8 +26,8 @@ window.QUIZ = {
             {
                 q: "What is the difference between <div class=\"big-title\"> and <h2>?",
                 options: [
-                    "None, only the styling changes",
-                    "The <div> renders faster",
+                    "None: only the styling changes on screen, and not the meaning of it",
+                    "The <div> renders faster, being simpler for the browser to handle",
                     "The <h2> is understood as a heading by Google and screen readers"
                 ],
                 a: 2,
@@ -38,7 +38,7 @@ window.QUIZ = {
                 options: [
                     "The one written last",
                     "The one whose selector is more specific",
-                    "The one with more properties"
+                    "The one that declares the greater number of properties"
                 ],
                 a: 1,
                 explication: "An id beats a class, which beats a tag. Most “this CSS doesn't work” comes from there."
@@ -59,7 +59,7 @@ window.QUIZ = {
                 options: [
                     "Centralising repeated values in one place",
                     "Speeding up page loading",
-                    "Hiding colours from the source code"
+                    "Hiding the colours from the source code sent to the browser"
                 ],
                 a: 0,
                 explication: "Changing the site's palette then means editing one line, instead of hunting a code through forty files."
@@ -69,7 +69,7 @@ window.QUIZ = {
                 options: [
                     "Because it does not work",
                     "Because every change then means reopening every file",
-                    "Because browsers forbid it"
+                    "Because modern browsers have forbidden it for several years now"
                 ],
                 a: 1,
                 explication: "That discipline costs five minutes at the start and saves days afterwards."
@@ -93,8 +93,8 @@ window.QUIZ = {
                 q: "How do you keep information after a page reload?",
                 options: [
                     "By using localStorage or a server",
-                    "By storing it in the DOM",
-                    "It is not possible in JavaScript"
+                    "By storing it in the DOM, on a hidden attribute",
+                    "It is not possible in JavaScript, you need a server"
                 ],
                 a: 0,
                 explication: "The DOM is rebuilt on every load: whatever you write into it disappears."
@@ -103,7 +103,7 @@ window.QUIZ = {
                 q: "What is the basic pattern of most of a site's JavaScript?",
                 options: [
                     "Select an element, listen for an event, change a class",
-                    "Calculate, display, save",
+                    "Calculate a value, display it, then save the result obtained",
                     "Load, compile, run"
                 ],
                 a: 0,
@@ -115,7 +115,7 @@ window.QUIZ = {
                 options: [
                     "Pause the program for one second",
                     "Wait for the result before continuing this function",
-                    "Repeat the operation until it succeeds"
+                    "Repeat the operation until it finally succeeds or times out"
                 ],
                 a: 1,
                 explication: "Without it, you manipulate an answer that has not arrived — a frequent cause of baffling bugs."
@@ -124,8 +124,8 @@ window.QUIZ = {
                 q: "A script in the <head> fails with getElementById returning null. Why?",
                 options: [
                     "The script runs before the HTML exists",
-                    "The id is misspelled",
-                    "Browsers block scripts in the <head>"
+                    "The id is misspelled somewhere in the markup",
+                    "Browsers block every script placed in the <head>"
                 ],
                 a: 0,
                 explication: "Two solutions: put the script just before </body>, or add the defer attribute."
@@ -160,7 +160,7 @@ window.QUIZ = {
                 options: [
                     "On the server only",
                     "In a JavaScript file, under a different name",
-                    "In an HTML comment"
+                    "In an HTML comment, at the bottom of the page"
                 ],
                 a: 0,
                 explication: "Robots constantly scan public sites for those keys; the delay before exploitation is measured in minutes."
@@ -180,8 +180,8 @@ window.QUIZ = {
                 q: "Which kind of project does not need a backend?",
                 options: [
                     "A documentation site or a portfolio",
-                    "A shop with payments",
-                    "An application with user accounts"
+                    "A shop with online payments and delivery",
+                    "An application with user accounts and profiles"
                 ],
                 a: 0,
                 explication: "Faster, free to host, and practically unattackable: there is no database to breach."
@@ -226,7 +226,7 @@ window.QUIZ = {
                 options: [
                     "They slow down rendering",
                     "They necessarily overflow on a narrower screen",
-                    "They are forbidden by the standards"
+                    "They are now forbidden by the web standards themselves"
                 ],
                 a: 1,
                 explication: "Prefer %, rem, fr and max-width, which adapt to the space available."
@@ -256,8 +256,8 @@ window.QUIZ = {
                 q: "Why is a menu that opens on hover a problem?",
                 options: [
                     "Hover does not exist on a touch screen",
-                    "It is too slow",
-                    "It uses too much memory"
+                    "It is too slow to open on a phone",
+                    "It uses too much memory on smaller devices"
                 ],
                 a: 0,
                 explication: "The menu then becomes unreachable for the majority of visitors."
@@ -265,7 +265,7 @@ window.QUIZ = {
             {
                 q: "How do you stop a table overflowing on mobile?",
                 options: [
-                    "Reduce the font size",
+                    "Reduce the font size until the table fits on the screen",
                     "Put it in a container with overflow-x: auto",
                     "Remove columns"
                 ],
@@ -300,7 +300,7 @@ window.QUIZ = {
         {
             q: "Which statement about a site's security is accurate?",
             options: [
-                "Minified code is protected well enough",
+                "Minified code is protected well enough from prying eyes",
                 "HTTPS prevents reading the source code",
                 "Everything that reaches the browser is public"
             ],
@@ -310,7 +310,7 @@ window.QUIZ = {
         {
             q: "You have to build a ten-page portfolio. Which approach should you favour?",
             options: [
-                "A modern framework, to stay current",
+                "A modern framework, to stay current and more employable later",
                 "A CMS with a database",
                 "Plain HTML, CSS and JavaScript files, served as they are"
             ],
@@ -322,7 +322,7 @@ window.QUIZ = {
             options: [
                 "Working through one tutorial after another",
                 "Running a real project you care about",
-                "Learning frameworks before the basics"
+                "Learning the frameworks before the basics of the language"
             ],
             a: 1,
             explication: "A real site confronts you with real problems — and it is in solving them that things stick."
@@ -330,8 +330,8 @@ window.QUIZ = {
         {
             q: "A site uses <div class=\"big-title\"> everywhere instead of <h1> and <h2>. What follows?",
             options: [
-                "The site displays badly",
-                "The site loads more slowly",
+                "The site displays badly on the older browsers and on mobile phones",
+                "The site loads noticeably more slowly on a slow mobile connection",
                 "Google and screen readers no longer understand its structure"
             ],
             a: 2,
