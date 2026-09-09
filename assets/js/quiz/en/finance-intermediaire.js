@@ -16,7 +16,7 @@ window.QUIZ = {
                 options: [
                     "The horizon, that is, the date of the need",
                     "The investor's temperament",
-                    "The current level of the markets"
+                    "The current level of the markets at that moment"
                 ],
                 a: 0,
                 explication: "A temperament does not change how long a market takes to recover from a fall. It is the date of the need that determines what you can bear."
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "What is the main limit of the “100 minus your age” rule?",
                 options: [
-                    "It is too complicated to work out",
+                    "It is far too complicated for anyone to work out",
                     "It confuses age with the investment horizon",
                     "It applies only to bonds"
                 ],
@@ -65,7 +65,7 @@ window.QUIZ = {
             {
                 q: "When should an allocation be revised?",
                 options: [
-                    "When markets rise or fall sharply",
+                    "When the markets rise or fall very sharply",
                     "Every month, to stay responsive",
                     "When the deadlines of your plans change"
                 ],
@@ -81,7 +81,7 @@ window.QUIZ = {
                 q: "What distinguishes fees from performance?",
                 options: [
                     "Fees are certain, performance is a hypothesis",
-                    "Fees vary every year, performance is stable",
+                    "Fees vary every year, while performance is stable",
                     "Nothing, both are unpredictable"
                 ],
                 a: 0,
@@ -132,7 +132,7 @@ window.QUIZ = {
                 q: "What fees are added to the fund's own inside a French assurance-vie contract?",
                 options: [
                     "Annual wrapper fees on unit-linked funds",
-                    "None, the fund includes everything",
+                    "None, the fund includes everything already",
                     "A state tax of 2%"
                 ],
                 a: 0,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "What do regular contributions really bring?",
                 options: [
                     "A higher average return",
-                    "A guarantee against losses",
+                    "A guarantee against losses in a falling market",
                     "The removal of the question of when to enter"
                 ],
                 a: 2,
@@ -255,7 +255,7 @@ window.QUIZ = {
                 options: [
                     "A mistake by the intermediary",
                     "The risk has risen with no conscious decision",
-                    "Nothing abnormal, just let it run"
+                    "Nothing abnormal at all, you should just let it run"
                 ],
                 a: 1,
                 explication: "The drift is mechanical. It exposes you more than you had accepted, at the precise moment markets are high."
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "How often should you check a long-term portfolio?",
                 options: [
-                    "Every day, to stay responsive",
+                    "Every day, so as to stay responsive",
                     "An annual appointment is enough",
                     "Never, it should not be touched again"
                 ],
@@ -292,8 +292,8 @@ window.QUIZ = {
             q: "Two investors obtain the same gross performance. What will open a gap between them?",
             options: [
                 "The fees and the tax wrapper chosen",
-                "The number of holdings owned",
-                "The bank hosting the account"
+                "The number of holdings that are owned",
+                "The bank that happens to host the account"
             ],
             a: 0,
             explication: "Fees and tax apply every year and at every withdrawal. They are the only two levers genuinely under control."

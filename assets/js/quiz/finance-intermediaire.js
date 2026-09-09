@@ -15,7 +15,7 @@ window.QUIZ = {
                 q: "Sur quoi se fonde d'abord le choix d'une allocation ?",
                 options: [
                     "L'horizon, c'est-à-dire la date du besoin",
-                    "Le tempérament de l'investisseur",
+                    "Le tempérament de l'investisseur et son goût du risque",
                     "Le niveau actuel des marchés"
                 ],
                 a: 0,
@@ -47,7 +47,7 @@ window.QUIZ = {
                 options: [
                     "Elle est trop compliquée à calculer",
                     "Elle confond l'âge et l'horizon de placement",
-                    "Elle ne s'applique qu'aux obligations"
+                    "Elle ne s'applique qu'aux obligations d'État"
                 ],
                 a: 1,
                 explication: "Une personne de 60 ans qui n'entamera son capital qu'à 80 ans dispose encore de vingt ans d'horizon, et non de zéro."
@@ -66,7 +66,7 @@ window.QUIZ = {
                 q: "Quand faut-il réviser son allocation ?",
                 options: [
                     "Quand les marchés montent ou baissent fortement",
-                    "Tous les mois, pour rester réactif",
+                    "Tous les mois, pour rester réactif aux marchés",
                     "Quand les échéances des projets changent"
                 ],
                 a: 2,
@@ -100,7 +100,7 @@ window.QUIZ = {
             {
                 q: "Comment sont prélevés les frais de gestion d'un fonds ?",
                 options: [
-                    "Par facture annuelle envoyée au client",
+                    "Par facture annuelle envoyée au client, comme une prestation",
                     "Uniquement au moment de la revente",
                     "Silencieusement, sur l'encours, déduits de la performance affichée"
                 ],
@@ -111,7 +111,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi l'effet des frais est-il si violent sur longue durée ?",
                 options: [
-                    "Parce qu'ils augmentent chaque année",
+                    "Parce qu'ils augmentent chaque année avec l'encours du contrat",
                     "Parce qu'ils privent aussi des intérêts que le rendement perdu aurait produits",
                     "Parce qu'ils sont prélevés deux fois"
                 ],
@@ -148,7 +148,7 @@ window.QUIZ = {
                 options: [
                     "Le contenant : PEA, compte-titres, assurance-vie",
                     "Le montant maximal qu'on peut investir",
-                    "Le document contractuel signé à l'ouverture"
+                    "Le document contractuel signé au moment de l'ouverture"
                 ],
                 a: 0,
                 explication: "Le contenu — actions, ETF — peut être le même. Ce qui change, c'est la fiscalité et les conditions de sortie."
@@ -156,9 +156,9 @@ window.QUIZ = {
             {
                 q: "Après cinq ans, quels prélèvements subsistent sur les gains d'un PEA ?",
                 options: [
-                    "Aucun prélèvement",
+                    "Aucun prélèvement, ni social ni fiscal",
                     "Les prélèvements sociaux uniquement",
-                    "L'impôt sur le revenu uniquement"
+                    "L'impôt sur le revenu, et lui seul"
                 ],
                 a: 1,
                 explication: "L'exonération porte sur l'impôt sur le revenu. Les prélèvements sociaux de 17,2 % restent dus."
@@ -198,7 +198,7 @@ window.QUIZ = {
                 q: "Quelle enveloppe est « la meilleure » ?",
                 options: [
                     "Le PEA, dans tous les cas",
-                    "L'assurance-vie, dans tous les cas",
+                    "L'assurance-vie, dans tous les cas et à tout âge",
                     "La question est mal posée : elles répondent à des besoins différents"
                 ],
                 a: 2,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Qu'apportent réellement les versements programmés ?",
                 options: [
                     "Un rendement moyen supérieur",
-                    "Une garantie contre les pertes",
+                    "Une garantie contre les pertes en cas de baisse",
                     "La suppression de la question du moment d'entrée"
                 ],
                 a: 2,
@@ -255,7 +255,7 @@ window.QUIZ = {
                 options: [
                     "Une erreur de l'intermédiaire",
                     "Le risque a augmenté sans décision consciente",
-                    "Rien d'anormal, il faut laisser courir"
+                    "Rien d'anormal, il faut laisser courir les gains"
                 ],
                 a: 1,
                 explication: "La dérive est mécanique. Elle expose davantage qu'on ne l'avait accepté, au moment précis où les marchés sont hauts."
@@ -281,7 +281,7 @@ window.QUIZ = {
         {
             q: "Quelle décision explique la plus grande part de la variation des résultats ?",
             options: [
-                "Le choix des supports individuels",
+                "Le choix des supports individuels retenus",
                 "Le moment précis de l'achat",
                 "L'allocation entre actifs risqués et stables"
             ],
@@ -292,8 +292,8 @@ window.QUIZ = {
             q: "Deux investisseurs obtiennent la même performance brute. Qu'est-ce qui creusera l'écart entre eux ?",
             options: [
                 "Les frais et l'enveloppe fiscale choisie",
-                "Le nombre de lignes détenues",
-                "La banque qui héberge le compte"
+                "Le nombre de lignes détenues en portefeuille",
+                "La banque qui héberge le compte-titres"
             ],
             a: 0,
             explication: "Frais et fiscalité s'appliquent chaque année et à chaque retrait. Ce sont les deux seuls leviers réellement maîtrisables."

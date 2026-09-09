@@ -14,8 +14,8 @@ window.QUIZ = {
             {
                 q: "À quoi correspond l'épargne de précaution ?",
                 options: [
-                    "3 à 6 mois de revenus",
-                    "10 % de son salaire annuel",
+                    "3 à 6 mois de revenus nets, avant impôts",
+                    "10 % de son salaire annuel, mis de côté",
                     "3 à 6 mois de dépenses courantes"
                 ],
                 a: 2,
@@ -25,8 +25,8 @@ window.QUIZ = {
                 q: "Pourquoi constituer cette réserve avant d'investir ?",
                 options: [
                     "Pour ne pas être contraint de vendre ses placements au mauvais moment",
-                    "Parce que la loi l'impose",
-                    "Parce qu'elle rapporte davantage que la bourse"
+                    "Parce que la loi impose de constituer cette réserve avant tout placement",
+                    "Parce qu'elle rapporte davantage que la bourse sur une durée un peu longue"
                 ],
                 a: 0,
                 explication: "Les imprévus financiers surviennent souvent quand l'économie va mal, c'est-à-dire quand les marchés sont bas."
@@ -36,7 +36,7 @@ window.QUIZ = {
                 options: [
                     "Un support disponible sous 48 h et sans risque en capital",
                     "Un ETF actions mondiales, plus rentable",
-                    "Un placement bloqué 5 ans pour éviter d'y toucher"
+                    "Un placement bloqué 5 ans, pour éviter la tentation d'y toucher"
                 ],
                 a: 0,
                 explication: "Ce n'est pas de l'investissement mais de l'assurance : le rendement importe peu, la disponibilité est tout."
@@ -51,7 +51,7 @@ window.QUIZ = {
             {
                 q: "Quelle méthode d'épargne se révèle la plus efficace dans la durée ?",
                 options: [
-                    "Mettre de côté ce qui reste à la fin du mois",
+                    "Mettre de côté ce qui reste sur le compte à la fin du mois",
                     "Épargner une grosse somme une fois par an",
                     "Un virement automatique le lendemain de la paie"
                 ],
@@ -62,8 +62,8 @@ window.QUIZ = {
                 q: "Pourquoi est-il déconseillé de chercher à optimiser le rendement de cette réserve ?",
                 options: [
                     "Parce que le gain possible est négligeable et le risque, lui, ne l'est pas",
-                    "Parce que les gains y sont imposés à 100 %",
-                    "Parce que c'est interdit sur un livret réglementé"
+                    "Parce que les gains y seraient imposés à 100 % dès le premier euro",
+                    "Parce que c'est tout simplement interdit sur un livret réglementé par l'État"
                 ],
                 a: 0,
                 explication: "Prendre du risque sur son matelas de sécurité revient à supprimer sa raison d'être."
@@ -78,7 +78,7 @@ window.QUIZ = {
                 options: [
                     "Placer son argent sans aucun risque",
                     "Accepter un risque de perte en échange d'un rendement espéré",
-                    "Confier son argent à un professionnel"
+                    "Confier son argent à un professionnel qui le fera fructifier"
                 ],
                 a: 1,
                 explication: "Le risque n'est pas un effet secondaire : c'est la contrepartie du rendement."
@@ -88,7 +88,7 @@ window.QUIZ = {
                 options: [
                     "Un produit réservé aux gros patrimoines",
                     "Une arnaque, par définition",
-                    "Un fonds euros classique"
+                    "Un fonds euros classique, garanti"
                 ],
                 a: 1,
                 explication: "Rendement élevé et absence de risque sont incompatibles. C'est le signal d'alerte le plus fiable."
@@ -98,7 +98,7 @@ window.QUIZ = {
                 options: [
                     "Le rendement qui produit à son tour du rendement",
                     "Un impôt sur les plus-values",
-                    "Le cumul de plusieurs comptes d'épargne"
+                    "Le cumul de plusieurs comptes d'épargne rémunérés"
                 ],
                 a: 0,
                 explication: "Discret sur quelques années, il devient le facteur dominant sur plusieurs décennies."
@@ -123,7 +123,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi l'investissement programmé évite-t-il de chercher le bon moment ?",
                 options: [
-                    "Parce qu'il garantit un rendement minimum",
+                    "Parce qu'il garantit un rendement minimum quoi qu'il arrive ensuite",
                     "Parce qu'on achète mécaniquement plus de parts quand les prix baissent",
                     "Parce que les frais y sont supprimés"
                 ],
@@ -148,8 +148,8 @@ window.QUIZ = {
             {
                 q: "Qu'achète-t-on avec une part d'ETF répliquant le MSCI World ?",
                 options: [
-                    "Une action d'une grande entreprise mondiale",
-                    "Une obligation d'État internationale",
+                    "Une action d'une grande entreprise mondiale, choisie pour sa solidité",
+                    "Une obligation d'État internationale, adossée à plusieurs pays",
                     "Une fraction de plus de 1 500 entreprises de 23 pays développés"
                 ],
                 a: 2,
@@ -158,8 +158,8 @@ window.QUIZ = {
             {
                 q: "Un ETF protège-t-il d'une baisse générale des marchés ?",
                 options: [
-                    "Oui, c'est tout l'intérêt de la diversification",
-                    "Oui, au-delà de 8 ans de détention",
+                    "Oui, c'est même tout l'intérêt de la diversification qu'un ETF apporte au portefeuille",
+                    "Oui, au-delà de huit ans de détention, le risque finit par disparaître",
                     "Non : il protège du risque lié à une entreprise, pas du risque de marché"
                 ],
                 a: 2,
@@ -169,9 +169,9 @@ window.QUIZ = {
             {
                 q: "Quel est le premier critère de choix d'un ETF ?",
                 options: [
-                    "Sa performance de l'année écoulée",
+                    "Sa performance sur l'année qui vient de s'écouler",
                     "Ses frais courants, souvent notés TER",
-                    "Le nom de la société qui l'émet"
+                    "Le nom de la société de gestion qui l'émet"
                 ],
                 a: 1,
                 explication: "C'est le seul élément connu à l'avance. Le rendement, lui, ne se commande pas."
@@ -179,7 +179,7 @@ window.QUIZ = {
             {
                 q: "Quelle différence entre un ETF capitalisant et un ETF distribuant ?",
                 options: [
-                    "Le distribuant est réservé aux professionnels",
+                    "Le distribuant est réservé aux investisseurs professionnels",
                     "Le capitalisant est garanti en capital",
                     "Le capitalisant réinvestit automatiquement les dividendes"
                 ],
@@ -189,8 +189,8 @@ window.QUIZ = {
             {
                 q: "Que montrent les études comparant fonds actifs et indices sur 10 ans ?",
                 options: [
-                    "Les fonds actifs battent presque toujours leur indice",
-                    "Les deux se valent exactement",
+                    "Les fonds actifs battent presque toujours leur indice de référence sur la durée",
+                    "Les deux se valent exactement, une fois toutes les années comparées",
                     "La majorité des fonds actifs font moins bien, une fois les frais déduits"
                 ],
                 a: 2,
@@ -205,7 +205,7 @@ window.QUIZ = {
                 q: "En finance, que désigne le mot « risque » ?",
                 options: [
                     "L'ampleur des variations, à la hausse comme à la baisse",
-                    "La probabilité de tout perdre",
+                    "La probabilité de tout perdre d'un coup, sans prévenir",
                     "Le montant des frais prélevés"
                 ],
                 a: 0,
@@ -214,7 +214,7 @@ window.QUIZ = {
             {
                 q: "Quelle question détermine le niveau de risque acceptable ?",
                 options: [
-                    "Quel rendement je vise ?",
+                    "Quel rendement est-ce que je vise sur ce placement ?",
                     "Quel est mon âge ?",
                     "Dans combien de temps aurai-je besoin de cet argent ?"
                 ],
@@ -224,9 +224,9 @@ window.QUIZ = {
             {
                 q: "Un placement en actions pour un besoin dans 18 mois, c'est :",
                 options: [
-                    "Audacieux mais défendable",
+                    "Audacieux mais défendable, si l'on accepte de voir le capital bouger",
                     "Mal conçu : la durée ne laisse aucune marge pour se remettre d'une baisse",
-                    "Le meilleur choix pour un objectif court"
+                    "C'est le meilleur choix possible pour un objectif de court terme, à trois ans"
                 ],
                 a: 1,
                 explication: "Sous deux ans, aucun risque en capital n'est justifiable."
@@ -235,8 +235,8 @@ window.QUIZ = {
             {
                 q: "Détenir dix actions du même secteur, est-ce diversifier ?",
                 options: [
-                    "Oui, dix lignes suffisent",
-                    "Oui, à condition qu'elles soient étrangères",
+                    "Oui, dix lignes bien choisies suffisent largement à diversifier un portefeuille",
+                    "Oui, à condition que ces dix lignes soient toutes étrangères au marché français local",
                     "Non : une vraie répartition joue sur plusieurs classes d'actifs, zones et secteurs"
                 ],
                 a: 2,
@@ -257,7 +257,7 @@ window.QUIZ = {
                 options: [
                     "Au moment de la vente",
                     "Dès qu'elle apparaît sur le relevé",
-                    "Au bout d'un an"
+                    "Au bout d'un an de baisse"
                 ],
                 a: 0,
                 explication: "Tant qu'on ne vend pas, la baisse reste virtuelle. D'où l'importance de ne jamais être contraint de vendre."
@@ -271,7 +271,7 @@ window.QUIZ = {
                 q: "Qu'appelle-t-on une « enveloppe » fiscale ?",
                 options: [
                     "Un type de placement à part entière",
-                    "Le document envoyé par l'administration fiscale",
+                    "Le document envoyé chaque année par l'administration fiscale",
                     "Le contenant dans lequel on loge ses placements"
                 ],
                 a: 2,
@@ -307,7 +307,7 @@ window.QUIZ = {
                 options: [
                     "Pour bénéficier d'une prime d'ouverture",
                     "Parce que le compteur fiscal démarre à l'ouverture et ne se rattrape pas",
-                    "Parce que les frais baissent avec le temps"
+                    "Parce que les frais de gestion baissent avec l'ancienneté du contrat"
                 ],
                 a: 1,
                 explication: "C'est l'une des rares décisions financières qui ne coûte presque rien et ne se rattrape pas plus tard."
@@ -347,7 +347,7 @@ window.QUIZ = {
             q: "Un ami te propose un placement à 12 % par an garanti sans risque. Que faire ?",
             options: [
                 "Refuser : rendement élevé et absence de risque sont incompatibles",
-                "Investir une petite somme pour tester",
+                "Investir une petite somme pour tester le sérieux de la promesse",
                 "Demander un rendement plus élevé"
             ],
             a: 0,

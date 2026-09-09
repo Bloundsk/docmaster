@@ -14,8 +14,8 @@ window.QUIZ = {
             {
                 q: "What does the emergency fund correspond to?",
                 options: [
-                    "3 to 6 months of income",
-                    "10% of your annual salary",
+                    "3 to 6 months of your income, before tax",
+                    "10% of your annual salary, set aside each year",
                     "3 to 6 months of everyday spending"
                 ],
                 a: 2,
@@ -76,7 +76,7 @@ window.QUIZ = {
             {
                 q: "What does “investing” mean in financial terms?",
                 options: [
-                    "Placing your money with no risk at all",
+                    "Placing your money somewhere with no risk at all, whatever happens",
                     "Accepting a risk of loss in exchange for a hoped-for return",
                     "Handing your money to a professional"
                 ],
@@ -98,7 +98,7 @@ window.QUIZ = {
                 options: [
                     "Return that itself produces further return",
                     "A tax on capital gains",
-                    "The total of several savings accounts"
+                    "The total of several savings accounts held together"
                 ],
                 a: 0,
                 explication: "Discreet over a few years, it becomes the dominant factor over several decades."
@@ -123,7 +123,7 @@ window.QUIZ = {
             {
                 q: "Why do regular contributions avoid having to find the right moment?",
                 options: [
-                    "Because they guarantee a minimum return",
+                    "Because they guarantee a minimum return, whatever the markets do",
                     "Because you mechanically buy more units when prices fall",
                     "Because fees are waived"
                 ],
@@ -169,7 +169,7 @@ window.QUIZ = {
             {
                 q: "What is the first criterion when choosing an ETF?",
                 options: [
-                    "Its performance over the past year",
+                    "Its performance over the past year and the year before",
                     "Its ongoing charges, often labelled TER",
                     "The name of the company issuing it"
                 ],
@@ -179,7 +179,7 @@ window.QUIZ = {
             {
                 q: "What is the difference between an accumulating and a distributing ETF?",
                 options: [
-                    "The distributing one is reserved for professionals",
+                    "The distributing one is reserved for professional investors only",
                     "The accumulating one guarantees the capital",
                     "The accumulating one automatically reinvests the dividends"
                 ],
@@ -205,7 +205,7 @@ window.QUIZ = {
                 q: "In finance, what does the word “risk” mean?",
                 options: [
                     "The size of the swings, upwards as well as downwards",
-                    "The probability of losing everything",
+                    "The probability of losing everything all at once, without warning",
                     "The amount of fees taken"
                 ],
                 a: 0,
@@ -214,8 +214,8 @@ window.QUIZ = {
             {
                 q: "Which question determines the acceptable level of risk?",
                 options: [
-                    "What return am I aiming for?",
-                    "How old am I?",
+                    "What return am I aiming for on this money?",
+                    "How old am I at this point in my life?",
                     "How long before I need this money?"
                 ],
                 a: 2,
@@ -257,7 +257,7 @@ window.QUIZ = {
                 options: [
                     "At the moment of the sale",
                     "As soon as it appears on the statement",
-                    "After a year"
+                    "After a full year of falling prices"
                 ],
                 a: 0,
                 explication: "As long as you do not sell, the fall stays notional. Hence the importance of never being forced to sell."
@@ -271,7 +271,7 @@ window.QUIZ = {
                 q: "What is a tax “wrapper”?",
                 options: [
                     "A type of investment in its own right",
-                    "The document sent by the tax authority",
+                    "The document the tax authority sends you every year",
                     "The container in which you house your investments"
                 ],
                 a: 2,
@@ -298,7 +298,7 @@ window.QUIZ = {
             },
             {
                 q: "On €10,000 of gains, what is the gap between a securities account and a PEA held over 5 years?",
-                options: ["About €1,280", "About €300", "None"],
+                options: ["About €1,280", "About €300 in tax", "None whatsoever"],
                 a: 0,
                 explication: "€3,000 of tax against €1,720 of social levies, for exactly the same investments."
             },
@@ -323,7 +323,7 @@ window.QUIZ = {
         {
             q: "In what order should you approach your financial situation?",
             options: [
-                "Invest first, save afterwards out of the gains",
+                "Invest first, and save afterwards out of the gains made",
                 "Build an emergency reserve, then invest the surplus",
                 "Open a tax wrapper before anything else"
             ],
@@ -356,7 +356,7 @@ window.QUIZ = {
         {
             q: "You need €15,000 in 18 months for a house deposit. What direction?",
             options: [
-                "Equities, to maximise the gain by then",
+                "Equities, so as to maximise the gain by the time it comes",
                 "No risk to the capital: the horizon is too short",
                 "50% equities, 50% guaranteed fund"
             ],

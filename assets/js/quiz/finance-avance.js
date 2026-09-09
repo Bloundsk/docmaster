@@ -15,7 +15,7 @@ window.QUIZ = {
                 q: "Sur quoi porte l'imposition lors d'un retrait ?",
                 options: [
                     "Sur la seule part de gains contenue dans le retrait",
-                    "Sur la totalité du montant retiré",
+                    "Sur la totalité du montant retiré, gains et capital confondus",
                     "Sur le capital versé à l'origine"
                 ],
                 a: 0,
@@ -46,8 +46,8 @@ window.QUIZ = {
                 q: "Quel est l'intérêt d'étaler un retrait sur deux années civiles ?",
                 options: [
                     "Utiliser l'abattement annuel deux fois",
-                    "Réduire les frais de courtage",
-                    "Éviter les prélèvements sociaux"
+                    "Réduire les frais de courtage prélevés",
+                    "Éviter les prélèvements sociaux sur les gains"
                 ],
                 a: 0,
                 explication: "Concentrer les gains sur une seule année fiscale fait dépasser l'abattement, et tout ce qui dépasse est imposé plein tarif."
@@ -65,7 +65,7 @@ window.QUIZ = {
             {
                 q: "Quelle phase de l'investissement est la plus souvent négligée ?",
                 options: [
-                    "Le choix des supports",
+                    "Le choix des supports au moment de l'entrée",
                     "La sortie, c'est-à-dire la façon de retirer",
                     "L'ouverture du compte"
                 ],
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il pour une obligation déjà détenue quand les taux montent ?",
                 options: [
-                    "Son prix monte",
+                    "Son prix monte aussitôt",
                     "Son prix baisse",
                     "Son prix ne bouge pas"
                 ],
@@ -111,7 +111,7 @@ window.QUIZ = {
             {
                 q: "Sur quoi porte la sécurité d'une obligation d'État ?",
                 options: [
-                    "Sur la stabilité de son prix",
+                    "Sur la stabilité de son prix au fil du temps",
                     "Sur le risque de défaut de l'emprunteur",
                     "Sur les deux à la fois"
                 ],
@@ -122,7 +122,7 @@ window.QUIZ = {
                 q: "Quelle différence entre une obligation en direct et un fonds obligataire ?",
                 options: [
                     "Le fonds garantit le capital, pas l'obligation",
-                    "Aucune, ce sont deux mots pour la même chose",
+                    "Aucune : ce sont deux mots pour désigner exactement la même chose en pratique",
                     "Le fonds n'a pas d'échéance et renouvelle continuellement ses titres"
                 ],
                 a: 2,
@@ -131,7 +131,7 @@ window.QUIZ = {
             {
                 q: "Où placer une somme dont on aura besoin dans deux ans ?",
                 options: [
-                    "Sur des obligations longues, plus rémunératrices",
+                    "Sur des obligations longues, nettement plus rémunératrices",
                     "Sur des supports à duration courte ou sans risque de prix",
                     "Peu importe, les obligations sont sûres"
                 ],
@@ -147,7 +147,7 @@ window.QUIZ = {
                 q: "Qu'est-ce qui caractérise une vraie diversification ?",
                 options: [
                     "Le nombre de lignes détenues",
-                    "La présence d'au moins dix fonds différents",
+                    "La présence d'au moins dix fonds différents en portefeuille",
                     "Le fait que les actifs ne baissent pas en même temps"
                 ],
                 a: 2,
@@ -167,8 +167,8 @@ window.QUIZ = {
                 q: "Que deviennent les corrélations pendant une crise ?",
                 options: [
                     "Elles augmentent, les actifs baissent davantage ensemble",
-                    "Elles diminuent, la diversification protège mieux",
-                    "Elles restent stables"
+                    "Elles diminuent, et la diversification protège donc mieux",
+                    "Elles restent parfaitement stables d'un bout à l'autre de la crise"
                 ],
                 a: 0,
                 explication: "Au moment précis où l'on compte sur la diversification, elle fonctionne moins bien. Elle atténue, elle ne protège pas."
@@ -177,7 +177,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que le biais domestique ?",
                 options: [
-                    "Le fait d'investir depuis son domicile",
+                    "Le fait d'investir depuis son domicile, sans passer par un intermédiaire",
                     "La tendance à surpondérer les entreprises de son propre pays",
                     "Une taxe sur les placements étrangers"
                 ],
@@ -187,8 +187,8 @@ window.QUIZ = {
             {
                 q: "Un indice américain gagne 10 % en dollars. Que perçoit un investisseur en euros ?",
                 options: [
-                    "10 %, la devise n'a aucun effet",
-                    "Toujours moins de 10 %",
+                    "10 %, la devise n'ayant aucun effet sur le résultat final",
+                    "Toujours moins de 10 %, quelle que soit la période considérée",
                     "Cela dépend de l'évolution du dollar face à l'euro"
                 ],
                 a: 2,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Que constate-t-on en comparant la performance d'un fonds à celle de ses porteurs ?",
                 options: [
                     "Les porteurs obtiennent en moyenne moins que le fonds",
-                    "Les porteurs obtiennent en moyenne davantage",
+                    "Les porteurs obtiennent en moyenne davantage que le fonds",
                     "Les deux sont identiques par construction"
                 ],
                 a: 0,
@@ -233,7 +233,7 @@ window.QUIZ = {
                 q: "Où se situent le plus souvent les meilleures séances de bourse ?",
                 options: [
                     "En période calme et haussière",
-                    "Réparties uniformément dans l'année",
+                    "Réparties uniformément sur l'ensemble de l'année",
                     "À proximité immédiate des pires, en pleine tourmente"
                 ],
                 a: 2,
@@ -243,8 +243,8 @@ window.QUIZ = {
             {
                 q: "Comment se manifeste l'aversion à la perte ?",
                 options: [
-                    "On refuse tout placement risqué",
-                    "On oublie rapidement ses pertes",
+                    "On refuse par principe tout placement risqué, même lorsque l'horizon reste lointain",
+                    "On oublie rapidement ses pertes, et l'on recommence les mêmes erreurs",
                     "La perte est ressentie environ deux fois plus fortement qu'un gain équivalent"
                 ],
                 a: 2,
@@ -254,8 +254,8 @@ window.QUIZ = {
                 q: "Quel remède le guide propose-t-il contre les décisions prises à chaud ?",
                 options: [
                     "Consigner par écrit, à froid, son allocation et la conduite prévue en cas de chute",
-                    "Faire davantage confiance à son intuition",
-                    "Confier la gestion à un tiers"
+                    "Faire davantage confiance à son intuition au moment de décider d'acheter ou de vendre",
+                    "Confier la gestion à un tiers, qui décidera sans être pris dans l'émotion"
                 ],
                 a: 0,
                 explication: "Le remède n'est pas la force de caractère : un document rédigé à froid tient mieux qu'une résolution prise à chaud."
@@ -282,7 +282,7 @@ window.QUIZ = {
             q: "Quel point commun relient les mécanismes de ce niveau ?",
             options: [
                 "Ils sont contre-intuitifs avant d'être expliqués",
-                "Ils ne concernent que les gros patrimoines",
+                "Ils ne concernent que les gros patrimoines déjà constitués",
                 "Ils dépendent tous de la conjoncture"
             ],
             a: 0,
@@ -291,9 +291,9 @@ window.QUIZ = {
         {
             q: "Deux personnes détiennent le même portefeuille et retirent la même somme. Qu'est-ce qui peut faire diverger leur net perçu ?",
             options: [
-                "Leur banque",
+                "Leur banque, et les frais que celle-ci prélève au moment du retrait",
                 "L'enveloppe dans laquelle elles puisent et l'étalement du retrait",
-                "Rien, le net est identique"
+                "Rien du tout, le montant net perçu est identique dans les deux cas"
             ],
             a: 1,
             explication: "L'ordre de retrait est un levier à part entière, et l'un des rares qui s'exerce sans prendre de risque supplémentaire."
@@ -312,9 +312,9 @@ window.QUIZ = {
         {
             q: "Un portefeuille contient vingt fonds. Que peut-on en déduire sur sa diversification ?",
             options: [
-                "Qu'il est très diversifié",
+                "Qu'il est très diversifié, par construction même du portefeuille",
                 "Rien : tout dépend du recouvrement entre ces fonds",
-                "Qu'il est trop coûteux"
+                "Qu'il est trop coûteux à détenir, vu le nombre de lignes"
             ],
             a: 1,
             explication: "Le nombre de lignes ne mesure rien. Seul compte ce qui baisse en même temps."
@@ -324,7 +324,7 @@ window.QUIZ = {
             options: [
                 "Choisir un fonds légèrement plus cher",
                 "Sortir du marché pendant une baisse",
-                "Rééquilibrer trop souvent"
+                "Rééquilibrer beaucoup trop souvent"
             ],
             a: 1,
             explication: "Manquer les meilleures séances coûte davantage qu'éviter les pires ne rapporte, et les deux se produisent au même moment."
@@ -332,9 +332,9 @@ window.QUIZ = {
         {
             q: "Que faut-il retenir de l'écart entre performance d'un fonds et performance de ses porteurs ?",
             options: [
-                "Que les fonds publient des chiffres faux",
+                "Que les fonds publient des chiffres faux ou mal calculés depuis des années",
                 "Que les décisions prises entre-temps ont un coût mesurable",
-                "Que les frais expliquent tout"
+                "Que les frais expliquent à eux seuls la totalité de l'écart constaté"
             ],
             a: 1,
             explication: "Cet écart ne vient ni du fonds ni des frais : il vient des dates auxquelles on est entré et sorti."

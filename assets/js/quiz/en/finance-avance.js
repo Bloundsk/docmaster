@@ -16,7 +16,7 @@ window.QUIZ = {
                 options: [
                     "Only the share of gains contained in the withdrawal",
                     "The whole amount withdrawn",
-                    "The capital originally paid in"
+                    "The capital that was originally paid into the contract"
                 ],
                 a: 0,
                 explication: "A withdrawal is deemed to consist of capital — never taxed — and gains. A contract containing 20% of gains triggers tax on only a fifth of the amount."
@@ -46,8 +46,8 @@ window.QUIZ = {
                 q: "What is the point of spreading a withdrawal over two calendar years?",
                 options: [
                     "Using the annual allowance twice",
-                    "Reducing brokerage fees",
-                    "Avoiding social levies"
+                    "Reducing the brokerage fees charged",
+                    "Avoiding the social levies that are due"
                 ],
                 a: 0,
                 explication: "Concentrating the gains into a single tax year takes you past the allowance, and everything above is taxed at full rate."
@@ -57,7 +57,7 @@ window.QUIZ = {
                 options: [
                     "Social levies, but not income tax",
                     "Nothing at all",
-                    "Income tax, but not social levies"
+                    "Income tax, but not the social levies"
                 ],
                 a: 0,
                 explication: "The advantage applies to income tax. The 17.2% of social levies remain due in every case."
@@ -65,7 +65,7 @@ window.QUIZ = {
             {
                 q: "Which phase of investing is most often neglected?",
                 options: [
-                    "The choice of products",
+                    "The choice of the products that are held",
                     "The exit, that is, how you withdraw",
                     "Opening the account"
                 ],
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "What happens to a bond you already hold when rates rise?",
                 options: [
-                    "Its price rises",
+                    "Its price rises at once",
                     "Its price falls",
                     "Its price does not move"
                 ],
@@ -111,9 +111,9 @@ window.QUIZ = {
             {
                 q: "What does the safety of a government bond concern?",
                 options: [
-                    "The stability of its price",
+                    "The stability of its price over time",
                     "The borrower's risk of default",
-                    "Both at once"
+                    "Both of those things at the same time"
                 ],
                 a: 1,
                 explication: "A long-duration government bond fund can lose more than 15% in a year without any government having defaulted."
@@ -147,7 +147,7 @@ window.QUIZ = {
                 q: "What characterises real diversification?",
                 options: [
                     "The number of holdings owned",
-                    "Having at least ten different funds",
+                    "Having at least ten different funds inside the portfolio",
                     "The fact that the assets do not fall at the same time"
                 ],
                 a: 2,
@@ -187,7 +187,7 @@ window.QUIZ = {
             {
                 q: "An American index gains 10% in dollars. What does an investor in euros receive?",
                 options: [
-                    "10%, the currency has no effect",
+                    "10%, since the currency has no effect at all on the result",
                     "Always less than 10%",
                     "It depends on how the dollar moved against the euro"
                 ],
@@ -214,7 +214,7 @@ window.QUIZ = {
                 options: [
                     "Holders obtain on average less than the fund",
                     "Holders obtain on average more",
-                    "The two are identical by construction"
+                    "The two are identical to each other, by construction"
                 ],
                 a: 0,
                 explication: "Published performance assumes you stayed invested from beginning to end. In practice contributions arrive after the rises and withdrawals after the falls."
@@ -283,7 +283,7 @@ window.QUIZ = {
             options: [
                 "They are counter-intuitive before being explained",
                 "They only concern large portfolios",
-                "They all depend on the economic cycle"
+                "They all depend on the economic cycle of the moment"
             ],
             a: 0,
             explication: "A bond falling when rates rise, a full portfolio that diversifies nothing, an investor earning less than their fund: each seems absurd, then obvious."
@@ -324,7 +324,7 @@ window.QUIZ = {
             options: [
                 "Choosing a slightly more expensive fund",
                 "Leaving the market during a fall",
-                "Rebalancing too often"
+                "Rebalancing the portfolio far too often"
             ],
             a: 1,
             explication: "Missing the best sessions costs more than avoiding the worst ones gains, and the two happen at the same moment."
