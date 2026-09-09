@@ -24,7 +24,7 @@ window.QUIZ = {
                 q: "Que désigne l'intention de recherche ?",
                 options: [
                     "L'attente réelle derrière la requête : comprendre, comparer ou agir",
-                    "Le nombre de fois qu'un mot est tapé",
+                    "Le nombre de fois qu'un mot est tapé chaque mois dans le moteur de recherche",
                     "La position visée dans les résultats"
                 ],
                 a: 0,
@@ -46,7 +46,7 @@ window.QUIZ = {
                 options: [
                     "Un meilleur classement",
                     "Une pénalité : ces techniques sont détectées",
-                    "Aucun effet, ni bon ni mauvais"
+                    "Aucun effet particulier, ni dans un sens ni dans l'autre"
                 ],
                 a: 1,
                 explication: "Le critère qui reste : le visiteur trouve-t-il sa réponse et repart-il satisfait ?"
@@ -61,7 +61,7 @@ window.QUIZ = {
                 q: "Quelle est la force principale du référencement naturel ?",
                 options: [
                     "Il donne des résultats immédiats",
-                    "Il ne demande aucun travail de contenu",
+                    "Il ne demande aucun travail de contenu ni de rédaction régulière",
                     "Le trafic obtenu ne s'arrête pas quand on cesse de payer"
                 ],
                 a: 2,
@@ -75,7 +75,7 @@ window.QUIZ = {
             {
                 q: "Sur une plateforme publicitaire, le plus offrant gagne-t-il toujours ?",
                 options: [
-                    "Oui, c'est le principe de l'enchère",
+                    "Oui, c'est tout le principe de l'enchère publicitaire",
                     "Non : l'enchère est combinée à un score de qualité",
                     "Oui, sauf le week-end"
                 ],
@@ -92,8 +92,8 @@ window.QUIZ = {
                 q: "Quel levier réduit le plus efficacement le coût d'acquisition ?",
                 options: [
                     "Améliorer le taux de conversion du site",
-                    "Baisser le coût par clic",
-                    "Augmenter le budget"
+                    "Baisser le coût de chacun des clics achetés",
+                    "Augmenter le budget quotidien de la campagne"
                 ],
                 a: 0,
                 explication: "Passer de 2 % à 3 % ramène le coût de 59 € à 39 €, sans dépenser un euro de plus en publicité."
@@ -112,7 +112,7 @@ window.QUIZ = {
             {
                 q: "Vers quelle page une annonce doit-elle mener ?",
                 options: [
-                    "La page d'accueil, qui présente tout",
+                    "La page d'accueil, qui présente toute l'offre du site au visiteur",
                     "Une page qui tient exactement la promesse de l'annonce",
                     "La page de contact"
                 ],
@@ -143,8 +143,8 @@ window.QUIZ = {
             {
                 q: "Vaut-il mieux être présent partout ou sur une seule plateforme ?",
                 options: [
-                    "Partout, pour maximiser la portée",
-                    "Trois au minimum, jamais moins",
+                    "Partout à la fois, pour maximiser la portée",
+                    "Trois au minimum, et jamais moins que cela",
                     "Une seule, bien tenue, produit davantage"
                 ],
                 a: 2,
@@ -174,7 +174,7 @@ window.QUIZ = {
             {
                 q: "Que vaut un compte de 50 000 abonnés inactifs ?",
                 options: [
-                    "Beaucoup : le nombre impressionne",
+                    "Beaucoup : le nombre impressionne les visiteurs",
                     "La même chose qu'un compte engagé",
                     "Moins qu'un compte de 800 abonnés engagés"
                 ],
@@ -232,7 +232,7 @@ window.QUIZ = {
                 options: [
                     "On a segmenté la liste et adapté le message à chaque groupe",
                     "On a doublé la fréquence d'envoi",
-                    "On a changé de fournisseur d'envoi"
+                    "On a changé de fournisseur d'envoi pour un service plus fiable"
                 ],
                 a: 0,
                 explication: "Même liste, même produit, un peu plus de travail de rédaction : le résultat double."
@@ -241,7 +241,7 @@ window.QUIZ = {
                 q: "Quel signal est le plus grave pour un expéditeur ?",
                 options: [
                     "Un taux d'ouverture en baisse",
-                    "Les désabonnements",
+                    "Les désabonnements successifs",
                     "Les signalements en spam"
                 ],
                 a: 2,
@@ -289,8 +289,8 @@ window.QUIZ = {
             q: "Quel canal t'appartient réellement ?",
             options: [
                 "Ta liste de courriels",
-                "Ton compte Instagram",
-                "Ta page Facebook"
+                "Ton compte Instagram et ses abonnés",
+                "Ta page Facebook professionnelle"
             ],
             a: 0,
             explication: "Tu loues ton audience aux plateformes. La liste que tu en extrais est le seul actif durable."
@@ -309,7 +309,7 @@ window.QUIZ = {
         {
             q: "Un prestataire garantit la première position sur Google en un mois. Comment l'interpréter ?",
             options: [
-                "C'est ambitieux mais crédible s'il est expérimenté",
+                "C'est ambitieux mais crédible s'il est déjà expérimenté",
                 "C'est normal pour un site neuf",
                 "C'est un signal d'alerte : le SEO demande 6 à 12 mois"
             ],

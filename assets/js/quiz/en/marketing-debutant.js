@@ -49,14 +49,14 @@ window.QUIZ = {
                 options: [
                     "A better ranking",
                     "A penalty: those techniques are detected",
-                    "No effect, good or bad"
+                    "No effect at all, neither good nor bad in the end"
                 ],
                 a: 1,
                 explication: "The criterion that remains: does the visitor find their answer and leave satisfied?"
             },
             {
                 q: "How long before serious SEO results?",
-                options: ["2 to 4 weeks", "6 to 12 months", "2 to 3 years minimum"],
+                options: ["2 to 4 weeks of work", "6 to 12 months", "2 to 3 years minimum"],
                 a: 1,
                 explication: "If a contractor promises first place in three weeks, the matter is settled."
             },
@@ -64,7 +64,7 @@ window.QUIZ = {
                 q: "What is the main strength of search ranking?",
                 options: [
                     "It gives immediate results",
-                    "It requires no content work",
+                    "It requires no content work and no regular writing at all",
                     "The traffic obtained does not stop when you stop paying"
                 ],
                 a: 2,
@@ -78,7 +78,7 @@ window.QUIZ = {
             {
                 q: "On an advertising platform, does the highest bidder always win?",
                 options: [
-                    "Yes, that is what an auction is",
+                    "Yes, that is exactly what an auction is meant to be",
                     "No: the bid is combined with a quality score",
                     "Yes, except at weekends"
                 ],
@@ -95,8 +95,8 @@ window.QUIZ = {
                 q: "Which lever cuts the acquisition cost most effectively?",
                 options: [
                     "Improving the site's conversion rate",
-                    "Lowering the cost per click",
-                    "Raising the budget"
+                    "Lowering the cost of each click bought",
+                    "Raising the daily budget of the campaign"
                 ],
                 a: 0,
                 explication: "Going from 2% to 3% brings the cost from €59 to €39, without spending a euro more on advertising."
@@ -115,7 +115,7 @@ window.QUIZ = {
             {
                 q: "Which page should an ad lead to?",
                 options: [
-                    "The home page, which presents everything",
+                    "The home page, which presents everything the site sells",
                     "A page that keeps the ad's promise exactly",
                     "The contact page"
                 ],
@@ -146,8 +146,8 @@ window.QUIZ = {
             {
                 q: "Is it better to be everywhere or on one single platform?",
                 options: [
-                    "Everywhere, to maximise reach",
-                    "Three at a minimum, never fewer",
+                    "Everywhere at once, so as to maximise the reach",
+                    "Three at the very minimum, and never fewer",
                     "One, kept up properly, produces more"
                 ],
                 a: 2,
@@ -178,7 +178,7 @@ window.QUIZ = {
                 q: "What is an account with 50,000 inactive followers worth?",
                 options: [
                     "A lot: the number impresses",
-                    "The same as an engaged account",
+                    "The same as an account whose followers actually engage",
                     "Less than an account with 800 engaged followers"
                 ],
                 a: 2,
@@ -188,7 +188,7 @@ window.QUIZ = {
                 q: "What works best over time?",
                 options: [
                     "Two posts a week kept up for six months",
-                    "Ten posts in one week then nothing",
+                    "Ten posts in a single week and then nothing at all",
                     "One perfect post per quarter"
                 ],
                 a: 0,
@@ -222,7 +222,7 @@ window.QUIZ = {
             {
                 q: "Which metric is the most reliable today?",
                 options: [
-                    "The open rate",
+                    "The open rate of the message",
                     "The number of subscribers",
                     "The click rate"
                 ],
@@ -234,7 +234,7 @@ window.QUIZ = {
                 q: "A list of 5,000 subscribers goes from 1.8% to 4% clicks. What changed?",
                 options: [
                     "The list was segmented and the message adapted to each group",
-                    "The sending frequency was doubled",
+                    "The sending frequency was doubled from the start of the month",
                     "The sending provider was changed"
                 ],
                 a: 0,
@@ -244,7 +244,7 @@ window.QUIZ = {
                 q: "Which signal is the most serious for a sender?",
                 options: [
                     "A falling open rate",
-                    "Unsubscribes",
+                    "Unsubscribes piling up",
                     "Spam reports"
                 ],
                 a: 2,
@@ -281,7 +281,7 @@ window.QUIZ = {
         {
             q: "What do you need to know before launching a paid campaign?",
             options: [
-                "The names of your competitors",
+                "The names of your closest competitors on the market",
                 "What a customer is worth over their lifetime",
                 "The best time of day to post"
             ],
@@ -303,7 +303,7 @@ window.QUIZ = {
             q: "You are torn between doubling your ad budget and improving your sales page. Which first?",
             options: [
                 "Improve conversion: the gain then benefits every channel",
-                "Double the budget, the effect is immediate",
+                "Double the budget, since the effect is immediate and visible",
                 "Both at the same time"
             ],
             a: 0,

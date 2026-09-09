@@ -14,7 +14,7 @@ window.QUIZ = {
             {
                 q: "Quel modèle d'attribution est le réglage par défaut de la plupart des outils ?",
                 options: [
-                    "Le premier clic",
+                    "Le tout premier clic du parcours",
                     "L'attribution répartie",
                     "Le dernier clic"
                 ],
@@ -25,8 +25,8 @@ window.QUIZ = {
                 q: "Que récompense mécaniquement le dernier clic ?",
                 options: [
                     "La recherche de marque et le courriel",
-                    "Le canal de découverte",
-                    "Les réseaux sociaux"
+                    "Le canal de découverte, celui du début",
+                    "Les réseaux sociaux payants et leurs formats"
                 ],
                 a: 0,
                 explication: "Ils interviennent juste avant l'achat, sans forcément avoir convaincu."
@@ -34,7 +34,7 @@ window.QUIZ = {
             {
                 q: "Un modèle d'attribution est-il « vrai » ?",
                 options: [
-                    "Oui, s'il est bien paramétré",
+                    "Oui, s'il est correctement paramétré dès le départ de chaque campagne",
                     "Oui, le modèle réparti",
                     "Non : aucun ne sait ce qui s'est passé dans la tête de l'acheteur"
                 ],
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "Quelle est la seule méthode fiable pour connaître l'apport d'un canal ?",
                 options: [
-                    "Changer de modèle d'attribution",
+                    "Changer de modèle d'attribution pour un modèle mieux réparti",
                     "Comparer avec le secteur",
                     "L'arrêter ou le réduire, et observer l'effet sur le total"
                 ],
@@ -90,9 +90,9 @@ window.QUIZ = {
             {
                 q: "Combien coûte le fait de faire revenir un client, comparé à en acquérir un ?",
                 options: [
-                    "Autant",
+                    "Autant, à quelques euros près sur l'année entière",
                     "Cinq à sept fois moins, selon les secteurs",
-                    "Deux fois plus"
+                    "Deux fois plus cher, en moyenne sur le marché"
                 ],
                 a: 1,
                 explication: "Pourtant, cette ligne figure rarement dans un plan marketing."
@@ -102,7 +102,7 @@ window.QUIZ = {
                 options: [
                     "Elle rapporte moins",
                     "Elle ne se voit pas dans un tableau de campagne",
-                    "Elle est plus difficile techniquement"
+                    "Elle est bien plus difficile techniquement à suivre"
                 ],
                 a: 1,
                 explication: "Elle produit pourtant l'essentiel du résultat."
@@ -123,7 +123,7 @@ window.QUIZ = {
                 options: [
                     "Un message clair aux fidèles : leur fidélité ne vaut rien",
                     "Une croissance saine",
-                    "Un meilleur bouche-à-oreille"
+                    "Un meilleur bouche-à-oreille chez les clients les plus fidèles"
                 ],
                 a: 0,
                 explication: "Le calcul est perdant deux fois : on paie plus cher un client moins rentable, et on démotive celui qui rapportait le plus."
@@ -133,7 +133,7 @@ window.QUIZ = {
                 options: [
                     "Plus que quatre fois le budget publicitaire",
                     "Une amélioration marginale",
-                    "L'équivalent d'une campagne bien optimisée"
+                    "L'équivalent d'une campagne publicitaire bien optimisée"
                 ],
                 a: 0,
                 explication: "Aucune optimisation publicitaire ne produit un effet de cette ampleur."
@@ -157,7 +157,7 @@ window.QUIZ = {
                 q: "« Plus que 3 en stock » avec un stock réel de 3 :",
                 options: [
                     "Est légitime : la personne remercierait presque d'avoir été prévenue",
-                    "Est une manipulation",
+                    "Est une manipulation caractérisée du consommateur, à éviter absolument",
                     "Est interdit"
                 ],
                 a: 0,
@@ -167,7 +167,7 @@ window.QUIZ = {
                 q: "Quand la preuve sociale devient-elle un mensonge ?",
                 options: [
                     "Quand le chiffre est inventé ou invérifiable",
-                    "Dès qu'on affiche un nombre de clients",
+                    "Dès qu'on affiche un nombre de clients quelque part",
                     "Quand elle est mise en avant"
                 ],
                 a: 0,
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "Un effet d'urgence sans inconvénient",
                     "Une partie du public le repère, n'achètera plus, et le dira",
-                    "Une amélioration durable de la conversion"
+                    "Une amélioration durable de la conversion du site marchand concerné"
                 ],
                 a: 1,
                 explication: "Une échéance réelle produit le même effet, sans le risque."
@@ -197,8 +197,8 @@ window.QUIZ = {
             {
                 q: "Toute communication emploie-t-elle des leviers de persuasion ?",
                 options: [
-                    "Non, seules les publicités en utilisent",
-                    "Uniquement dans la vente en ligne",
+                    "Non, seules les publicités payantes en utilisent",
+                    "Uniquement dans la vente en ligne, pas ailleurs",
                     "Oui : la question est où passe la limite"
                 ],
                 a: 2,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 q: "Quel est le principe pour prospecter un particulier par courriel ?",
                 options: [
                     "Le consentement préalable, libre et spécifique",
-                    "L'information préalable suffit",
+                    "L'information préalable du destinataire, qui suffit",
                     "Aucune règle particulière"
                 ],
                 a: 0,
@@ -232,8 +232,8 @@ window.QUIZ = {
             {
                 q: "Quel document est demandé en premier lors d'un contrôle ?",
                 options: [
-                    "La liste des clients",
-                    "Les statuts de l'entreprise",
+                    "La liste complète des clients",
+                    "Les statuts déposés de l'entreprise",
                     "Le registre des traitements"
                 ],
                 a: 2,
@@ -243,9 +243,9 @@ window.QUIZ = {
             {
                 q: "Qui est responsable d'une liste achetée sans consentement valable ?",
                 options: [
-                    "Le vendeur de la liste",
+                    "Le vendeur de la liste d'adresses",
                     "Celui qui utilise les données",
-                    "Les deux à parts égales"
+                    "Les deux, à parts strictement égales"
                 ],
                 a: 1,
                 explication: "En cas de plainte, c'est à toi de prouver le consentement."
@@ -253,9 +253,9 @@ window.QUIZ = {
             {
                 q: "Une allégation environnementale vague et non justifiée constitue :",
                 options: [
-                    "Un simple argument marketing",
+                    "Un simple argument marketing sans portée",
                     "Une pratique commerciale trompeuse",
-                    "Une obligation d'information"
+                    "Une obligation d'information du client"
                 ],
                 a: 1,
                 explication: "Les mentions écologiques sont particulièrement surveillées."
@@ -265,7 +265,7 @@ window.QUIZ = {
                 options: [
                     "Être identifiée comme telle",
                     "Rester discrète pour ne pas nuire à l'authenticité",
-                    "Mentionner le montant perçu"
+                    "Mentionner le montant exact qui a été perçu"
                 ],
                 a: 0,
                 explication: "L'obligation vaut aussi pour le créateur avec qui tu travailles."
@@ -291,7 +291,7 @@ window.QUIZ = {
         {
             q: "Quel point commun entre l'attribution et la rétention ?",
             options: [
-                "Les deux relèvent du service juridique",
+                "Les deux relèvent du service juridique et de personne d'autre dans l'entreprise",
                 "Les deux sont mal servies par les tableaux de bord de campagne",
                 "Les deux se mesurent quotidiennement"
             ],

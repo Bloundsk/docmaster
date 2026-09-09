@@ -36,7 +36,7 @@ window.QUIZ = {
             {
                 q: "Taking add-to-basket from 25 to 35% on 1,000 visitors:",
                 options: [
-                    "Has almost no effect",
+                    "Has almost no effect on the total number of orders",
                     "Doubles the orders",
                     "Takes orders from 30 to 42, that is +40%"
                 ],
@@ -92,7 +92,7 @@ window.QUIZ = {
             {
                 q: "How do you check the intent behind a search in thirty seconds?",
                 options: [
-                    "Consult a volume tool",
+                    "Consult a search-volume tool and read its monthly curves",
                     "Ask some customers",
                     "Type the search and look at what is already ranking"
                 ],
@@ -114,8 +114,8 @@ window.QUIZ = {
                 q: "What is wrong with a page that informs, compares and sells at once?",
                 options: [
                     "It rarely succeeds at all three",
-                    "It is too long",
-                    "Search engines dislike it"
+                    "It is far too long to read through",
+                    "Search engines strongly dislike that"
                 ],
                 a: 0,
                 explication: "Better a guide that informs and links to the product page, each doing its own job."
@@ -148,9 +148,9 @@ window.QUIZ = {
             {
                 q: "Which question lets you sort the metrics?",
                 options: [
-                    "Is it easy to obtain?",
+                    "Is it easy enough to obtain every month?",
                     "Which decision can this number change?",
-                    "Is it comparable to the sector?"
+                    "Is it comparable to the rest of the sector?"
                 ],
                 a: 1,
                 explication: "Impressions, views and followers rise with the budget and trigger no decision."
@@ -159,8 +159,8 @@ window.QUIZ = {
                 q: "What are tracking parameters in links for?",
                 options: [
                     "Telling apart where visitors come from",
-                    "Speeding up loading",
-                    "Improving search ranking"
+                    "Speeding up the loading of all the pages",
+                    "Improving the search ranking of the pages"
                 ],
                 a: 0,
                 explication: "Without them, everything blurs into “direct traffic”."
@@ -168,9 +168,9 @@ window.QUIZ = {
             {
                 q: "“source=newsletter” and “Source=Newsletter”:",
                 options: [
-                    "Are equivalent",
+                    "Are strictly equivalent for the tool",
                     "Will create two different lines",
-                    "Are both invalid"
+                    "Are both invalid and simply ignored"
                 ],
                 a: 1,
                 explication: "A simple convention that is followed beats a sophisticated system applied at random."
@@ -180,8 +180,8 @@ window.QUIZ = {
                 q: "A channel at 8% on 40 visitors against one at 3% on 5,000: which contributes more?",
                 options: [
                     "The second: 150 customers against 3",
-                    "The first, more effective",
-                    "They are equivalent"
+                    "The first one, which is more effective",
+                    "They are perfectly equivalent to each other"
                 ],
                 a: 0,
                 explication: "The rate measures effectiveness, the volume measures contribution. Both together, never one alone."
@@ -191,7 +191,7 @@ window.QUIZ = {
                 options: [
                     "The brand search, that is, nothing you can act on",
                     "The post",
-                    "It does not record it"
+                    "It does not record it anywhere in any of its reports"
                 ],
                 a: 0,
                 explication: "Part of marketing stays invisible to the tools. Acknowledging it avoids two steering mistakes."
@@ -234,7 +234,7 @@ window.QUIZ = {
             {
                 q: "Which three automated sequences are the most profitable?",
                 options: [
-                    "Birthday, sales, new arrivals",
+                    "Birthday, seasonal sales and new arrivals",
                     "Welcome, abandoned basket, reactivation",
                     "Weekly, monthly, quarterly"
                 ],
@@ -255,7 +255,7 @@ window.QUIZ = {
             {
                 q: "Why remove addresses inactive for six months?",
                 options: [
-                    "To cut the cost of the tool",
+                    "To cut the cost of the sending tool used every single month",
                     "Because the law requires it",
                     "Because it improves deliverability for all the other sends"
                 ],
@@ -267,7 +267,7 @@ window.QUIZ = {
                 options: [
                     "Yes, if it is visible",
                     "No, it is not valid consent under data protection law",
-                    "Yes, for existing customers"
+                    "Yes, for existing customers who have already ordered once"
                 ],
                 a: 1,
                 explication: "Beyond the legal risk, it fills the list with people who asked for nothing."
@@ -283,7 +283,7 @@ window.QUIZ = {
         {
             q: "What links the four subjects of this level?",
             options: [
-                "Optimising advertising budgets",
+                "Optimising the advertising budgets committed every month",
                 "Producing content",
                 "The move from “doing things” to “understanding a system”"
             ],
@@ -293,7 +293,7 @@ window.QUIZ = {
         {
             q: "What do the buying journey and the email funnel have in common?",
             options: [
-                "They both depend on the budget",
+                "They both depend on the budget committed",
                 "Successive rates that multiply together",
                 "They are measured once a year"
             ],
@@ -304,8 +304,8 @@ window.QUIZ = {
             q: "You have €1,000 and a funnel converting at 1%. What do you do?",
             options: [
                 "Understand why 99% leave",
-                "Buy traffic",
-                "Open a new channel"
+                "Buy more paid traffic quickly",
+                "Open another acquisition channel"
             ],
             a: 0,
             explication: "The gain then benefits every channel, including the ones opened later."
@@ -324,7 +324,7 @@ window.QUIZ = {
         {
             q: "What do vanity metrics and bought lists have in common?",
             options: [
-                "Both are expensive",
+                "Both are expensive to run over the course of a whole year",
                 "Both give the illusion of an asset without being one",
                 "Both are banned"
             ],

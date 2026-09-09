@@ -27,8 +27,8 @@ window.QUIZ = {
                 q: "What does last click mechanically reward?",
                 options: [
                     "Brand search and email",
-                    "The discovery channel",
-                    "Social networks"
+                    "The discovery channel first of all",
+                    "Social networks and their formats"
                 ],
                 a: 0,
                 explication: "They come just before the purchase, without necessarily having convinced anybody."
@@ -36,7 +36,7 @@ window.QUIZ = {
             {
                 q: "Is any attribution model “true”?",
                 options: [
-                    "Yes, if it is set up properly",
+                    "Yes, provided it is set up properly from the very start",
                     "Yes, the distributed model",
                     "No: none knows what went on in the buyer's head"
                 ],
@@ -47,7 +47,7 @@ window.QUIZ = {
             {
                 q: "What is the only reliable method for knowing a channel's contribution?",
                 options: [
-                    "Changing the attribution model",
+                    "Changing the attribution model for a distributed one instead of it",
                     "Comparing against the sector",
                     "Stopping or cutting it, and watching the effect on the total"
                 ],
@@ -94,7 +94,7 @@ window.QUIZ = {
                 options: [
                     "The same",
                     "Five to seven times less, depending on the sector",
-                    "Twice as much"
+                    "Twice as much, on average right across the market"
                 ],
                 a: 1,
                 explication: "And yet that line rarely appears in a marketing plan."
@@ -102,9 +102,9 @@ window.QUIZ = {
             {
                 q: "Why does retention interest people less than acquisition?",
                 options: [
-                    "It brings in less",
+                    "It brings in less money for each customer",
                     "It does not show up in a campaign report",
-                    "It is technically harder"
+                    "It is technically a good deal harder to track"
                 ],
                 a: 1,
                 explication: "It nonetheless produces most of the result."
@@ -125,7 +125,7 @@ window.QUIZ = {
                 options: [
                     "A clear message to the loyal: their loyalty is worth nothing",
                     "Healthy growth",
-                    "Better word of mouth"
+                    "Better word of mouth among the most loyal of the customers"
                 ],
                 a: 0,
                 explication: "The arithmetic loses twice: you pay more for a less profitable customer, and demotivate the one who brought in the most."
@@ -135,7 +135,7 @@ window.QUIZ = {
                 options: [
                     "More than four times the advertising budget",
                     "A marginal improvement",
-                    "The equivalent of a well-optimised campaign"
+                    "The equivalent of one well-optimised advertising campaign"
                 ],
                 a: 0,
                 explication: "No advertising optimisation produces an effect of that size."
@@ -199,8 +199,8 @@ window.QUIZ = {
             {
                 q: "Does all communication use persuasion levers?",
                 options: [
-                    "No, only advertising uses them",
-                    "Only in online selling",
+                    "No, only paid advertising campaigns ever use them",
+                    "Only in online selling, and nowhere else at all",
                     "Yes: the question is where the line runs"
                 ],
                 a: 2,
@@ -215,7 +215,7 @@ window.QUIZ = {
                 q: "What is the principle for emailing a private individual?",
                 options: [
                     "Prior consent, freely given and specific",
-                    "Prior information is enough",
+                    "Prior information of the recipient is enough",
                     "No particular rule"
                 ],
                 a: 0,
@@ -234,7 +234,7 @@ window.QUIZ = {
             {
                 q: "Which document is asked for first in an inspection?",
                 options: [
-                    "The customer list",
+                    "The complete list of all the customers",
                     "The company's articles of association",
                     "The record of processing activities"
                 ],
@@ -247,7 +247,7 @@ window.QUIZ = {
                 options: [
                     "The seller of the list",
                     "Whoever uses the data",
-                    "Both equally"
+                    "Both of them, in equal parts"
                 ],
                 a: 1,
                 explication: "If a complaint is made, it is for you to prove consent."
@@ -255,9 +255,9 @@ window.QUIZ = {
             {
                 q: "A vague, unsupported environmental claim is:",
                 options: [
-                    "A simple marketing argument",
+                    "A simple marketing argument with no weight",
                     "A misleading commercial practice",
-                    "An information obligation"
+                    "An obligation to inform the customer"
                 ],
                 a: 1,
                 explication: "Environmental wording is watched particularly closely."
@@ -293,7 +293,7 @@ window.QUIZ = {
         {
             q: "What do attribution and retention have in common?",
             options: [
-                "Both belong to the legal department",
+                "Both belong to the legal department and nobody else",
                 "Both are badly served by campaign dashboards",
                 "Both are measured daily"
             ],
@@ -305,7 +305,7 @@ window.QUIZ = {
             options: [
                 "What would I say if a customer found out exactly how it works?",
                 "Is it profitable?",
-                "Does it match the sector's usual practice?"
+                "Does it match the usual practice of the whole sector nowadays?"
             ],
             a: 0,
             explication: "That test also catches unintentional manipulation, where nobody meant to deceive."
@@ -334,7 +334,7 @@ window.QUIZ = {
         {
             q: "What do a fake countdown and a bought list have in common?",
             options: [
-                "Both are effective in the long run",
+                "Both are effective in the long run, whatever people say about them",
                 "Both produce an immediate gain and a far larger deferred cost",
                 "Both are without consequence"
             ],

@@ -26,7 +26,7 @@ window.QUIZ = {
                 options: [
                     "La corriger : elle plafonne tout ce qui précède",
                     "Amener plus de trafic pour compenser",
-                    "L'ignorer si les autres étapes vont bien"
+                    "L'ignorer, si toutes les autres étapes vont bien"
                 ],
                 a: 0,
                 explication: "Le goulot reste le goulot, quel que soit le volume qui arrive dessus."
@@ -34,7 +34,7 @@ window.QUIZ = {
             {
                 q: "Faire passer l'ajout au panier de 25 à 35 % sur 1 000 visiteurs :",
                 options: [
-                    "N'a presque aucun effet",
+                    "N'a presque aucun effet sur le total des commandes",
                     "Double les commandes",
                     "Fait passer de 30 à 42 commandes, soit + 40 %"
                 ],
@@ -90,7 +90,7 @@ window.QUIZ = {
             {
                 q: "Comment vérifier l'intention derrière une recherche en trente secondes ?",
                 options: [
-                    "Consulter un outil de volume",
+                    "Consulter un outil de volume de recherche mensuel et ses courbes",
                     "Demander à des clients",
                     "Taper la recherche et regarder ce qui est déjà classé"
                 ],
@@ -112,8 +112,8 @@ window.QUIZ = {
                 q: "Que reprocher à une page qui informe, compare et vend en même temps ?",
                 options: [
                     "Elle réussit rarement les trois",
-                    "Elle est trop longue",
-                    "Elle est mal vue des moteurs"
+                    "Elle est bien trop longue à lire",
+                    "Elle est très mal vue par les moteurs"
                 ],
                 a: 0,
                 explication: "Mieux vaut un guide qui informe et renvoie vers la page produit, chacun faisant son travail."
@@ -133,7 +133,7 @@ window.QUIZ = {
                 options: [
                     "Oui, s'il est assez complet",
                     "Non : le moteur a déjà déterminé le type de réponse attendu",
-                    "Oui, avec assez de liens entrants"
+                    "Oui, avec assez de liens entrants pointant vers cette page précise"
                 ],
                 a: 1,
                 explication: "Le meilleur contenu du monde ne se placera pas s'il répond à une autre question."
@@ -148,7 +148,7 @@ window.QUIZ = {
                 options: [
                     "Est-il facile à obtenir ?",
                     "Quelle décision ce nombre peut-il changer ?",
-                    "Est-il comparable au secteur ?"
+                    "Est-il comparable à la moyenne observée dans le secteur ?"
                 ],
                 a: 1,
                 explication: "Impressions, vues et abonnés montent avec le budget et ne déclenchent aucune décision."
@@ -157,8 +157,8 @@ window.QUIZ = {
                 q: "À quoi servent les paramètres de suivi dans les liens ?",
                 options: [
                     "À distinguer d'où viennent les visiteurs",
-                    "À accélérer le chargement",
-                    "À améliorer le référencement"
+                    "À accélérer le chargement des pages du site",
+                    "À améliorer le référencement naturel des pages"
                 ],
                 a: 0,
                 explication: "Sans eux, tout se mélange dans « accès direct »."
@@ -166,9 +166,9 @@ window.QUIZ = {
             {
                 q: "« source=infolettre » et « Source=Infolettre » :",
                 options: [
-                    "Sont équivalents",
+                    "Sont strictement équivalents pour l'outil",
                     "Créeront deux lignes différentes",
-                    "Sont tous deux invalides"
+                    "Sont tous les deux invalides et ignorés"
                 ],
                 a: 1,
                 explication: "Une convention simple et respectée vaut mieux qu'un système sophistiqué appliqué au hasard."
@@ -178,8 +178,8 @@ window.QUIZ = {
                 q: "Un canal à 8 % sur 40 visiteurs contre un canal à 3 % sur 5 000 : lequel apporte le plus ?",
                 options: [
                     "Le second : 150 clients contre 3",
-                    "Le premier, plus efficace",
-                    "Ils sont équivalents"
+                    "Le premier, nettement plus efficace",
+                    "Ils sont parfaitement équivalents"
                 ],
                 a: 0,
                 explication: "Le taux mesure l'efficacité, le volume mesure l'apport. Les deux ensemble, jamais l'un seul."
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "À la recherche de marque, c'est-à-dire à rien d'exploitable",
                     "À la publication",
-                    "Il ne l'enregistre pas"
+                    "Il ne l'enregistre pas du tout dans ses rapports mensuels habituels"
                 ],
                 a: 0,
                 explication: "Une part du marketing reste invisible aux outils. La reconnaître évite deux erreurs de pilotage."
@@ -198,7 +198,7 @@ window.QUIZ = {
                 q: "Quels indicateurs touchent réellement au parcours ?",
                 options: [
                     "Impressions et portée",
-                    "Nombre d'abonnés et de mentions",
+                    "Nombre d'abonnés, de mentions et de partages obtenus chaque mois",
                     "Conversion par étape, coût par client, part de nouveaux clients"
                 ],
                 a: 2,
@@ -232,9 +232,9 @@ window.QUIZ = {
             {
                 q: "Quelles sont les trois séquences automatiques les plus rentables ?",
                 options: [
-                    "Anniversaire, soldes, nouveautés",
+                    "Anniversaire, soldes et nouveautés de saison",
                     "Accueil, panier abandonné, réactivation",
-                    "Hebdomadaire, mensuelle, trimestrielle"
+                    "Hebdomadaire, mensuelle ou bien trimestrielle"
                 ],
                 a: 1,
                 explication: "Elles s'écrivent une fois et travaillent ensuite seules."
@@ -265,7 +265,7 @@ window.QUIZ = {
                 options: [
                     "Oui, si elle est visible",
                     "Non, ce n'est pas un consentement valable au sens du RGPD",
-                    "Oui, pour les clients existants"
+                    "Oui, pour les clients existants qui ont déjà commandé chez toi"
                 ],
                 a: 1,
                 explication: "Outre le risque juridique, cela remplit la liste de personnes qui n'ont rien demandé."
@@ -281,7 +281,7 @@ window.QUIZ = {
         {
             q: "Qu'est-ce qui relie les quatre sujets de ce niveau ?",
             options: [
-                "L'optimisation des budgets publicitaires",
+                "L'optimisation des budgets publicitaires engagés chaque mois de l'année",
                 "La production de contenu",
                 "Le passage de « faire des actions » à « comprendre un système »"
             ],
@@ -291,9 +291,9 @@ window.QUIZ = {
         {
             q: "Quel point commun entre le parcours d'achat et l'entonnoir de l'e-mail ?",
             options: [
-                "Ils dépendent tous deux du budget",
+                "Ils dépendent tous les deux du budget engagé",
                 "Des taux successifs qui se multiplient",
-                "Ils se mesurent une fois par an"
+                "Ils se mesurent une seule fois par an, en fin d'exercice"
             ],
             a: 1,
             explication: "Dans les deux cas, la première étape pèse le plus lourd sur le résultat final."
@@ -302,8 +302,8 @@ window.QUIZ = {
             q: "Tu as 1 000 € et un tunnel qui convertit à 1 %. Que faire ?",
             options: [
                 "Comprendre pourquoi 99 % partent",
-                "Acheter du trafic",
-                "Ouvrir un nouveau canal"
+                "Acheter davantage de trafic payant",
+                "Ouvrir un nouveau canal d'acquisition"
             ],
             a: 0,
             explication: "Le gain profite ensuite à tous les canaux, y compris ceux qu'on ouvrira plus tard."
@@ -324,7 +324,7 @@ window.QUIZ = {
             options: [
                 "Les deux coûtent cher",
                 "Les deux donnent l'illusion d'un actif sans en être un",
-                "Les deux sont interdits"
+                "Les deux sont interdits par la réglementation européenne"
             ],
             a: 1,
             explication: "Un gros chiffre rassurant, aucune décision possible et aucun client derrière."
