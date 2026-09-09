@@ -19,7 +19,7 @@ window.QUIZ = {
             {
                 q: "Where should the top of the screen sit?",
                 options: [
-                    "Clearly above eye level",
+                    "Clearly above the level of the eyes",
                     "As low as possible",
                     "At eye level, or just below"
                 ],
@@ -39,9 +39,9 @@ window.QUIZ = {
             {
                 q: "How should the screen face relative to the window?",
                 options: [
-                    "Towards it",
+                    "Facing towards the window, in full light",
                     "At right angles",
-                    "Backing onto it"
+                    "Backing onto the window, screen ahead"
                 ],
                 a: 1,
                 explication: "Facing the window you work against a backlight, backing onto it the screen throws reflections."
@@ -61,7 +61,7 @@ window.QUIZ = {
                 q: "What causes harm at a desk job?",
                 options: [
                     "Intense effort",
-                    "The number of keystrokes",
+                    "The number of keystrokes made in a day",
                     "The position held for hours"
                 ],
                 a: 2,
@@ -86,7 +86,7 @@ window.QUIZ = {
                 q: "Are physical activity and sedentary behaviour the same thing?",
                 options: [
                     "No: you can be athletic and sedentary",
-                    "Yes, one is the opposite of the other",
+                    "Yes, one is exactly the opposite of the other",
                     "Yes, if you count in hours"
                 ],
                 a: 0,
@@ -95,7 +95,7 @@ window.QUIZ = {
             {
                 q: "What is the WHO benchmark for an adult?",
                 options: [
-                    "30 minutes a day of intense sport",
+                    "30 minutes a day of genuinely intense sport",
                     "10,000 steps a day",
                     "150 minutes of moderate activity per week"
                 ],
@@ -116,7 +116,7 @@ window.QUIZ = {
             {
                 q: "What counts most in an interruption to sitting?",
                 options: [
-                    "Its length",
+                    "Its total length, in minutes",
                     "The fact that it happens",
                     "The intensity of the effort"
                 ],
@@ -137,7 +137,7 @@ window.QUIZ = {
                 q: "Which trick moves several hours a week with no organisational effort?",
                 options: [
                     "Taking calls standing or walking",
-                    "Taking longer breaks",
+                    "Taking noticeably longer breaks each time",
                     "Changing chair"
                 ],
                 a: 0,
@@ -161,8 +161,8 @@ window.QUIZ = {
             {
                 q: "What happens to blinking in front of a screen?",
                 options: [
-                    "It increases",
-                    "It does not change",
+                    "It increases slightly over time",
+                    "It does not change at all, in fact",
                     "Its rate drops markedly"
                 ],
                 a: 2,
@@ -202,7 +202,7 @@ window.QUIZ = {
             {
                 q: "Why does the eye tire in front of a screen?",
                 options: [
-                    "The screen gives off too much heat",
+                    "The screen gives off far too much heat for the eye",
                     "The colours are too bright",
                     "It fixes on a close plane with no release"
                 ],
@@ -250,7 +250,7 @@ window.QUIZ = {
                 options: [
                     "They cut breaks, and output collapses",
                     "They lengthen them",
-                    "They spread them better"
+                    "They spread the breaks out much better"
                 ],
                 a: 0,
                 explication: "The time “saved” is paid for in errors and an unproductive end of day."
@@ -269,7 +269,7 @@ window.QUIZ = {
                 q: "Does lunch taken at the screen break up the day?",
                 options: [
                     "Yes, it is a complete break",
-                    "Yes, if you do not work during it",
+                    "Yes, provided you do not work at all during it",
                     "No: it lasts an hour and breaks nothing"
                 ],
                 a: 2,
@@ -284,7 +284,7 @@ window.QUIZ = {
             q: "Which question does this path ask that the Productivity guide does not?",
             options: [
                 "How to produce more",
-                "How to organise yourself better",
+                "How to organise yourself rather better",
                 "How not to harm yourself at work"
             ],
             a: 2,
@@ -324,7 +324,7 @@ window.QUIZ = {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
                 "Setting your screen height",
-                "Buying an ergonomic chair",
+                "Buying a properly ergonomic chair",
                 "Installing a blue-light filter"
             ],
             a: 0,

@@ -29,7 +29,7 @@ window.QUIZ = {
                 options: [
                     "Oui, à tout moment et sans se justifier",
                     "Non, la demande passe par les ressources humaines",
-                    "Oui, mais seulement une fois par an"
+                    "Oui, mais seulement une seule fois par an"
                 ],
                 a: 0,
                 explication: "L'employeur ne peut pas s'y opposer ni en connaître le motif."
@@ -38,7 +38,7 @@ window.QUIZ = {
                 q: "Quelle est la portée d'une proposition d'aménagement de poste ?",
                 options: [
                     "C'est un simple avis consultatif",
-                    "Elle ne vaut qu'après un arrêt de travail",
+                    "Elle ne vaut vraiment qu'après un arrêt de travail de longue durée",
                     "Elle s'impose à l'employeur, sauf impossibilité justifiée"
                 ],
                 a: 2,
@@ -50,7 +50,7 @@ window.QUIZ = {
                 options: [
                     "Soigner les salariés",
                     "Exclusivement préventif : éviter que le travail n'altère la santé",
-                    "Contrôler les arrêts maladie"
+                    "Contrôler les arrêts maladie déclarés par les salariés de l'entreprise"
                 ],
                 a: 1,
                 explication: "Il ne soigne pas. C'est une confusion fréquente."
@@ -69,8 +69,8 @@ window.QUIZ = {
                 q: "La visite à la demande du salarié se déroule quand ?",
                 options: [
                     "Sur le temps de travail",
-                    "Sur les congés",
-                    "En dehors des heures"
+                    "Sur les congés payés du salarié",
+                    "En dehors des heures de travail"
                 ],
                 a: 0,
                 explication: "Elle ne coûte ni argent ni jours de congé."
@@ -83,9 +83,9 @@ window.QUIZ = {
             {
                 q: "Sur quoi porte l'obligation de sécurité de l'employeur ?",
                 options: [
-                    "Sur l'indemnisation des accidents",
+                    "Sur l'indemnisation des accidents déjà survenus au travail",
                     "Sur la prévention, pas seulement sur la réparation",
-                    "Sur la fourniture d'équipements"
+                    "Sur la fourniture des équipements de protection nécessaires"
                 ],
                 a: 1,
                 explication: "Évaluer les risques, les éviter à la source, adapter le travail à l'homme."
@@ -94,7 +94,7 @@ window.QUIZ = {
                 q: "La santé mentale est-elle couverte par cette obligation ?",
                 options: [
                     "Non, seulement la santé physique",
-                    "Seulement dans les grandes entreprises",
+                    "Seulement dans les grandes entreprises, au-delà d'un seuil",
                     "Oui, la mention est explicite dans le code du travail"
                 ],
                 a: 2,
@@ -103,8 +103,8 @@ window.QUIZ = {
             {
                 q: "À partir de combien de salariés le document unique est-il obligatoire ?",
                 options: [
-                    "À partir de onze",
-                    "À partir de cinquante",
+                    "À partir de onze salariés",
+                    "À partir de cinquante salariés",
                     "Dès le premier salarié"
                 ],
                 a: 2,
@@ -135,8 +135,8 @@ window.QUIZ = {
                 q: "La saisine de l'inspection du travail est :",
                 options: [
                     "Gratuite, et confidentielle sur demande",
-                    "Payante et publique",
-                    "Réservée aux représentants du personnel"
+                    "Payante, et rendue publique dans l'entreprise",
+                    "Réservée aux seuls représentants du personnel"
                 ],
                 a: 0,
                 explication: "C'est le recours quand rien ne bouge en interne."
@@ -151,7 +151,7 @@ window.QUIZ = {
                 options: [
                     "Épuisement, distance, perte du sentiment d'efficacité",
                     "Fatigue, stress, dépression",
-                    "Surcharge, isolement, démotivation"
+                    "Surcharge de travail, isolement et démotivation durable"
                 ],
                 a: 0,
                 explication: "Elles se combinent, et servent à nommer plutôt qu'à conclure."
@@ -161,7 +161,7 @@ window.QUIZ = {
                 options: [
                     "Oui, depuis 2019",
                     "Non : il y est décrit comme un phénomène lié au travail",
-                    "Oui, comme trouble anxieux"
+                    "Oui, il y figure comme un trouble anxieux bien caractérisé"
                 ],
                 a: 1,
                 explication: "Ce qui n'enlève rien à sa réalité ni à sa gravité."
@@ -169,7 +169,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi aucun test en ligne ne convient-il ?",
                 options: [
-                    "Parce que les questionnaires n'existent pas",
+                    "Parce que les questionnaires sérieux n'existent tout simplement pas",
                     "Un score sans cadre peut rassurer à tort ou inquiéter durablement",
                     "Parce que c'est interdit"
                 ],
@@ -180,7 +180,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui distingue l'épuisement d'une période difficile ?",
                 options: [
-                    "L'intensité de la charge",
+                    "L'intensité de la charge de travail qui est supportée chaque jour",
                     "Le secteur d'activité",
                     "La durée, l'absence de récupération, et l'installation"
                 ],
@@ -192,7 +192,7 @@ window.QUIZ = {
                 options: [
                     "L'entourage l'a remarqué avant la personne concernée",
                     "Une douleur physique précoce",
-                    "Une baisse visible des résultats"
+                    "Une baisse tout à fait visible des résultats obtenus"
                 ],
                 a: 0,
                 explication: "L'adaptation progressive efface les points de comparaison."
@@ -225,8 +225,8 @@ window.QUIZ = {
             {
                 q: "Quelle est la première démarche à engager ?",
                 options: [
-                    "Saisir le conseil de prud'hommes",
-                    "En parler à ses collègues",
+                    "Saisir directement le conseil de prud'hommes",
+                    "En parler d'abord à ses collègues les plus proches",
                     "Écrire les faits, datés, au fur et à mesure"
                 ],
                 a: 2,
@@ -256,8 +256,8 @@ window.QUIZ = {
             {
                 q: "Un salarié qui relate des faits de harcèlement peut-il être sanctionné pour ce motif ?",
                 options: [
-                    "Oui, si les faits ne sont pas établis",
-                    "Oui, en cas de dénonciation publique",
+                    "Oui, si les faits rapportés ne sont pas établis",
+                    "Oui, en cas de dénonciation publique des faits",
                     "Non : un licenciement fondé là-dessus est nul"
                 ],
                 a: 2,
@@ -268,7 +268,7 @@ window.QUIZ = {
                 options: [
                     "Non : décrire des faits datés à un interlocuteur compétent suffit",
                     "Oui, sinon l'alerte est irrecevable",
-                    "Oui, il faut citer l'article applicable"
+                    "Oui, il faut impérativement citer l'article du code applicable au cas"
                 ],
                 a: 0,
                 explication: "Ce n'est pas au salarié de qualifier la situation."
@@ -321,7 +321,7 @@ window.QUIZ = {
         {
             q: "Quelle démarche préparer avant d'en avoir besoin ?",
             options: [
-                "Rédiger une lettre type de démission",
+                "Rédiger à l'avance une lettre type de démission, à tout hasard",
                 "Constituer un dossier prud'homal",
                 "Noter les coordonnées de son service de santé au travail"
             ],

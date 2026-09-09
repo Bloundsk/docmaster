@@ -137,6 +137,13 @@ jobs:
       - name: Place de la bonne réponse dans les quiz
         run: node scripts/verifier-positions-quiz.mjs
 
+      # La longueur, l autre facon de deviner sans lire. « Prendre la plus
+      # longue » rapportait 81 % avant correction. Le controle mesure les TROIS
+      # strategies : corriger la premiere sans regarder les deux autres deplace
+      # le defaut au lieu de le supprimer.
+      - name: Longueur des options de quiz
+        run: node scripts/verifier-longueur-quiz.mjs
+
       # Le seul controle qui MESURE des pages affichees : une largeur, un
       # nombre de colonnes, un debordement ne se deduisent pas du CSS. Il
       # tournait donc uniquement a la main.

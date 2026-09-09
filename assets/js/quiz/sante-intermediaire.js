@@ -16,7 +16,7 @@ window.QUIZ = {
             {
                 q: "Le stress est-il une pathologie ?",
                 options: [
-                    "Oui, dès qu'il apparaît",
+                    "Oui, dès le moment où il apparaît chez la personne concernée",
                     "Non : c'est une réponse d'adaptation, utile et normale",
                     "Oui, s'il est fréquent"
                 ],
@@ -26,8 +26,8 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui distingue le stress chronique du stress aigu ?",
                 options: [
-                    "Son intensité",
-                    "Sa cause",
+                    "Son intensité au moment où il survient",
+                    "Sa cause première, quelle qu'elle soit",
                     "L'absence de retour à la normale"
                 ],
                 a: 2,
@@ -37,8 +37,8 @@ window.QUIZ = {
                 q: "Quel est le bon repère pour se situer ?",
                 options: [
                     "La récupération, pas l'intensité",
-                    "Le nombre d'heures travaillées",
-                    "Le niveau de responsabilité"
+                    "Le nombre total d'heures travaillées",
+                    "Le niveau de responsabilité occupé"
                 ],
                 a: 0,
                 explication: "Une période chargée suivie d'un week-end réparateur est le fonctionnement attendu."
@@ -59,7 +59,7 @@ window.QUIZ = {
                 options: [
                     "La personne concernée",
                     "L'entourage",
-                    "L'employeur"
+                    "L'employeur lui-même"
                 ],
                 a: 1,
                 explication: "C'est plus visible de l'extérieur que de l'intérieur."
@@ -93,8 +93,8 @@ window.QUIZ = {
                 q: "Qu'appelle-t-on la latitude ?",
                 options: [
                     "La marge laissée pour répondre à l'exigence",
-                    "Le nombre d'heures de travail",
-                    "Le niveau de rémunération"
+                    "Le nombre d'heures de travail réellement effectuées",
+                    "Le niveau de rémunération obtenu chaque mois"
                 ],
                 a: 0,
                 explication: "Décider de l'ordre, de la méthode, du moment ; avoir une prise sur ce qui arrive."
@@ -102,8 +102,8 @@ window.QUIZ = {
             {
                 q: "Quel est l'effet du soutien social dans ce modèle ?",
                 options: [
-                    "Il n'a pas d'effet mesuré",
-                    "Il remplace la latitude",
+                    "Il n'a aucun effet mesuré à ce jour sur la santé",
+                    "Il remplace purement et simplement la latitude",
                     "Il modifie l'effet de tout le reste"
                 ],
                 a: 2,
@@ -113,9 +113,9 @@ window.QUIZ = {
             {
                 q: "Un poste dit « actif » dans ce modèle, c'est :",
                 options: [
-                    "Peu exigeant et autonome",
+                    "Peu exigeant, et parfaitement autonome au quotidien",
                     "Exigeant, avec de la marge de manœuvre",
-                    "Très exigeant et contraint"
+                    "Très exigeant et fortement contraint au quotidien"
                 ],
                 a: 1,
                 explication: "Exigeant mais tenable, souvent stimulant."
@@ -135,7 +135,7 @@ window.QUIZ = {
                 options: [
                     "À nommer ce qui manque, pour pouvoir le demander",
                     "À se ranger dans une case",
-                    "À comparer deux entreprises"
+                    "À comparer deux entreprises entre elles avant de choisir"
                 ],
                 a: 0,
                 explication: "« J'ai peu de marge sur l'ordre des priorités » ouvre une conversation concrète."
@@ -159,8 +159,8 @@ window.QUIZ = {
                 q: "Trois fois deux heures valent-elles six heures de récupération ?",
                 options: [
                     "Non : la récupération demande du temps continu",
-                    "Oui, le total est le même",
-                    "Oui, si les coupures sont bien réparties"
+                    "Oui, puisque le total des heures reste exactement le même",
+                    "Oui, si les coupures sont bien réparties dans la semaine"
                 ],
                 a: 0,
                 explication: "Fractionnée, elle ne se produit pas."
@@ -191,7 +191,7 @@ window.QUIZ = {
                 options: [
                     "Ils s'estompent en quelques semaines après le retour",
                     "Toute l'année",
-                    "Jusqu'au congé suivant"
+                    "Jusqu'au congé suivant, et bien souvent même au-delà"
                 ],
                 a: 0,
                 explication: "Un congé répare une fatigue ; il ne corrige pas l'organisation qui la produit."
@@ -199,7 +199,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que le détachement psychologique ?",
                 options: [
-                    "Prendre de la distance avec ses collègues",
+                    "Prendre de la distance avec ses collègues de travail",
                     "Réduire son implication au travail",
                     "Ne plus y penser, et pas seulement ne plus le faire"
                 ],
@@ -216,7 +216,7 @@ window.QUIZ = {
                 options: [
                     "Non : c'est l'objet même du droit à la déconnexion",
                     "Oui, si c'est urgent",
-                    "Oui, en l'absence d'accord d'entreprise"
+                    "Oui, en l'absence d'accord d'entreprise sur ce point"
                 ],
                 a: 0,
                 explication: "Le droit existe en France depuis 2017."
@@ -224,7 +224,7 @@ window.QUIZ = {
             {
                 q: "Quel effet a un message professionnel envoyé à 23 h ?",
                 options: [
-                    "Aucun, si l'on précise de ne pas répondre",
+                    "Aucun, si l'on précise bien de ne pas répondre tout de suite",
                     "Il indique aux destinataires ce qui est attendu",
                     "Il allège la journée du lendemain"
                 ],
@@ -234,7 +234,7 @@ window.QUIZ = {
             {
                 q: "Rester joignable « au cas où » sans rien recevoir, quel est le coût ?",
                 options: [
-                    "Aucun, s'il n'y a pas de sollicitation",
+                    "Aucun, s'il n'y a aucune sollicitation pendant ce temps",
                     "Seulement la fatigue du téléphone",
                     "L'attente empêche le détachement, donc la récupération"
                 ],
@@ -292,7 +292,7 @@ window.QUIZ = {
             options: [
                 "Les deux dépendent du salarié",
                 "Les deux modifient l'effet d'une même charge de travail",
-                "Les deux se mesurent en heures"
+                "Les deux se mesurent en heures de présence au bureau chaque semaine"
             ],
             a: 1,
             explication: "Deux postes également chargés n'ont pas le même effet."
@@ -302,7 +302,7 @@ window.QUIZ = {
             options: [
                 "Le repos quotidien minimal de 11 h n'est pas respecté",
                 "Tout est conforme",
-                "Cela dépend du secteur uniquement"
+                "Cela dépend uniquement du secteur d'activité de l'entreprise"
             ],
             a: 0,
             explication: "Une heure d'écart, répétée toute l'année, qui n'apparaît sur aucun tableau de bord."
@@ -310,7 +310,7 @@ window.QUIZ = {
         {
             q: "Pourquoi noter par écrit, daté, comment on va au travail aujourd'hui ?",
             options: [
-                "Pour constituer une preuve juridique",
+                "Pour constituer une preuve juridique utilisable en cas de litige",
                 "Pour le montrer à son employeur",
                 "Parce que l'adaptation efface les points de comparaison"
             ],
@@ -320,8 +320,8 @@ window.QUIZ = {
         {
             q: "Quelle mesure de ce niveau coûte le moins et change le plus pour une équipe ?",
             options: [
-                "Réduire le nombre de réunions",
-                "Ajouter une charte de déconnexion",
+                "Réduire le nombre de réunions de la semaine",
+                "Ajouter une charte de déconnexion à l'accord",
                 "Différer l'envoi des messages tardifs"
             ],
             a: 2,

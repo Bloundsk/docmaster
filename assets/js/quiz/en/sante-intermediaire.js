@@ -19,7 +19,7 @@ window.QUIZ = {
             {
                 q: "Is stress a pathology?",
                 options: [
-                    "Yes, as soon as it appears",
+                    "Yes, from the very moment it first appears in someone",
                     "No: it is an adaptive response, useful and normal",
                     "Yes, if it is frequent"
                 ],
@@ -29,8 +29,8 @@ window.QUIZ = {
             {
                 q: "What separates chronic stress from acute stress?",
                 options: [
-                    "Its intensity",
-                    "Its cause",
+                    "Its intensity at the moment it strikes",
+                    "Its first cause, whatever that may be",
                     "The absence of a return to normal"
                 ],
                 a: 2,
@@ -60,9 +60,9 @@ window.QUIZ = {
             {
                 q: "Who often notices the situation first?",
                 options: [
-                    "The person concerned",
+                    "The person concerned themselves",
                     "The people around you",
-                    "The employer"
+                    "The employer of that person"
                 ],
                 a: 1,
                 explication: "It is more visible from the outside than from within."
@@ -71,7 +71,7 @@ window.QUIZ = {
                 q: "What does “I handle stress badly” assume?",
                 options: [
                     "That the person lacks method",
-                    "That the job is badly defined",
+                    "That the job itself is badly defined from the start",
                     "That the load is a given and coping is a skill"
                 ],
                 a: 2,
@@ -96,8 +96,8 @@ window.QUIZ = {
                 q: "What is meant by latitude?",
                 options: [
                     "The room left to respond to the demand",
-                    "The number of working hours",
-                    "The level of pay"
+                    "The number of working hours actually done",
+                    "The level of pay that is received every month"
                 ],
                 a: 0,
                 explication: "Deciding the order, the method, the moment; having a grip on what happens."
@@ -105,8 +105,8 @@ window.QUIZ = {
             {
                 q: "What effect does social support have in this model?",
                 options: [
-                    "It has no measured effect",
-                    "It replaces latitude",
+                    "It has no measured effect on health at all",
+                    "It replaces latitude altogether in practice",
                     "It changes the effect of everything else"
                 ],
                 a: 2,
@@ -116,9 +116,9 @@ window.QUIZ = {
             {
                 q: "A job called “active” in this model is:",
                 options: [
-                    "Undemanding and autonomous",
+                    "Undemanding, and completely autonomous",
                     "Demanding, with room to manoeuvre",
-                    "Very demanding and constrained"
+                    "Very demanding and heavily constrained"
                 ],
                 a: 1,
                 explication: "Demanding but sustainable, often stimulating."
@@ -137,7 +137,7 @@ window.QUIZ = {
                 q: "What is this model mainly useful for in practice?",
                 options: [
                     "Naming what is missing, so it can be asked for",
-                    "Filing yourself into a box",
+                    "Filing yourself away into a category of your own",
                     "Comparing two companies"
                 ],
                 a: 0,
@@ -162,8 +162,8 @@ window.QUIZ = {
                 q: "Are three lots of two hours worth six hours of recovery?",
                 options: [
                     "No: recovery needs continuous time",
-                    "Yes, the total is the same",
-                    "Yes, if the breaks are well spread"
+                    "Yes, since the total comes to the same thing",
+                    "Yes, if the breaks are well spread over the week"
                 ],
                 a: 0,
                 explication: "Fragmented, it does not happen."
@@ -193,8 +193,8 @@ window.QUIZ = {
                 q: "How long do a holiday's benefits last?",
                 options: [
                     "They fade within a few weeks of returning",
-                    "All year",
-                    "Until the next holiday"
+                    "All year long, without a single exception at all",
+                    "Until the next holiday comes round once again"
                 ],
                 a: 0,
                 explication: "A holiday repairs fatigue; it does not correct the organisation that produces it."
@@ -227,7 +227,7 @@ window.QUIZ = {
             {
                 q: "What effect does a work message sent at 11 pm have?",
                 options: [
-                    "None, if you say not to reply",
+                    "None at all, if you say clearly not to reply now",
                     "It signals to the recipients what is expected",
                     "It lightens the following day"
                 ],
@@ -270,7 +270,7 @@ window.QUIZ = {
                 options: [
                     "Yes, everybody manages their own boundaries",
                     "No: it plays out largely in what each person sends",
-                    "Yes, except where there is a company agreement"
+                    "Yes, except where there is a company agreement in force"
                 ],
                 a: 1,
                 explication: "What you send in the evening sets what others believe they must do."
@@ -284,7 +284,7 @@ window.QUIZ = {
             q: "What is the thread running through this level?",
             options: [
                 "How to reduce your workload",
-                "How to withstand stress better",
+                "How to withstand the stress a very great deal better",
                 "What makes a load sustainable, or stops it being so"
             ],
             a: 2,
@@ -293,7 +293,7 @@ window.QUIZ = {
         {
             q: "What do latitude and support have in common?",
             options: [
-                "Both depend on the employee",
+                "Both depend entirely on the employee involved",
                 "Both change the effect of the same workload",
                 "Both are measured in hours"
             ],
@@ -305,7 +305,7 @@ window.QUIZ = {
             options: [
                 "In France the 11 h minimum daily rest is not met",
                 "Everything is compliant",
-                "It depends on the sector only"
+                "It depends on the sector of activity only, in fact"
             ],
             a: 0,
             explication: "A one-hour gap, repeated all year, appearing on no dashboard."
@@ -314,7 +314,7 @@ window.QUIZ = {
             q: "Why write down, dated, how you are at work today?",
             options: [
                 "To build legal evidence",
-                "To show it to your employer",
+                "To show it to your own employer at some point later",
                 "Because adaptation erases the points of comparison"
             ],
             a: 2,
@@ -323,7 +323,7 @@ window.QUIZ = {
         {
             q: "Which measure in this level costs least and changes most for a team?",
             options: [
-                "Cutting the number of meetings",
+                "Cutting the number of meetings held during the week",
                 "Adding a disconnection charter",
                 "Scheduling late messages instead of sending them"
             ],

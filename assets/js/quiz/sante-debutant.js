@@ -16,7 +16,7 @@ window.QUIZ = {
             {
                 q: "Où placer le haut de l'écran ?",
                 options: [
-                    "Nettement au-dessus des yeux",
+                    "Nettement au-dessus de la hauteur des yeux",
                     "Le plus bas possible",
                     "À hauteur des yeux, ou juste en dessous"
                 ],
@@ -36,9 +36,9 @@ window.QUIZ = {
             {
                 q: "Comment orienter l'écran par rapport à la fenêtre ?",
                 options: [
-                    "Face à elle",
+                    "Face à la fenêtre, en pleine lumière",
                     "Perpendiculairement",
-                    "Dos à elle"
+                    "Dos à la fenêtre, écran devant soi"
                 ],
                 a: 1,
                 explication: "Face à la fenêtre on travaille en contre-jour, dos à elle l'écran renvoie des reflets."
@@ -49,7 +49,7 @@ window.QUIZ = {
                 options: [
                     "Un plan de travail trop haut",
                     "Une chaise trop basse pour le dos",
-                    "Un clavier trop large"
+                    "Un clavier beaucoup trop large pour le bureau"
                 ],
                 a: 0,
                 explication: "Les avant-bras doivent être horizontaux, épaules relâchées."
@@ -58,7 +58,7 @@ window.QUIZ = {
                 q: "Qu'est-ce qui abîme sur un poste de bureau ?",
                 options: [
                     "L'effort intense",
-                    "Le nombre de frappes au clavier",
+                    "Le nombre de frappes au clavier dans la journée",
                     "La position maintenue pendant des heures"
                 ],
                 a: 2,
@@ -83,7 +83,7 @@ window.QUIZ = {
                 q: "Activité physique et sédentarité, est-ce la même chose ?",
                 options: [
                     "Non : on peut être sportif et sédentaire",
-                    "Oui, l'une est l'inverse de l'autre",
+                    "Oui, l'une est exactement l'inverse de l'autre",
                     "Oui, si l'on compte en heures"
                 ],
                 a: 0,
@@ -92,7 +92,7 @@ window.QUIZ = {
             {
                 q: "Quel est le repère de l'OMS pour un adulte ?",
                 options: [
-                    "30 minutes par jour de sport intense",
+                    "30 minutes par jour de sport vraiment intense",
                     "10 000 pas par jour",
                     "150 minutes d'activité modérée par semaine"
                 ],
@@ -113,9 +113,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui compte le plus dans une interruption de la position assise ?",
                 options: [
-                    "Sa durée",
+                    "Sa durée totale, en minutes",
                     "Le fait qu'elle ait lieu",
-                    "L'intensité de l'effort"
+                    "L'intensité réelle de l'effort fourni"
                 ],
                 a: 1,
                 explication: "Se lever deux minutes toutes les heures n'a l'air de rien et fait le travail."
@@ -134,7 +134,7 @@ window.QUIZ = {
                 q: "Quelle astuce déplace plusieurs heures par semaine sans effort d'organisation ?",
                 options: [
                     "Téléphoner debout ou en marchant",
-                    "Prendre des pauses plus longues",
+                    "Prendre des pauses nettement plus longues",
                     "Changer de chaise"
                 ],
                 a: 0,
@@ -158,8 +158,8 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il au clignement devant un écran ?",
                 options: [
-                    "Il augmente",
-                    "Il ne change pas",
+                    "Il augmente légèrement avec le temps",
+                    "Il ne change pas du tout, en réalité",
                     "Sa fréquence chute nettement"
                 ],
                 a: 2,
@@ -179,7 +179,7 @@ window.QUIZ = {
             {
                 q: "Faut-il travailler dans le noir avec un écran allumé ?",
                 options: [
-                    "Oui, cela repose les yeux",
+                    "Oui, cela repose nettement les yeux en fin de soirée",
                     "Non : le contraste est mal supporté sur la durée",
                     "Cela n'a aucun effet"
                 ],
@@ -199,7 +199,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi l'œil se fatigue-t-il devant un écran ?",
                 options: [
-                    "L'écran émet trop de chaleur",
+                    "L'écran émet beaucoup trop de chaleur pour l'œil",
                     "Les couleurs sont trop vives",
                     "Il fixe un plan rapproché sans relâchement"
                 ],
@@ -226,7 +226,7 @@ window.QUIZ = {
                 options: [
                     "Un seul bloc de vingt minutes",
                     "Plusieurs coupures courtes",
-                    "Les deux se valent"
+                    "Les deux formules se valent exactement"
                 ],
                 a: 1,
                 explication: "Un repère ergonomique usuel est d'environ cinq minutes par heure travaillée."
@@ -266,7 +266,7 @@ window.QUIZ = {
                 q: "Le déjeuner pris devant l'écran coupe-t-il la journée ?",
                 options: [
                     "Oui, c'est une pause complète",
-                    "Oui, si l'on ne travaille pas pendant",
+                    "Oui, si l'on ne travaille pas du tout pendant ce temps",
                     "Non : il dure une heure et ne coupe rien"
                 ],
                 a: 2,
@@ -280,7 +280,7 @@ window.QUIZ = {
         {
             q: "Quelle question ce parcours pose-t-il, que le guide Productivité ne pose pas ?",
             options: [
-                "Comment produire davantage",
+                "Comment produire davantage chaque jour",
                 "Comment mieux s'organiser",
                 "Comment ne pas s'abîmer au travail"
             ],

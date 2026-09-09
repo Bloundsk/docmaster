@@ -32,8 +32,8 @@ window.QUIZ = {
                 q: "In France, can you request a visit without going through your employer?",
                 options: [
                     "Yes, at any time and without justifying it",
-                    "No, the request goes through HR",
-                    "Yes, but only once a year"
+                    "No, the request has to go through HR beforehand",
+                    "Yes, but only once in any given calendar year"
                 ],
                 a: 0,
                 explication: "The employer cannot object nor learn the reason. Arrangements differ in other countries."
@@ -42,7 +42,7 @@ window.QUIZ = {
                 q: "How binding is a proposed adjustment to the job?",
                 options: [
                     "It is a purely advisory opinion",
-                    "It only applies after a sick leave",
+                    "It only applies after a sick leave of a certain length of time",
                     "It binds the employer, unless impossibility is demonstrated"
                 ],
                 a: 2,
@@ -54,7 +54,7 @@ window.QUIZ = {
                 options: [
                     "Treating employees",
                     "Exclusively preventive: stopping work from damaging health",
-                    "Checking up on sick leave"
+                    "Checking up on the sick leave that the employees have taken"
                 ],
                 a: 1,
                 explication: "They do not treat. It is a frequent confusion."
@@ -64,7 +64,7 @@ window.QUIZ = {
                 options: [
                     "A visit requested during a long sick leave, to prepare the return",
                     "The pre-employment check",
-                    "A check before returning, imposed by the employer"
+                    "A check before returning to work, imposed by the employer alone here"
                 ],
                 a: 0,
                 explication: "Adjustments, phased return, redeployment: those are prepared beforehand."
@@ -73,7 +73,7 @@ window.QUIZ = {
                 q: "When does the employee-requested visit take place?",
                 options: [
                     "During working hours",
-                    "During holiday",
+                    "During the employee's paid holiday",
                     "Outside working hours"
                 ],
                 a: 0,
@@ -87,9 +87,9 @@ window.QUIZ = {
             {
                 q: "What does the employer's duty of safety bear on?",
                 options: [
-                    "Compensating accidents",
+                    "Compensating the accidents that have happened",
                     "Prevention, not only redress",
-                    "Providing equipment"
+                    "Providing the protective equipment needed"
                 ],
                 a: 1,
                 explication: "Assess the risks, avoid them at source, adapt the work to the person."
@@ -97,7 +97,7 @@ window.QUIZ = {
             {
                 q: "Is mental health covered by that duty in French law?",
                 options: [
-                    "No, only physical health",
+                    "No, only physical health is actually covered by it",
                     "Only in large companies",
                     "Yes, it is explicitly named in the labour code"
                 ],
@@ -107,8 +107,8 @@ window.QUIZ = {
             {
                 q: "From how many employees is the single document compulsory in France?",
                 options: [
-                    "From eleven",
-                    "From fifty",
+                    "From eleven employees onwards",
+                    "From fifty employees onwards",
                     "From the first employee"
                 ],
                 a: 2,
@@ -139,7 +139,7 @@ window.QUIZ = {
                 q: "Referring a matter to the labour inspectorate is:",
                 options: [
                     "Free, and confidential on request",
-                    "Paid for and public",
+                    "Paid for, and made public in the company",
                     "Reserved for employee representatives"
                 ],
                 a: 0,
@@ -155,7 +155,7 @@ window.QUIZ = {
                 options: [
                     "Exhaustion, detachment, loss of the sense of efficacy",
                     "Tiredness, stress, depression",
-                    "Overload, isolation, demotivation"
+                    "Overload of work, isolation and a lasting demotivation"
                 ],
                 a: 0,
                 explication: "They combine, and they serve to name rather than to conclude."
@@ -165,7 +165,7 @@ window.QUIZ = {
                 options: [
                     "Yes, since 2019",
                     "No: it is described there as a work-related phenomenon",
-                    "Yes, as an anxiety disorder"
+                    "Yes, it appears there as a fully fledged anxiety disorder"
                 ],
                 a: 1,
                 explication: "Which takes nothing away from its reality or its seriousness."
@@ -173,7 +173,7 @@ window.QUIZ = {
             {
                 q: "Why will no online test do?",
                 options: [
-                    "Because the questionnaires do not exist",
+                    "Because serious questionnaires on the subject simply do not exist yet",
                     "A score with no framework can wrongly reassure or lastingly worry",
                     "Because it is forbidden"
                 ],
@@ -184,7 +184,7 @@ window.QUIZ = {
             {
                 q: "What separates burnout from a difficult period?",
                 options: [
-                    "The intensity of the load",
+                    "The sheer intensity of the load that is being carried",
                     "The industry",
                     "Duration, the absence of recovery, and settling in"
                 ],
@@ -196,7 +196,7 @@ window.QUIZ = {
                 options: [
                     "The people around noticed before the person concerned",
                     "An early physical pain",
-                    "A visible drop in results"
+                    "A clearly visible drop in the results that are obtained"
                 ],
                 a: 0,
                 explication: "Gradual adaptation erases the points of comparison."
@@ -229,8 +229,8 @@ window.QUIZ = {
             {
                 q: "What is the first step to take?",
                 options: [
-                    "Take the case to an employment tribunal",
-                    "Talk about it to colleagues",
+                    "Take the case straight to an employment tribunal",
+                    "Talk about it first to your closest colleagues",
                     "Write the facts down, dated, as they happen"
                 ],
                 a: 2,
@@ -272,7 +272,7 @@ window.QUIZ = {
                 options: [
                     "No: describing dated facts to a competent person is enough",
                     "Yes, otherwise the alert is inadmissible",
-                    "Yes, the applicable article must be cited"
+                    "Yes, the applicable article of the labour code must be cited"
                 ],
                 a: 0,
                 explication: "It is not for the employee to categorise the situation."
