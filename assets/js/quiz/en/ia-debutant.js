@@ -18,7 +18,7 @@ window.QUIZ = {
                 options: [
                     "Looking up the answer in a database",
                     "Predicting the most likely continuation of a sequence of text",
-                    "Reasoning from rules written by engineers"
+                    "Reasoning from rules written by hand by engineers over the years"
                 ],
                 a: 1,
                 explication: "At each step it works out a probability for every possible token, picks one, then starts again."
@@ -26,9 +26,9 @@ window.QUIZ = {
             {
                 q: "What is a token?",
                 options: [
-                    "A whole word",
+                    "A whole word, exactly as it is written in the sentence",
                     "A fragment of a word, the unit text is cut into",
-                    "A login identifier"
+                    "A login identifier belonging to each user of the service"
                 ],
                 a: 1,
                 explication: "“Antidisestablishmentarianism” may come to four tokens, “the” to just one."
@@ -47,8 +47,8 @@ window.QUIZ = {
             {
                 q: "What does the “knowledge cutoff” refer to?",
                 options: [
-                    "The model's expiry date",
-                    "The maximum length of a conversation",
+                    "The model's expiry date and the end of its licence",
+                    "The maximum length of a conversation with the model",
                     "The date at which its training corpus stops"
                 ],
                 a: 2,
@@ -58,8 +58,8 @@ window.QUIZ = {
                 q: "What happens when a conversation goes past the context window?",
                 options: [
                     "The start of the conversation is forgotten",
-                    "The model refuses to answer",
-                    "The answer is automatically shortened"
+                    "The model refuses to answer and says so clearly",
+                    "The answer is automatically shortened by the service"
                 ],
                 a: 0,
                 explication: "Context is what the model “sees” in one go. Beyond it, information leaves its field of view."
@@ -67,7 +67,7 @@ window.QUIZ = {
             {
                 q: "Why can the same question get two different answers?",
                 options: [
-                    "Because the model learns from your exchanges live",
+                    "Because the model learns from your exchanges live, at every message",
                     "Because it regenerates every time instead of consulting a database",
                     "Because the internet connection varies"
                 ],
@@ -83,8 +83,8 @@ window.QUIZ = {
                 q: "What separates an agent from a plain chatbot?",
                 options: [
                     "It has tools and chains steps towards a goal",
-                    "It answers faster",
-                    "It uses a more recent model"
+                    "It answers faster than the models that came before",
+                    "It uses a more recent model, better trained and quicker"
                 ],
                 a: 0,
                 explication: "An agent acts, observes the result, decides what comes next, and starts again until it reaches its goal."
@@ -113,9 +113,9 @@ window.QUIZ = {
             {
                 q: "On which actions should a well-designed agent stop and ask for confirmation?",
                 options: [
-                    "All of them, without exception",
+                    "All of them, without a single exception being made",
                     "Irreversible ones: delete, send, pay, publish",
-                    "None, otherwise it loses its point"
+                    "None, otherwise it loses the whole point of being an agent"
                 ],
                 a: 1,
                 explication: "A well-designed agent hands you back control over what cannot be undone."
@@ -149,7 +149,7 @@ window.QUIZ = {
                 q: "What does the model do with whatever you have not stated?",
                 options: [
                     "It fills it in with whatever is statistically most common",
-                    "It asks you about it",
+                    "It asks you about it before it goes any further with the task",
                     "It leaves a blank"
                 ],
                 a: 0,
@@ -168,8 +168,8 @@ window.QUIZ = {
             {
                 q: "Which technique works best for getting the right format?",
                 options: [
-                    "Describing the format in detail",
-                    "Repeating the instruction twice",
+                    "Describing the expected format in the finest detail",
+                    "Repeating the instruction twice over, to insist on it",
                     "Giving an example of the expected result"
                 ],
                 a: 2,
@@ -179,7 +179,7 @@ window.QUIZ = {
             {
                 q: "Why ask for the reasoning before the conclusion?",
                 options: [
-                    "To keep the model busy longer",
+                    "To keep the model busy for a good deal longer, and get more out of it",
                     "Because each step supports the next, which improves reliability",
                     "Because it is nicer to read"
                 ],
@@ -190,7 +190,7 @@ window.QUIZ = {
                 q: "What effect does threatening or flattering a model have?",
                 options: [
                     "No lasting effect: what counts is the precision of the prompt",
-                    "It answers markedly better",
+                    "It answers markedly better, and in a considerably more polite tone",
                     "It refuses to answer"
                 ],
                 a: 0,
@@ -200,8 +200,8 @@ window.QUIZ = {
                 q: "What does adding “if you are not sure, say so” produce?",
                 options: [
                     "A marked reduction in invented claims",
-                    "Systematically evasive answers",
-                    "A refusal to answer hard questions"
+                    "Systematically evasive and over-cautious answers",
+                    "A refusal to answer any of the harder questions"
                 ],
                 a: 0,
                 explication: "Explicitly allowing ignorance is one of the most profitable instructions there is."
@@ -214,7 +214,7 @@ window.QUIZ = {
             {
                 q: "In which areas are hallucinations most likely?",
                 options: [
-                    "General explanations and definitions",
+                    "General explanations and the definitions of the commonest notions",
                     "Translations",
                     "Precise figures, dates, quotations and little-known references"
                 ],
@@ -225,8 +225,8 @@ window.QUIZ = {
                 q: "Which signal should trigger a check?",
                 options: [
                     "A very precise answer on an obscure subject",
-                    "A long answer",
-                    "An answer that starts with “I think”"
+                    "A particularly long and heavily detailed answer",
+                    "An answer that starts with “I think that”, hedging"
                 ],
                 a: 0,
                 explication: "The more precise the claim on a poorly documented subject, the more it deserves checking."
@@ -245,7 +245,7 @@ window.QUIZ = {
             {
                 q: "Where do a model's biases come from?",
                 options: [
-                    "An intention programmed by its designers",
+                    "An intention that was deliberately programmed by its human designers",
                     "The regularities of its training data, stereotypes included",
                     "A calculation fault"
                 ],
@@ -283,7 +283,7 @@ window.QUIZ = {
         {
             q: "What is the safest way to use an AI?",
             options: [
-                "On subjects you do not know, to fill the gaps",
+                "On subjects you do not know at all, so as to fill the gaps",
                 "On any subject, trusting it",
                 "On subjects you can evaluate, so you spot the errors"
             ],
@@ -303,8 +303,8 @@ window.QUIZ = {
         {
             q: "The more a system acts on the real world, which question takes priority?",
             options: [
-                "How well does it perform?",
-                "How much does it cost?",
+                "How well does it perform on this kind of task?",
+                "How much does it cost per month of use?",
                 "What happens if it is wrong?"
             ],
             a: 2,
@@ -336,7 +336,7 @@ window.QUIZ = {
             options: [
                 "Responsibility for judgement, which remains human",
                 "The ability to produce fluent text",
-                "The ability to translate between languages"
+                "The ability to translate between two different languages"
             ],
             a: 0,
             explication: "A model can list the arguments in a difficult decision; it does not carry the responsibility. You do."

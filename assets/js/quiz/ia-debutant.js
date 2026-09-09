@@ -15,7 +15,7 @@ window.QUIZ = {
                 options: [
                     "Rechercher la réponse dans une base de données",
                     "Prédire la suite la plus probable d'une séquence de texte",
-                    "Raisonner à partir de règles écrites par des ingénieurs"
+                    "Raisonner à partir de règles écrites à la main par des ingénieurs"
                 ],
                 a: 1,
                 explication: "À chaque étape, il calcule une probabilité pour chaque token possible, en choisit un, puis recommence."
@@ -23,9 +23,9 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qu'un token ?",
                 options: [
-                    "Un mot entier",
+                    "Un mot entier, tel qu'il est écrit dans la phrase",
                     "Un fragment de mot, unité de découpage du texte",
-                    "Un identifiant de connexion"
+                    "Un identifiant de connexion propre à chaque utilisateur"
                 ],
                 a: 1,
                 explication: "« anticonstitutionnellement » peut représenter quatre tokens, « le » un seul."
@@ -44,8 +44,8 @@ window.QUIZ = {
             {
                 q: "Que désigne la « date de connaissance » (knowledge cutoff) ?",
                 options: [
-                    "La date d'expiration du modèle",
-                    "La durée maximale d'une conversation",
+                    "La date d'expiration du modèle et de sa licence d'usage",
+                    "La durée maximale d'une conversation avec le modèle",
                     "La date à laquelle s'arrête son corpus d'entraînement"
                 ],
                 a: 2,
@@ -55,7 +55,7 @@ window.QUIZ = {
                 q: "Que se passe-t-il quand une conversation dépasse la fenêtre de contexte ?",
                 options: [
                     "Le début de la conversation est oublié",
-                    "Le modèle refuse de répondre",
+                    "Le modèle refuse de répondre et le signale",
                     "La réponse est automatiquement raccourcie"
                 ],
                 a: 0,
@@ -64,7 +64,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi la même question peut-elle recevoir deux réponses différentes ?",
                 options: [
-                    "Parce que le modèle apprend de tes échanges en direct",
+                    "Parce que le modèle apprend de tes échanges en direct, à chaque message",
                     "Parce qu'il régénère à chaque fois au lieu de consulter une base",
                     "Parce que la connexion internet varie"
                 ],
@@ -81,7 +81,7 @@ window.QUIZ = {
                 options: [
                     "Il dispose d'outils et enchaîne des étapes vers un objectif",
                     "Il répond plus rapidement",
-                    "Il utilise un modèle plus récent"
+                    "Il utilise un modèle plus récent, mieux entraîné et plus rapide"
                 ],
                 a: 0,
                 explication: "Un agent agit, observe le résultat, décide de la suite, et recommence jusqu'à atteindre son but."
@@ -112,7 +112,7 @@ window.QUIZ = {
                 options: [
                     "Toutes, sans exception",
                     "Les actions irréversibles : supprimer, envoyer, payer, publier",
-                    "Aucune, sinon il perd son intérêt"
+                    "Aucune, sinon il perd tout son intérêt pratique au quotidien réel"
                 ],
                 a: 1,
                 explication: "Un agent bien conçu te rend la main sur ce qui ne se rattrape pas."
@@ -146,7 +146,7 @@ window.QUIZ = {
                 q: "Que fait le modèle avec ce que tu n'as pas précisé ?",
                 options: [
                     "Il le comble par ce qui est statistiquement le plus courant",
-                    "Il te pose la question",
+                    "Il te pose la question qui lui manque avant de poursuivre",
                     "Il laisse un blanc"
                 ],
                 a: 0,
@@ -165,8 +165,8 @@ window.QUIZ = {
             {
                 q: "Quelle technique est la plus efficace pour obtenir le bon format ?",
                 options: [
-                    "Décrire le format en détail",
-                    "Répéter la consigne deux fois",
+                    "Décrire le format attendu dans le moindre détail",
+                    "Répéter la consigne deux fois de suite, pour insister",
                     "Donner un exemple du résultat attendu"
                 ],
                 a: 2,
@@ -187,7 +187,7 @@ window.QUIZ = {
                 q: "Quel effet a le fait de menacer ou de flatter un modèle ?",
                 options: [
                     "Aucun effet durable : ce qui compte est la précision de la consigne",
-                    "Il répond nettement mieux",
+                    "Il répond nettement mieux, et de façon beaucoup plus polie qu'avant",
                     "Il refuse de répondre"
                 ],
                 a: 0,
@@ -197,8 +197,8 @@ window.QUIZ = {
                 q: "Que produit l'ajout de « si tu n'es pas sûr, dis-le » ?",
                 options: [
                     "Une réduction nette des affirmations inventées",
-                    "Des réponses systématiquement évasives",
-                    "Un refus de répondre aux questions difficiles"
+                    "Des réponses systématiquement évasives et prudentes",
+                    "Un refus de répondre à toutes les questions difficiles"
                 ],
                 a: 0,
                 explication: "Autoriser explicitement l'ignorance est l'une des consignes les plus rentables."
@@ -211,7 +211,7 @@ window.QUIZ = {
             {
                 q: "Dans quelles zones les hallucinations sont-elles les plus probables ?",
                 options: [
-                    "Les explications générales et les définitions",
+                    "Les explications générales et les définitions de notions courantes",
                     "Les traductions",
                     "Les chiffres précis, dates, citations et références peu connues"
                 ],
@@ -222,8 +222,8 @@ window.QUIZ = {
                 q: "Quel signal doit déclencher une vérification ?",
                 options: [
                     "Une réponse très précise sur un sujet obscur",
-                    "Une réponse longue",
-                    "Une réponse qui commence par « je pense »"
+                    "Une réponse particulièrement longue et détaillée",
+                    "Une réponse qui commence par « je pense que »"
                 ],
                 a: 0,
                 explication: "Plus l'affirmation est précise sur un sujet peu documenté, plus elle mérite d'être vérifiée."
@@ -242,7 +242,7 @@ window.QUIZ = {
             {
                 q: "D'où viennent les biais d'un modèle ?",
                 options: [
-                    "D'une intention programmée par ses concepteurs",
+                    "D'une intention délibérément programmée par ses concepteurs humains",
                     "Des régularités de ses données d'entraînement, stéréotypes compris",
                     "D'un défaut de calcul"
                 ],
@@ -253,7 +253,7 @@ window.QUIZ = {
                 q: "Pourquoi un LLM est-il peu fiable sur un calcul exact ?",
                 options: [
                     "Parce que les mathématiques sont exclues de son entraînement",
-                    "Parce qu'il arrondit systématiquement",
+                    "Parce qu'il arrondit systématiquement les résultats",
                     "Parce qu'il prédit du texte, il ne calcule pas"
                 ],
                 a: 2,
@@ -290,7 +290,7 @@ window.QUIZ = {
         {
             q: "Un modèle affirme une chose avec assurance. Que peut-on en conclure ?",
             options: [
-                "Que l'information est probablement exacte",
+                "Que l'information est probablement exacte et déjà vérifiée ailleurs",
                 "Rien : l'assurance est identique qu'il sache ou qu'il complète",
                 "Qu'il a vérifié sa source"
             ],
@@ -300,8 +300,8 @@ window.QUIZ = {
         {
             q: "Plus un système agit sur le monde réel, quelle question devient prioritaire ?",
             options: [
-                "Quelle est sa performance ?",
-                "Combien coûte-t-il ?",
+                "Quelle est sa performance sur ce type de tâche ?",
+                "Combien coûte-t-il par mois d'utilisation ?",
                 "Que se passe-t-il s'il se trompe ?"
             ],
             a: 2,
@@ -332,7 +332,7 @@ window.QUIZ = {
             q: "Quelle limite aucun progrès technique n'a supprimée à ce jour ?",
             options: [
                 "La responsabilité du jugement, qui reste humaine",
-                "La capacité à produire un texte fluide",
+                "La capacité à produire un texte fluide et bien tourné",
                 "La possibilité de traduire d'une langue à l'autre"
             ],
             a: 0,

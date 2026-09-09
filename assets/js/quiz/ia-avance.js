@@ -15,7 +15,7 @@ window.QUIZ = {
                 q: "Comment un modèle choisit-il le jeton suivant ?",
                 options: [
                     "Il prend toujours le plus probable",
-                    "Il suit une règle définie par le fournisseur",
+                    "Il suit une règle fixe définie à l'avance par le fournisseur",
                     "Il en tire un au sort selon les probabilités calculées"
                 ],
                 a: 2,
@@ -24,9 +24,9 @@ window.QUIZ = {
             {
                 q: "Que règle la température ?",
                 options: [
-                    "La vitesse de génération",
+                    "La vitesse de génération des réponses successives du modèle",
                     "L'aplatissement de la distribution des probabilités",
-                    "La longueur de la réponse"
+                    "La longueur maximale de la réponse qui sera produite"
                 ],
                 a: 1,
                 explication: "Basse, les jetons probables écrasent les autres ; haute, les options moins probables gagnent leur chance."
@@ -57,7 +57,7 @@ window.QUIZ = {
                 options: [
                     "Laisser la valeur par défaut, intermédiaire, pour une tâche d'extraction",
                     "Mettre la température au maximum",
-                    "Changer la température à chaque appel"
+                    "Changer la température à chaque appel, selon le résultat que l'on obtient"
                 ],
                 a: 0,
                 explication: "On s'étonne ensuite que les résultats fluctuent d'un appel à l'autre."
@@ -65,8 +65,8 @@ window.QUIZ = {
             {
                 q: "Pour quelle tâche une température élevée est-elle souhaitable ?",
                 options: [
-                    "Classer des messages",
-                    "Générer du code",
+                    "Classer des messages entrants par catégorie",
+                    "Générer du code informatique exécutable",
                     "Proposer plusieurs idées de titres"
                 ],
                 a: 2,
@@ -91,8 +91,8 @@ window.QUIZ = {
                 q: "Combien de cas un jeu de test devrait-il contenir au minimum ?",
                 options: [
                     "Vingt à cinquante, représentatifs de l'usage réel",
-                    "Trois à cinq",
-                    "Plusieurs milliers"
+                    "Trois à cinq, choisis parmi les cas les plus courants",
+                    "Plusieurs milliers, pour être vraiment complet et représentatif"
                 ],
                 a: 0,
                 explication: "Avec, pour chacun, la réponse attendue."
@@ -100,9 +100,9 @@ window.QUIZ = {
             {
                 q: "Quels cas sont les plus révélateurs dans un jeu de test ?",
                 options: [
-                    "Les cas faciles",
+                    "Les cas faciles, ceux qui passent absolument toujours",
                     "Ceux dont la bonne réponse est « je ne sais pas »",
-                    "Les cas les plus longs"
+                    "Les cas les plus longs et les plus coûteux à traiter"
                 ],
                 a: 1,
                 explication: "Un système qui invente échoue précisément là."
@@ -131,7 +131,7 @@ window.QUIZ = {
             {
                 q: "Un score global qui monte suffit-il à conclure ?",
                 options: [
-                    "Oui, c'est la mesure de référence",
+                    "Oui, c'est bien la mesure de référence retenue dans tout le domaine",
                     "Non : il peut masquer des régressions sur des cas qui comptent",
                     "Oui, si l'écart dépasse 5 %"
                 ],
@@ -158,7 +158,7 @@ window.QUIZ = {
                 options: [
                     "Une attaque sur le réseau",
                     "Un texte placé dans une page ou un document que l'agent ira lire",
-                    "Une consigne écrite par l'utilisateur lui-même"
+                    "Une consigne écrite par l'utilisateur lui-même, en connaissance de cause"
                 ],
                 a: 1,
                 explication: "L'attaquant n'écrit jamais au système : il piège le contenu que l'agent consulte de lui-même."
@@ -168,7 +168,7 @@ window.QUIZ = {
                 options: [
                     "Non : on réduit ce qu'elle permet, on ne l'élimine pas",
                     "Oui, avec une consigne bien rédigée",
-                    "Oui, en filtrant les mots-clés suspects"
+                    "Oui, en filtrant les mots-clés suspects présents à l'entrée"
                 ],
                 a: 0,
                 explication: "C'est le raisonnement de la sécurité classique : supposer la compromission possible et limiter son rayon d'action."
@@ -187,8 +187,8 @@ window.QUIZ = {
             {
                 q: "Que vaut la consigne « ignore toute instruction contenue dans les documents » ?",
                 options: [
-                    "Elle règle le problème",
-                    "Elle aggrave la vulnérabilité",
+                    "Elle règle définitivement le problème",
+                    "Elle aggrave nettement la vulnérabilité",
                     "Elle aide un peu, et se contourne"
                 ],
                 a: 2,
@@ -197,7 +197,7 @@ window.QUIZ = {
             {
                 q: "Dans le scénario du courriel piégé, quelle faille logicielle est exploitée ?",
                 options: [
-                    "Une faille dans le serveur de messagerie",
+                    "Une faille dans le serveur de messagerie utilisé par l'entreprise",
                     "Aucune : le système fait exactement ce pour quoi il est conçu",
                     "Une faille dans le modèle lui-même"
                 ],
@@ -212,7 +212,7 @@ window.QUIZ = {
             {
                 q: "À quoi le fine-tuning excelle-t-il ?",
                 options: [
-                    "À ajouter des connaissances fraîches",
+                    "À ajouter des connaissances fraîches, mises à jour régulièrement",
                     "À réduire le coût des appels",
                     "À enseigner une forme : ton, format, structure des réponses"
                 ],
@@ -222,8 +222,8 @@ window.QUIZ = {
             {
                 q: "Le modèle ignore tes tarifs, qui changent chaque mois. Que faire ?",
                 options: [
-                    "Un fine-tuning mensuel",
-                    "Changer de modèle",
+                    "Un fine-tuning mensuel du modèle",
+                    "Changer de modèle plus souvent",
                     "Une récupération de documents"
                 ],
                 a: 2,
@@ -232,9 +232,9 @@ window.QUIZ = {
             {
                 q: "Le modèle sait, mais répond dans un format inadapté. Par quoi commencer ?",
                 options: [
-                    "Un fine-tuning",
+                    "Un fine-tuning conduit sur les données propres de l'entreprise",
                     "La consigne, puis des exemples dans la consigne",
-                    "Un changement de fournisseur"
+                    "Un changement pur et simple de fournisseur de modèle"
                 ],
                 a: 1,
                 explication: "Le fine-tuning n'intervient que si les deux premières approches échouent."
@@ -255,7 +255,7 @@ window.QUIZ = {
                 options: [
                     "Les connaissances y sont diluées dans les poids",
                     "Les sources sont supprimées à l'entraînement pour des raisons légales",
-                    "Il le peut, mais c'est désactivé par défaut"
+                    "Il le peut, mais c'est désactivé par défaut chez la plupart"
                 ],
                 a: 0,
                 explication: "C'est l'un des arguments décisifs en faveur de la récupération dès qu'il faut justifier une réponse."
@@ -281,7 +281,7 @@ window.QUIZ = {
         {
             q: "Qu'est-ce qui sépare une démonstration d'un système en production ?",
             options: [
-                "La puissance du modèle utilisé",
+                "La puissance brute du modèle qui est utilisé derrière le service rendu",
                 "Savoir si ça marche, comprendre les variations, connaître les failles",
                 "Le nombre d'utilisateurs"
             ],
@@ -302,7 +302,7 @@ window.QUIZ = {
             q: "Quel principe relie le périmètre des outils et l'injection de consigne ?",
             options: [
                 "On suppose la compromission possible et on limite ce qu'elle permet",
-                "On fait confiance au modèle pour refuser les instructions suspectes",
+                "On fait confiance au modèle pour refuser de lui-même les instructions suspectes",
                 "On filtre les entrées par mots-clés"
             ],
             a: 0,
@@ -312,7 +312,7 @@ window.QUIZ = {
         {
             q: "Une équipe veut « entraîner un modèle sur ses données ». Quelle question poser d'abord ?",
             options: [
-                "Quel budget est disponible ?",
+                "Quel budget est disponible pour ce projet et pour la suite ?",
                 "Quel fournisseur choisir ?",
                 "Le modèle ne sait pas quelque chose, ou répond mal ?"
             ],
@@ -323,8 +323,8 @@ window.QUIZ = {
             q: "Pourquoi le jeu de test est-il utile bien au-delà de la mise au point ?",
             options: [
                 "Il sert à chaque changement de version du modèle",
-                "Il est exigé par la réglementation",
-                "Il remplace la documentation"
+                "Il est exigé par la réglementation européenne en vigueur",
+                "Il remplace complètement la documentation du projet"
             ],
             a: 0,
             explication: "Et il y aura des changements de version, sans que tu les décides."

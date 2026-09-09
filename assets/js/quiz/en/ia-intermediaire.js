@@ -17,7 +17,7 @@ window.QUIZ = {
                 q: "What is a token to a language model?",
                 options: [
                     "A complete word",
-                    "A whole sentence",
+                    "A whole sentence, cut out by the punctuation of the text",
                     "A fragment of text, often a syllable or a short word"
                 ],
                 a: 2,
@@ -57,7 +57,7 @@ window.QUIZ = {
             {
                 q: "What happens when the context window overflows?",
                 options: [
-                    "The model automatically compresses the history",
+                    "The model automatically compresses the history of the conversation",
                     "The call fails, or the beginning is silently truncated",
                     "Nothing, the window grows"
                 ],
@@ -68,7 +68,7 @@ window.QUIZ = {
                 q: "Does a very large context window settle everything?",
                 options: [
                     "No: the quality of attention degrades over very long texts",
-                    "Yes, just send all your documents",
+                    "Yes, just send it all of your documents at once and let it read",
                     "Yes, and it costs less"
                 ],
                 a: 0,
@@ -93,7 +93,7 @@ window.QUIZ = {
                 q: "What is an embedding?",
                 options: [
                     "A list of numbers representing the meaning of a chunk",
-                    "An automatic summary of the document",
+                    "An automatic summary of the document, made when reading it",
                     "A compression of the text"
                 ],
                 a: 0,
@@ -103,7 +103,7 @@ window.QUIZ = {
                 q: "Does RAG make the model cleverer?",
                 options: [
                     "No, it simply puts the right document in front of it",
-                    "Yes, it increases its reasoning ability",
+                    "Yes, it increases its general reasoning ability a good deal",
                     "Yes, it adds knowledge to its weights"
                 ],
                 a: 0,
@@ -113,9 +113,9 @@ window.QUIZ = {
             {
                 q: "What is the real difficulty in a RAG system?",
                 options: [
-                    "The choice of model",
+                    "The choice of the language model used",
                     "Cutting the documents into chunks",
-                    "The speed of the search"
+                    "The speed of the search through the base"
                 ],
                 a: 1,
                 explication: "Too small, chunks lose their context; too large, they dilute the information and cost more."
@@ -168,7 +168,7 @@ window.QUIZ = {
             {
                 q: "Why prefer narrow tools to a general one?",
                 options: [
-                    "They are faster",
+                    "They are considerably faster to run each time",
                     "They cost less",
                     "They limit what a manipulated agent can do"
                 ],
@@ -179,8 +179,8 @@ window.QUIZ = {
             {
                 q: "In the sequence of a tool call, which step belongs to you?",
                 options: [
-                    "The decision to call the tool",
-                    "Writing the final answer",
+                    "The decision to call the tool, taken alone",
+                    "Writing the final answer for the reader",
                     "Checking and running the call"
                 ],
                 a: 2,
@@ -201,7 +201,7 @@ window.QUIZ = {
                 options: [
                     "It discovers them by trying",
                     "You describe them to it: name, role, parameters expected",
-                    "They are included in its training"
+                    "They are included in its initial training, once and for all"
                 ],
                 a: 1,
                 explication: "The quality of those descriptions largely determines how apt the calls are."
@@ -214,7 +214,7 @@ window.QUIZ = {
             {
                 q: "Which model is generally the right choice?",
                 options: [
-                    "The best-performing one available",
+                    "The best-performing one available on the market",
                     "The cheapest, always",
                     "The smallest one that succeeds at your task"
                 ],
@@ -225,7 +225,7 @@ window.QUIZ = {
                 q: "How is the cost of a model billed?",
                 options: [
                     "Per request",
-                    "Per minute of use",
+                    "Per minute of use, like a mobile phone subscription",
                     "Per million tokens, separating input from output"
                 ],
                 a: 2,
@@ -246,7 +246,7 @@ window.QUIZ = {
                 q: "What are public model leaderboards worth for your project?",
                 options: [
                     "They give the answer directly",
-                    "They are of no interest at all",
+                    "They are of no interest at all to anybody working in practice",
                     "They measure general capabilities, not your particular case"
                 ],
                 a: 2,
@@ -283,8 +283,8 @@ window.QUIZ = {
         {
             q: "What do the context window and the cost of a project have in common?",
             options: [
-                "They both depend on the number of users",
-                "They are independent",
+                "They both depend on the number of users connected",
+                "They are independent of one another entirely",
                 "The volume of tokens read determines both"
             ],
             a: 2,
@@ -303,8 +303,8 @@ window.QUIZ = {
         {
             q: "What determines how much an agent can break?",
             options: [
-                "The performance of the model chosen",
-                "The size of its context window",
+                "The raw performance of the model that was chosen",
+                "The size of its context window, in tokens",
                 "The scope of the tools it has been given"
             ],
             a: 2,
@@ -315,8 +315,8 @@ window.QUIZ = {
             q: "Why is sending a model an entire book rarely a good idea?",
             options: [
                 "Attention degrades and the cost explodes",
-                "It is technically impossible",
-                "The model refuses long texts"
+                "It is technically impossible to do this today",
+                "The model simply refuses to take any long text"
             ],
             a: 0,
             explication: "The three relevant pages do better, and a hundred times cheaper."
@@ -334,9 +334,9 @@ window.QUIZ = {
         {
             q: "Before choosing a model, which preparation pays off most?",
             options: [
-                "Reading the public leaderboards",
+                "Reading the public leaderboards of models",
                 "Writing twenty representative test cases",
-                "Comparing context window sizes"
+                "Comparing the sizes of the context windows"
             ],
             a: 1,
             explication: "They will then serve at every version change — and there will be some."

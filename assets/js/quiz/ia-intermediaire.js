@@ -15,7 +15,7 @@ window.QUIZ = {
                 q: "Qu'est-ce qu'un jeton pour un modèle de langage ?",
                 options: [
                     "Un mot complet",
-                    "Une phrase entière",
+                    "Une phrase entière, découpée selon la ponctuation du texte",
                     "Un fragment de texte, souvent une syllabe ou un mot court"
                 ],
                 a: 2,
@@ -55,7 +55,7 @@ window.QUIZ = {
             {
                 q: "Que se passe-t-il quand la fenêtre de contexte déborde ?",
                 options: [
-                    "Le modèle compresse automatiquement l'historique",
+                    "Le modèle compresse automatiquement l'historique de la conversation",
                     "L'appel échoue, ou le début est silencieusement tronqué",
                     "Rien, la fenêtre s'agrandit"
                 ],
@@ -91,7 +91,7 @@ window.QUIZ = {
                 q: "Qu'est-ce qu'un plongement ?",
                 options: [
                     "Une liste de nombres représentant le sens d'un fragment",
-                    "Un résumé automatique du document",
+                    "Un résumé automatique du document, produit au moment de la lecture",
                     "Une compression du texte"
                 ],
                 a: 0,
@@ -101,7 +101,7 @@ window.QUIZ = {
                 q: "Le RAG rend-il le modèle plus intelligent ?",
                 options: [
                     "Non, il lui met simplement le bon document sous les yeux",
-                    "Oui, il augmente ses capacités de raisonnement",
+                    "Oui, il augmente nettement ses capacités générales de raisonnement",
                     "Oui, il ajoute des connaissances à ses poids"
                 ],
                 a: 0,
@@ -111,9 +111,9 @@ window.QUIZ = {
             {
                 q: "Quelle est la vraie difficulté d'un RAG ?",
                 options: [
-                    "Le choix du modèle",
+                    "Le choix du modèle de langue employé",
                     "Le découpage des documents en fragments",
-                    "La vitesse de la recherche"
+                    "La vitesse de la recherche dans la base"
                 ],
                 a: 1,
                 explication: "Trop petits, les fragments perdent leur contexte ; trop grands, ils diluent l'information et coûtent plus cher."
@@ -148,7 +148,7 @@ window.QUIZ = {
                 options: [
                     "Il exécute l'outil lui-même",
                     "Il produit une demande d'appel, que ton programme exécute ou non",
-                    "Il demande l'autorisation à l'utilisateur"
+                    "Il demande d'abord l'autorisation à l'utilisateur avant toute action"
                 ],
                 a: 1,
                 explication: "Le modèle propose, ton code dispose. Toute la sécurité d'un agent se place à cet endroit."
@@ -157,7 +157,7 @@ window.QUIZ = {
                 q: "Qu'est-ce qui transforme un assistant en agent ?",
                 options: [
                     "La capacité d'appeler des outils",
-                    "Un modèle plus performant",
+                    "Un modèle nettement plus performant",
                     "Une fenêtre de contexte plus grande"
                 ],
                 a: 0,
@@ -167,7 +167,7 @@ window.QUIZ = {
                 q: "Pourquoi préférer des outils étroits à un outil général ?",
                 options: [
                     "Ils sont plus rapides",
-                    "Ils coûtent moins cher",
+                    "Ils coûtent nettement moins cher à l'usage quotidien",
                     "Ils limitent ce qu'un agent manipulé peut faire"
                 ],
                 a: 2,
@@ -177,8 +177,8 @@ window.QUIZ = {
             {
                 q: "Dans le déroulé d'un appel d'outil, quelle étape t'appartient ?",
                 options: [
-                    "La décision d'appeler l'outil",
-                    "La rédaction de la réponse finale",
+                    "La décision d'appeler l'outil, prise seule",
+                    "La rédaction de la réponse finale au lecteur",
                     "La vérification et l'exécution de l'appel"
                 ],
                 a: 2,
@@ -199,7 +199,7 @@ window.QUIZ = {
                 options: [
                     "Il les découvre en essayant",
                     "On les lui décrit : nom, rôle, paramètres attendus",
-                    "Ils sont inclus dans son entraînement"
+                    "Ils sont inclus dans son entraînement initial, une fois pour toutes"
                 ],
                 a: 1,
                 explication: "La qualité de ces descriptions détermine largement la pertinence des appels."
@@ -212,8 +212,8 @@ window.QUIZ = {
             {
                 q: "Quel est généralement le bon choix de modèle ?",
                 options: [
-                    "Le plus performant disponible",
-                    "Le moins cher, toujours",
+                    "Le plus performant disponible sur le marché",
+                    "Le moins cher, dans tous les cas de figure",
                     "Le plus petit qui réussit ta tâche"
                 ],
                 a: 2,
@@ -223,7 +223,7 @@ window.QUIZ = {
                 q: "Comment le coût d'un modèle est-il facturé ?",
                 options: [
                     "Par requête",
-                    "Par minute d'utilisation",
+                    "Par minute d'utilisation, comme un abonnement téléphonique",
                     "Par million de jetons, en distinguant entrée et sortie"
                 ],
                 a: 2,
@@ -232,7 +232,7 @@ window.QUIZ = {
             {
                 q: "Quel critère précède parfois tous les autres ?",
                 options: [
-                    "La popularité du fournisseur",
+                    "La popularité du fournisseur du modèle",
                     "L'endroit où circulent les données",
                     "La taille de la fenêtre de contexte"
                 ],
@@ -243,7 +243,7 @@ window.QUIZ = {
             {
                 q: "Que valent les classements publics de modèles pour ton projet ?",
                 options: [
-                    "Ils donnent la réponse directement",
+                    "Ils donnent la réponse directement, sans discussion possible ensuite",
                     "Ils sont sans aucun intérêt",
                     "Ils mesurent des capacités générales, pas ton cas particulier"
                 ],
@@ -282,7 +282,7 @@ window.QUIZ = {
             q: "Quel est le point commun entre la fenêtre de contexte et le coût d'un projet ?",
             options: [
                 "Ils dépendent tous deux du nombre d'utilisateurs",
-                "Ils sont indépendants",
+                "Ils sont indépendants l'un de l'autre, et se mesurent à part",
                 "Le volume de jetons lus détermine les deux"
             ],
             a: 2,
@@ -292,7 +292,7 @@ window.QUIZ = {
             q: "Une entreprise veut que le modèle connaisse ses procédures internes. Que faut-il faire ?",
             options: [
                 "Mettre en place une récupération de documents",
-                "Entraîner un modèle sur ses documents",
+                "Entraîner un modèle sur l'ensemble de ses documents",
                 "Choisir un modèle plus performant"
             ],
             a: 0,
@@ -301,8 +301,8 @@ window.QUIZ = {
         {
             q: "Qu'est-ce qui détermine ce qu'un agent peut casser ?",
             options: [
-                "La performance du modèle choisi",
-                "La taille de sa fenêtre de contexte",
+                "La performance brute du modèle qui a été choisi",
+                "La taille de sa fenêtre de contexte disponible",
                 "Le périmètre des outils qu'on lui a donnés"
             ],
             a: 2,
@@ -313,8 +313,8 @@ window.QUIZ = {
             q: "Pourquoi envoyer un livre entier à un modèle est-il rarement une bonne idée ?",
             options: [
                 "L'attention se dégrade et le coût explose",
-                "C'est techniquement impossible",
-                "Le modèle refuse les textes longs"
+                "C'est techniquement impossible aujourd'hui",
+                "Le modèle refuse purement et simplement les textes longs"
             ],
             a: 0,
             explication: "Les trois pages pertinentes font mieux, et cent fois moins cher."
@@ -332,7 +332,7 @@ window.QUIZ = {
         {
             q: "Avant de choisir un modèle, quel travail préalable est le plus rentable ?",
             options: [
-                "Lire les classements publics",
+                "Lire les classements publics des modèles",
                 "Écrire vingt cas de test représentatifs",
                 "Comparer les tailles de fenêtre de contexte"
             ],
