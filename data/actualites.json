@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-08T20:00:20.347Z",
+  "maj": "2026-09-09T12:24:46.857Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV202ZFYxaDgxclp4RlhvMkt2c3hmeEVjaDBlRmdkOXZueU5iMzlMVWxQVmZueDhBWV9qb2UzM3F0STNqU0I3S2lxekN3Yk00dTlLSDhETnVtbTMwQ3c1bWwyamVEc2FXRjB6LWNjcUR2bGpfRnB4RzF3bWpqbm9NM0tUOFhMUF8xWTRfcWJlUEpCOUxy?oc=5",
@@ -132,6 +132,18 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-08"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9Hb3JfRThMdzlVNFB2Tm1jTkFVVF9uSkljTDE0eHFFRmgzSXpFM0ZfbjdHUlQ3anlINFFPa0RSOVdWQnNVN3dZQVV4ZDkyUU5lc21SaVh2czQ1eXZWNHc0MS1lVQ?oc=5",
+      "titre": "Cybersécurité: face aux fuites de données, l'Anssi renforce sa capacité d'intervention",
+      "source": "TradingView",
+      "date": "2026-09-07",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-09"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
@@ -275,18 +287,6 @@
       "ancre": "surface-attaque",
       "section": "🗺️ Ta surface d'attaque",
       "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5TbW53MnNYX2g5X2J0UmR5MldjMGN1c2FhRTNwbk1pWnBya1VBQ1BZZ0hTNDdpVjRrVGgtb21mdFpvdDFnQ2JfU2xDbktUV21zRDlfX19BUktLaUFqWkE?oc=5",
-      "titre": "HTEC Momentum renforce son palmarès exceptionnel en matière d'expérience utilisateur avec deux distinctions aux UX Design Awards.",
-      "source": "Lelezard",
-      "date": "2026-09-03",
-      "guide": "design",
-      "page": "debutant.html",
-      "ancre": "les-tests-utilisateurs",
-      "section": "🧪 Les tests utilisateurs",
-      "sujet": "🎨 Design UX/UI — Débutant",
       "publie": "2026-09-03"
     }
   ]
