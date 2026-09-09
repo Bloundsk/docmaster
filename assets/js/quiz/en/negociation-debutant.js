@@ -16,8 +16,8 @@ window.QUIZ = {
                 q: "What is the most neglected question before a negotiation?",
                 options: [
                     "What do I do if I don't get it?",
-                    "What is my best argument?",
-                    "How am I going to open?"
+                    "What is my best argument going to be?",
+                    "How exactly am I going to open this?"
                 ],
                 a: 0,
                 explication: "It determines your real position, not the one you display."
@@ -26,7 +26,7 @@ window.QUIZ = {
                 q: "What is a request phrased as “being better recognised” worth?",
                 options: [
                     "It cannot be negotiated: it is not checkable",
-                    "It leaves useful room for manoeuvre",
+                    "It leaves useful room for manoeuvre later on in the talk",
                     "It is more diplomatic"
                 ],
                 a: 0,
@@ -36,7 +36,7 @@ window.QUIZ = {
                 q: "What should you do with the weak point in your own case?",
                 options: [
                     "Hope it goes unnoticed",
-                    "Deny it if it is raised",
+                    "Deny it firmly if it is ever raised by them",
                     "State it yourself, or prepare the answer"
                 ],
                 a: 2,
@@ -92,7 +92,7 @@ window.QUIZ = {
                 q: "What does a three-second silence after an answer produce?",
                 options: [
                     "Pointless awkwardness",
-                    "A return to the previous subject",
+                    "A return to the previous subject, with nothing new",
                     "Very often a second, more precise answer"
                 ],
                 a: 2,
@@ -101,9 +101,9 @@ window.QUIZ = {
             {
                 q: "What is the most profitable question in the field?",
                 options: [
-                    "“Do you agree?”",
+                    "“Do you agree with all of that?”",
                     "“Why does that matter to you?”",
-                    "“What is your budget?”"
+                    "“What is your budget for this?”"
                 ],
                 a: 1,
                 explication: "It moves from what the other side asks for to the reason they are asking."
@@ -112,7 +112,7 @@ window.QUIZ = {
             {
                 q: "Which mechanical remedy stops you drafting your reply while the other talks?",
                 options: [
-                    "Telling yourself to listen",
+                    "Telling yourself over and over to listen",
                     "Taking notes of what they say",
                     "Waiting longer before answering"
                 ],
@@ -133,7 +133,7 @@ window.QUIZ = {
                 q: "Listening is presented as a moral quality. What is it first of all?",
                 options: [
                     "A mark of respect",
-                    "A way of saving time",
+                    "A polite way of saving a little bit of time",
                     "A technique for collecting information"
                 ],
                 a: 2,
@@ -178,7 +178,7 @@ window.QUIZ = {
             {
                 q: "What side effect does starting with the conclusion have?",
                 options: [
-                    "It shortens the message",
+                    "It shortens the whole message quite considerably",
                     "It forces you to know what you want to say",
                     "It avoids questions"
                 ],
@@ -188,9 +188,9 @@ window.QUIZ = {
             {
                 q: "What marks a sentence as too long?",
                 options: [
-                    "It runs past thirty words",
+                    "It runs past thirty words in total",
                     "It cannot be said in one breath",
-                    "It has more than two commas"
+                    "It has more than two commas in it"
                 ],
                 a: 1,
                 explication: "It then probably contains two ideas."
@@ -213,9 +213,9 @@ window.QUIZ = {
             {
                 q: "What should a good email subject line say?",
                 options: [
-                    "The topic in one word",
+                    "The topic of the message, in one single word",
                     "What it is about AND what is expected",
-                    "How urgent it is"
+                    "How urgent the whole thing really is for you"
                 ],
                 a: 1,
                 explication: "“2027 budget — your approval before Friday” gets handled; “Budget update” gets postponed."
@@ -245,7 +245,7 @@ window.QUIZ = {
                 q: "Why does a message with six recipients in “To” achieve nothing?",
                 options: [
                     "Each assumes somebody else is dealing with it",
-                    "It gets filtered as a mass mailing",
+                    "It gets filtered as a mass mailing by the server",
                     "It arrives later"
                 ],
                 a: 0,
@@ -290,7 +290,7 @@ window.QUIZ = {
             q: "What do restating and putting the conclusion first have in common?",
             options: [
                 "Both shorten the exchange",
-                "Both are a matter of politeness",
+                "Both are simply a matter of politeness between people",
                 "Both stop people talking about two different things"
             ],
             a: 2,
@@ -310,7 +310,7 @@ window.QUIZ = {
             q: "Why does writing short take longer?",
             options: [
                 "You have to reread more",
-                "It is a myth: it is quicker",
+                "It is a myth: it is actually quicker that way",
                 "You have to select, and selecting is work"
             ],
             a: 2,
@@ -321,7 +321,7 @@ window.QUIZ = {
             options: [
                 "Prepare more arguments",
                 "Restate once, then stay quiet for three seconds",
-                "Shorten all your messages"
+                "Shorten every one of your messages, without exception"
             ],
             a: 1,
             explication: "No technique in the guide takes less effort and pays as much."

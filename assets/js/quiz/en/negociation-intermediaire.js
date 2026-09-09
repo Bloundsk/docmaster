@@ -15,9 +15,9 @@ window.QUIZ = {
             {
                 q: "Where does power in a negotiation come from?",
                 options: [
-                    "From the quality of your arguments",
+                    "From the quality of the arguments you prepared",
                     "From what you get if you walk away",
-                    "From your confidence"
+                    "From your own confidence when speaking"
                 ],
                 a: 1,
                 explication: "It is what explains why two equally skilled people do not have the same power."
@@ -25,7 +25,7 @@ window.QUIZ = {
             {
                 q: "What is a BATNA?",
                 options: [
-                    "The minimum amount the other side will accept",
+                    "The minimum amount that the other side will finally accept",
                     "The average of the offers received",
                     "The best alternative to a negotiated agreement"
                 ],
@@ -37,7 +37,7 @@ window.QUIZ = {
                 options: [
                     "A gain of €2,000 — you have room to continue",
                     "You should accept immediately",
-                    "The offer is worse than walking away"
+                    "The offer is clearly worse than walking away now"
                 ],
                 a: 0,
                 explication: "At €28,200 the offer would still beat walking away, but continuing would cost more than it brings."
@@ -48,7 +48,7 @@ window.QUIZ = {
                 options: [
                     "During it, through firmness",
                     "Before the negotiation, by improving your alternative",
-                    "At the end, by threatening to leave"
+                    "At the very end, by threatening to leave the table for good"
                 ],
                 a: 1,
                 explication: "Getting a second proposal moves the walk-away point."
@@ -82,8 +82,8 @@ window.QUIZ = {
                 q: "Buyer's maximum €32,000, seller's minimum €27,000: what is at stake?",
                 options: [
                     "The split of €5,000, not the deal itself",
-                    "Whether a deal is possible",
-                    "The choice of the midpoint"
+                    "Whether a deal is possible at all in this case",
+                    "The choice of the midpoint between the two"
                 ],
                 a: 0,
                 explication: "Everything said will serve to move the cursor within that range."
@@ -92,7 +92,7 @@ window.QUIZ = {
                 q: "What should you do when there is no zone of agreement on price?",
                 options: [
                     "Insist and repeat the arguments",
-                    "Drag it out to wear the other side down",
+                    "Drag it out so as to wear the other side down completely",
                     "Add a variable: timing, volume, warranty, services"
                 ],
                 a: 2,
@@ -101,8 +101,8 @@ window.QUIZ = {
             {
                 q: "Should you announce your maximum limit?",
                 options: [
-                    "Yes, to save time",
-                    "Yes, if the other side asks",
+                    "Yes, so as to save everybody a little time",
+                    "Yes, if the other side explicitly asks for it",
                     "No: announcing it amounts to offering it"
                 ],
                 a: 2,
@@ -113,8 +113,8 @@ window.QUIZ = {
                 q: "What does the absence of a zone of agreement mean?",
                 options: [
                     "No price suits both sides as things stand",
-                    "One of them is lying about their limit",
-                    "You should split the difference"
+                    "One of them is certainly lying about their limit",
+                    "You should simply split the difference in two"
                 ],
                 a: 0,
                 explication: "That is valuable information: it saves weeks."
@@ -167,7 +167,7 @@ window.QUIZ = {
             {
                 q: "When is it better to let the other side open?",
                 options: [
-                    "When you are in a strong position",
+                    "When you are in a strong position at the start of the discussion",
                     "When the relationship must last",
                     "When you do not know what the thing being negotiated is worth"
                 ],
@@ -179,8 +179,8 @@ window.QUIZ = {
                 q: "What does an opening offer far removed from the market produce?",
                 options: [
                     "It disqualifies rather than moves",
-                    "A decisive advantage",
-                    "No effect at all"
+                    "A decisive advantage from the start",
+                    "No measurable effect at all on the deal"
                 ],
                 a: 0,
                 explication: "The other side concludes you do not know the subject, or are not negotiating in good faith."
@@ -190,7 +190,7 @@ window.QUIZ = {
                 options: [
                     "It is ambitious and defensible in one sentence",
                     "It is as high as possible",
-                    "It is close to the real target"
+                    "It is very close indeed to the real target figure"
                 ],
                 a: 0,
                 explication: "Ambition without justification turns against whoever states it."
@@ -266,7 +266,7 @@ window.QUIZ = {
                 options: [
                     "Three fallback arguments",
                     "What costs me little and is worth a lot to them",
-                    "The point at which I will give in"
+                    "The point at which I am eventually going to give in"
                 ],
                 a: 1,
                 explication: "A deadline, a reference, an exclusivity, flexibility on the schedule."
@@ -280,7 +280,7 @@ window.QUIZ = {
             q: "What is the thread running through this level?",
             options: [
                 "You have to hold your position",
-                "The best negotiator is the most patient",
+                "The best negotiator is always the one who stays the most patient",
                 "A negotiation can largely be worked out before it starts"
             ],
             a: 2,
@@ -291,7 +291,7 @@ window.QUIZ = {
             options: [
                 "Both should be announced early",
                 "Both are there to help you decide, not to be communicated",
-                "Both are worked out after the first offer"
+                "Both are worked out after hearing the very first offer of all"
             ],
             a: 1,
             explication: "Announcing them amounts to offering them."
@@ -311,7 +311,7 @@ window.QUIZ = {
             options: [
                 "Check whether a zone of agreement exists, then add a variable",
                 "Split the difference",
-                "Bring in a third party"
+                "Bring in a third party to arbitrate between the two sides involved"
             ],
             a: 0,
             explication: "If there is no zone, insisting will never produce a deal on price alone."

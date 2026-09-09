@@ -15,8 +15,8 @@ window.QUIZ = {
                 q: "Quelle est la question la plus négligée avant une négociation ?",
                 options: [
                     "Que fais-je si je ne l'obtiens pas ?",
-                    "Quel est mon meilleur argument ?",
-                    "Comment vais-je commencer ?"
+                    "Quel est mon meilleur argument à avancer ?",
+                    "Comment vais-je commencer l'entretien ?"
                 ],
                 a: 0,
                 explication: "Elle détermine ta position réelle, pas ta position affichée."
@@ -25,7 +25,7 @@ window.QUIZ = {
                 q: "Que vaut une demande formulée comme « être mieux reconnu » ?",
                 options: [
                     "Elle ne se négocie pas : elle n'est pas vérifiable",
-                    "Elle laisse une marge utile",
+                    "Elle laisse une marge utile pour la suite de la discussion",
                     "Elle est plus diplomate"
                 ],
                 a: 0,
@@ -34,7 +34,7 @@ window.QUIZ = {
             {
                 q: "Que faire du point faible de son propre dossier ?",
                 options: [
-                    "Espérer qu'il passe inaperçu",
+                    "Espérer qu'il passe inaperçu jusqu'à la signature",
                     "Le nier s'il est soulevé",
                     "L'énoncer soi-même, ou préparer la réponse"
                 ],
@@ -67,7 +67,7 @@ window.QUIZ = {
                 options: [
                     "Estimer ce que cherche l'autre",
                     "Lister ce qu'on va dire",
-                    "Chiffrer son objectif"
+                    "Chiffrer précisément son objectif"
                 ],
                 a: 1,
                 explication: "Elle suppose que l'échange consiste à convaincre par accumulation."
@@ -91,7 +91,7 @@ window.QUIZ = {
                 q: "Que produit un silence de trois secondes après une réponse ?",
                 options: [
                     "Un malaise inutile",
-                    "Une reprise du sujet précédent",
+                    "Une reprise du sujet précédent, sans rien de neuf",
                     "Très souvent une seconde réponse, plus précise"
                 ],
                 a: 2,
@@ -102,7 +102,7 @@ window.QUIZ = {
                 options: [
                     "« Êtes-vous d'accord ? »",
                     "« Pourquoi est-ce important pour vous ? »",
-                    "« Quel est votre budget ? »"
+                    "« Quel est le budget prévu de votre côté ? »"
                 ],
                 a: 1,
                 explication: "Elle fait passer de ce que l'autre demande à la raison pour laquelle il le demande."
@@ -111,7 +111,7 @@ window.QUIZ = {
             {
                 q: "Quel remède mécanique empêche de préparer sa réponse pendant que l'autre parle ?",
                 options: [
-                    "Se répéter d'écouter",
+                    "Se répéter mentalement d'écouter l'autre",
                     "Prendre des notes de ce qu'il dit",
                     "Attendre plus longtemps avant de répondre"
                 ],
@@ -122,7 +122,7 @@ window.QUIZ = {
                 q: "Quelle différence entre une question ouverte et une question fermée ?",
                 options: [
                     "L'ouverte est plus polie",
-                    "La fermée est plus efficace",
+                    "La question fermée est nettement plus efficace des deux",
                     "L'ouverte appelle une explication, la fermée un mot"
                 ],
                 a: 2,
@@ -131,8 +131,8 @@ window.QUIZ = {
             {
                 q: "Écouter est présenté comme une qualité morale. Qu'est-ce d'abord ?",
                 options: [
-                    "Une marque de respect",
-                    "Une façon de gagner du temps",
+                    "Une simple marque de respect envers l'autre",
+                    "Une façon polie de gagner un peu de temps",
                     "Une technique de collecte d'information"
                 ],
                 a: 2,
@@ -177,9 +177,9 @@ window.QUIZ = {
             {
                 q: "Quel effet secondaire a le fait de commencer par la conclusion ?",
                 options: [
-                    "Cela raccourcit le message",
+                    "Cela raccourcit sensiblement le message envoyé",
                     "Cela oblige à savoir ce qu'on veut dire",
-                    "Cela évite les questions"
+                    "Cela évite les questions en retour du lecteur"
                 ],
                 a: 1,
                 explication: "Beaucoup d'exposés qui finissent par une conclusion floue n'en avaient pas."
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "Elle dépasse trente mots",
                     "Elle ne peut pas être dite d'un seul souffle",
-                    "Elle contient plus de deux virgules"
+                    "Elle contient plus de deux virgules successives"
                 ],
                 a: 1,
                 explication: "Elle contient alors probablement deux idées."
@@ -212,7 +212,7 @@ window.QUIZ = {
             {
                 q: "Que doit dire un bon objet de courriel ?",
                 options: [
-                    "Le sujet en un mot",
+                    "Le sujet du message, résumé en un seul mot",
                     "De quoi il s'agit ET ce qui est attendu",
                     "Le degré d'urgence"
                 ],
@@ -244,8 +244,8 @@ window.QUIZ = {
                 q: "Pourquoi un message à six destinataires en « À » n'obtient-il rien ?",
                 options: [
                     "Chacun suppose qu'un autre s'en charge",
-                    "Il est filtré comme un envoi de masse",
-                    "Il arrive plus tard"
+                    "Il est filtré comme un envoi de masse par le serveur",
+                    "Il arrive nettement plus tard que prévu"
                 ],
                 a: 0,
                 explication: "Une seule personne en « À », les autres en copie."
@@ -309,7 +309,7 @@ window.QUIZ = {
             q: "Pourquoi écrire court prend-il plus de temps ?",
             options: [
                 "Il faut relire davantage",
-                "C'est un mythe : cela va plus vite",
+                "C'est un mythe : au contraire, cela va plus vite",
                 "Il faut trier, et le tri est un travail"
             ],
             a: 2,
@@ -318,7 +318,7 @@ window.QUIZ = {
         {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
-                "Préparer davantage d'arguments",
+                "Préparer davantage d'arguments et de chiffres à l'avance",
                 "Reformuler une fois, puis se taire trois secondes",
                 "Raccourcir tous ses messages"
             ],

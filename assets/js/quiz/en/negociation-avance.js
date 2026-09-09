@@ -25,8 +25,8 @@ window.QUIZ = {
             {
                 q: "Which rule keeps you to the facts?",
                 options: [
-                    "Quote figures",
-                    "Stay in the recent past",
+                    "Quote figures and precise dates from the file",
+                    "Stay strictly in the most recent past of all",
                     "Describe what a camera would have recorded"
                 ],
                 a: 2,
@@ -56,8 +56,8 @@ window.QUIZ = {
             {
                 q: "Which two material conditions weigh as much as the wording?",
                 options: [
-                    "In writing, and with a witness",
-                    "Early in the week, and briefly",
+                    "In writing, and with a witness present in the room",
+                    "Early in the week, and as briefly as it can be done",
                     "One to one, and with time allowed for the answer"
                 ],
                 a: 2,
@@ -66,9 +66,9 @@ window.QUIZ = {
             {
                 q: "What is the risk of presenting a decision already taken as an open discussion?",
                 options: [
-                    "Making the meeting longer",
+                    "Making the meeting a good deal longer",
                     "Losing the other person's trust",
-                    "None, it is diplomatic"
+                    "None at all, it is simply diplomatic"
                 ],
                 a: 1,
                 explication: "You have to separate what is negotiable from what is not."
@@ -81,7 +81,7 @@ window.QUIZ = {
             {
                 q: "What does the sunk cost bias say?",
                 options: [
-                    "The more you invest, the more you should persist",
+                    "The more you invest in it, the more you ought to persist with it",
                     "The effort made has to be recouped",
                     "Time already spent should change nothing about the decision"
                 ],
@@ -93,7 +93,7 @@ window.QUIZ = {
                 options: [
                     "Overconfidence",
                     "Assuming that what one side gains, the other loses",
-                    "Fear of conflict"
+                    "Fear of an open conflict with the other side of the table"
                 ],
                 a: 1,
                 explication: "It shuts down the search for asymmetric trades."
@@ -122,7 +122,7 @@ window.QUIZ = {
             {
                 q: "What is commitment through consistency?",
                 options: [
-                    "Honouring your contractual commitments",
+                    "Honouring all of your contractual commitments to the letter",
                     "Repeating the same argument",
                     "Clinging to a stated number so as not to look changeable"
                 ],
@@ -134,7 +134,7 @@ window.QUIZ = {
                 options: [
                     "Because we communicate too much",
                     "They seem obvious to us while being invisible from outside",
-                    "Because the other side does its research"
+                    "Because the other side has already done its own research beforehand"
                 ],
                 a: 1,
                 explication: "And so we never explain them."
@@ -158,8 +158,8 @@ window.QUIZ = {
                 q: "What is the last-minute nibble?",
                 options: [
                     "An extra demand once the deal is nearly done",
-                    "A series of small concessions",
-                    "A refusal to close"
+                    "A series of small successive concessions asked for",
+                    "A plain refusal to close the deal at that stage"
                 ],
                 a: 0,
                 explication: "It exploits the moment when giving up would cost everything."
@@ -167,7 +167,7 @@ window.QUIZ = {
             {
                 q: "What is the real defence against all these tactics?",
                 options: [
-                    "Experience",
+                    "Experience already accumulated",
                     "Your alternative",
                     "A written contract"
                 ],
@@ -179,7 +179,7 @@ window.QUIZ = {
                 q: "What does “my boss says no” reveal?",
                 options: [
                     "An absent authority, unverifiable, which shifts the negotiation",
-                    "A real constraint to respect",
+                    "A real constraint that simply has to be respected by both sides here",
                     "An invitation to escalate"
                 ],
                 a: 0,
@@ -190,7 +190,7 @@ window.QUIZ = {
                 options: [
                     "They work all the better when the other side has nowhere to go",
                     "Because the stakes are higher",
-                    "Because the parties know each other less well"
+                    "Because the parties tend to know each other a great deal less well"
                 ],
                 a: 0,
                 explication: "It is the same reason that makes your alternative the general protection."
@@ -198,7 +198,7 @@ window.QUIZ = {
             {
                 q: "What does replying in kind cost?",
                 options: [
-                    "Nothing, it is fair game",
+                    "Nothing at all, it is simply fair game between professionals",
                     "The possibility of asymmetric trades, and the relationship",
                     "Time only"
                 ],
@@ -215,7 +215,7 @@ window.QUIZ = {
                 options: [
                     "€810 of time consumed, that is 54% of the remaining gap",
                     "A negligible cost",
-                    "€2,700, more than the gap"
+                    "€2,700, which is a good deal more than the gap that remains"
                 ],
                 a: 0,
                 explication: "The gap still justifies talking, but only just."
@@ -223,9 +223,9 @@ window.QUIZ = {
             {
                 q: "The same deadlock stretched over twenty weeks costs:",
                 options: [
-                    "€810",
+                    "€810, which is only a fairly modest share of it",
                     "€2,700, that is 180% of the remaining gap",
-                    "The same amount, time does not count"
+                    "The same amount, since time does not count"
                 ],
                 a: 1,
                 explication: "At that point both parties have lost, whatever the final deal."
@@ -233,9 +233,9 @@ window.QUIZ = {
             {
                 q: "Why is this calculation never done?",
                 options: [
-                    "It is too complex",
+                    "It is far too complex a calculation to run",
                     "It generally makes both sides wrong",
-                    "The data is missing"
+                    "The data that would be needed is missing"
                 ],
                 a: 1,
                 explication: "It is nonetheless a multiplication and a comparison."
@@ -256,7 +256,7 @@ window.QUIZ = {
                 options: [
                     "A failure of the negotiation",
                     "Exercising your alternative",
-                    "A tactical threat"
+                    "A purely tactical threat to leave"
                 ],
                 a: 1,
                 explication: "It is using what gave you power from the start."
@@ -265,7 +265,7 @@ window.QUIZ = {
                 q: "What does the fatigue of a long negotiation produce?",
                 options: [
                     "You become more demanding",
-                    "You negotiate better, out of habit",
+                    "You negotiate better, purely out of habit acquired",
                     "You accept what you would have refused on day one"
                 ],
                 a: 2,
@@ -321,7 +321,7 @@ window.QUIZ = {
             options: [
                 "Yes, it is an asymmetric negotiation",
                 "No: that calls for specific legal remedies, which vary by country",
-                "Yes, apply the difficult conversations method"
+                "Yes, simply apply the difficult conversations method to this situation too"
             ],
             a: 1,
             explication: "Some situations are not negotiations."

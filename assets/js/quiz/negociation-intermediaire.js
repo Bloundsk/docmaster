@@ -14,9 +14,9 @@ window.QUIZ = {
             {
                 q: "D'où vient le pouvoir dans une négociation ?",
                 options: [
-                    "De la qualité de tes arguments",
+                    "De la qualité de tes arguments préparés",
                     "De ce que tu obtiens si tu pars",
-                    "De ton assurance"
+                    "De ton assurance au moment de parler"
                 ],
                 a: 1,
                 explication: "C'est ce qui explique que deux personnes également habiles n'aient pas le même pouvoir."
@@ -24,7 +24,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que la MESORE ?",
                 options: [
-                    "Le montant minimal acceptable fixé par l'autre",
+                    "Le montant minimal acceptable fixé à l'avance par l'autre partie",
                     "La moyenne des offres reçues",
                     "La meilleure solution de rechange en l'absence d'accord"
                 ],
@@ -36,7 +36,7 @@ window.QUIZ = {
                 options: [
                     "Gain de 2 000 € — tu as de la marge pour continuer",
                     "Il faut accepter immédiatement",
-                    "L'offre est moins bonne que de partir"
+                    "L'offre est nettement moins bonne que de partir tout de suite"
                 ],
                 a: 0,
                 explication: "À 28 200 €, l'offre resterait meilleure que partir, mais continuer coûterait plus que cela ne rapporterait."
@@ -47,7 +47,7 @@ window.QUIZ = {
                 options: [
                     "Pendant, par la fermeté",
                     "Avant la négociation, en améliorant sa solution de rechange",
-                    "À la fin, en menaçant de partir"
+                    "À la toute fin, en menaçant clairement de partir sans accord"
                 ],
                 a: 1,
                 explication: "Obtenir une deuxième proposition déplace le point de rupture."
@@ -55,8 +55,8 @@ window.QUIZ = {
             {
                 q: "Que dit la solution de rechange de l'autre ?",
                 options: [
-                    "Ce qu'il pense de toi",
-                    "Son budget exact",
+                    "Ce qu'il pense vraiment de toi",
+                    "Son budget exact, au centime",
                     "Jusqu'où il peut aller"
                 ],
                 a: 2,
@@ -81,8 +81,8 @@ window.QUIZ = {
                 q: "Maximum acheteur 32 000 €, minimum vendeur 27 000 € : que se joue-t-il ?",
                 options: [
                     "Le partage de 5 000 €, pas l'accord lui-même",
-                    "La possibilité d'un accord",
-                    "Le choix du point médian"
+                    "La possibilité même d'un accord entre les deux",
+                    "Le choix du point médian entre les deux prix annoncés"
                 ],
                 a: 0,
                 explication: "Tout ce qui sera dit servira à déplacer le curseur dans cette fourchette."
@@ -90,7 +90,7 @@ window.QUIZ = {
             {
                 q: "Que faire quand il n'existe aucune zone d'accord sur le prix ?",
                 options: [
-                    "Insister et répéter les arguments",
+                    "Insister et répéter les arguments déjà donnés une fois de plus",
                     "Faire durer pour user l'autre",
                     "Ajouter une variable : délai, volume, garantie, services"
                 ],
@@ -100,8 +100,8 @@ window.QUIZ = {
             {
                 q: "Faut-il annoncer sa limite maximale ?",
                 options: [
-                    "Oui, pour gagner du temps",
-                    "Oui, si l'autre le demande",
+                    "Oui, pour gagner du temps sur la discussion",
+                    "Oui, si l'autre partie le demande clairement",
                     "Non : l'annoncer revient à l'offrir"
                 ],
                 a: 2,
@@ -112,8 +112,8 @@ window.QUIZ = {
                 q: "Que signifie l'absence de zone d'accord ?",
                 options: [
                     "Aucun prix ne convient aux deux en l'état",
-                    "L'un des deux ment sur sa limite",
-                    "Il faut couper la différence"
+                    "L'un des deux ment forcément sur sa limite",
+                    "Il faut couper la différence en deux parts"
                 ],
                 a: 0,
                 explication: "C'est une information précieuse : elle évite des semaines perdues."
@@ -166,7 +166,7 @@ window.QUIZ = {
             {
                 q: "Quand vaut-il mieux laisser l'autre ouvrir ?",
                 options: [
-                    "Quand on est en position de force",
+                    "Quand on se trouve en position de force évidente",
                     "Quand la relation doit durer",
                     "Quand on ignore la valeur de ce qui se négocie"
                 ],
@@ -178,8 +178,8 @@ window.QUIZ = {
                 q: "Que produit une première offre très éloignée du marché ?",
                 options: [
                     "Elle disqualifie plutôt qu'elle ne déplace",
-                    "Elle donne un avantage décisif",
-                    "Elle n'a aucun effet"
+                    "Elle donne un avantage décisif dès le départ",
+                    "Elle n'a aucun effet mesurable sur l'accord"
                 ],
                 a: 0,
                 explication: "L'autre en conclut que tu ne connais pas le sujet, ou que tu ne négocies pas de bonne foi."
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "Elle est ambitieuse et défendable en une phrase",
                     "Elle est la plus élevée possible",
-                    "Elle est proche de l'objectif réel"
+                    "Elle est très proche de l'objectif réellement visé"
                 ],
                 a: 0,
                 explication: "L'ambition sans justification se retourne contre celui qui l'annonce."
@@ -223,7 +223,7 @@ window.QUIZ = {
                 q: "Que se passe-t-il tant qu'on discute des positions ?",
                 options: [
                     "Chacun défend ses arguments",
-                    "L'accord se rapproche",
+                    "L'accord se rapproche nettement",
                     "Il n'existe qu'un partage"
                 ],
                 a: 2,
@@ -234,7 +234,7 @@ window.QUIZ = {
                 options: [
                     "Étaler le paiement, détailler le devis, ou ajuster le périmètre",
                     "Proposer 7,5 %",
-                    "Refuser et attendre"
+                    "Refuser l'offre et attendre la réponse d'en face pendant quelques jours"
                 ],
                 a: 0,
                 explication: "Aucune de ces trois solutions n'apparaît tant qu'on discute du pourcentage."
@@ -265,7 +265,7 @@ window.QUIZ = {
                 options: [
                     "Trois arguments de repli",
                     "Ce qui me coûte peu et lui rapporte beaucoup",
-                    "Le moment où je vais céder"
+                    "Le moment précis où j'accepterai de céder du terrain"
                 ],
                 a: 1,
                 explication: "Un délai, une référence, une exclusivité, une souplesse de calendrier."
@@ -279,7 +279,7 @@ window.QUIZ = {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
                 "Il faut savoir tenir sa position",
-                "Le meilleur négociateur est le plus patient",
+                "Le meilleur négociateur est toujours celui qui reste le plus patient",
                 "Une négociation se calcule en grande partie avant de commencer"
             ],
             a: 2,
@@ -290,7 +290,7 @@ window.QUIZ = {
             options: [
                 "Les deux doivent être annoncées tôt",
                 "Les deux servent à décider, pas à communiquer",
-                "Les deux se calculent après la première offre"
+                "Les deux se calculent après avoir entendu la première offre"
             ],
             a: 1,
             explication: "Les annoncer revient à les offrir."

@@ -16,7 +16,7 @@ window.QUIZ = {
                 options: [
                     "C'est une intention supposée : la seule réponse possible est de la nier",
                     "C'est trop direct",
-                    "Cela manque de preuves chiffrées"
+                    "Cela manque de preuves chiffrées et de dates précises que l'on pourrait citer"
                 ],
                 a: 0,
                 explication: "Un fait se discute ; une intention prêtée ne se discute pas."
@@ -24,8 +24,8 @@ window.QUIZ = {
             {
                 q: "Quelle règle permet de s'en tenir aux faits ?",
                 options: [
-                    "Citer des chiffres",
-                    "Rester sur le passé récent",
+                    "Citer des chiffres précis et des dates exactes",
+                    "Rester sur les faits du passé le plus récent",
                     "Décrire ce qu'une caméra aurait enregistré"
                 ],
                 a: 2,
@@ -56,7 +56,7 @@ window.QUIZ = {
                 q: "Quelles deux conditions matérielles pèsent autant que la formulation ?",
                 options: [
                     "Par écrit, et avec un témoin",
-                    "En début de semaine, et brièvement",
+                    "En début de semaine, et le plus brièvement possible pour tous",
                     "En tête-à-tête, et avec du temps prévu pour la réponse"
                 ],
                 a: 2,
@@ -65,9 +65,9 @@ window.QUIZ = {
             {
                 q: "Que risque-t-on à présenter une décision déjà prise comme une discussion ouverte ?",
                 options: [
-                    "De prolonger la réunion",
+                    "De prolonger inutilement la réunion déjà commencée",
                     "De perdre la confiance de son interlocuteur",
-                    "Rien, c'est diplomatique"
+                    "Rien du tout, c'est une simple formule diplomatique"
                 ],
                 a: 1,
                 explication: "Il faut distinguer ce qui est négociable de ce qui ne l'est pas."
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Que dit le biais du coût irrécupérable ?",
                 options: [
-                    "Plus on investit, plus on doit persévérer",
+                    "Plus on investit dans un projet, plus il faut persévérer ensuite",
                     "Il faut amortir l'effort consenti",
                     "Le temps déjà passé ne devrait rien changer à la décision"
                 ],
@@ -90,9 +90,9 @@ window.QUIZ = {
             {
                 q: "Quel biais empêche de trouver les accords créatifs ?",
                 options: [
-                    "L'excès de confiance",
+                    "L'excès de confiance dans ses propres arguments préparés",
                     "Supposer que ce que l'un gagne, l'autre le perd",
-                    "La peur du conflit"
+                    "La peur du conflit ouvert avec l'autre partie présente"
                 ],
                 a: 1,
                 explication: "Il ferme la recherche d'échanges asymétriques."
@@ -100,7 +100,7 @@ window.QUIZ = {
             {
                 q: "Connaître un biais suffit-il à s'en protéger ?",
                 options: [
-                    "Oui, la connaissance suffit",
+                    "Oui, la seule connaissance du biais suffit à s'en prémunir durablement",
                     "Oui, après entraînement",
                     "Non : l'ancrage a été mesuré chez des experts prévenus du dispositif"
                 ],
@@ -121,7 +121,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce que l'engagement par cohérence ?",
                 options: [
-                    "Tenir ses engagements contractuels",
+                    "Tenir ses engagements contractuels jusqu'au bout, quoi qu'il arrive",
                     "Répéter le même argument",
                     "S'accrocher à un chiffre annoncé pour ne pas paraître changeant"
                 ],
@@ -157,7 +157,7 @@ window.QUIZ = {
                 q: "Qu'est-ce que le grignotage final ?",
                 options: [
                     "Une demande supplémentaire une fois l'accord presque conclu",
-                    "Une série de petites concessions",
+                    "Une série de petites concessions successives arrachées une à une",
                     "Un refus de conclure"
                 ],
                 a: 0,
@@ -166,9 +166,9 @@ window.QUIZ = {
             {
                 q: "Quel est le vrai rempart contre tous ces procédés ?",
                 options: [
-                    "L'expérience",
+                    "L'expérience déjà accumulée",
                     "Ta solution de rechange",
-                    "Un contrat écrit"
+                    "Un contrat écrit et signé"
                 ],
                 a: 1,
                 explication: "Ils supposent tous que tu ne puisses pas partir."
@@ -179,7 +179,7 @@ window.QUIZ = {
                 options: [
                     "Une autorité absente, invérifiable, qui déplace la négociation",
                     "Une contrainte réelle à respecter",
-                    "Une invitation à monter d'un niveau"
+                    "Une invitation à monter d'un niveau hiérarchique dans la discussion"
                 ],
                 a: 0,
                 explication: "Elle déplace la discussion vers quelqu'un d'introuvable."
@@ -189,7 +189,7 @@ window.QUIZ = {
                 options: [
                     "Ils fonctionnent d'autant mieux que l'autre n'a nulle part où aller",
                     "Parce que les enjeux y sont plus élevés",
-                    "Parce que les parties se connaissent moins"
+                    "Parce que les parties se connaissent beaucoup moins bien entre elles"
                 ],
                 a: 0,
                 explication: "C'est la même raison qui fait de la solution de rechange la protection générale."
@@ -197,7 +197,7 @@ window.QUIZ = {
             {
                 q: "Que coûte le fait de répliquer par les mêmes armes ?",
                 options: [
-                    "Rien, c'est de bonne guerre",
+                    "Rien du tout, c'est simplement de bonne guerre entre professionnels",
                     "La possibilité d'échanges asymétriques, et la relation",
                     "Du temps uniquement"
                 ],
@@ -214,7 +214,7 @@ window.QUIZ = {
                 options: [
                     "810 € de temps consommé, soit 54 % de l'écart restant",
                     "Un coût négligeable",
-                    "2 700 €, soit davantage que l'écart"
+                    "2 700 €, soit bien davantage encore que l'écart qui reste"
                 ],
                 a: 0,
                 explication: "L'écart justifie encore de discuter, mais de justesse."
@@ -222,7 +222,7 @@ window.QUIZ = {
             {
                 q: "Le même blocage étiré sur vingt semaines coûte :",
                 options: [
-                    "810 €",
+                    "810 €, soit une part encore modeste du total",
                     "2 700 €, soit 180 % de l'écart restant",
                     "Le même montant, le temps ne se compte pas"
                 ],
@@ -232,9 +232,9 @@ window.QUIZ = {
             {
                 q: "Pourquoi ce calcul n'est-il jamais fait ?",
                 options: [
-                    "Il est trop complexe",
+                    "Il est bien trop complexe à mener jusqu'au bout",
                     "Il donne généralement tort aux deux camps",
-                    "Les données manquent"
+                    "Les données nécessaires manquent le plus souvent"
                 ],
                 a: 1,
                 explication: "C'est pourtant une multiplication et une comparaison."
@@ -253,9 +253,9 @@ window.QUIZ = {
             {
                 q: "Quitter la table, qu'est-ce que c'est ?",
                 options: [
-                    "Un échec de la négociation",
+                    "Un échec pur et simple de la négociation",
                     "L'exercice de ta solution de rechange",
-                    "Une menace tactique"
+                    "Une menace purement tactique et calculée"
                 ],
                 a: 1,
                 explication: "C'est l'usage de ce qui te donnait du pouvoir depuis le début."
@@ -263,8 +263,8 @@ window.QUIZ = {
             {
                 q: "Que produit la fatigue d'une négociation longue ?",
                 options: [
-                    "On devient plus exigeant",
-                    "On négocie mieux, par habitude",
+                    "On devient nettement plus exigeant avec le temps qui passe",
+                    "On négocie mieux, simplement par habitude bien acquise",
                     "On accepte ce qu'on aurait refusé au premier jour"
                 ],
                 a: 2,
