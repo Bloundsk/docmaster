@@ -1,5 +1,79 @@
 # Changelog — Clicked
 
+## 2026-09-09 — La longueur ne dit plus la réponse
+
+### Le chiffre de départ
+
+Sur les 2 532 questions du site, **« prendre la plus longue des trois options »
+rapportait 81,1 % de bonnes réponses** — le hasard en vaut 33,3. La bonne
+réponse dépassait le plus long distracteur de **17 caractères en médiane**. Il
+n'était pas nécessaire de savoir : il suffisait de compter les lignes.
+
+| Stratégie aveugle | Avant | Après |
+|---|---|---|
+| Prendre la plus longue des trois | **81,1 %** | **34,6 %** |
+| Écarter la troisième, puis la plus longue | 86,4 % | 35,2 % |
+| Écarter la troisième, puis tirer au sort | 49,8 % | 34,4 % |
+| Écart médian (bonne − plus long faux) | 17 car. | −3 car. |
+
+### La méthode : donner au distracteur sa raison d'être
+
+**On n'ampute pas la bonne réponse.** Sa précision est sa fonction — c'est elle
+qui apprend quelque chose. On donne au distracteur le raisonnement de celui qui
+y croit :
+
+- « Un camembert » → « Un camembert, qui montre bien le poids de chacun »
+- « La plus élevée possible » → « La plus élevée possible, pour pouvoir réagir sans délai »
+- « Elle est faux » → « Ils sont faux, tout simplement, et trompeurs »
+
+Le distracteur gagne en longueur **et** en plausibilité. Les deux défauts
+comptés le 8 septembre — la longueur, et les 20 % de mauvaises réponses
+invraisemblables — se corrigent donc d'un même geste.
+
+**Environ 1 900 distracteurs réécrits**, quatorze parcours, deux langues.
+
+### Une erreur que la mesure a rattrapée
+
+À force de convertir « la bonne réponse est la plus longue » en « elle est au
+milieu », **c'est la médiane qui devenait devinable** : 52 % sur dev-web, 47 %
+sur Data anglais et sur Design. J'avais corrigé la première stratégie sans
+regarder les deux autres — le défaut ne disparaissait pas, il se déplaçait.
+
+C'est pour cela que le contrôle mesure **les trois** stratégies, et non celle
+qui avait motivé le travail.
+
+### Ce que l'anglais a coûté en plus
+
+Traduits tels quels, les distracteurs français restaient trop courts : l'anglais
+est plus compact, et la bonne réponse y redevenait la plus longue une fois sur
+deux. Chaque parcours a demandé une passe d'ajustement supplémentaire côté
+anglais — et le script de réécriture affiche désormais, pour chaque texte, s'il
+dépasse ou non la bonne réponse. Sans ce compteur, je réécrivais à l'estime et
+je me trompais une fois sur trois.
+
+### Ce qui n'a pas été touché, et pourquoi
+
+- **Les échelles ordonnées** (« 2 ans / 5 ans / 10 ans ») : leur ordre porte du
+  sens, et les allonger ferait du bruit.
+- **Les options miroir** (« 61 % contre 40 % » / « 40 % contre 61 % ») :
+  allonger l'une casserait la symétrie qui fait la question.
+- **Les exemples de mots de passe**, les noms de domaine d'une adresse piégée,
+  les variantes de la règle 3-2-1 : un mot de passe fort EST plus long, un
+  domaine ne se rallonge pas, un parallélisme se casse.
+- **Cinq questions d'Entrepreneuriat** dont la bonne réponse dépasse 90
+  caractères : gonfler un distracteur jusque-là produirait une phrase que
+  personne n'écrirait.
+
+### Le dix-septième contrôle
+
+`scripts/verifier-longueur-quiz.mjs` refuse qu'une stratégie aveugle dépasse
+42 % sur une langue, 60 % sur une banque isolée — une banque ne fait que trente
+questions, le bruit d'échantillonnage y vaut à lui seul une dizaine de points —
+et qu'un écart médian dépasse 8 caractères.
+
+Vérifié en le lançant sur les banques d'avant correction : **81 % et 17
+caractères**, refusé sur douze banques nommées.
+
 ## 2026-09-08, tard — La bonne réponse n'est plus toujours au même endroit
 
 ### Le chiffre qui a lancé ce travail
