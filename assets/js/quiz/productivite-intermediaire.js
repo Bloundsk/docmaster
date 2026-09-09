@@ -14,9 +14,9 @@ window.QUIZ = {
             {
                 q: "Après une interruption, combien de temps faut-il pour retrouver sa concentration sur une tâche exigeante ?",
                 options: [
-                    "Quelques secondes",
+                    "Quelques secondes tout au plus, en général",
                     "De l'ordre de quinze à vingt minutes",
-                    "Une heure environ"
+                    "Une heure environ, parfois même davantage"
                 ],
                 a: 1,
                 explication: "C'est pourquoi une coupure de deux minutes en coûte vingt."
@@ -46,7 +46,7 @@ window.QUIZ = {
                 q: "Couper les notifications suffit-il à protéger sa concentration ?",
                 options: [
                     "Oui, c'est la mesure décisive",
-                    "Oui, à condition de les couper toute la journée",
+                    "Oui, à condition de les couper pendant la journée entière",
                     "Non, si l'on va vérifier soi-même toutes les dix minutes"
                 ],
                 a: 2,
@@ -57,7 +57,7 @@ window.QUIZ = {
                 options: [
                     "Pour justifier le temps passé",
                     "Parce que cela raccourcit nettement la reprise",
-                    "Pour partager l'avancement à l'équipe"
+                    "Pour partager l'avancement du travail à toute l'équipe"
                 ],
                 a: 1,
                 explication: "Le contexte est alors sur le papier plutôt qu'à reconstruire de mémoire."
@@ -67,7 +67,7 @@ window.QUIZ = {
                 options: [
                     "Pour faire respecter son statut",
                     "Pour que les autres n'aient pas à interrompre",
-                    "Pour éviter d'avoir à répondre ensuite"
+                    "Pour éviter d'avoir à répondre juste après coup"
                 ],
                 a: 1,
                 explication: "L'interruption devient inutile plutôt que d'être seulement refusée."
@@ -80,7 +80,7 @@ window.QUIZ = {
             {
                 q: "Que dit une liste de tâches que l'agenda dit mieux ?",
                 options: [
-                    "Elle dit quand, mais pas quoi",
+                    "Elle dit quand, mais jamais quoi faire",
                     "Elle dit combien de temps cela prendra",
                     "Elle dit quoi faire, mais pas quand"
                 ],
@@ -102,7 +102,7 @@ window.QUIZ = {
                 options: [
                     "Une tâche tend à occuper tout le temps qu'on lui alloue",
                     "Le travail augmente avec le nombre de participants",
-                    "Les tâches urgentes chassent les tâches importantes"
+                    "Les tâches urgentes chassent toujours les tâches importantes"
                 ],
                 a: 0,
                 explication: "D'où l'intérêt de fixer une durée avant de commencer, même arbitrairement."
@@ -158,7 +158,7 @@ window.QUIZ = {
                 options: [
                     "En convenant d'un canal réservé aux vraies urgences",
                     "En vérifiant quand même toutes les heures",
-                    "En prévenant chaque expéditeur individuellement"
+                    "En prévenant chaque expéditeur individuellement du délai"
                 ],
                 a: 0,
                 explication: "Le téléphone, généralement. Cela suffit à débloquer la crainte."
@@ -224,7 +224,7 @@ window.QUIZ = {
                 options: [
                     "Combien de temps cela va-t-il prendre ?",
                     "Qu'est-ce que je ne ferai pas si je dis oui ?",
-                    "Est-ce que quelqu'un d'autre peut le faire ?"
+                    "Est-ce que quelqu'un d'autre pourrait le faire à ma place ?"
                 ],
                 a: 1,
                 explication: "Si la réponse est « rien d'important », c'est un vrai oui."
@@ -255,7 +255,7 @@ window.QUIZ = {
                 options: [
                     "Parce qu'il est plus difficile",
                     "Parce qu'il reste silencieux, contrairement à l'urgent",
-                    "Parce qu'il concerne surtout le long terme"
+                    "Parce qu'il concerne surtout le long terme, jamais l'immédiat"
                 ],
                 a: 1,
                 explication: "Il faut lui réserver du temps, sans quoi l'urgent le remplit intégralement."
@@ -263,7 +263,7 @@ window.QUIZ = {
             {
                 q: "Que faire d'une liste de tâches qui s'allonge depuis six mois ?",
                 options: [
-                    "La reporter au trimestre suivant",
+                    "La reporter tout entière au trimestre suivant, sans la lire",
                     "La revoir et supprimer ce qui ne sera jamais fait",
                     "La découper en sous-tâches"
                 ],
@@ -279,7 +279,7 @@ window.QUIZ = {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
                 "Protéger l'attention plutôt que multiplier les tâches",
-                "Remplir l'agenda plus efficacement",
+                "Remplir son agenda de façon beaucoup plus efficace",
                 "Adopter le bon outil de gestion"
             ],
             a: 0,
@@ -288,8 +288,8 @@ window.QUIZ = {
         {
             q: "Qu'ont en commun le traitement au fil de l'eau et le travail prétendument parallèle ?",
             options: [
-                "Les deux économisent du temps",
-                "Les deux supposent un bon outil",
+                "Les deux économisent du temps de travail utile",
+                "Les deux supposent un bon outil numérique dédié",
                 "Les deux paient un coût de bascule répété"
             ],
             a: 2,
@@ -318,7 +318,7 @@ window.QUIZ = {
         {
             q: "Un collègue dit consacrer sa matinée aux messages « pour être tranquille ensuite ». Quel est le problème ?",
             options: [
-                "Il traite les messages trop lentement",
+                "Il traite ses messages beaucoup trop lentement le matin",
                 "Il donne son meilleur créneau aux priorités des autres",
                 "Il devrait les traiter en trois lots"
             ],

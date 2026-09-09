@@ -13,7 +13,7 @@ window.QUIZ = {
             {
                 q: "Quel est le rythme de base de la méthode Pomodoro ?",
                 options: [
-                    "50 minutes de travail, 10 de pause",
+                    "50 minutes de travail suivies de 10 minutes de pause complète",
                     "90 minutes de travail, 20 de pause",
                     "25 minutes sans interruption, puis 5 minutes de pause"
                 ],
@@ -23,7 +23,7 @@ window.QUIZ = {
             {
                 q: "Contre quoi la méthode agit-elle en premier lieu ?",
                 options: [
-                    "La fatigue de fin de journée",
+                    "La fatigue de fin de journée, qui rend chaque tâche plus difficile",
                     "Le manque de compétences",
                     "La procrastination : un engagement court est facile à prendre"
                 ],
@@ -33,9 +33,9 @@ window.QUIZ = {
             {
                 q: "Que faire d'une idée qui surgit pendant un pomodoro ?",
                 options: [
-                    "La traiter immédiatement",
+                    "La traiter immédiatement, sans attendre",
                     "La noter sur un papier et reprendre",
-                    "L'oublier volontairement"
+                    "L'oublier volontairement et continuer"
                 ],
                 a: 1,
                 explication: "Reprendre le fil après une coupure demande plusieurs minutes de remise en route."
@@ -79,7 +79,7 @@ window.QUIZ = {
             {
                 q: "Sur quel constat repose la méthode GTD ?",
                 options: [
-                    "La mémoire est excellente pour stocker",
+                    "La mémoire est excellente pour stocker durablement les tâches",
                     "Il faut travailler plus longtemps",
                     "La mémoire est bonne pour réfléchir et mauvaise pour stocker"
                 ],
@@ -90,7 +90,7 @@ window.QUIZ = {
                 q: "Quelles sont les cinq étapes de GTD ?",
                 options: [
                     "Planifier, déléguer, exécuter, contrôler, archiver",
-                    "Lister, prioriser, découper, faire, célébrer",
+                    "Lister, prioriser, découper, faire, puis célébrer le résultat",
                     "Collecter, clarifier, organiser, réviser, agir"
                 ],
                 a: 2,
@@ -120,7 +120,7 @@ window.QUIZ = {
             {
                 q: "Quelle étape tout le monde abandonne en premier, alors qu'elle fait tenir le système ?",
                 options: [
-                    "La collecte",
+                    "La collecte quotidienne",
                     "La revue hebdomadaire",
                     "L'organisation par contexte"
                 ],
@@ -130,9 +130,9 @@ window.QUIZ = {
             {
                 q: "Quel est le but réel de GTD ?",
                 options: [
-                    "Tout faire dans la journée",
+                    "Tout faire dans la même journée",
                     "N'avoir plus rien à retenir",
-                    "Travailler plus vite"
+                    "Travailler nettement plus vite"
                 ],
                 a: 1,
                 explication: "Un esprit déchargé réfléchit mieux. C'est la charge mentale que la méthode vise, pas la vitesse."
@@ -155,9 +155,9 @@ window.QUIZ = {
             {
                 q: "Quel quadrant a l'effet le plus durable ?",
                 options: [
-                    "Urgent et important",
+                    "Urgent et important à la fois",
                     "Important mais non urgent",
-                    "Urgent mais peu important"
+                    "Urgent mais assez peu important"
                 ],
                 a: 1,
                 explication: "Se former, prévenir, entretenir ses relations : rien n'a de date limite, donc rien ne s'impose jamais."
@@ -167,7 +167,7 @@ window.QUIZ = {
                 options: [
                     "D'événements imprévisibles",
                     "Des tâches importantes non urgentes négligées il y a six mois",
-                    "D'une mauvaise organisation des collègues"
+                    "D'une mauvaise organisation des collègues de l'équipe voisine"
                 ],
                 a: 1,
                 explication: "Une compétence non entretenue devient une urgence de reconversion ; un contrôle repoussé devient une panne."
@@ -197,7 +197,7 @@ window.QUIZ = {
                 q: "Que signifie un quadrant « supprimer » resté vide ?",
                 options: [
                     "Que tu es bien organisé",
-                    "Que tes tâches sont toutes utiles",
+                    "Que toutes tes tâches sont réellement utiles au projet en cours",
                     "Que tu n'as renoncé à rien : l'exercice n'a pas joué son rôle"
                 ],
                 a: 2,
@@ -213,7 +213,7 @@ window.QUIZ = {
                 options: [
                     "Il rend visible une organisation qui existe déjà, ou son absence",
                     "Il rend organisé",
-                    "Il remplace la méthode"
+                    "Il remplace complètement la méthode de travail de celui qui l'installe"
                 ],
                 a: 0,
                 explication: "Aucun outil ne compense l'absence de système."
@@ -232,7 +232,7 @@ window.QUIZ = {
                 q: "Que produisent trois applications de tâches utilisées en parallèle ?",
                 options: [
                     "La certitude qu'aucune n'est à jour",
-                    "Une couverture plus complète",
+                    "Une couverture nettement plus complète",
                     "Une meilleure répartition par contexte"
                 ],
                 a: 0,
@@ -244,7 +244,7 @@ window.QUIZ = {
                 options: [
                     "Les premiers jours d'utilisation",
                     "La troisième semaine, quand l'enthousiasme est retombé",
-                    "Le nombre de tâches saisies le premier mois"
+                    "Le nombre de tâches saisies pendant le premier mois d'usage"
                 ],
                 a: 1,
                 explication: "Tout outil paraît formidable au début : c'est la nouveauté qui plaît, pas l'outil."
@@ -253,7 +253,7 @@ window.QUIZ = {
                 q: "Quelle est la principale limite de Notion pour la gestion de tâches ?",
                 options: [
                     "Il est payant",
-                    "Il ne fonctionne pas hors ligne",
+                    "Il ne fonctionne pas du tout lorsque l'on se trouve hors ligne",
                     "Sa souplesse est un piège : on aménage au lieu de faire"
                 ],
                 a: 2,
@@ -262,8 +262,8 @@ window.QUIZ = {
             {
                 q: "Tu as changé d'outil trois fois cette année. Quel est le signal ?",
                 options: [
-                    "Tu affines ta méthode",
-                    "Le marché évolue vite",
+                    "Tu affines ta méthode de travail au fil du temps",
+                    "Le marché des outils évolue vraiment très vite",
                     "Le problème n'est probablement pas l'outil"
                 ],
                 a: 2,
@@ -290,9 +290,9 @@ window.QUIZ = {
         {
             q: "Combien de méthodes adopter à la fois ?",
             options: [
-                "Toutes, elles se complètent",
+                "Toutes, puisqu'elles se complètent parfaitement",
                 "Une seule, à laisser vivre trois semaines",
-                "Deux au minimum, pour comparer"
+                "Deux au minimum, pour pouvoir bien les comparer"
             ],
             a: 1,
             explication: "Empiler quatre systèmes revient à n'en avoir aucun."
@@ -322,7 +322,7 @@ window.QUIZ = {
             q: "Une tâche traîne sur ta liste depuis un mois. Quelle est la cause la plus probable ?",
             options: [
                 "Un manque de motivation",
-                "Elle n'est pas assez importante",
+                "Elle n'est pas assez importante pour toi en ce moment précis",
                 "Elle est mal formulée : ce n'est pas une action concrète"
             ],
             a: 2,
@@ -333,7 +333,7 @@ window.QUIZ = {
             options: [
                 "Celui que tu ouvriras encore dans trois semaines",
                 "Celui qui a le plus de fonctionnalités",
-                "Celui utilisé par les professionnels du secteur"
+                "Celui qu'utilisent tous les professionnels du secteur"
             ],
             a: 0,
             explication: "Tous les autres critères viennent loin derrière. Une feuille de papier tenue sérieusement bat un système abandonné."

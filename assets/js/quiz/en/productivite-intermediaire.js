@@ -15,7 +15,7 @@ window.QUIZ = {
             {
                 q: "After an interruption, how long does it take to regain concentration on a demanding task?",
                 options: [
-                    "A few seconds",
+                    "A few seconds at the very most, in practice",
                     "On the order of fifteen to twenty minutes",
                     "About an hour"
                 ],
@@ -47,7 +47,7 @@ window.QUIZ = {
                 q: "Is turning off notifications enough to protect concentration?",
                 options: [
                     "Yes, it is the decisive measure",
-                    "Yes, provided you turn them off all day",
+                    "Yes, provided you turn them off for the whole day",
                     "No, if you check for yourself every ten minutes"
                 ],
                 a: 2,
@@ -58,7 +58,7 @@ window.QUIZ = {
                 options: [
                     "To justify the time spent",
                     "Because it markedly shortens getting back in",
-                    "To share progress with the team"
+                    "To share your progress with the rest of the team"
                 ],
                 a: 1,
                 explication: "The context is then on paper rather than to be rebuilt from memory."
@@ -68,7 +68,7 @@ window.QUIZ = {
                 options: [
                     "To assert your status",
                     "So that others do not have to interrupt",
-                    "To avoid having to reply afterwards"
+                    "To avoid having to reply to anybody afterwards"
                 ],
                 a: 1,
                 explication: "The interruption becomes unnecessary rather than merely refused."
@@ -81,8 +81,8 @@ window.QUIZ = {
             {
                 q: "What does a calendar say better than a task list?",
                 options: [
-                    "The list says when, but not what",
-                    "The list says how long it will take",
+                    "The list says when, but never what to do",
+                    "The list says how long each item will take",
                     "The list says what to do, but not when"
                 ],
                 a: 2,
@@ -102,7 +102,7 @@ window.QUIZ = {
                 q: "What does Parkinson's law say?",
                 options: [
                     "A task tends to fill all the time allotted to it",
-                    "Work grows with the number of participants",
+                    "Work grows with the number of participants involved",
                     "Urgent tasks drive out important ones"
                 ],
                 a: 0,
@@ -132,7 +132,7 @@ window.QUIZ = {
             {
                 q: "What does it reveal when the tasks do not fit in the calendar?",
                 options: [
-                    "That you should work faster",
+                    "That you ought to be working a lot faster",
                     "That there are too many of them",
                     "That the calendar is badly designed"
                 ],
@@ -167,7 +167,7 @@ window.QUIZ = {
             {
                 q: "What principle actually empties an inbox?",
                 options: [
-                    "Replying to everything the same day",
+                    "Replying to absolutely everything on that very same day",
                     "Touching each item once, and deciding immediately",
                     "Archiving everything each Friday"
                 ],
@@ -223,9 +223,9 @@ window.QUIZ = {
             {
                 q: "What question should you ask before accepting a request?",
                 options: [
-                    "How long will it take?",
+                    "How long is this going to take me?",
                     "What will I not do if I say yes?",
-                    "Could someone else do it?"
+                    "Could somebody else do it instead?"
                 ],
                 a: 1,
                 explication: "If the answer is “nothing important”, it is a real yes."
@@ -256,7 +256,7 @@ window.QUIZ = {
                 options: [
                     "Because it is harder",
                     "Because it stays silent, unlike the urgent",
-                    "Because it mostly concerns the long term"
+                    "Because it mostly concerns the long term, never today"
                 ],
                 a: 1,
                 explication: "You have to reserve time for it, or the urgent fills the day entirely."
@@ -264,7 +264,7 @@ window.QUIZ = {
             {
                 q: "What should you do with a task list that has been growing for six months?",
                 options: [
-                    "Push it to the next quarter",
+                    "Push the whole thing to the next quarter instead",
                     "Review it and delete what will never be done",
                     "Break it into sub-tasks"
                 ],
@@ -280,7 +280,7 @@ window.QUIZ = {
             q: "What is the thread running through this level?",
             options: [
                 "Protecting attention rather than multiplying tasks",
-                "Filling the calendar more efficiently",
+                "Filling the calendar a good deal more efficiently than before",
                 "Adopting the right management tool"
             ],
             a: 0,
@@ -289,8 +289,8 @@ window.QUIZ = {
         {
             q: "What do handling messages as they come and supposedly parallel work have in common?",
             options: [
-                "Both save time",
-                "Both require a good tool",
+                "Both save a certain amount of working time",
+                "Both require a good dedicated tool to work",
                 "Both pay a repeated switching cost"
             ],
             a: 2,
@@ -300,8 +300,8 @@ window.QUIZ = {
             q: "Why do a 100% plan and a list that never shrinks fail for the same reason?",
             options: [
                 "Both refuse to make a trade-off",
-                "Both lack method",
-                "Both depend on software"
+                "Both of them plainly lack method",
+                "Both depend entirely on software"
             ],
             a: 0,
             explication: "Neither the calendar nor the list drops anything: reality does it, in a hurry."
@@ -310,7 +310,7 @@ window.QUIZ = {
             q: "Which measure in this level costs least and pays most?",
             options: [
                 "An hour of deep work before opening your mail",
-                "Changing task management tool",
+                "Changing your task management tool for another",
                 "Adding two hours to the day"
             ],
             a: 0,

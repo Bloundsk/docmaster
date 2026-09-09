@@ -35,7 +35,7 @@ window.QUIZ = {
                 q: "Que produit l'ajout de deux heures le soir à une journée déjà pleine ?",
                 options: [
                     "Un gain net de deux heures de travail",
-                    "Un gain, à condition de compenser le week-end",
+                    "Un gain net, à condition de compenser pendant le week-end",
                     "Des heures de faible rendement, et un lendemain dégradé"
                 ],
                 a: 2,
@@ -45,7 +45,7 @@ window.QUIZ = {
             {
                 q: "Qu'est-ce qui distingue une pause efficace ?",
                 options: [
-                    "Sa durée",
+                    "Sa durée totale, en minutes complètes",
                     "Le fait qu'elle soit prise à heure fixe",
                     "Le fait qu'elle change de registre"
                 ],
@@ -66,7 +66,7 @@ window.QUIZ = {
                 q: "Pourquoi la baisse de rendement due à l'absence de pause passe-t-elle inaperçue ?",
                 options: [
                     "Parce qu'elle est faible",
-                    "Parce qu'elle n'apparaît qu'après plusieurs semaines",
+                    "Parce qu'elle n'apparaît qu'après plusieurs semaines de suite",
                     "Parce qu'on continue d'être occupé tout en produisant moins"
                 ],
                 a: 2,
@@ -90,9 +90,9 @@ window.QUIZ = {
             {
                 q: "Quel effet a l'ajout de vingt secondes d'effort devant un geste ?",
                 options: [
-                    "Aucun, c'est négligeable",
+                    "Aucun effet, c'est parfaitement négligeable",
                     "Cela réduit fortement sa fréquence",
-                    "Cela le rend plus gratifiant"
+                    "Cela le rend au contraire plus gratifiant"
                 ],
                 a: 1,
                 explication: "Et en retirer vingt l'augmente d'autant. C'est le levier le plus puissant du domaine."
@@ -100,8 +100,8 @@ window.QUIZ = {
             {
                 q: "En quoi consiste l'ancrage d'une habitude ?",
                 options: [
-                    "La noter dans son agenda",
-                    "S'engager publiquement à la tenir",
+                    "La noter très soigneusement dans son agenda",
+                    "S'engager publiquement à la tenir chaque jour",
                     "La rattacher à une action déjà automatique"
                 ],
                 a: 2,
@@ -113,7 +113,7 @@ window.QUIZ = {
                 options: [
                     "Ne jamais manquer deux fois de suite",
                     "Rattraper le lendemain ce qui a été manqué",
-                    "Recommencer la série depuis zéro"
+                    "Recommencer toute la série depuis zéro"
                 ],
                 a: 0,
                 explication: "Une journée manquée est un accident ; deux, c'est le début d'un abandon."
@@ -146,9 +146,9 @@ window.QUIZ = {
             {
                 q: "Combien coûte réellement une réunion ?",
                 options: [
-                    "Sa durée",
+                    "Sa durée totale, mesurée en heures de présence",
                     "Sa durée multipliée par le nombre de participants",
-                    "Le temps de préparation de l'animateur"
+                    "Le temps de préparation de l'animateur de la réunion"
                 ],
                 a: 1,
                 explication: "Une heure à huit personnes, c'est une journée de travail entière."
@@ -166,7 +166,7 @@ window.QUIZ = {
             {
                 q: "Pourquoi l'écrit coûte-t-il moins cher que le synchrone ?",
                 options: [
-                    "Parce qu'il est plus rapide à produire",
+                    "Parce qu'il est nettement plus rapide à produire et à faire circuler",
                     "Parce qu'il engage moins l'auteur",
                     "Parce que chacun lit quand il le peut, sans fragmenter sa journée"
                 ],
@@ -187,9 +187,9 @@ window.QUIZ = {
             {
                 q: "Que vaut une réunion qui se termine sans décision ni action attribuée ?",
                 options: [
-                    "Elle a maintenu la cohésion de l'équipe",
+                    "Elle a maintenu la cohésion de l'équipe entière",
                     "Elle n'a pas eu lieu : elle a occupé du temps",
-                    "Elle prépare la suivante"
+                    "Elle prépare directement celle de la semaine suivante"
                 ],
                 a: 1,
                 explication: "L'objet de décision est la première des trois conditions."
@@ -199,7 +199,7 @@ window.QUIZ = {
                 options: [
                     "Une équipe plus réactive",
                     "L'impossibilité du travail de fond, pour tout le monde simultanément",
-                    "Une meilleure circulation de l'information"
+                    "Une meilleure circulation de l'information dans l'équipe tout entière"
                 ],
                 a: 1,
                 explication: "Convenir explicitement des délais libère l'ensemble de l'équipe d'un coup."
@@ -213,8 +213,8 @@ window.QUIZ = {
                 q: "Que se passe-t-il sans moment de recul régulier ?",
                 options: [
                     "La dérive s'accumule jusqu'à l'abandon en bloc",
-                    "Le système se stabilise de lui-même",
-                    "Les tâches se hiérarchisent naturellement"
+                    "Le système finit toujours par se stabiliser de lui-même",
+                    "Les tâches se hiérarchisent naturellement d'elles-mêmes"
                 ],
                 a: 0,
                 explication: "Des engagements pris il y a six mois n'ont plus de sens, et personne ne décide de les abandonner."
@@ -232,7 +232,7 @@ window.QUIZ = {
             {
                 q: "Que faire quand un système d'organisation se dérègle ?",
                 options: [
-                    "En adopter un nouveau",
+                    "En adopter un nouveau tout de suite",
                     "Rétablir la revue régulière",
                     "Réduire le nombre de projets suivis"
                 ],
@@ -245,7 +245,7 @@ window.QUIZ = {
                 options: [
                     "Vider les boîtes, revoir les projets, planifier la semaine",
                     "Réviser ses objectifs annuels",
-                    "Comparer les outils disponibles"
+                    "Comparer les outils disponibles sur le marché en ce moment même"
                 ],
                 a: 0,
                 explication: "C'est la revue qui empêche l'accumulation."
@@ -265,7 +265,7 @@ window.QUIZ = {
                 options: [
                     "Parce qu'il ne reviendra pas, quoi qu'on fasse ensuite",
                     "Parce qu'il a été mal employé",
-                    "Parce qu'un autre projet est toujours plus rentable"
+                    "Parce qu'un autre projet est toujours plus rentable que celui-ci"
                 ],
                 a: 0,
                 explication: "Seule compte la valeur de ce qui reste à faire, pas celle de ce qui est dépensé."
@@ -278,7 +278,7 @@ window.QUIZ = {
         {
             q: "Quel est le fil conducteur de ce niveau ?",
             options: [
-                "Les méthodes les plus strictes sont les plus efficaces",
+                "Les méthodes les plus strictes sont toujours les plus efficaces",
                 "L'outil détermine la réussite d'un système",
                 "Ce qui tient sur des années ne dépend pas de la motivation"
             ],
@@ -289,7 +289,7 @@ window.QUIZ = {
             q: "Qu'ont en commun le réglage de l'environnement et le passage à l'asynchrone ?",
             options: [
                 "Les deux réclament un logiciel dédié",
-                "Les deux fonctionnent seulement en équipe",
+                "Les deux ne fonctionnent qu'en équipe, jamais pour une seule personne",
                 "Les deux suppriment un effort au lieu de demander plus de discipline"
             ],
             a: 2,
@@ -310,7 +310,7 @@ window.QUIZ = {
             options: [
                 "L'habitude repose sur la motivation plutôt que sur l'environnement",
                 "Elle manque de discipline",
-                "Elle a choisi la mauvaise habitude"
+                "Elle a simplement choisi la mauvaise habitude au départ, voilà tout"
             ],
             a: 0,
             explication: "Ancrage, version minimale, friction retirée, règle de reprise : ce sont ces éléments qui manquent presque toujours."
@@ -329,7 +329,7 @@ window.QUIZ = {
             q: "Que reste-t-il si l'on n'applique qu'une seule chose de ce niveau ?",
             options: [
                 "Placer le travail difficile dans son meilleur créneau",
-                "Réduire le nombre de réunions",
+                "Réduire fortement le nombre de réunions hebdomadaires de l'équipe",
                 "Adopter un outil unique"
             ],
             a: 0,

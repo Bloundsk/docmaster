@@ -15,7 +15,7 @@ window.QUIZ = {
             {
                 q: "What is the basic rhythm of the Pomodoro technique?",
                 options: [
-                    "50 minutes of work, 10 of break",
+                    "50 minutes of work followed by 10 full minutes of pause",
                     "90 minutes of work, 20 of break",
                     "25 minutes with no interruption, then 5 minutes of break"
                 ],
@@ -25,7 +25,7 @@ window.QUIZ = {
             {
                 q: "What does the method act against first of all?",
                 options: [
-                    "End-of-day tiredness",
+                    "End-of-day tiredness, which makes everything much harder",
                     "A lack of skills",
                     "Procrastination: a short commitment is easy to make"
                 ],
@@ -35,9 +35,9 @@ window.QUIZ = {
             {
                 q: "What should you do with an idea that comes up during a pomodoro?",
                 options: [
-                    "Act on it immediately",
+                    "Act on it immediately, without waiting",
                     "Note it on paper and carry on",
-                    "Deliberately forget it"
+                    "Deliberately forget it and carry on"
                 ],
                 a: 1,
                 explication: "Picking up the thread after a break takes several minutes of restarting."
@@ -66,7 +66,7 @@ window.QUIZ = {
             {
                 q: "Is the 25-minute length untouchable?",
                 options: [
-                    "Yes, it is the scientific basis of the method",
+                    "Yes, it is the scientific basis of the entire method used",
                     "No: some creative tasks need 50 minutes just to get into",
                     "Yes, otherwise the method stops working"
                 ],
@@ -81,7 +81,7 @@ window.QUIZ = {
             {
                 q: "What observation is the GTD method based on?",
                 options: [
-                    "Memory is excellent for storing",
+                    "Memory is excellent for storing things over time",
                     "You have to work for longer",
                     "Memory is good for thinking and bad for storing"
                 ],
@@ -122,7 +122,7 @@ window.QUIZ = {
             {
                 q: "Which step does everyone abandon first, although it holds the system together?",
                 options: [
-                    "Capture",
+                    "The daily capture step",
                     "The weekly review",
                     "Organising by context"
                 ],
@@ -132,9 +132,9 @@ window.QUIZ = {
             {
                 q: "What is GTD's real goal?",
                 options: [
-                    "Doing everything in a day",
+                    "Doing absolutely everything in a single day",
                     "Having nothing left to remember",
-                    "Working faster"
+                    "Working a good deal faster than before"
                 ],
                 a: 1,
                 explication: "An unloaded mind thinks better. It is mental load the method targets, not speed."
@@ -149,7 +149,7 @@ window.QUIZ = {
                 options: [
                     "Urgency and importance",
                     "Difficulty and duration",
-                    "Cost and benefit"
+                    "Cost and expected benefit"
                 ],
                 a: 0,
                 explication: "Four boxes: do now, schedule, delegate, drop."
@@ -169,7 +169,7 @@ window.QUIZ = {
                 options: [
                     "Unforeseeable events",
                     "Important but non-urgent tasks neglected six months ago",
-                    "Colleagues being badly organised"
+                    "Colleagues being badly organised on their own side of things"
                 ],
                 a: 1,
                 explication: "A skill left unmaintained becomes an emergency; a service postponed becomes a breakdown."
@@ -180,7 +180,7 @@ window.QUIZ = {
                 options: [
                     "Urgent for whom?",
                     "How long will it take?",
-                    "Who asked first?"
+                    "Who asked for it first?"
                 ],
                 a: 0,
                 explication: "Many emergencies are someone else's, transferred by an insistent message."
@@ -234,8 +234,8 @@ window.QUIZ = {
                 q: "What do three task apps used in parallel produce?",
                 options: [
                     "The certainty that none is up to date",
-                    "Fuller coverage",
-                    "A better split by context"
+                    "Fuller coverage of everything there is to do",
+                    "A better split of the tasks by context"
                 ],
                 a: 0,
                 explication: "An imperfect but single system beats three perfect ones."
@@ -255,7 +255,7 @@ window.QUIZ = {
                 q: "What is Notion's main limitation for task management?",
                 options: [
                     "It costs money",
-                    "It does not work offline",
+                    "It does not work offline at all, and that is simply fatal",
                     "Its flexibility is a trap: you tinker instead of doing"
                 ],
                 a: 2,
@@ -264,8 +264,8 @@ window.QUIZ = {
             {
                 q: "You have changed tool three times this year. What is the signal?",
                 options: [
-                    "You are refining your method",
-                    "The market moves fast",
+                    "You are refining your own method as you go",
+                    "The market for these tools moves fast",
                     "The problem is probably not the tool"
                 ],
                 a: 2,
@@ -291,7 +291,7 @@ window.QUIZ = {
             options: [
                 "All of them, they complement each other",
                 "One only, given three weeks to bed in",
-                "Two at least, to compare"
+                "Two at the very least, so as to compare them"
             ],
             a: 1,
             explication: "Stacking four systems amounts to having none."
@@ -300,7 +300,7 @@ window.QUIZ = {
             q: "What is the main risk of the productivity field itself?",
             options: [
                 "You spend more time choosing a method than doing the work",
-                "The methods contradict each other",
+                "The methods contradict each other on almost every single point",
                 "The tools are expensive"
             ],
             a: 0,
@@ -320,7 +320,7 @@ window.QUIZ = {
             q: "A task has been lingering on your list for a month. What is the likeliest cause?",
             options: [
                 "A lack of motivation",
-                "It is not important enough",
+                "It is not important enough to you at this precise moment",
                 "It is badly phrased: it is not a concrete action"
             ],
             a: 2,
@@ -331,7 +331,7 @@ window.QUIZ = {
             options: [
                 "The one you will still open in three weeks",
                 "The one with the most features",
-                "The one used by professionals in the field"
+                "The one used by all the professionals in the field"
             ],
             a: 0,
             explication: "Every other criterion comes far behind. Paper kept seriously beats an abandoned system."

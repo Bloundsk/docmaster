@@ -17,7 +17,7 @@ window.QUIZ = {
                 options: [
                     "A steady rise until evening",
                     "A morning peak, an early-afternoon dip, a partial recovery",
-                    "A constant level as long as you are rested"
+                    "A constant level, provided that you are properly rested first"
                 ],
                 a: 1,
                 explication: "The exact position of the phases varies a lot, but their existence is constant."
@@ -46,7 +46,7 @@ window.QUIZ = {
             {
                 q: "What makes a break effective?",
                 options: [
-                    "Its length",
+                    "Its length, counted in whole minutes",
                     "The fact that it is taken at a fixed time",
                     "The fact that it changes register"
                 ],
@@ -56,7 +56,7 @@ window.QUIZ = {
             {
                 q: "What is the practical consequence of the daily rhythm, rarely applied?",
                 options: [
-                    "Start earlier in the morning",
+                    "Start earlier in the morning, before anybody else arrives",
                     "Put deep work in the peak, mechanical tasks in the dip",
                     "Spread tasks evenly"
                 ],
@@ -66,7 +66,7 @@ window.QUIZ = {
             {
                 q: "Why does the drop in output from skipping breaks go unnoticed?",
                 options: [
-                    "Because it is small",
+                    "Because it is small enough to be ignored entirely",
                     "Because it only appears after several weeks",
                     "Because you stay busy while producing less"
                 ],
@@ -91,9 +91,9 @@ window.QUIZ = {
             {
                 q: "What effect does adding twenty seconds of effort in front of an action have?",
                 options: [
-                    "None, it is negligible",
+                    "None at all, it is completely negligible",
                     "It sharply reduces how often it happens",
-                    "It makes it more rewarding"
+                    "It makes the whole thing far more rewarding"
                 ],
                 a: 1,
                 explication: "And removing twenty raises it as much. It is the most powerful lever in the field."
@@ -101,8 +101,8 @@ window.QUIZ = {
             {
                 q: "What does anchoring a habit consist of?",
                 options: [
-                    "Noting it in your calendar",
-                    "Committing to it publicly",
+                    "Noting it down carefully in your own calendar",
+                    "Committing to it publicly in front of others",
                     "Attaching it to an already automatic action"
                 ],
                 a: 2,
@@ -149,7 +149,7 @@ window.QUIZ = {
                 options: [
                     "Its length",
                     "Its length multiplied by the number of participants",
-                    "The organiser's preparation time"
+                    "The organiser's own preparation time, beforehand"
                 ],
                 a: 1,
                 explication: "One hour with eight people is a whole working day."
@@ -188,9 +188,9 @@ window.QUIZ = {
             {
                 q: "What is a meeting that ends with no decision and no assigned action worth?",
                 options: [
-                    "It maintained team cohesion",
+                    "It maintained the cohesion of the whole team",
                     "It did not happen: it occupied time",
-                    "It prepares the next one"
+                    "It prepares the meeting that comes next"
                 ],
                 a: 1,
                 explication: "Something to decide is the first of the three conditions."
@@ -214,7 +214,7 @@ window.QUIZ = {
                 q: "What happens without a regular moment for stepping back?",
                 options: [
                     "The drift accumulates until it is abandoned wholesale",
-                    "The system stabilises by itself",
+                    "The system ends up stabilising all by itself in the end",
                     "Tasks sort themselves naturally"
                 ],
                 a: 0,
@@ -224,7 +224,7 @@ window.QUIZ = {
                 q: "What question should you ask about each current project?",
                 options: [
                     "If this did not exist yet, would I start it today?",
-                    "How much time have I already invested?",
+                    "How much time have I already invested in this project?",
                     "Who else could take it over?"
                 ],
                 a: 0,
@@ -233,7 +233,7 @@ window.QUIZ = {
             {
                 q: "What should you do when an organising system goes off the rails?",
                 options: [
-                    "Adopt a new one",
+                    "Adopt a brand new one instead",
                     "Reinstate the regular review",
                     "Reduce the number of projects tracked"
                 ],
@@ -245,7 +245,7 @@ window.QUIZ = {
                 q: "What does the thirty-minute weekly review cover?",
                 options: [
                     "Empty the inboxes, review the projects, plan the week",
-                    "Revise your annual objectives",
+                    "Revise your annual objectives for the whole year ahead",
                     "Compare the available tools"
                 ],
                 a: 0,
@@ -266,7 +266,7 @@ window.QUIZ = {
                 options: [
                     "Because it will not come back, whatever you do next",
                     "Because it was badly spent",
-                    "Because another project is always more profitable"
+                    "Because another project is always more profitable than this one"
                 ],
                 a: 0,
                 explication: "Only the value of what remains to be done counts, not what has been spent."
@@ -280,7 +280,7 @@ window.QUIZ = {
             q: "What is the thread running through this level?",
             options: [
                 "The strictest methods are the most effective",
-                "The tool determines whether a system succeeds",
+                "The tool determines whether a system succeeds or fails",
                 "What lasts for years does not depend on motivation"
             ],
             a: 2,
@@ -300,7 +300,7 @@ window.QUIZ = {
             q: "Why does personal organisation quickly reach a limit?",
             options: [
                 "Because most interruptions and lost time are collective",
-                "Because personal methods are unreliable",
+                "Because personal methods are unreliable over the long run",
                 "Because it demands too much consistency"
             ],
             a: 0,
@@ -330,8 +330,8 @@ window.QUIZ = {
             q: "If you apply only one thing from this level, what should it be?",
             options: [
                 "Put hard work in your best window",
-                "Reduce the number of meetings",
-                "Adopt a single tool"
+                "Reduce the number of meetings each week",
+                "Adopt a single tool for everything"
             ],
             a: 0,
             explication: "Two hours at the right time are worth four at the wrong one — and it costs nothing."
