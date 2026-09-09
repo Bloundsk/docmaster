@@ -1,6 +1,18 @@
 {
-  "maj": "2026-09-09T12:24:46.857Z",
+  "maj": "2026-09-09T19:54:58.691Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONU55QTRfZkUtbndEVXozVG5mZUVGNXRKbTBUclBlWTJxN0lfT1FQbG9sc25aN0x5RE5aeDJMQ3czcnRfSkVySm9LZUlGV21YNW5rbjhGa1llaUVXNHBGSDBiVXZtUmtjaUxzdEZMMlcyenFuS21jNU1NckU4QVNNVUpMelVNS1dXSzdaQjFHQUlTVjZnbXo5WTR2eTl3Zi1WaU9DWA?oc=5",
+      "titre": "La hausse des taux d’intérêt s’ajoute aux craintes liées à la guerre commerciale",
+      "source": "Le Devoir",
+      "date": "2026-09-09",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "publie": "2026-09-09"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV202ZFYxaDgxclp4RlhvMkt2c3hmeEVjaDBlRmdkOXZueU5iMzlMVWxQVmZueDhBWV9qb2UzM3F0STNqU0I3S2lxekN3Yk00dTlLSDhETnVtbTMwQ3c1bWwyamVEc2FXRjB6LWNjcUR2bGpfRnB4RzF3bWpqbm9NM0tUOFhMUF8xWTRfcWJlUEpCOUxy?oc=5",
       "titre": "Fuite de données : comment communiquer dans les premières heures de la crise",
@@ -146,6 +158,18 @@
       "publie": "2026-09-09"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdFp0dkpEaFhQNFI5WmtNbkVnUWJZSTQ3aWhXa0ViZEVHSVJ5VUdhVDd6Nm94YUhncnFZYTRBYkVNR25KRngyUVdxbUVBd0paOHpFNkw4clJZbFVlQnVmMHVQMDFwdDJNeHJpX0NmemxwRVEzWlFtZFoxSG1UVmoxS255akJPRWtyNnVKWjc3U0lrcDJ3YnN2Tl8wbm11U2tveFpLNllNbnppem5zcGlpWQ?oc=5",
+      "titre": "Fuites de données : l’ANSSI déclenche une réponse renforcée face aux cyberattaques",
+      "source": "French Breaches",
+      "date": "2026-09-07",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-09"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
       "titre": "Mots de passe, identifiants, emails... une nouvelle fuite massive de données secoue la France",
       "source": "01net.com",
@@ -262,30 +286,6 @@
       "page": "avance.html",
       "ancre": "fuites-de-donnees",
       "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQdE9XaGxheEt1ZTU0Slg5SHFLU0M0bW4wZEZsNXRvbF9BWFlwbjAtX3NkRWsxQVRhcEh2U3p5VHpCSGJ6dTg5ZGluZTJUMlhPWjdGT3JGY25wS0lwa2lHOVEtdDdhbG41UjlsTkI1MUlMbU1UdVZrcGhnclNmOF9adkRjdXE0bUFXdGFxYzZCVzRmLXVIMXFUQ2UxZF9lanpnOWlnMVBmUXdQcGItTU9ueTcwWTVxOUx6a0wya2ZzeUlZQU5PWG1sZkZEQQ?oc=5",
-      "titre": "Cybersécurité : face à la multiplication des fuites de données, le gouvernement cherche à accélérer sa riposte",
-      "source": "Banque des Territoires",
-      "date": "2026-09-03",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSlVGQm9xV2Q1RGUtemNNQVZDbVN4LXp2WjlBQ3R4U25VeUFqMEVnMWtsRmhmbU8yVWpQSF9oQ3pvcUtNOHF4Q2ZxdTUwb0xNbmF3VTdKYi0wYkMxUEp2aDl6T1VXVWdwZnFKUVdGeEk3ZEc3Q01rbUlKZUlISmcyT29ncUdZdw?oc=5",
-      "titre": "Le Dyson CameraJet met une caméra dans votre bouche, et trois surfaces d'attaque",
-      "source": "Pasquale Pillitteri",
-      "date": "2026-09-03",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "surface-attaque",
-      "section": "🗺️ Ta surface d'attaque",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-03"
     }
