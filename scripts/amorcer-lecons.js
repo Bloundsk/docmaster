@@ -136,13 +136,30 @@ function conforme(html) {
         const finH3 = bloc.indexOf("</h3>");
         if (finH3 === -1 || finH3 > finSummary) continue;
 
-        morceaux[i] = bloc.slice(0, finH3 + 5) + duree
-                    + bloc.slice(finH3 + 5, finSummary) + amorce
+        /* Entre le titre et la fermeture du summary, une fois l ancien texte
+           genere efface, il ne reste que des blancs : rien pour une lecon
+           ecrite a la main, le saut de ligne laisse par l ancienne amorce pour
+           une lecon deja amorcee. Les deux doivent donner le meme resultat —
+           sinon il fallait deux passages pour atteindre la forme stable
+           (constate le 11 septembre 2026 sur « Negocier son salaire »). La
+           forme retenue est celle des 340 lecons en place : en choisir une
+           autre reecrirait 84 pages pour un blanc. */
+        let entre = bloc.slice(finH3 + 5, finSummary);
+        if (amorce && entre.trim() === "") entre = "\n                ";
+
+        morceaux[i] = bloc.slice(0, finH3 + 5) + duree + entre + amorce
                     + bloc.slice(finSummary);
     }
 
     return morceaux.join('<details class="lecon"');
 }
+
+/* Une lecon ecrite a la main n a ni duree ni amorce, et rien entre son titre et
+   la fermeture de son summary. Le script doit la porter en UN passage a sa forme
+   stable : il en fallait deux, et le --verifier rougissait entre les deux sur
+   toute lecon neuve. On le verifie sur chaque page, en la ramenant a cette forme. */
+const commeEcriteALaMain = (html) =>
+    html.replace(RE_DUREE, "").replace(RE_AMORCE, "").replace(/(<\/h3>)\s*(<\/summary>)/g, "$1$2");
 
 function pagesDeNiveau() {
     const pages = [];
@@ -163,6 +180,7 @@ function pagesDeNiveau() {
 
 const pages = pagesDeNiveau();
 const differentes = [];
+const enDeuxPassages = [];
 let lecons = 0;
 
 for (const relatif of pages) {
@@ -170,12 +188,22 @@ for (const relatif of pages) {
     const avant = fs.readFileSync(complet, "utf8");
     const apres = conforme(avant);
     if (apres === null) continue;
+    if (conforme(commeEcriteALaMain(avant)) !== apres) enDeuxPassages.push(relatif);
 
     lecons += (avant.match(/<details class="lecon"/g) || []).length;
     if (apres === avant) continue;
 
     differentes.push(relatif);
     if (!verifierSeulement) fs.writeFileSync(complet, apres);
+}
+
+if (enDeuxPassages.length) {
+    console.error(`\n[leçons] ${enDeuxPassages.length} page(s) où une leçon écrite à la main`);
+    console.error("[leçons] n'atteindrait pas sa forme en un seul passage :");
+    for (const f of enDeuxPassages.slice(0, 5)) console.error(`  · ${f}`);
+    if (enDeuxPassages.length > 5) console.error(`  … et ${enDeuxPassages.length - 5} autres`);
+    console.error("[leçons] le script est en cause, pas les pages : voir conforme().");
+    process.exit(1);
 }
 
 if (verifierSeulement) {

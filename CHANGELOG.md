@@ -1,5 +1,34 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Les amorces s'écrivent en un seul passage
+
+### Le défaut
+
+`amorcer-lecons.js` avait besoin de deux passages pour une leçon écrite à la main,
+et son `--verifier` rougissait entre les deux. Constaté en posant « Négocier son
+salaire ».
+
+La cause : le script efface la durée et l'amorce avant de les réécrire, mais
+l'effacement laissait derrière lui le saut de ligne qui suivait l'amorce. Ce blanc
+se retrouvait entre le titre et la fermeture du `<summary>`, et le script le
+recopiait avant de réinsérer l'amorce. Une leçon neuve, qui n'a rien à cet endroit,
+ne donnait donc pas le même résultat qu'une leçon déjà amorcée.
+
+### La correction
+
+Ce blanc est ramené à une forme unique avant l'assemblage. La forme retenue est
+celle des 340 leçons en place : **aucune page n'est réécrite**, le passage sur le
+dépôt entier ne change rien.
+
+### Le garde-fou
+
+Le script ramène désormais chaque page à la forme d'une leçon écrite à la main —
+sans durée, sans amorce, rien entre le titre et la fin du `<summary>` — et exige
+qu'**un seul passage** redonne la page en place. Posé avant la correction, il a
+rougi sur les 84 pages ; après, vert. Reproduit aussi sur la leçon réelle :
+« Négocier son salaire » ramenée à sa forme manuscrite retrouve, en un passage, sa
+version publiée à l'octet près.
+
 ## 2026-09-11 — Une septième situation : « Je dois négocier mon salaire »
 
 Écartée le matin faute de réponse dans les guides, la situation est entrée sur la

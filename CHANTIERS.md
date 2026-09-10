@@ -21,7 +21,6 @@ visiteurs sont des testeurs.
 | [Juger l'effet des titres et des amorces](#juger-leffet-des-titres-et-des-amorces) | Ludo, Claude pour l'analyse | octobre 2026 au plus tôt, site lancé | « regarde l'effet des titres et des amorces » |
 | [Écrire la leçon « compte piraté »](#écrire-la-leçon--compte-piraté-) | Claude | quand Ludo le décide | « écris la leçon sur le compte piraté » |
 | [La septième carte, seule sur sa rangée](#la-septième-carte-seule-sur-sa-rangée) | Ludo décide | — | « ajoute une huitième situation » ou « retire la situation … » |
-| [Le double passage des amorces](#le-double-passage-des-amorces) | Claude | avant la prochaine leçon | « corrige le double passage des amorces » |
 | [Renommer le dépôt](#renommer-le-dépôt) | Ludo décide | déconseillé | « prépare le renommage du dépôt » |
 
 ---
@@ -101,8 +100,8 @@ est pire que pas d'entrée.
    `assets/js/quiz/` et `assets/js/quiz/en/` ;
 4. une entrée dans `assets/js/search-data.js`, et la leçon dans la liste du
    sommaire du parcours, dans les deux langues ;
-5. `node scripts/amorcer-lecons.js` (deux fois, voir plus bas), puis
-   `chiffrer-parcours.js`, `publier-accueil.js` et `poser-renvois-glossaire.js` ;
+5. `node scripts/amorcer-lecons.js`, puis `chiffrer-parcours.js`,
+   `publier-accueil.js` et `poser-renvois-glossaire.js` ;
 6. enfin, la situation dans `scripts/poser-situations.js`.
 
 Les contrôles disent ce qui manque : parité français/anglais, simulateurs
@@ -125,20 +124,7 @@ trois, trois, puis une seule. Deux sorties :
 
 ---
 
-## 5. Défauts connus, non corrigés
-
-### Le double passage des amorces
-
-`scripts/amorcer-lecons.js` a besoin de **deux passages** pour une leçon écrite
-sans amorce : le premier laisse une ligne vide que le second retire. Le résultat
-final est juste, et son `--verifier` signale l'écart entre les deux : rien de faux
-ne part en ligne, mais le contrôle rougit après un seul passage.
-
-**Pour relancer :** « corrige le double passage des amorces ».
-
----
-
-## 6. Option déconseillée
+## 5. Option déconseillée
 
 ### Renommer le dépôt
 
