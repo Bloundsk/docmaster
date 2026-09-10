@@ -27,12 +27,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import url from "node:url";
+import contenu from "./langues-contenu.js";
 import vm from "node:vm";
 
 const RACINE = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
 const DOSSIERS = [
     { langue: "fr", chemin: path.join(RACINE, "assets/js/quiz") },
-    { langue: "en", chemin: path.join(RACINE, "assets/js/quiz/en") }
+    ...contenu.languesAvecQuiz(RACINE).map((code) => ({ langue: code, chemin: path.join(RACINE, "assets/js/quiz", code) }))
 ];
 
 const MIN_GLOBAL = 0.25, MAX_GLOBAL = 0.42;
@@ -98,18 +99,26 @@ for (const { langue, chemin } of DOSSIERS) {
     }
 }
 
-// Les deux langues présentent la MÊME question dans le MÊME ordre : un lecteur
-// qui bascule de drapeau ne doit pas retrouver la page réarrangée.
-for (const nom of Object.keys(parLangue.fr)) {
-    const fr = parLangue.fr[nom], en = parLangue.en[nom];
-    if (!en) { signaler(`en/${nom} : banque absente`); continue; }
-    if (fr.length !== en.length) {
-        signaler(`${nom} : ${fr.length} questions en français, ${en.length} en anglais`);
-        continue;
-    }
-    for (let i = 0; i < fr.length; i++) {
-        if (fr[i].a !== en[i].a) {
-            signaler(`${nom} § ${fr[i].section} #${fr[i].rang} : bonne réponse en position ${fr[i].a + 1} en français, ${en[i].a + 1} en anglais`);
+// Toutes les langues présentent la MÊME question dans le MÊME ordre : un lecteur
+// qui bascule de drapeau ne doit pas retrouver la page réarrangée. Une banque
+// est exigée pour chaque sujet annoncé traduit ; une banque d'un sujet en cours
+// de traduction est contrôlée dès qu'elle existe.
+for (const code of Object.keys(parLangue).filter((c) => c !== "fr")) {
+    const attendues = contenu.banquesAttendues(RACINE, code);
+    for (const nom of Object.keys(parLangue.fr)) {
+        const fr = parLangue.fr[nom], autre = parLangue[code][nom];
+        if (!autre) {
+            if (attendues.has(nom)) signaler(`${code}/${nom} : banque absente`);
+            continue;
+        }
+        if (fr.length !== autre.length) {
+            signaler(`${nom} : ${fr.length} questions en français, ${autre.length} en « ${code} »`);
+            continue;
+        }
+        for (let i = 0; i < fr.length; i++) {
+            if (fr[i].a !== autre[i].a) {
+                signaler(`${nom} § ${fr[i].section} #${fr[i].rang} : bonne réponse en position ${fr[i].a + 1} en français, ${autre[i].a + 1} en « ${code} »`);
+            }
         }
     }
 }

@@ -47,12 +47,14 @@ window.DOCMASTER_IDENTITE = (function () {
         signature: {
             fr: "Des parcours gratuits pour comprendre les compétences de demain.",
             en: "Free learning paths to understand the skills that matter next.",
+            hu: "Ingyenes tanulási utak a jövő készségeinek megértéséhez.",
         },
 
         // Ce qui suit le nom dans le titre de la page d'accueil, elle seule.
         accroche: {
             fr: "Bibliothèque de connaissances",
             en: "A library of knowledge",
+            hu: "Tudástár",
         },
 
         /* L'adresse de base, barre oblique finale comprise. En découlent les
@@ -72,6 +74,7 @@ window.DOCMASTER_IDENTITE = (function () {
         textePartage: (nbParcours) => ({
             fr: `${nom} — ${nbParcours} guides gratuits pour apprendre les compétences de demain`,
             en: `${nom} — ${nbParcours} free guides to learn the skills of tomorrow`,
+            hu: `${nom} — ${nbParcours} ingyenes útmutató a jövő készségeinek elsajátításához`,
         }),
     };
 })();

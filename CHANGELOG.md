@@ -1,5 +1,40 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Le hongrois se prépare : langue déclarée, scripts généralisés
+
+### La demande, et sa taille
+
+Ludo a demandé une traduction du site en hongrois, comme l'anglais. Mesuré avant de
+commencer : environ **160 000 mots** (guides 86 000, autres pages 10 600, quiz
+55 700, plus les simulateurs), et **une vingtaine de scripts** qui supposaient la
+paire français-anglais. La méthode de l'anglais est reprise : un sujet pilote, jugé
+avant les autres.
+
+### Ce qui est fait
+
+- **`assets/js/langues.js`** déclare le hongrois : drapeau rouge-blanc-vert dessiné
+  en SVG, nom « Magyar », format de date `hu-HU`, et les **64 libellés d'interface**
+  en tutoiement, comme le français du site. Les dates hongroises finissant par un
+  point (« 2026. szeptember 25. »), la phrase de rotation des questions n'en ajoute
+  pas un second.
+- **`assets/js/identite.js`** : accroche, signature et texte de partage hongrois.
+  **`assets/js/pratique.js`** : nombres au format hongrois, pourcentage sans espace.
+- **`scripts/langues-contenu.js`**, nouveau : la liste des langues qui ont du
+  contenu, lue dans `langues.js` et confirmée par le disque. Les amorces, le
+  sélecteur de niveau, les chiffres des parcours, les dates, l'identité, l'audit
+  de cohérence, les contrôles de position et de longueur des réponses et l'étape
+  de traduction de l'intégration continue la lisent au lieu de `["fr", "en"]`.
+  Le sélecteur de niveau, les durées et l'identité **échouent** désormais s'il leur
+  manque un libellé pour une langue : ils la sautaient en silence.
+
+### Vérifié
+
+**Rien ne change pour le français et l'anglais** : chaque générateur répond « rien à
+changer », l'audit compare toujours les 56 pages anglaises au français, l'étape de
+traduction retrouve ses 14 sujets, et tous les contrôles passent.
+
+Le drapeau hongrois reste caché : aucun sujet n'est encore annoncé traduit.
+
 ## 2026-09-11 — Les amorces s'écrivent en un seul passage
 
 ### Le défaut

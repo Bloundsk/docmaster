@@ -123,10 +123,11 @@ jobs:
       - name: Traduction des simulateurs
         run: |
           echec=0
-          for sujet in apprendre cybersecurite data design dev-web droit ecologie \
-                       entrepreneuriat finance ia marketing negociation productivite sante; do
-            if ! node scripts/verifier-traduction.mjs "$sujet" en; then echec=1; fi
-          done
+          # Chaque sujet annoncé traduit, dans chaque langue : la liste vient de
+          # langues.js, et non plus d'une ligne à tenir à jour ici.
+          while read -r sujet code; do
+            if ! node scripts/verifier-traduction.mjs "$sujet" "$code"; then echec=1; fi
+          done < <(node scripts/langues-contenu.js --paires)
           exit $echec
 
       # Les deux jeux de tests du depot. Ils existaient, mais rien ne les

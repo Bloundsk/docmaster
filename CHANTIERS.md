@@ -4,8 +4,8 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 `CHANGELOG.md` ; la **méthode**, dans `ARCHITECTURE.md`. Ce fichier se met à jour
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
-**État au 11 septembre 2026.** Aucun chantier technique n'est en cours :
-l'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+**État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
+du site en hongrois**. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -15,6 +15,7 @@ visiteurs sont des testeurs.
 
 | Chantier | Qui | Quand | Pour le relancer, dire |
 |---|---|---|---|
+| [**Traduire le site en hongrois**](#traduire-le-site-en-hongrois) | Claude ; un lecteur hongrois pour relire | en cours depuis le 11 septembre 2026 | « continue la traduction hongroise » |
 | [Lire les suggestions de la boîte à idées](#lire-les-suggestions-de-la-boîte-à-idées) | Ludo | à son rythme | — |
 | [Vérifier que la boîte à idées livre les messages](#vérifier-que-la-boîte-à-idées-livre-les-messages) | Ludo, ou Claude avec son accord | avant le lancement | « envoie un message de test par la boîte à idées » |
 | [Décider du lancement](#décider-du-lancement) | Ludo | — | — |
@@ -22,6 +23,53 @@ visiteurs sont des testeurs.
 | [Écrire la leçon « compte piraté »](#écrire-la-leçon--compte-piraté-) | Claude | quand Ludo le décide | « écris la leçon sur le compte piraté » |
 | [La septième carte, seule sur sa rangée](#la-septième-carte-seule-sur-sa-rangée) | Ludo décide | — | « ajoute une huitième situation » ou « retire la situation … » |
 | [Renommer le dépôt](#renommer-le-dépôt) | Ludo décide | déconseillé | « prépare le renommage du dépôt » |
+
+---
+
+## En cours
+
+### Traduire le site en hongrois
+
+Demandé par Ludo le 11 septembre 2026 : tout le site, comme l'anglais. Mesuré ce
+jour-là : **environ 160 000 mots** — 86 000 dans les guides, 10 600 dans les autres
+pages, 55 700 dans les quiz, plus les simulateurs — et une vingtaine de scripts qui
+supposaient la paire français-anglais.
+
+**Fait :**
+
+- le hongrois est **déclaré** dans `assets/js/langues.js` : drapeau, nom
+  « Magyar », 64 libellés d'interface en tutoiement, format de date `hu-HU` ; son
+  accroche, sa signature et son texte de partage dans `assets/js/identite.js` ;
+  le format des nombres dans `assets/js/pratique.js` ;
+- les scripts et contrôles lisent désormais **la liste des langues** dans
+  `scripts/langues-contenu.js` au lieu de `["fr", "en"]`, et échouent s'il leur
+  manque un libellé pour une langue.
+
+Le drapeau hongrois reste **caché** tant qu'aucun sujet n'est annoncé dans
+`CONTENU_TRADUIT.hu` : un drapeau qui promet une traduction inexistante est pire
+que pas de drapeau.
+
+**Méthode, reprise de l'anglais :**
+
+1. **Un sujet pilote, « Apprendre à apprendre », en entier** : les 4 pages sous
+   `hu/guides/apprendre/`, ses 3 banques sous `assets/js/quiz/hu/`, les textes de
+   ses simulateurs dans `assets/js/pratique/hu.js`. Puis l'ajouter à
+   `CONTENU_TRADUIT.hu`.
+2. **Le faire relire par un lecteur hongrois avant les treize autres.** Personne
+   dans le projet ne lit le hongrois : c'est la condition pour ne pas reproduire
+   une erreur de langue treize fois.
+3. Les treize autres sujets, un par un, contrôles au vert à chaque fois.
+4. Les pages hors cours (`hu/index.html`, `hu/guides.html`, FAQ…) et
+   `PAGES_TRADUITES.hu`. Il faudra alors une version hongroise pour
+   `publier-accueil.js`, `poser-situations.js`, le glossaire et ses renvois.
+
+**Deux décisions à prendre avant Finance, Droit, Santé et Entrepreneuriat :** qui
+relit ; et le sort des exemples français (PEA, droit du travail) — les transposer
+vers leurs équivalents hongrois, ce qui demande des faits hongrois vérifiés, ou
+garder les règles françaises en le disant (le bandeau `reglesFrancaises` existe en
+hongrois).
+
+**Pour relancer :** « continue la traduction hongroise ».
 
 ---
 

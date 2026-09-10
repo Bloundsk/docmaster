@@ -38,6 +38,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const contenu = require("./langues-contenu.js");
 const vm = require("vm");
 
 const RACINE = path.join(__dirname, "..");
@@ -54,6 +55,8 @@ const MOTS = {
           duree: (m) => "environ " + m + " minutes de lecture" },
     en: { section: (n) => n + (n > 1 ? " sections" : " section"),
           duree: (m) => "about " + m + " minutes of reading" },
+    hu: { section: (n) => n + " fejezet",
+          duree: (m) => "kb. " + m + " perc olvasás" },
 };
 
 /* Le texte reellement lu : le <main>, sans les scripts ni les balises. */
@@ -77,9 +80,10 @@ const TOTAUX = {};
 let ecrits = 0, conformes = 0;
 const divergents = [];
 
-for (const langue of ["fr", "en"]) {
-    const base = path.join(RACINE, langue === "fr" ? "" : "en", "guides");
+for (const langue of contenu.languesAvecGuides(RACINE)) {
+    const base = path.join(RACINE, langue === "fr" ? "" : langue, "guides");
     const L = MOTS[langue];
+    if (!L) throw new Error(`chiffrer-parcours : aucun libellé de durée pour « ${langue} »`);
 
     for (const [sujet, meta] of Object.entries(PARCOURS)) {
         const sommaire = path.join(base, sujet, "index.html");
@@ -134,10 +138,16 @@ const CATALOGUE = {
           sans: "sans prérequis", fichier: "guides.html", prefixe: "guides/" },
     en: { niveaux: (n) => n + " levels", total: (m) => "about " + m + " min",
           sans: "no prior knowledge", fichier: "en/guides.html", prefixe: "guides/" },
+    hu: { niveaux: (n) => n + " szint", total: (m) => "kb. " + m + " perc",
+          sans: "előismeret nélkül", fichier: "hu/guides.html", prefixe: "guides/" },
 };
 
-for (const langue of ["fr", "en"]) {
+for (const langue of contenu.languesAvecGuides(RACINE)) {
     const C = CATALOGUE[langue];
+    if (!C) throw new Error(`chiffrer-parcours : aucun libellé de catalogue pour « ${langue} »`);
+    // Une langue peut avoir ses guides avant sa page catalogue : c'est le cas
+    // d'une traduction en cours, sujet par sujet.
+    if (!fs.existsSync(path.join(RACINE, C.fichier))) continue;
     const chemin = path.join(RACINE, C.fichier);
     if (!fs.existsSync(chemin)) continue;
 

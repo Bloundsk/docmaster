@@ -43,6 +43,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const contenu = require("./langues-contenu.js");
 
 const RACINE = path.join(__dirname, "..");
 const verifierSeulement = process.argv.includes("--verifier");
@@ -163,7 +164,7 @@ const commeEcriteALaMain = (html) =>
 
 function pagesDeNiveau() {
     const pages = [];
-    for (const prefixe of ["", "en"]) {
+    for (const prefixe of contenu.prefixesAvecGuides(RACINE)) {
         const guides = path.join(RACINE, prefixe, "guides");
         if (!fs.existsSync(guides)) continue;
         for (const sujet of fs.readdirSync(guides)) {

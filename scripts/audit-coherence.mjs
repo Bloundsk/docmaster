@@ -7,6 +7,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import url from "node:url";
+import contenu from "./langues-contenu.js";
 import vm from "node:vm";
 
 /* La racine se deduit de l emplacement du script, elle n est pas ecrite en dur :
@@ -311,7 +312,7 @@ const motifs = [
    faux ou perdre un attribut « alt » sans que rien ne le dise. */
 const pagesSite = fs.readdirSync(RACINE).filter((f) => f.endsWith(".html"));
 const toutes = [];
-for (const [prefixe, racine] of [["", RACINE], ["en/", path.join(RACINE, "en")]]) {
+for (const [prefixe, racine] of contenu.languesAvecPages(RACINE).map((c) => (c === "fr" ? ["", RACINE] : [c + "/", path.join(RACINE, c)]))) {
     if (!fs.existsSync(racine)) continue;
     for (const f of fs.readdirSync(racine).filter((x) => x.endsWith(".html"))) {
         toutes.push({ nom: prefixe + f, html: lire(path.join(racine, f)) });
@@ -389,7 +390,7 @@ for (const page of toutes) {
 
        L attribut est lu par les lecteurs d ecran pour choisir leur
        prononciation : le declarer faux est pire que ne pas le declarer. */
-    const langueAttendue = page.nom.startsWith("en/") ? "en" : "fr";
+    const langueAttendue = (page.nom.match(/^([a-z]{2})\//) || [null, "fr"])[1];
     if (!new RegExp(`<html lang="${langueAttendue}">`).test(page.html)) {
         signaler("ACCESSIBILITE", `${page.nom} : langue non déclarée ou incorrecte (attendu « ${langueAttendue} »)`);
     }
@@ -669,24 +670,24 @@ console.log("\n=== 11. PARITÉ FR / EN ===");
 const bacL = { window: {}, document: { documentElement: { setAttribute() {} } }, navigator: { language: "fr" }, localStorage: { getItem: () => null, setItem() {} }, location: { pathname: "/" } };
 vm.createContext(bacL);
 vm.runInContext(lire(path.join(RACINE, "assets/js/langues.js")), bacL);
-const TRADUITS = bacL.window.DOCMASTER_LANGUES.CONTENU_TRADUIT.en || [];
-
 let compares = 0;
-for (const sujet of TRADUITS) {
-    for (const niveau of [...PARCOURS[sujet].niveaux, "index"]) {
-        const fr = path.join(RACINE, "guides", sujet, niveau + ".html");
-        const en = path.join(RACINE, "en/guides", sujet, niveau + ".html");
-        if (!fs.existsSync(en)) { signaler("PARITÉ", `en/guides/${sujet}/${niveau}.html manquant`); continue; }
-        compares++;
-        const a = fs.readFileSync(fr, "utf8"), b = fs.readFileSync(en, "utf8");
+for (const [code, traduits] of Object.entries(bacL.window.DOCMASTER_LANGUES.CONTENU_TRADUIT)) {
+    for (const sujet of traduits) {
+        for (const niveau of [...PARCOURS[sujet].niveaux, "index"]) {
+            const fr = path.join(RACINE, "guides", sujet, niveau + ".html");
+            const autre = path.join(RACINE, code, "guides", sujet, niveau + ".html");
+            if (!fs.existsSync(autre)) { signaler("PARITÉ", `${code}/guides/${sujet}/${niveau}.html manquant`); continue; }
+            compares++;
+            const a = fs.readFileSync(fr, "utf8"), b = fs.readFileSync(autre, "utf8");
 
-        const sections = (h) => (h.match(/<h3 id=/g) || []).length;
-        if (sections(a) !== sections(b)) {
-            signaler("PARITÉ", `${sujet}/${niveau} : ${sections(a)} section(s) en français, ${sections(b)} en anglais`);
-        }
-        const sims = (h) => [...h.matchAll(/data-pratique="([^"]+)"/g)].map((m) => m[1]).sort().join(",");
-        if (sims(a) !== sims(b)) {
-            signaler("PARITÉ", `${sujet}/${niveau} : simulateurs différents entre les deux langues`);
+            const sections = (h) => (h.match(/<h3 id=/g) || []).length;
+            if (sections(a) !== sections(b)) {
+                signaler("PARITÉ", `${sujet}/${niveau} : ${sections(a)} section(s) en français, ${sections(b)} en « ${code} »`);
+            }
+            const sims = (h) => [...h.matchAll(/data-pratique="([^"]+)"/g)].map((m) => m[1]).sort().join(",");
+            if (sims(a) !== sims(b)) {
+                signaler("PARITÉ", `${sujet}/${niveau} : simulateurs différents entre le français et « ${code} »`);
+            }
         }
     }
 }
@@ -695,14 +696,14 @@ for (const sujet of TRADUITS) {
    ancre renommee sans que la banque suive fait disparaitre le quiz de la
    section, en silence : la page s affiche, le bloc est vide. */
 let sections = 0;
-for (const dossier of ["guides", "en/guides"]) {
+for (const dossier of contenu.prefixesAvecGuides(RACINE).map((p) => (p ? p + "/" : "") + "guides")) {
     for (const sujet of sujets) {
         for (const niveau of PARCOURS[sujet].niveaux) {
             const page = path.join(RACINE, dossier, sujet, niveau + ".html");
             if (!fs.existsSync(page)) continue;
             const html = fs.readFileSync(page, "utf8");
             const ids = [...html.matchAll(/<h3 id="([^"]+)"/g)].map((m) => m[1]);
-            const ref = html.match(/quiz\/(en\/)?([a-z0-9-]+)\.js/);
+            const ref = html.match(/quiz\/([a-z]{2}\/)?([a-z0-9-]+)\.js/);
             if (!ref) { signaler("PARITÉ", `${dossier}/${sujet}/${niveau} : aucune banque de questions`); continue; }
             const banque = path.join(RACINE, "assets/js/quiz", ref[1] || "", ref[2] + ".js");
             if (!fs.existsSync(banque)) { signaler("PARITÉ", `${banque} introuvable`); continue; }
@@ -715,7 +716,7 @@ for (const dossier of ["guides", "en/guides"]) {
         }
     }
 }
-console.log(`  ${compares} pages comparées FR/EN, ${sections} sections de quiz rattachées`);
+console.log(`  ${compares} pages comparées au français, ${sections} sections de quiz rattachées`);
 
 /* --- 12. La mascotte -------------------------------------------------------
 

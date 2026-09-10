@@ -17,6 +17,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const contenu = require("./langues-contenu.js");
 const { execFileSync } = require("child_process");
 
 const RACINE = path.join(__dirname, "..");
@@ -24,6 +25,8 @@ const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin",
               "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 const MONTHS = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"];
+const HONAPOK = ["január", "február", "március", "április", "május", "június",
+                 "július", "augusztus", "szeptember", "október", "november", "december"];
 
 /* Les deux libelles, francais et anglais. On capture le libelle et la date
    separement : seule la date est remplacee, l emoji et le texte restent tels
@@ -37,6 +40,8 @@ const MONTHS = ["January", "February", "March", "April", "May", "June",
 const FORMATS = [
     { motif: /(Dernière mise à jour\s*:\s*)([^<]*)/, ecrire: (d) => `${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}` },
     { motif: /(Last updated:\s*)([^<]*)/,            ecrire: (d) => `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}` },
+    // Le hongrois ecrit l'annee d'abord : « 2026. szeptember 11. »
+    { motif: /(Utolsó frissítés:\s*)([^<]*)/,        ecrire: (d) => `${d.getFullYear()}. ${HONAPOK[d.getMonth()]} ${d.getDate()}.` },
 ];
 
 // Le format qui s applique a cette page, ou null si elle n affiche pas de date.
@@ -64,7 +69,7 @@ function listerGuides() {
     const pages = [];
     // Les deux arborescences. « en/guides » manquait : ses 56 pages gardaient
     // la date tapee le jour de leur traduction.
-    for (const racine of ["guides", "en/guides"]) {
+    for (const racine of contenu.prefixesAvecGuides(RACINE).map((p) => (p ? p + "/" : "") + "guides")) {
         const dossier = path.join(RACINE, racine);
         if (!fs.existsSync(dossier)) continue;
         for (const sujet of fs.readdirSync(dossier)) {

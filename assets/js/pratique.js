@@ -43,7 +43,7 @@
        de rattraper les chaines apres coup. Hors navigateur — c est le cas des
        tests — il n y a pas de langue choisie, on reste en francais et les
        verifications existantes ne bougent pas. */
-    const LOCALES = { fr: "fr-FR", en: "en-GB", es: "es-ES", de: "de-DE", it: "it-IT", zh: "zh-CN", ru: "ru-RU" };
+    const LOCALES = { fr: "fr-FR", en: "en-GB", es: "es-ES", de: "de-DE", it: "it-IT", zh: "zh-CN", ru: "ru-RU", hu: "hu-HU" };
 
     // « langueDeLaPage » et non « langueChoisie » : un nombre se lit avec le
     // texte qui l entoure. Les libelles d un simulateur viennent du fichier
@@ -81,7 +81,7 @@
 
     // L espace avant le signe est une regle typographique francaise, que
     // l anglais et le chinois ne suivent pas.
-    const SANS_ESPACE_POURCENT = ["en", "zh"];
+    const SANS_ESPACE_POURCENT = ["en", "zh", "hu"];
     const pourcent = (n, d = 1) =>
         nf(n, d) + (SANS_ESPACE_POURCENT.indexOf(langueActive()) !== -1 ? "%" : " %");
 

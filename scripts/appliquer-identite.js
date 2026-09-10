@@ -22,6 +22,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const contenu = require("./langues-contenu.js");
 const vm = require("vm");
 
 const RACINE = path.join(__dirname, "..");
@@ -41,7 +42,7 @@ const ALT = ID.textePartage(NB_PARCOURS);
 /* « en_GB » et non « en_US » : les pages anglaises sont écrites en orthographe
    britannique. Ce script avait commencé par imposer en_US, ce qui revenait à
    annoncer aux moteurs une langue que le site n'écrit pas. */
-const LOCALES = { fr: "fr_FR", en: "en_GB" };
+const LOCALES = { fr: "fr_FR", en: "en_GB", hu: "hu_HU" };
 
 // --- Les pages --------------------------------------------------------------
 //
@@ -51,7 +52,7 @@ const LOCALES = { fr: "fr_FR", en: "en_GB" };
 function listerPages() {
     const pages = [];
     const ajouter = (relatif) => pages.push(relatif);
-    for (const prefixe of ["", "en/"]) {
+    for (const prefixe of contenu.languesAvecPages(RACINE).map((c) => (c === "fr" ? "" : c + "/"))) {
         const racine = path.join(RACINE, prefixe);
         if (!fs.existsSync(racine)) continue;
         for (const f of fs.readdirSync(racine)) {
@@ -123,7 +124,11 @@ function traiter(relatif) {
     const avant = fs.readFileSync(complet, "utf8");
     let html = avant;
 
-    const langue = relatif.startsWith("en/") ? "en" : "fr";
+    const langue = (relatif.match(/^([a-z]{2})\//) || [null, "fr"])[1];
+    // Une langue sans locale ni accroche ecrirait « undefined » dans 60 balises.
+    if (!LOCALES[langue] || !ID.accroche[langue] || !ID.signature[langue]) {
+        throw new Error(`appliquer-identite : identité incomplète pour « ${langue} » (${relatif})`);
+    }
     const url = ID.base + relatif;
 
     // D'abord le nom, partout : titre, prose du corps, texte alternatif.
@@ -155,16 +160,17 @@ function traiter(relatif) {
     /* Les hreflang. Seules les 64 pages anglaises en portent aujourd'hui ; le
        script ne fait que réécrire ce qu'il trouve. La page française jumelle
        est la même adresse sans le préfixe « en/ ». */
-    const cheminFr = relatif.replace(/^en\//, "");
+    const cheminFr = relatif.replace(/^[a-z]{2}\//, "");
     html = poser(html, 'hreflang="fr"', "href", ID.base + cheminFr);
     html = poser(html, 'hreflang="en"', "href", ID.base + "en/" + cheminFr);
+    html = poser(html, 'hreflang="hu"', "href", ID.base + "hu/" + cheminFr);
     html = poser(html, 'hreflang="x-default"', "href", ID.base + cheminFr);
 
     /* La bannière de l'accueil : le nom, puis la signature juste dessous.
        Écrite dans la page et non peinte par JavaScript, parce que c'est le
        premier texte que lit un moteur de recherche, et le seul endroit du site
        où le nom est un titre de niveau 1. */
-    if (relatif === "index.html" || relatif === "en/index.html") {
+    if (/^([a-z]{2}\/)?index\.html$/.test(relatif)) {
         html = html.replace(/(<header>\s*<h1>)[^<]*(<\/h1>\s*<p>)[^<]*(<\/p>)/,
                             `$1${ID.nom}$2${ID.signature[langue]}$3`);
     }

@@ -30,7 +30,7 @@
  * AJOUTER UNE LANGUE : une entrée dans LANGUES, une colonne dans TEXTES. Le
  *   sélecteur l'ignorera jusqu'à ce qu'elle figure dans CONTENU_TRADUIT ou
  *   PAGES_TRADUITES — c'est voulu, et audit-coherence.mjs le vérifie.
- * AJOUTER UN TEXTE  : une entrée dans TEXTES, avec les sept langues.
+ * AJOUTER UN TEXTE  : une entrée dans TEXTES, avec les huit langues.
  * ------------------------------------------------------------------------- */
 (function () {
     "use strict";
@@ -114,6 +114,10 @@
             '<rect width="60" height="40" fill="#F5F5F5"/>' +
             '<rect y="13.33" width="60" height="13.34" fill="#0039A6"/>' +
             '<rect y="26.67" width="60" height="13.33" fill="#D52B1E"/>') },
+        { code: "hu", nom: "Magyar", drapeau: svg(
+            '<rect width="60" height="40" fill="#477050"/>' +
+            '<rect width="60" height="26.67" fill="#FFFFFF"/>' +
+            '<rect width="60" height="13.33" fill="#CE2939"/>') },
     ];
 
     /* Les sujets dont le contenu décrit le droit français. Traduire « repos
@@ -135,7 +139,7 @@
        C'est de cette liste que dépendent deux comportements : le sélecteur mène
        vers la page traduite quand elle existe, et le bandeau « les cours sont
        en français » ne s'affiche plus sur les sujets traduits. */
-    const CONTENU_TRADUIT = { en: ["apprendre", "cybersecurite", "data", "design", "dev-web", "droit", "ecologie", "entrepreneuriat", "finance", "ia", "marketing", "negociation", "productivite", "sante"], es: [], de: [], it: [], zh: [], ru: [] };
+    const CONTENU_TRADUIT = { en: ["apprendre", "cybersecurite", "data", "design", "dev-web", "droit", "ecologie", "entrepreneuriat", "finance", "ia", "marketing", "negociation", "productivite", "sante"], es: [], de: [], it: [], zh: [], ru: [], hu: [] };
 
     /* Les pages hors cours traduites, par langue, désignées par leur nom de
        fichier. Même règle que CONTENU_TRADUIT : une page n'y figure que
@@ -153,65 +157,65 @@
         en: ["index.html", "guides.html", "actualites.html", "podcasts.html",
              "glossaire.html", "idees.html", "faq.html", "a-propos.html",
              "mentions-legales.html", "mon-espace.html"],
-        es: [], de: [], it: [], zh: [], ru: [],
+        es: [], de: [], it: [], zh: [], ru: [], hu: [],
     };
 
     // Les correspondances d'adresses entre versions. La version francaise est a
     // la racine, les autres sous « <langue>/ » : c'est le francais qui existait
     // d'abord, et deplacer 65 pages casserait tous les liens deja partages.
-    const LOCALES_DATE = { fr: "fr-FR", en: "en-GB", es: "es-ES", de: "de-DE", it: "it-IT", zh: "zh-CN", ru: "ru-RU" };
+    const LOCALES_DATE = { fr: "fr-FR", en: "en-GB", es: "es-ES", de: "de-DE", it: "it-IT", zh: "zh-CN", ru: "ru-RU", hu: "hu-HU" };
 
     const TEXTES = {
         // --- Navigation ----------------------------------------------------
-        accueil:    { fr: "Accueil", en: "Home", es: "Inicio", de: "Startseite", it: "Home", zh: "首页", ru: "Главная" },
-        guides:     { fr: "Guides", en: "Guides", es: "Guías", de: "Kurse", it: "Guide", zh: "指南", ru: "Курсы" },
-        actualites: { fr: "Actualités", en: "News", es: "Actualidad", de: "Aktuelles", it: "Attualità", zh: "资讯", ru: "Новости" },
-        glossaire:  { fr: "Glossaire", en: "Glossary", es: "Glosario", de: "Glossar", it: "Glossario", zh: "术语表", ru: "Глоссарий" },
-        podcasts:   { fr: "Podcasts", en: "Podcasts", es: "Podcasts", de: "Podcasts", it: "Podcast", zh: "播客", ru: "Подкасты" },
-        idees:      { fr: "Boîte à idées", en: "Suggestions", es: "Buzón de ideas", de: "Ideenbox", it: "Cassetta delle idee", zh: "意见箱", ru: "Предложения" },
-        faq:        { fr: "FAQ", en: "FAQ", es: "Preguntas frecuentes", de: "FAQ", it: "FAQ", zh: "常见问题", ru: "Вопросы и ответы" },
-        aPropos:    { fr: "À propos", en: "About", es: "Acerca de", de: "Über uns", it: "Chi siamo", zh: "关于", ru: "О сайте" },
-        monEspace:  { fr: "Mon espace", en: "My space", es: "Mi espacio", de: "Mein Bereich", it: "Il mio spazio", zh: "我的空间", ru: "Мой раздел" },
-        mentions:   { fr: "Mentions légales", en: "Legal notice", es: "Aviso legal", de: "Impressum", it: "Note legali", zh: "法律声明", ru: "Правовая информация" },
+        accueil:    { fr: "Accueil", en: "Home", es: "Inicio", de: "Startseite", it: "Home", zh: "首页", ru: "Главная", hu: "Kezdőlap" },
+        guides:     { fr: "Guides", en: "Guides", es: "Guías", de: "Kurse", it: "Guide", zh: "指南", ru: "Курсы", hu: "Útmutatók" },
+        actualites: { fr: "Actualités", en: "News", es: "Actualidad", de: "Aktuelles", it: "Attualità", zh: "资讯", ru: "Новости", hu: "Hírek" },
+        glossaire:  { fr: "Glossaire", en: "Glossary", es: "Glosario", de: "Glossar", it: "Glossario", zh: "术语表", ru: "Глоссарий", hu: "Szójegyzék" },
+        podcasts:   { fr: "Podcasts", en: "Podcasts", es: "Podcasts", de: "Podcasts", it: "Podcast", zh: "播客", ru: "Подкасты", hu: "Podcastok" },
+        idees:      { fr: "Boîte à idées", en: "Suggestions", es: "Buzón de ideas", de: "Ideenbox", it: "Cassetta delle idee", zh: "意见箱", ru: "Предложения", hu: "Ötletláda" },
+        faq:        { fr: "FAQ", en: "FAQ", es: "Preguntas frecuentes", de: "FAQ", it: "FAQ", zh: "常见问题", ru: "Вопросы и ответы", hu: "GYIK" },
+        aPropos:    { fr: "À propos", en: "About", es: "Acerca de", de: "Über uns", it: "Chi siamo", zh: "关于", ru: "О сайте", hu: "Rólunk" },
+        monEspace:  { fr: "Mon espace", en: "My space", es: "Mi espacio", de: "Mein Bereich", it: "Il mio spazio", zh: "我的空间", ru: "Мой раздел", hu: "Saját oldalam" },
+        mentions:   { fr: "Mentions légales", en: "Legal notice", es: "Aviso legal", de: "Impressum", it: "Note legali", zh: "法律声明", ru: "Правовая информация", hu: "Jogi nyilatkozat" },
 
         // --- Commandes -----------------------------------------------------
-        allerContenu: { fr: "Aller au contenu principal", en: "Skip to main content", es: "Ir al contenido principal", de: "Zum Hauptinhalt springen", it: "Vai al contenuto principale", zh: "跳到主要内容", ru: "Перейти к основному содержанию" },
-        theme:        { fr: "Activer ou désactiver le mode sombre", en: "Toggle dark mode", es: "Activar o desactivar el modo oscuro", de: "Dunkelmodus umschalten", it: "Attiva o disattiva la modalità scura", zh: "切换深色模式", ru: "Переключить тёмную тему" },
+        allerContenu: { fr: "Aller au contenu principal", en: "Skip to main content", es: "Ir al contenido principal", de: "Zum Hauptinhalt springen", it: "Vai al contenuto principale", zh: "跳到主要内容", ru: "Перейти к основному содержанию", hu: "Ugrás a fő tartalomra" },
+        theme:        { fr: "Activer ou désactiver le mode sombre", en: "Toggle dark mode", es: "Activar o desactivar el modo oscuro", de: "Dunkelmodus umschalten", it: "Attiva o disattiva la modalità scura", zh: "切换深色模式", ru: "Переключить тёмную тему", hu: "Sötét mód be- és kikapcsolása" },
 
         /* Confort de lecture. L'intro dit franchement que la taille du texte
            n'est pas là et où elle se règle : sans cette phrase, un visiteur
            ouvrirait le panneau pour agrandir le texte, ne trouverait pas, et
            repartirait en croyant que le site n'y peut rien. */
-        confort:            { fr: "Confort de lecture", en: "Reading comfort", es: "Comodidad de lectura", de: "Lesekomfort", it: "Comfort di lettura", zh: "阅读舒适度", ru: "Комфорт чтения" },
-        confortIntro:       { fr: "La taille du texte se règle dans ton navigateur. Ces réglages-ci font ce qu'il ne sait pas faire.", en: "Text size is set in your browser. These settings do what it cannot.", es: "El tamaño del texto se ajusta en tu navegador. Estos ajustes hacen lo que él no puede.", de: "Die Schriftgröße stellst du im Browser ein. Diese Optionen ergänzen, was er nicht kann.", it: "La dimensione del testo si regola nel browser. Queste opzioni fanno ciò che non sa fare.", zh: "文字大小请在浏览器中设置。以下选项补充浏览器做不到的部分。", ru: "Размер текста задаётся в браузере. Эти настройки делают то, чего он не умеет." },
-        confortInterligne:  { fr: "Interligne", en: "Line spacing", es: "Interlineado", de: "Zeilenabstand", it: "Interlinea", zh: "行距", ru: "Межстрочный интервал" },
-        confortEspacement:  { fr: "Espacement du texte", en: "Text spacing", es: "Espaciado del texto", de: "Textabstand", it: "Spaziatura del testo", zh: "字间距", ru: "Интервалы в тексте" },
-        confortPolice:      { fr: "Police", en: "Typeface", es: "Tipografía", de: "Schriftart", it: "Carattere", zh: "字体", ru: "Шрифт" },
-        confortNormal:      { fr: "Normal", en: "Normal", es: "Normal", de: "Normal", it: "Normale", zh: "标准", ru: "Обычный" },
-        confortGrand:       { fr: "Grand", en: "Wide", es: "Amplio", de: "Groß", it: "Ampio", zh: "较大", ru: "Больше" },
-        confortMax:         { fr: "Maximum", en: "Widest", es: "Máximo", de: "Maximal", it: "Massimo", zh: "最大", ru: "Максимум" },
-        confortLisible:     { fr: "Lisible", en: "Legible", es: "Legible", de: "Lesbar", it: "Leggibile", zh: "易读", ru: "Читаемый" },
-        rechercher:   { fr: "🔍 Rechercher un guide, un sujet...", en: "🔍 Search for a guide or topic…", es: "🔍 Buscar una guía o un tema…", de: "🔍 Leitfaden oder Thema suchen…", it: "🔍 Cerca una guida o un argomento…", zh: "🔍 搜索指南或主题…", ru: "🔍 Искать руководство или тему…" },
-        aucunResultat:{ fr: "Aucun résultat trouvé.", en: "No results found.", es: "No se ha encontrado ningún resultado.", de: "Keine Ergebnisse gefunden.", it: "Nessun risultato trovato.", zh: "没有找到结果。", ru: "Ничего не найдено." },
-        recherchesRecentes:{ fr: "Recherches récentes :", en: "Recent searches:", es: "Búsquedas recientes:", de: "Letzte Suchanfragen:", it: "Ricerche recenti:", zh: "最近的搜索：", ru: "Недавние запросы:" },
+        confort:            { fr: "Confort de lecture", en: "Reading comfort", es: "Comodidad de lectura", de: "Lesekomfort", it: "Comfort di lettura", zh: "阅读舒适度", ru: "Комфорт чтения", hu: "Olvasási kényelem" },
+        confortIntro:       { fr: "La taille du texte se règle dans ton navigateur. Ces réglages-ci font ce qu'il ne sait pas faire.", en: "Text size is set in your browser. These settings do what it cannot.", es: "El tamaño del texto se ajusta en tu navegador. Estos ajustes hacen lo que él no puede.", de: "Die Schriftgröße stellst du im Browser ein. Diese Optionen ergänzen, was er nicht kann.", it: "La dimensione del testo si regola nel browser. Queste opzioni fanno ciò che non sa fare.", zh: "文字大小请在浏览器中设置。以下选项补充浏览器做不到的部分。", ru: "Размер текста задаётся в браузере. Эти настройки делают то, чего он не умеет.", hu: "A betűméretet a böngésződben állíthatod. Ezek a beállítások azt teszik, amire az nem képes." },
+        confortInterligne:  { fr: "Interligne", en: "Line spacing", es: "Interlineado", de: "Zeilenabstand", it: "Interlinea", zh: "行距", ru: "Межстрочный интервал", hu: "Sorköz" },
+        confortEspacement:  { fr: "Espacement du texte", en: "Text spacing", es: "Espaciado del texto", de: "Textabstand", it: "Spaziatura del testo", zh: "字间距", ru: "Интервалы в тексте", hu: "Betű- és szóköz" },
+        confortPolice:      { fr: "Police", en: "Typeface", es: "Tipografía", de: "Schriftart", it: "Carattere", zh: "字体", ru: "Шрифт", hu: "Betűtípus" },
+        confortNormal:      { fr: "Normal", en: "Normal", es: "Normal", de: "Normal", it: "Normale", zh: "标准", ru: "Обычный", hu: "Normál" },
+        confortGrand:       { fr: "Grand", en: "Wide", es: "Amplio", de: "Groß", it: "Ampio", zh: "较大", ru: "Больше", hu: "Nagyobb" },
+        confortMax:         { fr: "Maximum", en: "Widest", es: "Máximo", de: "Maximal", it: "Massimo", zh: "最大", ru: "Максимум", hu: "Legnagyobb" },
+        confortLisible:     { fr: "Lisible", en: "Legible", es: "Legible", de: "Lesbar", it: "Leggibile", zh: "易读", ru: "Читаемый", hu: "Olvasható" },
+        rechercher:   { fr: "🔍 Rechercher un guide, un sujet...", en: "🔍 Search for a guide or topic…", es: "🔍 Buscar una guía o un tema…", de: "🔍 Leitfaden oder Thema suchen…", it: "🔍 Cerca una guida o un argomento…", zh: "🔍 搜索指南或主题…", ru: "🔍 Искать руководство или тему…", hu: "🔍 Útmutató vagy téma keresése…" },
+        aucunResultat:{ fr: "Aucun résultat trouvé.", en: "No results found.", es: "No se ha encontrado ningún resultado.", de: "Keine Ergebnisse gefunden.", it: "Nessun risultato trovato.", zh: "没有找到结果。", ru: "Ничего не найдено.", hu: "Nincs találat." },
+        recherchesRecentes:{ fr: "Recherches récentes :", en: "Recent searches:", es: "Búsquedas recientes:", de: "Letzte Suchanfragen:", it: "Ricerche recenti:", zh: "最近的搜索：", ru: "Недавние запросы:", hu: "Legutóbbi keresések:" },
         // La recherche ne connaît que les titres français : le dire là où le
         // visiteur le constate vaut mieux que de le laisser deviner.
-        rechercheEnFrancais:{ fr: "", en: "Results are listed under their French titles; the links lead to the English pages.", es: "Los resultados aparecen con su título en francés; los enlaces llevan a las páginas traducidas.", de: "Die Ergebnisse tragen ihre französischen Titel; die Links führen zu den übersetzten Seiten.", it: "I risultati portano il loro titolo francese; i link rimandano alle pagine tradotte.", zh: "结果显示法语标题，链接指向已翻译的页面。", ru: "Результаты показаны с французскими заголовками; ссылки ведут на переведённые страницы." },
-        retourHaut:   { fr: "Retour en haut de la page", en: "Back to top", es: "Volver arriba", de: "Nach oben", it: "Torna su", zh: "返回顶部", ru: "Наверх" },
-        toutDeplier:  { fr: "Tout déplier", en: "Expand all", es: "Desplegar todo", de: "Alle ausklappen", it: "Espandi tutto", zh: "全部展开", ru: "Развернуть всё" },
-        toutReplier:  { fr: "Tout replier", en: "Collapse all", es: "Plegar todo", de: "Alle einklappen", it: "Comprimi tutto", zh: "全部折叠", ru: "Свернуть всё" },
-        ajouterFavori:{ fr: "Ajouter aux favoris", en: "Add to favourites", es: "Añadir a favoritos", de: "Zu Favoriten hinzufügen", it: "Aggiungi ai preferiti", zh: "加入收藏", ru: "Добавить в избранное" },
-        retirerFavori:{ fr: "Retirer des favoris", en: "Remove from favourites", es: "Quitar de favoritos", de: "Aus Favoriten entfernen", it: "Rimuovi dai preferiti", zh: "取消收藏", ru: "Удалить из избранного" },
-        favori:       { fr: "Favori", en: "Favourite", es: "Favorito", de: "Favorit", it: "Preferito", zh: "收藏", ru: "В избранном" },
-        copierLien:   { fr: "Copier le lien", en: "Copy link", es: "Copiar enlace", de: "Link kopieren", it: "Copia il link", zh: "复制链接", ru: "Копировать ссылку" },
-        lienCopie:    { fr: "Lien copié", en: "Link copied", es: "Enlace copiado", de: "Link kopiert", it: "Link copiato", zh: "链接已复制", ru: "Ссылка скопирована" },
-        luCompris:    { fr: "J'ai lu et compris", en: "I have read and understood", es: "Lo he leído y entendido", de: "Gelesen und verstanden", it: "Ho letto e capito", zh: "我已阅读并理解", ru: "Прочитано и понято" },
-        choisirLangue:{ fr: "Choisir la langue", en: "Choose language", es: "Elegir idioma", de: "Sprache wählen", it: "Scegli la lingua", zh: "选择语言", ru: "Выбрать язык" },
-        lienCopieCourt:{ fr: "✅ Lien copié !", en: "✅ Link copied!", es: "✅ ¡Enlace copiado!", de: "✅ Link kopiert!", it: "✅ Link copiato!", zh: "✅ 链接已复制！", ru: "✅ Ссылка скопирована!" },
-        copieImpossible:{ fr: "Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse.", en: "The link could not be copied automatically. Please copy it from the address bar.", es: "No se ha podido copiar el enlace automáticamente. Cópielo desde la barra de direcciones.", de: "Der Link konnte nicht automatisch kopiert werden. Bitte kopieren Sie ihn aus der Adressleiste.", it: "Impossibile copiare il link automaticamente. Copialo dalla barra degli indirizzi.", zh: "无法自动复制链接，请从地址栏手动复制。", ru: "Не удалось скопировать ссылку автоматически. Скопируйте её из адресной строки." },
+        rechercheEnFrancais:{ fr: "", en: "Results are listed under their French titles; the links lead to the English pages.", es: "Los resultados aparecen con su título en francés; los enlaces llevan a las páginas traducidas.", de: "Die Ergebnisse tragen ihre französischen Titel; die Links führen zu den übersetzten Seiten.", it: "I risultati portano il loro titolo francese; i link rimandano alle pagine tradotte.", zh: "结果显示法语标题，链接指向已翻译的页面。", ru: "Результаты показаны с французскими заголовками; ссылки ведут на переведённые страницы.", hu: "A találatok francia címükkel jelennek meg; a hivatkozások a lefordított oldalakra vezetnek." },
+        retourHaut:   { fr: "Retour en haut de la page", en: "Back to top", es: "Volver arriba", de: "Nach oben", it: "Torna su", zh: "返回顶部", ru: "Наверх", hu: "Vissza az oldal tetejére" },
+        toutDeplier:  { fr: "Tout déplier", en: "Expand all", es: "Desplegar todo", de: "Alle ausklappen", it: "Espandi tutto", zh: "全部展开", ru: "Развернуть всё", hu: "Összes kinyitása" },
+        toutReplier:  { fr: "Tout replier", en: "Collapse all", es: "Plegar todo", de: "Alle einklappen", it: "Comprimi tutto", zh: "全部折叠", ru: "Свернуть всё", hu: "Összes becsukása" },
+        ajouterFavori:{ fr: "Ajouter aux favoris", en: "Add to favourites", es: "Añadir a favoritos", de: "Zu Favoriten hinzufügen", it: "Aggiungi ai preferiti", zh: "加入收藏", ru: "Добавить в избранное", hu: "Hozzáadás a kedvencekhez" },
+        retirerFavori:{ fr: "Retirer des favoris", en: "Remove from favourites", es: "Quitar de favoritos", de: "Aus Favoriten entfernen", it: "Rimuovi dai preferiti", zh: "取消收藏", ru: "Удалить из избранного", hu: "Eltávolítás a kedvencek közül" },
+        favori:       { fr: "Favori", en: "Favourite", es: "Favorito", de: "Favorit", it: "Preferito", zh: "收藏", ru: "В избранном", hu: "Kedvenc" },
+        copierLien:   { fr: "Copier le lien", en: "Copy link", es: "Copiar enlace", de: "Link kopieren", it: "Copia il link", zh: "复制链接", ru: "Копировать ссылку", hu: "Hivatkozás másolása" },
+        lienCopie:    { fr: "Lien copié", en: "Link copied", es: "Enlace copiado", de: "Link kopiert", it: "Link copiato", zh: "链接已复制", ru: "Ссылка скопирована", hu: "Hivatkozás másolva" },
+        luCompris:    { fr: "J'ai lu et compris", en: "I have read and understood", es: "Lo he leído y entendido", de: "Gelesen und verstanden", it: "Ho letto e capito", zh: "我已阅读并理解", ru: "Прочитано и понято", hu: "Elolvastam és megértettem" },
+        choisirLangue:{ fr: "Choisir la langue", en: "Choose language", es: "Elegir idioma", de: "Sprache wählen", it: "Scegli la lingua", zh: "选择语言", ru: "Выбрать язык", hu: "Nyelv kiválasztása" },
+        lienCopieCourt:{ fr: "✅ Lien copié !", en: "✅ Link copied!", es: "✅ ¡Enlace copiado!", de: "✅ Link kopiert!", it: "✅ Link copiato!", zh: "✅ 链接已复制！", ru: "✅ Ссылка скопирована!", hu: "✅ Hivatkozás másolva!" },
+        copieImpossible:{ fr: "Impossible de copier le lien automatiquement. Copie-le manuellement depuis la barre d'adresse.", en: "The link could not be copied automatically. Please copy it from the address bar.", es: "No se ha podido copiar el enlace automáticamente. Cópielo desde la barra de direcciones.", de: "Der Link konnte nicht automatisch kopiert werden. Bitte kopieren Sie ihn aus der Adressleiste.", it: "Impossibile copiare il link automaticamente. Copialo dalla barra degli indirizzi.", zh: "无法自动复制链接，请从地址栏手动复制。", ru: "Не удалось скопировать ссылку автоматически. Скопируйте её из адресной строки.", hu: "A hivatkozást nem sikerült automatikusan másolni. Másold ki a címsorból." },
 
         // --- La mascotte -----------------------------------------------------
-        mascotteAlt:    { fr: "La mascotte de {nom} : un robot dont le corps est un livre ouvert", en: "The {nom} mascot: a robot whose body is an open book", es: "La mascota de {nom}: un robot cuyo cuerpo es un libro abierto", de: "Das Maskottchen von {nom}: ein Roboter, dessen Körper ein aufgeschlagenes Buch ist", it: "La mascotte di {nom}: un robot il cui corpo è un libro aperto", zh: "{nom} 的吉祥物：身体是一本翻开的书的机器人", ru: "Талисман {nom}: робот, чьё тело — раскрытая книга" },
+        mascotteAlt:    { fr: "La mascotte de {nom} : un robot dont le corps est un livre ouvert", en: "The {nom} mascot: a robot whose body is an open book", es: "La mascota de {nom}: un robot cuyo cuerpo es un libro abierto", de: "Das Maskottchen von {nom}: ein Roboter, dessen Körper ein aufgeschlagenes Buch ist", it: "La mascotte di {nom}: un robot il cui corpo è un libro aperto", zh: "{nom} 的吉祥物：身体是一本翻开的书的机器人", ru: "Талисман {nom}: робот, чьё тело — раскрытая книга", hu: "A {nom} kabalája: egy robot, amelynek a teste egy nyitott könyv" },
         /* Court, pour tenir sur un téléphone sans recouvrir la bannière : la
            version longue faisait 240 px, soit les deux tiers d'un écran de 375.
 
@@ -219,46 +223,46 @@
            faux au quinzième sujet, et rien ne l'aurait signalé : seules 2 des
            17 pages hors cours chargent parcours.js, la source de vérité du
            nombre de sujets. Une question ne vieillit pas. */
-        mascotteBulle:  { fr: "Par où commencer ?", en: "Where to start?", es: "¿Por dónde empezar?", de: "Womit anfangen?", it: "Da dove iniziare?", zh: "从哪里开始？", ru: "С чего начать?" },
-        mascotteLien:   { fr: "Voir les guides", en: "See the guides", es: "Ver las guías", de: "Zu den Leitfäden", it: "Vedi le guide", zh: "查看指南", ru: "К руководствам" },
+        mascotteBulle:  { fr: "Par où commencer ?", en: "Where to start?", es: "¿Por dónde empezar?", de: "Womit anfangen?", it: "Da dove iniziare?", zh: "从哪里开始？", ru: "С чего начать?", hu: "Hol kezdjük?" },
+        mascotteLien:   { fr: "Voir les guides", en: "See the guides", es: "Ver las guías", de: "Zu den Leitfäden", it: "Vedi le guide", zh: "查看指南", ru: "К руководствам", hu: "Irány az útmutatók" },
 
         /* Un message par page : la mascotte parle de l'endroit où l'on se
            trouve, pas du site en general. « Une suggestion ? » sur la boite a
            idees, « Une question ? » sur la FAQ. Le repli sur « mascotteBulle »
            reste en place pour toute page qui n aurait pas le sien. */
-        mascotteBulleAccueil:    { fr: "Satisferas-tu ta curiosité ?", en: "Will you satisfy your curiosity?", es: "¿Satisfará su curiosidad?", de: "Stillen Sie Ihre Neugier?", it: "Soddisferai la tua curiosità?", zh: "要满足你的好奇心吗？", ru: "Утолите своё любопытство?" },
-        mascotteBulleGuides:     { fr: "Par lequel commences-tu ?", en: "Which one will you start with?", es: "¿Por cuál empiezas?", de: "Womit fangen Sie an?", it: "Da quale cominci?", zh: "先从哪一个开始？", ru: "С чего начнёте?" },
-        mascotteBulleActualites: { fr: "Une lecture ?", en: "Something to read?", es: "¿Una lectura?", de: "Etwas zu lesen?", it: "Una lettura?", zh: "想读点什么？", ru: "Что почитать?" },
-        mascotteBullePodcasts:   { fr: "Une oreille libre ?", en: "Got a free ear?", es: "¿Un rato para escuchar?", de: "Ein Ohr frei?", it: "Un orecchio libero?", zh: "有空听听吗？", ru: "Найдётся минутка послушать?" },
-        mascotteBulleGlossaire:  { fr: "Un mot à éclaircir ?", en: "A word to clear up?", es: "¿Una palabra que aclarar?", de: "Ein Wort klären?", it: "Una parola da chiarire?", zh: "有词不懂？", ru: "Непонятное слово?" },
-        mascotteBulleIdees:      { fr: "Une suggestion ?", en: "A suggestion?", es: "¿Una sugerencia?", de: "Ein Vorschlag?", it: "Un suggerimento?", zh: "有建议吗？", ru: "Есть предложение?" },
-        mascotteBulleFaq:        { fr: "Une question ?", en: "A question?", es: "¿Una pregunta?", de: "Eine Frage?", it: "Una domanda?", zh: "有问题吗？", ru: "Есть вопрос?" },
-        mascotteBulleAPropos:    { fr: "Envie d'en savoir plus ?", en: "Want to know more?", es: "¿Quiere saber más?", de: "Mehr erfahren?", it: "Vuoi saperne di più?", zh: "想了解更多？", ru: "Хотите узнать больше?" },
-        mascotteBulleMentions:   { fr: "Tout y est écrit.", en: "It's all written here.", es: "Todo está escrito aquí.", de: "Hier steht alles.", it: "Qui è scritto tutto.", zh: "全都写在这里。", ru: "Здесь всё написано." },
-        mascotteBulleEspace:     { fr: "On reprend ?", en: "Carry on?", es: "¿Retomamos?", de: "Weitermachen?", it: "Riprendiamo?", zh: "继续吗？", ru: "Продолжим?" },
-        mascotteBulle404:        { fr: "Perdu ?", en: "Lost?", es: "¿Perdido?", de: "Verirrt?", it: "Perso?", zh: "迷路了？", ru: "Заблудились?" },
+        mascotteBulleAccueil:    { fr: "Satisferas-tu ta curiosité ?", en: "Will you satisfy your curiosity?", es: "¿Satisfará su curiosidad?", de: "Stillen Sie Ihre Neugier?", it: "Soddisferai la tua curiosità?", zh: "要满足你的好奇心吗？", ru: "Утолите своё любопытство?", hu: "Kielégíted a kíváncsiságodat?" },
+        mascotteBulleGuides:     { fr: "Par lequel commences-tu ?", en: "Which one will you start with?", es: "¿Por cuál empiezas?", de: "Womit fangen Sie an?", it: "Da quale cominci?", zh: "先从哪一个开始？", ru: "С чего начнёте?", hu: "Melyikkel kezded?" },
+        mascotteBulleActualites: { fr: "Une lecture ?", en: "Something to read?", es: "¿Una lectura?", de: "Etwas zu lesen?", it: "Una lettura?", zh: "想读点什么？", ru: "Что почитать?", hu: "Egy kis olvasnivaló?" },
+        mascotteBullePodcasts:   { fr: "Une oreille libre ?", en: "Got a free ear?", es: "¿Un rato para escuchar?", de: "Ein Ohr frei?", it: "Un orecchio libero?", zh: "有空听听吗？", ru: "Найдётся минутка послушать?", hu: "Ráérsz meghallgatni?" },
+        mascotteBulleGlossaire:  { fr: "Un mot à éclaircir ?", en: "A word to clear up?", es: "¿Una palabra que aclarar?", de: "Ein Wort klären?", it: "Una parola da chiarire?", zh: "有词不懂？", ru: "Непонятное слово?", hu: "Tisztáznál egy szót?" },
+        mascotteBulleIdees:      { fr: "Une suggestion ?", en: "A suggestion?", es: "¿Una sugerencia?", de: "Ein Vorschlag?", it: "Un suggerimento?", zh: "有建议吗？", ru: "Есть предложение?", hu: "Van egy ötleted?" },
+        mascotteBulleFaq:        { fr: "Une question ?", en: "A question?", es: "¿Una pregunta?", de: "Eine Frage?", it: "Una domanda?", zh: "有问题吗？", ru: "Есть вопрос?", hu: "Kérdésed van?" },
+        mascotteBulleAPropos:    { fr: "Envie d'en savoir plus ?", en: "Want to know more?", es: "¿Quiere saber más?", de: "Mehr erfahren?", it: "Vuoi saperne di più?", zh: "想了解更多？", ru: "Хотите узнать больше?", hu: "Többet tudnál meg?" },
+        mascotteBulleMentions:   { fr: "Tout y est écrit.", en: "It's all written here.", es: "Todo está escrito aquí.", de: "Hier steht alles.", it: "Qui è scritto tutto.", zh: "全都写在这里。", ru: "Здесь всё написано.", hu: "Itt minden le van írva." },
+        mascotteBulleEspace:     { fr: "On reprend ?", en: "Carry on?", es: "¿Retomamos?", de: "Weitermachen?", it: "Riprendiamo?", zh: "继续吗？", ru: "Продолжим?", hu: "Folytatjuk?" },
+        mascotteBulle404:        { fr: "Perdu ?", en: "Lost?", es: "¿Perdido?", de: "Verirrt?", it: "Perso?", zh: "迷路了？", ru: "Заблудились?", hu: "Elvesztél?" },
 
         // Le lien change lui aussi quand la page appelle une autre action.
-        mascotteLienIdees:       { fr: "Proposer un sujet", en: "Propose a subject", es: "Proponer un tema", de: "Thema vorschlagen", it: "Proponi un argomento", zh: "提出主题", ru: "Предложить тему" },
-        mascotteFermer: { fr: "Masquer la mascotte", en: "Hide the mascot", es: "Ocultar la mascota", de: "Maskottchen ausblenden", it: "Nascondi la mascotte", zh: "隐藏吉祥物", ru: "Скрыть талисман" },
+        mascotteLienIdees:       { fr: "Proposer un sujet", en: "Propose a subject", es: "Proponer un tema", de: "Thema vorschlagen", it: "Proponi un argomento", zh: "提出主题", ru: "Предложить тему", hu: "Téma javaslása" },
+        mascotteFermer: { fr: "Masquer la mascotte", en: "Hide the mascot", es: "Ocultar la mascota", de: "Maskottchen ausblenden", it: "Nascondi la mascotte", zh: "隐藏吉祥物", ru: "Скрыть талисман", hu: "Kabala elrejtése" },
 
         // --- Page introuvable ------------------------------------------------
         // Servie par GitHub Pages pour toute adresse inconnue du site, quelle
         // que soit la langue du chemin demandé : elle ne peut pas exister en
         // plusieurs exemplaires, elle traduit donc son propre texte.
-        introuvableTitre: { fr: "Cette page n'existe pas ou a été déplacée.", en: "This page does not exist, or has been moved.", es: "Esta página no existe o ha sido trasladada.", de: "Diese Seite existiert nicht oder wurde verschoben.", it: "Questa pagina non esiste o è stata spostata.", zh: "该页面不存在或已被移动。", ru: "Эта страница не существует или была перемещена." },
-        introuvableTexte: { fr: "Pas de panique — retourne à l'accueil pour retrouver tous les guides.", en: "No need to worry — go back to the home page to find all the guides.", es: "Que no cunda el pánico: vuelva al inicio para encontrar todas las guías.", de: "Kein Grund zur Sorge — kehren Sie zur Startseite zurück, um alle Leitfäden zu finden.", it: "Niente panico: torna alla home per ritrovare tutte le guide.", zh: "别担心 — 返回首页即可找到所有指南。", ru: "Не волнуйтесь — вернитесь на главную, чтобы найти все руководства." },
-        retourAccueil:    { fr: "← Retour à l'accueil", en: "← Back to the home page", es: "← Volver al inicio", de: "← Zurück zur Startseite", it: "← Torna alla home", zh: "← 返回首页", ru: "← Вернуться на главную" },
+        introuvableTitre: { fr: "Cette page n'existe pas ou a été déplacée.", en: "This page does not exist, or has been moved.", es: "Esta página no existe o ha sido trasladada.", de: "Diese Seite existiert nicht oder wurde verschoben.", it: "Questa pagina non esiste o è stata spostata.", zh: "该页面不存在或已被移动。", ru: "Эта страница не существует или была перемещена.", hu: "Ez az oldal nem létezik, vagy áthelyezték." },
+        introuvableTexte: { fr: "Pas de panique — retourne à l'accueil pour retrouver tous les guides.", en: "No need to worry — go back to the home page to find all the guides.", es: "Que no cunda el pánico: vuelva al inicio para encontrar todas las guías.", de: "Kein Grund zur Sorge — kehren Sie zur Startseite zurück, um alle Leitfäden zu finden.", it: "Niente panico: torna alla home per ritrovare tutte le guide.", zh: "别担心 — 返回首页即可找到所有指南。", ru: "Не волнуйтесь — вернитесь на главную, чтобы найти все руководства.", hu: "Semmi pánik — térj vissza a kezdőlapra, ott megtalálod az összes útmutatót." },
+        retourAccueil:    { fr: "← Retour à l'accueil", en: "← Back to the home page", es: "← Volver al inicio", de: "← Zurück zur Startseite", it: "← Torna alla home", zh: "← 返回首页", ru: "← Вернуться на главную", hu: "← Vissza a kezdőlapra" },
 
         // --- Quiz -----------------------------------------------------------
-        quizSurtitre: { fr: "On passe au test", en: "Time for a test", es: "Pasemos a la prueba", de: "Jetzt wird geprüft", it: "Passiamo alla prova", zh: "来做个测验", ru: "Переходим к проверке" },
-        quizTitre:    { fr: "🧠 Vérifie ta compréhension", en: "🧠 Check your understanding", es: "🧠 Compruebe lo que ha entendido", de: "🧠 Prüfen Sie Ihr Verständnis", it: "🧠 Verifica la tua comprensione", zh: "🧠 检验你的理解", ru: "🧠 Проверьте, что вы поняли" },
+        quizSurtitre: { fr: "On passe au test", en: "Time for a test", es: "Pasemos a la prueba", de: "Jetzt wird geprüft", it: "Passiamo alla prova", zh: "来做个测验", ru: "Переходим к проверке", hu: "Jöjjön a teszt" },
+        quizTitre:    { fr: "🧠 Vérifie ta compréhension", en: "🧠 Check your understanding", es: "🧠 Compruebe lo que ha entendido", de: "🧠 Prüfen Sie Ihr Verständnis", it: "🧠 Verifica la tua comprensione", zh: "🧠 检验你的理解", ru: "🧠 Проверьте, что вы поняли", hu: "🧠 Ellenőrizd, mit értettél meg" },
         // {j} bonnes réponses, {r} questions répondues. Les accolades sont
         // remplacees a l affichage : l ordre des deux nombres change selon la
         // langue, une concatenation en dur ne le permettrait pas.
-        quizScore:    { fr: "{j} bonne(s) réponse(s) sur {r} question(s) répondue(s)", en: "{j} correct out of {r} answered", es: "{j} acierto(s) de {r} pregunta(s) respondida(s)", de: "{j} von {r} beantworteten Fragen richtig", it: "{j} risposta/e corretta/e su {r} domanda/e", zh: "已答 {r} 题，答对 {j} 题", ru: "{j} верных из {r} отвеченных" },
-        quizRotation: { fr: "Les questions changent le ", en: "The questions change on ", es: "Las preguntas cambian el ", de: "Die Fragen wechseln am ", it: "Le domande cambiano il ", zh: "题目将于 ", ru: "Вопросы сменятся " },
-        quizRotationFin:{ fr: ".", en: ".", es: ".", de: ".", it: ".", zh: " 更换。", ru: "." },
+        quizScore:    { fr: "{j} bonne(s) réponse(s) sur {r} question(s) répondue(s)", en: "{j} correct out of {r} answered", es: "{j} acierto(s) de {r} pregunta(s) respondida(s)", de: "{j} von {r} beantworteten Fragen richtig", it: "{j} risposta/e corretta/e su {r} domanda/e", zh: "已答 {r} 题，答对 {j} 题", ru: "{j} верных из {r} отвеченных", hu: "{r} megválaszolt kérdésből {j} helyes" },
+        quizRotation: { fr: "Les questions changent le ", en: "The questions change on ", es: "Las preguntas cambian el ", de: "Die Fragen wechseln am ", it: "Le domande cambiano il ", zh: "题目将于 ", ru: "Вопросы сменятся ", hu: "A kérdések ekkor cserélődnek: " },
+        quizRotationFin:{ fr: ".", en: ".", es: ".", de: ".", it: ".", zh: " 更换。", ru: ".", hu: " " },
 
         // --- Bandeaux ------------------------------------------------------
         /* Ce message ne parle que de LA PAGE AFFICHÉE, et non plus de tout le
@@ -275,6 +279,7 @@
             it: "Questa pagina non è ancora tradotta. È mostrata in francese.",
             zh: "本页面尚未翻译，显示为法语。",
             ru: "Эта страница ещё не переведена. Она показана на французском языке.",
+            hu: "Ez az oldal még nincs lefordítva. Francia nyelven jelenik meg.",
         },
         // Affiché sur une page française qui, elle, a bien une traduction : le
         // visiteur y est arrivé par un lien partagé ou par son navigateur.
@@ -286,6 +291,7 @@
             it: "Questa pagina è disponibile anche in italiano.",
             zh: "本页面也提供中文版本。",
             ru: "Эта страница также доступна на русском языке.",
+            hu: "Ez az oldal magyarul is elérhető.",
         },
         reglesFrancaises: {
             fr: "",
@@ -295,6 +301,7 @@
             it: "Questa guida descrive le norme in vigore in Francia. Potrebbero non applicarsi nel suo Paese.",
             zh: "本指南介绍的是法国的规定，可能不适用于您所在的国家。",
             ru: "В этом руководстве описаны правила, действующие во Франции. В вашей стране они могут не применяться.",
+            hu: "Ez az útmutató a Franciaországban érvényes szabályokat ismerteti. Előfordulhat, hogy a te országodban nem érvényesek.",
         },
     };
 

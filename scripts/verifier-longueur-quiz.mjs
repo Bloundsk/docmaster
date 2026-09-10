@@ -27,12 +27,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import url from "node:url";
+import contenu from "./langues-contenu.js";
 import vm from "node:vm";
 
 const RACINE = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
 const DOSSIERS = [
     { langue: "fr", chemin: path.join(RACINE, "assets/js/quiz") },
-    { langue: "en", chemin: path.join(RACINE, "assets/js/quiz/en") }
+    ...contenu.languesAvecQuiz(RACINE).map((code) => ({ langue: code, chemin: path.join(RACINE, "assets/js/quiz", code) }))
 ];
 
 const MAX_GLOBAL = 0.42;

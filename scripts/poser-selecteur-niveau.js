@@ -29,6 +29,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const contenu = require("./langues-contenu.js");
 const vm = require("vm");
 
 const RACINE = path.join(__dirname, "..");
@@ -56,6 +57,13 @@ const LIBELLES = {
         debutant: "Beginner",
         intermediaire: "Intermediate",
         avance: "Advanced",
+    },
+    hu: {
+        aria: "Az útmutató szintje",
+        index: "Áttekintés",
+        debutant: "Kezdő",
+        intermediaire: "Középhaladó",
+        avance: "Haladó",
     },
 };
 
@@ -89,8 +97,10 @@ let conformes = 0;
 const divergentes = [];
 const sansAncrage = [];
 
-for (const langue of ["fr", "en"]) {
-    const base = path.join(RACINE, langue === "fr" ? "" : "en", "guides");
+for (const langue of contenu.languesAvecGuides(RACINE)) {
+    // Une langue sans libelles echoue ici, au lieu d'etre sautee en silence.
+    if (!LIBELLES[langue]) throw new Error(`poser-selecteur-niveau : aucun libellé pour « ${langue} »`);
+    const base = path.join(RACINE, langue === "fr" ? "" : langue, "guides");
     for (const [sujet, meta] of Object.entries(PARCOURS)) {
         for (const page of ["index", ...meta.niveaux]) {
             const fichier = path.join(base, sujet, page + ".html");
