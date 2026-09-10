@@ -1,6 +1,18 @@
 {
-  "maj": "2026-09-09T19:54:58.691Z",
+  "maj": "2026-09-10T12:18:19.774Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNenA0YmNLbjNscndYTkg2cjdGNktITmZpVjAzT3EyN1NlS1NwZ3NNV2lZTGFoTlQtZnJMUjg5TFMwdnRxNGhEVmswMndCRnQwVzgtdzZnOUpKa0dXdHhGSUdqMWRHbnJ6TkI4ZzlvVFhIRk1FUWlXY0V6MU1VdFpJNUlGcy1KejBVejlKVkF2WFBzSUttYzRHbVY0SGFUTWhoOXlIV0htMV9wLTZhOG9wRTNOSnY0bkJBLUtET2R2V1JQdHM?oc=5",
+      "titre": "Fuite de données à la DGFiP : les entreprises peuvent-elles attaquer l’Etat ?",
+      "source": "Option Finance",
+      "date": "2026-09-10",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-10"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONU55QTRfZkUtbndEVXozVG5mZUVGNXRKbTBUclBlWTJxN0lfT1FQbG9sc25aN0x5RE5aeDJMQ3czcnRfSkVySm9LZUlGV21YNW5rbjhGa1llaUVXNHBGSDBiVXZtUmtjaUxzdEZMMlcyenFuS21jNU1NckU4QVNNVUpMelVNS1dXSzdaQjFHQUlTVjZnbXo5WTR2eTl3Zi1WaU9DWA?oc=5",
       "titre": "La hausse des taux d’intérêt s’ajoute aux craintes liées à la guerre commerciale",
@@ -12,6 +24,30 @@
       "section": "📉 Obligations et taux d'intérêt",
       "sujet": "💰 Finance — Avancé",
       "publie": "2026-09-09"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOXp4aHdDUk51ejNwWW54Ukg4TjllbEVGSHNNRHdKMWRFNDAzMVA5ZnNsc0hGTkJERkJFU3djS0o5aW1PUGhKQVhSY1FpdTB0aG8zOThPMDZnOUVEVG5yN1J0Y0p2M3RXTTlUTGlXa0lHbVk0RGpTbUpvNVVoNDdiN3NlVi1EMUlrUFhPN3hCR1ZSSmRQbC1uSzVmenVkSGVyRFV5TFpDbmt6MGFnT2RyVHdrMDFtQTdEQncxMWxkYXQ3V3pFbEhwc3E1QUd2T0NlY0lmdFZ3?oc=5",
+      "titre": "Impots.gouv.fr toujours sans double authentification, un ex-ministre explique enfin pourquoi",
+      "source": "Capital.fr",
+      "date": "2026-09-09",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "double-authentification",
+      "section": "📱 La double authentification",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "publie": "2026-09-10"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPYktXZzNQTjVtWmF6QU4tRlNYa3ZXbWtJdWdvOXNVZlhfSDRoT0ZNejBaaUFhOFgxTHlZRzBPOEUzTHo2aFpmYm80cDVxVW1kdWZmeEtXQld6RUt0R19CSzBVX3hmTU5NSGkyQ0s2aVpoeWNxOXJ5ak5aMllib0RNOXA0M3h3Z2xtNGVFRUFhaHJKUGs0em1naC1nanZpdjA0UHhvbVg2dVVTdngyR0hfYmpKTkxNR3NlMGhfQWl6NVNFYVdaVVFyU1VvVUpMaGZlUmVoNDVNUdIB3AFBVV95cUxNVWxTQ0ZxUzZoSXNveEI0Uy1MLWExcTR2YkRJb25ieGc3T0t5akR4Tk5JUXNlcTZqaXFvT2NFUmhmeEZKUkVlS0QzR29xZ3VRRmZMblI4VkdRQUFGYVZCcTRQcnhOWTRoZEU5Q3FONnJZY29qVldqOTFjeWJXaWVxUWFQV2NfOER4cmVEY2NiWWdmZjBvS1ZtQmlDZ2pYdDI2T29fcnpUSjRLV0hYR1V2MGgxNEFSLXlPSldjWExPemU0MDY4UEtIRUF5T2NzeExhZTI3SFUwQ1A4SnFY?oc=5",
+      "titre": "Un ophtalmologue recommande la règle 20-20-20 au travail pour soulager la fatigue visuelle due aux écrans.",
+      "source": "Demócrata",
+      "date": "2026-09-09",
+      "guide": "sante",
+      "page": "debutant.html",
+      "ancre": "la-fatigue-visuelle",
+      "section": "👀 La fatigue visuelle",
+      "sujet": "🩺 Santé au travail — Débutant",
+      "publie": "2026-09-10"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV202ZFYxaDgxclp4RlhvMkt2c3hmeEVjaDBlRmdkOXZueU5iMzlMVWxQVmZueDhBWV9qb2UzM3F0STNqU0I3S2lxekN3Yk00dTlLSDhETnVtbTMwQ3c1bWwyamVEc2FXRjB6LWNjcUR2bGpfRnB4RzF3bWpqbm9NM0tUOFhMUF8xWTRfcWJlUEpCOUxy?oc=5",
@@ -252,42 +288,6 @@
       "section": "🧬 Les fuites de données",
       "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQcEN1OWItMjFNQWFHMnhHS2dNQjJWYUs4M1I0cnBpdXBOR1NHUEUyaWJmdzdxSjR1aFdwTHROT01ZRWlITy03X09CSExNSjRBYnhJTTJXWlBEd0taYmlTa2ZacVhTZlJqOWg2eEplYTFnNUdIYVprdHJ4eE1rQUZvYkt2MDZsOEpoTHdNRVlzRjdNN1EtbVZ2LVRDNUFuVUtJOHRLdGhGdE1JamVQYzRlYXk3dlJCRE12UUptZ2MzUV9ZWnZWRjFUTkEyai1qU3F1ZnJJUGln?oc=5",
-      "titre": "Cybersécurité dans l’iGaming : comment les plateformes protègent les données des joueurs et les transactions",
-      "source": "toulouse7.com",
-      "date": "2026-09-04",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "le-chiffrement-des-données",
-      "section": "🔐 Le chiffrement des données",
-      "sujet": "🔒 Cybersécurité — Débutant",
-      "publie": "2026-09-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORVpnel84UjJ6bGd1ck52QXpXOTdTRzBXaTNKSlRPV0gzSjMtRUFXZmFqM0Uxdm1hRnJsdHlOb1lfdlV2b21fS1Q3Z3o3OU5MVl95SFVKTi1PeWwtVG84aFNzWFU5bjdBS08tZHhoZ3pHeVdtVXhyckNxMkpTYV9HUmU0WndkRXVkWWdRTS1lUktCYmE3dE9lTmUwQmtCYlotRnNBSjZaMjVqakRQa0p4SUlQYWFkcURfUzM0VV9HZHY?oc=5",
-      "titre": "Pourquoi l’email reste le canal marketing le plus rentable pour les petites entreprises",
-      "source": "infos-it.fr",
-      "date": "2026-09-04",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "email-marketing",
-      "section": "✉️ Email marketing",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "publie": "2026-09-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRWVkdmx0NlBpdkRtVGJHN21FZkJjSWxwaUNkbXJ0SElWa2lDV19VNjdUQldzaks1VUp2eG00cXZSVjRtalZ2RzZ6d0J1bG5RWmI2ZUExNXRnZHY5aUFSVkRwS0ZiZUMtOExwc0h0LTVLc3pFTHkteVlIVmhtWFYzMndNNW04dTVkbXVIYnNPR1poZHh4MHplakE4SUNfcTdEdjdjZzc2ZDFBR3FQTWdMMV9hYnE3TmZvWlI2UDFJZ2tCMUZOa19uZ0xacjR6MThkQkdhQVFkTHpwTDVQS0E?oc=5",
-      "titre": "Cybersécurité : une clinique de Saint-Étienne condamnée à 500 000 euros d’amende après un vol de données",
-      "source": "Sud Ouest",
-      "date": "2026-09-03",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-03"
     }
   ]
 }
