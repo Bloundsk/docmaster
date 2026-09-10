@@ -48,13 +48,13 @@ const MARQUE_FIN = "<!-- NOUVEAUTES:FIN -->";
    taille, et UN bouton. Les concurrents annoncent tous leur taille en premier ;
    l accueil n en donnait aucun chiffre.
 
-   PARCOURS : les quatorze cartes, que l accueil ne montrait plus depuis le
-   29 aout. Elles ne sont pas recopiees : elles sont RELUES dans guides.html,
-   qui reste leur unique source. Modifier une description la-bas la met a jour
-   ici a la prochaine generation, et --verifier refuse toute derive. */
+   PARCOURS : les quatorze cartes etaient revenues sur l accueil le 6 septembre.
+   Ludo les en a retirees le 10 septembre 2026 : l accueil garde le bouton qui
+   mene aux parcours et met en tete ce qui a ete mis a jour. Les cartes vivent
+   sur guides.html et nulle part ailleurs. ecrire() refuse leur retour : elles
+   etaient deja revenues une fois contre une consigne ecrite. */
 const BLOCS = [
     ["<!-- PROMESSE:DEBUT -->", "<!-- PROMESSE:FIN -->", blocPromesse, "    "],
-    ["<!-- PARCOURS:DEBUT -->", "<!-- PARCOURS:FIN -->", blocParcours, "        "],
     [MARQUE_DEBUT, MARQUE_FIN, blocNouveautes, "        "],
 ];
 
@@ -123,7 +123,6 @@ const LIBELLES = {
                              nombre(n.questions, l) + " questions",
                              nombre(n.episodes, l) + " épisodes audio"].join(" · "),
         bouton: "Parcourir les quatorze parcours →",
-        parcours: "Tous les parcours",
         guides: "🕒 Guides mis à jour récemment",
         episodes: "🎧 Derniers épisodes",
         tousGuides: "Tous les guides →",
@@ -138,7 +137,6 @@ const LIBELLES = {
                              nombre(n.questions, l) + " questions",
                              nombre(n.episodes, l) + " audio episodes"].join(" · "),
         bouton: "Browse the fourteen paths →",
-        parcours: "All the paths",
         guides: "🕒 Recently updated guides",
         episodes: "🎧 Latest episodes",
         tousGuides: "All guides →",
@@ -244,35 +242,6 @@ function blocPromesse(langue) {
     return html;
 }
 
-/* Les quatorze cartes, RELUES dans guides.html plutot que recopiees. Les liens
-   y sont deja relatifs a la racine de la langue, et index.html vit au meme
-   endroit que guides.html : ils fonctionnent tels quels, sans reecriture. */
-function blocParcours(langue) {
-    const source = path.join(RACINE, langue === "fr" ? "" : "en", "guides.html");
-    const html = fs.readFileSync(source, "utf8");
-
-    const debut = html.indexOf('<section id="categories">');
-    if (debut === -1) throw new Error("guides.html : section #categories introuvable");
-    const fin = html.indexOf("</section>", debut);
-    const articles = html.slice(debut, fin).match(/<article>[\s\S]*?<\/article>/g) || [];
-
-    /* Garde-fou : si une carte disparaissait de guides.html, l accueil en
-       montrerait treize sans que rien ne proteste. */
-    const attendu = Object.keys(PARCOURS).length;
-    if (articles.length !== attendu) {
-        throw new Error("guides.html : " + articles.length + " carte(s) pour "
-                      + attendu + " parcours");
-    }
-
-    let sortie = '        <section id="categories">\n';
-    sortie += "            <h2>" + LIBELLES[langue].parcours + "</h2>\n";
-    for (const article of articles) {
-        sortie += "\n            " + article.replace(/\n {12}/g, "\n            ") + "\n";
-    }
-    sortie += "        </section>\n";
-    return sortie;
-}
-
 function blocNouveautes(langue) {
     const L = LIBELLES[langue];
     const guides = guidesRecents(langue);
@@ -330,6 +299,14 @@ function ecrire(chemin, langue) {
     const complet = path.join(RACINE, chemin);
     const avant = fs.readFileSync(complet, "utf8");
     let texte = avant;
+
+    /* Les cartes de parcours ne reviennent pas sur l accueil : decision de Ludo
+       du 10 septembre 2026. Elles vivent sur guides.html. */
+    if (avant.includes('<section id="categories">') || avant.includes("PARCOURS:DEBUT")) {
+        console.error("  " + chemin + " : les cartes de parcours sont revenues sur l'accueil."
+                    + " Elles vivent sur guides.html (décision du 10 septembre 2026).");
+        return { erreur: true };
+    }
 
     for (const [marqueDebut, marqueFin, produire, retrait] of BLOCS) {
         const d = texte.indexOf(marqueDebut);

@@ -1,5 +1,49 @@
 # Changelog — Clicked
 
+## 2026-09-10 — Les cartes de parcours quittent l'accueil, pour de bon
+
+### La décision
+
+Ludo l'a confirmé : l'accueil ne montre plus les quatorze cartes. Il garde la
+promesse — ce qu'est le site, sa taille, et le bouton « Parcourir les quatorze
+parcours » — et met en tête **ce qui a été mis à jour**. Les cartes vivent sur
+`guides.html`, et nulle part ailleurs.
+
+C'est le troisième mouvement : retirées le 30 août, revenues le 6 septembre,
+retirées de nouveau. D'où le garde-fou ci-dessous.
+
+### Ce qui a changé
+
+- `index.html` et `en/index.html` n'ont plus de section `#categories`. L'ordre
+  est désormais : Quoi de neuf → Guides mis à jour récemment → Derniers
+  épisodes → À lire ailleurs. Nos propres nouveautés passent avant les lectures
+  venues d'ailleurs.
+- L'introduction ne dit plus « Sous les parcours, cette page rassemble… » : il
+  n'y a plus de parcours au-dessus.
+- `scripts/publier-accueil.js` ne produit plus le bloc `PARCOURS` et **refuse**
+  un accueil qui en contient un : `--verifier` sort en erreur si
+  `<section id="categories">` ou son marqueur reviennent. Vu rougir sur défaut
+  réinjecté, puis reverdir une fois la page restaurée.
+
+### Le contrôle qui serait devenu muet
+
+L'audit de géométrie vérifie la grille `#categories` — qu'elle occupe sa largeur
+et donne le bon nombre de colonnes à chaque largeur d'écran — sur les pages de
+sa liste. **L'accueil était la seule page de cette liste qui la portait**, et
+l'audit saute une grille absente sans le signaler. Retirer les cartes de
+l'accueil arrêtait donc toute mesure de la grille, avec un verdict qui restait
+vert.
+
+`guides.html` et `en/guides.html` entrent dans la liste : **824 mesures sur
+29 gabarits**, contre 760 sur 27.
+
+### Vérifié
+
+Les dix-sept contrôles, la traduction des quatorze simulateurs et l'audit de
+géométrie passent. Dans le navigateur, sur les deux accueils : aucune carte, le
+bouton mène à `guides.html`, les quatre sections dans l'ordre annoncé, aucune
+erreur de console.
+
 ## 2026-09-10 — Le glossaire cesse d'être un cul-de-sac
 
 ### Ce qui manquait

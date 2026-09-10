@@ -54,6 +54,11 @@
  * ------------------------------------------------------------------------- */
 const PAGES = [
     { url: "../index.html",                    nom: "accueil" },
+    // La grille des quatorze cartes ne vit plus que sur le catalogue depuis le
+    // 10 septembre 2026. Sans cette page, la grille « #categories » cessait
+    // d'etre mesuree sans que rien ne rougisse : le controle saute une grille
+    // absente, il ne signale pas qu'elle a disparu de toutes les pages.
+    { url: "../guides.html",                   nom: "catalogue des parcours" },
     { url: "../actualites.html",               nom: "actualités" },
     { url: "../podcasts.html",                 nom: "podcasts" },
     { url: "../guides/finance/index.html",     nom: "sommaire de guide" },
@@ -79,9 +84,10 @@ const PAGES = [
     { url: "../en/guides/entrepreneuriat/debutant.html", nom: "cours traduit 14 (en)" },
 
     // Les pages hors cours traduites. Leur gabarit diffère de celui des cours :
-    // grille de cartes sur l'accueil, tableaux dans les mentions légales,
+    // grille de cartes au catalogue, tableaux dans les mentions légales,
     // formulaire dans la boîte à idées, listes de définitions au glossaire.
     { url: "../en/index.html",            nom: "accueil (en)" },
+    { url: "../en/guides.html",           nom: "catalogue des parcours (en)" },
     { url: "../en/faq.html",              nom: "FAQ (en)" },
     { url: "../en/glossaire.html",        nom: "glossaire (en)" },
     { url: "../en/idees.html",            nom: "boîte à idées (en)" },

@@ -70,9 +70,11 @@ podcasts.html / podcast.xml        les épisodes, et leur flux
 les adresses pour du contenu qui n'est pas le nôtre, et qui disparaît au bout de
 quelques mois.
 
-**Les parcours ne sont plus sur l'accueil** depuis le 30 août 2026 : rien dans la
-navigation n'y menait, et on ne savait pas où les trouver. L'accueil montre ce
-qui a bougé ; `guides.html` porte la liste.
+**Les parcours ne sont pas sur l'accueil.** Ils l'ont quitté le 30 août 2026
+(rien dans la navigation n'y menait), y sont revenus le 6 septembre, et Ludo les
+en a retirés pour de bon le 10 septembre. L'accueil garde la promesse et son
+bouton vers `guides.html`, puis ce qui a bougé ; `guides.html` porte la liste.
+`publier-accueil.js --verifier` refuse leur retour.
 
 Un fichier par niveau plutôt qu'une page unique très longue. Trois raisons :
 
@@ -444,7 +446,7 @@ Les surfaces à mettre à jour, à chaque sujet ajouté :
 | `search-data.js` | contrôle 4 |
 | **Glossaire, français et anglais** | **contrôle 4 bis** |
 | Chiffres annoncés en prose | contrôle 5 |
-| Cartes de l'accueil, « déjà couvert » | contrôle 5 |
+| Cartes du catalogue (`guides.html`), « déjà couvert » | contrôle 5 |
 | `CONTENU_TRADUIT`, `PAGES_TRADUITES` | contrôle 9 |
 
 Le contrôle 4 bis a été ajouté après coup, et pour cause : c'était la seule
@@ -819,7 +821,7 @@ interface et les dépendances qui vont avec — dans un projet qui n'en a aucune
 Le navigateur est donc le moteur, et le prix est que le contrôle se lance à la
 main.
 
-Il mesure **27 gabarits à 5 largeurs, soit 732 mesures**, et vérifie :
+Il mesure **29 gabarits à 5 largeurs, soit 824 mesures** (10 septembre 2026), et vérifie :
 
 | Contrôle | Défaut qui l'a fait naître |
 |---|---|
