@@ -207,7 +207,7 @@ console.log("\n=== 4 bis. GLOSSAIRE ===");
 // devine : « ecologie » s'affiche « Sobriete numerique », rien ne le deduit.
 const CATEGORIES = {
     finance: ["Finance", "Finance"],
-    ia: ["IA", "IA"],
+    ia: ["IA", "AI"],
     "dev-web": ["Développement Web", "Web Development"],
     marketing: ["Marketing", "Marketing"],
     cybersecurite: ["Cybersécurité", "Cybersecurity"],

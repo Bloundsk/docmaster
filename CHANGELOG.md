@@ -1,5 +1,86 @@
 # Changelog — Clicked
 
+## 2026-09-10 — Le glossaire, la FAQ et « À propos » remis d'accord avec le site
+
+### Ce qui était devenu faux
+
+Chaque phrase des trois pages a été relue et confrontée au code et à la mesure,
+dans les deux langues.
+
+| Ce que disaient les pages | Ce que dit la mesure |
+|---|---|
+| « Une page de cours fait entre 1 400 et 2 200 mots » (FAQ, À propos) | 1 768 à 2 731 mots en français, 1 607 à 2 632 en anglais : les vagues 1 et 2 ont ajouté l'objectif, les questions, les réponses et l'action de la semaine |
+| « Replié, le guide tient sur un écran » | 6,1 écrans à 1 400 × 900, 9,5 sur téléphone. Seul le bloc des sections repliées tient sur un écran d'ordinateur (657 px) |
+| « Chaque guide est autonome », « part de zéro », « un expert le trouvera trop simple » | Écrit avant les trois niveaux : l'intermédiaire suppose le débutant, l'avancé suppose les deux |
+| « Le glossaire reprend tous les termes » | 35 entrées pour 14 parcours : il reprend les principaux |
+| Stockage local : « thème, favoris, progression » | Le navigateur garde aussi le confort de lecture, la langue, les dates de révision, les dernières recherches et le masquage de la mascotte |
+| (rien sur le bouton « Aa ») | Une question ajoutée dans les deux FAQ, et une entrée dans l'index de recherche |
+
+Vérifié et exact, donc laissé tel quel : la veille deux fois par jour, des
+épisodes de 1 min 14 à 1 min 46, la rotation des questions toutes les deux
+semaines, les **trois** gestes mesurés, les étoiles aux trois endroits annoncés,
+l'impression.
+
+« À propos » décrit désormais la trame d'une page de niveau — objectif et cinq
+questions en tête, réponses puis action de la semaine en fin — vérifiée présente
+sur les 84 pages.
+
+Le chiffre des mots a menti exactement comme la règle du dépôt le prévoit : écrit
+à la main, il est devenu faux sans cesser d'être plausible. Il est remplacé par
+« près de 2 000 mots », qui tient à la médiane (2 023 en français, 1 905 en
+anglais) sans prétendre à une borne.
+
+### Le glossaire parlait une autre langue que les guides
+
+- **Anglais : la catégorie « 🤖 IA » n'était pas traduite.** Le contrôle 4 bis
+  attendait « IA » côté anglais, et la validait donc. Corrigé des deux côtés.
+- **Six termes ne figuraient dans aucun guide de leur langue**, parce que le guide
+  emploie un autre mot : « Rappel actif » (le guide dit *se tester*), *Formal
+  notice* (*formal demand*), *Risk assessment record* (*single document*),
+  *Eco-design* (*frugal design*), *SEA / CPC* (*paid search*), *The Pomodoro
+  method* (*Pomodoro technique*). L'entrée porte désormais le mot du guide,
+  l'ancien entre parenthèses et dans les mots-clés.
+- **« Mise en demeure » affirmait qu'elle « précède toute action en justice ».**
+  Le guide dit autre chose, et de plus utile : un courrier ordinaire suffit, et
+  elle **n'interrompt pas la prescription** — seule une assignation le fait. La
+  définition reprend le guide ; la version anglaise précise « in France ».
+
+### Le quatrième piège des renvois
+
+Les renommages ont posé cinq renvois neufs. L'un tombait **dans le titre d'un
+encadré** : « The *formal demand*, without mystery ». Le même défaut était déjà en
+ligne côté français, sur « La mise en demeure, sans mystère ».
+
+La cause : ce titre est un `<span class="titre">`, pas un `h4`. La règle « pas de
+renvoi sur la page qui explique le terme » ne le voyait pas.
+
+Le premier correctif était trop large : compter tous les titres d'encadré comme
+des titres de section retirait aussi le renvoi PEA de Finance intermédiaire,
+parce que « Erreur fréquente — ouvrir tard son PEA » contient le mot. Mesure
+avant de choisir : huit titres d'encadré contiennent un terme du glossaire ;
+**les deux qui l'ouvrent le définissent, les six autres sont des pièges qui
+l'emploient**. Règle retenue : un encadré explique un terme quand le terme ouvre
+son titre. Et aucun lien ne se pose plus à l'intérieur d'un titre d'encadré,
+quoi que dise la règle.
+
+Résultat : **59 renvois**. Par rapport à l'état d'avant ce correctif, exactement
+deux de moins — les deux posés dans un titre — et le renvoi PEA revient à la
+place qu'il occupe en ligne, octet pour octet.
+
+### Vérifié
+
+Les dix-sept contrôles, la traduction des quatorze simulateurs et l'audit de
+géométrie (824 mesures) passent. Dans le navigateur : 28 questions dans chaque
+FAQ, la nouvelle placée entre « thème » et « case lue » et trouvée par le filtre
+sur « lisible » ; trois catégories « AI » et aucune « IA » au glossaire anglais ;
+les six nouvelles ancres existent, et `#terme-formal-demand` cible la bonne entrée.
+
+### Signalé, non modifié
+
+`mentions-legales.html` ne cite que « vos favoris » parmi ce que garde le stockage
+local : incomplet pour la même raison que la FAQ. Page juridique, hors de la
+demande — laissée en l'état.
+
 ## 2026-09-10 — Les cartes de parcours quittent l'accueil, pour de bon
 
 ### La décision

@@ -467,7 +467,7 @@ puis aller l'ouvrir.
 
 `scripts/poser-renvois-glossaire.js` pose l'autre sens. Il enveloppe, dans
 chaque page de niveau, le **premier** emploi de chaque terme du glossaire, et
-lui seul — 56 renvois sur les 84 pages. Le deuxième emploi n'est pas un lien :
+lui seul — 59 renvois sur les 84 pages. Le deuxième emploi n'est pas un lien :
 un texte cousu de liens ne se lit plus.
 
 Trois règles disent où il ne pose rien, et chacune vient d'un essai raté :
@@ -490,6 +490,20 @@ admis — et sur les titres **jusqu'au `h4`**, parce que c'est souvent à ce
 niveau qu'un terme reçoit sa définition (`Le DOM`, `L'intérêt composé`,
 `Le document unique`). Étendre du `h3` au `h4` a retiré six renvois, tous posés
 sur la phrase même qui définissait le mot.
+
+Une quatrième règle est venue le 10 septembre 2026 : **un titre d'encadré n'est
+pas un `h4`**. « La mise en demeure, sans mystère » est un `<span class="titre">`
+— la règle ne le voyait pas, et le renvoi se posait *dans* le titre. Mais tous les
+titres d'encadré ne définissent pas : « Erreur fréquente — ouvrir tard son PEA »
+emploie le mot sans l'expliquer. Sur les huit titres d'encadré qui contiennent un
+terme, les deux qui l'**ouvrent** le définissaient. Un encadré explique donc un
+terme quand le terme ouvre son titre, et aucun lien ne se pose à l'intérieur d'un
+titre d'encadré.
+
+Le script ne trouve que les mots du glossaire. **Une entrée doit donc porter le
+mot du guide**, l'autre nom entre parenthèses : « Se tester (rappel actif) »,
+*Formal demand*. Six entrées portaient un mot qu'aucun guide de leur langue
+n'emploie — elles n'étaient reliées à rien, sans que rien ne le signale.
 
 Le script est *généré-et-vérifié* comme les autres : `--verifier` refait le
 travail en mémoire et refuse si le dépôt a dérivé. Il surveille les deux

@@ -19,6 +19,7 @@
  *     ce sont des reperes, pas de la lecture suivie ;
  *   - dans les titres, le code, et a l interieur d un lien existant : un <a>
  *     dans un <a> n est pas du HTML valide ;
+ *   - dans les titres d encadre (<span class="titre">) : ce sont des titres ;
  *   - sur la page qui EXPLIQUE le terme, quand un titre de section le porte :
  *     renvoyer au glossaire depuis la section qui en dit dix fois plus est un
  *     contresens.
@@ -103,6 +104,11 @@ function zonesInterdites(html) {
             zones.push([m.index, i]);
         }
     }
+    /* Les titres d encadre. Aucun ne contient de <span> imbrique (738 sur 738
+       au 10 septembre 2026) : le premier </span> les ferme. */
+    const titreEncadre = /<span class="titre">[\s\S]*?<\/span>/g;
+    let t;
+    while ((t = titreEncadre.exec(html))) zones.push([t.index, t.index + t[0].length]);
     return zones;
 }
 
@@ -144,6 +150,16 @@ function poserRenvois(html, entrees, prefixe) {
     const titres = (html.slice(debutMain, finMain).match(/<h[234][^>]*>[\s\S]*?<\/h[234]>/g) || [])
         .join(" ").toLowerCase();
 
+    /* Les titres d encadre, a part. Un encadre EXPLIQUE un terme quand le terme
+       ouvre son titre : « La mise en demeure, sans mystere ». Il ne fait que
+       l EMPLOYER quand le terme vient apres : « Erreur frequente — ouvrir tard
+       son PEA ». Mesure du 10 septembre 2026 : huit titres d encadre contiennent
+       un terme du glossaire ; les deux qui l ouvrent sont des definitions, les
+       six autres des pieges. Les compter tous comme des titres de section
+       retirait le renvoi PEA de la page ou le lecteur en a besoin. */
+    const titresEncadre = (html.slice(debutMain, finMain).match(/<span class="titre">[\s\S]*?<\/span>/g) || [])
+        .map((t) => t.replace(/<[^>]+>/g, "").trim());
+
     const poses = [];
     let sortie = html;
     // Les termes les plus longs d'abord : « intérêt composé » avant « intérêt ».
@@ -161,6 +177,11 @@ function poserRenvois(html, entrees, prefixe) {
         const motifTitre = new RegExp("(?<![\\w-])" + racine.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
             + "(e|es|s|ing|ings|é|ée|és|ement)?(?![\\w-])", "i");
         if (motifTitre.test(titres)) continue;      // la page l'explique déjà
+
+        const ouvreLeTitre = new RegExp("^(?:(?:le|la|les|un|une|the|a|an)\\s+|l['’]\\s*)?"
+            + racine.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+            + "(e|es|s|ing|ings|é|ée|és|ement)?(?![\\w-])", "i");
+        if (titresEncadre.some((t) => ouvreLeTitre.test(t))) continue;   // un encadré le définit
 
         const motif = new RegExp("(?<![\\w-])" + nu.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![\\w-])", "i");
         const dm = sortie.indexOf('<main id="main-content">');
