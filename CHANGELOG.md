@@ -1,5 +1,57 @@
 # Changelog — Clicked
 
+## 2026-09-10 — Mentions légales complétées, et le glossaire contrôlé contre les guides
+
+### Les mentions légales
+
+Ce qui manquait, dans les deux langues :
+
+- **Google Fonts.** Les polices (Inter, Literata) sont chargées depuis les serveurs
+  de Google sur 133 des 134 pages : à chaque ouverture, le navigateur du visiteur
+  contacte Google, qui reçoit son adresse IP. C'est la seule requête vers un tiers
+  au chargement d'une page, et la page n'en disait rien. Une section « 4. Polices
+  de caractères » la décrit : aucun cookie, un traitement qui relève de Google LLC,
+  un transfert possible hors de l'Union. La FAQ en dit une phrase, pour ne pas
+  affirmer « uniquement des statistiques » à côté d'une page juridique qui dit plus.
+- **Le stockage local** listait cinq éléments sur huit. S'y ajoutent la langue
+  choisie, les dates de révision et le masquage de la mascotte.
+- **« Tout effacer »** efface aussi les dates de révision — le code le fait
+  délibérément, pour qu'aucun rappel ne revienne pour une leçon oubliée. La page
+  le dit désormais.
+
+Une correction d'une affirmation faite plus tôt dans la journée : la page ne
+citait pas « que vos favoris », elle citait cinq éléments sur huit.
+
+**Si les polices sont un jour hébergées sur le site**, la section 4 et la phrase
+de la FAQ deviennent fausses : les retirer du même geste.
+
+### Contrôle 4 ter : le glossaire parle la langue des guides
+
+`audit-coherence.mjs` cherche chaque terme du glossaire, parenthèse retirée, dans
+le texte des guides de sa langue, avec des frontières de mot qui comprennent les
+lettres accentuées. Un intitulé qui nomme deux notions — « SASU / SARL », « UX vs
+UI » — doit trouver les deux. Il tourne dans l'intégration continue avec le reste
+de l'audit, donc sans ligne de plus dans le workflow.
+
+- **Il a trouvé un cas dès sa première exécution** : « SEA / CPC ». Le guide
+  Marketing dit « coût par clic », jamais « CPC ». L'entrée s'appelle maintenant
+  « SEA / coût par clic ».
+- **Vu rougir sur défaut réinjecté** : *Formal demand* renommé en *Formal notice*
+  a produit une anomalie qui nomme le terme ; restauré, l'anomalie a disparu.
+- **Son prototype mentait.** Écrit dans une chaîne shell, il déclarait absents
+  « Phishing », « Wireframe » ou « Ancrage », tous présents dans les guides. Le
+  même motif, écrit dans un fichier, les trouve. Le contrôle a été écrit dans un
+  fichier — et ce n'est qu'après avoir disculpé le motif que le prototype a été
+  écarté.
+
+### Vérifié
+
+Les dix-sept contrôles, la traduction des quatorze simulateurs et l'audit de
+géométrie passent ; le 4 ter trouve les 35 termes de chaque langue. Dans le
+navigateur, sur les deux pages de mentions légales : quatre sous-sections, la
+langue, les révisions, la mascotte et Google Fonts présents, aucune erreur de
+console.
+
 ## 2026-09-10 — Le glossaire, la FAQ et « À propos » remis d'accord avec le site
 
 ### Ce qui était devenu faux

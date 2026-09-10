@@ -445,6 +445,7 @@ Les surfaces à mettre à jour, à chaque sujet ajouté :
 | Anneau de navigation | contrôle 3 |
 | `search-data.js` | contrôle 4 |
 | **Glossaire, français et anglais** | **contrôle 4 bis** |
+| Glossaire : chaque terme employé par les guides de sa langue | contrôle 4 ter |
 | Chiffres annoncés en prose | contrôle 5 |
 | Cartes du catalogue (`guides.html`), « déjà couvert » | contrôle 5 |
 | `CONTENU_TRADUIT`, `PAGES_TRADUITES` | contrôle 9 |

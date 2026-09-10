@@ -237,6 +237,64 @@ for (const [fichier, rang] of [["glossaire.html", 0], ["en/glossaire.html", 1]])
     console.log(`  ${fichier} : ${[...html.matchAll(/<dt>/g)].length} termes, ${new Set(vues).size} catégories`);
 }
 
+/* --- 4 ter. Le glossaire parle la langue des guides ------------------------
+
+   Un terme du glossaire que les guides n emploient pas ne sert a rien : le
+   lecteur ne le croise jamais, et poser-renvois-glossaire.js ne peut le relier a
+   aucune page. Six entrees etaient dans ce cas le 10 septembre 2026, parce que
+   le guide disait autre chose : « Rappel actif » la ou le guide dit « se
+   tester », « Formal notice » pour « formal demand ». Rien ne le signalait :
+   chaque entree etait juste, prise isolement.
+
+   Chaque terme est cherche, parenthese retiree, dans le texte des guides de sa
+   langue, avec des frontieres de mot (lettres accentuees comprises : « DOM » ne
+   doit pas se trouver dans « domaine »). Un intitule qui nomme deux notions —
+   « SASU / SARL », « UX vs UI » — doit trouver chacune des deux. */
+console.log("\n=== 4 ter. VOCABULAIRE DU GLOSSAIRE ===");
+
+const texteDuMain = (html) => {
+    const debut = html.indexOf("<main");
+    const fin = html.indexOf("</main>");
+    return (debut === -1 ? html : html.slice(debut, fin === -1 ? html.length : fin))
+        .replace(/<(script|style)[\s\S]*?<\/\1>/g, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&nbsp;|&#160;/g, " ")
+        .replace(/&amp;/g, "&")
+        .replace(/\s+/g, " ");
+};
+
+for (const [fichier, dossier] of [["glossaire.html", "guides"], ["en/glossaire.html", "en/guides"]]) {
+    const cheminGlossaire = path.join(RACINE, fichier);
+    const cheminGuides = path.join(RACINE, dossier);
+    if (!fs.existsSync(cheminGlossaire) || !fs.existsSync(cheminGuides)) continue;
+
+    let corpus = "";
+    let pagesLues = 0;
+    for (const sujet of fs.readdirSync(cheminGuides)) {
+        const d = path.join(cheminGuides, sujet);
+        if (!fs.statSync(d).isDirectory()) continue;
+        for (const f of fs.readdirSync(d).filter((x) => x.endsWith(".html"))) {
+            corpus += " " + texteDuMain(lire(path.join(d, f)));
+            pagesLues++;
+        }
+    }
+
+    const termes = [...lire(cheminGlossaire).matchAll(/<dt>([^<]+)<\/dt>/g)].map((m) => m[1].trim());
+    let introuvables = 0;
+    for (const terme of termes) {
+        const nu = terme.replace(/\s*\([^)]*\)/g, "").trim();
+        for (const notion of nu.split(/\s+\/\s+|\s+vs\.?\s+/i)) {
+            const motif = notion.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/['’]/g, "['’]");
+            const trouve = new RegExp(`(?<![\\p{L}\\p{N}_-])${motif}s?(?![\\p{L}\\p{N}_-])`, "iu").test(corpus);
+            if (!trouve) {
+                introuvables++;
+                signaler("GLOSSAIRE", `${fichier} : « ${notion} » (entrée « ${terme} ») n'apparaît dans aucun guide de sa langue — l'entrée doit porter le mot qu'emploie le guide`);
+            }
+        }
+    }
+    console.log(`  ${fichier} : ${termes.length} termes cherchés dans ${pagesLues} pages de ${dossier}/, ${introuvables} introuvable(s)`);
+}
+
 // --- 5. Affirmations chiffrees dans les pages du site ----------------------
 console.log("\n=== 5. CHIFFRES ANNONCES ===");
 
