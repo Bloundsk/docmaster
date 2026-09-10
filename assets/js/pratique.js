@@ -3902,6 +3902,32 @@
             lecon: "Deux personnes qui veulent la même orange peuvent toutes deux être satisfaites : l'une voulait le jus, l'autre l'écorce. Encore fallait-il demander pourquoi."
         },
 
+        "salaire": {
+            titre: "Combien vaut un écart de salaire ?",
+            intro: "Ce que tu obtiens de plus en négociant ne compte pas une fois : il se reporte sur chaque année, et grandit avec chaque augmentation.",
+            champs: [
+                { id: "ecart", libelle: "Écart obtenu en négociant (brut par an)", unite: "€", defaut: 2000, min: 0, max: 100000, pas: 100 },
+                { id: "hausse", libelle: "Hausse annuelle supposée", unite: "%", defaut: 2, min: 0, max: 10, pas: 0.5 },
+                { id: "duree", libelle: "Durée", unite: "ans", defaut: 10, min: 1, max: 45, pas: 1 }
+            ],
+            calculer: ({ ecart, hausse, duree }) => {
+                // L ecart obtenu a l embauche sert de base a chaque hausse en
+                // pourcentage : il grandit avec elles. Somme d une suite
+                // geometrique, et simple produit quand la hausse est nulle —
+                // la formule diviserait sinon par zero.
+                const r = hausse / 100;
+                const n = Math.round(duree);
+                const cumul = r === 0 ? ecart * n : ecart * (Math.pow(1 + r, n) - 1) / r;
+                return [
+                    { libelle: "Cumul sur la durée", valeur: euros(cumul), fort: true },
+                    { libelle: "Écart la première année", valeur: euros(ecart) },
+                    { libelle: "Écart la dernière année", valeur: euros(ecart * Math.pow(1 + r, n - 1)) },
+                    { libelle: "Soit par mois, la première année", valeur: euros(ecart / 12) }
+                ];
+            },
+            lecon: "Un écart obtenu à l'embauche ne se rattrape pas avec les augmentations : il sert de base à chacune d'elles."
+        },
+
         "conversation-difficile": {
             type: "controle",
             titre: "Cette conversation est-elle préparée ?",

@@ -1005,6 +1005,19 @@ window.PRATIQUE_TEXTES = {
         "Le « coupons la poire en deux » paraît équitable et dépend entièrement du premier chiffre annoncé. C'est pour cela qu'il vaut mieux l'annoncer, en restant plausible.":
             "“Let's split the difference” sounds fair and depends entirely on the first number stated. That is why it is better to state it — while staying plausible.",
 
+        // --- salaire -----------------------------------------------------------------------------
+        "Combien vaut un écart de salaire ?": "What is a salary difference worth?",
+        "Ce que tu obtiens de plus en négociant ne compte pas une fois : il se reporte sur chaque année, et grandit avec chaque augmentation.":
+            "What you win by negotiating does not count once: it carries into every year, and grows with every raise.",
+        "Écart obtenu en négociant (brut par an)": "Difference won by negotiating (gross per year)",
+        "Hausse annuelle supposée": "Assumed yearly raise",
+        "Cumul sur la durée": "Total over the period",
+        "Écart la première année": "Difference in the first year",
+        "Écart la dernière année": "Difference in the final year",
+        "Soit par mois, la première année": "Per month, in the first year",
+        "Un écart obtenu à l'embauche ne se rattrape pas avec les augmentations : il sert de base à chacune d'elles.":
+            "A difference won at hiring is not caught up by raises: it is the base for every one of them.",
+
         // --- positions-interets ---------------------------------------------------------------
         "Position ou intérêt ?": "Position or interest?",
         "Une position est ce qu'on demande. Un intérêt est la raison pour laquelle on le demande. Coche ce que tu connais.":

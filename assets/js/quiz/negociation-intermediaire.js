@@ -270,6 +270,72 @@ window.QUIZ = {
                 a: 1,
                 explication: "Un délai, une référence, une exclusivité, une souplesse de calendrier."
             }
+        ],
+
+        // ---------------------------------------------------------------
+        "negocier-son-salaire": [
+            // Série 1
+            {
+                q: "Pourquoi un écart obtenu à l'embauche compte-t-il plus d'une fois ?",
+                options: [
+                    "Il sert de base à chaque augmentation en pourcentage",
+                    "Il est versé en une fois, avec une prime d'arrivée",
+                    "Il se rattrape de toute façon à la première révision"
+                ],
+                a: 0,
+                explication: "Une hausse de quelques pour cent s'applique au salaire de départ : l'écart grandit avec elle."
+            },
+            {
+                q: "Tu obtiens 2 000 € brut par an de plus, avec 2 % de hausse annuelle. Que vaut l'écart sur dix ans ?",
+                options: [
+                    "Exactement 20 000 €, soit dix fois l'écart",
+                    "Environ 10 000 €, les hausses ne portant pas dessus",
+                    "Près de 21 900 €, car les hausses s'y appliquent"
+                ],
+                a: 2,
+                explication: "Chaque augmentation s'applique aussi à l'écart : 2 390 € la dixième année, près de 21 900 € au total."
+            },
+            {
+                q: "Sans autre offre en cours, quelle est ta solution de rechange ?",
+                options: [
+                    "Il n'y en a aucune, donc rien à négocier",
+                    "Ce que tu feras vraiment si tu refuses",
+                    "L'offre moyenne du marché pour ce poste"
+                ],
+                a: 1,
+                explication: "Rester dans ton poste, poursuivre ta recherche : c'est elle qui fixe ce que tu peux refuser."
+            },
+            // Série 2
+            {
+                q: "Sur quoi fonder le chiffre que tu annonces ?",
+                options: [
+                    "Sur tes dépenses : loyer, crédit, charges fixes",
+                    "Sur ton salaire actuel, augmenté de dix pour cent",
+                    "Sur la fourchette du poste, établie à l'extérieur"
+                ],
+                a: 2,
+                explication: "Annonces comparables, études de rémunération, minima conventionnels : un chiffre défendable en une phrase."
+            },
+            {
+                q: "On te demande ton salaire actuel. Quelle réponse sert ta négociation ?",
+                options: [
+                    "Répondre par ce que vaut le poste que tu vises",
+                    "Donner le chiffre exact, pour paraître transparent",
+                    "Refuser net de répondre à la question posée"
+                ],
+                a: 0,
+                explication: "Ton salaire actuel ancrerait la discussion sur ton ancien emploi plutôt que sur le nouveau."
+            },
+            {
+                q: "L'enveloppe du salaire est bloquée. Que reste-t-il à négocier ?",
+                options: [
+                    "Rien : le fixe était le seul vrai sujet de fond",
+                    "Le variable, le télétravail, la date de révision",
+                    "Uniquement le montant de la prime d'arrivée"
+                ],
+                a: 1,
+                explication: "La zone d'accord s'est déplacée vers ce qui coûte peu à l'employeur et compte pour toi."
+            }
         ]
     },
 

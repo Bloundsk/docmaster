@@ -1,5 +1,68 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Une leçon « Négocier son salaire »
+
+### Pourquoi
+
+En choisissant les entrées par situation, un manque est apparu : le mot
+« salaire » n'apparaissait nulle part dans le parcours Négociation. C'est
+pourtant la négociation que presque tout le monde mène.
+
+### Où, et ce qu'elle dit
+
+Cinquième leçon du niveau **intermédiaire**, parce qu'elle applique les quatre
+notions qui viennent d'y être posées : solution de rechange, zone d'accord,
+ancrage, positions et intérêts. Quatre temps :
+
+- **Ce qui se joue vraiment** : un écart obtenu à l'embauche sert de base à
+  chaque augmentation en pourcentage. Exemple chiffré : 2 000 € brut par an de
+  plus, 2 % de hausse par an, donc 2 390 € la dixième année et près de 21 900 €
+  sur dix ans.
+- **Ta solution de rechange, côté salarié** : la négociation est asymétrique, et
+  la leçon le dit plutôt que de faire comme si les deux parties pouvaient
+  partir.
+- **Le chiffre, et qui l'annonce** : une fourchette établie à l'extérieur, et la
+  règle de l'ancrage appliquée au salaire actuel qu'on te demande.
+- **Ce qui se négocie à côté du fixe** : quand l'enveloppe est bloquée, la zone
+  d'accord se déplace.
+
+Aucune statistique n'est citée : les sources nommées sont des types de sources
+(annonces, études de rémunération, minima conventionnels), et l'exemple est un
+calcul que le lecteur refait dans le simulateur. En anglais, la convention
+collective est donnée pour ce qu'elle est : un mécanisme français.
+
+L'avertissement du niveau renvoyait les relations « employeur et salarié isolé »
+au niveau avancé, qui n'en parle qu'en passant. Il renvoie désormais à cette
+section, qui les traite de front.
+
+### Ce qui l'accompagne
+
+- **Un simulateur**, « Combien vaut un écart de salaire ? », traduit en anglais.
+  Ses résultats, relus en exécutant le simulateur, sont ceux de l'exemple :
+  21 899 €, 2 390 €, 167 € par mois ; 20 000 € sans hausse.
+- **Six questions par langue**, avec la bonne réponse au même rang en français et
+  en anglais, dans les bornes des contrôles de position et de longueur.
+- **La recherche** (une entrée, et « salaire » dans les mots-clés du niveau), les
+  deux sommaires du parcours, les durées recalculées (5 sections, environ
+  14 minutes) et l'accueil, qui compte désormais 170 leçons et 1 272 questions.
+
+Dans le navigateur, dans les deux langues : la section s'ouvre depuis le
+sommaire, le simulateur affiche les chiffres de l'exemple (« €21,899 » côté
+anglais, sans un mot français restant), le quiz de la section pose les nouvelles
+questions, aucune erreur de console.
+
+### Un petit défaut noté en chemin
+
+`amorcer-lecons.js` a besoin de **deux passages** pour une leçon écrite sans
+amorce : le premier laisse une ligne vide que le second retire. Le résultat final
+est juste et son `--verifier` le signale entre les deux ; le défaut n'est pas
+corrigé.
+
+### Vérifié
+
+Tous les contrôles de l'intégration continue passent, dont la traduction des
+simulateurs, la parité français/anglais et l'audit de géométrie.
+
 ## 2026-09-11 — Six entrées par situation sur la page Guides
 
 ### Pourquoi

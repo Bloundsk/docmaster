@@ -271,6 +271,72 @@ window.QUIZ = {
                 a: 1,
                 explication: "A deadline, a reference, an exclusivity, flexibility on the schedule."
             }
+        ],
+
+        // ---------------------------------------------------------------
+        "negotiating-your-salary": [
+            // Série 1
+            {
+                q: "Why does a difference won at hiring count more than once?",
+                options: [
+                    "It becomes the base for every percentage raise",
+                    "It is paid once, as a bonus on arrival",
+                    "It gets caught up anyway at the first review"
+                ],
+                a: 0,
+                explication: "A raise of a few per cent applies to the starting salary: the difference grows with it."
+            },
+            {
+                q: "You win €2,000 gross a year more, with a 2% yearly raise. What is the difference worth over ten years?",
+                options: [
+                    "Exactly €20,000, ten times the difference",
+                    "About €10,000, as raises do not apply to it",
+                    "Nearly €21,900, because raises apply to it"
+                ],
+                a: 2,
+                explication: "Every raise also applies to the difference: €2,390 in year ten, nearly €21,900 in total."
+            },
+            {
+                q: "With no other offer on the table, what is your alternative?",
+                options: [
+                    "There is none, so nothing to negotiate",
+                    "What you will actually do if you say no",
+                    "The average market offer for this job"
+                ],
+                a: 1,
+                explication: "Staying in your current job, carrying on searching: that is what sets what you can turn down."
+            },
+            // Série 2
+            {
+                q: "What should the figure you name be based on?",
+                options: [
+                    "Your expenses: rent, loan and fixed costs",
+                    "Your current salary, plus ten per cent",
+                    "The pay range for the job, found outside"
+                ],
+                a: 2,
+                explication: "Comparable job ads, salary surveys, any minimum set for your sector: a figure you can defend in one sentence."
+            },
+            {
+                q: "You are asked for your current salary. Which answer helps your negotiation?",
+                options: [
+                    "Answer with what the job you want is worth",
+                    "Give the exact figure, to seem transparent",
+                    "Refuse outright to answer the question"
+                ],
+                a: 0,
+                explication: "Your current salary would anchor the discussion on your old job rather than the new one."
+            },
+            {
+                q: "The salary budget is fixed. What is left to negotiate?",
+                options: [
+                    "Nothing: base pay was the only real topic",
+                    "Bonus, remote days, the next review date",
+                    "Only the amount of a bonus on arrival"
+                ],
+                a: 1,
+                explication: "The zone of agreement has moved to what costs the employer little and matters to you."
+            }
         ]
     },
 
