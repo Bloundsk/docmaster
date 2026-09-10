@@ -1,5 +1,21 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Une septième situation : « Je dois négocier mon salaire »
+
+Écartée le matin faute de réponse dans les guides, la situation est entrée sur la
+page Guides dès que sa leçon a existé. Elle mène à *Négociation · Intermédiaire ·
+Négocier son salaire* ; en anglais, « I have to negotiate my salary » — sans
+mention de la France, la négociation elle-même n'étant pas un mécanisme de droit
+français.
+
+L'introduction du bloc ne compte plus les situations : « Six situations
+fréquentes » serait devenu faux à cet ajout même, sans que rien ne le signale. Le
+compte piraté reste sans leçon, donc sans entrée.
+
+Vérifié : `poser-situations.js --verifier`, l'audit de cohérence (lien et ancre)
+et l'audit de géométrie passent ; dans le navigateur, la carte mène à la section
+ouverte, dans les deux langues.
+
 ## 2026-09-11 — Une leçon « Négocier son salaire »
 
 ### Pourquoi

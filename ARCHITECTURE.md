@@ -76,12 +76,12 @@ en a retirés pour de bon le 10 septembre. L'accueil garde la promesse et son
 bouton vers `guides.html`, puis ce qui a bougé ; `guides.html` porte la liste.
 `publier-accueil.js --verifier` refuse leur retour.
 
-**La page Guides s'ouvre sur six entrées par situation** (11 septembre 2026) :
+**La page Guides s'ouvre sur des entrées par situation** (11 septembre 2026) :
 « Un vendeur refuse de me rembourser » mène à *Droit · Débutant · Écrire pour que
 ça compte*. Le catalogue range par matière ; un visiteur arrive avec un ennui.
 Chaque situation a été confrontée au texte de la section avant d'être retenue, et
 deux ont été écartées faute de réponse dans les guides (négocier son salaire, un
-compte piraté). `scripts/poser-situations.js` n'écrit que la phrase et la
+compte piraté) ; le salaire y est entré le même jour, une fois sa leçon écrite. `scripts/poser-situations.js` n'écrit que la phrase et la
 destination ; le nom du parcours vient de sa carte, le titre de la section vient
 de la page visée. Son `--verifier` rougit si l'un d'eux dérive.
 

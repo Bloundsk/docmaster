@@ -5,7 +5,7 @@
  * Le catalogue range le savoir par matiere : Finance, Droit, Cybersecurite.
  * Un visiteur, lui, arrive avec un ennui — « un vendeur refuse de me
  * rembourser » — et devait deviner sous quelle matiere il etait range, puis a
- * quel niveau. Ces six entrees menent directement a la section qui y repond.
+ * quel niveau. Ces entrees menent directement a la section qui y repond.
  *
  * CHOISIES SUR PIECES (10 septembre 2026)
  *
@@ -15,6 +15,10 @@
  * Negociation) et « on a pirate mon compte » (aucun passage ne dit quoi faire
  * apres un piratage). Une entree qui promet ce que la page ne donne pas est
  * pire que pas d entree.
+ *
+ * Le salaire a ete ajoute le 11 septembre 2026, une fois sa lecon ecrite
+ * (Negociation, niveau intermediaire). Le compte pirate attend toujours la
+ * sienne : pas de lecon, pas d entree.
  *
  * CE QUI EST ECRIT ICI, ET CE QUI EST RELU
  *
@@ -54,6 +58,8 @@ const SITUATIONS = [
       texte: { fr: "Je veux quitter mon logement", en: "I want to leave my rented home in France" } },
     { sujet: "sante", niveau: "intermediaire", ancres: { fr: "la-deconnexion", en: "disconnecting" },
       texte: { fr: "Mon travail m'écrit le soir", en: "My employer in France messages me in the evening" } },
+    { sujet: "negociation", niveau: "intermediaire", ancres: { fr: "negocier-son-salaire", en: "negotiating-your-salary" },
+      texte: { fr: "Je dois négocier mon salaire", en: "I have to negotiate my salary" } },
     { sujet: "finance", niveau: "debutant", ancres: { fr: "lépargne", en: "saving" },
       texte: { fr: "J'ai un peu d'argent de côté", en: "I have a little money put aside" } },
     { sujet: "apprendre", niveau: "debutant", ancres: { fr: "se-tester-plutot-que-relire", en: "testing-rather-than-rereading" },
@@ -65,7 +71,7 @@ const LIBELLES = {
         page: "guides.html",
         prefixe: "",
         titre: "Tu cherches une réponse précise ?",
-        intro: "Six situations fréquentes, et la section qui y répond — sans passer par le sommaire.",
+        intro: "Des situations fréquentes, et la section qui y répond — sans passer par le sommaire.",
         guillemets: ["« ", " »"],
         niveaux: { debutant: "Débutant", intermediaire: "Intermédiaire", avance: "Avancé" },
     },
@@ -73,7 +79,7 @@ const LIBELLES = {
         page: "en/guides.html",
         prefixe: "en/",
         titre: "Looking for a specific answer?",
-        intro: "Six common situations, and the section that answers each one — straight there.",
+        intro: "Common situations, and the section that answers each one — straight there.",
         guillemets: ["“", "”"],
         niveaux: { debutant: "Beginner", intermediaire: "Intermediate", avance: "Advanced" },
     },
