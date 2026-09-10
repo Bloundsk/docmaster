@@ -1,5 +1,75 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Six entrées par situation sur la page Guides
+
+### Pourquoi
+
+Le catalogue range le savoir par matière. Un visiteur arrive avec un ennui —
+« un vendeur refuse de me rembourser » — et devait deviner que la réponse se
+trouve dans Droit, au niveau débutant, section « Écrire pour que ça compte ».
+C'est le seul point de la vague 3 de l'audit pédagogique qui ait résisté à la
+mesure ; les deux autres ont été écartés le 10 septembre.
+
+### Les six, choisies sur pièces
+
+| Situation | Destination |
+|---|---|
+| « J'ai reçu un message qui me presse de cliquer » | Cybersécurité · Débutant · Le phishing |
+| « Un vendeur refuse de me rembourser » | Droit & démarches · Débutant · Écrire pour que ça compte |
+| « Je veux quitter mon logement » | Droit & démarches · Intermédiaire · Donner congé |
+| « Mon travail m'écrit le soir » | Santé au travail · Intermédiaire · La déconnexion |
+| « J'ai un peu d'argent de côté » | Finance · Débutant · L'épargne |
+| « Je révise et j'oublie tout » | Apprendre à apprendre · Débutant · Se tester plutôt que relire |
+
+Chaque situation a été confrontée au texte de la section avant d'être retenue.
+Deux ont été écartées : « je dois négocier mon salaire » — le mot n'apparaît nulle
+part dans le parcours Négociation — et « on a piraté mon compte » — aucun passage
+ne dit quoi faire après un piratage. Une entrée qui promet ce que la page ne
+donne pas est pire que pas d'entrée. Deux destinations sont au niveau
+intermédiaire, qu'un visiteur n'aurait pas trouvé en commençant par le début.
+
+En anglais, les trois situations de droit français le disent dans la phrase :
+« A seller in France won't refund me ».
+
+### Produites, et vérifiées
+
+`scripts/poser-situations.js` n'écrit que la phrase et la destination. Le nom et
+l'icône du parcours sont relus dans sa carte du catalogue, le titre de la section
+dans la page visée. Son `--verifier` tourne dans l'intégration continue. **Vu
+rougir deux fois** : un titre retouché dans le bloc ; une ancre visée renommée —
+le script échoue, et l'audit des liens signale en plus le lien mort.
+
+Le style n'emploie que des jetons existants : aucune ligne propre au mode
+sombre. L'audit de géométrie mesure la nouvelle grille (trois colonnes, puis
+deux, puis une) : 846 mesures.
+
+Dans le navigateur : un clic sur « Je veux quitter mon logement » ouvre la page
+avec *Donner congé* dépliée, son titre à 83 px du haut, sous la barre, et aucune
+autre section ouverte ; l'ancre accentuée `#lépargne` se comporte de même.
+Contrastes en clair : 16,98 pour la phrase, 9,75 pour la destination, 7,84 pour
+l'introduction ; en sombre : 13,35, 7,00 et 6,96. Page anglaise : six cartes,
+trois colonnes. Aucune erreur de console.
+
+### Un test qui échouait une fois sur dix
+
+Pendant la vérification, `test-revisions.mjs` a rougi, puis passé quinze fois de
+suite. Relancé 150 fois : **14 échecs**, toujours « le lendemain, la leçon est
+due ». Le test notait l'heure *avant* d'enregistrer la leçon, qui relisait l'heure
+une milliseconde plus tard quand l'horloge avançait entre les deux lignes :
+l'échéance tombait alors juste après « le lendemain ». Le code du site n'est pas
+en cause — il ne compte qu'en millisecondes, sans date locale ni universelle, et
+aucun visiteur ne voit de rappel décalé.
+
+Le test note désormais l'heure après l'enregistrement : **0 échec sur 300
+passages**, et il rougit toujours quand le premier palier passe à deux jours. Un
+contrôle bloquant qui échoue au hasard finit par être relancé sans être lu ;
+c'est pire qu'un contrôle absent.
+
+### Vérifié
+
+Tous les contrôles de l'intégration continue passent, dont la traduction des
+quatorze simulateurs et l'audit de géométrie.
+
 ## 2026-09-11 — Les restes de Poppins retirés : toute police passe par les deux variables
 
 ### Ce qui restait

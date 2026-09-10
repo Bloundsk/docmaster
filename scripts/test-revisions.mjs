@@ -63,10 +63,15 @@ console.log("\n=== 2. L'ÉCHELLE ===");
 {
     const { R } = bacAEssai();
     const p = "guides/ia/avance.html";
-    const t0 = Date.now();
-
     dit(R.amorcer(p) === true, "une leçon sans date reçoit la date du jour");
     dit(R.amorcer(p) === false, "amorcer une deuxième fois ne remet pas le compteur à zéro");
+
+    /* L heure se note APRES l enregistrement, jamais avant. Notee avant, elle
+       precedait d une milliseconde la date posee par amorcer() chaque fois que
+       l horloge avancait entre les deux lignes : l echeance tombait alors juste
+       apres « le lendemain », et le test echouait au hasard — 14 fois sur 150
+       le 11 septembre 2026. Les paliers suivants suivaient deja cet ordre. */
+    const t0 = Date.now();
 
     // Palier 1 : un jour.
     dit(R.etat(p, t0).due === false, "le jour même, rien n'est dû");

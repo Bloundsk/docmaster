@@ -1028,6 +1028,50 @@ article { background: var(--surface); padding: 25px; border-radius: var(--radius
 article:hover { transform: translateY(-8px); box-shadow: var(--shadow-fort); }
 article h3 { color: var(--primary); margin-bottom: 10px; }
 
+/* ---------------------------------------------------------------------------
+   ENTREES PAR SITUATION (page Guides)
+
+   Six situations formulees comme on les vit, chacune menant a la section qui
+   y repond. Ecrites par scripts/poser-situations.js. Rien que des jetons deja
+   en place — surface, bord, ombre, rayon, couleurs — : le composant suit donc
+   les deux themes sans une ligne propre au mode sombre.
+
+   Meme grille que le catalogue (270 px minimum) : trois colonnes sur un grand
+   ecran, deux sur tablette, une sur telephone. audit-geometrie.html le mesure.
+   ------------------------------------------------------------------------- */
+#situations { margin-bottom: 44px; }
+#situations > h2 { margin-bottom: 6px; }
+.situations-intro { color: var(--muted); margin-bottom: 18px; }
+.situations {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 14px;
+}
+.situation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: var(--bord-carte);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: var(--text);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+}
+.situation:hover, .situation:focus-visible { transform: translateY(-2px); box-shadow: var(--shadow-flottant); }
+.situation-texte { font-weight: 600; line-height: 1.35; }
+.situation-cible { font-size: .85rem; color: var(--primary); }
+@media (prefers-reduced-motion: reduce) {
+    .situation { transition: none; }
+    .situation:hover, .situation:focus-visible { transform: none; }
+}
+
 /* ---------------------------------------------------------------
    Les categories de l'accueil, en grille.
 

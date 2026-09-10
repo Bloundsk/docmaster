@@ -102,6 +102,13 @@ jobs:
       - name: Renvois vers le glossaire
         run: node scripts/poser-renvois-glossaire.js --verifier
 
+      # Les entrees par situation de la page Guides menent a une section precise.
+      # Leur libelle — parcours, niveau, titre de la section — est relu dans les
+      # pages visees : un titre retouche ou une ancre disparue rougit ici, au lieu
+      # de laisser un lien qui promet autre chose que ce qu il ouvre.
+      - name: Entrees par situation
+        run: node scripts/poser-situations.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le
