@@ -6,6 +6,8 @@ favoris, mesure d'usage, recherche, Mon espace, quiz, veille, rapport d'usage et
 le hook de datation. Décider de la structure après avoir produit le contenu
 obligerait à tout reprendre — le contenu comme le code.
 
+Ce qui reste à faire, et la phrase qui relance chaque chantier : `CHANTIERS.md`.
+
 ---
 
 ## 1. Le constat de départ
