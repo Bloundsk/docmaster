@@ -437,6 +437,13 @@
        fichier. Plus rien ne peut lui echapper, y compris ce qui sera ajoute
        plus tard.
 
+       Sauf ce qui declarait sa police dans une feuille <style> propre a une
+       page : la FAQ, le glossaire, la boite a idees et Mon espace gardaient
+       Poppins (qui ne se chargeait plus : police de secours du systeme) ou
+       Inter ecrite en dur. Retires le 11 septembre 2026 ; audit-coherence.mjs,
+       controle 14, refuse desormais toute police qui ne passe pas par ces
+       deux variables.
+
        Elles ne sont PAS redefinies en mode sombre : une police n a pas de
        theme. C est aussi pourquoi ce changement-ci se voit dans les deux, a la
        difference de la palette. */

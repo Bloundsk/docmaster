@@ -1,5 +1,55 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Les restes de Poppins retirés : toute police passe par les deux variables
+
+### Ce qui restait
+
+Poppins a quitté le site le 6 septembre, mais les feuilles `<style>` propres à
+quatre pages la déclaraient encore : les questions de la FAQ, les termes du
+glossaire, les étiquettes et le bouton d'envoi de la boîte à idées. Comme elle
+ne se chargeait plus, ces éléments s'affichaient **dans la police de secours du
+système** — ni Literata ni Inter, et Arial sous Windows.
+
+Huit autres déclarations écrivaient Inter en dur (champs de filtre, champs du
+formulaire, boutons « Copier » et « Tout effacer ») : le rendu était juste, mais
+hors d'atteinte du réglage « police lisible ». C'est exactement le défaut que la
+règle « tout passe par `--police-titre` ou `--police-texte` » avait corrigé dans
+`style.css` le 6 septembre — les feuilles propres à une page lui avaient échappé.
+
+### Ce qui change à l'écran
+
+- **Questions de la FAQ, termes du glossaire** : police des titres (Literata),
+  comme les titres de section des guides et les titres d'encadré.
+- **Étiquettes, champs et boutons** de la boîte à idées, champs de filtre,
+  bouton « Tout effacer » : police du texte (Inter), comme les autres boutons.
+
+Le changement est visible, et dans les deux thèmes : une police n'a pas de thème.
+Il remplace une police que personne n'avait choisie.
+
+Vérifié dans le navigateur, élément par élément — le glossaire en anglais, la FAQ,
+la boîte à idées et Mon espace en français, leurs règles étant identiques d'une
+langue à l'autre, et le contrôle 14 couvrant les huit pages : chaque
+élément corrigé affiche la police annoncée, et **le réglage « Lisible » les
+atteint désormais tous** — ils passent en Atkinson Hyperlegible quand il est
+actif. Aucune erreur de console.
+
+### Contrôle 14 : polices déclarées
+
+`audit-coherence.mjs` lit chaque `font-family` des pages, des feuilles et des
+scripts — 42 déclarations — et refuse toute valeur qui ne passe pas par
+`var(--police-titre)` ou `var(--police-texte)`. Seuls « inherit » et les piles
+monospace du code sont admis ; les `@font-face`, qui définissent les polices, ne
+sont pas lus. **Vu rougir** : Poppins remise dans le glossaire a produit une
+anomalie qui cite la déclaration ; la page restaurée, l'anomalie a disparu.
+
+Le commentaire de `layout.js` qui attendait « que Poppins arrive » parle
+désormais des polices du site.
+
+### Vérifié
+
+Les dix-sept contrôles, la traduction des quatorze simulateurs et l'audit de
+géométrie (824 mesures) passent.
+
 ## 2026-09-10 — Les polices hébergées sur le site : plus aucune requête vers Google
 
 ### Pourquoi

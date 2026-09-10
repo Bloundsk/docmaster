@@ -856,6 +856,39 @@ for (const f of ["amorcer-preferences.js", "appliquer-identite.js", "publier-pod
 }
 console.log(`  ${toutes.length} pages, ${feuilles.length} feuille(s), ${scriptsDuSite.length} scripts : ${ressourcesTiers} ressource(s) de tiers relevée(s)`);
 
+// --- 14. Polices declarees ------------------------------------------------
+/* Toute police passe par --police-titre ou --police-texte : c est ce qui permet
+   au reglage « police lisible » d atteindre chaque element, et ce qui evite
+   qu une police retiree survive quelque part. Le 11 septembre 2026, les
+   feuilles <style> de la FAQ, du glossaire, de la boite a idees et de Mon
+   espace declaraient encore Poppins — plus chargee, donc police de secours du
+   systeme — ou Inter ecrite en dur, qui echappait au reglage.
+
+   Sont admis : les deux variables, « inherit », et les piles monospace du code.
+   Les @font-face, qui DEFINISSENT les polices, ne sont pas lus. */
+console.log("\n=== 14. POLICES DECLAREES ===");
+
+const lirePolices = (nom, texte) => {
+    let vues = 0;
+    const sansFontFace = texte.replace(/@font-face\s*\{[^}]*\}/g, "");
+    for (const m of sansFontFace.matchAll(/font-family\s*:\s*([^;"}]+)/g)) {
+        vues++;
+        const valeur = m[1].trim();
+        if (/^var\(--police-(titre|texte)\)/.test(valeur) || /^inherit\b/.test(valeur) || /monospace/.test(valeur)) continue;
+        signaler("POLICES", `${nom} : « font-family: ${valeur} » — passer par var(--police-titre) ou var(--police-texte)`);
+    }
+    return vues;
+};
+let declarationsDePolice = 0;
+for (const page of toutes) declarationsDePolice += lirePolices(page.nom, page.html);
+for (const f of fs.readdirSync(path.join(RACINE, "assets", "css")).filter((x) => x.endsWith(".css"))) {
+    declarationsDePolice += lirePolices(`assets/css/${f}`, lire(path.join(RACINE, "assets", "css", f)));
+}
+for (const f of fs.readdirSync(path.join(RACINE, "assets", "js")).filter((x) => x.endsWith(".js"))) {
+    declarationsDePolice += lirePolices(`assets/js/${f}`, lire(path.join(RACINE, "assets", "js", f)));
+}
+console.log(`  ${declarationsDePolice} déclaration(s) de police lue(s)`);
+
 // --- Resultat --------------------------------------------------------------
 console.log("\n=== RESULTAT ===\n");
 if (!anomalies.length) {

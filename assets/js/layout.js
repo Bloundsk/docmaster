@@ -315,7 +315,7 @@ ${options.map((o, i) => `                                <button type="button" d
         //
         // Tant que la police de secours est appliquée, les liens sont plus
         // larges : à sept entrées, ils passent sur deux lignes et la navbar
-        // fait 126 px. Quand Poppins arrive, ils reviennent sur une ligne et
+        // fait 126 px. Quand les polices du site arrivent, ils reviennent sur une ligne et
         // elle retombe à 70. Or « load » se déclenche AVANT ce basculement,
         // et `document.fonts.ready` se résout trop tôt : la valeur restait
         // figée à 138 px, soit 56 px de titre cachés sur tout le site.

@@ -726,7 +726,11 @@ titres en comptant sur l'héritage : les vingt-deux règles qui déclaraient une
 police lui échappaient. Mesuré, réglage actif : **dix types d'éléments**
 gardaient l'ancienne police — boutons, étiquettes d'encadré, en-têtes de
 tableau, surtitres de quiz. Le réglage réécrit désormais les deux variables, et
-plus rien ne peut lui échapper.
+plus rien ne peut lui échapper. Sauf les feuilles `<style>` propres à
+quatre pages (FAQ, glossaire, boîte à idées, Mon espace, dans les deux langues),
+qui déclaraient encore Poppins ou Inter en dur : retirées le 11 septembre 2026.
+Le contrôle 14 d'`audit-coherence.mjs` refuse désormais toute police qui ne
+passe pas par les deux variables.
 
 S'y ajoute une remise à zéro indispensable : `button, input, select, textarea
 { font-family: inherit }`. Un `<button>` n'hérite pas de la police — la feuille
