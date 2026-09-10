@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>A felejtési görbe és a térközös ismétlés — Tanulás, kezdő - Clicked</title>
+    <meta name="description" content="Mitől marad meg a tudás: a felejtési görbe, a térközös ismétlés, az önellenőrzés az újraolvasás helyett és a tudás illúziói. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/apprendre/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/apprendre/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/apprendre/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/apprendre/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/apprendre/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="A felejtési görbe és a térközös ismétlés — Tanulás, kezdő - Clicked">
+    <meta property="og:description" content="Mitől marad meg a tudás: a felejtési görbe, a térközös ismétlés, az önellenőrzés az újraolvasás helyett és a tudás illúziói. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/apprendre/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A felejtési görbe és a térközös ismétlés — Tanulás, kezdő - Clicked">
+    <meta name="twitter:description" content="Mitől marad meg a tudás: a felejtési görbe, a térközös ismétlés, az önellenőrzés az újraolvasás helyett és a tudás illúziói. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🎓 A tanulás tanulása</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎓 A tanulás tanulása — Kezdő</h1>
+                <p>Mitől marad meg, amit tanulunk. Előismeret nélkül.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 90 Q55 82 70 90 Q85 82 100 90 L100 62 Q85 54 70 62 Q55 54 40 62 Z"/>
+<path d="M70 62 L70 90"/>
+<path d="M44 48 Q60 48 70 40 Q80 32 94 32" stroke-opacity="0.65"/></g></g>
+<circle class="illu-twinkle" cx="94" cy="32" r="3" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:1.1s"/>
+<circle class="illu-twinkle" cx="106" cy="100" r="2.5" fill="white" style="animation-delay:1.7s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>akkor ismételj, amikor a felejtés a leggyorsabb</strong>, hogy újraolvasás helyett kikérdezd magad, és hogy felismerd a tudás illúzióját, amelyet az újraolvasás kelt.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#la-courbe-de-loubli">📉 A felejtési görbe</a></li>
+                <li><a href="#la-repetition-espacee">🔁 A térközös ismétlés</a></li>
+                <li><a href="#se-tester-plutot-que-relire">✍️ Kikérdezni magad újraolvasás helyett</a></li>
+                <li><a href="#les-illusions-de-maitrise">🪞 A tudás illúziói</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mikor a leggyorsabb a felejtés — és így mikor kell ismételni?</li>
+                <li>Mennyi időt takarít meg egy jól időzített térköz a heti újraolvasáshoz képest?</li>
+                <li>Az önellenőrzés azt ellenőrzi, amit tudsz, vagy maga a tanulás?</li>
+                <li>Miért tűnik tudásnak egy négyszer újraolvasott szöveg?</li>
+                <li>Mi a közös minden valóban működő módszerben?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Ez az útmutató arról az egyetlen készségről szól, amely az összes többit szolgálja. Az oldal többi útja egy-egy területet tanít; ez azt, hogyan marad meg, amit ott tanulsz.</p>
+            <p>Jó okkal érdemes itt kezdeni: <strong>azok a módszerek, amelyeket szinte mindenki használ — újraolvasás, kiemelés, jegyzetek újraírása —, a létező legkevésbé hatékonyak közé tartoznak</strong>. Nem lusta szokások: olyan szokások, amelyek a haladás érzését keltik, és ez sokkal rosszabb.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Az idézett számok az emlékezetpszichológia publikált kutatásaiból származnak, és <strong>nagyságrendként</strong> értendők: a megtanult anyagtól, az emberektől és a vizsgálati körülményektől függően változnak.</p>
+                <p>A tartós tanulási nehézségek hátterében specifikus zavar is állhat, amelyet nem lehet ismétlési módszerrel orvosolni. Ez az útmutató nem helyettesíti a szakember véleményét.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Mitől marad meg, amit tanulunk</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="la-courbe-de-loubli">📉 A felejtési görbe</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Amit épp megtanultál, nem egyenletesen törlődik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Amit épp megtanultál, nem egyenletesen törlődik. A veszteség <strong>eleinte hirtelen, aztán egyre lassabb</strong>. Ez a forma, és nem az átlagos sebesség szabja meg, mikor kell ismételni.</p>
+
+                <h4>A forma fontosabb a számoknál</h4>
+                <p>Egyenletes csökkenés esetén állandó időközönként kellene ismételni. Csakhogy nem ez történik: annak nagy része, ami el fog tűnni, az első két napban tűnik el. Ezen túl a megmaradt tudás sokkal tovább kitart.</p>
+                <p>Ebből egy meglepő következmény adódik: <strong>a másnapi ismétlés több anyagot ment meg, mint a három héttel későbbi</strong>, ugyanannyi ráfordított idővel.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — ma megtanult 40 kifejezés</span>
+                    <p>Ismétlés nélkül <strong>másnapra 24</strong> marad meg belőlük, <strong>két nap után 18</strong>, <strong>egy hét után 8</strong>, <strong>egy hónap után 3</strong>.</p>
+                    <p>Vagyis a teljes veszteség több mint fele az első 48 órában történik. Aki hétvégéig vár az ismétléssel, a csata után érkezik.</p>
+                </div>
+
+                <div class="pratique" data-pratique="courbe-oubli"></div>
+
+                <h4>Miért működik a magolás — és miért csapda</h4>
+                <p>A vizsga előtti este intenzív ismétlése nagyon jól működik — <em>másnapra</em>. A görbe magasról indul, és a vizsga előbb jön, mint hogy leereszkedne.</p>
+                <p>A gond az, hogy utána ugyanúgy leereszkedik. Három héttel később szinte semmi sem marad — ez magyarázza azt az ismerős érzést, hogy „mindent elfelejtettünk” egy tárgyból, amelyből pedig sikeres vizsgát tettünk.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy rosszul tanultunk</span>
+                    <p>A felejtés nem a tanulás hibája, hanem az emlékezet normális működése. Senkinek sem sikerül erőfeszítés nélkül megjegyeznie azt, amit csak egyszer látott.</p>
+                    <p>A hasznos kérdés tehát nem az, hogy „hogyan tanuljak jobban elsőre”, hanem az, hogy <strong>„mikor kell visszatérni rá”</strong>.</p>
+                </div>
+
+                <p class="retenir">💡 A felejtés közvetlenül a tanulás után a leggyorsabb. Ezért ekkor kerül a legkevesebbe és hozza a legtöbbet egy ismétlés.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-repetition-espacee">🔁 A térközös ismétlés</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Minden sikeres ismétlés nemcsak visszaemeli a görbét: laposabbá is teszi.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden sikeres ismétlés nemcsak visszaemeli a görbét: <strong>laposabbá is teszi</strong>. Ami egy napig tartott, utána három napig tart, aztán egy hétig, aztán háromig. Így lehet tartósan megjegyezni valamit meglepően kevés munkával.</p>
+
+                <h4>Az időközök</h4>
+                <p>Egy klasszikus ütemezés: <strong>1 nap, 3 nap, 7 nap, 21 nap, 60 nap, 180 nap</strong>. Minden sikeres ismétlés nagyjából háromszor távolabbra tolja a következőt.</p>
+                <p>Ezekben a számokban nincs semmi szent: az elv számít — <strong>közvetlenül a felejtés előtt visszatérni</strong>. Aki túl korán tér vissza, arra pazarolja az időt, amit még tud; aki túl későn, az újratanul.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 60 kifejezés, hat hónapra</span>
+                    <p>Kifejezésenként és alkalmanként <strong>8 másodperccel</strong> számolva.</p>
+                    <p><strong>Térközökkel:</strong> 6 alkalom, vagyis összesen <strong>48 perc</strong> a hat hónap alatt.</p>
+                    <p><strong>Ha minden héten mindent újraolvasol:</strong> 25 alkalom, vagyis <strong>3 óra 20 perc</strong>.</p>
+                    <p>Négyszer kevesebb idő — és a végén jobb megtartás, mert a térköz ott dolgozik, ahol az újraolvasás csak ismétel.</p>
+                </div>
+
+                <div class="pratique" data-pratique="repetition-espacee"></div>
+
+                <h4>Mitől nehéz kitartani mellette</h4>
+                <p>Nem erőfeszítést kíván, hanem <strong>ütemtervet</strong>. Itt dől el minden: senki sem tartja fejben, hogy az egyik kifejezést 21 nap múlva kell átnézni, a másikat 3 nap múlva.</p>
+                <p>Ezért használnak tanulókártya-programokat — közülük az Anki a legismertebb —, amelyek semmi mást nem tesznek, csak vezetik ezt az ütemtervet. Egy kartotékdoboz öt elválasztólappal ugyanezt végzi, képernyő nélkül.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt ismételni, amit már tudsz</span>
+                    <p>Kellemes, a hozzáértés érzését adja, és semmit sem ér. Az az idő, amelyet egy hat hónapja hibátlanul felidézett kártyára fordítasz, azoktól a kártyáktól vész el, amelyeket elrontasz.</p>
+                    <p>Az a jó ismétlés, amelyben rendszeresen tévedsz. Ha minden elsőre megy, túl rövidek az időközök.</p>
+                </div>
+
+                <p class="retenir">💡 A térközök nem kívánnak több munkát: négyszer kevesebbet kívánnak. Amit kívánnak, az a rendszeresség.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="se-tester-plutot-que-relire">✍️ Kikérdezni magad újraolvasás helyett</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Ha egy választ az emlékezetedben keresel, az sokkal jobban megerősíti az emléket, mint az újraolvasás.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ha egy választ az emlékezetedben keresel, az sokkal jobban megerősíti az emléket, mint az újraolvasás. Ez a terület egyik legszilárdabb eredménye, és az egyik legkevésbé alkalmazott: <strong>a számonkérés nem a tanulás ellenőrzése, hanem maga a tanulás</strong>.</p>
+
+                <h4>Az alapkísérlet</h4>
+                <p>Két csoport, egy szöveg, azonos tanulási idő. Az első csoport újraolvas; a második odanézés nélkül kikérdezi magát. Azonnal tesztelve az újraolvasók teljesítenek jobban — innen az illúzió.</p>
+                <p><strong>Egy héttel később</strong> tesztelve az arány egyértelműen megfordul: az újraolvasók nagyjából <strong>40%</strong>-ot őriztek meg, akik kikérdezték magukat, nagyjából <strong>61%</strong>-ot.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 100 megjegyzendő elem</span>
+                    <p><strong>Csak újraolvasás:</strong> egy héttel később 40 elemre emlékszel.</p>
+                    <p><strong>Az idő felében önellenőrzés:</strong> 51 elem.</p>
+                    <p><strong>Végig önellenőrzés:</strong> 61 elem, vagyis <strong>21-gyel több</strong> — ugyanannyi perc alatt.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-test"></div>
+
+                <h4>Kikérdezni magad, a gyakorlatban</h4>
+                <ul>
+                    <li><strong>Csukd be az anyagot, és írj le mindent, amire emlékszel.</strong> Aztán nyisd ki újra, és nézd meg, mi hiányzott — pontosan ezeket kell újra átvenni.</li>
+                    <li><strong>Alakítsd kérdéssé a címeket.</strong> „A felejtési görbe” így lesz: „milyen alakú a felejtési görbe, és mit változtat ez?”.</li>
+                    <li><strong>Válaszolj, mielőtt elolvasnád a választ</strong>, akkor is, ha tévedsz. Ha tévedsz, majd látod a javítást, az jobban megmarad, mint ha rögtön a helyes választ olvasnád.</li>
+                    <li><strong>Magyarázd el valakinek</strong>, vagy hangosan, senkinek. A hiányok azonnal kiderülnek.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — nyitott anyaggal kikérdezni magad</span>
+                    <p>Ha „csak ellenőrzésképpen” odapillantasz a válaszra, épp azt az erőfeszítést szünteted meg, amely hat. Felismerni egy választ és előhívni két különböző művelet, és csak a második erősíti az emléket.</p>
+                    <p>Az a kellemetlen pillanat, amikor keresel és nem találsz, nem a módszer kudarca: maga a módszer.</p>
+                </div>
+
+                <p class="retenir">💡 Ha kényelmes az ismétlésed, valószínűleg nem sokat ér.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-illusions-de-maitrise">🪞 A tudás illúziói</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az igazi akadály nem a tanulás nehézsége, hanem annak nehézsége, hogy tudjuk, mit tudunk.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az igazi akadály nem a tanulás nehézsége, hanem <strong>annak nehézsége, hogy tudjuk, mit tudunk</strong>. A saját tudásunkról alkotott ítéleteink rendszeresen túl optimisták, és épp a tanulás után azok.</p>
+
+                <h4>Folyékonyság, amelyet tudásnak hiszünk</h4>
+                <p>Egy négyszer újraolvasott szöveg könnyen olvasható. Az agy ezt a könnyedséget a tudás jelének veszi — pedig csak azt méri, mennyire ismerős a tördelés és a mondatok fordulata.</p>
+                <p>Ezért maradnak a kiemelés és az újraolvasás a legelterjedtebb módszerek: abban a pillanatban ezek a legjutalmazóbbak. A számonkérés később jön, amikor a szöveg nélkül kell teljesíteni.</p>
+
+                <div class="exemple">
+                    <span class="titre">A döntő teszt</span>
+                    <p>Válassz egy témát, amelyet szerinted jól ismersz. Csukj be mindent. Írd le, mit tudsz róla, tíz sorban, semmibe sem belenézve.</p>
+                    <p>Ami kijön, azt tudod. A többi csak felismerés volt: egy listában felismerted volna, de előhívni nem tudtad.</p>
+                    <p>Ez a teszt elsőre kellemetlen. Egyben ez az egyetlen megbízható információ, amely a vizsga előtt a rendelkezésedre áll.</p>
+                </div>
+
+                <div class="pratique" data-pratique="illusion-maitrise"></div>
+
+                <h4>A hasznos nehézségek</h4>
+                <p>A terület egyik meglepő tétele: ami a tanulást abban a pillanatban lassabbá és fáradságosabbá teszi, gyakran tartósabbá is teszi. Térközök, önellenőrzés, a témák keverése — mindhárom rontja az azonnali teljesítményt, és javítja a későbbit.</p>
+                <p>A fordítottja is igaz: azokból a módszerekből, amelyek azt az érzést keltik, hogy minden könnyen megy, semmi sem marad meg.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — aszerint megítélni egy módszert, milyen érzést kelt</span>
+                    <p>„Ez a módszer nem nekem való, rosszabbul jegyzek meg vele” — ezt szinte mindig az első napokban mondjuk, épp akkor, amikor minden jó módszer gyengébb eredményt ad az újraolvasásnál.</p>
+                    <p>Egy tanulási módszert nem az adott alkalom alapján kell megítélni, hanem egy héttel később, azon, ami megmaradt.</p>
+                </div>
+
+                <p class="retenir">💡 A tanulás érzése és a tanulás ténye nem ugyanabba az irányba mozdul. Ez a terület központi csapdája.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A felejtés az első két napban hirtelen, aztán lelassul: korán kell ismételni.</li>
+                <li>Hat jól időzített ismétlés négyszer kevesebb időbe kerül, mint a heti újraolvasás.</li>
+                <li>Az önellenőrzés nem ellenőrzés, hanem a tanulás módja.</li>
+                <li>A négyszer újraolvasott szöveg ismerőssé válik, nem tudássá — és a különbség csak egy héttel később derül ki.</li>
+                <li>Mindezekben a módszerekben van valami közös: abban a pillanatban kellemetlenek.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Válassz ki valamit, amit ezen a héten tanultál. Csukj be mindent, és írd le emlékezetből, mit őriztél meg belőle — papírra, odanézés nélkül. Utána hasonlítsd össze. A különbség, amelyet felfedezel, pontosan az, amit az újraolvasás elrejtett volna előled.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>„Make It Stick”</strong>, Brown, Roediger és McDaniel: e kutatási terület közérthető összefoglalása, azok tollából, akik a kutatásokat végezték (angolul).</li>
+                    <li><strong>Roediger és Karpicke kutatásai</strong> a tesztelési hatásról: az itt idézett 40% és 61% innen származik.</li>
+                    <li><strong>Anki</strong>: szabad, térközös ismétlésre épülő tanulókártya-program, amely helyetted vezeti az ütemtervet.</li>
+                    <li><strong>The Learning Scientists</strong>: rövid, illusztrált, szabadon hozzáférhető anyagok a hat igazolt stratégiáról (angolul).</li>
+                </ul>
+                <p><strong>Egy hasznos szokás:</strong> a következő olvasmányod végén csukd be az oldalt, és írj le három mondatot emlékezetből. Tanulságos a különbség ahhoz képest, amit azt hitted, megjegyeztél — és ez már maga is ismétlés.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza az úthoz</span>🎓 A tanulás tanulása</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Tanulás — Középhaladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/productivite/index.html">⏱️ Termelékenység és szervezés (franciául)</a>
+                <a href="../../../guides/ia/index.html">🤖 Mesterséges intelligencia (franciául)</a>
+                <a href="../../../guides/data/index.html">📊 Adatok és elemzés (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/apprendre-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

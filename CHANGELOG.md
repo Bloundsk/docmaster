@@ -1,5 +1,64 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Premier parcours en hongrois : « Apprendre à apprendre »
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/apprendre/` (le sommaire et les trois niveaux),
+  traduites du français, en tutoiement. Elles gardent les **ancres françaises** :
+  les favoris, la progression et les rappels de révision des visiteurs y sont
+  attachés. L'en-tête et le pied de page viennent des pages anglaises.
+- **Les 3 banques de quiz** de `assets/js/quiz/hu/` : 90 questions, avec la bonne
+  réponse au même rang qu'en français.
+- **`assets/js/pratique/hu.js`** : les 138 textes des 12 simulateurs du parcours.
+- `CONTENU_TRADUIT.hu` annonce « apprendre » : **le drapeau hongrois apparaît**.
+  Le plan du site liste les quatre pages, et les pages anglaises du parcours
+  annoncent leur version hongroise (`hreflang`).
+- Les parcours cités en « Guides similaires » et dans la navigation entre
+  parcours ne sont pas encore traduits : les liens mènent au français, et le
+  disent (« franciául »).
+- Les durées hongroises s'écrivent en toutes lettres : « 3 óra 20 perc » dans les
+  simulateurs, « 2 perc » sur les leçons.
+
+### Corrigé en traduisant
+
+- **« 26 passages »** pour une relecture hebdomadaire : sur six mois, le simulateur
+  de la page en compte 25, et c'est 25 qui donne les 3 h 20 annoncées. Corrigé en
+  français et en anglais, dans la leçon, au sommaire du parcours et dans la
+  recherche.
+- **« Les neuf autres parcours de ce site »** : il y en a treize. La phrase ne
+  compte plus.
+
+### Quatre contrôles qui voyaient mal le hongrois
+
+- **La longueur des réponses.** Traduites fidèlement, les banques hongroises
+  laissaient deviner la bonne réponse à sa longueur : « prendre la plus longue »
+  rapportait 51,7 %, au-dessus des 42 % admis. Onze distracteurs ont reçu le
+  raisonnement de celui qui y croit, comme en français le 9 septembre. Résultat : 37,4 %.
+- **`verifier-traduction.mjs` prenait du hongrois pour du français.** « é », « ü »,
+  « le » et « ne » s'écrivent dans les deux langues. Le filet les ignore désormais,
+  pour le seul hongrois.
+- **Le même contrôle ne voyait pas « 1 h »** sur la page hongroise : l'unité s'est
+  affichée pendant qu'il annonçait 138/138, parce qu'une unité d'une seule lettre
+  échappe à ses deux filets. Il fait maintenant tourner les simulateurs dans la
+  langue vérifiée, et cherche les unités d'une lettre que le dictionnaire de cette
+  langue traduit. Vérifié dans les deux sens : unité hongroise retirée, il rougit
+  sur six valeurs ; unité remise, il repasse au vert. L'anglais n'en bouge pas.
+- **L'audit de géométrie réclamait `lang="fr"`** sur les pages hongroises : il ne
+  connaissait que le préfixe `en/`. Il lit désormais les codes de langue dans
+  `langues.js`, et mesure deux pages hongroises de plus.
+
+### Vérifié
+
+Les 17 contrôles, les 15 paires de traduction et l'audit de géométrie passent.
+Dans le navigateur, les quatre pages s'affichent en hongrois sans erreur de
+console : quiz, simulateurs, sélecteur de niveau et pied de page compris.
+
+### Ce qui reste
+
+Faire relire le parcours par un lecteur hongrois avant de traduire les treize
+autres sujets : voir `CHANTIERS.md`.
+
 ## 2026-09-11 — Le hongrois se prépare : langue déclarée, scripts généralisés
 
 ### La demande, et sa taille

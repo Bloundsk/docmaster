@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Kevert gyakorlás, tudatos gyakorlás és alvás — Tanulás, középhaladó - Clicked</title>
+    <meta name="description" content="Az erőfeszítés megszervezése: kevert gyakorlás, mély feldolgozás, tudatos gyakorlás és az alvás szerepe a rögzülésben. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/apprendre/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/apprendre/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/apprendre/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/apprendre/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/apprendre/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Kevert gyakorlás, tudatos gyakorlás és alvás — Tanulás, középhaladó - Clicked">
+    <meta property="og:description" content="Az erőfeszítés megszervezése: kevert gyakorlás, mély feldolgozás, tudatos gyakorlás és az alvás szerepe a rögzülésben. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/apprendre/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kevert gyakorlás, tudatos gyakorlás és alvás — Tanulás, középhaladó - Clicked">
+    <meta name="twitter:description" content="Az erőfeszítés megszervezése: kevert gyakorlás, mély feldolgozás, tudatos gyakorlás és az alvás szerepe a rögzülésben. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🎓 A tanulás tanulása</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎓 A tanulás tanulása — Középhaladó</h1>
+                <p>Szervezd meg a munkát, és hagyd, hogy az éjszaka befejezze.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 90 Q55 82 70 90 Q85 82 100 90 L100 62 Q85 54 70 62 Q55 54 40 62 Z"/>
+<path d="M70 62 L70 90"/>
+<path d="M44 48 Q60 48 70 40 Q80 32 94 32" stroke-opacity="0.65"/></g></g>
+<circle class="illu-twinkle" cx="94" cy="32" r="3" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:1.1s"/>
+<circle class="illu-twinkle" cx="106" cy="100" r="2.5" fill="white" style="animation-delay:1.7s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>keverd a feladataidat ahelyett, hogy csoportosítanád őket</strong>, hogy egy új fogalmat ahhoz kapcsolj, amit már tudsz, hogy azon dolgozz, ami nem megy, ne azon, ami megy, és hogy megóvd a tanulást követő éjszakát.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#lentrelacement">🔀 Kevert gyakorlás</a></li>
+                <li><a href="#lelaboration">🧩 A mély feldolgozás</a></li>
+                <li><a href="#la-pratique-deliberee">🎯 A tudatos gyakorlás</a></li>
+                <li><a href="#sommeil-et-consolidation">😴 Az alvás és a rögzülés</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mit gyakorolsz, amikor tíz ugyanolyan típusú feladatot oldasz meg egymás után?</li>
+                <li>Miért könnyebb előhívni egy tíz másikhoz kapcsolt fogalmat?</li>
+                <li>Mit ad az az idő, amelyet arra fordítasz, ami már megy?</li>
+                <li>Mi történik a tanulást követő éjszaka?</li>
+                <li>Mit jelent, ha abban a pillanatban rosszabbul teljesítesz?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint arról szólt, <em>mikor</em> térj vissza egy fogalomra, és <em>hogyan</em> dolgozz vele: térközökkel, önellenőrzéssel, óvakodva a tudás érzésétől.</p>
+            <p>Ez a szint a körülötte lévő szervezésről szól: milyen <strong>sorrendben</strong> dolgozz, mit <strong>kezdj a tartalommal</strong>, miközben tanulod, <strong>hová tedd az erőfeszítést</strong>, és mi történik, miután becsuktad a füzetet.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Az idézett számszerű különbségek meghatározott anyagokon végzett kísérletekből származnak: egy hatás nagyságát szemléltetik, és nem vihetők át változatlanul bármely tárgyra.</p>
+                <p>Az itt tárgyalt alvási kérdések a hétköznapi életmódhoz tartoznak. Tartós alvászavar esetén orvoshoz kell fordulni.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Az erőfeszítés megszervezése</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="lentrelacement">🔀 Kevert gyakorlás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A megszokott gyakorlás úgy zajlik, hogy húsz ugyanolyan típusú feladatot oldunk meg egymás után, aztán áttérünk a következő típusra.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A megszokott gyakorlás úgy zajlik, hogy húsz ugyanolyan típusú feladatot oldunk meg egymás után, aztán áttérünk a következő típusra. Kényelmes, a tudás érzését kelti — és jóval kevésbé hatékony, mint ha keverjük őket.</p>
+
+                <h4>Miért téveszt meg a csoportosítás</h4>
+                <p>Ha minden feladat ugyanolyan típusú, <strong>nem kell felismerni, milyen típusról van szó</strong>. Alkalmazod a módszert, amelyet épp elolvastál, és bejön. A sorozat halad, a hozzáértés érzése nő.</p>
+                <p>A dolgozat napján senki sem mondja meg a típust. Pedig épp a probléma felismerése a nehéz rész — és egyedül ezt nem gyakoroltad.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 48 feladat, négy típus</span>
+                    <p><strong>Blokkokban</strong> — típusonként tizenkét feladat egymás után: a későbbi teszten nagyjából <strong>48-ból 10 sikerül</strong>.</p>
+                    <p><strong>Keverve</strong> — a típusok összevissza: nagyjából <strong>48-ból 30</strong>, vagyis <strong>21-gyel több</strong>.</p>
+                    <p>Ugyanannyi feladat, ugyanannyi idő. Csak a sorrend változik.</p>
+                </div>
+
+                <div class="pratique" data-pratique="entrelacement"></div>
+
+                <h4>Mibe kerül</h4>
+                <p>A keverés kellemetlen: többet tévedsz, lassabban haladsz, és határozottan úgy érzed, hogy rosszabbul boldogulsz. Ez az érzés pontos — <strong>abban a pillanatban</strong>. A későbbi teszten megfordul.</p>
+                <p>A gyakorlatban: ha megismertél egy módszert, végezz két-három csoportosított feladatot, hogy megértsd, aztán térj át rögtön mindannak a keverékére, amit addig láttál.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — összetéveszteni a keverést a csapongással</span>
+                    <p>Keverni annyi, mint <strong>ugyanazon a területen belül</strong> váltogatni olyan feladatokat, amelyek eléggé hasonlítanak ahhoz, hogy összetéveszthetők legyenek. Épp az összetévesztés lehetősége teszi hasznossá a gyakorlatot.</p>
+                    <p>Tízpercenként váltogatni három, egymáshoz nem kapcsolódó tárgy között nem keverés: feladatváltás, azzal az újrakezdési költséggel, amellyel jár.</p>
+                </div>
+
+                <p class="retenir">💡 A csoportosítás a módszer alkalmazását gyakoroltatja. A keverés a módszer kiválasztását — és a nagy napon ezt kérik tőled.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="lelaboration">🧩 A mély feldolgozás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy magányos információ nehezen marad meg.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy magányos információ nehezen marad meg. Ha ugyanazt ahhoz kapcsolod, amit már tudsz, több úton is elérhetővé válik — és elég, ha egyetlen út működik, hogy előhívd.</p>
+
+                <h4>A reflex: „miért?”</h4>
+                <p>A technika egyetlen kérdés, amelyet minden fontos állításnál felteszel: <strong>miért igaz ez?</strong> Aztán: mennyiben illik — vagy nem illik — ahhoz, amit már tudok?</p>
+                <p>Triviálisnak tűnik. Mégis ez választja el a nyomot hagyó olvasást attól, amelyik csak elfut a szemed előtt.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ugyanannak a mondatnak kétféle olvasása</span>
+                    <p><em>„A felejtés görbét követ: eleinte nagyon gyors, aztán egyre lassabb.”</em></p>
+                    <p><strong>Passzív olvasás:</strong> kiemeled, továbblépsz. A mondat világosnak tűnik, tehát megvan.</p>
+                    <p><strong>Mély feldolgozás:</strong> miért ilyen az alakja? Mit jelent ez arra nézve, mikor ismételjek? Összefér azzal, hogy még mindig emlékszem a gyerekkori címemre? És ha nem volna igaz, mit tapasztalnék helyette?</p>
+                    <p>A második háromszor annyi időt vesz igénybe, és tízszer annyi marad meg belőle.</p>
+                </div>
+
+                <div class="pratique" data-pratique="elaboration"></div>
+
+                <h4>Újrafogalmazni, nem lemásolni</h4>
+                <p>Egy definíció lemásolása semmilyen feldolgozást nem igényel: a kéz dolgozik, nem az emlékezet. Ha a saját szavaiddal fogalmazod újra, fel kell építened az értelmét — és azonnal kiderül, ha nem értetted meg.</p>
+                <p>Ugyanez igaz a példákra: a tananyag példáját olvastad, az semmit sem bizonyít. <strong>Egy saját magad által talált példa</strong> a bizonyítéka annak, hogy érted a fogalmat.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a tökéletes jegyzetlapok</span>
+                    <p>Egy tananyag színes, szép átmásolása órákat vesz igénybe, szép tárgyat hoz létre, és kevés nyomot hagy: ez másolás, nem feldolgozás.</p>
+                    <p>A hasznos jegyzetlap <strong>kérdéseket</strong> tartalmaz, nem válaszokat. Csúnya, és működik.</p>
+                </div>
+
+                <p class="retenir">💡 Nem az számít, mennyi időt töltesz egy tartalommal, hanem hogy mit csinálsz vele közben.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-pratique-deliberee">🎯 A tudatos gyakorlás</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A sok gyakorlás önmagában nem visz előre.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A sok gyakorlás önmagában nem visz előre. Lehet húsz évig vezetni úgy, hogy az ember semmivel sem vezet jobban, mint két év után. Az előrevivő gyakorlást három feltétel különbözteti meg.</p>
+
+                <h4>A három feltétel</h4>
+                <ol>
+                    <li><strong>Azon dolgozni, ami nem megy</strong>, nem azon, ami megy. Ez a legegyszerűbb és a legkevésbé betartott feltétel.</li>
+                    <li><strong>A képességeid határán maradni</strong>: elég nehéz legyen ahhoz, hogy rendszeresen tévedj, és elég könnyű ahhoz, hogy többnyire sikerüljön. A túl könnyű semmit sem tanít, a túl nehéz sem.</li>
+                    <li><strong>Gyors visszajelzést kapni.</strong> Ha nem tudod, mi volt rossz, megismétled a hibát, és még meg is erősíted.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — heti 5 óra, 12 héten át</span>
+                    <p><strong>Az idő 20%-a a gyenge pontokra:</strong> hetente 1 hasznos óra, 4 kényelmi óra. Tizenkét hét alatt <strong>12 hasznos óra</strong>.</p>
+                    <p><strong>Az idő 60%-a a gyenge pontokra:</strong> hetente 3 hasznos óra, vagyis <strong>36 óra</strong> az időszak alatt.</p>
+                    <p>Háromszor nagyobb fejlődés ugyanannyi összóraszám mellett. Nem arról van szó, hogy többet kell dolgozni.</p>
+                </div>
+
+                <div class="pratique" data-pratique="pratique-deliberee"></div>
+
+                <h4>Miért nem csináljuk</h4>
+                <p>Mert kellemetlen. Újra megcsinálni, ami megy, a hozzáértés érzését adja; nekimenni annak, ami nem megy, az ellenkezőjét — ráadásul azzal az érzéssel, hogy nem haladunk.</p>
+                <p>A hasznos viszonyítási pont: <strong>egy jó gyakorlás hibák nyomát hagyja</strong>. Egy hibátlan alkalom főleg azt jelzi, hogy ismert terepen maradtál.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — összetéveszteni a mennyiséget a fejlődéssel</span>
+                    <p>„Hat órát töltöttem vele” — ez semmit sem mond. Hat óra azzal, amit már tudsz, és hat óra a gyenge pontjaiddal két különböző tevékenység, és csak az egyik emeli a szintet.</p>
+                    <p>Az órák számolása kényelmes és megtévesztő mérce. A kijavított hibák számolása fáradságos és őszinte.</p>
+                </div>
+
+                <p class="retenir">💡 Az arra fordított idő, amit már tudsz, szinten tart. Nem visz előre, akármeddig tart is.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="sommeil-et-consolidation">😴 Az alvás és a rögzülés</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Amit megtanulsz, nem abban a pillanatban kerül a helyére, amikor megtanulod.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Amit megtanulsz, nem abban a pillanatban kerül a helyére, amikor megtanulod. A rögzülés — egy törékeny nyom átalakulása stabil emlékké — nagyrészt <strong>a tanulást követő alvás során</strong> megy végbe.</p>
+
+                <h4>Az éjszaka is az ismétlés része</h4>
+                <p>Közvetlen következmény: a tanulást követő éjszaka nem semleges idő, hanem munkaidő. Aki feláldozza, annak egy részét semmissé teszi, amit épp megtanult.</p>
+                <p>Egy másik, hasznosabb következmény: <strong>este ismételni, aztán aludni</strong> jobb, mint reggel ismételni egy másnapi dolgozatra, azonos idő mellett. A tartalom így azonnal átmegy azon a szakaszon, amely rögzíti.</p>
+
+                <div class="exemple">
+                    <span class="titre">Az átvirrasztott éjszaka rossz cseréje</span>
+                    <p>Ha a vizsga előtti este három órával tovább maradsz fenn, három óra újraolvasást nyersz — a repertoár legkevésbé hatékony módszerét.</p>
+                    <p>Cserébe elveszíted mindannak a rögzülését, amin napközben dolgoztál, a másnapi figyelmedet, és azt a képességet, hogy előhívd, amit pedig tudsz.</p>
+                    <p>Három óra a legrosszabb módszerből az egész nap rendbetételéért cserébe: a csere mindkét irányban rossz.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sommeil-consolidation"></div>
+
+                <h4>A szünetek is</h4>
+                <p>Kisebb léptékben a szünetek hasonló szerepet játszanak. Egy valódi szünet — képernyő és újabb megterhelő feladat nélkül — időt ad az agynak, hogy újrajátssza, amit épp látott.</p>
+                <p>Ha szünetben a telefonodat nézed, ezt a teret mással töltöd ki. Ez nem szünet az emlékezet számára, hanem témaváltás.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy a hétvégén bepótolhatod</span>
+                    <p>Egy rövid éjszakát nem lehet teljesen kiegyenlíteni két nappal későbbi hosszú alvással. Ami akkor nem rögzült, utólag sem fog.</p>
+                    <p>A rendszeres napirend többet nyom a latban, mint a hetente átaludt órák összege.</p>
+                </div>
+
+                <p class="retenir">💡 A létező legolcsóbb ismétlés csukott szemmel történik. Csak helyet kell hagyni neki.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A feladatok típus szerinti csoportosítása a módszer alkalmazását gyakoroltatja, nem a kiválasztását.</li>
+                <li>Egy elszigetelt fogalom feledésbe merül; tíz másikhoz kapcsolva tíz úton is előhívható.</li>
+                <li>Az arra fordított idő, ami már megy, szinten tart, de nem visz előre.</li>
+                <li>A rögzülés alvás közben történik: az átvirrasztott éjszaka a rendezést újraolvasásra cseréli.</li>
+                <li>Ennek a szintnek mind a négy módszere rontja az azonnali teljesítményt. Ez annak a jele, hogy működnek.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Keverd össze a következő ismétlésedet: ahelyett, hogy tíz ugyanolyan típusú feladatot oldanál meg egymás után, váltogass három típust. Abban a pillanatban rosszabbul fog menni — ez annak a jele, hogy működik.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Rohrer és Taylor kutatásai</strong> a matematikai feladatok keveréséről: az útmutatóban idézett különbségek innen származnak.</li>
+                    <li><strong>„Peak”</strong>, Anders Ericsson: a tudatos gyakorlás alapműve, attól a kutatótól, aki a fogalmat megalkotta (angolul).</li>
+                    <li><strong>„Why We Sleep”</strong>, Matthew Walker: az alvás szerepéről az emlékezetben (angolul). Érdemes szem előtt tartani, hogy a könyv egyes állításait vitatták.</li>
+                    <li><strong>Az országod alvásegészségügyi szervezetei</strong>: megbízható eligazítás a valódi alvásigényről és a tévhitekről.</li>
+                </ul>
+                <p><strong>Egy hasznos szokás:</strong> a következő gyakorlásodnál szándékosan keverd a feladattípusokat ahelyett, hogy csoportosítanád őket. Többet fogsz tévedni. Ez annak a jele, hogy működik.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Tanulás — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Tanulás — Haladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/productivite/index.html">⏱️ Termelékenység és szervezés (franciául)</a>
+                <a href="../../../guides/ia/index.html">🤖 Mesterséges intelligencia (franciául)</a>
+                <a href="../../../guides/data/index.html">📊 Adatok és elemzés (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/apprendre-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

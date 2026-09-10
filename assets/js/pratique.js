@@ -91,13 +91,20 @@
     // Un nombre saisi au demi : « 10,5 » garde sa decimale, « 10,0 » la perd.
     const souple = (n) => nf(n, Number.isInteger(n) ? 0 : 1);
 
+    // Les unites d une duree suivent la langue de la page, comme les nombres.
+    // Le hongrois n abrege pas l heure en « h » : « 3 óra 20 perc ». Une lettre
+    // seule echappait au controle de traduction, qui ne lit que les mots de deux
+    // lettres ou plus : « 1 h » s est affiche sur la premiere page hongroise.
+    const UNITES_DUREE = { hu: { h: "óra", min: "perc" } };
+    const uniteDuree = (u) => (UNITES_DUREE[langueActive()] || {})[u] || u;
+
     const heuresMinutes = (minutes) => {
         const total = Math.round(minutes);
         const h = Math.floor(total / 60);
         const m = total % 60;
-        if (h === 0) return nf(m) + " min";
-        if (m === 0) return nf(h) + " h";
-        return nf(h) + " h " + String(m).padStart(2, "0") + " min";
+        if (h === 0) return nf(m) + " " + uniteDuree("min");
+        if (m === 0) return nf(h) + " " + uniteDuree("h");
+        return nf(h) + " " + uniteDuree("h") + " " + String(m).padStart(2, "0") + " " + uniteDuree("min");
     };
 
     // Valeur future d un capital et de versements mensuels, interets composes
@@ -2594,7 +2601,7 @@
                 const heuresSeance = duree * participants;
                 const coutSeance = heuresSeance * taux;
                 return [
-                    { libelle: "Heures de travail par séance", valeur: nf(heuresSeance, 1) + " h" },
+                    { libelle: "Heures de travail par séance", valeur: nf(heuresSeance, 1) + " " + uniteDuree("h") },
                     { libelle: "Coût par séance", valeur: euros(coutSeance) },
                     { libelle: "Coût annuel", valeur: euros(coutSeance * frequence), fort: true }
                 ];
@@ -3201,8 +3208,8 @@
                 const parSemaine = heures * jours;
                 const manque = Math.max(0, ACTIVITE_OMS - activite);
                 return [
-                    { libelle: "Heures assis par semaine", valeur: souple(parSemaine) + " h" },
-                    { libelle: "Soit, sur une année de travail", valeur: nf(Math.round(parSemaine * 45)) + " h", fort: true },
+                    { libelle: "Heures assis par semaine", valeur: souple(parSemaine) + " " + uniteDuree("h") },
+                    { libelle: "Soit, sur une année de travail", valeur: nf(Math.round(parSemaine * 45)) + " " + uniteDuree("h"), fort: true },
                     { libelle: "Repère de l'OMS", valeur: nf(ACTIVITE_OMS) + " min d'activité modérée par semaine" },
                     {
                         libelle: manque > 0 ? "Il te manque" : "Repère atteint",
@@ -3228,9 +3235,9 @@
                 // travail sur ecran, distincte du minimum legal.
                 const conseillees = Math.round(travail) * 5;
                 return [
-                    { libelle: "Pause légale minimale", valeur: due > 0 ? nf(due) + " min" : "aucune en dessous de 6 h" },
-                    { libelle: "Pauses réellement prises", valeur: nf(pauses) + " min" },
-                    { libelle: "Écart au minimum légal", valeur: pauses >= due ? "respecté" : "− " + nf(due - pauses) + " min", fort: true },
+                    { libelle: "Pause légale minimale", valeur: due > 0 ? nf(due) + " " + uniteDuree("min") : "aucune en dessous de 6 h" },
+                    { libelle: "Pauses réellement prises", valeur: nf(pauses) + " " + uniteDuree("min") },
+                    { libelle: "Écart au minimum légal", valeur: pauses >= due ? "respecté" : "− " + nf(due - pauses) + " " + uniteDuree("min"), fort: true },
                     { libelle: "Repère ergonomique sur écran", valeur: "environ " + nf(conseillees) + " min, réparties dans la journée" }
                 ];
             },
@@ -3270,8 +3277,8 @@
                 if (coupure < REPOS_QUOTIDIEN) alertes.push("repos quotidien");
                 if (weekend < REPOS_HEBDOMADAIRE) alertes.push("repos hebdomadaire");
                 return [
-                    { libelle: "Repos quotidien minimal", valeur: nf(REPOS_QUOTIDIEN) + " h — le tien : " + souple(coupure) + " h" },
-                    { libelle: "Repos hebdomadaire minimal", valeur: nf(REPOS_HEBDOMADAIRE) + " h — le tien : " + nf(weekend) + " h" },
+                    { libelle: "Repos quotidien minimal", valeur: nf(REPOS_QUOTIDIEN) + " h — le tien : " + souple(coupure) + " " + uniteDuree("h") },
+                    { libelle: "Repos hebdomadaire minimal", valeur: nf(REPOS_HEBDOMADAIRE) + " h — le tien : " + nf(weekend) + " " + uniteDuree("h") },
                     { libelle: "Heures travaillées", valeur: nf(heures) + " h par semaine" },
                     {
                         libelle: "Constat",
@@ -3767,9 +3774,9 @@
                 // heuresMinutes arrondit a la minute : sous dix minutes, il
                 // afficherait « 1 min » aussi bien pour le total que pour sa
                 // moitie, et la comparaison disparaitrait.
-                const duree = (m) => (m < 10 ? nf(m, 1) + " min" : heuresMinutes(m));
+                const duree = (m) => (m < 10 ? nf(m, 1) + " " + uniteDuree("min") : heuresMinutes(m));
                 return [
-                    { libelle: "Temps de lecture", valeur: nf(minutes, 1) + " min" },
+                    { libelle: "Temps de lecture", valeur: nf(minutes, 1) + " " + uniteDuree("min") },
                     { libelle: "Temps mobilisé au total", valeur: duree(total), fort: true },
                     { libelle: "En divisant la longueur par deux", valeur: duree(total / 2) },
                     { libelle: "À garder en tête", valeur: mots > 150 ? "au-delà de 150 mots, la plupart des lecteurs parcourent au lieu de lire" : "longueur qui se lit vraiment" }
@@ -4256,6 +4263,6 @@
     }
 
     if (typeof module !== "undefined" && module.exports) {
-        module.exports = { SIMULATEURS, valeurFuture };
+        module.exports = { SIMULATEURS, valeurFuture, UNITES_DUREE };
     }
 })();

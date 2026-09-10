@@ -82,6 +82,10 @@ const PAGES = [
     { url: "../en/guides/droit/intermediaire.html",    nom: "cours traduit 12 (en)" },
     { url: "../en/guides/finance/avance.html",         nom: "cours traduit 13 (en)" },
     { url: "../en/guides/entrepreneuriat/debutant.html", nom: "cours traduit 14 (en)" },
+    // Le hongrois allonge les mots plus que l'anglais : « Középhaladó » dans le
+    // sélecteur de niveau, les titres de leçons composés d'un seul tenant.
+    { url: "../hu/guides/apprendre/intermediaire.html", nom: "cours traduit (hu)" },
+    { url: "../hu/guides/apprendre/index.html",         nom: "sommaire traduit (hu)" },
 
     // Les pages hors cours traduites. Leur gabarit diffère de celui des cours :
     // grille de cartes au catalogue, tableaux dans les mentions légales,
@@ -233,7 +237,11 @@ async function controler(d, w, largeur, nomPage) {
        ont été traduites, il a réclamé « lang="fr" » sur six pages anglaises —
        24 échecs qui n'en étaient pas. La règle est la même que celle de
        langues.js, et doit le rester. */
-    const attenduLang = /\/en\/(guides\/|[a-z0-9-]+\.html$)/.test(d.location.pathname) ? "en" : "fr";
+    /* Et les codes viennent de langues.js lui-même : écrit « en » en dur, ce
+       contrôle a réclamé « lang="fr" » sur les premières pages hongroises. */
+    const codes = (d.defaultView.DOCMASTER_LANGUES || { CODES: ["en"] }).CODES;
+    const prefixe = new RegExp("/(" + codes.join("|") + ")/(?=guides/|[a-z0-9-]+\\.html$|$)");
+    const attenduLang = (d.location.pathname.match(prefixe) || [null, "fr"])[1];
     const vuLang = d.documentElement.getAttribute("lang");
     if (vuLang !== attenduLang) ko("langue déclarée = langue du texte", `lang="${vuLang}", attendu "${attenduLang}"`);
     else ok("langue déclarée = langue du texte", `lang="${vuLang}"`);

@@ -20,10 +20,17 @@ for (const f of fs.readdirSync(path.join(RACINE, "guides", SUJET))) {
     for (const m of html.matchAll(/data-pratique="([^"]+)"/g)) poses.add(m[1]);
 }
 
-const bac = { window: {}, document: undefined, module: { exports: {} }, Intl };
+/* Les simulateurs tournent dans la langue vérifiée, comme sur sa page : les
+   nombres et les unités en dépendent. Sans cette ligne, ils tournaient en
+   français, et une unité propre à la langue ne pouvait pas être contrôlée. */
+const bac = { window: { DOCMASTER_LANGUES: { langueDeLaPage: () => LANGUE } }, document: undefined, module: { exports: {} }, Intl };
 vm.createContext(bac);
 vm.runInContext(fs.readFileSync(path.join(RACINE, "assets/js/pratique.js"), "utf8"), bac);
 const SIMULATEURS = bac.module.exports.SIMULATEURS;
+/* Les unités que pratique.js écrit lui-même dans la langue de la page
+   (« 3 óra 20 perc ») ne sont pas du texte d'origine resté tel quel. */
+const UNITES_DE_LA_LANGUE = new Set(Object.values((bac.module.exports.UNITES_DUREE || {})[LANGUE] || {}));
+const aTraduire = (m) => !IDENTIQUES.has(m) && !UNITES_DE_LA_LANGUE.has(m);
 
 const bacDico = { window: {} };
 vm.createContext(bacDico);
@@ -89,9 +96,16 @@ const fragmenter = (t) => {
     for (const [fr, autre] of fragmentsTries) sortie = sortie.split(fr).join(autre);
     return sortie;
 };
-const resteDuFrancais = (t) =>
-    /[àâçéèêëîïôûùüÿœ]/i.test(t) ||
-    /\b(le|la|les|des|une|un|pour|dans|avec|vous|sur|par|est|sont|plus|moins|que|qui|ne|pas)\b/i.test(t);
+/* Deux lettres et deux mots de ce filet appartiennent aussi au hongrois : « é »
+   et « ü » (« fordítás nélkül »), « le » et « ne ». Laissés en place, ils
+   signalaient comme du français des valeurs entièrement traduites. On ne les
+   retire que pour la langue qui les écrit : partout ailleurs, ils restent le
+   signe d'un oubli. */
+const PROPRES_A_LA_LANGUE = { hu: { lettres: "éü", mots: ["le", "ne"] } }[LANGUE] || { lettres: "", mots: [] };
+const LETTRES_FRANCAISES = new RegExp("[" + [..."àâçéèêëîïôûùüÿœ"].filter((l) => !PROPRES_A_LA_LANGUE.lettres.includes(l)).join("") + "]", "i");
+const MOTS_FRANCAIS = new RegExp("\\b(" + ["le", "la", "les", "des", "une", "un", "pour", "dans", "avec", "vous", "sur", "par", "est", "sont", "plus", "moins", "que", "qui", "ne", "pas"]
+    .filter((m) => !PROPRES_A_LA_LANGUE.mots.includes(m)).join("|") + ")\\b", "i");
+const resteDuFrancais = (t) => LETTRES_FRANCAISES.test(t) || MOTS_FRANCAIS.test(t);
 
 /* Ce qu'aucun fragment n'a touché dans une valeur calculée. On applique les
    fragments en bornant chaque remplacement, puis on efface les zones bornées :
@@ -147,13 +161,19 @@ const manquants = [...textes].filter((t) => {
     if (!construitAvecUneValeur(t)) return true;
     const apres = fragmenter(t);
     if (apres === t || resteDuFrancais(apres)) return true;
-    return intouche(t).filter((m) => !IDENTIQUES.has(m)).length > 0;
+    return intouche(t).filter(aTraduire).length > 0;
 });
 
 // Un mot français resté dans une valeur calculée, qu'aucun fragment ne reprend.
 // La substitution passe par « fragmenter » et non par une seconde copie de la
 // boucle : il y en avait deux, et corriger l'ordre dans l'une seulement a fait
 // signaler pendant un moment un défaut qui n'existait pas.
+/* Une unité d'une seule lettre échappe aux deux filets : « intouche » ne
+   retient que les mots de deux lettres ou plus, et aucune liste de mots
+   français ne contient « h ». La première page hongroise a ainsi affiché
+   « 1 h » pendant que ce contrôle annonçait 138/138. On la cherche dans les
+   valeurs chaque fois que le dictionnaire de la langue la traduit. */
+const UNITES_TRADUITES = ["h", "j", "s", "min"].filter((u) => dico.textes[u] && dico.textes[u] !== u);
 const restes = [];
 for (const v of valeurs) {
     if (dico.textes[v]) continue;   // entrée exacte : tr() la prend avant les fragments
@@ -165,9 +185,11 @@ for (const v of valeurs) {
     // « 183 heures », « 26 jours » et « 46 000 lignes », affichés en français
     // sur cinq pages anglaises pendant que le premier annonçait « rien ne
     // manque ».
-    const mots = intouche(v).filter((m) => !IDENTIQUES.has(m));
-    if (resteDuFrancais(sortie) || mots.length) {
-        const cause = mots.length ? `  (intouché : ${mots.join(", ")})` : "";
+    const mots = intouche(v).filter(aTraduire);
+    const unites = UNITES_TRADUITES.filter((u) => new RegExp("\\d\\s" + u + "(?![\\p{L}])", "u").test(sortie));
+    if (resteDuFrancais(sortie) || mots.length || unites.length) {
+        const cause = mots.length ? `  (intouché : ${mots.join(", ")})`
+            : unites.length ? `  (unité non traduite : ${unites.join(", ")})` : "";
         restes.push(`${v}  →  ${sortie}${cause}`);
     }
 }

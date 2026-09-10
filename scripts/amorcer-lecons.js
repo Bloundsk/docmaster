@@ -104,8 +104,13 @@ function premierePhrase(corps) {
     return tronque.slice(0, tronque.lastIndexOf(" ")) + "…";
 }
 
+// L unite de la duree suit la langue declaree par la page : les simulateurs
+// hongrois ecrivent « perc », la leçon qui les contient ne dit pas « min ».
+const UNITE_MINUTE = { hu: "perc" };
+
 function conforme(html) {
     if (!html.includes('<details class="lecon"')) return null;
+    const unite = UNITE_MINUTE[(html.match(/<html lang="([a-z]+)"/) || [])[1]] || "min";
 
     // 1. On efface ce qui a ete genere auparavant.
     let voulu = html.replace(RE_DUREE, "").replace(RE_AMORCE, "");
@@ -124,7 +129,7 @@ function conforme(html) {
         if (!mots) continue;
 
         const minutes = Math.max(1, Math.round(mots / MOTS_PAR_MINUTE));
-        const duree = `<span class="lecon-duree">${minutes} min</span>`;
+        const duree = `<span class="lecon-duree">${minutes} ${unite}</span>`;
 
         const phrase = premierePhrase(corps);
         const amorce = phrase

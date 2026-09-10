@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Son premier parcours est publié et attend un relecteur. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -43,25 +43,44 @@ supposaient la paire français-anglais.
   le format des nombres dans `assets/js/pratique.js` ;
 - les scripts et contrôles lisent désormais **la liste des langues** dans
   `scripts/langues-contenu.js` au lieu de `["fr", "en"]`, et échouent s'il leur
-  manque un libellé pour une langue.
+  manque un libellé pour une langue ;
+- **le parcours pilote « Apprendre à apprendre » est publié** : ses 4 pages sous
+  `hu/guides/apprendre/`, ses 3 banques de quiz (90 questions), les textes de ses
+  12 simulateurs.
 
-Le drapeau hongrois reste **caché** tant qu'aucun sujet n'est annoncé dans
-`CONTENU_TRADUIT.hu` : un drapeau qui promet une traduction inexistante est pire
-que pas de drapeau.
+Le drapeau hongrois est **visible** depuis la publication du pilote. Vérifié dans
+le navigateur sur un parcours pas encore traduit (Finance) : choisir « Magyar »
+laisse le cours en français, passe le menu en hongrois et affiche en hongrois
+« cette page n'est pas encore traduite », plus l'avertissement sur les règles
+françaises.
 
 **Méthode, reprise de l'anglais :**
 
-1. **Un sujet pilote, « Apprendre à apprendre », en entier** : les 4 pages sous
-   `hu/guides/apprendre/`, ses 3 banques sous `assets/js/quiz/hu/`, les textes de
-   ses simulateurs dans `assets/js/pratique/hu.js`. Puis l'ajouter à
-   `CONTENU_TRADUIT.hu`.
-2. **Le faire relire par un lecteur hongrois avant les treize autres.** Personne
-   dans le projet ne lit le hongrois : c'est la condition pour ne pas reproduire
-   une erreur de langue treize fois.
+1. ~~**Un sujet pilote, « Apprendre à apprendre », en entier**~~ — **fait le
+   11 septembre 2026** : les 4 pages sous `hu/guides/apprendre/`, ses 3 banques
+   sous `assets/js/quiz/hu/`, les textes de ses simulateurs dans
+   `assets/js/pratique/hu.js`, et le sujet ajouté à `CONTENU_TRADUIT.hu`.
+2. **Le faire relire par un lecteur hongrois avant les treize autres — c'est
+   l'étape suivante.** Personne dans le projet ne lit le hongrois : c'est la
+   condition pour ne pas reproduire une erreur de langue treize fois.
 3. Les treize autres sujets, un par un, contrôles au vert à chaque fois.
 4. Les pages hors cours (`hu/index.html`, `hu/guides.html`, FAQ…) et
    `PAGES_TRADUITES.hu`. Il faudra alors une version hongroise pour
    `publier-accueil.js`, `poser-situations.js`, le glossaire et ses renvois.
+
+**Ce que le relecteur hongrois doit regarder en priorité :**
+
+- le registre : tutoiement partout, comme le français du site ;
+- les termes choisis, repris sur les quatre pages et dans les quiz :
+  *térközös ismétlés* (répétition espacée), *kikérdezni magad* et *önellenőrzés*
+  (se tester), *a tudás illúziói* (illusions de maîtrise), *kevert gyakorlás*
+  (entrelacement), *mély feldolgozás* (élaboration), *tudatos gyakorlás*
+  (pratique délibérée), *transzfer* ;
+- la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
+- les durées de lecture : calculées à 180 mots par minute pour toutes les
+  langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12
+  en français. Les mots hongrois étant plus longs, le chiffre est probablement
+  trop bas.
 
 **Deux décisions à prendre avant Finance, Droit, Santé et Entrepreneuriat :** qui
 relit ; et le sort des exemples français (PEA, droit du travail) — les transposer
