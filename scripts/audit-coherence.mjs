@@ -790,6 +790,72 @@ if (!/prefers-reduced-motion[\s\S]*mascotte-flotte/.test(bloc)) {
 
 console.log(`  ${avec} page(s) hors cours l'affichent, 0 page de cours`);
 
+// --- 13. Ressources de tiers au chargement ----------------------------------
+/* Les polices venaient de Google Fonts jusqu au 10 septembre 2026 : chaque page
+   faisait contacter Google, qui recevait l adresse IP du visiteur, et les
+   mentions legales n en disaient rien. Elles sont desormais hebergees sur le
+   site.
+
+   Ce controle refuse toute ressource CHARGEE depuis un autre domaine qui ne
+   figure pas dans la liste ci-dessous : feuille de style, preconnexion,
+   prechargement, icone ou script dans une page ; url() ou @import dans une
+   feuille ; adresse posee en .src ou .href par un script. Une liste
+   d autorisations plutot qu une liste d interdits : un nouveau fournisseur
+   rougit ici au lieu de passer en silence. */
+console.log("\n=== 13. RESSOURCES DE TIERS ===");
+
+const TIERS_AUTORISES = {
+    "gc.zgo.at": "script de GoatCounter, pose par layout.js — mesure d audience decrite dans les mentions legales",
+};
+const domaineDe = (adresse) => adresse.replace(/^https?:\/\//, "").split(/[/?#]/)[0];
+let ressourcesTiers = 0;
+const verifierTiers = (fichier, adresse, nature) => {
+    const domaine = domaineDe(adresse);
+    if (domaine === "bloundsk.github.io") return;
+    ressourcesTiers++;
+    if (!TIERS_AUTORISES[domaine]) {
+        signaler("TIERS", `${fichier} : ${nature} chargé depuis ${domaine} — héberger la ressource, ou l'autoriser dans TIERS_AUTORISES ET la décrire dans les mentions légales`);
+    }
+};
+
+for (const page of toutes) {
+    for (const m of page.html.matchAll(/<link\b[^>]*>/gi)) {
+        const rel = (m[0].match(/\brel="([^"]*)"/i) || [])[1] || "";
+        const href = (m[0].match(/\bhref="(https?:\/\/[^"]*)"/i) || [])[1];
+        if (href && /stylesheet|preconnect|preload|prefetch|dns-prefetch|icon|modulepreload/i.test(rel)) {
+            verifierTiers(page.nom, href, `<link rel="${rel}">`);
+        }
+    }
+    for (const m of page.html.matchAll(/<(?:script|img|iframe|audio|video|source)\b[^>]*\bsrc="(https?:\/\/[^"]*)"/gi)) {
+        verifierTiers(page.nom, m[1], "src");
+    }
+}
+
+const feuilles = fs.readdirSync(path.join(RACINE, "assets", "css")).filter((f) => f.endsWith(".css"));
+for (const f of feuilles) {
+    const css = lire(path.join(RACINE, "assets", "css", f));
+    for (const m of css.matchAll(/(?:url\(\s*["']?|@import\s+["'])(https?:\/\/[^"')\s]+)/g)) {
+        verifierTiers(`assets/css/${f}`, m[1], "url()");
+    }
+}
+
+const scriptsDuSite = fs.readdirSync(path.join(RACINE, "assets", "js")).filter((f) => f.endsWith(".js"));
+for (const f of scriptsDuSite) {
+    const js = lire(path.join(RACINE, "assets", "js", f));
+    for (const m of js.matchAll(/\.(?:src|href)\s*=\s*["'`](https?:\/\/[^"'`]+)/g)) {
+        verifierTiers(`assets/js/${f}`, m[1], ".src / .href");
+    }
+}
+
+// Les generateurs de pages : un lien retire des pages reviendrait par eux.
+for (const f of ["amorcer-preferences.js", "appliquer-identite.js", "publier-podcasts.js", "publier-accueil.js", "publier-actualites.js"]) {
+    const chemin = path.join(RACINE, "scripts", f);
+    if (fs.existsSync(chemin) && /fonts\.(googleapis|gstatic)\.com/.test(lire(chemin))) {
+        signaler("TIERS", `scripts/${f} écrit encore un lien vers Google Fonts`);
+    }
+}
+console.log(`  ${toutes.length} pages, ${feuilles.length} feuille(s), ${scriptsDuSite.length} scripts : ${ressourcesTiers} ressource(s) de tiers relevée(s)`);
+
 // --- Resultat --------------------------------------------------------------
 console.log("\n=== RESULTAT ===\n");
 if (!anomalies.length) {

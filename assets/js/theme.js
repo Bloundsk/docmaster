@@ -105,26 +105,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return net;
     };
 
-    /* La police lisible n'est téléchargée QUE si elle est demandée. L'imposer
-       à tout le monde coûterait un fichier de plus à chaque visite, pour un
-       réglage que presque personne n'active. En attendant qu'elle arrive,
-       Verdana s'applique déjà — c'est écrit dans la règle CSS. */
-    const chargerPoliceLisible = () => {
-        if (document.getElementById('police-lisible')) return;
-        const lien = document.createElement('link');
-        lien.id = 'police-lisible';
-        lien.rel = 'stylesheet';
-        lien.href = 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap';
-        document.head.appendChild(lien);
-    };
-
+    /* La police lisible n'a plus de chargeur : elle est déclarée dans
+       style.css, et le navigateur ne la télécharge que lorsqu'une règle
+       l'emploie — c'est-à-dire quand ce réglage est actif. En attendant
+       qu'elle arrive, Verdana s'applique déjà. */
     const appliquerConfort = (reglages) => {
         for (const clef of Object.keys(CONFORT_DEFAUT)) {
             for (let v = 1; v <= CONFORT_MAX[clef]; v++) {
                 racine.classList.toggle('confort-' + clef + '-' + v, reglages[clef] === v);
             }
         }
-        if (reglages.police) chargerPoliceLisible();
     };
 
     /* aria-pressed est ce qui dit à un lecteur d'écran quelle option est

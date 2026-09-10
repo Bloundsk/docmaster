@@ -34,7 +34,7 @@ const vm = require("vm");
    affichage. Il en existait ici une COPIE, et elle a diverge des la premiere
    modification du bloc — le controle des podcasts l'a signale sur-le-champ.
    Une seule source, desormais : amorcer-preferences.js. */
-const { BLOC: BLOC_PREFERENCES, POLICES } = require("./amorcer-preferences.js");
+const { BLOC: BLOC_PREFERENCES } = require("./amorcer-preferences.js");
 
 const RACINE = path.join(__dirname, "..");
 const DOSSIER = path.join(RACINE, "podcasts");
@@ -351,9 +351,6 @@ function rendrePage(episodes, T) {
     <meta name="description" content="${echapper(T.description)}">
     <link rel="icon" type="image/svg+xml" href="${T.prefixe}assets/img/favicon.svg">
     <link rel="alternate" type="application/rss+xml" title="Podcasts ${ID.nom}" href="${flux}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="${POLICES}" rel="stylesheet">
 ${BLOC_PREFERENCES}
     <link rel="stylesheet" href="${T.prefixe}assets/css/style.css">
     <link rel="canonical" href="${ID.base}${T.adresse}">

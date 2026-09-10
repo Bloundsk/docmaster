@@ -43,10 +43,6 @@ const ALT = ID.textePartage(NB_PARCOURS);
    annoncer aux moteurs une langue que le site n'écrit pas. */
 const LOCALES = { fr: "fr_FR", en: "en_GB" };
 
-/* Les polices : source unique dans amorcer-preferences.js, le module qui
-   detient ce qui doit etre identique dans chaque <head>. */
-const { POLICES } = require("./amorcer-preferences.js");
-
 // --- Les pages --------------------------------------------------------------
 //
 // Les deux arborescences, dans le même ordre que dater-guides.js. Le chemin
@@ -155,16 +151,6 @@ function traiter(relatif) {
     html = poser(html, 'property="og:image"', "content", ID.base + ID.imagePartage);
     html = poser(html, 'name="twitter:image"', "content", ID.base + ID.imagePartage);
     html = poser(html, 'rel="canonical"', "href", url);
-
-    /* Le lien vers les polices. Il etait ecrit a la main dans les 133 pages,
-       toutes identiques — donc 133 endroits a corriger le jour ou la
-       typographie change, et aucun controle pour le dire. Il est desormais
-       produit ici, et le mode --verifier le surveille comme le reste du <head>.
-
-       Seules deux familles, et le moins de graisses possible : Literata n est
-       chargee qu en 700, la seule graisse que les titres emploient. */
-    html = html.replace(/href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]*"/,
-                        `href="${POLICES}"`);
 
     /* Les hreflang. Seules les 64 pages anglaises en portent aujourd'hui ; le
        script ne fait que réécrire ce qu'il trouve. La page française jumelle

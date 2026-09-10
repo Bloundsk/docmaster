@@ -1,5 +1,81 @@
 # Changelog — Clicked
 
+## 2026-09-10 — Les polices hébergées sur le site : plus aucune requête vers Google
+
+### Pourquoi
+
+Les polices venaient de Google Fonts sur 133 des 134 pages : chaque ouverture de
+page faisait contacter les serveurs de Google, qui recevaient l'adresse IP du
+visiteur. Les mentions légales venaient de le dire ; Ludo a préféré supprimer la
+cause plutôt que la décrire.
+
+### Ce qui a été fait
+
+- **18 fichiers de police, 340 Ko**, dans `assets/fonts/`, avec les trois licences
+  SIL Open Font License (`OFL-*.txt`) tirées du dépôt officiel de Google Fonts.
+  Chaque fichier a été vérifié à sa signature `wOF2`.
+- **32 `@font-face` en tête de `style.css`**, recopiés de ceux que Google
+  servait, à l'adresse près. Le découpage par jeu de caractères est gardé : une
+  page française ordinaire télécharge Inter latin (47 Ko) et Literata latin
+  (21 Ko), comme avant.
+- **Les 133 pages** perdent leurs trois lignes (deux préconnexions et la feuille
+  de Google). `publier-podcasts.js` ne les écrit plus ; `POLICES` disparaît
+  d'`amorcer-preferences.js` et d'`appliquer-identite.js`.
+- **Une troisième famille était chez Google** : Atkinson Hyperlegible, que
+  `theme.js` chargeait quand on choisit « Police : Lisible ». Elle est déclarée
+  dans `style.css`, sans chargeur : une police déclarée n'est téléchargée que
+  lorsqu'une règle l'emploie.
+- La section « Polices » des mentions légales et la phrase de la FAQ, écrites
+  quelques heures plus tôt, sont retirées : elles seraient devenues fausses.
+
+### Rien n'a changé à l'écran — mesuré, pas regardé
+
+Avant toute modification, un même texte (accents, €, œ, π, cyrillique) a été
+mesuré dans dix polices avec les fichiers de Google, puis remesuré avec ceux du
+site. **Les dix largeurs sont identiques au millième de pixel** — Inter 400 :
+631,156 px avant comme après. Deux témoins garantissaient que l'instrument
+distingue les polices : Arial à 604,281 px, une police inexistante à 544,391 px.
+
+Recopier les déclarations à l'identique n'est pas un détail. Inter n'y est
+déclarée qu'en 400, 500 et 700 : la graisse 600, que la feuille emploie seize
+fois, s'affiche donc en 700 — la mesure donne 642,406 px pour les deux, avant
+comme après. Une déclaration « propre » de 100 à 900 aurait changé ces seize
+rendus.
+
+Dans le navigateur : aucune requête vers Google, les polices servies par le site,
+aucune erreur. Une page ordinaire ne télécharge pas Atkinson Hyperlegible ;
+activer le réglage la charge depuis le site et l'applique au texte.
+
+### Contrôle 13 : aucune ressource de tiers non autorisée
+
+`audit-coherence.mjs` relève tout ce qu'une page charge depuis un autre domaine
+— feuilles, préconnexions, préchargements, icônes, scripts, `url()` et `@import`
+des feuilles, adresses posées en `.src` ou `.href` par les scripts — et refuse ce
+qui ne figure pas dans `TIERS_AUTORISES`. Une liste d'autorisations plutôt qu'une
+liste d'interdits : un nouveau fournisseur rougit au lieu de passer en silence.
+Seul `gc.zgo.at` (GoatCounter, décrit dans les mentions légales) est autorisé. Le
+contrôle vérifie aussi que les générateurs de pages n'écrivent plus de lien vers
+Google Fonts.
+
+**Vu rougir** : le lien Google remis dans `faq.html` a produit une anomalie qui
+nomme le domaine ; la page restaurée, l'anomalie a disparu.
+
+### Ce qui a failli passer
+
+- Le script de téléchargement attendait 25 déclarations ; Google en sert 32
+  (Inter : 7 jeux de caractères × 3 graisses). Il s'est arrêté avant de
+  télécharger quoi que ce soit — c'était l'attente qui était fausse.
+- Le contrôle a d'abord reçu le numéro 10, déjà pris par « Liens et ancres » :
+  les sections 10 à 12 ne portent pas le même commentaire d'en-tête que 1 à 9, et
+  la recherche ne les voyait pas. Renuméroté 13.
+- Un commentaire d'`appliquer-identite.js` annonçait encore une « source unique »
+  des polices qui n'existe plus : retiré.
+
+### Vérifié
+
+Les dix-sept contrôles, la traduction des quatorze simulateurs et l'audit de
+géométrie (824 mesures) passent.
+
 ## 2026-09-10 — Mentions légales complétées, et le glossaire contrôlé contre les guides
 
 ### Les mentions légales

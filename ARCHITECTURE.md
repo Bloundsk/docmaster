@@ -732,10 +732,13 @@ S'y ajoute une remise à zéro indispensable : `button, input, select, textarea
 { font-family: inherit }`. Un `<button>` n'hérite pas de la police — la feuille
 du navigateur lui impose la sienne — et quatre boutons restaient en Arial.
 
-**Le lien vers les polices a une source unique**, `POLICES` dans
-`amorcer-preferences.js`. Il était écrit à la main dans les 133 pages, plus une
-copie dans `publier-podcasts.js` : 134 endroits à corriger pour changer de
-typographie, et aucun contrôle pour le dire.
+**Les polices sont hébergées sur le site** depuis le 10 septembre 2026, dans
+`assets/fonts/`, avec leurs trois licences. Elles venaient de Google Fonts, qui
+recevait l'adresse IP de chaque visiteur. Les `@font-face` en tête de
+`style.css` recopient celles de Google à l'adresse près : c'est ce qui garde le
+rendu identique, mesuré au pixel avant et après. Aucune page ne porte plus de
+lien de police, et `audit-coherence.mjs` (contrôle 13) refuse toute ressource
+chargée depuis un domaine qui n'est pas explicitement autorisé.
 
 Ce qui s'écrit s'éclaircit en mode sombre, donc tout texte devient lisible d'un
 coup — **y compris ce qui sera ajouté plus tard**. Les aplats gardent le bleu
