@@ -93,6 +93,15 @@ jobs:
       - name: Chiffres des parcours conformes au texte
         run: node scripts/chiffrer-parcours.js --verifier
 
+      # Les renvois vers le glossaire sont poses par un script : le PREMIER
+      # emploi d un terme dans une page, et lui seul. Deux choses peuvent
+      # deriver sans bruit — un renvoi retire a la main lors d une reecriture,
+      # et un ancrage du glossaire renomme, qui laisse le lien pointer dans le
+      # vide. Le lecteur qui clique arrive alors en haut d une page de
+      # trente-cinq definitions, sans savoir laquelle il venait lire.
+      - name: Renvois vers le glossaire
+        run: node scripts/poser-renvois-glossaire.js --verifier
+
       # Le site tutoie son lecteur. Quelques passages gardent le vouvoiement —
       # avertissements legaux, blocs de non-conseil, paroles rapportees — et ils
       # sont recenses. Sans ce controle, le prochain guide serait ecrit dans le

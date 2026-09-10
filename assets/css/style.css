@@ -581,6 +581,52 @@ main > section p a:not([class]):hover,
 main > section li a:not([class]):hover,
 .lecon-corps a:not([class]):hover { text-decoration-thickness: 2px; }
 
+/* ---------------------------------------------------------------
+   LES RENVOIS VERS LE GLOSSAIRE
+
+   Le premier emploi d un terme du glossaire, et lui seul, est
+   cliquable. Il ne doit pas se lire comme un lien ordinaire : celui-ci
+   emmene ailleurs, le renvoi ne fait qu offrir une definition a qui
+   bute. D ou le pointille, convention ancienne du web pour <abbr>,
+   plutot que le trait plein des liens de navigation.
+
+   La couleur reste celle du texte : un mot du paragraphe, pas une
+   invitation a quitter la page. Le pointille, lui, ne depend pas de la
+   teinte — il reste visible pour qui distingue mal les couleurs, et
+   c est ce qui signale le lien.
+   --------------------------------------------------------------- */
+.renvoi-glossaire {
+    color: inherit;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--primary);
+    text-underline-offset: .18em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-thickness .15s, color .15s;
+}
+.renvoi-glossaire:hover,
+.renvoi-glossaire:focus-visible {
+    color: var(--primary);
+    text-decoration-thickness: 2px;
+}
+
+/* L arrivee dans le glossaire. Le lecteur atterrit sur une page de
+   trente-cinq definitions : sans repere, il doit chercher celle qu il
+   venait lire. L accent la designe. Les regles .glossary-item vivent
+   dans le <style> des deux pages de glossaire ; celle-ci les emporte
+   par sa specificite, et sert donc les deux langues d un seul endroit. */
+.glossary-item:target {
+    border-left: 4px solid var(--primary);
+    padding-left: 18px;
+    animation: glossaire-arrivee 1.2s ease-out;
+}
+@keyframes glossaire-arrivee {
+    from { background: var(--teinte); }
+    to   { background: var(--surface); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .glossary-item:target { animation: none; }
+}
+
 /* Sommaire (table des matières) */
 .toc { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); border: var(--bord-carte); padding: 20px 25px; margin-bottom: 40px; }
 .toc h2 { font-size: 1.1rem; margin-bottom: 12px; }

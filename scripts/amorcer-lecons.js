@@ -75,7 +75,13 @@ const texteBrut = (html) =>
     html.replace(/<[^>]+>/g, " ")
         .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&")
         .replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
-        .replace(/\s+/g, " ").trim();
+        .replace(/\s+/g, " ")
+        /* Une balise devient une espace, sinon « </p><p> » souderait deux
+           mots. Mais « <a>PEA</a>, » donnait alors « PEA , ». On referme
+           donc l espace avant la virgule, le point et la parenthese — et
+           EUX SEULS : le francais en exige une avant : ; ! ? et ». */
+        .replace(/\s+([,.)])/g, "$1")
+        .trim();
 
 const echapper = (t) =>
     t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

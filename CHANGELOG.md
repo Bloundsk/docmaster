@@ -1,5 +1,88 @@
 # Changelog — Clicked
 
+## 2026-09-10 — Le glossaire cesse d'être un cul-de-sac
+
+### Ce qui manquait
+
+Le glossaire comptait **35 entrées**, dont 30 réellement employées dans les
+guides. **Aucune page n'y renvoyait.** Le lecteur qui butait sur « prescription »
+ou « ancrage » au milieu d'un guide n'avait rien à cliquer : le glossaire
+existait, mais il fallait déjà le connaître pour le trouver.
+
+### Ce qui est posé
+
+`scripts/poser-renvois-glossaire.js` pose un ancrage stable sur chaque entrée
+(`id="terme-…"`, 35 par langue) et enveloppe, dans chaque page de niveau, le
+**premier** emploi de chaque terme — et lui seul. **56 renvois sur 84 pages.**
+Le deuxième emploi reste du texte : un paragraphe cousu de liens ne se lit plus.
+
+Vérifié : sur `finance/debutant`, le mot « PEA » apparaît dix fois et **un seul**
+est un lien, le premier. Clic mesuré dans le navigateur : arrivée sur
+`glossaire.html#terme-pea`, bonne entrée en `:target`, à 145 px du haut, sous la
+barre collante.
+
+### Les trois pièges, et lequel m'a eu
+
+- **Les frontières de mot.** Chercher « DOM » sans elles le trouve dans
+  « domaine » et « domicile » : 29 pages abîmées au lieu de zéro. Piège vu
+  avant d'écrire la première ligne.
+- **Le `<a>` dans le `<a>`.** Écarté par construction, vérifié après coup : 0.
+- **La page qui explique déjà le terme.** Celui-là m'a eu. La règle comparait
+  les titres au terme *à l'identique* — elle laissait donc un renvoi
+  « wireframe » sur la page dont le titre dit « Le wireframing ». Le mot du
+  titre contient la racine, pas le terme.
+
+Le premier réflexe a été de soupçonner l'instrument : le débogage passait par
+un `node -e` dans une chaîne shell contenant `[\s\S]`, exactement le piège de
+mangling déjà rencontré. Vérification refaite **depuis un fichier** : la lecture
+était juste, c'est la règle qui était fausse. *Se méfier de l'instrument, oui —
+mais le disculper avant d'accuser le code.*
+
+La comparaison se fait maintenant sur la racine, suffixes admis, et sur les
+titres **jusqu'au `h4`** : c'est souvent à ce niveau qu'un terme reçoit sa
+définition. Six renvois de plus sont tombés — `Le DOM`, `L'intérêt composé`,
+`The BATNA`, `Le document unique` — tous posés sur la phrase même qui
+définissait le mot.
+
+### Le dix-huitième contrôle
+
+`poser-renvois-glossaire.js --verifier` refait le travail en mémoire et refuse
+si le dépôt a dérivé. Prouvé en réinjectant les deux défauts : un renvoi retiré
+à la main → refusé, un ancrage `terme-pea` renommé → refusé.
+
+### Un défaut vieux de plusieurs mois, révélé par ricochet
+
+Poser ces liens a fait échouer `amorcer-lecons --verifier`. L'amorce d'une leçon
+est extraite du texte de la page, et l'extracteur remplace chaque balise par une
+espace — `<a>PEA</a>,` donnait donc « PEA , ».
+
+Le défaut n'était pas nouveau. Le correctif a touché **30 pages, dont 28 sans le
+moindre renvoi** : partout où un `<strong>` collait à une virgule, l'amorce
+portait la même cicatrice (« knowing what you know . »). Personne ne l'avait vu.
+
+L'espace est refermée devant `,`, `.` et `)` — **et eux seuls** : le français
+exige une espace avant `:`, `;`, `!`, `?` et `»`, et la fermer là aurait remplacé
+une faute par une autre.
+
+### Habillage
+
+`.renvoi-glossaire` : soulignement **pointillé**, convention ancienne du web
+pour `<abbr>`, plutôt que le trait plein des liens de navigation — celui-ci
+emmène ailleurs, le renvoi ne fait qu'offrir une définition. La couleur du texte
+reste celle du paragraphe : c'est un mot de la phrase, pas une invitation à
+partir. Le pointillé, lui, ne dépend pas de la teinte.
+
+`cursor: help` avait été posé par mimétisme avec `<abbr>`, puis retiré : ce
+lien **navigue**, et le curseur doit le dire.
+
+`.glossary-item:target` reçoit l'accent de 4 px et un `padding-left` de 18 px —
+18 + 4 = 22, la valeur non ciblée, donc **le texte ne bouge pas**. Mesuré dans
+les deux thèmes : contraste de l'accent sur la carte **9,75:1** en clair,
+**7,00:1** en sombre. Aucune valeur du thème sombre touchée.
+
+Audit de géométrie relancé après coup : 760 mesures, 27 gabarits, 5 largeurs,
+aucune anomalie.
+
 ## 2026-09-09 — La longueur ne dit plus la réponse
 
 ### Le chiffre de départ

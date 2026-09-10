@@ -455,6 +455,54 @@ aux neuf sujets d'origine. Toutes les autres étaient restées justes.
 La leçon est celle du reste du document : *ce qui n'est pas contrôlé dérive, et
 la dérive ne se voit pas depuis l'endroit où elle se produit.*
 
+### Le glossaire était un cul-de-sac
+
+Le contrôle 4 bis garantissait que chaque sujet ait ses entrées. Il ne disait
+rien du sens de circulation — et il n'y en avait qu'un. Trente-cinq définitions
+attendaient dans une page que **rien ne citait** : le lecteur qui butait sur
+« prescription » au milieu d'un guide devait deviner qu'un glossaire existait,
+puis aller l'ouvrir.
+
+`scripts/poser-renvois-glossaire.js` pose l'autre sens. Il enveloppe, dans
+chaque page de niveau, le **premier** emploi de chaque terme du glossaire, et
+lui seul — 56 renvois sur les 84 pages. Le deuxième emploi n'est pas un lien :
+un texte cousu de liens ne se lit plus.
+
+Trois règles disent où il ne pose rien, et chacune vient d'un essai raté :
+
+- **Sur les frontières de mot.** Chercher « DOM » sans elles le trouvait dans
+  « domaine » et « domicile » : 29 pages abîmées au lieu de zéro.
+- **Hors du sommaire, de l'objectif, des blocs de questions et de réponses,
+  des titres, du code et de l'intérieur d'un lien existant.** Ce sont des
+  repères, pas de la lecture suivie — et un `<a>` dans un `<a>` n'est pas du
+  HTML valide.
+- **Pas sur la page qui explique le terme**, quand un titre de section le
+  porte. Renvoyer au glossaire depuis la section qui en dit dix fois plus est
+  un contresens.
+
+La troisième règle a été écrite deux fois. Sa première version comparait les
+titres au terme **à l'identique**, et laissait donc un renvoi « wireframe » sur
+la page dont le titre dit « Le wireframing » : le mot du titre contient la
+racine, pas le terme. La comparaison se fait maintenant sur la racine, suffixes
+admis — et sur les titres **jusqu'au `h4`**, parce que c'est souvent à ce
+niveau qu'un terme reçoit sa définition (`Le DOM`, `L'intérêt composé`,
+`Le document unique`). Étendre du `h3` au `h4` a retiré six renvois, tous posés
+sur la phrase même qui définissait le mot.
+
+Le script est *généré-et-vérifié* comme les autres : `--verifier` refait le
+travail en mémoire et refuse si le dépôt a dérivé. Il surveille les deux
+dérives possibles — un renvoi retiré à la main lors d'une réécriture, et un
+ancrage `id="terme-…"` renommé, qui laisse le lien pointer dans le vide.
+
+**Effet de bord instructif.** Poser ces liens a fait échouer
+`amorcer-lecons --verifier` : l'amorce d'une leçon est extraite du texte de la
+page, et l'extracteur remplace chaque balise par une espace — donc
+`<a>PEA</a>,` donnait « PEA , ». Le défaut n'était pas nouveau : il touchait
+**30 pages**, dont 28 sans le moindre renvoi, où un `<strong>` collé à une
+virgule produisait la même chose. Il attendait depuis toujours. L'espace est
+maintenant refermée devant `,`, `.` et `)` — **et eux seuls**, le français en
+exigeant une avant `:`, `;`, `!`, `?` et `»`.
+
 ## 6. Les langues
 
 Sept langues déclarées : français, anglais, espagnol, allemand, italien,
@@ -727,20 +775,20 @@ troisième ligne, un commit contenait des guides datés d'aujourd'hui et un accu
 bâti sur hier — et l'intégration continue le refusait, à juste titre. En local
 tout passait, parce que l'accueil avait été régénéré *avant* la datation.
 
-**Dix-sept contrôles bloquants tournent par ailleurs à chaque poussée**, dans
+**Dix-huit contrôles bloquants tournent par ailleurs à chaque poussée**, dans
 `controles.yml` et `identite.yml` : `valider-js`, `audit-coherence`,
 `verifier-identite`, `verifier-registre`, `verifier-traduction`,
 `appliquer-identite --verifier`, `publier-accueil --verifier`,
 `publier-podcasts --verifier`, `amorcer-lecons --verifier`,
 `amorcer-preferences --verifier`, `poser-selecteur-niveau --verifier`,
-`chiffrer-parcours --verifier`, `verifier-positions-quiz`,
-`verifier-longueur-quiz`, `test-recherche`,
+`chiffrer-parcours --verifier`, `poser-renvois-glossaire --verifier`,
+`verifier-positions-quiz`, `verifier-longueur-quiz`, `test-recherche`,
 `test-revisions` et `test-actualites`. Les
-sept `--verifier` ne touchent à rien : ils refont la génération en mémoire et
+huit `--verifier` ne touchent à rien : ils refont la génération en mémoire et
 refusent si le résultat diffère du dépôt.
 
 **S'y ajoute l'audit de géométrie**, décrit juste en dessous, qui est bloquant
-lui aussi — donc **dix-huit en tout**. Il ne figure pas dans la liste ci-dessus
+lui aussi — donc **dix-neuf en tout**. Il ne figure pas dans la liste ci-dessus
 parce qu'il ne se lance pas comme les autres, et c'est précisément le piège :
 le 6 septembre 2026, douze contrôles ont été lancés en local, pas celui-là, et
 l'intégration continue est passée au rouge sur une poussée annoncée verte.
