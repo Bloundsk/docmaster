@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-10T19:52:58.721Z",
+  "maj": "2026-09-11T12:16:44.085Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNenA0YmNLbjNscndYTkg2cjdGNktITmZpVjAzT3EyN1NlS1NwZ3NNV2lZTGFoTlQtZnJMUjg5TFMwdnRxNGhEVmswMndCRnQwVzgtdzZnOUpKa0dXdHhGSUdqMWRHbnJ6TkI4ZzlvVFhIRk1FUWlXY0V6MU1VdFpJNUlGcy1KejBVejlKVkF2WFBzSUttYzRHbVY0SGFUTWhoOXlIV0htMV9wLTZhOG9wRTNOSnY0bkJBLUtET2R2V1JQdHM?oc=5",
@@ -218,6 +218,18 @@
       "publie": "2026-09-09"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSVF5U2QyOVhmVWtFbk5Fdkx4QmtnTzNDbERwbFpnazFXbW05WThZcEtYSVFkUXQ4eVY2cHFtY2Q2SHpvWTlzczZSOWY5bUpBeXJjdTdxWGtac3NZdDRjWDlIbEtkSGZManZ5ZjUtWVNLQUJwZktIVERPX2tENWVGSTFfdng3VzJ3RVNPRlBHZ2RLLWZZV3Jyel94OVFBcHNlWFdxUVZ0N0thWER6enEwaXQ1aGVPaTVi?oc=5",
+      "titre": "Cyberattaque de l'AMF : l'association confirme une fuite de données et saisit la Cnil",
+      "source": "Banque des Territoires",
+      "date": "2026-09-07",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-11"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
       "titre": "Mots de passe, identifiants, emails... une nouvelle fuite massive de données secoue la France",
       "source": "01net.com",
@@ -275,18 +287,6 @@
       "ancre": "les-agents-ia",
       "section": "⚙️ Les agents IA",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-09-04"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTV9mQ21Sc21fVmZxdjhBX1pDdF94cEJrM2pFbXR1NFBhNjdKWDQ2SHRuTzlINjZmcFhLenFfd2Y0WHB0cjhwdXdRWUx5a3ZuX3EwSXRVMXJQSmFhM040NWJ6bTN0RVYtSFZya3VIMmszMkVCNGt1VEZtcXVPOGxwWFAtQXY3eWVXTnc5dU5YUnZqMmlSaUgyM2Q2MXRqS0hmejRwS3hLaGdERzJqb2ExZnlMdndCUV91VUhIdDNrdks?oc=5",
-      "titre": "Fuite DGFIP : le malentendu français qui fragilise notre cybersécurité",
-      "source": "journaldunet.com",
-      "date": "2026-09-04",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-04"
     }
   ]
