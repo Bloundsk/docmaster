@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Energia, rendszerek és visszatekintés — Termelékenység, haladó - Clicked</title>
+    <meta name="description" content="Energia az idő helyett, rendszerek az akaraterő helyett, csapatszintű termelékenység és rendszeres visszatekintés. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/productivite/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/productivite/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/productivite/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/productivite/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/productivite/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Energia, rendszerek és visszatekintés — Termelékenység, haladó - Clicked">
+    <meta property="og:description" content="Energia az idő helyett, rendszerek az akaraterő helyett, csapatszintű termelékenység és rendszeres visszatekintés. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/productivite/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Energia, rendszerek és visszatekintés — Termelékenység, haladó - Clicked">
+    <meta name="twitter:description" content="Energia az idő helyett, rendszerek az akaraterő helyett, csapatszintű termelékenység és rendszeres visszatekintés. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">⏱️ Termelékenység és szervezés</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⏱️ Termelékenység — Haladó</h1>
+                <p>Ami évekig kitart, és nem a motiváción múlik.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>az energiád szerint oszd be a feladataidat</strong>, hogy az akaraterőt a környezeteddel helyettesítsd, hogy kiszámold egy értekezlet költségét, és hogy rendszeres áttekintést tarts.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#energie-plutot-que-temps">⚡ Energia az idő helyett</a></li>
+                <li><a href="#systemes-plutot-que-volonte">🔁 Rendszerek az akaraterő helyett</a></li>
+                <li><a href="#productivite-collective">👥 A csapatszintű termelékenység</a></li>
+                <li><a href="#recul-regulier">🧭 A rendszeres visszatekintés</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Két óra a megfelelő időben tényleg annyit ér, mint négy a rosszban?</li>
+                <li>Akaraterő vagy környezet: melyik merül ki?</li>
+                <li>Mire képes a súrlódás csökkentése egy fogadalomhoz képest?</li>
+                <li>Mit emészt fel egy egyórás, nyolcfős értekezlet?</li>
+                <li>Mi lesz egy szervezési rendszerből rendszeres áttekintés nélkül?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A középhaladó szint a figyelem védelméről szólt: a megszakítások költségéről, az időblokkolásról, a beérkező ügyek kezeléséről, a valódi rangsorolásról. Ez elég egy zsúfolt hét átvészeléséhez.</p>
+            <p>Ez a szint arról szól, ami <strong>évekig</strong> kitart. A módszerek ritkán azért buknak el, mert rosszak: azért buknak el, mert olyan motivációra épülnek, amely természeténél fogva ingadozik. Ami megmarad, az nem az akaraterőn múlik — hanem a test ritmusán, a környezet kialakításán, a közös szabályokon, és egy rendszeres alkalmon arra, hogy abbahagyd, ami már nem hasznos.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A biológiai ritmusok emberenként nagyon eltérnek: a megadott támpontok átlagok, amelyeket a saját megfigyeléseddel érdemes összevetni.</p>
+                <p>A tartós fáradtság, az alvászavarok vagy a kimerültség nem szervezési kérdés. Orvosi véleményt igényelnek, amelyet ez az útmutató nem helyettesít.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ami hosszú távon kitart</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="energie-plutot-que-temps">⚡ Energia az idő helyett</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az idő egyenletes: egy óra az egy óra.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az idő egyenletes: egy óra az egy óra. A figyelem egyáltalán nem az. Egy óra a legjobb pillanatodban annyit hoz, amennyit három óra a nap végén nem fog — és ezt a különbséget egyetlen naptár sem mutatja.</p>
+
+                <h4>A nap ritmusa</h4>
+                <p>A legtöbb embernek <strong>délelőtt van figyelmi csúcsa</strong>, <strong>kora délután mélypontja</strong>, és a nap végén <strong>részleges visszaemelkedése</strong>. E szakaszok pontos helye nagyon változó, de a létezésük állandó.</p>
+                <p>A gyakorlati következmény egyszerű, és ritkán alkalmazzák: a legtöbb gondolkodást igénylő munkának a csúcsra kell kerülnie, nem az adminisztratív feladatoknak. A csúcsot pedig nagyon gyakran üzenetekre és értekezletekre fordítjuk.</p>
+
+                <div class="exemple">
+                    <span class="titre">Hogyan ismerd fel a saját ritmusodat</span>
+                    <p>Két héten át naponta háromszor írj fel egy számot 1-től 5-ig: mennyire érzed magad koncentráltnak, az időponttal együtt.</p>
+                    <p>A minta általában tíz nap után rajzolódik ki. Nem mindig az, amire számítottál — sokan rájönnek, hogy a legjobb idősávjukat az e-mailekre fordították.</p>
+                    <p>Ha ismered a mintát, egyetlen döntés elég: <strong>tedd az elmélyült munkát a csúcsra</strong>, a gépies feladatokat pedig a mélypontra.</p>
+                </div>
+
+                <div class="pratique" data-pratique="rythme-energie"></div>
+
+                <h4>A pihenés nem elvesztegetett idő</h4>
+                <p>A figyelem elhasználódik és újratöltődik. Ha szünet nélkül dolgozol, fokozatosan romlik a teljesítményed, amit te magad nem veszel észre — továbbra is el vagy foglalva, csak kevesebbet hozol létre.</p>
+                <p>A hatékony szüneteknek van egy közös vonásuk: <strong>egészen mást csinálsz közben</strong>. Sétálsz, a távolba nézel, nem csinálsz semmit. A telefon nézegetése nem pihenés a figyelemnek: ugyanazt az erőforrást veszi igénybe, csak másképp.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megnyújtani a napot, amikor túl sok a munka</span>
+                    <p>Ha egy már teli naphoz este két órát hozzáteszel, alacsony hatékonyságú órákat adsz hozzá, és rontod a másnapot — amely jó lehetett volna.</p>
+                    <p>Egy hét alatt az összteljesítmény csökken. Ez azon ritka esetek egyike, amikor a kevesebb munka többet hoz, és ez bőségesen dokumentált.</p>
+                </div>
+
+                <p class="retenir">💡 A nehéz feladatot a legjobb idősávodba tedd. Ez az egyetlen optimalizálás, amely semmibe sem kerül.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="systemes-plutot-que-volonte">🔁 Rendszerek az akaraterő helyett</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Minden módszer, amely feltételezi, hogy minden nap gondolsz rá, végül feladja.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden módszer, amely feltételezi, hogy minden nap gondolsz rá, végül feladja. Nem gyengeségből: azért, mert az akaraterő korlátozott erőforrás, és a nap többi része már nagyrészt felemésztette.</p>
+
+                <h4>Szinte mindenről a súrlódás dönt</h4>
+                <p>Egy viselkedés annál gyakoribb, minél könnyebb. Ez triviálisnak tűnik, mégis ez a terület legerősebb eszköze: <strong>ha húsz másodpercnyi erőfeszítést teszel egy mozdulat elé, az erősen csökkenti a gyakoriságát</strong>, ha húsz másodpercet elveszel, ugyanennyivel növeli.</p>
+                <p>Ebből két szimmetrikus irány következik: <strong>csökkentsd a súrlódást</strong> az előtt, amit csinálni szeretnél — készítsd elő előző este, hagyd nyitva az eszközt, szűkítsd az első lépést valami nevetségesen kicsire; és <strong>növeld</strong> az előtt, amit kerülni szeretnél — jelentkezz ki a fiókból, töröld az alkalmazást, vidd a készüléket egy másik szobába.</p>
+
+                <div class="exemple">
+                    <span class="titre">Három mechanizmus, amely motiváció nélkül is működik</span>
+                    <p><strong>A lehorgonyzás.</strong> Egy új szokást egy már automatikus cselekvéshez kötsz: „miután leteszem a bögrémet, megnyitom a dokumentumot”. A kiváltó jel már megvan, nincs mit megjegyezni.</p>
+                    <p><strong>A minimális változat.</strong> Határozd meg a lehető legkisebb változatot — „írj egy mondatot”, „nyisd meg a fájlt”. A cél nem az eredmény, hanem hogy soha ne szakadjon meg a sorozat.</p>
+                    <p><strong>Az előre meghozott döntés.</strong> „Kedd délelőtt X-en dolgozom.” Ha egyszer, higgadtan eldöntötted, nem kell minden héten újra meghoznod.</p>
+                </div>
+
+                <div class="pratique" data-pratique="friction-habitude"></div>
+
+                <h4>Számolj a kudarccal, ahelyett hogy kizárnád</h4>
+                <p>A sorozat meg fog szakadni: betegség, váratlan esemény, utazás. A tartós szokást a kudarcba fulladt próbálkozástól nem a megszakítás hiánya különbözteti meg, hanem <strong>a folytatási szabály</strong>.</p>
+                <p>A leghatékonyabb megfogalmazás egyben a legegyszerűbb: <em>soha ne hagyd ki kétszer egymás után</em>. Egy kihagyott nap baleset; kettő egy feladás kezdete.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — mindent egyszerre megváltoztatni</span>
+                    <p>Öt új szokás ugyanazon a hétfőn egy hét alatt kimeríti az akaraterő-tartalékot, és mind együtt buknak el. A kudarcot aztán a fegyelem hiányának tulajdonítjuk, és ez elveszi a kedvet a következő próbálkozástól.</p>
+                    <p>Egyszerre egy szokás, amíg automatikussá nem válik — általában hat-nyolc hét —, aztán a következő.</p>
+                </div>
+
+                <p class="retenir">💡 Ne számíts a jövőbeli akaraterődre. Inkább alakítsd ki azt a környezetet, amely könnyűvé teszi a helyes mozdulatot.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="productivite-collective">👥 A csapatszintű termelékenység</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az egyéni szervezettség hamar eléri a határát: a megszakítások többsége másoktól jön, és az elvesztegetett idő nagy része közösen vész el.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az egyéni szervezettség hamar eléri a határát: a megszakítások többsége másoktól jön, és az elvesztegetett idő nagy része közösen vész el. Egy rosszul szervezett csapat mindenki egyéni szervezettségét semmissé teszi.</p>
+
+                <h4>Egy értekezlet valódi költsége</h4>
+                <p>Egy értekezlet nem a hosszába kerül: a hosszának és <strong>a résztvevők számának szorzatába</strong>, plusz abba a széttöredezésbe, amelyet a napjukban okoz.</p>
+                <p>Egy óra nyolc emberrel egy teljes munkanap. Így megfogalmazva a „tényleg mindenkit meg kell hívni?” kérdés másképp hangzik.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Heti értekezlet: <strong>1,5 óra</strong>, <strong>7 résztvevő</strong>, átlagos óraköltség járulékokkal <strong>45 EUR</strong>.</p>
+                    <p>Közvetlen költség: alkalmanként <strong>473 EUR</strong>, vagyis évente nagyjából <strong>22 700 EUR</strong>.</p>
+                    <p>Ehhez jön hetente 10,5 óra, amely az elmélyült munkától vész el — és hét ember napjainak széttöredezése.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-reunion"></div>
+
+                <h4>Mitől hasznos egy értekezlet</h4>
+                <p>Három feltétel, amelyeknek egyszerre kell teljesülniük: <strong>egy eldöntendő kérdés</strong> — egy tájékoztató értekezlet lehet egy üzenet is; <strong>csak azok, akik döntenek, vagy akiknek a véleménye megváltoztatja a döntést</strong>; és <strong>előre elolvasott előkészítő anyag</strong>, amihez időben el kell küldeni.</p>
+                <p>Egy értekezlet, amely döntés és kiosztott feladat nélkül ér véget, nem is volt: csak lefoglalta az időt.</p>
+
+                <h4>Az aszinkron mint alapbeállítás</h4>
+                <p>Az írás többe kerül a küldőnek, és sokkal kevesebbe a címzetteknek: mindenki akkor olvas, amikor tud, a napja szétszabdalása nélkül. Az írás visszakereshető marad, javítható, és senkinek sem kell egyszerre elérhetőnek lennie.</p>
+                <p>A szinkron kommunikáció megőrzi az értékét abban, amit meg kell tárgyalni, közösen kell eldönteni, vagy ami emberi finomságot igényel. A többit érdemes leírni.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azonnali választ várni</span>
+                    <p>Az a kultúra, amelyben minden üzenetre néhány percen belül válasz jár, mindenki számára egyszerre teszi lehetetlenné az elmélyült munkát.</p>
+                    <p>Ha kifejezetten megállapodtok a határidőkben — „az üzeneteket fél napon belül kezeljük, a sürgős ügy telefonon jön” —, az az egész csapatot egy csapásra felszabadítja.</p>
+                </div>
+
+                <p class="retenir">💡 Az egyéni szervezettséged nem lehet jobb a csapatodénál. Azon túl ez már közös ügy.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="recul-regulier">🧭 A rendszeres visszatekintés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Minden szervezési rendszer elcsúszik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden szervezési rendszer elcsúszik. A projektek felhalmozódnak, a hat hónapja vállalt kötelezettségeknek már nincs értelme, a feladatok ott maradnak, és senki sem dönt úgy, hogy elhagyja őket. Visszatekintés nélkül az elcsúszás addig halmozódik, amíg a rendszert egyben el nem hagyják.</p>
+
+                <h4>Három ritmus, három kérdés</h4>
+                <p><strong>Minden héten</strong> harminc perc: kiüríteni a gyűjtőhelyeket, átnézni a folyamatban lévő projekteket, megtervezni a következő hetet. Ez az áttekintés akadályozza meg a felhalmozódást.</p>
+                <p><strong>Minden hónapban</strong> egy óra: mi nem haladt, és miért? Mely vállalásaimat kell elhagynom vagy újratárgyalnom?</p>
+                <p><strong>Minden negyedévben</strong> fél nap: azon dolgozom, ami számít, vagy csak azon, ami befut?</p>
+
+                <div class="exemple">
+                    <span class="titre">A kérdés, amely a legjobbat teszi</span>
+                    <p>Minden folyamatban lévő projektnél: <strong>„ha még nem létezne, belekezdenék ma?”</strong></p>
+                    <p>Ha a válasz nem, a projekt csak a tehetetlenség és a leállítás kínossága miatt él tovább. A már befektetett költség nem jön vissza, bármit teszünk is utána.</p>
+                    <p>Leállítani időt és figyelmet szabadít fel, és gyakran egy háttérben lappangó bűntudatot is, amelyet nem vallottunk be magunknak.</p>
+                </div>
+
+                <div class="pratique" data-pratique="revue-reguliere"></div>
+
+                <h4>Abbahagyni: ez is képesség</h4>
+                <p>Hozzáadni könnyű és jólesik. Abbahagyni azt kívánja, hogy vállald a lemondást mások és önmagad előtt. Mégis ez különbözteti meg a kitartó szervezettséget attól, amely addig duzzad, amíg össze nem omlik.</p>
+                <p>Egy hasznos szabály: <strong>semmi új anélkül, hogy valamit elvennél</strong>. Ez a hozzáadás pillanatában kényszerít döntésre, nem hat hónappal később, kapkodva.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — módszert váltani az áttekintés helyett</span>
+                    <p>Amikor egy rendszer szétesik, csábító egy újat bevezetni. Az új néhány hétig működik — mert épp mindent újrarendeztél —, aztán az is elcsúszik.</p>
+                    <p>Nem a módszer hiányzott, hanem az áttekintés. Az eszközváltás csak egy negyedévvel tolja el a gondot.</p>
+                </div>
+
+                <p class="retenir">💡 Ha nincs rendszeres alkalom a dolgok abbahagyására, minden rendszer végül összeroskad a saját súlya alatt.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Két óra a megfelelő időben annyit ér, mint négy a rosszban.</li>
+                <li>Az akaraterő kimerülő erőforrás; a környezet erőfeszítés nélkül hat.</li>
+                <li>Egy kívánt mozdulat súrlódásának csökkentése többet ér bármilyen fogadalomnál.</li>
+                <li>Egy egyórás, nyolcfős értekezlet egy munkanapot emészt fel.</li>
+                <li>Rendszeres áttekintés nélkül a szervezési rendszer elcsúszik, és végül felhagynak vele.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>A következő egyórás értekezletnél, amelyet szervezel, szorozd meg az időtartamot a résztvevők számával, és írd bele az eredményt a meghívóba. Egy óra nyolc emberrel egy munkanap.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>„Atomic Habits”</strong>, James Clear: a súrlódásról és a lehorgonyzásról. A szokások kialakításáról szóló leggyakorlatiasabb könyv.</li>
+                    <li><strong>„When”</strong>, Daniel Pink: a napi ritmusokkal és a kora délutáni mélyponttal foglalkozó kutatások összefoglalása.</li>
+                    <li><strong>A munkavédelmi szervek iránymutatásai</strong>: hivatalos támpontok a munkaidőről, a szünetekről és a mentális terhelésről.</li>
+                    <li><strong>Az értekezletek költségével foglalkozó kutatások</strong>: ágazati becslések arról, mennyi időt töltünk értekezleteken, és ennek mekkora részét tartják maguk a résztvevők terméketlennek.</li>
+                    <li><strong>„Getting Things Done”</strong>, David Allen: a heti áttekintésről szóló fejezet, amely a módszer leggyakrabban elhanyagolt része.</li>
+                </ul>
+                <p><strong>Egy hasznos reflex:</strong> tedd be a heti áttekintést a naptárba, mint egy találkozót, rögzített időpontra. Csak így éli túl a harmadik hónapot.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Termelékenység — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza az útmutatóhoz →</span>⏱️ Termelékenység és szervezés</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../../../guides/design/index.html">🎨 UX/UI design (franciául)</a>
+                <a href="../../../guides/data/index.html">📊 Adatok és elemzés (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/productivite-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

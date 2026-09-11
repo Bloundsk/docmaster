@@ -25,6 +25,15 @@ window.PRATIQUE_TEXTES = {
         "exercice": "feladat",
         "mots": "szó",
         " sur ": " / ",
+
+        // --- productivite ---------------------------------------------------
+        // Le hongrois place le nombre avant le mot et ne dit pas « en » :
+        // « En 2 passage(s) groupé(s) » devient « 2 csoportos körben ». Le
+        // morceau long passe d'abord, puis « En » disparaît.
+        " passage(s) groupé(s)": " csoportos körben",
+        "En ": "",
+        " de la journée": " a napból",
+        " par jour": " naponta",
     },
 
     textes: {
@@ -41,6 +50,212 @@ window.PRATIQUE_TEXTES = {
         "mots": "szó",
         "Verdict": "Ítélet",
         "Éléments à retenir": "Megjegyzendő elemek",
+        "min": "perc",
+        "pers.": "fő",
+        "€/h": "EUR/óra",
+        "fois": "alkalom",
+        "msg": "db",
+
+        // --- productivite / rythme-energie ------------------------------------
+        "Travailles-tu au bon moment ?": "Jó időben dolgozol?",
+        "Coche ce qui décrit ta journée réelle.": "Jelöld be, ami a valódi napodat írja le.",
+        "Deux heures au bon moment valent quatre heures au mauvais. C'est l'optimisation qui ne coûte rien.":
+            "Két óra a megfelelő időben annyit ér, mint négy a rosszban. Ez az az optimalizálás, amely semmibe sem kerül.",
+        "Je connais mon meilleur créneau de concentration": "Ismerem a legjobb koncentrációs idősávomat",
+        "observé, pas supposé": "megfigyelve, nem feltételezve",
+        "Le travail de fond y est effectivement placé": "Az elmélyült munka ténylegesen oda kerül",
+        "Les tâches mécaniques occupent le creux d'après-midi": "A gépies feladatok a kora délutáni mélypontot töltik ki",
+        "Je ne consacre pas ma première heure aux messages": "Az első órámat nem az üzeneteknek szentelem",
+        "Je prends des pauses qui changent de registre": "Olyan szüneteket tartok, amelyekben egészen mást csinálok",
+        "consulter son téléphone n'est pas une pause pour l'attention": "a telefon nézegetése nem pihenés a figyelemnek",
+        "Je n'allonge pas la journée quand le travail déborde": "Nem nyújtom meg a napot, amikor túl sok a munka",
+        "le total produit sur la semaine baisse": "a heti összteljesítmény csökken",
+        "Ton meilleur créneau est probablement consacré aux priorités des autres.":
+            "A legjobb idősávod valószínűleg mások prioritásait szolgálja.",
+        "Bonne base. Protéger la première heure est le changement le plus rentable.":
+            "Jó alap. Az első óra megvédése a legkifizetődőbb változtatás.",
+        "Tes heures les plus productives servent ce qui compte le plus.":
+            "A legtermékenyebb óráid azt szolgálják, ami a legfontosabb.",
+
+        // --- productivite / friction-habitude -----------------------------------
+        "Ton habitude peut-elle tenir ?": "Kitart majd a szokásod?",
+        "Coche ce qui est vrai de l'habitude que tu veux installer.": "Jelöld be, ami igaz arra a szokásra, amelyet ki akarsz alakítani.",
+        "Ajouter vingt secondes d'effort réduit fortement la fréquence d'un geste. En retirer vingt l'augmente d'autant.":
+            "Húsz másodpercnyi plusz erőfeszítés erősen csökkenti egy mozdulat gyakoriságát. Húsz másodperc elvétele ugyanennyivel növeli.",
+        "Elle est rattachée à une action déjà automatique": "Egy már automatikus cselekvéshez kötöttem",
+        "le déclencheur existe, rien à retenir": "a kiváltó jel már megvan, nincs mit megjegyezni",
+        "Sa version minimale est ridiculement petite": "A minimális változata nevetségesen kicsi",
+        "« écrire une phrase », « ouvrir le fichier »": "„írj egy mondatot”, „nyisd meg a fájlt”",
+        "J'ai retiré de la friction devant elle": "Csökkentettem előtte a súrlódást",
+        "préparé la veille, outil déjà ouvert": "előző este előkészítve, az eszköz már nyitva",
+        "J'ai ajouté de la friction devant ce qui la concurrence": "Súrlódást tettem az elé, ami versenyez vele",
+        "J'ai une règle de reprise après une rupture": "Van szabályom arra, hogyan folytatom egy kihagyás után",
+        "ne jamais manquer deux fois de suite": "soha ne hagyd ki kétszer egymás után",
+        "Je n'installe qu'une seule habitude à la fois": "Egyszerre csak egy szokást alakítok ki",
+        "Cette habitude repose encore sur la volonté, qui fluctue par nature.":
+            "Ez a szokás még az akaraterőn múlik, amely természeténél fogva ingadozik.",
+        "Bonne conception. La règle de reprise est ce qui décide au deuxième mois.":
+            "Jól megtervezett. A folytatási szabály dönt a második hónapban.",
+        "Cette habitude ne dépend pas de ta motivation. Elle a une vraie chance.":
+            "Ez a szokás nem a motivációdon múlik. Van valódi esélye.",
+
+        // --- productivite / cout-reunion ------------------------------------------
+        "Combien coûte cette réunion ?": "Mennyibe kerül ez az értekezlet?",
+        "Une réunion coûte sa durée multipliée par le nombre de participants.":
+            "Egy értekezlet a hosszának és a résztvevők számának szorzatába kerül.",
+        "Une heure à huit personnes, c'est une journée de travail. La question « faut-il convier tout le monde ? » se pose alors autrement.":
+            "Egy óra nyolc emberrel egy teljes munkanap. Így a „mindenkit meg kell hívni?” kérdés másképp hangzik.",
+        "Durée": "Időtartam",
+        "Participants": "Résztvevők",
+        "Coût horaire chargé moyen": "Átlagos óraköltség járulékokkal",
+        "Occurrences par an": "Alkalmak évente",
+        "Heures de travail par séance": "Munkaórák alkalmanként",
+        "Coût par séance": "Költség alkalmanként",
+        "Coût annuel": "Éves költség",
+
+        // --- productivite / revue-reguliere -------------------------------------------
+        "Ton système résiste-t-il à la dérive ?": "Ellenáll a rendszered az elcsúszásnak?",
+        "Coche ce qui a effectivement lieu, à intervalle régulier.": "Jelöld be, ami rendszeres időközönként ténylegesen megtörténik.",
+        "Quand un système se dérègle, changer d'outil reporte le problème d'un trimestre. Ce qui manquait, c'était la revue.":
+            "Ha egy rendszer szétesik, az eszközváltás csak egy negyedévvel tolja el a gondot. Ami hiányzott, az az áttekintés volt.",
+        "Une revue hebdomadaire de trente minutes, à heure fixe dans l'agenda": "Heti harmincperces áttekintés, rögzített időpontban a naptárban",
+        "Un point mensuel sur ce qui n'a pas avancé, et pourquoi": "Havi összegzés arról, mi nem haladt, és miért",
+        "Un recul trimestriel sur ce qui compte vraiment": "Negyedéves visszatekintés arra, ami igazán számít",
+        "Je pose devant chaque projet : « si cela n'existait pas, est-ce que je le commencerais ? »":
+            "Minden projektnél megkérdezem: „ha még nem létezne, belekezdenék?”",
+        "J'ai arrêté au moins un engagement au cours des six derniers mois": "Az elmúlt hat hónapban legalább egy vállalásomat leállítottam",
+        "Rien de nouveau n'entre sans que quelque chose sorte": "Semmi új nem kerül be anélkül, hogy valami kikerülne",
+        "Sans revue, ce système dérivera jusqu'à être abandonné en bloc.":
+            "Áttekintés nélkül ez a rendszer addig csúszik el, amíg egyben fel nem hagysz vele.",
+        "Bonne discipline. Arrêter des choses reste la partie la plus difficile.":
+            "Jó fegyelem. Dolgokat abbahagyni továbbra is a legnehezebb rész.",
+        "Ton système se corrige tout seul. C'est ce qui le fera durer.":
+            "A rendszered magától korrigálja magát. Ettől lesz tartós.",
+
+        // --- productivite / rythme-pomodoro -------------------------------------------
+        "Que produit une journée en Pomodoro ?": "Mit hoz egy nap Pomodoróval?",
+        "Le total surprend : le temps réellement concentré est bien inférieur aux heures passées.":
+            "Az összeg meglep: a ténylegesen koncentrált idő jóval kevesebb, mint az eltöltött órák.",
+        "Quatre heures de présence donnent environ trois heures de concentration réelle. C'est déjà beaucoup.":
+            "Négy óra jelenlét nagyjából három óra valódi koncentrációt ad. Ez már sok.",
+        "Durée d'une session": "Egy blokk hossza",
+        "Pause entre deux sessions": "Szünet két blokk között",
+        "Heures consacrées au travail de fond": "Elmélyült munkára szánt órák",
+        "Sessions dans la plage": "Blokkok az idősávban",
+        "Temps réellement concentré": "Ténylegesen koncentrált idő",
+        "Part de la plage": "Az idősáv hányada",
+
+        // --- productivite / sante-gtd ---------------------------------------------------
+        "Ton système tient-il debout ?": "Megáll a lábán a rendszered?",
+        "Coche ce qui est vrai aujourd'hui, pas ce que tu avais prévu.": "Azt jelöld be, ami ma igaz, ne azt, amit terveztél.",
+        "Un système auquel on ne fait pas confiance est doublé d'une liste mentale — et c'est elle qui fatigue.":
+            "Egy rendszer mellé, amelyben nem bízunk, fejben is vezetünk egy listát — és az fáraszt.",
+        "Tout ce que j'ai à faire est noté quelque part, hors de ma tête": "Minden teendőm le van írva valahol, a fejemen kívül",
+        "Il existe un seul endroit pour capturer, pas cinq": "Egyetlen hely van a gyűjtésre, nem öt",
+        "Chaque tâche commence par un verbe d'action": "Minden feladat cselekvést jelentő igével kezdődik",
+        "« appeler le comptable » et non « comptable »": "„felhívni a könyvelőt”, nem „könyvelő”",
+        "Les tâches de plus d'une étape sont identifiées comme projets": "A több lépésből álló feladatokat projektként jelölöm",
+        "Je vide mes boîtes de capture au moins une fois par semaine": "A gyűjtőhelyeimet legalább hetente kiürítem",
+        "Je fais confiance à mon système : je n'ai pas de liste parallèle mentale": "Megbízom a rendszeremben: nincs mellette fejben vezetett listám",
+        "Ta mémoire porte encore une partie du système, et elle le porte mal.":
+            "A rendszer egy részét még a memóriád viszi, és rosszul viszi.",
+        "Bonne base. La revue hebdomadaire est ce qui manque le plus souvent.":
+            "Jó alap. A heti áttekintés az, ami a leggyakrabban hiányzik.",
+        "Système fiable : ta tête n'a plus à servir de mémoire.": "Megbízható rendszer: a fejednek már nem kell tárolóként szolgálnia.",
+
+        // --- productivite / matrice-eisenhower -------------------------------------------
+        "Ta matrice sert-elle à quelque chose ?": "Használ valamit a mátrixod?",
+        "Coche ce qui est vrai de ton usage réel, pas de tes intentions.": "Azt jelöld be, ami a valódi használatodra igaz, ne a szándékaidra.",
+        "L'urgent se signale de lui-même. L'important reste silencieux : il faut lui réserver du temps, ou il n'arrivera jamais.":
+            "A sürgős magától jelentkezik. A fontos csendben marad: időt kell foglalni neki, különben sosem kerül sorra.",
+        "J'ai classé les tâches de ma semaine dans les quatre cases": "A heti feladataimat besoroltam a négy mezőbe",
+        "Le quadrant 4 n'est pas vide": "A 4. negyed nem üres",
+        "s'il l'est, c'est que rien n'a été renoncé": "ha üres, akkor semmiről sem mondtál le",
+        "Un créneau récurrent est réservé au quadrant 2 dans mon agenda": "A naptáramban ismétlődő idősáv van lefoglalva a 2. negyednek",
+        "important mais non urgent": "fontos, de nem sürgős",
+        "Devant une tâche urgente, je me demande « urgent pour qui ? »": "Egy sürgős feladatnál megkérdezem magamtól: „kinek sürgős?”",
+        "Les tâches du quadrant 3 sont déléguées ou expédiées, pas soignées": "A 3. negyed feladatait átadom vagy gyorsan letudom, nem csiszolgatom",
+        "Je refais l'exercice au moins une fois par mois": "Legalább havonta megismétlem a gyakorlatot",
+        "L'exercice a été fait, mais rien n'a changé dans l'agenda : il n'a rien arbitré.":
+            "A gyakorlat megvolt, de a naptárban semmi sem változott: nem döntött el semmit.",
+        "Bon usage. Le créneau réservé au quadrant 2 est ce qui manque le plus souvent.":
+            "Jó használat. A 2. negyednek lefoglalt idősáv az, ami a leggyakrabban hiányzik.",
+        "La matrice arbitre réellement. C'est tout ce qu'on lui demande.": "A mátrix valóban dönt. Csak ennyit várunk tőle.",
+
+        // --- productivite / choisir-outil ---------------------------------------------------
+        "Cet outil te convient-il ?": "Neked való ez az eszköz?",
+        "Coche ce qui est vrai de l'outil que tu utilises ou envisages.": "Jelöld be, ami igaz arra az eszközre, amelyet használsz vagy fontolgatsz.",
+        "Le meilleur outil est celui qu'on utilise encore dans six mois. Tous les autres critères passent après.":
+            "A legjobb eszköz az, amelyet hat hónap múlva is használunk. Minden más szempont csak ezután jön.",
+        "Capturer une tâche prend moins de cinq secondes": "Egy feladat felírása kevesebb mint öt másodperc",
+        "au-delà, on ne capture plus": "e fölött már nem írjuk fel",
+        "Il est accessible partout où les idées surviennent": "Mindenhol elérhető, ahol ötletek jönnek",
+        "Je n'ai pas passé plus d'une heure à le configurer": "Nem töltöttem egy óránál többet a beállításával",
+        "Je l'utilise encore trois mois après l'avoir adopté": "Három hónappal a bevezetése után is használom",
+        "Il ne me demande pas de renseigner des champs dont je ne me sers pas": "Nem kér tőlem olyan mezőket, amelyeket nem használok",
+        "Je peux en sortir mes données si je change d'avis": "Ki tudom vinni belőle az adataimat, ha meggondolom magam",
+        "Cet outil consomme probablement plus d'énergie qu'il n'en fait gagner.":
+            "Ez az eszköz valószínűleg több energiát emészt fel, mint amennyit megtakarít.",
+        "Correct. La vraie question reste : l'utiliseras-tu dans trois mois ?":
+            "Elfogadható. A valódi kérdés továbbra is: használni fogod három hónap múlva?",
+        "Outil adapté : il sert le système au lieu de le remplacer.": "Megfelelő eszköz: a rendszert szolgálja, nem helyettesíti.",
+
+        // --- productivite / cout-changement-tache ------------------------------------------------
+        "Ce que coûtent tes interruptions": "Mibe kerülnek a megszakításaid",
+        "Le temps perdu n'est pas la durée de l'interruption, c'est le temps de reprise.":
+            "Az elvesztegetett idő nem a megszakítás hossza, hanem a visszatalálás ideje.",
+        "Une coupure de deux minutes en coûte vingt. C'est pourquoi le total surprend toujours.":
+            "Egy kétperces megszakítás húszba kerül. Ezért lep meg mindig az összeg.",
+        "Interruptions par jour": "Megszakítások naponta",
+        "Durée moyenne d'une interruption": "Egy megszakítás átlagos hossza",
+        "Temps de reprise après coupure": "Visszatalálási idő megszakítás után",
+        "Durée de la journée de travail": "A munkanap hossza",
+        "Temps des interruptions": "A megszakítások ideje",
+        "Temps de reprise": "Visszatalálási idő",
+        "Total perdu": "Összes veszteség",
+
+        // --- productivite / blocage-de-temps --------------------------------------------------------
+        "Combien de temps te reste-t-il vraiment ?": "Valójában mennyi időd marad?",
+        "Planifier plus que le disponible garantit d'échouer — par arithmétique, pas par manque de discipline.":
+            "Ha többet tervezel, mint amennyi időd van, biztosan kudarcot vallasz — a számtan miatt, nem fegyelemhiányból.",
+        "Une planification à 70 % tient. Une planification à 100 % casse à la première urgence.":
+            "A 70%-os tervezés kitart. A 100%-os az első sürgős ügynél összeomlik.",
+        "Durée de la journée": "A nap hossza",
+        "Réunions": "Értekezletek",
+        "Traitement des messages": "Üzenetek kezelése",
+        "Imprévus et transitions": "Váratlan ügyek és átállások",
+        "Temps disponible pour le travail de fond": "Elmélyült munkára maradó idő",
+        "Part de la journée": "A nap hányada",
+        "À planifier raisonnablement (70 %)": "Észszerűen tervezhető (70%)",
+
+        // --- productivite / flux-entrant -------------------------------------------------------------
+        "Au fil de l'eau, ou par lots ?": "Folyamatosan, vagy csoportosítva?",
+        "Le travail est le même. Ce sont les transitions qui coûtent.": "A munka ugyanaz. Az átállások kerülnek sokba.",
+        "Ce n'est pas le nombre de messages qui coûte cher, c'est le nombre de fois qu'on les regarde.":
+            "Nem az üzenetek száma kerül sokba, hanem az, hányszor nézünk rájuk.",
+        "Messages par jour": "Üzenetek naponta",
+        "Temps de traitement par message": "Kezelési idő üzenetenként",
+        "Reprise après chaque interruption": "Visszatalálás minden megszakítás után",
+        "Nombre de passages par jour si traité par lots": "Napi körök száma csoportos kezelésnél",
+        "Au fil de l'eau": "Folyamatosan",
+        "Économie": "Megtakarítás",
+
+        // --- productivite / cout-opportunite ----------------------------------------------------------
+        "Faut-il dire oui ?": "Igent mondj?",
+        "Coche ce que tu as vérifié avant d'accepter cette demande.": "Jelöld be, mit ellenőriztél, mielőtt elfogadod ezt a kérést.",
+        "Personne ne vient réclamer le travail qui n'a pas été fait. C'est ce qui rend ce coût invisible.":
+            "Senki sem jön számon kérni azt a munkát, amely nem készült el. Ettől láthatatlan ez a költség.",
+        "Je sais précisément ce que je ne ferai pas si j'accepte": "Pontosan tudom, mit nem fogok megcsinálni, ha elfogadom",
+        "Cette chose abandonnée est moins importante que la demande": "Ez az elhagyott dolog kevésbé fontos, mint a kérés",
+        "J'ai estimé la durée réelle, pas la durée annoncée": "A valódi időigényt becsültem meg, nem a bejelentettet",
+        "J'ai vérifié qu'elle rentre dans mon temps disponible, pas dans ma journée théorique":
+            "Ellenőriztem, hogy belefér a ténylegesen szabad időmbe, nem az elméleti napomba",
+        "Si je dois refuser, j'ai une formulation qui rend le coût visible": "Ha nemet kell mondanom, van olyan megfogalmazásom, amely láthatóvá teszi a költséget",
+        "report daté, arbitrage explicite, version réduite": "dátummal ellátott halasztás, kimondott választás, szűkített változat",
+        "La personne qui demande sait ce que cela décale": "A kérő tudja, mit tol el ez",
+        "Accepter ici, c'est refuser autre chose sans l'avoir décidé.": "Ha itt igent mondasz, valami másra mondasz nemet anélkül, hogy eldöntötted volna.",
+        "Il manque l'essentiel : nommer ce qui sera abandonné.": "A lényeg hiányzik: megnevezni, mi marad el.",
+        "Décision instruite : c'est un vrai oui, ou un refus argumenté.": "Megalapozott döntés: valódi igen, vagy megindokolt nem.",
 
         // --- apprendre / frequence-vocabulaire ------------------------------
         "Combien de mots faut-il pour lire ?": "Hány szót kell ismerni az olvasáshoz?",

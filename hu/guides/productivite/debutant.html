@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Pomodoro, GTD és az Eisenhower-mátrix — Termelékenység, kezdő - Clicked</title>
+    <meta name="description" content="A Pomodoro-technika, a GTD, az Eisenhower-mátrix és a feladatkezelő eszköz kiválasztása. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/productivite/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/productivite/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/productivite/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/productivite/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/productivite/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Pomodoro, GTD és az Eisenhower-mátrix — Termelékenység, kezdő - Clicked">
+    <meta property="og:description" content="A Pomodoro-technika, a GTD, az Eisenhower-mátrix és a feladatkezelő eszköz kiválasztása. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/productivite/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pomodoro, GTD és az Eisenhower-mátrix — Termelékenység, kezdő - Clicked">
+    <meta name="twitter:description" content="A Pomodoro-technika, a GTD, az Eisenhower-mátrix és a feladatkezelő eszköz kiválasztása. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">⏱️ Termelékenység és szervezés</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⏱️ Termelékenység — Kezdő</h1>
+                <p>A négy módszer, amely bizonyított. Előismeret nélkül.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>időzített blokkokban dolgozz</strong>, hogy a feladataidat a fejedből egy megbízható rendszerbe tedd át, hogy különválaszd a sürgőset a fontostól, és hogy olyan eszközt válassz, amelyet tényleg meg is tartasz.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#la-méthode-pomodoro">🍅 A Pomodoro-technika</a></li>
+                <li><a href="#la-méthode-gtd">✅ A GTD-módszer</a></li>
+                <li><a href="#la-matrice-deisenhower">🎯 Az Eisenhower-mátrix</a></li>
+                <li><a href="#les-outils-de-gestion-de-tâches">🛠️ A feladatkezelő eszközök</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Milyen ritmust javasol a Pomodoro-technika?</li>
+                <li>Mire épül a GTD-módszer?</li>
+                <li>Mit különít el az Eisenhower-mátrix?</li>
+                <li>A mátrix melyik mezője nem telik meg soha magától?</li>
+                <li>Melyik a legjobb feladatkezelő eszköz?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A termelékenység tanácsokkal telített terület, és épp ez a baja: több időt töltünk a módszer kiválasztásával, mint magával a munkával. Egy új eszköz telepítése ráadásul azonnal olyan elégedettséget ad, mintha haladtunk volna — pedig nem haladtunk.</p>
+            <p>Az itt bemutatott módszerekben közös, hogy nem gyorsabb munkára akarnak rávenni, hanem arra, hogy <strong>csökkentsd azt, ami költséggel jár, de semmit sem hoz</strong> — a megszakításokat, az ismétlődő döntéseket, annak a mentális terhét, amit félsz elfelejteni.</p>
+            <p>Egy hasznos figyelmeztetés: egyszerre csak egyet vezess be, és adj neki három hetet. Négy rendszer egymásra halmozása annyi, mint egy sem.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Az alapok, amelyeket ismerni kell</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="la-méthode-pomodoro">🍅 A Pomodoro-technika</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Dolgozz 25 percet mindenféle megszakítás nélkül, aztán tarts 5 perc szünetet.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Dolgozz <strong>25 percet mindenféle megszakítás nélkül</strong>, aztán tarts <strong>5 perc szünetet</strong>. Négy kör után jöhet egy 15–30 perces hosszú szünet. Ennyi.</p>
+
+                <h4>Miért működik</h4>
+                <p>Két mechanizmus, amely független az akaraterőtől:</p>
+                <ul>
+                    <li><strong>Egy rövid vállalást könnyű megtenni.</strong> „Dolgozni ezen az ügyön” homályos és szorongató; „25 percet szánni rá” megvalósítható. A módszer elsősorban a halogatás ellen hat, nem a fáradtság ellen.</li>
+                    <li><strong>Az időzítő megvéd a megszakításoktól.</strong> Egy megszakítás után több percbe telik, mire újra felveszed a fonalat. Egy óránként hatszor megszakított munka nem lassan halad: el sem indul igazán.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Egy megszakítás valódi költsége</span>
+                    <p>Egy megerőltető feladat, amely <strong>2 óra</strong> koncentrációt igényel.</p>
+                    <p><strong>Védelem nélkül:</strong> nagyjából tízpercenként egy értesítés. Minden újrakezdés több percnyi visszarázódásba kerül. Két óra alatt az idő jelentős része újraindulásokra megy el — és a minőség még jobban megsínyli, mint az időtartam.</p>
+                    <p><strong>Pomodoróval:</strong> négy valóban folyamatos, 25 perces blokk. A munka a második óra vége előtt elkészül, és jobb lesz az eredmény.</p>
+                    <p>A nyereség nem nagyobb sebességből fakad, hanem abból, hogy nem vész el idő az újrakezdésekre.</p>
+                </div>
+
+                <div class="pratique" data-pratique="rythme-pomodoro"></div>
+
+                <h4>A gyakorlatban</h4>
+                <ol>
+                    <li>Írj fel <strong>egyetlen</strong> feladatot, mielőtt elindítod az időzítőt. A homályos cél homályos pomodorót szül.</li>
+                    <li>Kapcsold ki az értesítéseket. E lépés nélkül a módszernek nincs értelme.</li>
+                    <li>Ha felbukkan egy ötlet, írd fel egy papírra, és folytasd. Ne foglalkozz vele.</li>
+                    <li>Tartsd meg ténylegesen a szünetet, és <strong>közben csinálj valami egészen mást</strong>: állj fel, igyál, nézz a távolba. A közösségi média görgetése nem pihenés a figyelemnek.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — szünet nélkül folytatni, amikor jól megy</span>
+                    <p>Csábító, és ettől leszel kimerült a nap végére. A szünetek nem jutalmak: a módszer részei, és ezeknek köszönhető, hogy a negyedik blokk ugyanolyan jó, mint az első.</p>
+                    <p>Egy másik finomítás: a 25 percben nincs semmi szent. Egyes kreatív feladatokba 50 perc kell, hogy belemelegedj. Igazítsd az időtartamot, az elvet tartsd meg.</p>
+                </div>
+
+                <p class="retenir">💡 A nyereség nem a sebességből, hanem a folyamatosságból fakad. Huszonöt megszakítás nélküli perc annyit ér, mint egy szétszabdalt óra.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-méthode-gtd">✅ A GTD-módszer</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A GTD ( Getting Things Done) egy megfigyelésből indul ki: az emlékezet kiváló a gondolkodásra, és katasztrofális a tárolásra.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A <strong>GTD</strong> (<em>Getting Things Done</em>) egy megfigyelésből indul ki: az emlékezet kiváló a gondolkodásra, és katasztrofális a tárolásra. Amíg egy feladat sehol sincs leírva, az elme folyton visszatér hozzá — nem azért, hogy elvégezze, csak hogy ellenőrizze, nem felejtette-e el. Ez állandó és láthatatlan fáradtság.</p>
+
+                <h4>Az öt lépés</h4>
+                <ol>
+                    <li><strong>Gyűjtés</strong> — mindent kiírni a fejedből egyetlen helyre: feladatokat, ötleteket, vállalásokat, a legjelentéktelenebbeket is.</li>
+                    <li><strong>Tisztázás</strong> — minden tételnél: lehet vele tenni valamit? Ha nem, kidobod, archiválod vagy várakoztatod. Ha igen, mi a <strong>következő konkrét, fizikai lépés</strong>?</li>
+                    <li><strong>Rendszerezés</strong> — környezet szerint rendezni: telefonon, számítógépnél, bevásárláskor, megbeszélni X-szel.</li>
+                    <li><strong>Áttekintés</strong> — heti áttekintés, amely nélkül a rendszer elavul, és elveszíti minden hitelét.</li>
+                    <li><strong>Cselekvés</strong> — a környezet, a rendelkezésre álló idő és a pillanatnyi energia alapján választani.</li>
+                </ol>
+
+                <h4>A lényeg: a következő lépés</h4>
+                <div class="exemple">
+                    <span class="titre">Átfogalmazni, hogy elinduljon</span>
+                    <p><strong>„Megszervezni a szemináriumot”</strong> — egy feladat, amelyet hetekig halogatunk. Ez nem lépés, hanem projekt: az agy nem tudja, hol kezdje, ezért kitér előle.</p>
+                    <p><strong>„Felhívni a catering céget a 06 1 234 5678-as számon, és árajánlatot kérni 30 főre”</strong> — pontos lépés, négy perc alatt elvégezhető, és gondolkodás nélkül megcsináljuk.</p>
+                    <p>Egy régóta halogatott feladat szinte mindig rosszul van megfogalmazva. Gyakran elég átfogalmazni, hogy elinduljon.</p>
+                </div>
+
+                <h4>A kétperces szabály</h4>
+                <p>Ha egy lépés kevesebb mint két percet vesz igénybe, csináld meg azonnal. Felírni, besorolni, újraolvasni és megkeresni többe kerülne, mint elvégezni.</p>
+
+                <h4>A heti áttekintés</h4>
+                <p>Ezt a lépést hagyja el mindenki elsőként, pedig ez tartja egyben az egészet. Harminc perc, minden héten ugyanazon a napon: kiüríteni a gyűjtőhelyeket, átnézni a folyamatban lévő projekteket, ellenőrizni, hogy mindegyiknek van-e meghatározott következő lépése.</p>
+                <p>Nélküle a lista megtelik elavult tételekkel, nem bízunk benne többé, és visszatérünk az emlékezethez — vagyis a mentális terheléshez.</p>
+
+                <div class="pratique" data-pratique="sante-gtd"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megépíteni a tökéletes rendszert</span>
+                    <p>Heteket lehet tölteni címkék, adatbázisok és automatizmusok elegáns rendszerének megtervezésével. Kellemes, munkának látszik, és nem az.</p>
+                    <p>Egy komolyan vezetett papírlap és egy doboz felülmúl egy kifinomult rendszert, amelyet tíz nap után feladunk.</p>
+                </div>
+
+                <p class="retenir">💡 A cél nem az, hogy mindent megcsinálj, hanem hogy semmit ne kelljen fejben tartanod. A tehermentesített elme jobban gondolkodik.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-matrice-deisenhower">🎯 Az Eisenhower-mátrix</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Két kérdés, négy mező.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Két kérdés, négy mező. Az eszköz leegyszerűsítőnek tűnik, és épp ezért működik, amikor egy harmincsoros lista megbénít.</p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>Sürgős</th><th>Nem sürgős</th></tr>
+                    <tr><th>Fontos</th><td><strong>1. Csináld most</strong><br>Válság, közeli határidő, meghibásodás</td><td><strong>2. Tervezd be</strong><br>Tanulás, megelőzés, stratégia, egészség, kapcsolatok</td></tr>
+                    <tr><th>Kevésbé fontos</th><td><strong>3. Add át vagy tudd le gyorsan</strong><br>Megkeresések, kényszerből vállalt értekezletek, bizonyos e-mailek</td><td><strong>4. Hagyd el</strong><br>Figyelemelterelések, megszokásból végzett tevékenységek</td></tr>
+                </table>
+                </div>
+
+                <h4>A negyed, amely mindent megváltoztat</h4>
+                <p>A <strong>2. negyed</strong> — fontos, de nem sürgős — az egyetlen, amelynek tartós a hatása. Tanulni, ápolni a kapcsolatokat, megelőzni a problémákat, aludni: ezek egyikének sincs határideje, ezért egyik sem követeli ki magának a helyet.</p>
+                <p>A mechanizmus gépies: minél inkább elhanyagolod a 2. negyedet, annál jobban megtelik az 1. Egy karban nem tartott tudásból sürgős pályaváltás lesz; egy elhalasztott műszaki vizsgából meghibásodás. <strong>A mai sürgős ügyek a hat hónappal ezelőtt elhanyagolt 2. negyedből jönnek.</strong></p>
+
+                <div class="exemple">
+                    <span class="titre">A sürgősség próbája</span>
+                    <p>Egy sürgősnek tűnő feladatnál tedd fel a kérdést: <em>„kinek sürgős?”</em></p>
+                    <p>Sok sürgős ügy valaki másé, egy erőszakos üzenettel áttolva hozzád. Ez nem jelenti, hogy vissza kell utasítanod — csak tudnod kell, hogy szívességből csinálod, nem azért, mert a te prioritásaid közé tartozik.</p>
+                    <p>E megkülönböztetés nélkül egy egész nap megtelhet mások prioritásaival.</p>
+                </div>
+
+                <h4>A gyakorlatban</h4>
+                <p>Foglalj le a naptáradban <strong>egy ismétlődő idősávot</strong> a 2. negyednek, és kezeld áthelyezhetetlen találkozóként. Ami nincs a naptárban, az nem létezik: mindig elnyeli valami sürgős.</p>
+
+                <div class="pratique" data-pratique="matrice-eisenhower"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — mindent „fontosnak” besorolni</span>
+                    <p>Ha a négy mező egyformán tele van, a gyakorlat hiábavaló volt. A mátrix választásra kényszerít, és a választás azt jelenti, hogy bizonyos dolgok nem készülnek el.</p>
+                    <p>A 4. negyedben kell lennie valaminek. Ha üres, akkor semmiről sem mondtál le.</p>
+                </div>
+
+                <p class="retenir">💡 A sürgős magától követeli a helyét, a fontos soha. A fontosnak kell előre időt foglalni.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-outils-de-gestion-de-tâches">🛠️ A feladatkezelő eszközök</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy eszköztől senki sem lesz szervezett.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy eszköztől senki sem lesz szervezett. Láthatóvá tesz egy már létező szervezettséget — vagy annak hiányát.</p>
+
+                <h4>Válassz a működésed szerint</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Eszköz</th><th>Jól működik erre</th><th>Korlát</th></tr>
+                    <tr><td><strong>Todoist</strong></td><td>Feladatlisták, határidők, környezetek. Közel áll a GTD-hez.</td><td>Kevéssé alkalmas egy projekt vizuális követésére</td></tr>
+                    <tr><td><strong>Trello</strong></td><td>Vizuális követés oszlopokban (teendő / folyamatban / kész)</td><td>Néhány tucat kártya felett átláthatatlanná válik</td></tr>
+                    <tr><td><strong>Notion</strong></td><td>Jegyzetek és feladatok egy helyen, nagyon testreszabható</td><td>A rugalmassága csapda: rendezgetjük ahelyett, hogy csinálnánk</td></tr>
+                    <tr><td><strong>Papír</strong></td><td>A hétköznapokra, értesítés és figyelemelterelés nélkül</td><td>Se keresés, se emlékeztető, se biztonsági mentés</td></tr>
+                </table>
+                </div>
+
+                <h4>A szempontok, amelyek tényleg számítanak</h4>
+                <ul>
+                    <li><strong>A rögzítés sebessége.</strong> Ha egy feladat felírása öt másodpercnél tovább tart, abba fogod hagyni — és a rendszer abban a pillanatban összeomlik.</li>
+                    <li><strong>Egyetlen hely.</strong> Három párhuzamos alkalmazás biztosítja, hogy egyik se legyen naprakész. Egy tökéletlen, de egyetlen rendszer jobb három tökéletesnél.</li>
+                    <li><strong>Napi használat.</strong> Az a lista, amelyet nem nyitunk meg, halott lista.</li>
+                    <li><strong>A kilépés lehetősége.</strong> Ellenőrizd, hogy az adataid exportálhatók: az eszközök megszűnnek, vagy árat változtatnak.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">A háromhetes próba</span>
+                    <p>Minden új eszköz csodálatosnak tűnik az első napokban — az újdonság tetszik, nem az eszköz.</p>
+                    <p>A valódi kérdés a harmadik héten merül fel, amikor visszatér a teher, és alábbhagy a lelkesedés: <em>megnyitod még?</em></p>
+                    <p>Ha igen, tartsd meg, és ne keress tovább. Ha nem, a gond valószínűleg nem az eszközzel van.</p>
+                </div>
+
+                <div class="pratique" data-pratique="choisir-outil"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a szervezett halogatás</span>
+                    <p>A listák átrendezése, alkalmazások összehasonlítása, módszertani videók nézése: munkának látszik, és nem az. Sőt, a halogatás különösen kényelmes formája, mert még a lelkiismeretünk is nyugodt marad.</p>
+                    <p>Figyelmeztető jel: ha egy éven belül kétszernél többször váltottál eszközt, nem az eszköz a kérdés.</p>
+                </div>
+
+                <p class="retenir">💡 A legjobb eszköz az, amelyet három hét múlva is megnyitsz. Minden más szempont messze lemarad mögötte.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A Pomodoro-technika 25 perc koncentrált munkát és 5 perc szünetet váltogat.</li>
+                <li>A GTD lényege, hogy minden feladatot egy megbízható külső rendszerbe gyűjtesz.</li>
+                <li>Az Eisenhower-mátrix különválasztja a sürgősséget és a fontosságot.</li>
+                <li>Foglalj le minden héten időt a fontos, de nem sürgős feladatokra.</li>
+                <li>A legjobb eszköz az, amelyet a hétköznapokban ténylegesen használsz.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Foglalj le most rögtön a naptáradban egy órát a jövő hétre egy fontos, de nem sürgős feladatra. Ez a mátrix egyetlen mezője, amely soha nem telik meg magától.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>„Getting Things Done”</strong>, David Allen — a GTD alapműve. Sűrű olvasmány; az első három fejezet elég az induláshoz.</li>
+                    <li><strong>„Deep Work”</strong>, Cal Newport — a hosszan tartó koncentrációról, és arról, miért válik ritkává. Jó kiegészítése a Pomodorónak.</li>
+                    <li><strong>„Atomic Habits”</strong>, James Clear — a szokásokon, nem a motiváción keresztüli megközelítés. A három közül ez a legközvetlenebbül alkalmazható.</li>
+                    <li><strong>Blokkoló alkalmazások</strong> (Cold Turkey, Freedom, a rendszerek beépített fókusz módja) — hatékonyabbak az akaraterőnél, mert még a kísértés előtt hatnak.</li>
+                    <li><strong>A telefonod időzítője</strong> — ingyenes, és elég a Pomodoróhoz. Nincs szükség külön alkalmazásra.</li>
+                </ul>
+                <p><strong>Módszertani tanács:</strong> ne olvasd el egymás után ezt a három könyvet. Válassz egyet, alkalmazz belőle egyetlen gondolatot egy hónapig, és csak akkor nyisd meg a következőt, ha szükséged van rá. A termelékenységről való olvasás maga is az egyik leggyakoribb módja annak, hogy kitérjünk előle.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>⏱️ Termelékenység és szervezés</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Termelékenység — Középhaladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/design/index.html">🎨 UX/UI design (franciául)</a>
+                <a href="../../../guides/ia/index.html">🤖 Mesterséges intelligencia (franciául)</a>
+                <a href="../../../guides/marketing/index.html">📢 Digitális marketing (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/productivite-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

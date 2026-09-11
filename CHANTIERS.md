@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Son premier parcours est publié et attend un relecteur. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Deux parcours sont publiés (Apprendre, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -46,7 +46,9 @@ supposaient la paire français-anglais.
   manque un libellé pour une langue ;
 - **le parcours pilote « Apprendre à apprendre » est publié** : ses 4 pages sous
   `hu/guides/apprendre/`, ses 3 banques de quiz (90 questions), les textes de ses
-  12 simulateurs.
+  12 simulateurs ;
+- **Productivité est publiée** le même jour, sur la même méthode, à la demande de
+  Ludo.
 
 Le drapeau hongrois est **visible** depuis la publication du pilote. Vérifié dans
 le navigateur sur un parcours pas encore traduit (Finance) : choisir « Magyar »
@@ -60,10 +62,17 @@ françaises.
    11 septembre 2026** : les 4 pages sous `hu/guides/apprendre/`, ses 3 banques
    sous `assets/js/quiz/hu/`, les textes de ses simulateurs dans
    `assets/js/pratique/hu.js`, et le sujet ajouté à `CONTENU_TRADUIT.hu`.
-2. **Le faire relire par un lecteur hongrois avant les treize autres — c'est
-   l'étape suivante.** Personne dans le projet ne lit le hongrois : c'est la
-   condition pour ne pas reproduire une erreur de langue treize fois.
-3. Les treize autres sujets, un par un, contrôles au vert à chaque fois.
+2. **Le faire relire par un lecteur hongrois.** Personne dans le projet ne lit le
+   hongrois. C'était recommandé avant les autres sujets ; **Ludo a choisi le
+   11 septembre 2026 de continuer sans attendre.** La relecture reste à faire, et
+   portera sur tous les sujets déjà publiés.
+3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
+   Apprendre, Productivité (2 sur 14).** Ordre suivi : d'abord les sujets sans
+   droit français — IA, Data, Design, Dev web, Cybersécurité, Marketing,
+   Négociation, Écologie — puis les quatre qui demandent la décision ci-dessous.
+   **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
+   fidèle recrée le biais de longueur (Apprendre 51,7 %, Productivité 62 à 67 %
+   par banque).
 4. Les pages hors cours (`hu/index.html`, `hu/guides.html`, FAQ…) et
    `PAGES_TRADUITES.hu`. Il faudra alors une version hongroise pour
    `publier-accueil.js`, `poser-situations.js`, le glossaire et ses renvois.
@@ -76,6 +85,9 @@ françaises.
   (se tester), *a tudás illúziói* (illusions de maîtrise), *kevert gyakorlás*
   (entrelacement), *mély feldolgozás* (élaboration), *tudatos gyakorlás*
   (pratique délibérée), *transzfer* ;
+- pour Productivité : *elmélyült munka* (travail de fond), *súrlódás* (friction),
+  *lehorgonyzás* (ancrage), *időblokkolás* (blocage de temps), *visszatalálás*
+  (reprise après une interruption), *értekezlet* (réunion) ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12

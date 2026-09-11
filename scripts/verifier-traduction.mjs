@@ -27,9 +27,17 @@ const bac = { window: { DOCMASTER_LANGUES: { langueDeLaPage: () => LANGUE } }, d
 vm.createContext(bac);
 vm.runInContext(fs.readFileSync(path.join(RACINE, "assets/js/pratique.js"), "utf8"), bac);
 const SIMULATEURS = bac.module.exports.SIMULATEURS;
-/* Les unités que pratique.js écrit lui-même dans la langue de la page
-   (« 3 óra 20 perc ») ne sont pas du texte d'origine resté tel quel. */
-const UNITES_DE_LA_LANGUE = new Set(Object.values((bac.module.exports.UNITES_DUREE || {})[LANGUE] || {}));
+/* Ce que pratique.js écrit lui-même dans la langue de la page n'est pas du
+   texte d'origine resté tel quel : les unités de durée (« 3 óra 20 perc ») et
+   le symbole que Intl donne à l'euro dans cette langue (« 22 680 EUR » en
+   hongrois, où il n'est pas « € »). */
+const exportes = bac.module.exports;
+const localeVerifiee = (exportes.LOCALES || {})[LANGUE];
+const symboleEuro = localeVerifiee
+    ? new Intl.NumberFormat(localeVerifiee, { style: "currency", currency: "EUR" }).formatToParts(1)
+        .filter((p) => p.type === "currency").map((p) => p.value)
+    : [];
+const UNITES_DE_LA_LANGUE = new Set([...Object.values((exportes.UNITES_DUREE || {})[LANGUE] || {}), ...symboleEuro]);
 const aTraduire = (m) => !IDENTIQUES.has(m) && !UNITES_DE_LA_LANGUE.has(m);
 
 const bacDico = { window: {} };

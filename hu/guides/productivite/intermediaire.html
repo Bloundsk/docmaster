@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Időblokkolás és feladatváltás — Termelékenység, középhaladó - Clicked</title>
+    <meta name="description" content="A feladatváltás költsége, az időblokkolás, a beérkező ügyek kezelése és a valódi rangsorolás. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/productivite/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/productivite/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/productivite/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/productivite/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/productivite/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Időblokkolás és feladatváltás — Termelékenység, középhaladó - Clicked">
+    <meta property="og:description" content="A feladatváltás költsége, az időblokkolás, a beérkező ügyek kezelése és a valódi rangsorolás. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/productivite/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Időblokkolás és feladatváltás — Termelékenység, középhaladó - Clicked">
+    <meta name="twitter:description" content="A feladatváltás költsége, az időblokkolás, a beérkező ügyek kezelése és a valódi rangsorolás. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">⏱️ Termelékenység és szervezés</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⏱️ Termelékenység — Középhaladó</h1>
+                <p>A figyelmed védelme a naptárad teleírása helyett.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle cx="70" cy="70" r="26" fill="none" stroke="white" stroke-width="2.5"/>
+<g class="illu-ring"><line x1="70" y1="70" x2="70" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<g class="illu-icon"><line x1="70" y1="70" x2="83" y2="75" stroke="white" stroke-width="2.5" stroke-linecap="round"/></g>
+<circle cx="70" cy="70" r="3.5" fill="white"/>
+<circle class="illu-twinkle" cx="105" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>számszerűsítsd, mibe kerül egy megszakítás</strong>, hogy beoszd az idődet ahelyett, hogy elszenvednéd, hogy csoportosítva kezeld az üzeneteidet, és hogy úgy mondj nemet, hogy tudod, mit kapsz cserébe.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#cout-du-changement">🧠 A feladatváltás költsége</a></li>
+                <li><a href="#blocage-de-temps">📅 Az időblokkolás</a></li>
+                <li><a href="#traiter-les-flux">📥 A beérkező ügyek kezelése</a></li>
+                <li><a href="#prioriser-vraiment">🎯 Valódi rangsorolás</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mibe kerül egy megszakítás a hosszán túl?</li>
+                <li>Mennyi időt tölt ki egy feladat?</li>
+                <li>A tele naptár egyben termékeny naptár is?</li>
+                <li>Folyamatosan kezeld az üzeneteidet, vagy csoportosítva?</li>
+                <li>Mire mondasz nemet, amikor igent mondasz?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint négy bevált módszert mutatott be: a Pomodorót, a GTD-t, az Eisenhower-mátrixot és egy eszköz kiválasztását. Ez elég a feladatok megszervezéséhez.</p>
+            <p>Ez a szint arról szól, amit ezek a módszerek kimondatlanul feltételeznek: <strong>a szabad figyelemről</strong>. A szűkös erőforrás ugyanis a figyelem, nem az idő. Egy tízperces darabokra szabdalt nyolcórás nap nem ér annyit, mint három óra folyamatos munka — és ezen semmilyen feladatkezelő rendszer nem segít.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Az idézett időtartamok a figyelemmel foglalkozó kutatásokból származó nagyságrendek: emberenként, a feladat jellegétől és a körülményektől függően eltérnek.</p>
+                <p>A tartós koncentrációs nehézségnek más oka is lehet, mint a szervezés. Ez az útmutató nem helyettesíti az orvosi véleményt.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A szűkös erőforrás védelme</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="cout-du-changement">🧠 A feladatváltás költsége</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egyik feladatról a másikra váltani nem ingyenes.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egyik feladatról a másikra váltani nem ingyenes. Az agynak ki kell ürítenie az aktuális kontextust, betöltenie az újat, majd később újra megtalálnia az elhagyott fonalat. Ez a költség a naptárban láthatatlan, egy napon belül viszont jelentős.</p>
+
+                <h4>Mibe kerül egy kétperces megszakítás</h4>
+                <p>A témával foglalkozó kutatások egybehangzóak: egy megszakítás után egy megerőltető feladatnál nagyjából <strong>tizenöt-húsz percbe</strong> telik visszatalálni a korábbi koncentrációhoz. A kétperces megszakítás tehát húszba kerül.</p>
+                <p>A számítás kegyetlenné válik, ha megszorozzuk. Hat megszakítás egy délelőtt nem tizenkét percet visz el: akár száznál is többet.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Egy nap <strong>9 megszakítással</strong>, mindegyik 3 perces, olyan feladatokon, amelyeknél <strong>12 perc</strong> kell a visszatalálásra.</p>
+                    <p>A megszakítások ideje: 27 perc. A visszatalálás ideje: <strong>108 perc</strong>.</p>
+                    <p>Összesen: <strong>2 óra 15 perc</strong> vész el egy 8 órás napból — közel 28%, és ennek nagy része sehol sem látszik.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-changement-tache"></div>
+
+                <h4>Ami valóban véd</h4>
+                <p>Az értesítések kikapcsolása nem elég, ha tízpercenként magadtól nézed meg őket. Három intézkedés működik együtt: <strong>lehetetlenné tenni a megszakítást</strong> — a készülék karnyújtáson kívül, az üzenetküldő bezárva; <strong>bejelenteni, mikor nem vagy elérhető</strong>, hogy másoknak ne kelljen megszakítaniuk; és <strong>felírni, hol tartottál</strong>, mielőtt abbahagyod, ami jelentősen lerövidíti a visszatalálást.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy egyszerre két dolgot csinálsz</span>
+                    <p>Az agy nem dolgoz fel egyszerre két megerőltető feladatot: gyorsan váltogat, és minden oda-vissza lépésnél megfizeti az átállás költségét.</p>
+                    <p>Ami párhuzamos munkának látszik, az valójában egymás utáni munka átállási költséggel — és mindkét feladat minősége rosszabb.</p>
+                </div>
+
+                <p class="retenir">💡 Az elvesztegetett idő nem a megszakítás hossza, hanem az az idő, amely utána a visszatéréshez kell.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="blocage-de-temps">📅 Az időblokkolás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy feladatlista azt mondja meg, mit csinálj.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy feladatlista azt mondja meg, <em>mit</em> csinálj. Azt nem, hogy <em>mikor</em>, és épp ez hiányzik: egy húszelemes lista egy üres naptárral szemben leginkább bűntudatot szül.</p>
+
+                <h4>Időt foglalni, ahogy egy értekezletet foglalunk</h4>
+                <p>Az elv egyszerű: minden fontos feladat kap egy idősávot a naptárban, ugyanúgy, mint egy találkozó. A különbség lélektani és gyakorlati is — egy idősávot meg lehet védeni, egy szándékot nem.</p>
+                <p>Ez egy hasznos szembesítésre is kényszerít: ha a feladatok nem férnek bele, akkor túl sok van belőlük. A lista eltakarta; a naptár megmutatja.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — ami valójában marad</span>
+                    <p>Egy <strong>8 órás</strong> nap. Értekezletek: <strong>2 óra 30 perc</strong>. Üzenetek kezelése: <strong>1 óra 15 perc</strong>. Váratlan ügyek és átállások: <strong>1 óra</strong>.</p>
+                    <p>Az elmélyült munkára ténylegesen maradó idő: <strong>3 óra 15 perc</strong>.</p>
+                    <p>Ha erre a napra hat óra termelő munkát tervezel, biztosan kudarcot vallasz — nem fegyelemhiányból, hanem a számtan miatt.</p>
+                </div>
+
+                <div class="pratique" data-pratique="blocage-de-temps"></div>
+
+                <h4>Parkinson törvénye, és hogyan használd</h4>
+                <p>Egy feladat hajlamos kitölteni a rá szánt teljes időt. Egy feljegyzés, amely negyven percet venne igénybe, három órát fog, ha szabad a délután.</p>
+                <p>Ezért érdemes <strong>előre időkeretet szabni</strong>, akár önkényesen is. Ez nem kényszer: ez akadályozza meg, hogy a feladat szétterüljön.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — 100%-ig teleírni a naptárt</span>
+                    <p>Egy üres hely nélküli naptár nem éli túl az első sürgős ügyet: minden más elcsúszik, és a nap felzárkózási versennyé válik.</p>
+                    <p>Az üres blokkok nem elvesztegetett idő: ettől lesz ellenálló a terv. A 70%-os tervezés kitart; a 100%-os összeomlik.</p>
+                </div>
+
+                <p class="retenir">💡 Egy idősávok nélküli feladatlista kívánságlista. A naptár szembesíti a valósággal.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="traiter-les-flux">📥 A beérkező ügyek kezelése</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Üzenetek, értesítések, kérések, dokumentumok: a beérkező ügyek áradata folyamatos, és soha nem áll meg.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Üzenetek, értesítések, kérések, dokumentumok: a beérkező ügyek áradata folyamatos, és soha nem áll meg. A kérdés nem az, hogy kiürítsd, hanem hogy ne ez szabja meg a napod sorrendjét.</p>
+
+                <h4>Csoportosítva, sosem folyamatosan</h4>
+                <p>Ha az üzeneteket beérkezésükkor kezeled, minden alkalommal megszakítod magad — a fent látott visszatalálási költséggel. Két-három külön körben kezelni őket ugyanannyi kezelési időbe kerül, átállási költség nélkül.</p>
+                <p>A legtöbb munkakörben napi két idősáv elég. Attól a félelemtől, hogy „lemaradsz valami sürgősről”, megszabadít, ha megállapodtok egy csatornában, amely a valóban sürgős ügyeké — általában a telefon.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — az áradat súlya</span>
+                    <p>Napi <strong>45 üzenet</strong>, átlagosan <strong>1,5 perc</strong> mindegyik: 68 perc tiszta kezelési idő.</p>
+                    <p>Folyamatosan kezelve, minden alkalommal <strong>4 perc</strong> visszatalálással: <strong>4 óra 8 perc</strong>.</p>
+                    <p>Két csoportban kezelve: <strong>1 óra 16 perc</strong>. A munka ugyanaz; az átállások vittek el csaknem három órát.</p>
+                </div>
+
+                <div class="pratique" data-pratique="flux-entrant"></div>
+
+                <h4>Tételenként egy döntés</h4>
+                <p>Az elv, amely valóban kiüríti a postafiókot: minden tételhez csak egyszer nyúlj, és azonnal dönts. <strong>Válaszolj</strong>, ha két percnél kevesebb, <strong>tervezd be</strong>, ha feladat, <strong>add át</strong>, <strong>archiváld</strong> vagy <strong>töröld</strong>.</p>
+                <p>Nem a mennyiség miatt telik túl egy postafiók, hanem attól, hogy elolvassuk az üzeneteket, nem kezdünk velük semmit, aztán újra elolvassuk őket.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az üzenetekkel kezdeni a napot</span>
+                    <p>Az első óra általában az, amelyben a figyelem a legszabadabb. Ha a beérkező ügyeknek szenteled, a legjobb idősávodat mások prioritásainak adod.</p>
+                    <p>Egy óra elmélyült munka, mielőtt megnyitod az üzeneteidet, az egész napot megváltoztatja — és hatvan perc alatt semmi fontos nem vész el.</p>
+                </div>
+
+                <p class="retenir">💡 Nem az üzenetek száma kerül sokba, hanem az, hányszor nézünk rájuk.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="prioriser-vraiment">🎯 Valódi rangsorolás</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Rangsorolni nem azt jelenti, hogy fontossági sorrendbe rakjuk a feladatokat.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Rangsorolni nem azt jelenti, hogy fontossági sorrendbe rakjuk a feladatokat. Azt jelenti, hogy <strong>lemondunk egyesekről</strong>. Amíg egyetlen feladatot sem vetettél el, nem rangsoroltál, csak sorba rendeztél.</p>
+
+                <h4>Az alternatív költség, az időre alkalmazva</h4>
+                <p>Ha elfogadsz egy félnapos kérést, nemet mondasz mindarra, amit abban a fél napban csinálhattál volna. Ez a nem valódi, csak láthatatlan: senki sem jön számon kérni azt a munkát, amely nem készült el.</p>
+                <p>Ezért hasznos egy kérdés az elfogadás előtt: <strong>mit nem fogok megcsinálni, ha igent mondok?</strong> Ha a válasz „semmi fontosat”, az valódi igen. Ha megnevez valamit, a döntést érdemes mérlegelni.</p>
+
+                <div class="exemple">
+                    <span class="titre">Három megfogalmazás, hogy nemet mondj elzárkózás nélkül</span>
+                    <p><strong>A dátummal ellátott halasztás.</strong> „Ezen a héten nem megy. 24-én neki tudok állni, megfelel?”</p>
+                    <p><strong>A kimondott választás.</strong> „Meg tudom csinálni, de akkor az X projekt egy hetet csúszik. Melyiket szeretnéd?” — a döntés visszakerül a kérőhöz.</p>
+                    <p><strong>A szűkített változat.</strong> „Az egészet nem tudom vállalni, de ezt a részét csütörtökig megcsinálom.”</p>
+                    <p>Egyik válasz sem kerek elutasítás. Mindegyik láthatóvá teszi a költséget, amelyet az „igen” eltakart.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-opportunite"></div>
+
+                <h4>A fontos és a sürgős különválasztása a gyakorlatban</h4>
+                <p>A sürgős magától jelentkezik: kiabál, határideje van, valaki vár. A fontos csendben marad — tanulni, gondolkodni, megelőzni egy problémát, ápolni egy kapcsolatot.</p>
+                <p>Ezért a fontos soha nem kerül sorra magától a nap folyamán: időt kell foglalni neki, különben a sürgős teljesen kitölti.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a lista, amely soha nem rövidül</span>
+                    <p>Egy hat hónapja nyúló feladatlista olyan dolgokat tartalmaz, amelyek soha nem készülnek el. Ott maradnak, minden átolvasáskor lekötik a figyelmet, és állandó kudarcérzést táplálnak.</p>
+                    <p>Egy havi áttekintés egyetlen kérdéssel — „tényleg meg fogom ezt csinálni?” — és a vállalt törlés többet ér a végtelen halasztásnál.</p>
+                </div>
+
+                <p class="retenir">💡 Az a rangsorolás, amely semmiről sem mond le, nem rangsorolás. Csak sorrend.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy megszakítás sokkal többe kerül a hosszánál: a visszatalálás percekben mérhető.</li>
+                <li>Egy feladat kitölti a neki szánt időt — ezért érdemes azt előre rögzíteni.</li>
+                <li>A tele naptár nem termékeny naptár: az elmélyült munkához blokkok kellenek.</li>
+                <li>Az üzenetek csoportos kezelése kevesebbe kerül, mint a folyamatos.</li>
+                <li>Ha valamire igent mondasz, minden másra nemet mondasz — akkor is, ha ki sem mondod.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Kapcsold ki egyetlen eszköz értesítéseit fél napra, és nézd meg két alkalommal. Utána írd fel, miről maradtál le valójában: a lista szinte mindig üres.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>„Deep Work”</strong>, Cal Newport: a koncentrált munka értékéről és azokról a feltételekről, amelyek lehetővé teszik. A téma alapkönyve.</li>
+                    <li><strong>Gloria Mark kutatásai</strong> a munkahelyi megszakításokról: az útmutatóban idézett visszatalálási idők innen származnak.</li>
+                    <li><strong>„Getting Things Done”</strong>, David Allen: a teljes módszer, amelynek alapelveit a kezdő szint mutatja be.</li>
+                    <li><strong>A munkavédelmi szervek iránymutatásai</strong>: hivatalos tájékoztatás a munkaszervezési tényezőkről és a mentális terhelésre gyakorolt hatásukról.</li>
+                </ul>
+                <p><strong>Egy hasznos reflex:</strong> három napig írj fel minden megszakítást az időponttal együtt. Az összeg meglep, és lehetővé teszi, hogy beszélj róla a munkatársaiddal.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Termelékenység — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Termelékenység — Haladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../../../guides/data/index.html">📊 Adatok és elemzés (franciául)</a>
+                <a href="../../../guides/design/index.html">🎨 UX/UI design (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/productivite-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

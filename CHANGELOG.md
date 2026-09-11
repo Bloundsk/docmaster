@@ -1,5 +1,44 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Deuxième parcours en hongrois : Productivité
+
+Ludo a demandé de continuer (« continue ») sans attendre la relecture hongroise
+que `CHANTIERS.md` recommandait. La réserve avait été posée une fois ; elle reste
+notée, pas répétée.
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/productivite/`, **les 3 banques de quiz**
+  (90 questions, la bonne réponse au même rang qu'en français) et **les 152 textes
+  des 12 simulateurs** dans `assets/js/pratique/hu.js`.
+- `CONTENU_TRADUIT.hu` annonce « apprendre » et « productivite ». Les pages
+  anglaises du parcours annoncent leur version hongroise, et les pages hongroises
+  d'« Apprendre à apprendre », qui citaient la Productivité en français, mènent
+  maintenant à sa version hongroise.
+- **Transposé plutôt que traduit** : le numéro de téléphone de l'exemple GTD
+  (format hongrois), l'INRS devenu « les organismes de santé au travail », le
+  contrôle technique devenu la *műszaki vizsga*. Les montants restent en euros,
+  comme le simulateur qui les calcule.
+
+### Corrigé en route
+
+- **La longueur des réponses, une deuxième fois.** Traduites fidèlement, les
+  trois banques laissaient de nouveau deviner la bonne réponse : 62, 63 et 67 %
+  pour « prendre la plus longue », au-delà des 60 % admis par banque. Trente-sept
+  distracteurs ont reçu le raisonnement de celui qui y croit ; aucune bonne
+  réponse n'a été raccourcie. Résultat : 37,0 % sur les 180 questions hongroises.
+- **`verifier-traduction.mjs` prenait « EUR » pour du français oublié.** En
+  hongrois, `Intl` écrit l'euro « 22 680 EUR ». Le contrôle lit désormais le
+  symbole que la langue vérifiée donne à l'euro.
+- **« 4 óra 08 perc »** : le zéro qui aide à lire « 4 h 08 min » ne s'écrit pas
+  devant un mot en entier. Les durées hongroises disent « 4 óra 8 perc ».
+
+### Vérifié
+
+Les 17 contrôles, les paires de traduction et l'audit de géométrie passent. Dans
+le navigateur, les quatre pages s'affichent sans erreur de console, simulateurs
+compris : « 2 óra 15 perc (28% a napból) », « 473 EUR », « 2 csoportos körben ».
+
 ## 2026-09-11 — Premier parcours en hongrois : « Apprendre à apprendre »
 
 ### Ce qui est publié

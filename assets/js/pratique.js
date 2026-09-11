@@ -97,6 +97,9 @@
     // lettres ou plus : « 1 h » s est affiche sur la premiere page hongroise.
     const UNITES_DUREE = { hu: { h: "óra", min: "perc" } };
     const uniteDuree = (u) => (UNITES_DUREE[langueActive()] || {})[u] || u;
+    // Le zero de « 4 h 08 min » aide a lire une abreviation ; devant un mot
+    // ecrit en entier, il ne s ecrit pas : « 4 óra 8 perc ».
+    const minutesApresHeures = (m) => (UNITES_DUREE[langueActive()] ? String(m) : String(m).padStart(2, "0"));
 
     const heuresMinutes = (minutes) => {
         const total = Math.round(minutes);
@@ -104,7 +107,7 @@
         const m = total % 60;
         if (h === 0) return nf(m) + " " + uniteDuree("min");
         if (m === 0) return nf(h) + " " + uniteDuree("h");
-        return nf(h) + " " + uniteDuree("h") + " " + String(m).padStart(2, "0") + " " + uniteDuree("min");
+        return nf(h) + " " + uniteDuree("h") + " " + minutesApresHeures(m) + " " + uniteDuree("min");
     };
 
     // Valeur future d un capital et de versements mensuels, interets composes
@@ -4263,6 +4266,6 @@
     }
 
     if (typeof module !== "undefined" && module.exports) {
-        module.exports = { SIMULATEURS, valeurFuture, UNITES_DUREE };
+        module.exports = { SIMULATEURS, valeurFuture, UNITES_DUREE, LOCALES };
     }
 })();
