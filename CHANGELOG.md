@@ -1,5 +1,34 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Neuvième parcours en hongrois : Négociation & communication
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/negociation/`, **les 3 banques de quiz** (96 questions,
+  la bonne réponse au même rang qu'en français) et **les 160 textes des
+  13 simulateurs** (163 textes et 6 fragments ajoutés : « 27 000 EUR – 32 000 EUR »,
+  « a különbözet elosztása: 5000 EUR — nem maga a megállapodás », « 500 EUR, hogy
+  megérje folytatni »).
+- `CONTENU_TRADUIT.hu` annonce aussi « negociation ». Aucune page hongroise ne citait
+  encore ce parcours : rien à repointer.
+- **Aucun droit dans ce parcours, et rien n'en est prêté au hongrois.** Harcèlement,
+  discrimination et médiation sont dits « variables selon les pays », avec renvoi aux
+  guides Santé et Droit en français (« franciául »). La MESORE, sigle français, devient
+  la BATNA ; les minima de la convention collective deviennent « le minimum de branche
+  ou la convention collective, s'il y en a ». Montants gardés en euros, comme les
+  simulateurs.
+
+### Corrigé en route
+
+- **Le fragment « EUR à » ne prenait pas.** `Intl.NumberFormat` met une espace
+  insécable entre le nombre et « EUR » ; la clef commençait par une espace ordinaire.
+  Elle commence désormais par « EUR ». Et « 54%-a a különbségnek » répétait le libellé :
+  la valeur affiche « 54% ».
+- **Le biais de longueur, une neuvième fois, corrigé en une passe** : la bonne réponse
+  était la plus longue dans 51 % des cas (français 35 %). 33 distracteurs rallongés sur
+  27 questions, chacun jusqu'à la place française : 34 / 37 / 31 % (français
+  35 / 38 / 28 %). Les 816 questions hongroises sont à 32,9 / 36,2 / 31,6 %.
+
 ## 2026-09-11 — Huitième parcours en hongrois : Marketing digital
 
 ### Ce qui est publié

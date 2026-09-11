@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Felkészülés, meghallgatás, szerkezet — Tárgyalás, kezdő - Clicked</title>
+    <meta name="description" content="Felkészülni, mielőtt megszólalsz, valóban meghallgatni, felépíteni egy üzenetet, és úgy írni, hogy elolvassák. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/negociation/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/negociation/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/negociation/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Felkészülés, meghallgatás, szerkezet — Tárgyalás, kezdő - Clicked">
+    <meta property="og:description" content="Felkészülni, mielőtt megszólalsz, valóban meghallgatni, felépíteni egy üzenetet, és úgy írni, hogy elolvassák. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/negociation/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Felkészülés, meghallgatás, szerkezet — Tárgyalás, kezdő - Clicked">
+    <meta name="twitter:description" content="Felkészülni, mielőtt megszólalsz, valóban meghallgatni, felépíteni egy üzenetet, és úgy írni, hogy elolvassák. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🤝 Tárgyalás és kommunikáció</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤝 Tárgyalás — Kezdő</h1>
+                <p>Megértetni magad. Nincs előfeltétel.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34 58 L58 58 L58 78 L46 78 L38 86 L38 78 L34 78 Z"/>
+<path d="M82 46 L106 46 L106 66 L102 66 L102 74 L94 66 L82 66 Z"/>
+<path d="M50 96 Q70 108 90 96" stroke-opacity="0.55"/></g></g>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:.5s"/>
+<circle class="illu-twinkle" cx="106" cy="96" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>előre eldöntsd, mit teszel, ha semmit sem érsz el</strong>, hogy átfogalmazva hallgass meg valakit, hogy a konklúzióval kezdve építs fel egy üzenetet, és hogy úgy írj, hogy elolvassanak.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#preparer-avant-de-parler">🎯 Felkészülni, mielőtt megszólalsz</a></li>
+                <li><a href="#ecouter-vraiment">👂 Valóban meghallgatni</a></li>
+                <li><a href="#structurer-un-message">🗣️ Felépíteni egy üzenetet</a></li>
+                <li><a href="#ecrire-pour-etre-lu">📧 Úgy írni, hogy elolvassák</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Melyik kérdésre készülnek fel a legritkábban egy tárgyalás előtt?</li>
+                <li>Mit tár fel, ha átfogalmazod, amit hallottál?</li>
+                <li>Hová kerüljön egy üzenet konklúziója: az elejére vagy a végére?</li>
+                <li>Mennyi munkaidőt köt le egy nyolc embernek elküldött 400 szavas üzenet?</li>
+                <li>Mit ér a híres „a kommunikáció 93%-a nonverbális”?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Ez a terület tele van tanácsokkal, amelyek közül sok soha nem ellenőrzött állításokon alapul. Ez az útmutató ahhoz tartja magát, ami bizonyítható — és a legkevésbé látványossal kezd: <strong>felkészülni, meghallgatni és szerkezetet adni</strong>.</p>
+            <p>A középhaladó szint magáról a tárgyalásról szól majd, azokkal az eszközökkel, amelyek kiszámíthatóvá teszik. Ez a szint azt rakja le, ami nélkül azok semmit sem érnek.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A leírt technikák publikált kutatásokból származnak, de hatásosságuk erősen függ a helyzettől, az emberektől és a kultúrától — nem receptek.</p>
+                <p>A terület legelterjedtebb állításait kihagyjuk, ha nem állják meg a helyüket. Ez néha ellentmond az intuíciónak, és szándékos.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Megértetni magad</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="preparer-avant-de-parler">🎯 Felkészülni, mielőtt megszólalsz</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy fontos beszélgetés lényege eldől, mielőtt elkezdődne.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy fontos beszélgetés lényege eldől, mielőtt elkezdődne. Nem mondatok begyakorlásával, hanem négy olyan kérdés megválaszolásával, amelyet szinte soha nem teszünk fel magunknak.</p>
+
+                <h4>A négy kérdés</h4>
+                <ol>
+                    <li><strong>Mit akarok elérni?</strong> Egy mondatban, ellenőrizhető formában. A „nagyobb elismerés” nem tárgyalható; a „5%-os béremelés január 1-jétől” megvitatható.</li>
+                    <li><strong>Miről vagyok hajlandó lemondani?</strong> Ha egy kéréshez nem társul ellentételezés, a másik csak mindent elutasíthat vagy mindent megadhat.</li>
+                    <li><strong>Mit akar a másik?</strong> Ha nem tudod, tervezd be, hogy megkérdezed — ez olyan kérdés, amelyet hangosan is fel lehet tenni.</li>
+                    <li><strong>Mit teszek, ha nem jutunk semmire?</strong> Ez a döntő kérdés, és éppen ezt ugorjuk át. Ez határozza meg a valódi pozíciódat, nem a hangoztatottat.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">A saját ügyed gyenge pontja</span>
+                    <p>A hasznos felkészülés azt is számba veszi, ami ellened szól. A másik úgyis megtalálja: jobb, ha előre látod, mint ha a tárgyaláson derül ki.</p>
+                    <p>Két lehetőség van, és mindkettő jobb a hallgatásnál: <strong>magad mondod ki</strong>, ami tompítja a hatását, vagy <strong>előkészíted a választ</strong>, ami megóv a rögtönzéstől a legrosszabb pillanatban.</p>
+                    <p>Ami nem működik: remélni, hogy senki sem veszi észre.</p>
+                </div>
+
+                <div class="pratique" data-pratique="preparer-echange"></div>
+
+                <h4>Megválasztani az időpontot és a csatornát</h4>
+                <p>Egy értekezlet végére becsempészett vagy harminc üzenet közé ékelt fontos kérés olyan hátránnyal indul, amelynek semmi köze a tartalmához.</p>
+                <p>A hasznos reflex egy mondat: <strong>ne a keretek diktáljanak</strong>. Kérj külön időpontot, válaszd az írást vagy a szóbeliséget aszerint, melyik szolgálja a mondanivalót, és ne írásban intézd, ami beszélgetést kíván.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — csak az érveidre készülni fel</span>
+                    <p>A klasszikus felkészülés abból áll, hogy listázzuk, mit fogunk mondani. Ez a legkevésbé hasznos rész: azt feltételezi, hogy a beszélgetésben az győz, aki több érvet halmoz fel.</p>
+                    <p>Ami az eredményt megváltoztatja, az annak ismerete, mit teszel kudarc esetén — mert egyedül ez határozza meg, meddig mehetsz el.</p>
+                </div>
+
+                <p class="retenir">💡 Nem a legjobb érved határozza meg a pozíciódat, hanem az, amit akkor kapsz, ha a beszélgetés kudarcot vall.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="ecouter-vraiment">👂 Valóban meghallgatni</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A meghallgatást erkölcsi erényként szokás bemutatni.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A meghallgatást erkölcsi erényként szokás bemutatni. Elsősorban azonban információgyűjtési technika: a szükséges információk nagy részét kimondják, csak nem halljuk meg, mert közben a válaszunkat fogalmazzuk.</p>
+
+                <h4>Átfogalmazni, és amit ez feltár</h4>
+                <p>Az átfogalmazás egyetlen formula: <em>„ha jól értem, …”</em>, utána az, amit megértettél, majd csend.</p>
+                <p>Nem az a lényege, hogy jó benyomást kelts. Hanem az, hogy <strong>meglepően sok esetben a másik kijavít</strong> — és kiderül, hogy tíz perce két különböző dologról beszéltetek.</p>
+
+                <div class="exemple">
+                    <span class="titre">A csend, a legkényelmetlenebb eszköz</span>
+                    <p>Egy válasz után három másodperc csend nagyon gyakran egy második választ szül — pontosabbat, őszintébbet, néha döntőt.</p>
+                    <p>Ezt a csendet kellemetlen kivárni: a reflex az, hogy kitöltjük. Épp ezért működik, és ezért használják olyan ritkán.</p>
+                    <p>Ennek az útmutatónak egyetlen technikája sem kíván kevesebb erőfeszítést, és egyik sem hoz ennyit.</p>
+                </div>
+
+                <div class="pratique" data-pratique="ecoute-active"></div>
+
+                <h4>A kérdések, amelyek megnyitnak</h4>
+                <p>Egy zárt kérdés — „egyetért?” — egy szót vár. Egy nyitott kérdés — „mi zavarja ebben?” — magyarázatot vár, és a magyarázat az, ami hasznos.</p>
+                <p>A terület legjövedelmezőbb kérdése néhány szó: <strong>„miért fontos ez Önnek?”</strong>. Arról, amit a másik kér, átvezet ahhoz, hogy miért kéri — és ott vannak a megoldások.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azért hallgatni, hogy válaszolhass</span>
+                    <p>Szinte mindenki a visszavágását fogalmazza, amíg a másik beszél, és ez a mondottak lényegébe kerül.</p>
+                    <p>Az ellenszer mechanikus, nem erkölcsi: <strong>jegyzetelj arról, amit mond</strong>. Az írással elfoglalt kéz nem tudja közben megfogalmazni a választ.</p>
+                </div>
+
+                <p class="retenir">💡 Az átfogalmazás tíz másodpercbe kerül. Ha egy óra után derül ki, hogy másról beszéltetek, az egy órába.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="structurer-un-message">🗣️ Felépíteni egy üzenetet</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy előadás természetes szerkezete — háttér, elemzés, majd konklúzió — a felfedezés sorrendje.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy előadás természetes szerkezete — háttér, elemzés, majd konklúzió — a felfedezés sorrendje. Nem ez a legérthetőbb, mert feltételezi, hogy a hallgató végig figyel.</p>
+
+                <h4>Először a konklúzió</h4>
+                <p>A szabály egyszerű, és ellentmond az intuíciónak: <strong>azzal kezdd, amit meg akarsz értetni</strong>, és utána fejtsd ki. A „Javaslom, hogy egy hónappal halasszuk el az indulást, három okból” erőfeszítés nélkül követhető. Ha ugyanaz a három ok jön előbb, és utánuk a javaslat, mindent fejben kell tartani.</p>
+                <p>Ennek a szerkezetnek van egy második hatása is: rákényszerít, hogy tudd, mit akarsz mondani. Sok előadásnak, amely homályos konklúzióval ér véget, egyszerűen nem is volt konklúziója.</p>
+
+                <div class="exemple">
+                    <span class="titre">„A kommunikáció 93%-a nonverbális” — mit mond valójában a kutatás</span>
+                    <p>A szám Albert Mehrabian munkáiból származik, és mindenhol úgy idézik, mintha általában a kommunikációt írná le. Semmi ilyet nem ír le.</p>
+                    <p>A kísérletek <strong>különálló szavakkal</strong> dolgoztak, amelyeket a jelentésükkel <strong>ellentétes</strong> hangsúllyal és arckifejezéssel mondtak ki, és egy <strong>attitűd</strong> észlelését mérték — nem egy információ átadását.</p>
+                    <p>Vagyis: ha a hangsúly ellentmond a szavaknak, a hangsúlynak hiszünk. Ez érdekes és sokkal szűkebb eredmény. Maga Mehrabian is többször elmondta, hogy az általánosítás téves.</p>
+                    <p>A gyakorlati következmény az ellenkezője annak, amit le szoktak vonni: <strong>a tartalom számít, és sokat számít</strong>.</p>
+                </div>
+
+                <div class="pratique" data-pratique="longueur-message"></div>
+
+                <h4>Mondatonként egy gondolat</h4>
+                <p>A hosszú mondatok nem teszik gazdagabbá a mondanivalót: arra kényszerítik a hallgatót, hogy több elemet tartson fejben, miközben újabbakat kap.</p>
+                <p>A hasznos támpont: ha egy mondatot nem lehet egy lélegzettel kimondani, valószínűleg két gondolatot tartalmaz. Szétválasztásuk nem egyszerűsíti a tartalmat, hanem hozzáférhetővé teszi.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a formát csiszolni a kérés rovására</span>
+                    <p>Sok üzenet jól megfogalmazott, kellemes olvasni, és semmit sem ér el: a kérés feloldódik az udvariasságban, vagy a végére kerül.</p>
+                    <p>Az udvariasság elfér egy formulában; a kérésnek szembeötlőnek kell lennie. A kettő nem zárja ki egymást — de ha kétséges, a kérésnek kell győznie.</p>
+                </div>
+
+                <p class="retenir">💡 A konklúzió kerüljön az elejére. Ha nem tudod, melyik az, az nem formai probléma.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="ecrire-pour-etre-lu">📧 Úgy írni, hogy elolvassák</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy munkahelyi üzenetet nem elolvasnak, hanem szelektálnak.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy munkahelyi üzenetet nem elolvasnak, hanem szelektálnak. Előbb a tárgysoron megy át, aztán az első két soron. Ami utánuk jön, csak akkor létezik, ha ez a két lépés sikerült.</p>
+
+                <h4>A tárgysor és az első két sor</h4>
+                <p>Egy jó tárgysor megmondja, <strong>miről van szó, és mit várnak</strong>: a „2027-es költségvetés — jóváhagyás péntekig” elintéződik; a „Költségvetés” elhalasztódik.</p>
+                <p>Az első két sor hordozza a kérést. A háttér, az előzmények és a magyarázatok utána jönnek — azoknak, akiknek szükségük van rájuk.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — egy 400 szavas üzenet 8 címzettnek</span>
+                    <p>Olvasási idő: személyenként <strong>1,6 perc</strong>. <strong>Összesen lekötött idő: 13 perc.</strong></p>
+                    <p>Ugyanez az üzenet 200 szóra rövidítve: <strong>6,4 perc</strong>. Hét perc megtakarítás, egyszer — és minden egyes üzenetnél.</p>
+                    <p>Mellesleg: <strong>kb. 150 szó felett a legtöbb olvasó átfut a szövegen ahelyett, hogy elolvasná</strong>. Egy 400 szavas üzenetet tehát nem olvasnak el kétszer annyira, mint egy 200 szavasat: rosszabbul olvassák el.</p>
+                </div>
+
+                <div class="pratique" data-pratique="courriel-lu"></div>
+
+                <h4>Egy kérés, egy címzett</h4>
+                <p>Egy üzenet, amelynek hat címzettje van a „Címzett” mezőben, és három különböző kérést tartalmaz, általában semmit sem ér el: mindenki azt feltételezi, hogy valaki más intézi.</p>
+                <p>A szabály, amely a legtöbb esetet megoldja: <strong>egyetlen ember a „Címzett” mezőben</strong>, a többiek másolatban, és egyetlen kérés — vagy egy számozott lista, minden sor mellett egy névvel.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — leírni azt, amit ki kellett volna mondani</span>
+                    <p>Egy nézeteltérés, egy kifogás, egy kényes tárgyalás: ezek a témák rosszul mutatnak írásban. A hangnem elvész, az újraolvasások halmozódnak, és egy ötperces beszélgetésből háromnapos levelezés lesz.</p>
+                    <p>A támpont: ha harmadszor olvasod újra az üzenetedet, hogy a hangnemén igazíts, akkor nem kellett volna megírni. Az írás utána jön, a rögzítéshez.</p>
+                </div>
+
+                <p class="retenir">💡 A tárgysor és az első két sor dönti el, hogy a többit elolvassák-e. Minden gondosság oda menjen.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A leginkább elhanyagolt kérdés nem az, hogy „mit akarok?”, hanem az, hogy „mit teszek, ha nem kapom meg?”.</li>
+                <li>Az átfogalmazásból nagyon gyakran kiderül, hogy mást értettünk.</li>
+                <li>A konklúzió az elejére kerül, nem a végére: lehet, hogy az olvasód odáig el sem jut.</li>
+                <li>Egy nyolc embernek elküldött 400 szavas üzenet 13 percnyi munkát köt le.</li>
+                <li>„A kommunikáció 93%-a nonverbális” egy olyan kutatás eltorzítása, amely nem ezt mondta.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vedd elő a legutóbbi fontos üzenetedet, és tedd a konklúzióját az első mondatba. Olvasd el mindkét változatot: a másodikat tíz másodperc alatt el lehet olvasni, az elsőt végig kellett olvasni.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az aktív hallgatásról szóló munkák</strong>: az átfogalmazás és a csend, két egyszerű és megbízható technika.</li>
+                    <li><strong>A piramiselv</strong> (The Pyramid Principle), Barbara Minto: először a konklúzió, utána az érvelés. A munkahelyi üzenetek szerkezetének alapműve.</li>
+                    <li><strong>Albert Mehrabian munkái</strong> — érdemes elolvasni őket, hogy lássuk, mekkora a különbség aközött, amit megállapítanak, és amit a szájukba adnak.</li>
+                    <li><strong>Nonviolent Communication</strong> (Erőszakmentes kommunikáció), Marshall Rosenberg: a megfigyelhető tény és az értelmezés megkülönböztetése, amelyre a haladó szint is épít.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> a következő fontos beszélgetésednél fogalmazz át egyszer — „ha jól értem, …” — és hallgass három másodpercig. Ez a szint legjövedelmezőbb mozdulata.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>🤝 Tárgyalás és kommunikáció</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Tárgyalás — Középhaladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../../../guides/droit/index.html">⚖️ Jog és ügyintézés (franciául)</a>
+                <a href="../../../guides/sante/index.html">🩺 Munkahelyi egészség (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/negociation-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Alternatíva, horgonyzás és érdekek — Tárgyalás, középhaladó - Clicked</title>
+    <meta name="description" content="Az alternatívád, a lehetséges megállapodás zónája, a horgonyzás, valamint a pozíciók és az érdekek közti különbség. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/negociation/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/negociation/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/negociation/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Alternatíva, horgonyzás és érdekek — Tárgyalás, középhaladó - Clicked">
+    <meta property="og:description" content="Az alternatívád, a lehetséges megállapodás zónája, a horgonyzás, valamint a pozíciók és az érdekek közti különbség. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/negociation/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alternatíva, horgonyzás és érdekek — Tárgyalás, középhaladó - Clicked">
+    <meta name="twitter:description" content="Az alternatívád, a lehetséges megállapodás zónája, a horgonyzás, valamint a pozíciók és az érdekek közti különbség. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🤝 Tárgyalás és kommunikáció</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤝 Tárgyalás — Középhaladó</h1>
+                <p>Amit ki lehet számolni, mielőtt leülsz az asztalhoz.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34 58 L58 58 L58 78 L46 78 L38 86 L38 78 L34 78 Z"/>
+<path d="M82 46 L106 46 L106 66 L102 66 L102 74 L94 66 L82 66 Z"/>
+<path d="M50 96 Q70 108 90 96" stroke-opacity="0.55"/></g></g>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:.5s"/>
+<circle class="illu-twinkle" cx="106" cy="96" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>megnevezd a legjobb alternatívádat</strong>, hogy felismerd, létezik-e megállapodási zóna, hogy megértsd az elsőként kimondott szám hatását, hogy a pozícióktól eljuss az érdekekig, és hogy felkészülj a fizetésed megtárgyalására.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#la-solution-de-rechange">🚪 A legjobb alternatíva</a></li>
+                <li><a href="#la-zone-daccord">📏 A megállapodási zóna</a></li>
+                <li><a href="#lancrage">⚓ A horgonyzás</a></li>
+                <li><a href="#positions-et-interets">🧭 Pozíciók és érdekek</a></li>
+                <li><a href="#negocier-son-salaire">💼 A fizetés megtárgyalása</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Honnan ered az erőd egy tárgyalásban?</li>
+                <li>Mit tegyél, ha az árban nincs megállapodási zóna?</li>
+                <li>Valójában mitől függ a „felezzük meg a különbséget”?</li>
+                <li>Mi a különbség egy pozíció és egy érdek között?</li>
+                <li>Mihez képest kell megítélni egy megállapodást?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint arról szólt, hogyan értesd meg magad. Ez magáról a tárgyalásról szól — és arról a gyakran figyelmen kívül hagyott tényről, hogy <strong>nagyrészt kiszámítható, mielőtt elkezdődne</strong>.</p>
+            <p>Négy fogalom elég. A Harvard Negotiation Project munkáiból származnak, és mindegyik számokra fordítható. Az utolsó fejezet arra a tárgyalásra alkalmazza őket, amelyet szinte mindenki lefolytat: a saját fizetéséről szólóra.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A példák összegei önkényesek, egy mechanizmus bemutatását szolgálják.</p>
+                <p>A leírt eszközök olyan tárgyalást feltételeznek, amelyből mindkét fél felállhat. Egy nagyon aszimmetrikus viszonyban — munkáltató és egyedülálló munkavállaló, bérbeadó és bérlő — másként érvényesülnek: az utolsó fejezet ezt a fizetés példáján mutatja meg.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ami kiszámítható</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="la-solution-de-rechange">🚪 A legjobb alternatíva</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Ez az egész útmutató központi fogalma, és a legkevésbé ismert: az erőd egy tárgyalásban nem az érveidből, a magabiztosságodból vagy a felkészültségedből ered.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ez az egész útmutató központi fogalma, és a legkevésbé ismert: az erőd egy tárgyalásban nem az érveidből, a magabiztosságodból vagy a felkészültségedből ered. Abból ered, <strong>amit akkor kapsz, ha felállsz az asztaltól</strong>.</p>
+
+                <h4>A BATNA</h4>
+                <p>Angol rövidítéssel <strong>BATNA</strong> (best alternative to a negotiated agreement), magyarul <strong>a tárgyalásos megállapodás legjobb alternatívája</strong>. Ez a legjobb lehetőséged, ha nincs megállapodás: egy másik beszállító, egy másik állás, a meglévő megtartása, bírósághoz fordulás.</p>
+                <p>Ez jelöli ki a <strong>kiszállási pontodat</strong>: egyetlen ennél rosszabb ajánlatot sem érdemes elfogadni, hiszen jobb felállni. És ez magyarázza, miért nincs ugyanakkora ereje két egyformán ügyes embernek.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — egy 30 000 EUR-s ajánlat</span>
+                    <p>Az alternatívád értéke <strong>28 000 EUR</strong>. Az asztalon lévő ajánlat: <strong>30 000 EUR</strong>.</p>
+                    <p><strong>Nyereség a felálláshoz képest: + 2 000 EUR.</strong> A beszélgetés folytatása nagyjából 500 EUR-nyi időbe és energiába kerülne.</p>
+                    <p>Ítélet: <strong>van mozgástered a folytatásra</strong>. Ha az ajánlat 28 200 EUR lenne, még mindig jobb volna a felállásnál — de a folytatás többe kerülne, mint amennyit hozna.</p>
+                </div>
+
+                <div class="pratique" data-pratique="mesore"></div>
+
+                <h4>Javítsd, mielőtt tárgyalsz</h4>
+                <p>Ez a leghasznosabb gyakorlati következmény: <strong>a pozíciódat a tárgyalás előtt erősíted meg, nem közben</strong>. Egy második ajánlat beszerzése, egy alternatíva ellenőrzése, egy B terv előkészítése — mindegyik elmozdítja a kiszállási pontot.</p>
+                <p>És fordítva: ha megbecsülöd a másik alternatíváját, látod, meddig mehet el. Egy beszállító, akinek egyetlen ügyfele vagy te, nem úgy tárgyal, mint akinek húsz van.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — blöffölni alternatíva nélkül</span>
+                    <p>Az „akár máshová is mehetek”, ha nem igaz, egyszer működik, aztán megfizetsz érte: ha a másik szavadon fog, csak engedni tudsz, meggyengült helyzetből.</p>
+                    <p>Egy valódi alternatíva, még ha szerény is, többet ér egy öt percig hihető fenyegetésnél.</p>
+                </div>
+
+                <p class="retenir">💡 Számszerűsített alternatíva nélkül nem tudod, jó-e egy ajánlat — csak azt, hogy kellemes-e.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-zone-daccord">📏 A megállapodási zóna</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Mindkét félnek van egy határa.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Mindkét félnek van egy határa. A kettő között van — vagy nincs — egy tér, ahol megállapodás lehetséges. Ennek ismerete teljesen megváltoztatja, miről tárgyalsz.</p>
+
+                <h4>Amit a zóna meghatároz</h4>
+                <p>Ha a maximumod meghaladja a másik minimumát, létezik <strong>megállapodási zóna</strong>. A tárgyalás már nem arról szól, lehetséges-e megállapodás, hanem <strong>a zóna felosztásáról</strong>.</p>
+                <p>Ha nem létezik, semmilyen erősködés nem hoz megállapodást pusztán az árban. Ez értékes információ, és heteket spórol meg.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — két határ</span>
+                    <p>A maximumod: <strong>32 000 EUR</strong>. A másik becsült minimuma: <strong>27 000 EUR</strong>.</p>
+                    <p><strong>Megállapodási zóna: 27 000 EUR – 32 000 EUR.</strong> Szélesség: <strong>5 000 EUR</strong>. Középpont: 29 500 EUR.</p>
+                    <p>Tehát nem a megállapodás a tét, hanem ennek az 5 000 EUR-nak a felosztása. Minden, ami elhangzik, arra szolgál majd, hogy ezen a sávon belül mozdítsa el a mutatót.</p>
+                </div>
+
+                <div class="pratique" data-pratique="zopa"></div>
+
+                <h4>Ha nincs zóna</h4>
+                <p>Ez a legtanulságosabb eset. Csak két válasz van, és csak az egyik hasznos.</p>
+                <p>A haszontalan: erősködni, ismételni az érveket, elhúzni. A hasznos: <strong>új változót bevonni</strong>. Fizetési határidő, mennyiség, a kötelezettség időtartama, garancia, kapcsolódó szolgáltatások, szállítási ütemezés.</p>
+                <p>Az egyváltozós tárgyalás osztozkodás: amit az egyik nyer, a másik elveszíti. Amint kettő van, cserék válnak lehetségessé — és ez oldja fel a legtöbb elakadt helyzetet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — kimondani a határodat</span>
+                    <p>Ha azt mondod, „a maximumom 32 000”, azzal 32 000-et ajánlasz: senki sem megy már lejjebb.</p>
+                    <p>A határ a döntéshez kell, nem a közléshez. Megtartod magadnak, ahogy az alternatívát is, amelyre épül.</p>
+                </div>
+
+                <p class="retenir">💡 Ha az árban nincs megállapodási zóna, az egyetlen kiút egy új változó. Az erősködés nem teremt zónát.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="lancrage">⚓ A horgonyzás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Az elsőként kimondott szám mindenre hatással van, ami utána jön, akkor is, ha mindenki tudja, hogy lehet rá alkudni, és védettnek hiszi magát.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az elsőként kimondott szám mindenre hatással van, ami utána jön, akkor is, ha mindenki tudja, hogy lehet rá alkudni, és védettnek hiszi magát. Ez a döntéspszichológia egyik legtöbbször megismételt eredménye.</p>
+
+                <h4>Az aritmetikai mechanizmus</h4>
+                <p>Pszichológia sem kell hozzá, hogy lássuk: a híres „felezzük meg a különbséget” eredménye teljes egészében a két kiinduló ajánlattól függ. Aki elsőként mond számot, az egyenlet felét rögzíti.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 29 000 EUR a cél</span>
+                    <p>A célod <strong>29 000 EUR</strong>. A másiktól várható ajánlat: <strong>27 000 EUR</strong>.</p>
+                    <p>Ahhoz, hogy a középpont a célodra essen, az első ajánlatod legyen <strong>31 000 EUR</strong> — vagyis <strong>2 000 EUR-val több</strong>, mint amit célzol.</p>
+                    <p>A kapott középpont: 29 000 EUR, pontosan a célod. A számítás triviális; ami nem az, hogy eszedbe jusson, mielőtt kimondasz egy számot.</p>
+                </div>
+
+                <div class="pratique" data-pratique="ancrage"></div>
+
+                <h4>Mondj számot elsőként?</h4>
+                <p>A hagyományos tanácsot — „soha ne mondj elsőként számot” — cáfolják a horgonyzásról szóló kutatások: aki nyit, az irányítja a beszélgetést, feltéve, hogy a száma hihető marad.</p>
+                <p>A kivétel az információn múlik: ha nem ismered a tárgyalt dolog értékét, a nyitással azt kockáztatod, hogy saját magad ellen horgonyzol. <strong>Nyiss, ha tudod; hagyd a másikat nyitni, ha nem tudod.</strong></p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a képtelen horgony</span>
+                    <p>A piactól nagyon távoli első ajánlat nem elmozdítja a beszélgetést, hanem hiteltelenné tesz. A másik arra következtet, hogy nem ismered a témát, vagy nem tárgyalsz jóhiszeműen.</p>
+                    <p>A hatásos horgony ambiciózus és védhető — egy mondatban meg kell tudni indokolni.</p>
+                </div>
+
+                <p class="retenir">💡 A „felezzük meg a különbséget” igazságosnak tűnik, és teljes egészében az elsőként kimondott számtól függ.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="positions-et-interets">🧭 Pozíciók és érdekek</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A pozíció az, amit kérünk.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A <strong>pozíció</strong> az, amit kérünk. Az <strong>érdek</strong> az ok, amiért kérjük. A pozíciók szemben állnak egymással; az érdekek gyakran nem.</p>
+
+                <h4>A megkülönböztetés, amely feloldja az elakadást</h4>
+                <p>Két ember, aki ugyanazt a narancsot akarja, kettévágja. Az egyik a levét akarta, a másik a héját egy süteményhez: mindketten megkaphatták volna az egészet. Elég lett volna megkérdezni, <em>miért</em>.</p>
+                <p>A példa szándékosan leegyszerűsített. A mechanizmus viszont az egész útmutató leghasznosabbja: <strong>amíg pozíciókról vitatkozunk, csak osztozkodás létezik</strong>. Amint ismerjük az érdekeket, más megoldások is megjelennek.</p>
+
+                <div class="exemple">
+                    <span class="titre">Amit a „miért” kérdés feltár</span>
+                    <p><strong>Pozíció:</strong> „15% kedvezmény kell”. <strong>Lehetséges érdek:</strong> betartani egy éves költségvetést, belsőleg igazolni a kiadást, vagy ugyanazt kapni, mint a versenytárs.</p>
+                    <p>Esettől függően más a megoldás: a fizetés elosztása két üzleti évre, részletes árajánlat, vagy a terjedelem módosítása az ár helyett.</p>
+                    <p>E három megoldás egyike sem jelenik meg, amíg a százalékról vitatkozunk.</p>
+                </div>
+
+                <div class="pratique" data-pratique="interets-positions"></div>
+
+                <h4>Keresd az aszimmetrikus cserét</h4>
+                <p>A legjobb megállapodás nem az, amelyben mindenki enged a feléből: hanem az, amelyben mindenki azt adja, ami neki a legkevesebbe kerül, és azt kapja, ami neki a legtöbbet ér.</p>
+                <p>Ebből adódik a kérdés, amelyet minden tárgyalás előtt elő kell készíteni: <strong>mi az, ami nekem kevésbe kerül, neki pedig sokat ér?</strong> Egy határidő, egy referencia, egy kizárólagosság, rugalmasság az ütemezésben. Ezek sosem szerepelnek a kiinduló beszélgetésben.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt feltételezni, hogy minden zéró összegű</span>
+                    <p>Az a hit, hogy amit az egyik nyer, a másik elveszíti, egyetlen változónál igaz, több változónál hamis. Mégis szinte mindenkinek ez az alapfeltevése.</p>
+                    <p>Ennek mérhető ára van: megakadályozza az aszimmetrikus cserék keresését, így azoknak a megállapodásoknak a megtalálását is, amelyekre senki sem gondolt.</p>
+                </div>
+
+                <p class="retenir">💡 A „miért fontos ez Önnek?” a terület legjövedelmezőbb kérdése, és a legritkábban feltett.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="negocier-son-salaire">💼 A fizetés megtárgyalása</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A fizetés az a tárgyalás, amelyet szinte mindenki lefolytat, és amelyre szinte mindenki a legkevésbé készül fel.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A fizetés az a tárgyalás, amelyet szinte mindenki lefolytat, és amelyre szinte mindenki a legkevésbé készül fel. Ennek a szintnek mind a négy fogalma érvényes rá — feltéve, hogy szembenézünk azzal, ami aszimmetrikussá teszi.</p>
+
+                <h4>Ami valójában a tét</h4>
+                <p>A felvételkor elért különbség nem egyszer számít. Minden százalékos emelés alapja lesz, és velük együtt nő. Fordítva: ami az első napon nem sikerül, ritkán hozható be: egy néhány százalékos emelés a kezdő fizetésre vonatkozik, nem arra, amit kaphattál volna.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 2 000 EUR-val több felvételkor</span>
+                    <p>Tárgyalással évente bruttó <strong>2 000 EUR-val</strong> többet érsz el, ez nagyjából <strong>havi 167 EUR</strong>.</p>
+                    <p>Évi <strong>2%-os</strong> feltételezett emeléssel a különbség a tizedik évben <strong>2 390 EUR</strong>, mert minden emelés rá is vonatkozik.</p>
+                    <p>Tíz év alatt összesen: közel <strong>21 900 EUR bruttó</strong> — egy néhány perces beszélgetésért.</p>
+                </div>
+
+                <div class="pratique" data-pratique="salaire"></div>
+
+                <h4>Az alternatívád, munkavállalói oldalról</h4>
+                <p>Itt válik aszimmetrikussá a tárgyalás. A munkáltató szinte mindig választhat másik jelöltet; neked nincs mindig másik ajánlatod. Az alternatívád ilyenkor az, amit valóban tenni fogsz, ha nemet mondasz: maradsz a jelenlegi munkahelyeden, folytatod a keresést, elfogadsz egy másik ajánlatot.</p>
+                <p>Ezt nem az interjú napján kell megteremteni. <strong>Egy folyamatban lévő másik ajánlat, vagy egy jelenlegi állás, amelyet hajlandó vagy megtartani, többet nyom a latban bármilyen érvnél.</strong> Enélkül is tárgyalj — de arról, ami a munkáltatónak kevésbe kerül, ne a távozással fenyegetőzve.</p>
+
+                <h4>A szám, és hogy ki mondja ki</h4>
+                <p>Mielőtt megszólalnál, állapítsd meg a pozíció bérsávját külső források alapján: hasonló álláshirdetések, bérfelmérések, és ha van ilyen, az ágazatodra vonatkozó bérminimum vagy kollektív szerződés. Ettől lesz a számod egy mondatban védhető.</p>
+                <p>A horgonyzás szabálya változatlanul érvényes: <strong>nyiss, ha ismered a piacot</strong>, és mondj valamivel többet annál, amit célzol. Ha a jelenlegi fizetésedről kérdeznek, azzal válaszolj, amit a pozíció ér: a jelenlegi fizetésed a régi állásodhoz horgonyozná a beszélgetést.</p>
+
+                <h4>Amit a fix bér mellett lehet tárgyalni</h4>
+                <p>Ha a bérkeret be van fagyasztva, a megállapodási zóna nem tűnt el: áthelyeződött. Változó bérrész, otthoni munkavégzés napjai, a következő bérfelülvizsgálat időpontja, képzés, eszközök, kezdési dátum — mind olyan pont, amely az egyik félnek kevésbe kerül, a másiknak sokat számít.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a saját szükségleteiddel indokolni</span>
+                    <p>„A lakbérem mellett legalább… kell”: az érv őszintének tűnik, és gyengíti a kérést. A munkáltató egy pozíció értékét fizeti meg, nem a betöltője kiadásait — és azt a következtetést vonja le, hogy nem ismered a piacot.</p>
+                    <p>Ugyanez a csapda az azonnali elfogadás: egy-két nap gondolkodási időt kérni hétköznapi kérés, semmibe sem kerül, és időt ad, hogy ellenőrizd az alternatívádat.</p>
+                </div>
+
+                <p class="retenir">💡 Minden euró, amit a felvételkor elérsz, benne lesz az összes későbbi emelésben.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Az erőd nem az érveidből ered, hanem abból, amit akkor kapsz, ha felállsz.</li>
+                <li>Ha az árban nincs megállapodási zóna, az erősködés semmit sem ér.</li>
+                <li>A „felezzük meg a különbséget” igazságosnak tűnik, és teljes egészében az első számtól függ.</li>
+                <li>A pozíció az, amit kérünk, az érdek az ok, amiért kérjük.</li>
+                <li>Egy megállapodást az alternatívádhoz mérsz, sosem ahhoz, amit reméltél.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>A következő fontos beszélgetésed előtt írj le egyetlen mondatot: „ha nem jutunk megállapodásra, akkor …”. Ebből ered az erőd, nem az érveidből.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>„Getting to Yes”</strong>, Fisher &amp; Ury — a Harvard Negotiation Project alapműve. A BATNA és a pozíciók/érdekek megkülönböztetése innen származik.</li>
+                    <li><strong>Tversky &amp; Kahneman munkái a horgonyzásról</strong>: a döntéspszichológia egyik legtöbbször megismételt eredménye.</li>
+                    <li><strong>„Negotiation Genius”</strong>, Malhotra &amp; Bazerman: a megállapodási zóna, az aszimmetrikus cserék és a torzítások, sok számszerű esettel.</li>
+                    <li><strong>Mediátorok és egyeztetők</strong> — a legtöbb országban vannak olcsó utak arra az esetre, ha a tárgyalás kudarcot vall; nézz utána, mi létezik ott, ahol élsz. A francia rendszert a <a href="../../../guides/droit/avance.html">Jog és ügyintézés, haladó szint (franciául)</a> útmutató írja le.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> a következő tárgyalásod előtt írj le egyetlen sort — mit kapsz, ha kudarcot vall. Ez a sor dönt el minden mást.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Tárgyalás — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Tárgyalás — Haladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../../../guides/droit/index.html">⚖️ Jog és ügyintézés (franciául)</a>
+                <a href="../../../guides/sante/index.html">🩺 Munkahelyi egészség (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/negociation-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

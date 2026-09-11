@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Nehéz beszélgetések, torzítások, manipuláció — Tárgyalás, haladó - Clicked</title>
+    <meta name="description" content="Nehéz beszélgetések, a legdrágább torzítások, a manipuláció felismerése, és hogy mikor kell abbahagyni. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/negociation/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/negociation/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/negociation/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Nehéz beszélgetések, torzítások, manipuláció — Tárgyalás, haladó - Clicked">
+    <meta property="og:description" content="Nehéz beszélgetések, a legdrágább torzítások, a manipuláció felismerése, és hogy mikor kell abbahagyni. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/negociation/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nehéz beszélgetések, torzítások, manipuláció — Tárgyalás, haladó - Clicked">
+    <meta name="twitter:description" content="Nehéz beszélgetések, a legdrágább torzítások, a manipuláció felismerése, és hogy mikor kell abbahagyni. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🤝 Tárgyalás és kommunikáció</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤝 Tárgyalás — Haladó</h1>
+                <p>A nehéz beszélgetések, és hogy mikor kell abbahagyni.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34 58 L58 58 L58 78 L46 78 L38 86 L38 78 L34 78 Z"/>
+<path d="M82 46 L106 46 L106 66 L102 66 L102 74 L94 66 L82 66 Z"/>
+<path d="M50 96 Q70 108 90 96" stroke-opacity="0.55"/></g></g>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:.5s"/>
+<circle class="illu-twinkle" cx="106" cy="96" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>úgy kezdj bele egy nehéz beszélgetésbe, hogy ne tulajdoníts szándékot a másiknak</strong>, hogy felismerd a számodra költséges torzításokat, hogy megnevezz egy manipulatív fogást, és hogy tudd, mikor kell abbahagyni.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#les-conversations-difficiles">😤 A nehéz beszélgetések</a></li>
+                <li><a href="#les-biais">🧠 A torzítások</a></li>
+                <li><a href="#reconnaitre-la-manipulation">🎭 A manipuláció felismerése</a></li>
+                <li><a href="#savoir-sarreter">🛑 Tudni, mikor kell abbahagyni</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mi akasztja el a nehéz beszélgetést: a kifogás vagy valami más?</li>
+                <li>Miért nem lehet megvitatni egy feltételezett szándékot?</li>
+                <li>Mit kellene megváltoztatnia egy döntésen a már befektetett időnek?</li>
+                <li>Mi a helyes válasz egy manipulatív fogásra?</li>
+                <li>A tárgyalások többsége túl korán vagy túl későn ér véget?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Az első két szint jóhiszemű beszélgetést feltételezett olyan felek között, akik megállapodást keresnek. Ez arról szól, mi történik, ha nem így van: <strong>a nyílt nézeteltérésről</strong>, <strong>a saját vakfoltjaidról</strong>, <strong>a fogásokról</strong>, és <strong>arról a pillanatról, amikor abba kell hagyni</strong>.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A leírt fogásokat azért mutatjuk be, hogy felismerd őket, nem azért, hogy alkalmazd: egy tartósnak szánt kapcsolatban többe kerülnek, mint amennyit hoznak.</p>
+                <p>Egyes helyzetek nem tárgyalási kérdések. A zaklatás, a diszkrimináció és a munkahelyi nyomásgyakorlás konkrét jogorvoslati utakat igényel, amelyek országonként eltérnek — nézz utána, mi vonatkozik rád. A francia rendszert a <a href="../../../guides/sante/avance.html">Munkahelyi egészség, haladó szint (franciául)</a> útmutató írja le.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Amikor bonyolódik</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="les-conversations-difficiles">😤 A nehéz beszélgetések</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy kifogás megfogalmazása, egy rossz hír közlése, egy alapvető nézeteltérés kimondása: ezek a beszélgetések szinte mindig ugyanott buknak el, és ugyanazért.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy kifogás megfogalmazása, egy rossz hír közlése, egy alapvető nézeteltérés kimondása: ezek a beszélgetések szinte mindig ugyanott buknak el, és ugyanazért.</p>
+
+                <h4>Megfigyelhető tény kontra tulajdonított szándék</h4>
+                <p>A „nem veszed komolyan ezt a projektet” nem megvitatható kifogás: feltételezett szándék. Az egyetlen lehetséges válasz a tagadás, és a beszélgetés itt véget ér.</p>
+                <p>„A beszámolót hétfőre vártam, csütörtökön kaptam meg, és ez a harmadik alkalom ebben a negyedévben” — ez tényeket ír le. Meg lehet erősíteni, meg lehet magyarázni, vitatni lehet őket — de megnyitnak valamit.</p>
+                <p>A szabály egy mondat: <strong>írd le, amit egy kamera rögzített volna</strong>. Minden, amit nem lehetett volna felvenni, értelmezés.</p>
+
+                <div class="exemple">
+                    <span class="titre">A háromlépéses szerkezet</span>
+                    <p><strong>1. A tény.</strong> Dátummal, megfigyelhetően, jelzők nélkül.</p>
+                    <p><strong>2. A hatás.</strong> Amit konkrétan okoz — „el kellett halasztanom az értekezletet, és magamnak kellett újra átnéznem a számokat”. Nem az, hogy „ez tiszteletlenség”.</p>
+                    <p><strong>3. A kérés.</strong> Pontos, és a jövőre irányul: „legközelebb szólj, amint látod, hogy a határidő nem fog tartani”.</p>
+                    <p>A harmadik lépés nélkül csak szemrehányás marad. Ezt felejtik el a leggyakrabban, pedig csak ez változtathat bármin.</p>
+                </div>
+
+                <div class="pratique" data-pratique="conversation-difficile"></div>
+
+                <h4>Amitől egy kritika befogadható</h4>
+                <p>Két gyakorlati feltétel ugyanannyit nyom, mint a megfogalmazás: <strong>négyszemközt</strong>, soha mások előtt; és <strong>időt hagyva a válaszra</strong>. Egy értekezlet végén odavetett kritikát, amelyre nincs mód válaszolni, ítéletként élnek meg.</p>
+                <p>Végül meg kell különböztetni, mi tárgyalható és mi nem. Ha egy már meghozott döntést nyitott kérdésként mutatsz be, az a legbiztosabb módja annak, hogy elveszítsd a másik bizalmát.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a dicséretbe csomagolt kritika</span>
+                    <p>Az a technika, hogy a kritikát két dicséret közé tesszük, nagyon elterjedt, és nagyrészt hatástalan: a másik vagy az egyikre, vagy a másikra emlékszik, ritkán mindkettőre, és leginkább azt tanulja meg, hogy gyanakodjon a dicséretekre.</p>
+                    <p>Ami működik, egyszerűbb: mondd ki, mi nem jó, világosan, egyszer, egy kéréssel — a pozitívumokat pedig más alkalommal mondd el, amikor hinni fognak nekik.</p>
+                </div>
+
+                <p class="retenir">💡 Írd le, amit egy kamera rögzített volna. Minden mást vitatni fognak, és joggal.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-biais">🧠 A torzítások</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A tárgyalás legdrágább hibái nem az ellenféltől származnak: szabályos, előrelátható mechanizmusokból erednek, amelyeket másokon sokkal jobban látunk, mint…</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A tárgyalás legdrágább hibái nem az ellenféltől származnak: szabályos, előrelátható mechanizmusokból erednek, amelyeket másokon sokkal jobban látunk, mint magunkon.</p>
+
+                <h4>A négy legköltségesebb</h4>
+                <ol>
+                    <li><strong>Az elsüllyedt költség.</strong> Hat hónapnyi egyeztetés nem teszi elfogadhatóvá a rossz megállapodást. Az eltöltött idő mindenképpen elveszett; csak az alternatívádhoz való összehasonlítás számít.</li>
+                    <li><strong>A feltételezett zéró összeg.</strong> Az a hit, hogy amit az egyik nyer, a másik elveszíti. Egyetlen változónál igaz, több változónál hamis — és ez az alapfeltevés.</li>
+                    <li><strong>A következetességből fakadó elköteleződés.</strong> Ragaszkodni egy kimondott számhoz, hogy ne tűnjünk ingadozónak, akkor is, ha új információk abszurddá teszik.</li>
+                    <li><strong>Annak túlbecslése, amit a másik tud.</strong> A saját korlátainkat nyilvánvalónak hisszük, pedig kívülről láthatatlanok — ezért el sem magyarázzuk őket.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">Az egyetlen összehasonlítási pont, amely számít</span>
+                    <p>Egy megállapodást <strong>az alternatívádhoz</strong> mérünk. Nem ahhoz, amit reméltél, nem ahhoz, amit a másik elért, és nem a ráfordított időhöz.</p>
+                    <p>Kellemetlen összehasonlítás: elveszi a győzelem érzését, és a vereség érzését is. Az az érdeme, hogy ez az egyetlen, amely a valóságnak felel meg.</p>
+                    <p>Egy csalódást keltő megállapodás lehet kiváló, és egy kemény küzdelemben kicsikart megállapodás lehet rosszabb a felállásnál.</p>
+                </div>
+
+                <div class="pratique" data-pratique="biais-negociation"></div>
+
+                <h4>Ami mérsékli a kárt</h4>
+                <p>Egyik torzítás sem tűnik el attól, hogy ismerjük. Ami működik, az eljárásbeli: <strong>írd le a kiszállási pontodat, mielőtt elkezdesz</strong>, és olvasd el újra a döntés pillanatában.</p>
+                <p>A hideg fejjel leírt szám sokkal jobban ellenáll a pillanat nyomásának, mint egy fejben tartott szándék.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — védettnek hinni magad, mert ismered a torzítást</span>
+                    <p>Ha tudod, mi a horgonyzás, attól még nem véd meg a horgonyzástól: a hatást hivatásos tárgyalóknál, bíráknál, a kísérleti elrendezésről előre tájékoztatott szakértőknél is kimérték.</p>
+                    <p>A tudás nem elég; a leírt eljárás igen.</p>
+                </div>
+
+                <p class="retenir">💡 A már befektetett időnek semmin sem kellene változtatnia a döntésben. Szinte mindig változtat.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="reconnaitre-la-manipulation">🎭 A manipuláció felismerése</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Bizonyos fogások olyan rendszeresen visszatérnek, hogy nevük van.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Bizonyos fogások olyan rendszeresen visszatérnek, hogy nevük van. Ismeretük nem arra való, hogy alkalmazzuk őket — egy tartósnak szánt kapcsolatban sokkal többe kerülnek, mint amennyit hoznak —, hanem arra, hogy ne legyünk kiszolgáltatva nekik.</p>
+
+                <h4>A leggyakoribbak</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Fogás</th><th>Hogyan néz ki</th></tr>
+                    <tr><td><strong>Mesterséges sürgetés</strong></td><td>„Az ajánlat ma este lejár” — hogy megakadályozza az összehasonlítást és a mérlegelést</td></tr>
+                    <tr><td><strong>Álengedmény</strong></td><td>Egy apró gesztus nagy erőfeszítésként beállítva, hogy valódi ellentételezést csikarjon ki</td></tr>
+                    <tr><td><strong>Utolsó pillanatos pluszkérés</strong></td><td>Egy újabb kérés, amikor a megállapodás már majdnem kész, és a visszalépés mindenbe kerülne</td></tr>
+                    <tr><td><strong>A távollévő döntéshozó</strong></td><td>„A felettesem nem engedi” — ellenőrizhetetlen, és a tárgyalást egy elérhetetlen személyhez tolja át</td></tr>
+                    <tr><td><strong>Forrás nélküli szám</strong></td><td>Magától értetődőként odavetett adat, amelyet udvariatlannak tűnik megkérdőjelezni</td></tr>
+                    <tr><td><strong>Személyes támadás</strong></td><td>A személy megkérdőjelezése a tartalom helyett, hogy elterelje a beszélgetést</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">A válasz: nyugodtan megnevezni</span>
+                    <p>Se eltűrni, se visszavágni. <strong>Hangosan, agresszivitás nélkül leírni a fogást</strong> a legtöbb esetben elég ahhoz, hogy abbamaradjon — mert csak észrevétlenül működik.</p>
+                    <p>„Látom, hogy nagyon rövid a határidő. Lehet róla tárgyalni?” — ez kezeli a mesterséges sürgetést. „Tegnap megegyeztünk ebben a terjedelemben; ez a kérés megváltoztatja” — ez kezeli az utolsó pillanatos pluszkérést.</p>
+                    <p>Egyik mondat sem vádol. Egyszerűen láthatóvá teszik azt, aminek kimondatlannak kellett volna maradnia.</p>
+                </div>
+
+                <div class="pratique" data-pratique="manipulation"></div>
+
+                <h4>Az igazi védőbástya</h4>
+                <p>Mindezek a technikák azt feltételezik, hogy nem tudsz felállni. <strong>Az alternatívád az egyetlen általános védelem</strong>: vele a mesterséges sürgetés nem fog rajtad, az utolsó pillanatos pluszkérés elutasítható, a távollévő döntéshozó pedig érdektelenné válik.</p>
+                <p>Ezért is gyakoribbak a fogások az aszimmetrikus viszonyokban: annál jobban működnek, minél kevésbé van hová mennie a másiknak.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — ugyanazokkal a fegyverekkel visszavágni</span>
+                    <p>Ha egy tükörfogással válaszolsz, a tárgyalásból összecsapás lesz, és elvész az aszimmetrikus cserék lehetősége — pedig ezek hozzák a legjobb megállapodásokat.</p>
+                    <p>A kapcsolatot is megrongálja, ami drága, amint újra találkozni kell.</p>
+                </div>
+
+                <p class="retenir">💡 A megnevezett fogás nem működik tovább. Csak addig hat, amíg természetesnek tűnik.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="savoir-sarreter">🛑 Tudni, mikor kell abbahagyni</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A tárgyalás legritkábban feltett kérdése az, hogy mennyibe kerül.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A tárgyalás legritkábban feltett kérdése az, hogy mennyibe kerül. Egy elhúzódó nézeteltérés időt, figyelmet és kapcsolatot emészt fel — és gyakran többe kerül, mint a még áthidalandó különbség.</p>
+
+                <h4>A számítás, amelyet senki sem végez el</h4>
+                <p>Pedig elemi: a ráfordított idő, megszorozva azzal, amit ér, összevetve azzal, ami még a tét. Ha soha nem végzik el, az azért van, mert az eredménye általában mindkét félre nézve kínos.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 1 500 EUR maradék különbség</span>
+                    <p>Hat hét várható elakadás, heti három óra a témára fordítva, óránként 45 EUR.</p>
+                    <p><strong>Ráfordított idő: 18 óra. Ennek az időnek a költsége: 810 EUR</strong> — vagyis <strong>a maradék különbség 54%-a</strong>. A különbség még indokolja a tárgyalást, de épphogy.</p>
+                    <p>Ugyanez az elakadás <strong>húsz hétre</strong> nyújtva <strong>2 700 EUR-ba</strong> kerül: <strong>a különbség 180%-a</strong>. Ekkor már mindkét fél veszített, bármi legyen is a végső megállapodás.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-du-desaccord"></div>
+
+                <h4>Felállni, és hogyan</h4>
+                <p>Felállni az asztaltól nem kudarc és nem fenyegetés: az alternatívád gyakorlása. De tisztességesen kell csinálni, mert az ügyek újra megnyílnak.</p>
+                <p>Három elem elég: <strong>megköszönni</strong>, <strong>kimondani, mi tette volna lehetővé a megállapodást</strong>, és <strong>nyitva hagyni az ajtót</strong>. „Nem tudunk X fölé menni. Ha az Önök oldalán változik a helyzet, keressenek meg újra.”</p>
+                <p>Ennek a megfogalmazásnak gyakori mellékhatása van: néha jobb feltételekkel indítja újra a tárgyalást — mert hihetővé teszi a felállást.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megegyezni, csak hogy vége legyen</span>
+                    <p>Egy hosszú tárgyalás fáradtsága arra visz, hogy elfogadjuk, amit az első napon elutasítottunk volna. A megkönnyebbülés azonnali, és semmit sem mond a megállapodás minőségéről.</p>
+                    <p>Pontosan ezt a helyzetet előzi meg az előre leírt kiszállási pont. Az aláírás pillanatában olvasd el újra, ne előtte.</p>
+                </div>
+
+                <p class="retenir">💡 Felállni az asztaltól nem a tárgyalás kudarca: annak használata, ami kezdettől erőt adott.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Nem a kifogás akasztja el a beszélgetést, hanem a tulajdonított szándék.</li>
+                <li>Egy tény megvitatható; egy feltételezett szándék nem vitatható, csak tagadható.</li>
+                <li>A már befektetett időnek semmin sem kellene változtatnia a döntésben — és szinte mindig mindent megváltoztat.</li>
+                <li>Egy fogásra nem az a válasz, hogy eltűrjük vagy alkalmazzuk: hanem hogy megnevezzük.</li>
+                <li>Sok tárgyalás folytatódik azután is, hogy már többe kerül, mint amennyit hoz.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Keress egy tárgyalást vagy projektet, amelyet főleg azért folytatsz, mert már sokat fektettél bele. Írd le, mit döntenél, ha ma érkeznél, előzmények nélkül. Ez az egyetlen őszinte döntés.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>„Difficult Conversations”</strong>, Stone, Patton &amp; Heen — a Harvard Negotiation Projectből: a tények, a szándékok és az identitás megkülönböztetése.</li>
+                    <li><strong>„Gyors és lassú gondolkodás”</strong> (Thinking, Fast and Slow), Daniel Kahneman: az itt említett torzítások, és hogy miért nem elég ismerni őket a védekezéshez.</li>
+                    <li><strong>„Influence”</strong>, Robert Cialdini: a befolyásolás mechanizmusai, azért leírva, hogy felismerjük őket.</li>
+                    <li><strong>Munkahelyi tanácsadó szervek</strong>: azokra a helyzetekre, amelyek nem tárgyalást, hanem jogorvoslatot igényelnek. Hogy mi létezik, országonként eltér. A francia rendszert a <a href="../../../guides/sante/avance.html">Munkahelyi egészség, haladó szint (franciául)</a> útmutató írja le.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> mielőtt belépsz, írd fel egy papírra a kiszállási pontodat, és csak a döntés pillanatában olvasd el újra. Ez az egyetlen védelem, amely ellenáll a fáradtságnak.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Tárgyalás — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza →</span>🤝 Tárgyalás és kommunikáció</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../../../guides/droit/index.html">⚖️ Jog és ügyintézés (franciául)</a>
+                <a href="../../../guides/sante/index.html">🩺 Munkahelyi egészség (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/negociation-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

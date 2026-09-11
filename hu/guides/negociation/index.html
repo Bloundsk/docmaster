@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Felkészülés, meghallgatás, szerkezet: a tárgyalás útmutatója - Clicked</title>
+    <meta name="description" content="Tárgyalás és kommunikáció három szinten: felkészülés és meghallgatás, alternatívák, horgonyzás és érdekek, majd nehéz beszélgetések, torzítások, és hogy mikor kell abbahagyni. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/index.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/negociation/index.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/negociation/index.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/negociation/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/negociation/index.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Felkészülés, meghallgatás, szerkezet: a tárgyalás útmutatója - Clicked">
+    <meta property="og:description" content="Tárgyalás és kommunikáció három szinten: felkészülés és meghallgatás, alternatívák, horgonyzás és érdekek, majd nehéz beszélgetések, torzítások, és hogy mikor kell abbahagyni. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/negociation/index.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Felkészülés, meghallgatás, szerkezet: a tárgyalás útmutatója - Clicked">
+    <meta name="twitter:description" content="Tárgyalás és kommunikáció három szinten: felkészülés és meghallgatás, alternatívák, horgonyzás és érdekek, majd nehéz beszélgetések, torzítások, és hogy mikor kell abbahagyni. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt; <span aria-current="page">🤝 Tárgyalás és kommunikáció</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤝 Tárgyalás és kommunikáció</h1>
+                <p>Megértetni magad, és tudni, mi számolható ki előre.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34 58 L58 58 L58 78 L46 78 L38 86 L38 78 L34 78 Z"/>
+<path d="M82 46 L106 46 L106 66 L102 66 L102 74 L94 66 L82 66 Z"/>
+<path d="M50 96 Q70 108 90 96" stroke-opacity="0.55"/></g></g>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:.5s"/>
+<circle class="illu-twinkle" cx="106" cy="96" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html" aria-current="page">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <section>
+            <h2 id="le-parcours">Az útmutató</h2>
+            <p>Három szint: követheted őket sorban, vagy kezdheted ott, ahol most tartasz. Mindegyik önállóan is olvasható, de mindegyik feltételezi az előzőek ismeretét.</p>
+            <ol class="parcours">
+                <li class="etape">
+                    <a class="etape-lien" href="debutant.html">
+                        <span class="etape-rang">1. szint</span>
+                        <span class="etape-titre">Kezdő</span>
+                        <span class="etape-resume">Megértetni magad. Nincs előfeltétel.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>Felkészülni, mielőtt megszólalsz</li>
+                        <li>Valóban meghallgatni</li>
+                        <li>Felépíteni egy üzenetet</li>
+                        <li>Úgy írni, hogy elolvassák</li>
+                    </ul>
+                    <p class="etape-duree">4 fejezet · kb. 9 perc olvasás · nincs előfeltétel</p>
+                </li>
+                <li class="etape">
+                    <a class="etape-lien" href="intermediaire.html">
+                        <span class="etape-rang">2. szint</span>
+                        <span class="etape-titre">Középhaladó</span>
+                        <span class="etape-resume">Amit ki lehet számolni, mielőtt leülsz az asztalhoz.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>A legjobb alternatíva</li>
+                        <li>A megállapodási zóna</li>
+                        <li>A horgonyzás</li>
+                        <li>Pozíciók és érdekek</li>
+                        <li>A fizetés megtárgyalása</li>
+                    </ul>
+                    <p class="etape-duree">5 fejezet · kb. 12 perc olvasás · feltételezi az 1. szint ismeretét</p>
+                </li>
+                <li class="etape">
+                    <a class="etape-lien" href="avance.html">
+                        <span class="etape-rang">3. szint</span>
+                        <span class="etape-titre">Haladó</span>
+                        <span class="etape-resume">A nehéz beszélgetések, és hogy mikor kell abbahagyni.</span>
+                    </a>
+                    <ul class="etape-contenu">
+                        <li>A nehéz beszélgetések</li>
+                        <li>A torzítások</li>
+                        <li>A manipuláció felismerése</li>
+                        <li>Tudni, mikor kell abbahagyni</li>
+                    </ul>
+                    <p class="etape-duree">4 fejezet · kb. 10 perc olvasás · feltételezi az 1. és a 2. szint ismeretét</p>
+                </li>
+            </ol>
+        </section>
+
+        <div class="recap-box">
+            <h2>⚡ Amit a végén tudni fogsz</h2>
+            <ul>
+                <li>Miért nem az érveidből ered az erőd, hanem abból, amit akkor kapsz, ha felállsz az asztaltól.</li>
+                <li>Miért függ a „felezzük meg a különbséget” teljes egészében az elsőként kimondott számtól.</li>
+                <li>Hogyan kerülhet többe egy nézeteltérés, mint a még áthidalandó különbség.</li>
+                <li>Mit mond valójában „a kommunikáció 93%-a nonverbális” mögötti kutatás.</li>
+                <li>Hogyan fogalmazz meg egy kifogást úgy, hogy a beszélgetés ne a szándékokról szóljon.</li>
+            </ul>
+        </div>
+
+        <section>
+            <h2 id="avertissement">Mielőtt belekezdenél</h2>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A leírt technikák publikált kutatásokból származnak, de hatásosságuk erősen függ a helyzettől, az emberektől és a kultúrától — nem receptek.</p>
+                <p>A terület legelterjedtebb állításait kihagyjuk, ha nem állják ki a vizsgálatot. Ez néha ellentmond az intuíciónak, és szándékos.</p>
+                <p>A haladó szinten leírt fogásokat azért mutatjuk be, hogy <strong>felismerd őket, nem azért, hogy alkalmazd</strong>. Egyes helyzetek pedig nem tárgyalási kérdések: a zaklatás, a diszkrimináció és a munkahelyi nyomásgyakorlás konkrét jogorvoslati utakat igényel, amelyek országonként eltérnek. A francia rendszert a <a href="../../../guides/sante/index.html">Munkahelyi egészség (franciául)</a> útmutató írja le.</p>
+            </div>
+        </section>
+
+        <div class="guide-nav">
+            <a href="../../../guides/ecologie/index.html"><span class="label">← Másik útmutató</span>🌱 Digitális mértékletesség (franciául)</a>
+            <a href="../../../guides/finance/index.html" class="next"><span class="label">Másik útmutató →</span>💰 Pénzügyek (franciául)</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../../../guides/droit/index.html">⚖️ Jog és ügyintézés (franciául)</a>
+                <a href="../../../guides/sante/index.html">🩺 Munkahelyi egészség (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

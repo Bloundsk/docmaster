@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Huit parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, IA, Marketing, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Neuf parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -67,12 +67,12 @@ françaises.
    11 septembre 2026 de continuer sans attendre.** La relecture reste à faire, et
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
-   Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité, Marketing
-   (8 sur 14).** Ordre suivi : d'abord les sujets sans droit français — Négociation,
-   Écologie — puis les quatre qui demandent la décision ci-dessous.
+   Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité, Marketing,
+   Négociation (9 sur 14).** Ordre suivi : d'abord les sujets sans droit français —
+   reste Écologie — puis les quatre qui demandent la décision ci-dessous.
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
@@ -137,6 +137,19 @@ françaises.
   Hongrie ; la règle de prospection vers les professionnels est dite variable
   selon les pays, la France citée en exemple, sans rien affirmer du droit hongrois ;
   l'ARPP devient « l'Önszabályozó Reklám Testület », à confirmer ;
+- pour Négociation : *a legjobb alternatíva* et le sigle anglais *BATNA* (la MESORE
+  française n'a pas d'équivalent hongrois usuel), *kiszállási pont* (point de
+  rupture), *megállapodási zóna*, *horgonyzás*, *pozíció / érdek*, *elsüllyedt
+  költség* (coût irrécupérable), *utolsó pillanatos pluszkérés* (grignotage final),
+  *a távollévő döntéshozó* (autorité absente), « felezzük meg a különbséget »
+  (couper la poire en deux), « Címzett » et « másolat » pour « À » et « Cc » ; le
+  titre hongrois de Kahneman (« Gyors és lassú gondolkodás ») cité sans vérifier
+  l'édition. Rien de juridique : harcèlement, discrimination et médiation sont dits
+  variables selon les pays, avec renvoi aux guides Santé et Droit en français ; les
+  « minima de la convention collective » deviennent « l'ágazati bérminimum vagy
+  kollektív szerződés, ha van ilyen ». Noms choisis pour deux parcours encore en
+  français : *Munkahelyi egészség* (Santé au travail), *Digitális mértékletesség*
+  (Sobriété numérique) ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12
