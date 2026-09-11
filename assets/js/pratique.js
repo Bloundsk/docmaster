@@ -95,7 +95,7 @@
     // Le hongrois n abrege pas l heure en « h » : « 3 óra 20 perc ». Une lettre
     // seule echappait au controle de traduction, qui ne lit que les mots de deux
     // lettres ou plus : « 1 h » s est affiche sur la premiere page hongroise.
-    const UNITES_DUREE = { hu: { h: "óra", min: "perc" } };
+    const UNITES_DUREE = { hu: { h: "óra", min: "perc", s: "mp" } };
     const uniteDuree = (u) => (UNITES_DUREE[langueActive()] || {})[u] || u;
     // Le zero de « 4 h 08 min » aide a lire une abreviation ; devant un mot
     // ecrit en entier, il ne s ecrit pas : « 4 óra 8 perc ».
@@ -1490,7 +1490,7 @@
                 else if (secondes < 10) seuil = "un retour de progression devient nécessaire";
                 else seuil = "au-delà de la limite d'attention : la plupart abandonnent";
                 return [
-                    { libelle: "Temps de chargement estimé", valeur: nf(secondes, 1) + " s", fort: true },
+                    { libelle: "Temps de chargement estimé", valeur: nf(secondes, 1) + " " + uniteDuree("s"), fort: true },
                     { libelle: "Poids à retirer pour passer sous 1 s", valeur: nf(Math.max(0, Math.round(poids - (1 - latence / 1000) * debit * 1000 / 8))) + " Ko" },
                     { libelle: "Perception", valeur: seuil }
                 ];
@@ -1520,10 +1520,10 @@
                 const balayageGroupe = 0.1 * (groupes + parFamille);
 
                 return [
-                    { libelle: "Décider (Hick) — liste plate", valeur: nf(decisionPlate, 2) + " s" },
-                    { libelle: `Décider (Hick) — ${groupes} familles`, valeur: nf(decisionGroupee, 2) + " s" },
-                    { libelle: "Chercher — liste plate", valeur: nf(balayagePlat, 2) + " s" },
-                    { libelle: `Chercher — ${groupes} familles`, valeur: nf(balayageGroupe, 2) + " s", fort: balayageGroupe < balayagePlat }
+                    { libelle: "Décider (Hick) — liste plate", valeur: nf(decisionPlate, 2) + " " + uniteDuree("s") },
+                    { libelle: `Décider (Hick) — ${groupes} familles`, valeur: nf(decisionGroupee, 2) + " " + uniteDuree("s") },
+                    { libelle: "Chercher — liste plate", valeur: nf(balayagePlat, 2) + " " + uniteDuree("s") },
+                    { libelle: `Chercher — ${groupes} familles`, valeur: nf(balayageGroupe, 2) + " " + uniteDuree("s"), fort: balayageGroupe < balayagePlat }
                 ];
             },
             lecon: "Sur une option déjà connue, regrouper fait perdre un peu de temps. Sur une option qu'il faut trouver, le gain est considérable — et c'est le cas d'un visiteur qui découvre le site."
@@ -2079,7 +2079,7 @@
                 const partTemps = total > 0 ? tE / total * 100 : 0;
                 const partNombre = nb > 0 ? boutEnBout / nb * 100 : 0;
                 return [
-                    { libelle: "Durée totale de la suite", valeur: nf(total, 0) + " s", fort: true },
+                    { libelle: "Durée totale de la suite", valeur: nf(total, 0) + " " + uniteDuree("s"), fort: true },
                     { libelle: "Part des tests de bout en bout", valeur: pourcent(partNombre, 1) + " des tests" },
                     { libelle: "Mais ils occupent", valeur: pourcent(partTemps, 0) + " du temps" }
                 ];

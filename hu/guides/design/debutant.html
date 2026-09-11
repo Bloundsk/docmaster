@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>UX vagy UI, drótvázak és felhasználói tesztek — Design, kezdő - Clicked</title>
+    <meta name="description" content="UX és UI, drótvázkészítés, vizuális tervezési elvek és felhasználói tesztek költségvetés nélkül. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/design/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/design/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/design/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/design/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/design/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="UX vagy UI, drótvázak és felhasználói tesztek — Design, kezdő - Clicked">
+    <meta property="og:description" content="UX és UI, drótvázkészítés, vizuális tervezési elvek és felhasználói tesztek költségvetés nélkül. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/design/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UX vagy UI, drótvázak és felhasználói tesztek — Design, kezdő - Clicked">
+    <meta name="twitter:description" content="UX és UI, drótvázkészítés, vizuális tervezési elvek és felhasználói tesztek költségvetés nélkül. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🎨 UX/UI design</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎨 UX/UI design — Kezdő</h1>
+                <p>Megérteni, miért működik vagy nem működik egy felület. Előismeret nélkül.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="70" cy="70" r="24"/><circle cx="70" cy="70" r="9" stroke-opacity="0.6"/></g><circle cx="70" cy="70" r="3.5" fill="white"/></g>
+<circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>megkülönböztesd az élményt a megjelenéstől</strong>, hogy előbb szerkezetet építs, és csak utána díszíts, hogy térrel és kontraszttal alakíts ki hierarchiát, és hogy kipróbálj egy tervet, mielőtt lefejlesztenék.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#ux-vs-ui-quelle-différence">🧭 UX és UI: mi a különbség?</a></li>
+                <li><a href="#le-wireframing">🖊️ A drótvázkészítés</a></li>
+                <li><a href="#les-principes-de-design-visuel">🎨 A vizuális tervezés elvei</a></li>
+                <li><a href="#les-tests-utilisateurs">🧪 A felhasználói tesztek</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mi a különbség az UX és az UI között?</li>
+                <li>Mire jó egy drótváz a vizuális tervezés előtt?</li>
+                <li>Mire szolgál egy oldal vizuális hierarchiája?</li>
+                <li>Elvesztegetett hely a fehér tér?</li>
+                <li>Mikor a legolcsóbb kipróbálni egy felületet?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A designt az alapján ítéljük meg, amit észreveszünk. Ez téves mérce: a legjobb felületek épp azok, amelyeket nem veszünk észre. Senki sem dicsér meg egy ajtót, amiért jó irányba nyílt — csak azokat vesszük észre, amelyeket toltunk, pedig húzni kellett volna.</p>
+            <p>A felülettervezés tehát nem ízlés kérdése. Olyan szakma, amelynek szabályai a látás és a figyelem működéséből fakadnak — ellenőrizhető szabályok, amelyeket meg lehet tanulni.</p>
+            <p>Ez az útmutató először két, folyton összekevert fogalmat választ szét, aztán bemutatja a tervezési módszert, a vizuális elveket, és azt az egyetlen megbízható módot, amellyel kideríthető, hogy működik-e: nézni, ahogy valaki kipróbálja.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Az alapok, amelyeket ismerni kell</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="ux-vs-ui-quelle-différence">🧭 UX és UI: mi a különbség?</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az UX ( User Experience, felhasználói élmény) arról szól, amit az ember átél: érti-e, hol van, eléri-e a célját, elégedetten távozik-e?</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az <strong>UX</strong> (<em>User Experience</em>, felhasználói élmény) arról szól, amit az ember átél: érti-e, hol van, eléri-e a célját, elégedetten távozik-e? Az <strong>UI</strong> (<em>User Interface</em>, felhasználói felület) arról, amit lát: színek, tipográfia, gombok, térközök.</p>
+
+                <div class="exemple">
+                    <span class="titre">Egy hasonlat, amely feloldja a zavart</span>
+                    <p>Egy épületben az <strong>UX</strong> dönti el, hogy kell vészkijárat, hol legyen, és mennyi idő alatt lehessen elérni.</p>
+                    <p>Az <strong>UI</strong> dönt a tábla színéről, a betűtípusról, a piktogram formájáról.</p>
+                    <p>Egy gyönyörű tábla, amely egy befalazott ajtóhoz vezet: kiváló UI, katasztrofális UX. Egy kézzel írt cetli, amely a jó kijáratot mutatja: gyenge UI, sikeres UX.</p>
+                    <p>A második helyzet életeket ment, az első nem.</p>
+                </div>
+
+                <h4>Az UX minden képernyő előtt dől el</h4>
+                <p>A munka nagy része a képernyők előtt zajlik: kinek szól, milyen problémát old meg, milyen sorrendben következnek a lépések? Egy grafikai megújítás soha nem javít meg egy rosszul megtervezett folyamatot — csak elegánsabbá teszi a benne való eltévedést.</p>
+
+                <h4>Amit nem lehet az esztétikára bízni</h4>
+                <ul>
+                    <li><strong>A lépések száma.</strong> Minden további lépés elveszíti a felhasználók egy részét. Semmilyen animáció nem ellensúlyoz egy tizenkét mezős űrlapot.</li>
+                    <li><strong>A szóhasználat.</strong> A belső zsargonból vett felirat — „Saját TKR-felület” — érthetetlen marad, bármilyen betűtípust választunk is.</li>
+                    <li><strong>A hibaüzenetek.</strong> A „Hiba történt” senkinek sem segít. Az „Ehhez az irányítószámhoz nem tartozik település” lehetővé teszi a cselekvést.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — összetéveszteni a „szépet” a „hatékonnyal”</span>
+                    <p>A vizuális divatok rendszeresen szülnek csábító, de kínkeserves felületeket: világosszürke szöveg fehér alapon, keret nélküli gombok, amelyek már nem különböznek a szövegtől, animációk, amelyek minden műveletet késleltetnek.</p>
+                    <p>A mérce nem az, hogy „jól mutat-e egy képernyőképen?”, hanem hogy „aki most látja először, elsőre boldogul-e vele?”.</p>
+                </div>
+
+                <div class="pratique" data-pratique="ux-ou-ui"></div>
+
+                <p class="retenir">💡 Az UI az, amit látunk, az UX az, amit átélünk. Az elsőt meg lehet csinálni jól úgy, hogy a második teljesen kudarcot vall.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-wireframing">🖊️ A drótvázkészítés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A drótváz ( wireframe) szándékosan csúnya terv: szürke téglalapok, kitöltő szöveg, semmi szín.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A <strong>drótváz</strong> (<em>wireframe</em>) szándékosan csúnya terv: szürke téglalapok, kitöltő szöveg, semmi szín. Ez a csúnyaság módszertani döntés.</p>
+
+                <h4>Miért mondunk le az elején a vizualitásról</h4>
+                <p>Két ok, egy lélektani és egy gazdasági:</p>
+                <ul>
+                    <li><strong>Egy vázlatot szabadabban kritizálunk.</strong> Egy kész terv előtt a visszajelzések egy gomb színéről szólnak. Szürke téglalapok előtt végre a lépések sorrendjéről beszélünk — ez az igazi téma.</li>
+                    <li><strong>Könnyebben lemondunk róla.</strong> Háromnapi grafikai munka után senkinek sincs kedve mindent újrakezdeni. Egy tízperces vázlatot sajnálat nélkül kidobunk.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">A késői javítás költsége</span>
+                    <p>Egy folyamatot a <strong>papírvázlat</strong> szakaszában újragondolni: néhány perc.</p>
+                    <p>A <strong>grafikai terv</strong> szakaszában: egy-két nap.</p>
+                    <p><strong>Fejlesztés után</strong>: hetek, költségvetési alkuk, és gyakran egy félresikerült kompromisszum, amelyet évekig megtartanak.</p>
+                    <p>Ezért kell a szerkezeti hibáknak a lehető legkorábban kiderülniük — amikor még szinte semmibe sem kerülnek.</p>
+                </div>
+
+                <h4>A kidolgozottság szintjei</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Szint</th><th>Megjelenés</th><th>Mire jó</th></tr>
+                    <tr><td><strong>Alacsony kidolgozottság</strong></td><td>Papírvázlat, téglalapok</td><td>Több irány kipróbálása, a szerkezet eldöntése</td></tr>
+                    <tr><td><strong>Közepes kidolgozottság</strong></td><td>Szürke, valódi szövegek, helyes arányok</td><td>A folyamatok jóváhagyása, tesztelés felhasználókkal</td></tr>
+                    <tr><td><strong>Magas kidolgozottság</strong></td><td>Színek, képek, interakciók</td><td>Átadás a fejlesztésnek, bemutatás</td></tr>
+                </table>
+                </div>
+                <p>Klasszikus hiba, hogy egyből a magas kidolgozottságra ugranak. Ezzel a gyors haladás érzését nyerjük, és elveszítjük azt a lehetőséget, hogy olcsón tévedjünk.</p>
+
+                <h4>Egy részlet, amely megváltoztatja a visszajelzéseket</h4>
+                <p>Használj <strong>valódi tartalmakat</strong> latin kitöltő szöveg helyett. Egy valódi terméknév néha három sor, ahol a példa egy volt. Ezek a kilógások a fejlesztéskor derülnek ki — túl későn —, ha a tervet ideális tartalommal töltötték ki.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — gondosan kidolgozni a vázlatot</span>
+                    <p>Ha egy napot töltesz egy drótvázzal, elveszíti az értelmét: ragaszkodni kezdesz hozzá, és már nem kérdőjelezed meg. Egy drótváznak elég csúnyának kell maradnia ahhoz, hogy merd kidobni.</p>
+                    <p>Ennél a lépésnél a papír és a ceruza gyakran jobb bármilyen szoftvernél.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-wireframe"></div>
+
+                <p class="retenir">💡 A vázlat szakaszában tévedj, ott, ahol a hiba öt percbe kerül. Ez a drótváz lényege.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-principes-de-design-visuel">🎨 A vizuális tervezés elvei</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Ezek az elvek nem divatból születtek: az észlelés működéséből fakadnak.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ezek az elvek nem divatból születtek: az észlelés működéséből fakadnak. Érvényesek voltak az informatika előtt, és utána is azok maradnak.</p>
+
+                <h4>1. A vizuális hierarchia</h4>
+                <p>A szem nem olvas, hanem végigpásztáz. Egy másodperc töredéke alatt fontossági sorrendbe rendezi az elemeket — méretük, kontrasztjuk, helyzetük és a körülöttük lévő tér alapján.</p>
+                <p>Ha minden ki van emelve, semmi sincs. Egy oldal, ahol három elem egyformán kiabál, hierarchia nélküli oldal: a látogatónak mindent el kell olvasnia a döntéshez, és a legtöbben feladják.</p>
+
+                <div class="exemple">
+                    <span class="titre">A hunyorítási próba</span>
+                    <p>Lépj hátra két métert, vagy hunyorogj addig, amíg a szöveg olvashatatlanná nem válik.</p>
+                    <p>Ami látható marad, azt veszi észre először a látogató. Ha a fő művelet nincs köztük, a hierarchiát újra kell gondolni — függetlenül attól, milyen szép az oldal.</p>
+                </div>
+
+                <h4>2. A közelség</h4>
+                <p>Az egymáshoz közeli elemeket összetartozónak érzékeljük. Egy rossz űrlapmezőhöz tapadt címke olyan félreértést okoz, amelyet a legjobb felirat sem hoz helyre. A térköz maga is <em>információ</em>.</p>
+
+                <h4>3. Az üres tér</h4>
+                <p>Gyakran pazarlásnak tartják, pedig ettől olvasható egy tartalom. Elkülönít, kiemel, levegőt ad. Ha minden szabad területet ki akarunk tölteni, zsúfolt felületek születnek, amelyeken semmi sem emelkedik ki.</p>
+
+                <h4>4. A következetesség</h4>
+                <p>Egy műveletgombnak mindenhol ugyanúgy kell kinéznie. Minden eltérés újratanulásra kényszerít. Ezért hasznos egy kis rendszer: két-három szövegméret, korlátozott színpaletta, rögzített térközskála (például 8, 16, 24, 32 képpont). A megkötés felgyorsítja a munkát, és egységessé teszi az eredményt.</p>
+
+                <h4>5. A kontraszt és az akadálymentesség</h4>
+                <p>A világosszürke szöveg fehér alapon elegáns egy grafikus új monitorján, és olvashatatlan egy laptopon napsütésben, vagy egy ötven év feletti embernek.</p>
+                <p>Az akadálymentességi szabványok folyó szövegnél legalább <strong>4,5:1</strong> kontrasztarányt ajánlanak. Ingyenes ellenőrzők néhány másodperc alatt megmérik. Ez nem egy kisebbség kedvéért hozott megkötés: mindenkinek kényelmet jelent, valós körülmények között.</p>
+                <p>Még egy szempont: soha ne közvetíts információt pusztán színnel. Egy üzenet nélkül pirosra váltó mező láthatatlan marad egy színtévesztő ember számára — márpedig nagyjából minden tizenkettedik férfi az.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — díszíteni szerkezet helyett</span>
+                    <p>Ha egy rosszul szervezett oldalra színátmeneteket, árnyékokat és animációkat teszünk, azzal csak elfedjük a hibáit. Egy sikeres design többet vesz el, mint amennyit hozzáad.</p>
+                    <p>Mielőtt hozzáadsz egy vizuális elemet, kérdezd meg, mit segít megérteni. Ha semmit, csak zajt ad hozzá.</p>
+                </div>
+
+                <div class="pratique" data-pratique="hierarchie-visuelle"></div>
+
+                <p class="retenir">💡 Ha minden ki van emelve, semmi sincs. Ha kiválasztod, mi számít, el kell fogadnod, hogy a többi visszafogott marad.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-tests-utilisateurs">🧪 A felhasználói tesztek</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A saját felületedet nem tudod megítélni.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A saját felületedet nem tudod megítélni. Tudod, hol van minden, és miért kapta a nevét — ezt a tudást nem lehet elfelejteni. Egyetlen módon tudhatod meg: ha nézed, ahogy valaki más kipróbálja.</p>
+
+                <h4>Öt ember elég</h4>
+                <p>Az ergonómiai kutatás klasszikus eredménye: öt felhasználó feltárja a súlyos problémák túlnyomó többségét. A következők főleg azt erősítik meg, amit már láttunk.</p>
+                <p>A gyakorlati következmény: jobb minden szakasz előtt öt teszt, mint egyszerre harminc a végén.</p>
+
+                <h4>Hogyan csináld</h4>
+                <ol>
+                    <li><strong>Adj feladatot, ne idegenvezetést.</strong> „Keresd meg egy éves előfizetés árát, és indítsd el az előfizetést”, és ne azt, hogy „mit gondolsz erről az oldalról?”.</li>
+                    <li><strong>Kérd, hogy hangosan gondolkodjon.</strong> Ez hozza felszínre a tétovázásokat, amelyek gyakran tanulságosabbak a hibáknál.</li>
+                    <li><strong>Hallgass.</strong> Ez a legnehezebb. Amint segítesz, a tesztnek vége — a valódi felhasználó mellett senki sem fog ülni.</li>
+                    <li><strong>A mozdulatokat figyeld, ne a véleményeket.</strong> Amit az emberek csinálnak, végtelenül többet ér annál, amit mondanak.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">Mit tár fel egy teszt tíz perc alatt</span>
+                    <p>Egy csapat meg van győződve arról, hogy az „Indítás” gombjuk egyértelmű. Öt teszt után:</p>
+                    <ul>
+                        <li>5-ből 3 ember először a felső menüben keres</li>
+                        <li>2 tétovázik, mert az „Indítás” nem mondja meg, mi történik utána</li>
+                        <li>1 feladja, mert azt hiszi, fiók kell hozzá</li>
+                    </ul>
+                    <p>Ezek közül egyik probléma sem látszott a projekt belsejéből. Mind kijavítható fél nap alatt — <em>ha</em> a fejlesztés előtt kiderülnek.</p>
+                </div>
+
+                <h4>Költségvetés és eszközök nélkül</h4>
+                <p>A felhasználói tesztet drága módszernek tartják. Nem az: egy kolléga egy másik osztályról, egy ismerős vagy valaki egy kávézóból is elég. Öt perc, egy feladat, egy terv, akár papíron. Ez jóval elmarad egy laboratóriumi protokolltól, és végtelenül jobb, mint semmit sem tesztelni.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — csak a végén tesztelni</span>
+                    <p>Egy héttel az élesítés előtt végzett teszt már nem döntéshez kell: azokat a problémákat dokumentálja, amelyeket nem lesz időd kijavítani.</p>
+                    <p>A drótvázon tesztelj, amikor még minden költség nélkül megváltoztatható.</p>
+                </div>
+
+                <div class="pratique" data-pratique="combien-de-testeurs"></div>
+
+                <p class="retenir">💡 Ha egy felhasználó hibázik, nem ő nem értette meg: a felület nem volt világos. Ez a fordulat a szakma alapja.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Az UX a teljes élményről szól, az UI a vizuális megjelenésről.</li>
+                <li>A drótváz felépíti egy felület szerkezetét, mielőtt a vizuális tervezésre kerülne sor.</li>
+                <li>A vizuális hierarchia oda vezeti a szemet, ami a legfontosabb.</li>
+                <li>A fehér tér nem elvesztegetett hely: levegőt ad az elrendezésnek.</li>
+                <li>Korán tesztelni, akár egy egyszerű tervvel is, olcsóbb, mint fejlesztés után javítani.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Mutasd meg az egyik oldaladat valakinek öt másodpercig, aztán takard el. Kérdezd meg: mit látott először, és mit kínál ez az oldal? Ha a válaszok nem egyeznek a tieiddel, a hierarchiát újra kell gondolni.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Nielsen Norman Group</strong> — a használhatósági kutatás mérvadó forrása. Cikkeik kutatásokra épülnek, nem divatokra. Kezdd Nielsen 10 heurisztikájával.</li>
+                    <li><strong>Laws of UX</strong> — a lélektani elvek (Fitts, Hick, Jakob) egy-egy oldalon elmagyarázva, példákkal.</li>
+                    <li><strong>„Don't Make Me Think”</strong>, Steve Krug — két óra alatt elolvasható, és tartósan megváltoztatja, ahogyan egy felületre nézünk. A terület legjobb kiindulópontja.</li>
+                    <li><strong>WebAIM Contrast Checker</strong> — ingyen ellenőrzi, olvashatók-e a színeid. Használd, mielőtt véglegesítesz egy palettát.</li>
+                    <li><strong>Figma</strong> — személyes használatra ingyenes, és a drótvázak és a végleges tervek szabványeszközévé vált.</li>
+                </ul>
+                <p><strong>Módszertani tanács:</strong> a legtanulságosabb gyakorlat semmibe sem kerül — vegyél egy felületet, amelyet naponta használsz, és keresd meg, miért működik, vagy mi idegesít benne. Ez a kritikus szem megfigyeléssel fejlődik, sokkal inkább, mint olvasással.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>🎨 UX/UI design</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>UX/UI design — Középhaladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+                <a href="../../../guides/marketing/index.html">📢 Digitális marketing (franciául)</a>
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/design-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

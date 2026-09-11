@@ -1,5 +1,37 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Cinquième parcours en hongrois : Design UX/UI
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/design/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 166 textes des
+  12 simulateurs**.
+- `CONTENU_TRADUIT.hu` annonce aussi « design ». Les cinq pages hongroises qui
+  citaient Design en français (sommaires Apprendre et Data, trois niveaux de
+  Productivité) mènent maintenant à sa version hongroise.
+- **Transposé plutôt que traduit** : l'obligation française d'accessibilité devient
+  la règle européenne (sites publics, et depuis juin 2025 l'acte européen sur
+  l'accessibilité pour de nombreuses entreprises) ; le RGAA laisse la place à la
+  norme EN 301 549, la CNIL au CEPD (EDPB) et à la NAIH, la DGCCRF aux autorités de
+  protection des consommateurs et au GVH. Là où le français invoquait « le droit
+  français » sur la résiliation (quiz et simulateur), le hongrois parle de
+  protection des consommateurs, sans prêter au droit hongrois une règle qu'on n'a
+  pas vérifiée. À confirmer par le relecteur, noté dans CHANTIERS.md.
+
+### Corrigé en route
+
+- **Les secondes restaient « s »** dans trois simulateurs (budget de performance
+  et loi de Hick en Design, durée d'une suite de tests en Dev web) : l'unité passe
+  maintenant par `uniteDuree("s")`, qui donne « mp » en hongrois et laisse « s »
+  ailleurs.
+- **Le biais de longueur, une cinquième fois.** Traduite fidèlement, la bonne
+  réponse était la plus longue 51 fois sur 90, contre 26 en français (58 % pour
+  « prendre la plus longue »). Trente-sept distracteurs rallongés, chacun jusqu'à
+  remettre la bonne réponse à la place qu'elle a en français, au milieu ou la plus
+  courte : Design revient à 28 / 41 / 33 % (longue / milieu / courte ; français
+  29 / 37 / 36 %), et les 450 questions hongroises à 33,9 / 35,6 / 31,4 %.
+
 ## 2026-09-11 — Quatrième parcours en hongrois : Data & Analytics
 
 ### Ce qui est publié

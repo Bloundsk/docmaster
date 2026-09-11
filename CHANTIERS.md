@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Quatre parcours sont publiés (Apprendre, Data, IA, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Cinq parcours sont publiés (Apprendre, Data, Design, IA, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -67,12 +67,12 @@ françaises.
    11 septembre 2026 de continuer sans attendre.** La relecture reste à faire, et
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
-   Apprendre, Productivité, IA, Data (4 sur 14).** Ordre suivi : d'abord les sujets
-   sans droit français — Design, Dev web, Cybersécurité, Marketing, Négociation,
+   Apprendre, Productivité, IA, Data, Design (5 sur 14).** Ordre suivi : d'abord les
+   sujets sans droit français — Dev web, Cybersécurité, Marketing, Négociation,
    Écologie — puis les quatre qui demandent la décision ci-dessous.
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
@@ -99,6 +99,18 @@ françaises.
   *hibahatár* (marge d'erreur), *zavaró változó* (variable confondante),
   *túlélési torzítás* (biais du survivant), *visszatérés az átlaghoz* (régression
   vers la moyenne), *adatlánc* (chaîne de données) ;
+- pour Design : *drótváz* (wireframe), *kidolgozottság* (fidélité), *sötét minta*
+  (schéma sombre), *design-rendszer*, *design-adósság*, *érintési célpont* (cible
+  tactile), *tartalomváz* (squelette de contenu), *kártyarendezés* (tri par
+  cartes), *töréspont* (point de rupture) ;
+- les transpositions juridiques de Design, faites sans source hongroise vérifiée :
+  l'obligation d'accessibilité présentée comme européenne (directive sur
+  l'accessibilité des sites publics, acte européen sur l'accessibilité depuis juin
+  2025) ; EN 301 549 à la place du RGAA ; le CEPD (EDPB) et la NAIH à la place de la
+  CNIL ; les autorités de protection des consommateurs et le GVH à la place de la
+  DGCCRF ; « non conforme au droit français » (résiliation) devenu
+  « fogyasztóvédelmi szempontból kifogásolható », et la question de quiz sur la
+  résiliation reformulée autour de la protection des consommateurs ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12

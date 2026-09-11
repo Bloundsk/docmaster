@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Kognitív terhelés és észlelt teljesítmény — Design, haladó - Clicked</title>
+    <meta name="description" content="Észlelt teljesítmény, kognitív terhelés, sötét minták, és hogyan mérjük a designt ahelyett, hogy vitatkoznánk róla. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/design/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/design/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/design/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/design/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/design/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Kognitív terhelés és észlelt teljesítmény — Design, haladó - Clicked">
+    <meta property="og:description" content="Észlelt teljesítmény, kognitív terhelés, sötét minták, és hogyan mérjük a designt ahelyett, hogy vitatkoznánk róla. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/design/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kognitív terhelés és észlelt teljesítmény — Design, haladó - Clicked">
+    <meta name="twitter:description" content="Észlelt teljesítmény, kognitív terhelés, sötét minták, és hogyan mérjük a designt ahelyett, hogy vitatkoznánk róla. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🎨 UX/UI design</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🎨 UX/UI design — Haladó</h1>
+                <p>Ami a felhasználó fejében zajlik, és mit kezdünk vele.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="70" cy="70" r="24"/><circle cx="70" cy="70" r="9" stroke-opacity="0.6"/></g><circle cx="70" cy="70" r="3.5" fill="white"/></g>
+<circle class="illu-twinkle" cx="98" cy="52" r="3" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="42" cy="88" r="3" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="100" cy="95" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>az észlelt várakozásra hass</strong>, ne csak az időtartamra, hogy csökkentsd egy döntés terhét, hogy felismerj egy sötét mintát, és hogy mérd a designt ahelyett, hogy csak változtatnál rajta.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#performance-percue">⏱️ Az észlelt teljesítmény</a></li>
+                <li><a href="#charge-cognitive">🧠 A kognitív terhelés</a></li>
+                <li><a href="#schemas-sombres">🎯 A sötét minták</a></li>
+                <li><a href="#mesurer-le-design">📐 A design mérése</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Miért nem tűnik egyformának két ugyanolyan hosszú várakozás?</li>
+                <li>Hogyan változik a döntési idő, ha újabb lehetőségeket adsz hozzá?</li>
+                <li>Mitől lassú elérni egy célpontot?</li>
+                <li>Mit hoz rövid távon egy sötét minta, és mibe kerül később?</li>
+                <li>Mi lesz egy olyan designnal, amelyet nem mérnek?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Az első két szint arról szólt, amit megrajzolunk: képernyőkről, navigációról, rendszerről. Ez arról szól, <strong>ami a veled szemben álló emberben zajlik</strong> — mennyi ideig hiszi, hogy vár, hány lehetőséget bír el a figyelme, és mi készteti feladásra.</p>
+            <p>Ezek a mechanizmusok mérhetők, és évtizedek óta ismertek. Lehetővé teszik, hogy egy tervezési döntést ne csak ízléssel indokoljunk, és felvetnek egy kérdést, amely elől senki sem térhet ki: <strong>segítésre használjuk ezt a tudást, vagy manipulálásra?</strong></p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Az idézett törvények egyszerűsített modellek: nagyságrendekről való gondolkodáshoz hasznosak, nem egyéni viselkedés előrejelzéséhez.</p>
+                <p>A sötét mintákról szóló fejezetben leírt megtévesztő gyakorlatokat azért mutatjuk be, hogy <strong>felismerd és elkerüld</strong> őket. Közülük többet az európai jog szankcionál.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ami a felhasználóban zajlik</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="performance-percue">⏱️ Az észlelt teljesítmény</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A mért idő és az érzett idő két különböző dolog.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A mért idő és az érzett idő két különböző dolog. Egy két másodperc alatt betöltődő oldal lassabbnak tűnhet egy hárommásodpercesnél — minden azon múlik, mi történik a várakozás alatt.</p>
+
+                <h4>Az észlelés küszöbei</h4>
+                <p>Három érték határozza meg ezt az egész területet:</p>
+                <p><strong>0,1 másodperc</strong> — a reakció azonnalinak tűnik. Ez alatt a felhasználónak az az érzése, hogy közvetlenül a tárgyat mozgatja.</p>
+                <p><strong>1 másodperc</strong> — a gondolatmenet nem szakad meg, de a késést észleli. Vizuális visszajelzésre nincs szükség.</p>
+                <p><strong>10 másodperc</strong> — a figyelem határa. Ezen túl az ember másba kezd, és haladásjelzőt kell mutatni neki, ha meg akarjuk tartani.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Egy <strong>2500 kB-os</strong> oldal <strong>10 Mb/s-os</strong> mobilkapcsolaton nagyjából <strong>2 másodperc</strong> alatt töltődik le — ehhez jön még a késleltetés és a megjelenítés ideje.</p>
+                    <p>Ugyanez az oldal <strong>800 kB-ra</strong> csökkentve egy másodperc alá kerül. A nyereség nem gyorsabb szervertől jön, hanem az elhagyott súlyból: tömörítetlen képek, nem használt betűkészletek, soha le nem futó szkriptek.</p>
+                </div>
+
+                <div class="pratique" data-pratique="budget-performance"></div>
+
+                <h4>Kitölteni a várakozást</h4>
+                <p>Az üres várakozás nagyjából kétszer olyan hosszúnak tűnik, mint egy ugyanolyan hosszú, de kitöltött várakozás. Innen jön három hatékony technika:</p>
+                <p>A <strong>tartalomvázak</strong> — azok a szürke formák, amelyek előrevetítik az elrendezést — azt az érzést keltik, hogy a betöltés már elkezdődött.</p>
+                <p>Az <strong>azonnali visszajelzés</strong>: egy gomb, amely már a kattintáskor állapotot vált, megelőzi a kételyt és a második kattintást.</p>
+                <p>Az <strong>optimista megjelenítés</strong>: a várt eredményt a szerver megerősítése előtt mutatjuk meg, és hiba esetén javítunk. Ettől olyan gördülékenyek a modern üzenetküldő alkalmazások.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a végtelen pörgettyű</span>
+                    <p>A haladás jelzése nélküli betöltési animáció semmiről sem tájékoztat. Csak annyit mond: „talán történik valami”, és minél határozatlanabb, annál hosszabbnak tűnik.</p>
+                    <p>Egy haladásjelző sáv, még ha csak közelítő is, jobban elviselhető. Rövid műveletnél pedig a tartalomváz jobb a pörgettyűnél.</p>
+                </div>
+
+                <p class="retenir">💡 A súly csökkentése a valós időt javítja. A várakozás kitöltése az érzett időt. Mindkettő számít.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="charge-cognitive">🧠 A kognitív terhelés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Minden felület szellemi erőfeszítést kíván: megérteni, választani, megjegyezni.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden felület szellemi erőfeszítést kíván: megérteni, választani, megjegyezni. Ez az erőfeszítés korlátos, és elfogy. Az a felület, amely túl sokat emészt fel belőle, kifáraszt, aztán feladásra késztet — gyakran anélkül, hogy az ember meg tudná mondani, miért.</p>
+
+                <h4>Hick törvénye: a választás ára</h4>
+                <p>A döntéshez szükséges idő a lehetőségek számának <strong>logaritmusával</strong> nő. Gyakorlatilag: 2-ről 4 választásra lépni ugyanannyiba kerül, mint 4-ről 8-ra.</p>
+                <p>Egy pontosítás szükséges, mert szinte mindig kimarad: ez a törvény a <strong>már ismert</strong> lehetőségek közötti választást írja le. Szó szerint alkalmazva még azt is kimondja, hogy egy lapos lista jobb egy kétszintű navigációnál — hiszen az utóbbinál kétszer kell dönteni.</p>
+                <p>A csoportosítást valami más teszi nyerővé: a <strong>vizuális pásztázás</strong>. Aki most ismerkedik egy menüvel, nem választ, hanem keres — és ennek a költsége nagyjából lineáris. Húsz végigolvasandó pont kontra négy csoport, aztán öt pont: a különbség szembetűnő.</p>
+
+                <div class="pratique" data-pratique="loi-de-hick"></div>
+
+                <h4>Fitts törvénye: a mozdulat ára</h4>
+                <p>Egy célpont eléréséhez szükséges idő a <strong>távolságától</strong> és a <strong>méretétől</strong> függ. Egy kicsi, távoli célpontot lassú eltalálni; egy nagy, közeli célpont azonnal elérhető.</p>
+                <p>Ebből több jól megalapozott következmény adódik: a képernyő szélei és sarkai kiemelt zónák, mert a kurzor magától megáll ott. Telefonon a képernyő alja jobban elérhető a hüvelykujjnak, mint a teteje — ez magyarázza, miért kerültek a navigációs sávok alulra.</p>
+                <p>Egy űrlap fő műveletének pedig <strong>nagynak kell lennie, és közel az utolsó kitöltött mezőhöz</strong>, nem egy sarokba száműzve.</p>
+
+                <div class="exemple">
+                    <span class="titre">Az egyszerre megjegyzett elemek száma</span>
+                    <p>A munkamemória egyszerre csak néhány elemet tart meg — a ma általánosan elfogadott nagyságrend <strong>négy</strong> körül van, nem a sokáig idézett hét.</p>
+                    <p>Ezért olvasunk egy telefonszámot csoportokban, ezért érdemes egy hosszú űrlapot lépésekre bontani, és ezért rossz ötlet arra kérni valakit, hogy egy információt fejben vigyen át az egyik képernyőről a másikra: újra meg kell jeleníteni.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — összetéveszteni az egyszerűt a minimalistával</span>
+                    <p>Feliratokat elhagyni, a lehetőségeket homályos ikonok mögé rejteni, a magyarázatokat törölni: a képernyő letisztultnak tűnik, a mentális terhelés nő.</p>
+                    <p>A felhasználónak ettől kezdve találgatnia kell. Az egyszerű felület nem az, amelyik a legkevesebbet mutatja, hanem az, amelyik a legkevesebb erőfeszítést kívánja a megértéshez.</p>
+                </div>
+
+                <p class="retenir">💡 A lehetőségek száma kevésbé fáraszt, mint az, ha nincs szerkezet a végigböngészésükhöz.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="schemas-sombres">🎯 A sötét minták</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A sötét minta olyan felület, amelyet arra terveztek, hogy olyasmit csikarjon ki a felhasználóból, amit tájékozottan nem választott volna.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A sötét minta olyan felület, amelyet arra terveztek, hogy olyasmit csikarjon ki a felhasználóból, amit tájékozottan nem választott volna. Ezek nem ügyetlenségek: szándékos, gyakran tesztelt és optimalizált tervezési döntések.</p>
+
+                <h4>A legelterjedtebb formák</h4>
+                <p><strong>A kiegyensúlyozatlan hozzájárulás.</strong> „Az összes elfogadása” nagy, színes gomb, a „beállítások” kis szürke hivatkozás. Technikailag van választás; a gyakorlatban terelnek.</p>
+                <p><strong>Előfizetés egy kattintással, lemondás tízzel.</strong> Feliratkozni harminc másodperc; leiratkozni csak egy elrejtett oldal megtalálása után lehet, és még indokolni is kell a távozást.</p>
+                <p><strong>A végén felbukkanó díjak.</strong> A kiírt ár nem a fizetett ár. A felárak azután jelennek meg, hogy az ember már időt fektetett a vásárlási folyamatba.</p>
+                <p><strong>A visszautasítás szégyene.</strong> „Nem, köszönöm, inkább többet fizetek.” Az elutasító feliratot úgy fogalmazták meg, hogy kellemetlen legyen rákattintani.</p>
+                <p><strong>A hamis sürgetés.</strong> Egy visszaszámláló, amely újraindul, vagy „3 ember nézi ezt a terméket” minden alap nélkül.</p>
+
+                <div class="exemple">
+                    <span class="titre">Amit az európai jog mond</span>
+                    <p>Ezek közül több gyakorlat nem csupán vitatható: <strong>jogellenes</strong>.</p>
+                    <p>A hozzájárulást <strong>ugyanolyan könnyű legyen megtagadni, mint megadni</strong> — az a sütisáv, amelyen nincs „összes elutasítása” gomb ugyanazon a szinten, mint az „összes elfogadása”, nem felel meg az előírásoknak.</p>
+                    <p>A lemondásnak ugyanolyan egyszerű módon kell lehetségesnek lennie, mint a feliratkozásnak. A fogyasztóvédelmi hatóságok pedig szankcionálják a megtévesztő árfeltüntetést.</p>
+                </div>
+
+                <div class="pratique" data-pratique="schemas-sombres"></div>
+
+                <h4>Miért rossz számítás</h4>
+                <p>Ezek a technikák működnek: rövid távon valóban növelik a konverziót. Ettől csábítók, és ettől tűnnek hatékonynak egy irányítópulton.</p>
+                <p>Amit az irányítópult nem mutat: a későbbi lemondások, a visszatérítési kérelmek, a negatív értékelések és a lassan beköltöző bizalmatlanság. A nyereség azonnali és mért; a költség késleltetett és szétszórt.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a nem szándékos sötét minta</span>
+                    <p>Egy „az egyszerűség kedvéért” előre bejelölt négyzet, egy „esztétikai okból” kevésbé látható elutasító gomb: senki sem akart megtéveszteni, és a felhasználó számára az eredmény ugyanaz.</p>
+                    <p>A próba egyszerű: <strong>ha a felhasználó rájönne erre a mechanizmusra, becsapva érezné magát?</strong> Ha igen, a szándék semmin sem változtat.</p>
+                </div>
+
+                <p class="retenir">💡 Az a felület, amely olyan hozzájárulást szerez meg, amelyet senki sem adott volna meg, ha érti, nem meggyőzött: csapdába ejtett.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="mesurer-le-design">📐 A design mérése</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Az, hogy „szebb”, nem elfogadható érv, az pedig, hogy „az ügyfélnek jobban tetszik”, még kevésbé.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az, hogy „szebb”, nem elfogadható érv, az pedig, hogy „az ügyfélnek jobban tetszik”, még kevésbé. A design mérhető — tökéletlenül, de ahhoz eléggé, hogy dönteni lehessen.</p>
+
+                <h4>A használhatósági teszt három alapmérése</h4>
+                <p><strong>A sikerességi arány</strong>: a résztvevők mekkora része végzi el a feladatot segítség nélkül. Ez a legfontosabb mérés, és ezt felejtik el a leggyakrabban.</p>
+                <p><strong>A feladatidő</strong>: mennyi időbe telik nekik. Óvatosan értelmezendő — a gyorsabb nem mindig jobb, főleg egy fontos döntésnél.</p>
+                <p><strong>A hibák száma</strong>: hányszor tévednek, lépnek vissza, vagy tétováznak láthatóan.</p>
+                <p>Ehhez jön egy szabványosított elégedettségi kérdőív, amelynek fő érdeme, hogy összehasonlítható változatról változatra és termékről termékre.</p>
+
+                <div class="exemple">
+                    <span class="titre">A számítás, amely meggyőz egy vezetőséget</span>
+                    <p>Egy javítás <strong>5 másodpercet</strong> takarít meg egy feladaton, amelyet <strong>200 ember</strong> végez el <strong>naponta háromszor</strong>, évente 220 napon.</p>
+                    <p>Azaz 5 × 3 × 200 × 220 = 660 000 másodperc, nagyjából <strong>évi 183 óra</strong>.</p>
+                    <p>Ez a számítás az esztétikai érvet költségvetési érvvé alakítja. Gyakran ez az egyetlen, amelyre odafigyelnek.</p>
+                </div>
+
+                <div class="pratique" data-pratique="gain-de-temps-utilisateur"></div>
+
+                <h4>Amit a mérések nem mondanak el</h4>
+                <p>Egy használhatósági teszt azt mutatja meg, <strong>hol</strong> buknak el az emberek, ritkán azt, hogy <strong>miért</strong>. A választ a megfigyelés és az utólag feltett kérdések adják, nem az eredménytáblázat.</p>
+                <p>Egy magában álló szám pedig semmit sem ér: az összehasonlítás — előtte és utána, A és B változat — hozza létre az információt.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt mérni, amit könnyű mérni</span>
+                    <p>Az oldalon töltött időt könnyű összegyűjteni. Egyben tökéletesen kétértelmű is: érdeklődés, vagy zavarodottság?</p>
+                    <p>Egy kényelmes, de értelmezhetetlen mutató rosszabb, mint ha semmit sem mérnénk: azt az érzést kelti, hogy tudunk valamit.</p>
+                </div>
+
+                <p class="retenir">💡 Mérés nélkül a design nem javul — csak változik, és azt hisszük, hogy javítottunk rajta.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A kitöltött várakozás rövidebbnek tűnik, mint egy ugyanolyan hosszú üres várakozás.</li>
+                <li>A döntési idő a lehetőségek számának logaritmusával nő, nem lineárisan.</li>
+                <li>Egy távoli, kicsi célpontot sokkal lassabb elérni, mint egy közeli, nagyot.</li>
+                <li>A sötét minta azonnali konverziót és tartós bizalmatlanságot hoz.</li>
+                <li>Az a design, amelyet nem mérnek, nem javul: csak változik.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Számold meg az egyik menüd pontjait. Ha hétnél több van, mérd le stopperrel, mennyi idő alatt találod meg a hatodikat: a döntési idő a lehetőségek számával nő, és ezt most magadon mérted le.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>EDPB — iránymutatás a megtévesztő tervezési mintákról</strong>: az európai adatvédelmi hatóságok közös anyaga arról, mit várnak el egy hozzájárulási felülettől, és mit kifogásolnak. Magyarországon a NAIH felügyeli ezeket a szabályokat.</li>
+                    <li><strong>Fogyasztóvédelmi hatóságok és a Gazdasági Versenyhivatal (GVH)</strong>: az árfeltüntetésre és a tisztességtelen kereskedelmi gyakorlatokra vonatkozó szabályok, amelyek minden webáruházra érvényesek.</li>
+                    <li><strong>A Nielsen Norman Group munkái</strong>: a válaszidő észlelési küszöbei és a használhatósági tesztek protokolljai, az 1990-es évek óta dokumentálva.</li>
+                    <li><strong>Teljesítmény-auditáló eszközök</strong>: megadják egy oldal valós súlyát, és részletezik, mi lassítja. A listát szinte mindig a képek uralják.</li>
+                    <li><strong>A kognitív terhelés szakirodalma</strong>: Miller és Cowan munkái a munkamemóriáról, amelyekből a csoportosítási szabályok erednek.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> mielőtt megvédesz egy javítást, számold ki, hány órát takarít meg évente. Az esztétikai érvről lehet vitatkozni, a számításról sokkal kevésbé.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>UX/UI design — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza az útmutatóhoz →</span>🎨 UX/UI design</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/dev-web/index.html">💻 Webfejlesztés (franciául)</a>
+                <a href="../../../guides/marketing/index.html">📢 Digitális marketing (franciául)</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/design-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
