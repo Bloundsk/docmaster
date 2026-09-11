@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Onze parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Écologie, Entrepreneuriat, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Douze parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Écologie, Entrepreneuriat, Finance, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -68,12 +68,12 @@ françaises.
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
    Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité, Marketing,
-   Négociation, Écologie, Entrepreneuriat (11 sur 14).** Les sujets sans droit
-   français sont tous faits ; restent Finance, Droit et Santé, à traiter comme
-   Entrepreneuriat (décision ci-dessous).
+   Négociation, Écologie, Entrepreneuriat, Finance (12 sur 14).** Les sujets sans
+   droit français sont tous faits ; restent Droit et Santé, à traiter comme
+   Entrepreneuriat et Finance (décision ci-dessous).
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %, Entrepreneuriat 52 %). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %, Entrepreneuriat 52 %, Finance 41 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
@@ -173,6 +173,18 @@ françaises.
   EURL, SAS, cotisations patronales de 40 à 45 %) ; le RGPD est dit européen, donc
   applicable en Hongrie ; organismes nommés par leur fonction, avec « Magyarországon
   a NAIH » et « Magyarországon az SZTNH » — ce second nom est à vérifier ;
+- pour Finance : *vésztartalék* (épargne de précaution), *befektetési keret*
+  (enveloppe), *hagyományos értékpapírszámla* (compte-titres), *szociális
+  hozzájárulás* (prélèvements sociaux), *átalányadó* (flat tax), *adómentes keret*
+  (abattement), *kamatos kamat*, *újrasúlyozás* (rééquilibrage), *rendszeres
+  befizetések* (versements programmés), *hazai torzítás* (biais domestique),
+  *veszteségkerülés* (aversion à la perte), *felhalmozó / osztalékfizető*
+  (capitalisant / distribuant), « duration » gardé tel quel. **Les enveloppes et
+  taux restent français et le disent** : PEA, assurance-vie et fonds euros gardent
+  leur nom, chaque niveau prévient que keretek et adókulcsok sont français ; le
+  niveau avancé ajoute que la structure des enveloppes se retrouve dans la plupart
+  des pays, et le biais domestique invite à « írd be a saját országodat ». Autorité
+  citée : « Franciaországban az AMF, Magyarországon az MNB » ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12
@@ -186,7 +198,7 @@ pris l'option recommandée, celle de la version anglaise. Les règles française
 le dit ; le bandeau `reglesFrancaises` s'affiche de lui-même en hongrois. Ce qui est
 européen se dit européen ; les organismes deviennent leur fonction. Transposer vers
 le droit hongrois reste possible plus tard, avec des sources hongroises vérifiées.
-Appliqué à Entrepreneuriat ; à appliquer à Finance, Droit et Santé.
+Appliqué à Entrepreneuriat et Finance ; à appliquer à Droit et Santé.
 
 **Pour relancer :** « continue la traduction hongroise ».
 

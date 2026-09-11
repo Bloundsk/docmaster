@@ -1,5 +1,35 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Douzième parcours en hongrois : Finance
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/finance/`, **les 3 banques de quiz** (96 questions,
+  la bonne réponse au même rang qu'en français) et **les 124 textes des
+  13 simulateurs** (119 textes et 7 fragments ajoutés : « % az egészből »,
+  « %-os költséggel », « N év után (… befizetve) », et les vingt libellés « Ha N év
+  múlva kezded »).
+- `CONTENU_TRADUIT.hu` annonce aussi « finance ». Les douze pages hongroises qui
+  citaient ce parcours en français mènent maintenant à sa version hongroise.
+- **Deuxième sujet à droit français, traité comme Entrepreneuriat.** PEA,
+  assurance-vie, fonds euros, flat tax à 30 % et prélèvements sociaux à 17,2 %
+  restent, et chaque niveau le dit (« a leírt befektetési keretek és adókulcsok
+  franciák ») ; le bandeau `reglesFrancaises` s'affiche de lui-même, vérifié sur le
+  niveau avancé. Le niveau avancé ajoute, comme en anglais, que la structure des
+  enveloppes (imposée à la réalisation, exonérée après détention, abattement
+  annuel) se retrouve dans la plupart des pays, et le biais domestique invite le
+  lecteur à « írd be a saját országodat ». L'autorité citée devient « Franciaországban
+  az AMF, Magyarországon az MNB » ; les autres ressources, leur fonction.
+
+### Corrigé en route
+
+- **Le biais de longueur, une douzième fois, corrigé en une passe** : la bonne réponse
+  était la plus longue dans 41 % des cas (français 31 %), et 10 fois sur 30 au niveau
+  avancé contre 2 en français. 37 distracteurs retouchés — rallongés, ou raccourcis
+  là où le français mettait la bonne réponse en plus longue : 32 / 35 / 33 %
+  (français 31 / 41 / 29 %). Les 1 092 questions hongroises sont à
+  33,4 / 35,9 / 31,3 %.
+
 ## 2026-09-12 — Onzième parcours en hongrois : Entrepreneuriat
 
 ### Ce qui est publié

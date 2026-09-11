@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Allokáció, költségek, befektetési keretek — Pénzügyek, középhaladó - Clicked</title>
+    <meta name="description" content="A pénzügyek útmutatójának középhaladó szintje: allokáció felépítése, a költségek hatásának mérése, adózási keret választása, rendszeres befektetés. A francia befektetési kereteket ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/finance/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/finance/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/finance/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/finance/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/finance/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Allokáció, költségek, befektetési keretek — Pénzügyek, középhaladó - Clicked">
+    <meta property="og:description" content="A pénzügyek útmutatójának középhaladó szintje: allokáció felépítése, a költségek hatásának mérése, adózási keret választása, rendszeres befektetés. A francia befektetési kereteket ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/finance/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Allokáció, költségek, befektetési keretek — Pénzügyek, középhaladó - Clicked">
+    <meta name="twitter:description" content="A pénzügyek útmutatójának középhaladó szintje: allokáció felépítése, a költségek hatásának mérése, adózási keret választása, rendszeres befektetés. A francia befektetési kereteket ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">💰 Pénzügyek</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💰 Pénzügyek — Középhaladó</h1>
+                <p>Az elvektől a döntésekig: mennyit, hová, milyen költséggel.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<line x1="45" y1="85" x2="45" y2="60"/><line x1="60" y1="85" x2="60" y2="50"/><line x1="75" y1="85" x2="75" y2="65"/><line x1="90" y1="85" x2="90" y2="45"/>
+<path d="M40 45 L95 45 M40 45 L40 90 L100 90" stroke-opacity="0.5"/></g></g>
+<circle class="illu-twinkle" cx="90" cy="45" r="4" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="55" r="2.5" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="105" cy="95" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>az időtávodból vezess le egy allokációt</strong>, ne egy véleményből, hogy számszerűsítsd, mit jelentenek a költségek hosszú távon, hogy válassz a francia keretek — PEA, értékpapírszámla, assurance-vie — között, és hogy rendszeres befizetésekkel tartsd az irányt.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#construire-son-allocation">🧭 Az allokáció felépítése</a></li>
+                <li><a href="#les-frais">💸 A költségek, a csendes ellenség</a></li>
+                <li><a href="#choisir-son-enveloppe">🏦 A keret megválasztása</a></li>
+                <li><a href="#investir-dans-la-duree">🔁 Hosszú távon befektetni</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Miből vezethető le a részvények és a kötvények aránya?</li>
+                <li>Mibe kerül egy százalékpont éves költség harminc év alatt?</li>
+                <li>PEA vagy assurance-vie: melyik a jobb?</li>
+                <li>Átlagosan többet hoz a rendszeres befizetés?</li>
+                <li>Mitől marad fenn egy allokáció az időben?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint egy egyszerű kérdésre felelt: milyen sorrendben kell a dolgokat csinálni. Tartalékot képezni, megérteni, mi a befektetés, nem összekeverni a megtakarítást a befektetéssel.</p>
+            <p>Ez a szint a közvetlenül utána következő, sokkal konkrétabb kérdésekre felel: <strong>a pénzem mekkora részét tegyem részvényekbe</strong>, <strong>mennyibe kerül valójában a közvetítőm</strong>, <strong>milyen számlát nyissak</strong>, és <strong>milyen ütemben fektessek be</strong>. Ez a négy döntés határozza meg az eredmény nagy részét, jóval azelőtt, hogy egy-egy alap kiválasztására sor kerülne.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>: mechanizmusokat magyaráz el, egyetlen befektetést sem ajánl. Nem személyre szabott befektetési tanácsadás, és nem helyettesíti az engedéllyel rendelkező szakembert. Egyetlen befektetés sem kockázatmentes, és a múltbeli hozamok nem jelzik előre a jövőbelieket.</p>
+                <p><strong>A leírt befektetési keretek és adókulcsok franciák.</strong> Az időtávról, a költségekről és az újrasúlyozásról szóló gondolatmenet bárhol érvényes, az adózási számok nem.</p>
+                <p>Az idézett kamatok, felső határok és adószabályok változnak: mielőtt cselekszel, mindig ellenőrizd őket a hivatalos forrásuknál.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A meghozandó döntések</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="construire-son-allocation">🧭 Az allokáció felépítése</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az allokáció a tőkéd megosztása a kockázatos befektetések — főleg részvények — és a stabil befektetések — főleg kötvények és tőkegarantált alapok — között.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az allokáció a tőkéd megosztása a kockázatos befektetések — főleg részvények — és a stabil befektetések — főleg kötvények és tőkegarantált alapok — között. Ez <strong>a legmeghatározóbb döntés</strong>: az eredményeid ingadozásának nagy részét ez magyarázza, sokkal inkább, mint maguknak az eszközöknek a kiválasztása.</p>
+
+                <h4>Az időtáv parancsol, nem a vérmérséklet</h4>
+                <p>A kérdés nem az, hogy „óvatos vagy merész vagyok-e?”, hanem az, hogy <strong>„mennyi idő múlva lesz szükségem erre a pénzre?”</strong>. A vérmérséklet nem változtat azon, hogy egy részvénypiacnak több évbe is telhet, mire egy zuhanásból felépül.</p>
+                <p>A logika mechanikus: minél hosszabb az időtáv, annál több idő jut egy esés eltüntetésére. Egy év alatt egy 100%-ban részvényből álló allokáció elveszítheti értékének harmadát. Húsz év alatt a kockázat nem nulla, de más természetű.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Három terv, három különböző allokáció ugyanannál az embernél:</p>
+                    <p><strong>Autóvásárlás 2 év múlva</strong> — 0% részvény. Az igény közel van, az összegnek biztosnak kell lennie. Megtakarítási számla vagy tőkegarantált alap.</p>
+                    <p><strong>Lakásvásárlási önerő 8 év múlva</strong> — nagyjából 40% részvény. Egy esésnek van ideje részben eltűnni, de teljesen nem.</p>
+                    <p><strong>Nyugdíj 25 év múlva</strong> — 80% vagy több. Az időtáv több teljes piaci ciklust is elnyel.</p>
+                    <p>Figyeld meg: ez nem három embertípus, hanem <strong>ugyanannak az embernek három tárcája</strong>, mindegyik a saját határidejével.</p>
+                </div>
+
+                <h4>A „100 mínusz az életkor” szabály, és amit ér</h4>
+                <p>Egy régi szabály azt javasolja, hogy a részvényarány <strong>100 mínusz az életkor</strong> legyen: 30 évesen 70%, 60 évesen 40%. Az az érdeme, hogy létezik, és a pénz szükségességéhez közeledve csökkenti a kockázatot.</p>
+                <p>A korlátja, hogy összekeveri az életkort az időtávval. Egy 60 éves ember, aki csak 80 évesen nyúl a tőkéjéhez, még húsz évvel rendelkezik, nem nullával. Fordítva: egy 30 évesnek, aki két év múlva lakást vesz, semmi oka 70%-os kitettségre.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a piacokat figyelve választani allokációt</span>
+                    <p>Ha azért növeled a részvényarányt, mert a tőzsde két éve emelkedik, drágán veszel. Ha egy zuhanás után csökkented, olcsón adsz el, és egy átmeneti esésből végleges veszteség lesz.</p>
+                    <p>Az allokációt <strong>hideg fejjel</strong>, ismert határidők alapján rögzítjük, és csak akkor vizsgáljuk felül, ha ezek a határidők változnak — nem akkor, amikor a hírek felbolydulnak.</p>
+                </div>
+
+                <div class="pratique" data-pratique="perte-max-portefeuille"></div>
+
+                <p class="retenir">💡 Egy allokáció egy dátumból következik, nem a piacokról alkotott véleményből.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-frais">💸 A költségek, a csendes ellenség</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A költségek a hozamod egyetlen olyan eleme, amely előre ismert és teljesen biztos.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A költségek a hozamod egyetlen olyan eleme, amely <strong>előre ismert és teljesen biztos</strong>. A teljesítmény bizonytalan; a költségeket viszont bármi történjék levonják, jó és rossz években egyaránt.</p>
+
+                <h4>Hol rejtőznek</h4>
+                <p>Egymásra rakódnak, és ettől nehéz észrevenni őket:</p>
+                <ul>
+                    <li><strong>Az eszköz kezelési költsége</strong> (egy alap vagy ETF „TER”-je): évente vonják le az állományból, soha nem számlázzák külön. Csendben vonódik le a kimutatott teljesítményből.</li>
+                    <li><strong>Keretköltségek</strong>: a francia assurance-vie szerződések a befektetési egységekre ráadásul éves díjat is felszámítanak.</li>
+                    <li><strong>Brókeri díjak</strong>: minden megbízásnál.</li>
+                    <li><strong>Belépési díjak</strong>: egyes szerződések minden befizetésből levonják.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — mibe kerül egy százalékpont költség</span>
+                    <p><strong>20 000 EUR</strong> tőke, <strong>30 évre</strong> befektetve, egy <strong>költségek előtt évi 6%-ot</strong> hozó eszközben.</p>
+                    <p><strong>0,2%-os költséggel</strong> (szokásos index-ETF) a nettó hozam 5,8%: a tőke nagyjából <strong>113 000 EUR</strong> lesz.</p>
+                    <p><strong>1,2%-os költséggel</strong> (aktívan kezelt alap) a nettó hozam 4,8%-ra esik: a tőke nagyjából <strong>84 000 EUR</strong> lesz.</p>
+                    <p>Egyetlen százalékpont éves költség <strong>29 000 EUR-ba</strong> került, az eredmény negyedébe — anélkül, hogy bármi megjelent volna egy kivonaton.</p>
+                </div>
+
+                <h4>Miért ilyen erős a különbség</h4>
+                <p>Mert a költségek minden évben a <em>teljes</em> tőkére vonatkoznak, a felhalmozott nyereségre is. Nem csak a hozamot csipkedik: megfosztanak azoktól a kamatoktól is, amelyeket ez a hozam a következő években termelt volna. Ez a visszafelé működő kamatos kamat.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — egy alapot a múltbeli teljesítménye alapján megítélni</span>
+                    <p>Egy szép évet felmutató alap természetesen vonzó. A múltbeli teljesítmény azonban nem ismétlődik megbízhatóan, a költségek viszont minden évben ugyanúgy.</p>
+                    <p>Ha két eszközt először a költségeik alapján hasonlítasz össze, az egyetlen biztos adat alapján hasonlítasz.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-des-frais"></div>
+
+                <p class="retenir">💡 A hozam feltevés, a költség bizonyosság. Kezdd azzal, ami biztos.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="choisir-son-enveloppe">🏦 A keret megválasztása</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A keret a tároló: Franciaországban a PEA, a hagyományos értékpapírszámla, az assurance-vie.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A keret a tároló: Franciaországban a PEA, a hagyományos értékpapírszámla, az assurance-vie. A tartalom — a részvények, az ETF-ek — gyakran ugyanaz lehet. Ami változik, az az <strong>adózás</strong> és a <strong>kivét feltételei</strong>.</p>
+                <p>Sokan keresik „a legjobbat”. Rossz a kérdés: nem ugyanarra a kérdésre felelnek.</p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>PEA</th><th>Értékpapírszámla</th><th>Assurance-vie</th></tr>
+                    <tr><th>Mit tartalmazhat</th><td>Európai részvények és alapok</td><td>Bármit, földrajzi korlát nélkül</td><td>A szerződés által kínált eszközöket</td></tr>
+                    <tr><th>Fő előny</th><td>5 év után a nyereség jövedelemadó-mentes</td><td>Semmilyen korlát</td><td>8 év után éves adómentes keret, és öröklési előnyök</td></tr>
+                    <tr><th>Korlát</th><td>Személyenként egy, befizetési felső határ</td><td>Teljes adózás az első euró nyereségtől</td><td>A szerződés költségei, korlátozott eszközválaszték</td></tr>
+                    <tr><th>Kivét a határidő előtt</th><td>Lehetséges, de 5 év előtt megszünteti a tervet</td><td>Szabad</td><td>Szabad, 8 év előtt kedvezőtlenebb adózással</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — amit a keret megváltoztat</span>
+                    <p>Ugyanaz a befektetés <strong>10 000 EUR nyereséget</strong> hoz. A kivét pillanatában:</p>
+                    <p><strong>Értékpapírszámlán</strong>: 30%-os átalányadó (jövedelemadó és szociális hozzájárulás együtt), azaz <strong>3 000 EUR</strong>. Marad 7 000 EUR.</p>
+                    <p><strong>Öt évnél régebbi PEA-n</strong>: csak a szociális hozzájárulás érvényes, 17,2% — nagyjából <strong>1 720 EUR</strong>. Marad 8 280 EUR.</p>
+                    <p>Ugyanaz az eszköz, ugyanaz a hozam, ugyanaz az időtáv: <strong>1 280 EUR különbség</strong>, kizárólag a keret miatt.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — későn megnyitni a PEA-t</span>
+                    <p>Az ötéves óra a terv <strong>megnyitásakor</strong> indul, nem az első jelentős befizetéskor. Ha szerény összeggel nyitsz PEA-t, akár azonnali terv nélkül, elindul az óra.</p>
+                    <p>Sokan várják, hogy „legyen elég” a nyitáshoz, és ezzel több év, ingyen megszerezhető előnyről mondanak le.</p>
+                </div>
+
+                <div class="pratique" data-pratique="comparateur-enveloppes"></div>
+
+                <p class="retenir">💡 Nem a legjobb keretet választjuk, hanem azt, amelyik a határidőhöz és a tervezett tartalomhoz illik.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="investir-dans-la-duree">🔁 Hosszú távon befektetni</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy allokációt kiválasztani egy dolog; húsz évig kitartani mellette egy másik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy allokációt kiválasztani egy dolog; húsz évig kitartani mellette egy másik. A legtöbb terv itt bukik el, nem számítási hiba, hanem feladás miatt.</p>
+
+                <h4>A rendszeres befizetések</h4>
+                <p>Ha rendszeres időközönként fix összeget fektetsz be, bármilyen szinten van a piac, gépiesen több jegyet veszel, amikor az árak alacsonyak, és kevesebbet, amikor magasak.</p>
+                <p>Legyünk őszinték abban, mit hoz ez: <strong>átlagosan nem hoz többet</strong>, mint egyszerre befektetni mindent — történelmileg még kicsit kevesebbet is, mert a pénz rövidebb ideig van befektetve. Az előnye máshol van, és döntő: a módszer <strong>megszünteti a belépési pillanat kérdését</strong>, amely megbénít és végtelen halogatáshoz vezet.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p><strong>Havi 200 EUR 20 éven át</strong>, azaz 48 000 EUR befizetés, évi 6%-on: nagyjából <strong>92 000 EUR</strong>. A kamatok meghaladják a befizetéseket.</p>
+                    <p>Ugyanez a havi összeg <strong>csak 10 évig</strong> (24 000 EUR befizetés): nagyjából <strong>33 000 EUR</strong>.</p>
+                    <p>A kétszeres időtáv nem kétszeres, hanem közel háromszoros tőkét hoz. Az idő, jobban, mint az összeg, határozza meg az eredményt.</p>
+                </div>
+
+                <h4>Az újrasúlyozás</h4>
+                <p>Idővel a legjobban növő tárca egyre nagyobb helyet foglal el. Egy 60% részvényre tervezett allokáció néhány jó év után 75%-ra csúszhat — a kockázat úgy nőtt, hogy senki sem döntött róla.</p>
+                <p>Újrasúlyozni annyi, mint <strong>évente egyszer</strong> visszatérni a célhoz, lehetőleg a lemaradt tárcába fizetve, nem eladással. A művelet ellentmond az intuíciónak — azt kéri, hogy azt erősítsd, ami a legrosszabbul teljesített —, de pontosan ez tartja meg a választott kockázati szintet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — naponta figyelni a portfóliót</span>
+                    <p>A napi figyelés megsokszorozza az alkalmakat, hogy pirosat láss, és így a kísértést is a cselekvésre. Minden nem tervezett beavatkozás érzelmi hatás alatt hozott döntés.</p>
+                    <p>Egy hosszú távú portfóliónak elég egy előre, naptárba beírt éves időpont — és ez megóv a legtöbb drága hibától.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-duree"></div>
+
+                <p class="retenir">💡 Nem az allokáció kiválasztása a legnehezebb, hanem az, hogy ne változtass rajta, amikor próbára teszik.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A részvények és kötvények közti allokáció az időtávból következik, nem a pillanatnyi hangulatból.</li>
+                <li>Egy százalékpont éves költség harminc év alatt a végső tőke nagyjából ötödébe kerül.</li>
+                <li>A PEA nem „jobb” az assurance-vie-nél: nem ugyanarra a kérdésre felelnek.</li>
+                <li>A rendszeres befizetés átlagosan nem hoz többet — elviselhetővé teszi a várakozást.</li>
+                <li>Az éves újrasúlyozás tartja fenn az allokációt az időben.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Nyisd meg a szerződésed vagy számlád éves kivonatát, és keresd meg a költségek sorát — kezelési díj, befizetési díj, az eszköz költségei. Add össze őket. Írd be az összeget a költségszimulátorba: látni fogod, mibe kerülnek huszonöt év alatt.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országod pénzügyi felügyelete</strong> — kalkulátorai és költségtájékoztatói egy valódi szerződés költségeinek kiszámítását teszik lehetővé egy elméleti példa helyett.</li>
+                    <li><strong>A kormányzati hivatalos portál</strong> — a keretek felső határai, az adózás, a járulékkulcsok. A forrásnál ellenőrizd, ezek az értékek változnak.</li>
+                    <li><strong>Kiemelt információkat tartalmazó dokumentumok (KID)</strong>: az Európai Unióban minden alapnak közzé kell tennie egyet, a valódi költségeivel. Ezt kell elolvasni minden jegyzés előtt, és három oldalon elfér.</li>
+                    <li><strong>SPIVA-tanulmányok</strong> (S&amp;P Dow Jones Indices): az aktív alapok és az indexek éves összehasonlítása. Közvetlenül a költségek kérdésére világít rá.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> mindig kérd el az éves költségek teljes összegét — az eszközét és a keretét együtt. Az a közvetítő, akinek nehezére esik erre válaszolni, már válaszolt is.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Pénzügyek — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Pénzügyek — Haladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Vállalkozás</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../productivite/index.html">⏱️ Termelékenység és szervezés</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/finance-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
