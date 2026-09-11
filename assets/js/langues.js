@@ -139,7 +139,7 @@
        C'est de cette liste que dépendent deux comportements : le sélecteur mène
        vers la page traduite quand elle existe, et le bandeau « les cours sont
        en français » ne s'affiche plus sur les sujets traduits. */
-    const CONTENU_TRADUIT = { en: ["apprendre", "cybersecurite", "data", "design", "dev-web", "droit", "ecologie", "entrepreneuriat", "finance", "ia", "marketing", "negociation", "productivite", "sante"], es: [], de: [], it: [], zh: [], ru: [], hu: ["apprendre", "cybersecurite", "data", "design", "dev-web", "ia", "productivite"] };
+    const CONTENU_TRADUIT = { en: ["apprendre", "cybersecurite", "data", "design", "dev-web", "droit", "ecologie", "entrepreneuriat", "finance", "ia", "marketing", "negociation", "productivite", "sante"], es: [], de: [], it: [], zh: [], ru: [], hu: ["apprendre", "cybersecurite", "data", "design", "dev-web", "ia", "marketing", "productivite"] };
 
     /* Les pages hors cours traduites, par langue, désignées par leur nom de
        fichier. Même règle que CONTENU_TRADUIT : une page n'y figure que

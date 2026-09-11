@@ -1,5 +1,34 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Huitième parcours en hongrois : Marketing digital
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/marketing/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 166 textes des
+  12 simulateurs** (157 textes et 11 fragments ajoutés : les valeurs soudées à un
+  nombre, « 17 (költség: 36 EUR / eladás) », « 8,3 hónap », « kosárba helyezés (25%) »).
+- `CONTENU_TRADUIT.hu` annonce aussi « marketing ». Les onze pages hongroises qui
+  citaient Marketing en français mènent maintenant à sa version hongroise.
+- **Le cadre juridique est européen, et le dit.** La Hongrie étant dans l'Union, la
+  leçon suit le GDPR et l'ePrivacy « qui s'appliquent aussi en Hongrie ». La seule
+  règle propre à la France — la prospection vers un professionnel, où l'information
+  préalable suffit — est présentée comme variable selon les pays, la France citée en
+  exemple, sans rien affirmer du droit hongrois. CNIL → NAIH, DGCCRF → autorités de
+  consommation et GVH, ARPP → Önszabályozó Reklám Testület (à confirmer par le
+  relecteur, noté dans CHANTIERS.md).
+- **Exemples transposés** : le TBSZ remplace le PEA dans le tableau des intentions de
+  recherche, « kgfb … Szeged » l'assurance auto à Toulouse ; les montants restent en
+  euros, comme les simulateurs.
+
+### Corrigé en route
+
+- **Le biais de longueur, une huitième fois, corrigé en une passe** comme pour
+  Cybersécurité : la bonne réponse était la plus longue dans 56 % des cas (français
+  36 %). 28 distracteurs rallongés sur 26 questions, chacun jusqu'à la place
+  française : 36 / 36 / 28 % (français 36 / 37 / 28 %). Les 720 questions hongroises
+  sont à 32,8 / 36,1 / 31,7 %.
+
 ## 2026-09-11 — Septième parcours en hongrois : Cybersécurité
 
 ### Ce qui est publié

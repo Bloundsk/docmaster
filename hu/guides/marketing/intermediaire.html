@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Keresési szándék és vásárlási út — Marketing, középhaladó - Clicked</title>
+    <meta name="description" content="A marketing útmutató középhaladó szintje: a vásárlási út és szivárgási pontjai, a keresési szándék, az akciók mérése, a kapcsolatépítő e-mail és az automatizálás.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/marketing/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/marketing/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/marketing/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/marketing/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/marketing/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Keresési szándék és vásárlási út — Marketing, középhaladó - Clicked">
+    <meta property="og:description" content="A marketing útmutató középhaladó szintje: a vásárlási út és szivárgási pontjai, a keresési szándék, az akciók mérése, a kapcsolatépítő e-mail és az automatizálás.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/marketing/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keresési szándék és vásárlási út — Marketing, középhaladó - Clicked">
+    <meta name="twitter:description" content="A marketing útmutató középhaladó szintje: a vásárlási út és szivárgási pontjai, a keresési szándék, az akciók mérése, a kapcsolatépítő e-mail és az automatizálás.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">📢 Digitális marketing</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📢 Digitális marketing — Középhaladó</h1>
+                <p>Megérteni, hol és miért lépnek le az emberek.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M45 65 L45 80 L58 80 L75 92 L75 53 L58 65 Z" stroke-linejoin="round"/><path d="M85 60 Q92 70 85 80" stroke-opacity="0.6"/><path d="M92 53 Q104 70 92 87" stroke-opacity="0.4"/></g></g>
+<circle class="illu-twinkle" cx="45" cy="72" r="3" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="105" cy="45" r="2.5" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="35" cy="100" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>lépésről lépésre kövess egy vásárlási utat</strong>, hogy a keresés mögötti szándékra írj, hogy olyan mutatókat válassz, amelyek döntéseket váltanak ki, és hogy automatizálj egy küldést anélkül, hogy elveszítenéd a hozzájárulást.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#parcours-achat">🎯 A vásárlási út</a></li>
+                <li><a href="#intention-de-recherche">✍️ A keresési szándék</a></li>
+                <li><a href="#mesurer-ses-actions">📈 Mérni, ami számít</a></li>
+                <li><a href="#email-et-automatisation">💌 Az e-mail és az automatizálás</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mi marad a végén egy négylépcsős, lépésenként 50%-os úton?</li>
+                <li>Jobb megduplázni a forgalmat, vagy megjavítani a legjobban szivárgó lépést?</li>
+                <li>Konvertál egy jól rangsorolt tartalom, amely elvéti a szándékot?</li>
+                <li>Mi az a mutató, amelyet semmilyen döntéshez nem lehet kötni?</li>
+                <li>Egy hozzájárulás nélkül szerzett címlista: érték vagy kockázat?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint a négy eszközt mutatta be: keresőoptimalizálás, hirdetés, közösségi média, e-mail. Mindegyik tudja, mit csinál; egyik sem mondja meg, hogyan kapcsolódnak egymáshoz.</p>
+            <p>Ez a szint arról szól, ami mindezt összeköti: <strong>az útról, amelyet valaki a vásárlás előtt bejár</strong>, arról, mit keresett valójában, mit lehet ebből mérni, és hogyan ápoljuk utána a kapcsolatot. Ez az átmenet az „akciók végzésétől” a „rendszer megértéséig”.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Az idézett arányok nagyságrendek, amelyek egy mechanizmus megértését szolgálják: ágazattól, ártól és közönségtől függően rendkívül eltérőek lehetnek.</p>
+                <p>Minden e-mail-cím gyűjtésére a GDPR vonatkozik. Mielőtt listát építenél, nézz utána a rád vonatkozó szabályoknak.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A rendszer megértése</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="parcours-achat">🎯 A vásárlási út</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Senki sem vásárol egyetlen lépésben.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Senki sem vásárol egyetlen lépésben. Attól a pillanattól, hogy valaki rájön, hogy van egy problémája, addig, amíg fizet, több lépésen megy át — és mindegyiknél lemorzsolódnak emberek.</p>
+
+                <h4>Az arányok összeszorzódnak</h4>
+                <p>Ezt a pontot az intuíció rendszeresen elvéti. Négy lépés, amely egyenként a látogatók <strong>50%-át</strong> tartja meg, nem a felét hagyja meg a végére, hanem <strong>6,25%-ot</strong>. A veszteség halmozódik.</p>
+                <p>Gyakorlati következmény: egy 20%-os lépés az út közepén mindent korlátoz, ami előtte van. Kétszer annyi embert idehozni semmin sem változtat — a szűk keresztmetszet szűk keresztmetszet marad.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>1000 látogató. A termékoldalt megnézi <strong>40%</strong>, kosárba tesz <strong>25%</strong>, megkezdi a rendelést <strong>60%</strong>, befejezi a fizetést <strong>50%</strong>.</p>
+                    <p>Eredmény: <strong>30 rendelés</strong>, azaz 3% összesített konverzió.</p>
+                    <p>Ha a kosárba helyezést 25-ről 35%-ra emeled, <strong>42 rendelés</strong> lesz belőle — <strong>+40%</strong>, egyetlen euró további hirdetés nélkül.</p>
+                </div>
+
+                <div class="pratique" data-pratique="points-de-fuite"></div>
+
+                <h4>Megtalálni a szivárgási pontot</h4>
+                <p>A hasznos reflex nem az, hogy mindent javítsunk, hanem hogy megtaláljuk <strong>azt a lépést, ahol az arány a többihez képest összeomlik</strong>. Ott van a nyereség, és szinte mindig olcsóbb, mint forgalmat vásárolni.</p>
+                <p>A leggyakoribb okok: túl későn kiderülő ár, kötelező regisztráció, túl hosszú űrlap, vagy el nem oszlatott kétely — szállítás, visszaküldés, a fizetés biztonsága.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — forgalmat vásárolni egy szivárgó tölcsér ellensúlyozására</span>
+                    <p>Egy 1%-os tölcséren a hirdetési költségkeret megduplázása a költséget is megduplázza, arányos eredménnyel, anélkül hogy bármit kijavítana.</p>
+                    <p>Ugyanez a költségkeret arra fordítva, hogy megértsük, miért távozik 99%, tartós hatást ér el, amely utána <em>minden</em> csatornának jót tesz.</p>
+                </div>
+
+                <p class="retenir">💡 Javítsd meg a legjobban szivárgó lépést, mielőtt több forgalmat vásárolsz. A nyereség utána minden másra rászorzódik.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="intention-de-recherche">✍️ A keresési szándék</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Minden keresés mögött pontos elvárás áll.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden keresés mögött pontos elvárás áll. Pontosan válaszolni rá többet számít, mint a kulcsszósűrűség vagy a szöveg hossza.</p>
+
+                <h4>Négy szándék, négy tartalom</h4>
+                <p><strong>Információkereső</strong> — „hogyan válasszunk elektromos kerékpárt”: az ember tájékozódik. Egy összehasonlító útmutató illik hozzá; egy termékoldal elriasztja.</p>
+                <p><strong>Navigációs</strong> — „decathlon elektromos kerékpár”: egy konkrét oldalt keres. Fölösleges megpróbálni helyezést elérni rá.</p>
+                <p><strong>Kereskedelmi</strong> — „legjobb elektromos kerékpár 2026”: vásárlás előtt összehasonlít. Egy tisztességes, szempontokat felsoroló összehasonlítás működik.</p>
+                <p><strong>Tranzakciós</strong> — „összecsukható elektromos kerékpár vásárlás”: készen áll. Egy világos termékoldal, árral és elérhetőséggel.</p>
+
+                <div class="exemple">
+                    <span class="titre">Hogyan ellenőrizd a szándékot harminc másodperc alatt</span>
+                    <p>Írd be a megcélzott keresést, és <strong>nézd meg, mi van már rangsorolva</strong>. Ha az első tíz találat blogcikk, egy termékoldalnak semmi esélye: a kereső megértette, hogy az emberek tájékozódni akarnak.</p>
+                    <p>Ez a próba egy percbe kerül, és megóv attól, hogy olyan tartalmat írj, amely minőségétől függetlenül nem tud helyezést elérni.</p>
+                </div>
+
+                <div class="pratique" data-pratique="intention-de-recherche"></div>
+
+                <h4>Szándékonként egy tartalom, nem egy tartalom mindenre</h4>
+                <p>Egy oldal, amely egyszerre próbál tájékoztatni, összehasonlítani és eladni, ritkán sikeres mindháromban. Jobb egy tájékoztató útmutató, amely a termékoldalra irányít, és mindegyik végzi a maga dolgát.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a legtöbbet keresett kifejezéseket célozni</span>
+                    <p>Az „elektromos kerékpár” óriási keresési mennyiségű, ádáz versennyel és homályos szándékkal. Az „összecsukható elektromos kerékpár munkába járáshoz” százszor kevesebb keresést kap — de olyanoktól, akik tudják, mit akarnak.</p>
+                    <p>Ezeken a pontos kereséseken a konverziós arány összemérhetetlenül jobb, és a helyezés elérése reális.</p>
+                </div>
+
+                <p class="retenir">💡 A világ legjobb tartalma sem ér el helyezést, ha más kérdésre válaszol, mint amit feltettek.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="mesurer-ses-actions">📈 Mérni, ami számít</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A digitális marketing rengeteg számot termel, és ezek többsége semmire sem jó.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A digitális marketing rengeteg számot termel, és ezek többsége semmire sem jó. A válogatást egyetlen kérdéssel lehet elvégezni: <strong>milyen döntést változtathat meg ez a szám?</strong></p>
+
+                <h4>A hiúsági mutatók</h4>
+                <p>Megjelenések, megtekintések, követők, elérés: a költségkerettel együtt nőnek, és semmit sem mondanak az eredményről. Megnyugtatnak, kitöltik az irányítópultokat, és semmilyen döntést nem váltanak ki.</p>
+                <p>A hasznos mutatók azok, amelyek az <strong>utat</strong> érintik: lépésenkénti konverziós arány, megszerzett ügyfelenkénti költség, átlagos rendelési érték, az új ügyfelek aránya.</p>
+
+                <h4>Tudni, honnan jönnek az emberek</h4>
+                <p>Ha nyomkövető paramétereket teszel a hivatkozásaidba — forrás, médium, kampány —, meg tudod különböztetni, mi jön egy hírlevélből, egy bejegyzésből vagy egy hirdetésből. Enélkül minden összekeveredik a „közvetlen” forgalomban.</p>
+                <p>Egy egyszerű, leírt és betartott konvenció többet ér, mint egy kifinomult, de találomra alkalmazott rendszer: a <code>source=hirlevel</code> és a <code>Source=Hirlevel</code> két külön sort hoz létre.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ami nem mérhető, és amit el kell fogadni</span>
+                    <p>Valaki lát egy bejegyzést, beszél róla egy barátjának, aki három héttel később rákeres a márka nevére, és vásárol. Az eszköz az eladást a <strong>márkanévre való keresésnek</strong> tulajdonítja — vagyis semminek.</p>
+                    <p>A marketing egy része láthatatlan marad az eszközök számára. Ha ezt elismerjük, két hibát kerülünk el: nem vágunk el egy működő csatornát, és nem becsüljük túl azt, amelyik a konverziókat learatja.</p>
+                </div>
+
+                <div class="pratique" data-pratique="vanity-metrics"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — arányokat összehasonlítani a mennyiségek nélkül</span>
+                    <p>Egy 40 látogatón 8%-os konverziójú csatorna jobbnak tűnik, mint egy 5000 látogatón 3%-os. Az első 3 ügyfelet hoz, a második 150-et.</p>
+                    <p>Az arány a hatékonyságot méri, a mennyiség a hozzájárulást. A kettő együtt, soha csak az egyik.</p>
+                </div>
+
+                <p class="retenir">💡 Ha egy szám semmilyen döntést nem változtathat meg, nincs helye az irányítópultodon.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="email-et-automatisation">💌 Az e-mail és az automatizálás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Az e-mail az a csatorna, ahol a legkevésbé függünk egy platformtól: a lista a tiéd, senki sem változtathat meg egy algoritmust úgy, hogy egyik napról a másikra…</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az e-mail az a csatorna, ahol a legkevésbé függünk egy platformtól: a lista a tiéd, senki sem változtathat meg egy algoritmust úgy, hogy egyik napról a másikra elvegye tőled a közönségedet.</p>
+
+                <h4>A lista értékét a minősége adja, nem a mérete</h4>
+                <p>Ezer ember, aki kérte az üzeneteidet, többet ér, mint tízezer megvásárolt cím. Az utóbbiak panaszokat szülnek, rontják a feladói hírnevedet — és jogi kockázatnak tesznek ki.</p>
+                <p>A rendszeres tisztítás a munka része: a hat hónapja inaktív címek eltávolítása javítja az összes többi küldés kézbesíthetőségét.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — az e-mail tölcsérhatása</span>
+                    <p><strong>4000 fős</strong> lista. Megnyitási arány <strong>32%</strong>, kattintási arány a megnyitásokon <strong>12%</strong>, a kattintások konverziója <strong>6%</strong>.</p>
+                    <p>Eredmény: küldésenként <strong>9 eladás</strong>.</p>
+                    <p>Ha a megnyitást 32-ről 40%-ra emeled — jobb tárgysorral, jobb időzítéssel —, <strong>11 eladás</strong> lesz belőle. Az emelő az üzenet tárgysora, nem a tartalma.</p>
+                </div>
+
+                <div class="pratique" data-pratique="impact-taux-ouverture"></div>
+
+                <h4>Az automatikus sorozatok</h4>
+                <p>Három sorozat hozza az eredmény nagy részét: <strong>az üdvözlő</strong> — két-három üzenet feliratkozás után, amikor a figyelem a legnagyobb; <strong>az elhagyott kosár</strong> — egy emlékeztető néhány órával később; <strong>az újraaktiváló</strong> — egy üzenet az inaktívaknak, mielőtt eltávolítanád őket.</p>
+                <p>Egyszer kell megírni őket, utána maguktól dolgoznak. Ez a csatorna legjobb erőfeszítés–eredmény aránya.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az előre bejelölt négyzet</span>
+                    <p>Ha valakit egy előre bejelölt négyzettel, vagy azért, mert vásárolt, iratkoztatsz fel egy hírlevélre, az a GDPR értelmében nem érvényes hozzájárulás.</p>
+                    <p>A jogi kockázaton túl olyan emberekkel tölti meg a listát, akik semmit sem kértek: panaszok, leiratkozások, és mindenkinek romló feladói hírnév.</p>
+                </div>
+
+                <p class="retenir">💡 A hozzájárulásra épülő lista érték. A megvásárolt lista teher.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy út arányai összeszorzódnak: négy 50%-os lépés után 6% marad a végén.</li>
+                <li>A legjobban szivárgó lépés javítása többet hoz, mint a forgalom megduplázása.</li>
+                <li>Egy tartalom, amely nem felel a keresés mögötti szándékra, nem konvertál, még jó helyezéssel sem.</li>
+                <li>Egy mutató, amelyet nem lehet döntéshez kötni, csak dísz.</li>
+                <li>Egy hozzájárulás nélkül szerzett címlista jogi kockázat, nem érték.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Rajzold fel az utadat négy lépésben, és írd mindegyik mellé az átjutási arányt. Szorozd össze őket. Az eredmény szinte mindig alacsonyabb, mint amit bárki gondolt — és megmutatja, melyik lépést kell javítani.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az adatvédelmi hatóság (Magyarországon a NAIH) — közvetlen üzletszerzés</strong>: mit szabad e-mailben attól függően, hogy a címzett magánszemély vagy vállalkozás. A szabályok eltérnek.</li>
+                    <li><strong>Az e-mail-küldő eszközöd dokumentációja</strong>: a kézbesíthetőségről és a feladó hitelesítéséről szóló fejezetek, amelyek eldöntik, megérkeznek-e az üzeneteid.</li>
+                    <li><strong>Kulcsszókutató eszközök</strong>: először arra használd őket, hogy ellenőrizd a keresés mögötti szándékot, és csak utána a mennyiségekre.</li>
+                    <li><strong>Ágazati jelentések a konverziós arányokról</strong>: viszonyítási pontnak hasznosak, ha hasonló ágazatokat és kosárértékeket hasonlítasz össze.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> mielőtt tartalmat írsz, írd be a megcélzott keresést, és nézd meg az első tíz találatot. Megmondják, mit vár a kereső.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Digitális marketing — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Digitális marketing — Haladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../design/index.html">🎨 UX/UI design</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/marketing-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

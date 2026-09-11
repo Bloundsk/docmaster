@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Attribúció, megtartás és jogi keret — Marketing, haladó - Clicked</title>
+    <meta name="description" content="A marketing útmutató haladó szintje: az attribúció és korlátai, a megtartás és az ügyfélélettartam, az etikus meggyőzés, a megkeresés jogi kerete.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/marketing/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/marketing/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/marketing/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/marketing/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/marketing/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Attribúció, megtartás és jogi keret — Marketing, haladó - Clicked">
+    <meta property="og:description" content="A marketing útmutató haladó szintje: az attribúció és korlátai, a megtartás és az ügyfélélettartam, az etikus meggyőzés, a megkeresés jogi kerete.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/marketing/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Attribúció, megtartás és jogi keret — Marketing, haladó - Clicked">
+    <meta name="twitter:description" content="A marketing útmutató haladó szintje: az attribúció és korlátai, a megtartás és az ügyfélélettartam, az etikus meggyőzés, a megkeresés jogi kerete.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">📢 Digitális marketing</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📢 Digitális marketing — Haladó</h1>
+                <p>Amit az eszközök nem mérnek, és amit a jog szabályoz.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M45 65 L45 80 L58 80 L75 92 L75 53 L58 65 Z" stroke-linejoin="round"/><path d="M85 60 Q92 70 85 80" stroke-opacity="0.6"/><path d="M92 53 Q104 70 92 87" stroke-opacity="0.4"/></g></g>
+<circle class="illu-twinkle" cx="45" cy="72" r="3" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="105" cy="45" r="2.5" fill="white" style="animation-delay:1s"/>
+<circle class="illu-twinkle" cx="35" cy="100" r="2.5" fill="white" style="animation-delay:1.6s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>úgy olvass egy attribúciót, hogy ne keverd össze a learatást a meggyőzéssel</strong>, hogy kiszámold, mit ér a megtartás, hogy megkülönböztesd a meggyőzést a manipulációtól, és hogy ismerd a közvetlen megkeresés jogi keretét.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#attribution">🧭 Az attribúció</a></li>
+                <li><a href="#retention-et-cycle-de-vie">🔁 A megtartás</a></li>
+                <li><a href="#persuasion-ethique">🧠 Meggyőzni manipuláció nélkül</a></li>
+                <li><a href="#cadre-juridique">⚖️ A jogi keret</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Melyik csatornát jutalmazza az utolsó kattintás?</li>
+                <li>Mit változtat, ha a havi megtartás 88-ról 92%-ra nő?</li>
+                <li>Mennyibe kerül egy meglévő ügyfél egy újhoz képest?</li>
+                <li>Mikor szűnik meg egy meggyőzési eszköz legitim lenni?</li>
+                <li>Mindenkire ugyanazok a szabályok vonatkoznak az e-mailes megkeresésnél?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A középhaladó szint a rendszerről szólt: az útról, a szándékról, a mérésről, a kapcsolatról. Ennyi elég ahhoz, hogy összefüggő akciókat irányítsunk.</p>
+            <p>Ez a szint a <strong>vakfoltokról</strong> szól: arról, amit az eszközök rosszul tulajdonítanak, amit a legtöbb csapat elhanyagol, mert kevésbé látszik, a meggyőzés és a megtévesztés közötti határról, és azokról a szabályokról, amelyek akkor is érvényesek, ha nem ismerjük őket.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Nem jogi tanácsadás: a megkeresésre és a reklámra vonatkozó szabályok változnak, és alkalmazásuk a tevékenységedtől függ. Nézd meg az idézett hivatalos forrásokat, és kötelező érvényű esetekben kérj szakembert.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A vakfoltok</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="attribution">🧭 Az attribúció</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Valaki lát egy bejegyzést, elolvas egy cikket, kap egy hírlevelet, aztán rákeres a márka nevére, és vásárol.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Valaki lát egy bejegyzést, elolvas egy cikket, kap egy hírlevelet, aztán rákeres a márka nevére, és vásárol. <strong>Kié az eladás?</strong> A válasz teljes egészében a választott modelltől függ — és ez a választás megváltoztatja a költségkereteket.</p>
+
+                <h4>Három modell, három igazság</h4>
+                <p>Az <strong>utolsó kattintás</strong> mindent a vásárlás előtti utolsó csatornának tulajdonít. A legtöbb eszköz alapbeállítása, és a legfélrevezetőbb: rendszeresen a márkanévre való keresést és az e-mailt jutalmazza, amelyek az út végén lépnek közbe.</p>
+                <p>Az <strong>első kattintás</strong> mindent a felfedezés csatornájának tulajdonít. Szimmetrikusan igazságtalan: azt értékeli, ami ismertséget hoz, és figyelmen kívül hagyja azt, ami meggyőz.</p>
+                <p>A <strong>megosztott</strong> attribúció szétosztja az érdemet az érintkezési pontok között. Igazságosabb, bonyolultabb, és mindig konvenció kérdése: egyetlen modell sem tudja, mi történt valójában a vásárló fejében.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — ugyanaz az út, három olvasat</span>
+                    <p>Tipikus út: közösségi bejegyzés → blogcikk → hírlevél → márkanévre keresés → vásárlás.</p>
+                    <p><strong>Utolsó kattintás</strong>: 100% a márkanévre keresésé. Csábító következtetés: megvágni a közösségi költségkeretet.</p>
+                    <p><strong>Első kattintás</strong>: 100% a közösségi médiáé. Ellentétes következtetés.</p>
+                    <p><strong>Megosztott</strong>: 25% a négy érintkezési pont mindegyikének.</p>
+                    <p>Az eladás ugyanaz. Három ellentétes költségvetési döntés következhet belőle.</p>
+                </div>
+
+                <div class="pratique" data-pratique="attribution-comparee"></div>
+
+                <h4>Az egyetlen döntő ellenőrzés</h4>
+                <p>Mivel egyik modell sem igaz, csak úgy tudhatod meg, mit hoz valójában egy csatorna, ha <strong>leállítod</strong> — vagy erősen csökkented —, és a végösszegre gyakorolt hatást figyeled, nem a táblázat soraira.</p>
+                <p>Kényelmetlen, és türelmet kíván. Egyben ez az egyetlen oksági módszer, pontosan úgy, mint egy kontrollált teszt.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — elvágni azt a csatornát, amely nem arat</span>
+                    <p>A felfedezés csatornája utolsó kattintásos modellben mindig rossz számokat mutat. Ha elvágod, néhány héttel később törvényszerűen csökkennek azok a csatornák, amelyek jól teljesítőnek látszottak.</p>
+                    <p>Ekkor általános visszaesést látunk látható ok nélkül, és ott keressük a hibát, ahol nincs.</p>
+                </div>
+
+                <p class="retenir">💡 Egyetlen attribúciós modell sem igaz. Az egyetlen megbízható próba: leállítani egy csatornát, és a végösszeget nézni.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="retention-et-cycle-de-vie">🔁 A megtartás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A szerzés viszi el a költségkeretek és a beszélgetések nagy részét.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A szerzés viszi el a költségkeretek és a beszélgetések nagy részét. A megtartás hozza az eredmény nagy részét, és senkit sem érdekel — mert nem látszik egy kampánytáblázatban.</p>
+
+                <h4>Egy hűségpont hatása</h4>
+                <p>Egy ügyfélkapcsolat átlagos időtartama a havi lemorzsolódási arányból vezethető le. Ha havonta az ügyfeleid <strong>12%-át</strong> veszíted el, az átlagos élettartam nagyjából <strong>8,3 hónap</strong>. Ha ezt a veszteséget <strong>8%-ra</strong> csökkented, <strong>12,5 hónapra</strong> nő.</p>
+                <p>Négy hűségponttal több, és a kapcsolat <strong>50%-kal</strong> hosszabb lesz. Semmilyen hirdetésoptimalizálás nem ér el ekkora hatást.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — hová megy a pénz</span>
+                    <p>Egy ügyfél megszerzése <strong>45 euróba</strong> kerül. Visszahozni ágazattól függően <strong>öt-hétszer kevesebbe</strong>.</p>
+                    <p>Egy szerzésre fordított havi 3000 eurós költségkeret nagyjából <strong>67 ügyfelet</strong> hoz. Ugyanez a költségkeret régi ügyfelek újraaktiválására fordítva gyakran több százat hoz vissza.</p>
+                    <p>A második sor mégis ritkán szerepel egy marketingtervben.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-retention"></div>
+
+                <h4>Ami visszahozza az ügyfeleket</h4>
+                <p>Három emelő, a hatékonyság és a növekvő költség sorrendjében: <strong>betartani az ígéretet</strong> — az első rendelésnek úgy kell zajlania, ahogy meghirdették; <strong>kísérni az elejét</strong> — az első napok döntik el a használatot; <strong>felvenni a kapcsolatot, mielőtt elfelejtenek</strong> — egy üzenet a megfelelő pillanatban, nem egy mindenkinek szóló havi emlékeztető.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — többet adni az újaknak, mint a hűségeseknek</span>
+                    <p>Egy csak új ügyfeleknek szóló üdvözlő kedvezmény világos üzenetet küld azoknak, akik maradtak: a hűségük semmit sem ér.</p>
+                    <p>A számítás kétszeresen veszteséges — többet fizetünk egy kevésbé jövedelmező ügyfélért, és elvesszük a kedvét annak, aki a legtöbbet hozta.</p>
+                </div>
+
+                <p class="retenir">💡 Négy megtartási ponttal több többet ér, mint négyszer akkora hirdetési költségkeret.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="persuasion-ethique">🧠 Meggyőzni manipuláció nélkül</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A meggyőzési mechanizmusokat évtizedek óta dokumentálják, és valóban működnek.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A meggyőzési mechanizmusokat évtizedek óta dokumentálják, és valóban működnek. A kérdés nem az, hogy használjuk-e őket — minden kommunikáció használja —, hanem hogy <strong>hol húzódik a határ</strong>.</p>
+
+                <h4>Az eszközök, és tisztességes használatuk</h4>
+                <p><strong>A társadalmi bizonyíték.</strong> A „2400 ügyfél” tájékoztat, ha igaz és ellenőrizhető. Egy kitalált számláló hazugság.</p>
+                <p><strong>A szűkösség.</strong> A „már csak 3 darab raktáron” segít dönteni, ha a készlet valós. Egy minden látogatáskor újrainduló számláló megtévesztés.</p>
+                <p><strong>A kölcsönösség.</strong> Egy hasznos tartalom felkínálása kedvező hozzáállást teremt. Ez legitim, amíg a tartalom valóban ér valamit.</p>
+                <p><strong>A tekintély.</strong> Egy forrásra vagy tanúsítványra hivatkozni tájékoztat. Kitalálni vagy eltúlozni megtéveszt.</p>
+
+                <div class="exemple">
+                    <span class="titre">A döntő próba</span>
+                    <p>Egyetlen szempont választja el a meggyőzést a manipulációtól: <strong>igaz-e az információ, és egyetértene-e az ügyfél, ha felfedezné a mechanizmust?</strong></p>
+                    <p>„Már csak 3 darab raktáron” valóban 3 darabos készlettel: az ember szinte megköszönné, hogy figyelmeztették.</p>
+                    <p>Ugyanez az üzenet 400 elérhető darabbal: becsapva érezné magát. A szöveg azonos; ami változik, az az igazság.</p>
+                </div>
+
+                <div class="pratique" data-pratique="persuasion-ethique"></div>
+
+                <h4>Miért gazdasági is a határ</h4>
+                <p>A megtévesztő technikák rövid távon működnek, és utána megfizettetnek: visszatérítési kérelmek, negatív értékelések, hírnév. A nyereség a hónap irányítópultján jelenik meg; a költség a következő két évre oszlik szét, anélkül hogy valaha is az okának tulajdonítanák.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a hamis visszaszámláló</span>
+                    <p>Egy ajánlatot, amely „2 óra 14 perc múlva lejár”, és minden látogatáskor újraindul, a közönség egy része észrevesz. Akik észreveszik, soha többé nem vásárolnak, és el is mondják.</p>
+                    <p>Egy valós határidő ugyanazt a sürgetést váltja ki, a kockázat nélkül — és tisztességesen emlékeztetni is lehet rá.</p>
+                </div>
+
+                <p class="retenir">💡 A meggyőzés tájékoztat, hogy dönteni lehessen. A manipuláció megakadályozza, hogy tájékozottan döntsünk.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="cadre-juridique">⚖️ A jogi keret</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A marketing a digitális világ egyik legszigorúbban szabályozott tevékenysége.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A marketing a digitális világ egyik legszigorúbban szabályozott tevékenysége. A szabályok akkor is érvényesek, ha nem ismerjük őket, és a szankciók a vállalkozást sújtják, nem a végrehajtó szolgáltatót.</p>
+                <p>Az alábbi leírás az európai keretet követi — a GDPR-t és az elektronikus hírközlési adatvédelmi (ePrivacy) szabályokat —, amely Magyarországon is érvényes. A részletek tagállamonként eltérhetnek: ellenőrizd a hazai előírásokat.</p>
+
+                <h4>Az e-mailes megkeresés</h4>
+                <p><strong>Magánszemély</strong> felé az alapelv az előzetes, önkéntes és konkrét hozzájárulás. Kivétel létezik a meglévő ügyfelekre, hasonló termékek esetén, feltéve, hogy az adatgyűjtéskor tiltakozhattak ellene.</p>
+                <p><strong>Vállalkozás</strong> felé a szabályok tagállamonként eltérnek: egyes országokban (például Franciaországban) egy általános céges címre küldött, a címzett munkaköréhez kapcsolódó ajánlatnál elég az előzetes tájékoztatás és a tiltakozás joga, máshol ehhez is hozzájárulás kell. Ez semmiképp sem engedély arra, hogy bárkinek írjunk.</p>
+                <p>Minden esetben: látható feladói azonosság, nem félrevezető tárgysor, és <strong>egy kattintásos leiratkozás</strong>, amely gyorsan érvényesül.</p>
+
+                <div class="exemple">
+                    <span class="titre">A négy kötelezettség, amelyről megfeledkeznek</span>
+                    <p><strong>Az adatkezelési nyilvántartás</strong>: leírja, mit gyűjtesz, miért és mennyi ideig. Ellenőrzéskor elsőként ezt kérik.</p>
+                    <p><strong>A megőrzési idő</strong>: egy e-mail-címet nem lehet korlátlanul megőrizni. Időtartamot kell meghatározni és alkalmazni.</p>
+                    <p><strong>A hozzájárulás a követőkhöz</strong>: a látogatásmérő és hirdetési sütik előzetes beleegyezést igényelnek, amelyet ugyanolyan könnyű megtagadni, mint megadni.</p>
+                    <p><strong>A fizetett együttműködések átláthatósága</strong>: egy fizetett bejegyzést ilyenként kell megjelölni, egy veled dolgozó tartalomgyártónál is.</p>
+                </div>
+
+                <div class="pratique" data-pratique="conformite-prospection"></div>
+
+                <h4>A megtévesztő reklám</h4>
+                <p>Egy állítást bizonyítani kell tudni. A „legjobb”, az „első számú”, a „garantált” kötelez, és egy árösszehasonlítás feltételezi, hogy az áthúzott árat valóban alkalmazták.</p>
+                <p>A környezetvédelmi állításokat különösen figyelik: egy homályos, alá nem támasztott zöld állítás megtévesztő kereskedelmi gyakorlatnak minősül.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy a megvásárolt lista jogszerű, „mert az eladó ezt mondta”</span>
+                    <p>Az adatkezelő az, aki az adatokat felhasználja, nem az, aki eladta őket. Panasz esetén neked kell bizonyítanod a hozzájárulást.</p>
+                    <p>Egy lista, amelynek az eredetét nem tudod igazolni, olyan kockázat, amelyet semmi sem ellensúlyoz.</p>
+                </div>
+
+                <p class="retenir">💡 Ellenőrzéskor neked kell bizonyítanod a hozzájárulást — nem az érintettnek azt, hogy semmit sem fogadott el.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Az utolsó kattintás azt a csatornát jutalmazza, amelyik arat, nem azt, amelyik meggyőzött.</li>
+                <li>Ha a havi megtartás 88-ról 92%-ra nő, a kapcsolat felével hosszabb lesz.</li>
+                <li>Egy meglévő ügyfél többszörösen olcsóbb egy újnál, és senki sem beszél róla az értekezleteken.</li>
+                <li>Egy meggyőzési eszköz akkor szűnik meg legitim lenni, amikor hamis információra épül.</li>
+                <li>Az e-mailes megkeresés szabályai a címzettől függően eltérnek.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vedd a havi lemorzsolódási arányodat, és számold ki a kapcsolat átlagos időtartamát: 1 osztva ezzel az aránnyal. Számold újra négy ponttal jobb aránnyal. Ez az az emelő, amelyről senki sem beszél az értekezleteken.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az adatvédelmi hatóság (Magyarországon a NAIH) — közvetlen üzletszerzés</strong>: a magánszemélyek és a vállalkozások közötti különbség, és a meglévő ügyfelekre vonatkozó kivételek.</li>
+                    <li><strong>Az adatvédelmi hatóság — sütik és követők</strong>: egy megfelelő sütisáv feltételei, és a látogatásmérésre vonatkozó kivételek.</li>
+                    <li><strong>A fogyasztóvédelmi hatóságok és a Gazdasági Versenyhivatal (GVH)</strong>: az állításokra, az áthúzott árakra és a környezetvédelmi állításokra vonatkozó szabályok.</li>
+                    <li><strong>A reklámszakma önszabályozó testülete</strong> (Magyarországon az Önszabályozó Reklám Testület): szakmai ajánlások, különösen a fizetett együttműködések átláthatóságáról.</li>
+                    <li><strong>Tanulmányok a megtartás költségéről</strong>: a szerzést és a megtartást összevető nagyságrendek, ágazatonként.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> mielőtt kampányt indítasz, kérdezd meg magadtól, mit válaszolnál, ha egy ügyfél pontosan megtudná, hogyan működik.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Digitális marketing — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza az útmutatóhoz →</span>📢 Digitális marketing</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../../../guides/entrepreneuriat/index.html">🚀 Vállalkozás (franciául)</a>
+                <a href="../design/index.html">🎨 UX/UI design</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/marketing-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
