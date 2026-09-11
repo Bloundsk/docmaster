@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Streaming, eszközök és hálózatok — Mértékletesség, középhaladó - Clicked</title>
+    <meta name="description" content="A digitális mértékletesség útmutatójának középhaladó szintje: egy hatásszám olvasása, a streaming, a megoszlás az eszközök, a hálózat és a szerverek között, és az elkerült utazás.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/ecologie/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/ecologie/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/ecologie/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/ecologie/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/ecologie/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Streaming, eszközök és hálózatok — Mértékletesség, középhaladó - Clicked">
+    <meta property="og:description" content="A digitális mértékletesség útmutatójának középhaladó szintje: egy hatásszám olvasása, a streaming, a megoszlás az eszközök, a hálózat és a szerverek között, és az elkerült utazás.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/ecologie/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Streaming, eszközök és hálózatok — Mértékletesség, középhaladó - Clicked">
+    <meta name="twitter:description" content="A digitális mértékletesség útmutatójának középhaladó szintje: egy hatásszám olvasása, a streaming, a megoszlás az eszközök, a hálózat és a szerverek között, és az elkerült utazás.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🌱 Digitális mértékletesség</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🌱 Digitális mértékletesség — Középhaladó</h1>
+                <p>Olvasni a számokat, és tudni, melyek állják meg a helyüket.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 102 L70 62"/>
+<path d="M70 66 Q52 62 48 44 Q66 42 70 62"/>
+<path d="M70 74 Q88 70 92 52 Q74 50 70 70"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="92" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="102" cy="88" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>egy hatásszámot a hatóköre alapján ítélj meg</strong>, hogy megmondd, mi nyom valójában egy videóban, hogy felosszd a hatást az eszközök, a hálózat és a szerverek között, és hogy felismerd azt az egyetlen esetet, amikor a digitális megoldás ezerszeresen nyer.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#lire-un-chiffre-dimpact">📊 Egy hatásszám olvasása</a></li>
+                <li><a href="#le-cas-du-streaming">🎥 A streaming esete</a></li>
+                <li><a href="#qui-pese-quoi">☁️ Eszközök, hálózat, szerverek</a></li>
+                <li><a href="#le-deplacement-evite">🚄 Az elkerült utazás</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mi hiányzik egy hatásszámból ahhoz, hogy jelentsen valamit?</li>
+                <li>Egy videónál mi nyom többet: a képernyő vagy a felbontás?</li>
+                <li>A hálózat azért fogyaszt, mert szállít, vagy mert be van kapcsolva?</li>
+                <li>Mi dominálja a digitális technológia hatását Franciaországban?</li>
+                <li>Melyik esetben nyer a digitális megoldás ezerszeresen?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint azt tisztázta, hol van a hatás. Ez azt tanítja meg, hogyan <strong>olvasd a terület számait</strong> — kezdve a leghíresebbekkel, amelyekről kiderült, hogy tévesek.</p>
+            <p>Ez a szint inkább módszertani, mint gyakorlati, és ez szándékos: ezen a területen többet ér egy rossz számot félretenni, mint tíz jó gesztust ismerni.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés — a számok francia árammal számolnak</span>
+                <p><strong>A számítások a francia áram kibocsátási tényezőjével dolgoznak, amely szokatlanul alacsony.</strong> Európa más részein ugyanezek a műveletek <strong>öt-tízszer több</strong> kibocsátást adnak mindenen, ami áramhoz kötődik; Magyarországon is többszöröset. Ez ezen a szinten különösen számít, mert az eszközök, a hálózat és a szerverek közötti megoszlás közvetlenül ettől függ.</p>
+                <p>A terület egyes értékei — különösen az egy gigabájt átvitelére jutó energia — tanulmányonként tízszeresen eltérnek, és gyorsan csökkennek. Ezért <strong>bemeneti adatként</strong> kezeljük őket, soha nem állandóként.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Mérni, és tudni, mit mérünk</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="lire-un-chiffre-dimpact">📊 Egy hatásszám olvasása</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Ez a terület nagy léptékben termelt téves számokat, amelyeket komoly intézmények éveken át átvettek.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ez a terület nagy léptékben termelt téves számokat, amelyeket komoly intézmények éveken át átvettek. Megérteni, hogyan történt ez, többet ér, mint megjegyezni a javított értékeket.</p>
+
+                <h4>Az öt kérdés</h4>
+                <ol>
+                    <li><strong>Milyen hatókör?</strong> A gyártással együtt, vagy csak a használat? Itt rejtőznek a tízszeres eltérések.</li>
+                    <li><strong>Melyik ország?</strong> A francia áram öt-tízszer kevesebbet bocsát ki, mint az európai átlag. Ugyanaz a számítás teljesen más eredményt ad.</li>
+                    <li><strong>Milyen mértékegység?</strong> Gramm CO₂e, kilowattóra, liter víz, kiló nyersanyag: ezek nem felcserélhető egyenértékek.</li>
+                    <li><strong>Milyen forrás, milyen dátum?</strong> A digitális technológia energiaintenzitása gyorsan csökken; egy 2015-ös szám gyakran elavult.</li>
+                    <li><strong>Milyen bizonytalanság?</strong> Egy ilyen változékony területen a sáv nélküli szám gyanús.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">Hogyan honosodik meg egy téves szám</span>
+                    <p>Megjelenik egy régi becslés a feltevéseivel. Egy cikk átveszi, a feltevések nélkül. Egy második az elsőt idézi. Egy jelentés a másodikat. Egy intézményi kampány a jelentést.</p>
+                    <p>Az ötödik átvételnél az eredeti forrás eltűnt, a feltevések is, és a szám magától értetődővé vált. Pontosan ez volt az útja a „videóóránként 3,2 kg”-nak, amelyet később nagyjából nyolcszorosan javítottak.</p>
+                    <p>Az ellenszer nem az, hogy mindenben kételkedjünk: hanem hogy <strong>egy lépéssel visszamenjünk</strong>. Egy számot, amelyet nem lehet a forrásáig visszakövetni, nem adunk tovább.</p>
+                </div>
+
+                <div class="pratique" data-pratique="lire-un-chiffre"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — egy téves számot egy másik téves számmal javítani</span>
+                    <p>A „3,2 kg”-ra adott reakció ugyanolyan határozott ellenkező állításokat szült: „a streaming semmit sem fogyaszt”. Ez sem pontosabb.</p>
+                    <p>A jó válasz gyakran egy nagyságrend a bizonytalanságával együtt, ami rosszul terjed — és pontosan ezért terjednek jobban a téves számok.</p>
+                </div>
+
+                <p class="retenir">💡 Egy számot, amelyet nem lehet a forrásáig visszakövetni, nem adunk tovább, akkor sem, ha jó irányba mutat.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-cas-du-streaming">🎥 A streaming esete</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Ez a terület legtanulságosabb példája, mert a fő részét magunk is kiszámolhatjuk — és kiderül, hogy nem az, amelyről mindenki beszél.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ez a terület legtanulságosabb példája, mert a fő részét magunk is kiszámolhatjuk — és kiderül, hogy nem az, amelyről mindenki beszél.</p>
+
+                <h4>Ami biztosan kiszámolható</h4>
+                <p>Annak az eszköznek a fogyasztása, amelyen nézzük: a teljesítménye szorozva az idővel. Egy televízió nagyjából 100 wattot fogyaszt, egy laptop 30-at, egy telefon 3-at.</p>
+                <p>Az áram kibocsátási tényezőjével szorozva ez a fogyasztás megbízható eredményt ad — és ezt egyetlen választás uralja: <strong>melyik képernyőn nézzük</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — napi két óra videó</span>
+                    <p><strong>Egy 100 W-os televízión:</strong> évi 73 kWh, azaz <strong>4,4 kg CO₂e</strong> francia árammal.</p>
+                    <p><strong>Egy 3 W-os telefonon:</strong> évi <strong>0,13 kg CO₂e</strong>.</p>
+                    <p><strong>33-szoros különbség</strong> a kettő között, pontosan ugyanarra a tartalomra és ugyanannyi időre.</p>
+                    <p>Ehhez képest a nagy felbontásról normálra váltás sokkal kisebb részt változtat — és a legbizonytalanabb tételen.</p>
+                </div>
+
+                <div class="pratique" data-pratique="streaming"></div>
+
+                <h4>Miért számít kevesebbet a hálózat, mint gondolnánk</h4>
+                <p>A természetes intuíció az, hogy egy kétszer nagyobb fájl kétszer annyit fogyaszt. Ez nagyrészt téves: egy hálózat főleg <strong>azért fogyaszt, mert be van kapcsolva</strong>, nem azért, mert szállít. A berendezések akkor is működnek, ha nagy a forgalom, és akkor is, ha kicsi.</p>
+                <p>Az egy gigabájtra jutó fogyasztás ezért csökken, ahogy a forgalom nő, ami a „gigabájtonkénti” számításokat különösen félrevezetővé teszi — és a múltbeli hibák egy részét is megmagyarázza.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a felbontásról dönteni</span>
+                    <p>A videóminőség csökkentése a legelterjedtebb tanács ebben a témában. Van hatása, de a legkisebb és legbizonytalanabb részre vonatkozik.</p>
+                    <p>Televízió helyett telefonon nézni hússzor nagyobb hatású — ami szintén nem ajánlás: csak azt mutatja meg, hol van az emelő.</p>
+                </div>
+
+                <p class="retenir">💡 A választott képernyő dönt, nem a felbontás. A hálózat pedig azért fogyaszt, mert be van kapcsolva, nem azért, mert szállít.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="qui-pese-quoi">☁️ Eszközök, hálózat, szerverek</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A digitális technológia hatása három tételre oszlik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A digitális technológia hatása három tételre oszlik. A sorrendjük Franciaországban jól megalapozott, és ellentmond az uralkodó képnek — az óriási adatközpontokénak.</p>
+
+                <h4>A sorrend</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Tétel</th><th>Súly</th><th>Ami dominál</th></tr>
+                    <tr><td><strong>Végeszközök</strong></td><td>Messze az első</td><td>A felhasználók eszközeinek gyártása</td></tr>
+                    <tr><td><strong>Hálózatok</strong></td><td>Közepes</td><td>A folyamatosan bekapcsolt berendezések</td></tr>
+                    <tr><td><strong>Adatközpontok</strong></td><td>A leglátványosabb, nem a legsúlyosabb</td><td>Az áram és a szerverhardver</td></tr>
+                </table>
+                </div>
+                <p>Ez a sorrend Franciaországra és a szokásos használatra jellemző: ott alacsony az áram kibocsátása, ami mindent könnyít, ami fogyasztás, és a gyártást hagyja dominálni. Egy szén-dioxid-intenzívebb áramú országban a hálózatok és az adatközpontok aránya nagyobb.</p>
+
+                <div class="exemple">
+                    <span class="titre">Miért foglalják el az adatközpontok az egész teret</span>
+                    <p>Láthatók, koncentráltak, fotogének, és megnevezhető cégekhez tartoznak. A végeszközök viszont mindenkinél ott vannak, kis mennyiségben.</p>
+                    <p>Pedig milliárdnyi legyártott és lecserélt apró tárgy összege messze meghaladja néhány ezer épületét — még ha azok nagyon sokat fogyasztanak is.</p>
+                    <p>Ugyanaz a torzítás, mint máshol: amire könnyű rámutatni, azt tartjuk a fő felelősnek.</p>
+                </div>
+
+                <div class="pratique" data-pratique="parc-du-foyer"></div>
+
+                <h4>Mi következik ebből</h4>
+                <p>Egy „zöld adatközpontban üzemeltetett” szolgáltatás a legkisebb tételt kezeli. Ez nem semmi, és nem változtat a sorrenden.</p>
+                <p>Egy szolgáltatás, amely egy ötéves eszközön is használható marad, viszont a domináns tételre hat — egy csere elhalasztásával. Ez a haladó szint témája.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — egyik ország számait átvinni a másikra</span>
+                    <p>Az adatközpontok és a hálózatok aránya jelentősen nő azokban az országokban, ahol az áram szén-dioxid-intenzívebb. Egy német és egy francia tanulmány nem ugyanazt a megoszlást írja le.</p>
+                    <p>Ez az előző fejezet öt kérdése közül a második, és ezt felejtik el a leggyakrabban, amikor külföldi forrást idéznek.</p>
+                </div>
+
+                <p class="retenir">💡 Ami a legtöbbet nyom, az nálad van otthon, nem egy cikk illusztrációjaként lefotózott csarnokban.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-deplacement-evite">🚄 Az elkerült utazás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Van egy eset, amikor a digitális megoldás nem csipeget a nagyságrendből, hanem megváltoztatja: amikor egy fizikai utazást vált ki.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Van egy eset, amikor a digitális megoldás nem csipeget a nagyságrendből, hanem megváltoztatja: amikor egy fizikai utazást vált ki. Ez a terület egyetlen mérlegelése, ahol az arány ezrekben mérhető.</p>
+
+                <h4>A nagyságrendek</h4>
+                <p>Utasonként és kilométerenként: a francia vonat néhány grammot bocsát ki, egy egyedül vezetett benzines autó nagyjából százat, egy rövid távú repülőút még többet.</p>
+                <p>Ezzel szemben két óra videóhívás egy laptopon <strong>összesen</strong> néhány gramm CO₂e-t jelent.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — megbeszélés 400 km-re, oda-vissza</span>
+                    <p><strong>Vonattal: 2,4 kg CO₂e.</strong></p>
+                    <p><strong>Autóval, egyedül: 96 kg.</strong></p>
+                    <p><strong>Repülővel: 184 kg.</strong></p>
+                    <p><strong>Videóhívással: 3,6 gramm.</strong></p>
+                    <p>A repülőhöz viszonyított arány meghaladja az 50 000-et. Az útmutató egyetlen más mérlegelése sem közelíti meg ezt a különbséget — ezért érdemes mindegyik előtt ismerni.</p>
+                    <p>A vonatra vonatkozó szám francia: szén-dioxid-intenzívebb áramhálózaton a vasút többszörösét bocsátja ki, de még mindig messze kevesebbet, mint a repülés.</p>
+                </div>
+
+                <div class="pratique" data-pratique="visio-vs-deplacement"></div>
+
+                <h4>Az érv korlátai</h4>
+                <p>Ahhoz azonban, hogy számítson, az utazást <strong>valóban el kell kerülni</strong>. Egy videóhívás, amely változatlan személyes megbeszélések mellé kerül, semmit sem kerül el: hozzáad.</p>
+                <p>Az otthoni munka pedig inkább áthelyezi a fogyasztást, mint megszünteti: az otthon fűtése, a megkettőzött eszközök, néha a távolabbra költözés. A mérleg a legtöbb tanulmányban kedvező marad, de sokkal szorosabb, mint a fenti számítás.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — olyan nyereséget számolni, amely nem történt meg</span>
+                    <p>Ez az „elkerülési” mérlegek klasszikus gyengesége: egy feltételezett forgatókönyvhöz hasonlítanak, amelyet senki sem ellenőriz.</p>
+                    <p>Az őszinte kérdés a teljes összegre vonatkozik: valóban csökkent az utazások száma, vagy csak a megbeszélésenkénti utazásoké?</p>
+                </div>
+
+                <p class="retenir">💡 Egy elkerült utazás ezerszer annyit nyom, mint az azt kiváltó videóhívás — feltéve, hogy valóban elkerülték.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy hatásszám hatókör és ország nélkül semmit sem jelent.</li>
+                <li>Egy videónál a választott képernyő sokkal többet nyom, mint a beállított felbontás.</li>
+                <li>A hálózat főleg azért fogyaszt, mert be van kapcsolva, nem azért, mert szállít.</li>
+                <li>Franciaországban a végeszközök dominálják a digitális technológia hatását, messze az adatközpontok előtt.</li>
+                <li>Az elkerült utazás az egyetlen eset, amikor a digitális megoldás ezerszeresen nyer.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Legközelebb, amikor valaki egy hatásszámot idéz neked, tegyél fel két kérdést, mielőtt továbbadnád: milyen hatókörre, és melyik országban. A keringő számok többsége ezt nem éli túl.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országod környezetvédelmi hivatala és távközlési hatósága</strong> — több országban közösen adják ki a digitális technológia környezeti lábnyomáról szóló referenciatanulmányt, a végeszközök, a hálózatok és az adatközpontok közötti megoszlással.</li>
+                    <li><strong>Nemzetközi Energiaügynökség (IEA)</strong> — elemzések a hálózatok és az adatközpontok fogyasztásáról, és a gyakori módszertani hibákról.</li>
+                    <li><strong>Nyilvános kibocsátásitényező-adatbázisok</strong> — hogy magad ellenőrizz egy nagyságrendet, a saját országod tényezőivel.</li>
+                    <li><strong>Közlekedési kibocsátási tényezők</strong> — az útmutatóban használt utasonkénti, kilométerenkénti értékek. Országonként erősen eltérnek, különösen a vasútnál.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> legközelebb, amikor egy digitális hatásszám megüt, keresd meg az eredeti forrását. Az esetek felében nem létezik, vagy mást mond.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Digitális mértékletesség — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Digitális mértékletesség — Haladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Webfejlesztés</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/ecologie-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

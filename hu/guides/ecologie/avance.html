@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Ökotervezés és visszapattanó hatás — Mértékletesség, haladó - Clicked</title>
+    <meta name="description" content="A digitális mértékletesség útmutatójának haladó szintje: ökotervezés, a vállalati eszközpark, a szabályozási keret és a visszapattanó hatás.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/ecologie/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/ecologie/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/ecologie/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/ecologie/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/ecologie/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Ökotervezés és visszapattanó hatás — Mértékletesség, haladó - Clicked">
+    <meta property="og:description" content="A digitális mértékletesség útmutatójának haladó szintje: ökotervezés, a vállalati eszközpark, a szabályozási keret és a visszapattanó hatás.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/ecologie/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ökotervezés és visszapattanó hatás — Mértékletesség, haladó - Clicked">
+    <meta name="twitter:description" content="A digitális mértékletesség útmutatójának haladó szintje: ökotervezés, a vállalati eszközpark, a szabályozási keret és a visszapattanó hatás.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🌱 Digitális mértékletesség</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🌱 Digitális mértékletesség — Haladó</h1>
+                <p>Tervezni, dönteni, és óvatosnak lenni a bejelentett nyereségekkel.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 102 L70 62"/>
+<path d="M70 66 Q52 62 48 44 Q66 42 70 62"/>
+<path d="M70 74 Q88 70 92 52 Q74 50 70 70"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="92" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="102" cy="88" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>egy szolgáltatást aszerint könnyíts, amit a hardverre ró</strong>, hogy eszközparkban gondolkodj utasítások helyett, hogy elhelyezd a szabályozási keretet, és hogy felismerd a visszapattanó hatást.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#lecoconception">🪶 Az ökotervezés</a></li>
+                <li><a href="#le-parc-en-entreprise">🏢 A vállalati eszközpark</a></li>
+                <li><a href="#le-cadre-reglementaire">📜 A szabályozási keret</a></li>
+                <li><a href="#leffet-rebond">🔄 A visszapattanó hatás</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mi egy nehéz szolgáltatás legrosszabb hatása?</li>
+                <li>Mi nyom többet, mint a munkatársaknak küldött összes utasítás?</li>
+                <li>Mit veszítünk a szennyezésen túl egy be nem gyűjtött elektronikai hulladékkal?</li>
+                <li>Mi hiányzik egy százalékban bejelentett nyereségből?</li>
+                <li>Ha a hatékonyság húsz éve javul, miért nő a teljes összeg?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Az első két szint a felhasználóhoz szólt. Ez azokhoz szól, akik <strong>döntenek</strong>: szolgáltatást terveznek, eszközparkot kezelnek, beruházásokról döntenek.</p>
+            <p>Itt változik meg az emelők léptéke — és itt kerülnek a legtöbbe a téves érvelések, mert több ezer eszközre alkalmazzák őket.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés — a számok francia árammal számolnak</span>
+                <p><strong>A számítások a francia áram kibocsátási tényezőjével dolgoznak, amely szokatlanul alacsony.</strong> Európa más részein az áramhoz kötődő tételek öt-tízszer nagyobbak lennének, Magyarországon is többszörösek; a gyártási számokat, amelyek ezen a szinten dominálnak, ez nem érinti.</p>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Az alapértékek módosítható nagyságrendek.</p>
+                <p>A leírt szabályozási kötelezettségek az európai keretet követik, és változnak: mielőtt hivatkoznál rájuk, ellenőrizd a jelenlegi állapotukat a hivatalos forrásoknál.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Tervezni és dönteni</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="lecoconception">🪶 Az ökotervezés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy digitális szolgáltatás ökotervezését általában megtakarított kilobájtok ügyeként mutatják be.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy digitális szolgáltatás ökotervezését általában megtakarított kilobájtok ügyeként mutatják be. Ez a látható rész, és a legkevésbé fontos.</p>
+
+                <h4>A valódi tét: nem kényszeríteni cserére</h4>
+                <p>Egy szolgáltatás, amely új eszközt követel meg, elavulttá tesz működő hardvert. Mivel a gyártás dominálja a hatást, <strong>egy kikényszerített csere többe kerül, mint több évnyi adatátvitel</strong>.</p>
+                <p>A tervezési kérdés tehát nem az, hogy „mennyit nyom az oldalam”, hanem az, hogy „hány éves eszköztől válik használhatatlanná”. A kettő összefügg, de a második számít.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — oldalanként 3 MB-os webhely</span>
+                    <p>Havi 10 000 látogatás, átvitt gigabájtonként 0,06 kWh-val.</p>
+                    <p><strong>Évente átvitt adat: 351,6 GB.</strong> Becsült kibocsátás: <strong>évi 1,3 kg CO₂e</strong>. A méret felezésével: 0,6 kg.</p>
+                    <p>Vagyis: egy teljes webhely felére könnyítése kevesebbet takarít meg, mint egy legyártott telefon tizede. <strong>Ettől a könnyítés nem haszontalan</strong> — de az indoka máshol van: gyorsaság, akadálymentesség, és főleg a régi eszközökkel való kompatibilitás.</p>
+                </div>
+
+                <div class="pratique" data-pratique="poids-page"></div>
+
+                <h4>Amitől egy szolgáltatás mértékletes</h4>
+                <ul>
+                    <li><strong>Egy ötéves eszközön is működik</strong>, és lassú kapcsolaton is.</li>
+                    <li><strong>Semmit sem indít el magától</strong> — videókat, animációkat, folyamatos frissítéseket.</li>
+                    <li><strong>Nem igyekszik meghosszabbítani a ráfordított időt.</strong> Végtelen görgetés, értesítések, emlékeztetők: ezek a mechanizmusok növelik a használatot, anélkül hogy bármit hoznának a felhasználónak.</li>
+                    <li><strong>Azt teszi, amit várnak tőle</strong>, megszokásból hozzáadott funkciók nélkül.</li>
+                </ul>
+                <p>Ezek a szempontok szinte teljesen egybeesnek az akadálymentesség és a teljesítmény szempontjaival. Ez jó hír: egy megbeszélésen az ökológiára hivatkozás nélkül is megvédhetők.</p>
+
+                <div class="pratique" data-pratique="ecoconception"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a zöld tárhely mint válasz</span>
+                    <p>Egy „szén-dioxid-mentes” tárhely bejelentése a három tétel közül a legkisebbet kezeli, és lehetővé teszi, hogy semmi mást ne változtassunk.</p>
+                    <p>Ez nem haszontalan. Egyszerűen nem elég ahhoz, hogy egy szolgáltatást mértékletesnek nevezzünk, és gyakran ez minden, ami történik.</p>
+                </div>
+
+                <p class="retenir">💡 Egy nehéz szolgáltatás legrosszabb hatása nem a fogyasztása: hanem hogy használhatatlanná tesz egy még működő eszközt.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-parc-en-entreprise">🏢 A vállalati eszközpark</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy szervezetben ugyanaz a sorrend érvényes: az eszközpark minden mást dominál.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy szervezetben ugyanaz a sorrend érvényes: az eszközpark minden mást dominál. És ez sokkal könnyebben mozgatható emelő, mint egy viselkedésváltozás.</p>
+
+                <h4>A döntés, amely számít</h4>
+                <p>A munkaállomások cseréjének ciklusa egyetlen döntés, amelyet néhány ember hoz meg, és az egész eszközparkra vonatkozik. Egyetlen szemléletformáló kampánynak sincs ilyen erőfeszítés–eredmény aránya.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 100 munkaállomás, csere 3 helyett 5 évente</span>
+                    <p>Egy munkaállomás gyártása: 200 kg CO₂e.</p>
+                    <p><strong>Ma, 3 évvel: évi 6 667 kg CO₂e.</strong></p>
+                    <p><strong>5 évvel: évi 4 000 kg.</strong> Megtakarítás: <strong>minden évben 2 667 kg CO₂e</strong>, ami nagyjából <strong>22 200 km autózásnak</strong> felel meg.</p>
+                    <p>Egy döntés, egyszer, anélkül hogy bárkitől bármit kérnénk — és egy hatás, amely minden évben megismétlődik.</p>
+                </div>
+
+                <div class="pratique" data-pratique="parc-entreprise"></div>
+
+                <h4>Ami lehetővé teszi a meghosszabbítást</h4>
+                <ol>
+                    <li><strong>Javítható hardvert venni</strong>, elérhető alkatrészekkel és cserélhető akkumulátorral.</li>
+                    <li><strong>Olyan szoftvereket választani, amelyek nem kényszerítenek cserére.</strong> Gyakran ez a valódi kiváltó ok, nem a meghibásodás.</li>
+                    <li><strong>Belső felújítással számolni</strong>: egy igényes felhasználótól visszakapott gép egy másik feladatra még nagyon jól használható.</li>
+                    <li><strong>Kivenni az eszközparkot az automatikus számviteli ciklusból.</strong> A hároméves értékcsökkenési leírás nem kötelez arra, hogy három év után cserélj.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — szemléletformáló kampány a döntés helyett</span>
+                    <p>A munkatársakat arra kérni, hogy töröljék az e-mailjeiket, látványos, olcsó, és nincs mérhető hatása. A cserék ritkítása láthatatlan és döntő.</p>
+                    <p>Ha egy szervezet az elsőt teszi a második nélkül, a kérdés már nem környezeti: hanem kommunikációs.</p>
+                </div>
+
+                <p class="retenir">💡 Egy eszközparkról hozott döntés többet nyom tízezer egyéni gesztusnál — és senkitől sem kér semmit.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-cadre-reglementaire">📜 A szabályozási keret</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A téma néhány év alatt a szemléletformálástól a szabályokig jutott.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A téma néhány év alatt a szemléletformálástól a szabályokig jutott. Ha ismered ezt a keretet, kötelezettségekre támaszkodhatsz meggyőződések helyett.</p>
+                <p>Az alábbiak jórészt az <strong>európai keretet</strong> írják le, amely Magyarországon is érvényes; ahol egy mechanizmus csak egy országra jellemző, azt jelezzük. Nézz utána, mi vonatkozik rád.</p>
+
+                <h4>A fő mechanizmusok</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Mechanizmus</th><th>Mit csinál</th></tr>
+                    <tr><td><strong>Tartóssági index</strong></td><td>A vásárláskor feltüntetve pontozza a javíthatóságot és a megbízhatóságot. Francia mechanizmus, amely több termékkategóriában a javíthatósági indexet váltotta; más országok hasonló besorolásokat vezetnek be.</td></tr>
+                    <tr><td><strong>Alkatrészek elérhetősége</strong></td><td>A pótalkatrészeknek egy ideig elérhetőnek kell lenniük, vagy erről tájékoztatni kell — a szabály termékkategóriától és országtól függ.</td></tr>
+                    <tr><td><strong>E-hulladék-rendszer (WEEE)</strong></td><td>Az elektromos és elektronikus berendezések hulladékainak visszavétele és kezelése, az árba beépített hozzájárulásból finanszírozva. Uniós irányelven alapul.</td></tr>
+                    <tr><td><strong>Visszavétel vásárláskor</strong></td><td>A forgalmazónak egy egyenértékű készülék eladásakor vissza kell vennie a régit — ezt ritkán említi. Ez is az uniós e-hulladék-irányelvből ered.</td></tr>
+                    <tr><td><strong>Tervezett elavulás</strong></td><td>A francia jogban bűncselekmény: egy termék élettartamának szándékos lerövidítése a csere növelése érdekében. Más országok a tisztességtelen kereskedelmi gyakorlatok szabályai szerint kezelik, vagy sehogy.</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">A gyenge láncszem: a begyűjtés</span>
+                    <p>Az élettartamuk végére ért eszközök jelentős része soha nem kerül kezelési rendszerbe. Fiókokban maradnak, a háztartási hulladékkal távoznak, vagy külföldre kerülnek.</p>
+                    <p>Pedig ezek az eszközök olyan fémeket tartalmaznak, amelyek kitermelése a gyártás legsúlyosabb tétele. Ha nem nyerjük vissza őket, kétszer veszítünk: a hulladék szennyezésével, és az újra elvégzendő kitermeléssel.</p>
+                    <p>A hasznos gesztus hétköznapi — hulladékudvarba, üzletbe vagy gyűjtőpontra vinni —, és éppen ez hiányzik a leggyakrabban.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az újrahasznosítást megoldásnak tekinteni</span>
+                    <p>Az újrahasznosítás az anyagok egy részét nyeri vissza, soha nem az egészet, és maga is energiát fogyaszt. A sorrendben az utolsó, a csökkentés, az újrahasználat és a javítás után.</p>
+                    <p>Az újrahasznosítást előtérbe helyező üzenet a figyelmet a vásárlásról az élettartam végére tereli — vagyis onnan, ahol minden eldől, oda, ahol már szinte semmit sem lehet megmenteni.</p>
+                </div>
+
+                <p class="retenir">💡 Az újrahasznosítás a sorrend utolsó lépése, nem az első. A sorrend a vásárlással kezdődik.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="leffet-rebond">🔄 A visszapattanó hatás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Ez a mechanizmus magyarázza, miért nem csökkentette húsz év műszaki fejlődése a digitális technológia lábnyomát: az egységnyi hatékonyság javul, az egységek…</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ez a mechanizmus magyarázza, miért nem csökkentette húsz év műszaki fejlődése a digitális technológia lábnyomát: <strong>az egységnyi hatékonyság javul, az egységek száma pedig ennél jobban nő</strong>.</p>
+
+                <h4>A mechanizmus</h4>
+                <p>Egy hatékonyságnövekedés csökkenti egy használat költségét. Az olcsóbb használatból több lesz. Az egységnyi nyereség valós, a teljes összeg mégis nő.</p>
+                <p>A példák mindenhol ott vannak: olcsó lesz a tárhely, ezért mindent megtartunk; gyorsulnak a hálózatok, ezért nehezebbek lesznek a tartalmak; kevesebbet fogyasztanak az eszközök, ezért több van belőlük egy háztartásban.</p>
+
+                <div class="exemple">
+                    <span class="titre">A kérdés, amely eldönti</span>
+                    <p>A nyereséget szinte mindig <strong>százalékban és egységenként</strong> jelentik be: „40%-kal hatékonyabb”, „lekérdezésenként feleannyi fogyasztás”.</p>
+                    <p>Az egyetlen kérdés, amely számít, máshol van: <strong>csökkent-e a teljes összeg?</strong></p>
+                    <p>Ritkán teszik fel, mert nehéz mérni, és a válasz gyakran nem. Egy kétszer hatékonyabb modell, amelyet tízszer gyakrabban használnak, ötször többet fogyaszt.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-rebond"></div>
+
+                <h4>Ami ebből nem következik</h4>
+                <p>A visszapattanó hatás nem azt mondja, hogy a hatékonyság haszontalan: nélküle a használat növekedése sokkal többe kerülne. Azt mondja, hogy nem elég, és hogy egy önmagában bejelentett hatékonyságnövekedés nem bizonyítja a csökkenést.</p>
+                <p>A gyakorlati következmény szerény és igényes: <strong>a teljes összegeket mérd, ne az arányokat</strong>. Egy irányítópult, amely csak intenzitásokat követ, a végtelenségig javulni fog, miközben az abszolút fogyasztás nő.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a „zöld digitális” megoldást végpontnak tekinteni</span>
+                    <p>Egy szolgáltatás lehet lekérdezésenként hatékony, szén-dioxid-mentes adatközpontban üzemeltetett, és mégis növelheti a teljes lábnyomot — mert megsokszorozta a használatot, vagy felgyorsította a hardver cseréjét.</p>
+                    <p>Egyik tulajdonság sem hamis. Egyszerűen más kérdésre felelnek, mint amelyet feltettek.</p>
+                </div>
+
+                <p class="retenir">💡 Egy javulási százalék semmit sem mond, amíg nem ismered a teljes összeget. Ezt a kérdést kerüljük, pedig csak ez számít.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy nehéz szolgáltatás legrosszabb hatása nem a fogyasztása: hanem hogy elavulttá tesz egy működő eszközt.</li>
+                <li>Száz munkaállomáson két további év többet nyom, mint a munkatársaknak küldött összes utasítás.</li>
+                <li>Egy be nem gyűjtött elektronikai hulladék ugyanúgy elveszett nyersanyag, mint szennyezés.</li>
+                <li>Egy százalékban bejelentett nyereség semmit sem mond, amíg nem ismered a teljes összeg alakulását.</li>
+                <li>Az egységnyi hatékonyság húsz éve javul, a teljes összeg mégis nő.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vegyél egy szolgáltatást, amelyet használsz, és nézd meg, milyen gépet követel meg. Egy szolgáltatás, amely elavulttá tesz egy működő eszközt, sokkal többe kerül, mint amennyit fogyaszt.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Nyilvános ökotervezési referenciakeretek digitális szolgáltatásokhoz</strong> — szempontról szempontra. Egyre több ország ad ki ilyet.</li>
+                    <li><strong>Az országod környezetvédelmi hivatala</strong> — gyakorlati útmutatók szervezeteknek az ökotervezésről és a felelős informatikáról.</li>
+                    <li><strong>Nyilvános javítási, adományozási és gyűjtőhely-jegyzékek</strong> — hogy az eszközök a fiókokból visszakerüljenek a használatba.</li>
+                    <li><strong>Nemzeti keretek a digitális technológia környezeti lábnyomának csökkentésére</strong> — és a közintézményekre rótt kötelezettségeik. Hogy mi létezik, országonként eltér.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> minden bejelentett környezeti javulásnál a teljes összeget keresd, ne a százalékot. Ha nem adják meg, az általában azt jelenti, hogy nem jó irányba halad.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Digitális mértékletesség — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza →</span>🌱 Digitális mértékletesség</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Webfejlesztés</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/ecologie-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

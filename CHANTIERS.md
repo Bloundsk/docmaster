@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Neuf parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Dix parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Écologie, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -68,11 +68,11 @@ françaises.
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
    Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité, Marketing,
-   Négociation (9 sur 14).** Ordre suivi : d'abord les sujets sans droit français —
-   reste Écologie — puis les quatre qui demandent la décision ci-dessous.
+   Négociation, Écologie (10 sur 14).** Les sujets sans droit français sont tous
+   faits ; restent les quatre qui demandent la décision ci-dessous.
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
@@ -150,6 +150,18 @@ françaises.
   kollektív szerződés, ha van ilyen ». Noms choisis pour deux parcours encore en
   français : *Munkahelyi egészség* (Santé au travail), *Digitális mértékletesség*
   (Sobriété numérique) ;
+- pour Écologie : *gyártási lábnyom* (empreinte de fabrication), *végeszköz*
+  (terminal), *felújított* (reconditionné), *ökotervezés* (écoconception),
+  *visszapattanó hatás* (effet rebond), *eszközpark* (parc), *hatókör* (périmètre
+  d'un chiffre), *e-hulladék* et *WEEE* (DEEE), *hulladékudvar* (déchetterie). Les
+  calculs restent sur l'électricité française, avec l'avertissement « cinq à dix fois
+  plus ailleurs en Europe, plusieurs fois plus en Hongrie aussi » — sans chiffre
+  hongrois. **Le cadre réglementaire est à relire** : filière DEEE et reprise à
+  l'achat dites européennes (directive DEEE) ; indice de durabilité et délit
+  d'obsolescence programmée dits français ; disponibilité des pièces « selon la
+  catégorie et le pays » ; ADEME, Arcep, RGESN, Longue vie aux objets et loi REEN
+  remplacés par leur fonction, comme en anglais. Dans les simulateurs, « × 33 (több) »
+  plutôt que « 33-szor », dont le suffixe suivrait le nombre saisi ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12

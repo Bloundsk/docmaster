@@ -1,5 +1,34 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Dixième parcours en hongrois : Écologie & sobriété numérique
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/ecologie/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 152 textes des
+  12 simulateurs** (148 textes et 16 fragments ajoutés : « 18,3 kg CO₂e/év, azaz
+  37%-kal kevesebb », « kb. 22 222 km », « 351,6 GB »).
+- `CONTENU_TRADUIT.hu` annonce aussi « ecologie ». La page hongroise de Négociation, qui
+  menait à la Sobriété numérique en français, mène maintenant à sa version hongroise.
+- **Les calculs restent sur l'électricité française, et le disent.** Chaque niveau
+  prévient : cinq à dix fois plus ailleurs en Europe, « plusieurs fois plus en Hongrie
+  aussi » — sans chiffre hongrois avancé.
+- **Le cadre réglementaire trie ce qui est européen.** Filière DEEE et reprise de
+  l'ancien appareil à l'achat sont dites européennes (directive DEEE) ; l'indice de
+  durabilité et le délit d'obsolescence programmée sont dits français ; la
+  disponibilité des pièces varie « selon la catégorie et le pays ». ADEME, Arcep,
+  RGESN, Longue vie aux objets et loi REEN deviennent leur fonction, comme en anglais.
+
+### Corrigé en route
+
+- **« × 33 de plus » devient « × 33 (több) ».** « 33-szor » accorderait son suffixe
+  au nombre saisi, qui change. Et l'unité « Go » est traduite par une clef collée au
+  chiffre (« 6 Go »), pour ne pas toucher un « Google » ailleurs.
+- **Le biais de longueur, une dixième fois, corrigé en une passe** : la bonne réponse
+  était la plus longue dans 56 % des cas (français 35 %). 28 distracteurs rallongés sur
+  23 questions, chacun jusqu'à la place française : 36 / 36 / 31 % (français
+  35 / 36 / 30 %). Les 906 questions hongroises sont à 33,2 / 36,2 / 31,5 %.
+
 ## 2026-09-11 — Neuvième parcours en hongrois : Négociation & communication
 
 ### Ce qui est publié

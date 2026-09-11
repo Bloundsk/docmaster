@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>A hatás a gyártásban van — Mértékletesség, kezdő - Clicked</title>
+    <meta name="description" content="A digitális mértékletesség útmutatójának kezdő szintje: hol van valójában a hatás, az élettartam meghosszabbítása, a jelképes gesztusok és a jó vásárlás.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/ecologie/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/ecologie/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/ecologie/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/ecologie/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/ecologie/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="A hatás a gyártásban van — Mértékletesség, kezdő - Clicked">
+    <meta property="og:description" content="A digitális mértékletesség útmutatójának kezdő szintje: hol van valójában a hatás, az élettartam meghosszabbítása, a jelképes gesztusok és a jó vásárlás.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/ecologie/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A hatás a gyártásban van — Mértékletesség, kezdő - Clicked">
+    <meta name="twitter:description" content="A digitális mértékletesség útmutatójának kezdő szintje: hol van valójában a hatás, az élettartam meghosszabbítása, a jelképes gesztusok és a jó vásárlás.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🌱 Digitális mértékletesség</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🌱 Digitális mértékletesség — Kezdő</h1>
+                <p>Hol van valójában a hatás. Nincs előfeltétel.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 102 L70 62"/>
+<path d="M70 66 Q52 62 48 44 Q66 42 70 62"/>
+<path d="M70 74 Q88 70 92 52 Q74 50 70 70"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="92" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="102" cy="88" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>egy eszköz hatását a megfelelő helyre tedd</strong>, hogy kiszámold, mit hoz egy további használati év, hogy megkülönböztesd a hasznos gesztust a jelképestől, és hogy a vásárlás pillanatában dönts.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#limpact-est-dans-la-fabrication">🏭 A hatás a gyártásban van</a></li>
+                <li><a href="#allonger-la-duree-de-vie">⏳ Az élettartam meghosszabbítása</a></li>
+                <li><a href="#les-gestes-symboliques">📧 A jelképes gesztusok</a></li>
+                <li><a href="#bien-acheter">🛒 Jól vásárolni</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Egy eszköz hatásának mekkora része van már kifizetve az első bekapcsoláskor?</li>
+                <li>Mit nyersz azzal, ha két évvel tovább tartasz meg egy telefont?</li>
+                <li>A régi e-mailek törlése: hasznos vagy jelképes gesztus?</li>
+                <li>Egy fiókban elfelejtett eszköz kevesebbe került, mint egy használt?</li>
+                <li>Melyik pillanatban dől el minden?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Ennek a témának van egy kellemetlen sajátossága: <strong>a keringő számok gyakran tévesek</strong>, néha tízszeresen, és éveken át jóhiszeműen idézik őket. „Egy e-mail tíz gramm CO₂”, „egy óra videó 3,2 kiló”: mindkét állítás bejárta a médiát, mielőtt kijavították volna.</p>
+            <p>Ez az útmutató ezért másfelől közelít: először azt tisztázza, <strong>hol van a hatás</strong>, ami jól dokumentált, és csak utána beszél gesztusokról. És csak azt számolja ki, ami kiszámolható.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés — a számok francia árammal számolnak</span>
+                <p><strong>A számítások a francia áram kibocsátási tényezőjével dolgoznak, amely szokatlanul alacsony.</strong> Európa más részein ugyanezek a műveletek <strong>öt-tízszer több</strong> kibocsátást adnának mindenen, ami áramfogyasztás; Magyarországon is többszöröset. A gyártásra vonatkozó következtetéseket, amelyekről ez a szint szól, ez nem érinti.</p>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A szimulátorok alapértékei <strong>nagyságrendek</strong>, módosíthatók: egy eszköz gyártási lábnyoma modellenként és számítási módszerenként erősen eltér.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Hol van valójában a hatás</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="limpact-est-dans-la-fabrication">🏭 A hatás a gyártásban van</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Ez a terület központi ténye, és ez borítja fel a legtöbb intuíciót: egy telefonnál, számítógépnél vagy táblagépnél a gyártás adja a lábnyom nagy részét.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ez a terület központi ténye, és ez borítja fel a legtöbb intuíciót: egy telefonnál, számítógépnél vagy táblagépnél <strong>a gyártás adja a lábnyom nagy részét</strong>. A több évnyi használat alatt elfogyasztott áram jóval kevesebbet nyom.</p>
+
+                <h4>Miért</h4>
+                <p>Fémeket kitermelni és finomítani, tisztatermet igénylő alkatrészeket gyártani, összeszerelni, szállítani: hosszú, rendkívül energiaigényes lánc, olyan országokban, ahol az áram sokkal szén-dioxid-intenzívebb, mint a francia.</p>
+                <p>Ezzel szemben egy telefon évente néhány kilowattórát fogyaszt. A kettő aránya elsöprő, és csak egy irányba mutat.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — két és fél évig megtartott telefon</span>
+                    <p>Gyártás: 60 kg CO₂e. Áram: évi 5 kg CO₂e.</p>
+                    <p><strong>A gyártás egy évre vetítve: 24 kg.</strong> Összesen: <strong>évi 29 kg</strong>, ebből <strong>83% egyedül a gyártás</strong>.</p>
+                    <p>Ugyanez az eszköz két évvel tovább megtartva: <strong>évi 18,3 kg, azaz 37%-kal kevesebb</strong>. Anélkül, hogy bármit változtatnál a használatán.</p>
+                </div>
+
+                <div class="pratique" data-pratique="empreinte-appareil"></div>
+
+                <h4>A következmény minden gesztusra</h4>
+                <p>Ha a hatás a hardverben van, akkor a használatra vonatkozó tanácsok — e-mailek törlése, a felbontás csökkentése, a lapok bezárása — a kisebbik részt célozzák.</p>
+                <p>Nem arról van szó, hogy tévesek. Hanem arról, hogy lekötik a figyelmet, és azt az érzést keltik, hogy tettünk valamit, miközben a döntés, amely számít — vásárolni vagy megtartani — máshol születik.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — lecserélni, hogy kevesebbet fogyasszon</span>
+                    <p>„Ez az új modell 30%-kal kevesebbet fogyaszt” — gyakran igaz, és ritkán számít: a 30% a kisebbik részre vonatkozik, az új eszköz gyártása viszont azonnali és teljes.</p>
+                    <p>Egy működő eszközt takarékosabb modellre cserélni szinte mindig veszteséges, és gyakran nagyon.</p>
+                </div>
+
+                <p class="retenir">💡 A hatás nagy része már ki van fizetve, amikor először bekapcsolod az eszközt. Az egyetlen megmaradó változó az idő.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="allonger-la-duree-de-vie">⏳ Az élettartam meghosszabbítása</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Mivel a gyártás dominál, minden egyetlen kérdésre fut ki: hány évig fog szolgálni ez az eszköz?</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Mivel a gyártás dominál, minden egyetlen kérdésre fut ki: <strong>hány évig fog szolgálni ez az eszköz?</strong> Minden nyert év felhígít egy már kifizetett lábnyomot.</p>
+
+                <h4>Ami lerövidíti egy eszköz életét</h4>
+                <ul>
+                    <li><strong>A törés.</strong> Ez a telefoncsere első oka, és a legkevésbé végzetes: egy tok és egy képernyővédő néhány euróba kerül.</li>
+                    <li><strong>Az akkumulátor.</strong> Hamarabb öregszik, mint a többi rész, és a cseréje töredékébe kerül egy új eszköz árának.</li>
+                    <li><strong>A frissítések vége.</strong> Egy eszközt, amely már nem kap biztonsági javításokat, nehéz megtartani, bármilyen is a fizikai állapota.</li>
+                    <li><strong>Az egyre nehezebb szoftver.</strong> Az alkalmazások és az oldalak egyre igényesebbek; egy tökéletesen működő eszköz kényelmetlenné válik.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Mibe kerül egy idő előtti csere</span>
+                    <p>Egy <strong>két és fél évig</strong> megtartott telefon évi 29 kg CO₂e. Ugyanez <strong>négy és fél évig</strong>: 18,3 kg. A különbség, 37%, a használat semmilyen változtatása nélkül jön.</p>
+                    <p>Fordítva: ha <strong>hat hónap</strong> után cseréled, az összeg évi 125 kg-ra nő, ebből 96% egyedül a gyártás. Ugyanaz az eszköz, ugyanaz a használat, négyszer akkora hatás.</p>
+                    <p>Az idő, és egyedül az idő, egy a hethez arányban változtatja az eredményt.</p>
+                </div>
+
+                <div class="pratique" data-pratique="duree-de-vie"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megtartani a régit, „hátha kell még”</span>
+                    <p>Egy fiókban tartott eszköznek pontosan ugyanakkora a gyártási lábnyoma, mint egy használtnak. Az már el van költve.</p>
+                    <p>Eladni vagy elajándékozni azt jelenti, hogy elkerülöd annak a gyártását, amelyet valaki helyette vett volna. Ez az egyetlen gesztus, amely egy haszontalan tárgyat elkerült hatássá alakít.</p>
+                </div>
+
+                <p class="retenir">💡 Minden az élettartamon nyert év többet ér, mint az összes használati gesztus együtt. Ez nem szókép, hanem a számok aránya.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-gestes-symboliques">📧 A jelképes gesztusok</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A témában terjesztett tanácsok jelentős része olyan gesztusokról szól, amelyeknek a hatása valós, de parányi.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A témában terjesztett tanácsok jelentős része olyan gesztusokról szól, amelyeknek a hatása valós, de parányi. Megkülönböztetni őket nem cinizmus: ez teszi lehetővé, hogy az erőfeszítés oda kerüljön, ahol eredményt hoz.</p>
+
+                <h4>Az e-mail esete</h4>
+                <p>Az „e-mailenként tíz gramm CO₂” szám több mint tíz évig keringett. Egy régi becslésből származott, amely a hardver amortizációját is tartalmazta, és újraellenőrzés nélkül vették át.</p>
+                <p>A komoly becslések egy átlagos e-mailt <strong>a gramm töredékére</strong> teszik. Ezer régi üzenet törlése tehát néhány másodpercnyi autózásnak megfelelő megtakarítás — egyszer.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ami nyom, és ami csak annak látszik</span>
+                    <p><strong>Jelentős hatás:</strong> tovább megtartani az eszközt, felújítottat venni, csere helyett javíttatni.</p>
+                    <p><strong>Valós, de nagyon kicsi hatás:</strong> e-maileket törölni, hírlevelekről leiratkozni, csökkenteni a videóminőséget.</p>
+                    <p><strong>Semmilyen hatás:</strong> a böngésző gyorsítótárának ürítése — amely miatt újra le kell tölteni, ami már megvolt.</p>
+                    <p>Az első sor mindhárom gesztusa a <strong>hardverre</strong> vonatkozik. A másik két sor egyike sem érinti.</p>
+                </div>
+
+                <div class="pratique" data-pratique="gestes-symboliques"></div>
+
+                <h4>Miért terjednek ezek a tanácsok annyira</h4>
+                <p>Könnyen alkalmazhatók, ingyenesek, azonnaliak, és jó érzést adnak. Semmit sem kérdőjeleznek meg — főleg nem egy tervezett vásárlást. Egy tanácsot, amely azt mondaná, „tartsd meg a telefonodat két évvel tovább”, kevésbé kényelmes továbbadni.</p>
+                <p>Ez nem ok arra, hogy semmit se tegyünk: ok arra, hogy egy gesztus átvétele előtt megnézzük, a hardverre vagy a használatra vonatkozik-e.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy a figyelem végtelen</span>
+                    <p>A hatástalan gesztus problémája nem az, hogy hatástalan: hanem hogy felemészti a rendelkezésre álló figyelmet és jó szándékot, amelyek végesek.</p>
+                    <p>Aki minden hónapban törli az e-mailjeit, és kétévente telefont cserél, rossz cserét csinált, anélkül hogy tudná.</p>
+                </div>
+
+                <p class="retenir">💡 Mielőtt átveszel egy gesztust, egy kérdés: a hardverre vagy a használatra vonatkozik? Az első számít, a második szinte semmit.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="bien-acheter">🛒 Jól vásárolni</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Mivel a gyártás dönt, a vásárlás az a pillanat, amikor szinte minden eldől.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Mivel a gyártás dönt, a vásárlás az a pillanat, amikor szinte minden eldől. Ez az egyetlen pillanat is, amikor a modellek között összehasonlítható információ áll rendelkezésre.</p>
+
+                <h4>A felújított eszköz</h4>
+                <p>Ez a leghatásosabb eszköz egy magánszemély kezében: egy felújított készülék szinte egy teljes gyártást megtakarít. Semmilyen használati gesztus nem közelíti meg ezt a nagyságrendet.</p>
+                <p>Az ellenőrizendő pontok inkább kereskedelmiek, mint környezetiek: garancia, az akkumulátor állapota, származás, elállási jog.</p>
+
+                <h4>Ami újnál számít</h4>
+                <ol>
+                    <li><strong>Az alkatrészek elérhetőségének időtartama</strong>, amely a valódi javíthatóságot meghatározza.</li>
+                    <li><strong>A garantált frissítési évek száma.</strong> Gyakran ez határozza meg az élettartam végét, bármilyen meghibásodás előtt.</li>
+                    <li><strong>A hivatalos javíthatósági vagy tartóssági besorolások</strong>, ahol a vásárláskor feltüntetik őket.</li>
+                    <li><strong>A valóban szükséges méret és teljesítmény.</strong> A túlméretezett eszköz gyártása többe kerül, anélkül hogy többet szolgálna.</li>
+                </ol>
+
+                <div class="pratique" data-pratique="achat-responsable"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — „környezetbarátot” venni ahelyett, hogy nem vennénk</span>
+                    <p>Egyetlen új eszköznek sem nulla a lábnyoma, és két modell közti különbség kicsi ahhoz képest, hogy veszünk-e egyáltalán.</p>
+                    <p>A hasznos sorrend három lépés, ebben a sorrendben: <strong>megtartani, javíttatni, felújítottat venni</strong>. Az új vásárlása csak ezután jön, ha az első három kimerült.</p>
+                </div>
+
+                <p class="retenir">💡 Az útmutató leghatásosabb gesztusa az üzletben történik, és gyakran abból áll, hogy semmit sem veszel.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy eszköz hatásának nagy része már ki van fizetve, amikor először bekapcsolod.</li>
+                <li>Egy két és fél helyett négy és fél évig megtartott telefon évente 37%-kal kevesebb.</li>
+                <li>A régi e-mailek törlése szinte semmit sem nyom. A javíttatás és a megtartás sokat.</li>
+                <li>Egy fiókban tartott eszköznek pontosan ugyanakkora a gyártási lábnyoma, mint egy használtnak.</li>
+                <li>A vásárlás az a pillanat, amikor minden eldől: ekkor dől el a gyártás.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Nyisd ki a fiókot, ahol a régi eszközeid alszanak. Mindegyik már a teljes gyártását elköltötte. Válassz ki egyet, és dönts: javíttatod, elajándékozod, vagy leadod egy gyűjtőhelyen.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országod környezetvédelmi hivatala</strong> — tanulmányok a digitális technológia környezeti lábnyomáról az adott országban, és gyakorlati tájékoztatók. Az ország számít: az áramkeverék minden számot megváltoztat.</li>
+                    <li><strong>A távközlési szabályozó hatóság</strong> — több országban a környezetvédelmi hivatallal közösen adja ki a hatás megoszlásáról szóló referenciamunkát.</li>
+                    <li><strong>Javíthatósági és tartóssági besorolások</strong> — egyre több országban feltüntetik őket a vásárláskor.</li>
+                    <li><strong>Nyilvános javítási és újrahasználati jegyzékek</strong> — hogy találj javítót, adományozási pontot vagy használtcikk-boltot a közeledben.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> számold meg az otthonodban lévő elektronikus eszközöket, a fiókban lévőket is. Az összeg meglepő, és ez az egyetlen mérőszám, amely igazán számít.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>🌱 Digitális mértékletesség</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Digitális mértékletesség — Középhaladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Webfejlesztés</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/ecologie-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
