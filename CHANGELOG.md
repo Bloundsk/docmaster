@@ -1,5 +1,33 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Onzième parcours en hongrois : Entrepreneuriat
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/entrepreneuriat/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 146 textes des
+  12 simulateurs** (145 textes et 9 fragments ajoutés : « 3,7 — egészséges »,
+  « 75 400 EUR/év », « 16 000 ügyfél », et les neuf libellés « N további hasonló kör
+  után »).
+- `CONTENU_TRADUIT.hu` annonce aussi « entrepreneuriat ». Les quatorze pages hongroises
+  qui citaient ce parcours en français mènent maintenant à sa version hongroise.
+- **Premier des quatre sujets à droit français, traité comme en anglais.** Ludo a
+  répondu « continue » sans trancher entre transposer et garder : les règles
+  françaises restent (micro-entreprise, EURL, SAS, cotisations patronales de 40 à
+  45 %), et le guide le dit ; le bandeau « ez az útmutató a Franciaországban érvényes
+  szabályokat ismerteti » s'affiche de lui-même, vérifié sur les quatre pages et
+  absent de Marketing. Le RGPD est dit européen, donc applicable en Hongrie ;
+  Bpifrance, URSSAF, CNIL et INPI deviennent leur fonction, avec la NAIH et le SZTNH
+  nommés pour la Hongrie.
+
+### Corrigé en route
+
+- **Le biais de longueur, une onzième fois, corrigé en une passe** : la bonne réponse
+  était la plus longue dans 52 % des cas (français 37 %). 28 distracteurs retouchés —
+  rallongés, ou raccourcis là où le français mettait la bonne réponse en plus longue :
+  38 / 33 / 28 % (français 37 / 37 / 26 %). Les 996 questions hongroises sont à
+  33,6 / 35,9 / 31,2 %.
+
 ## 2026-09-11 — Dixième parcours en hongrois : Écologie & sobriété numérique
 
 ### Ce qui est publié

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Üzleti terv és piackutatás — Vállalkozás, kezdő - Clicked</title>
+    <meta name="description" content="A vállalkozás útmutatójának kezdő szintje: az üzleti terv, a piackutatás, a jogi forma megválasztása, az indulás finanszírozása. A francia jogi formákat ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/entrepreneuriat/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/entrepreneuriat/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/entrepreneuriat/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/entrepreneuriat/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/entrepreneuriat/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Üzleti terv és piackutatás — Vállalkozás, kezdő - Clicked">
+    <meta property="og:description" content="A vállalkozás útmutatójának kezdő szintje: az üzleti terv, a piackutatás, a jogi forma megválasztása, az indulás finanszírozása. A francia jogi formákat ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/entrepreneuriat/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Üzleti terv és piackutatás — Vállalkozás, kezdő - Clicked">
+    <meta name="twitter:description" content="A vállalkozás útmutatójának kezdő szintje: az üzleti terv, a piackutatás, a jogi forma megválasztása, az indulás finanszírozása. A francia jogi formákat ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🚀 Vállalkozás</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🚀 Vállalkozás — Kezdő</h1>
+                <p>Lerakni az alapokat, mielőtt bármit kockára tennél.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 45 L80 75 L70 70 L60 75 Z"/><path d="M62 75 L55 90 L65 85 M78 75 L85 90 L75 85" stroke-opacity="0.6"/></g><circle cx="70" cy="55" r="3" fill="white"/></g>
+<circle class="illu-twinkle" cx="100" cy="50" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="40" cy="60" r="2.5" fill="white" style="animation-delay:1.2s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>elmondd, mire jó valójában egy üzleti terv</strong>, hogy befektetés előtt szembesíts egy ötletet a piaccal, hogy a forgalmad és a társaid alapján válassz jogi formát, és hogy ismerd az indulás finanszírozási forrásait.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#le-business-plan">📋 Az üzleti terv</a></li>
+                <li><a href="#létude-de-marché">🎯 A piackutatás</a></li>
+                <li><a href="#le-choix-du-statut-juridique">🏢 A jogi forma megválasztása</a></li>
+                <li><a href="#le-financement">💵 A finanszírozás</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mit bizonyít valójában egy üzleti terv?</li>
+                <li>Mire jó a piackutatás befektetés előtt?</li>
+                <li>Mitől függ a jogi forma megválasztása?</li>
+                <li>Mire kötelez a választott finanszírozás a pénzen túl?</li>
+                <li>Hogyan korlátozd a kockázatot, mielőtt többet fektetnél be?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Egy fiatal vállalkozás kudarcának leggyakoribb oka sem a tehetség, sem a munka hiánya: hanem az, hogy <strong>nincs piaca</strong>. Gondosan felépítünk valamit, amit senki sem kért.</p>
+            <p>Ez az útmutató ezért megfordítja a magától értetődő sorrendet. Nem a névvel, a logóval vagy a jogi formával kezdünk — hanem azzal, hogy ellenőrizzük: létezik-e a probléma, és kész-e valaki fizetni azért, hogy megszűnjön. Minden más ezután jön, és sokkal egyszerűbb lesz.</p>
+            <p><strong>Az itt idézett jogi és adózási elemek franciák</strong>, és rendszeresen változnak: bármilyen döntés előtt ellenőrizd őket a saját országod hivatalos forrásainál. A gondolkodásmód — fedezeti pont, likviditás, építés előtti tesztelés — nem függ attól, hol vagy.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Az alapok, amelyeket ismerni kell</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="le-business-plan">📋 Az üzleti terv</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az üzleti tervnek két funkciója van, amelyeket gyakran összekevernek: gondolkodni és meggyőzni.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az üzleti tervnek két funkciója van, amelyeket gyakran összekevernek: <strong>gondolkodni</strong> és <strong>meggyőzni</strong>. Az első a fontosabb. Egy terv, amelyből kiderül, hogy a feltevéseid nem állják meg a helyüket, már igazolta a létjogosultságát.</p>
+
+                <h4>Mit tartalmaz</h4>
+                <ol>
+                    <li><strong>A probléma</strong> — ki szenved, mitől, és hogyan boldogul vele ma.</li>
+                    <li><strong>A megoldás</strong> — az ajánlatod, és hogy konkrétan mit változtat.</li>
+                    <li><strong>A piac</strong> — hány lehetséges ügyfél van, és hol találhatók.</li>
+                    <li><strong>Az üzleti modell</strong> — ki fizet, mennyit, milyen gyakran.</li>
+                    <li><strong>A versenytársak</strong> — beleértve a „semmit sem tenni” lehetőséget, amely az első versenytársad.</li>
+                    <li><strong>A pénzügyi előrejelzés</strong> — kiadások, bevételek, fedezeti pont, likviditás.</li>
+                    <li><strong>A csapat</strong> — miért éppen te, és nem más.</li>
+                </ol>
+
+                <h4>A szám, amelyet minden olvasó keres</h4>
+                <p>A <strong>fedezeti pont</strong>: az az árbevétel, amely felett már nem veszítesz pénzt.</p>
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Havi fix költségek: <strong>2 500 EUR</strong> (helyiség, biztosítások, előfizetések, minimális saját fizetés).</p>
+                    <p>Fedezet eladott szolgáltatásonként: <strong>180 EUR</strong>.</p>
+                    <p><strong>Fedezeti pont = 2 500 / 180 ≈ havi 14 szolgáltatás</strong>, vagyis nagyjából másfél munkanaponként egy.</p>
+                    <p>Ez az öt perc alatt elvégzett számítás egy megérzést ellenőrizhető kérdéssé alakít: <em>„képes vagyok havonta 14 szolgáltatást eladni?”</em>. Sok projekt ennél a sornál áll meg — hasznosan.</p>
+                </div>
+
+                <h4>A likviditás többet öl, mint a jövedelmezőség</h4>
+                <p>Egy papíron nyereséges vállalkozás is megszűnhet, ha nincs pénze: az ügyfelek 30 vagy 60 napra fizetnek, a költségek azonnal esedékesek. Egy tizenkét hónapos, havi bontású likviditási tábla hasznosabb, mint egy tervezett eredménykimutatás.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a hokiütő-görbe</span>
+                    <p>Az első évben lapos előrejelzés, a másodiktól robbanás, anélkül hogy bármi indokolná a törést. Minden finanszírozó több százszor látta már ezt a grafikont.</p>
+                    <p>Többet érnek a szerény, kimondott feltevésekre épülő számok: „havi 3 ügyfél, mert már van 2 aláírt ígéretem és 8 leszervezett találkozóm”.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-business-plan"></div>
+
+                <p class="retenir">💡 Az üzleti terv elsősorban neked szól. Ha semmit sem tanultál belőle, és semmiben sem kételkedtél meg, akkor tetszeni akart, nem próbára tenni.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="létude-de-marché">🎯 A piackutatás</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A cél nem az, hogy megerősítsd az ötletedet — hanem hogy megpróbáld lerombolni.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A cél nem az, hogy megerősítsd az ötletedet — hanem hogy megpróbáld lerombolni. Ha ellenáll, van a kezedben valami.</p>
+
+                <h4>Beszélni az emberekkel</h4>
+                <p>Az online kérdőívek keveset árulnak el: az emberek azt válaszolják, amit igaznak hisznek, vagy ami kedvesnek tűnik. Húsz darab húszperces beszélgetésből többet tanulsz, mint háromszáz kitöltött űrlapból.</p>
+                <p>Az aranyszabály: <strong>a múltról kérdezz, soha a jövőről</strong>.</p>
+                <div class="exemple">
+                    <span class="titre">Ugyanaz a kérdés kétféleképpen</span>
+                    <p><strong>Haszontalan kérdés:</strong> „Használna egy alkalmazást a számlái kezelésére?”<br>
+                    → Szinte mindenki igent mond. Semmibe sem kerül, és jólesik.</p>
+                    <p><strong>Hasznos kérdés:</strong> „Hogyan kezelte a számláit a múlt hónapban? Mennyi időbe telt? Mit próbált előtte? Mennyit fizet ma ezért?”<br>
+                    → Ellenőrizhető tények, valódi költségkeret, és gyakran annak felfedezése, hogy az illető nagyon jól elboldogul.</p>
+                    <p>Egy kimondott szándék semmit sem ér. Egy múltbeli viselkedés és egy létező kiadás sokat.</p>
+                </div>
+
+                <h4>A piac méretezése</h4>
+                <p>„A wellnesspiac 4 milliárdot ér” — ez neked semmit sem jelent. Menj le a valóban elérhető piacig: a körzeted, a szegmensed, a termelési kapacitásod. Egy kicsi, védhető szám több bizalmat kelt, mint egy óriási, elérhetetlen.</p>
+
+                <h4>Tesztelni építés előtt</h4>
+                <ul>
+                    <li><strong>Egy bemutató oldal</strong> feliratkozás gombbal, még mielőtt a termék létezne. A feliratkozási arány valódi jelzés.</li>
+                    <li><strong>Az előértékesítés</strong> — a végső próba: valaki előveszi a bankkártyáját.</li>
+                    <li><strong>A kézi változat</strong> — kézzel nyújtani a szolgáltatást az első ügyfeleknek, automatizálás nélkül. Rengeteget tanulsz, és semmi fölöslegeset nem fejlesztettél.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — csak a közeli ismerősöket megkérdezni</span>
+                    <p>A barátaid és a családod bátorítani akarnak. A véleményük szeretetteljes, nem informatív. Keress inkább olyanokat, akiknek semmi okuk kímélni téged — különösen azokat, akik nemet mondanak, és megindokolják.</p>
+                    <p>Egy megindokolt „nem” tíz „ez zseniális”-t ér.</p>
+                </div>
+
+                <div class="pratique" data-pratique="taille-de-marche"></div>
+
+                <p class="retenir">💡 Az egyetlen próba, amely igazán számít, egy fizetés. Amíg senki sem fizetett, bátorításod van, nem piacod.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-choix-du-statut-juridique">🏢 A jogi forma megválasztása</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A jogi forma meghatározza az adózásodat, a társadalombiztosítási védelmedet, a felelősségedet az adósságokért, és azt, hogy be tudsz-e fogadni társakat.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A jogi forma meghatározza az adózásodat, a társadalombiztosítási védelmedet, a felelősségedet az adósságokért, és azt, hogy be tudsz-e fogadni társakat. Jó hír: ez a választás megváltoztatható. Jobb egyszerűen indulni, mint hat hónappal elhalasztani a projektet.</p>
+
+                <h4>A fő formák Franciaországban</h4>
+                <p>Az alábbi táblázat <strong>francia</strong> formákat ír le. A legtöbb országban mindegyik családnak van megfelelője — egyszerűsített egyéni vállalkozói forma, szűk körű társaság, külső befektetőknek szánt társaság —, de az értékhatárok és a nevek eltérnek. Az oszlopokat olvasd, ne a rövidítéseket.</p>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Forma</th><th>Kinek való</th><th>Erősségek</th><th>Korlátok</th></tr>
+                    <tr><td><strong>Micro-entreprise</strong></td><td>Egyedül indulóknak, szolgáltatási tevékenységhez</td><td>Azonnali és ingyenes létrehozás, minimális könyvelés, a forgalommal arányos terhek</td><td>Forgalmi felső határ, a költségek nem vonhatók le</td></tr>
+                    <tr><td><strong>EURL / SARL</strong></td><td>Családi vagy többszemélyes projekthez</td><td>Szigorúan szabályozott keret, a magánvagyon védelme</td><td>Jelentős formai követelmények, a többségi ügyvezető társadalombiztosítási helyzete</td></tr>
+                    <tr><td><strong>SASU / SAS</strong></td><td>Növekedésre vagy tőkebevonásra szánt projekthez</td><td>Nagy szabadság a létesítő okiratban, könnyű társbelépés, az ügyvezető munkavállalóként biztosított</td><td>Magasabb járulékterhek a kifizetett jövedelmen</td></tr>
+                </table>
+                </div>
+
+                <h4>A micro-entreprise mint kiindulópont</h4>
+                <p>Egy tevékenység kipróbálására nehéz felülmúlni: néhány perces online létrehozás, nincs tőkeigény, és nulla forgalomnál nincs költség. Akkor érdemes társaságra váltani, amikor közelítesz az értékhatárokhoz, amikor a levonható költségek jelentőssé válnak, vagy amikor társ érkezik.</p>
+                <p>Egy figyelmeztetés azonban: micro-entreprise-ben <strong>a szakmai kiadások nem vonhatók le</strong>. Az a tevékenység, amelyhez jelentős beszerzés kell — eszközök, áru —, ott gyorsan hátrányba kerül.</p>
+
+                <div class="exemple">
+                    <span class="titre">Tanulságos összehasonlítás</span>
+                    <p>Tanácsadói tevékenység, <strong>40 000 EUR</strong> forgalom, évi <strong>2 000 EUR</strong> költség: a micro-entreprise előnyös marad, és sokkal egyszerűbb.</p>
+                    <p>Kézműves tevékenység, <strong>40 000 EUR</strong> forgalom, <strong>22 000 EUR</strong> anyagbeszerzés: micro-entreprise-ben a terhek a befolyt 40 000 EUR után számítódnak, a kiadott 22 000 EUR figyelembevétele nélkül. Egy társaság egyértelműen előnyösebb.</p>
+                    <p>A szabály: minél magasabbak a valódi költségeid, annál kevésbé illik hozzád a micro-entreprise.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — összekeverni a számlákat</span>
+                    <p>Ha a személyes bankszámládat használod a tevékenységhez, a könyvelés kínszenvedés lesz, minden ellenőrzés bonyolultabb, és elmosódik, mennyit keres valójában a vállalkozás.</p>
+                    <p>Egy külön számla — akár egy egyszerű második folyószámla — az első befolyt eurótól. Öt perc a nyitás, és órákat spórolsz vele.</p>
+                </div>
+
+                <div class="pratique" data-pratique="choisir-statut"></div>
+
+                <p class="retenir">💡 Ne akaszd meg a projektedet a jogi forma választásán. Indulj egyszerűen, és válts, amikor a tevékenység indokolja: ez előre látható és gyakori.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-financement">💵 A finanszírozás</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Minden finanszírozási forrásnak ára van.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden finanszírozási forrásnak ára van. Néha kamat, néha a tőke egy része, néha a döntési szabadságod. A választás kevésbé függ az összegtől, mint attól, mit vagy hajlandó feladni.</p>
+
+                <h4>Áttekintés</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Forrás</th><th>Mibe kerül</th><th>Kinek való</th></tr>
+                    <tr><td><strong>Saját forrás</strong></td><td>A megtakarításod, és a kockázat</td><td>Minden induláshoz — ez nyugtatja meg a többi finanszírozót</td></tr>
+                    <tr><td><strong>Alapítói kölcsön</strong></td><td>Semmibe: kamatmentes, biztosíték nélkül</td><td>Támogató hálózathoz tartozó alapítóknak (Franciaországban: Initiative France, Réseau Entreprendre)</td></tr>
+                    <tr><td><strong>Bankhitel</strong></td><td>Kamat, gyakran személyes kezességvállalás</td><td>Azonosítható eszközigényekhez</td></tr>
+                    <tr><td><strong>Támogatások</strong></td><td>A pályázatra fordított idő</td><td>Innováció, térségi programok, kiemelt ágazatok</td></tr>
+                    <tr><td><strong>Közösségi finanszírozás</strong></td><td>Egy kampány, amelyet életben kell tartani</td><td>Fogyasztói termékekhez, amelyek közben a piacot is tesztelik</td></tr>
+                    <tr><td><strong>Tőkebevonás</strong></td><td>A tőke és a hatalom egy része</td><td>Kizárólag nagyon gyors növekedésű projektekhez</td></tr>
+                </table>
+                </div>
+
+                <h4>Az alapítói kölcsönök emelőhatása</h4>
+                <p>Gyakran nem ismerik őket: személyesen, kamat és biztosíték nélkül adják, és saját forrásként számítanak. A bankok figyelembe veszik őket: egy ilyen kölcsön gyakran egy másik, nagyobb hitelt nyit meg. A fenti francia programokat megneveztük; a legtöbb országban van hasonló, más néven.</p>
+
+                <h4>Amit a bank valójában néz</h4>
+                <ul>
+                    <li><strong>A saját hozzájárulásod</strong> — általában az igény 20–30%-a körül. Ha te semmit sem kockáztatsz, miért kockáztatna ő?</li>
+                    <li><strong>Az előrejelzés következetessége</strong> — a kimondott feltevések többet érnek a hízelgő számoknál.</li>
+                    <li><strong>A tapasztalatod az ágazatban</strong>.</li>
+                    <li><strong>A biztosítékok</strong> — egy állami garanciaprogram (Franciaországban a Bpifrance) kezességet vállalhat a hitel egy részéért, ami gyakran megváltoztatja a döntést.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — sikernek hinni a tőkebevonást</span>
+                    <p>A tőkebevonás nem beteljesülés: hanem kötelezettségvállalás. Eladod a vállalkozásod egy részét azért cserébe, hogy nagyon gyorsan növekedned kell, és olyan társakat szerzel, akiknek beleszólásuk lesz — akár abba is, hogy te maradsz-e a vezető.</p>
+                    <p>A projektek nagy többségénél az ügyfelek bevételéből finanszírozott fejlődés több szabadságot és több értéket hagy az alapítónál.</p>
+                </div>
+
+                <div class="pratique" data-pratique="besoin-de-financement"></div>
+
+                <p class="retenir">💡 A legjobb finanszírozás továbbra is egy fizető ügyfél. Nem kell visszafizetni, semmit sem hígít, és bizonyítja, hogy a piac létezik.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Az üzleti terv azt bizonyítja, hogy a projektet alaposan végiggondolták.</li>
+                <li>A piackutatás befektetés előtt szembesíti az ötletet a valósággal.</li>
+                <li>A megfelelő jogi forma a tervezett forgalomtól és a társak számától függ.</li>
+                <li>A választott finanszírozásnak következményei vannak a vállalkozás feletti irányításra.</li>
+                <li>Egy ötlet kis léptékű tesztelése korlátozza a kockázatot, mielőtt többet fektetnél be.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Írd le az ötletedet egy mondatban, amely megnevezi a problémát és azt, akinek ez a problémája. Ha ez nem megy a megoldásod említése nélkül, a piackutatás még el sem kezdődött.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országod állami vállalkozói portálja</strong> — üzletiterv-sablonok, kalkulátorok és a támogatási programok jegyzéke. Franciaországban ez a Bpifrance Création; minden országnak van megfelelője.</li>
+                    <li><strong>A helyi kereskedelmi és iparkamarák</strong> — helyi támogatás, gyakran ingyenes vagy nagyon olcsó. Kevesen használják, pedig a jövőbeli befizetéseid finanszírozzák.</li>
+                    <li><strong>Alapítói kölcsönhálózatok</strong> — kamatmentes kölcsönök és tapasztalt vezetők mentorálása. A mentorálás gyakran többet ér a pénznél.</li>
+                    <li><strong>A vállalkozásoknak szóló hivatalos kormányzati portál</strong> — az értékhatárok, jogi formák és ügyintézések hiteles forrása. Minden blog előtt ezt nézd meg, ezt az útmutatót is beleértve.</li>
+                    <li><strong>„The Mom Test”</strong>, Rob Fitzpatrick — rövid könyv, amely teljes egészében arról szól, hogyan kérdezd a lehetséges ügyfeleket úgy, hogy ne udvariaskodó válaszokat kapj. A legjobb befektetés egy piackutatás előtt.</li>
+                </ul>
+                <p><strong>Módszertani tanács:</strong> mielőtt létrehozod a céget, próbálj szerezni egy első fizető ügyfelet. Ez igazolja a projektet, megnyugtatja a finanszírozókat — és néha megóv attól, hogy létrehozz egy vállalkozást, amelyről túl későn derülne ki, hogy nincs piaca.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>🚀 Vállalkozás</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Vállalkozás — Középhaladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../../../guides/finance/index.html">💰 Pénzügyek (franciául)</a>
+                <a href="../dev-web/index.html">💻 Webfejlesztés</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/entrepreneuriat-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

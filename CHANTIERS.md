@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Dix parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Écologie, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Onze parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Écologie, Entrepreneuriat, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -68,11 +68,12 @@ françaises.
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
    Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité, Marketing,
-   Négociation, Écologie (10 sur 14).** Les sujets sans droit français sont tous
-   faits ; restent les quatre qui demandent la décision ci-dessous.
+   Négociation, Écologie, Entrepreneuriat (11 sur 14).** Les sujets sans droit
+   français sont tous faits ; restent Finance, Droit et Santé, à traiter comme
+   Entrepreneuriat (décision ci-dessous).
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %, Entrepreneuriat 52 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
@@ -162,17 +163,30 @@ françaises.
   catégorie et le pays » ; ADEME, Arcep, RGESN, Longue vie aux objets et loi REEN
   remplacés par leur fonction, comme en anglais. Dans les simulateurs, « × 33 (több) »
   plutôt que « 33-szor », dont le suffixe suivrait le nombre saisi ;
+- pour Entrepreneuriat : *üzleti terv*, *fedezet* et *fedezeti pont* (marge, seuil de
+  rentabilité), *likviditás* (trésorerie), *kifutási idő* (autonomie), *forgótőke-igény*
+  (BFR), *egységgazdaságtan* (unit economics), *ügyfélérték* et *ügyfélszerzési
+  költség*, *megtérülési idő*, *hígulás*, *befektetés előtti értékelés*, *alapítói
+  kölcsön* (prêt d'honneur, terme choisi faute d'équivalent établi), *tagok közötti
+  megállapodás* (pacte d'associés), *jogátruházás*, *védjegykutatás* (recherche
+  d'antériorité). **Les règles restent françaises et le disent** (micro-entreprise,
+  EURL, SAS, cotisations patronales de 40 à 45 %) ; le RGPD est dit européen, donc
+  applicable en Hongrie ; organismes nommés par leur fonction, avec « Magyarországon
+  a NAIH » et « Magyarországon az SZTNH » — ce second nom est à vérifier ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12
   en français. Les mots hongrois étant plus longs, le chiffre est probablement
   trop bas.
 
-**Deux décisions à prendre avant Finance, Droit, Santé et Entrepreneuriat :** qui
-relit ; et le sort des exemples français (PEA, droit du travail) — les transposer
-vers leurs équivalents hongrois, ce qui demande des faits hongrois vérifiés, ou
-garder les règles françaises en le disant (le bandeau `reglesFrancaises` existe en
-hongrois).
+**Le sort des exemples français, tranché par défaut le 12 septembre 2026.** À la
+question « transposer ou garder », Ludo a répondu « continue » sans choisir : j'ai
+pris l'option recommandée, celle de la version anglaise. Les règles françaises
+(micro-entreprise, taux de cotisations, PEA, droit du travail) restent, et le guide
+le dit ; le bandeau `reglesFrancaises` s'affiche de lui-même en hongrois. Ce qui est
+européen se dit européen ; les organismes deviennent leur fonction. Transposer vers
+le droit hongrois reste possible plus tard, avec des sources hongroises vérifiées.
+Appliqué à Entrepreneuriat ; à appliquer à Finance, Droit et Santé.
 
 **Pour relancer :** « continue la traduction hongroise ».
 

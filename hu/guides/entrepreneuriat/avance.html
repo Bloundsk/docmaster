@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Egységgazdaságtan, tőkebevonás, felvétel — Vállalkozás, haladó - Clicked</title>
+    <meta name="description" content="A vállalkozás útmutatójának haladó szintje: az egységgazdaságtan, tőkét bevonni vagy nem, egy felvétel valódi költsége, a le nem írt dolgokból születő jogi kockázatok.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/entrepreneuriat/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/entrepreneuriat/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/entrepreneuriat/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/entrepreneuriat/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/entrepreneuriat/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Egységgazdaságtan, tőkebevonás, felvétel — Vállalkozás, haladó - Clicked">
+    <meta property="og:description" content="A vállalkozás útmutatójának haladó szintje: az egységgazdaságtan, tőkét bevonni vagy nem, egy felvétel valódi költsége, a le nem írt dolgokból születő jogi kockázatok.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/entrepreneuriat/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Egységgazdaságtan, tőkebevonás, felvétel — Vállalkozás, haladó - Clicked">
+    <meta name="twitter:description" content="A vállalkozás útmutatójának haladó szintje: az egységgazdaságtan, tőkét bevonni vagy nem, egy felvétel valódi költsége, a le nem írt dolgokból születő jogi kockázatok.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🚀 Vállalkozás</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🚀 Vállalkozás — Haladó</h1>
+                <p>A döntések, amelyek elköteleznek: a növekedés, mások pénze, és az emberek.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 45 L80 75 L70 70 L60 75 Z"/><path d="M62 75 L55 90 L65 85 M78 75 L85 90 L75 85" stroke-opacity="0.6"/></g><circle cx="70" cy="55" r="3" fill="white"/></g>
+<circle class="illu-twinkle" cx="100" cy="50" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="40" cy="60" r="2.5" fill="white" style="animation-delay:1.2s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>kiszámold, mennyit hoz egy ügyfél ahhoz képest, amennyibe kerül</strong>, hogy eldöntsd, bevonsz-e tőkét, hogy számszerűsítsd egy munkatárs felvételét, és hogy felismerd a le nem írt dolgokból születő kockázatokat.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#unit-economics">📊 Az egységgazdaságtan</a></li>
+                <li><a href="#lever-des-fonds">🤝 Tőkét bevonni, vagy nem</a></li>
+                <li><a href="#recruter-et-deleguer">👥 Felvenni és delegálni</a></li>
+                <li><a href="#risques-juridiques">⚖️ A jogi kockázatok</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mit eredményez a növekedés, ha az egységgazdaságtan negatív?</li>
+                <li>Mennyit kell hoznia egy ügyfélnek ahhoz képest, amennyibe megszerzése került?</li>
+                <li>Tőkebevonás: siker, vagy kötelezettségvállalás?</li>
+                <li>Mennyibe kerül valójában egy munkavállaló a bruttó béréhez képest?</li>
+                <li>Honnan erednek a legdrágább jogi kockázatok?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A középhaladó szint az életképességről szólt: valódi igény, fedezet, ügyfelek, likviditás. Ha ez a négy megvan, a vállalkozás működik.</p>
+            <p>Ez a szint azokról a döntésekről szól, amelyek <strong>hosszú távra köteleznek el</strong>: gyorsítsunk-e, kinek a pénzével, kivel, és milyen kötöttségek mellett. Mindegyiket nehéz visszacsinálni — és mindegyiket sokkal nyugodtabban lehet meghozni, ha a megfelelő számok vannak előtted.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. Nem jogi, nem adózási és nem befektetési tanácsadás. Az idézett kulcsok és értékhatárok változó nagyságrendek.</p>
+                <p><strong>A felvételről szóló fejezet munkáltatói járulékkulcsai franciák</strong>, ahogy a végén megnevezett francia hivatalok is. A gondolkodásmód — egységgazdaságtan, hígulás, mit kell leírni — egyetlen országtól sem függ.</p>
+                <p>Tőkebevonásnál, munkatárs felvételénél vagy egy fontos szerződésnél a szakember segítsége mindig kevesebbe kerül, mint a hiba, amelytől megóv.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A döntések, amelyek elköteleznek</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="unit-economics">📊 Az egységgazdaságtan</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az egységgazdaságtan (unit economics) egy olyan kérdésre felel, amelyet a növekedés könnyen elfed: keresünk-e pénzt minden egyes ügyfélen, ha mindent…</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az egységgazdaságtan (unit economics) egy olyan kérdésre felel, amelyet a növekedés könnyen elfed: <strong>keresünk-e pénzt minden egyes ügyfélen, ha mindent beszámítunk?</strong> Amíg a válasz nem, minden új ügyfél rontja a helyzetet.</p>
+
+                <h4>A két szám, és az arányuk</h4>
+                <p>Az <strong>ügyfélszerzési költség</strong> az, amit átlagosan el kell költeni egy fizető ügyfél megszerzésére: hirdetés, értékesítési idő, belépési kedvezmények, mindent beleértve.</p>
+                <p>Az <strong>ügyfélérték</strong> (élettartam-érték) az a teljes fedezet, amelyet egy ügyfél hoz, mielőtt távozik. A <em>fedezet</em> alapján számoljuk, soha nem az árbevétel alapján — különben képzelgés.</p>
+                <p>A kettő aránya a központi mutató. Az 1 alatti arány azt jelenti, hogy fizetünk azért, hogy pénzt veszítsünk. A 3-as arányt általában egészségesnek tartják; ha jóval magasabb, az gyakran azt jelzi, hogy nem fektetünk be eléggé az ügyfélszerzésbe.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Ügyfelenkénti havi fedezet: <strong>38 EUR</strong>. Átlagos élettartam: <strong>14 hónap</strong>. Ügyfélérték: <strong>532 EUR</strong>.</p>
+                    <p>Ügyfélszerzési költség: <strong>145 EUR</strong>. Arány: <strong>3,7</strong> — egészséges.</p>
+                    <p>Megtérülési idő: 145 / 38 ≈ <strong>3,8 hónap</strong>. Ennyi idő alatt téríti meg az ügyfél a megszerzése költségét, és ez közvetlenül meghatározza a pénzigényt.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cac-ltv"></div>
+
+                <h4>Miért uralja a megtartás az összes többit</h4>
+                <p>Ha az élettartamot 14-ről 20 hónapra növeled, az ügyfélérték 43%-kal nő — egyetlen euró további ügyfélszerzési költség nélkül. Semmilyen hirdetésoptimalizálás nem hoz ilyen hatást.</p>
+                <p>Ezért a megtartáson végzett munka szinte mindig jövedelmezőbb, mint az ügyfélszerzésen végzett — és szinte mindig kevesebb jut rá: kevésbé látható.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — növekedni, hogy elfedjük a meg nem álló modellt</span>
+                    <p>Negatív egységgazdaságtan mellett a növekedés semmit sem old meg: felnagyítja a veszteséget, miközben a siker látszatát kelti. Az árbevétel nő, a pénz gyorsabban fogy.</p>
+                    <p>Amíg az arány nem egyértelműen 1 fölötti, a gyorsítás annyi, mint a fal felé nyomni a gázt.</p>
+                </div>
+
+                <p class="retenir">💡 Az egységgazdaságtant nem a volumen javítja meg. Az ár, a fedezet vagy a megtartás.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="lever-des-fonds">🤝 Tőkét bevonni, vagy nem</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A tőkebevonást megkoronázásként mutatják be.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A tőkebevonást megkoronázásként mutatják be. Valójában egy <strong>modellválasztás</strong>, amely a projektek kisebbségének való, és messze a kapott pénzen túl kötelez el.</p>
+
+                <h4>Amit valójában eladsz</h4>
+                <p>Nem részesedést adsz el: <strong>gyors növekedés ígéretét</strong> adod el. Egy tőkebefektető öt-tíz éven belüli eladást vagy tőzsdei bevezetést keres, jelentős szorzóval. Ez nagyon nagy piacot és agresszív pályát feltételez.</p>
+                <p>Egy nyereséges, évi 15%-kal növekvő vállalkozás kiváló üzlet az alapítójának, és rossz befektetés egy alapnak. A két logika nem találkozik.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — a hígulás</span>
+                    <p><strong>300 000 EUR</strong> bevonása <strong>1 200 000 EUR</strong> befektetés előtti értékelés mellett.</p>
+                    <p>Befektetés utáni értékelés: 1 500 000 EUR. A befektetőé <strong>20%</strong>.</p>
+                    <p>Egy alapító, akié 100% volt, most 80%-ot birtokol. Két további, hasonló mértékű hígulás után <strong>52%</strong> alá kerül — és elveszíti az irányítást a többséget igénylő döntések felett.</p>
+                </div>
+
+                <div class="pratique" data-pratique="dilution"></div>
+
+                <h4>Az alternatívák, amelyekre túl ritkán gondolnak</h4>
+                <p>Az <strong>ügyfelek általi finanszírozás</strong> — előlegek, előértékesítés, előre kifizetett éves előfizetések — semmit sem hígít, és közben igazolja a keresletet.</p>
+                <p>A <strong>bankhitel</strong>, amely állami garanciával gyakran elérhető, kamatba kerül, de sem részesedésbe, sem igazgatósági helybe.</p>
+                <p>A <strong>támogatások és pályázatok</strong> adminisztratív időt igényelnek, és néha annyit hoznak, mint egy kisebb befektetési kör, tőkerész átadása nélkül.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — tőkét bevonni, hogy modellt találjunk</span>
+                    <p>A külső pénz felgyorsítja, ami létezik. Nem pótolja az üzleti modellt, amely még nem működik.</p>
+                    <p>Életképes egységgazdaságtan előtt tőkét bevonni annyi, mint tovább finanszírozni egy veszteséget, ráadásul növekedési nyomással. Sok kudarc így néz ki.</p>
+                </div>
+
+                <p class="retenir">💡 Tőkét bevonni nem pénzt keresni: hanem növekedést vállalni olyanok előtt, akik kiszállást várnak.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="recruter-et-deleguer">👥 Felvenni és delegálni</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Az első munkatárs felvétele az a pillanat, amikor a vállalkozás megszűnik egyszemélyes tevékenység lenni.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az első munkatárs felvétele az a pillanat, amikor a vállalkozás megszűnik egyszemélyes tevékenység lenni. Ezt a döntést számolják el a leggyakrabban rosszul.</p>
+
+                <h4>Egy munkavállaló valódi költsége</h4>
+                <p>A bruttó bér nem a költség. Hozzájönnek a munkáltatói járulékok — a francia általános esetben a bruttó <strong>40–45%-a</strong> —, aztán az eszközök, a képzés, a biztosítás, és a saját óráid egy része a vezetésre.</p>
+                <p>Jegyezz meg egy egyszerű nagyságrendet: <strong>egy munkavállaló a bruttó bére nagyjából 1,45-szörösébe kerül</strong>, az első hónapok nem elhanyagolható vezetési ideje nélkül. A szorzó országonként eltér; a gondolkodásmód nem — döntés előtt ellenőrizd a sajátodat.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Havi bruttó bér: <strong>2 600 EUR</strong>. Munkáltatói költség: kb. <strong>3 770 EUR</strong>, azaz évi <strong>45 240 EUR</strong>.</p>
+                    <p>60%-os fedezet mellett évente nagyjából <strong>75 400 EUR</strong> többlet-árbevételt kell termelni ahhoz, hogy ez a felvétel megtérüljön.</p>
+                    <p>Így megfogalmazva a kérdés konkrét lesz: ez az ember hoz-e 75 000 EUR többlet-árbevételt, vagy felszabadít-e annyi időt, hogy te hozd?</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-reel-salarie"></div>
+
+                <h4>Feladatot delegálj, ne problémát</h4>
+                <p>A sikeres delegálás feltétele, hogy a feladat <strong>meghatározott, dokumentált és mérhető</strong> legyen. Egy homályos probléma átadása — „foglalkozz a marketinggel” — főleg frusztrációt szül mindkét oldalon.</p>
+                <p>Az előzetes próba egyszerű: el tudnád-e magyarázni tíz perc alatt, mit kell tenni, és hogyan néz ki egy jó eredmény? Ha nem, a feladat még nem áll készen a delegálásra.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — felvenni valakit, hogy könnyebb legyen</span>
+                    <p>A túlterheltség nem ok a felvételre. Ha a tevékenység nem termeli meg a megfelelő fedezetet, egy munkavállaló a túlterhelésből likviditási gondot csinál.</p>
+                    <p>Először gondolj eseti megbízásra, gyakornokra vagy részmunkaidőre: ezek visszafordíthatók, egy határozatlan idejű munkaszerződés nem.</p>
+                </div>
+
+                <p class="retenir">💡 Egy felvételről egy azonosított többlet-árbevétel alapján döntünk, nem a túlterheltség érzése alapján.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="risques-juridiques">⚖️ A jogi kockázatok</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy fiatal vállalkozás jogi nehézségei ritkán származnak homályos szabályozásból.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy fiatal vállalkozás jogi nehézségei ritkán származnak homályos szabályozásból. Szinte mindig abból erednek, <strong>amit nem írtak le</strong>, akkor, amikor még mindenki jól kijött egymással.</p>
+
+                <h4>A négy pont, amelyet korán rendezni kell</h4>
+                <p><strong>A tagok közötti megállapodás.</strong> Ki miről dönt, mi történik, ha valaki kiválik, hogyan értékelik a részesedéseket, hogyan osztoznak nézeteltérés esetén. Ezeket a kérdéseket az elején könnyű eldönteni, később konfliktusok lesznek belőlük.</p>
+                <p><strong>A szellemi tulajdon.</strong> Amit egy külsős megbízott létrehoz, nem lesz automatikusan a tiéd: írásos jogátruházás kell. Enélkül a logó, a kód vagy a szövegek a szerzőjüknél maradnak.</p>
+                <p><strong>Az értékesítési feltételek.</strong> Fizetési határidők, késedelmi kötbér, felelősségkorlátozás, felmondási feltételek. Ha egy jogvita után írod meg őket, már semmit sem érnek.</p>
+                <p><strong>A személyes adatok.</strong> Az első ügyféllistától kezdve érvényes a GDPR, amely az egész Európai Unióban — így Magyarországon is — alkalmazandó: adatkezelési nyilvántartás, az érintettek tájékoztatása, megőrzési idő. Az EU-n kívül szinte mindig van hasonló szabályozás — nézz utána, melyik.</p>
+
+                <div class="exemple">
+                    <span class="titre">A számítás, amely dönt</span>
+                    <p>Létesítő okiratot és tagi megállapodást íratni: nagyjából <strong>1 500–3 000 EUR</strong>.</p>
+                    <p>Egy tagok közötti konfliktus megállapodás nélkül: több tízezer euró, két év eljárás, és közben megbénult vállalkozás.</p>
+                    <p>Ez azon ritka kiadások egyike, amelyek hozama többszörösben mérhető.</p>
+                </div>
+
+                <div class="pratique" data-pratique="risques-juridiques"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a társ írásos megállapodás nélkül</span>
+                    <p>„Barátok vagyunk, majd később megbeszéljük.” Ez az oka a fiatal vállalkozásokat megölő konfliktusok többségének — nem a verseny, nem a piac.</p>
+                    <p>Egy két évvel későbbi nézeteltérés arról, ki mennyit tett bele, írásos megállapodás nélkül nem rendeződik békésen. És minden döntést megakaszt, egy eladást is.</p>
+                </div>
+
+                <p class="retenir">💡 Nem az a szerződés drága, amelyet megírsz, hanem az, amelyet nem írtál meg.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Negatív egységgazdaságtan mellett növekedni annyi, mint a fal felé gyorsítani.</li>
+                <li>Egy ügyfélnek egyértelműen többet kell hoznia, mint amennyibe megszerzése került — és elég gyorsan.</li>
+                <li>A tőkebevonás nem siker: hanem gyors növekedésre vállalt kötelezettség.</li>
+                <li>Egy munkavállaló a bruttó bére nagyjából 1,45-szörösébe kerül, és vezetési időben még sokkal többe.</li>
+                <li>A legdrágább jogi kockázatok abból születnek, amit nem írtak le.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Számolj ki két számot: mennyibe kerül egy ügyfél megszerzése, és mennyit hoz a teljes élettartama alatt. Ha rossz sorrendben állnak, a növekedés csak gyorsítja a bajt.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az állami fejlesztési bank</strong>: hitelgaranciák, innovációs támogatások, és ismertetők a tőkefinanszírozás mechanizmusairól. Franciaországban a Bpifrance.</li>
+                    <li><strong>A társadalombiztosítási hatóság hivatalos munkáltatóiköltség-kalkulátora</strong>: a hivatalos számítás, a hatályos kulcsokkal, sokkal megbízhatóbb egy közelítő szorzónál.</li>
+                    <li><strong>Az adatvédelmi hatóság útmutatója az adatkezelőknek</strong> (Magyarországon a NAIH, Franciaországban a CNIL): mit kell bevezetni már az első ügyféllistától.</li>
+                    <li><strong>A nemzeti szellemitulajdon-hivatal</strong> (Magyarországon az SZTNH, Franciaországban az INPI): védjegybejelentés, alkotások védelme, és az ingyenes védjegykutatás — névválasztás előtt érdemes megnézni.</li>
+                    <li><strong>Támogató hálózatok</strong> — alapítói kölcsönprogramok, helyi inkubátorok: kamatmentes kölcsönök és mentorálás, gyakran döntő az első felvételnél.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> minden elkötelező döntés előtt írd le azt a forgatókönyvet, amelyben rosszul sül el. Ha elviselhető, lépj. Ha nem, csökkentsd a kötelezettséget.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Vállalkozás — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza →</span>🚀 Vállalkozás</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/finance/index.html">💰 Pénzügyek (franciául)</a>
+                <a href="../marketing/index.html">📢 Digitális marketing</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/entrepreneuriat-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
