@@ -136,7 +136,11 @@ const intouche = (t) => {
    français dans une liste de recherche — laisse passer le défaut en silence,
    et c'est exactement ce qui est arrivé à « heures », « jours » et « lignes ». */
 const IDENTIQUES = new Set([
-    "min", "minutes", "mm", "px", "em", "ms", "observations",
+    "min", "mm", "px", "em", "ms",
+    /* Trois mots qui s'écrivent pareil en français et en anglais — en anglais
+       seulement. Comptés identiques pour toutes les langues, ils laissaient
+       passer « 1600 observations » sur une page hongroise. */
+    ...(LANGUE === "en" ? ["minutes", "observations", "net"] : []),
     // Unités de l'écologie : « 2 667 kg CO₂e », « 73,0 kWh », « 22 222 km ».
     // « CO » apparaît seul parce que le « ₂e » n'est pas une lettre latine.
     "kg", "CO", "kWh", "km", "GB", "MB", "W",

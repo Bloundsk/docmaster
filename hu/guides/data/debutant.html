@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Mutatók, adatgyűjtés és diagramok — Adatok, kezdő - Clicked</title>
+    <meta name="description" content="Mutatók, adatgyűjtés, tisztességes diagramok és a négy statisztikai fogalom, amely a hétköznapokban számít. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/data/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/data/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/data/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/data/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/data/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Mutatók, adatgyűjtés és diagramok — Adatok, kezdő - Clicked">
+    <meta property="og:description" content="Mutatók, adatgyűjtés, tisztességes diagramok és a négy statisztikai fogalom, amely a hétköznapokban számít. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/data/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mutatók, adatgyűjtés és diagramok — Adatok, kezdő - Clicked">
+    <meta name="twitter:description" content="Mutatók, adatgyűjtés, tisztességes diagramok és a négy statisztikai fogalom, amely a hétköznapokban számít. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">📊 Adatok és elemzés</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Adatok és elemzés — Kezdő</h1>
+                <p>Számokat olvasni anélkül, hogy becsapnának. Nem kell hozzá statisztikai előismeret.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>megkülönböztesd a hasznos mutatót a dekoratív számtól</strong>, hogy megítéld, honnan származnak az adatok, hogy az üzenet alapján válassz diagramot, és hogy a mediánt válaszd, amikor szélsőértékek torzítják az átlagot.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#les-kpi">📈 A KPI-k</a></li>
+                <li><a href="#la-collecte-de-données">🗂️ Az adatgyűjtés</a></li>
+                <li><a href="#la-visualisation-de-données">📉 Az adatvizualizáció</a></li>
+                <li><a href="#les-bases-des-statistiques">🧮 A statisztika alapjai</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Miről ismerhető fel egy hasznos mutató a dekoratív számmal szemben?</li>
+                <li>Sok adat jobb, vagy megbízható adat?</li>
+                <li>Mitől függ, milyen diagramot választasz?</li>
+                <li>Mikor jobb a medián az átlagnál?</li>
+                <li>Ha két mennyiség együtt változik, az bizonyítja az ok-okozati kapcsolatot?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>„Úgy tűnik, jobban megy, mióta megváltoztattuk a kezdőlapot.” Ezt a mondatot minden szervezetben hallani. Lehet, hogy igaz. A gond az, hogy ellenőrizhetetlen — és drága döntéseket fognak hozni rá alapozva.</p>
+            <p>Az adatok nem arra valók, hogy lenyűgöző irányítópultokat gyártsunk. Arra valók, hogy egy pontos kérdésre ismert bizonyossággal válaszoljunk. Fontos árnyalat: a rosszul gyűjtött vagy rosszul értelmezett adat <strong>rosszabb</strong>, mint ha nincs adat, mert hamis magabiztosságot ad.</p>
+            <p>Ez az útmutató négy dolgot tárgyal: kiválasztani, mit mérünk, megbízható adatokhoz jutni, hazugság nélkül ábrázolni őket, és tévedés nélkül értelmezni. Nem kell hozzá matematikai tudás — a hétköznapokban hasznos négy statisztikai fogalom elfér egy oldalon.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Az alapok, amelyeket ismerni kell</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="les-kpi">📈 A KPI-k</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A KPI ( Key Performance Indicator, kulcs-teljesítménymutató) egy szám, amelyet azért választunk, hogy egy döntési kérdésre válaszoljon.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A <strong>KPI</strong> (<em>Key Performance Indicator</em>, kulcs-teljesítménymutató) egy szám, amelyet azért választunk, hogy egy döntési kérdésre válaszoljon. A fontos szó a <em>választunk</em>: ezernyi dolgot lehet mérni, és nem a gyűjtés a nehéz, hanem a válogatás.</p>
+
+                <h4>Mitől jó egy mutató</h4>
+                <p>Egy mutatót akkor érdemes követni, ha három feltételnek megfelel:</p>
+                <ul>
+                    <li><strong>Pontos célhoz kapcsolódik.</strong> Nem „javítani a weboldalt”, hanem „növelni a vásárló látogatók arányát”.</li>
+                    <li><strong>Időben ugyanúgy mérhető.</strong> Ha a definíció menet közben változik, az összehasonlításnak nincs értelme.</li>
+                    <li><strong>Cselekvésre ösztönöz.</strong> A változásának döntést kell kiváltania. Ez a legerősebb szűrő, és ezt felejtik el a leggyakrabban.</li>
+                </ul>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Egy webáruháznak havonta <strong>100 000 látogatója</strong> és <strong>1200 eladása</strong> van. A következő hónapban egy hirdetési kampány <strong>180 000 látogatóra</strong> növeli a forgalmat, <strong>1300 eladással</strong>.</p>
+                    <p>A forgalom felől nézve: <strong>+80%</strong>. A havi jelentés hízelgő.</p>
+                    <p>A konverziós arány felől nézve: <strong>1,20%-ról</strong> <strong>0,72%-ra</strong> esik, vagyis <strong>40%-os</strong> zuhanás. A kampány 80 000 olyan embert hozott, akik közül szinte senki sem volt érdeklődő.</p>
+                    <p>Mindkét szám helyes. Csak az egyik vezet döntéshez: újra kell gondolni a kampány célzását.</p>
+                </div>
+
+                <h4>Eredménymutatók és előrejelző mutatók</h4>
+                <p>Az árbevétel <strong>eredménymutató</strong>: azt rögzíti, ami már megtörtént, amikor már késő cselekedni. Az ezen a héten kiküldött árajánlatok száma <strong>előrejelző mutató</strong>: jelzi a jövő havi árbevételt, amikor még van idő reagálni. Egy hasznos irányítópult mindkettőt tartalmazza.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a hiúsági mutató</span>
+                    <p>Követők, megtekintések, letöltések, lájkok száma: ezek a számok szinte mindig nőnek, sosem csökkennek, és kellemes bemutatni őket. Ritkán kapcsolódnak döntéshez.</p>
+                    <p>Az alkalmazandó próba: „ha ez a szám holnap 20%-kal csökkenne, mit csinálnék másképp?” Ha a válasz „semmit”, az nem KPI, hanem dísz.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-kpi"></div>
+
+                <p class="retenir">💡 Az a mutató, amely egyetlen döntést sem változtat meg, nem mutató. Mielőtt követni kezdenél egyet, írd le, milyen döntés meghozatalához fog kelleni.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-collecte-de-données">🗂️ Az adatgyűjtés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Minden elemzés örökli az adatgyűjtése hibáit.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden elemzés örökli az adatgyűjtése hibáit. Egy torzított adatokon végzett kifogástalan számítás hamis eredményt ad — de magabiztosan tálalva, ami veszélyesebbé teszi egy vállalt megérzésnél.</p>
+
+                <h4>Mennyiségi és minőségi adatok</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Típus</th><th>Erre válaszol</th><th>Korlát</th></tr>
+                    <tr><td><strong>Mennyiségi</strong><br>számok, mérések, számlálások</td><td><em>Mennyi? Hol? Mikor?</em><br>„68% a fizetésnél lép ki”</td><td>Sosem mondja meg, <em>miért</em></td></tr>
+                    <tr><td><strong>Minőségi</strong><br>interjúk, szó szerinti idézetek, megfigyelések</td><td><em>Miért? Hogyan?</em><br>„Nem láttam a szállítási díjat”</td><td>Nem mondja meg, hogy reprezentatív-e</td></tr>
+                </table>
+                </div>
+                <p>A kettő kiegészíti, és nem helyettesíti egymást. A mennyiségi adat behatárolja a problémát, a minőségi megmagyarázza. Egy kosárelhagyás okát egy számtáblázatban keresni időpocsékolás: öt emberrel kell beszélni.</p>
+
+                <h4>A kiválasztási torzítás</h4>
+                <p>Ez a leggyakoribb adatgyűjtési hiba, és a legnehezebben észrevehető: akik válaszolnak, nem hasonlítanak azokra, akik nem válaszolnak.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Egy szolgáltatás elégedettségi kérdőívet küld <strong>5000 ügyfelének</strong>. <strong>200 válasz</strong> érkezik, <strong>4,3 / 5</strong> átlagpontszámmal. Látszólagos következtetés: az ügyfelek elégedettek.</p>
+                    <p>De ki szán öt percet egy kérdőív kitöltésére? A nagyon elégedettek és a nagyon elégedetlenek. A 4800 hallgatag ügyfél — köztük azok, akik a konkurenciához mentek — nincs benne a számításban.</p>
+                    <p>Ez a 4,3 <strong>a válaszolók</strong> elégedettségét méri, nem az ügyfelekét. Ez az árnyalat mindent megváltoztat.</p>
+                </div>
+
+                <h4>Három kérdés, mielőtt felhasználsz egy számot</h4>
+                <ol>
+                    <li><strong>Kit mértek meg, és kit hagytak ki?</strong> Gyakran a hiányzók a valódi téma.</li>
+                    <li><strong>Hogyan történt a mérés?</strong> Egy önbevalláson alapuló űrlap és egy automatikus mérés nem egyenértékű.</li>
+                    <li><strong>Milyen időszakban?</strong> Egy iskolai szünetes hét nem jelzi előre egy átlagos hét eredményét.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — gyűjteni, mielőtt tudnánk, mit keresünk</span>
+                    <p>A „gyűjtsünk össze mindent, majd meglátjuk” óriási, drágán fenntartható adatbázisokat eredményez, amelyekben semmit sem találunk. Nagy adatmennyiségben pedig mindig akad egy látványos korreláció, amelyet csak a véletlen okoz.</p>
+                    <p>A kérdés megelőzi az adatgyűjtést, sosem fordítva.</p>
+                </div>
+
+                <div class="pratique" data-pratique="qualite-collecte"></div>
+
+                <p class="retenir">💡 Mielőtt megbízol egy számban, kérdezd meg, kit nem számoltak bele. Szinte mindig ott rejtőzik a hiba.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-visualisation-de-données">📉 Az adatvizualizáció</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy diagram nem egy táblázatra tett dísz: érv.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy diagram nem egy táblázatra tett dísz: érv. Irányítja az olvasást, kiemel valamit, és háttérbe szorít valami mást. Ebből felelősség fakad — ugyanaz az adat a megjelenítésétől függően két ellentétes döntéshez vezethet.</p>
+
+                <h4>A formát a kérdéshez igazítani</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Feltett kérdés</th><th>Megfelelő forma</th><th>Kerülendő</th></tr>
+                    <tr><td>Hogyan alakul időben?</td><td>Vonaldiagram</td><td>Oszlopok (12 pont felett olvashatatlan)</td></tr>
+                    <tr><td>Ki a legnagyobb?</td><td>Vízszintes, rendezett oszlopok</td><td>Kördiagram (a szem rosszul hasonlítja össze a szögeket)</td></tr>
+                    <tr><td>Mekkora rész az egészből?</td><td>Kördiagram, <strong>legfeljebb 3 résszel</strong></td><td>8 részes kördiagram</td></tr>
+                    <tr><td>Van kapcsolat A és B között?</td><td>Pontdiagram</td><td>Két, eltérő skálájú vonal</td></tr>
+                    <tr><td>Egyetlen megjegyzendő szám?</td><td>A szám nagy betűkkel kiírva</td><td>Egy mérőóra, egy számláló</td></tr>
+                </table>
+                </div>
+
+                <h4>A levágott tengely</h4>
+                <p>Ez a legelterjedtebb vizuális manipuláció, gyakran szándékolatlan — sok eszköz alapból így jeleníti meg.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Két termék: <strong>A = 51 eladás</strong>, <strong>B = 49 eladás</strong>. 4%-os különbség.</p>
+                    <p><strong>0</strong>-ról induló tengellyel a két oszlop egyformának látszik — ez hű kép.</p>
+                    <p><strong>48</strong>-ról induló tengellyel A oszlopa <strong>háromszor</strong> olyan magas lesz, mint B-é. Az olvasó azt a következtetést vonja le, hogy A lesöpri B-t.</p>
+                    <p>Egyetlen számot sem hamisítottak meg. Csak a skála változott.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a használati útmutatót igénylő diagram</span>
+                    <p>Ha az olvasónak a jelmagyarázatot kell böngésznie a megértéshez, a diagram nem töltötte be a szerepét. Egy jó ábra három másodperc alatt olvasható: a cím a következtetést mondja ki („Hat hónap alatt megduplázódtak az eladások”, nem „Eladások 2026”), a tengelyek meg vannak nevezve a mértékegységükkel, és egy diagramon egy gondolat van.</p>
+                </div>
+
+                <div class="pratique" data-pratique="choisir-son-graphique"></div>
+
+                <p class="retenir">💡 Mindig nézd meg, honnan indul a függőleges tengely. Ez az első megszerzendő reflex, és megóv attól, hogy becsapjanak — a saját diagramjaid is.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-bases-des-statistiques">🧮 A statisztika alapjai</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Négy fogalom elég az értelmezési hibák túlnyomó többségének elkerüléséhez.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Négy fogalom elég az értelmezési hibák túlnyomó többségének elkerüléséhez. Egyik sem igényel bonyolult számolást.</p>
+
+                <h4>1. Átlag vagy medián</h4>
+                <p>Az <strong>átlag</strong> mindent összead, és elosztja az elemszámmal. A <strong>medián</strong> az az érték, amely a sokaságot két egyenlő félre osztja.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Tíz fizetés egy kis cégnél: kilenc ember havi <strong>600 000 forintot</strong> keres, egy vezető <strong>6 000 000 forintot</strong>.</p>
+                    <p><strong>Átlag</strong> = (9 × 600 000 + 6 000 000) / 10 = <strong>1 140 000 Ft</strong></p>
+                    <p><strong>Medián</strong> = <strong>600 000 Ft</strong></p>
+                    <p>„Az átlagfizetés 1 140 000 Ft” igaz, és a tíz alkalmazott egyikének a valóságát sem írja le. A medián viszont kilencükét leírja.</p>
+                </div>
+
+                <p>Gyakorlati szabály: amint egy eloszlásban szélsőértékek vannak — fizetések, ingatlanárak, válaszidők, ügyfelenkénti árbevétel —, a medián becsületesebb. Mindkettőt közölni még jobb: a különbségük önmagában megmutatja az eloszlás egyenlőtlenségét.</p>
+
+                <h4>2. Korreláció és ok-okozatiság</h4>
+                <p>Két változó akkor <strong>korrelál</strong>, ha együtt változnak. Ebből semmi sem következik arra nézve, hogy az egyik okozza-e a másikat.</p>
+                <p>Három magyarázat lehetséges: A okozza B-t, B okozza A-t, vagy <strong>C okozza mindkettőt</strong>. Ez a harmadik eset a leggyakoribb, és ezt felejtik el a legtöbbször.</p>
+
+                <div class="exemple">
+                    <span class="titre">Példa</span>
+                    <p>A fagylalteladások és a vízbe fulladások egyszerre nőnek. A fagylalt senkit sem fojt vízbe: a hőség okozza mindkettőt.</p>
+                    <p>Szakmai változat, amelyet nehezebb észrevenni: „a mobilalkalmazásunkat használó ügyfelek háromszor annyit vásárolnak”. Lehet, hogy az alkalmazás váltja ki a vásárlást. De az is lehet, hogy egyszerűen a már amúgy is leghűségesebb ügyfelek telepítik az alkalmazást. Milliókat fektetni az alkalmazásba erre alapozva fogadás, nem következtetés.</p>
+                </div>
+
+                <h4>3. A minta nagysága</h4>
+                <p>10 látogatóból 6 kattintás „60%”. 10 másik látogatónál ugyanez a megoldás talán 30%-ot hoz. Néhány száz megfigyelés alatt egy néhány százalékpontos eltérés semmit sem jelent: zaj.</p>
+                <p>Hasznos nagyságrend: egy oldal két változatának összehasonlításához általában <strong>változatonként több száz konverzió</strong> kell — nem látogató, hanem konverzió —, mielőtt bármit kimondanánk.</p>
+
+                <h4>4. A százalék százaléka</h4>
+                <p><strong>2%-ról 3%-ra</strong> emelkedni <strong>+1 százalékpont</strong> vagy <strong>+50%</strong>. Mindkét megfogalmazás helyes; a második látványos, és gyakran épp ezért választják. Ha egy szám lenyűgöz, keresd meg mögötte az abszolút értéket.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a teszt vége előtt következtetni</span>
+                    <p>Ha minden reggel megnézed egy teszt eredményét, és azon a napon állítod le, amikor az eltérés kedvező, biztosan találsz egy győztest, még két teljesen azonos változat között is. A teszt időtartamát <strong>az indítás előtt</strong> kell rögzíteni.</p>
+                </div>
+
+                <div class="pratique" data-pratique="effet-valeur-extreme"></div>
+
+                <p class="retenir">💡 Minden számnál: mekkora a minta, és megmagyarázhatja-e az eltérést a véletlen? Ez a két kérdés kiszűri az elhamarkodott következtetések többségét.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy jó KPI mérhető, pontos célhoz kapcsolódik, és cselekvésre ösztönöz.</li>
+                <li>Az adatok minősége fontosabb a mennyiségüknél.</li>
+                <li>A diagram típusa az átadandó üzenettől függ.</li>
+                <li>Szélsőértékek esetén a medián gyakran jobban jellemez, mint az átlag.</li>
+                <li>A korreláció nem ok-okozatiság.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vegyél elő egy irányítópultot, amelyet tényleg nézel. Minden számnál tedd fel a kérdést: milyen döntés változna, ha megduplázódna? Amelyiknél nincs válasz, az eltűnhet.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Google Analytics Academy</strong> — ingyenes képzések a webes adatelemzésről, tanúsítvánnyal.</li>
+                    <li><strong>Kaggle</strong> — valódi adatkészletek és magyarázott feladatok, hogy infrastruktúra kiépítése nélkül gyakorolhass.</li>
+                    <li><strong>Our World in Data</strong> — a tisztességes vizualizáció mintapéldája: megnevezett források, elmagyarázott módszerek, le nem vágott tengelyek.</li>
+                    <li><strong>„How to Lie with Statistics”</strong>, Darrell Huff — rövid, 1954-ben írták, és még mindig a legjobb gyakorlás a félrevezető diagramok felismeréséhez.</li>
+                    <li><strong>Központi Statisztikai Hivatal (KSH)</strong> — nyilvános magyar adatok, amelyekkel a hétköznapjaidat érintő számokon gyakorolhatsz.</li>
+                </ul>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>📊 Adatok és elemzés</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Adatok és elemzés — Középhaladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/finance/index.html">💰 Pénzügyek (franciául)</a>
+                <a href="../../../guides/dev-web/index.html">💻 Webfejlesztés (franciául)</a>
+                <a href="../../../guides/cybersecurite/index.html">🔒 Kiberbiztonság (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/data-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

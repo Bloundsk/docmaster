@@ -92,7 +92,7 @@ window.QUIZ = {
             {
                 q: "Mi a GTD öt lépése?",
                 options: [
-                    "Tervezés, átadás, végrehajtás, ellenőrzés, archiválás",
+                    "Tervezés, feladatátadás, végrehajtás, ellenőrzés, archiválás",
                     "Listázás, rangsorolás, felbontás, elvégzés, végül az eredmény megünneplése",
                     "Gyűjtés, tisztázás, rendszerezés, áttekintés, cselekvés"
                 ],
@@ -123,7 +123,7 @@ window.QUIZ = {
             {
                 q: "Melyik lépést hagyja el mindenki elsőként, pedig az tartja egyben a rendszert?",
                 options: [
-                    "A napi gyűjtést",
+                    "A mindennapi gyűjtést",
                     "A heti áttekintést",
                     "A környezet szerinti rendszerezést"
                 ],
@@ -265,7 +265,7 @@ window.QUIZ = {
             {
                 q: "Idén háromszor váltottál eszközt. Mit jelez ez?",
                 options: [
-                    "Idővel finomítod a munkamódszeredet",
+                    "Idővel egyre jobban finomítod a munkamódszeredet",
                     "Az eszközök piaca tényleg nagyon gyorsan változik",
                     "A gond valószínűleg nem az eszközzel van"
                 ],

@@ -48,7 +48,7 @@ window.QUIZ = {
                 q: "Mitől hatékony egy szünet?",
                 options: [
                     "A teljes hosszától, egész percekben mérve",
-                    "Attól, hogy rögzített időpontban tartod",
+                    "Attól, hogy mindig rögzített időpontban tartod",
                     "Attól, hogy egészen mást csinálsz közben"
                 ],
                 a: 2,
@@ -102,7 +102,7 @@ window.QUIZ = {
             {
                 q: "Mit jelent egy szokás lehorgonyzása?",
                 options: [
-                    "Nagyon gondosan beírni a naptárba",
+                    "Nagyon gondosan, emlékeztetővel beírni a naptárba",
                     "Nyilvánosan vállalni, hogy minden nap tartod",
                     "Egy már automatikus cselekvéshez kötni"
                 ],
@@ -114,7 +114,7 @@ window.QUIZ = {
                 q: "Milyen folytatási szabály különbözteti meg a tartós szokást a kudarcba fulladt próbálkozástól?",
                 options: [
                     "Soha ne hagyd ki kétszer egymás után",
-                    "Másnap pótold, amit kihagytál",
+                    "Másnap duplán pótold be, amit kihagytál",
                     "Kezdd újra az egész sorozatot a nulláról"
                 ],
                 a: 0,

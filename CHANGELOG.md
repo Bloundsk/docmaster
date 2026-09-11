@@ -1,5 +1,49 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Quatrième parcours en hongrois : Data & Analytics
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/data/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 157 textes des
+  12 simulateurs**.
+- `CONTENU_TRADUIT.hu` annonce « apprendre », « data », « ia » et « productivite ».
+  Les pages hongroises déjà publiées qui citaient Data en français mènent
+  maintenant à sa version hongroise, navigation entre parcours comprise.
+- **Transposé plutôt que traduit** : l'exemple des salaires passe en forints
+  (neuf salaires à 600 000 Ft et un à 6 000 000 Ft : moyenne 1 140 000 Ft, médiane
+  600 000 Ft, quiz compris) ; l'INSEE devient le KSH, la CNIL la NAIH ; « un pays
+  de 60 millions d'habitants » devient « un pays de dix millions ».
+
+### Corrigé en route
+
+- **`verifier-traduction.mjs` ne voyait pas « observations »** : le mot était
+  compté comme identique au français dans toutes les langues. Il ne l'est plus
+  que pour l'anglais, avec « minutes » et « net » ; les unités (kg, km, px…)
+  restent communes.
+- **Les réponses de quiz, une quatrième fois, et d'une nouvelle manière.** Le
+  contrôle passait (39,0 %), mais chaque banque Data donnait la bonne réponse la
+  plus longue 12 à 15 fois sur 30, contre 8 ou 9 en français : quinze distracteurs
+  rallongés. Cela a déplacé le défaut au lieu de le supprimer. « Prendre celle du
+  milieu » est monté à 43,2 % sur les 360 questions hongroises, au-delà des 42 %
+  admis : c'est exactement la fuite que le contrôle surveille.
+  Trente-cinq distracteurs de plus ont été rallongés dans les douze banques. Chaque
+  fois, c'était une question où le français plaçait la bonne réponse en plus
+  courte. Résultat, comparé au français sur les mêmes questions :
+
+  | Stratégie aveugle | Hongrois | Français |
+  |---|---|---|
+  | Prendre la plus longue | 35,4 % | 35,2 % |
+  | Prendre celle du milieu | 34,3 % | 35,7 % |
+  | Prendre la plus courte | 31,0 % | 30,0 % |
+
+### Vérifié
+
+Les 17 contrôles, les 18 paires de traduction et l'audit de géométrie passent.
+Dans le navigateur, les pages s'affichent sans erreur de console, simulateurs
+compris : « 29 nap (4,1 hét) », « 1600 megfigyelés », « 46 000 sor »,
+« 45,1% és 54,9% ».
+
 ## 2026-09-11 — Troisième parcours en hongrois : Intelligence artificielle
 
 ### Ce qui est publié

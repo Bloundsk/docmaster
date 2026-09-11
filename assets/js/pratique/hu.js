@@ -40,6 +40,16 @@ window.PRATIQUE_TEXTES = {
         // hongrois garde le singulier : « 27 500 token ».
         " k jetons — bien au-delà de toute fenêtre": " ezer token — messze túl bármely kontextusablakon",
         " jetons": " token",
+
+        // --- data -----------------------------------------------------------
+        // Le singulier suit le nombre en hongrois : « 29 nap (4,1 hét) »,
+        // « 46 000 sor ». « jours » passe avant « jour », qu'il contient.
+        "% et ": "% és ",
+        " semaines": " hét",
+        " jours": " nap",
+        " jour": " nap",
+        " lignes": " sor",
+        " observations": " megfigyelés",
     },
 
     textes: {
@@ -494,6 +504,210 @@ window.PRATIQUE_TEXTES = {
         "Modèle A par mois": "A modell havonta",
         "Modèle B par mois": "B modell havonta",
         "Écart annuel": "Éves különbség",
+
+        // --- data / unités et réponses communes ------------------------------------
+        "obs.": "megf.",
+        "vis./j": "látog./nap",
+        "exact": "helyes",
+        "val.": "érték",
+        "lignes": "sor",
+        "critères": "szempont",
+        "valeurs": "érték",
+
+        // --- data / marge-erreur ---------------------------------------------------------
+        "Calcule la marge d'erreur": "Számold ki a hibahatárt",
+        "Elle dépend de la taille de l'échantillon, presque jamais de celle de la population.":
+            "A minta nagyságától függ, a sokaság nagyságától szinte soha.",
+        "Deux chiffres dont les intervalles se chevauchent ne peuvent pas être déclarés différents.":
+            "Két szám, amelynek az intervalluma átfedi egymást, nem nyilvánítható különbözőnek.",
+        "Taille de l'échantillon": "A minta nagysága",
+        "Proportion mesurée": "Mért arány",
+        "Marge d'erreur (95 %)": "Hibahatár (95%)",
+        "La valeur réelle se situe entre": "A valódi érték tartománya",
+        "Pour diviser cette marge par deux, il faudrait": "A hibahatár megfelezéséhez ennyi kellene",
+
+        // --- data / taille-test-ab ---------------------------------------------------------
+        "Dimensionne ton test A/B": "Méretezd az A/B tesztedet",
+        "À décider avant de lancer. Après, il est trop tard pour savoir si le test pouvait conclure.":
+            "Az indítás előtt kell eldönteni. Utána már késő megtudni, hogy a teszt adhatott-e eredményt.",
+        "Détecter un effet deux fois plus petit demande quatre fois plus de trafic. C'est ce qui rend les petits gains si coûteux à prouver.":
+            "Egy feleakkora hatás kimutatásához négyszer akkora forgalom kell. Ezért olyan drága a kis nyereségeket bizonyítani.",
+        "Taux de conversion actuel": "Jelenlegi konverziós arány",
+        "Amélioration relative visée": "Megcélzott relatív javulás",
+        "Visiteurs par jour, tous groupes confondus": "Napi látogatók, az összes csoportban együtt",
+        "Visiteurs nécessaires par groupe": "Szükséges látogatók csoportonként",
+        "Nouveau taux visé": "Megcélzott új arány",
+        "Durée du test à ce trafic": "A teszt időtartama ekkora forgalom mellett",
+
+        // --- data / pieges-interpretation -----------------------------------------------------
+        "Identifie le piège": "Ismerd fel a csapdát",
+        "Coche les situations où une conclusion serait probablement fausse.": "Jelöld be azokat a helyzeteket, amelyekben egy következtetés valószínűleg hamis lenne.",
+        "Aucun de ces pièges ne suppose une erreur de calcul. Les données sont justes ; c'est la lecture qui trompe.":
+            "Egyik csapda sem feltételez számítási hibát. Az adatok helyesek; az olvasatuk téveszt meg.",
+        "Le résultat global contredit ce qu'on observe dans chaque sous-groupe": "Az összesített eredmény ellentmond annak, amit minden alcsoportban látunk",
+        "paradoxe de Simpson : vérifie la répartition": "Simpson-paradoxon: ellenőrizd a megoszlást",
+        "On analyse les clients actuels pour comprendre pourquoi les gens restent": "A jelenlegi ügyfeleket elemezzük, hogy megértsük, miért maradnak az emberek",
+        "biais du survivant : les partis ont la réponse": "túlélési torzítás: a távozók tudják a választ",
+        "Une action a été prise après un mois exceptionnellement mauvais, et le mois suivant est meilleur":
+            "Egy kivételesen rossz hónap után intézkedtünk, és a következő hónap jobb",
+        "régression vers la moyenne : cela arrive sans intervention": "visszatérés az átlaghoz: beavatkozás nélkül is megtörténik",
+        "Les groupes comparés ont des compositions très différentes": "Az összehasonlított csoportok összetétele nagyon eltérő",
+        "L'écart observé est inférieur à la marge d'erreur": "A megfigyelt eltérés kisebb a hibahatárnál",
+        "On a testé cinquante hypothèses et retenu celle qui ressortait": "Ötven hipotézist teszteltünk, és azt tartottuk meg, amelyik kiugrott",
+        "sur cinquante, certaines ressortent par hasard": "ötvenből néhány véletlenül is kiugrik",
+        "Ces six situations conduisent toutes à des conclusions fausses à partir de données exactes.":
+            "Ez a hat helyzet mind helyes adatokból vezet hamis következtetésekre.",
+        "Bonne vigilance. Les six sont en réalité des pièges classiques.": "Jó éberség. Valójában mind a hat klasszikus csapda.",
+        "Les six situations sont effectivement piégeuses. Tu les reconnais toutes.": "Mind a hat helyzet valóban csapda. Mindet felismered.",
+
+        // --- data / sante-chaine-donnees -----------------------------------------------------------
+        "Audite ta chaîne de données": "Vizsgáld át az adatláncodat",
+        "Coche ce qui est en place aujourd'hui.": "Jelöld be, ami ma már működik.",
+        "Une donnée figée depuis trois jours est plus dangereuse qu'une donnée absente : personne ne remarque qu'elle ne bouge plus.":
+            "Egy három napja befagyott adat veszélyesebb egy hiányzónál: senki sem veszi észre, hogy már nem mozdul.",
+        "La date de dernière mise à jour est affichée à côté des chiffres": "Az utolsó frissítés dátuma ott van a számok mellett",
+        "la protection la moins coûteuse contre la panne silencieuse": "a legolcsóbb védelem a csendes meghibásodás ellen",
+        "Une alerte se déclenche si le volume reçu s'écarte de l'habitude": "Riasztás indul, ha a beérkező mennyiség eltér a szokásostól",
+        "Un traitement en échec produit une alerte, pas un silence": "Egy sikertelen feldolgozás riasztást ad, nem csendet",
+        "Les définitions des indicateurs sont écrites et partagées": "A mutatók definíciói le vannak írva, és mindenki ismeri őket",
+        "Deux tableaux de bord différents donnent le même chiffre pour la même notion": "Két különböző irányítópult ugyanarra a fogalomra ugyanazt a számot adja",
+        "Je peux remonter d'un chiffre affiché jusqu'à sa source": "Egy megjelenített számtól vissza tudok jutni a forrásáig",
+        "Un incident en amont produirait aujourd'hui un tableau de bord faux et crédible.":
+            "Egy korábbi lépésben történt hiba ma hamis, de hihető irányítópultot eredményezne.",
+        "Correct. L'alerte sur le volume est le contrôle au meilleur rapport effort-utilité.":
+            "Elfogadható. A mennyiségre beállított riasztás a legjobb ráfordítás-haszon arányú ellenőrzés.",
+        "Chaîne surveillée : une anomalie sera vue avant qu'une décision soit prise dessus.":
+            "Felügyelt lánc: egy rendellenességet még azelőtt észrevesznek, hogy döntés születne rá alapozva.",
+
+        // --- data / qualite-kpi ------------------------------------------------------------------------
+        "Ton indicateur est-il utile ?": "Hasznos a mutatód?",
+        "Prends un indicateur que tu suis, et coche ce qui est vrai.": "Válassz egy mutatót, amelyet követsz, és jelöld be, ami igaz rá.",
+        "Si personne ne change rien quand un chiffre bouge, ce chiffre n'est pas un indicateur : c'est une décoration.":
+            "Ha senki sem változtat semmin, amikor egy szám elmozdul, az a szám nem mutató, hanem dísz.",
+        "Je sais quoi faire différemment s'il double demain": "Tudom, mit csinálnék másképp, ha holnap megduplázódna",
+        "le test décisif : sinon, il occupe de la place pour rien": "ez a döntő próba: különben csak helyet foglal",
+        "Il a un point de comparaison : période précédente, objectif ou groupe témoin": "Van viszonyítási pontja: előző időszak, cél vagy kontrollcsoport",
+        "Sa définition est écrite et n'a pas changé depuis six mois": "A definíciója le van írva, és hat hónapja nem változott",
+        "Sa fréquence de suivi correspond à sa vitesse d'évolution": "A követés gyakorisága megfelel a változás sebességének",
+        "Il est accompagné de son effectif, pas seulement d'un pourcentage": "Az elemszám is ott van mellette, nem csak egy százalék",
+        "Quelqu'un est nommément responsable de le regarder": "Valaki név szerint felelős azért, hogy figyelje",
+        "Cet indicateur donne surtout l'illusion du pilotage.": "Ez a mutató főleg az irányítás illúzióját kelti.",
+        "Bonne base. La définition écrite est le point qui manque le plus souvent.": "Jó alap. A leírt definíció hiányzik a leggyakrabban.",
+        "Indicateur solide : il peut réellement déclencher une décision.": "Szilárd mutató: valóban kiválthat egy döntést.",
+
+        // --- data / qualite-collecte ----------------------------------------------------------------------
+        "Tes données disent-elles ce que tu crois ?": "Azt mondják az adataid, amit gondolsz?",
+        "Coche ce qui est vrai de la façon dont ces données ont été recueillies.": "Jelöld be, ami igaz arra, ahogyan ezeket az adatokat gyűjtötték.",
+        "Aucun traitement statistique ne rattrape une collecte biaisée. Il la rend seulement plus présentable.":
+            "Semmilyen statisztikai feldolgozás nem hozza helyre a torzított adatgyűjtést. Csak szalonképesebbé teszi.",
+        "Je sais qui a été mesuré, et qui ne l'a pas été": "Tudom, kit mértek meg, és kit nem",
+        "les absents faussent plus que les présents": "a hiányzók jobban torzítanak, mint a jelenlévők",
+        "La collecte est automatique, ou le questionnaire est identique pour tous": "Az adatgyűjtés automatikus, vagy a kérdőív mindenkinek ugyanaz",
+        "Les personnes mesurées ne savaient pas qu'on cherchait ce résultat": "A megmért emberek nem tudták, hogy ezt az eredményt keresik",
+        "sinon leur comportement change": "különben megváltozik a viselkedésük",
+        "La période couverte est représentative": "A lefedett időszak reprezentatív",
+        "pas seulement les soldes, ou un mois avec deux jours fériés": "nem csak a leárazások ideje, vagy egy hónap két ünnepnappal",
+        "Je connais le taux de réponse ou de couverture": "Ismerem a válaszadási vagy lefedettségi arányt",
+        "Les définitions n'ont pas changé pendant la période": "A definíciók nem változtak az időszak alatt",
+        "Les données décrivent peut-être une population différente de celle visée.":
+            "Az adatok talán nem azt a sokaságot írják le, amelyet célba vettél.",
+        "Acceptable. Note les réserves à côté du résultat plutôt que de les oublier.":
+            "Elfogadható. Írd az eredmény mellé a fenntartásokat, ahelyett hogy elfelejtenéd őket.",
+        "Collecte saine : les chiffres portent bien sur ce que tu crois.": "Rendben lévő adatgyűjtés: a számok valóban arra vonatkoznak, amire gondolsz.",
+
+        // --- data / choisir-son-graphique ----------------------------------------------------------------------
+        "Le bon graphique pour la bonne question": "A megfelelő diagram a megfelelő kérdéshez",
+        "Coche les associations exactes. Quatre le sont.": "Jelöld be a helyes párosításokat. Négy ilyen van.",
+        "Un axe vertical qui ne part pas de zéro n'est pas toujours malhonnête — mais il doit toujours être signalé.":
+            "A nem nulláról induló függőleges tengely nem mindig tisztességtelen — de mindig jelezni kell.",
+        "Comparer des catégories → barres": "Kategóriák összehasonlítása → oszlopok",
+        "Suivre une évolution dans le temps → courbe": "Időbeli alakulás követése → vonaldiagram",
+        "Montrer une répartition en parts d'un tout → camembert, si peu de parts": "Egy egész részekre bontása → kördiagram, ha kevés a rész",
+        "exact, au-delà de cinq parts il devient illisible": "helyes, öt rész fölött olvashatatlanná válik",
+        "Comparer des catégories → camembert": "Kategóriák összehasonlítása → kördiagram",
+        "faux : l'œil compare mal des angles": "hamis: a szem rosszul hasonlítja össze a szögeket",
+        "Montrer une relation entre deux variables → nuage de points": "Két változó kapcsolatának bemutatása → pontdiagram",
+        "Faire paraître une hausse plus forte → tronquer l'axe vertical": "Egy emelkedés erősebbnek mutatása → a függőleges tengely levágása",
+        "faux : c'est la manipulation la plus répandue": "hamis: ez a legelterjedtebb manipuláció",
+        "Quatre de ces six associations sont exactes.": "A hat párosítás közül négy helyes.",
+        "Quatre associations sont exactes. Vérifie avec les indications que ce sont les tiennes.":
+            "Négy párosítás helyes. A magyarázatok alapján ellenőrizd, hogy azokat jelölted-e.",
+        "Plus de quatre : deux de ces propositions sont fausses.": "Négynél több: ezek közül két állítás hamis.",
+
+        // --- data / effet-valeur-extreme --------------------------------------------------------------------------
+        "Vois une valeur extrême déformer la moyenne": "Nézd meg, hogyan torzítja egy szélsőérték az átlagot",
+        "C'est la raison pour laquelle la médiane existe.": "Ezért létezik a medián.",
+        "La médiane ne bouge pas d'un centime. C'est pourquoi on la préfère dès qu'il existe des valeurs extrêmes — salaires, paniers, temps de réponse.":
+            "A medián egy centet sem mozdul. Ezért részesítik előnyben, amint szélsőértékek vannak — fizetések, kosárértékek, válaszidők.",
+        "Nombre de valeurs ordinaires": "Szokásos értékek száma",
+        "Valeur ordinaire": "Szokásos érték",
+        "Valeur extrême ajoutée": "Hozzáadott szélsőérték",
+        "Moyenne sans la valeur extrême": "Átlag a szélsőérték nélkül",
+        "Moyenne avec la valeur extrême": "Átlag a szélsőértékkel",
+        "Médiane (inchangée)": "Medián (változatlan)",
+
+        // --- data / impact-du-nettoyage -----------------------------------------------------------------------------
+        "Combien de lignes restera-t-il ?": "Hány sor marad?",
+        "Le chiffre à retenir n'est pas la taille du fichier, c'est la taille de ce qui est exploitable.":
+            "Nem a fájl mérete a megjegyzendő szám, hanem a használható rész mérete.",
+        "Le problème n'est jamais d'avoir perdu des lignes. C'est de présenter un résultat en laissant croire qu'il porte sur le fichier entier.":
+            "A gond sosem az, hogy sorok vesztek el. Hanem az, ha úgy mutatsz be egy eredményt, mintha az egész fájlra vonatkozna.",
+        "Lignes dans le fichier": "Sorok a fájlban",
+        "Part de doublons": "Ismétlődések aránya",
+        "Part des lignes restantes avec une valeur manquante essentielle": "A megmaradt sorok aránya, amelyekből nélkülözhetetlen érték hiányzik",
+        "Après suppression des doublons": "Az ismétlődések törlése után",
+        "Lignes réellement exploitables": "Ténylegesen használható sorok",
+        "Part du fichier de départ": "A kiinduló fájl hányada",
+
+        // --- data / taille-des-segments ----------------------------------------------------------------------------------
+        "Tes segments sont-ils assez fournis ?": "Elég nagyok a szegmenseid?",
+        "Découper indéfiniment finit par produire du bruit qu'on prend pour du signal.": "A végtelen darabolás végül zajt termel, amelyet jelnek nézünk.",
+        "Quand une observation déplace le pourcentage de plusieurs points, le segment ne mesure plus rien d'autre que lui-même.":
+            "Ha egyetlen megfigyelés több százalékponttal mozdítja el az arányt, a szegmens már csak önmagát méri.",
+        "Population totale": "Teljes sokaság",
+        "Nombre de critères croisés": "Kombinált szempontok száma",
+        "Valeurs possibles par critère": "Lehetséges értékek szempontonként",
+        "Segments produits": "Létrejött szegmensek",
+        "Observations par segment en moyenne": "Megfigyelések szegmensenként, átlagosan",
+        "Une seule observation fait bouger le taux de": "Egyetlen megfigyelés ennyivel mozdítja el az arányt",
+
+        // --- data / correlation-causalite ---------------------------------------------------------------------------------
+        "Avant de conclure « A cause B »": "Mielőtt kimondanád: „A okozza B-t”",
+        "Passe ta corrélation au crible : coche ce que tu as réellement vérifié.": "Vizsgáld át a korrelációdat: jelöld be, amit ténylegesen ellenőriztél.",
+        "Le danger n'est pas la corrélation absurde, qui se repère. C'est celle à laquelle on peut donner une explication crédible.":
+            "Nem az abszurd korreláció a veszélyes, azt észrevesszük. Hanem az, amelyre hihető magyarázatot lehet adni.",
+        "J'ai envisagé que B cause A": "Megfontoltam, hogy B okozza A-t",
+        "le sens inverse est souvent aussi plausible": "a fordított irány gyakran ugyanolyan valószínű",
+        "J'ai cherché une troisième variable qui causerait les deux": "Kerestem egy harmadik változót, amely mindkettőt okozhatja",
+        "le cas le plus fréquent, et de loin": "messze ez a leggyakoribb eset",
+        "J'ai vérifié que A précède bien B dans le temps": "Ellenőriztem, hogy A időben valóban megelőzi B-t",
+        "L'effet persiste quand je segmente la population": "A hatás megmarad, amikor szegmentálom a sokaságot",
+        "Je n'ai pas comparé des dizaines d'indicateurs pour trouver celui-ci": "Nem tucatnyi mutatót hasonlítottam össze, hogy ezt megtaláljam",
+        "sur cent comparaisons, certaines coïncident par hasard": "száz összehasonlításból néhány véletlenül is egybeesik",
+        "Une expérimentation a été menée, ou est prévue": "Kísérletet végeztünk, vagy tervezünk",
+        "la seule méthode qui établisse vraiment la causalité": "az egyetlen módszer, amely valóban igazolja az ok-okozatiságot",
+        "À ce stade, tu as une corrélation et une histoire plausible. Pas une cause.": "Ezen a ponton van egy korrelációd és egy hihető történeted. Ok nincs.",
+        "Il manque des vérifications. La variable confondante est celle qu'on oublie le plus.":
+            "Hiányoznak ellenőrzések. A zavaró változót felejtik el a leggyakrabban.",
+        "Hypothèse sérieusement instruite. Reste que seule l'expérimentation tranche.":
+            "Alaposan megvizsgált hipotézis. De dönteni csak a kísérlet tud.",
+
+        // --- data / tableau-de-bord-utile ------------------------------------------------------------------------------------
+        "Passe ton tableau de bord au crible": "Vizsgáld át az irányítópultodat",
+        "Coche ce qui est vrai du tableau de bord que tu as sous les yeux.": "Jelöld be, ami igaz az előtted lévő irányítópultra.",
+        "Un tableau de bord se juge au nombre de décisions qu'il a déclenchées, pas au nombre de graphiques.":
+            "Egy irányítópultot az általa kiváltott döntések száma alapján ítélünk meg, nem a diagramok száma alapján.",
+        "Chaque indicateur passe le test « si ce nombre doublait, que ferais-je ? »":
+            "Minden mutató kiállja a „ha ez a szám megduplázódna, mit tennék?” próbát",
+        "Aucun chiffre n'est affiché sans point de comparaison": "Egyetlen szám sem jelenik meg viszonyítási pont nélkül",
+        "La date de dernière mise à jour est visible": "Látható az utolsó frissítés dátuma",
+        "Les effectifs accompagnent les pourcentages": "A százalékok mellett ott vannak az elemszámok",
+        "Sur les mesures de qualité, une valeur extrême est affichée en plus de la moyenne": "A minőségi méréseknél az átlag mellett egy szélsőérték is megjelenik",
+        "le neuvième décile en dit plus que la moyenne": "a kilencedik decilis többet mond az átlagnál",
+        "Il tient sur un écran sans défilement": "Görgetés nélkül elfér egy képernyőn",
+        "Ce tableau sera consulté deux semaines, puis oublié.": "Ezt az irányítópultot két hétig nézik majd, aztán elfelejtik.",
+        "Bon niveau. La date de mise à jour est le manque le plus dangereux.": "Jó szint. A frissítés dátumának hiánya a legveszélyesebb.",
+        "Tableau de bord exploitable : il sert à décider, pas à rassurer.": "Használható irányítópult: döntéshez való, nem megnyugtatáshoz.",
 
         // --- apprendre / frequence-vocabulaire ------------------------------
         "Combien de mots faut-il pour lire ?": "Hány szót kell ismerni az olvasáshoz?",

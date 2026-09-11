@@ -159,7 +159,7 @@ window.QUIZ = {
                 q: "Mi a jó utasítás négy eleme?",
                 options: [
                     "Udvariasság, hosszúság, sürgősség, jutalom",
-                    "Alany, állítmány, tárgy, írásjelek",
+                    "Alany, állítmány, tárgy, helyes írásjelek",
                     "Kontextus, feladat, formátum, megkötések"
                 ],
                 a: 2,
@@ -332,7 +332,7 @@ window.QUIZ = {
             options: [
                 "A döntés felelősségét, amely emberi marad",
                 "A gördülékeny, jól megfogalmazott szöveg írásának képességét",
-                "A nyelvek közötti fordítás lehetőségét"
+                "A nyelvek közötti gépi fordítás lehetőségét"
             ],
             a: 0,
             explication: "Egy modell felsorolhatja egy nehéz döntés érveit; a felelősséget nem ő viseli. Hanem te."

@@ -105,7 +105,7 @@ window.QUIZ = {
                 options: [
                     "Összesen 48 perc",
                     "Összesen 3 óra 20 perc, hat hónapra elosztva",
-                    "Heti egy óra"
+                    "Heti egy óra, hat hónapon át"
                 ],
                 a: 0,
                 explication: "Szemben a heti teljes újraolvasás 3 óra 20 percével: négyszer kevesebb idő."
@@ -116,7 +116,7 @@ window.QUIZ = {
                 options: [
                     "Az erőfeszítéstől, amelyet minden alkalommal kíván",
                     "Az ütemtervtől, amelyet feltételez",
-                    "A hozzá szükséges eszközöktől"
+                    "A hozzá szükséges eszközöktől és alkalmazásoktól"
                 ],
                 a: 1,
                 explication: "Senki sem tartja fejben, hogy az egyik kifejezést 21 nap múlva, a másikat 3 nap múlva kell átnézni."

@@ -115,7 +115,7 @@ window.QUIZ = {
                 options: [
                     "A környezetek változatossága",
                     "Többször megismételni ugyanazt a feladatot",
-                    "Jobb jegyzeteket készíteni"
+                    "Jobb, rendezettebb jegyzeteket készíteni"
                 ],
                 a: 0,
                 explication: "Ugyanaz a fogalom négy környezetben találkozva mindegyiktől elválik."
@@ -245,7 +245,7 @@ window.QUIZ = {
             {
                 q: "Mit árul el egy kártya, amelyet tízszer egymás után elrontasz?",
                 options: [
-                    "Hogy nehéz megjegyezni",
+                    "Hogy eleve nehéz megjegyezni",
                     "Hogy gyakrabban kell ismételni",
                     "Hogy rosszul van megírva"
                 ],

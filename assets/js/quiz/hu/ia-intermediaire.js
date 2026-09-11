@@ -236,7 +236,7 @@ window.QUIZ = {
                 options: [
                     "A modell szolgáltatójának népszerűsége",
                     "Az, hogy hol haladnak át az adatok",
-                    "A kontextusablak mérete"
+                    "A kontextusablak rendelkezésre álló mérete"
                 ],
                 a: 1,
                 explication: "Egy nálad üzemeltetett nyílt modell semmilyen adatot nem juttat ki; egy távoli szolgáltatás igen."
@@ -311,7 +311,7 @@ window.QUIZ = {
             q: "Miért ritkán jó ötlet egy egész könyvet elküldeni egy modellnek?",
             options: [
                 "Romlik a figyelem, és megugrik a költség",
-                "Ma még technikailag lehetetlen",
+                "Ma még technikailag lehetetlen, bármilyen modellel",
                 "A modell egyszerűen elutasítja a hosszú szövegeket"
             ],
             a: 0,

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>A/B tesztek, bizonytalanság és értelmezési csapdák — Adatok, haladó - Clicked</title>
+    <meta name="description" content="Az adatelemzési útmutató haladó szintje: hibahatár és konfidenciaintervallum, A/B tesztek és statisztikai erő, Simpson-paradoxon, az adatlánc minősége.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/data/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/data/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/data/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/data/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/data/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="A/B tesztek, bizonytalanság és értelmezési csapdák — Adatok, haladó - Clicked">
+    <meta property="og:description" content="Az adatelemzési útmutató haladó szintje: hibahatár és konfidenciaintervallum, A/B tesztek és statisztikai erő, Simpson-paradoxon, az adatlánc minősége.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/data/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A/B tesztek, bizonytalanság és értelmezési csapdák — Adatok, haladó - Clicked">
+    <meta name="twitter:description" content="Az adatelemzési útmutató haladó szintje: hibahatár és konfidenciaintervallum, A/B tesztek és statisztikai erő, Simpson-paradoxon, az adatlánc minősége.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">📊 Adatok és elemzés</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>📊 Adatok és elemzés — Haladó</h1>
+                <p>Tudni, mit nem mond el egy szám, és hány megfigyelés kellene ahhoz, hogy megtudjuk.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="42,85 58,68 72,78 98,50"/><polyline points="86,50 98,50 98,62" stroke-opacity="0.6"/></g></g>
+<circle class="illu-twinkle" cx="98" cy="50" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="42" cy="85" r="3" fill="white" style="animation-delay:.9s"/>
+<circle class="illu-twinkle" cx="72" cy="78" r="2.5" fill="white" style="animation-delay:1.5s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>minden méréshez bizonytalanságot rendelj</strong>, hogy úgy olvass egy A/B tesztet, hogy nem nézed minden nap, hogy felismerj egy Simpson-paradoxont, és hogy egy adatláncot visszakövess a forrásáig.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#incertitude-dune-mesure">🎲 Egy mérés bizonytalansága</a></li>
+                <li><a href="#tests-ab">🧪 Az A/B tesztek</a></li>
+                <li><a href="#pieges-dinterpretation">⚠️ Az értelmezési csapdák</a></li>
+                <li><a href="#chaine-de-donnees">🏗️ Az adatlánc</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mit hordoz minden mintából származó szám, akkor is, ha nem tüntetik fel?</li>
+                <li>Hány megfigyelés kell a hibahatár megfelezéséhez?</li>
+                <li>Mit garantál, ha egy A/B tesztet minden nap megnézel, amíg kedvező nem lesz?</li>
+                <li>Megfordulhat egy tendencia, ha összevonjuk az adatokat?</li>
+                <li>Mit eredményez egy korai lépésben hibás adat egy gondosan elkészített irányítópulton?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A középhaladó szint az adatok feldolgozásáról és a leggyakoribb gondolkodási hibákról szólt. Ez elég egy becsületes elemzéshez.</p>
+            <p>Ez a szint arról a kérdésről szól, amelyet szinte senki sem tesz fel: <strong>mennyire bízhatunk a kapott számban?</strong> Egy oldal két változata közötti 2%-os különbség eredmény vagy zaj? Hány látogató kellene a döntéshez? És mit tegyünk, ha a válasz attól függ, hogyan csoportosítjuk az adatokat?</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A megadott képletek szokásos közelítések, amelyek egy teszt méretezéséhez vagy egy nagyságrend megítéléséhez elegendők — egy tudományos publikációhoz nem.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Amit egy szám nem mond el</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="incertitude-dune-mesure">🎲 Egy mérés bizonytalansága</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">„A felhasználók 42%-a a B változatot szereti jobban.” Ez a mondat hiányos.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>„A felhasználók 42%-a a B változatot szereti jobban.” Ez a mondat hiányos. Hány emberen mérték? Hogyan kérdezték meg őket? Ezen információk nélkül a szám nem hamis — ellenőrizhetetlen.</p>
+
+                <h4>Miért elég egy minta, és meddig</h4>
+                <p>Ha a sokaság egy részén mérünk, egy <strong>hibahatárral</strong> körülvett becslést kapunk. Az intuícióval ellentétes pont: ez a hibahatár szinte kizárólag <em>a minta nagyságától</em> függ, nem a sokaság nagyságától.</p>
+                <p>1000 ember megkérdezése nagyjából ugyanakkora pontosságot ad egy 50 000 lakosú városban, mint egy tízmilliós országban. Ettől lehetségesek a közvélemény-kutatások.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p><strong>400 megfigyelésnél</strong> egy 50%-osnak mért arány hibahatára nagyjából <strong>± 5 százalékpont</strong>. A valódi érték tehát 45% és 55% között van.</p>
+                    <p>Ahhoz, hogy <strong>± 2,5 százalékpontra</strong> csökkenjen, nem 800, hanem <strong>1600</strong> megfigyelés kell: a hibahatár megfelezéséhez négyszeres elemszám szükséges.</p>
+                    <p>Ezért állnak meg az országos közvélemény-kutatások nagyjából 1000 főnél. Továbbmenni sokba kerül, és nagyon keveset hoz.</p>
+                </div>
+
+                <div class="pratique" data-pratique="marge-erreur"></div>
+
+                <h4>Amit a hibahatár nem fed le</h4>
+                <p>Csak a mintavétel véletlenszerűségét méri. Semmit sem mond egy rosszul megfogalmazott kérdőívről, egy rosszul kiválasztott sokaságról, vagy arról, hogy csak az elégedetlenek válaszolnak. Ezek a torzítások nem csökkennek attól, hogy több embert kérdezünk meg — hanem felerősödnek.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — két olyan számot összehasonlítani, amelyek hibahatára átfedi egymást</span>
+                    <p>A változat: 42%. B változat: 45%. Mindkettőn ± 5 százalékpontos hibahatárral a 3 pontos eltérés semmilyen következtetést nem enged meg.</p>
+                    <p>Ha kijelentenénk, hogy B nyert, zajt mutatnánk be eredményként.</p>
+                </div>
+
+                <p class="retenir">💡 Egy elemszám nélküli százalék nem információ, hanem számokba öntött benyomás.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="tests-ab">🧪 Az A/B tesztek</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az A/B teszt az egyetlen elterjedt módszer, amely ok-okozatiságot igazol: két véletlenszerűen kialakított csoport, egyetlen eltérés, és az eredmények…</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az A/B teszt az egyetlen elterjedt módszer, amely <strong>ok-okozatiságot</strong> igazol: két véletlenszerűen kialakított csoport, egyetlen eltérés, és az eredmények összehasonlítása. Jól végezve dönt. Rosszul végezve a szigorúság látszatával gyárt hamis bizonyosságokat.</p>
+
+                <h4>Méretezni az indítás előtt</h4>
+                <p>A kérdés, amelyet a teszt <em>előtt</em> kell eldönteni: hány megfigyelés kell a keresett hatás kimutatásához? Ez a kiinduló aránytól és a megcélzott javulás mértékétől függ.</p>
+                <p>Minél kisebb a várt hatás, annál több megfigyelés kell — és az összefüggés kíméletlen: <strong>egy feleakkora hatás kimutatásához négyszer akkora forgalom kell</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Jelenlegi konverziós arány: <strong>3%</strong>. Megcélzott javulás: <strong>relatív + 20%</strong>, vagyis 3,6%-ra emelkedni.</p>
+                    <p>Nagyjából <strong>csoportonként 14 000 látogató</strong> kell ahhoz, hogy a szokásos küszöbökkel dönteni lehessen.</p>
+                    <p>Ha a weboldalnak napi 1000 látogatója van, ez <strong>négy hét</strong> tesztet jelent. Ha ezt az indítás előtt tudod, nem állítod le három nap után abban a hitben, hogy már megvan a válasz.</p>
+                </div>
+
+                <div class="pratique" data-pratique="taille-test-ab"></div>
+
+                <h4>Az ismételt ránézés, avagy miért találjuk meg mindig, amit keresünk</h4>
+                <p>A leggyakoribb hiba, hogy minden nap megnézik az eredményeket, és leállítják a tesztet, amint az eltérés kedvezővé válik. Ha elég sokszor nézünk rá, az eltérés végül <strong>véletlenül</strong> átlépi a küszöböt — aztán visszaesik.</p>
+                <p>A szabály egyszerű: előre rögzíteni az időtartamot és az elemszámot, és csak a végén következtetni. Az a teszt, amelyet akkor állítunk le, amikor igazat ad nekünk, már semmit sem tesztel.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — egyszerre több dolgot tesztelni</span>
+                    <p>Ha egyetlen B változatban megváltoztatod a címet, a gomb színét és a képet, azzal arra a kérdésre kapsz választ, hogy „az egész jobb-e?”, és semmi másra.</p>
+                    <p>Ha az eredmény pozitív, nem fogod tudni, melyik elem hatott — és azt sem, hogy nincs-e köztük egy, amely ront, csak a többiek ellensúlyozzák.</p>
+                </div>
+
+                <p class="retenir">💡 Egy A/B tesztet az indítása előtt kell méretezni. Utána már késő azon gondolkodni, hogy adhatott-e eredményt.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="pieges-dinterpretation">⚠️ Az értelmezési csapdák</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Három jelenség hibátlanul pontos adatokból a valósággal ellentétes következtetésekhez vezet.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Három jelenség hibátlanul pontos adatokból a valósággal ellentétes következtetésekhez vezet. Ismerni őket semmibe sem kerül; nem ismerni drága.</p>
+
+                <h4>A Simpson-paradoxon</h4>
+                <p>Egy minden csoportban meglévő tendencia <strong>megfordulhat</strong>, amikor a csoportokat összevonjuk. Ez nem matematikai kuriózum: akkor fordul elő, amikor a csoportok mérete nagyon eltérő.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>A változat: <strong>8%</strong> mobilon (800 látogató), <strong>20%</strong> számítógépen (200 látogató) → átlag <strong>10,4%</strong>.</p>
+                    <p>B változat: <strong>10%</strong> mobilon (200 látogató), <strong>22%</strong> számítógépen (800 látogató) → átlag <strong>19,6%</strong>.</p>
+                    <p>Összesítve B nagy fölénnyel nyer. Csakhogy nem a változatok különbsége hozta ezt: B egyszerűen több számítógépes látogatót kapott, akik jobban konvertálnak. B minden csoportban <em>is</em> jobb, de a csaknem tízpontos összesített különbség szinte teljes egészében a megoszlásból fakad.</p>
+                </div>
+
+                <h4>A túlélési torzítás</h4>
+                <p>Ha a jelenlegi ügyfeleket elemezzük, hogy megértsük, miért maradnak az emberek, csak azokat kérdezzük meg, akik maradtak. A távozók, akik tudják a választ, eltűntek a fájlból.</p>
+
+                <h4>A visszatérés az átlaghoz</h4>
+                <p>Egy kivételesen rossz hónapot általában egy jobb követ, beavatkozás nélkül is. Ezért minden mélypont után hozott intézkedés hatékonynak fog tűnni. Ez a leggyakoribb illúzió a korrekciós intézkedések értékelésében.</p>
+
+                <div class="pratique" data-pratique="pieges-interpretation"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az alcsoportok megnézése nélkül következtetni</span>
+                    <p>A Simpson-paradoxont csak szegmentálással lehet észrevenni. Ha az összesített eredmény minden szegmensnek ellentmond, az megoszlási egyensúlytalanságot jelez, nem felfedezést.</p>
+                    <p>A reflex: ellenőrizni, hogy az összehasonlított csoportok összetétele hasonló-e. Ha nem, az összesített összehasonlításnak nincs értelme.</p>
+                </div>
+
+                <p class="retenir">💡 Ha az összeg épp az ellenkezőjét mondja, mint minden része, nem az összegnek kell hinni.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="chaine-de-donnees">🏗️ Az adatlánc</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy irányítópult egy lánc utolsó láncszeme: gyűjtés, továbbítás, tárolás, átalakítás, megjelenítés.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy irányítópult egy lánc utolsó láncszeme: gyűjtés, továbbítás, tárolás, átalakítás, megjelenítés. Bármelyik láncszemen fellépő hiba kifogástalanul tálalt, de hamis eredményt ad.</p>
+
+                <h4>A négy figyelendő tulajdonság</h4>
+                <p><strong>A frissesség.</strong> Mikori a megjelenített adat? Az az irányítópult, amely ezt nem mondja meg, valós idejűnek tetteti magát. Egy sikertelen feldolgozás miatt három napja befagyott adat veszélyesebb, mint ha nincs adat: senki sem veszi észre, hogy már nem mozdul.</p>
+                <p><strong>A teljesség.</strong> A vártnál kisebb szám valódi csökkenést jelez, vagy egy forrást, amely nem küldött adatot? A megkülönböztetéshez azt is számolni kell, ami hiányzik.</p>
+                <p><strong>A következetesség.</strong> Két irányítópult, amely két különböző számot mutat „az ügyfelek számára”, mindkettőbe vetett bizalmat lerombolja. A gond szinte mindig eltérő, soha le nem írt definíciókból fakad.</p>
+                <p><strong>A visszakövethetőség.</strong> Minden megjelenített számtól vissza lehet-e jutni a forrásáig és ahhoz az átalakításhoz, amely előállította? Enélkül egy rendellenességet nem lehet diagnosztizálni.</p>
+
+                <div class="exemple">
+                    <span class="titre">A legolcsóbb ellenőrzés</span>
+                    <p>Egy egyszerű automatikus teszt a mennyiségre: ha a ma beérkezett sorok száma több mint 30%-kal eltér az elmúlt hét nap átlagától, riasztás indul.</p>
+                    <p>Ez a triviális ellenőrzés a valódi incidensek többségét észleli — megszakadt forrás, tömeges ismétlődés, formátumváltás egy korábbi lépésben — jóval azelőtt, hogy hamis adatokra döntést alapoznának.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sante-chaine-donnees"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a riasztás hiányát jó jelnek venni</span>
+                    <p>Egy csendben meghiúsuló feldolgozás után az irányítópult az utolsó ismert értékeket mutatja. Minden normálisnak tűnik, a számok hihetők, és elavultak.</p>
+                    <p>Mindig jelenítsd meg az utolsó frissítés dátumát a számok mellett. Ez a legolcsóbb védelem a leggyakoribb csendes meghibásodás ellen.</p>
+                </div>
+
+                <p class="retenir">💡 Egy elemzés minőségét a leggyengébb láncszeme korlátozza, és az ritkán maga az elemzés.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Minden mintából származó szám bizonytalanságot hordoz, akár feltüntetik, akár nem.</li>
+                <li>A hibahatár megfelezéséhez négyszer annyi megfigyelés kell.</li>
+                <li>Ha egy A/B tesztet minden nap megnézel, amíg kedvező nem lesz, garantáltan kedvezőnek fogod találni.</li>
+                <li>Egy tendencia megfordulhat az adatok összevonása után: ez a Simpson-paradoxon.</li>
+                <li>Egy korai lépésben hibás adat tökéletesen tálalt és tökéletesen hamis irányítópultot eredményez.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vedd elő az utolsó számot, amelyet közöltél, és írd mellé a hibahatárát — vagy azt a mondatot, hogy „nem tudom kiszámolni”. Mindkettő becsületes; a csupasz szám nem volt az.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>KSH — a felmérések módszertana</strong>: hogyan épülnek fel a nyilvános minták, és milyen hibahatárokat közölnek az eredményekkel.</li>
+                    <li><strong>Mintanagyság-kalkulátorok</strong>: minden teszt előtt használd őket, és írd fel az elfogadott feltevéseket. A kapott szám teljes egészében rajtuk múlik.</li>
+                    <li><strong>„Thinking, Fast and Slow”</strong>, Daniel Kahneman: az átlaghoz való visszatérésről szóló fejezet megmagyarázza, miért tűnik oly sok korrekciós intézkedés hatékonynak.</li>
+                    <li><strong>A Simpson-paradoxonról szóló munkák</strong>: a történeti esetek, főleg az egyetemi felvételiknél és a klinikai vizsgálatoknál, szemléletesebbek a bizonyításnál.</li>
+                </ul>
+                <p><strong>Egy hasznos reflex:</strong> mielőtt elindítasz egy tesztet, írd le a tervezett időtartamot és elemszámot, valamint a döntési küszöböt. Ez a dokumentum három nap múlva megvéd saját magadtól.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Adatok és elemzés — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza az útmutatóhoz →</span>📊 Adatok és elemzés</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+                <a href="../../../guides/marketing/index.html">📢 Digitális marketing (franciául)</a>
+                <a href="../../../guides/finance/index.html">💰 Pénzügyek (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/data-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
