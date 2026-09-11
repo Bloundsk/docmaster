@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>API-k, JSON és adatbázisok — Webfejlesztés, középhaladó - Clicked</title>
+    <meta name="description" content="API-k és JSON, adatbázisok és az N+1 csapda, élesítés, és csapatmunka a Gittel. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/dev-web/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/dev-web/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/dev-web/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/dev-web/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="API-k, JSON és adatbázisok — Webfejlesztés, középhaladó - Clicked">
+    <meta property="og:description" content="API-k és JSON, adatbázisok és az N+1 csapda, élesítés, és csapatmunka a Gittel. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/dev-web/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="API-k, JSON és adatbázisok — Webfejlesztés, középhaladó - Clicked">
+    <meta name="twitter:description" content="API-k és JSON, adatbázisok és az N+1 csapda, élesítés, és csapatmunka a Gittel. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">💻 Webfejlesztés</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💻 Webfejlesztés — Középhaladó</h1>
+                <p>Szóra bírni a darabokat egymással, tárolni az adatokat, és élesíteni.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>szerződésként olvass egy API-t</strong>, hogy megértsd, mire jó egy adatbázis, hogy élesíts egy oldalt, és hogy csapatban dolgozz úgy, hogy ne legyetek egymás útjában.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#api-et-json">🔌 Az API-k és a JSON</a></li>
+                <li><a href="#bases-de-donnees">🗄️ Az adatbázisok</a></li>
+                <li><a href="#mettre-en-ligne">🚀 Élesítés</a></li>
+                <li><a href="#travail-a-plusieurs">🧰 Csapatmunka</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mit kell elolvasni egy API-ban, mielőtt használnád?</li>
+                <li>Mitől függ leggyakrabban egy oldal megjelenési ideje?</li>
+                <li>Mi történik, ha egy lekérdezést ciklusban indítunk?</li>
+                <li>El lehet rejteni egy kulcsot a böngészőnek küldött kódban?</li>
+                <li>Mire jó a Git, ha nem mentésre?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint az építőköveket írta le: HTML, CSS, JavaScript, a különbség a böngészőben és a szerveren futó kód között, és a képernyőkhöz való alkalmazkodás.</p>
+            <p>Ez a szint arról szól, ami egy oldalt <strong>alkalmazássá</strong> tesz: hogyan beszélnek egymással a darabok, hol élnek az adatok, hogyan jut el mindez a látogatókhoz, és hogyan dolgozzunk többen úgy, hogy ne legyünk egymás útjában. Ez az a négy téma, amelyen egy hobbiprojektből valódi projekt lesz.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>, és független a divatos technológiáktól. A bemutatott elvek nyelvtől és keretrendszertől függetlenül érvényesek; az eszközök változnak, a mechanizmusok sokkal kevésbé.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ami egy alkalmazást alkot</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="api-et-json">🔌 Az API-k és a JSON</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Az API két program érintkezési pontja.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az <strong>API</strong> két program érintkezési pontja. A weben szinte mindig ugyanazt a formát ölti: a böngésző kérést küld egy címre, a szerver strukturált adatokat küld vissza — leggyakrabban <strong>JSON</strong> formátumban.</p>
+
+                <h4>Szerződés, nem csak egy cím</h4>
+                <p>Egy jól megtervezett API négy dolgot határoz meg: <strong>a címet</strong> és a metódust, <strong>azt, amit küldünk</strong>, <strong>azt, amit kapunk</strong>, és <strong>azt, ami hiba esetén történik</strong>. Az utolsót szokás elfelejteni, és éppen ez dönti le az alkalmazásokat éles üzemben.</p>
+                <p>A válaszkódoknak pontos jelentésük van: <strong>200</strong> minden rendben, <strong>400</strong> a kérés hibásan formázott, <strong>401</strong> azonosítás szükséges, <strong>404</strong> az erőforrás nem létezik, <strong>500</strong> a szerver hibázott. Ha 200-at küldünk vissza hibaüzenettel a törzsben, minden kliensnek találgatnia kell.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — az oda-vissza utak ára</span>
+                    <p>Egy oldal, amely <strong>8 API-hívást</strong> indít egymás után, mindegyik <strong>120 ms</strong> hálózati késleltetéssel és <strong>30 ms</strong> szerveroldali feldolgozással.</p>
+                    <p>Sorban: <strong>1200 ms</strong>. Párhuzamosan, ha a hívások nem függnek egymástól: nagyjából <strong>150 ms</strong>.</p>
+                    <p>A második esetben a szerver nem gyorsabb. A hívások szervezése változtat meg mindent.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-des-appels"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az API-kulcs a böngésző kódjában</span>
+                    <p>Minden, amit a böngésző megkap, olvasható: a JavaScript-kód, a változók, a fejlécek. Egy oda tett titkos kulcs nyilvános, még „minifikálva” is.</p>
+                    <p>A titkot igénylő hívásoknak a saját szervereden kell átmenniük, amely őrzi a kulcsot, és továbbítja a kérést.</p>
+                </div>
+
+                <p class="retenir">💡 Egy oldal ideje főleg az oda-vissza utak számától függ, ritkán a szerver sebességétől.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="bases-de-donnees">🗄️ Az adatbázisok</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Amint egy alkalmazás két látogatás között megőriz valamit, adatbázisra van szüksége.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Amint egy alkalmazás két látogatás között megőriz valamit, adatbázisra van szüksége. A típus megválasztása kevésbé fontos, mint mondani szokás; a lekérdezés módja viszont rendkívül fontos.</p>
+
+                <h4>Relációs vagy dokumentumalapú</h4>
+                <p>A <strong>relációs</strong> adatbázis egymáshoz kapcsolt táblákba rendezi az adatokat, előre meghatározott sémával. Garantálja a konzisztenciát: nem lehet rendelést rögzíteni létező ügyfél nélkül.</p>
+                <p>A <strong>dokumentumalapú</strong> adatbázis teljes objektumokat tárol, kötött séma nélkül. Induláskor rugalmasabb, és a konzisztencia felelősségét a kódba helyezi át.</p>
+                <p>A projektek túlnyomó többségénél a relációs marad az észszerű alapértelmezés: az adatok szinte mindig kapcsolatokat alakítanak ki, és jobb, ha ezeket az adatbázis tartatja be.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — a ciklusba tett lekérdezések problémája</span>
+                    <p>50 cikk megjelenítése a szerzőjük nevével.</p>
+                    <p><strong>Szerzőnként egy lekérdezés</strong>: 1 lekérdezés a cikkekért, aztán 50 lekérdezés. Egyenként 4 ms-mal ez <strong>204 ms</strong>.</p>
+                    <p><strong>Egyetlen lekérdezés összekapcsolással</strong> (join): nagyjából <strong>6 ms</strong>.</p>
+                    <p>Az arány 34 az 1-hez. 500 cikknél katasztrofális lesz — pedig a kód ugyanúgy néz ki.</p>
+                </div>
+
+                <div class="pratique" data-pratique="probleme-n-plus-1"></div>
+
+                <h4>Az indexek, és az áruk</h4>
+                <p>Egy index felgyorsítja a keresést egy oszlopban, mint egy könyv tárgymutatója. Nélküle az adatbázis végigolvassa az összes sort. Vele egyenesen a jó helyre ugrik.</p>
+                <p>Az ár: minden index kicsit lassítja az írást, és helyet foglal. A szűrésekben és összekapcsolásokban használt oszlopokat indexeld, ne mindet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — szöveg összefűzésével építeni lekérdezést</span>
+                    <p>Ha a felhasználó által beírt adatok összefűzésével rakunk össze egy lekérdezést, azzal utat nyitunk az SQL-befecskendezésnek — az egyik legrégebbi és leggyakrabban kihasznált sebezhetőségnek.</p>
+                    <p>Az ellenszer egyszerű és rendszeres: az <strong>előkészített lekérdezések</strong>, amelyekben az értékek a lekérdezés szövegétől külön kerülnek átadásra. Soha nincs ok másképp csinálni.</p>
+                </div>
+
+                <p class="retenir">💡 A ciklusba tett lekérdezés a leggyakoribb teljesítményhiba, és olvasáskor a legláthatatlanabb.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="mettre-en-ligne">🚀 Élesítés</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy oldal, amely a gépeden működik, még nem működik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy oldal, amely a gépeden működik, még nem működik. Az élesítés olyan megkötéseket hoz, amelyeket a helyi fejlesztés teljesen elfed.</p>
+
+                <h4>A négy elem</h4>
+                <p><strong>Egy domainnév</strong>, évente bérelve. <strong>Egy tárhely</strong>, amely futtatja a kódodat és kiszolgálja a fájljaidat. <strong>Egy tanúsítvány</strong>, amely bekapcsolja a HTTPS-t — ma a legtöbb tárhelyszolgáltatónál ingyenes és automatikus. <strong>Egy telepítési mód</strong>, vagyis az, hogy új változatot küldhess fel az előző elrontása nélkül.</p>
+                <p>Szerveroldali kód nélküli oldalhoz elég a statikus tárhely: gyakran ingyenes, nagyon gyors, és szinte semmi karbantartást nem igényel.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ami megváltozik a saját gép és az éles környezet között</span>
+                    <p><strong>Az elérési utak</strong> nem ugyanazok. Egy hivatkozás, amely helyben működik, élesben sehová sem mutathat.</p>
+                    <p><strong>A kis- és nagybetű számít.</strong> A Windows nem különbözteti meg az <code>Image.png</code>-t az <code>image.png</code>-től; a szerver igen. Ez az első élesítés leggyakoribb hibája.</p>
+                    <p><strong>A titkok</strong> nem lehetnek többé a kódban: környezeti változókon keresztül érkeznek.</p>
+                    <p><strong>Megjelenik a gyorsítótár.</strong> Egy módosítás hiányzónak tűnhet, pedig már telepítve van.</p>
+                </div>
+
+                <div class="pratique" data-pratique="checklist-mise-en-ligne"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — néhány fájl átmásolásával telepíteni</span>
+                    <p>Ha kézzel küldjük fel „a módosított fájlokat”, előbb-utóbb kimarad egy. Az oldal ekkor egy hiányzó szkriptre hivatkozik, és mindenkinél elromlik.</p>
+                    <p>Mindig az egészet telepítsd, egyetlen forrásból — ideális esetben automatikusan, a kódtárból.</p>
+                </div>
+
+                <p class="retenir">💡 A „nálam működik” és az „élesben van” közötti különbség négy pontban rejlik, és mind egyszerre ellenőrizhető.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="travail-a-plusieurs">🧰 Csapatmunka</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A Gitet mentési eszközként szokás bemutatni.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A Gitet mentési eszközként szokás bemutatni. Ez pontatlan, és rossz használathoz vezet. A Git arra való, hogy <strong>vissza lehessen lépni</strong>, és hogy <strong>többen dolgozhassanak ugyanazon a kódon</strong> anélkül, hogy egymás útjában lennének.</p>
+
+                <h4>Mit tesz lehetővé egy jó előzménytörténet</h4>
+                <p>Egy olvasható előzménytörténet konkrét kérdésekre felel: mikor változott ez a sor, miért, és mi más változott vele egy időben. Ehhez <strong>kicsi</strong>, <strong>összefüggő</strong> commitok kellenek, olyan üzenettel, amely a <em>miértet</em> magyarázza, nem a <em>mit</em>.</p>
+                <p>Az „Áfaszámítás javítása részleges visszatérítéseknél” végtelenül többet ér a „fix”-nél. A második miatt el kell olvasni a kódot, hogy megértsük.</p>
+
+                <h4>Az ágak</h4>
+                <p>Egy ág elkülönít egy folyamatban lévő munkát. Az elv: a fő ág <strong>mindig működőképes</strong> marad, és minden munka mellette él, amíg el nem készül.</p>
+                <p>Egy három hétig élő ágat nagyon nehéz visszaolvasztani: közben minden más megváltozott. A rövid, gyakran összefésült ágak megelőzik a konfliktusok nagy részét.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ami valóban véd</span>
+                    <p><strong>Soha ne commitolj titkot.</strong> Egy egyszer feltolt jelszó az előzményekben marad, akkor is, ha később törlöd. Kompromittáltnak kell tekinteni, és meg kell változtatni.</p>
+                    <p><strong>Egy kizárási fájl</strong> az első naptól: függőségek, helyi beállítási fájlok, naplók.</p>
+                    <p><strong>Összefésülés előtt átnézni.</strong> Egyedül is: ha egy órával a megírása után átolvasod a saját változtatásodat, meglátod, amit már nem vettél észre.</p>
+                </div>
+
+                <div class="pratique" data-pratique="hygiene-git"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a mindent egybe commit</span>
+                    <p>Egy commit, amely egy javítást, egy új funkciót és a kód átformázását keveri, nem vonható vissza tisztán: az egyiket nem lehet a többi nélkül eltávolítani.</p>
+                    <p>Egy commit, egy szándék. Ettől használható az előzménytörténet azon a napon, amikor vissza kell csinálni valamit.</p>
+                </div>
+
+                <p class="retenir">💡 A Git nem véd meg a fájlok elvesztésétől. Attól véd meg, hogy ne tudj visszalépni.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Az API szerződés: mit küldünk, mit kapunk, és mi történik hiba esetén.</li>
+                <li>Egy oldal ideje gyakran az oda-vissza utak számától függ, nem a szerver sebességétől.</li>
+                <li>Egy ciklusba tett lekérdezés a gyors oldalt használhatatlanná teszi.</li>
+                <li>A böngésző kódjába tett titok már nem titok.</li>
+                <li>A Git nem mentésre való: arra, hogy vissza lehessen lépni, és hogy többen dolgozhassanak.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Nyisd meg a böngésződ fejlesztői eszközeit, a Hálózat lapot, és töltsd újra egy oldalt, amelyet használsz. Számold meg az oda-vissza utakat: ez a szám, sokkal inkább, mint a szerver sebessége, okozza a várakozást.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>MDN Web Docs</strong>: a HTTP, a válaszkódok és a böngésző API-jainak referenciája. Ingyenes, reklám nélküli, és a közösség gondozza.</li>
+                    <li><strong>A Git hivatalos dokumentációja</strong>: az ágakról és az összefésülésről szóló fejezet világosabb a legtöbb oktatóanyagnál.</li>
+                    <li><strong>OWASP</strong>: a legelterjedtebb sebezhetőségek listája, köztük az SQL-befecskendezés. Azelőtt olvasd el, hogy lekérdezést írnál, nem utána.</li>
+                    <li><strong>A tárhelyszolgáltatód dokumentációja</strong>: a környezeti változók és a kódtárból történő automatikus telepítés. Két óra, amely hónapokat takarít meg.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> amint egy oldal lassúnak tűnik, számold meg, hány kérést indít, mielőtt bármi mást optimalizálnál.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Webfejlesztés — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Webfejlesztés — Haladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../design/index.html">🎨 UX/UI design</a>
+                <a href="../../../guides/cybersecurite/index.html">🔒 Kiberbiztonság (franciául)</a>
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/dev-web-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

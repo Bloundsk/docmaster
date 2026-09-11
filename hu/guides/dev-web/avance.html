@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Teljesítmény, biztonság és automatizált tesztek — Webfejlesztés, haladó - Clicked</title>
+    <meta name="description" content="Teljesítmény és gyorsítótár, alkalmazásbiztonság, automatizált tesztek és technikai adósság: ami eldönti, meddig él egy oldal. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/dev-web/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/dev-web/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/dev-web/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/dev-web/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Teljesítmény, biztonság és automatizált tesztek — Webfejlesztés, haladó - Clicked">
+    <meta property="og:description" content="Teljesítmény és gyorsítótár, alkalmazásbiztonság, automatizált tesztek és technikai adósság: ami eldönti, meddig él egy oldal. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/dev-web/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Teljesítmény, biztonság és automatizált tesztek — Webfejlesztés, haladó - Clicked">
+    <meta name="twitter:description" content="Teljesítmény és gyorsítótár, alkalmazásbiztonság, automatizált tesztek és technikai adósság: ami eldönti, meddig él egy oldal. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">💻 Webfejlesztés</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💻 Webfejlesztés — Haladó</h1>
+                <p>Ami megkülönbözteti a működő oldalt a tartós oldaltól.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>a megfelelő helyre tegyél gyorsítótárat</strong>, hogy minden beérkező adatot ellenségesnek kezelj, hogy megbízható teszteket írj, és hogy a technikai adósságról kamatokban beszélj, ne vétekben.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#performance-et-cache">⚡ A teljesítmény és a gyorsítótár</a></li>
+                <li><a href="#securite-applicative">🔐 Az alkalmazásbiztonság</a></li>
+                <li><a href="#tests-automatises">🧪 Az automatizált tesztek</a></li>
+                <li><a href="#dette-technique">🏗️ A technikai adósság</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Melyik emelő javítja a teljesítményt anélkül, hogy bármit könnyítenénk?</li>
+                <li>Mennyire bízhatunk meg egy kívülről kapott adatban?</li>
+                <li>Mi rosszabb egy hiányzó tesztnél?</li>
+                <li>A technikai adósság: vétek vagy kölcsön?</li>
+                <li>Egy teljes újraírás gyakrabban sikerül, mint ahányszor kudarcot vall?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A középhaladó szint az építésről szólt: szóra bírni a darabokat, tárolni az adatokat, élesíteni, csapatban dolgozni. Ennyi elég egy működő alkalmazás átadásához.</p>
+            <p>Ez a szint arról szól, ami az <strong>élettartamáról</strong> dönt: bírni a terhelést, ellenállni a támadásoknak, félelem nélkül módosíthatónak lenni, és úgy öregedni, hogy ne váljon olvashatatlanná. Négy téma, amely az élesítés napján nem látszik, utána viszont mindent eldönt.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>. A leírt sebezhetőségeket azért mutatjuk be, hogy a tervezéskor megértsd és elkerüld őket. A teljesítménybeli nagyságrendek erősen függnek a környezettől: mérj magadnál, ahelyett hogy egy valahol olvasott számban bíznál.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Ami az élettartamról dönt</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="performance-et-cache">⚡ A teljesítmény és a gyorsítótár</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Mérés nélkül optimalizálni találgatás.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Mérés nélkül optimalizálni találgatás. Az első lépés mindig ugyanaz: megnyitni a böngésző eszközeit, megnézni, mi tart sokáig, és a leghosszabb sávval kezdeni — nem a legérdekesebbel.</p>
+
+                <h4>A gyorsítótár, az egyetlen ingyenes emelő</h4>
+                <p>Egy fájl könnyítése munkát kíván. A gyorsítótárazása egyetlen konfigurációs sort, és a visszatérő látogatóknál teljesen megszünteti a letöltését.</p>
+                <p>A mechanizmus: a szerver megadja, mennyi ideig érvényes egy fájl. Amíg ez az idő tart, a böngésző semmit sem kér újra — még ellenőrzésképpen sem.</p>
+                <p>Ebből egy megkötés következik: egy erősen gyorsítótárazott fájlt nem lehet többé helyben módosítani. Az általános megoldás a <strong>verziózott név</strong>: <code>style.a3f9.css</code>. Egy módosítás megváltoztatja a nevet, tehát a címet, így a gyorsítótár magától kikerül.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — a gyorsítótár hatása</span>
+                    <p>Egy <strong>1800 kB-os</strong> oldal, amelyből <strong>1500 kB</strong> statikus fájl — szkriptek, stílusok, betűkészletek, képek.</p>
+                    <p>Ha a látogatások <strong>60%-a</strong> visszatérés, ezek a látogatók csak 300 kB-ot töltenek le.</p>
+                    <p>Átlagos adatmennyiség látogatásonként: <strong>900 kB</strong> 1800 helyett. Feleannyi, anélkül hogy bármit könnyítettünk volna.</p>
+                </div>
+
+                <div class="pratique" data-pratique="impact-du-cache"></div>
+
+                <h4>Ami a legtöbbet nyom, sorrendben</h4>
+                <p>Az esetek túlnyomó többségében: először <strong>a képek</strong> — rossz méretben, régi formátumban —, aztán <strong>a külső szkriptek</strong> — statisztika, widgetek, sávok —, végül az alkalmazás kódja.</p>
+                <p>Gyakori prioritási hiba a saját kód optimalizálásával kezdeni, miközben egy 4 MB-os kép vár az oldal tetején.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a betöltés közben ugráló oldal</span>
+                    <p>Egy megadott méretek nélküli kép, egy betűkészlet, amely lecserél egy másikat, egy beszúródó sáv: a tartalom elcsúszik az ujjak alatt, és a felhasználó mellékattint.</p>
+                    <p>A képek méretének megadása és a később betöltődő elemek helyének lefoglalása megszünteti ezt a hibát, anélkül hogy bármit gyorsítana.</p>
+                </div>
+
+                <p class="retenir">💡 Előbb mérj. Egy lassúság oka szinte soha nem az, amit gondolunk.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="securite-applicative">🔐 Az alkalmazásbiztonság</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egyetlen elv elintézi a lényeget: minden kívülről érkező adat ellenséges, amíg az ellenkezője be nem bizonyosodik. Űrlap, cím, fejléc, feltöltött fájl, egy…</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egyetlen elv elintézi a lényeget: <strong>minden kívülről érkező adat ellenséges, amíg az ellenkezője be nem bizonyosodik</strong>. Űrlap, cím, fejléc, feltöltött fájl, egy külső API válasza.</p>
+
+                <h4>A három támadás, amelyet ismerni kell</h4>
+                <p><strong>Az SQL-befecskendezés</strong>: az összefűzéssel épített lekérdezés lehetővé teszi, hogy a felhasználó írja meg a lekérdezés egy részét. Ellenszer: előkészített lekérdezések, rendszeresen.</p>
+                <p><strong>A befecskendezett szkript</strong> — gyakran XSS-nek hívják: az oldalon változatlanul megjelenített felhasználói tartalom kódot tartalmazhat, amely a többi látogatónál fut le. Ellenszer: megjelenítéskor kódolni (escapelni), és tartalombiztonsági szabályzatot beállítani.</p>
+                <p><strong>A hamisított kérés</strong> — CSRF: egy harmadik oldal a látogató nyitott munkamenetét kihasználva indít műveletet a te oldaladon. Ellenszer: űrlaponként egyedi token, és úgy beállított sütik, hogy ne menjenek át más oldalakra.</p>
+
+                <div class="exemple">
+                    <span class="titre">A legolcsóbb védekezések</span>
+                    <p><strong>Bemenetkor ellenőrizni, kimenetkor kódolni.</strong> Két külön mozdulat: az első elutasítja, aminek nem a várt formája van, a második hatástalanítja, ami megjelenik.</p>
+                    <p><strong>Soha ne bízz a böngészőben.</strong> A kliensoldali ellenőrzés a kényelmet javítja; három másodperc alatt megkerülhető. Az számít, amit a szerver ellenőriz.</p>
+                    <p><strong>Frissítsd a függőségeidet.</strong> A behatolások többsége egy ismert, de nem frissített könyvtáron át történik, nem egy újonnan felfedezett résen.</p>
+                </div>
+
+                <div class="pratique" data-pratique="audit-securite-web"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a túl beszédes hibaüzenetek</span>
+                    <p>Egy hibaoldal, amely kiírja az SQL-lekérdezést, a fájlok elérési útját vagy a szerver verzióját, ingyen térképet ad a támadónak.</p>
+                    <p>Éles üzemben: általános üzenet a látogatónak, a teljes részletezés a naplókba. Mindkettő, soha fordítva.</p>
+                </div>
+
+                <p class="retenir">💡 A biztonságot nem a végén adjuk hozzá. Abban áll, hogy az első sortól kezdve semmiben sem bízunk meg.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="tests-automatises">🧪 Az automatizált tesztek</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A tesztek nem arra valók, hogy bebizonyítsák a kód helyességét: arra, hogy félelem nélkül módosítani lehessen.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A tesztek nem arra valók, hogy bebizonyítsák a kód helyességét: arra, hogy <strong>félelem nélkül módosítani lehessen</strong>. Egy tesztek nélküli projektből olyan projekt lesz, amelyhez senki sem mer hozzányúlni, és így hal meg.</p>
+
+                <h4>Három szint, három felhasználás</h4>
+                <p>Az <strong>egységtesztek</strong> egy elszigetelt függvényt ellenőriznek. Gyorsak — néhány ezredmásodperc —, és pontosan megmondják, mi romlott el.</p>
+                <p>Az <strong>integrációs tesztek</strong> azt ellenőrzik, hogy több darab együtt működik-e, az adatbázist is beleértve. Lassabbak, közelebb a valósághoz.</p>
+                <p>A <strong>végponttól végpontig tartó</strong> (end-to-end) tesztek egy valódi böngészőt vezérelnek egy teljes folyamaton. A leglassabbak és a legtörékenyebbek, de csak ezek ellenőrzik azt, amit a felhasználó átél.</p>
+                <p>A klasszikus arány: sok egységteszt, néhány integrációs teszt, nagyon kevés végponttól végpontig tartó. A fordítottja lassú tesztsort eredményez, amelyet már senki sem vár ki.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — egy tesztsor időtartama</span>
+                    <p><strong>400 egységteszt</strong> 5 ms-mal: 2 másodperc.</p>
+                    <p><strong>60 integrációs teszt</strong> 200 ms-mal: 12 másodperc.</p>
+                    <p><strong>12 végponttól végpontig tartó teszt</strong> 8 mp-cel: 96 másodperc.</p>
+                    <p>Összesen: <strong>110 másodperc</strong>, amelynek 87%-a a tesztek 2,5%-áé. Ez a maroknyi lassú teszt dönti el, hogy a tesztsor minden módosításkor lefut, vagy hetente egyszer.</p>
+                </div>
+
+                <div class="pratique" data-pratique="pyramide-des-tests"></div>
+
+                <h4>Mit kell elsősorban tesztelni</h4>
+                <p>Az üzleti logikát — számításokat, szabályokat, határeseteket — és a kritikus folyamatokat: regisztráció, fizetés, küldés. A többi várhat.</p>
+                <p>Ami nem érdemel tesztet: a triviális getterek, a könyvtárak kódja, és egy képernyő pontos megjelenése, amely úgyis változni fog.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az instabil teszt</span>
+                    <p>Egy teszt, amely minden tizedik futáskor ok nélkül elbukik, megtanítja a csapatot, hogy nézés nélkül újraindítsa. Azon a napon, amikor valódi hibát talál, senki sem hisz neki.</p>
+                    <p>Egy instabil tesztet meg kell javítani vagy törölni — soha nem eltűrni.</p>
+                </div>
+
+                <p class="retenir">💡 A tesztek nem a hibák elkapására vannak: arra, hogy a változtatás lehetséges legyen.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="dette-technique">🏗️ A technikai adósság</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A hasonlat pontos: ma időt kölcsönzünk — egyszerűsítve, kerülőutakkal —, és később fizetjük vissza, kamatostul.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A hasonlat pontos: ma időt kölcsönzünk — egyszerűsítve, kerülőutakkal —, és később fizetjük vissza, kamatostul. Nem a kölcsönvétel a gond, hanem az, ha soha nem fizetjük vissza.</p>
+
+                <h4>Vállalt és elszenvedett adósság</h4>
+                <p>A <strong>vállalt</strong> adósságot tudatosan viseljük: „gyorsan szállítunk, hogy igazoljuk az ötletet, aztán átdolgozzuk ezt a modult”. Dokumentált és dátumozott.</p>
+                <p>Az <strong>elszenvedett</strong> adósság tudatlanságból vagy kapkodásból ered. Senki sem tud a létezéséről, amíg bele nem botlik.</p>
+                <p>Az első kezelhető. A második csendben halmozódik, amíg a legkisebb változtatás is hosszú és kockázatos nem lesz.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — a kamatok</span>
+                    <p>Egy rozoga architektúra <strong>heti 3 órát</strong> visz el kerülőutakkal és javításokkal.</p>
+                    <p>Egy évre: <strong>144 óra</strong>, azaz közel <strong>négy hét</strong> munka.</p>
+                    <p>Ha a kijavítása 40 órát igényel, a művelet kevesebb mint négy hónap alatt megtérül. Így megfogalmazva a döntés már nem ízlés kérdése.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-de-la-dette"></div>
+
+                <h4>Újraírni, ritkán</h4>
+                <p>Egy régi kód láttán erős a kísértés, hogy mindent újrakezdjünk. Legtöbbször kudarcot vall, egy pontos okból: a meglévő kód <strong>évek alatt felgyűlt, egyedi esetekre írt javításokat</strong> tartalmaz, amelyekre senki sem emlékszik, és amelyeket az újraírás elveszít.</p>
+                <p>A fokozatos átdolgozás — egyszerre egy darabot lecserélni, a többit működésben tartva — kevésbé hálás, és sokkal biztonságosabb.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a függőségek láthatatlan adóssága</span>
+                    <p>Egy két évig nem frissített könyvtárat nagyon nehéz továbbfejleszteni: a köztes verziók olyan töréseket vezettek be, amelyeken most egyszerre kell átjutni.</p>
+                    <p>Rendszeresen, kis lépésekben frissíteni sokkal kevesebbe kerül, mint háromévente egy nagy ugrás — és közben az ismert réseket is bezárja.</p>
+                </div>
+
+                <p class="retenir">💡 Fejezd ki az adósságot heti elvesztett órákban. Ez az egyetlen nyelv, amellyel időt kapsz a kijavítására.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A gyorsítótár az egyetlen emelő, amely javítja a teljesítményt anélkül, hogy bármit könnyítenénk.</li>
+                <li>Minden kívülről érkező adat ellenséges, amíg az ellenkezője be nem bizonyosodik.</li>
+                <li>Egy véletlenszerűen elbukó teszt rosszabb egy hiányzó tesztnél: megtanít figyelmen kívül hagyni a riasztásokat.</li>
+                <li>A technikai adósság nem erkölcsi hiba, hanem kölcsön — a kamatok jelentik a gondot.</li>
+                <li>Egy teljes újraírás gyakrabban vall kudarcot, mint ahányszor sikerül.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vedd elő azt, amit a kódodban legutóbb halasztottál el, és írd le egy mondatban, mibe kerül, ha hat hónapig így marad. Ez a mondat, nem a lelkiismeret-furdalás, hozza meg a döntést.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>OWASP Top 10</strong>: a tíz legelterjedtebb sebezhetőség, sebezhető és javított kódpéldákkal. A terület referenciája.</li>
+                    <li><strong>MDN — HTTP gyorsítótár-fejlécek</strong>: a dokumentáció, amely valóban elmagyarázza a gyakran félreértett direktívák közötti különbséget.</li>
+                    <li><strong>A böngészőbe épített auditeszközök</strong>: megadják a teljesítménymutatókat és a nyereség szerint rendezett javaslatok listáját.</li>
+                    <li><strong>„Working Effectively with Legacy Code”</strong>, Michael Feathers: hogyan adjunk teszteket egy tesztek nélküli kódhoz, anélkül hogy mindent elrontanánk.</li>
+                    <li><strong>Sebezhetőségi adatbázisok</strong>: segítségükkel ellenőrizhető, érint-e egy használt függőséget ismert rés.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> mielőtt átdolgozást javasolnál, mérd meg, hány órát veszítetek hetente a mostani kód miatt. A szám megváltoztatja a beszélgetést.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Webfejlesztés — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza az útmutatóhoz →</span>💻 Webfejlesztés</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/cybersecurite/index.html">🔒 Kiberbiztonság (franciául)</a>
+                <a href="../design/index.html">🎨 UX/UI design</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/dev-web-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

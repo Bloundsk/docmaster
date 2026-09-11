@@ -1,5 +1,34 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Sixième parcours en hongrois : Développement web
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/dev-web/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 166 textes des
+  12 simulateurs** (153 textes et 5 fragments ajoutés, 13 existaient déjà).
+- `CONTENU_TRADUIT.hu` annonce aussi « dev-web ». Les sept pages hongroises qui
+  citaient Dev web en français (Data débutant, trois pages de Design, trois pages
+  d'IA) mènent maintenant à sa version hongroise.
+- **Adapté plutôt que traduit** : « MDN, en français » perd la mention de langue
+  (MDN n'a pas de version hongroise) ; l'exemple de message de commit sur la TVA
+  devient l'áfa ; « 34 fois plus lent » s'affiche « 34× lassabb », parce que le
+  suffixe hongrois (-szor/-szer/-ször) dépend du nombre saisi.
+
+### Corrigé en route
+
+- **Le biais de longueur, une sixième fois, et le piège du milieu une deuxième.**
+  Traduite fidèlement, la bonne réponse était la plus longue 35 fois sur 90, contre
+  19 en français. Vingt-quatre distracteurs rallongés l'ont ramenée à 17, mais ont
+  poussé « prendre celle du milieu » à 50 % (français 39 %), exactement comme sur
+  Data. Neuf distracteurs de plus, là où le français place la bonne réponse en plus
+  courte : Dev web finit à 20 / 40 / 39 % (longue / milieu / courte ; français
+  22 / 39 / 41 %), les 540 questions hongroises à 31,6 / 36,4 / 32,7 %.
+- **Une question reste à égalité, et c'est assumé** : les trois onglets du
+  navigateur (« Hálózat / Konzol / Elemek ») ne s'allongent pas sans changer de
+  nom ; ils portent désormais leur nom anglais entre parenthèses, comme dans la
+  leçon.
+
 ## 2026-09-11 — Cinquième parcours en hongrois : Design UX/UI
 
 ### Ce qui est publié

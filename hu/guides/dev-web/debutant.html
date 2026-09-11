@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>HTML, CSS, JavaScript és reszponzív tervezés — Webfejlesztés, kezdő - Clicked</title>
+    <meta name="description" content="HTML és CSS, a JavaScript és a DOM, frontend és backend, és a reszponzív tervezés. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/dev-web/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/dev-web/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/dev-web/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/dev-web/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/dev-web/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="HTML, CSS, JavaScript és reszponzív tervezés — Webfejlesztés, kezdő - Clicked">
+    <meta property="og:description" content="HTML és CSS, a JavaScript és a DOM, frontend és backend, és a reszponzív tervezés. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/dev-web/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTML, CSS, JavaScript és reszponzív tervezés — Webfejlesztés, kezdő - Clicked">
+    <meta name="twitter:description" content="HTML és CSS, a JavaScript és a DOM, frontend és backend, és a reszponzív tervezés. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">💻 Webfejlesztés</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>💻 Webfejlesztés — Kezdő</h1>
+                <p>Megérteni, miből áll egy weboldal. Nem kell hozzá programozási előismeret.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="55,50 40,70 55,90"/><polyline points="85,50 100,70 85,90"/><line x1="75" y1="45" x2="65" y2="95"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="70" r="4" fill="white" style="animation-delay:.2s"/>
+<circle class="illu-twinkle" cx="100" cy="70" r="4" fill="white" style="animation-delay:.8s"/>
+<circle class="illu-twinkle" cx="70" cy="35" r="2.5" fill="white" style="animation-delay:1.4s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>elmondd, mit csinál a HTML, a CSS és a JavaScript</strong>, hogy el tudd helyezni, mi történik a böngészőben és mi a szerveren, és hogy megértsd, mit old meg a reszponzív tervezés.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#html-css">🏗️ HTML és CSS</a></li>
+                <li><a href="#javascript">⚡ JavaScript</a></li>
+                <li><a href="#frontend-vs-backend">🔗 Frontend és backend</a></li>
+                <li><a href="#responsive-design">📱 Reszponzív design</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mit csinál a HTML, és mit a CSS?</li>
+                <li>Mit ad hozzá a JavaScript egy oldalhoz?</li>
+                <li>Frontend, backend: melyik hol fut?</li>
+                <li>Mire jó a reszponzív design?</li>
+                <li>Melyik képernyővel érdemes kezdeni a tervezést?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A webfejlesztésnek van egy ritka sajátossága: tíz perc alatt látható eredményt lehet elérni, telepítés nélkül, egy egyszerű szövegszerkesztővel és egy böngészővel. Ez a nagyon alacsony belépési küszöb magyarázza, hogy autodidaktaként is lehet benne fejlődni.</p>
+            <p>Ez magyarázza a fő nehézséget is: az ökoszisztéma hatalmas és zajos. Folyton olyan eszközökbe botlunk, amelyeket nélkülözhetetlennek mutatnak be, pedig nem azok. Az alapok viszont húsz éve nem változtak — <strong>HTML, CSS, JavaScript</strong>. A világ összes keretrendszere végül ezt a hármat állítja elő.</p>
+            <p>Ez az útmutató arra szorítkozik, ami tíz év múlva is igaz lesz: egy oldal szerkezetére, a formázására, az interaktivitására, arra, hogy mi fut a látogatónál és mi egy szerveren, és a képernyőkhöz való alkalmazkodásra.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Az alapok, amelyeket ismerni kell</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="html-css">🏗️ HTML és CSS</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A HTML azt írja le, mi az egy tartalom.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A <strong>HTML</strong> azt írja le, mi <em>az</em> egy tartalom. A <strong>CSS</strong> azt, hogyan <em>néz ki</em>. Ez a szétválasztás a szakma első elve, és kezdőként ezt szegjük meg először.</p>
+
+                <h4>HTML: a jelentés a megjelenés előtt</h4>
+                <p>Egy címke jelentést hordoz, nem stílust. A <code>&lt;h1&gt;</code> nem azt jelenti, hogy „nagy szöveg”, hanem hogy „az oldal fő címe”. A különbség nem elméleti: ez határozza meg, mit ért meg a Google és a képernyőolvasó.</p>
+
+                <div class="exemple">
+                    <span class="titre">Két írásmód, ugyanaz a látvány</span>
+                    <p><code>&lt;div class="nagy-cim"&gt;Áraink&lt;/div&gt;</code><br>
+                    Egy program számára: egy tetszőleges, szöveget tartalmazó blokk.</p>
+                    <p><code>&lt;h2&gt;Áraink&lt;/h2&gt;</code><br>
+                    Egy program számára: egy szakaszcím. Egy vak felhasználó közvetlenül odanavigálhat, egy keresőmotor tudja, miről szól az oldal.</p>
+                    <p>Néhány sor CSS után vizuálisan azonosak. Funkcionálisan összemérhetetlenek.</p>
+                </div>
+
+                <p>A szerkezeti címkék, amelyeket ismerni kell: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>. Egy oldal, amely helyesen használja őket, szinte külön erőfeszítés nélkül akadálymentes.</p>
+
+                <h4>CSS: a kaszkád és a szelektorok</h4>
+                <p>Ha két szabály vonatkozik ugyanarra az elemre, az nyer, amelyiknek a szelektora <strong>specifikusabb</strong> — nem az, amelyiket utoljára írták. Egy azonosító legyőz egy osztályt, az osztály egy címkét. A legtöbb „nem működik ez a CSS” innen ered.</p>
+                <p>Az elrendezéshez ma két eszköz elég: a <strong>Flexbox</strong> egy sorban vagy oszlopban való igazításhoz, a <strong>Grid</strong> kétdimenziós rácshoz.</p>
+                <p>Végül a <strong>CSS-változók</strong> egy helyen tartják az ismétlődő értékeket:</p>
+
+                <div class="exemple">
+                    <span class="titre">CSS-változók</span>
+                    <p><code>:root { --primary: #2563eb; }</code><br>
+                    aztán <code>color: var(--primary);</code> mindenhol, ahol a szín szerepel.</p>
+                    <p>Az oldal arculatának megváltoztatása így egyetlen sor módosítása, ahelyett hogy negyven fájlban keresnél egy hexadecimális kódot.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a stílust a HTML-be írni</span>
+                    <p>A <code>&lt;p style="color:red"&gt;</code> működik, és a tizedik oldalnál kezelhetetlenné válik: minden módosításhoz újra meg kell nyitni az összes fájlt.</p>
+                    <p>A stílus külön <code>.css</code> fájlba való. Ez a fegyelem az elején öt percbe kerül, utána napokat takarít meg.</p>
+                </div>
+
+                <div class="pratique" data-pratique="semantique-html"></div>
+
+                <p class="retenir">💡 A HTML arra felel, hogy „mi ez?”, a CSS arra, hogy „hogyan néz ki?”. Amíg a válasz világos, a kód karbantartható marad.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="javascript">⚡ JavaScript</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A HTML és a CSS egy mozdulatlan oldalt állít elő.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A HTML és a CSS egy mozdulatlan oldalt állít elő. A <strong>JavaScript</strong> életet lehel bele: reagál a műveletekre, módosítja a tartalmat, és szerverekkel kommunikál, az oldal újratöltése nélkül.</p>
+
+                <h4>A DOM</h4>
+                <p>Amikor a böngésző beolvassa a HTML-t, egy memóriabeli ábrázolást épít belőle: a <strong>DOM</strong>-ot (<em>Document Object Model</em>). Ezt a szerkezetet módosítja a JavaScript — soha az eredeti fájlt.</p>
+                <p>Gyakorlati következmény: a lemezen lévő HTML-fájl nem változik. Az oldal frissítése mindent visszavon. Ezért egy megőrzendő információt valahol el kell menteni — a böngészőben a <code>localStorage</code>-ba, vagy egy szerverre.</p>
+
+                <div class="exemple">
+                    <span class="titre">Az alapséma: kiválasztani, figyelni, cselekedni</span>
+                    <p><code>const gomb = document.getElementById('menu');</code><br>
+                    <code>gomb.addEventListener('click', () =&gt; {</code><br>
+                    <code>&nbsp;&nbsp;menu.classList.toggle('nyitva');</code><br>
+                    <code>});</code></p>
+                    <p>Három sor, amely egy oldal JavaScriptjének 80%-át összefoglalja: lekérünk egy elemet, figyelünk egy eseményt, módosítunk egy osztályt. A stílus a CSS-ben marad — a JavaScript csak hozzáadja vagy elveszi az osztályt.</p>
+                </div>
+
+                <h4>Szinkron és aszinkron</h4>
+                <p>Bizonyos műveletek időbe telnek: lekérdezni egy szervert, beolvasni egy fájlt. A JavaScript nem áll meg megvárni őket — továbbhalad, és akkor dolgozza fel a választ, amikor megérkezik. Ezt hívjuk <strong>aszinkron</strong> működésnek.</p>
+                <p>Innen jön az <code>await</code> kulcsszó, amely azt jelenti: „várd meg az eredményt, mielőtt folytatod ezt a függvényt”. Nélküle olyan válasszal dolgozunk, amely még meg sem érkezett — ez a kezdők érthetetlen hibáinak egyik leggyakoribb oka.</p>
+
+                <h4>A böngésző eszközei</h4>
+                <p>Az <strong>F12</strong> billentyű megnyitja a fejlesztői eszközöket. Három lap többet ér minden oktatóanyagnál:</p>
+                <ul>
+                    <li><strong>Konzol</strong> (Console): itt jelennek meg a JavaScript-hibák, a sor számával.</li>
+                    <li><strong>Hálózat</strong> (Network): minden betöltött fájl, a válaszkódjával. Egy piros 404 azonnal feltűnik.</li>
+                    <li><strong>Elemek</strong> (Elements): a valódi DOM, és az egyes elemekre ténylegesen alkalmazott CSS.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a túl korán lefutó szkript</span>
+                    <p>Egy <code>&lt;head&gt;</code>-be tett szkript azelőtt fut le, hogy a HTML létezne. A <code>getElementById</code> ekkor <code>null</code>-t ad vissza, és minden leáll.</p>
+                    <p>Két megoldás: a szkriptet közvetlenül a <code>&lt;/body&gt;</code> elé tenni, vagy megadni a <code>defer</code> attribútumot. Ez az első projektek első számú hibája.</p>
+                </div>
+
+                <div class="pratique" data-pratique="js-ou-css"></div>
+
+                <p class="retenir">💡 Mielőtt azt keresnéd, miért „nem működik”, nyisd meg a konzolt. A hiba szinte mindig ott áll, a pontos sorral.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="frontend-vs-backend">🔗 Frontend és backend</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A kérdés, amely eldönti, melyikről van szó: ez a kód a látogató gépén fut, vagy egy általad irányított szerveren?</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A kérdés, amely eldönti, melyikről van szó: <strong>ez a kód a látogató gépén fut, vagy egy általad irányított szerveren?</strong></p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>Frontend</th><th>Backend</th></tr>
+                    <tr><td>Hol fut</td><td>A látogató böngészőjében</td><td>Egy szerveren</td></tr>
+                    <tr><td>Nyelvek</td><td>HTML, CSS, JavaScript</td><td>Node.js, Python, PHP, Java…</td></tr>
+                    <tr><td>Szerep</td><td>Megjelenítés, interakciók</td><td>Adatok, fiókok, fizetések</td></tr>
+                    <tr><td>Látja-e a látogató</td><td><strong>Teljes egészében</strong></td><td>Soha</td></tr>
+                </table>
+                </div>
+
+                <h4>A legfontosabb következmény</h4>
+                <p>Minden, ami a böngészőbe kerül, olvasható: kód, megjegyzések, hozzáférési kulcsok. Egy jobb kattintás elég hozzá.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — és drága</span>
+                    <p>Ha egy API-kulcsot, egy adatbázisjelszót vagy egy hozzáférés-ellenőrzést a JavaScriptbe teszel, azzal nyilvánosságra hozod. Robotok folyamatosan pásztázzák a nyilvános oldalakat és kódtárakat ilyen kulcsok után; a közzététel és a kihasználás között gyakran csak percek telnek el.</p>
+                    <p>Minden ellenőrzés, amely számít — jogosultság, fizetés, kvóta — <strong>a szerveroldalon</strong> történik. A böngészőoldali ellenőrzés csak a kényelmet szolgálja: néhány másodperc alatt megkerülhető.</p>
+                </div>
+
+                <h4>A statikus oldalak</h4>
+                <p>Nem minden projektnek kell szerver. Egy tartalmi oldal — dokumentáció, portfólió, blog — állhat egyszerű HTML-fájlokból, amelyeket úgy szolgálunk ki, ahogy vannak. Gyorsabb, ingyen tárhelyezhető, és gyakorlatilag feltörhetetlen: nincs feltörhető adatbázis.</p>
+                <p>A backendre akkor van szükség, amikor felhasználói fiókok, módosítható adatok, fizetések vagy e-mail-küldés kell.</p>
+
+                <h4>A keretrendszerek</h4>
+                <p>A React, a Vue és az Angular egy pontos problémát old meg: egy összetett felületet szinkronban tartani folyton változó adatokkal. Egy ügyviteli alkalmazásnál sokat nyerünk velük. Egy tízoldalas weboldalon főleg bonyolultságot és súlyt adnak hozzá.</p>
+                <p>A helyes tanulási sorrend az igényé: elsajátítani a JavaScriptet, beleütközni a korlátjába, aztán kiválasztani az eszközt, amely feloldja.</p>
+
+                <div class="pratique" data-pratique="ou-placer-la-logique"></div>
+
+                <p class="retenir">💡 Minden, ami a böngészőbe kerül, nyilvános. A biztonságot soha nem a frontendbe írjuk.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="responsive-design">📱 Reszponzív design</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A webes forgalom nagyobb része ma mobilon zajlik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A webes forgalom nagyobb része ma mobilon zajlik. Egy oldal, amely egy 6 hüvelykes képernyőn nem használható, nem működő oldal — akármilyen jól mutat a fejlesztő képernyőjén.</p>
+
+                <h4>A három összetevő</h4>
+                <ol>
+                    <li><strong>A viewport címke</strong> a <code>&lt;head&gt;</code>-ben:<br>
+                    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><br>
+                    Nélküle a mobil az oldal 980 px széles, kicsinyített változatát mutatja. Ez az első, amit ellenőrizni kell.</li>
+                    <li><strong>Rugalmas mértékegységek</strong>: <code>%</code>, <code>rem</code>, <code>fr</code>, <code>max-width</code>. Egy képpontban rögzített szélesség egy keskenyebb képernyőn biztosan kilóg.</li>
+                    <li><strong>A media queryk</strong>: a képernyő méretéhez kötött CSS-szabályok.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">A mobile-first megközelítés</span>
+                    <p>Először a kis képernyő stílusát írjuk meg, aztán <em>hozzáadunk</em> a nagyokhoz:</p>
+                    <p><code>.racs { display: block; }</code><br>
+                    <code>@media (min-width: 768px) {</code><br>
+                    <code>&nbsp;&nbsp;.racs { display: grid; grid-template-columns: 1fr 1fr; }</code><br>
+                    <code>}</code></p>
+                    <p>Miért a mobillal kezdjük? Mert egy keskeny képernyő rangsorolásra kényszerít: csak a lényegnek jut hely. A fordított út zsúfoláshoz, majd elrejtéshez vezet — és láthatatlan elemek betöltéséhez.</p>
+                </div>
+
+                <h4>Amit gyakran elfelejtünk</h4>
+                <ul>
+                    <li><strong>Az érintési zónák.</strong> Egy ujj nem kurzor: minden kattintható elemnél legalább 44 képpontos oldalhosszal számolj.</li>
+                    <li><strong>A rámutatás nem létezik.</strong> Egy menü, amely az egér áthaladására nyílik, érintőképernyőn elérhetetlen.</li>
+                    <li><strong>A képek.</strong> Egy mobilra küldött 4000 px-es fotó adatforgalmat fogyaszt, és mindent lelassít. A <code>max-width: 100%</code> legalább a kilógást megakadályozza.</li>
+                    <li><strong>A táblázatok.</strong> Szinte mindig kilógnak: tedd őket egy <code>overflow-x: auto</code> tárolóba.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az ablak összehúzásával tesztelni</span>
+                    <p>A böngésző összehúzása képet ad az elrendezésről, de nem utánozza sem az érintést, sem a képpontsűrűséget, sem a mobilhálózat lassúságát.</p>
+                    <p>A fejlesztői eszközök (F12) mobileszköz-módja hűebb. Egy valódi telefonon végzett teszt pedig, legalább egyszer a közzététel előtt, szinte mindig kiderít valamit.</p>
+                </div>
+
+                <div class="pratique" data-pratique="largeur-de-ligne"></div>
+
+                <p class="retenir">💡 Először a legkorlátozottabb képernyőre tervezz. Ami túléli ezt a megkötést, az a lényeg; a többi valószínűleg fölösleges volt.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A HTML a tartalom szerkezetét adja, a CSS a vizuális megjelenését határozza meg.</li>
+                <li>A JavaScript interaktívvá teszi az oldalt azzal, hogy reagál a felhasználó műveleteire.</li>
+                <li>A frontend az, amit a felhasználó lát, a backend a szerveroldali, láthatatlan logikát kezeli.</li>
+                <li>A reszponzív design minden képernyőn jó megjelenést biztosít.</li>
+                <li>A mobile-first megközelítést egyre inkább ajánlják.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Nyiss meg egy oldalt, amelyet használsz, és húzd össze az ablakot egy telefon szélességéig. Jegyezd fel, mi romlik el először: szinte mindig egy táblázat, egy kép vagy egy menü.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>MDN Web Docs</strong> — a Mozilla által gondozott referencia-dokumentáció. Ha kétséged van egy címkéről vagy egy tulajdonságról, itt nézd meg, és sehol máshol.</li>
+                    <li><strong>web.dev</strong> (Google) — teljesítményre és akadálymentességre vonatkozó bevált gyakorlatok, mért esetekkel, nem véleményekkel.</li>
+                    <li><strong>Can I Use</strong> — melyik funkció melyik böngészőben működik, és melyik verzió óta.</li>
+                    <li><strong>Flexbox Froggy</strong> és <strong>Grid Garden</strong> — két ingyenes játék, amelyekkel egy-egy óra alatt elsajátítható a Flexbox és a Grid. A terület legjobb idő–eredmény aránya.</li>
+                    <li><strong>Lighthouse</strong> — beépítve a fejlesztői eszközökbe (F12, Lighthouse lap). Pontozza az oldaladat teljesítmény, akadálymentesség és keresőoptimalizálás szerint, és felsorolja, mit kell javítani.</li>
+                </ul>
+                <p><strong>Módszertani tanács:</strong> a legjobb fejlődést egy olyan projekt hozza, amely fontos neked, nem egy újabb oktatóanyag. Egy valódi oldal valódi problémákkal szembesít — és azokat megoldva jegyzünk meg a legtöbbet.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>💻 Webfejlesztés</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Webfejlesztés — Középhaladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/cybersecurite/index.html">🔒 Kiberbiztonság (franciául)</a>
+                <a href="../productivite/index.html">⏱️ Termelékenység és szervezés</a>
+                <a href="../design/index.html">🎨 UX/UI design</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/dev-web-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
