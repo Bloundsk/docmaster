@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Jelszavak, adathalászat és vírusirtó — Kiberbiztonság, kezdő - Clicked</title>
+    <meta name="description" content="Ingyenes útmutató a jelszavakról, az adathalászatról, a tűzfalakról és az adatok titkosításáról.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/cybersecurite/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/cybersecurite/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Jelszavak, adathalászat és vírusirtó — Kiberbiztonság, kezdő - Clicked">
+    <meta property="og:description" content="Ingyenes útmutató a jelszavakról, az adathalászatról, a tűzfalakról és az adatok titkosításáról.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/cybersecurite/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jelszavak, adathalászat és vírusirtó — Kiberbiztonság, kezdő - Clicked">
+    <meta name="twitter:description" content="Ingyenes útmutató a jelszavakról, az adathalászatról, a tűzfalakról és az adatok titkosításáról.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🔒 Kiberbiztonság</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🔒 Kiberbiztonság — Kezdő</h1>
+                <p>Védekezni az alapvető szokásokkal. Nem kell hozzá műszaki előismeret.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="52" y="65" width="36" height="28" rx="4"/><path d="M58 65 L58 53 a12 12 0 0 1 24 0 L82 65"/></g><circle cx="70" cy="79" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="105" cy="60" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="95" r="2.5" fill="white" style="animation-delay:1.1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>felismerj egy adathalász üzenetet</strong>, hogy elmondd, mit csinál és mit nem csinál egy vírusirtó, és hogy megértsd, miért nem szabad soha újra felhasználni egy jelszót.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#mots-de-passe-authentification">🔑 Jelszavak és azonosítás</a></li>
+                <li><a href="#le-phishing">🎣 Az adathalászat</a></li>
+                <li><a href="#les-pare-feux-et-antivirus">🛡️ Tűzfalak és vírusirtók</a></li>
+                <li><a href="#le-chiffrement-des-données">🔐 Az adatok titkosítása</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Milyen védelmet adj elsőként a fontos fiókjaidhoz?</li>
+                <li>Mit kezdj egy e-mailben kapott hivatkozással, ha kétséged van?</li>
+                <li>Mit nem fog soha helyetted megtenni egy vírusirtó?</li>
+                <li>Mit ellenőrizz, mielőtt érzékeny adatot írsz be egy oldalon?</li>
+                <li>Miért ne használd soha ugyanazt a jelszót több szolgáltatásnál?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kiberbiztonságot szívesen képzeljük szakértők és zseniális hekkerek párharcának. A valóság sokkal hétköznapibb: a behatolások túlnyomó többsége semmilyen műszaki hibát nem használ ki. Egy újrahasznosított jelszóra, egy jól utánzott e-mailre vagy egy frissítetlen programra épülnek.</p>
+            <p>A jó hír: ez azt jelenti, hogy néhány egyszerű szokás a kockázat nagy részét megszünteti. Nem arról van szó, hogy sebezhetetlenné válj — ilyen nem létezik —, hanem hogy ne légy többé könnyű célpont.</p>
+            <p>Ez az útmutató azt a négy témát tárgyalja, amely a legtöbbet véd: az azonosítást, a manipulációs kísérletek felismerését, a védelmi eszközöket és valódi korlátaikat, valamint a titkosítást.</p>
+        </section>
+
+        <section>
+            <h2 id="bases">Az alapok, amelyeket ismerni kell</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="mots-de-passe-authentification">🔑 Jelszavak és azonosítás</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A jelszó őrzi a hozzáférést minden máshoz.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A jelszó őrzi a hozzáférést minden máshoz. És a fő gond nem a bonyolultsága — hanem az <strong>újrahasznosítása</strong>.</p>
+
+                <h4>Miért az újrahasznosítás a valódi veszély</h4>
+                <p>Rendszeresen törnek fel oldalakat, köztük nagy platformokat is. Az onnan kikerülő belépésiadat-listák aztán szabadon keringenek. Programok automatikusan kipróbálják őket több száz más szolgáltatásnál: ez a <em>credential stuffing</em>.</p>
+
+                <div class="exemple">
+                    <span class="titre">A valós forgatókönyv</span>
+                    <p>2019-ben fiókot nyitsz egy kis fórumon a szokásos e-mail-címeddel és a szokásos jelszavaddal. A fórum megszűnik, az adatbázisa kiszivárog.</p>
+                    <p>Ma egy program kipróbálja ezt a párost az e-mail-fiókodon, a bankodnál, a közösségi oldalaidon, a webáruházaidban. Semmilyen kifinomult feltörés: egy egyszerű lista és egy szkript.</p>
+                    <p>Ha az e-mail-fiókod elesik, minden más követi — hiszen azon keresztül történnek a jelszó-visszaállítások.</p>
+                </div>
+
+                <p>A <strong>haveibeenpwned.com</strong> oldalon ingyen ellenőrizheted, szerepel-e a címed ismert szivárgásokban. A válasz gyakran igen, és ez tanulságos.</p>
+
+                <h4>Mitől jó egy jelszó</h4>
+                <p>A <strong>hosszúság</strong> többet számít, mint a különleges karakterek. Egy négy, egymáshoz nem kapcsolódó szóból álló kifejezés jobban ellenáll, mint egy szimbólumokkal teletűzdelt rövid szó, és közben megjegyezhető marad.</p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Példa</th><th>Erősség</th><th>Miért</th></tr>
+                    <tr><td><code>P@ssw0rd!</code></td><td>Nagyon gyenge</td><td>A szokásos betűcserék minden támadói szótárban benne vannak</td></tr>
+                    <tr><td><code>Debrecen1987</code></td><td>Gyenge</td><td>Város és születési év: megtalálható a közösségi oldalaidon</td></tr>
+                    <tr><td><code>teknos-tuzogep-felho-ecet</code></td><td>Erős</td><td>Nagy hosszúság, semmilyen kiszámítható logika</td></tr>
+                </table>
+                </div>
+
+                <h4>A kétlépcsős azonosítás</h4>
+                <p>A <strong>2FA</strong> egy második bizonyítékot ad hozzá: egy ideiglenes kódot, egy fizikai kulcsot. A támadó még a jelszavaddal együtt is elakad. Ez a legjobb erőfeszítés–védelem arányú intézkedés.</p>
+                <p>Nem minden módszer egyenértékű:</p>
+                <ul>
+                    <li><strong>Fizikai kulcs</strong> (YubiKey, Titan) — a legbiztonságosabb, az adathalászatnak is ellenáll.</li>
+                    <li><strong>Hitelesítő alkalmazás</strong> (Authy, Google Authenticator) — kiváló kompromisszum, ingyenes.</li>
+                    <li><strong>SMS</strong> — jobb a semminél, de sebezhető a <em>SIM-cserével</em> szemben: egy csaló ráveszi a szolgáltatót, hogy a számodat az ő SIM-kártyájára vigye át.</li>
+                </ul>
+                <p>Abszolút elsőbbség: a fő e-mail-fiók, aztán a bank, aztán a fizetési eszközöket tartalmazó fiókok.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a kötelező időszakos jelszócsere</span>
+                    <p>Ha 90 naponta kötelező jelszót cserélni, az ellenkező hatást éri el: az emberek a <code>Nyar2026!</code>-ról a <code>Nyar2026!!</code>-ra váltanak. A biztonsági szervezetek, köztük az amerikai NIST és a francia ANSSI, már nem ajánlják ezt a gyakorlatot.</p>
+                    <p>Egy hosszú, egyedi jelszó, amelyet <strong>csak szivárgás esetén</strong> cserélsz le, jobban véd.</p>
+                </div>
+
+                <div class="pratique" data-pratique="force-mot-de-passe"></div>
+
+                <p class="retenir">💡 Egy jelszókezelő és kétlépcsős azonosítás az e-mail-fiókodon: ez a két intézkedés egyetlen este alatt megszünteti a személyes kockázat nagy részét.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-phishing">🎣 Az adathalászat</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az adathalászat (phishing) nem a gépet támadja: az embert.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az <strong>adathalászat</strong> (phishing) nem a gépet támadja: az embert. Egy megbízható szervezetet utánoz, hogy megszerezzen egy jelszót, egy kártyaszámot vagy egy átutalást.</p>
+
+                <h4>A mechanizmus mindig ugyanaz</h4>
+                <p>Három összetevő, minden esetben:</p>
+                <ol>
+                    <li><strong>Egy tekintély</strong>: a bankod, az adóhatóság, egy futárszolgálat, a vezetőséged.</li>
+                    <li><strong>Egy sürgetés</strong>: felfüggesztett fiók, elakadt csomag, 48 órán belül fizetendő bírság.</li>
+                    <li><strong>Egy azonnali cselekvés</strong>: kattintani, beírni, fizetni.</li>
+                </ol>
+                <p>A sürgetés nem részlet: éppen az ellenőrzést hivatott megakadályozni. Egy üzenetben minden időbeli nyomás önmagában a fő figyelmeztető jel.</p>
+
+                <div class="exemple">
+                    <span class="titre">Amit nem veszünk észre</span>
+                    <p>A helyesírási hibák ritkává váltak — az automatikus szövegíró eszközök eltüntették ezt a jelet. Nézd inkább a <strong>domaint</strong>, a <code>@</code> jobb oldalán és az első <code>/</code> előtt:</p>
+                    <ul>
+                        <li><code>secure-bank.hu</code> — ez nem a <code>bank.hu</code></li>
+                        <li><code>bank.hu.fiok-ellenorzes.net</code> — a valódi domain a <code>fiok-ellenorzes.net</code></li>
+                        <li><code>bamk.hu</code> — egy megváltoztatott betű, gyors olvasáskor láthatatlan</li>
+                    </ul>
+                    <p>A HTTPS-lakat semmit sem bizonyít: bárki öt perc alatt ingyenes tanúsítványt szerez. Azt garantálja, hogy a kapcsolat titkosított, nem azt, hogy az oldal tisztességes.</p>
+                </div>
+
+                <h4>A változatok</h4>
+                <ul>
+                    <li><strong>Célzott adathalászat</strong> (spear phishing) — személyre szabott üzenet a neveddel, a beosztásoddal, egy folyamatban lévő projekttel. Sokkal hatékonyabb.</li>
+                    <li><strong>Vezérigazgatói csalás</strong> (CEO-csalás) — egy „vezető” sürgős és bizalmas átutalást kér. Ez a csalástípus évente jelentős összegekbe kerül a vállalkozásoknak.</li>
+                    <li><strong>Smishing</strong> — SMS-ben. Csomag, bírság, bankszámla.</li>
+                    <li><strong>Vishing</strong> — telefonon, gyakran a bankod csalásmegelőzési osztályának kiadva magát.</li>
+                </ul>
+
+                <h4>Az egyetlen reflex</h4>
+                <p>Soha ne használd a kapott hivatkozást. Nyisd meg magad az alkalmazást, vagy írd be a címet, amelyet ismersz. Ha az üzenet valódi volt, az információ várni fog rád az ügyfélfelületeden.</p>
+                <p>Telefonon: tedd le, és hívd vissza a kártyád hátoldalán szereplő számot. Egy valódi ügyintéző ezt tökéletesen megérti; egy csaló megpróbál lebeszélni róla.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy velünk ez nem történhet meg</span>
+                    <p>A vállalati tesztkampányok magas kattintási arányt mutatnak, műszaki végzettségűeknél is. A döntő tényező nem a hozzáértés: hanem a fáradtság, a munkaterhelés, vagy az, hogy az üzenet éppen akkor érkezik, amikor csomagot vártunk.</p>
+                    <p>Ezért a védekezésnek <strong>rendszeres szokásnak</strong> kell lennie, nem alkalmi éberségnek. Egy szokás akkor is kitart, amikor a figyelem lankad.</p>
+                </div>
+
+                <div class="pratique" data-pratique="signaux-phishing"></div>
+
+                <p class="retenir">💡 Egyetlen legitim szervezet sem kér jelszót vagy megerősítő kódot, semmilyen csatornán. Ez alól a szabály alól nincs kivétel.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-pare-feux-et-antivirus">🛡️ Tűzfalak és vírusirtók</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Ezek az eszközök hasznosak, és személyes használatra bőven elegendők — feltéve, hogy értjük, mit csinálnak, és főleg, hogy mit nem.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ezek az eszközök hasznosak, és személyes használatra bőven elegendők — feltéve, hogy értjük, mit csinálnak, és főleg, hogy mit nem.</p>
+
+                <h4>Mit véd az egyes eszköz</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Eszköz</th><th>Szerep</th><th>Ez ellen nem véd</th></tr>
+                    <tr><td><strong>Tűzfal</strong></td><td>Szűri a bejövő és kimenő kapcsolatokat</td><td>Amit szándékosan telepítesz</td></tr>
+                    <tr><td><strong>Vírusirtó</strong></td><td>Felismeri az ismert kártevőket</td><td>Az adathalászat, egy ellopott jelszó</td></tr>
+                    <tr><td><strong>Frissítések</strong></td><td>Kijavítják a nyilvánosságra került hibákat</td><td>Nincs ilyen — ez a leghatékonyabb intézkedés</td></tr>
+                </table>
+                </div>
+                <p>Windowson a <strong>Defender</strong> beépített, ingyenes, és rendszeresen a független tesztek élmezőnyében szerepel. Egy külső csomagért fizetni általában nem hoz mérhető biztonsági nyereséget.</p>
+
+                <h4>A leghatékonyabb intézkedés a legunalmasabb</h4>
+                <p>Telepíteni a frissítéseket. Egy nyilvánosságra került hibát a robotok néhány napon belül kihasználnak. A javítás szinte mindig <strong>a támadás előtt</strong> létezik — a telepítés késlekedése teremti a sebezhetőséget.</p>
+                <p>Ez nemcsak a rendszerre érvényes, hanem a böngészőre, a bővítményekre, a telefonra és az internetes routerre is, amelyről rendszeresen megfeledkezünk.</p>
+
+                <h4>A zsarolóvírusok</h4>
+                <p>A <em>ransomware</em> titkosítja a fájljaidat, és fizetést követel. Egyetlen vírusirtó sem garantál védelmet. Az egyetlen igazán megbízható ellenszer a <strong>biztonsági mentés</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">A 3-2-1 szabály</span>
+                    <ul>
+                        <li><strong>3</strong> másolat a fontos adataidról</li>
+                        <li><strong>2</strong> különböző adathordozón (belső lemez + külső lemez)</li>
+                        <li><strong>1</strong> másolat máshol tárolva, vagy leválasztva</li>
+                    </ul>
+                    <p>A kritikus pont az utolsó: egy állandóan csatlakoztatott külső lemez a többivel együtt titkosítódik. A leválasztott mentés az igazi mentés.</p>
+                    <p>Egy soha ki nem próbált mentés pedig nem mentés: évente egyszer próbálj meg visszaállítani egy véletlenszerűen kiválasztott fájlt.</p>
+                </div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a hamis biztonságérzet</span>
+                    <p>„Van vírusirtóm, védve vagyok” — ez a gondolat lankasztja az éberséget. Pedig a vírusirtó semmit sem lát, amikor önként beírod a jelszavadat egy hamis oldalon — és messze ez a leggyakoribb forgatókönyv.</p>
+                </div>
+
+                <div class="pratique" data-pratique="protections-de-base"></div>
+
+                <p class="retenir">💡 Bekapcsolt automatikus frissítések és leválasztott biztonsági mentés: két beállítás, amely többet véd bármilyen fizetős programnál.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-chiffrement-des-données">🔐 Az adatok titkosítása</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Titkosítani azt jelenti, hogy egy információt olvashatatlanná teszünk annak, akinél nincs meg a kulcs.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Titkosítani azt jelenti, hogy egy információt olvashatatlanná teszünk annak, akinél nincs meg a kulcs. Ez a technológia teszi lehetővé, hogy egy kártyaszámot olyan hálózaton írjunk be, amelyet nem mi irányítunk.</p>
+
+                <h4>Titkosítás átvitel közben és tárolt állapotban</h4>
+                <ul>
+                    <li><strong>Átvitel közben</strong>: útközben. Ez a HTTPS szerepe — a lakat a címsorban.</li>
+                    <li><strong>Tárolt állapotban</strong>: a lemezen. BitLocker Windowson, FileVault Macen. Laptopon elengedhetetlen: lopás esetén a lemez olvashatatlan marad.</li>
+                </ul>
+
+                <h4>Mit jelent — és mit nem — a lakat</h4>
+                <div class="exemple">
+                    <span class="titre">Egy nagyon elterjedt félreértés</span>
+                    <p>A HTTPS <strong>egyetlen dolgot</strong> garantál: senki sem olvashatja és nem módosíthatja a böngésződ és az oldal közötti adatforgalmat.</p>
+                    <p>Az oldal tisztességéről semmit sem mond. Egy csaló oldalnak is tökéletesen érvényes lakatja van — a tanúsítványok ingyenesek. A kártyaszámod ekkor tökéletesen titkosítva érkezik meg a csalóhoz.</p>
+                    <p>A lakat az <em>utat</em> védi, nem a <em>célt</em>. Mindig ellenőrizd a domainnevet.</p>
+                </div>
+
+                <h4>A végpontok közötti titkosítás</h4>
+                <p>A <strong>végpontok közötti</strong> titkosítással csak a feladó és a címzett tudja elolvasni a tartalmat — maga a szolgáltató sem képes rá.</p>
+                <p>A Signal és a WhatsApp alapértelmezetten alkalmazza az üzenetekre. Sok hagyományos e-mail-szolgáltatás nem: ott a leveleidet a tárhelyszolgáltató el tudja olvasni.</p>
+                <p>Figyelj a <strong>metaadatokra</strong>: titkosítva is kiderül egy üzenetváltásból, ki kivel beszélt, mikor és mennyi ideig. Ezek az információk gyakran ugyanolyan beszédesek, mint a tartalom.</p>
+
+                <h4>A nyilvános wifi</h4>
+                <p>A kockázat kisebb, mint régen, hiszen szinte minden oldal HTTPS-t használ. Két óvintézkedés azért marad: soha ne csatlakozz egy túl barátságos nevű nyílt hálózathoz anélkül, hogy a pontos nevét ellenőriznéd a helyszínen, és kerüld az érzékeny műveleteket ismeretlen hálózatról. A telefonodról megosztott internetkapcsolat biztonságosabb.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a VPN mint univerzális védelem</span>
+                    <p>A VPN a szolgáltatójáig titkosítja az utat. Nem véd sem az adathalászattól, sem a vírusoktól, sem egy gyenge jelszótól. Csak áthelyezi a bizalmat az internetszolgáltatódról a VPN szolgáltatójára — aki ettől kezdve a teljes forgalmadat látja.</p>
+                    <p>Hasznos egy földrajzi korlátozás megkerülésére vagy egy valóban gyanús hálózaton. Nem biztonsági pajzs, bármit sugall is a reklámjuk.</p>
+                </div>
+
+                <div class="pratique" data-pratique="ou-est-le-chiffrement"></div>
+
+                <p class="retenir">💡 A lakat azt igazolja, hogy az út biztonságos, soha azt, hogy a cél tisztességes. Olvasd el a domainnevet, mielőtt megbízol az ikonban.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Kapcsold be a kétlépcsős azonosítást (2FA) minden fontos fiókodon.</li>
+                <li>Kétség esetén soha ne kattints közvetlenül egy e-mailben kapott hivatkozásra.</li>
+                <li>Egy vírusirtó nem helyettesíti az emberi éberséget.</li>
+                <li>Mindig ellenőrizd a lakat (HTTPS) meglétét, mielőtt érzékeny adatokat írsz be.</li>
+                <li>Soha ne használd ugyanazt a jelszót több szolgáltatásnál.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Kapcsold be a kétlépcsős azonosítást az e-mail-fiókodon — elsőként ezen, mert ez állítja vissza az összes többi fiókodat. Tíz perc, egyetlen alkalommal.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országod hivatalos kiberbiztonsági bejelentő szolgálata</strong> — a legtöbb országban működik ilyen. Tájékoztató anyagok, teendők incidens esetén, és segítség, ha áldozattá váltál.</li>
+                    <li><strong>Az országod nemzeti kiberbiztonsági hatósága</strong> — informatikai biztonsági útmutatói a mérvadók, a nagyon kis szervezetek számára is.</li>
+                    <li><strong>Have I Been Pwned</strong> — ingyen ellenőrizheted, szerepel-e a címed egy ismert szivárgásban, és értesítést kaphatsz a következőkről.</li>
+                    <li><strong>Az adatvédelmi hatóság</strong> (Magyarországon a NAIH) — jogaid az adataid felett, és teendők, ha téged érintő adatszivárgás történt.</li>
+                    <li><strong>Adathalász oldalak bejelentésére szolgáló szolgáltatások</strong> — egy csaló oldal jelentésére és lezáratására.</li>
+                </ul>
+                <p><strong>Ha valóban baj történt:</strong> először a fő e-mail-fiókod jelszavát változtasd meg egy tiszta eszközről, kapcsold be rajta a kétlépcsős azonosítást, aztán foglalkozz a többi fiókkal. Tegyél feljelentést a rendőrségen — ez elengedhetetlen minden, a bankodnál vagy a biztosítódnál intézendő ügyhöz.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>🔒 Kiberbiztonság</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Kiberbiztonság — Középhaladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../productivite/index.html">⏱️ Termelékenység és szervezés</a>
+                <a href="../design/index.html">🎨 UX/UI design</a>
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/cybersecurite-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

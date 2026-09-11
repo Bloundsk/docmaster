@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Six parcours sont publiés (Apprendre, Data, Design, Dev web, IA, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Sept parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, IA, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -67,12 +67,12 @@ françaises.
    11 septembre 2026 de continuer sans attendre.** La relecture reste à faire, et
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
-   Apprendre, Productivité, IA, Data, Design, Dev web (6 sur 14).** Ordre suivi :
-   d'abord les sujets sans droit français — Cybersécurité, Marketing, Négociation,
+   Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité (7 sur 14).**
+   Ordre suivi : d'abord les sujets sans droit français — Marketing, Négociation,
    Écologie — puis les quatre qui demandent la décision ci-dessous.
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
@@ -117,6 +117,16 @@ françaises.
   « échapper », *végponttól végpontig tartó teszt* (test de bout en bout),
   *technikai adósság* ; et « 34× lassabb » pour « 34 fois plus lent », choisi
   parce que le suffixe hongrois (-szor/-szer/-ször) dépend du nombre affiché ;
+- pour Cybersécurité : *adathalászat* (hameçonnage), *kétlépcsős azonosítás*
+  (double authentification), *jelszókezelő*, *zsarolóvírus* (rançongiciel),
+  *helyreállító kódok* (codes de secours), *továbbítási szabály* (règle de
+  transfert), *végpontok közötti titkosítás* (bout en bout), *támadási felület*,
+  *vezérigazgatói csalás* (fraude au président) ; et les transpositions, faites par
+  fonction comme en anglais : cybermalveillance.gouv.fr devenu « le service officiel
+  de signalement de ton pays », l'ANSSI « l'autorité nationale de cybersécurité »,
+  la CNIL « l'autorité de protection des données (en Hongrie, la NAIH) », le dépôt
+  de plainte « feljelentés a rendőrségen ». À vérifier en priorité : s'il faut
+  nommer l'organisme hongrois de signalement plutôt que sa fonction ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12

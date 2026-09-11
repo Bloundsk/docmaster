@@ -1,5 +1,36 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Septième parcours en hongrois : Cybersécurité
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/cybersecurite/`, **les 3 banques de quiz**
+  (90 questions, la bonne réponse au même rang qu'en français) et **les 165 textes
+  des 12 simulateurs** (162 textes et 1 fragment ajoutés).
+- `CONTENU_TRADUIT.hu` annonce aussi « cybersecurite ». Les huit pages hongroises
+  qui citaient Cybersécurité en français (Data débutant, quatre pages de Dev web,
+  trois pages d'IA) mènent maintenant à sa version hongroise.
+- **Transposé par fonction, comme l'anglais** : cybermalveillance.gouv.fr devient
+  « le service officiel de signalement de ton pays », l'ANSSI « l'autorité
+  nationale de cybersécurité », la CNIL « l'autorité de protection des données »
+  (en Hongrie, la NAIH, déjà citée par Data). Le changement de mot de passe imposé
+  cite le NIST américain à côté de l'ANSSI. Les exemples passent en Hongrie :
+  `Debrecen1987`, `bank.hu`, une phrase de passe hongroise sans accents.
+  « Délai de 24 h » s'écrit « 24 órás határidő », que le garde-fou des unités
+  d'une lettre laisse passer.
+
+### Corrigé en route
+
+- **Le biais de longueur, une septième fois, corrigé en une seule passe.**
+  Traduite fidèlement, la bonne réponse était la plus longue dans 57 % des cas et
+  la plus courte dans 14 % (français 38 % et 28 %). Plutôt que de corriger « la plus
+  longue », puis le milieu, les deux listes ont été lues ensemble dès le départ :
+  33 distracteurs rallongés sur 29 questions, chacun jusqu'à la place française.
+  Résultat : 37 / 35 / 29 % (français 38 / 35 / 28 %). Une seule question reste au
+  milieu alors que le français la met en plus longue : il faudrait rallonger la
+  bonne réponse, ce que la règle écarte. Les 630 questions hongroises sont à
+  32,3 / 36,1 / 32,2 %.
+
 ## 2026-09-11 — Sixième parcours en hongrois : Développement web
 
 ### Ce qui est publié

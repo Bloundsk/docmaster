@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Adatszivárgások és manipuláció — Kiberbiztonság, haladó - Clicked</title>
+    <meta name="description" content="A kiberbiztonsági útmutató haladó szintje: adatszivárgások és a belépési adatok újrajátszása, célzott támadások, a végpontok közötti titkosítás korlátai, a személyes támadási felületed.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/cybersecurite/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/cybersecurite/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/cybersecurite/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/cybersecurite/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Adatszivárgások és manipuláció — Kiberbiztonság, haladó - Clicked">
+    <meta property="og:description" content="A kiberbiztonsági útmutató haladó szintje: adatszivárgások és a belépési adatok újrajátszása, célzott támadások, a végpontok közötti titkosítás korlátai, a személyes támadási felületed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/cybersecurite/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Adatszivárgások és manipuláció — Kiberbiztonság, haladó - Clicked">
+    <meta name="twitter:description" content="A kiberbiztonsági útmutató haladó szintje: adatszivárgások és a belépési adatok újrajátszása, célzott támadások, a végpontok közötti titkosítás korlátai, a személyes támadási felületed.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🔒 Kiberbiztonság</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🔒 Kiberbiztonság — Haladó</h1>
+                <p>Ami megmarad, amikor a kézenfekvő védelmek már a helyükön vannak.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="52" y="65" width="36" height="28" rx="4"/><path d="M58 65 L58 53 a12 12 0 0 1 24 0 L82 65"/></g><circle cx="70" cy="79" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="105" cy="60" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="35" cy="95" r="2.5" fill="white" style="animation-delay:1.1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>ellenőrizd, kiszivárogtak-e a címeid</strong>, hogy felismerj egy célzott támadást, hogy elmondd, mit nem véd a titkosítás, és hogy bezárd egy fiók helyreállítási kiskapuit.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#fuites-de-donnees">🧬 Az adatszivárgások</a></li>
+                <li><a href="#ingenierie-sociale">🎭 A célzott manipuláció</a></li>
+                <li><a href="#chiffrement-de-bout-en-bout">🔏 A titkosítás korlátai</a></li>
+                <li><a href="#surface-attaque">🗺️ A támadási felületed</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Átlagosan mennyi idő után derül ki, hogy kiszivárogtak az adataink?</li>
+                <li>Miért nem elég a jelszócsere egy fiók visszaszerzéséhez?</li>
+                <li>Mi hiányzik egy célzott támadásból a tömeges adathalászathoz képest?</li>
+                <li>Mit véd a végpontok közötti titkosítás, és mit hagy láthatóan?</li>
+                <li>Hol jutnak be leggyakrabban egy jól védett fiókba?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Az első két szint a mozdulatokról és a megoldásokról szólt. Ha ezek a helyükön vannak, a kockázat nem tűnik el: áthelyeződik.</p>
+            <p>Oda helyeződik, amit nem te irányítasz — az általad használt szolgáltatások adatbázisaiba —, és oda, amit semmilyen eszköz nem szűr ki: <strong>egy hihető kérésre, amelyet személyesen neked címeznek, a megfelelő pillanatban</strong>. Ez a szint ezekről a vakfoltokról szól, és azoknak a védelmeknek a valódi korlátairól, amelyeket teljesnek hiszünk.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong> és általános. Támadási mechanizmusokat ír le, hogy védekezni lehessen ellenük. Munkahelyi, egyesületi vagy fokozottan kitett környezetben saját intézkedésekre és szakember véleményére van szükség.</p>
+                <p>Valódi incidens esetén az országod hivatalos kiberbiztonsági bejelentő szolgálatához vagy a rendőrséghez fordulj, ne egy online útmutatóhoz.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A vakfoltok</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="fuites-de-donnees">🧬 Az adatszivárgások</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Mindent megtehetsz, amit kell, és mégis kompromittálódhatsz: elég, ha egy szolgáltatás, amelyre egy címet és egy jelszót bíztál, elveszíti az adatbázisát.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Mindent megtehetsz, amit kell, és mégis kompromittálódhatsz: elég, ha egy szolgáltatás, amelyre egy címet és egy jelszót bíztál, elveszíti az adatbázisát. Ez a kockázat nem rajtad múlik.</p>
+
+                <h4>A belépési adatok újrajátszása</h4>
+                <p>A nyilvánosságra került lista kering, és automatikusan újrajátsszák több száz más szolgáltatásnál. Ezt hívják <em>credential stuffingnak</em>. A sikerességi arány alacsony — néhány tized százalék —, de milliónyi párosra alkalmazva bőven elég.</p>
+                <p>Az, hogy a jelszavad hosszú, semmin sem változtat: nem kitalálják, hanem <strong>ismerik</strong>.</p>
+
+                <div class="exemple">
+                    <span class="titre">A késés nagyságrendje</span>
+                    <p>A behatolás és a felfedezése között eltelt átlagos idő <strong>hónapokban</strong> mérhető, nem napokban. A felfedezés és az érintettek értesítése között gyakran további hetek telnek el.</p>
+                    <p>Vagyis: amikor megkapod az e-mailt egy szivárgásról, a belépési adatok már régóta keringenek. Az értesítés nem riasztás, hanem tényállás.</p>
+                </div>
+
+                <h4>Visszaszerezni az irányítást, a helyes sorrendben</h4>
+                <p>A sorrend számít, mert egyes lépések fölöslegessé teszik a következőket, ha túl későn jönnek. <strong>Először a helyreállító e-mail-fiók</strong>: amíg egy támadó irányítja, mindent visszavesz, amit épp megváltoztattál.</p>
+                <p>Utána az érintett szolgáltatás, aztán mindazok, ahol a jelszót újrahasznosítottad — és végül az a lépés, amelyről szinte mindenki megfeledkezik.</p>
+
+                <div class="pratique" data-pratique="reflexes-apres-fuite"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megállni a jelszócserénél</span>
+                    <p>Egy támadó, aki hozzáfért egy e-mail-fiókhoz, gyakran hagy benne egy <strong>automatikus továbbítási szabályt</strong>: minden beérkező üzenet másolatát megkapja. Ez a szabály a jelszócsere után is működik, csendben, a jövőbeli visszaállító hivatkozásokra is.</p>
+                    <p>A továbbítási szabályok és az aktív munkamenetek ellenőrzése az irányítás visszaszerzésének része. A jelszó önmagában nem elég.</p>
+                </div>
+
+                <p class="retenir">💡 Egy szivárgást a te oldaladon nem lehet megelőzni. A továbbterjedését igen.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="ingenierie-sociale">🎭 A célzott manipuláció</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A tömeges adathalászat felismerhető: hibák, gyanús cím, általános megszólítás.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A tömeges adathalászat felismerhető: hibák, gyanús cím, általános megszólítás. A célzott támadásnak <strong>ezek közül egyik jele sincs meg</strong>. Neked írták, valós információk alapján, és olyan cselekvést kér, amelynek a te helyzetedben van értelme.</p>
+
+                <h4>Honnan jönnek az információk</h4>
+                <p>Leggyakrabban nyilvános forrásokból: egy szakmai profilból, egy álláshirdetésből, egy szervezeti ábrából, egy közösségi oldalon megjelent bejegyzésből. Semmit sem törnek fel az üzenet összeállításához — mindent egyszerűen elolvasnak.</p>
+
+                <div class="exemple">
+                    <span class="titre">A klasszikus forma</span>
+                    <p>Egy üzenet, amely látszólag egy felettestől jön, egy hosszú hétvége előtti napon: „Úton vagyok, ezt a számlát ma ki kell fizetni. Számítok a diszkréciódra, majd elmagyarázom.”</p>
+                    <p>Három emelő hat egyszerre: <strong>a tekintély</strong>, <strong>a sürgetés</strong> és <strong>a titoktartás</strong> — ez utóbbi arra szolgál, hogy megakadályozza azt az egyetlen dolgot, amely meghiúsítaná a támadást: hogy megkérdezz valaki mást.</p>
+                </div>
+
+                <h4>Az egyetlen megbízható ellenszer</h4>
+                <p>Nem az, hogy jobban elolvassuk az üzenetet. Egy jól megírt üzenet nem különböztethető meg egy valóditól, és éppen az tesz sebezhetővé, ha azt hisszük, felismerjük a csalást.</p>
+                <p>Az ellenszer <strong>eljárási</strong>: minden szokatlan kérésnél, amely pénzt, belépési adatokat vagy adatokat érint, <strong>egy másik csatornán</strong> ellenőrizni — egy olyan számon, amelyet már korábban ismertél, soha nem az üzenetben megadotton.</p>
+
+                <div class="pratique" data-pratique="signaux-spear-phishing"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy elég az éberség</span>
+                    <p>A témában készült összes vizsgálat ugyanarra jut: a képzett és figyelmeztetett emberek is bedőlnek, csak ritkábban. A fáradtság, a munkaterhelés és a helyzet elvégzi a többit.</p>
+                    <p>Egy leírt szabály — „nincs átutalás telefonos megerősítés nélkül” — azokon a napokon is véd, amikor lankad a figyelem. Éppen ez az értelme.</p>
+                </div>
+
+                <p class="retenir">💡 Egy célzott támadás ellen nem az ítélőképességed véd, hanem az eljárásod.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="chiffrement-de-bout-en-bout">🔏 A titkosítás korlátai</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A végpontok közötti titkosítás egy dolgot garantál, és azt szilárdan: csak a levelezőpartnerek olvashatják a tartalmat.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A végpontok közötti titkosítás egy dolgot garantál, és azt szilárdan: csak a levelezőpartnerek olvashatják a <strong>tartalmat</strong>. Sem a szolgáltatás, sem egy közvetítő, sem aki a forgalmat lehallgatja.</p>
+                <p>Amit nem véd, az ugyanolyan fontos, és sokkal kevésbé ismert.</p>
+
+                <h4>A metaadatok láthatók maradnak</h4>
+                <p>Ki kinek ír, hány órakor, milyen gyakran, milyen hálózati címről, mekkora mennyiségben: ezek az információk a legtöbb szolgáltatásnál titkosítatlanul áramlanak, titkosítás ide vagy oda.</p>
+                <p>Pedig gyakran elég belőlük a lényeg rekonstruálásához. Ahhoz, hogy tudjuk, valaki egy segélyhívó szolgálattal, aztán egy ügyvéddel, aztán a bankjával váltott üzenetet, ebben a sorrendben és ugyanazon a délutánon, egyetlen üzenetet sem kell elolvasni.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ami a titkosítás ellenére kitett marad</span>
+                    <p><strong>A végeszközök.</strong> A titkosítás a szállítást védi, nem az eszközöket. Egy visszafejtett üzenet megjelenik a képernyőn, és néha titkosítatlanul mentődik.</p>
+                    <p><strong>A mentések.</strong> Egy titkosított beszélgetés, amelynek az automatikus mentése nincs titkosítva, a felhőben ismét olvashatóvá válik.</p>
+                    <p><strong>A címzett.</strong> Semmi sem akadályozza meg a partneredet abban, hogy képernyőképet készítsen, és azt sem, hogy az ő eszköze kompromittálódjon.</p>
+                </div>
+
+                <div class="pratique" data-pratique="metadonnees-visibles"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a mentés, amely semmissé teszi a titkosítást</span>
+                    <p>Több titkosított üzenetküldő is felkínálja a beszélgetések felhőbe mentését. Ha ez a mentés nincs külön titkosítva, a teljes levelezés hozzáférhetővé válik annak, aki hozzáfér a tárhelyfiókhoz.</p>
+                    <p>A szállítás védelme ekkor érintetlen, és tökéletesen haszontalan.</p>
+                </div>
+
+                <p class="retenir">💡 A titkosítás azt védi, amit mondasz. Azt nem rejti el, kinek mondod, és mikor.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="surface-attaque">🗺️ A támadási felületed</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A támadási felület mindazon pontok összessége, amelyeken valaki bejuthatna.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A támadási felület mindazon pontok összessége, amelyeken valaki bejuthatna. Magától nő, döntés nélkül: minden létrehozott fiók, minden engedélyezett alkalmazás, minden kipróbált és elfelejtett szolgáltatás növeli egy kicsit.</p>
+
+                <h4>Az elfelejtett fiókok a legveszélyesebbek</h4>
+                <p>Egy nyolc éve regisztrált, azóta sosem használt szolgáltatás őrzi a címedet és az akkori jelszavadat — gyakran azok egyikét, amelyet akkor újrahasznosítottál. Nem frissítették, nem kínál kétlépcsős azonosítást, és nem is fogsz értesülni, ha kiszivárog, hiszen elfelejtetted, hogy létezik.</p>
+
+                <h4>A fiók-helyreállítás, a gyenge láncszem</h4>
+                <p>Minden figyelem a jelszóra irányul. Pedig a legtöbb szolgáltatás párhuzamos utat is kínál: biztonsági kérdéseket, egy helyreállító címet, egy telefonszámot.</p>
+                <p>Ezek az utak gyakran gyengébbek a főbejáratnál. Egy „Mi volt az első háziállatod neve?” típusú kérdésre néha egy nyilvános profil elolvasásával is lehet válaszolni. Egy elhagyott helyreállító címet egy harmadik fél <strong>újra létrehozhat</strong>, ha a domain megengedi.</p>
+
+                <div class="exemple">
+                    <span class="titre">Csökkenteni a felületet, egyszer</span>
+                    <p><strong>Vedd számba</strong>: a jelszókezelő fiókjainak listája, plusz egy keresés az e-mail-fiókodban az „üdvözöljük” vagy „erősítse meg regisztrációját” kifejezésekre.</p>
+                    <p><strong>Szüntesd meg</strong>, amire már nincs szükség. Egy törölt fiók nem szivárog ki.</p>
+                    <p><strong>Vond vissza</strong> a fő fiókjaidon engedélyezett külső alkalmazások hozzáférését: sokan tartós hozzáférést őriznek még jóval azután is, hogy már nem használják őket.</p>
+                    <p><strong>Ellenőrizd</strong> a helyreállító címeket és telefonszámokat: a tieidnek és még aktívnak kell lenniük.</p>
+                </div>
+
+                <div class="pratique" data-pratique="score-exposition"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — az őszinte válaszok a biztonsági kérdésekre</span>
+                    <p>Anyád leánykori neve, a születési helyed, az első iskolád: ezek az információk nyilvánosak, vagy egy közeli ismerős könnyen kitalálja őket.</p>
+                    <p>Egy biztonsági kérdés nem őszinteségi kérdőív. Kezeld a választ második jelszóként: legyen önkényes, és a jelszókezelőben tárold.</p>
+                </div>
+
+                <p class="retenir">💡 Minden bezárt fiók egy ajtóval kevesebb, végleg.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy szivárgás nem látszik: átlagosan hónapokkal a történtek után derül ki.</li>
+                <li>A jelszócsere nem elég egy fiók visszaszerzéséhez — egy továbbítási szabály túléli.</li>
+                <li>Egy célzott támadásnak nincs meg a tömeges adathalászat egyetlen durva jele sem.</li>
+                <li>A végpontok közötti titkosítás a tartalmat védi, a metaadatokat soha.</li>
+                <li>A fiók-helyreállítás gyakran a leggyengébb és legkevésbé figyelt láncszem.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Nyisd meg az e-mail-fiókod beállításait, és egyetlen dolgot ellenőrizz: az automatikus továbbítási szabályokat. Egy betolakodó által beállított szabály túléli a jelszócserét.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országod hivatalos kiberbiztonsági bejelentő szolgálata</strong>: a teendők incidens esetén, és segítség a további lépésekhez.</li>
+                    <li><strong>Az adatvédelmi hatóság</strong> (Magyarországon a NAIH): jogaid egy szivárgás után, és annak a szolgáltatásnak a kötelezettségei, amelynél történt — különösen a bejelentési határidő.</li>
+                    <li><strong>Have I Been Pwned</strong>: egy cím figyelése az ismert szivárgásokban, értesítéssel, ha újra felbukkan.</li>
+                    <li><strong>Az országod nemzeti kiberbiztonsági hatósága</strong>: útmutatók az azonosításról és az e-mail-fiókok biztonságáról, részletesebben, mint a legtöbb közérthető cikk.</li>
+                    <li><strong>Éves jelentések a behatolásokról</strong>: a felfedezési idők és a leggyakoribb behatolási pontok, számokkal és reklámszöveg nélkül.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> évente egyszer nézd át a fő fiókodon engedélyezett alkalmazások listáját. Szinte mindig vannak rajta olyan szolgáltatások, amelyek létezéséről már elfeledkeztél.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Kiberbiztonság — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza az útmutatóhoz →</span>🔒 Kiberbiztonság</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../dev-web/index.html">💻 Webfejlesztés</a>
+                <a href="../data/index.html">📊 Adatok és elemzés</a>
+                <a href="../ia/index.html">🤖 Mesterséges intelligencia</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/cybersecurite-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
