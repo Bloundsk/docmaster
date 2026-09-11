@@ -34,6 +34,12 @@ window.PRATIQUE_TEXTES = {
         "En ": "",
         " de la journée": " a napból",
         " par jour": " naponta",
+
+        // --- ia -------------------------------------------------------------
+        // Le plus long d'abord : il contient « jetons ». Après un nombre, le
+        // hongrois garde le singulier : « 27 500 token ».
+        " k jetons — bien au-delà de toute fenêtre": " ezer token — messze túl bármely kontextusablakon",
+        " jetons": " token",
     },
 
     textes: {
@@ -256,6 +262,238 @@ window.PRATIQUE_TEXTES = {
         "Accepter ici, c'est refuser autre chose sans l'avoir décidé.": "Ha itt igent mondasz, valami másra mondasz nemet anélkül, hogy eldöntötted volna.",
         "Il manque l'essentiel : nommer ce qui sera abandonné.": "A lényeg hiányzik: megnevezni, mi marad el.",
         "Décision instruite : c'est un vrai oui, ou un refus argumenté.": "Megalapozott döntés: valódi igen, vagy megindokolt nem.",
+
+        // --- ia / unités et réponses communes ------------------------------------
+        "oui": "igen",
+        "non": "nem",
+        "tours": "kör",
+        "€/M jetons": "EUR/millió token",
+        "doc.": "db",
+        "pages": "oldal",
+        "jetons": "token",
+        "req.": "kérés",
+        "€": "EUR",
+
+        // --- ia / reglage-temperature ----------------------------------------------
+        "Choisis ta température": "Válaszd ki a hőmérsékletet",
+        "Coche les tâches qui appellent une température BASSE.": "Jelöld be azokat a feladatokat, amelyekhez ALACSONY hőmérséklet kell.",
+        "Le réglage par défaut est intermédiaire. Il convient donc mal aux deux extrémités — dont l'extraction.":
+            "Az alapbeállítás közepes. Ezért egyik véglethez sem illik jól — a kinyeréshez sem.",
+        "Extraire des informations d'un document": "Információt kinyerni egy dokumentumból",
+        "oui : on veut la même réponse à chaque fois": "igen: minden alkalommal ugyanazt a választ akarjuk",
+        "Classer des messages par catégorie": "Üzeneteket kategóriákba sorolni",
+        "Proposer dix idées de titres": "Tíz címötletet javasolni",
+        "non : la variété est justement ce qu'on cherche": "nem: épp a változatosságot keressük",
+        "Générer du code": "Kódot generálni",
+        "Reformuler un texte avec plus de style": "Egy szöveget stílusosabban átfogalmazni",
+        "Répondre à une question factuelle": "Ténykérdésre válaszolni",
+        "Quatre de ces six tâches appellent une température basse.": "A hat feladat közül négyhez alacsony hőmérséklet kell.",
+        "Quatre tâches appellent une température basse. Vérifie que ce sont bien celles-là.":
+            "Négy feladathoz kell alacsony hőmérséklet. Ellenőrizd, hogy tényleg ezek azok.",
+        "Plus de quatre : deux de ces tâches gagnent au contraire à la variété.":
+            "Négynél több: ezek közül kettő épp a változatosságtól lesz jobb.",
+
+        // --- ia / jeu-de-test --------------------------------------------------------
+        "Évalue ta méthode d'évaluation": "Értékeld az értékelési módszeredet",
+        "Coche ce qui est vrai de ta manière de mesurer.": "Jelöld be, ami igaz arra, ahogyan mérsz.",
+        "Le jeu de test est ce qui transforme une opinion sur un système en information sur un système.":
+            "A tesztkészlet az, ami egy rendszerről alkotott véleményt a rendszerről szóló információvá alakítja.",
+        "J'ai au moins vingt cas de test écrits avec leur réponse attendue": "Legalább húsz tesztesetet írtam a várt válaszukkal együtt",
+        "Le jeu contient des cas limites, pas seulement des cas faciles": "A készletben határesetek is vannak, nem csak könnyű esetek",
+        "Il contient des cas où la bonne réponse est « je ne sais pas »": "Vannak benne olyan esetek, amelyeknél a helyes válasz a „nem tudom”",
+        "les plus révélateurs : un système qui invente échoue là": "ezek a legárulkodóbbak: egy kitalálásra hajlamos rendszer itt bukik el",
+        "Un second jeu, jamais consulté pendant les réglages, sert de contrôle final":
+            "Egy második, a hangolás közben soha meg nem nézett készlet szolgál végső ellenőrzésként",
+        "Je regarde le détail des cas, pas seulement le score global": "Az esetek részleteit nézem, nem csak az összpontszámot",
+        "un score qui monte peut cacher des régressions": "egy emelkedő pontszám visszaeséseket rejthet",
+        "Si j'utilise un modèle-juge, j'inverse l'ordre des candidats": "Ha bírómodellt használok, felcserélem a jelöltek sorrendjét",
+        "un juge favorise ce qui est présenté en premier": "a bíró előnyben részesíti, amit elsőként mutatnak neki",
+        "Sans mesure, une amélioration ressentie sur trois essais peut être une dégradation sur cent.":
+            "Mérés nélkül egy három próbán érzett javulás száz próbán romlás lehet.",
+        "Base correcte. Le jeu de contrôle mis à part et le détail des cas font la différence.":
+            "Elfogadható alap. A félretett ellenőrző készlet és az esetek részletei jelentik a különbséget.",
+        "Méthode solide : tes améliorations sont mesurées, pas ressenties.": "Szilárd módszer: a javításaidat méred, nem érzed.",
+
+        // --- ia / surface-injection -----------------------------------------------------
+        "Mesure ton exposition à l'injection": "Mérd fel, mennyire vagy kitéve az injekciónak",
+        "Coche ce qui s'applique à ton système.": "Jelöld be, ami a rendszeredre vonatkozik.",
+        "On ne referme pas l'injection de consigne. On réduit ce qu'elle permet d'obtenir.":
+            "A promptinjekciót nem lehet bezárni. Azt lehet csökkenteni, amit el lehet érni vele.",
+        "L'agent lit des contenus que je ne maîtrise pas": "Az ügynök olyan tartalmakat olvas, amelyek felett nincs ellenőrzésem",
+        "pages web, courriels reçus, documents envoyés par des tiers": "weboldalak, beérkező e-mailek, harmadik felek által küldött dokumentumok",
+        "Il dispose d'outils capables d'envoyer ou de publier": "Vannak küldésre vagy közzétételre képes eszközei",
+        "Il peut supprimer ou modifier des données": "Törölhet vagy módosíthat adatokat",
+        "Il accède à des informations confidentielles": "Bizalmas információkhoz fér hozzá",
+        "Il agit sans validation humaine sur les actions irréversibles": "Visszafordíthatatlan műveleteknél emberi jóváhagyás nélkül cselekszik",
+        "Sa seule protection contre l'injection est une phrase dans la consigne": "Az injekció elleni egyetlen védelme egy mondat az utasításban",
+        "cela aide un peu, et se contourne": "ez kicsit segít, és megkerülhető",
+        "Exposition faible. Reconsidère à chaque nouvel outil ajouté.": "Alacsony kitettség. Minden új eszköz hozzáadásakor gondold át újra.",
+        "Exposition limitée. Le cloisonnement lecture / écriture reste la précaution clé.":
+            "Korlátozott kitettség. Az olvasás és az írás elkülönítése marad a legfontosabb óvintézkedés.",
+        "Un texte placé dans un contenu lu par l'agent pourrait déclencher des actions non voulues.":
+            "Egy, az ügynök által olvasott tartalomba helyezett szöveg nem kívánt műveleteket indíthat el.",
+
+        // --- ia / entrainer-ou-recuperer -------------------------------------------------
+        "Faut-il entraîner, ou récupérer ?": "Betanítani vagy visszakeresni?",
+        "Coche les situations qui relèvent de la RÉCUPÉRATION plutôt que de l'entraînement.":
+            "Jelöld be azokat a helyzeteket, amelyek a VISSZAKERESÉSRE tartoznak, nem a betanításra.",
+        "« Le modèle ne sait pas » appelle la récupération. « Le modèle répond mal » appelle d'abord la consigne.":
+            "A „modell nem tudja” visszakeresést kíván. A „modell rosszul válaszol” először az utasítás javítását.",
+        "Le modèle ignore nos procédures internes": "A modell nem ismeri a belső eljárásainkat",
+        "récupération : mets le document sous ses yeux": "visszakeresés: tedd elé a dokumentumot",
+        "Le modèle ignore nos tarifs, qui changent chaque mois": "A modell nem ismeri a havonta változó árainkat",
+        "récupération : des poids figés vieilliraient aussitôt": "visszakeresés: a rögzített súlyok azonnal elavulnának",
+        "Les réponses ne respectent pas notre charte de ton": "A válaszok nem tartják be a hangnemre vonatkozó irányelveinket",
+        "entraînement possible — après avoir essayé la consigne et des exemples": "betanítás szóba jöhet — miután kipróbáltad az utasítást és a példákat",
+        "Le modèle ne connaît pas les événements récents": "A modell nem ismeri a friss eseményeket",
+        "récupération": "visszakeresés",
+        "Le format de sortie doit suivre une structure très particulière": "A kimeneti formátumnak nagyon sajátos szerkezetet kell követnie",
+        "entraînement possible, en dernier recours": "betanítás szóba jöhet, végső megoldásként",
+        "Le modèle doit citer ses sources": "A modellnek meg kell neveznie a forrásait",
+        "récupération : un modèle affiné ne peut pas citer ce qu'il a dilué": "visszakeresés: egy finomhangolt modell nem tudja idézni, amit felhígított",
+        "Quatre de ces six situations relèvent de la récupération.": "A hat helyzet közül négy a visszakeresésre tartozik.",
+        "Quatre situations relèvent de la récupération. Les deux autres, d'une question de forme.":
+            "Négy helyzet a visszakeresésre tartozik. A másik kettő formai kérdés.",
+        "Plus de quatre : deux de ces situations concernent la forme, pas la connaissance.":
+            "Négynél több: ezek közül kettő a formát érinti, nem a tudást.",
+
+        // --- ia / anatomie-llm --------------------------------------------------------------
+        "Ce qu'un modèle de langage fait, et ne fait pas": "Mit csinál egy nyelvi modell, és mit nem",
+        "Coche uniquement les affirmations exactes. Trois le sont.": "Csak a helyes állításokat jelöld be. Három ilyen van.",
+        "Un modèle produit du texte plausible. Le vrai et le plausible coïncident souvent — pas toujours.":
+            "Egy modell hihető szöveget ír. Az igaz és a hihető gyakran egybeesik — de nem mindig.",
+        "Il prédit le fragment de texte suivant, encore et encore": "Megjósolja a következő szövegdarabot, újra és újra",
+        "exact : c'est tout son fonctionnement": "helyes: ez a teljes működése",
+        "Il consulte une base de connaissances à chaque réponse": "Minden válasznál egy tudásbázist kérdez le",
+        "faux : sauf si on lui en branche une explicitement": "hamis: kivéve, ha kifejezetten hozzákapcsolnak egyet",
+        "Il peut produire une affirmation fausse avec une parfaite assurance": "Tökéletes magabiztossággal írhat hamis állítást",
+        "exact : rien dans son fonctionnement ne distingue vrai et plausible": "helyes: a működésében semmi sem különbözteti meg az igazat a hihetőtől",
+        "Il comprend le sens comme un humain le comprend": "Úgy érti a jelentést, ahogy egy ember",
+        "faux, et la question reste débattue": "hamis, és a kérdés továbbra is vitatott",
+        "Il n'a aucune mémoire entre deux conversations": "Két beszélgetés között semmilyen emlékezete nincs",
+        "exact : l'historique lui est renvoyé, il ne le retient pas": "helyes: az előzményt visszaküldik neki, nem ő jegyzi meg",
+        "Il calcule ses réponses à partir de règles écrites par des humains": "Emberek által írt szabályokból számolja ki a válaszait",
+        "faux : les règles ne sont écrites nulle part, elles sont apprises": "hamis: a szabályok sehol sincsenek leírva, tanultak",
+        "Trois de ces affirmations sont exactes. Les indications te disent lesquelles.":
+            "Ezek közül három állítás helyes. A magyarázatok megmondják, melyek.",
+        "Trois affirmations sont exactes. Vérifie avec les indications que ce sont bien les tiennes.":
+            "Három állítás helyes. A magyarázatok alapján ellenőrizd, hogy tényleg azokat jelölted-e.",
+        "Plus de trois cases cochées : certaines affirmations sont fausses.": "Háromnál több bejelölve: némelyik állítás hamis.",
+
+        // --- ia / anatomie-agent ----------------------------------------------------------------
+        "Distingue un agent d'un assistant": "Különböztesd meg az ügynököt az asszisztenstől",
+        "Coche ce qui caractérise un agent, par opposition à un simple assistant conversationnel.":
+            "Jelöld be, ami egy ügynökre jellemző, szemben egy egyszerű csevegő asszisztenssel.",
+        "Ce n'est pas l'intelligence qui fait l'agent, c'est la capacité d'agir — et donc de se tromper avec conséquence.":
+            "Nem az intelligencia teszi ügynökké, hanem a cselekvés képessége — és így az, hogy következményekkel járóan tévedhet.",
+        "Il peut appeler des outils extérieurs": "Külső eszközöket tud hívni",
+        "Il enchaîne plusieurs étapes sans qu'on les lui dicte une par une": "Több lépést fűz össze anélkül, hogy egyenként diktálnák neki",
+        "Il observe le résultat d'une action avant de décider de la suivante": "Megfigyeli egy művelet eredményét, mielőtt a következőről döntene",
+        "Il poursuit un objectif plutôt que de répondre à une question": "Egy célt követ, nem egy kérdésre válaszol",
+        "Il peut produire des effets réels : envoyer, écrire, supprimer": "Valódi hatásokat idézhet elő: küldhet, írhat, törölhet",
+        "c'est ce qui rend le périmètre de ses outils décisif": "ettől döntő az eszközeinek hatóköre",
+        "Ces cinq points sont tous caractéristiques d'un agent.": "Ez az öt pont mind az ügynökre jellemző.",
+        "Bonne base. Les points restants sont également exacts.": "Jó alap. A többi pont is helyes.",
+        "Les cinq caractéristiques sont exactes. Un agent, c'est bien tout cela réuni.":
+            "Mind az öt jellemző helyes. Az ügynök valóban mindez együtt.",
+
+        // --- ia / qualite-consigne ------------------------------------------------------------------
+        "Passe ta consigne au crible": "Vizsgáld át az utasításodat",
+        "Reprends une consigne que tu as écrite, et coche ce qui y figure vraiment.":
+            "Vegyél elő egy utasítást, amelyet írtál, és jelöld be, ami tényleg benne van.",
+        "Un modèle ne demande jamais de précision. Ce que la consigne ne dit pas, il le comble tout seul.":
+            "Egy modell sosem kérdez vissza. Amit az utasítás nem mond ki, azt magától tölti ki.",
+        "Le rôle ou le point de vue attendu est précisé": "Meg van adva a várt szerep vagy nézőpont",
+        "La tâche est décrite en une phrase claire": "A feladat egyetlen világos mondatban van leírva",
+        "Le format de sortie est imposé": "A kimeneti formátum elő van írva",
+        "liste, tableau, longueur maximale, langue": "lista, táblázat, maximális hossz, nyelv",
+        "Un ou deux exemples de ce qui est attendu sont fournis": "Egy-két példa is van arra, amit vársz",
+        "l'ajout le plus efficace, presque toujours": "szinte mindig ez a leghatékonyabb kiegészítés",
+        "Ce qu'il ne faut PAS faire est indiqué": "Meg van adva, mit NEM szabad csinálni",
+        "La conduite à tenir en cas d'information manquante est prévue": "Meg van adva, mi a teendő, ha hiányzik egy információ",
+        "sans quoi le modèle comblera le vide": "különben a modell kitölti a hézagot",
+        "Plusieurs éléments manquent : le modèle devra deviner, et il devinera.":
+            "Több elem hiányzik: a modellnek találgatnia kell, és találgatni is fog.",
+        "Solide. Les exemples et le cas « information manquante » sont les ajouts les plus rentables.":
+            "Szilárd. A példák és a „hiányzó információ” esete a legkifizetődőbb kiegészítések.",
+        "Consigne complète. C'est déjà mieux que la plupart.": "Teljes utasítás. Ez már jobb a legtöbbnél.",
+
+        // --- ia / signaux-hallucination ------------------------------------------------------------------
+        "Repère une réponse à vérifier": "Ismerd fel az ellenőrizendő választ",
+        "Coche ce que présente la réponse que tu as sous les yeux.": "Jelöld be, mi jellemző a válaszra, amely előtted van.",
+        "Les inventions les plus dangereuses sont les plus plausibles : une référence bien formée qui n'existe pas.":
+            "A legveszélyesebb kitalálások a leghihetőbbek: egy szabályos formájú hivatkozás, amely nem létezik.",
+        "Elle cite une source précise — référence, article, page": "Pontos forrást idéz — hivatkozást, cikket, oldalszámot",
+        "Elle donne des chiffres exacts sans indiquer d'où ils viennent": "Pontos számokat közöl anélkül, hogy megadná, honnan származnak",
+        "Elle porte sur un fait récent ou daté": "Friss vagy dátumhoz kötött tényről szól",
+        "Elle porte sur un sujet de niche, peu documenté": "Szűk, kevéssé dokumentált témáról szól",
+        "Elle est affirmée sans la moindre nuance": "A legcsekélyebb árnyalás nélkül állítja",
+        "Elle concerne une personne, un lieu ou une entreprise nommément": "Név szerint megnevezett személyre, helyre vagy cégre vonatkozik",
+        "Aucun signal. La vérification reste utile pour tout ce qui t'engage.":
+            "Nincs figyelmeztető jel. Az ellenőrzés továbbra is hasznos mindenhez, amiért felelősséget vállalsz.",
+        "Quelques signaux. Vérifie les éléments chiffrés et les noms propres.": "Van néhány jel. Ellenőrizd a számokat és a tulajdonneveket.",
+        "Réponse à vérifier avant tout usage : plusieurs facteurs de risque sont réunis.":
+            "Használat előtt ellenőrizendő válasz: több kockázati tényező is összegyűlt.",
+
+        // --- ia / cout-en-tokens ------------------------------------------------------------------------
+        "Mesure le coût réel d'une conversation": "Mérd fel egy beszélgetés valódi költségét",
+        "L'historique est relu à chaque tour. Ce n'est pas le dernier message qui coûte, c'est leur somme.":
+            "Az előzményt minden körben újraolvassa. Nem az utolsó üzenet kerül sokba, hanem az összegük.",
+        "Double le nombre de tours et le total lu quadruple à peu près : la croissance n'est pas linéaire.":
+            "Kétszer annyi kör, és az elolvasott összeg nagyjából megnégyszereződik: a növekedés nem lineáris.",
+        "Mots par échange (question et réponse)": "Szavak váltásonként (kérdés és válasz)",
+        "Nombre d'échanges dans la conversation": "Váltások száma a beszélgetésben",
+        "Prix d'entrée du modèle": "A modell bemeneti ára",
+        "Jetons par échange": "Token váltásonként",
+        "Total réellement lu sur la conversation": "A beszélgetés során ténylegesen elolvasott összeg",
+        "Coût de la conversation": "A beszélgetés költsége",
+
+        // --- ia / dimensionner-un-rag --------------------------------------------------------------------
+        "Dimensionne une base documentaire": "Méretezz egy dokumentumbázist",
+        "Avant de choisir un outil, mesure ce que tu as réellement à indexer.": "Mielőtt eszközt választasz, mérd fel, mit kell valójában indexelned.",
+        "C'est précisément parce que ce volume ne tient dans aucune fenêtre que la récupération existe.":
+            "Épp azért létezik a visszakeresés, mert ekkora mennyiség egyetlen ablakba sem fér bele.",
+        "Nombre de documents": "Dokumentumok száma",
+        "Pages par document en moyenne": "Oldalak dokumentumonként, átlagosan",
+        "Taille d'un fragment": "Egy darab mérete",
+        "Volume total": "Teljes mennyiség",
+        "Fragments à indexer": "Indexelendő darabok",
+        "Si tout était envoyé au modèle d'un coup": "Ha mindent egyszerre küldenénk el a modellnek",
+
+        // --- ia / perimetre-outils -------------------------------------------------------------------------
+        "Délimite le périmètre de ton agent": "Határold körül az ügynököd hatókörét",
+        "Coche ce qui est vrai de l'agent que tu conçois.": "Jelöld be, ami igaz az általad tervezett ügynökre.",
+        "Ce qu'un agent peut casser est exactement ce que ses outils permettent. Rien de plus, rien de moins.":
+            "Egy ügynök pontosan azt ronthatja el, amit az eszközei lehetővé tesznek. Se többet, se kevesebbet.",
+        "Chaque outil fait une chose précise et nommée": "Minden eszköz egy pontos, megnevezett dolgot csinál",
+        "plutôt qu'un outil général du type « exécute cette requête »": "egy „futtasd ezt a lekérdezést” típusú általános eszköz helyett",
+        "Les outils qui lisent sont séparés de ceux qui écrivent": "Az olvasó eszközök külön vannak az írásra képesektől",
+        "Toute action irréversible passe par une confirmation humaine": "Minden visszafordíthatatlan művelet emberi megerősítésen megy át",
+        "envoyer, supprimer, payer": "küldés, törlés, fizetés",
+        "Mon code vérifie les paramètres avant d'exécuter un appel": "A kódom ellenőrzi a paramétereket, mielőtt végrehajt egy hívást",
+        "le modèle propose, ton code dispose": "a modell javasol, a kódod dönt",
+        "Un agent qui lit du contenu extérieur n'a pas d'outil d'envoi": "Egy külső tartalmat olvasó ügynöknek nincs küldő eszköze",
+        "cloisonnement : c'est la parade à l'injection de consigne": "elkülönítés: ez a védekezés a promptinjekció ellen",
+        "Les appels d'outils sont journalisés": "Az eszközhívások naplózva vannak",
+        "L'agent peut aujourd'hui produire des effets que tu n'as pas prévus.": "Az ügynök jelenleg olyan hatásokat idézhet elő, amelyekre nem számítottál.",
+        "Bonne architecture. La confirmation humaine et le cloisonnement sont les deux points à ne pas lâcher.":
+            "Jó architektúra. Az emberi megerősítés és az elkülönítés az a két pont, amelyből nem szabad engedni.",
+        "Périmètre maîtrisé : même détourné, l'agent ne peut pas faire grand-chose.":
+            "Kézben tartott hatókör: az ügynök még eltérítve sem tud sok kárt tenni.",
+
+        // --- ia / arbitrage-modele ----------------------------------------------------------------------------
+        "Compare le coût mensuel de deux modèles": "Hasonlítsd össze két modell havi költségét",
+        "Un écart minime par requête devient structurant à l'échelle du mois.": "Egy kérésenként apró különbség havi szinten meghatározóvá válik.",
+        "La sortie coûte environ trois fois l'entrée : réduire la longueur des réponses est souvent le levier le plus rentable.":
+            "A kimenet nagyjából háromszor annyiba kerül, mint a bemenet: a válaszok rövidítése gyakran a legkifizetődőbb eszköz.",
+        "Requêtes par mois": "Kérések havonta",
+        "Jetons d'entrée par requête": "Bemeneti token kérésenként",
+        "Jetons de sortie par requête": "Kimeneti token kérésenként",
+        "Modèle A — prix entrée / sortie (€/M)": "A modell — bemeneti / kimeneti ár (EUR/millió)",
+        "Modèle B — prix entrée / sortie (€/M)": "B modell — bemeneti / kimeneti ár (EUR/millió)",
+        "Modèle A par mois": "A modell havonta",
+        "Modèle B par mois": "B modell havonta",
+        "Écart annuel": "Éves különbség",
 
         // --- apprendre / frequence-vocabulaire ------------------------------
         "Combien de mots faut-il pour lire ?": "Hány szót kell ismerni az olvasáshoz?",

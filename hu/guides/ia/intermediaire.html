@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Kontextus, tokenek és modellválasztás — MI, középhaladó - Clicked</title>
+    <meta name="description" content="Az MI-útmutató középhaladó szintje: kontextusablak és tokenek, RAG, eszközhívás, és a modellválasztás költség és válaszidő alapján.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/ia/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/ia/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/ia/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/ia/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Kontextus, tokenek és modellválasztás — MI, középhaladó - Clicked">
+    <meta property="og:description" content="Az MI-útmutató középhaladó szintje: kontextusablak és tokenek, RAG, eszközhívás, és a modellválasztás költség és válaszidő alapján.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/ia/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kontextus, tokenek és modellválasztás — MI, középhaladó - Clicked">
+    <meta name="twitter:description" content="Az MI-útmutató középhaladó szintje: kontextusablak és tokenek, RAG, eszközhívás, és a modellválasztás költség és válaszidő alapján.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🤖 Mesterséges intelligencia</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🤖 Mesterséges intelligencia — Középhaladó</h1>
+                <p>Amit meg kell érteni ahhoz, hogy tartós dolgot építs.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2" fill="none" stroke-linecap="round">
+<line x1="70" y1="70" x2="45" y2="50"/><line x1="70" y1="70" x2="95" y2="50"/><line x1="70" y1="70" x2="45" y2="90"/><line x1="70" y1="70" x2="95" y2="90"/><line x1="70" y1="70" x2="70" y2="40"/></g>
+<circle cx="70" cy="70" r="6" fill="white"/><circle cx="45" cy="50" r="4" fill="white"/><circle cx="95" cy="50" r="4" fill="white"/><circle cx="45" cy="90" r="4" fill="white"/><circle cx="95" cy="90" r="4" fill="white"/><circle cx="70" cy="40" r="4" fill="white"/></g>
+<circle class="illu-twinkle" cx="110" cy="70" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="30" cy="70" r="2.5" fill="white" style="animation-delay:1s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>kontextusban és tokenekben gondolkodj</strong>, hogy odaadd a dokumentumaidat egy modellnek, hogy megértsd, milyen eszközökön keresztül cselekszik egy ügynök, és hogy a feladat, ne a hírnév alapján válassz modellt.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#contexte-et-jetons">🧩 A kontextus és a tokenek</a></li>
+                <li><a href="#le-rag">📚 Dokumentumokat adni a modellnek</a></li>
+                <li><a href="#outils-et-fonctions">🔧 Az eszközök, avagy hogyan cselekszik egy ügynök</a></li>
+                <li><a href="#choisir-un-modele">⚖️ Modellt választani</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Hogyan „emlékszik” egy modell a beszélgetésre?</li>
+                <li>Okosabbá teszi a RAG a modellt?</li>
+                <li>Mi dönti el, mit ronthat el egy ügynök?</li>
+                <li>Mindig a legerősebb modellt kell választani?</li>
+                <li>Mi alapján számolják a költséget: a kérés, vagy valami más?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint elmagyarázta, mi a nyelvi modell, mi az ügynök, hogyan fogalmazz meg egy utasítást, és hol vannak a korlátok. Ez elég ahhoz, hogy körültekintően használd a létező eszközöket.</p>
+            <p>Ez a szint annak szól, aki <strong>építeni</strong> akar: egy modellt a saját dokumentumaira kötni, eszközöket adni neki, és olyan döntéseket hozni, amelyek pénzbe kerülnek. A következő négy fogalom magyarázza a projektkudarcok nagy részét — nem azért, mert nehezek, hanem mert ritkán értik meg őket, mielőtt sokba kerülnének.</p>
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>, és szándékosan független a szolgáltatóktól. Az idézett nagyságrendek — kontextusméretek, millió tokenenkénti árak — gyorsan változnak: egy projekt méretezése előtt ellenőrizd őket a forrásnál.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A fogalmak, amelyeket érteni kell</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="contexte-et-jetons">🧩 A kontextus és a tokenek</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy modell nem szavakat dolgoz fel, hanem tokeneket : szövegdarabokat, gyakran egy szótagot vagy egy rövid szót.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy modell nem szavakat dolgoz fel, hanem <strong>tokeneket</strong>: szövegdarabokat, gyakran egy szótagot vagy egy rövid szót. Nagyságrendileg <strong>három token jut két szóra</strong> — ez a nyelvtől függ, és magyar szövegnél általában több. Egy 80 000 szavas regény így legalább 120 000 tokent nyom.</p>
+
+                <h4>A kontextusablak plafon, nem memória</h4>
+                <p>A kontextusablak az a szövegmennyiség, amelyet a modell egyszerre el tud olvasni: az utasítás, a megadott dokumentumok, a beszélgetés előzményei és a megírandó válasz, mindez összeadva.</p>
+                <p>A fontos, és a legrosszabbul értett pont: <strong>a modell két hívás között semmire sem emlékszik</strong>. Az emlékezés illúzióját az kelti, hogy minden körben visszaküldik neki a teljes előzményt. Egy harmincüzenetes beszélgetés így a harmincadik üzenetnél sokkal többe kerül, mint az elsőnél, hiszen minden alkalommal mindent újraolvas.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Egy beszélgetés, amelyben minden váltás <strong>500 token</strong>. A tizedik váltásnál az előzmény 5000 tokent nyom.</p>
+                    <p>Tíz kör alatt a modell által elolvasott összeg nem 5000 token, hanem <strong>nagyjából 27 500</strong> — az egymást követő előzmények összege. Ezt az összeget számlázzák.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-en-tokens"></div>
+
+                <h4>Mi történik, ha az ablak megtelik</h4>
+                <p>Az eszközöktől függően kétféle viselkedés létezik: vagy a hívás meghiúsul, vagy a beszélgetés eleje csendben levágódik. A második eset alattomosabb — a modell tovább válaszol, de „elfelejtette” a kezdeti utasításokat.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy egy nagy ablak mindent megold</span>
+                    <p>Egy 200 000 tokenes ablakba egy egész könyv belefér. Ez nem jelenti azt, hogy a modell jól ki is használja a tartalmát: a figyelem minősége nagyon hosszú szövegeknél romlik, főleg a közepén.</p>
+                    <p>A három releváns oldal elküldése szinte mindig jobb eredményt ad — és százszor kevesebbe kerül.</p>
+                </div>
+
+                <p class="retenir">💡 A modell nem emlékszik: minden alkalommal mindent felolvasnak neki, és ezt a felolvasást te fizeted meg.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-rag">📚 Dokumentumokat adni a modellnek</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy modell nem ismeri a belső dokumentumaidat, az eljárásaidat, az áraidat.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy modell nem ismeri a belső dokumentumaidat, az eljárásaidat, az áraidat. A problémát megoldó módszer neve <strong>RAG</strong> — visszakereséssel kiegészített generálás. Az elv egy mondatban: <em>először megkeresni a releváns részeket, aztán a kérdéssel együtt odaadni őket a modellnek</em>.</p>
+
+                <h4>Hogyan működik, szakzsargon nélkül</h4>
+                <p>A dokumentumokat néhány száz tokenes darabokra vágják. Minden darabból számok listája lesz, amely a jelentését képviseli — ez a <strong>beágyazás</strong> (<em>embedding</em>). A felhasználó kérdése ugyanezt a kezelést kapja, majd megkeresik azokat a darabokat, amelyeknek a számai a legközelebb vannak hozzá.</p>
+                <p>Ezek a darabok bekerülnek az utasításba. A modell rájuk támaszkodva válaszol, nem a tanítás során szerzett emlékeire.</p>
+
+                <div class="exemple">
+                    <span class="titre">Mit változtat a RAG</span>
+                    <p><strong>RAG nélkül</strong>: „Mennyi nálunk az elállási határidő?” → a modell az általános jogszabályok alapján válaszol, vagy kitalál valamit.</p>
+                    <p><strong>RAG-gel</strong>: a kérdés először megkeresi az általános szerződési feltételeid 7. pontját, aztán a modell arra hivatkozva válaszol.</p>
+                    <p>A különbség nem a modell intelligenciája. Hanem az, hogy a megfelelő dokumentum van előtte.</p>
+                </div>
+
+                <div class="pratique" data-pratique="dimensionner-un-rag"></div>
+
+                <h4>A darabolás az igazi nehézség</h4>
+                <p>A túl kicsi darabok elveszítik a kontextusukat: az „ez a határidő tizennégy nap” nem mondja meg, melyik határidőről van szó. A túl nagyok a zaj közé hígítják a releváns információt, és többe kerülnek.</p>
+                <p>A legtöbb csalódást okozó RAG nem a modell miatt gyenge, hanem mert a darabolást a dokumentumok szerkezetére való tekintet nélkül végezték.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy a RAG megszünteti a kitalálásokat</span>
+                    <p>Ha a keresés nem hoz fel releváns darabot, a modell akkor is válaszol — azzal, ami van neki. A RAG csökkenti a kitalálásokat, de nem szünteti meg őket.</p>
+                    <p>A védekezés: kifejezetten utasítani a modellt, hogy azt válaszolja: „ezt az információt nem találom a megadott dokumentumokban”, és megjeleníteni a felhasznált forrásokat, hogy a felhasználó ellenőrizhesse őket.</p>
+                </div>
+
+                <p class="retenir">💡 A RAG nem teszi tudósabbá a modellt. Megkíméli attól, hogy találgatnia kelljen.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="outils-et-fonctions">🔧 Az eszközök, avagy hogyan cselekszik egy ügynök</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Egy modell önmagában csak szöveget ír.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy modell önmagában csak szöveget ír. Az asszisztenst az teszi <strong>ügynökké</strong>, hogy eszközöket tud hívni: lekérdezni egy adatbázist, üzenetet küldeni, fájlt létrehozni.</p>
+
+                <h4>A valódi mechanizmus</h4>
+                <p>Leírjuk a modellnek az elérhető eszközöket: a nevüket, azt, hogy mit csinálnak, és milyen paramétereket várnak. Amikor úgy ítéli, hogy egy eszköz hasznos, nem ő maga futtatja — <strong>hívási kérést állít elő</strong>, strukturált formában. A programod megkapja ezt a kérést, eldönti, végrehajtja-e, és visszaküldi neki az eredményt.</p>
+                <p>Ez a különbség alapvető: <strong>a modell javasol, a kódod dönt</strong>. Itt dől el egy ügynök teljes biztonsága.</p>
+
+                <div class="exemple">
+                    <span class="titre">Egy eszközhívással járó váltás menete</span>
+                    <p>1. A felhasználó megkérdezi: „Hány függőben lévő rendelés van?”</p>
+                    <p>2. A modell hívási kérést küld vissza: <code>rendelesek_szama(statusz: "fuggoben")</code>.</p>
+                    <p>3. A programod ellenőrzi, hogy a hívás jogos-e, végrehajtja, és <code>47</code> az eredmény.</p>
+                    <p>4. Az eredmény visszakerül a modellhez, amely megírja a választ.</p>
+                    <p>Négy lépés, amelyből csak egyet végez a modell: a középső teljes egészében a tiéd.</p>
+                </div>
+
+                <div class="pratique" data-pratique="perimetre-outils"></div>
+
+                <h4>A legkisebb jogosultság elve</h4>
+                <p>Egy ügynök csak azt teheti, amit az eszközei lehetővé tesznek. Ha „tetszőleges SQL-lekérdezés futtatása” eszközt adsz neki, az olyan, mintha az adatbázis kulcsait egy olyan rendszerre bíznád, amelyet az általa olvasott szöveg manipulálhat.</p>
+                <p><strong>Szűk, megnevezett</strong> eszközök — <code>rendelesek_szama</code>, <code>szamla_olvasasa</code> — egy általános eszköz helyett: ez a különbség egy hasznos ügynök és egy incidens között.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — visszafordíthatatlan művelet megerősítés nélkül</span>
+                    <p>Egy ügynök, amely emberi jóváhagyás nélkül törölhet, küldhet vagy fizethet, előbb-utóbb tévedésből meg is fogja tenni. Nem feltétlenül rosszindulatból: elég hozzá egy kétértelmű utasítás.</p>
+                    <p>Válaszd külön az olvasó eszközöket az írásra képesektől. Az utóbbiak megerősítésen mennek át.</p>
+                </div>
+
+                <p class="retenir">💡 A modell magától semmit sem csinál. Pontosan azt ronthatja el, amit a kezébe adtál.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="choisir-un-modele">⚖️ Modellt választani</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A reflex az, hogy a legerősebb modellt választjuk.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A reflex az, hogy a legerősebb modellt választjuk. Ritkán ez a jó döntés: egy egyszerű, ismétlődő feladatnál egy kisebb modell ugyanolyan jól válaszol, tízszer gyorsabban, az ár töredékéért.</p>
+
+                <h4>Négy szempont, ebben a sorrendben</h4>
+                <p><strong>A minőség a te feladatodon</strong> — nem általában. Egy matematikai érvelésben kiváló modell nem feltétlenül jobb e-mailek osztályozásában.</p>
+                <p><strong>A válaszidő.</strong> Két másodperc tíz helyett nem apróság egy felületen, ahol valaki vár.</p>
+                <p><strong>A költség</strong>, millió tokenenként számlázva, külön a bemenetre és a kimenetre — a kimenet általában többszörösen drágább.</p>
+                <p><strong>Hol futnak az adatok.</strong> Egy nálad üzemeltetett nyílt modell semmilyen adatot nem juttat ki; egy távoli szolgáltatás igen. Ez a kérdés néha minden mást megelőz.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda</span>
+                    <p>Egy szolgáltatás <strong>havi 10 000 kérést</strong> kezel, mindegyik 2000 bemeneti és 500 kimeneti tokennel.</p>
+                    <p>Havi mennyiség: <strong>20 millió</strong> bemeneti és <strong>5 millió</strong> kimeneti token.</p>
+                    <p>Egy árkülönbség, amely egy kérésnél jelentéktelennek tűnik, ekkora mennyiségnél eldönti, hogy a szolgáltatás életképes, vagy le kell állítani.</p>
+                </div>
+
+                <div class="pratique" data-pratique="arbitrage-modele"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — rangsorok alapján megítélni egy modellt</span>
+                    <p>A nyilvános rangsorok általános képességeket mérnek szabványos teszteken. Semmit sem mondanak a te konkrét esetedről, és a modelleket végül ezekre a tesztekre optimalizálják.</p>
+                    <p>Állíts össze húsz, a valódi feladatodra jellemző példát, és futtasd le a jelölteken. Egy fél nap munka, és olyan válasz, amely rólad szól.</p>
+                </div>
+
+                <p class="retenir">💡 A jó modell a legkisebb, amely megoldja a feladatodat — nem a legnagyobb elérhető.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy modell semmire sem „emlékszik”: mindazt, amit a beszélgetésről tud, minden körben visszaküldik neki.</li>
+                <li>A RAG nem teszi okosabbá a modellt: a megfelelő dokumentumokat teszi elé.</li>
+                <li>Egy ügynök csak a neki adott eszközökön keresztül cselekszik — ott dől el, mit ronthat el.</li>
+                <li>A legerősebb modell ritkán a jó választás egy egyszerű, ismétlődő feladathoz.</li>
+                <li>A költséget millió tokenenként számolják, nem kérésenként: a kontextus többet nyom, mint a válasz.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt a szintet</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész szintet lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vegyél egy feladatot, amelyet gyakran bízol MI-re, és csináld meg újra egy szerényebb modellel. Egy egyszerű, ismétlődő feladat azonos minőség mellett gyakran tízszer kevesebbe kerül — de ki kell próbálni, hogy lásd.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>A szolgáltatók hivatalos dokumentációi</strong>: az egyetlen megbízható forrás a kontextusméretekről és az árakról, amelyek évente többször változnak.</li>
+                    <li><strong>Online tokenszámlálók</strong>: ha beillesztesz egy szöveget, és látod a valódi súlyát, sok számlázási meglepetéstől megkíméled magad.</li>
+                    <li><strong>A nemzeti adatvédelmi hatóság</strong> (Magyarországon a NAIH): a kötelezettségek, amelyek akkor érvényesek, amikor egy adatkezelés személyes adatokat érint.</li>
+                    <li><strong>Az EU mesterséges intelligenciáról szóló rendelete</strong> (AI Act): a kockázati kategóriák és a hozzájuk tartozó kötelezettségek, hasznos, mielőtt egy rendszert a nyilvánosság elé viszel.</li>
+                </ul>
+                <p><strong>Egy hasznos reflex:</strong> mielőtt modellt választasz, írd meg a húsz tesztesetedet. Utána minden verzióváltásnál hasznukat veszed — és lesznek verzióváltások.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Mesterséges intelligencia — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Mesterséges intelligencia — Haladó</a>
+        </div>
+
+        <!-- Ces parcours ne sont pas encore traduits : les liens menent a la version
+             francaise, et le disent. Les repointer vers « ../<sujet>/ » a la traduction. -->
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../../../guides/data/index.html">📊 Adatok és elemzés (franciául)</a>
+                <a href="../../../guides/dev-web/index.html">💻 Webfejlesztés (franciául)</a>
+                <a href="../../../guides/cybersecurite/index.html">🔒 Kiberbiztonság (franciául)</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/ia-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

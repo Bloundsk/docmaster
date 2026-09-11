@@ -1,5 +1,39 @@
 # Changelog — Clicked
 
+## 2026-09-11 — Troisième parcours en hongrois : Intelligence artificielle
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/ia/`, **les 3 banques de quiz** (90 questions, la
+  bonne réponse au même rang qu'en français) et **les 176 textes des
+  12 simulateurs**.
+- `CONTENU_TRADUIT.hu` annonce « apprendre », « ia » et « productivite ». Les pages
+  hongroises d'Apprendre et de Productivité qui citaient l'IA en français mènent
+  maintenant à sa version hongroise.
+- **Transposé plutôt que traduit** : « La capitale de la France est… » devient
+  Budapest ; « anticonstitutionnellement » devient le plus long mot hongrois ;
+  l'entreprise fictive devient une *Kft.* ; les noms d'outils de l'exemple de code
+  sont écrits en hongrois ; la CNIL devient « l'autorité nationale de protection
+  des données (en Hongrie, la NAIH) » ; le RGPD est cité sous le nom qu'on lui
+  donne en Hongrie, GDPR.
+- Le repère « trois jetons pour deux mots » est gardé, avec la précision qu'un
+  texte hongrois en compte davantage : l'exemple du roman dit « au moins
+  120 000 jetons ».
+
+### Corrigé en route
+
+- **La longueur des réponses, une troisième fois** : 16, 16 et 17 bonnes réponses
+  plus longues que les deux autres sur 30 questions, contre 11 en français, et
+  43,8 % pour « prendre la plus longue » sur l'ensemble hongrois. Vingt-huit
+  distracteurs rallongés : 36,5 % sur les 270 questions.
+
+### Vérifié
+
+Les 17 contrôles, les 17 paires de traduction et l'audit de géométrie passent.
+Dans le navigateur, les pages s'affichent sans erreur de console, simulateurs
+compris : « 27 500 token », « 1200 ezer token — messze túl bármely
+kontextusablakon », « 105,00 EUR ».
+
 ## 2026-09-11 — Deuxième parcours en hongrois : Productivité
 
 Ludo a demandé de continuer (« continue ») sans attendre la relecture hongroise
