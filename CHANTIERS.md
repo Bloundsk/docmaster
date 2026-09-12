@@ -78,17 +78,21 @@ françaises.
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
 4. Les pages hors cours. **Faites le 12 septembre 2026 : accueil, catalogue,
-   actualités, podcasts, glossaire** (`PAGES_TRADUITES.hu`), avec `publier-accueil.js`,
+   actualités, podcasts, glossaire, FAQ, à propos, mentions légales** (`PAGES_TRADUITES.hu`), avec `publier-accueil.js`,
    `poser-situations.js`, `publier-actualites.js`, `publier-podcasts.js` et
    `poser-renvois-glossaire.js` qui écrivent le hongrois. Pour le glossaire, chaque
    terme hongrois se trouve tel quel (non décliné) dans les guides hongrois, la notion
    complète entre parenthèses — le hongrois décline, et le contrôle 4 ter cherche le
-   mot nu. Restent, dans cet ordre conseillé :
-   - **FAQ, à propos, mentions légales** (traduction de courtoisie, la version
-     française fait foi, comme en anglais) ;
+   mot nu. Les mentions légales hongroises sont une traduction de courtoisie (la
+   version française fait foi, encadré en tête) et vouvoient au « Ön », comme le
+   français vouvoie par exception ; FAQ et à propos tutoient. Restent, dans cet ordre conseillé :
    - **boîte à idées** : ne jamais envoyer de message d'essai par le formulaire ;
    - **Mon espace** : sa table des titres de parcours, et le contrôle d'`audit-coherence`
      qui ne la vérifie que pour `en/mon-espace.html`.
+   **En traduisant idées et Mon espace, repointer leurs liens** : `hu/faq.html`,
+   `hu/a-propos.html` et `hu/mentions-legales.html` les lient en français
+   (`../idees.html`, `../mon-espace.html`, suivis de « (franciául) »). Ces liens
+   fonctionnent, donc aucun contrôle ne les signalera : chercher « (franciául) » sous `hu/`.
    Avant chaque page, chercher « en/ » et « "en" » dans les scripts qui la touchent :
    trois défauts de ce genre ont rougi ou mené ailleurs au premier lot. Et retirer au
    passage des pages hongroises les commentaires « Ces parcours ne sont pas encore

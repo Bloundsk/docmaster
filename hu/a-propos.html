@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Rólunk - Clicked</title>
+    <meta name="description" content="Mi a Clicked, hogyan készülnek az útmutatók, és miért nem használ a webhely sütit, és nem kér fiókot.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/a-propos.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/a-propos.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/a-propos.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/a-propos.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/a-propos.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Rólunk - Clicked">
+    <meta property="og:description" content="Mi a Clicked, hogyan készülnek az útmutatók, és miért nem használ a webhely sütit, és nem kér fiókot.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/a-propos.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rólunk - Clicked">
+    <meta name="twitter:description" content="Mi a Clicked, hogyan készülnek az útmutatók, és miért nem használ a webhely sütit, és nem kér fiókot.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/identite.js"></script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="index.html">Kezdőlap</a> &gt; <span aria-current="page">Rólunk</span>
+    </nav>
+
+    <header>
+        <h1>A Clicked-ről</h1>
+        <p>Ingyenes tudástár, lépésről lépésre építve.</p>
+    </header>
+
+    <main id="main-content">
+        <section>
+            <h2>A projekt</h2>
+            <!-- Cette phrase énumérait les domaines un par un. Elle a dû être
+                 corrigée à la main à chaque nouveau guide, et s'est trouvée
+                 fausse entre-temps. La liste vit désormais à un seul endroit :
+                 la page Guides. -->
+            <p>
+                A Clicked ingyenes oktatási útmutatók gyűjteménye, a pénzügyektől a munkahelyi
+                egészségig. Az <a href="guides.html">Útmutatók oldal</a> adja a teljes listát,
+                mindegyik útmutató három szintre tagolva.
+            </p>
+            <p>
+                Minden <strong>útmutató</strong> a nulláról indul: a kezdő szint semmilyen
+                előismeretet nem feltételez, a szakszavakat pedig a szöveg menet közben
+                elmagyarázza — a <a href="glossaire.html">szójegyzék</a> összegyűjti a fontosabb
+                kifejezéseket, és az útmutatók olvasás közben hivatkoznak rá.
+            </p>
+            <p>
+                Egy útmutatón belül viszont <strong>a szintek egymásra épülnek</strong>: a
+                középhaladó feltételezi a kezdőt, a haladó mindkettőt. Ezt minden szintoldal az
+                elején jelzi, hogy olvasás előtt tudd, jó helyen jársz-e.
+            </p>
+        </section>
+
+        <section>
+            <h2>Hogyan készülnek az útmutatók</h2>
+            <p>
+                Egy meghatározás nem elég a megértéshez. Ezért minden fogalom ugyanazt a mintát követi:
+            </p>
+            <ul>
+                <li>egy <strong>magyarázat</strong>, amely valóban kifejti a témát;</li>
+                <li>egy <strong>számokkal kidolgozott példa</strong>, ellenőrizhető adatokkal;</li>
+                <li>a <strong>gyakori hiba</strong> épp ebben a kérdésben, és hogy mibe kerül;</li>
+                <li>egy megjegyzendő mondat, és egy <strong>kvíz</strong>, amellyel ellenőrizheted, hogy megmaradt-e.</li>
+            </ul>
+            <p>
+                E szakaszok köré minden szintoldal azzal nyit, mire tesz képessé, és <strong>öt
+                kérdéssel</strong>, amelyekre válaszolni fogsz tudni. A válaszokkal zárul, majd
+                <strong>egyetlen teendővel</strong> az adott hétre.
+            </p>
+            <p>
+                A szakaszok alapból össze vannak csukva: egy tananyagoldal csaknem 2000 szó, és ha
+                egyszerre minden látszana, az inkább elriasztana, mint segítene. Minden összecsukott
+                szakasz mutatja az olvasási idejét és az első mondatát; azt nyitod ki, ami érdekel.
+            </p>
+        </section>
+
+        <section>
+            <h2>A három nyelv</h2>
+            <p>
+                A webhely franciául készült, és a <strong>tizennégy útmutató teljes egészében
+                elérhető angolul és magyarul</strong> — nyelvenként 56 oldal, a szimulátorokkal és
+                a kvízekkel együtt.
+            </p>
+            <p>
+                Két dolog szándékosan franciául marad. A <a href="actualites.html">hírek</a>
+                francia forrásokra mutatnak: egy lefordított cím alapján a cikket már nem lehetne
+                megtalálni. És <strong>mindaz, ami francia jogot ír le</strong> — adózási keretek,
+                határidők, cégformák — megtartja a francia adatait, az oldal tetején
+                figyelmeztetéssel, és magában a mondatban is jelezve, hogy a szabály francia. Ami
+                uniós szabály, azt uniósként említjük: az Magyarországon is érvényes.
+            </p>
+        </section>
+
+        <section>
+            <h2>Útmutatónként egy epizód</h2>
+            <p>
+                Minden útmutatónak megvan a maga <a href="podcasts.html">hangos epizódja</a>:
+                nagyjából másfél perc, amely átadja a téma fő gondolatát és azt, milyen sorrendben
+                számítanak a dolgok. Meghallgatható az útmutató elején, a podcastok oldalán, vagy
+                bármelyik podcastalkalmazásban <a href="../podcast.xml">a hírcsatornán</a> keresztül.
+                <strong>Az epizódok franciául szólnak.</strong>
+            </p>
+            <p>
+                <strong>A hang szintetikus</strong>, az útmutató szövegéből készül. Az írott
+                szövegek viszont kézzel íródnak — és ezek hordozzák a tartalmat. Egy epizód nem
+                helyettesíti az írott útmutatót: a számításoknak, a szimulátoroknak és a kvízeknek
+                nincs hangos megfelelője.
+            </p>
+        </section>
+
+        <section>
+            <h2>Ami magától működik</h2>
+            <p>
+                Két mechanizmus működik magától. Egy <strong>automatikus figyelés</strong> naponta
+                kétszer átnézi az útmutatók minden alszakaszának híreit, és a
+                <a href="actualites.html">Hírek</a> oldalon magától közzéteszi, amit megtart. A
+                <strong>kvízkérdések pedig kéthetente változnak</strong>, hogy egy később
+                újraolvasott útmutató ne ugyanazokat a kérdéseket tegye fel.
+            </p>
+        </section>
+
+        <section>
+            <h2>Fiók, sütik és reklám nélkül</h2>
+            <p>
+                A webhely <strong>nem helyez el sütit</strong>. Ezért nem láttál soha hozzájárulást
+                kérő sávot érkezéskor. Nincs reklám, nincs fizetett hivatkozás és nincs szponzorált
+                tartalom.
+            </p>
+            <p>
+                A kedvenceid, az előrehaladásod és a beállításaid <strong>a böngésződben</strong>
+                maradnak, és semmilyen szerverre nem kerülnek. Ez teszi lehetővé, hogy
+                <a href="../mon-espace.html">saját oldalt</a> (franciául) kínáljunk anélkül, hogy
+                valaha regisztrációt, jelszót vagy e-mail-címet kérnénk.
+            </p>
+            <p>
+                A részletek a <a href="mentions-legales.html">jogi nyilatkozatban</a> olvashatók.
+            </p>
+        </section>
+
+        <section>
+            <h2>Részvétel</h2>
+            <p>
+                A webhelyet a GitHub Pages ingyenesen tárolja, és a kódja nyilvános. Ha hiányzik
+                egy téma, az <a href="../idees.html">Ötletláda</a> (franciául) segítségével néhány
+                másodperc alatt javasolhatod — a leggyakrabban visszatérő kéréseket vesszük előre.
+            </p>
+            <p>
+                A leggyakoribb kérdésekre a <a href="faq.html">GYIK</a> ad választ.
+            </p>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script src="../assets/js/mascotte.js"></script>
+</body>
+</html>

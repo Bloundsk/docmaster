@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>GYIK - Clicked</title>
+    <meta name="description" content="Gyakori kérdések a Clicked-ről: az útmutatók tartalma, sötét mód, olvasási előrehaladás, adatvédelem és a gyűjtött adatok.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .faq-group { margin-bottom: 34px; }
+        .faq-group > h2 { margin-bottom: 16px; }
+
+        .faq-item {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            padding: 18px 22px;
+            font-family: var(--police-titre);
+            font-weight: 600;
+            color: var(--primary);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        /* Masque la flèche native pour la remplacer par notre chevron */
+        .faq-item summary::-webkit-details-marker { display: none; }
+
+        .faq-item summary::after {
+            content: "▾";
+            font-size: 1.1rem;
+            line-height: 1;
+            color: var(--muted);
+            flex-shrink: 0;
+            transition: transform .25s;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        /* Respecte le réglage système « réduire les animations » */
+        @media (prefers-reduced-motion: reduce) {
+            .faq-item summary::after { transition: none; }
+        }
+
+        .faq-item summary:hover { color: var(--secondary); }
+
+        .faq-item .answer {
+            padding: 0 22px 20px;
+            color: var(--text);
+        }
+
+        .faq-item .answer p { margin-bottom: 10px; }
+        .faq-item .answer p:last-child { margin-bottom: 0; }
+        .faq-item .answer ul { margin: 10px 0 0 20px; }
+        .faq-item .answer li { margin-bottom: 6px; }
+
+        .faq-empty {
+            text-align: center;
+            color: var(--muted);
+            padding: 30px;
+        }
+
+        kbd {
+            background: var(--background);
+            border: 1px solid var(--muted);
+            border-radius: 5px;
+            padding: 1px 7px;
+            font-family: monospace;
+            font-size: .9em;
+        }
+    </style>
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/faq.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/faq.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/faq.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/faq.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/faq.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="GYIK - Clicked">
+    <meta property="og:description" content="Gyakori kérdések a Clicked-ről: az útmutatók tartalma, sötét mód, olvasási előrehaladás, adatvédelem és a gyűjtött adatok.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/faq.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GYIK - Clicked">
+    <meta name="twitter:description" content="Gyakori kérdések a Clicked-ről: az útmutatók tartalma, sötét mód, olvasási előrehaladás, adatvédelem és a gyűjtött adatok.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/identite.js"></script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="index.html">Kezdőlap</a> &gt; <span aria-current="page">GYIK</span>
+    </nav>
+
+    <header>
+        <h1>❓ Gyakori kérdések</h1>
+        <p>Minden, amit a Clicked-ről tudni érdemes, röviden.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="faq-search" placeholder="🔍 Szűrés a kérdések között…" autocomplete="off" aria-label="Szűrés a gyakori kérdések között" style="width:100%;padding:16px 20px;border:none;border-radius:var(--radius);box-shadow:var(--shadow);font-family:var(--police-texte);font-size:1rem;background:var(--surface);color:var(--text);outline:none;">
+    </div>
+
+    <main id="main-content">
+
+        <div class="faq-group">
+            <h2>A webhely</h2>
+
+            <details class="faq-item">
+                <summary>Mi az a Clicked?</summary>
+                <div class="answer">
+                    <p>Ingyenes oktatási útmutatók gyűjteménye, a pénzügyektől a munkahelyi egészségig. Az <a href="guides.html">Útmutatók oldal</a> adja a teljes listát — ez az egyetlen hely, ahol naprakészen tartjuk.</p>
+                    <p>Minden útmutató három szintre tagolódik: kezdő, középhaladó, haladó. A kezdő szint a nulláról indul, és minden szint a lényegre tör: a kulcsfogalmak, számokkal kidolgozott példák, és egy kvíz, amellyel ellenőrizheted, hogy megértetted.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Tényleg ingyenes a webhely?</summary>
+                <div class="answer">
+                    <p>Igen, teljesen. Nincs regisztráció, nincs előfizetés, nincs fizetős változat, nincs reklám. Semmi sincs tagoknak fenntartva.</p>
+                    <p>A webhelyet a GitHub Pages ingyenesen tárolja, ezért nem kell semmiért fizetni.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Kinek szól a Clicked?</summary>
+                <div class="answer">
+                    <p>Kezdőknek, és mindenkinek, aki tovább akar lépni. A kezdő szint nem igényel előismeretet: a szakszavakat a szöveg menet közben elmagyarázza, a <a href="glossaire.html">szójegyzék</a> pedig összegyűjti a fontosabb szakkifejezéseket.</p>
+                    <p>Ha egy területet már ismersz, kezdd rögtön a középhaladó vagy a haladó szinten: minden szintoldal az elején megmondja, mit feltételez ismertnek.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Kell fiókot létrehoznom?</summary>
+                <div class="answer">
+                    <p>Nem, és nem is lehet. A webhely nem kezel felhasználói fiókokat: se e-mail-címet, se jelszót.</p>
+                    <p>A kedvenceid, az előrehaladásod, az ismétlési emlékeztetőid és a megjelenítési beállításaid közvetlenül a böngésződben tárolódnak, szerver nélkül. A <a href="../mon-espace.html">Saját oldalam</a> (franciául) oldal összegyűjti a kedvenceidet, az előrehaladásodat és az ismétléseidet.</p>
+                    <p>Ez tudatos döntés: ha egyszerű könyvjelzőkhöz regisztrációt kérnénk, jelszavakat kellene tárolnunk, annak minden kockázatával.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hogyan jelölhetek meg kedvencként egy útmutatót vagy egy szakaszt?</summary>
+                <div class="answer">
+                    <p>Kattints a ☆ csillagra. Találsz egyet az <a href="guides.html">Útmutatók oldal</a> minden kártyáján, minden útmutató tetején, és minden szakaszcím jobb oldalán.</p>
+                    <p>A csillag aranyszínűre ★ vált, amint a kedvenc elmentődött. Az összeset a <a href="../mon-espace.html">Saját oldalam</a> (franciául) oldalon találod, az előrehaladásoddal együtt.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>A kedvenceim követnek egyik eszközről a másikra?</summary>
+                <div class="answer">
+                    <p>Nem. Abban a böngészőben tárolódnak, amelyet használsz, pontosan ezen az eszközön.</p>
+                    <p>Ha másik számítógépre vagy telefonra váltasz, vagy törlöd a böngészési adatokat, nulláról indulnak. Ez a fiók hiányának közvetlen ára: semmi sincs szerveren tárolva, így semmit sem lehet szinkronizálni — és senki sem nézheti meg.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>A tartalom</h2>
+
+            <details class="faq-item">
+                <summary>Milyen sorrendben olvassam az útmutatókat?</summary>
+                <div class="answer">
+                    <p>Az útmutatók függetlenek egymástól: olvasd őket tetszőleges sorrendben, egyik sem feltételezi, hogy a többit már elolvastad.</p>
+                    <p>Egy útmutatón belül viszont a szintek egymásra épülnek: a középhaladó feltételezi a kezdőt, a haladó mindkettőt. Az útmutatók fejléce alatti szintválasztóval léphetsz át egyik szintről a másikra.</p>
+                    <p>Ha bizonytalan vagy, minden útmutató alján hasonló útmutatókat, valamint az előzőre és a következőre mutató hivatkozásokat találsz, amelyek olvasási sorrendet javasolnak.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Naprakészek az útmutatók?</summary>
+                <div class="answer">
+                    <p>Az útmutatók alapfogalmakkal foglalkoznak, amelyek lassan változnak. Minden oldal kiírja az utolsó frissítés dátumát, amelyet a tartalom valódi módosításaiból automatikusan számolunk.</p>
+                    <p>Emellett naponta kétszer figyelés fut minden útmutató minden szakaszára. A legérdekesebb találatok a <a href="actualites.html">Hírek</a> oldalon jelennek meg.</p>
+                    <p>Ennek ellenére mindenben, ami számokat, kamatlábakat, árakat vagy szabályozást érint, mindig ellenőrizd az információt az eredeti forrásnál.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Honnan származnak a podcastok?</summary>
+                <div class="answer">
+                    <p>Minden útmutatónak van egy epizódja, nagyjából másfél perces. Automatikusan készül az útmutató szövegéből: <strong>a hang szintetikus</strong>, senki sem olvassa fel ezeket az epizódokat.</p>
+                    <p>Ettől lehetségesek egyáltalán. Tizennégy felolvasás több órát venne igénybe, és minden javítás után újra kellene kezdeni. Az útmutatók szövegei viszont kézzel íródnak.</p>
+                    <p>Egy epizód összefoglaló, nem helyettesítő: átadja a fő gondolatot és a lépések sorrendjét, de a számításoknak, a szimulátoroknak és a kvízeknek nincs hangos megfelelője. Minden epizódhoz tartozik egy írásos összefoglaló, amely nem szó szerinti átirat.</p>
+                    <p><strong>Az epizódok franciául szólnak.</strong> Meghallgathatod őket minden útmutató elején, a <a href="podcasts.html">Podcastok</a> oldalon, vagy bármelyik podcastalkalmazásban <a href="../podcast.xml">a hírcsatornán</a> keresztül.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Honnan származnak a Hírek oldal cikkei?</summary>
+                <div class="answer">
+                    <p>Egy automatikus keresés naponta kétszer átnézi az online sajtót, útmutató-szakaszonként egy lekérdezéssel, és emberi közreműködés nélkül közzéteszi, amit talál.</p>
+                    <p>Egy szűrő kiszűri a toplistákat, a partnerlinkes összehasonlításokat és a sajtóközleményeket. <strong>Azt nem tudja megítélni, hogy egy cikk pontos-e</strong>, csak azt, hogy reklámnak tűnik-e — az itt megjelenő cikkeket tehát senki sem lektorálta. Ami nem odavaló, azt észrevételkor azonnal eltávolítjuk.</p>
+                    <p>Minden cikk ahhoz az útmutató-szakaszhoz kapcsolódik, amelyet kiegészít, így egy kattintással eljuthatsz a hírtől az alapfogalomig.</p>
+                    <p>Ezek a cikkek más webhelyeken jelentek meg: az idézésük azt jelenti, hogy érdemesnek tűntek az olvasásra, nem azt, hogy a tartalmukat jóváhagyjuk vagy pontosnak szavatoljuk. <strong>Franciául íródtak</strong>, akárcsak a forrásaik.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Követhetem a Pénzügyek útmutató pénzügyi tanácsait?</summary>
+                <div class="answer">
+                    <p>A Pénzügyek útmutató <strong>oktatási</strong> tartalom. Elmagyarázza, hogyan működik a megtakarítás, az ETF-ek, a diverzifikáció vagy a kockázat — egyetlen konkrét befektetést sem ajánl.</p>
+                    <p>Nem személyre szabott befektetési tanácsadás, és nem helyettesíti az engedéllyel rendelkező tanácsadót. Egyetlen befektetés sem kockázatmentes, és a múltbeli hozamok nem jelzik előre a jövőbelieket. Arra is figyelj, hogy <strong>az általa bemutatott adózási keretek franciák</strong>.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Javasolhatok új témát vagy új kategóriát?</summary>
+                <div class="answer">
+                    <p>Igen, és örülünk neki. Az <a href="../idees.html">Ötletláda</a> (franciául) segítségével egy egész területet vagy egy meglévő útmutatóba illő konkrét témát is javasolhatsz.</p>
+                    <p>A leggyakrabban visszatérő kéréseket vesszük előre. Az oldal a már tervezett témákat is mutatja, és ezekről is elmondhatod a véleményed.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hibát találtam. Hogyan jelezhetem?</summary>
+                <div class="answer">
+                    <p>E-mailben: <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span> — ugyanez a cím szolgál minden, a személyes adataidat érintő kérésre is.</p>
+                    <p>Ha lehet, írd meg, melyik útmutatóról és szakaszról van szó: így tudjuk a leggyorsabban javítani.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Felhasználhatom a tartalmat?</summary>
+                <div class="answer">
+                    <p>Személyes vagy oktatási célra — ismétléshez, egy meghatározás idézéséhez, vagy ha egy útmutatóra támaszkodva magyarázol el valamit valakinek — nyugodtan.</p>
+                    <p>Teljes újraközléshez vagy kereskedelmi felhasználáshoz írj a <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span> címre, és beszéljük meg.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>A webhely használata</h2>
+
+            <details class="faq-item">
+                <summary>Miért vannak összecsukva az útmutatók szakaszai?</summary>
+                <div class="answer">
+                    <p>Egy tananyagoldal csaknem 2000 szó. Ha egyszerre minden látszana, olyan szövegfal fogadna, amely már az elején elvenné a kedved.</p>
+                    <p>Összecsukva a szakaszok tartalomjegyzékként olvashatók: mindegyik mutatja az olvasási idejét és az első mondatát, te pedig azt nyitod ki, ami érdekel. Az <strong>„Összes kinyitása”</strong> gomb mindent kinyit, ha inkább egyvégtében olvasnál.</p>
+                    <p>Ha a tartalomjegyzék egyik elemére kattintasz, a hozzá tartozó szakasz automatikusan kinyílik — nem kell keresgélned.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hogyan kereshetek gyorsan az útmutatókban?</summary>
+                <div class="answer">
+                    <p>Nyomd meg a <kbd>/</kbd> billentyűt bármelyik oldalon: a kurzor egyből a keresősávba kerül.</p>
+                    <p>A keresés elnézi az elgépeléseket. <strong>A találatok címe franciául szerepel</strong>, mert a keresés az eredeti változatot indexeli — a hivatkozások viszont a magyar oldalakra visznek.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hogyan válthatok világos és sötét téma között?</summary>
+                <div class="answer">
+                    <p>Alapértelmezés szerint a webhely <strong>követi az eszközöd beállítását</strong>: ha a telefonod vagy a számítógéped sötét módban van, a webhely is. Semmit sem kell tenned.</p>
+                    <p>Ha egy témát rögzíteni szeretnél, kattints a jobb felső sarokban a 🌙 vagy a ☀️ ikonra. A választásod ekkor elsőbbséget kap a rendszerbeállítással szemben, és ebben a böngészőben a következő látogatásaidra is megmarad.</p>
+                    <p>Az automatikus követéshez úgy térhetsz vissza, hogy a böngésződ beállításaiban törlöd a webhely adatait.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hogyan tehetem olvashatóbbá a szöveget?</summary>
+                <div class="answer">
+                    <p>A jobb felső sarokban lévő <strong>„Aa”</strong> gombbal. Beállíthatod vele a <strong>sorközt</strong>, a <strong>betű- és szóközt</strong> és a <strong>betűtípust</strong>, köztük egy jobban olvasható betűtípust is. A beállításaidat ez a böngésző megjegyzi.</p>
+                    <p>A betűméretet viszont a böngésződben állíthatod (<strong>Ctrl +</strong> és <strong>Ctrl −</strong>): a webhely követi, külön beállítás nélkül.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Mire való az „Elolvastam és megértettem” jelölőnégyzet?</summary>
+                <div class="answer">
+                    <p>Az előrehaladásod követésére. Bejelölés után az útmutató befejezettként szerepel, és a következő látogatásaidkor is az marad.</p>
+                    <p>Ez személyes emlékeztető: ezt az információt senki más nem látja, és sehová sem küldjük el.</p>
+                    <p>Az ismétlési emlékeztetők kiindulópontja is: lásd a következő kérdést.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Miért jelenik meg újra ismétlésre egy befejezett lecke?</summary>
+                <div class="answer">
+                    <p>Mert a felejtés nagy része az első két napban történik. Egy bejelölt lecke ezért egy nap, majd három nap, majd egy hét, végül három hét múlva újra megjelenik a <a href="../mon-espace.html">Saját oldalam</a> (franciául) oldalon — ez az a lépcső, amelyet <a href="guides/apprendre/debutant.html">A tanulás tanulása</a> útmutató elmagyaráz.</p>
+                    <p><strong>Ismételni nem annyi, mint újraolvasni.</strong> Nyisd meg újra az oldalt, és válaszolj az elején lévő kérdésekre olvasás nélkül: a felidézés rögzíti a tudást, nem az újraolvasás.</p>
+                    <p>A negyedik emlékeztető után a webhely elhallgat. Az az emlékeztető, amely soha nem ér véget, előbb-utóbb figyelmen kívül marad — és akkor már az összeset figyelmen kívül hagyjuk.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Egy másik eszközön is megtalálom az előrehaladásomat?</summary>
+                <div class="answer">
+                    <p>Nem. Az előrehaladás abban a böngészőben tárolódik, amelyet használsz, pontosan ezen az eszközön.</p>
+                    <p>Ha másik számítógépre, telefonra vagy böngészőre váltasz, vagy törlöd a böngészési adatokat, az előrehaladás nulláról indul. Ez az ára annak a döntésnek, hogy nincsenek felhasználói fiókok.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Pontozzák a kvízeket?</summary>
+                <div class="answer">
+                    <p>Nem, és semmilyen eredményt nem tárolunk. A kvíz csak gondolkodásra késztet: azonnal látod, hogy a válaszod helyes-e, magyarázattal együtt.</p>
+                    <p>Ahányszor csak akarod, újra kitöltheted.</p>
+                    <p><strong>Minden szakasz alján van egy kvíz</strong>, az útmutató végén pedig egy <strong>összefoglaló kvíz</strong>, amelynek kérdései eltérnek, és az egész témát lefedik.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Miért változnak a kérdések?</summary>
+                <div class="answer">
+                    <p>Minden kvíz nagyobb kérdéskészletből merít, mint amennyit megjelenít. <strong>Kéthetente</strong> automatikusan más kérdésekre vált.</p>
+                    <p>Az előnye: ha néhány hét múlva visszatérsz egy útmutatóhoz, nem pontosan ugyanazokat a kérdéseket kapod, így az derül ki, hogy megértetted-e, nem az, hogy megjegyezted-e.</p>
+                    <p>Az oldal újratöltése nem változtat semmin: ugyanabban az időben mindenki ugyanazt a sorozatot látja. Különben elég volna addig frissíteni, amíg a már ismert kérdések jönnek.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Kinyomtathatok egy útmutatót, vagy olvashatom internet nélkül?</summary>
+                <div class="answer">
+                    <p>Igen. Nyomd meg a <kbd>Ctrl</kbd> + <kbd>P</kbd> billentyűket: a nyomtatásra szánt elrendezés eltávolítja a navigációt, a gombokat és az interaktív elemeket, és csak a szöveget hagyja meg.</p>
+                    <p>Nyomtató helyett a „Mentés PDF-ként” lehetőséget is választhatod.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Működik a webhely telefonon?</summary>
+                <div class="answer">
+                    <p>Igen, az elrendezés alkalmazkodik a telefonok és a táblagépek képernyőjéhez: a navigáció átrendeződik, a szöveg nagyítás nélkül is olvasható marad.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="faq-group">
+            <h2>Adatok és adatvédelem</h2>
+
+            <details class="faq-item">
+                <summary>Használ a webhely sütiket?</summary>
+                <div class="answer">
+                    <p><strong>Egyet sem, kivétel nélkül.</strong> Ezért nem láttál soha „sütik elfogadása” sávot érkezéskor.</p>
+                    <p>A megjelenítési beállításaid (téma, olvasási kényelem, nyelv), a kedvenceid, az előrehaladásod, az ismétlési dátumaid, a legutóbbi kereséseid és a kabalafigura esetleges elrejtése a böngésző helyi tárhelyét (<em>localStorage</em>) használják, amely az eszközödön marad, és semmilyen szerverre nem kerül.</p>
+                    <p>Az <a href="../idees.html">Ötletláda</a> (franciául) közvetlenül az oldalról küldi el a javaslatodat, anélkül hogy címet kérne, és anélkül hogy ellenőrző rendszert töltene be.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Milyen adatokat gyűjt a webhely?</summary>
+                <div class="answer">
+                    <p>Kizárólag összesített látogatottsági statisztikákat, egy adatvédelmet tiszteletben tartó eszközzel: megtekintett oldalak, a webhely, ahonnan a látogató érkezett, ország és böngészőtípus.</p>
+                    <p>Ehhez jön három művelet számlálása az útmutatókban: egy szakasz megnyitása, egy kedvenc hozzáadása, egy útmutató olvasottnak jelölése. Ebből derül ki, mely témák érdeklik leginkább az olvasókat, hogy eldönthessük, milyen útmutatók jöjjenek. Csak a művelet neve kerül elküldésre — „megnyitott szakasz: ETF-ek” —, semmi olyan, ami két műveletet ugyanahhoz a személyhez kötne.</p>
+                    <p>Semmilyen IP-címet nem tárolunk, és semmilyen azonosító nem teszi lehetővé, hogy felismerjünk egyik látogatásról a másikra, vagy követhessünk más webhelyeken. <strong>A kedvenceid tartalma a böngésződben marad</strong>: annyit számolunk, hogy egy szakaszt kedvencnek jelöltek, soha nem azt, hogy ki, és mi mással együtt.</p>
+                    <p>Egyetlen kivétel: amit te magad írsz az <a href="../idees.html">Ötletládába</a> (franciául). Egy javaslatot <strong>legfeljebb 24 hónapig</strong> őrzünk meg, amíg kiderül, gyakran visszatér-e a téma, utána töröljük. Mivel címet nem kérünk, névtelen marad — hacsak a szövegben meg nem nevezed magad.</p>
+                    <p>A részletek a <a href="mentions-legales.html">jogi nyilatkozatban</a> olvashatók.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Van reklám vagy szponzorált tartalom?</summary>
+                <div class="answer">
+                    <p>Nincs. Semmi reklám, semmi partnerlink, semmi fizetett együttműködés. A webhely nem profitorientált, így semmit sem emelünk ki üzleti okokból.</p>
+                </div>
+            </details>
+        </div>
+
+        <p class="faq-empty" id="faq-empty" hidden>Egyetlen kérdés sem felel meg a keresésednek.</p>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script src="../assets/js/mascotte.js"></script>
+    <script>
+        // Filtre les questions au fil de la frappe, et déplie automatiquement
+        // celles qui correspondent pour que la réponse soit visible tout de suite.
+        const faqSearch = document.getElementById("faq-search");
+        const faqEmpty = document.getElementById("faq-empty");
+
+        faqSearch.addEventListener("input", (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            let visibles = 0;
+
+            document.querySelectorAll(".faq-item").forEach(item => {
+                const match = q === "" || item.textContent.toLowerCase().includes(q);
+                item.hidden = !match;
+                item.open = q !== "" && match;
+                if (match) visibles++;
+            });
+
+            // Masque un groupe entier si aucune de ses questions ne correspond
+            document.querySelectorAll(".faq-group").forEach(group => {
+                const reste = group.querySelectorAll(".faq-item:not([hidden])").length;
+                group.hidden = reste === 0;
+            });
+
+            faqEmpty.hidden = visibles > 0;
+        });
+    </script>
+</body>
+</html>

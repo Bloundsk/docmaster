@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Jogi nyilatkozat - Clicked</title>
+    <meta name="description" content="A Clicked jogi információi: kiadó, tárhely, személyes adatok, az Ön jogai. Tájékoztató fordítás; a francia változat az irányadó.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/mentions-legales.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/mentions-legales.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/mentions-legales.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/mentions-legales.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/mentions-legales.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Jogi nyilatkozat - Clicked">
+    <meta property="og:description" content="A Clicked jogi információi: kiadó, tárhely, személyes adatok, az Ön jogai. Tájékoztató fordítás; a francia változat az irányadó.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/mentions-legales.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jogi nyilatkozat - Clicked">
+    <meta name="twitter:description" content="A Clicked jogi információi: kiadó, tárhely, személyes adatok, az Ön jogai. Tájékoztató fordítás; a francia változat az irányadó.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/identite.js"></script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="index.html">Kezdőlap</a> &gt; <span aria-current="page">Jogi nyilatkozat</span>
+    </nav>
+
+    <header>
+        <h1>Jogi nyilatkozat</h1>
+        <p>A Clicked-re vonatkozó jogi információk.</p>
+    </header>
+
+    <main id="main-content">
+        <div class="piege">
+            <span class="titre">Tájékoztató fordítás</span>
+            <p>
+                Ez az oldal a kényelem kedvéért készült fordítás. A webhelyet Franciaországban
+                adják ki, és a francia jog hatálya alá tartozik: bármilyen eltérés esetén
+                kizárólag a <a href="../mentions-legales.html">francia változat</a> az irányadó.
+            </p>
+        </div>
+
+        <section>
+            <h2>A webhely kiadója</h2>
+            <p>
+                Ezt a webhelyet magánszemélyként adja ki <strong>Bloundsk</strong>, nem kereskedelmi
+                és nem szakmai keretek között. A webhely nem profitorientált, és nem kínál sem
+                értékesítést, sem reklámot, sem partnerprogramot.
+            </p>
+            <p>
+                A digitális gazdaságba vetett bizalomról szóló, 2004. június 21-i 2004-575. számú
+                francia törvény 6. cikke III. 2. pontjának megfelelően a kiadó — nem szakmai
+                minőségben eljáró magánszemély — személyazonosságát közölte a tárhelyszolgáltatóval,
+                és álnéven publikál.
+            </p>
+            <p>
+                <strong>Kapcsolat:</strong>
+                <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span>
+            </p>
+            <p>
+                Ez a cím szolgál minden megkeresésre: tartalmi hiba bejelentése, kérdés, vagy az
+                Ön adataival kapcsolatos jogok gyakorlása.
+            </p>
+        </section>
+
+        <section>
+            <h2>Tárhely</h2>
+            <p>
+                A webhely tárhelyszolgáltatója a <strong>GitHub Pages</strong>, a GitHub, Inc.
+                szolgáltatása, 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, Amerikai
+                Egyesült Államok. Telefon: +1 877 448 4820.
+                A GitHub jelenleg írásban, az
+                <a href="https://support.github.com/" rel="noopener">ügyfélszolgálati portálján</a>
+                keresztül intézi a megkereséseket.
+            </p>
+            <p>
+                Mint minden tárhelyszolgáltató, a GitHub is rögzít műszaki naplóiban kapcsolódási
+                adatokat, köztük a látogatók <strong>IP-címét</strong>, biztonsági és üzemeltetési
+                célból. Ez az adatkezelés a GitHub, Inc. saját adatkezelése, és a saját adatvédelmi
+                szabályzata alá tartozik; a webhely kiadója nem fér hozzá, és nem határozza meg a
+                feltételeit.
+            </p>
+            <p>
+                Mivel a GitHub, Inc. az Egyesült Államokban működik, ezek az adatok az Európai
+                Unión kívülre kerülnek, az e vállalat által biztosított garanciák mellett.
+            </p>
+        </section>
+
+        <section>
+            <h2>Személyes adatok</h2>
+            <p>
+                A webhelyet úgy tervezték, hogy a kezelt adatok a lehető legszűkebb körre
+                korlátozódjanak. Három különálló adatkezelés létezik egymás mellett; ezeket az
+                alábbiakban ismertetjük.
+            </p>
+
+            <h3>1. Az Ön böngészőjében tárolt beállítások</h3>
+            <p>
+                A megjelenítési téma, az olvasási kényelem beállításai, a választott nyelv, a
+                keresési előzmények, az olvasási előrehaladás és az abból adódó ismétlési dátumok,
+                a kabalafigura esetleges elrejtése és <strong>az Ön kedvencei</strong> a böngésző
+                helyi tárhelyét (<em>localStorage</em>) használják. Ezek az adatok <strong>az Ön
+                eszközén maradnak</strong>, semmilyen szerverre nem kerülnek, és eltűnnek, amikor Ön
+                törli a böngészési adatokat.
+            </p>
+            <p>
+                Ezért nem kínál a webhely <strong>semmilyen regisztrációt</strong>: se
+                e-mail-címet, se jelszót, se felhasználói fiókot. A
+                <a href="../mon-espace.html">Saját oldalam</a> (franciául) oldal csupán megjeleníti,
+                amit az Ön böngészője rögzített, és egy kattintással törölhetők rajta a kedvencei,
+                az előrehaladása és az ismétlési dátumai. A téma, az olvasási kényelem, a nyelv és
+                a keresési előzmények ott állíthatók, ahol bekapcsolják őket; a webhely böngészési
+                adatainak törlése mindegyiket eltávolítja.
+            </p>
+
+            <h3>2. Látogatottságmérés</h3>
+            <p>
+                A webhely a <strong>GoatCounter</strong> eszközzel méri a látogatottságát. Ez az
+                eszköz nem helyez el sütit, nem tárol IP-címet, és nem teszi lehetővé sem az Ön
+                azonosítását, sem az Ön követését egyik webhelyről a másikra. Csak összesített
+                adatokat őriz meg: megtekintett oldalak, hivatkozó webhely, ország, böngészőtípus.
+            </p>
+            <p>
+                Ugyanezen az alapon és ugyanezzel az eszközzel a webhely <strong>három
+                műveletet</strong> számol az útmutatókon belül: egy szakasz megnyitását, egy kedvenc
+                hozzáadását, és egy útmutató olvasottnak jelölését. Ez a számlálás arra szolgál,
+                hogy kiderüljön, mely témák érdeklik leginkább az olvasókat, és ehhez igazodjanak a
+                következő útmutatók.
+            </p>
+            <p>
+                Csak a művelet neve kerül továbbításra — például „megnyitott szakasz: ETF-ek”.
+                Semmilyen azonosító, semmilyen süti, semmi olyan, ami két műveletet ugyanahhoz a
+                személyhez kötne. Ezek a mérések nem hagyják el a GoatCounter rendszerét, és soha
+                nem kapcsolódnak össze az Ön kedvenceinek tartalmával, amely a böngészőjében marad,
+                és senkinek sem kerül továbbításra.
+            </p>
+            <p>
+                Ennélfogva ez a megoldás a CNIL, a francia adatvédelmi hatóság ajánlásai értelmében
+                hozzájárulás alól mentesített látogatottságmérésnek minősül.
+            </p>
+
+            <h3>3. A tárhelyszolgáltató naplói</h3>
+            <p>
+                A GitHub Pages által rögzített IP-címek a tárhelyszolgáltatóhoz tartoznak, amint azt
+                az előző szakasz ismerteti.
+            </p>
+        </section>
+
+        <section>
+            <h2>Ötletláda</h2>
+            <p>
+                Az <a href="../idees.html">Ötletláda</a> (franciául) oldalon űrlap segítségével új témák
+                javasolhatók. A küldés közvetlen: az üzenet abban a pillanatban elmegy, amikor Ön
+                rákattint, anélkül hogy elhagyná az oldalt. <strong>Semmilyen süti nem kerül
+                elhelyezésre</strong>, és semmilyen külső ellenőrző rendszer nem töltődik be.
+            </p>
+            <p>
+                <strong>Címet nem kérünk Öntől</strong>: az űrlap csak a javasolt témát tartalmazza,
+                és ha Ön kívánja, azt, hogy miért érdekli. Így Ön névtelen marad, hacsak az üzenete
+                szövegében úgy nem dönt, hogy megnevezi magát.
+            </p>
+
+            <div class="table-scroll">
+            <table>
+                <tr><th>Adatkezelő</th><td>Bloundsk, a webhely kiadója (lásd „A webhely kiadója” szakaszt)</td></tr>
+                <tr><th>Cél</th><td>Témajavaslatok gyűjtése, hogy ezek alapján dőljön el, milyen útmutatók készüljenek</td></tr>
+                <tr><th>Jogalap</th><td>A <strong>hozzájárulás</strong> (a GDPR 6. cikk (1) bekezdésének a) pontja), amelyet az űrlap önkéntes elküldése fejez ki</td></tr>
+                <tr><th>Érintett adatok</th><td>Kizárólag az, amit Ön az űrlapba ír. Semmilyen e-mail-cím, azonosító vagy süti</td></tr>
+                <tr><th>Címzett</th><td>Kizárólag a webhely kiadója. Semmilyen adatot nem adunk át, nem adunk el, és nem használunk reklámcélra</td></tr>
+                <tr><th>Technikai adatfeldolgozó</th><td>A FormSubmit, amely az űrlap üzenetét a kiadó postafiókjába továbbítja. Az üzeneteket nem őrzi meg</td></tr>
+                <tr><th>A levelezés tárhelyszolgáltatója</th><td>Proton AG, Route de la Galaise 32, 1228 Plan-les-Ouates, Svájc — olyan ország, amelyről az Európai Bizottság megállapította, hogy megfelelő szintű adatvédelmet biztosít</td></tr>
+                <tr><th>Megőrzési idő</th><td>A beérkezéstől számított <strong>legfeljebb 24 hónap</strong>, majd törlés</td></tr>
+            </table>
+            </div>
+
+            <p>
+                Ez az oldal nem 15 év alatti személyeknek szól, a törvényes képviselőjük
+                hozzájárulása nélkül.
+            </p>
+        </section>
+
+        <section>
+            <h2>Az Ön jogai</h2>
+            <p>
+                Az (EU) 2016/679 rendelet (GDPR) és a módosított, 1978. január 6-i 78-17. számú
+                francia törvény alapján az Önre vonatkozó adatokkal kapcsolatban az alábbi jogok
+                illetik meg:
+            </p>
+            <ul>
+                <li><strong>Hozzáféréshez való jog</strong> — visszaigazolást kérni arról, hogy kezelik-e az Önre vonatkozó adatokat, és másolatot kapni róluk (15. cikk)</li>
+                <li><strong>Helyesbítéshez való jog</strong> — a pontatlan adatok kijavíttatása (16. cikk)</li>
+                <li><strong>Törléshez való jog</strong> — az adatai törlésének kérése (17. cikk)</li>
+                <li><strong>Az adatkezelés korlátozásához való jog</strong> (18. cikk)</li>
+                <li><strong>Adathordozhatósághoz való jog</strong> — az adatai megszerzése olvasható formátumban (20. cikk)</li>
+                <li><strong>Tiltakozáshoz való jog</strong> az adatkezeléssel szemben (21. cikk)</li>
+                <li><strong>A hozzájárulás visszavonásának joga</strong> bármikor, anélkül hogy ez érintené a korábban végzett adatkezelés jogszerűségét</li>
+            </ul>
+            <p>
+                E jogok e-mailben gyakorolhatók a
+                <span class="courriel" data-nom="docmaster.contact" data-domaine="proton.me">docmaster.contact [arobase] proton.me</span> címen.
+                Egy hónapon belül választ kap.
+            </p>
+            <p>
+                Ha a velünk való kapcsolatfelvételt követően úgy ítéli meg, hogy jogait nem tartják
+                tiszteletben, panaszt tehet a <strong>CNIL</strong>-nél —
+                Commission Nationale de l'Informatique et des Libertés,
+                3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 —
+                <a href="https://www.cnil.fr/fr/plaintes" rel="noopener">cnil.fr/fr/plaintes</a>.
+                Ha az Európai Unió másik tagállamában él, a saját országa felügyeleti hatóságánál is
+                panaszt tehet; Magyarországon ez a Nemzeti Adatvédelmi és Információszabadság
+                Hatóság (NAIH).
+            </p>
+        </section>
+        <section>
+            <h2>Szellemi tulajdon</h2>
+            <p>
+                A webhely tartalmai oktatási és tájékoztató célt szolgálnak. Nem minősülnek sem
+                pénzügyi, sem jogi tanácsadásnak, sem személyre szabott szakmai tanácsadásnak.
+            </p>
+        </section>
+
+        <section>
+            <h2>Hivatkozások külső webhelyekre</h2>
+            <p>
+                A <a href="actualites.html">Hírek</a> oldal más webhelyeken megjelent cikkekre
+                hivatkozik. Csak a cím, a kiadvány neve és a megjelenés dátuma kerül átvételre; a
+                hivatkozás az eredeti forráshoz vezet.
+            </p>
+            <p>
+                Ezeket a cikkeket automatikusan találjuk meg és tesszük közzé, előzetes lektorálás
+                nélkül; egy szűrő kiszűri a nyilvánvalóan reklámcélú tartalmakat. Az idézésük azt
+                jelenti, hogy egy útmutató témájához kapcsolódnak, nem azt, hogy a tartalmukat
+                jóváhagyjuk vagy pontosnak szavatoljuk. A Clicked nem befolyásolja ezeket a
+                webhelyeket: a tartalmuk megváltozhat, fizetőssé válhat vagy eltűnhet. Minden nem
+                helyénvalóként jelzett hivatkozást eltávolítunk.
+            </p>
+            <p>
+                Semmilyen adat nem kerül ezekhez a webhelyekhez, amíg Ön meg nem nyit egy
+                hivatkozást. A hivatkozások új lapon nyílnak meg, az eredeti oldal továbbítása
+                nélkül.
+            </p>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script src="../assets/js/mascotte.js"></script>
+</body>
+</html>

@@ -1,5 +1,38 @@
 # Changelog — Clicked
 
+## 2026-09-12 — FAQ, « À propos » et mentions légales en hongrois
+
+### Ce qui est publié
+
+- **`hu/faq.html`** (28 questions), **`hu/a-propos.html`** et
+  **`hu/mentions-legales.html`**, déclarées dans `PAGES_TRADUITES.hu` : le menu et le pied
+  de page de toutes les pages hongroises y mènent désormais.
+- Traduites du français, avec les adaptations que l'anglais avait déjà faites : épisodes
+  et actualités **dits en français**, enveloppes fiscales de Finance dites françaises, et
+  la recherche décrite telle qu'elle est — **titres en français, liens vers les pages
+  hongroises**. Ce dernier point a été mesuré avant d'être écrit : sur `hu/index.html`,
+  « etf » renvoie « Les ETF » vers `guides/finance/debutant.html`, résolu sous `hu/`.
+- « À propos » gagne, comme en anglais, une section sur les langues (« A három nyelv ») :
+  quatorze parcours en anglais et en hongrois, actualités et droit français gardés en
+  français, et ce qui est européen dit européen, applicable en Hongrie.
+- **Mentions légales : traduction de courtoisie**, encadré en tête — la version
+  française est seule à faire foi. Elles **vouvoient au « Ön »**, miroir du vouvoiement
+  que le français y garde par exception (`registre.json`) ; FAQ et « À propos » tutoient.
+  La CNIL est présentée comme l'autorité française, et la NAIH comme l'autorité hongroise
+  auprès de laquelle un résident peut aussi se plaindre (article 77 du RGPD).
+- La boîte à idées et Mon espace ne sont pas encore traduits : ces trois pages les lient
+  en français, « (franciául) ». `CHANTIERS.md` note de les repointer.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue, 28 paires de traduction | verts |
+| Structure comparée à l'anglais | identique : 28 questions, 4 groupes ; 7 sections ; 3 sous-sections, 8 lignes de tableau, 2 adresses |
+| Liens des trois pages | aucun lien mort |
+| `audit-geometrie` | **1 201 mesures, 39 gabarits**, 0 anomalie |
+| Navigateur | filtre « süti » → 1 question, dépliée ; message « aucune question » ; adresse décodée en `mailto:` comme en français ; menu et pied vers `hu/faq`, `hu/a-propos`, `hu/mentions-legales` ; 0 erreur |
+
 ## 2026-09-12 — Glossaire en hongrois
 
 ### Ce qui est publié
