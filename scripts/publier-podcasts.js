@@ -247,12 +247,29 @@ const MOIS_EN = ["January", "February", "March", "April", "May", "June", "July",
    derniere depend des donnees de localisation installees, donc de la machine.
    Une page generee differemment ici et sur le runner ferait echouer le controle
    de conformite sans que le depot soit en faute — deja vu avec ffprobe. */
+const MOIS_HU = ["január", "február", "március", "április", "május", "június", "július",
+                 "augusztus", "szeptember", "október", "november", "december"];
+
 function dateLisible(iso, langue) {
     if (langue === "fr") return enFrancais(iso);
     const [a, m, j] = String(iso).split("-").map(Number);
     if (!a || !m || !j) return String(iso);
+    // Le hongrois ecrit l annee en tete : « 2026. augusztus 30. »
+    if (langue === "hu") return `${a}. ${MOIS_HU[m - 1]} ${j}.`;
     return `${j} ${MOIS_EN[m - 1]} ${a}`;
 }
+
+/* Le nom du parcours dans le lien « ouvrir », pour le hongrois : le lien mene a
+   une page hongroise, il s annonce sous le titre qu elle porte. Le titre de
+   l episode, lui, reste francais, comme l audio. */
+const NOMS_HU = {
+    finance: "Pénzügyek", ia: "Mesterséges intelligencia", "dev-web": "Webfejlesztés",
+    marketing: "Digitális marketing", cybersecurite: "Kiberbiztonság",
+    entrepreneuriat: "Vállalkozás", productivite: "Termelékenység és szervezés",
+    data: "Adatok és elemzés", design: "UX/UI design", droit: "Jog és ügyintézés",
+    sante: "Munkahelyi egészség", ecologie: "Digitális mértékletesség",
+    negociation: "Tárgyalás és kommunikáció", apprendre: "A tanulás tanulása",
+};
 
 const PAGES = {
     fr: {
@@ -315,6 +332,37 @@ const PAGES = {
         limiteTitre: "What an episode is not",
         limite: "An episode is a lesson, not advice. It explains mechanisms; it knows nothing about your situation or your plans. The paths that touch money, law or health say so in full, and the episode says it too.",
     },
+    hu: {
+        lang: "hu", locale: "hu_HU", prefixe: "../", adresse: "hu/podcasts.html",
+        titre: `Podcastok - ${ID.nom}`,
+        description: "Útmutatónként egy epizód: egy téma lényege néhány percben. Az epizódok franciául szólnak.",
+        filAriane: ["Navigációs útvonal", "Kezdőlap", "Podcastok"],
+        h1: "🎧 Podcastok",
+        chapo: "Egy útmutató lényege néhány percben.",
+        // Même raison qu'en anglais : le dire avant qu'on lance un fichier.
+        avis: `<div class="piege"><span class="titre">Ezek az epizódok franciául szólnak</span><p>A hanganyag és az alábbi írásos összefoglalók franciául vannak. Maguk az útmutatók teljesen le vannak fordítva — <a href="guides.html">nézd meg az útmutatókat</a>, ha inkább magyarul olvasnád őket.</p></div>`,
+        titreEpisodes: "Az epizódok",
+        introAvec: (flux) => `<p>Útmutatónként egy epizód. Hallgasd meg itt, vagy bármelyik podcastalkalmazásban <a href="${flux}">az RSS-csatornán</a> keresztül.</p>`,
+        introSans: `<p>Útmutatónként egy epizód, a felvétel folyamatban. Az írásos összefoglalók már itt vannak.</p>`,
+        minute: (n) => `${n} perc`,
+        environ: "kb. ",
+        attente: `🎧 <strong>A hanganyag még nincs fent.</strong> Az alábbi összefoglaló már most elolvasható.`,
+        ouvrir: (parcours) => `Megnyitom: ${parcours} →`,
+        noms: NOMS_HU,
+        replier: "Miről szól az epizód",
+        titreMethode: "Hogyan készülnek",
+        methode: [
+            "Minden epizód egy útmutató gondolatait veszi sorra, abban a sorrendben, ahogyan számítanak. Nem helyettesíti az írott útmutatót: a számításoknak, a szimulátoroknak és a kvízeknek nincs szóbeli megfelelőjük.",
+            "Minden epizódhoz tartozik egy írásos összefoglaló. Ez nem szó szerinti átirat: a hanganyag magából az útmutatóból készül, az összefoglaló ugyanazt mondja el rövidebben.",
+        ],
+        voixTitre: "A hang szintetikus",
+        voix: [
+            "<strong>Ezeket az epizódokat senki sem olvassa fel.</strong> A hang szintetikus: minden epizód automatikusan készül az útmutató szövegéből.",
+            "Ettől lehetségesek egyáltalán: tizennégy felolvasás órákig tartana, és minden útmutató-javításkor újra kellene csinálni. Az írott szövegeket viszont kézzel írják — és ezek hordozzák a tartalmat.",
+        ],
+        limiteTitre: "Ami egy epizód nem",
+        limite: "Egy epizód tananyag, nem tanácsadás. Mechanizmusokat magyaráz el; semmit sem tud a helyzetedről vagy a terveidről. A pénzzel, joggal vagy egészséggel foglalkozó útmutatók ezt teljes terjedelmében kimondják, és az epizód is kimondja.",
+    },
 };
 
 function rendreEpisode(e, T) {
@@ -322,12 +370,13 @@ function rendreEpisode(e, T) {
     const ecoute = e.audio
         ? `                <audio controls preload="none" src="${T.prefixe}assets/audio/${e.fichierAudio}"></audio>\n`
         : `                <p class="podcast-attente">${T.attente}</p>\n`;
+    const nomDuParcours = (T.noms && T.noms[e.sujet]) || e.parcours;
 
     return `            <article class="podcast" id="${e.sujet}">
                 <h3>${echapper(sansEmoji(e.parcours))} — ${echapper(e.titre)}</h3>
                 <p class="podcast-duree">${e.exacte ? "" : T.environ}${T.minute(e.minutes)} · ${echapper(dateLisible(e.publie, T.lang))}</p>
                 <p>${echapper(e.resume)}</p>
-${ecoute}                <p><a href="${lien}">${echapper(T.ouvrir(sansEmoji(e.parcours)))}</a></p>
+${ecoute}                <p><a href="${lien}">${echapper(T.ouvrir(sansEmoji(nomDuParcours)))}</a></p>
                 <details class="podcast-texte">
                     <summary>${T.replier}</summary>
 ${enHTML(e.corps)}                </details>
@@ -546,6 +595,7 @@ if (!episodes.length) {
 const ecrits = [
     ecrireSiDifferent("podcasts.html", rendrePage(episodes, PAGES.fr)),
     ecrireSiDifferent("en/podcasts.html", rendrePage(episodes, PAGES.en)),
+    ecrireSiDifferent("hu/podcasts.html", rendrePage(episodes, PAGES.hu)),
     ecrireSiDifferent("podcast.xml", rendreFlux(episodes)),
 ].filter(Boolean);
 

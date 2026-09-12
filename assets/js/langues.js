@@ -160,7 +160,7 @@
         es: [], de: [], it: [], zh: [], ru: [],
         /* Le hongrois, page par page depuis le 12 septembre 2026. Une page
            absente de cette liste reste servie en français par le menu. */
-        hu: ["index.html", "guides.html", "actualites.html"],
+        hu: ["index.html", "guides.html", "actualites.html", "podcasts.html"],
     };
 
     // Les correspondances d'adresses entre versions. La version francaise est a

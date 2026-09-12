@@ -1,5 +1,31 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Podcasts en hongrois
+
+### Ce qui est publié
+
+- **`hu/podcasts.html`**, écrite par `publier-podcasts.js` comme les deux autres :
+  quatorze épisodes, déclarée dans `PAGES_TRADUITES.hu`. L'audio et les résumés sont en
+  français, et un encadré le dit **en tête**, avant qu'on lance un fichier — avec un
+  lien vers les útmutatók, qui eux sont traduits. Le flux `podcast.xml` reste unique et
+  français : il n'y a qu'une bande-son.
+- Ce que le site écrit autour est hongrois : dates « 2026. augusztus 30. », formées à la
+  main comme en anglais (le rendu d'`Intl` dépend de la machine), durées « 2 perc », et
+  lien « Megnyitom: A tanulás tanulása → » sous le nom que porte la page d'arrivée.
+- **L'accueil hongrois annonce maintenant les trois derniers épisodes**, sans qu'on ait
+  rien à y toucher : la condition « la page des podcasts existe dans cette langue » est
+  devenue vraie. Il les range sous les noms hongrois des parcours, et sa phrase
+  d'introduction les mentionne.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue | verts |
+| `podcasts.html`, `en/podcasts.html`, `podcast.xml` | inchangés |
+| `audit-geometrie` | **1 069 mesures, 35 gabarits**, 0 anomalie |
+| Navigateur | 14 épisodes, audio résolu, menu vers `hu/podcasts.html`, 0 erreur |
+
 ## 2026-09-12 — Accueil, catalogue et actualités en hongrois
 
 ### Ce qui est publié

@@ -330,7 +330,8 @@ function blocNouveautes(langue) {
             html += '                <li class="actu">\n';
             html += '                    <a class="actu-titre" href="podcasts.html">'
                  + echapper(e.titre) + "</a>\n";
-            html += '                    <p class="actu-source">' + echapper(e.parcours)
+            html += '                    <p class="actu-source">'
+                 + echapper((NOMS[langue] || {})[e.sujet] || e.parcours)
                  + duree(e.secondes, langue) + "</p>\n";
             html += "                </li>\n";
         }
