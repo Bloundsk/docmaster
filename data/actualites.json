@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-12T23:35:07.773Z",
+  "maj": "2026-09-12T23:35:20.755Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVkRKV2Z5WHhURzlxNzdBbkd4blFOMDdKWDRhYXFUQ25hY0VzVVYwZTNFTUlzajd0dHBhRlhDTk1mcXlWM2dxdWV3cFFVTG9XcVFLYUJxRXhXWm5kTkFXeW1Zc0w5RURnTHVIeFluU0N3d3BSbGJIaW92cy0xYS0zNFJLR0xhWEJqMGpzb1lNdFkweWRXQV9UM0hB?oc=5",
@@ -206,30 +206,6 @@
       "publie": "2026-09-12"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5TbW53MnNYX2g5X2J0UmR5MldjMGN1c2FhRTNwbk1pWnBya1VBQ1BZZ0hTNDdpVjRrVGgtb21mdFpvdDFnQ2JfU2xDbktUV21zRDlfX19BUktLaUFqWkE?oc=5",
-      "titre": "HTEC Momentum renforce son palmarès exceptionnel en matière d'expérience utilisateur avec deux distinctions aux UX Design Awards.",
-      "source": "Lelezard",
-      "date": "2026-09-03",
-      "guide": "design",
-      "page": "debutant.html",
-      "ancre": "les-tests-utilisateurs",
-      "section": "🧪 Les tests utilisateurs",
-      "sujet": "🎨 Design UX/UI — Débutant",
-      "publie": "2026-09-12"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNakxJOTdHZ283VnZwaEo3RkJFcmxYMDJBb3RtX2JSUjZ2dUdHMDVreUZVc3REZ2p6RjJfc3hLUVB1Nkk0RklKVEJIck9CRFBKT1BoMDhFSG9pdGs0RVVSOXRZRTZULWN4RkRJRmdULTJsc1ZOeXZ5QlltOWYtSmZUUXVPMzI2U3F1c1RJUlJteEJDaWZpLUlrcUd2Q1dobFZNLV9ENVhuVm9QLUx6MldVTm5YT0cteXlWNmZTWjJqcUhKTkE0Y1E?oc=5",
-      "titre": "Rentrée dans le supérieur : comment conserver le droit aux allocations pour un enfant majeur",
-      "source": "RTBF",
-      "date": "2026-09-03",
-      "guide": "droit",
-      "page": "debutant.html",
-      "ancre": "conserver-ses-documents",
-      "section": "🗂️ Conserver ses documents",
-      "sujet": "⚖️ Droit & démarches — Débutant",
-      "publie": "2026-09-12"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSnFBdms2dlRUY0JyVmx1UG1aaFBMOW9YRGN4NWM3Y2FOSXl4S3VLVDBsZFNmX0pfa0ZrQkk5b29qZE92S2xjNnZnZjBqZ3JjbXJJcWsxSU12Q2xGWmV1WlV1UjlwNmJGNGlydG1NSzNxV0NRVjNyRjJfVHVCOWhYMnBrZ3c1U2dsUHAzQ3VRMERUTGlNY05zQWw5aHZBSWlGR25kTWItcGlrRFNZTUIyWA?oc=5",
       "titre": "Gestion des risques : l’IA gagne du terrain chez les gestionnaires d’actifs",
       "source": "Finance et Investissement",
@@ -287,6 +263,30 @@
       "ancre": "la-medecine-du-travail",
       "section": "🏥 La médecine du travail",
       "sujet": "🩺 Santé au travail — Avancé",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUWVNcmp3ejRVWkxZbTZ5eUFxVWlhbUl3S2NJNnNsX3FFLWUwRDFOOGZqRW9HSjNpd3pCS2FWMUpzZkpkYVhJOVdDTEY5MkQyYy1MMVJUYVlvdUFDTEg4ejFmUlk2dGpKdklyYmt6NnI0eU5aUHdkYkRzbkhjdzZ4X3VjcEktdWZjVWtaT3RQOFJyVTh1RS01TjFST2hqWGRpSDc3ag?oc=5",
+      "titre": "Au Niger, apprendre un métier pour construire son autonomie",
+      "source": "UNICEF",
+      "date": "2026-09-01",
+      "guide": "apprendre",
+      "page": "avance.html",
+      "ancre": "construire-son-systeme",
+      "section": "📐 Construire son système",
+      "sujet": "🎓 Apprendre à apprendre — Avancé",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdmJEcHVxLTRXa2lSNnZ3cFIwam94TEd3NU5NUl9PUFNNQ3QtS2YtemJRLUVWdkFlMHZ2REVYQjhGb0x2b3dRbGo3cWtETlZ5TnFKQTlHcEFYTC1XUEp0SFFQeElYd0JXaVZWV3BHXzZvVy1Tck5uLU9rbnE5QUJ1NnoyVXZNZXU5RldQaXgyV2VoQXk3MzF4cFI0Mzc4anNFYlBnaTNDQkxrUDRHX1g1eElFN1ZmTXoyOHNzbGFpeC1fcG96aG0wd0lCTWpaVUZQQ1ZHbmhVUzlYbkdjQXBTLVBlaWZhb2VJVEJ3ZEQwTUhBeFd3MUNxUkpyR2JBUl82SDBz?oc=5",
+      "titre": "Le meilleur OLED de Samsung gagne une version spectaculaire qui cache son design controversé et ajoute un énorme système Hi-Fi",
+      "source": "TechRadar",
+      "date": "2026-09-01",
+      "guide": "design",
+      "page": "intermediaire.html",
+      "ancre": "systeme-de-design",
+      "section": "🧱 Le système de design",
+      "sujet": "🎨 Design UX/UI — Intermédiaire",
       "publie": "2026-09-12"
     }
   ]
