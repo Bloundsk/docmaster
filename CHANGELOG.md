@@ -1,5 +1,50 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Quatorzième parcours en hongrois : Santé au travail — les quatorze sont traduits
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/sante/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 149 textes des
+  12 simulateurs** (162 textes et 6 fragments ajoutés : « 150 perc mérsékelt
+  intenzitású mozgás hetente », « 11 óra — a tiéd: 10 óra », « kb. 40 perc, a nap
+  során elosztva » ; les quadrants de Karasek deviennent *aktív, feszült, nyugodt,
+  passzív*).
+- `CONTENU_TRADUIT.hu` annonce désormais **les quatorze sujets**. Les six pages
+  hongroises qui citaient ce parcours en français (Droit, Écologie, et les quatre de
+  Négociation) mènent à sa version hongroise.
+- **Quatrième sujet à droit français, traité comme les trois précédents.** Médecine du
+  travail, DUERP, CSE, droit de retrait, droit à la déconnexion et définition du
+  harcèlement moral restent français et le disent ; le bandeau `reglesFrancaises`
+  s'affiche de lui-même, vérifié. **Ce qui est européen se dit européen** : repos de
+  11 heures par jour et de 24 heures de plus par semaine (35 h), principe d'une pause
+  au-delà de six heures — sa durée de 20 minutes est dite française —, obligation
+  d'évaluer les risques, charge de la preuve aménagée en matière de discrimination.
+- **Le numéro de crise du lecteur passe en premier**, comme le veut la règle du site :
+  « Magyarországon a 116-123 », « közvetlen veszélyben a 112 », puis le 3114 français —
+  dans les avertissements, les ressources et le verdict d'alerte du simulateur
+  d'épuisement.
+- **États non affichés par défaut vérifiés dans le navigateur** : les trois constats
+  de la récupération, trois quadrants de Karasek, repère d'activité dépassé ou tout
+  juste atteint, journée de moins de six heures, verdict d'alerte de l'épuisement.
+  Tout en hongrois, sans erreur de console.
+
+### Corrigé en route
+
+- **Quatre liens profonds menaient encore au français.** Dans Négociation, « Munkahelyi
+  egészség, haladó szint (franciául) » et « Jog és ügyintézés, haladó szint
+  (franciául) » pointaient vers les niveaux avancés français — dont un laissé par la
+  publication du Droit le matin même : le repointage ne cherchait que les liens vers
+  les sommaires. Repointés ; plus aucun lien vers un guide français sous `hu/`,
+  vérifié par recherche sur tout le dossier.
+- **Le fragment « dans » posé pour le Droit abîmait un texte de la Santé** :
+  « réparties dans la journée » devenait « még la napnée ». Le vérificateur l'a
+  montré avant traduction ; un fragment plus long, appliqué en premier, le neutralise.
+- **Le biais de longueur, une quatorzième fois, corrigé en une passe** : la bonne
+  réponse était la plus longue dans 59 % des cas (français 37 %). 31 distracteurs
+  retouchés : 38 / 32 / 31 % (français 37 / 37 / 29 %). Les 1 272 questions hongroises
+  sont à 34,1 / 35,1 / 31,3 %.
+
 ## 2026-09-12 — Treizième parcours en hongrois : Droit & démarches
 
 ### Ce qui est publié

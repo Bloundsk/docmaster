@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Munkahely, ülés és szünetek — Munkahelyi egészség, kezdő - Clicked</title>
+    <meta name="description" content="A munkahelyi egészség útmutatójának kezdő szintje: a munkahely beállítása, az ülő életmód, a szemfáradtság és a valóban pihentető szünetek. A francia jogot ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/sante/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/sante/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/sante/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/sante/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/sante/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Munkahely, ülés és szünetek — Munkahelyi egészség, kezdő - Clicked">
+    <meta property="og:description" content="A munkahelyi egészség útmutatójának kezdő szintje: a munkahely beállítása, az ülő életmód, a szemfáradtság és a valóban pihentető szünetek. A francia jogot ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/sante/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Munkahely, ülés és szünetek — Munkahelyi egészség, kezdő - Clicked">
+    <meta name="twitter:description" content="A munkahelyi egészség útmutatójának kezdő szintje: a munkahely beállítása, az ülő életmód, a szemfáradtság és a valóban pihentető szünetek. A francia jogot ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🩺 Munkahelyi egészség</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🩺 Munkahelyi egészség — Kezdő</h1>
+                <p>A test munka közben. Nincs előfeltétel.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M38 76 L54 76 L60 60 L70 92 L80 68 L86 76 L102 76"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="46" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="100" cy="100" r="2.5" fill="white" style="animation-delay:1.2s"/>
+<circle class="illu-twinkle" cx="104" cy="44" r="3" fill="white" style="animation-delay:1.8s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>beállítsd a munkahelyedet</strong>, hogy megszakítsd az ülést, hogy enyhítsd a szemfáradtságot, és hogy valóban pihentető szüneteket tarts.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#regler-son-poste">🪑 A munkahely beállítása</a></li>
+                <li><a href="#la-sedentarite">🚶 Az ülő életmód</a></li>
+                <li><a href="#la-fatigue-visuelle">👀 A szemfáradtság</a></li>
+                <li><a href="#les-pauses">😌 A pihentető szünetek</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Miért nem lehet jól beállítani egy asztalra tett laptopot?</li>
+                <li>Eltörli-e a szombati sport a napi kilenc óra ülést?</li>
+                <li>Mit tehetsz ingyen a szemfáradtság ellen?</li>
+                <li>Mennyi szünet jár hat óra munka után, a francia jog szerint?</li>
+                <li>Mi lesz egy mindennapos kellemetlenségből, amelyet megszoksz figyelmen kívül hagyni?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Ez az útmutató nem a teljesítményről szól. A <a href="../productivite/index.html">Termelékenység</a> útmutató a munka megszervezéséről szól; ez egy másik kérdésről: <strong>hogy ne ártson neked</strong>.</p>
+            <p>Ez a szint a legkézzelfoghatóbbal kezd — a testtel, a testtartással, a szemmel, a szünetekkel. Rejtély nélküli beállítások, amelyek egyszer elvégezve hónapokig kitartanak, és amelyeket szinte senki sem végez el.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés — olvasd el</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>, és ahol szabályt említ, a <strong>francia jogot</strong> ismerteti. A munkaközi szünet itt megadott hossza francia: <strong>nézz utána a saját országod szabályának</strong>. A testi és ergonómiai tanácsok viszont mindenhol érvényesek.</p>
+                <p>Nem állít fel diagnózist, és nem helyettesíti sem a háziorvosodat, sem a foglalkozás-egészségügyi orvost.</p>
+                <p>Egy tartóssá váló fájdalom, egy nem múló látási panasz, egy pihenésre sem múló fáradtság: ezekkel orvoshoz kell fordulni, nem egy székbeállítással kell megoldani.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A test munka közben</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="regler-son-poste">🪑 A munkahely beállítása</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A képernyős munkával összefüggő panaszok többsége órákig fenntartott testhelyzetekből ered, nem erőteljes megterhelésből.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A képernyős munkával összefüggő panaszok többsége órákig fenntartott testhelyzetekből ered, nem erőteljes megterhelésből. Ami okozza őket, az tehát beállítható — és a beállítás sokáig kitart.</p>
+
+                <h4>A négy támpont</h4>
+                <ol>
+                    <li><strong>A képernyő teteje szemmagasságban</strong>, vagy kicsivel alatta. A túl alacsony képernyő hét órán át előrebillenti a fejet.</li>
+                    <li><strong>A képernyő karnyújtásnyira.</strong> Túl közel a szem folyamatosan fókuszál; túl messze előredőlsz.</li>
+                    <li><strong>Az alkar vízszintes</strong>, a váll ellazult. Ha a váll megemelkedik, túl magas a munkafelület.</li>
+                    <li><strong>A talp a padlón</strong>, a comb vízszintes. Egy lábtartó olcsóbb egy gyógytornánál.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">A laptop ellentmondása</span>
+                    <p>A laptop képernyője egybe van építve a billentyűzettel. Asztalra téve nincs helyes testhelyzet: vagy a képernyő van jó magasságban, és a kéz túl magasan, vagy a kéz van jó helyen, és a fej billen előre.</p>
+                    <p><strong>Egy állvány és egy külön billentyűzet egy ellentmondást old fel, nem egy kényelmetlenséget.</strong> Ezért szerepelnek minden ajánlásban, alkalmi, de hosszan tartó használat esetén is.</p>
+                </div>
+
+                <div class="pratique" data-pratique="poste-de-travail"></div>
+
+                <h4>A fény</h4>
+                <p>A képernyő merőleges legyen az ablakra: szemben vele ellenfényben dolgozol; háttal neki a képernyő tükröződik. A szem mindkét esetben folyamatosan kompenzál.</p>
+                <p>A kiegészítő lámpa a dokumentumot világítsa meg, ne a képernyőt. És egy sötét szobában bekapcsolt képernyő olyan kontrasztot kényszerít ki, amelyet a szem hosszú távon rosszul visel.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megvárni, hogy fájjon</span>
+                    <p>Egy rossz testhelyzet nem fáj az első napon, és az első hónapban sem. Először nap végi kellemetlenségként jelentkezik, amelyet megszoksz figyelmen kívül hagyni.</p>
+                    <p>Éppen mert gyenge a jelzés, a munkahelyet azelőtt kell beállítani, hogy szükség lenne rá. Húsz perc, egyszer.</p>
+                </div>
+
+                <p class="retenir">💡 Irodai munkahelyen nem az erőkifejtés árt, hanem a fenntartott testhelyzet. Az pedig beállítható.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-sedentarite">🚶 Az ülő életmód</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A hosszan tartó ülést ma önálló kockázati tényezőként tartják számon — a mozgáshiánytól elkülönítve.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A hosszan tartó ülést ma önálló kockázati tényezőként tartják számon — a mozgáshiánytól elkülönítve. Lehetsz sportos <em>és</em> ülő életmódú: ez két különböző dolog.</p>
+
+                <h4>Két fogalom, amelyet összekevernek</h4>
+                <p>A <strong>fizikai aktivitást</strong> erőkifejtéssel töltött percekben mérik. Az <strong>ülő életmódot</strong> üléssel töltött órákban. Egy óra sport szombaton javítja az elsőt, a másodikon semmit sem változtat.</p>
+                <p>Ezért különít el az ajánlás két célt: eleget mozogni <em>és</em> rendszeresen megszakítani az ülést.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — napi 9 óra ülés, heti 5 nap</span>
+                    <p><strong>Heti 45 óra</strong>, azaz egy munkaév alatt <strong>2 025 óra</strong>.</p>
+                    <p>Az Egészségügyi Világszervezet támpontja felnőtteknek <strong>heti 150 perc mérsékelt intenzitású mozgás</strong>. 60 percnél <strong>90 hiányzik</strong>.</p>
+                    <p>És ha ezt el is éred, a 2 025 óra ülés megmarad. Ez a második emelő, az elsőtől független.</p>
+                </div>
+
+                <div class="pratique" data-pratique="sedentarite"></div>
+
+                <h4>Ami a gyakorlatban működik</h4>
+                <ul>
+                    <li><strong>Óránként felállni</strong>, akár csak két percre. A megszakítás számít, nem a hossza.</li>
+                    <li><strong>Állva vagy sétálva telefonálni.</strong> Szervezési erőfeszítés nélkül heti több órát helyez át.</li>
+                    <li><strong>A hasznos tárgyakat karnyújtáson kívülre tenni</strong> — nyomtató, vizes palack. A kényszer elvégzi helyetted a munkát.</li>
+                    <li><strong>Állítható magasságú íróasztal</strong>, ha lehetséges: a váltogatás többet ér, mint bármelyik testhelyzet egész nap.</li>
+                </ul>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy a sport kompenzál</span>
+                    <p>„Hetente háromszor futok, ez kompenzál”: valóban javítja a fizikai aktivitást, de nem csökkenti az üléssel töltött időt.</p>
+                    <p>Mindkettő számít, és a második a könnyebb: senkinek sem kell motiváció ahhoz, hogy két percre felálljon.</p>
+                </div>
+
+                <p class="retenir">💡 Lehetsz sportos és ülő életmódú. Két külön mérőszám, és két külön emelő.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-fatigue-visuelle">👀 A szemfáradtság</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Ha órákig egy közeli pontra nézel, elfárad a fókuszálást végző izom, és erősen csökken a pislogás.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ha órákig egy közeli pontra nézel, elfárad a fókuszálást végző izom, és erősen csökken a pislogás. Innen a száraz szem, a fejfájás, a nap végi homályos látás.</p>
+
+                <h4>A legolcsóbb mozdulat</h4>
+                <p>Rendszeresen, néhány másodpercre a távolba nézni. A legelterjedtebb megfogalmazás a három húszas: <strong>20 percenként 20 lábnyira (6 méterre) nézni 20 másodpercig</strong>.</p>
+                <p>A pontos számok keveset számítanak — az elv a lényeg: óránként többször adni az izomnak egy kis ellazulást.</p>
+
+                <div class="exemple">
+                    <span class="titre">A pislogás, az elfeledett</span>
+                    <p>A pislogás szétteríti a könnyfilmet a szemen. Képernyő előtt a gyakorisága jelentősen csökken, és a film gyorsabban párolog, mint ahogy megújul.</p>
+                    <p>Ez a mechanizmus magyarázza — jobban, mint a képernyő fénye — a nap végi száraz, homokos érzést a szemben.</p>
+                    <p>A megoldás ugyanilyen egyszerű: gondolni rá, és olyan „nézz a távolba” szüneteket tartani, amelyek természetesen helyreállítják a reflexet.</p>
+                </div>
+
+                <div class="pratique" data-pratique="fatigue-visuelle"></div>
+
+                <h4>A „kék fényről”</h4>
+                <p>Gyengék a bizonyítékok arra, hogy a képernyők kék fénye károsítaná a szemet, és az erre a célra árult szűrők nem sokat bizonyítottak a szemfáradtság terén.</p>
+                <p>Ami jobban megalapozott, az az <strong>alvást</strong> érinti: a fény, bármilyen színű, késlelteti az elalvást. A hasznos emelő tehát az, hogy mikor hagyod abba, sokkal inkább, mint a képernyőre tett szűrő.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — beállítással kezelni egy tartós panaszt</span>
+                    <p>Az átmeneti szemfáradtság szünetekkel megszűnik. A napokig tartó panasz, a visszatérő fejfájás vagy a tartósan homályos látás vizsgálatot igényel.</p>
+                    <p>Gyakori ok a nem megfelelő szemüveg vagy kontaktlencse, és ezt semmilyen képernyőbeállítás nem javítja.</p>
+                </div>
+
+                <p class="retenir">💡 A közelre néző szem soha nem pihen. Néhány másodpercre a távolba nézni az útmutató legegyszerűbb mozdulata.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-pauses">😌 A pihentető szünetek</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A szünet se nem jutalom, se nem időpocsékolás: ettől bírja ki az egész nap.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A szünet se nem jutalom, se nem időpocsékolás: ettől bírja ki az egész nap. Feltéve, hogy valóban szünet.</p>
+
+                <h4>A minimum, és a többi</h4>
+                <p>Az Európai Unióban hat óránál hosszabb munkanap esetén szünet jár; a hosszát a nemzeti jog szabja meg. A francia jog <strong>hat óra munka után húsz perc szünetet</strong> ír elő. Ez egy alsó határ, és gyakran célként olvassák — pedig semmit sem mond az elosztásról.</p>
+                <p>Márpedig az elosztás számít: több rövid megszakítás jobban véd, mint egyetlen blokk. Képernyős munkánál egy szokásos ergonómiai támpont nagyjából öt perc minden ledolgozott órára, a nap során elosztva.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — egy 8 órás nap</span>
+                    <p><strong>Minimális törvényes szünet Franciaországban: 20 perc.</strong> Ténylegesen kivett szünet: 15 perc.</p>
+                    <p><strong>Eltérés a törvényes minimumtól: − 5 perc</strong> — még az alsó határ sincs meg.</p>
+                    <p><strong>Ergonómiai támpont képernyős munkánál: kb. 40 perc</strong>, a nap során elosztva. A szokásos gyakorlattól való eltérés jelentős, és sehol sem látszik.</p>
+                </div>
+
+                <div class="pratique" data-pratique="pauses-legales"></div>
+
+                <h4>Mitől lesz valódi egy szünet</h4>
+                <p>A pihentető szünet <strong>regisztert vált</strong>. Felállni, mozogni, máshová nézni, másról beszélni. A telefonon egy hírfolyam görgetése pontosan ugyanazt az erőforrást veszi igénybe, mint a munka: tartós figyelem, közeli pont, képernyő.</p>
+                <p>A képernyő előtt elköltött ebéd ugyanígy működik: egy óráig tart, és semmit sem szakít meg.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — elhagyni a szüneteket, amikor nő a terhelés</span>
+                    <p>Ez a legelterjedtebb és a leginkább visszafelé sülő reflex: éppen a zsúfolt napokon esik vissza a teljesítmény szünetek nélkül.</p>
+                    <p>A „megnyert” időt hibákkal, újraolvasással és terméketlen nap véggel fizeted meg — anélkül, hogy bármi láthatóvá tenné.</p>
+                </div>
+
+                <p class="retenir">💡 Húsz perc egy blokkban megfelel a francia törvénynek. Óránként öt perc az embert védi. Nem ugyanaz.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Az asztalra tett laptop szükségszerűen vagy túl alacsonyra teszi a képernyőt, vagy túl magasra a kezet.</li>
+                <li>Napi kilenc óra ülés évente 2 025 óra — és a szombati sport nem törli el a testhelyzetet.</li>
+                <li>Néhány másodpercre a távolba nézni ellazítja a fókuszáló izmot. Ingyenes és hatékony.</li>
+                <li>A francia jog szerint hat óra után húsz perc szünet jár. Ez alsó határ, nem cél.</li>
+                <li>Egy mindennapos kellemetlenség, amelyet megszoksz figyelmen kívül hagyni, végül tartós fájdalommá válik.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Ellenőrizd a képernyőd tetejének magasságát: szemmagasságban kell lennie. Ha egész nap lefelé nézel, emeld meg még ma — néhány könyv is elég.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országos munkavédelmi szakintézet</strong> — a legtöbb ingyenes tájékoztatót ad a képernyős munkáról, a mozgásszervi panaszokról és a munkahely kialakításáról. Franciaországban az INRS.</li>
+                    <li><strong>A WHO fizikai aktivitásra vonatkozó ajánlásai</strong> — az itt idézett heti 150 perc, és a mozgás és az ülő életmód megkülönböztetése. Nemzetközi ajánlások.</li>
+                    <li><strong>A munkakörülmények javításával foglalkozó országos szervezet</strong> — anyagok a munkaszervezésről és a megelőzésről. Franciaországban az ANACT.</li>
+                    <li><strong>A foglalkozás-egészségügyi szolgálatod</strong> — Franciaországban a látogatás jog, kérésre és bizalmasan. Máshol eltérőek a szabályok.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> állítsd be most a képernyőd magasságát, mielőtt továbbolvasol. Ez az útmutató egyetlen mozdulata, amely két percig tart, és hónapokig kitart.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>🩺 Munkahelyi egészség</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Egészség — Középhaladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../productivite/index.html">⏱️ Termelékenység és szervezés</a>
+                <a href="../droit/index.html">⚖️ Jog és ügyintézés</a>
+                <a href="../apprendre/index.html">🎓 A tanulás tanulása</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/sante-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

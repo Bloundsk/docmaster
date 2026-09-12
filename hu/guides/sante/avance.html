@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Kiégés és a munkáltató kötelezettségei — Munkahelyi egészség, haladó - Clicked</title>
+    <meta name="description" content="A munkahelyi egészség útmutatójának haladó szintje: foglalkozás-egészségügy, a munkáltató kötelezettségei, kiégés és súlyos helyzetek. A francia jogot ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/sante/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/sante/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/sante/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/sante/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/sante/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Kiégés és a munkáltató kötelezettségei — Munkahelyi egészség, haladó - Clicked">
+    <meta property="og:description" content="A munkahelyi egészség útmutatójának haladó szintje: foglalkozás-egészségügy, a munkáltató kötelezettségei, kiégés és súlyos helyzetek. A francia jogot ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/sante/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kiégés és a munkáltató kötelezettségei — Munkahelyi egészség, haladó - Clicked">
+    <meta name="twitter:description" content="A munkahelyi egészség útmutatójának haladó szintje: foglalkozás-egészségügy, a munkáltató kötelezettségei, kiégés és súlyos helyzetek. A francia jogot ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🩺 Munkahelyi egészség</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🩺 Munkahelyi egészség — Haladó</h1>
+                <p>A szereplők, a kötelezettségek, és mit tegyél, ha baj van.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M38 76 L54 76 L60 60 L70 92 L80 68 L86 76 L102 76"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="46" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="100" cy="100" r="2.5" fill="white" style="animation-delay:1.2s"/>
+<circle class="illu-twinkle" cx="104" cy="44" r="3" fill="white" style="animation-delay:1.8s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>tudd, mit mondhat és mit nem a foglalkozás-egészségügyi orvos</strong>, hogy ismerd a munkáltató biztonsági kötelezettségét, hogy felismerd a kiégést, és hogy reagálj egy súlyos helyzetre.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#la-medecine-du-travail">🏥 A foglalkozás-egészségügy</a></li>
+                <li><a href="#les-obligations-de-lemployeur">🛡️ A munkáltató kötelezettségei</a></li>
+                <li><a href="#lepuisement-professionnel">🔥 A kiégés</a></li>
+                <li><a href="#les-situations-graves">🚨 A súlyos helyzetek</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>A munkáltatónak dolgozik-e a foglalkozás-egészségügyi orvos?</li>
+                <li>A saját kérésedre tett látogatás: jog vagy szívesség, és milyen időben?</li>
+                <li>Mire vonatkozik a munkáltató biztonsági kötelezettsége?</li>
+                <li>Megállapíthatod-e magadnál a kiégést?</li>
+                <li>Mit tegyél először egy súlyos helyzetben?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Az első két szint arról szólt, amit bárki egyedül megtehet. Ez arról, ami egyedül nem oldható meg: <strong>a szereplőkről, akiket ismerni kell</strong>, <strong>arról, amivel a munkáltató tartozik</strong>, és <strong>arról, mit tegyél, milyen sorrendben</strong>, ha a helyzet túlnő a beállításokon.</p>
+            <p>Ezt a szintet a leghasznosabb azelőtt elolvasni, <em>hogy</em> szükség lenne rá. Ezek a mechanizmusok nehezen fedezhetők fel a helyzet közepén.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés — olvasd el</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>, és a <strong>francia jogot</strong> ismerteti. A foglalkozás-egészségügyi orvos szerepe, a DUERP, a CSE, a munkavégzéstől való kivonulás joga és a zaklatási ügyek bizonyítási szabályai itt francia mechanizmusként szerepelnek. <strong>A legtöbb országban van megfelelőjük, de eltérnek — nézz utána a sajátodnak.</strong></p>
+                <p>Nem állít fel diagnózist, és nem helyettesíti sem az orvost, sem az ügyvédet, sem a munkavállalói képviselőt.</p>
+                <p>Az oldal gyakorlatai <strong>teendőkről</strong> és <strong>ismeretekről</strong> szólnak — soha nem az egészségi állapotodról. Egyik sem ad pontszámot, és egyik sem von le rólad következtetést.</p>
+                <p><strong>Ha rosszul vagy:</strong> beszélj a háziorvosoddal vagy a foglalkozás-egészségügyi orvossal. Ha nagy bajban vagy, hívd az országod lelkisegély-vonalát: Magyarországon a <strong>116-123</strong> ingyenes és éjjel-nappal hívható, közvetlen veszélyben a <strong>112</strong>. Franciaországban a 3114.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">A szereplők és a jogorvoslatok</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="la-medecine-du-travail">🏥 A foglalkozás-egészségügy</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Ez a terület legerősebb emelője, és az egyik legkevésbé értett.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ez a terület legerősebb emelője, és az egyik legkevésbé értett. A legelterjedtebb tévhit: azt hinni, hogy a foglalkozás-egészségügyi orvos a munkáltatónak dolgozik.</p>
+
+                <h4>Mi, és mi nem</h4>
+                <p>Franciaországban a foglalkozás-egészségügyi orvos (médecin du travail) <strong>orvos</strong>, akit ugyanúgy köt az orvosi titoktartás, mint bármely más orvost. A munkáltató, amely fizeti, sem ahhoz nem fér hozzá, amit mondasz, sem a dokumentációdhoz — csak a munkaköri alkalmasságodra vonatkozó <strong>következtetésekhez</strong>.</p>
+                <p>Szerepe kizárólag megelőző: nem gyógyít, hanem megakadályozza, hogy a munka rontsa az egészséget.</p>
+
+                <h4>A saját kérésedre tett látogatás</h4>
+                <p>Ez a leginkább figyelmen kívül hagyott pont: <strong>Franciaországban bármely munkavállaló bármikor kérhet látogatást, a munkáltatója megkerülésével és indoklás nélkül</strong>. A munkáltató nem tiltakozhat, és nem ismerheti meg az okát.</p>
+                <p>Hosszú betegállomány alatt <strong>visszatérés előtti látogatás</strong> kérhető: a visszatérés előkészítésére szolgál — munkakör-átalakítás, terápiás részmunkaidő, áthelyezés —, még mielőtt a munka újrakezdődne.</p>
+
+                <div class="exemple">
+                    <span class="titre">Amit el tud érni</span>
+                    <p><strong>A munkakör átalakítását.</strong> Javaslatai kötelezik a munkáltatót, amely csak a lehetetlenség igazolásával teheti félre őket.</p>
+                    <p><strong>A munkakör</strong> és a munkakörülmények helyszíni vizsgálatát.</p>
+                    <p><strong>Egy csoportra vonatkozó figyelmeztetést</strong>: ha több munkavállalót érintő kockázatot észlel, írásban jelezheti a munkáltatónak, amelynek válaszolnia kell.</p>
+                    <p>Egyik lépés sem feltételezi, hogy beteg vagy. Csak azt, hogy valami gondot okoz a munkában.</p>
+                </div>
+
+                <div class="pratique" data-pratique="medecine-travail"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megvárni az időszakos vizsgálatot</span>
+                    <p>Az időszakos vizsgálatok sok esetben évekre vannak egymástól. Ha a következőig vársz egy probléma felvetésével, gyakran túl sokáig vársz.</p>
+                    <p>A kérésre tett látogatás pontosan erre való, és semmibe sem kerül — sem a munkavállalónak, sem szabadnapokban: munkaidőben zajlik.</p>
+                </div>
+
+                <p class="retenir">💡 Egy látogatás a saját kérésedre, bizalmasan, indoklás nélkül, munkaidőben. Franciaországban jog, és nagyon kevesen élnek vele.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-obligations-de-lemployeur">🛡️ A munkáltató kötelezettségei</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A munkahelyi egészség nem választható belső irányelv: törvényi kötelezettség, amelynek hatóköre szélesebb, mint általában hiszik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A munkahelyi egészség nem választható belső irányelv: törvényi kötelezettség, amelynek hatóköre szélesebb, mint általában hiszik.</p>
+
+                <h4>Megelőzési kötelezettség</h4>
+                <p>A munkáltatónak meg kell tennie a szükséges intézkedéseket a munkavállalók biztonságának és <strong>testi és lelki</strong> egészségének védelmére. A lelki egészség a francia munka törvénykönyvében kifejezetten szerepel.</p>
+                <p>Ez a kötelezettség a <strong>megelőzésre</strong> vonatkozik: felmérni a kockázatokat, a forrásuknál elkerülni őket, a munkát az emberhez igazítani. A kár bekövetkezése utáni helyreállítás nem elég a teljesítéséhez.</p>
+
+                <h4>Az egységes dokumentum</h4>
+                <p>A <strong>DUERP</strong> — a szakmai kockázatok értékelésének egységes dokumentuma — Franciaországban már az első munkavállalótól kötelező. Munkaegységenként sorolja fel a kockázatokat, és tartalmaznia kell a <strong>pszichoszociális kockázatokat</strong> is, nem csak a fizikaiakat. A kockázatértékelés kötelezettsége uniós eredetű, így Magyarországon is létezik, más formában.</p>
+                <p>A munkavállalók hozzáférhetnek. Jogos elkérni, és ha nem kapsz választ, az is információ.</p>
+
+                <div class="exemple">
+                    <span class="titre">A kapcsolattartók, sorrendben</span>
+                    <p><strong>A CSE</strong> — a francia munkavállalói képviseleti testület — legalább tizenegy fős vállalatoknál. Tagjai jelezhetnek, vizsgálódhatnak, és súlyos, közvetlen veszély esetén riasztási joguk van.</p>
+                    <p><strong>A foglalkozás-egészségügyi szolgálat</strong>, közvetlenül elérhető.</p>
+                    <p><strong>A munkaügyi felügyelet</strong>, ha semmi sem mozdul. A bejelentés ingyenes, és kérésre bizalmas maradhat.</p>
+                </div>
+
+                <div class="pratique" data-pratique="duerp"></div>
+
+                <h4>A munkavégzéstől való kivonulás joga</h4>
+                <p><strong>Súlyos és közvetlen veszély</strong> esetén Franciaországban bármely munkavállaló kivonhatja magát a helyzetből (droit de retrait), miután figyelmeztette a munkáltatót. Emiatt önmagában semmilyen szankció vagy bérlevonás nem alkalmazható.</p>
+                <p>Két feltétel számít: a veszélynek <strong>súlyosnak</strong> és <strong>közvetlennek</strong> kell lennie, és a kivonulás nem idézhet elő veszélyt másoknak. Az okot az alapján ítélik meg, amit a történés pillanatában észszerűen hinni lehetett.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy CSE nélkül semmi sem jár</span>
+                    <p>A biztonsági kötelezettség és az egységes dokumentum a vállalat méretétől függetlenül létezik, munkavállalói képviselők nélkül is.</p>
+                    <p>Ezek hiányában a foglalkozás-egészségügyi szolgálat és a munkaügyi felügyelet közvetlenül elérhető marad.</p>
+                </div>
+
+                <p class="retenir">💡 A kötelezettség a megelőzésre vonatkozik. Az a munkáltató, amely utólag javít, nem tette meg, amit a törvény kér tőle.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="lepuisement-professionnel">🔥 A kiégés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A szó bekerült a köznyelvbe, és ettől egyszerre lett ismerős és homályos.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A szó bekerült a köznyelvbe, és ettől egyszerre lett ismerős és homályos. Valami pontosat jelöl, és nem a fáradtság vagy a túlhajszoltság szinonimája.</p>
+
+                <h4>A három leírt dimenzió</h4>
+                <p>A szakirodalom hármat különít el, amelyek összekapcsolódnak:</p>
+                <ol>
+                    <li><strong>A kimerültség</strong> — a pihenésre már nem múló fáradtság, testi és lelki egyaránt.</li>
+                    <li><strong>A távolságtartás</strong> — elszakadás, néha cinizmus a munkával és az emberekkel szemben.</li>
+                    <li><strong>A hatékonyságérzés elvesztése</strong> — az az érzés, hogy semmi sem sikerül, a valódi eredményektől függetlenül.</li>
+                </ol>
+                <p>Nem szoros értelemben vett orvosi diagnózis, és a nemzetközi osztályozásokban nem önálló betegségként szerepel: ott <strong>munkával összefüggő jelenségként</strong> írják le. Ez semmit sem von le a valóságából és a súlyosságából.</p>
+
+                <div class="exemple">
+                    <span class="titre">Ami megkülönbözteti egy nehéz időszaktól</span>
+                    <p><strong>Az időtartam.</strong> Több hét, javulás nélkül az időszakok között.</p>
+                    <p><strong>A regenerálódás hiánya.</strong> A hétvége, majd a szabadság sem elég már.</p>
+                    <p><strong>A beállandósulás.</strong> Már nem reakció egy eseményre, hanem alapállapottá vált.</p>
+                    <p>A beszámolókban állandóan visszatér egy jel: <strong>a környezet előbb vette észre, mint az érintett</strong>. A fokozatos alkalmazkodás eltörli az összehasonlítási pontokat.</p>
+                </div>
+
+                <div class="pratique" data-pratique="epuisement"></div>
+
+                <h4>Miért nem megfelelő egyetlen online teszt sem</h4>
+                <p>Léteznek validált kérdőívek, és szakemberek használják őket — keretek között, beszélgetéssel és értelmezéssel. Ebből a keretből kiemelve jelentés nélküli számokat adnak.</p>
+                <p>Egy weboldal által adott pontszám tévesen megnyugtathat valakit, aki rosszul van, vagy tartósan aggaszthat valakit, aki jól van. Egyik hiba sem elfogadható, és ezért nem kínál ez az oldal ilyet.</p>
+                <p><strong>A hasznos következő lépés mindig ugyanaz:</strong> beszélni a háziorvossal vagy a foglalkozás-egészségügyi orvossal. Mindkettőt köti a titoktartás.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — egyéni gyengeségként olvasni</span>
+                    <p>A szervezeti tényezők — tartós túlterhelés, a mozgástér hiánya, az elismerés hiánya, értékkonfliktusok — dokumentáltak és meghatározók.</p>
+                    <p>Ha a kérdést személyes ellenálló képesség hiányaként kezeljük, az ok a helyén marad, és az emberre hárul az, ami a szervezethez tartozik.</p>
+                </div>
+
+                <p class="retenir">💡 Ez a három dimenzió a megnevezésre való, nem a következtetésre. A megnevezés lehetővé teszi, hogy beszélni lehessen róla — és ez már sok.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-situations-graves">🚨 A súlyos helyzetek</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Lelki vagy szexuális zaklatás, hátrányos megkülönböztetés, erőszak: olyan helyzetek, ahol a lépések sorrendje ugyanannyit számít, mint a tartalmuk.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Lelki vagy szexuális zaklatás, hátrányos megkülönböztetés, erőszak: olyan helyzetek, ahol a lépések sorrendje ugyanannyit számít, mint a tartalmuk. És ahol amit a pillanatban nem írtak le, azt utólag nagyon nehéz bizonyítani.</p>
+
+                <h4>Amit a francia törvény meghatároz</h4>
+                <p>A francia jogban a <strong>lelki zaklatás</strong> ismételt cselekedetekkel valósul meg, amelyek célja vagy hatása a munkakörülmények olyan romlása, amely sértheti a jogokat, a méltóságot, az egészséget vagy a szakmai jövőt.</p>
+                <p>Két gyakran ismeretlen pont: <strong>nem kell hozzá szándék</strong> — elég a hatás; és <strong>hierarchikus viszony sem</strong> — a kollégák közötti zaklatás ugyanígy megvalósul.</p>
+                <p>A <strong>szexuális zaklatásnak</strong> külön meghatározása van, és bizonyos esetekben egyetlen cselekmény is elég.</p>
+
+                <div class="exemple">
+                    <span class="titre">A sorrend, amely számít</span>
+                    <p><strong>1. Írj.</strong> A tényeket, dátummal, folyamatosan. Ez az első, amit minden kapcsolattartó kérni fog, és a legnehezebb hat hónappal később rekonstruálni.</p>
+                    <p><strong>2. Őrizz meg.</strong> Üzeneteket, e-maileket, dokumentumokat, beosztásokat — mindent, ami a tényeket rögzíti.</p>
+                    <p><strong>3. Jelezz írásban</strong> a munkáltatónak vagy a HR-nek. Ez a jelzés indítja el a cselekvési kötelezettségét: az a tájékoztatott munkáltató, amely semmit sem tesz, felelősséggel tartozik.</p>
+                    <p><strong>4. Fordulj a közvetítőkhöz</strong> — munkavállalói képviselők, a zaklatási ügyekért felelős kapcsolattartó, foglalkozás-egészségügyi orvos, munkaügyi felügyelet, az egyenlő bánásmódért felelős szerv (Franciaországban a Défenseur des droits).</p>
+                </div>
+
+                <div class="pratique" data-pratique="situation-grave"></div>
+
+                <h4>A védelem</h4>
+                <p>Az a munkavállaló, aki zaklatásról tanúskodik vagy beszámol, <strong>emiatt nem szankcionálható</strong>. Az erre alapozott elbocsátás semmis.</p>
+                <p>Zaklatási és hátrányos megkülönböztetési ügyekben a bizonyítási teher <strong>megosztott</strong>: a munkavállaló olyan tényeket mutat be, amelyek a helyzetre utalnak, és a munkáltatónak kell bizonyítania, hogy azok másként magyarázhatók. Ez jelentős eltérés a szokásos szabálytól — és még egy ok arra, hogy dossziét állíts össze. Hátrányos megkülönböztetésnél ez uniós szabály, így Magyarországon is érvényes.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — megvárni, hogy biztos legyél a minősítésben</span>
+                    <p>Sokan azért haboznak jelezni, mert nem tudják, hogy a helyzet „számít-e” zaklatásnak. Nem a munkavállaló dolga minősíteni.</p>
+                    <p>A hasznos lépés dátumozott tényeket leírni egy illetékes kapcsolattartónak. A jogi minősítés később jön, és másokra tartozik.</p>
+                </div>
+
+                <p class="retenir">💡 Írd le a tényeket, dátummal, már az elején. Ettől lesz minden további lépés lehetséges, és utólag semmi sem pótolja.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Franciaországban a foglalkozás-egészségügyi orvos nem a munkáltató orvosa: köti az orvosi titoktartás.</li>
+                <li>A saját kérésedre tett látogatás jog, bizalmas, és munkaidőben zajlik.</li>
+                <li>A munkáltató biztonsági kötelezettsége a megelőzésre vonatkozik, nem a helyreállításra.</li>
+                <li>A kiégést nem lehet magadnál megállapítani, és főleg nem egy online kérdőívvel.</li>
+                <li>Súlyos helyzetben: minden más előtt leírni a tényeket, dátummal.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Jegyezd fel valahol, hogyan kérhetsz látogatást a foglalkozás-egészségügyi orvosnál a munkahelyeden. Franciaországban jog, bizalmas, munkaidőben — és ezt az információt soha nem keresi senki abban a pillanatban, amikor kellene.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>A lelkisegély-vonal</strong> — Magyarországon a 116-123, ingyenes és éjjel-nappal hívható; közvetlen veszélyben a 112. Franciaországban a 3114.</li>
+                    <li><strong>A foglalkozás-egészségügyi szolgálatod</strong> — Franciaországban a saját kérésre tett látogatás jog, bizalmas és munkaidőben zajlik.</li>
+                    <li><strong>Az országos munkavédelmi szakintézet</strong> — anyagok a zaklatásról, a pszichoszociális kockázatokról és a megelőzési kötelezettségről. Franciaországban az INRS.</li>
+                    <li><strong>Az egyenlő bánásmódért felelős szerv</strong> — ingyenes bejelentés hátrányos megkülönböztetés és zaklatás esetén. Franciaországban a Défenseur des droits.</li>
+                    <li><strong>A munkaügyi felügyelet</strong> — ingyenes bejelentés, kérésre bizalmas, munkavállalói képviselők nélkül is.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> jegyezd fel még ma a foglalkozás-egészségügyi szolgálatod elérhetőségét. Nem akkor lesz energiád megkeresni, amikor szükséged van rá.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Egészség — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza →</span>🩺 Munkahelyi egészség</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../productivite/index.html">⏱️ Termelékenység és szervezés</a>
+                <a href="../droit/index.html">⚖️ Jog és ügyintézés</a>
+                <a href="../apprendre/index.html">🎓 A tanulás tanulása</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/sante-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Treize parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Droit, Écologie, Entrepreneuriat, Finance, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Les quatorze parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Droit, Écologie, Entrepreneuriat, Finance, IA, Marketing, Négociation, Productivité, Santé) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -68,18 +68,20 @@ françaises.
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
    Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité, Marketing,
-   Négociation, Écologie, Entrepreneuriat, Finance, Droit (13 sur 14).** Les sujets
-   sans droit français sont tous faits ; reste Santé, à traiter comme
-   Entrepreneuriat, Finance et Droit (décision ci-dessous).
+   Négociation, Écologie, Entrepreneuriat, Finance, Droit, Santé (14 sur 14).**
+   Tous les parcours sont traduits ; les quatre sujets à droit français ont suivi la
+   décision ci-dessous.
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %, Entrepreneuriat 52 %, Finance 41 %, Droit 63 %). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %, Entrepreneuriat 52 %, Finance 41 %, Droit 63 %, Santé 59 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
 4. Les pages hors cours (`hu/index.html`, `hu/guides.html`, FAQ…) et
    `PAGES_TRADUITES.hu`. Il faudra alors une version hongroise pour
-   `publier-accueil.js`, `poser-situations.js`, le glossaire et ses renvois.
+   `publier-accueil.js`, `poser-situations.js`, le glossaire et ses renvois. Au
+   passage, retirer des pages hongroises les commentaires « Ces parcours ne sont pas
+   encore traduits », devenus sans objet depuis que les quatorze le sont.
 
 **Ce que le relecteur hongrois doit regarder en priorité :**
 
@@ -202,6 +204,21 @@ françaises.
   la mise en demeure qui n'interrompt pas est dite française. Exemple ajouté aux
   pièges de recherche : un site en hongrois de Slovaquie ou de Roumanie décrit le
   droit de son pays ;
+- pour Santé : **d'abord les numéros de crise**, parce que le sujet touche à la
+  détresse : « Magyarországon a 116-123 » (ligne d'écoute, gratuite, jour et nuit) et
+  « közvetlen veszélyben a 112 », placés avant le 3114 français — à confirmer avant
+  tout le reste. Termes : *foglalkozás-egészségügyi orvos / szolgálat* (médecine du
+  travail), *ülő életmód* (sédentarité), *szemfáradtság*, *munkaközi szünet*,
+  *regenerálódás* (récupération), *lelki elszakadás* (détachement psychologique),
+  *követelmény / mozgástér* (exigence / latitude) et les quadrants *aktív, feszült,
+  nyugodt, passzív*, *lekapcsolódás joga* (droit à la déconnexion), *kiégés*,
+  *kockázatértékelés*, *pszichoszociális kockázatok*, *munkaügyi felügyelet*,
+  *lelki zaklatás* (harcèlement moral), *munkavégzéstől való kivonulás* (droit de
+  retrait). Dits européens et applicables en Hongrie : repos de 11 h par jour et
+  24 h de plus par semaine, principe d'une pause au-delà de six heures (les
+  20 minutes sont dites françaises), obligation d'évaluer les risques, charge de la
+  preuve aménagée pour la discrimination. Tout le reste dit français ; INRS, ANACT
+  et Défenseur des droits nommés entre parenthèses après leur fonction ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12
@@ -215,7 +232,7 @@ pris l'option recommandée, celle de la version anglaise. Les règles française
 le dit ; le bandeau `reglesFrancaises` s'affiche de lui-même en hongrois. Ce qui est
 européen se dit européen ; les organismes deviennent leur fonction. Transposer vers
 le droit hongrois reste possible plus tard, avec des sources hongroises vérifiées.
-Appliqué à Entrepreneuriat, Finance et Droit ; à appliquer à Santé.
+Appliqué aux quatre : Entrepreneuriat, Finance, Droit et Santé.
 
 **Pour relancer :** « continue la traduction hongroise ».
 

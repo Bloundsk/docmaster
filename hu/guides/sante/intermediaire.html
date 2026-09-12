@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Stressz, regenerálódás, lekapcsolódás — Munkahelyi egészség, középhaladó - Clicked</title>
+    <meta name="description" content="A munkahelyi egészség útmutatójának középhaladó szintje: akut és krónikus stressz, követelmény és mozgástér, regenerálódás és a lekapcsolódás joga. A francia jogot ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/sante/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/sante/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/sante/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/sante/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/sante/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Stressz, regenerálódás, lekapcsolódás — Munkahelyi egészség, középhaladó - Clicked">
+    <meta property="og:description" content="A munkahelyi egészség útmutatójának középhaladó szintje: akut és krónikus stressz, követelmény és mozgástér, regenerálódás és a lekapcsolódás joga. A francia jogot ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/sante/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stressz, regenerálódás, lekapcsolódás — Munkahelyi egészség, középhaladó - Clicked">
+    <meta name="twitter:description" content="A munkahelyi egészség útmutatójának középhaladó szintje: akut és krónikus stressz, követelmény és mozgástér, regenerálódás és a lekapcsolódás joga. A francia jogot ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">🩺 Munkahelyi egészség</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>🩺 Munkahelyi egészség — Középhaladó</h1>
+                <p>A mentális terhelés, és ami elviselhetővé teszi — vagy nem.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M38 76 L54 76 L60 60 L70 92 L80 68 L86 76 L102 76"/></g></g>
+<circle class="illu-twinkle" cx="40" cy="46" r="2.5" fill="white" style="animation-delay:.3s"/>
+<circle class="illu-twinkle" cx="100" cy="100" r="2.5" fill="white" style="animation-delay:1.2s"/>
+<circle class="illu-twinkle" cx="104" cy="44" r="3" fill="white" style="animation-delay:1.8s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>megkülönböztesd az akut és a krónikus stresszt</strong>, hogy felismerd a követelmény és a mozgástér közötti egyensúlyhiányt, hogy valódi regenerálódást szervezz, és hogy ismerd a minimális pihenőidőidet.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#aigu-ou-chronique">🧠 Akut stressz, krónikus stressz</a></li>
+                <li><a href="#exigence-et-latitude">⚖️ Követelmény és mozgástér</a></li>
+                <li><a href="#la-recuperation">🔋 A regenerálódás</a></li>
+                <li><a href="#la-deconnexion">🔌 A lekapcsolódás</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Melyik stressz árt: amelyik megemelkedik, vagy amelyik nem csillapodik?</li>
+                <li>Mi koptat valójában egy munkaterhelésben?</li>
+                <li>Mi változtatja meg minden más hatását?</li>
+                <li>Milyen minimális pihenőidőkre hivatkozhatsz a munkáltatóddal szemben?</li>
+                <li>Mit szab meg másoknak egy 23 órakor elküldött üzenet?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint arról szólt, ami beállítható: testtartás, fény, szünetek. Ez arról szól, amit meg kell érteni, mielőtt kezelni lehetne — <strong>mitől marad egy megterhelő munka elviselhető, vagy mitől szűnik meg annak lenni</strong>.</p>
+            <p>A központi különbség nem a „stresszes” és a „nem stresszes” között van. Hanem egy csillapodó és egy már nem csillapodó terhelés között.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés — olvasd el</span>
+                <p>Ez az útmutató <strong>oktatási célú</strong>, és ahol szabályt említ, a <strong>francia jogot</strong> ismerteti — a lekapcsolódás joga francia. A napi 11 és a heti 35 óra pihenő uniós minimum, így Magyarországon is érvényes; a nemzeti jog egyes esetekben eltérést engedhet. A stressz és a regenerálódás mechanizmusai viszont nem országfüggők.</p>
+                <p>Az oldal gyakorlatai <strong>munkakörülményekről</strong> szólnak, soha nem egészségi állapotról: egyik sem értékel, pontoz vagy von le rólad bármilyen következtetést.</p>
+                <p>Ha valami megszólít itt, szakemberhez fordulj: a <strong>háziorvosodhoz</strong> vagy a <strong>foglalkozás-egészségügyi orvoshoz</strong>.</p>
+                <p>Ha nagy bajban vagy, hívd az országod lelkisegély-vonalát: Magyarországon a <strong>116-123</strong> ingyenes és éjjel-nappal hívható, közvetlen veszélyben a <strong>112</strong>. Franciaországban a 3114.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Mitől elviselhető egy terhelés</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="aigu-ou-chronique">🧠 Akut stressz, krónikus stressz</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A stressz nem betegség: alkalmazkodási válasz, hasznos és hatékony.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A stressz nem betegség: alkalmazkodási válasz, hasznos és hatékony. Mozgósítja a szervezetet egy igénnyel szemben, aztán lecsillapodik. Nem az a baj, hogy beindul — hanem hogy nem áll le.</p>
+
+                <h4>A különbség a visszatérésben van</h4>
+                <p><strong>Az akut stressz</strong> egy határidő, egy felszólalás, egy váratlan helyzet előtt emelkedik meg. A pillanatban bizonyos teljesítményeket még javít is. Aztán lecsillapodik, és a szervezet regenerálódik.</p>
+                <p><strong>A krónikus stressz</strong> az, ami megmarad, amikor a lecsillapodás már nem következik be. Nem „sok akut stressz”: egy másik állapot, más hatásokkal — alvás, hangulat, koncentráció, testi egészség.</p>
+
+                <div class="exemple">
+                    <span class="titre">A jel, amely megkülönbözteti a kettőt</span>
+                    <p>Egy zsúfolt időszak, amely egy pihentető hétvégével zárul, majd egy normális hét: ez a várt működés.</p>
+                    <p>Egy zsúfolt időszak, amelyet egy másik követ, amikor a hétvége már nem elég, amikor olyankor is a munkára gondolsz, amikor korábban nem, amikor megváltozik az alvás: ez már nem ugyanaz.</p>
+                    <p><strong>A támpont nem az intenzitás, hanem a regenerálódás.</strong> És kívülről jobban látszik, mint belülről — a környezeted gyakran előbb veszi észre.</p>
+                </div>
+
+                <div class="pratique" data-pratique="stress-chronique"></div>
+
+                <h4>Miért nehéz észrevenni magadon</h4>
+                <p>Az alkalmazkodás fokozatos. Minden hét hasonlít az előzőre, és az összehasonlítási pont a helyzettel együtt tolódik. Ez magyarázza az olyan mondatokat, mint a nyolc hónapon át ismételt „semmi baj, csak egy nehezebb időszak”.</p>
+                <p>Ezért hasznosak a külső támpontok: egy dátum, egy megjegyzés a környezetedtől, egy hat hónappal ezelőtt írt, újraolvasott jegyzet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a személyben keresni az okot</span>
+                    <p>„Rosszul kezelem a stresszt” — ez azt feltételezi, hogy a terhelés adottság, az alkalmazkodás pedig készség. Pedig az expozíció legalább annyit számít, mint az, ahogyan reagálsz rá.</p>
+                    <p>A szervezeti tényezők — terhelés, önállóság, a szerep egyértelműsége, támogatás — dokumentáltak, és a munkáltató felelősségi körébe tartoznak. Ez nem egyéni teherbírás kérdése.</p>
+                </div>
+
+                <p class="retenir">💡 A támpont nem az intenzitás, hanem a normális állapot visszatérése. A már nem csillapodó stressz nem erősebb stressz: hanem valami más.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="exigence-et-latitude">⚖️ Követelmény és mozgástér</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Két egyformán terhelt munkakörnek nem ugyanaz a hatása.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Két egyformán terhelt munkakörnek nem ugyanaz a hatása. Hogy mi választja el őket, azt az 1980-as évek óta dokumentálják, és két dimenzióban foglalható össze — amelyekhez egy harmadik is társul.</p>
+
+                <h4>A modell</h4>
+                <p><strong>A követelmény</strong>: a munka mennyisége, a határidők, a nyomás, a nehézség.</p>
+                <p><strong>A mozgástér</strong>: az a szabadság, amely a követelményre való válaszhoz marad. Dönteni a sorrendről, a módszerről, az időpontról; használni a képességeidet; hatással lenni arra, ami történik.</p>
+                <p>A kettő keresztezése négy helyzetet ad. Csak egy jár a legnagyobb kockázattal: <strong>magas követelmény, kicsi mozgástér</strong>. A kombináció számít, nem a követelmény önmagában.</p>
+
+                <div class="table-scroll">
+                <table>
+                    <tr><th></th><th>Nagy mozgástér</th><th>Kicsi mozgástér</th></tr>
+                    <tr><th>Magas követelmény</th><td><strong>Aktív</strong><br>Megterhelő, de elviselhető, gyakran ösztönző</td><td><strong>Feszült</strong><br>A kockázattal leginkább összefüggő kombináció</td></tr>
+                    <tr><th>Alacsony követelmény</th><td><strong>Nyugodt</strong><br>Kényelmes</td><td><strong>Passzív</strong><br>Az unalom koptat, a képességek leépülnek</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">A harmadik dimenzió: a támogatás</span>
+                    <p>Az eredeti modellhez később adták hozzá, és minden más hatását megváltoztatja. Egy feszült munkakör, ahol segítséget kérhetsz, jelezhetsz, meghallgatnak, nem ugyanazokkal a következményekkel jár, mint egy feszült munkakör, ahol egyedül vagy.</p>
+                    <p>A szakirodalomban leírt legkedvezőtlenebb helyzet az, amely mindhármat halmozza: <strong>magas követelmény, kicsi mozgástér, kevés támogatás</strong>.</p>
+                    <p>Ez gyakorlati jó hír is: a támogatás gyakran a legkönnyebben elérhető emelő a három közül.</p>
+                </div>
+
+                <div class="pratique" data-pratique="karasek"></div>
+
+                <h4>Amit a modell alapján kérni lehet</h4>
+                <p>Nem az a haszna, hogy beskatulyázd magad: hanem hogy <strong>megnevezd, ami hiányzik</strong>. A „túl sok a munkám” nehezen megbeszélhető. A „kevés beleszólásom van a prioritások sorrendjébe” konkrét beszélgetést nyit.</p>
+                <p>Mozgásteret visszaadni gyakran olcsóbb, mint csökkenteni a terhelést — és néha ez az egyetlen, ami alku tárgya lehet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a passzív munkakört kényelmesnek tekinteni</span>
+                    <p>A kevés követelmény és a kicsi mozgástér kívülről irigylésre méltónak tűnik. Mégis régóta leírt, koptató helyzet: az elköteleződés elvesztése, a képességek leépülése, egyre nehezebb kilábalni belőle.</p>
+                    <p>A munkahelyi unalomnak saját hatásai vannak, eltérnek a túlterhelésétől, és még nehezebb kimondani.</p>
+                </div>
+
+                <p class="retenir">💡 Nem a követelmény koptat, hanem a mozgástér nélküli követelmény. És a támogatás mindkettő hatását megváltoztatja.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-recuperation">🔋 A regenerálódás</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A regenerálódás nem a munka hiánya: aktív folyamat, amelyhez összefüggő idő kell.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A regenerálódás nem a munka hiánya: aktív folyamat, amelyhez összefüggő idő kell. Feldarabolva nem következik be — háromszor két óra nem ér annyit, mint hat óra.</p>
+
+                <h4>A minimumok, és amit jelentenek</h4>
+                <p>Az Európai Unió két pihenőidőt ír elő, amelyek nem kényelmi ajánlások: <strong>két munkanap között 11 óra egybefüggő pihenőt</strong>, és <strong>hetente ezen felül legalább 24 órát, azaz összesen 35 egybefüggő órát</strong>. Franciaországban mindkettő a munka törvénykönyvében szerepel; Magyarországon is érvényes minimum, a nemzeti jog egyes esetekben eltérést engedhet.</p>
+                <p>Franciaországban ezek <strong>kikényszeríthető minimumok</strong>. Ha rendszeresen alájuk kerülsz, az nem az elkötelezettség jele: olyan helyzet, amelyet jelezni kell a foglalkozás-egészségügyi szolgálatnak, és amelyért a munkáltató felel.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — egy 45 órás hét</span>
+                    <p>A legrövidebb szünet két munkanap között: <strong>10 óra</strong>. Hétvégi pihenő: <strong>40 óra</strong>.</p>
+                    <p><strong>Minimális napi pihenőidő: 11 óra — a tiéd: 10 óra.</strong> Minimális heti pihenőidő: 35 óra — a tiéd: 40 óra.</p>
+                    <p><strong>Megállapítás: a napi pihenőidő a minimum alatt van.</strong> Egyetlen óra eltérés, egész évben ismételve, és semmilyen kimutatásban nem jelenik meg.</p>
+                </div>
+
+                <div class="pratique" data-pratique="charge-recuperation"></div>
+
+                <h4>Ami regenerál, és ami csak annak látszik</h4>
+                <p>A kutatásokban három feltétel tér vissza: <strong>a lelki elszakadás</strong> — nem gondolni rá, nem csak nem csinálni; <strong>a kontroll</strong> — te döntöd el, mit csinálsz az időddel; és <strong>egy regisztert váltó tevékenység</strong>.</p>
+                <p>Egy semmittevéssel, de a munkán rágódva töltött este egyiket sem teljesíti. Pihenésként éled meg, és mégsem pihentet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — a szabadságra számítani</span>
+                    <p>A szabadság jótékony hatásai valósak és dokumentáltak — és a visszatérés után néhány héten belül elhalványulnak.</p>
+                    <p>A szabadság kijavítja a felgyűlt fáradtságot; nem javítja ki a szervezetet, amely termeli. Ha a visszatéréskor semmi sem változik, a kör újraindul.</p>
+                </div>
+
+                <p class="retenir">💡 A regenerálódáshoz összefüggő idő és elszakadás kell. Feldarabolva, vagy rágódással töltve nem következik be.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-deconnexion">🔌 A lekapcsolódás</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">A lekapcsolódás joga 2017 óta létezik a francia jogban.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A lekapcsolódás joga 2017 óta létezik a francia jogban. Már a léte is mond valamit: a munka és a munkán kívüli idő határa magától nem tart.</p>
+
+                <h4>Amit a francia szabály mond</h4>
+                <p>A vállalatoknak meg kell határozniuk e jog gyakorlásának módját — megállapodásban vagy szabályzatban. A gyakorlatban ez attól, hogy este nem kötelező válaszolni, a határozottabb megoldásokig terjed: időzített küldés, a szerverek lekapcsolása, figyelmeztetések.</p>
+                <p>Egy gyakran figyelmen kívül hagyott pont: <strong>azt, hogy munkaidőn kívül nem válaszolsz, nem lehet a szemedre vetni</strong>. Éppen ez a jog lényege.</p>
+
+                <div class="exemple">
+                    <span class="titre">Egy késői üzenet láncreakciója</span>
+                    <p>Egy 23 órakor elküldött üzenet nemcsak a szerzőjének jelent terhet. Jelzi a címzetteknek, mit várnak tőlük — akkor is, ha senki sem kéri, akkor is, ha hozzáteszik: „ne most válaszolj”.</p>
+                    <p>Ezért változtat többet egy csapat szokásain az időzített küldés, amely egy kattintásba kerül, mint egy kifüggesztett szabályzat.</p>
+                    <p>A lekapcsolódás tehát nem csak egyéni ügy: nagyrészt azon múlik, ki mit küld.</p>
+                </div>
+
+                <div class="pratique" data-pratique="deconnexion"></div>
+
+                <h4>Határok otthoni munkavégzésnél</h4>
+                <p>Amikor a hely már nem választ el, más jelzőkre van szükség: egy befejezési időpont, egy akár apró, kijelölt hely, egy záró rituálé — rendet rakni, bezárni az alkalmazásokat, öt percre kimenni.</p>
+                <p>Ezek mesterséges jelek, és éppen azért működnek, mert az agy a környezeti jelekből tudja, mikor váltson üzemmódot.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy az elérhetőség keveset nyom</span>
+                    <p>„Hátha” elérhetőnek maradni úgy, hogy semmi sem jön, valódi ára van: a megkeresés várása megakadályozza az elszakadást, amely a regenerálódás feltétele.</p>
+                    <p>Nem az esténként kapott üzenetek száma nyom, hanem annak lehetősége, hogy jöhet egy.</p>
+                </div>
+
+                <p class="retenir">💡 Amit este elküldesz, az szabja meg, mit hisznek mások, hogy tenniük kell. Ez a legközvetlenebb emelő, és a te kezedben van.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Az emelkedő, majd csillapodó stressz normális. A normális állapot visszatérésének hiánya árt.</li>
+                <li>Nem a követelmény koptat, hanem a mozgástér nélküli követelmény.</li>
+                <li>A kollégák és a vezetők támogatása minden más hatását megváltoztatja.</li>
+                <li>11 óra két munkanap között, hetente 35 egybefüggő óra: uniós minimumok, Franciaországban kikényszeríthetők.</li>
+                <li>Egy 23 órakor elküldött üzenet megszabja, mit hisznek mások, hogy tenniük kell.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Nézd meg a heti utolsó munkahelyi üzeneted időpontját. Ha késői, emlékezz rá, hogy ez szabja meg, mit hisznek mások, hogy tenniük kell — és a következőt időzítsd másnap reggelre.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az országos munkavédelmi szakintézet — pszichoszociális kockázatok</strong>: referenciaanyag a szervezeti tényezőkről és megelőzésükről. Franciaországban az INRS.</li>
+                    <li><strong>A Karasek-modell</strong>: a követelmény és a mozgástér két dimenziója, és az 1980-as évek óta a foglalkozás-egészségügyben használt kérdőív.</li>
+                    <li><strong>A munkakörülmények javításával foglalkozó országos szervezet</strong> — anyagok a munkaterhelésről és a lekapcsolódás gyakorlati módjairól. Franciaországban az ANACT.</li>
+                    <li><strong>A lelkisegély-vonal</strong> — Magyarországon a 116-123, ingyenes és éjjel-nappal hívható; Franciaországban a 3114.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> írd fel egy dátumozott lapra, hogyan érzed magad ma a munkában, és tedd el. Hat hónap múlva újraolvasva megmondja, amit az emlékezet nem — az alkalmazkodás eltörli az összehasonlítási pontokat.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Egészség — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Egészség — Haladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../productivite/index.html">⏱️ Termelékenység és szervezés</a>
+                <a href="../droit/index.html">⚖️ Jog és ügyintézés</a>
+                <a href="../apprendre/index.html">🎓 A tanulás tanulása</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/sante-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>
