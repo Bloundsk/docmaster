@@ -65,6 +65,12 @@ function motsDeLaPage(html) {
     if (!m) return 0;
     return m[0]
         .replace(/<script[\s\S]*?<\/script>/g, " ")
+        /* Les commentaires ne se lisent pas. Le motif des balises ci-dessous
+           les effacait par accident — sauf ceux qui contiennent un « > » : celui
+           qui citait « ../<sujet>/ » s arretait a « <sujet> », et la fin du
+           commentaire comptait comme texte (Negociation hongrois : 12 minutes
+           annoncees au lieu de 11, 12/09/2026). */
+        .replace(/<!--[\s\S]*?-->/g, " ")
         .replace(/<[^>]+>/g, " ")
         .replace(/\s+/g, " ")
         .trim()

@@ -1,5 +1,61 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Dates hongroises contrôlées, crochet de commit pour chaque langue
+
+Trois défauts du même genre que ceux déjà notés — un outil écrit pour le français et
+l'anglais, jamais repassé pour le hongrois — trouvés en voulant retirer 38 commentaires
+périmés sans fausser les dates.
+
+### Ce qui est corrigé
+
+- **Le contrôle 6 d'`audit-coherence.mjs` ne regardait pas les pages hongroises.** Son
+  motif ne connaissait que « Dernière mise à jour » et « Last updated » ; « Utolsó
+  frissítés: 2026. szeptember 12. » met l'année d'abord, et la page était **sautée sans
+  un mot**. Il annonçait « 112 pages datées » : 56 françaises, 56 anglaises. Il en compte
+  maintenant **168**, et un libellé présent mais illisible est signalé au lieu d'être
+  sauté. Vu rougir sur deux défauts réinjectés dans `hu/guides/finance/avance.html` :
+  une date future (« 2027. január 3. »), une date illisible (« szeptember 12, 2026 »).
+- **Le crochet de commit n'ajoutait que `index.html en/index.html`** après avoir
+  regénéré les accueils. `hu/index.html`, réécrit mais pas ajouté, restait hors du
+  commit — c'est ce qui s'est produit au commit du glossaire, rattrapé par un second
+  commit ; sans lui, l'intégration continue aurait rougi. Il ajoute maintenant l'accueil
+  de chaque langue (`[a-z][a-z]/index.html`).
+- **Le crochet actif et sa copie versionnée avaient divergé** : `.git/hooks/pre-commit`
+  reconnaissait déjà les guides de toute langue, `scripts/hook-pre-commit.txt` encore
+  « `(en/)?guides` ». Remis d'accord, puis recopié et comparé.
+- **`dater-guides.js` ignore désormais les commentaires HTML**, comme il ignorait déjà le
+  `<head>` : ils ne changent rien pour le lecteur. Sans cela, retirer les commentaires
+  aurait daté 38 pages du jour sans que leur texte ait bougé.
+- **`chiffrer-parcours.js` comptait une partie d'un commentaire comme texte à lire.**
+  Son motif des balises effaçait les commentaires par accident, sauf ceux qui contiennent
+  un « > » : celui qui citait « ../<sujet>/ » s'arrêtait à « <sujet> », et la fin était
+  comptée. Retirer les commentaires a fait rougir son `--verifier` : Négociation
+  intermédiaire hongrois annonçait **12 minutes au lieu de 11**, et sa carte du catalogue
+  **31 au lieu de 30**. Les commentaires sont maintenant retirés avant le comptage. Le
+  recomptage ne change **aucun autre chiffre**, ni en français ni en anglais.
+
+### Ce qui est retiré
+
+- Le commentaire « Ces parcours ne sont pas encore traduits » de **38 pages hongroises** :
+  les quatorze parcours le sont, et plus aucun lien « (franciául) » ne subsiste dans les
+  guides. 76 lignes retirées, 2 par page, aucune ajoutée.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| Ancienne comparaison, sur un commentaire retiré | « contenu changé » : aurait redaté |
+| Nouvelle comparaison, sur les 38 pages | « 38 page(s) inchangée(s) sur le fond, date conservée » |
+| Vraie retouche dans `<main>` (`hu/guides/cybersecurite/debutant.html`) | datée : 11 → 12 septembre, puis page restaurée |
+| Contrôle 6 | 168 pages datées, 0 anomalie ; rouge sur les deux défauts réinjectés |
+| `chiffrer-parcours.js` sans les commentaires | 2 chiffres corrigés (Négociation hongrois), 0 autre sur 45 sommaires |
+| Commentaire de 400 mots contenant « > », réinjecté dans `<main>` | `--verifier` vert : ignoré |
+| 400 vrais mots réinjectés dans `<main>` | `--verifier` rouge : comptés |
+
+Un premier essai de la « vraie retouche » disait « inchangée » lui aussi. L'instrument
+était en cause, pas le script : le premier `<p>` de la page est dans le bandeau
+(ligne 91), avant `<main>` (ligne 122). Refait dans `<main>`, il date.
+
 ## 2026-09-12 — FAQ, « À propos » et mentions légales en hongrois
 
 ### Ce qui est publié

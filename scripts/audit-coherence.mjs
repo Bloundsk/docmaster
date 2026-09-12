@@ -355,6 +355,8 @@ const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
               "août", "septembre", "octobre", "novembre", "décembre"];
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july",
                 "august", "september", "october", "november", "december"];
+const HONAPOK = ["január", "február", "március", "április", "május", "június", "július",
+                 "augusztus", "szeptember", "október", "november", "december"];
 /* La date du jour A PARIS, et non celle de la machine.
 
    Les guides sont dates par le hook pre-commit, sur l heure locale de l auteur.
@@ -374,16 +376,29 @@ const aujourdhuiAParis = () => {
 const aujourdhui = aujourdhuiAParis();
 let datees = 0;
 for (const page of toutes) {
+    /* Le hongrois ecrit l annee d abord : « Utolsó frissítés: 2026. szeptember 12. ».
+       Le seul motif francais-anglais ne le reconnaissait pas, et la page etait
+       sautee sans un mot : les 56 pages hongroises n etaient pas controlees
+       (« 112 pages datées » au lieu de 168). Un libelle present mais illisible
+       est desormais signale, au lieu d etre saute. */
+    let texte, jour, nom, annee;
     const m = page.html.match(/(?:Dernière mise à jour|Last updated)\s*:\s*(\d+)\s+(\S+)\s+(\d{4})/);
-    if (!m) continue;
+    const h = page.html.match(/Utolsó frissítés:\s*(\d{4})\.\s+(\S+)\s+(\d{1,2})\./);
+    if (m) [texte, jour, nom, annee] = m;
+    else if (h) [texte, annee, nom, jour] = h;
+    else {
+        if (/Dernière mise à jour|Last updated|Utolsó frissítés/.test(page.html)) {
+            signaler("DATES", `${page.nom} : date de mise à jour illisible`);
+        }
+        continue;
+    }
     datees++;
-    const nom = m[2].toLowerCase();
-    const mois = MOIS.indexOf(nom) !== -1 ? MOIS.indexOf(nom) : MONTHS.indexOf(nom);
-    if (mois === -1) { signaler("DATES", `${page.nom} : mois « ${m[2]} » non reconnu`); continue; }
-    const d = new Date(Number(m[3]), mois, Number(m[1]));
+    const mois = [MOIS, MONTHS, HONAPOK].map((liste) => liste.indexOf(nom.toLowerCase())).find((i) => i !== -1);
+    if (mois === undefined) { signaler("DATES", `${page.nom} : mois « ${nom} » non reconnu`); continue; }
+    const d = new Date(Number(annee), mois, Number(jour));
     // Une date future est forcement fausse ; une date anterieure au projet aussi.
-    if (d > aujourdhui) signaler("DATES", `${page.nom} annonce une date future : ${m[0]}`);
-    if (d < new Date(2026, 6, 1)) signaler("DATES", `${page.nom} annonce une date suspecte : ${m[0]}`);
+    if (d > aujourdhui) signaler("DATES", `${page.nom} annonce une date future : ${texte}`);
+    if (d < new Date(2026, 6, 1)) signaler("DATES", `${page.nom} annonce une date suspecte : ${texte}`);
 }
 console.log(`  ${datees} pages datées`);
 

@@ -44,7 +44,7 @@ fi
 # date tapee a la main le jour de leur traduction, pendant que leur version
 # francaise se datait toute seule. Un ecart d autant plus trompeur qu une date
 # figee a l air d une vraie date.
-GUIDES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^(en/)?guides/.*\.html$')
+GUIDES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^([a-z][a-z]/)?guides/.*\.html$')
 
 # --- 3. Coherence d ensemble -----------------------------------------------
 #
@@ -133,8 +133,10 @@ git add $GUIDES
 # rouge pour cette seule raison. En local tout passait, parce que j avais
 # regenere l accueil AVANT que ce hook ne redate les guides.
 if command -v node >/dev/null 2>&1 && [ -f scripts/publier-accueil.js ]; then
+    # L accueil de CHAQUE langue : « en/index.html » etait ecrit en dur, et
+    # hu/index.html, regenere mais pas ajoute, restait hors du commit (12/09/2026).
     if node scripts/publier-accueil.js >/dev/null 2>&1; then
-        git add index.html en/index.html 2>/dev/null
+        git add index.html [a-z][a-z]/index.html 2>/dev/null
     else
         echo "[dates] accueil non regenere, le controle le signalera" >&2
     fi

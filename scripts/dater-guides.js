@@ -88,10 +88,16 @@ function listerGuides() {
 // lecteur. Sans ce filtre, corriger une balise commune a fait passer les 36
 // pages au jour meme : trente-six dates fausses d un coup, ce que ce script
 // est justement charge d empecher.
+//
+// Un commentaire HTML ne change rien non plus pour le lecteur : le retirer
+// d une page ne doit pas la dater du jour. Le commentaire part avec sa ligne
+// (indentation et saut de ligne compris), faute de quoi la ligne vide restante
+// suffirait a faire differer les deux versions.
 function corpsSeul(html) {
     const debut = html.indexOf("<main");
     const fin = html.lastIndexOf("</main>");
-    return debut === -1 || fin === -1 ? html : html.slice(debut, fin);
+    const corps = debut === -1 || fin === -1 ? html : html.slice(debut, fin);
+    return corps.replace(/[ \t]*<!--[\s\S]*?-->[ \t]*\n?/g, "");
 }
 
 // Version du fichier telle qu elle est actuellement enregistree dans le depot.

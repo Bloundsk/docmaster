@@ -94,9 +94,10 @@ françaises.
    (`../idees.html`, `../mon-espace.html`, suivis de « (franciául) »). Ces liens
    fonctionnent, donc aucun contrôle ne les signalera : chercher « (franciául) » sous `hu/`.
    Avant chaque page, chercher « en/ » et « "en" » dans les scripts qui la touchent :
-   trois défauts de ce genre ont rougi ou mené ailleurs au premier lot. Et retirer au
-   passage des pages hongroises les commentaires « Ces parcours ne sont pas encore
-   traduits », devenus sans objet.
+   trois défauts de ce genre ont rougi ou mené ailleurs au premier lot, trois de plus le
+   12 septembre (dates hongroises non contrôlées, accueil hongrois oublié par le crochet,
+   crochet actif différent de sa copie versionnée). Chercher aussi les motifs de texte
+   écrits pour le français et l'anglais : ils sautent le hongrois sans rien dire.
 
 **Ce que le relecteur hongrois doit regarder en priorité :**
 
