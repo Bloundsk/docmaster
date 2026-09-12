@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-12T23:35:20.755Z",
+  "maj": "2026-09-12T23:45:33.135Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVkRKV2Z5WHhURzlxNzdBbkd4blFOMDdKWDRhYXFUQ25hY0VzVVYwZTNFTUlzajd0dHBhRlhDTk1mcXlWM2dxdWV3cFFVTG9XcVFLYUJxRXhXWm5kTkFXeW1Zc0w5RURnTHVIeFluU0N3d3BSbGJIaW92cy0xYS0zNFJLR0xhWEJqMGpzb1lNdFkweWRXQV9UM0hB?oc=5",
@@ -278,15 +278,15 @@
       "publie": "2026-09-12"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdmJEcHVxLTRXa2lSNnZ3cFIwam94TEd3NU5NUl9PUFNNQ3QtS2YtemJRLUVWdkFlMHZ2REVYQjhGb0x2b3dRbGo3cWtETlZ5TnFKQTlHcEFYTC1XUEp0SFFQeElYd0JXaVZWV3BHXzZvVy1Tck5uLU9rbnE5QUJ1NnoyVXZNZXU5RldQaXgyV2VoQXk3MzF4cFI0Mzc4anNFYlBnaTNDQkxrUDRHX1g1eElFN1ZmTXoyOHNzbGFpeC1fcG96aG0wd0lCTWpaVUZQQ1ZHbmhVUzlYbkdjQXBTLVBlaWZhb2VJVEJ3ZEQwTUhBeFd3MUNxUkpyR2JBUl82SDBz?oc=5",
-      "titre": "Le meilleur OLED de Samsung gagne une version spectaculaire qui cache son design controversé et ajoute un énorme système Hi-Fi",
-      "source": "TechRadar",
+      "lien": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1tSWNETWM1R1pJY1ZWandjZnh5OGM4dDR1Ml80R0FNN3lDWjNVLXVMa09fQ0xTOVNuQWNlZ0tpTU83OGptSVRobzVHazhlLWdGWVVXdmFnejJ2S3liRmQtZXVWeFlHRFhhUU5yNEJWQQ?oc=5",
+      "titre": "Binance renforce sa présence dans la finance traditionnelle avec des options sur 1 000 actions et ETF américains",
+      "source": "TradingView",
       "date": "2026-09-01",
-      "guide": "design",
-      "page": "intermediaire.html",
-      "ancre": "systeme-de-design",
-      "section": "🧱 Le système de design",
-      "sujet": "🎨 Design UX/UI — Intermédiaire",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "les-etf",
+      "section": "📦 Les ETF",
+      "sujet": "💰 Finance — Débutant",
       "publie": "2026-09-12"
     }
   ]
