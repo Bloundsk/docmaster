@@ -207,23 +207,32 @@ console.log("\n=== 4 bis. GLOSSAIRE ===");
 // Le libelle attendu par sujet, dans chaque langue. Ecrit ici plutot que
 // devine : « ecologie » s'affiche « Sobriete numerique », rien ne le deduit.
 const CATEGORIES = {
-    finance: ["Finance", "Finance"],
-    ia: ["IA", "AI"],
-    "dev-web": ["Développement Web", "Web Development"],
-    marketing: ["Marketing", "Marketing"],
-    cybersecurite: ["Cybersécurité", "Cybersecurity"],
-    entrepreneuriat: ["Entrepreneuriat", "Entrepreneurship"],
-    productivite: ["Productivité", "Productivity"],
-    data: ["Data", "Data"],
-    design: ["Design", "Design"],
-    droit: ["Droit", "Law"],
-    sante: ["Santé au travail", "Health at Work"],
-    ecologie: ["Sobriété numérique", "Digital Sustainability"],
-    negociation: ["Négociation", "Negotiation"],
-    apprendre: ["Apprendre", "Learning"],
+    finance: ["Finance", "Finance", "Pénzügyek"],
+    ia: ["IA", "AI", "Mesterséges intelligencia"],
+    "dev-web": ["Développement Web", "Web Development", "Webfejlesztés"],
+    marketing: ["Marketing", "Marketing", "Marketing"],
+    cybersecurite: ["Cybersécurité", "Cybersecurity", "Kiberbiztonság"],
+    entrepreneuriat: ["Entrepreneuriat", "Entrepreneurship", "Vállalkozás"],
+    productivite: ["Productivité", "Productivity", "Termelékenység"],
+    data: ["Data", "Data", "Adatok"],
+    design: ["Design", "Design", "Design"],
+    droit: ["Droit", "Law", "Jog"],
+    sante: ["Santé au travail", "Health at Work", "Munkahelyi egészség"],
+    ecologie: ["Sobriété numérique", "Digital Sustainability", "Digitális mértékletesség"],
+    negociation: ["Négociation", "Negotiation", "Tárgyalás"],
+    apprendre: ["Apprendre", "Learning", "Tanulás"],
 };
 
-for (const [fichier, rang] of [["glossaire.html", 0], ["en/glossaire.html", 1]]) {
+/* Les glossaires et les guides dont ils doivent parler la langue, avec le rang
+   du libellé attendu ci-dessus. La liste était écrite pour deux langues aux deux
+   contrôles : un troisième glossaire n'aurait été vérifié par aucun. */
+const GLOSSAIRES = [
+    { fichier: "glossaire.html", guides: "guides", rang: 0 },
+    { fichier: "en/glossaire.html", guides: "en/guides", rang: 1 },
+    { fichier: "hu/glossaire.html", guides: "hu/guides", rang: 2 },
+];
+
+for (const { fichier, rang } of GLOSSAIRES) {
     const chemin = path.join(RACINE, fichier);
     if (!fs.existsSync(chemin)) { signaler("GLOSSAIRE", `${fichier} est absent`); continue; }
     const html = fs.readFileSync(chemin, "utf8");
@@ -264,7 +273,7 @@ const texteDuMain = (html) => {
         .replace(/\s+/g, " ");
 };
 
-for (const [fichier, dossier] of [["glossaire.html", "guides"], ["en/glossaire.html", "en/guides"]]) {
+for (const { fichier, guides: dossier } of GLOSSAIRES) {
     const cheminGlossaire = path.join(RACINE, fichier);
     const cheminGuides = path.join(RACINE, dossier);
     if (!fs.existsSync(cheminGlossaire) || !fs.existsSync(cheminGuides)) continue;

@@ -1,5 +1,44 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Glossaire en hongrois
+
+### Ce qui est publié
+
+- **`hu/glossaire.html`** (« 📖 Szójegyzék ») : les 35 termes et les 14 catégories du
+  glossaire français, déclarée dans `PAGES_TRADUITES.hu`. Le hongrois décline — « a
+  lábnyomát », « a lábnyomáról » — alors que le contrôle 4 ter cherche le mot **nu**
+  dans les guides. Chaque intitulé a donc été choisi sous une forme qu'on trouve telle
+  quelle dans les guides hongrois, la notion complète entre parenthèses : « Lábnyom
+  (gyártási lábnyom) », « Átfogalmazni (aktív hallgatás) ». « Hallgatás » seul a été
+  écarté : dans le guide Droit, il veut aussi dire « silence ».
+- **24 renvois** posés dans les guides hongrois vers leur terme, par
+  `poser-renvois-glossaire.js`, qui connaît maintenant trois langues.
+- Les contrôles 4 bis et 4 ter d'`audit-coherence.mjs` parcourent une liste de
+  glossaires (français, anglais, hongrois) au lieu de deux noms de fichier en dur.
+
+### Défauts trouvés en route
+
+- **Le lien coupait un mot hongrois en deux** : `<a>lábnyom</a>át`. La frontière de mot
+  du script était `\w`, qui ne connaît que les lettres ASCII — « á » y passait pour une
+  frontière. Elle est maintenant `\p{L}`, la même que celle du contrôle 4 ter. Les
+  pages françaises et anglaises n'ont pas bougé ; deux pages hongroises ont perdu ce
+  lien fautif (le renvoi reste posé ailleurs, sur un « lábnyom » non décliné).
+- L'identifiant d'ancre effaçait « ő » et « ű », absents de la plage `à-ÿ` : ajoutés.
+- `amorcer-lecons.js --verifier` a rougi : l'amorce reprenait le texte coupé
+  (« lábnyom át »). Corrigé avec le lien.
+- **Le garde-fou existe sans contrôle de plus** : `poser-renvois-glossaire.js --verifier`
+  recalcule les renvois avec la nouvelle frontière. Le lien coupé, réinjecté à la main
+  dans `hu/guides/ecologie/avance.html`, l'a fait rougir ; fichier restauré, vert.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue, 28 paires de traduction | verts |
+| Contrôles 4 bis / 4 ter | 35 termes par glossaire, 0 introuvable |
+| `audit-geometrie` | **1 101 mesures, 36 gabarits**, 0 anomalie |
+| Navigateur | renvoi « ETF » d'un guide hongrois → `hu/glossaire.html#terme-etf`, terme en haut d'écran ; filtre « elévülés » → 2 termes ; 0 erreur |
+
 ## 2026-09-12 — Podcasts en hongrois
 
 ### Ce qui est publié

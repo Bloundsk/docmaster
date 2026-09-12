@@ -78,13 +78,12 @@ françaises.
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
 4. Les pages hors cours. **Faites le 12 septembre 2026 : accueil, catalogue,
-   actualités, podcasts** (`PAGES_TRADUITES.hu`), avec `publier-accueil.js`,
-   `poser-situations.js`, `publier-actualites.js` et `publier-podcasts.js` qui
-   écrivent le hongrois. Restent, dans cet ordre conseillé :
-   - **glossaire** : `poser-renvois-glossaire.js` (liste `LANGUES`) et les contrôles
-     4 et 4 ter d'`audit-coherence.mjs` citent `glossaire.html` et `en/glossaire.html`
-     en dur. Chaque terme hongrois doit se trouver tel quel dans les guides hongrois ;
-     les renvois se poseront alors dans les 56 pages hongroises ;
+   actualités, podcasts, glossaire** (`PAGES_TRADUITES.hu`), avec `publier-accueil.js`,
+   `poser-situations.js`, `publier-actualites.js`, `publier-podcasts.js` et
+   `poser-renvois-glossaire.js` qui écrivent le hongrois. Pour le glossaire, chaque
+   terme hongrois se trouve tel quel (non décliné) dans les guides hongrois, la notion
+   complète entre parenthèses — le hongrois décline, et le contrôle 4 ter cherche le
+   mot nu. Restent, dans cet ordre conseillé :
    - **FAQ, à propos, mentions légales** (traduction de courtoisie, la version
      française fait foi, comme en anglais) ;
    - **boîte à idées** : ne jamais envoyer de message d'essai par le formulaire ;

@@ -37,18 +37,23 @@ const VERIFIER = process.argv.includes("--verifier");
 
 const LANGUES = [
     { code: "fr", glossaire: "glossaire.html", guides: "guides" },
-    { code: "en", glossaire: "en/glossaire.html", guides: "en/guides" }
+    { code: "en", glossaire: "en/glossaire.html", guides: "en/guides" },
+    // Les pages hongroises gardent leurs ancres de section françaises ; leurs
+    // renvois, eux, mènent au glossaire hongrois, qui a ses propres termes.
+    { code: "hu", glossaire: "hu/glossaire.html", guides: "hu/guides" }
 ];
 
 /* Un ancrage lisible et stable : les accents restent, comme partout ailleurs
-   sur le site (#lépargne), et la parenthese explicative disparait. */
+   sur le site (#lépargne), et la parenthese explicative disparait. « ő » et
+   « ű » sont hors de la plage à-ÿ : sans eux, « kétlépcsős » devenait
+   « kétlépcs-s ». Aucun terme français ou anglais ne les porte. */
 function slug(terme) {
     return "terme-" + terme
         .replace(/\s*\([^)]*\)/g, "")
         .trim()
         .toLowerCase()
         .replace(/['’]/g, "-")
-        .replace(/[^a-z0-9à-ÿ]+/gi, "-")
+        .replace(/[^a-z0-9à-ÿőű]+/gi, "-")
         .replace(/^-+|-+$/g, "");
 }
 
@@ -173,17 +178,20 @@ function poserRenvois(html, entrees, prefixe) {
            et non « wireframe ». On compare donc sur la racine, en tolérant les
            suffixes qu'une langue ajoute — mais avec des frontières de mot, sans
            quoi « DOM » se retrouverait dans « domaine ». */
+        /* Frontière de mot : \w ne connaît que les lettres ASCII, et « á » y
+           passait pour une frontière — « lábnyom » se posait dans « lábnyomát »
+           et coupait le mot hongrois en deux. \p{L} connaît toutes les lettres. */
         const racine = nu.replace(/e$/i, "");
-        const motifTitre = new RegExp("(?<![\\w-])" + racine.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-            + "(e|es|s|ing|ings|é|ée|és|ement)?(?![\\w-])", "i");
+        const motifTitre = new RegExp("(?<![\\p{L}\\p{N}_-])" + racine.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+            + "(e|es|s|ing|ings|é|ée|és|ement)?(?![\\p{L}\\p{N}_-])", "iu");
         if (motifTitre.test(titres)) continue;      // la page l'explique déjà
 
         const ouvreLeTitre = new RegExp("^(?:(?:le|la|les|un|une|the|a|an)\\s+|l['’]\\s*)?"
             + racine.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-            + "(e|es|s|ing|ings|é|ée|és|ement)?(?![\\w-])", "i");
+            + "(e|es|s|ing|ings|é|ée|és|ement)?(?![\\p{L}\\p{N}_-])", "iu");
         if (titresEncadre.some((t) => ouvreLeTitre.test(t))) continue;   // un encadré le définit
 
-        const motif = new RegExp("(?<![\\w-])" + nu.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![\\w-])", "i");
+        const motif = new RegExp("(?<![\\p{L}\\p{N}_-])" + nu.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![\\p{L}\\p{N}_-])", "iu");
         const dm = sortie.indexOf('<main id="main-content">');
         const fm = sortie.indexOf("</main>", dm);
         const segments = segmentsDeTexte(sortie, dm, fm);
@@ -240,7 +248,7 @@ for (const langue of LANGUES) {
     }
 }
 
-console.log(`Renvois vers le glossaire : ${totalRenvois} lien(s) sur 84 pages,`
+console.log(`Renvois vers le glossaire : ${totalRenvois} lien(s) sur ${LANGUES.length * 42} pages,`
     + ` ${modifies} fichier(s) ${VERIFIER ? "en écart" : "écrit(s)"}, ${identiques} déjà conforme(s).`);
 
 if (VERIFIER && anomalies.length) {

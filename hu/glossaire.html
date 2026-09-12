@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Szójegyzék - Clicked</title>
+    <meta name="description" content="Az útmutatókban használt szakkifejezések egyszerű magyarázata, minden témából.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .glossary-item { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 22px; margin-bottom: 14px; }
+        .glossary-item dt { font-weight: 700; color: var(--primary); font-family: var(--police-titre); margin-bottom: 6px; }
+        .glossary-item dd { margin: 0; }
+        .glossary-item .cat { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    </style>
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/glossaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/glossaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/glossaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/glossaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/glossaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Szójegyzék - Clicked">
+    <meta property="og:description" content="Az útmutatókban használt szakkifejezések egyszerű magyarázata, minden témából.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/glossaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Szójegyzék - Clicked">
+    <meta name="twitter:description" content="Az útmutatókban használt szakkifejezések egyszerű magyarázata, minden témából.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/identite.js"></script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="index.html">Kezdőlap</a> &gt; <span aria-current="page">Szójegyzék</span>
+    </nav>
+
+    <header>
+        <h1>📖 Szójegyzék</h1>
+        <p>Szakkifejezések egyszerűen elmagyarázva, minden témából.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="glossary-search" placeholder="🔍 Szűrés a szójegyzékben…" autocomplete="off" style="width:100%;padding:16px 20px;border:none;border-radius:var(--radius);box-shadow:var(--shadow);font-family:var(--police-texte);font-size:1rem;background:var(--surface);color:var(--text);outline:none;">
+    </div>
+
+    <main id="main-content">
+        <dl id="glossary-list">
+
+            <div class="glossary-item" id="terme-etf" data-term="etf indexkövető alap befektetés pénzügyek">
+                <span class="cat">💰 Pénzügyek</span>
+                <dt>ETF</dt>
+                <dd>Olyan alap, amely egy teljes tőzsdeindex teljesítményét követi, így alacsony költséggel automatikus diverzifikációt ad.</dd>
+            </div>
+            <div class="glossary-item" id="terme-kamatos-kamat" data-term="kamatos kamat hozam pénzügyek">
+                <span class="cat">💰 Pénzügyek</span>
+                <dt>Kamatos kamat</dt>
+                <dd>Az a mechanizmus, amelyben egy befektetés hozama idővel maga is hozamot termel.</dd>
+            </div>
+            <div class="glossary-item" id="terme-pea" data-term="pea francia befektetési keret adózás pénzügyek">
+                <span class="cat">💰 Pénzügyek</span>
+                <dt>PEA</dt>
+                <dd>Plan d'Épargne en Actions: francia befektetési keret részvényekhez, öt év után kedvezőbb adózással. Franciaországon kívül nincs pontos megfelelője.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-llm" data-term="llm nagy nyelvi modell mesterséges intelligencia mi">
+                <span class="cat">🤖 Mesterséges intelligencia</span>
+                <dt>LLM (nagy nyelvi modell)</dt>
+                <dd>Hatalmas szövegmennyiségen tanított nyelvi modell, amely emberi nyelvet ért és állít elő.</dd>
+            </div>
+            <div class="glossary-item" id="terme-hallucinációk" data-term="hallucináció hallucinációk mesterséges intelligencia mi">
+                <span class="cat">🤖 Mesterséges intelligencia</span>
+                <dt>Hallucinációk</dt>
+                <dd>Egy MI által magabiztos hangon előállított hamis információ, mintha igaz volna.</dd>
+            </div>
+            <div class="glossary-item" id="terme-promptírás" data-term="promptírás prompt utasítás mesterséges intelligencia mi">
+                <span class="cat">🤖 Mesterséges intelligencia</span>
+                <dt>Promptírás</dt>
+                <dd>Világos, pontos utasítások megfogalmazásának mestersége, hogy egy MI jobb eredményt adjon.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-dom" data-term="dom javascript web webfejlesztés">
+                <span class="cat">💻 Webfejlesztés</span>
+                <dt>DOM</dt>
+                <dd>A HTML-oldal olyan ábrázolása, amelyet a JavaScript menet közben olvasni és módosítani tud.</dd>
+            </div>
+            <div class="glossary-item" id="terme-reszponzív-design" data-term="reszponzív design mobil web webfejlesztés">
+                <span class="cat">💻 Webfejlesztés</span>
+                <dt>Reszponzív design</dt>
+                <dd>Egy webhely olyan felépítése, hogy minden képernyőtípuson helyesen jelenjen meg.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-keresőoptimalizálás" data-term="keresőoptimalizálás seo kereső helyezés marketing">
+                <span class="cat">📢 Marketing</span>
+                <dt>Keresőoptimalizálás (SEO)</dt>
+                <dd>Search Engine Optimization: módszerek, amelyek javítják egy webhely helyezését a nem fizetett keresési találatok között.</dd>
+            </div>
+            <div class="glossary-item" id="terme-online-hirdetés" data-term="online hirdetés sea fizetett hirdetés kattintás marketing">
+                <span class="cat">📢 Marketing</span>
+                <dt>Online hirdetés (SEA)</dt>
+                <dd>Fizetett hirdetés a keresőkben, általában kattintásonként számlázva.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-adathalászat" data-term="adathalászat phishing csalás kiberbiztonság">
+                <span class="cat">🔒 Kiberbiztonság</span>
+                <dt>Adathalászat</dt>
+                <dd>Csalási technika, amely megbízható szervezetnek adja ki magát, hogy információt lopjon.</dd>
+            </div>
+            <div class="glossary-item" id="terme-kétlépcsős-azonosítás" data-term="kétlépcsős azonosítás 2fa hitelesítés kiberbiztonság">
+                <span class="cat">🔒 Kiberbiztonság</span>
+                <dt>Kétlépcsős azonosítás (2FA)</dt>
+                <dd>A jelszó mellé tett további biztonsági réteg.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-üzleti-terv" data-term="üzleti terv business plan vállalkozás">
+                <span class="cat">🚀 Vállalkozás</span>
+                <dt>Üzleti terv</dt>
+                <dd>A vállalkozási tervet rendszerező dokumentum: ajánlat, piac, stratégia és pénzügyi előrejelzés.</dd>
+            </div>
+            <div class="glossary-item" id="terme-sasu-sarl" data-term="sasu sarl jogi forma cégforma vállalkozás">
+                <span class="cat">🚀 Vállalkozás</span>
+                <dt>SASU / SARL</dt>
+                <dd>Francia cégformák, amelyek meghatározzák a vállalkozás jogi, adózási és társadalombiztosítási keretét.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-pomodoro-technika" data-term="pomodoro technika termelékenység">
+                <span class="cat">⏱️ Termelékenység</span>
+                <dt>Pomodoro-technika</dt>
+                <dd>Munkamódszer 25 perces, összpontosított szakaszokban, rövid szünetekkel elválasztva.</dd>
+            </div>
+            <div class="glossary-item" id="terme-gtd" data-term="gtd getting things done termelékenység">
+                <span class="cat">⏱️ Termelékenység</span>
+                <dt>GTD</dt>
+                <dd>Getting Things Done: módszer, amely minden feladatot a fejeden kívüli, megbízható rendszerbe rögzít.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-kpi" data-term="kpi mutató adatok elemzés">
+                <span class="cat">📊 Adatok</span>
+                <dt>KPI</dt>
+                <dd>Key Performance Indicator: a legfontosabb mutató arról, hogy egy cél teljesül-e.</dd>
+            </div>
+            <div class="glossary-item" id="terme-korreláció" data-term="korreláció ok-okozati kapcsolat okozat adatok">
+                <span class="cat">📊 Adatok</span>
+                <dt>Korreláció (és ok-okozati kapcsolat)</dt>
+                <dd>Két dolog, amely együtt mozog, nem feltétlenül áll ok-okozati kapcsolatban egymással.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-ux-vs-ui" data-term="ux ui design">
+                <span class="cat">🎨 Design</span>
+                <dt>UX vs UI</dt>
+                <dd>A UX a használat teljes élményéről szól, a UI a konkrét vizuális megjelenésről.</dd>
+            </div>
+            <div class="glossary-item" id="terme-drótváz" data-term="drótváz wireframe design">
+                <span class="cat">🎨 Design</span>
+                <dt>Drótváz</dt>
+                <dd>Egy felület egyszerű, vázlatos terve, amely a végleges vizuális tervezés előtt készül.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-elévülés" data-term="elévülés határidő jog">
+                <span class="cat">⚖️ Jog</span>
+                <dt>Elévülés</dt>
+                <dd>Az a határidő, amelyen túl egy jogot már nem lehet bíróságon érvényesíteni. Franciaországban az általános határidő 5 év; nézz utána a saját országodénak.</dd>
+            </div>
+            <div class="glossary-item" id="terme-hivatalos-felszólítás" data-term="hivatalos felszólítás levél jogvita jog mise en demeure">
+                <span class="cat">⚖️ Jog</span>
+                <dt>Hivatalos felszólítás</dt>
+                <dd>Levél, amely egy kötelezettség teljesítését követeli. Franciaországban egy közönséges levél is elég, ha a „mise en demeure” szavakat használja. Elindítja a késedelmi következményeket, de a francia jogban nem szakítja meg az elévülést: ahhoz keresetindítás kell.</dd>
+            </div>
+            <div class="glossary-item" id="terme-gdpr" data-term="gdpr személyes adatok adatvédelem jog">
+                <span class="cat">⚖️ Jog</span>
+                <dt>GDPR</dt>
+                <dd>A személyes adatokról szóló európai rendelet. Hozzáférési, helyesbítési és törlési jogokat ad, az egész Unióban érvényesen.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-egységes-dokumentum" data-term="egységes dokumentum duerp kockázatértékelés munkahelyi egészség">
+                <span class="cat">🩺 Munkahelyi egészség</span>
+                <dt>Egységes dokumentum (DUERP)</dt>
+                <dd>A munkahelyi kockázatok jegyzéke, amelyet Franciaországban minden munkáltatónak naprakészen kell tartania, a vállalat méretétől függetlenül.</dd>
+            </div>
+            <div class="glossary-item" id="terme-mentális-terhelés" data-term="mentális terhelés munkahelyi egészség">
+                <span class="cat">🩺 Munkahelyi egészség</span>
+                <dt>Mentális terhelés</dt>
+                <dd>Egy feladat által igényelt szellemi erőfeszítés: emlékezni, dönteni, átszervezni. Fáraszt, látható nyom nélkül.</dd>
+            </div>
+            <div class="glossary-item" id="terme-munkavégzéstől-való-kivonulás" data-term="munkavégzéstől való kivonulás veszély munkahelyi egészség">
+                <span class="cat">🩺 Munkahelyi egészség</span>
+                <dt>Munkavégzéstől való kivonulás</dt>
+                <dd>Súlyos és közvetlen veszély esetén a munka abbahagyásának joga, bérvesztés és szankció nélkül. Francia törvényes jog.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-visszapattanó-hatás" data-term="visszapattanó hatás digitális mértékletesség">
+                <span class="cat">🌱 Digitális mértékletesség</span>
+                <dt>Visszapattanó hatás</dt>
+                <dd>A hatékonyságnyereséget a nagyobb használat elnyeli: egy eszköz, amely feleannyit fogyaszt, de háromszor annyit használják, többet fogyaszt.</dd>
+            </div>
+            <div class="glossary-item" id="terme-ökotervezés" data-term="ökotervezés mértékletes tervezés digitális mértékletesség">
+                <span class="cat">🌱 Digitális mértékletesség</span>
+                <dt>Ökotervezés</dt>
+                <dd>Egy digitális szolgáltatás olyan tervezése, hogy kevesebbet fogyasszon: kevesebb átvitt adat, kevesebb számítás, tartós eszközök.</dd>
+            </div>
+            <div class="glossary-item" id="terme-lábnyom" data-term="lábnyom gyártási lábnyom gyártás eszköz digitális mértékletesség">
+                <span class="cat">🌱 Digitális mértékletesség</span>
+                <dt>Lábnyom (gyártási lábnyom)</dt>
+                <dd>Egy eszköz hatásának az a része, amelyet az előállítása okoz, még a használat előtt. Egy telefonnál messze meghaladja az általa valaha elfogyasztott áramot.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-batna" data-term="batna legjobb alternatíva tárgyalás">
+                <span class="cat">🤝 Tárgyalás</span>
+                <dt>BATNA</dt>
+                <dd><em>Best Alternative to a Negotiated Agreement</em>: amit teszel, ha a megállapodás meghiúsul. Ez szabja meg a valódi erődet, nem a magabiztosságod.</dd>
+            </div>
+            <div class="glossary-item" id="terme-horgonyzás" data-term="horgonyzás torzítás tárgyalás">
+                <span class="cat">🤝 Tárgyalás</span>
+                <dt>Horgonyzás</dt>
+                <dd>Az elsőként kimondott szám irányítja az utána következő egész beszélgetést, még akkor is, ha mindenki tudja, hogy önkényes.</dd>
+            </div>
+            <div class="glossary-item" id="terme-átfogalmazni" data-term="átfogalmazni aktív hallgatás meghallgatni tárgyalás">
+                <span class="cat">🤝 Tárgyalás</span>
+                <dt>Átfogalmazni (aktív hallgatás)</dt>
+                <dd>Saját szavaiddal visszamondani, amit a másik mondott, hogy ellenőrizd, jól értetted-e. Olyan nézeteltéréseket hoz felszínre, amelyeket mindkét fél lezártnak hitt.</dd>
+            </div>
+
+            <div class="glossary-item" id="terme-térközös-ismétlés" data-term="térközös ismétlés emlékezet tanulás">
+                <span class="cat">🎓 Tanulás</span>
+                <dt>Térközös ismétlés</dt>
+                <dd>Egyre hosszabb időközönként ismételni, közvetlenül azelőtt, hogy elfelejtenéd. Ez a leghatékonyabbnak bizonyított módszer.</dd>
+            </div>
+            <div class="glossary-item" id="terme-felejtési-görbe" data-term="felejtési görbe emlékezet tanulás">
+                <span class="cat">🎓 Tanulás</span>
+                <dt>Felejtési görbe</dt>
+                <dd>Annak leírása, milyen gyorsan halványul el a megtanult tudás felelevenítés nélkül — az első napokban nagyon gyorsan.</dd>
+            </div>
+            <div class="glossary-item" id="terme-kikérdezni-magad" data-term="kikérdezni magad önellenőrzés felidézés tanulás">
+                <span class="cat">🎓 Tanulás</span>
+                <dt>Kikérdezni magad (önellenőrzés)</dt>
+                <dd>Arra kényszeríteni magad, hogy emlékezetből idézd fel az információt, ahelyett, hogy újraolvasnád. Kellemetlenebb, mint az újraolvasás, és sokkal hatékonyabb.</dd>
+            </div>
+
+        </dl>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script src="../assets/js/mascotte.js"></script>
+    <script>
+        document.getElementById("glossary-search").addEventListener("input", (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            document.querySelectorAll(".glossary-item").forEach(item => {
+                const match = item.dataset.term.includes(q) || item.textContent.toLowerCase().includes(q);
+                item.style.display = match ? "" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
