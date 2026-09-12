@@ -4,10 +4,13 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 `CHANGELOG.md` ; la **méthode**, dans `ARCHITECTURE.md`. Ce fichier se met à jour
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
-**État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Les quatorze parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Droit, Écologie, Entrepreneuriat, Finance, IA, Marketing, Négociation, Productivité, Santé) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
-site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
-visiteurs sont des testeurs.
+**État au 12 septembre 2026.** Aucun chantier n'est en cours. **La traduction du
+site en hongrois est terminée** : les quatorze parcours (56 pages, quiz et
+simulateurs) et les dix pages hors cours ; la relecture par un lecteur hongrois
+reste notée. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont
+hébergées sur le site, tous les contrôles passent. Ce qui reste attend une
+décision de Ludo. **Le site n'est pas encore lancé** : ses visiteurs sont des
+testeurs.
 
 ---
 
@@ -15,7 +18,7 @@ visiteurs sont des testeurs.
 
 | Chantier | Qui | Quand | Pour le relancer, dire |
 |---|---|---|---|
-| [**Traduire le site en hongrois**](#traduire-le-site-en-hongrois) | Claude ; un lecteur hongrois pour relire | en cours depuis le 11 septembre 2026 | « continue la traduction hongroise » |
+| [Traduire le site en hongrois](#traduire-le-site-en-hongrois) | Claude : **fait** ; un lecteur hongrois pour relire | terminé le 12 septembre 2026 | — |
 | [Lire les suggestions de la boîte à idées](#lire-les-suggestions-de-la-boîte-à-idées) | Ludo | à son rythme | — |
 | [Vérifier que la boîte à idées livre les messages](#vérifier-que-la-boîte-à-idées-livre-les-messages) | Ludo, ou Claude avec son accord | avant le lancement | « envoie un message de test par la boîte à idées » |
 | [Décider du lancement](#décider-du-lancement) | Ludo | — | — |
@@ -26,7 +29,7 @@ visiteurs sont des testeurs.
 
 ---
 
-## En cours
+## Terminé récemment
 
 ### Traduire le site en hongrois
 
@@ -47,8 +50,10 @@ supposaient la paire français-anglais.
 - **le parcours pilote « Apprendre à apprendre » est publié** : ses 4 pages sous
   `hu/guides/apprendre/`, ses 3 banques de quiz (90 questions), les textes de ses
   12 simulateurs ;
-- **Productivité, Intelligence artificielle, puis Data & Analytics, sont
-  publiés** le même jour, sur la même méthode, à la demande de Ludo.
+- **les treize autres parcours suivent** les 11 et 12 septembre, sur la même
+  méthode (1 272 questions hongroises au total) ;
+- **les dix pages hors cours** le 12 septembre : accueil, catalogue, actualités,
+  podcasts, glossaire, FAQ, à propos, mentions légales, boîte à idées, Mon espace.
 
 Le drapeau hongrois est **visible** depuis la publication du pilote. Vérifié dans
 le navigateur sur un parcours pas encore traduit (Finance) : choisir « Magyar »
@@ -250,7 +255,8 @@ européen se dit européen ; les organismes deviennent leur fonction. Transposer
 le droit hongrois reste possible plus tard, avec des sources hongroises vérifiées.
 Appliqué aux quatre : Entrepreneuriat, Finance, Droit et Santé.
 
-**Pour relancer :** « continue la traduction hongroise ».
+**Plus rien à relancer** : la traduction est complète. Cette section reste pour la
+relecture hongroise, et pour la méthode si une autre langue venait un jour.
 
 ---
 
@@ -320,21 +326,26 @@ est pire que pas d'entrée.
 **Pour relancer :** « écris la leçon sur le compte piraté ». Même marche que
 « Négocier son salaire » (11 septembre 2026) :
 
-1. le texte, en français puis en anglais, avec la trame de chaque leçon :
-   explication, exemple, erreur fréquente, phrase à retenir. Les organismes
+1. le texte, **en français, en anglais et en hongrois** (depuis le 12 septembre
+   2026, le site est complet dans les trois langues), avec la trame de chaque
+   leçon : explication, exemple, erreur fréquente, phrase à retenir. Les organismes
    nationaux cités (cybermalveillance.gouv.fr…) se traduisent par leur fonction ;
+   la page hongroise garde l'ancre française ;
 2. un simulateur : `data-pratique` dans la page, sa déclaration dans
-   `assets/js/pratique.js`, ses textes dans `assets/js/pratique/en.js` ;
-3. six questions par langue, la bonne réponse au même rang dans les deux, dans
-   `assets/js/quiz/` et `assets/js/quiz/en/` ;
+   `assets/js/pratique.js`, ses textes dans `assets/js/pratique/en.js` et
+   `assets/js/pratique/hu.js` ;
+3. six questions par langue, la bonne réponse au même rang dans les trois, dans
+   `assets/js/quiz/`, `assets/js/quiz/en/` et `assets/js/quiz/hu/` — et mesurer la
+   longueur des réponses hongroises avant tout : une traduction fidèle recrée le biais ;
 4. une entrée dans `assets/js/search-data.js`, et la leçon dans la liste du
-   sommaire du parcours, dans les deux langues ;
+   sommaire du parcours, dans les trois langues ;
 5. `node scripts/amorcer-lecons.js`, puis `chiffrer-parcours.js`,
    `publier-accueil.js` et `poser-renvois-glossaire.js` ;
-6. enfin, la situation dans `scripts/poser-situations.js`.
+6. enfin, la situation dans `scripts/poser-situations.js`, avec son texte hongrois.
 
-Les contrôles disent ce qui manque : parité français/anglais, simulateurs
-traduits, position et longueur des réponses, liens et ancres.
+Les contrôles disent ce qui manque : parité entre les langues
+(`verifier-traduction.mjs`, une paire par langue), simulateurs traduits, position
+et longueur des réponses dans chaque langue, liens et ancres.
 
 ---
 
