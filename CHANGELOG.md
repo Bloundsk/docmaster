@@ -1,5 +1,33 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Boîte à idées en hongrois
+
+### Ce qui est publié
+
+- **`hu/idees.html`** (« 💡 Ötletláda »), déclarée dans `PAGES_TRADUITES.hu` : menu, pied de
+  page et mascotte (« Van egy ötleted? » → `#form-idee`) y mènent. Les quatorze domaines
+  couverts portent les noms hongrois des autres pages.
+- Le script du formulaire arrive avec le pied de la page anglaise ; ses messages au
+  visiteur sont remplacés un à un, et le constructeur s'arrête si l'un d'eux manque.
+- **Le message reçu par l'éditeur garde les intitulés français** (« Sujet proposé »,
+  « Pourquoi ce sujet »), marqué « Boîte à idées (HU) » : c'est Ludo qui le lit. L'anglais
+  avait choisi des intitulés anglais ; pour le hongrois, le français sert mieux.
+- **Le formulaire n'a pas été soumis pour essai**, ni vide ni rempli : la vérification
+  s'est faite sur le code servi. Aucune requête vers FormSubmit pendant le contrôle.
+- Les cinq liens de la FAQ, d'« À propos » et des mentions légales hongroises qui menaient
+  à la boîte à idées française, « (franciául) », mènent maintenant à la page hongroise.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue, 28 paires de traduction | verts |
+| Structure comparée au français et à l'anglais | identique : 3 sections, 14 domaines, 2 champs, champ piège, même point d'envoi |
+| Liens des quatre pages concernées | aucun lien mort ; plus aucun `../idees.html` sous `hu/` |
+| Marqueurs « (franciául) » restants | 5, tous devant un lien vers Mon espace |
+| `audit-geometrie` | **1 233 mesures, 40 gabarits**, 0 anomalie |
+| Navigateur | libellés, bouton et messages du script en hongrois, aucun reste anglais ; adresse décodée ; 0 erreur |
+
 ## 2026-09-12 — Dates hongroises contrôlées, crochet de commit pour chaque langue
 
 Trois défauts du même genre que ceux déjà notés — un outil écrit pour le français et
