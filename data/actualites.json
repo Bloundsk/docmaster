@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-12T23:04:58.237Z",
+  "maj": "2026-09-12T23:12:03.869Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVkRKV2Z5WHhURzlxNzdBbkd4blFOMDdKWDRhYXFUQ25hY0VzVVYwZTNFTUlzajd0dHBhRlhDTk1mcXlWM2dxdWV3cFFVTG9XcVFLYUJxRXhXWm5kTkFXeW1Zc0w5RURnTHVIeFluU0N3d3BSbGJIaW92cy0xYS0zNFJLR0xhWEJqMGpzb1lNdFkweWRXQV9UM0hB?oc=5",
@@ -86,18 +86,6 @@
       "publie": "2026-09-10"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV202ZFYxaDgxclp4RlhvMkt2c3hmeEVjaDBlRmdkOXZueU5iMzlMVWxQVmZueDhBWV9qb2UzM3F0STNqU0I3S2lxekN3Yk00dTlLSDhETnVtbTMwQ3c1bWwyamVEc2FXRjB6LWNjcUR2bGpfRnB4RzF3bWpqbm9NM0tUOFhMUF8xWTRfcWJlUEpCOUxy?oc=5",
-      "titre": "Fuite de données : comment communiquer dans les premières heures de la crise",
-      "source": "blogdumoderateur.com",
-      "date": "2026-09-08",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-08"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNZ28xVmlETi1INkZ1YlozbGg1NUE5a3JzUnBxU0FrdW1KTjZqaGUwTFpOWVZiRW54Q0tNU0poTWI4cGZtdU5sUnRXWllrZmg3dU9DTVBUeDlRZC1lUmxmVnVsQ3ZBOGJxMTB6V1NCMl80cG9RUDZ1LWhJWGozUTg2SWlKUFZnekc2dGJrUFA5UUJaWTNCeG5SRWk4b2JRNXc3aktsLXJheXhxUmFGNmhSZmlWX01tVF9Mb0hoOTVZTjNBU2ktTEU2MXh1LUlfaGhER2dDNDdhRVI0Ry16Z0J3X19LZEhJc2xsTkE?oc=5",
       "titre": "Ce kit de phishing contourne la double authentification de Microsoft 365 et piège des centaines d’entreprises",
       "source": "Clubic",
@@ -134,18 +122,6 @@
       "publie": "2026-09-08"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMirwJBVV95cUxOSWE3emRIdjJ2eTNhSXJVZjBqQnVzN29Pd2hPODhhb2R4blNlZG5MdHRFcTdGSTlnaDlObjVqR3FYRWRlN2lPaW9uNUtObDJIdWtKQldqOU5wc3VBSFdyR1E4WjB4N1ZjenY0TE5VMl8yd2ptRGtYckVIdS1RcE45YjhMMDNZNDBKbG9lSl9ZdGdLVHZQSDAtTDNsOWNONnl1X2puenhuclhqQWNqM1FCQVBiS0dMcUtFWklZQkJSNkJqTHotOFVZOWR3Zm9ac1dKM3RwaE9LdkZVMjc5ako1RGdCeXozdV9rWXI1blNjNUlwYlpyLXN1eFJRRThOUGJsMnRIX29DTTluSnBJZXJtWEVtNEhDZ3dkT3VxYk9Wcm5PX2ZOakVicXpINjBhZzQ?oc=5",
-      "titre": "Multiplication des cyber-attaques et fuites de données : le gouvernement n'a toujours pas fait voter la directive NIS 2 pour les éviter",
-      "source": "france3-regions.franceinfo.fr",
-      "date": "2026-09-07",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-07"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOem9rd3RXVTNzTTIwb1pXaE1wa0VyaVBCV3UtRG0zbVZWa3dCMmFDd1AzcHh5c1ExN0dQMGI4NE1zQTJHMmZhWTItWWxEX3NSNmJ0QVpQMXB3Uk50dUlic053VWJacmZQUmw0dE1VNGpueTc2V1hXNS1FR2xjbzN2M3NRZy1KanpwWk13MU51dGVtWDE0NUNBclZuc09KZENDVjRtVW44MmpwNHZmLTFaZnFCNWZlOW96QmpVYUpYQXR5SkFYNGNQNmd4TlFoWUNDSXkwZ2F3WEowR1Vwcl94b3g3X18?oc=5",
       "titre": "Intelligence artificielle : l’UE enquête sur une nouvelle perte de contrôle d’agents OpenAI",
       "source": "Sud Ouest",
@@ -156,66 +132,6 @@
       "section": "⚙️ Les agents IA",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
       "publie": "2026-09-07"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdl82ZjhjbTNXcG92S1FJV3hyV2ZhRy1HZi1rVkRUNFBmT2h3NVY4MFNMWUFKWGJLZjhpTk1wUjVQSHlnQ01MVHJUVWxkLWhCREpZMU9Sa3pNMEdXTHBWU251WERfUmhtc2w2TVFtWDJVRkdnSE04UGlka3lCNDFMNzJWWXBWWUJrUTJqYTQ1TnllRUFaSndkVGM5M2xhaXBWcDBCX0hMY3lSTjVqcEg4VEVOaEFOUkEzSE5MMEdkTWZXSE1QWFE?oc=5",
-      "titre": "Cybersécurité : face aux fuites de données, l'Anssi renforce sa capacité d'intervention",
-      "source": "Le Figaro",
-      "date": "2026-09-07",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-07"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQOHYwSHNSdi1nRzhJZnBDbzVPMVU2cnlZNWxwRzEwVkJkRUpxWDdYZXcxenY3ZnU3N0k5SXM0eEs0UzhybXpwWDJfcm5MLWVDeUktN05GTXktVEpReExmTGFHLUp6dDFqelJvRHlIM2dhNDBvd19Kd0s2UGRyLUpRQnYtdlZQSGItdndZSzJTVUxDNlk1eFY5U2ZvQ1hEdHdlWmFBUHhtWllVQUhOZjJhNlNab0hXbE4yTk85aXNhemtUM19fU3Jlb3hScFNRRUgtcE8wTUN1Wjd3MXMwNXF6R0FpNzZ6dkYyMjZ5LVhFQVVTOVJkYnAwMU4xdWtjQmVj?oc=5",
-      "titre": "L’AMF visée par une fuite de données après une attaque contre son site internet",
-      "source": "lagazettedescommunes.com",
-      "date": "2026-09-07",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-08"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdFp0dkpEaFhQNFI5WmtNbkVnUWJZSTQ3aWhXa0ViZEVHSVJ5VUdhVDd6Nm94YUhncnFZYTRBYkVNR25KRngyUVdxbUVBd0paOHpFNkw4clJZbFVlQnVmMHVQMDFwdDJNeHJpX0NmemxwRVEzWlFtZFoxSG1UVmoxS255akJPRWtyNnVKWjc3U0lrcDJ3YnN2Tl8wbm11U2tveFpLNllNbnppem5zcGlpWQ?oc=5",
-      "titre": "Fuites de données : l’ANSSI déclenche une réponse renforcée face aux cyberattaques",
-      "source": "French Breaches",
-      "date": "2026-09-07",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-09"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSVF5U2QyOVhmVWtFbk5Fdkx4QmtnTzNDbERwbFpnazFXbW05WThZcEtYSVFkUXQ4eVY2cHFtY2Q2SHpvWTlzczZSOWY5bUpBeXJjdTdxWGtac3NZdDRjWDlIbEtkSGZManZ5ZjUtWVNLQUJwZktIVERPX2tENWVGSTFfdng3VzJ3RVNPRlBHZ2RLLWZZV3Jyel94OVFBcHNlWFdxUVZ0N0thWER6enEwaXQ1aGVPaTVi?oc=5",
-      "titre": "Cyberattaque de l'AMF : l'association confirme une fuite de données et saisit la Cnil",
-      "source": "Banque des Territoires",
-      "date": "2026-09-07",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-11"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
-      "titre": "Mots de passe, identifiants, emails... une nouvelle fuite massive de données secoue la France",
-      "source": "01net.com",
-      "date": "2026-09-06",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "publie": "2026-09-06"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQby13MnNpOGlEX0lWRXRVZEdoeGNkOUNWY3lfaUZQZk5xUzBQci02TTN6bUF0djlYWmEzUmJxRFFHX3BDcXRKcThHemdFV3VjRnlBUm80eUY1cXJPZjNOZWhFbldDWXd3WFhnb1FON0dvV2p5Zkw0SmRaQ2lfYV96cGlFWVRjektLTTU0eGhrcTd4VzhpdzR1TE1GOXMyX3F0ZGpLN1Jodzhrb1dWeFpZT0hfNTJKazhHUTBwWnlvamhHaDBvVngtSlUwZTJRQkhjUEVpUnRtTQ?oc=5",
@@ -239,18 +155,6 @@
       "ancre": "les-agents-ia",
       "section": "⚙️ Les agents IA",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "publie": "2026-09-12"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdzItRFFZZVRzRnlBSzhRYW0tM25KR3RHRHUyaktkbS1JbWY3cEZNaVZNd0hWOW03ODFTMVhZMnl1U1dVbGhSNHlTTEktTnFMSUQ1Y0l0NlN0UUdVNEJTX1VQeW5WZU5RVTU4bjdKWEo5c2pxZ2N5SkhvMmdpZDdwOWJuX3dwMi0yOW83eWFZdzJic1E4YTh0RDd1M3c0dzQ5ZWg5d1BTMnhUemEyYlA1Uk1LRTcwQ3VRVkduaFV3?oc=5",
-      "titre": "Fuite de données chez Micromania, la vague d'arnaques au colis qui menace ses clients",
-      "source": "Capital.fr",
-      "date": "2026-09-04",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
       "publie": "2026-09-12"
     },
     {
@@ -278,15 +182,111 @@
       "publie": "2026-09-12"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTV9mQ21Sc21fVmZxdjhBX1pDdF94cEJrM2pFbXR1NFBhNjdKWDQ2SHRuTzlINjZmcFhLenFfd2Y0WHB0cjhwdXdRWUx5a3ZuX3EwSXRVMXJQSmFhM040NWJ6bTN0RVYtSFZya3VIMmszMkVCNGt1VEZtcXVPOGxwWFAtQXY3eWVXTnc5dU5YUnZqMmlSaUgyM2Q2MXRqS0hmejRwS3hLaGdERzJqb2ExZnlMdndCUV91VUhIdDNrdks?oc=5",
-      "titre": "Fuite DGFIP : le malentendu français qui fragilise notre cybersécurité",
-      "source": "journaldunet.com",
-      "date": "2026-09-04",
+      "lien": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9MaG1wb3A2MXoxNW12cWlBOUh0ZTZ5aDV4RDZjeXRpbEk4b1o3bHVZNDd6dXptUmxNNkxwcFpiSmxfcDR2NnMxUmpONWQtVFhFVDV2bHN2VkowRlU?oc=5",
+      "titre": "Aide logement 2026 : conditions, montants, démarches",
+      "source": "Mes Allocs",
+      "date": "2026-09-03",
+      "guide": "droit",
+      "page": "intermediaire.html",
+      "ancre": "louer-un-logement",
+      "section": "🏠 Louer un logement",
+      "sujet": "⚖️ Droit & démarches — Intermédiaire",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxPeFVZQ1h0RWFpb2lqa1NfSWFYVGtvaDFmdmRoUXJlTFpQRzFWanlWUGgwWHZBYjR1Wm9hSGNja210YTBHZ3Z0M3Q5LUNzOTNSU2Vqd0FCR2NIM1dBV1h4RVlJcjRwWFRqNmRBUGJqSzFOenJ2V3RINEFGZDlCLVEtd0xGN19rZHhwUHV4VFJQalpwQ1JUeGk0dmcySUxlejBNclZRMHNneUdLdnEwSmlCSEdxNGNpejhpV3MyS1hFZldneGtCUVdXd3Jfa1p2dXp4OTdLMkIzMXk5b0ZVQ3F2aDdYNHpjVkNwbGdfd09nSjdkSkd6TExFRXpwa2N4Q09mV0RmTTdCcVo2UklSLXVLc2ttX1RjX2h5a0pHUV9XakhKalc3Zk4zM1M1SllZeTJlam9qb0FkX0EwQnRWYzgyUXk1dlFVR1VE?oc=5",
+      "titre": "« La pédagogie, c’est donner à l’élève l’envie d’apprendre, ce n’est pas juste un transfert de contenu » : les ambitions de Jean-Philippe Vinci pour cette rentrée scolaire à Monaco",
+      "source": "Nice-Matin",
+      "date": "2026-09-03",
+      "guide": "apprendre",
+      "page": "avance.html",
+      "ancre": "le-transfert",
+      "section": "🎯 Le transfert",
+      "sujet": "🎓 Apprendre à apprendre — Avancé",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMGJkU0NnSHk4WUliYmdCWEdnaVU4aWY4NUlSUlV0aG9kWWNYUmR5Zk5pV09VUkVGd1BVWXhIdldSQVhnZnBWT2RQVFBBSW1ITWc1OEwxZk1WUEFuR2ZOS1h0QnA0ZG1kbjdlM2pjMk5EUmJXYThuQmFoanZQOWJwTzAtY1I4OEFqalZ4eGc4SVZVcWk2dGJBVkVhYkNHSVNqOE5kaEhlRlhrQThxcXM5TWZLVWVuUnBCd2YtZzVnNzJsYTBBcFE?oc=5",
+      "titre": "PARIS : Finance verte - Goodvest lance Rive 3, un produit d'épargne alliant performance et impact écologique",
+      "source": "Presse Agence",
+      "date": "2026-09-03",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "lépargne",
+      "section": "📊 L'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQelJGOWdlRF90OUNFNHYxTVlpbTBWUEpvcDZrVTg3MHlNQlR4cGg1emZvcjFlaVZzYml6cGhHQ2JSVXhmU2RqdkZZam84blhiV2RjaGZ4X0pNbnliandTUllaczYzYlp5MFFEekd0N0VHM1BpS1RFWUNXNDZIM3hmMUxGMldzYV9ZM01YOEU4RXJPTzQ?oc=5",
+      "titre": "Commerce de détail : L’IA gagne du terrain dans le parcours d’achat",
+      "source": "Isarta",
+      "date": "2026-09-03",
+      "guide": "marketing",
+      "page": "intermediaire.html",
+      "ancre": "parcours-achat",
+      "section": "🎯 Le parcours d'achat",
+      "sujet": "📢 Marketing Digital — Intermédiaire",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSlVGQm9xV2Q1RGUtemNNQVZDbVN4LXp2WjlBQ3R4U25VeUFqMEVnMWtsRmhmbU8yVWpQSF9oQ3pvcUtNOHF4Q2ZxdTUwb0xNbmF3VTdKYi0wYkMxUEp2aDl6T1VXVWdwZnFKUVdGeEk3ZEc3Q01rbUlKZUlISmcyT29ncUdZdw?oc=5",
+      "titre": "Le Dyson CameraJet met une caméra dans votre bouche, et trois surfaces d'attaque",
+      "source": "Pasquale Pillitteri",
+      "date": "2026-09-03",
       "guide": "cybersecurite",
       "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
+      "ancre": "surface-attaque",
+      "section": "🗺️ Ta surface d'attaque",
       "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5TbW53MnNYX2g5X2J0UmR5MldjMGN1c2FhRTNwbk1pWnBya1VBQ1BZZ0hTNDdpVjRrVGgtb21mdFpvdDFnQ2JfU2xDbktUV21zRDlfX19BUktLaUFqWkE?oc=5",
+      "titre": "HTEC Momentum renforce son palmarès exceptionnel en matière d'expérience utilisateur avec deux distinctions aux UX Design Awards.",
+      "source": "Lelezard",
+      "date": "2026-09-03",
+      "guide": "design",
+      "page": "debutant.html",
+      "ancre": "les-tests-utilisateurs",
+      "section": "🧪 Les tests utilisateurs",
+      "sujet": "🎨 Design UX/UI — Débutant",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNakxJOTdHZ283VnZwaEo3RkJFcmxYMDJBb3RtX2JSUjZ2dUdHMDVreUZVc3REZ2p6RjJfc3hLUVB1Nkk0RklKVEJIck9CRFBKT1BoMDhFSG9pdGs0RVVSOXRZRTZULWN4RkRJRmdULTJsc1ZOeXZ5QlltOWYtSmZUUXVPMzI2U3F1c1RJUlJteEJDaWZpLUlrcUd2Q1dobFZNLV9ENVhuVm9QLUx6MldVTm5YT0cteXlWNmZTWjJqcUhKTkE0Y1E?oc=5",
+      "titre": "Rentrée dans le supérieur : comment conserver le droit aux allocations pour un enfant majeur",
+      "source": "RTBF",
+      "date": "2026-09-03",
+      "guide": "droit",
+      "page": "debutant.html",
+      "ancre": "conserver-ses-documents",
+      "section": "🗂️ Conserver ses documents",
+      "sujet": "⚖️ Droit & démarches — Débutant",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSnFBdms2dlRUY0JyVmx1UG1aaFBMOW9YRGN4NWM3Y2FOSXl4S3VLVDBsZFNmX0pfa0ZrQkk5b29qZE92S2xjNnZnZjBqZ3JjbXJJcWsxSU12Q2xGWmV1WlV1UjlwNmJGNGlydG1NSzNxV0NRVjNyRjJfVHVCOWhYMnBrZ3c1U2dsUHAzQ3VRMERUTGlNY05zQWw5aHZBSWlGR25kTWItcGlrRFNZTUIyWA?oc=5",
+      "titre": "Gestion des risques : l’IA gagne du terrain chez les gestionnaires d’actifs",
+      "source": "Finance et Investissement",
+      "date": "2026-09-03",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "publie": "2026-09-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRXpad2xOcDF4RER0MDZ6dWxxZkRpbFU3aUl2ZTZ5MU5Tb0hqZHJLVS1uNHpuQ0JoVlh2OE1NNnhpUlNaTzhWeGtPeVloUzVLc3dPWUZOUGt6SWNMYnJSM254clctNnJTOF9mRXBxT1RfeVNwNDdnaDhDS0swbDF1a1ZjLUZuUC1zX1JMT2o0bFJaeXhOdE5XcVpBWWZ5RGhBU2hzVFd0c3FCLTUz?oc=5",
+      "titre": "Intelligence artificielle : c’est quoi un « LLM » ?",
+      "source": "MaVille.com",
+      "date": "2026-09-02",
+      "guide": "ia",
+      "page": "debutant.html",
+      "ancre": "quest-ce-quun-llm",
+      "section": "🧠 Qu'est-ce qu'un LLM ?",
+      "sujet": "🤖 Intelligence Artificielle — Débutant",
       "publie": "2026-09-12"
     }
   ]
