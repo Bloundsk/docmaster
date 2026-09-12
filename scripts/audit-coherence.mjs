@@ -106,18 +106,32 @@ if (!espaceFr.includes("DOCMASTER_PARCOURS")) {
     signaler("STRUCTURE", "mon-espace.html ne lit plus les titres dans parcours.js");
 }
 
-/* La page anglaise, elle, DOIT tenir sa propre table : parcours.js nomme les
-   sujets en francais. Ce qui se verifie est qu elle les couvre tous. */
-const espaceEn = lire(path.join(RACINE, "en/mon-espace.html"));
-const tableEn = espaceEn.match(/const NOMS\s*=\s*\{[\s\S]*?\};/);
-if (!tableEn) {
-    signaler("STRUCTURE", "en/mon-espace.html : la table des titres anglais est introuvable");
-} else {
-    const nommes = new Set([...tableEn[0].matchAll(/["{,\s]"?([a-z-]+)"?\s*:/g)].map((m) => m[1]));
+/* Les pages des autres langues, elles, DOIVENT tenir leur propre table :
+   parcours.js nomme les sujets en francais. Ce qui se verifie est que chacune
+   les couvre tous.
+
+   Ce controle ne lisait que « en/mon-espace.html », ecrit en dur : une page
+   hongroise sans table, ou a table incomplete, serait passee sans un mot. Il
+   parcourt maintenant chaque langue qui a des pages. Une page declaree traduite
+   mais absente n est pas signalee ICI : le controle des pages annoncees
+   traduites le fait deja (verifie en retirant hu/mon-espace.html). */
+let tablesVerifiees = 0;
+for (const code of contenu.languesAvecPages(RACINE).filter((c) => c !== "fr")) {
+    const nom = `${code}/mon-espace.html`;
+    const chemin = path.join(RACINE, code, "mon-espace.html");
+    if (!fs.existsSync(chemin)) continue;
+    const table = lire(chemin).match(/const NOMS\s*=\s*\{[\s\S]*?\};/);
+    if (!table) {
+        signaler("STRUCTURE", `${nom} : la table des titres de parcours est introuvable`);
+        continue;
+    }
+    tablesVerifiees++;
+    const nommes = new Set([...table[0].matchAll(/["{,\s]"?([a-z-]+)"?\s*:/g)].map((m) => m[1]));
     for (const cle of Object.keys(PARCOURS)) {
-        if (!nommes.has(cle)) signaler("STRUCTURE", `en/mon-espace.html : « ${cle} » n'a pas de titre anglais`);
+        if (!nommes.has(cle)) signaler("STRUCTURE", `${nom} : « ${cle} » n'a pas de titre dans cette langue`);
     }
 }
+console.log(`  Mon espace : ${tablesVerifiees} table(s) de titres de parcours vérifiée(s)`);
 
 /* La clef des echeances de revision est ecrite dans DEUX fichiers : enhance.js
    la pose au moment ou la case est cochee, revisions.js la relit. Deux clefs

@@ -1,5 +1,43 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Mon espace en hongrois : la traduction hongroise est complète
+
+### Ce qui est publié
+
+- **`hu/mon-espace.html`** (« ⭐ Saját oldalam »), déclarée dans `PAGES_TRADUITES.hu`. Avec
+  elle, **les 56 pages de guides et les dix pages hors cours existent en hongrois.**
+- Comme l'anglais, la page tient **sa propre table des noms de parcours** (`parcours.js`
+  les nomme en français), avec les noms hongrois des autres pages, et ses niveaux
+  (Kezdő, Középhaladó, Haladó).
+- Les messages du script de rendu sont remplacés un à un. Le hongrois ne met pas de
+  pluriel après un nombre : « 3 kedvenc », « 3 lecke », « 2 nap múlva », « 3 napja » — les
+  tournures anglaises à pluriel conditionnel ont été simplifiées, pas recopiées. Le
+  constructeur s'arrête s'il reste un mot anglais dans le script.
+- Les cinq derniers liens « (franciául) » — FAQ (3), « À propos », mentions légales —
+  mènent à la page hongroise. **Plus aucun lien vers le français ne subsiste sous `hu/`.**
+
+### Ce qui est corrigé
+
+- **Le contrôle de Mon espace d'`audit-coherence.mjs` ne lisait que
+  `en/mon-espace.html`**, écrit en dur : une page hongroise sans table, ou à table
+  incomplète, serait passée sans un mot. Il parcourt maintenant chaque langue qui a des
+  pages, et dit combien de tables il a vérifiées (« 2 »). Vu rougir en retirant « sante »
+  de la table hongroise. Une page déclarée mais absente n'y est pas signalée une seconde
+  fois : essayé en retirant la page, le contrôle des pages annoncées traduites et celui
+  des liens la signalaient déjà.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue, 28 paires de traduction | verts |
+| Structure comparée à l'anglais | identique : 3 sections, 5 zones, 3 boutons, tables des noms et des niveaux |
+| Liens | aucun lien mort ; 0 `../mon-espace.html` et 0 « (franciául) » sous `hu/` |
+| Table hongroise privée de « sante » | rouge : « « sante » n'a pas de titre dans cette langue » |
+| `audit-geometrie` | **1 265 mesures, 41 gabarits**, 0 anomalie |
+| Navigateur, page vide | « 0 kedvenc · 0/42 befejezett oldal · 0% előrehaladás », messages d'attente en hongrois |
+| Navigateur, une page cochée | « 💰 Pénzügyek — Kezdő » vers la page hongroise, « 1 nap múlva », mascotte « Folytatjuk? » ; stockage du navigateur remis exactement dans son état (2 clefs d'essai retirées) ; 0 erreur |
+
 ## 2026-09-12 — Boîte à idées en hongrois
 
 ### Ce qui est publié

@@ -77,8 +77,10 @@ françaises.
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
-4. Les pages hors cours. **Faites le 12 septembre 2026 : accueil, catalogue,
-   actualités, podcasts, glossaire, FAQ, à propos, mentions légales, boîte à idées** (`PAGES_TRADUITES.hu`), avec `publier-accueil.js`,
+4. ~~Les pages hors cours~~ — **toutes faites le 12 septembre 2026 : accueil, catalogue,
+   actualités, podcasts, glossaire, FAQ, à propos, mentions légales, boîte à idées, Mon
+   espace** (`PAGES_TRADUITES.hu`). **La traduction hongroise est complète** : ne reste
+   que la relecture par un lecteur hongrois (point 2), notée et non bloquante. Avec `publier-accueil.js`,
    `poser-situations.js`, `publier-actualites.js`, `publier-podcasts.js` et
    `poser-renvois-glossaire.js` qui écrivent le hongrois. Pour le glossaire, chaque
    terme hongrois se trouve tel quel (non décliné) dans les guides hongrois, la notion
@@ -87,14 +89,11 @@ françaises.
    version française fait foi, encadré en tête) et vouvoient au « Ön », comme le
    français vouvoie par exception ; FAQ et à propos tutoient. La boîte à idées hongroise
    envoie à l'éditeur un message aux intitulés français, marqué « (HU) » ; **son formulaire
-   n'a jamais été soumis pour essai**, et ne doit pas l'être sans l'accord de Ludo. Reste :
-   - **Mon espace** : sa table des titres de parcours, et le contrôle d'`audit-coherence`
-     qui ne la vérifie que pour `en/mon-espace.html`.
-   **En traduisant Mon espace, repointer ses liens** : `hu/faq.html` (3),
-   `hu/a-propos.html` et `hu/mentions-legales.html` le lient en français
-   (`../mon-espace.html`, suivi de « (franciául) »). Ces liens fonctionnent, donc aucun
-   contrôle ne les signalera : chercher « </a> (franciául) » sous `hu/` (5 aujourd'hui).
-   Avant chaque page, chercher « en/ » et « "en" » dans les scripts qui la touchent :
+   n'a jamais été soumis pour essai**, et ne doit pas l'être sans l'accord de Ludo. Mon
+   espace hongrois tient sa propre table des noms de parcours, comme l'anglais ; le
+   contrôle d'`audit-coherence` qui ne lisait que `en/mon-espace.html` parcourt désormais
+   chaque langue. Plus aucun lien « (franciául) » ne subsiste sous `hu/`.
+   **Pour une langue suivante**, chercher « en/ » et « "en" » dans les scripts qui touchent chaque page :
    trois défauts de ce genre ont rougi ou mené ailleurs au premier lot, trois de plus le
    12 septembre (dates hongroises non contrôlées, accueil hongrois oublié par le crochet,
    crochet actif différent de sa copie versionnée). Chercher aussi les motifs de texte
