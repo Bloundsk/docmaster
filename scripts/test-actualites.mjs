@@ -41,10 +41,16 @@ for (const p of PAGES) fs.copyFileSync(path.join(RACINE, p), path.join(BAC, p));
 /* Les titres partagent VRAIMENT deux mots avec leur section : depuis l ajout du
    filtre de pertinence, un titre factice sans rapport est refuse — et c est le
    filtre qui a raison. Des donnees d essai irrealistes ne testent rien. */
+/* Dates RELATIVES au jour du test. Elles etaient ecrites en dur (11 au 19 aout
+   2026) : quand l age maximal est passe a trente jours, le 13 septembre 2026,
+   ces articles d essai sont devenus trop vieux et les tests echouaient pour une
+   raison qui n avait rien a voir avec ce qu ils eprouvaient. */
+const ilYaJours = (j) => new Date(Date.now() - j * 86400000).toISOString().slice(0, 10);
+
 const METAS = {
-    "https://news.google.com/a": { titre: "Phishing : la cybersécurité des PME en question", source: "itdaily.fr", date: "2026-08-12", guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing", section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" },
-    "https://news.google.com/b": { titre: "Épargne & finance : les taux <en 2026>", source: "Le Monde", date: "2026-08-13", guide: "finance", page: "debutant.html", ancre: "lépargne", section: "L'épargne", sujet: "💰 Finance — Débutant" },
-    "https://news.google.com/c": { titre: "Les LLM et l'intelligence artificielle en entreprise", source: "spam.example", date: "2026-08-11", guide: "ia", page: "debutant.html", ancre: "les-llm", section: "Les LLM", sujet: "🤖 Intelligence Artificielle — Débutant" }
+    "https://news.google.com/a": { titre: "Phishing : la cybersécurité des PME en question", source: "itdaily.fr", date: ilYaJours(3), guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing", section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" },
+    "https://news.google.com/b": { titre: "Épargne & finance : les taux <en 2026>", source: "Le Monde", date: ilYaJours(2), guide: "finance", page: "debutant.html", ancre: "lépargne", section: "L'épargne", sujet: "💰 Finance — Débutant" },
+    "https://news.google.com/c": { titre: "Les LLM et l'intelligence artificielle en entreprise", source: "spam.example", date: ilYaJours(4), guide: "ia", page: "debutant.html", ancre: "les-llm", section: "Les LLM", sujet: "🤖 Intelligence Artificielle — Débutant" }
 };
 
 function corps(coches) {
@@ -223,13 +229,13 @@ console.log("\n=== 8. LE FILTRE REFUSE MEME UNE CASE COCHEE ===");
 const refuses = {
     "https://news.google.com/promo": {
         titre: "Investir en private equity : les meilleures plateformes en 2026",
-        source: "Un site quelconque", date: "2026-08-19",
+        source: "Un site quelconque", date: ilYaJours(3),
         guide: "finance", page: "debutant.html", ancre: "lépargne",
         section: "L'épargne", sujet: "💰 Finance — Débutant",
     },
     "https://news.google.com/source": {
         titre: "Un titre parfaitement anodin",
-        source: "news-eco.com", date: "2026-08-19",
+        source: "news-eco.com", date: ilYaJours(3),
         guide: "ia", page: "debutant.html", ancre: "les-llm",
         section: "Les LLM", sujet: "🤖 IA — Débutant",
     },
@@ -476,6 +482,71 @@ verifier("les trois plus récents de la section passent",
 verifier("le quatrième, le plus ancien, est écarté", !e14.includes("p4"), JSON.stringify(e14));
 verifier("le témoin d'une autre section passe", e14.includes("p5"), JSON.stringify(e14));
 verifier("l'écart est dit", /section déjà pourvue/.test(sortie14), sortie14.trim().slice(0, 300));
+
+/* --- 15. Le communique derriere un tiret -------------------------------------
+ *
+ * Cas reel, en ligne le 13 septembre 2026, sous « L'épargne » : le filtre ne
+ * decoupait le titre qu aux deux-points, et « Goodvest lance Rive 3 » restait
+ * colle a « Finance verte - ». La source est neutre ici, pour que ce soit bien
+ * le decoupage qui refuse, et non la liste des sources.
+ *
+ * Le temoin porte lui aussi un tiret entoure d espaces, sans marque ni produit :
+ * il DOIT passer, sans quoi un filtre qui refuserait tout tiret aurait l air de
+ * fonctionner. */
+console.log("\n=== 15. LE COMMUNIQUÉ DERRIÈRE UN TIRET EST REFUSÉ ===");
+fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
+const epargne = { guide: "finance", page: "debutant.html", ancre: "lépargne",
+                  section: "L'épargne", sujet: "💰 Finance — Débutant" };
+const tiret = {
+    "https://news.google.com/t1": { ...epargne, source: "Un journal", date: ilYa(1),
+        titre: "PARIS : Finance verte - Goodvest lance Rive 3, un produit d'épargne alliant performance et impact écologique" },
+    "https://news.google.com/t2": { ...epargne, source: "Un journal", date: ilYa(1),
+        titre: "Finance et épargne - le livret garde la cote auprès des ménages" },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(tiret).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(tiret)}\n-->\n`,
+}];
+const sortie15 = lancer();
+const e15 = lireEtat().articles.map((a) => a.lien.split("/").pop());
+verifier("« Goodvest lance Rive 3 » est refusé malgré le tiret", !e15.includes("t1"), JSON.stringify(e15));
+verifier("le témoin à tiret, sans produit annoncé, passe", e15.includes("t2"), JSON.stringify(e15));
+verifier("le refus nomme le produit", /communiqué produit.*Rive/.test(sortie15), sortie15.trim().slice(0, 300));
+
+/* --- 16. Le palmares au masculin ---------------------------------------------
+ *
+ * Cas reels. « Le meilleur OLED de Samsung… » est entre le 13 septembre 2026 sous
+ * « Le systeme de design » : la regle ne connaissait que « meilleure(s) ». « Les 27
+ * meilleurs outils… » figure dans l historique des rapports.
+ *
+ * Le temoin est du journalisme, et il porte « le meilleur » au milieu de la
+ * phrase : il DOIT passer. Il partage deux mots avec sa section, sans quoi il
+ * serait refuse comme hors sujet — et le test serait vert pour une autre raison
+ * que celle qu il eprouve. */
+console.log("\n=== 16. LE PALMARÈS AU MASCULIN EST REFUSÉ ===");
+fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
+const modele = { guide: "ia", page: "intermediaire.html", ancre: "choisir-un-modele",
+                 section: "Choisir un modèle", sujet: "🤖 Intelligence Artificielle — Intermédiaire" };
+const palmares = {
+    "https://news.google.com/m1": { ...modele, source: "Un journal", date: ilYa(1),
+        titre: "Le meilleur OLED de Samsung gagne une version spectaculaire qui cache son design" },
+    "https://news.google.com/m2": { ...modele, source: "Un journal", date: ilYa(1),
+        titre: "Les 27 meilleurs outils pour choisir un modèle d'IA" },
+    "https://news.google.com/m3": { ...modele, source: "Un journal", date: ilYa(1),
+        titre: "Choisir un modèle d'IA : pourquoi le meilleur modèle n'existe pas" },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(palmares).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(palmares)}\n-->\n`,
+}];
+const sortie16 = lancer();
+const e16 = lireEtat().articles.map((a) => a.lien.split("/").pop());
+verifier("« Le meilleur OLED… » est refusé", !e16.includes("m1"), JSON.stringify(e16));
+verifier("« Les 27 meilleurs outils… » est refusé", !e16.includes("m2"), JSON.stringify(e16));
+verifier("« pourquoi le meilleur modèle n'existe pas » passe", e16.includes("m3"), JSON.stringify(e16));
+verifier("le refus dit « palmarès »", /palmares/.test(sortie16), sortie16.trim().slice(0, 300));
 
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

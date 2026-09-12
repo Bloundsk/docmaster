@@ -53,8 +53,52 @@ flux. Retrouvés sur Bing par leur titre exact, **17 des 24 articles en ligne** 
 leur adresse d'origine (lefigaro.fr, 01net.com, sudouest.fr…) ; 7 sont introuvables,
 dont les trois aux sources les plus douteuses ; deux mènent à MSN ou Yahoo, qui
 republient Clubic et Capital. En remplacement de Google pour chercher, Bing ne rend
-qu'une douzaine de résultats par recherche, contre une centaine. Le choix est laissé
-à Ludo.
+qu'une douzaine de résultats par recherche, contre une centaine.
+
+**Tranché par Ludo : les liens Google restent.** Ce qui était faux, c'était la
+promesse : les mentions légales, en français, anglais et hongrois, disent désormais
+que le lien passe par Google Actualités, qui peut d'abord afficher sa page de
+consentement depuis l'Union européenne, et qu'aucune donnée ne part vers Google ni
+vers ces sites tant qu'un lien n'est pas ouvert.
+
+### Ce que le plafond a fait remonter, et la seconde passe
+
+Relancée avec le plafond, la publication a bien ramené *Les fuites de données* à trois
+articles et supprimé les doublons (dix-neuf sections représentées au lieu de dix). Mais
+elle a rempli les vingt-quatre places avec des articles du 2 au 5 septembre, et
+plusieurs n'avaient rien à faire là. Relus un par un, puis, avec l'accord de Ludo :
+
+- **Cinq articles retirés** (rapports n° 70, 71, 73 et 84) : « Cybersécurité dans
+  l'iGaming… » (toulouse7.com), « Finance verte - Goodvest lance Rive 3, un produit
+  d'épargne… », « HTEC Momentum renforce son palmarès… », « Aide logement 2026 :
+  conditions, montants, démarches » (Mes Allocs, service commercial), et un article sur
+  les allocations étudiantes rangé sous *Conserver ses documents*.
+- **Deux sources écartées** : Presse Agence (Vapodil, Goodvest) et Lelezard (HTEC),
+  deux diffuseurs de communiqués.
+- **La faille du tiret fermée** : le filtre des communiqués ne découpait le titre
+  qu'aux deux-points et aux tirets longs ; « Finance verte - Goodvest lance Rive 3 »
+  restait donc une seule phrase sans marque en tête. Il coupe aussi au tiret entouré
+  d'espaces ; un tiret collé (« e-commerce », « Saint-Étienne ») ne coupe pas.
+- **Un mois, pas quatre** : l'âge maximal passe de 120 à **30 jours**, pour la veille
+  comme pour la publication — une veille qui garderait un article de quarante jours
+  l'annoncerait « déjà en ligne » alors que la page le refuserait. La page montre le
+  mois écoulé, quitte à montrer moins de vingt-quatre articles.
+- **Le palmarès au masculin** : « Le meilleur OLED de Samsung… » est entré sous *Le
+  système de design* à la relance. La règle des palmarès ne connaissait que
+  « meilleure(s) », alors que son propre commentaire donnait « le meilleur courtier
+  2026 » en exemple à refuser. Mesurée avant d'être posée, sur les 966 titres de
+  l'historique : une première version refusait aussi quatre titres de journalisme
+  (« pourquoi le meilleur modèle d'IA n'existe pas ») ; la version retenue refuse
+  18 palmarès de plus (« Les 23 meilleurs outils… », « 10 Meilleurs Robots de
+  Trading… »), n'en laisse repasser aucun, et épargne ces quatre titres : « le
+  meilleur » au milieu d'une phrase reste permis.
+
+Tests 15 et 16, chacun avec son témoin. Le titre Goodvest est refusé malgré une source
+neutre, et un titre à tiret sans produit annoncé passe — rejouée sur une copie, la règle
+d'avant le laissait bien passer. « Le meilleur OLED… » et « Les 27 meilleurs outils… »
+sont refusés ; « pourquoi le meilleur modèle n'existe pas » passe. Les dates d'essai du fichier de test, écrites
+en dur du 11 au 19 août, sont devenues relatives au jour du test : à trente jours, elles
+auraient fait échouer les tests pour une raison étrangère à ce qu'ils éprouvent.
 
 ## 2026-09-12 — Douze situations : plus aucune carte seule
 

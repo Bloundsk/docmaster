@@ -42,7 +42,17 @@
 
 // Un site qui annonce « les competences de demain » ne peut pas afficher un
 // article de 2021 : la page se contredirait elle-meme.
-const AGE_MAX_JOURS = 120;
+//
+// Trente jours depuis le 13 septembre 2026, a la demande de Ludo (cent vingt
+// auparavant). Le plafond de trois articles par section, pose le meme jour, a
+// fait remonter des articles de debut de mois pour remplir les vingt-quatre
+// places — dont plusieurs communiques. La page montre desormais le mois ecoule,
+// quitte a montrer moins.
+//
+// La regle vaut pour la veille ET pour la publication, et c est voulu : une
+// veille qui retiendrait un article de quarante jours l annoncerait « deja en
+// ligne » dans son rapport, alors que la page le refuserait.
+const AGE_MAX_JOURS = 30;
 
 /* Les tournures qui trahissent un contenu promotionnel ou un comparatif
    d affiliation. Chacune est nee d un titre reellement remonte par le flux.
@@ -54,7 +64,20 @@ const AGE_MAX_JOURS = 120;
    n en avoir aucun, mais une veille qui ne propose rien ne sert a rien non
    plus. */
 const TOURNURES_PROMOTIONNELLES = [
-    { motif: /\bles?\s+meilleures?\b|\bmeilleures?\s+(application|plateforme|site|banque|courtier|outil|logiciel|offre|carte|assurance)/i,
+    /* « le meilleur », au masculin, echappait : le motif ne connaissait que
+       « meilleure(s) », alors que le commentaire ci-dessus donne « le meilleur
+       courtier 2026 » en exemple a refuser. Corrige le 13 septembre 2026, apres
+       « Le meilleur OLED de Samsung… » publie sous « Le systeme de design ».
+
+       Mesure sur les 966 titres de l historique, avant adoption : 18 palmares
+       refuses en plus (« Les 23 meilleurs outils… », « 10 Meilleurs Robots de
+       Trading… »), aucun de ceux d avant ne repasse. Une premiere version, qui
+       refusait « le meilleur » partout, ecartait aussi quatre titres de
+       journalisme — « pourquoi le meilleur modele d IA n existe pas ». D ou la
+       forme retenue : le pluriel (« les 23 meilleurs »), le chiffre en tete, le
+       titre qui S OUVRE sur « le meilleur », ou « meilleur » devant un produit.
+       Au milieu d une phrase, « le meilleur » reste permis. */
+    { motif: /\bles?\s+meilleures?\b|\bles\s+(\d+\s+)?meilleure?s\b|^\s*\d+\s+meilleure?s\b|^\s*(le|la)\s+meilleure?\b|\bmeilleure?s?\s+(application|plateforme|site|banque|courtier|outil|logiciel|offre|carte|assurance)s?\b/i,
       quoi: "palmares" },
     { motif: /\btop\s*\d+\b|\bclassement\s+des\b/i,                      quoi: "classement" },
     { motif: /\bcomparatif\b|\bcomparaison\s+des\b|\bon\s+a\s+teste\b/i,  quoi: "comparatif" },
@@ -82,6 +105,13 @@ const SOURCES_ECARTEES = [
     "news-eco.com",       // communiques de presse republies tels quels
     "Cafédelabourse",     // comparatifs d affiliation (courtiers, banques)
     "Finance Héros",      // idem
+    // Deux diffuseurs de communiques, ajoutes le 13 septembre 2026 apres
+    // relecture de la page en ligne, a la demande de Ludo : « Vapodil - Le
+    // modele economique qui transforme ses clients en entrepreneurs » et
+    // « Goodvest lance Rive 3, un produit d epargne » venaient du premier,
+    // « HTEC Momentum renforce son palmares » du second.
+    "Presse Agence",
+    "Lelezard",
 ];
 
 /* Un titre qui n en est pas un. « IA Local souveraine pour tous vos
@@ -243,7 +273,12 @@ function communiqueProduit(titre) {
     const forme = new RegExp(
         `^\\s*((?:${MOT}\\s+){0,2}${MOT})\\s+(?:${VERBES_D_ANNONCE})\\b(.*)$`, "iu");
 
-    for (const segment of titre.split(/\s*[:–—]\s*/).filter(Boolean)) {
+    /* Le tiret entoure d espaces coupe aussi : « PARIS : Finance verte -
+       Goodvest lance Rive 3, un produit d epargne » passait le filtre, parce que
+       seuls les deux-points et les tirets longs decoupaient le titre (en ligne le
+       13 septembre 2026). Un tiret colle — « e-commerce », « Saint-Etienne » —
+       ne coupe pas : il fait partie du mot. */
+    for (const segment of titre.split(/\s*[:–—]\s*|\s+-\s+/).filter(Boolean)) {
         const m = segment.match(forme);
         if (!m) continue;
         if (!estUneMarque(m[1].split(/\s+/))) continue;
