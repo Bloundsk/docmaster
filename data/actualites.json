@@ -1,6 +1,18 @@
 {
-  "maj": "2026-09-11T19:53:43.196Z",
+  "maj": "2026-09-12T11:40:57.856Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQVkRKV2Z5WHhURzlxNzdBbkd4blFOMDdKWDRhYXFUQ25hY0VzVVYwZTNFTUlzajd0dHBhRlhDTk1mcXlWM2dxdWV3cFFVTG9XcVFLYUJxRXhXWm5kTkFXeW1Zc0w5RURnTHVIeFluU0N3d3BSbGJIaW92cy0xYS0zNFJLR0xhWEJqMGpzb1lNdFkweWRXQV9UM0hB?oc=5",
+      "titre": "Fuites de données : un risque majeur pour les utilisateurs",
+      "source": "Universidad de Guadalajara",
+      "date": "2026-09-12",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "publie": "2026-09-12"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQNU82YlBSVUZhYnlEeHhqS01RLWlEa3RRSzhDUnp1ZWVidUZGMXlnZ0dFNDNUazB2SmU2NVU5NUpFX0pkLUVtUk52OGUxak4xSW1qSkpmYWZNTE9pR195X1ZVRU5Nblp4Ym9RN05CUldGY1JEeFFta2tnUVk2YWNrWkl4eDgtMUIwZHVRNmZBbi1GdW91S2FiczFlS3NGaUk5SUQ1bkxJd2pYaE5GeHpxaWY1Q1YwbmJQNmlnRDNxNUk4YWQ0YTR5Z1ROZDdVY2s0QUNVWDJDcTBHTHRFdGN3aHJtOA?oc=5",
       "titre": "Sénégal : Everest Finance mise sur Sama Naffa pour rapprocher l’épargne du marché financier",
@@ -275,18 +287,6 @@
       "ancre": "vos-donnees-personnelles",
       "section": "🔐 Tes données personnelles",
       "sujet": "⚖️ Droit & démarches — Avancé",
-      "publie": "2026-09-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPb2JqaExpUW5wazkzV3dwMGNnN1F4M0dCMFp1UEhfbzRpSDdXbzVXRHZQSW5BTEd1QWlKSUFuWlFpd1RWMTdUeV9nZlhEVklRNkxlZHpZQlRNZU54YjFxSjR1Um8tVHZEcG1YeERISVhvUWN1NkZlckN6cHJGbTNsNndFZ2NieTVMWGNsRDhjanBCN2NhTnB6bnloMTl0WEZvV2ZlTVdLWFM4UzlVbkhEX0YtTFRFbDBrby12d3ZGdlhOcXVqaTk0eDNrTzNKNmthUnJHUHRnTzhLZDNpd3NNNnRLYjY3cUVtcmRGbWZiZk5BSkVuYkZRS1RxTy1sSWhJLVhz?oc=5",
-      "titre": "Intelligence artificielle : des agents d’OpenAI se seraient coordonnés tout seuls bien avant la cyberattaque de Hugging Face",
-      "source": "sudouest.fr",
-      "date": "2026-09-05",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Les agents IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
       "publie": "2026-09-05"
     }
   ]
