@@ -77,11 +77,26 @@ françaises.
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
-4. Les pages hors cours (`hu/index.html`, `hu/guides.html`, FAQ…) et
-   `PAGES_TRADUITES.hu`. Il faudra alors une version hongroise pour
-   `publier-accueil.js`, `poser-situations.js`, le glossaire et ses renvois. Au
-   passage, retirer des pages hongroises les commentaires « Ces parcours ne sont pas
-   encore traduits », devenus sans objet depuis que les quatorze le sont.
+4. Les pages hors cours. **Faites le 12 septembre 2026 : accueil, catalogue,
+   actualités** (`PAGES_TRADUITES.hu`), avec `publier-accueil.js`,
+   `poser-situations.js` et `publier-actualites.js` qui écrivent le hongrois. Restent,
+   dans cet ordre conseillé :
+   - **podcasts** : `publier-podcasts.js` n'écrit que deux langues ; les épisodes
+     sont en français, seul le texte autour se traduit. Une fois la page là,
+     l'accueil hongrois annoncera les épisodes de lui-même ;
+   - **glossaire** : `poser-renvois-glossaire.js` (liste `LANGUES`) et les contrôles
+     4 et 4 ter d'`audit-coherence.mjs` citent `glossaire.html` et `en/glossaire.html`
+     en dur. Chaque terme hongrois doit se trouver tel quel dans les guides hongrois ;
+     les renvois se poseront alors dans les 56 pages hongroises ;
+   - **FAQ, à propos, mentions légales** (traduction de courtoisie, la version
+     française fait foi, comme en anglais) ;
+   - **boîte à idées** : ne jamais envoyer de message d'essai par le formulaire ;
+   - **Mon espace** : sa table des titres de parcours, et le contrôle d'`audit-coherence`
+     qui ne la vérifie que pour `en/mon-espace.html`.
+   Avant chaque page, chercher « en/ » et « "en" » dans les scripts qui la touchent :
+   trois défauts de ce genre ont rougi ou mené ailleurs au premier lot. Et retirer au
+   passage des pages hongroises les commentaires « Ces parcours ne sont pas encore
+   traduits », devenus sans objet.
 
 **Ce que le relecteur hongrois doit regarder en priorité :**
 

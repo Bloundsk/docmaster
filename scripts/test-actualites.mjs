@@ -20,6 +20,7 @@ const FICHIER_ISSUES = path.join(BAC, "issues.json");
 fs.rmSync(BAC, { recursive: true, force: true });
 fs.mkdirSync(path.join(BAC, "scripts"), { recursive: true });
 fs.mkdirSync(path.join(BAC, "en"), { recursive: true });
+fs.mkdirSync(path.join(BAC, "hu"), { recursive: true });
 /* Les deux fichiers, pas seulement celui qu'on teste : publier-actualites.js
    requiert actualites-regles.js. Le bac à sable ne copiait que le premier, et
    le test tombait sur MODULE_NOT_FOUND — même défaut que le jour où il ne
@@ -33,7 +34,8 @@ for (const f of ["publier-actualites.js", "actualites-regles.js"]) {
    jour ou le script a commence a ecrire aussi les pages anglaises, il s est
    arrete sur un fichier absent — et ce test, qu on n avait pas relance, etait
    le seul a pouvoir le dire. */
-const PAGES = ["actualites.html", "index.html", "en/actualites.html", "en/index.html"];
+const PAGES = ["actualites.html", "index.html", "en/actualites.html", "en/index.html",
+               "hu/actualites.html", "hu/index.html"];
 for (const p of PAGES) fs.copyFileSync(path.join(RACINE, p), path.join(BAC, p));
 
 /* Les titres partagent VRAIMENT deux mots avec leur section : depuis l ajout du
@@ -123,6 +125,13 @@ verifier("la page anglaise est écrite aussi", pageEn.includes("Phishing : la cy
 verifier("elle est rédigée en anglais", pageEn.includes("Related to") && !pageEn.includes("En rapport avec"));
 verifier("elle renvoie vers le guide anglais", pageEn.includes('href="guides/cybersecurite/debutant.html"'));
 verifier("l'accueil anglais aussi", lirePage("en/index.html").includes("Read elsewhere"));
+/* Le hongrois garde les ancres françaises : son lien vers le guide peut viser
+   la section, contrairement à l'anglais. */
+const pageHu = lirePage("hu/actualites.html");
+verifier("la page hongroise est écrite aussi", pageHu.includes("Phishing : la cybersécurité des PME en question"));
+verifier("elle est rédigée en hongrois", pageHu.includes("Kapcsolódó útmutató:") && !pageHu.includes("Related to"));
+verifier("son lien vise la section française", pageHu.includes("guides/cybersecurite/debutant.html#le-phishing"));
+verifier("l'accueil hongrois aussi", lirePage("hu/index.html").includes("Máshol olvasva"));
 verifier("l'accueil français reste français", lirePage("index.html").includes("À lire ailleurs"));
 
 const accueil2 = lirePage("index.html");

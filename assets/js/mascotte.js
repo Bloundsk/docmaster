@@ -467,8 +467,14 @@
     // La racine du site, deja calculee par les pages pour leurs scripts.
     function racine() {
         const base = window.DOCMASTER_BASE || "";
-        // Sur une page anglaise hors cours, l accueil anglais est a cote.
-        return /\/en\//.test(location.pathname) ? base + "en/" : base;
+        /* L accueil de la langue de la page, s il existe. Le motif « /en/ » en
+           dur renvoyait les pages hongroises vers l accueil francais. La langue
+           de la page vient de langues.js, qui sait distinguer un prefixe de
+           langue d un dossier homonyme ; l accueil traduit, de PAGES_TRADUITES. */
+        const L = window.DOCMASTER_LANGUES;
+        const code = L && L.langueDeLaPage ? L.langueDeLaPage() : "fr";
+        const traduites = (L && L.PAGES_TRADUITES && L.PAGES_TRADUITES[code]) || [];
+        return code !== "fr" && traduites.indexOf("index.html") !== -1 ? base + code + "/" : base;
     }
 
     if (document.readyState === "loading") {

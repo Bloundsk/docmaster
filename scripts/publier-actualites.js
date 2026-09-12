@@ -295,7 +295,29 @@ const VERSIONS = {
         toutes: "All the news →",
         etiquette: (a) => `<a href="guides/${a.guide}/${a.page}">${echapper(NOMS_EN[a.guide] || a.guide)} — ${echapper(NIVEAUX_EN[a.page.replace(".html", "")] || "")}</a>`,
     },
+    /* Les pages hongroises ont gardé les ancres françaises : le lien peut donc
+       viser la section, comme en français. Le nom affiché est celui que porte
+       la page hongroise, pas le titre français de la section. */
+    hu: {
+        dossier: "hu/", locale: "hu-HU",
+        rapport: "Kapcsolódó útmutató:",
+        vide: "Egyelőre nincs kiválasztott cikk. Ez az oldal az olvasmányokkal együtt telik meg.",
+        titreAccueil: "📰 Máshol olvasva",
+        introAccueil: "Néhány, az útmutatókhoz kapcsolódó olvasmány, automatikusan kiválasztva. <strong>Franciául vannak</strong>: francia forrásokra mutatnak, és egy lefordított cím alapján már nem lehetne megtalálni őket.",
+        toutes: "Az összes hír →",
+        etiquette: (a) => `<a href="guides/${a.guide}/${a.page}#${encodeURIComponent(a.ancre)}">${echapper(NOMS_HU[a.guide] || a.guide)} — ${echapper(NIVEAUX_HU[a.page.replace(".html", "")] || "")}</a>`,
+    },
 };
+
+const NOMS_HU = {
+    finance: "💰 Pénzügyek", ia: "🤖 Mesterséges intelligencia", "dev-web": "💻 Webfejlesztés",
+    marketing: "📢 Digitális marketing", cybersecurite: "🔒 Kiberbiztonság",
+    entrepreneuriat: "🚀 Vállalkozás", productivite: "⏱️ Termelékenység és szervezés",
+    data: "📊 Adatok és elemzés", design: "🎨 UX/UI design", droit: "⚖️ Jog és ügyintézés",
+    sante: "🩺 Munkahelyi egészség", ecologie: "🌱 Digitális mértékletesség",
+    negociation: "🤝 Tárgyalás és kommunikáció", apprendre: "🎓 A tanulás tanulása",
+};
+const NIVEAUX_HU = { debutant: "Kezdő", intermediaire: "Középhaladó", avance: "Haladó", index: "" };
 
 const NOMS_EN = {
     finance: "💰 Finance", ia: "🤖 Artificial Intelligence", "dev-web": "💻 Web Development",
@@ -418,7 +440,7 @@ function injecter(fichier, contenu) {
             fs.writeFileSync(ETAT, JSON.stringify({ maj, articles }, null, 2) + "\n");
         }
 
-        /* Les quatre pages porteuses des marqueurs, dans les deux langues. La
+        /* Les pages porteuses des marqueurs, deux par langue. La
            version anglaise a été oubliée une fois : les deux pages françaises
            se mettaient à jour, l'anglaise gardait la liste du jour de sa
            traduction sans que rien ne le signale. */

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Útmutatók - Clicked</title>
+    <meta name="description" content="A Clicked tizennégy útmutatója a kezdő szinttől a haladóig: pénzügyek, mesterséges intelligencia, webfejlesztés, kiberbiztonság és még sok más. Ingyenes, regisztráció nélkül.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Útmutatók - Clicked">
+    <meta property="og:description" content="A Clicked tizennégy útmutatója a kezdő szinttől a haladóig: pénzügyek, mesterséges intelligencia, webfejlesztés, kiberbiztonság és még sok más. Ingyenes, regisztráció nélkül.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Útmutatók - Clicked">
+    <meta name="twitter:description" content="A Clicked tizennégy útmutatója a kezdő szinttől a haladóig: pénzügyek, mesterséges intelligencia, webfejlesztés, kiberbiztonság és még sok más. Ingyenes, regisztráció nélkül.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../";</script>
+    <script src="../assets/js/identite.js"></script>
+    <script src="../assets/js/langues.js"></script>
+    <script src="../assets/js/layout.js"></script>
+
+    <header>
+        <h1>Útmutatók</h1>
+        <p>Tizennégy útmutató, mindegyik három szinten. Válassz egy témát, vagy keress rá arra, amire szükséged van.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="🔍 Útmutató vagy téma keresése…" autocomplete="off">
+        <span class="search-hint">/</span>
+        <div id="search-results" class="search-results"></div>
+    </div>
+
+    <main id="main-content">
+        <!-- SITUATIONS:DEBUT -->
+        <section id="situations" aria-labelledby="situations-titre">
+            <h2 id="situations-titre">Konkrét választ keresel?</h2>
+            <p class="situations-intro">Gyakori helyzetek, és a fejezet, amely választ ad rájuk — egyenesen oda.</p>
+            <ul class="situations">
+                <li>
+                    <a class="situation" href="guides/cybersecurite/debutant.html#le-phishing">
+                        <span class="situation-texte">„Olyan üzenetet kaptam, amely sürget, hogy kattintsak”</span>
+                        <span class="situation-cible"><span aria-hidden="true">🔒</span> Kiberbiztonság · Kezdő · Az adathalászat</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="situation" href="guides/droit/debutant.html#ecrire-pour-que-ca-compte">
+                        <span class="situation-texte">„Egy franciaországi eladó nem akarja visszaadni a pénzemet”</span>
+                        <span class="situation-cible"><span aria-hidden="true">⚖️</span> Jog és ügyintézés · Kezdő · Írni úgy, hogy számítson</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="situation" href="guides/droit/intermediaire.html#donner-conge">
+                        <span class="situation-texte">„Ki akarok költözni a franciaországi bérelt lakásomból”</span>
+                        <span class="situation-cible"><span aria-hidden="true">⚖️</span> Jog és ügyintézés · Középhaladó · Felmondás</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="situation" href="guides/sante/intermediaire.html#la-deconnexion">
+                        <span class="situation-texte">„A franciaországi munkáltatóm este is ír nekem”</span>
+                        <span class="situation-cible"><span aria-hidden="true">🩺</span> Munkahelyi egészség · Középhaladó · A lekapcsolódás</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="situation" href="guides/negociation/intermediaire.html#negocier-son-salaire">
+                        <span class="situation-texte">„Tárgyalnom kell a fizetésemről”</span>
+                        <span class="situation-cible"><span aria-hidden="true">🤝</span> Tárgyalás és kommunikáció · Középhaladó · A fizetés megtárgyalása</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="situation" href="guides/finance/debutant.html#lépargne">
+                        <span class="situation-texte">„Van egy kis félretett pénzem”</span>
+                        <span class="situation-cible"><span aria-hidden="true">💰</span> Pénzügyek · Kezdő · A megtakarítás</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="situation" href="guides/apprendre/debutant.html#se-tester-plutot-que-relire">
+                        <span class="situation-texte">„Tanulok, és mindent elfelejtek”</span>
+                        <span class="situation-cible"><span aria-hidden="true">🎓</span> A tanulás tanulása · Kezdő · Kikérdezni magad újraolvasás helyett</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- SITUATIONS:FIN -->
+
+        <section id="categories">
+            <h2>Az összes útmutató</h2>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">💰</span>Pénzügyek</h3>
+                <p>A pénzügyi befektetés alapjai.</p>
+                <p class="carte-chiffres">3 szint · kb. 33 perc · előismeret nélkül</p>
+                <a href="guides/finance/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🤖</span>Mesterséges intelligencia</h3>
+                <p>Hogyan épülnek fel az MI-ügynökök, és milyen technológiák állnak mögöttük.</p>
+                <p class="carte-chiffres">3 szint · kb. 28 perc · előismeret nélkül</p>
+                <a href="guides/ia/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">💻</span>Webfejlesztés</h3>
+                <p>Modern weboldalak és webalkalmazások építése.</p>
+                <p class="carte-chiffres">3 szint · kb. 27 perc · előismeret nélkül</p>
+                <a href="guides/dev-web/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">📢</span>Digitális marketing</h3>
+                <p>Egy termék vagy márka online népszerűsítésének eszközei.</p>
+                <p class="carte-chiffres">3 szint · kb. 27 perc · előismeret nélkül</p>
+                <a href="guides/marketing/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🔒</span>Kiberbiztonság</h3>
+                <p>Hogyan védd meg magad és az adataidat az interneten — az alapok.</p>
+                <p class="carte-chiffres">3 szint · kb. 27 perc · előismeret nélkül</p>
+                <a href="guides/cybersecurite/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🚀</span>Vállalkozás</h3>
+                <p>Egy vállalkozási terv felépítése és elindítása.</p>
+                <p class="carte-chiffres">3 szint · kb. 28 perc · előismeret nélkül</p>
+                <a href="guides/entrepreneuriat/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">⏱️</span>Termelékenység és szervezés</h3>
+                <p>Jobb szervezés a hatékonyabb mindennapokért.</p>
+                <p class="carte-chiffres">3 szint · kb. 29 perc · előismeret nélkül</p>
+                <a href="guides/productivite/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">📊</span>Adatok és elemzés</h3>
+                <p>Adatok gyűjtése, elemzése és értelmezése.</p>
+                <p class="carte-chiffres">3 szint · kb. 26 perc · előismeret nélkül</p>
+                <a href="guides/data/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🎨</span>UX/UI design</h3>
+                <p>Érthető és kellemesen használható felületek tervezése.</p>
+                <p class="carte-chiffres">3 szint · kb. 29 perc · előismeret nélkül</p>
+                <a href="guides/design/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">⚖️</span>Jog és ügyintézés</h3>
+                <p>Eligazodni a hivatalos ügyintézésben, ismerni a határidőket, érvényesíteni a jogaidat.</p>
+                <p class="carte-chiffres">3 szint · kb. 30 perc · előismeret nélkül</p>
+                <a href="guides/droit/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🩺</span>Munkahelyi egészség</h3>
+                <p>A munkahely beállítása, a mentális terhelés megértése, a lehetőségeid ismerete.</p>
+                <p class="carte-chiffres">3 szint · kb. 29 perc · előismeret nélkül</p>
+                <a href="guides/sante/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🌱</span>Digitális mértékletesség</h3>
+                <p>Hol van valójában a digitális technológia hatása, és mely számok állják meg a helyüket.</p>
+                <p class="carte-chiffres">3 szint · kb. 27 perc · előismeret nélkül</p>
+                <a href="guides/ecologie/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🤝</span>Tárgyalás és kommunikáció</h3>
+                <p>Megértetni magad, és tudni, mit lehet elérni, mielőtt tárgyalsz.</p>
+                <p class="carte-chiffres">3 szint · kb. 31 perc · előismeret nélkül</p>
+                <a href="guides/negociation/index.html">Megnézem az útmutatót →</a>
+            </article>
+
+            <article>
+                <h3><span class="carte-icone" aria-hidden="true">🎓</span>A tanulás tanulása</h3>
+                <p>Megjegyezni, amit olvasol, jókor ismételni, és rendet tenni a módszerek között.</p>
+                <p class="carte-chiffres">3 szint · kb. 28 perc · előismeret nélkül</p>
+                <a href="guides/apprendre/index.html">Megnézem az útmutatót →</a>
+            </article>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/search-data.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/favoris.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    <script src="../assets/js/enhance.js"></script>
+    <script src="../assets/js/mascotte.js"></script>
+
+    <!-- Les statistiques d'audience (GoatCounter) sont chargées par assets/js/layout.js,
+         présent sur toutes les pages du site. Rien à ajouter ici. -->
+</body>
+</html>

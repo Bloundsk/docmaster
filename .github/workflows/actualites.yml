@@ -97,7 +97,7 @@ jobs:
             fi
 
             # « git add -u » plutôt qu'une liste de fichiers : le script écrit
-            # les quatre pages porteuses des marqueurs, françaises et anglaises.
+            # les pages porteuses des marqueurs, dans chaque langue.
             # La liste en dur n'en citait que deux ; les pages anglaises étaient
             # modifiées puis perdues au checkout suivant, sans que rien ne le
             # signale. Le contrôle ci-dessous rend l'oubli impossible.

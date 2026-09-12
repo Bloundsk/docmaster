@@ -157,7 +157,10 @@
         en: ["index.html", "guides.html", "actualites.html", "podcasts.html",
              "glossaire.html", "idees.html", "faq.html", "a-propos.html",
              "mentions-legales.html", "mon-espace.html"],
-        es: [], de: [], it: [], zh: [], ru: [], hu: [],
+        es: [], de: [], it: [], zh: [], ru: [],
+        /* Le hongrois, page par page depuis le 12 septembre 2026. Une page
+           absente de cette liste reste servie en français par le menu. */
+        hu: ["index.html", "guides.html", "actualites.html"],
     };
 
     // Les correspondances d'adresses entre versions. La version francaise est a

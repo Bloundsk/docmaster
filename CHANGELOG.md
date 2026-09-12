@@ -1,5 +1,54 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Accueil, catalogue et actualités en hongrois
+
+### Ce qui est publié
+
+- **`hu/index.html`, `hu/guides.html` et `hu/actualites.html`**, déclarées dans
+  `PAGES_TRADUITES.hu`. Le menu, le sélecteur de langue et le bandeau « Ez az oldal
+  magyarul is elérhető » y mènent ; les sept autres pages hors cours restent servies
+  en français par le menu, comme le prévoit `lien()`.
+- **Rien de ce qui dérive n'y est écrit à la main.** La promesse et ses chiffres
+  (`publier-accueil.js`) ; les guides récemment mis à jour, lus dans les pages
+  hongroises elles-mêmes avec leur date « 2026. szeptember 12. » ; les sept entrées par
+  situation (`poser-situations.js`), dont les trois de droit français disent
+  « franciaországi » ; les chiffres des cartes (`chiffrer-parcours.js`, qui connaissait
+  déjà le hongrois) ; les actualités (`publier-actualites.js`).
+- **Les actualités hongroises visent la section**, là où l'anglais renvoie en haut de
+  page : les pages hongroises ont gardé les ancres françaises. Les titres d'articles
+  restent en français, et la page hongroise le dit.
+- **L'accueil hongrois n'annonce pas d'épisodes** : la page des podcasts n'existe pas
+  encore en hongrois, et le lien mènerait nulle part — la règle déjà écrite pour
+  l'anglais s'applique d'elle-même.
+
+### Corrigé en route
+
+- **`en/guides.html` annonçait aux moteurs des hreflang vers l'accueil**, pas vers le
+  catalogue. `appliquer-identite.js` ne pouvait pas le rattraper : son motif attend
+  `<link hreflang=…`, alors que `rel="alternate"` précède l'attribut dans toutes les
+  pages — il ne réécrit donc aucun hreflang. Ceux des trois pages anglaises jumelles
+  sont réécrits en entier, hongrois compris.
+- **La mascotte cherchait « /en/ » en dur** : sur une page hongroise, son lien menait à
+  l'accueil français. Elle lit maintenant la langue de la page dans `langues.js`.
+- **Le contrôle 12 d'`audit-coherence.mjs` retirait « en/ » en dur** et réclamait un
+  message de mascotte pour « hu/index.html ». Vu rougir à la première exécution,
+  corrigé pour tout préfixe de langue.
+- `publier-accueil.js` et `poser-situations.js` ne listent plus leurs langues en dur :
+  une langue qui a des libellés doit avoir sa page, sinon le script échoue au lieu de
+  la sauter en silence. `test-actualites.mjs` copie et vérifie aussi les deux pages
+  hongroises, lien vers la section compris.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue, 28 paires de traduction | verts |
+| `audit-geometrie` | **1 035 mesures, 34 gabarits**, 0 anomalie (trois pages hongroises ajoutées) |
+| Menu depuis `hu/index.html` | 3 liens sous `hu/`, 7 vers le français |
+| Bandeau sur l'accueil français, préférence hongroise | « Ez az oldal magyarul is elérhető », lien juste |
+| Recherche depuis `hu/guides.html` | résultats titrés en français, liens vers les pages hongroises |
+| Console | 0 erreur |
+
 ## 2026-09-12 — Quatorzième parcours en hongrois : Santé au travail — les quatorze sont traduits
 
 ### Ce qui est publié

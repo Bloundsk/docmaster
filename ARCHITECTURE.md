@@ -661,11 +661,15 @@ reste écrit dans le HTML pour qu'elle demeure lisible sans JavaScript. Elle pos
 `window.DOCMASTER_PAGE_AUTOTRADUITE`, qui évite que le bandeau l'annonce comme
 non traduite.
 
-### Ce qui s'écrit dans les deux langues
+### Ce qui s'écrit dans chaque langue
 
-`scripts/publier-actualites.js` rend **quatre** pages : `actualites.html` et
-`index.html`, dans chaque langue. Il n'en rendait que deux ; la page anglaise
+`scripts/publier-actualites.js` rend `actualites.html` et `index.html` dans
+**chaque langue qui les a** — français, anglais et, depuis le 12 septembre 2026,
+hongrois : six pages. Il n'en rendait d'abord que deux ; la page anglaise
 aurait figé sa liste au jour de sa traduction, **sans que rien ne le signale**.
+`publier-accueil.js` et `poser-situations.js` suivent la même règle : une langue qui
+a des libellés doit avoir sa page, sinon le script échoue. Les pages hongroises
+gardant les ancres françaises, leurs liens d'actualités visent la section.
 Son option `--hors-ligne` rejoue le rendu depuis l'état enregistré, sans jeton
 GitHub — la seule façon de voir l'effet d'un gabarit modifié.
 

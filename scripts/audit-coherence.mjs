@@ -776,7 +776,9 @@ if (fs.existsSync(fichierMascotte)) {
        mais une page qui s en contente n a rien de particulier a dire — ce qui
        se decide, et ne s oublie pas. */
     for (const page of toutes) {
-        const nom = page.nom.replace(/^en\//, "");
+        // Le prefixe de toute langue, pas seulement « en/ » : ecrit en dur, il
+        // faisait reclamer un message « hu/index.html » a la mascotte.
+        const nom = page.nom.replace(/^[a-z]{2}\//, "");
         if (/guides\//.test(page.nom) || nom === "index.html") continue;
         if (!src.includes(`"${nom}"`)) signaler("MASCOTTE", `${nom} : aucun message de mascotte déclaré`);
     }

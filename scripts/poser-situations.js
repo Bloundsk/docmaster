@@ -28,9 +28,9 @@
  * la prochaine generation, et une ancre disparue fait echouer le script au
  * lieu de laisser un lien qui ment.
  *
- * En anglais, les trois situations de droit francais le disent dans la phrase
- * elle-meme : le bandeau de la page previent, la phrase empeche de sortir la
- * regle de son contexte.
+ * En anglais et en hongrois, les trois situations de droit francais le disent
+ * dans la phrase elle-meme : le bandeau de la page previent, la phrase empeche
+ * de sortir la regle de son contexte.
  *
  *   node scripts/poser-situations.js              ecrit
  *   node scripts/poser-situations.js --verifier   ne touche a rien, sort en
@@ -48,22 +48,31 @@ const FIN = "<!-- SITUATIONS:FIN -->";
 const I = "        ";
 
 /* Les ancres sont des cles : elles ne se renomment pas (favoris des visiteurs,
-   quiz, sommaires). Les anglaises ont ete relevees rang pour rang, titre compare. */
+   quiz, sommaires). Les anglaises ont ete relevees rang pour rang, titre compare.
+   Les pages hongroises ont garde les ancres francaises : elles n en ont pas
+   d autres, et ancreDe() retombe donc sur celles-ci. */
 const SITUATIONS = [
     { sujet: "cybersecurite", niveau: "debutant", ancres: { fr: "le-phishing", en: "phishing" },
-      texte: { fr: "J'ai reçu un message qui me presse de cliquer", en: "I got a message urging me to click" } },
+      texte: { fr: "J'ai reçu un message qui me presse de cliquer", en: "I got a message urging me to click",
+               hu: "Olyan üzenetet kaptam, amely sürget, hogy kattintsak" } },
     { sujet: "droit", niveau: "debutant", ancres: { fr: "ecrire-pour-que-ca-compte", en: "writing-that-counts" },
-      texte: { fr: "Un vendeur refuse de me rembourser", en: "A seller in France won't refund me" } },
+      texte: { fr: "Un vendeur refuse de me rembourser", en: "A seller in France won't refund me",
+               hu: "Egy franciaországi eladó nem akarja visszaadni a pénzemet" } },
     { sujet: "droit", niveau: "intermediaire", ancres: { fr: "donner-conge", en: "giving-notice" },
-      texte: { fr: "Je veux quitter mon logement", en: "I want to leave my rented home in France" } },
+      texte: { fr: "Je veux quitter mon logement", en: "I want to leave my rented home in France",
+               hu: "Ki akarok költözni a franciaországi bérelt lakásomból" } },
     { sujet: "sante", niveau: "intermediaire", ancres: { fr: "la-deconnexion", en: "disconnecting" },
-      texte: { fr: "Mon travail m'écrit le soir", en: "My employer in France messages me in the evening" } },
+      texte: { fr: "Mon travail m'écrit le soir", en: "My employer in France messages me in the evening",
+               hu: "A franciaországi munkáltatóm este is ír nekem" } },
     { sujet: "negociation", niveau: "intermediaire", ancres: { fr: "negocier-son-salaire", en: "negotiating-your-salary" },
-      texte: { fr: "Je dois négocier mon salaire", en: "I have to negotiate my salary" } },
+      texte: { fr: "Je dois négocier mon salaire", en: "I have to negotiate my salary",
+               hu: "Tárgyalnom kell a fizetésemről" } },
     { sujet: "finance", niveau: "debutant", ancres: { fr: "lépargne", en: "saving" },
-      texte: { fr: "J'ai un peu d'argent de côté", en: "I have a little money put aside" } },
+      texte: { fr: "J'ai un peu d'argent de côté", en: "I have a little money put aside",
+               hu: "Van egy kis félretett pénzem" } },
     { sujet: "apprendre", niveau: "debutant", ancres: { fr: "se-tester-plutot-que-relire", en: "testing-rather-than-rereading" },
-      texte: { fr: "Je révise et j'oublie tout", en: "I revise and forget everything" } },
+      texte: { fr: "Je révise et j'oublie tout", en: "I revise and forget everything",
+               hu: "Tanulok, és mindent elfelejtek" } },
 ];
 
 const LIBELLES = {
@@ -83,7 +92,17 @@ const LIBELLES = {
         guillemets: ["“", "”"],
         niveaux: { debutant: "Beginner", intermediaire: "Intermediate", avance: "Advanced" },
     },
+    hu: {
+        page: "hu/guides.html",
+        prefixe: "hu/",
+        titre: "Konkrét választ keresel?",
+        intro: "Gyakori helyzetek, és a fejezet, amely választ ad rájuk — egyenesen oda.",
+        guillemets: ["„", "”"],
+        niveaux: { debutant: "Kezdő", intermediaire: "Középhaladó", avance: "Haladó" },
+    },
 };
+
+const ancreDe = (s, langue) => s.ancres[langue] || s.ancres.fr;
 
 const decoder = (t) => t.replace(/&quot;/g, '"').replace(/&#39;/g, "'")
     .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
@@ -124,11 +143,13 @@ function bloc(langue) {
     h += `${I}    <p class="situations-intro">${L.intro}</p>\n`;
     h += `${I}    <ul class="situations">\n`;
     for (const s of SITUATIONS) {
+        if (!s.texte[langue]) throw new Error(`${L.page} : la situation « ${s.texte.fr} » n'a pas de texte`);
         const carte = carteDuParcours(catalogue, s.sujet, L.page);
         const page = `guides/${s.sujet}/${s.niveau}.html`;
-        const titre = titreDeSection(L.prefixe + page, s.ancres[langue]);
+        const ancre = ancreDe(s, langue);
+        const titre = titreDeSection(L.prefixe + page, ancre);
         h += `${I}        <li>\n`;
-        h += `${I}            <a class="situation" href="${page}#${s.ancres[langue]}">\n`;
+        h += `${I}            <a class="situation" href="${page}#${ancre}">\n`;
         h += `${I}                <span class="situation-texte">${L.guillemets[0]}${echapper(s.texte[langue])}${L.guillemets[1]}</span>\n`;
         h += `${I}                <span class="situation-cible"><span aria-hidden="true">${carte.icone}</span> `
            + `${echapper(carte.nom)} · ${L.niveaux[s.niveau]} · ${echapper(titre)}</span>\n`;
@@ -172,7 +193,7 @@ for (const langue of Object.keys(LIBELLES)) {
     }
 }
 
-console.log(`Situations : ${SITUATIONS.length} entrées, deux langues, ${ecarts} page(s) `
+console.log(`Situations : ${SITUATIONS.length} entrées, ${Object.keys(LIBELLES).length} langues, ${ecarts} page(s) `
     + (VERIFIER ? "en écart." : "écrite(s)."));
 if (VERIFIER && ecarts) {
     console.error("[situations] correction : node scripts/poser-situations.js");
