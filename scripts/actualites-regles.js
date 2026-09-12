@@ -451,7 +451,35 @@ function admissible(article, recherche, section) {
     return { ok: true };
 }
 
-module.exports = { AGE_MAX_JOURS, assezRecent, admissible, motsCommuns,
+/* --------------------------------------------------------------------------
+   LE MEME ARTICLE, SOUS DEUX ADRESSES (corrige le 13 septembre 2026)
+
+   Google News donne une adresse differente au meme article selon la recherche
+   qui l a fait remonter. Le dedoublonnage, fait par lien, laissait donc passer
+   deux fois le meme titre. En ligne le 12 septembre :
+
+     « L'ONU demande des limites urgentes a l'IA… »            deux fois
+     « Cybersecurite : face aux fuites de donnees, l'Anssi… »  Le Figaro
+     « Cybersecurite: face aux fuites de donnees, l'Anssi… »   TradingView
+
+   Le second ne differe du premier que par une espace. Sur une page limitee a
+   vingt-quatre articles, chaque doublon prend la place d un article.
+
+   La cle ignore la casse, les accents, la ponctuation et les espaces : deux
+   titres qui ne different que par la typographie sont le meme titre. Elle ne
+   rapproche PAS deux articles differents sur la meme affaire — ce serait juger
+   du sens, ce qu un filtre lexical ne sait pas faire. C est le plafond par
+   section, dans scripts/publier-actualites.js, qui empeche une affaire unique
+   de remplir la page. */
+function cleDeTitre(titre) {
+    return String(titre || "")
+        .toLowerCase()
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+}
+
+module.exports = { AGE_MAX_JOURS, assezRecent, admissible, motsCommuns, cleDeTitre,
                    MINIMUM_MOTS_COMMUNS, MINIMUM_MOTS_SECTION,
                    communiqueProduit, TOURNURES_PROMOTIONNELLES,
                    SOURCES_ECARTEES, EDITEURS_SUIVIS };

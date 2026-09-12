@@ -44,9 +44,17 @@ const ETAT = path.join(RACINE, "data", "actualites.json");
 /* Les regles d admission sont partagees avec scripts/veille.js. Elles etaient
    recopiees dans les deux fichiers, chacun demandant a l autre par commentaire
    de rester synchrone. Une regle qui tient par un commentaire ne tient pas. */
-const { AGE_MAX_JOURS, admissible } = require("./actualites-regles.js");
+const { AGE_MAX_JOURS, admissible, cleDeTitre } = require("./actualites-regles.js");
 
 const MAX_ARTICLES = 24;   // au-dela, la page devient un mur
+
+/* Au plus trois articles par section de guide, les plus recents.
+   Mesure du 12 septembre 2026 : « Les fuites de donnees » occupait onze des
+   vingt-quatre places, dont sept entrees le meme jour sur deux affaires
+   seulement (l Anssi, l AMF). La veille ne retient qu un article par section a
+   chaque passage ; c est leur accumulation, deux passages par jour, qui
+   remplissait la page au detriment des treize autres parcours. */
+const MAX_PAR_SECTION = 3;
 
 const NB_SUR_ACCUEIL = 3;
 
@@ -245,9 +253,40 @@ function filtrer(articles) {
         }
     }
 
-    return retenus
-        .sort((a, b) => (b.date || b.publie).localeCompare(a.date || a.publie))
-        .slice(0, MAX_ARTICLES);
+    /* Doublons de titre et plafond par section, APRES le tri : l article le
+       plus recent passe, les suivants s effacent. Ces ecarts-la sont dits comme
+       les autres — un article qui disparait sans raison lisible passe pour un
+       bug. */
+    const titresVus = new Set();
+    const parSection = new Map();
+    const gardes = [];
+    const places = [];
+    const tries = retenus.sort((a, b) => (b.date || b.publie).localeCompare(a.date || a.publie));
+    for (const a of tries) {
+        const cle = cleDeTitre(a.titre);
+        if (titresVus.has(cle)) {
+            places.push({ article: a, raison: "doublon d'un titre déjà publié" });
+            continue;
+        }
+        const section = `${a.guide}/${a.page}#${a.ancre}`;
+        const deja = parSection.get(section) || 0;
+        if (deja >= MAX_PAR_SECTION) {
+            places.push({ article: a, raison: `section déjà pourvue (${MAX_PAR_SECTION} articles plus récents)` });
+            continue;
+        }
+        titresVus.add(cle);
+        parSection.set(section, deja + 1);
+        gardes.push(a);
+    }
+
+    if (places.length) {
+        console.warn(`${places.length} article(s) écarté(s) pour laisser la place :`);
+        for (const { article, raison } of places) {
+            console.warn(`  · ${raison} — ${article.source || "?"} — ${article.titre}`);
+        }
+    }
+
+    return gardes.slice(0, MAX_ARTICLES);
 }
 
 // --- Rendu ------------------------------------------------------------------

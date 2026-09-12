@@ -419,5 +419,63 @@ verifier("le refus nomme le produit annoncé", /communiqué produit.*wondrZ/.tes
 verifier("l'annonce d'un éditeur enseigné par le site passe",
     e12.some((a) => a.lien.endsWith("/cp3")), JSON.stringify(e12.map((a) => a.lien)));
 
+/* --- 13. Le meme article sous deux adresses ---------------------------------
+ *
+ * Cas reel, en ligne le 12 septembre 2026 : Le Figaro et TradingView publiaient
+ * le meme titre, a une espace pres avant les deux-points, sous deux adresses
+ * Google News differentes. Le dedoublonnage par lien laissait passer les deux.
+ * L etat est vide avant ce test et le suivant : les articles des tests
+ * precedents fausseraient les comptes par section. */
+console.log("\n=== 13. UN DOUBLON DE TITRE N'EST PUBLIÉ QU'UNE FOIS ===");
+const ilYa = (j) => new Date(Date.now() - j * 86400000).toISOString().slice(0, 10);
+const phishing = { guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing",
+                   section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" };
+
+fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
+const doublons = {
+    "https://news.google.com/d1": { ...phishing, titre: "Phishing : la cybersécurité des PME en question", source: "Le Figaro", date: ilYa(1) },
+    "https://news.google.com/d2": { ...phishing, titre: "Phishing: la cybersécurité des PME en question", source: "TradingView", date: ilYa(1) },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(doublons).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(doublons)}\n-->\n`,
+}];
+const sortie13 = lancer();
+const e13 = lireEtat().articles;
+verifier("un seul des deux exemplaires est publié",
+    e13.filter((a) => /\/d[12]$/.test(a.lien)).length === 1, JSON.stringify(e13.map((a) => a.lien)));
+verifier("l'écart est dit", /doublon/.test(sortie13), sortie13.trim().slice(0, 300));
+
+/* --- 14. Au plus trois articles par section ---------------------------------
+ *
+ * Cas reel : onze des vingt-quatre places pour « Les fuites de donnees » le 12
+ * septembre 2026. Quatre articles distincts sous la meme section : les trois
+ * plus recents passent. Le temoin, dans une autre section, doit passer aussi —
+ * sans lui, un plafond global de trois aurait l air de fonctionner. */
+console.log("\n=== 14. AU PLUS TROIS ARTICLES PAR SECTION ===");
+fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
+const plafond = {
+    "https://news.google.com/p1": { ...phishing, titre: "Phishing : la cybersécurité des hôpitaux mise à l'épreuve", source: "A", date: ilYa(1) },
+    "https://news.google.com/p2": { ...phishing, titre: "Phishing : la cybersécurité des écoles face aux faux courriels", source: "B", date: ilYa(2) },
+    "https://news.google.com/p3": { ...phishing, titre: "Phishing : la cybersécurité des mairies en alerte", source: "C", date: ilYa(3) },
+    "https://news.google.com/p4": { ...phishing, titre: "Phishing : la cybersécurité des artisans trop souvent négligée", source: "D", date: ilYa(4) },
+    "https://news.google.com/p5": { titre: "Finance et épargne : le livret garde la cote", source: "E", date: ilYa(5),
+                                    guide: "finance", page: "debutant.html", ancre: "lépargne",
+                                    section: "L'épargne", sujet: "💰 Finance — Débutant" },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(plafond).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(plafond)}\n-->\n`,
+}];
+const sortie14 = lancer();
+const e14 = lireEtat().articles.map((a) => a.lien.split("/").pop());
+verifier("les trois plus récents de la section passent",
+    ["p1", "p2", "p3"].every((p) => e14.includes(p)), JSON.stringify(e14));
+verifier("le quatrième, le plus ancien, est écarté", !e14.includes("p4"), JSON.stringify(e14));
+verifier("le témoin d'une autre section passe", e14.includes("p5"), JSON.stringify(e14));
+verifier("l'écart est dit", /section déjà pourvue/.test(sortie14), sortie14.trim().slice(0, 300));
+
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

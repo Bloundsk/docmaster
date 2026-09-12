@@ -1,5 +1,61 @@
 # Changelog — Clicked
 
+## 2026-09-13 — La veille vérifiée : doublons, articles retirés, trois par section
+
+Demandé par Ludo : vérifier la veille automatique et ce qu'elle publie.
+
+### Ce qui fonctionne
+
+Deux passages par jour depuis des semaines, tous réussis ; la publication suit
+chacun. Le filtre écarte ce qu'il doit (hors sujet, plus de 120 jours, source
+écartée). La publication du 12 septembre à 19 h 30 n'a rien produit parce qu'il n'y
+avait rien de nouveau — « Rien à publier », pas une panne.
+
+### Ce qui ne fonctionnait pas, relu sur les 24 articles en ligne
+
+- **Deux articles en double.** « L'ONU demande des limites urgentes à l'IA… » deux
+  fois ; « l'Anssi renforce sa capacité d'intervention » chez Le Figaro et chez
+  TradingView, à une espace près. Google News donne une adresse différente au même
+  article selon la recherche, et le dédoublonnage ne comparait que les adresses.
+- **Trois articles sans place ici** : « Montre connectée 2026 : quel modèle
+  choisir… » sous *IA · Choisir un modèle* (« modèle » et « choisir » dans un autre
+  sens) ; « Vapodil – Le modèle économique… », une annonce commerciale ; « Everest
+  Finance mise sur Sama Naffa… », un produit d'épargne annoncé — le cas wondrZ.
+- **Une section qui mange la page** : *Les fuites de données* avait 11 des 24 places,
+  dont 7 entrées le même jour sur deux affaires. Après les retraits, les places
+  libérées sont revenues à la même section : 12.
+
+### Ce qui est fait
+
+- **Les cinq articles retirés** (les deux copies et les trois ci-dessus), avec
+  l'accord de Ludo, en décochant leurs cases dans les rapports n° 81, 83, 84 et 89.
+  Vérifié dans l'état publié : ils n'y sont plus, les deux originaux restent.
+- **Doublons par titre** : une clé partagée, `cleDeTitre()` dans
+  `actualites-regles.js`, ignore casse, accents, ponctuation et espaces. La veille ne
+  repropose plus un titre déjà proposé ; la publication ne garde qu'un exemplaire
+  d'un même titre. Elle ne rapproche pas deux articles différents sur la même
+  affaire — c'est le rôle du plafond.
+- **Au plus trois articles par section** sur la page, les plus récents. Chaque
+  article écarté pour doublon ou plafond est nommé dans le journal, avec sa raison.
+- Deux tests de plus dans `test-actualites.mjs` (13 et 14), chacun avec un témoin
+  qui doit passer : un doublon à une espace près n'est publié qu'une fois ; quatre
+  articles d'une section en donnent trois, et un article d'une autre section passe.
+
+### Les liens passent par Google — mesuré, pas encore tranché
+
+Chaque lien d'article est une adresse `news.google.com`. Ouvert depuis la France
+sans cookie Google, il mène d'abord à la page « Avant de continuer » de Google
+(cookies, adresse IP), pas à l'article — alors que les mentions légales disent que
+« le lien mène à la source d'origine ». Ces adresses ne se décodent plus hors ligne.
+
+Mesuré le 13 septembre : Bing Actualités donne l'adresse d'origine en clair dans son
+flux. Retrouvés sur Bing par leur titre exact, **17 des 24 articles en ligne** ont
+leur adresse d'origine (lefigaro.fr, 01net.com, sudouest.fr…) ; 7 sont introuvables,
+dont les trois aux sources les plus douteuses ; deux mènent à MSN ou Yahoo, qui
+republient Clubic et Capital. En remplacement de Google pour chercher, Bing ne rend
+qu'une douzaine de résultats par recherche, contre une centaine. Le choix est laissé
+à Ludo.
+
 ## 2026-09-12 — Douze situations : plus aucune carte seule
 
 ### Pourquoi douze

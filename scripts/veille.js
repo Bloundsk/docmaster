@@ -53,7 +53,7 @@ const attendre = ms => new Promise(r => setTimeout(r, ms));
    avec le script de publication. Elles etaient auparavant recopiees dans les
    deux fichiers, chacun portant un commentaire demandant a l autre de rester
    synchrone : une regle qui tient par un commentaire ne tient pas. */
-const { admissible } = require("./actualites-regles.js");
+const { admissible, cleDeTitre } = require("./actualites-regles.js");
 
 // « 2026-08-12 » -> « 12 août ». L annee n est ajoutee que si elle differe de
 // l annee en cours : sur une page d actualites, « 12 août 2026 » en plein
@@ -213,13 +213,20 @@ async function recupererLiensDejaProposes(repo, token) {
         `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=100`,
         { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } }
     );
-    if (!reponse.ok) return new Set();
+    if (!reponse.ok) return { liens: new Set(), titres: new Set() };
 
+    /* Les liens ET les titres. Google News donne une adresse differente au meme
+       article selon la recherche : par lien seul, « L'ONU demande des limites
+       urgentes a l'IA » a ete propose, et publie, deux fois (8 septembre 2026).
+       Le titre est compare par sa cle, qui ignore ponctuation, accents et casse. */
     const liens = new Set();
+    const titres = new Set();
     for (const issue of await reponse.json()) {
-        for (const m of (issue.body || "").matchAll(/\((https?:\/\/[^)]+)\)/g)) liens.add(m[1]);
+        const corps = issue.body || "";
+        for (const m of corps.matchAll(/\((https?:\/\/[^)]+)\)/g)) liens.add(m[1]);
+        for (const m of corps.matchAll(/^\s*-\s*\[[ xX]\]\s*\[(.*?)\]\(https?:/gm)) titres.add(cleDeTitre(m[1]));
     }
-    return liens;
+    return { liens, titres };
 }
 
 // --- Construction du rapport ------------------------------------------------
@@ -258,6 +265,7 @@ async function construireRapport(guides, dejaProposes) {
        promesse fausse — le site n en affichera qu un, la publication etant
        indexee par lien. */
     const retenusCePassage = new Set();
+    const titresCePassage = new Set();   // meme regle, par titre (voir recupererLiensDejaProposes)
 
     // Un bloc par guide, avec ses metadonnees. Le rapport n est plus assemble
     // en une seule chaine : au-dela de treize sujets il depassait la limite de
@@ -281,7 +289,9 @@ async function construireRapport(guides, dejaProposes) {
                 const articles = await recupererArticles(s.requete);
                 const retenus = [];
                 for (const a of articles) {
-                    if (dejaProposes.has(a.lien) || retenusCePassage.has(a.lien)) continue;
+                    const cle = cleDeTitre(a.titre);
+                    if (dejaProposes.liens.has(a.lien) || retenusCePassage.has(a.lien)) continue;
+                    if (dejaProposes.titres.has(cle) || titresCePassage.has(cle)) continue;
                     // s.titre, l intitule de la section, est passe a part : la
                     // regle de pertinence exige qu au moins un mot commun en
                     // vienne, et la requete seule ne permet plus de distinguer
@@ -296,6 +306,7 @@ async function construireRapport(guides, dejaProposes) {
                     }
                     retenus.push(a);
                     retenusCePassage.add(a.lien);
+                    titresCePassage.add(cle);
                     if (retenus.length >= NB_ARTICLES_RETENUS) break;
                 }
                 nouveaux = retenus;
