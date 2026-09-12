@@ -24,6 +24,14 @@
  * (traiter par lots, une decision par element, ne pas ouvrir la journee sur
  * ses messages), relue avant d etre retenue.
  *
+ * Douze depuis le 12 septembre 2026 : trois parcours sans situation en ont recu
+ * une, chacune relue dans sa section — l IA (hallucinations, fluidite prise pour
+ * de la fiabilite), la duree de vie des appareils (casse, batterie, revente) et la
+ * validation d une idee (entretiens sur le passe, produit minimum, pas les
+ * proches). Douze parce que ce nombre remplit chaque rangee a une, deux, trois
+ * ou quatre colonnes : a neuf, la derniere carte restait seule sur tablette ; a
+ * dix, elle l aurait ete sur grand ecran.
+ *
  * CE QUI EST ECRIT ICI, ET CE QUI EST RELU
  *
  * Seules la phrase de la situation et sa destination sont ecrites ici. Le nom
@@ -83,6 +91,15 @@ const SITUATIONS = [
     { sujet: "productivite", niveau: "intermediaire", ancres: { fr: "traiter-les-flux", en: "handling-streams" },
       texte: { fr: "Je croule sous les messages", en: "I'm drowning in messages",
                hu: "Elárasztanak az üzenetek" } },
+    { sujet: "ia", niveau: "debutant", ancres: { fr: "les-limites-et-risques-de-lia", en: "limits-and-risks" },
+      texte: { fr: "Je ne sais pas si je peux croire une IA", en: "I'm not sure I can trust what an AI tells me",
+               hu: "Nem tudom, elhihetem-e, amit egy MI mond" } },
+    { sujet: "ecologie", niveau: "debutant", ancres: { fr: "allonger-la-duree-de-vie", en: "extending-lifetime" },
+      texte: { fr: "J'hésite à changer de téléphone", en: "I'm thinking of replacing my phone",
+               hu: "Azon gondolkodom, hogy új telefont veszek" } },
+    { sujet: "entrepreneuriat", niveau: "intermediaire", ancres: { fr: "valider-avant-de-construire", en: "validate-before-building" },
+      texte: { fr: "J'ai une idée d'entreprise", en: "I have a business idea",
+               hu: "Van egy üzleti ötletem" } },
 ];
 
 const LIBELLES = {

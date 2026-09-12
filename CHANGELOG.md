@@ -1,5 +1,44 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Douze situations : plus aucune carte seule
+
+### Pourquoi douze
+
+À neuf situations, la page Guides se rangeait 3-3-3 sur grand écran, mais 2-2-2-2-1 sur
+tablette : la dernière carte restait seule. Une dixième l'aurait déplacée sur grand écran
+(3-3-3-1). **Douze remplit chaque rangée à une, deux ou trois colonnes** — et la grille
+ne dépasse pas trois colonnes, mesuré jusqu'à 1 920 px.
+
+### Les trois ajouts
+
+Pris dans des parcours qui n'avaient aucune situation, et relus dans leur section avant
+d'être retenus :
+
+- **« Je ne sais pas si je peux croire une IA »** → *Intelligence artificielle · Débutant ·
+  Les limites et risques de l'IA* : où se logent les hallucinations (chiffres, dates,
+  références), et pourquoi une prose fluide neutralise notre détecteur d'erreur.
+- **« J'hésite à changer de téléphone »** → *Sobriété numérique · Débutant · Allonger la
+  durée de vie* : casse, batterie, mises à jour, et revendre plutôt que garder « au cas
+  où ».
+- **« J'ai une idée d'entreprise »** → *Entrepreneuriat · Intermédiaire · Valider avant de
+  construire* : l'entretien sur le passé, les signaux qui comptent, le produit minimum,
+  et pourquoi les proches ne valident rien.
+
+Aucune ne touche au droit français : leurs phrases anglaise et hongroise n'ont rien à
+préciser. Deux autres candidates ont été lues et laissées de côté : le référencement
+(Marketing) et la performance d'un site (Dev web), plus techniques pour une entrée de
+ce genre.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue, 28 paires de traduction | verts |
+| `poser-situations.js --verifier` | 12 entrées, 3 langues, 0 écart |
+| Grille, dans le navigateur | 1 par rangée à 375 px ; 2-2-2-2-2-2 à 768 px ; 3-3-3-3 à 1 280 et 1 920 px |
+| Liens des trois ajouts | chacun trouve sa section ; la page hongroise d'Entrepreneuriat s'ouvre dépliée sur elle ; 0 erreur |
+| `audit-geometrie` | 1 265 mesures, 41 gabarits, 0 anomalie |
+
 ## 2026-09-12 — Une leçon « Quand un compte est piraté », et neuf situations
 
 Demandé par Ludo : écrire la leçon sur le compte piraté, et ajouter une situation à la

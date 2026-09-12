@@ -84,8 +84,9 @@ bouton vers `guides.html`, puis ce qui a bougé ; `guides.html` porte la liste.
 Chaque situation a été confrontée au texte de la section avant d'être retenue, et
 deux ont été écartées faute de réponse dans les guides (négocier son salaire, un
 compte piraté) ; chacune y est entrée une fois sa leçon écrite — le salaire le
-11 septembre, le compte piraté le 12. **Pas de leçon, pas d'entrée.** Neuf situations
-depuis le 12 septembre 2026. `scripts/poser-situations.js` n'écrit que la phrase et la
+11 septembre, le compte piraté le 12. **Pas de leçon, pas d'entrée.** Douze situations
+depuis le 12 septembre 2026 : un nombre qui remplit chaque rangée de la grille à une,
+deux, trois ou quatre colonnes — en ajouter une rouvre une carte isolée quelque part. `scripts/poser-situations.js` n'écrit que la phrase et la
 destination ; le nom du parcours vient de sa carte, le titre de la section vient
 de la page visée. Son `--verifier` rougit si l'un d'eux dérive.
 

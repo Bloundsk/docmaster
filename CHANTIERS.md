@@ -24,7 +24,6 @@ testeurs.
 | [Décider du lancement](#décider-du-lancement) | Ludo | — | — |
 | [Juger l'effet des titres et des amorces](#juger-leffet-des-titres-et-des-amorces) | Ludo, Claude pour l'analyse | octobre 2026 au plus tôt, site lancé | « regarde l'effet des titres et des amorces » |
 | [Écrire une nouvelle leçon](#écrire-une-nouvelle-leçon) | Claude | quand Ludo en demande une | « écris une leçon sur … » |
-| [La neuvième carte, seule sur tablette](#la-neuvième-carte-seule-sur-tablette) | Ludo décide | — | « ajoute une dixième situation », ou rien |
 | [Renommer le dépôt](#renommer-le-dépôt) | Ludo décide | déconseillé | « prépare le renommage du dépôt » |
 
 ---
@@ -351,19 +350,11 @@ et longueur des réponses dans chaque langue, liens et ancres.
 
 ## 4. Petites décisions en attente
 
-### La neuvième carte, seule sur tablette
-
-La page Guides propose **neuf situations** depuis le 12 septembre 2026 (« On a piraté
-mon compte » et « Je croule sous les messages » ont rejoint les sept). Mesuré dans
-le navigateur : **3-3-3 à 1 280 px**, la carte isolée du grand écran a disparu ; mais
-**2-2-2-2-1 à 768 px**, où la dernière reste seule — comme la septième l'était déjà
-sur tablette. Deux sorties, si cela gêne :
-
-- **une dixième situation** — à condition qu'une section y réponde vraiment,
-  vérifié dans son texte avant de la retenir (elle ferait 3-3-3-1 sur grand écran) ;
-- **ne rien faire** : une carte seule en fin de liste ne cache rien.
-
-**Pour relancer :** « ajoute une dixième situation ».
+Aucune. **La carte isolée de la page Guides est réglée** le 12 septembre 2026 : douze
+situations, mesurées dans le navigateur à 1 par rangée à 375 px, **2-2-2-2-2-2 à
+768 px**, **3-3-3-3 à 1 280 et 1 920 px** (la grille ne dépasse pas trois colonnes).
+**Toute situation ajoutée rouvre une carte seule quelque part** : n'en ajouter que par
+six, ou en remplacer une.
 
 ---
 
