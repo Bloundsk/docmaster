@@ -5,7 +5,7 @@ Ce qui reste à faire, et comment le relancer. Ce qui est **fait** vit dans
 chaque fois qu'un chantier s'ouvre ou se ferme.
 
 **État au 11 septembre 2026.** Un seul chantier est en cours : **la traduction
-du site en hongrois**. Douze parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Écologie, Entrepreneuriat, Finance, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
+du site en hongrois**. Treize parcours sont publiés (Apprendre, Cybersécurité, Data, Design, Dev web, Droit, Écologie, Entrepreneuriat, Finance, IA, Marketing, Négociation, Productivité) ; la relecture hongroise reste à faire. L'audit pédagogique (vagues 1 à 3) est livré, les polices sont hébergées sur le
 site, tous les contrôles passent. **Le site n'est pas encore lancé** : ses
 visiteurs sont des testeurs.
 
@@ -68,12 +68,12 @@ françaises.
    portera sur tous les sujets déjà publiés.
 3. Les autres sujets, un par un, contrôles au vert à chaque fois. **Faits :
    Apprendre, Productivité, IA, Data, Design, Dev web, Cybersécurité, Marketing,
-   Négociation, Écologie, Entrepreneuriat, Finance (12 sur 14).** Les sujets sans
-   droit français sont tous faits ; restent Droit et Santé, à traiter comme
-   Entrepreneuriat et Finance (décision ci-dessous).
+   Négociation, Écologie, Entrepreneuriat, Finance, Droit (13 sur 14).** Les sujets
+   sans droit français sont tous faits ; reste Santé, à traiter comme
+   Entrepreneuriat, Finance et Droit (décision ci-dessous).
    **À chaque sujet, `verifier-longueur-quiz.mjs` avant tout** : une traduction
    fidèle recrée le biais de longueur à chaque fois (Apprendre 51,7 %,
-   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %, Entrepreneuriat 52 %, Finance 41 %). **Et comparer les
+   Productivité 62 à 67 % par banque, IA 43,8 % au total, Design 58 %, Dev web 40 %, Cybersécurité 57 %, Marketing 56 %, Négociation 51 %, Écologie 56 %, Entrepreneuriat 52 %, Finance 41 %, Droit 63 %). **Et comparer les
    trois positions au français, question par question**, pas seulement « la plus
    longue » : corriger celle-ci a fait monter « celle du milieu » à 43,2 % sur Data.
    Le français place la bonne réponse à 35 / 36 / 30 % (longue / milieu / courte).
@@ -185,6 +185,23 @@ françaises.
   niveau avancé ajoute que la structure des enveloppes se retrouve dans la plupart
   des pays, et le biais domestique invite à « írd be a saját országodat ». Autorité
   citée : « Franciaországban az AMF, Magyarországon az MNB » ;
+- pour Droit : *kellékszavatosság* (garantie légale de conformité), *elállási jog*
+  (rétractation), *hivatalos felszólítás* (mise en demeure, nom français cité),
+  *tértivevényes ajánlott levél*, *beköltözési / kiköltözési jegyzőkönyv* (état des
+  lieux), *kaució*, *felmondási idő*, *próbaidő*, *értesítési határidő* (délai de
+  prévenance), *kollektív szerződés*, *versenytilalmi kikötés*, *tisztességtelen
+  feltétel* (clause abusive), *elévülés*, *nyugvás / megszakítás*, *keresetindítás*
+  (assignation), *bírósági egyeztető* (conciliateur de justice), *költségmentesség*
+  (aide juridictionnelle). **Le cadre juridique est à relire en priorité** : dits
+  européens et applicables en Hongrie — rétractation de 14 jours à distance, garantie
+  de conformité d'au moins deux ans, notion de clause abusive, médiation de la
+  consommation (« Magyarországon a békéltető testületek »), RGPD (NAIH) ; tout le reste
+  dit français. À vérifier : « nem írottnak tekintendő » traduit « réputée non
+  écrite », alors que le droit hongrois parle plutôt de clause *semmis* ; et le nom
+  des békéltető testületek. Rien n'est affirmé du droit hongrois de la prescription :
+  la mise en demeure qui n'interrompt pas est dite française. Exemple ajouté aux
+  pièges de recherche : un site en hongrois de Slovaquie ou de Roumanie décrit le
+  droit de son pays ;
 - la ressource citée pour les listes de fréquence (Magyar Nemzeti Szövegtár) ;
 - les durées de lecture : calculées à 180 mots par minute pour toutes les
   langues, elles donnent 9 à 10 minutes par niveau en hongrois, contre 11 à 12
@@ -198,7 +215,7 @@ pris l'option recommandée, celle de la version anglaise. Les règles française
 le dit ; le bandeau `reglesFrancaises` s'affiche de lui-même en hongrois. Ce qui est
 européen se dit européen ; les organismes deviennent leur fonction. Transposer vers
 le droit hongrois reste possible plus tard, avec des sources hongroises vérifiées.
-Appliqué à Entrepreneuriat et Finance ; à appliquer à Droit et Santé.
+Appliqué à Entrepreneuriat, Finance et Droit ; à appliquer à Santé.
 
 **Pour relancer :** « continue la traduction hongroise ».
 

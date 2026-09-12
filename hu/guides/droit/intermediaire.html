@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Bérlés, felmondás, munkaszerződés — Jog, középhaladó - Clicked</title>
+    <meta name="description" content="A jog és ügyintézés útmutatójának középhaladó szintje: lakásbérlés, felmondás, munkaszerződés és egy tevékenység bejelentése. A francia jogot ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/droit/intermediaire.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/droit/intermediaire.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/droit/intermediaire.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/droit/intermediaire.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/droit/intermediaire.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Bérlés, felmondás, munkaszerződés — Jog, középhaladó - Clicked">
+    <meta property="og:description" content="A jog és ügyintézés útmutatójának középhaladó szintje: lakásbérlés, felmondás, munkaszerződés és egy tevékenység bejelentése. A francia jogot ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/droit/intermediaire.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bérlés, felmondás, munkaszerződés — Jog, középhaladó - Clicked">
+    <meta name="twitter:description" content="A jog és ügyintézés útmutatójának középhaladó szintje: lakásbérlés, felmondás, munkaszerződés és egy tevékenység bejelentése. A francia jogot ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">⚖️ Jog és ügyintézés</a> &gt;
+        <span aria-current="page">Középhaladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⚖️ Jog és ügyintézés — Középhaladó</h1>
+                <p>Lakhatás, munka, vállalkozás: mi dől el az aláíráskor.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 40 L70 100"/><path d="M50 100 L90 100"/><path d="M44 52 L96 46"/>
+<path d="M44 52 L34 76 Q44 84 54 76 Z"/><path d="M96 46 L86 70 Q96 78 106 70 Z"/>
+<circle cx="70" cy="40" r="4"/></g></g>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="106" cy="98" r="2.5" fill="white" style="animation-delay:1.3s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html" aria-current="page">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>megvédd a kauciódat</strong>, hogy szabályosan adj vagy fogadj felmondást, hogy elolvasd, mi számít egy munkaszerződésben, és hogy bejelents egy tevékenységet.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#louer-un-logement">🏠 Lakásbérlés</a></li>
+                <li><a href="#donner-conge">🚪 Felmondás</a></li>
+                <li><a href="#le-contrat-de-travail">💼 A munkaszerződés</a></li>
+                <li><a href="#declarer-une-activite">🧾 Egy tevékenység bejelentése</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Melyik irat védi a kauciódat?</li>
+                <li>Mit kockáztat a bérbeadó, ha késve adja vissza a kauciót?</li>
+                <li>Mikortól fut a felmondási idő, és mi kell a lerövidítéséhez?</li>
+                <li>Meghosszabbodhat-e a próbaidő úgy, hogy semmit sem írsz alá?</li>
+                <li>A francia micro-entreprise rendszerben levonhatod-e a tényleges költségeidet?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>A kezdő szint olyan reflexekről szólt, amelyek bárhol érvényesek: keresni, számolni, írni, megőrizni. Ez a szint három helyzetre alkalmazza őket, amellyel szinte mindenki találkozik — <strong>lakhatás, munka, egy tevékenység bejelentése</strong>.</p>
+            <p>A három pillanat közös vonása: minden az aláíráskor dől el, és utólag bizonyíték nélkül semmi sem hozható helyre.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató a <strong>francia jogról</strong> szól, és <strong>oktatási célú</strong>. A leírt szabályok az általános esetre vonatkoznak: sok helyzetre különleges szabályok érvényesek — szociális bérlakás, turisztikai célú bútorozott lakás, kollektív szerződés, támogatott munkaszerződés. <strong>Franciaországon kívül egyik szám sem érvényes: nézz utána a saját szabályaidnak.</strong></p>
+                <p>Egyetlen összeg vagy értékhatár sem szerepel itt, mert változnak: nézd meg őket a hivatalos francia portálon, amelyet naprakészen tartanak.</p>
+                <p>Elbocsátás, bérleti jogvita vagy cégalapítás esetén fordulj szakemberhez. Léteznek ingyenes tanácsadások.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Három helyzet, és ami bennük eldől</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="louer-un-logement">🏠 Lakásbérlés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A bérleti szerződés erősen szabályozott szerződés: a törvény előírja a tartalmát, felső határt szab a kauciónak, és rögzíti a határidőket.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A bérleti szerződés erősen szabályozott szerződés: a törvény előírja a tartalmát, felső határt szab a kauciónak, és rögzíti a határidőket. Sok minden, amiben a felek „megállapodnak”, semmit sem ér.</p>
+
+                <h4>Aminek benne kell lennie, és aminek nem lehet</h4>
+                <p>A szerződést írásba kell foglalni, és tartalmaznia kell egy sor kötelező adatot — a felek személyét, a lakás leírását, a lakbér és a rezsi összegét, az időtartamot. Franciaországban mellé kell csatolni a <strong>műszaki tanúsítványok dossziéját</strong> és egy tájékoztatót.</p>
+                <p>Ezzel szemben bizonyos feltételek <strong>tiltottak</strong>, és nem írottnak tekintendők, még aláírva is: egyetlen fizetési mód előírása, egy hozzátartozó befogadásának tilalma, vagy olyan javítások áthárítása a bérlőre, amelyek a tulajdonost terhelik.</p>
+
+                <h4>A beköltözési jegyzőkönyv, a legfontosabb irat</h4>
+                <p>Ez az egyetlen irat, amely kiköltözéskor lehetővé teszi, hogy megkülönböztesd, amit te rongáltál meg, attól, ami már sérült volt. Beköltözési jegyzőkönyv nélkül Franciaországban úgy vélelmezik, hogy a lakást jó állapotban adták át — és a teher ellened fordul.</p>
+                <p>Szánj rá időt: jegyezz fel minden nyomot, fényképezz, olvasd le a mérőórákat. Húsz perc beköltözéskor több száz eurót ér kiköltözéskor.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 3 hónap késéssel visszaadott 700 EUR-s kaució</span>
+                    <p>Rezsi nélküli lakbér: 700 EUR. Nincs indokolt levonás.</p>
+                    <p><strong>Neked járó összeg: 700 EUR.</strong> Törvényes határidő: 1 hónap, ha a kiköltözési jegyzőkönyv megegyezik a beköltözésivel, különben 2 hónap.</p>
+                    <p><strong>Késedelmi növelés: 210 EUR</strong> — a rezsi nélküli havi lakbér 10%-a minden megkezdett hónapra.</p>
+                    <p><strong>Összesen követelhető: 910 EUR.</strong> Ez a növelés törvény erejénél fogva jár; nem alku tárgya, követelni kell.</p>
+                </div>
+
+                <div class="pratique" data-pratique="depot-de-garantie"></div>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — elfogadni egy indokolatlan levonást</span>
+                    <p>A bérbeadó csak azt tarthatja vissza, amit igazol: árajánlattal, számlával vagy közösen felvett jegyzőkönyvvel. „Helyreállítás: 400 EUR” csatolt irat nélkül nem elég.</p>
+                    <p>A <strong>természetes elhasználódást</strong> is figyelembe kell vennie: egy tízéves padlószőnyeg nem számlázható az új áráért.</p>
+                </div>
+
+                <p class="retenir">💡 A beköltözési jegyzőkönyvet a legolcsóbb elkészíteni, és a legdrágább nélküle maradni.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="donner-conge">🚪 Felmondás</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy lakásból való kiköltözésnek egyszerű szabályai vannak, amelyeknél szinte minden hiba egy havi lakbérbe kerül.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy lakásból való kiköltözésnek egyszerű szabályai vannak, amelyeknél szinte minden hiba egy havi lakbérbe kerül.</p>
+
+                <h4>A felmondási idő hossza Franciaországban</h4>
+                <p><strong>Bútorozatlan bérlet: három hónap.</strong> <strong>Bútorozott bérlet: egy hónap.</strong> Bútorozatlan bérletnél több esetben egy hónapra csökken: ha a lakás feszült lakáspiacú övezetben van, munkahelyi áthelyezés, munkahely elvesztése, első munkahely megszerzése, költözést indokoló egészségi állapot, vagy bizonyos támogatásokra való jogosultság esetén.</p>
+                <p>Döntő pont: <strong>az okot a felmondó levélben meg kell adni</strong>. Írásban megadott ok nélkül a felmondási idő három hónap marad — akkor is, ha teljesítetted a feltételt.</p>
+
+                <h4>A kezdőnap</h4>
+                <p>A felmondási idő attól számít, hogy a bérbeadó <strong>kézhez kapta</strong> a levelet, nem a feladástól. Két nap postai út eltolhatja a kiköltözés dátumát, és vele egy teljes havi lakbért.</p>
+                <p>A felmondást tértivevényes ajánlott levélben, bírósági végrehajtó útján, vagy aláírás ellenében személyesen átadva kell közölni. Egy e-mail nem elég.</p>
+
+                <div class="exemple">
+                    <span class="titre">Mi történik a felmondási idő alatt</span>
+                    <p>A lakbér a felmondási idő végéig jár, <strong>kivéve</strong>, ha a lakást a bérbeadó beleegyezésével előbb újra kiadják — ekkor az új bérlet kezdetétől már nem jár.</p>
+                    <p>A bérbeadó megmutathatja a lakást, de egyeztetett időpontokban: nincs nála a kulcs, és nem írhatja elő a hétvégéket és az ünnepnapokat.</p>
+                </div>
+
+                <div class="pratique" data-pratique="preavis-bail"></div>
+
+                <h4>A kiköltözési jegyzőkönyv</h4>
+                <p>A kulcsok átadásakor, a jelenlétedben készül — ez teszi lehetővé a beköltözésivel való soronkénti összehasonlítást. A távollétedben felvett jegyzőkönyv sokkal kevesebbet ér.</p>
+                <p>Olvasd le a mérőórákat, tarts meg egy aláírt példányt, és fényképezd le az üres lakást, dátummal. Ettől lesz egy vita lehetséges, és nem csak elméleti.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — cím hátrahagyása nélkül elköltözni</span>
+                    <p>A bérbeadónak az új címedre kell visszaadnia a kauciót. Enélkül a határidő nem fut hasznosan, és a visszaadás elakad.</p>
+                    <p>Add meg a felmondó levélben, és ismételd meg a kiköltözési jegyzőkönyvön.</p>
+                </div>
+
+                <p class="retenir">💡 Egy írásos ok nélkül lerövidített felmondási idő háromhónapos felmondási idő. A hiányzó mondat két havi lakbérbe kerül.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="le-contrat-de-travail">💼 A munkaszerződés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A munkaszerződés az a terület, ahol a francia jog a legkevesebb teret hagyja a felek megállapodásának: a lényeg kötelező, bármit írtak is alá.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A munkaszerződés az a terület, ahol a francia jog a legkevesebb teret hagyja a felek megállapodásának: a lényeg kötelező, bármit írtak is alá.</p>
+
+                <h4>Határozatlan és határozott idő: a szabály és a kivétel</h4>
+                <p>Franciaországban a <strong>határozatlan idejű szerződés (CDI) a munkaszerződés normál formája</strong>. A határozott idejű (CDD) kivétel, amely csak kimerítően felsorolt esetekben lehetséges — helyettesítés, átmeneti munkanövekedés, idénymunka —, és az okát írásban kell rögzíteni.</p>
+                <p>Az írásba nem foglalt, vagy érvényes ok nélküli határozott idejű szerződés határozatlan idejűvé minősíthető át. Ez nem elmélet: az egyik leggyakoribb munkaügyi per.</p>
+
+                <h4>A próbaidő</h4>
+                <p>Lehetővé teszi, hogy bármelyik fél indoklás és végkielégítés nélkül megszüntesse a szerződést. Maximális időtartama határozatlan idejű szerződésnél a munkakör kategóriájától függ: <strong>2 hónap</strong> a fizikai és adminisztratív munkakörökben, <strong>3 hónap</strong> a művezetőknek és technikusoknak, <strong>4 hónap</strong> a vezetőknek.</p>
+                <p>Egyszer meghosszabbítható — de csak ha egy ágazati megállapodás lehetővé teszi, <strong>ha a szerződés említi</strong>, és a te írásos beleegyezéseddel. Hallgatólagosan soha nem hosszabbodik meg.</p>
+                <p>A próbaidő megszüntetéséhez a munkáltatónak <strong>értesítési határidőt</strong> kell betartania, amely a munkában töltött idővel nő: 24 óra 8 nap előtt, 48 óra 8 nap és 1 hónap között, 2 hét 1 hónap után, 1 hónap 3 hónap után.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — vezető, 4 hónap próbaidő, 45 nap munkában</span>
+                    <p><strong>A próbaidő vége: 77 nap múlva.</strong></p>
+                    <p><strong>Maximális időtartam meghosszabbítással: 8 hónap</strong> — és csak ha a szerződés előírja.</p>
+                    <p><strong>Ma alkalmazandó értesítési határidő: 2 hét.</strong></p>
+                    <p>Az a munkáltató, amely e határidő betartása nélkül szünteti meg a próbaidőt, kártalanítással tartozik — a megszüntetés érvényes marad, de meg kell fizetni.</p>
+                </div>
+
+                <div class="pratique" data-pratique="periode-essai"></div>
+
+                <h4>A kollektív szerződés</h4>
+                <p>Ez a nagy elfeledett. A munka törvénykönyve mellett érvényes, és nagyon gyakran kedvezőbbet ír elő: besorolás, ágazati minimálbér, felmondási idő, pótlékok, családi eseményekre járó szabadnapok.</p>
+                <p>A neve szerepel a bérpapíron. Egyszer elolvasni — legalább a felmondási időről és a besorolásról szóló cikkeit — többet hoz, mint sok jogi kutatás.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — ellentételezés nélküli versenytilalmi kikötést aláírni</span>
+                    <p>A versenytilalmi kikötés csak akkor érvényes, ha időben és térben korlátozott, a vállalat érdeke indokolja, és <strong>anyagi ellentételezés</strong> jár érte.</p>
+                    <p>Ellentételezés nélkül semmis. Sok szerződés még ma is tartalmaz ilyet.</p>
+                </div>
+
+                <p class="retenir">💡 Ami a szerződésben kedvezőtlenebb a törvénynél vagy a kollektív szerződésnél, az nem érvényes. Az aláírás ezen semmit sem változtat.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="declarer-une-activite">🧾 Egy tevékenység bejelentése</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Minden rendszeres, nyereségszerző tevékenységet be kell jelenteni, még ha szerény, még ha alkalmi is.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Minden rendszeres, nyereségszerző tevékenységet be kell jelenteni, még ha szerény, még ha alkalmi is. A kérdés tehát nem az, hogy <em>kell-e</em> bejelenteni, hanem az, hogy <strong>milyen formában</strong>.</p>
+
+                <h4>A micro-entreprise, és amit feltételez</h4>
+                <p>Ez a legegyszerűbb francia rendszer: online bejelentés, az árbevétel százalékában számított járulékok, egy bizonyos értékhatár alatt nincs ÁFA, a könyvelés egy bevételi nyilvántartásra szűkül.</p>
+                <p>A központi mechanizmusát gyakran félreértik: <strong>a tényleges költségek nem vonhatók le</strong>. Az adóhatóság egy átalányos levonást alkalmaz, amely elvileg ezeket képviseli. Egy kevés kiadással járó tevékenység nyer rajta; egy sok anyagot vagy eszközt vásárló tevékenység veszít, bármekkora is az árbevétele.</p>
+                <p>Az árbevételi értékhatárokat és a járulékkulcsokat rendszeresen felülvizsgálják: <strong>ellenőrizd őket a hivatalos francia oldalakon</strong>, ne egy cikkben, ezt is beleértve.</p>
+
+                <div class="exemple">
+                    <span class="titre">A számítás, amely dönt</span>
+                    <p>Két tevékenység azonos árbevétellel. Az első tanácsadást ad el: szinte semmi kiadás. A második tárgyakat készít: az alapanyag a bevételek jelentős részét teszi ki.</p>
+                    <p>Ebben a rendszerben mindkettő ugyanúgy adózik — az árbevétel után, egy átalányos levonással csökkentve. Az első jól jár vele; a második olyan pénz után fizet adót, amelyet soha nem keresett meg.</p>
+                    <p>Ez az egyetlen kérdés, amely a választáskor számít: <strong>a bevételeim mekkora része megy el kiadásokra?</strong></p>
+                </div>
+
+                <div class="pratique" data-pratique="micro-entreprise"></div>
+
+                <h4>A többi forma, egy-egy sorban</h4>
+                <ul>
+                    <li><strong>Egyéni vállalkozás tényleges költségelszámolással</strong> — ugyanazok a formalitások, de a költségek ténylegesen levonhatók. Nagy kiadású tevékenységhez.</li>
+                    <li><strong>Egyszemélyes társaság</strong> (Franciaországban EURL / SASU) — nehezebb működtetni, de elkülöníti a vagyont, és később tagok is csatlakozhatnak.</li>
+                    <li><strong>Egyesület</strong> — nyereségfelosztás nélküli tevékenységhez. Nem arra való, hogy kikerüld az adószabályokat, ha a tevékenység valójában nyereségszerző.</li>
+                </ul>
+                <p>A kereskedelmi és iparkamarák ingyenes időpontokat kínálnak a döntéshez. Egy óra egy tanácsadóval többet ér egy fórumon hozott döntésnél.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy egy bizonyos összeg alatt semmi sem jár</span>
+                    <p>Nincs olyan értékhatár, amely alatt egy rendszeres tevékenység mentesülne a bejelentés alól. A nulla árbevételt is be kell vallani.</p>
+                    <p>Ami viszont létezik, azok az összegtől függő egyszerűbb rendszerek — innen a zavar.</p>
+                </div>
+
+                <p class="retenir">💡 Ebben a rendszerben arra adózol, amit beszedsz, nem arra, amit keresel. Az egész döntés ezen múlik.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A beköltözési jegyzőkönyv az egyetlen irat, amely védi a kauciót.</li>
+                <li>A késve visszaadott kaució Franciaországban havonta a lakbér 10%-ával nő — törvény erejénél fogva.</li>
+                <li>A felmondási idő a kézhezvételtől fut, és a lerövidítését írásban kell indokolni.</li>
+                <li>A próbaidő soha nem hosszabbodik meg hallgatólagosan.</li>
+                <li>A micro-entreprise rendszerben a költségek nem vonhatók le: a levonás átalányos.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Keresd elő a beköltözési jegyzőkönyvedet, és tedd el digitalizálva a lakbérnyugtáid mellé. Ez az egyetlen irat, amely védi a kauciódat, és éppen ezt nem találja meg senki azon a napon, amikor szükség van rá.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>A lakásügyi tájékoztató szervezet</strong> — Franciaországban az ANIL: tájékoztatók, levélminták és megyénként ingyenes tanácsadás.</li>
+                    <li><strong>Hivatalos munkajogi eszközök</strong> — Franciaországban a „code du travail numérique” a kollektív szerződésed szerint válaszol, nem csak a törvény alapján.</li>
+                    <li><strong>A járulékokat beszedő szerv</strong> — értékhatárok, járulékkulcsok és hivatalos kalkulátorok, naprakészen. Franciaországban az URSSAF.</li>
+                    <li><strong>Kereskedelmi és iparkamarák</strong> — ingyenes időpontok a jogi forma kiválasztásához.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> keresd meg a bérpapírodon a kollektív szerződésed nevét, aztán olvasd el a felmondási időről és a besorolásról szóló cikkeit. Tíz perc, amely gyakran olyan jogokat tár fel, amelyekről senki sem szólt.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="debutant.html"><span class="label">← Előző szint</span>Jog — Kezdő</a>
+            <a href="avance.html" class="next"><span class="label">Következő szint →</span>Jog — Haladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Vállalkozás</a>
+                <a href="../finance/index.html">💰 Pénzügyek</a>
+                <a href="../cybersecurite/index.html">🔒 Kiberbiztonság</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/droit-intermediaire.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

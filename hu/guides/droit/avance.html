@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>Szerződések, elévülés, személyes adatok — Jog, haladó - Clicked</title>
+    <meta name="description" content="A jog és ügyintézés útmutatójának haladó szintje: szerződések olvasása, elévülés, bíróság nélküli rendezés és az adatvédelmi jogok érvényesítése. A francia jogot ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/droit/avance.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/droit/avance.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/droit/avance.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/droit/avance.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/droit/avance.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="Szerződések, elévülés, személyes adatok — Jog, haladó - Clicked">
+    <meta property="og:description" content="A jog és ügyintézés útmutatójának haladó szintje: szerződések olvasása, elévülés, bíróság nélküli rendezés és az adatvédelmi jogok érvényesítése. A francia jogot ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/droit/avance.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Szerződések, elévülés, személyes adatok — Jog, haladó - Clicked">
+    <meta name="twitter:description" content="A jog és ügyintézés útmutatójának haladó szintje: szerződések olvasása, elévülés, bíróság nélküli rendezés és az adatvédelmi jogok érvényesítése. A francia jogot ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">⚖️ Jog és ügyintézés</a> &gt;
+        <span aria-current="page">Haladó</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⚖️ Jog és ügyintézés — Haladó</h1>
+                <p>Érvényesíteni a jogaidat, és tudni, mikor éri meg.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 40 L70 100"/><path d="M50 100 L90 100"/><path d="M44 52 L96 46"/>
+<path d="M44 52 L34 76 Q44 84 54 76 Z"/><path d="M96 46 L86 70 Q96 78 106 70 Z"/>
+<circle cx="70" cy="40" r="4"/></g></g>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="106" cy="98" r="2.5" fill="white" style="animation-delay:1.3s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html" aria-current="page">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>felismerj egy tisztességtelen feltételt</strong>, hogy tudd, elévült-e egy jog, hogy bíróság nélküli rendezést válassz, és hogy gyakorold a személyes adataidhoz fűződő jogaidat.</p>
+            <p class="objectif-prerequis">Feltételezi a kezdő és a középhaladó szint ismeretét.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#lire-un-contrat">📐 Szerződések olvasása</a></li>
+                <li><a href="#la-prescription">⏱️ Az elévülés</a></li>
+                <li><a href="#regler-sans-juge">🤝 Rendezés bíróság nélkül</a></li>
+                <li><a href="#vos-donnees-personnelles">🔐 A személyes adataid</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mi lesz egy tisztességtelen feltétellel, még aláírva is?</li>
+                <li>Mi marad egy erős érvből, ha lejárt az elévülési idő?</li>
+                <li>Mi szakítja meg az elévülést: egy hivatalos felszólítás vagy egy keresetindítás?</li>
+                <li>Miért nem jut el soha bíróság elé oly sok hétköznapi jogvita?</li>
+                <li>Mennyibe kerül a francia bírósági egyeztető és az adatvédelmi hatóság?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Az első két szint arra szolgált, hogy elkerüld a bajt. Ez arról szól, mit tegyél, ha már itt van: <strong>újraolvasni, amit aláírtál</strong>, <strong>ellenőrizni, hogy van-e még idő</strong>, <strong>a legkevésbé költséges utat választani</strong>, és <strong>olyan jogokat gyakorolni, amelyek semmibe sem kerülnek</strong>.</p>
+            <p>Ez az a szint is, ahol szembenézünk egy kérdéssel, amelyet a jog soha nem tesz fel: <em>megéri-e?</em></p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés</span>
+                <p>Ez az útmutató a <strong>francia jogról</strong> szól, és <strong>oktatási célú</strong>. Az elévülési idők a követelés természetétől függően változnak, és számos kivételük van: az itt idézettek az általános szabályok, és <strong>franciák</strong>. Máshol a határidők, a bíróságok és az ingyenes utak mind eltérnek.</p>
+                <p>Kivétel az utolsó fejezet: a GDPR szerinti jogok az egész Európai Unióban, így Magyarországon is érvényesek.</p>
+                <p>Mielőtt bármilyen eljárást indítasz, ellenőriztesd a határidődet egy szakemberrel. Egy hiba ezen a ponton jóvátehetetlen.</p>
+                <p>Franciaországban a points-justice és a jogi tanácsadó központok ingyenes tanácsadást nyújtanak, és a költségmentesség a jövedelemtől függően a költségek egészét vagy egy részét fedezheti — a jövedelemhatárokat évente felülvizsgálják.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Amikor már itt a baj</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="lire-un-contrat">📐 Szerződések olvasása</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy kereskedő és egy fogyasztó közötti szerződés nem egyenlő felek megállapodása, és a jog ezt figyelembe veszi.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy kereskedő és egy fogyasztó közötti szerződés nem egyenlő felek megállapodása, és a jog ezt figyelembe veszi. Ami benne áll, annak egy része félretehető — az aláírástól függetlenül.</p>
+
+                <h4>A nem írottnak tekintendő feltétel</h4>
+                <p>Ez a központi mechanizmus a francia jogban. Egy tisztességtelen feltételt nem kérelemre semmisítenek meg: <strong>nem írottnak tekintendő</strong>, vagyis soha nem is létezett. A szerződés többi része továbbra is érvényes.</p>
+                <p>Tisztességtelen az a feltétel, amely <strong>jelentős egyenlőtlenséget</strong> teremt a felek jogai és kötelezettségei között. A francia fogyasztóvédelmi törvénykönyv két listát állít fel: a megdönthetetlenül tisztességtelennek vélelmezett, és az ellenkező bizonyításáig tisztességtelennek vélelmezett feltételekét. A tisztességtelen feltétel fogalma uniós eredetű, így Magyarországon is létezik; a pontos hatása és a listák országonként eltérhetnek.</p>
+
+                <div class="exemple">
+                    <span class="titre">Hat feltétel, amellyel még ma is találkozni</span>
+                    <p><strong>Kizárni vagy csökkenteni a kártérítést</strong>, amely a kereskedő hibája esetén jár.</p>
+                    <p><strong>Lehetővé tenni, hogy a kereskedő egyedül módosítsa a szerződést</strong>, előre rögzített ok nélkül.</p>
+                    <p><strong>Lehetetlen bizonyítást előírni</strong> a fogyasztónak.</p>
+                    <p><strong>Kizárni a törvényes kellékszavatosságot</strong> — gyakori a kis eladók általános szerződési feltételeiben.</p>
+                    <p><strong>Megtiltani a bírósághoz fordulást</strong>, vagy egy távoli bíróságot kikötni.</p>
+                    <p><strong>Időtartam és felmondási lehetőség nélkül kötelezettséget vállaltatni.</strong></p>
+                </div>
+
+                <div class="pratique" data-pratique="clauses-abusives"></div>
+
+                <h4>Három hely, amelyet aláírás előtt el kell olvasni</h4>
+                <ol>
+                    <li><strong>Az időtartam és a felmondás.</strong> Hogyan lehet kilépni, milyen felmondási idővel, és mennyiért? Itt vannak a kellemetlen meglepetések.</li>
+                    <li><strong>Az ár, és amit nem tartalmaz.</strong> Kezelési díj, aktiválási díj, felmondási díj, éves áremelés.</li>
+                    <li><strong>Amit „az általános szerződési feltételekre” hagynak.</strong> Ezek a szerződés részei, amennyiben megismerhetted őket.</li>
+                </ol>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy az aláírás lemondás</span>
+                    <p>„Ön aláírta” a leggyakoribb és a legkevésbé pontos válasz. Amit a szerződés elvesz a törvénytől, azt a törvény visszaveszi: a törvényes szavatosságot, a bírósághoz fordulás jogát, a tisztességtelen feltételek elleni védelmet.</p>
+                    <p>Az aláírás arra kötelez, ami alku tárgya. Arra, ami nem az, nincs hatása.</p>
+                </div>
+
+                <p class="retenir">💡 A tisztességtelen feltétel nem írottnak tekintendő. Nincs mit megsemmisíttetni: egyszerűen nem alkalmazható.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="la-prescription">⏱️ Az elévülés</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Az elévülés az a határidő, amelyen túl egy követelés már nem érvényesíthető.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az elévülés az a határidő, amelyen túl egy követelés már nem érvényesíthető. Nem formalitás: ez az első, amire a másik fél hivatkozni fog, és elég ahhoz, hogy az ügyet az érdem vizsgálata nélkül lezárják.</p>
+
+                <h4>Az általános határidők a francia jogban</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Követelés</th><th>Határidő</th><th>Kezdőnap</th></tr>
+                    <tr><td><strong>Általános szabály</strong></td><td>5 év</td><td>Az a nap, amikor a tényekről tudomást szereztél vagy szerezhettél volna</td></tr>
+                    <tr><td><strong>Kereskedő követelése fogyasztóval szemben</strong></td><td>2 év</td><td>Az esedékesség napja — például egy kifizetetlen számláé</td></tr>
+                    <tr><td><strong>Munkabér</strong></td><td>3 év</td><td>Az a nap, amikor az összeg esedékes volt</td></tr>
+                    <tr><td><strong>Lakbér és rezsi</strong></td><td>3 év</td><td>A fizetési határidő napja</td></tr>
+                    <tr><td><strong>Rejtett hiba</strong></td><td>2 év</td><td>A hiba felfedezése</td></tr>
+                    <tr><td><strong>Személyi sérülés</strong></td><td>10 év</td><td>Az állapot stabilizálódása</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 36 hónapos tények, 5 éves határidő</span>
+                    <p>Teljes határidő: 5 év. Már eltelt: 36 hónap.</p>
+                    <p><strong>Még 2 éved van</strong> — a követelés még érvényesíthető.</p>
+                    <p>Ugyanez az ügy a fogyasztótól követelő kereskedőkre vonatkozó 2 éves határidő alatt <strong>már egy éve elévült volna</strong>. Az alkalmazandó határidő mindent megváltoztat, és attól függ, ki követel kitől.</p>
+                </div>
+
+                <div class="pratique" data-pratique="prescription"></div>
+
+                <h4>Ami megszakítja, és ami nem</h4>
+                <p><strong>Nem szakítja meg:</strong> egy reklamáció, egy e-mail, egy hivatalos felszólítás — ajánlott levélben sem. Ez a terület legdrágább hibája, mert azt az érzést kelti, hogy cselekedtél.</p>
+                <p><strong>Megszakítja:</strong> a keresetindítás a bíróságon, egy végrehajtási intézkedés, és ha az adós elismeri a tartozást. A megszakítás után egy teljes új határidő indul nulláról.</p>
+                <p>Külön eset: egy <strong>közvetítői vagy egyeztetési</strong> kérelem nyugvást okoz — a határidő ott folytatódik, ahol megállt, ami nem ugyanaz, mint egy új kezdet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — addig alkudozni, amíg el nem évül</span>
+                    <p>A hónapokon át elhúzódó levélváltás azt a benyomást kelti, hogy az ügy halad. A határidő közben tovább fut — és ez a jóhiszemű és a rosszhiszemű ellenfélnek egyaránt kedvez.</p>
+                    <p>Ha az alkudozás elhúzódik, és közeleg a határidő, vagy bírósághoz kell fordulni, vagy hivatalosan közvetítői eljárást kell indítani.</p>
+                </div>
+
+                <p class="retenir">💡 Az elévülést azon a napon ítélik meg, amikor a bírósághoz fordulsz, nem azon, amikor elkezdesz foglalkozni vele.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="regler-sans-juge">🤝 Rendezés bíróság nélkül</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A per a leglátványosabb, és ritkán a legjövedelmezőbb út.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A per a leglátványosabb, és ritkán a legjövedelmezőbb út. A hétköznapi jogvitákra több ingyenes út létezik — és gyakran kötelező állomást jelentenek.</p>
+
+                <h4>Az ingyenes utak</h4>
+                <ul>
+                    <li><strong>A bírósági egyeztető.</strong> Franciaországban (conciliateur de justice) önkéntes, ingyenes, és egyszerű kérelemmel lehet hozzá fordulni. Nincs kényszerítő hatalma, de az elért megállapodást a bíró jóváhagyhatja, és így végrehajthatóvá válik.</li>
+                    <li><strong>A fogyasztói vitarendező fórum.</strong> A fogyasztónak ingyenes, és a kereskedőknek kötelező felkínálniuk. Az elérhetősége az általános szerződési feltételekben szerepel. Az Európai Unió minden országában létezik; Magyarországon a békéltető testületek töltik be ezt a szerepet.</li>
+                    <li><strong>Az ágazati ombudsmanok</strong> — energia, bank, biztosítás, távközlés, közlekedés. Hatékonyak, és alig veszik igénybe őket.</li>
+                </ul>
+                <p>Kis értékű vitáknál Franciaországban <strong>a békés rendezés megkísérlése elvben kötelező</strong>, mielőtt bírósághoz fordulnál. Ha kihagyod ezt a lépést, a keresetet elfogadhatatlannak nyilváníthatják.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 1 500 EUR követelés, 1 200 EUR költség, 60% esély</span>
+                    <p><strong>Ha nyersz: 300 EUR.</strong> Ha veszítesz: <strong>− 1 200 EUR</strong>.</p>
+                    <p><strong>Átlagos várható eredmény: − 300 EUR.</strong> És ebben nincsenek benne a várakozással töltött hónapok és a ráfordított idő.</p>
+                    <p>A számítás ítélete egyértelmű: egy békés megállapodás, még ha részleges is, többet hozna. Ez nem a beletörődés tanácsa — ezt mondja a szám.</p>
+                    <p>Ugyanez a vita egy egyeztető előtt, költségek nélkül, teljesen megváltoztatja az egyenletet.</p>
+                </div>
+
+                <div class="pratique" data-pratique="cout-litige"></div>
+
+                <h4>Ha a bíróság elkerülhetetlenné válik</h4>
+                <p>A hétköznapi polgári jogvitákban Franciaországban a <strong>tribunal judiciaire</strong> az illetékes, egy bizonyos összeg alatt egyszerűsített eljárással — kötelező ügyvédi képviselet nélkül. A munkaszerződéssel kapcsolatos vitákat a munkaügyi bíróság (conseil de prud'hommes), a kereskedők közötti vitákat a kereskedelmi bíróság tárgyalja.</p>
+                <p>A <strong>költségmentesség</strong> (aide juridictionnelle) a jövedelemtől függően a költségek egészét vagy egy részét fedezi. A jövedelemhatárokat évente felülvizsgálják: ellenőrizd a hivatalos portálon.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — összekeverni a pernyerést a pénzhez jutással</span>
+                    <p>Egy kedvező ítéletet szerezni és visszakapni a pénzt két külön lépés. Ha az ellenfél fizetésképtelen vagy eltűnt, a végrehajtás — amelynek saját költsége van — semmit sem hozhat.</p>
+                    <p>Innen egy kérdés, amelyet <strong>mielőtt</strong> bármibe belekezdesz, fel kell tenni: a másik oldalon van-e miből fizetni?</p>
+                </div>
+
+                <p class="retenir">💡 Franciaországban a bírósági egyeztető ingyenes, és a hétköznapi jogviták nagy részét rendezi. Mégis alig ismerik.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="vos-donnees-personnelles">🔐 A személyes adataid</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">2018 óta mindenkinek jogai vannak azokra az adatokra, amelyeket a szervezetek róla tárolnak.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>2018 óta mindenkinek jogai vannak azokra az adatokra, amelyeket a szervezetek róla tárolnak. Ezek a jogok ingyenesen, indoklás nélkül gyakorolhatók — és nagyon kevesen élnek velük. Az útmutató többi részével ellentétben az egész Európai Unióban érvényesek, így Magyarországon is.</p>
+
+                <h4>A jogok, és hogyan gyakorold őket</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Jog</th><th>Mit tesz lehetővé</th></tr>
+                    <tr><td><strong>Hozzáférés</strong></td><td>Másolatot kapni minden rólad tárolt adatról</td></tr>
+                    <tr><td><strong>Helyesbítés</strong></td><td>Kijavíttatni egy pontatlan vagy hiányos információt</td></tr>
+                    <tr><td><strong>Törlés</strong></td><td>Töröltetni, ha nincs törvényes megőrzési kötelezettség</td></tr>
+                    <tr><td><strong>Tiltakozás</strong></td><td>Elutasítani a közvetlen üzletszerzést, indoklás nélkül</td></tr>
+                    <tr><td><strong>Adathordozhatóság</strong></td><td>Visszakapni az adataidat újrafelhasználható formátumban</td></tr>
+                    <tr><td><strong>Korlátozás</strong></td><td>Befagyasztani az adatok felhasználását egy vita idejére</td></tr>
+                </table>
+                </div>
+                <p>A kérelmet egy egyszerű e-maillel lehet benyújtani a szervezetnek, vagy az adatvédelmi tisztviselőjének, ha van ilyen. <strong>Egy hónapja</strong> van a válaszra, amely bonyolult kérelem esetén két hónappal meghosszabbítható — ekkor erről tájékoztatnia kell téged.</p>
+
+                <div class="exemple">
+                    <span class="titre">Amit egy hozzáférési kérelem feltár</span>
+                    <p>Egy háromsoros e-mail — „kérem hozzáférést a rám vonatkozó összes személyes adathoz, a GDPR 15. cikke alapján” — elég.</p>
+                    <p>A válasz gyakran tanulságos: a valódi megőrzési idő, az adatok címzettjei, a kapcsolattartás teljes története, és néha olyan információk, amelyekről nem is tudtad, hogy megadtad őket.</p>
+                    <p>Ez az az irat is, amely lehetővé tesz egy későbbi vitát: csak arról lehet vitatkozni, amit láttál.</p>
+                </div>
+
+                <div class="pratique" data-pratique="droits-rgpd"></div>
+
+                <h4>Ha semmi sem mozdul</h4>
+                <p>Ha az egyhónapos határidő válasz nélkül telik el, vagy indokolás nélküli elutasítást kapsz, a <strong>panasz az adatvédelmi hatóságnál</strong> ingyenes, és néhány perc alatt online benyújtható. Magyarországon ez a NAIH, Franciaországban a CNIL. A hallgatás maga is elfogadható ok.</p>
+                <p>A hatóság nem szerez neked kártérítést — felügyeleti hatóság, nem bíróság —, de közbelép a szervezetnél, és ez az esetek nagy részében elég.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy a törléshez való jog abszolút</span>
+                    <p>Enged a törvényes megőrzési kötelezettségnek: egy bank, egy munkáltató vagy egy adóhatóság bizonyos adatokat évekig köteles megőrizni, bármit kérsz is.</p>
+                    <p>A közvetlen üzletszerzés elleni tiltakozás viszont nem ismer kivételt.</p>
+                </div>
+
+                <p class="retenir">💡 Egy e-mail, semmi indoklás, egy hónap a válaszra, és ingyenes panasz, ha hallgatnak. Kevés jog ilyen egyszerűen gyakorolható.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>A tisztességtelen feltétel nem írottnak tekintendő: nem alkalmazható, még aláírva sem.</li>
+                <li>Az elévülési idő után a legerősebb érv sem érvényesíthető.</li>
+                <li>A francia jogban egy hivatalos felszólítás nem szakítja meg az elévülést; a keresetindítás igen.</li>
+                <li>Sok hétköznapi jogvita gazdaságilag nem éri meg azt a pert, amelyet erkölcsileg megérdemelne.</li>
+                <li>Franciaországban a bírósági egyeztető ingyenes, és az adatvédelmi hatóság is.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Vegyél elő egy aláírt szerződést — előfizetés, biztosítás, bérleti szerződés —, és csak egy dolgot keress benne: mi történik, ha a lejárat előtt kilépsz. Szinte mindig ezt a feltételt nem olvasta el senki.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>Az adatvédelmi hatóság</strong> — levélminták az egyes jogok gyakorlásához, és online panasz. Magyarországon a NAIH, Franciaországban a CNIL.</li>
+                    <li><strong>A tisztességtelen feltételekkel foglalkozó bizottságok és a fogyasztóvédelmi hatóságok</strong> — ágazatonkénti ajánlásaik felsorolják a rendszeresen félretett feltételeket.</li>
+                    <li><strong>Bírósági egyeztetők</strong> — Franciaországban hivatalos címjegyzék és ingyenes online kérelem.</li>
+                    <li><strong>Az igazságügyi minisztérium portálja</strong> — melyik bíróság, milyen eljárás, milyen költségek, és költségmentességi kalkulátor.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> minden eljárás előtt tegyél fel két kérdést, ebben a sorrendben — határidőn belül vagyok-e még, és van-e az ellenfélnek miből fizetnie? Gyakrabban döntenek, mint az ügy érdeme.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="intermediaire.html"><span class="label">← Előző szint</span>Jog — Középhaladó</a>
+            <a href="index.html" class="next"><span class="label">Vissza →</span>⚖️ Jog és ügyintézés</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Vállalkozás</a>
+                <a href="../finance/index.html">💰 Pénzügyek</a>
+                <a href="../cybersecurite/index.html">🔒 Kiberbiztonság</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/droit-avance.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

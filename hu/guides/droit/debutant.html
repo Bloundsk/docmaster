@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
+    <title>A jog megtalálása, határidők és levelek — Jog, kezdő - Clicked</title>
+    <meta name="description" content="A jog és ügyintézés útmutatójának kezdő szintje: hol találod a rád vonatkozó szabályokat, a határidők, amelyek számítanak, a levél, amely számít, és az iratok megőrzése. A francia jogot ismerteti.">
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg">
+
+    <script>
+        /* Applique le theme et le confort de lecture AVANT le premier
+           affichage, sans quoi la page apparaitrait dans le mauvais theme, et
+           le texte s'afficherait serre avant de sauter a l'interligne choisi.
+
+           Doit rester inline : un fichier externe imposerait un aller-retour
+           reseau, pendant lequel la page serait deja peinte.
+
+           Regle du site : le choix explicite du visiteur prime sur tout. En
+           son absence on suit le reglage de son systeme QUAND IL EN EXISTE UN.
+           C'est le cas du theme sombre ; ce ne l'est d'aucun reglage de
+           confort, qu'aucun systeme d'exploitation n'expose. C'est justement
+           ce qui oblige a les demander au visiteur.
+
+           ECRIT PAR scripts/amorcer-preferences.js. Ne pas modifier a la main :
+           le mode --verifier compare les 133 pages a cette source et bloque a
+           la moindre divergence. */
+        (function () {
+            var racine = document.documentElement;
+
+            var choix = null;
+            try { choix = localStorage.getItem('theme'); } catch (e) {}
+
+            var sombre = choix
+                ? choix === 'dark'
+                : !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+            if (sombre) racine.classList.add('dark-mode');
+
+            /* Les bornes sont recopiees de theme.js. Une valeur hors bornes
+               vient d'un stockage abime ou d'une version future du site : on
+               l'ignore plutot que de poser une classe CSS inexistante. */
+            var bornes = { interligne: 2, espacement: 2, police: 1 };
+            try {
+                var confort = JSON.parse(localStorage.getItem('confort') || '{}');
+                for (var clef in bornes) {
+                    var valeur = parseInt(confort[clef], 10);
+                    if (valeur >= 1 && valeur <= bornes[clef]) {
+                        racine.classList.add('confort-' + clef + '-' + valeur);
+                    }
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="canonical" href="https://bloundsk.github.io/docmaster/hu/guides/droit/debutant.html">
+    <link rel="alternate" hreflang="fr" href="https://bloundsk.github.io/docmaster/guides/droit/debutant.html">
+    <link rel="alternate" hreflang="en" href="https://bloundsk.github.io/docmaster/en/guides/droit/debutant.html">
+    <link rel="alternate" hreflang="hu" href="https://bloundsk.github.io/docmaster/hu/guides/droit/debutant.html">
+    <link rel="alternate" hreflang="x-default" href="https://bloundsk.github.io/docmaster/guides/droit/debutant.html">
+    <meta property="og:site_name" content="Clicked">
+    <meta property="og:title" content="A jog megtalálása, határidők és levelek — Jog, kezdő - Clicked">
+    <meta property="og:description" content="A jog és ügyintézés útmutatójának kezdő szintje: hol találod a rád vonatkozó szabályokat, a határidők, amelyek számítanak, a levél, amely számít, és az iratok megőrzése. A francia jogot ismerteti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bloundsk.github.io/docmaster/hu/guides/droit/debutant.html">
+    <meta property="og:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Clicked — 14 ingyenes útmutató a jövő készségeinek elsajátításához">
+    <meta property="og:locale" content="hu_HU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A jog megtalálása, határidők és levelek — Jog, kezdő - Clicked">
+    <meta name="twitter:description" content="A jog és ügyintézés útmutatójának kezdő szintje: hol találod a rád vonatkozó szabályokat, a határidők, amelyek számítanak, a levél, amely számít, és az iratok megőrzése. A francia jogot ismerteti.">
+    <meta name="twitter:image" content="https://bloundsk.github.io/docmaster/assets/img/og-image.png">
+</head>
+<body>
+    <script>window.DOCMASTER_BASE = "../../../";</script>
+    <script src="../../../assets/js/identite.js"></script>
+    <script src="../../../assets/js/langues.js"></script>
+    <script src="../../../assets/js/layout.js"></script>
+
+    <nav class="breadcrumb" aria-label="Navigációs útvonal">
+        <a href="../../../index.html">Kezdőlap</a> &gt;
+        <a href="index.html">⚖️ Jog és ügyintézés</a> &gt;
+        <span aria-current="page">Kezdő</span>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>⚖️ Jog és ügyintézés — Kezdő</h1>
+                <p>Eligazodni, és leírni, ami számít. Nincs előfeltétel.</p>
+            </div>
+            <div class="header-illustration">
+                <svg width="140" height="140" viewBox="0 0 140 140" role="presentation" aria-hidden="true" focusable="false">
+<circle class="illu-circ-1" cx="70" cy="70" r="60" fill="white" opacity="0.12"/>
+<circle class="illu-ring" cx="70" cy="70" r="46" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.4"/>
+<g class="illu-icon"><g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M70 40 L70 100"/><path d="M50 100 L90 100"/><path d="M44 52 L96 46"/>
+<path d="M44 52 L34 76 Q44 84 54 76 Z"/><path d="M96 46 L86 70 Q96 78 106 70 Z"/>
+<circle cx="70" cy="40" r="4"/></g></g>
+<circle class="illu-twinkle" cx="36" cy="102" r="2.5" fill="white" style="animation-delay:.4s"/>
+<circle class="illu-twinkle" cx="106" cy="98" r="2.5" fill="white" style="animation-delay:1.3s"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- SELECTEUR-NIVEAU:DEBUT -->
+    <nav class="niveaux" aria-label="Az útmutató szintje">
+        <a href="index.html">Áttekintés</a>
+        <a href="debutant.html" aria-current="page">Kezdő</a>
+        <a href="intermediaire.html">Középhaladó</a>
+        <a href="avance.html">Haladó</a>
+    </nav>
+    <!-- SELECTEUR-NIVEAU:FIN -->
+
+    <div class="guide-meta">
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
+        <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
+    </div>
+
+    <main id="main-content">
+        <div class="objectif">
+            <h2>Mire tanít meg ez a szint</h2>
+            <p>Ez a szint képessé tesz arra, hogy <strong>megtaláld a rád vonatkozó szöveget és a dátumát</strong>, hogy megkülönböztesd az elállást a szavatosságtól, hogy az átvételtől számold a határidőt, és hogy olyan levelet írj, amely bizonyítékként szolgál.</p>
+            <p class="objectif-prerequis">Nincs előfeltétel: ez a szint a nulláról indul.</p>
+        </div>
+
+        <div class="toc">
+            <h2>📑 Tartalom</h2>
+            <ul>
+                <li><a href="#introduction">Bevezetés</a></li>
+                <li><a href="#ou-trouver-le-droit">📚 Hol találod a rád vonatkozó jogot</a></li>
+                <li><a href="#les-delais-qui-comptent">⏳ A határidők, amelyek számítanak</a></li>
+                <li><a href="#ecrire-pour-que-ca-compte">✍️ Írni úgy, hogy számítson</a></li>
+                <li><a href="#conserver-ses-documents">🗂️ Az iratok megőrzése</a></li>
+            </ul>
+        </div>
+
+        <div class="recap-box recap-questions">
+            <h2>⚡ Amire válaszolni fogsz tudni</h2>
+            <ul>
+                <li>Mit kell tartalmaznia egy jogi válasznak, hogy érjen valamit?</li>
+                <li>Elállás és szavatosság: ugyanaz a jog?</li>
+                <li>Egy határidő a feladástól vagy az átvételtől számít?</li>
+                <li>Mitől lesz egy levél hasznos, és nem csak díszítő?</li>
+                <li>Min nyerik meg leggyakrabban a jogvitákat?</li>
+            </ul>
+            <p class="recap-note">Próbálj most válaszolni, akár rosszul is. A válaszokat az útmutató végén találod.</p>
+        </div>
+
+        <section>
+            <h2 id="introduction">Bevezetés</h2>
+            <p>Ez az útmutató nem akar jogászt faragni belőled. Szerényebb és hasznosabb célja van: tudni, <strong>hol keress</strong>, <strong>mennyi időd maradt</strong>, és <strong>mit írj</strong>, amikor egy hétköznapi helyzet rosszra fordul.</p>
+            <p>Három reflex elég a mindennapi nehézségek többségének megoldásához — egy hibás vásárlás, egy vissza nem kapott kaució, egy szerződés, amelyet nem mersz vitatni. Ez a szint ezeket alakítja ki.</p>
+
+            <div class="piege">
+                <span class="titre">Figyelmeztetés — olvasd el</span>
+                <p>Ez az útmutató a <strong>francia jogról</strong> szól, és <strong>oktatási célú</strong>. A leírt határidők, jogorvoslatok és eljárások franciák: <strong>mielőtt cselekszel, nézz utána a saját országod szabályainak</strong>. Ami átvihető, az a módszer, nem a számok.</p>
+                <p>Nem jogi tanácsadás: nem ismeri sem a helyzetedet, sem a szerződésedet, sem a tényeket.</p>
+                <p>Az itt idézett határidők törvényes határidők, évek óta változatlanok. Ezzel szemben <strong>minden összeg, értékhatár és plafon rendszeresen változik</strong>: ez az útmutató szándékosan egyet sem idéz, és minden alkalommal a hivatalos forrásra utal.</p>
+                <p>Ha egy helyzet komoly következményekkel jár — elbocsátás, jelentős jogvita, közjegyzői okirat —, fordulj szakemberhez. Sok tanácsadás ingyenes.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="bases">Az alapreflexek</h2>
+            <div class="lecon-controles">
+                <button type="button" id="tout-deplier">Összes kinyitása</button>
+            </div>
+
+            <details class="lecon">
+                <summary><h3 id="ou-trouver-le-droit">📚 Hol találod a rád vonatkozó jogot</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Ma már nem az a nehéz, hogy választ találj — ezerszámra van —, hanem hogy azt találd meg, amelyik ma, a te országodban rád vonatkozik.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Ma már nem az a nehéz, hogy választ találj — ezerszámra van —, hanem hogy azt találd meg, <strong>amelyik ma, a te országodban rád vonatkozik</strong>. A legtöbb hiba itt születik.</p>
+
+                <h4>A két forrás, amely elég</h4>
+                <ul>
+                    <li><strong>A hivatalos kormányzati portál</strong> — Franciaországban a service-public.fr: a hivatalos magyarázat közérthető nyelven, az ügyintézés lépéseivel és az űrlapokkal. Szinte minden esetben ez a jó kiindulópont.</li>
+                    <li><strong>A hivatalos jogszabálytár</strong> — Franciaországban a Légifrance: maga a jogszabály szövege. Akkor hasznos, ha egy jogszabályhelyet kell idézni, vagy ellenőrizni kell, hogy egy szabály még hatályos-e.</li>
+                </ul>
+                <p>Ehhez jönnek még, a témától függően: az adatvédelmi hatóság a személyes adatokhoz (Magyarországon a NAIH), a fogyasztóvédelmi hatóság a vásárlásokhoz, a lakásügyi tájékoztató szervezet a bérléshez, a járulékokat beszedő szerv a járulékokhoz. Mind ingyenes, naprakész tájékoztatókat tesz közzé.</p>
+
+                <div class="exemple">
+                    <span class="titre">Az online keresés három csapdája</span>
+                    <p><strong>Az ország.</strong> A francia nyelvű találatok jó része belga, svájci vagy québeci. Ott a szabályok gyakran hasonlóak — és néha éppen fordítottak. Magyar nyelven is előfordul: egy szlovákiai vagy romániai magyar oldal a saját országa jogát írja le.</p>
+                    <p><strong>A dátum.</strong> Egy 2016-os blogbejegyzés a szavatosságról olyan jogot ír le, amely azóta megváltozott. Semmi sem jelzi ezt az olvasónak.</p>
+                    <p><strong>A forrás.</strong> Egy fórumválasz vagy egy változtatás nélkül átvett MI-válasz lehet tökéletesen megírt és tökéletesen hibás. A forma nem jelzi a megbízhatóságot.</p>
+                </div>
+
+                <div class="pratique" data-pratique="source-fiable"></div>
+
+                <h4>Megkülönböztetni a kötelezőt a szokásostól</h4>
+                <p>Sok mindenről, amit kötelezőnek hiszünk, kiderül, hogy nem az, és fordítva is igaz. „Ajánlott levél kell” gyakran csak óvatos szokás; „beköltözési jegyzőkönyv kell” Franciaországban törvényes kötelezettség.</p>
+                <p>A próba: <strong>hivatkozik-e az állítás egy jogszabályra?</strong> Ha igen, ellenőrizhető. Ha nem, gyakorlatról van szó — néha kiválóról, de senkire sem kötelezőről.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azt hinni, hogy egy aláírt feltétel kötelez</span>
+                    <p>Egy szerződés nem veheti el azt a jogot, amelyet a törvény ad. Az a feltétel, amely kizárja a törvényes szavatosságot, vagy megtiltja a bírósághoz fordulást, aláírva is hatástalan.</p>
+                    <p>Aláírni tehát nem lemondás. Erről szól ennek az útmutatónak a haladó szintje.</p>
+                </div>
+
+                <p class="retenir">💡 Egy szabály dátum és hivatkozott jogszabály nélkül nem szabály: csak egy jól megfogalmazott vélemény.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="les-delais-qui-comptent">⏳ A határidők, amelyek számítanak</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A jogban a határidőn belül nem gyakorolt jog elvész.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A jogban a határidőn belül nem gyakorolt jog elvész. Ez nem büntetés, hanem a működés módja: a határidő után a világ legerősebb érve sem terjeszthető elő.</p>
+
+                <h4>Két jog, amelyet rendszeresen összekevernek</h4>
+                <p><strong>Az elállási jog</strong> — 14 nap, csak távollévők között kötött szerződésnél, indoklás nélkül. Uniós szabály, Magyarországon is ugyanígy érvényes. Online vagy telefonos vásárlásra vonatkozik; <strong>üzletben vásárolt termékre nem</strong>. Az a kereskedő, aki visszavesz egy helyben vásárolt terméket, gesztust tesz, nem kötelezettséget teljesít.</p>
+                <p><strong>A törvényes kellékszavatosság</strong> — 2 év, bármely kereskedőtől vásárolt termékre, üzletben és online egyaránt. Akkor érvényesíthető, ha a termék nem működik, nem felel meg a leírásának, vagy idő előtt meghibásodik. A két év az Európai Unióban a legrövidebb megengedett időtartam.</p>
+                <p>A második sokkal erősebb az elsőnél, és éppen ezt felejtik el. Ingyenes, nem függ semmilyen fizetős kiterjesztéstől, és az eladó nem tagadhatja meg.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — egy 20 napja átvett új készülék</span>
+                    <p><strong>Elállás:</strong> a határidő lejárt. A 14 nap letelt.</p>
+                    <p><strong>Törvényes kellékszavatosság:</strong> még <strong>23 hónap</strong>.</p>
+                    <p><strong>Bizonyítási teher:</strong> Franciaországban még <strong>23 hónapig</strong> az eladónak kell bizonyítania, hogy a termék megfelelt a szerződésnek — nem neked azt, hogy nem felelt meg.</p>
+                    <p>Ez az utolsó pont a leghasznosabb mind közül, és a legkevésbé ismert.</p>
+                </div>
+
+                <div class="pratique" data-pratique="delais-consommateur"></div>
+
+                <h4>A kezdőnap</h4>
+                <p>Egy határidő szinte mindig egy pontos eseménytől számít: a termék <strong>átvételétől</strong>, egy levél <strong>kézhezvételétől</strong>, egy hiba <strong>felfedezésétől</strong>. Ritkán a feladástól, soha attól a pillanattól, amikor elkezdesz foglalkozni vele.</p>
+                <p>Ezért érdemes megőrizni a dátum nyomát: a szállítólevelet, a tértivevényt, a rendelésről készült képernyőképet.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — elfogadni, hogy „lejárt a garancia”</span>
+                    <p>Sok eladó azt válaszolja, hogy lejárt az egyéves gyártói garancia. Ez igaz, és nem tartozik a tárgyhoz: a <strong>törvényes</strong> szavatosság az eladó kötelezettsége, független a gyártóétól, és Franciaországban két évig tart.</p>
+                    <p>A megfogalmazás, amely Franciaországban a legtöbb helyzetet feloldja: „nem a kereskedelmi garanciára, hanem a törvényes kellékszavatosságra hivatkozom, a francia fogyasztóvédelmi törvénykönyv L217-3. és következő cikkei alapján”.</p>
+                </div>
+
+                <p class="retenir">💡 Elállás: 14 nap, csak távollévők között. Kellékszavatosság: 2 év, mindenhol. Két különböző dolog.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="ecrire-pour-que-ca-compte">✍️ Írni úgy, hogy számítson</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">Egy telefonhívás nem hagy nyomot.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Egy telefonhívás nem hagy nyomot. Az a reklamáció, amely számít, írásos, és öt dolgot tartalmaz — az ékesszólás nincs köztük.</p>
+
+                <h4>Az öt elem</h4>
+                <ol>
+                    <li><strong>Ki, és melyik ügy.</strong> Az adataid, a szerződés vagy a rendelés azonosítója.</li>
+                    <li><strong>A tények, dátummal.</strong> Mi történt, mikor. Jelzők és szemrehányás nélkül: ezek gyengítik a levelet ahelyett, hogy erősítenék.</li>
+                    <li><strong>A kérés, számszerűsítve.</strong> „149 EUR visszatérítése” — ezzel foglalkoznak; „egy kereskedelmi gesztus” — ezt lefűzik.</li>
+                    <li><strong>Egy határidő.</strong> Tizenöt nap észszerű és szokásos. Leírva elindít valamit; kimondatlanul semmit sem ér.</li>
+                    <li><strong>A jogalap.</strong> A jogszabályhely, ha megvan, ennek hiányában a szerződés vonatkozó pontja.</li>
+                </ol>
+
+                <div class="exemple">
+                    <span class="titre">A hivatalos felszólítás, rejtély nélkül</span>
+                    <p>A hivatalos felszólítás nem ügyvédeknek fenntartott ünnepélyes okirat. Egy közönséges levél, amely tartalmazza a fenti öt elemet, <strong>és kifejezetten felszólításnak nevezi magát</strong> (Franciaországban a <em>mise en demeure</em> szavakkal).</p>
+                    <p>Franciaországban kettős haszna van: elindítja a késedelmi kamat futását, és ez az az irat, amelyet minden egyeztető vagy bíró elsőként kér — „küldött felszólítást?”.</p>
+                    <p>Tértivevényes ajánlott levélként néhány euróba kerül. Ez a legjobb költség-haszon arány az egész útmutatóban.</p>
+                </div>
+
+                <div class="pratique" data-pratique="lettre-efficace"></div>
+
+                <h4>Ajánlott levél vagy e-mail?</h4>
+                <p>A tértivevényes ajánlott levél három dolgot bizonyít: hogy írtál, mikor, és hogy a címzett megkapta. Az e-mail az elsőt és a másodikat bizonyítja, a harmadikat nem mindig.</p>
+                <p>A gyakorlatban: első reklamációhoz e-mail, ajánlott levél, amint élesedik a hangnem, vagy elkezd futni egy határidő.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — azért írni, hogy megkönnyebbülj</span>
+                    <p>Egy háromoldalas levél, amely a felháborodást, az elvesztegetett időt és az érzett megvetést meséli el, nehezen olvasható és rosszul intézhető. Az ügyfélszolgálat kérést és dátumot keres; ha nem találja, az ügy vár.</p>
+                    <p>Egy oldal, öt elem, egyetlen jelző sem. Kevésbé jólesik megírni, és sokkal hatásosabb.</p>
+                </div>
+
+                <p class="retenir">💡 Dátumozott, számszerűsített, megalapozott, bizonyítható. Annak a levélnek, amelyben ez a négy megvan, nem kell szépen megírtnak lennie.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="conserver-ses-documents">🗂️ Az iratok megőrzése</h3><span class="lecon-duree">1 perc</span>
+                
+                    <span class="lecon-amorce">Az a jog, amelyet nem tudsz bizonyítani, semmit sem ér.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>Az a jog, amelyet nem tudsz bizonyítani, semmit sem ér. És szinte mindig <strong>annak kell bizonyítania, aki követel</strong> — innen ered annak prózai jelentősége, hogy mit őrzöl meg.</p>
+
+                <h4>A megőrzési idők, a francia szabályok szerint</h4>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Irat</th><th>Meddig őrizd</th><th>Miért</th></tr>
+                    <tr><td><strong>Bérpapírok</strong></td><td>Időkorlát nélkül</td><td>A nyugdíj kiszámításához, néha évtizedekkel később</td></tr>
+                    <tr><td><strong>Építési munkák számlái</strong></td><td>10 év</td><td>A francia tízéves építési garancia időtartama</td></tr>
+                    <tr><td><strong>Adómegállapítások</strong></td><td>3 év</td><td>Az adóhatóság utólagos ellenőrzési ideje</td></tr>
+                    <tr><td><strong>Lakbérnyugták</strong></td><td>A kiköltözés után 3 évig</td><td>A bérlettel kapcsolatos követelések elévülése</td></tr>
+                    <tr><td><strong>Energiaszámlák</strong></td><td>5 év</td><td>Az általános elévülési idő</td></tr>
+                    <tr><td><strong>Szerződések és garanciák</strong></td><td>A szerződés időtartama + 2 év</td><td>Hogy legyen idő a szavatosság érvényesítésére</td></tr>
+                </table>
+                </div>
+
+                <div class="exemple">
+                    <span class="titre">Az irat, amelyet kidobunk, aztán megbánjuk</span>
+                    <p>A <strong>bérpapírok</strong>. Húsz évig semmi hasznuk, aztán egyszer csak arra kellenek, hogy kijavíttass egy hiányos szolgálatiidő-nyilvántartást.</p>
+                    <p>Rögtön utána jön a <strong>beköltözési jegyzőkönyv</strong>. Nélküle kiköltözéskor semmit sem lehet összehasonlítani, és a kaucióból levont összegeket nagyon nehéz vitatni.</p>
+                </div>
+
+                <div class="pratique" data-pratique="conserver-papiers"></div>
+
+                <h4>Digitalizálni, bonyodalmak nélkül</h4>
+                <p>Egy dokumentumról készült olvasható fénykép ugyanannyit ér bizonyítékként, mint egy fénymásolat: a bizonyítás kezdetének számít, és a levélváltások döntő többségében elegendő.</p>
+                <p>Egy évenként rendezett, két helyre mentett mappa egy óra alatt, egyszer s mindenkorra megoldja a kérdést. A fontos okiratok eredetijét — közjegyzői okiratok, oklevelek, anyakönyvi okiratok — viszont papíron kell megőrizni.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — mindent megtartani, és semmit sem megtalálni</span>
+                    <p>Egy doboznyi, tíz éve rendezetlen papír egyenértékű az archívum hiányával: amikor tizenöt napon belül kell bemutatni egy iratot, nem található.</p>
+                    <p>Az éves rendezés többet ér a halmozásnál. Ami pedig online újra elérhető — energiaszámlák, bankszámlakivonatok —, azt nem kell papíron megőrizni.</p>
+                </div>
+
+                <p class="retenir">💡 Jogvitában nem az a kérdés, hogy „igazam volt-e?”, hanem hogy „be tudom-e bizonyítani?”.</p>
+                </div>
+            </details>
+        </section>
+
+        <div class="recap-box recap-reponses">
+            <h2>✅ Amit megjegyzel</h2>
+            <ul>
+                <li>Egy jogi válasz dátum és hivatkozott jogszabály nélkül semmit sem ér: a jog változik.</li>
+                <li>Az elállás és a szavatosság két külön jog, amelyeket szinte mindig összekevernek.</li>
+                <li>Egy határidő az átvételtől számít, nem a feladástól.</li>
+                <li>Egy hasznos levél dátumozott, számszerűsített, megalapozott és bizonyítható. A többi díszítés.</li>
+                <li>Egy jogvitát ritkán nyernek meg az ügy érdemén, gyakran azon az iraton, amelyet be tudsz mutatni.</li>
+            </ul>
+        </div>
+
+        <div class="mark-read-box">
+            <input type="checkbox" id="mark-read-checkbox">
+            <label for="mark-read-checkbox">Elolvastam és megértettem ezt az útmutatót</label>
+        </div>
+
+        <div class="quiz-box">
+            <h2>🧠 Összefoglaló kvíz</h2>
+            <p class="quiz-intro">Ezek a kérdések az egész útmutatót lefedik, és különböznek a fejezetek kérdéseitől.</p>
+            <div id="quiz-container"></div>
+            <p class="quiz-rotation" id="quiz-rotation"></p>
+        </div>
+
+        <section class="action-semaine">
+            <h2>🎯 Egy teendő erre a hétre</h2>
+            <p>Válassz egy friss vásárlást, és keresd meg a hivatalos forrásánál a rá vonatkozó elállási határidőt. Mérd az időt: ha tíz percnél tovább tart, megérted, miért nem teszi ezt senki abban a pillanatban, amikor számítana.</p>
+        </section>
+
+        <section>
+            <h2>📚 Ha tovább mennél</h2>
+            <article class="lecon">
+                <ul class="ressources">
+                    <li><strong>A kormányzati hivatalos portál</strong> — ügyintézés, tájékoztatók és űrlapok, naprakészen. Franciaországban a service-public.fr.</li>
+                    <li><strong>A hivatalos jogszabálytár</strong> — a törvények és törvénykönyvek hatályos szövege. Franciaországban a Légifrance.</li>
+                    <li><strong>Ingyenes jogi tanácsadó szolgálatok</strong> — Franciaországban a points-justice; a legtöbb országban van megfelelőjük.</li>
+                    <li><strong>A fogyasztóvédelmi hatóság</strong> — gyakorlati tájékoztatók, és a tisztességtelen gyakorlatok online bejelentése.</li>
+                </ul>
+                <p><strong>Hasznos reflex:</strong> mielőtt egy online olvasott szabály alapján cselekszel, keresd meg ugyanazt a hivatalos kormányzati oldalon. Öt perc, amely megóv a legtöbb kellemetlen meglepetéstől.</p>
+            </article>
+        </section>
+
+        <div class="guide-nav">
+            <a href="index.html"><span class="label">← Vissza</span>⚖️ Jog és ügyintézés</a>
+            <a href="intermediaire.html" class="next"><span class="label">Következő szint →</span>Jog — Középhaladó</a>
+        </div>
+
+        <div class="related-guides">
+            <h2>Hasonló útmutatók</h2>
+            <div class="related-list">
+                <a href="../entrepreneuriat/index.html">🚀 Vállalkozás</a>
+                <a href="../finance/index.html">💰 Pénzügyek</a>
+                <a href="../cybersecurite/index.html">🔒 Kiberbiztonság</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../../assets/js/quiz/hu/droit-debutant.js"></script>
+    <script src="../../../assets/js/quiz.js"></script>
+    <script src="../../../assets/js/pratique/hu.js"></script>
+    <script src="../../../assets/js/pratique.js"></script>
+    <script src="../../../assets/js/favoris.js"></script>
+    <script src="../../../assets/js/theme.js"></script>
+    <script src="../../../assets/js/enhance.js"></script>
+</body>
+</html>

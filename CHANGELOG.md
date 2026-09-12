@@ -1,5 +1,41 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Treizième parcours en hongrois : Droit & démarches
+
+### Ce qui est publié
+
+- **Les 4 pages** de `hu/guides/droit/`, **les 3 banques de quiz** (90 questions,
+  la bonne réponse au même rang qu'en français) et **les 152 textes des
+  12 simulateurs** (155 textes et 6 fragments ajoutés : « még 14 nap », « lejárt,
+  túllépés: 339 nap », « 1 év 4 hónap », « 210 EUR (10% a havi lakbérből minden
+  megkezdett hónapra) »).
+- `CONTENU_TRADUIT.hu` annonce aussi « droit ». Les cinq pages hongroises qui citaient
+  ce parcours en français (Apprendre, et les quatre de Négociation) mènent maintenant
+  à sa version hongroise.
+- **Troisième sujet à droit français, traité comme Entrepreneuriat et Finance.**
+  Prescription, bail, préavis, période d'essai, micro-entreprise et juridictions
+  restent français, et chaque phrase qui cite un délai le dit ; le bandeau
+  `reglesFrancaises` s'affiche de lui-même, vérifié sur le niveau avancé. **Ce qui est
+  européen se dit européen et applicable en Hongrie** : la rétractation de 14 jours à
+  distance, la garantie de conformité d'au moins deux ans, la notion de clause
+  abusive, la médiation de la consommation (« Magyarországon a békéltető testületek »)
+  et les droits RGPD (NAIH). Les organismes français deviennent leur fonction, le nom
+  français entre parenthèses quand il sert à chercher (*mise en demeure*,
+  *conciliateur de justice*, *aide juridictionnelle*).
+- **Les états non affichés par défaut ont été vérifiés dans le navigateur**, parce que
+  `verifier-traduction.mjs` ne fait tourner que les valeurs initiales : action
+  prescrite (« Elévült ennyi ideje 1 év 4 hónap »), période d'essai dépassée, frais
+  nuls (« 0 EUR »), délais de consommation expirés. Tout s'affiche en hongrois, sans
+  erreur de console.
+
+### Corrigé en route
+
+- **Le biais de longueur, une treizième fois, corrigé en une passe** : la bonne réponse
+  était la plus longue dans 63 % des cas (français 36 %) — le pire relevé jusqu'ici,
+  parce que dire « en France » et « a francia jogban » allonge surtout les bonnes
+  réponses. 39 distracteurs retouchés sur 31 questions : 39 / 30 / 32 % (français
+  36 / 35 / 29 %). Les 1 182 questions hongroises sont à 33,8 / 35,4 / 31,3 %.
+
 ## 2026-09-12 — Douzième parcours en hongrois : Finance
 
 ### Ce qui est publié
