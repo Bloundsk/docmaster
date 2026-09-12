@@ -270,6 +270,72 @@ window.QUIZ = {
                 a: 2,
                 explication: "Avant d'installer un outil de sécurité, chercher qui le finance est un réflexe utile."
             }
+        ],
+
+        // ---------------------------------------------------------------
+        "compte-pirate": [
+            // Série 1
+            {
+                q: "Ton compte a été piraté et l'attaquant écrit à tes contacts. Quel geste passe en premier ?",
+                options: [
+                    "Supprimer le compte pour couper court aux messages",
+                    "Attendre d'avoir récupéré l'accès pour agir proprement",
+                    "Prévenir tes proches par un autre canal"
+                ],
+                a: 2,
+                explication: "La récupération peut prendre des jours ; l'arnaque vise tes contacts dès les premières minutes. Les prévenir par SMS ou par téléphone ne dépend pas de l'accès au compte."
+            },
+            {
+                q: "Un « expert en récupération » te propose de reprendre ton compte contre paiement. De quoi s'agit-il ?",
+                options: [
+                    "D'une seconde arnaque visant les victimes de la première",
+                    "D'un service utile quand la procédure officielle échoue",
+                    "D'une offre légale, à condition de payer une fois le compte récupéré"
+                ],
+                a: 0,
+                explication: "Personne ne récupère un compte contre paiement. Ceux qui se proposent après un message d'alerte savent qu'ils s'adressent à une victime pressée."
+            },
+            {
+                q: "Tu as repris ton compte et changé le mot de passe. Qu'est-ce qui peut encore laisser l'attaquant dedans ?",
+                options: [
+                    "Rien, le nouveau mot de passe coupe tous les accès",
+                    "Seulement l'historique de ton navigateur",
+                    "Une session encore ouverte, ou une adresse de récupération à lui"
+                ],
+                a: 2,
+                explication: "Changer le mot de passe ne ferme pas une session déjà ouverte, ni une adresse ou un numéro de récupération ajoutés par l'attaquant. Il faut les vérifier un par un."
+            },
+            // Série 2
+            {
+                q: "Pourquoi abandonner un compte piraté pour en ouvrir un autre est-il une erreur ?",
+                options: [
+                    "Parce que le nouveau compte sera piraté de la même façon",
+                    "L'ancien reste actif, et l'attaquant continue d'écrire en ton nom",
+                    "Parce que le service facture la fermeture des comptes"
+                ],
+                a: 1,
+                explication: "Le compte abandonné garde ton nom et ta photo. Tant qu'il n'est pas signalé comme piraté, il sert à tromper tes contacts."
+            },
+            {
+                q: "Avant de nettoyer le compte, que faut-il conserver ?",
+                options: [
+                    "Des captures des alertes et des messages envoyés, avec leurs dates",
+                    "Rien, les traces pourraient être utilisées contre toi par la suite",
+                    "La liste des mots de passe que tu as utilisés sur ce compte depuis sa création"
+                ],
+                a: 0,
+                explication: "Les captures servent au signalement et, si de l'argent a été perdu, à la plainte. Une fois le compte nettoyé, ces traces disparaissent."
+            },
+            {
+                q: "Une carte bancaire était enregistrée sur le compte piraté. Que fais-tu ?",
+                options: [
+                    "Rien tant qu'aucun achat suspect n'apparaît sur tes relevés",
+                    "Tu la supprimes du compte, et c'est tout",
+                    "Tu préviens ta banque, sans attendre un achat suspect"
+                ],
+                a: 2,
+                explication: "Un moyen de paiement enregistré a pu servir, ou servir plus tard. La banque peut surveiller ou bloquer la carte ; la retirer du compte n'efface pas ce qui a déjà été fait."
+            }
         ]
     },
 

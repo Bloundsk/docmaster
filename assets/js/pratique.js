@@ -724,6 +724,29 @@
             lecon: "Une règle de transfert automatique posée par un attaquant continue de fonctionner après le changement de mot de passe."
         },
 
+        "arnaque-aux-proches": {
+            titre: "Ce que ton compte piraté peut coûter à tes proches",
+            intro: "Un compte piraté sert d'abord à écrire en ton nom. Chaque contact qui te fait confiance est une cible.",
+            champs: [
+                { id: "contacts", libelle: "Contacts qui reçoivent le message", unite: "personnes", defaut: 300, min: 1, max: 5000, pas: 10 },
+                { id: "part", libelle: "Part qui y croit et envoie l'argent", unite: "%", defaut: 1, min: 0, max: 20, pas: 0.5 },
+                { id: "montant", libelle: "Montant demandé à chacun", unite: "€", defaut: 250, min: 0, max: 5000, pas: 10 }
+            ],
+            calculer: ({ contacts, part, montant }) => {
+                // Le compte pirate ecrit en ton nom a tous tes contacts : une
+                // part infime qui y croit suffit. Le nombre de personnes est
+                // arrondi au dixieme, faute de quoi 0,5 % de 300 afficherait
+                // « 2 » au lieu de « 1,5 ».
+                const victimes = Math.round(contacts * part / 100 * 10) / 10;
+                return [
+                    { libelle: "Argent perdu par tes proches", valeur: euros(victimes * montant), fort: true },
+                    { libelle: "Proches qui envoient l'argent", valeur: souple(victimes) },
+                    { libelle: "Messages envoyés en ton nom", valeur: nf(contacts) }
+                ];
+            },
+            lecon: "Prévenir tes contacts par un autre canal prend deux minutes. C'est la seule mesure qui protège ceux qui n'ont aucune raison de se méfier de toi."
+        },
+
         "signaux-spear-phishing": {
             type: "controle",
             titre: "Reconnais une attaque ciblée",

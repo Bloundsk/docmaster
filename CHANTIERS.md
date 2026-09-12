@@ -23,8 +23,8 @@ testeurs.
 | [Vérifier que la boîte à idées livre les messages](#vérifier-que-la-boîte-à-idées-livre-les-messages) | Ludo, ou Claude avec son accord | avant le lancement | « envoie un message de test par la boîte à idées » |
 | [Décider du lancement](#décider-du-lancement) | Ludo | — | — |
 | [Juger l'effet des titres et des amorces](#juger-leffet-des-titres-et-des-amorces) | Ludo, Claude pour l'analyse | octobre 2026 au plus tôt, site lancé | « regarde l'effet des titres et des amorces » |
-| [Écrire la leçon « compte piraté »](#écrire-la-leçon--compte-piraté-) | Claude | quand Ludo le décide | « écris la leçon sur le compte piraté » |
-| [La septième carte, seule sur sa rangée](#la-septième-carte-seule-sur-sa-rangée) | Ludo décide | — | « ajoute une huitième situation » ou « retire la situation … » |
+| [Écrire une nouvelle leçon](#écrire-une-nouvelle-leçon) | Claude | quand Ludo en demande une | « écris une leçon sur … » |
+| [La neuvième carte, seule sur tablette](#la-neuvième-carte-seule-sur-tablette) | Ludo décide | — | « ajoute une dixième situation », ou rien |
 | [Renommer le dépôt](#renommer-le-dépôt) | Ludo décide | déconseillé | « prépare le renommage du dépôt » |
 
 ---
@@ -314,17 +314,17 @@ et seulement une fois le site lancé.
 
 ## 3. Contenu possible
 
-### Écrire la leçon « compte piraté »
+### Écrire une nouvelle leçon
 
-Trouvé en choisissant les entrées par situation, le 10 septembre 2026 : le parcours
-Cybersécurité explique comment **se protéger** (mots de passe, double
-authentification, fuites de données), jamais comment **réagir** à un piratage.
-Tant que la leçon n'existe pas, la situation « On a piraté mon compte » ne peut
-pas entrer sur la page Guides : une entrée qui promet ce que la page ne donne pas
-est pire que pas d'entrée.
+**La leçon « Quand un compte est piraté » est écrite** depuis le 12 septembre 2026
+(Cybersécurité, niveau intermédiaire), avec sa situation sur la page Guides. Aucune
+autre leçon n'est demandée aujourd'hui. Avant d'en écrire une, **lire ce que le
+parcours dit déjà** : l'avancé de Cybersécurité traitait la reprise après une fuite,
+et la leçon a été recentrée sur ce qui manquait vraiment (la prise de contrôle du
+compte et l'arnaque aux proches), avec un renvoi plutôt qu'une redite.
 
-**Pour relancer :** « écris la leçon sur le compte piraté ». Même marche que
-« Négocier son salaire » (11 septembre 2026) :
+**Pour relancer :** « écris une leçon sur … ». Même marche que « Négocier son
+salaire » (11 septembre 2026) et « Quand un compte est piraté » (12 septembre) :
 
 1. le texte, **en français, en anglais et en hongrois** (depuis le 12 septembre
    2026, le site est complet dans les trois langues), avec la trame de chaque
@@ -351,16 +351,19 @@ et longueur des réponses dans chaque langue, liens et ancres.
 
 ## 4. Petites décisions en attente
 
-### La septième carte, seule sur sa rangée
+### La neuvième carte, seule sur tablette
 
-La page Guides propose sept situations. Sur un grand écran, elles se rangent par
-trois, trois, puis une seule. Deux sorties :
+La page Guides propose **neuf situations** depuis le 12 septembre 2026 (« On a piraté
+mon compte » et « Je croule sous les messages » ont rejoint les sept). Mesuré dans
+le navigateur : **3-3-3 à 1 280 px**, la carte isolée du grand écran a disparu ; mais
+**2-2-2-2-1 à 768 px**, où la dernière reste seule — comme la septième l'était déjà
+sur tablette. Deux sorties, si cela gêne :
 
-- **une huitième situation** — à condition qu'une section y réponde vraiment,
-  vérifié dans son texte avant de la retenir ;
-- **revenir à six**, en retirant l'une d'elles.
+- **une dixième situation** — à condition qu'une section y réponde vraiment,
+  vérifié dans son texte avant de la retenir (elle ferait 3-3-3-1 sur grand écran) ;
+- **ne rien faire** : une carte seule en fin de liste ne cache rien.
 
-**Pour relancer :** « ajoute une huitième situation » ou « retire la situation … ».
+**Pour relancer :** « ajoute une dixième situation ».
 
 ---
 

@@ -112,14 +112,14 @@
     <!-- SELECTEUR-NIVEAU:FIN -->
 
     <div class="guide-meta">
-        <span>🕒 Utolsó frissítés: 2026. szeptember 11.</span>
+        <span>🕒 Utolsó frissítés: 2026. szeptember 12.</span>
         <button class="copy-link-btn">🔗 Hivatkozás másolása</button>
     </div>
 
     <main id="main-content">
         <div class="objectif">
             <h2>Mire tanít meg ez a szint</h2>
-            <p>Ez a szint képessé tesz arra, hogy <strong>egy jelszókezelőre bízd a jelszavaidat</strong>, hogy második tényezőt válassz, hogy olyan mentést építs, amelyet egy zsarolóvírus nem ér el, és hogy tudd, pontosan mit helyez át egy VPN.</p>
+            <p>Ez a szint képessé tesz arra, hogy <strong>egy jelszókezelőre bízd a jelszavaidat</strong>, hogy második tényezőt válassz, hogy olyan mentést építs, amelyet egy zsarolóvírus nem ér el, hogy tudd, pontosan mit helyez át egy VPN, és hogy a helyes sorrendben cselekedj, ha feltörik egy fiókodat.</p>
             <p class="objectif-prerequis">Feltételezi a kezdő szint ismeretét.</p>
         </div>
 
@@ -131,6 +131,7 @@
                 <li><a href="#double-authentification">📱 A kétlépcsős azonosítás</a></li>
                 <li><a href="#sauvegarde-et-rancongiciel">💾 Mentés és zsarolóvírus</a></li>
                 <li><a href="#reseau-et-vpn">🌐 A hálózat és a VPN</a></li>
+                <li><a href="#compte-pirate">🆘 Ha feltörik egy fiókodat</a></li>
             </ul>
         </div>
 
@@ -291,6 +292,48 @@
                 </div>
 
                 <p class="retenir">💡 A HTTPS mindenhol védi a tartalmat. A VPN a helyi hálózatod elől rejti el a célt. Ez nem ugyanaz a probléma.</p>
+                </div>
+            </details>
+
+            <details class="lecon">
+                <summary><h3 id="compte-pirate">🆘 Ha feltörik egy fiókodat</h3><span class="lecon-duree">2 perc</span>
+                
+                    <span class="lecon-amorce">A jelszó már nem működik, egy értesítés ismeretlen eszközről történt bejelentkezést jelez, vagy egy barátod megkérdezi, miért kérsz tőle pénzt.</span>
+                </summary>
+                <div class="lecon-corps">
+                <p>A jelszó már nem működik, egy értesítés ismeretlen eszközről történt bejelentkezést jelez, vagy egy barátod megkérdezi, miért kérsz tőle pénzt. A fiókodat feltörték. Most a lépések sorrendje számít — és az, hogy a támadó ne használhassa ki a következő órákat.</p>
+
+                <h4>Először az ismerőseid, egy másik csatornán</h4>
+                <p>Egy feltört fiókot ritkán használnak arra, hogy elolvassák az üzeneteidet. Arra használják, hogy <strong>a nevedben írjanak</strong>: „külföldön ragadtam”, „tudnál kölcsönadni 250 eurót?”, „küldd el nekem a kódot, amit most kapsz”. Akik ismernek, éppen ők azok, akik nem gyanakszanak.</p>
+                <p>Figyelmeztesd őket azonnal, olyan csatornán, amelyet a támadó nem irányít: SMS-ben, telefonon, egy másik közösségi oldalon. Ez két perc, a fiók visszaszerzése viszont napokig tarthat.</p>
+
+                <div class="exemple">
+                    <span class="titre">Számpélda — 300 ismerős</span>
+                    <p>A támadó a <strong>300 ismerősödnek</strong> ír, és sürgősen <strong>250 eurót</strong> kér.</p>
+                    <p>Tegyük fel, hogy csak <strong>1%</strong> hisz neki: <strong>3 ismerősöd</strong> elküldi a pénzt, vagyis <strong>750 euró</strong> vész el — olyanoktól, akik azt hitték, segítenek neked.</p>
+                    <p>A saját fiókod semmibe sem került neked. Az ő beléd vetett bizalmukat használták ki.</p>
+                </div>
+
+                <div class="pratique" data-pratique="arnaque-aux-proches"></div>
+
+                <h4>A hozzáférés visszaszerzése, csak a hivatalos úton</h4>
+                <p>A szolgáltatás saját helyreállítási eljárását használd, az alkalmazásából vagy a kézzel beírt címéről. Ha a támadó megváltoztatta a fiókhoz tartozó e-mail-címet vagy telefonszámot, keresd a feltört fiók bejelentésére szolgáló lehetőséget: a legtöbb nagy szolgáltatásnak van ilyen, és más módon ellenőrzi a személyazonosságodat.</p>
+                <p><strong>Senki sem szerzi vissza helyetted a fiókot pénzért.</strong> A „fiók-visszaszerzési szakértők”, akik a figyelmeztető üzeneted után írnak neked, vagy a hozzászólásokban jelentkeznek, egy második csalás szereplői, amely éppen az első áldozatait célozza.</p>
+
+                <h4>Az ajtók bezárása magad mögött</h4>
+                <p>Ha újra bent vagy, cseréld a jelszót egy egyedire, <strong>jelentkezz ki minden munkamenetből</strong>, kapcsold be a kétlépcsős azonosítást, és kérj új helyreállító kódokat. Utána ellenőrizd a helyreállítási e-mail-címet és telefonszámot, valamint az engedélyezett alkalmazásokat: a támadó a sajátjait hagyhatta ott.</p>
+                <p>Ha az e-mail-fiókodat vették el, egy automatikus továbbítási szabály túlélhette a jelszócserét: a haladó szint <a href="avance.html#fuites-de-donnees">Az adatszivárgások</a> fejezetben elmagyarázza, miért. És ha ezt a jelszót máshol is használtad, mindenhol cseréld le.</p>
+
+                <h4>A nyomok megőrzése és a bejelentés</h4>
+                <p>Mielőtt mindent rendbe teszel, készíts képernyőképeket: a bejelentkezési értesítésekről, a nevedben küldött üzenetekről és azok dátumáról. Jelentsd a feltörést a szolgáltatásnak. Ha bankkártya volt elmentve a fiókban, értesítsd a bankodat. Ha pénz veszett el, vagy zsarolnak, tegyél feljelentést a rendőrségen; az országod hivatalos bejelentési szolgálata végigvezet a lépéseken.</p>
+
+                <div class="piege">
+                    <span class="titre">Gyakori hiba — feladni a fiókot, és újat nyitni</span>
+                    <p>A reflex érthető: inkább újrakezdeni, mint egy eljárással bajlódni. A régi fiók viszont nyitva marad, a fényképeddel és a neveddel, a támadó pedig tovább ír az ismerőseidnek.</p>
+                    <p>Egy vissza nem szerezhető fiókot legalább jelenteni kell a szolgáltatásnak feltörtként, és szólni kell az ismerőseidnek, hogy az már nem tőled jön.</p>
+                </div>
+
+                <p class="retenir">💡 Figyelmeztesd az ismerőseidet, még mielőtt visszaszerzed a fiókot: a visszaszerzés napokig tart, a csalás perceket.</p>
                 </div>
             </details>
         </section>

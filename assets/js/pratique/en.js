@@ -2116,6 +2116,18 @@ window.PRATIQUE_TEXTES = {
         "Les listes issues de fuites sont rejouées automatiquement sur des centaines d'autres services. Aucun attaquant humain n'intervient.":
             "Lists from breaches are replayed automatically against hundreds of other services. No human attacker is involved.",
 
+        // --- arnaque-aux-proches ---------------------------------------------------------
+        "Ce que ton compte piraté peut coûter à tes proches": "What your hacked account can cost the people close to you",
+        "Un compte piraté sert d'abord à écrire en ton nom. Chaque contact qui te fait confiance est une cible.": "A hacked account is used first to write in your name. Every contact who trusts you is a target.",
+        "Contacts qui reçoivent le message": "Contacts who receive the message",
+        "personnes": "people",
+        "Part qui y croit et envoie l'argent": "Share who believe it and send the money",
+        "Montant demandé à chacun": "Amount asked of each person",
+        "Argent perdu par tes proches": "Money lost by the people close to you",
+        "Proches qui envoient l'argent": "People close to you who send the money",
+        "Messages envoyés en ton nom": "Messages sent in your name",
+        "Prévenir tes contacts par un autre canal prend deux minutes. C'est la seule mesure qui protège ceux qui n'ont aucune raison de se méfier de toi.": "Warning your contacts through another channel takes two minutes. It is the only step that protects the people who have no reason to be wary of you.",
+
         // --- robustesse-2fa ----------------------------------------------------------------
         "Classe tes comptes par exposition": "Rank your accounts by exposure",
         "Tous les comptes ne se valent pas : certains servent à récupérer tous les autres.":

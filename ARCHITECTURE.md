@@ -83,7 +83,9 @@ bouton vers `guides.html`, puis ce qui a bougé ; `guides.html` porte la liste.
 ça compte*. Le catalogue range par matière ; un visiteur arrive avec un ennui.
 Chaque situation a été confrontée au texte de la section avant d'être retenue, et
 deux ont été écartées faute de réponse dans les guides (négocier son salaire, un
-compte piraté) ; le salaire y est entré le même jour, une fois sa leçon écrite. `scripts/poser-situations.js` n'écrit que la phrase et la
+compte piraté) ; chacune y est entrée une fois sa leçon écrite — le salaire le
+11 septembre, le compte piraté le 12. **Pas de leçon, pas d'entrée.** Neuf situations
+depuis le 12 septembre 2026. `scripts/poser-situations.js` n'écrit que la phrase et la
 destination ; le nom du parcours vient de sa carte, le titre de la section vient
 de la page visée. Son `--verifier` rougit si l'un d'eux dérive.
 

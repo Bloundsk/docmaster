@@ -1,5 +1,82 @@
 # Changelog — Clicked
 
+## 2026-09-12 — Une leçon « Quand un compte est piraté », et neuf situations
+
+Demandé par Ludo : écrire la leçon sur le compte piraté, et ajouter une situation à la
+page Guides.
+
+### Ce que le parcours disait déjà, et ce qui manquait
+
+Avant d'écrire, relu le parcours Cybersécurité. **L'avancé traitait déjà la reprise
+après une fuite** (« Reprendre le contrôle, dans le bon ordre » : boîte de secours,
+service, mots de passe réutilisés, règles de transfert, simulateur
+`reflexes-apres-fuite`) — un cas où l'on a encore l'accès. Ce qui manquait vraiment,
+c'est la **prise de contrôle** : le mot de passe ne marche plus, et le compte écrit en
+ton nom. La leçon porte sur ce cas, et renvoie à l'avancé pour les règles de transfert
+au lieu de les répéter.
+
+### La leçon
+
+Cinquième leçon du niveau **intermédiaire** de Cybersécurité (`#compte-pirate`,
+`#hacked-account` en anglais, ancre française en hongrois), après la double
+authentification et ses codes de secours, qui servent à reprendre un compte. Quatre
+temps :
+
+- **Tes proches d'abord, par un autre canal** : un compte piraté sert à écrire en ton
+  nom (« peux-tu m'avancer 250 € », « envoie-moi le code que tu vas recevoir ») ; les
+  prévenir prend deux minutes, la récupération des jours. Exemple chiffré, présenté
+  comme une hypothèse : 300 contacts, 1 % qui y croit, 250 € demandés — 3 proches,
+  750 € perdus.
+- **Reprendre l'accès, par la seule porte officielle** — et les « experts en
+  récupération » payants nommés pour ce qu'ils sont : une seconde arnaque.
+- **Fermer les portes** : mot de passe unique, sessions déconnectées, double
+  authentification, nouveaux codes de secours, adresse et numéro de récupération,
+  applications autorisées ; renvoi vers l'avancé pour les règles de transfert.
+- **Garder les traces, et signaler** : captures, signalement au service, banque si une
+  carte était enregistrée, plainte si de l'argent est perdu ou en cas de chantage.
+  cybermalveillance.gouv.fr est nommé en français ; en anglais et en hongrois, il
+  devient « le service officiel de signalement de ton pays », comme ailleurs.
+
+Erreur fréquente : abandonner le compte pour en ouvrir un autre — l'ancien continue
+d'écrire à tes contacts. L'objectif du niveau le mentionne désormais, dans les trois
+langues.
+
+### Ce qui l'accompagne
+
+- **Un simulateur**, « Ce que ton compte piraté peut coûter à tes proches »
+  (`arnaque-aux-proches`), traduit en anglais et en hongrois. Ses valeurs par défaut
+  redonnent l'exemple : 750 €, 3 proches, 300 messages (« €750 », « 750 EUR »).
+- **Six questions par langue**, bonne réponse au même rang dans les trois ; la banque
+  passe de 10/11/9 à 12/12/12 réponses par position. Deux fois la plus longue, deux
+  fois celle du milieu, deux fois la plus courte, en français.
+- La recherche (une entrée, « compte piraté » dans les mots-clés du niveau), les trois
+  sommaires du parcours (5 sections), les durées (3 min, 3 min, 2 perc) et les accueils
+  (171 leçons, 1 278 questions par langue).
+
+### Les situations : neuf au lieu de sept
+
+- **« On a piraté mon compte »** mène à la nouvelle leçon — écartée le 10 septembre
+  faute de leçon, elle entre avec elle.
+- **« Je croule sous les messages »** mène à *Productivité · Intermédiaire · Traiter les
+  flux entrants*, relue avant d'être retenue : traiter par lots, une décision par
+  élément, ne pas ouvrir la journée sur ses messages. Elle amène un parcours qui
+  n'avait pas de situation. Deux autres candidates ont été lues et gardées de côté :
+  les limites de l'IA, la durée de vie des appareils.
+- **La septième carte seule** : mesuré à 1 280 px, les neuf cartes se rangent 3-3-3.
+  À 768 px, elles font 2-2-2-2-1 — la dernière reste seule sur tablette, comme la
+  septième l'était déjà. Noté dans `CHANTIERS.md` comme petite décision, sans urgence.
+
+### Vérifications
+
+| Contrôle | Résultat |
+|---|---|
+| 18 contrôles de l'intégration continue, 28 paires de traduction | verts |
+| Traduction des simulateurs de Cybersécurité (en, hu) | « Rien ne manque » |
+| Position et longueur des réponses | dans les bornes ; la plus longue rapporte 33,9 / 35,2 / 34,1 % (fr / en / hu) |
+| `audit-geometrie` | 1 265 mesures, 41 gabarits, 0 anomalie |
+| Navigateur, trois langues | la leçon s'ouvre depuis son ancre, le simulateur affiche l'exemple sans mot restant d'une autre langue, le quiz de la section pose les nouvelles questions, 0 erreur |
+| Page Guides | 9 entrées, chacune vers la bonne section ; 3-3-3 à 1 280 px, 2-2-2-2-1 à 768 px |
+
 ## 2026-09-12 — Mon espace en hongrois : la traduction hongroise est complète
 
 ### Ce qui est publié

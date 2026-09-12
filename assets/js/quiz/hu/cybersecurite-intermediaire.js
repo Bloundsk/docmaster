@@ -268,6 +268,70 @@ window.QUIZ = {
                 a: 2,
                 explication: "Mielőtt telepítesz egy biztonsági eszközt, hasznos reflex utánanézni, ki finanszírozza."
             }
+        ],
+
+        // ---------------------------------------------------------------
+        "compte-pirate": [
+            {
+                q: "Feltörték a fiókodat, és a támadó az ismerőseidnek ír. Mi az első lépés?",
+                options: [
+                    "Törölni a fiókot, hogy megszűnjenek az üzenetek",
+                    "Várni, amíg visszakapod a hozzáférést, hogy rendesen intézkedhess",
+                    "Figyelmeztetni az ismerőseidet egy másik csatornán"
+                ],
+                a: 2,
+                explication: "A visszaszerzés napokig tarthat; a csalás már az első percekben az ismerőseidet célozza. SMS-ben vagy telefonon szólni nekik nem függ a fiókhoz való hozzáféréstől."
+            },
+            {
+                q: "Egy „fiók-visszaszerzési szakértő” pénzért felajánlja, hogy visszaszerzi a fiókodat. Mi ez?",
+                options: [
+                    "Egy második csalás, amely az első áldozatait célozza",
+                    "Hasznos szolgáltatás, ha a hivatalos eljárás nem működik",
+                    "Legális ajánlat, ha csak a fiók visszaszerzése után kell fizetni"
+                ],
+                a: 0,
+                explication: "Senki sem szerez vissza fiókot pénzért. Akik egy figyelmeztető üzenet után jelentkeznek, tudják, hogy egy sietős áldozathoz szólnak."
+            },
+            {
+                q: "Visszaszerezted a fiókodat, és lecserélted a jelszót. Mi engedheti még be a támadót?",
+                options: [
+                    "Semmi, az új jelszó minden meglévő hozzáférést megszüntet",
+                    "Csak a böngésződ előzményei",
+                    "Egy még nyitott munkamenet, vagy egy általa megadott helyreállítási cím"
+                ],
+                a: 2,
+                explication: "A jelszócsere nem zár le egy már nyitott munkamenetet, és nem távolítja el a támadó által hozzáadott helyreállítási címet vagy számot. Ezeket egyenként kell ellenőrizni."
+            },
+            {
+                q: "Miért hiba feladni egy feltört fiókot, és újat nyitni?",
+                options: [
+                    "Mert az új fiókot ugyanúgy fel fogják törni",
+                    "A régi aktív marad, és a támadó tovább ír a nevedben",
+                    "Mert a szolgáltatás díjat számít fel a fiókok bezárásáért"
+                ],
+                a: 1,
+                explication: "A magára hagyott fiók megőrzi a nevedet és a fényképedet. Amíg nincs feltörtként bejelentve, az ismerőseid megtévesztésére szolgál."
+            },
+            {
+                q: "Mit érdemes megőrizni, mielőtt rendbe teszed a fiókot?",
+                options: [
+                    "Képernyőképeket az értesítésekről és a küldött üzenetekről, dátummal",
+                    "Semmit, mert a nyomokat később felhasználhatják ellened",
+                    "Az összes jelszó listáját, amelyet a fiók létrehozása óta használtál"
+                ],
+                a: 0,
+                explication: "A képernyőképek a bejelentéshez, és ha pénz veszett el, a feljelentéshez kellenek. Ha a fiók rendbe van téve, ezek a nyomok eltűnnek."
+            },
+            {
+                q: "Bankkártya volt elmentve a feltört fiókban. Mit teszel?",
+                options: [
+                    "Semmit, amíg nem jelenik meg gyanús vásárlás a kivonataidon",
+                    "Törlöd a fiókból, és kész",
+                    "Értesíted a bankodat, anélkül hogy gyanús vásárlásra várnál"
+                ],
+                a: 2,
+                explication: "Egy elmentett fizetési eszközt felhasználhattak, vagy később felhasználhatnak. A bank figyelheti vagy letilthatja a kártyát; a fiókból való törlés nem teszi semmissé, ami már megtörtént."
+            }
         ]
     },
 

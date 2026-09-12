@@ -272,6 +272,72 @@ window.QUIZ = {
                 a: 2,
                 explication: "Before installing a security tool, looking up who funds it is a useful habit."
             }
+        ],
+
+        // ---------------------------------------------------------------
+        "hacked-account": [
+            // Series 1
+            {
+                q: "Your account has been hacked and the attacker is writing to your contacts. What comes first?",
+                options: [
+                    "Delete the account to put a stop to the messages",
+                    "Wait until you have access again, so you can act properly",
+                    "Warn the people close to you through another channel"
+                ],
+                a: 2,
+                explication: "Recovery can take days; the scam targets your contacts in the first minutes. Warning them by text or phone does not depend on having access to the account."
+            },
+            {
+                q: "A “recovery expert” offers to get your account back for a fee. What is it?",
+                options: [
+                    "A second scam aimed at the victims of the first",
+                    "A useful service when the official procedure fails",
+                    "A legal offer, as long as you pay once the account is recovered"
+                ],
+                a: 0,
+                explication: "Nobody recovers an account for payment. Those who turn up after a warning message know they are talking to a victim in a hurry."
+            },
+            {
+                q: "You have taken your account back and changed the password. What can still let the attacker in?",
+                options: [
+                    "Nothing, the new password cuts every existing access",
+                    "Only your browser history",
+                    "A session still open, or a recovery address of their own"
+                ],
+                a: 2,
+                explication: "Changing the password does not close a session that is already open, nor remove a recovery address or number the attacker added. They have to be checked one by one."
+            },
+            // Series 2
+            {
+                q: "Why is abandoning a hacked account for a new one a mistake?",
+                options: [
+                    "Because the new account will be hacked the same way",
+                    "The old one stays active, and the attacker keeps writing in your name",
+                    "Because the service charges for closing accounts"
+                ],
+                a: 1,
+                explication: "The abandoned account keeps your name and photo. Until it is reported as hacked, it is used to deceive your contacts."
+            },
+            {
+                q: "Before cleaning up the account, what should you keep?",
+                options: [
+                    "Screenshots of the alerts and of the messages sent, with their dates",
+                    "Nothing, as the traces could be used against you later",
+                    "The list of every password you have used on this account since it was created"
+                ],
+                a: 0,
+                explication: "The screenshots serve for the report and, if money was lost, for the police report. Once the account is cleaned up, those traces are gone."
+            },
+            {
+                q: "A bank card was saved on the hacked account. What do you do?",
+                options: [
+                    "Nothing, as long as no suspicious purchase shows on your statements",
+                    "You remove it from the account, and that is all",
+                    "You tell your bank, without waiting for a suspicious purchase"
+                ],
+                a: 2,
+                explication: "A saved payment method may have been used, or may be used later. The bank can monitor or block the card; removing it from the account does not undo what has already been done."
+            }
         ]
     },
 

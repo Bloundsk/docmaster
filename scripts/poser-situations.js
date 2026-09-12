@@ -17,8 +17,12 @@
  * pire que pas d entree.
  *
  * Le salaire a ete ajoute le 11 septembre 2026, une fois sa lecon ecrite
- * (Negociation, niveau intermediaire). Le compte pirate attend toujours la
- * sienne : pas de lecon, pas d entree.
+ * (Negociation, niveau intermediaire). Le compte pirate l a ete le 12 septembre
+ * 2026, avec la sienne (Cybersecurite, niveau intermediaire) — pas de lecon,
+ * pas d entree. Le meme jour, « je croule sous les messages » a rejoint la
+ * liste : la section « Traiter les flux entrants » y repond point par point
+ * (traiter par lots, une decision par element, ne pas ouvrir la journee sur
+ * ses messages), relue avant d etre retenue.
  *
  * CE QUI EST ECRIT ICI, ET CE QUI EST RELU
  *
@@ -55,6 +59,9 @@ const SITUATIONS = [
     { sujet: "cybersecurite", niveau: "debutant", ancres: { fr: "le-phishing", en: "phishing" },
       texte: { fr: "J'ai reçu un message qui me presse de cliquer", en: "I got a message urging me to click",
                hu: "Olyan üzenetet kaptam, amely sürget, hogy kattintsak" } },
+    { sujet: "cybersecurite", niveau: "intermediaire", ancres: { fr: "compte-pirate", en: "hacked-account" },
+      texte: { fr: "On a piraté mon compte", en: "Someone has hacked my account",
+               hu: "Feltörték a fiókomat" } },
     { sujet: "droit", niveau: "debutant", ancres: { fr: "ecrire-pour-que-ca-compte", en: "writing-that-counts" },
       texte: { fr: "Un vendeur refuse de me rembourser", en: "A seller in France won't refund me",
                hu: "Egy franciaországi eladó nem akarja visszaadni a pénzemet" } },
@@ -73,6 +80,9 @@ const SITUATIONS = [
     { sujet: "apprendre", niveau: "debutant", ancres: { fr: "se-tester-plutot-que-relire", en: "testing-rather-than-rereading" },
       texte: { fr: "Je révise et j'oublie tout", en: "I revise and forget everything",
                hu: "Tanulok, és mindent elfelejtek" } },
+    { sujet: "productivite", niveau: "intermediaire", ancres: { fr: "traiter-les-flux", en: "handling-streams" },
+      texte: { fr: "Je croule sous les messages", en: "I'm drowning in messages",
+               hu: "Elárasztanak az üzenetek" } },
 ];
 
 const LIBELLES = {
