@@ -100,6 +100,24 @@ sont refusés ; « pourquoi le meilleur modèle n'existe pas » passe. Les dates
 en dur du 11 au 19 août, sont devenues relatives au jour du test : à trente jours, elles
 auraient fait échouer les tests pour une raison étrangère à ce qu'ils éprouvent.
 
+### La troisième passe
+
+Relus après la seconde relance, sept articles encore en ligne restaient douteux. Ludo
+les a fait retirer (rapports n° 67, 70, 71, 80, 82, 86 et 90) :
+
+- Trois articles de sources invérifiables : « Universidad de Guadalajara », et
+  « Demócrata » deux fois.
+- « Le Dyson CameraJet… » (Pasquale Pillitteri), un blog sur une brosse à dents, rangé
+  sous *La surface d'attaque*.
+- « Binance renforce sa présence… » (TradingView), rangé sous *Les ETF*.
+- « La pédagogie… un transfert de contenu » (Nice-Matin), rangé sous *Le transfert*.
+- « Au Niger, apprendre un métier… » (UNICEF), rangé sous *Construire son système*.
+
+Les cases ont été décochées par lien et par titre, pour qu'une copie du même article
+dans un autre rapport ne revienne pas. Aucune règle n'a changé : ce sont des articles,
+pas des familles. Sept articles plus anciens ont pris les places libérées (le plus vieux
+date du 30 août), sans doublon ni section à plus de trois.
+
 ## 2026-09-12 — Douze situations : plus aucune carte seule
 
 ### Pourquoi douze
