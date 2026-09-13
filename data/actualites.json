@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-13T13:24:48.830Z",
+  "maj": "2026-09-13T13:25:19.546Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
@@ -335,6 +335,76 @@
       "sujet": "🔒 Cybersécurité — Débutant",
       "langue": "fr",
       "site": "",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZmRzR2xtUVdTUGJWWHYwcVBpNmpGTEJQRVN6ZENOZEJGLXdUM0tzSWt6YUoxQTlyQmZDVUNJRVg0b1RDWEZwZlhWTXdOdUxVcW1EclVVNlFvM1l0cUd1UTNNdHdLVmhBdWhJVUhNX0plREhLWkVvNS1fNE9Ial8wOXozY2VxdU9wMDh1QTFPUDVlaW1j?oc=5",
+      "titre": "Florida sues Netflix over misleading parents over minors’ data collection",
+      "source": "The Guardian",
+      "date": "2026-09-11",
+      "guide": "data",
+      "page": "debutant.html",
+      "ancre": "data-collection",
+      "section": "🗂️ Data collection",
+      "sujet": "📊 Data & Analytics — Beginner",
+      "langue": "en",
+      "site": "theguardian.com",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGRRVFRPMzF6Rm9renM0LTg4aFEwOWE2aVJGY012b1BrMWdHbTZCRVFmaE5jYjkxZjJUQU9ZWTdUR0NtbXlHeC1aaVllSloxMllYeWlfTFUxXzNTVUl3cm80TTZGUFlTYXo3cWdsb3JZU2dvamxxbnRqa2pBM01UcUFSbWc3WVFEaW1tVDJHTDFlZmU3VWxZaVhGcDBBVzRSOEg4?oc=5",
+      "titre": "Mark Ritson: Digital marketing’s endgame was always automation. Strategy matters again",
+      "source": "The Drum",
+      "date": "2026-09-07",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "email-marketing",
+      "section": "✉️ Email marketing",
+      "sujet": "📢 Digital Marketing — Beginner",
+      "langue": "en",
+      "site": "thedrum.com",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVDBsRE5fbDNEYlVhOHJhU3JUUkR6WW93LUc2TUstZFBJLWhObFE0SXMzUV9HLXNQcU84MjYwdzlZcnZ5bS0zTFpQUWNIdVkwRHluNGFsdDJpcUdFZ3V6N0FtcTd2c0ZKNV9Oa05yeW41TXpRdEFEMTJwQVA4VldsOURxYUo4dUE2Vm5INEloZkpZMmx2SExkWHFjblhKUFVZdjNzYg?oc=5",
+      "titre": "I’m 78 with a £750,000 pension but still work as a tour guide four days a week",
+      "source": "The i Paper",
+      "date": "2026-09-05",
+      "guide": "sante",
+      "page": "debutant.html",
+      "ancre": "sitting-still",
+      "section": "🚶 Sitting still",
+      "sujet": "🩺 Health at Work — Beginner",
+      "langue": "en",
+      "site": "inews.co.uk",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcmZ0Y0IxNnpucGFSR3M0Q2U2b0t1YldRMXpqUHEtLWk1cE9ZSmJhTnBfWnoycFhQcUdzanY4WWJ1UW9JQ2p4UTQ2RjJoQV9IbkpQVThiOWRjMGU2SFVfLTFpMjlGOUtmcVRvZzdKMjhrRjhYYk80bm5zaG04RlVkRzVUV3h6b1hxRjY1WmNhdEtoTTh1UjF1MEpacGI0dXZOMm04UjBpNU5wOHJCNVJSMVlrSUNmVkg1TlhZRkhVdkdpSmZF?oc=5",
+      "titre": "$1T investment giant Apollo breached after social engineering attack",
+      "source": "The Register",
+      "date": "2026-08-24",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "social-engineering",
+      "section": "🎭 Targeted social engineering",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "theregister.com",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTVUwRER2YzVSZ2tZZTNrVExxREJIajA3RktuM3VSRzU5akZfaUwtRUM3d0NUdVFPTk1DUml0a0NrRFJ2MjNoeXVMZVJTVTI4dE9HZE9FSWYydzVKanlLSV9BV1RjSm1LbXAxaUpwRVNHVFVYVU9PNzJnd3BRTkJBdDkzNHRfc2JJOHB2d19URm56VDQ?oc=5",
+      "titre": "How to build an inclusive curriculum design toolkit | THE Campus Learn, Share, Connect",
+      "source": "Times Higher Education",
+      "date": "2026-08-18",
+      "guide": "apprendre",
+      "page": "avance.html",
+      "ancre": "building-your-system",
+      "section": "📐 Building your system",
+      "sujet": "🎓 Learning how to learn — Advanced",
+      "langue": "en",
+      "site": "timeshighereducation.com",
       "publie": "2026-09-13"
     },
     {
