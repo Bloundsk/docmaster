@@ -191,8 +191,16 @@ async function controler(d, w, largeur, nomPage) {
         if (part < 0.9) ko(`${g.nom} : occupe sa largeur`, `${largeurDe(el)} px sur ${Math.round(dispo)} (${Math.round(part * 100)} %)`);
         else ok(`${g.nom} : occupe sa largeur`, `${largeurDe(el)} px`);
 
-        /* 4. Le nombre de colonnes annoncé est celui qu'on obtient. */
-        const attendu = g.colonnes[largeur];
+        /* 4. Le nombre de colonnes annoncé est celui qu'on obtient — sans
+           réclamer plus de colonnes qu'il n'y a d'éléments à y ranger.
+           Défaut vécu le 13 septembre 2026 : la page hongroise des actualités
+           n'avait qu'un article, donc une colonne, et l'audit en exigeait deux.
+           La grille était juste ; c'est la promesse qui ne tenait pas compte
+           du contenu. */
+        const cases = [...el.children]
+            .filter((e) => getComputedStyle(e).gridColumn !== "1 / -1" && largeurDe(e) > 0).length;
+        const promis = g.colonnes[largeur];
+        const attendu = promis === undefined ? undefined : Math.min(promis, Math.max(cases, 1));
         if (attendu !== undefined) {
             const vu = colonnesDe(el);
             if (vu !== attendu) ko(`${g.nom} : ${attendu} colonne(s)`, `${vu} obtenue(s)`);

@@ -148,6 +148,11 @@ suffixe de domaine (« Le Monde.fr », « Capital.fr »). Vérifié sur les vrai
 de l'historique : tous ceux qui passaient passent encore, sauf RTL Info. Un cas de
 plus au test 17, avec son témoin.
 
+Le contrôle de géométrie est alors passé au rouge, sans défaut d'affichage : la
+page hongroise n'avait qu'un article, donc une colonne, et l'audit en exigeait
+deux en grand écran. Il ne réclame plus davantage de colonnes qu'il n'y a
+d'éléments à ranger.
+
 ## 2026-09-13 — La veille vérifiée : doublons, articles retirés, trois par section
 
 Demandé par Ludo : vérifier la veille automatique et ce qu'elle publie.
