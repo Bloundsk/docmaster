@@ -49,6 +49,84 @@ anglais, est rédigé d'après ce que dit l'épisode.
   avant, n'a pas eu lieu. Les notebooks Marketing et Cybersecurity ont leur
   source ; il reste à générer.
 
+## 2026-09-13 — Une veille par langue, dans les médias reconnus du pays
+
+Demandé par Ludo : chaque langue du site correspond à un pays où elle est parlée. La
+veille doit chercher dans les médias les plus lus de ce pays, puis dans les médias
+spécialisés et reconnus du domaine de chaque guide. Exemples donnés : The Times,
+The Sun, Le Progrès, Le Figaro, BFM Business, le Défenseur des droits.
+
+### Avant
+
+- Une seule veille, en français, sur tout Google News. Les pages anglaise et hongroise
+  montraient les mêmes articles français, en prévenant qu'ils étaient en français.
+- N'importe quelle source pouvait paraître. La liste des sources écartées courait
+  après chacune (Vietnam.vn, Presse Agence, Lelezard…), et chaque retrait en faisait
+  remonter une autre.
+
+### Ce qui est fait
+
+- **La liste des médias**, `scripts/actualites-medias.js` : France (97 domaines),
+  Royaume-Uni (67), Hongrie (58). Les généralistes suivent les classements d'audience
+  (ACPM, août 2026 ; Press Gazette ; Gemius et Ahrefs), tabloïds compris. Les
+  spécialisés sont rangés par guide. Chacun des 250 domaines candidats a été sondé dans
+  Google News sur trente jours : ceux qui n'y publient rien sont exclus (lci.fr,
+  ajbh.hu…). Écartés exprès : comparateurs et bons plans (MoneySavingExpert,
+  TechRadar, Frandroid, Bankmonitor…) et sites d'annonces.
+- **Seuls ces médias paraissent** : `mediaReconnu()` dans `actualites-regles.js`, à
+  la veille comme à la publication. Le média est reconnu par son domaine ; un
+  sous-domaine n'est pas le site (carnet.sudouest.fr publie des avis de décès). Les
+  articles d'avant, sans domaine, sont jugés sur leur nom.
+- **Une veille par langue** : `veille.js` lit les guides anglais et hongrois et cherche
+  dans l'édition britannique ou hongroise de Google News. Chaque page Actualités ne
+  montre que les articles de sa langue (24 au plus, 3 par section), avec un lien vers
+  la section du guide dans cette langue.
+- **Les règles de titre en anglais et en hongrois** : palmarès, bons plans, contenu
+  sponsorisé (« (x) » en hongrois). La pertinence suit la langue : pluriels et « -ing »
+  en anglais, racines communes en hongrois, qui est une langue à suffixes.
+- **Les offres d'emploi refusées**, dans les trois langues.
+- Le mode `--essai` : la veille complète, sans rien écrire sur GitHub.
+- Mentions légales (fr, en, hu) et accroche de l'accueil : chaque page dit la presse
+  qu'elle cite.
+- Tests 17 à 19 dans `test-actualites.mjs`, chacun avec ses témoins.
+
+### L'essai, avant toute publication
+
+- **Français** : 16 articles retenus, dont 3 mauvais — deux offres d'emploi de Welcome
+  to the Jungle, une fiche de fonds de Boursorama. Les deux sites sont retirés.
+- **Anglais** : 16 articles retenus, dont 5 mauvais — deux offres d'emploi du BMJ, une
+  de Citizens Advice, un registre de GOV.UK, une fiche d'exercices de Tes. Les quatre
+  sites sont retirés, et la règle « offre d'emploi » est née de ces deux essais.
+- **Hongrois** : l'essai n'a pas pu tourner. Google News a bloqué la connexion
+  locale après environ 1 300 requêtes en moins d'une heure (sondage des médias et
+  deux essais compris), et le blocage durait encore une heure et demie plus tard.
+  Ludo a choisi de publier sans l'attendre : le premier passage hongrois se fait
+  directement sur GitHub, et ses articles se relisent dans le rapport comme les
+  autres — décocher une case les retire. Les règles hongroises n'ont donc été
+  éprouvées que par les tests (racines communes, « (x) », offres d'emploi).
+
+### Ce que l'essai a appris
+
+- Une recherche qui mêle grands titres et spécialisés ne rend que des grands titres :
+  quatre sites spécialisés interrogés seuls donnaient cent articles, mêlés à Le Monde et
+  au Figaro, aucun. Les médias sont donc interrogés par groupes séparés.
+- Deux recherches par section dans trois langues font près de mille requêtes : Google
+  News a cessé de répondre (HTTP 503) pendant l'essai hongrois. D'où la forme retenue :
+  **une recherche par section**, spécialisés et généralistes en alternance d'un passage
+  à l'autre ; **une langue par passage**, six horaires au lieu de deux ; et **arrêt
+  après cinq refus de suite**, dit dans le rapport, au lieu de tourner à vide.
+
+### Ce que ça change en ligne
+
+- Page française : 9 des 24 articles actuels restent. Les 15 autres partent, faute
+  d'être dans la liste (Le Devoir, Isarta, moustique.be, L'École branchée…).
+- Pages anglaise et hongroise : vides jusqu'au premier passage de leur veille. Les
+  trois veilles ont été lancées à la main juste après la mise en ligne, une par
+  langue, pour ne pas attendre le lendemain matin.
+- Une recherche par section au lieu de deux : chaque passage trouve moins
+  d'articles que les essais (seize par langue). Les pages se remplissent en deux ou
+  trois jours.
+
 ## 2026-09-13 — La veille vérifiée : doublons, articles retirés, trois par section
 
 Demandé par Ludo : vérifier la veille automatique et ce qu'elle publie.

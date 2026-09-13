@@ -26,7 +26,7 @@ fs.mkdirSync(path.join(BAC, "hu"), { recursive: true });
    le test tombait sur MODULE_NOT_FOUND — même défaut que le jour où il ne
    copiait que deux des quatre pages. Ce qu'un script lit, le bac doit
    l'avoir. */
-for (const f of ["publier-actualites.js", "actualites-regles.js"]) {
+for (const f of ["publier-actualites.js", "actualites-regles.js", "actualites-medias.js"]) {
     fs.copyFileSync(path.join(RACINE, "scripts", f), path.join(BAC, "scripts", f));
 }
 
@@ -48,7 +48,7 @@ for (const p of PAGES) fs.copyFileSync(path.join(RACINE, p), path.join(BAC, p));
 const ilYaJours = (j) => new Date(Date.now() - j * 86400000).toISOString().slice(0, 10);
 
 const METAS = {
-    "https://news.google.com/a": { titre: "Phishing : la cybersécurité des PME en question", source: "itdaily.fr", date: ilYaJours(3), guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing", section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" },
+    "https://news.google.com/a": { titre: "Phishing : la cybersécurité des PME en question", source: "Numerama", site: "numerama.com", date: ilYaJours(3), guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing", section: "Le phishing", sujet: "🔒 Cybersécurité — Débutant" },
     "https://news.google.com/b": { titre: "Épargne & finance : les taux <en 2026>", source: "Le Monde", date: ilYaJours(2), guide: "finance", page: "debutant.html", ancre: "lépargne", section: "L'épargne", sujet: "💰 Finance — Débutant" },
     "https://news.google.com/c": { titre: "Les LLM et l'intelligence artificielle en entreprise", source: "spam.example", date: ilYaJours(4), guide: "ia", page: "debutant.html", ancre: "les-llm", section: "Les LLM", sujet: "🤖 Intelligence Artificielle — Débutant" }
 };
@@ -123,21 +123,19 @@ verifier("lien vers la section du guide", page2.includes('href="guides/cybersecu
 verifier("liens externes protégés", (page2.match(/rel="noopener noreferrer"/g) || []).length === 2);
 verifier("l'état vide a disparu", !page2.includes("Aucune actualité retenue"));
 
-/* Les quatre pages, et pas seulement les deux francaises. Le titre d article
-   reste en francais partout — un titre traduit ne se retrouve plus — mais ce
-   que le site ecrit AUTOUR doit suivre la langue de la page. */
+/* Les six pages sont réécrites, et pas seulement les françaises. Depuis le 13
+   septembre 2026, chaque langue a ses propres articles : un article français
+   ne paraît QUE sur les pages françaises. Les pages anglaise et hongroise, qui
+   n'ont ici aucun article de leur langue, montrent leur état vide — dans leur
+   langue. L'essai 17 vérifie l'autre moitié : un article anglais y paraît. */
 const pageEn = lirePage("en/actualites.html");
-verifier("la page anglaise est écrite aussi", pageEn.includes("Phishing : la cybersécurité des PME en question"));
-verifier("elle est rédigée en anglais", pageEn.includes("Related to") && !pageEn.includes("En rapport avec"));
-verifier("elle renvoie vers le guide anglais", pageEn.includes('href="guides/cybersecurite/debutant.html"'));
-verifier("l'accueil anglais aussi", lirePage("en/index.html").includes("Read elsewhere"));
-/* Le hongrois garde les ancres françaises : son lien vers le guide peut viser
-   la section, contrairement à l'anglais. */
+verifier("la page anglaise ne montre pas l'article français", !pageEn.includes("Phishing : la cybersécurité des PME en question"));
+verifier("elle montre son état vide, en anglais", pageEn.includes("No article selected") && !pageEn.includes("Aucune actualité"));
+verifier("l'accueil anglais n'a pas de rubrique vide", !lirePage("en/index.html").includes("Read elsewhere"));
 const pageHu = lirePage("hu/actualites.html");
-verifier("la page hongroise est écrite aussi", pageHu.includes("Phishing : la cybersécurité des PME en question"));
-verifier("elle est rédigée en hongrois", pageHu.includes("Kapcsolódó útmutató:") && !pageHu.includes("Related to"));
-verifier("son lien vise la section française", pageHu.includes("guides/cybersecurite/debutant.html#le-phishing"));
-verifier("l'accueil hongrois aussi", lirePage("hu/index.html").includes("Máshol olvasva"));
+verifier("la page hongroise ne montre pas l'article français", !pageHu.includes("Phishing : la cybersécurité des PME en question"));
+verifier("elle montre son état vide, en hongrois", pageHu.includes("Egyelőre nincs kiválasztott cikk"));
+verifier("l'accueil hongrois n'a pas de rubrique vide", !lirePage("hu/index.html").includes("Máshol olvasva"));
 verifier("l'accueil français reste français", lirePage("index.html").includes("À lire ailleurs"));
 
 const accueil2 = lirePage("index.html");
@@ -300,13 +298,16 @@ console.log("\n=== 10. LE HORS-SUJET EST REFUSE ===");
 const horsSujet = {
     "https://news.google.com/hs1": {
         titre: "La diversification économique face au piège des annonces",
-        source: "Le Matin", date: new Date().toISOString().slice(0, 10),
+        // Les sources des cas 10 a 16 sont des medias de la liste : sans cela,
+        // la regle des medias refuserait l article avant la regle eprouvee,
+        // et le test serait vert pour une autre raison.
+        source: "Le Figaro", date: new Date().toISOString().slice(0, 10),
         guide: "finance", page: "avance.html", ancre: "la-diversification-reelle",
         section: "La diversification réelle", sujet: "💰 Finance — Avancé",
     },
     "https://news.google.com/hs2": {
         titre: "BJ's (BJRI): Buy, Sell, or Hold Post Q2 Earnings?",
-        source: "TradingView", date: new Date().toISOString().slice(0, 10),
+        source: "Capital", date: new Date().toISOString().slice(0, 10),
         guide: "entrepreneuriat", page: "avance.html", ancre: "les-unit-economics",
         section: "Les unit economics", sujet: "🚀 Entrepreneuriat — Avancé",
     },
@@ -340,7 +341,7 @@ console.log("\n=== 11. UN MOT DOIT VENIR DE LA SECTION ===");
 const malRange = {
     "https://news.google.com/mr1": {
         titre: "Couleurs, influenceurs et algorithmes : comment le marketing digital cible les enfants",
-        source: "SNRTnews", date: new Date().toISOString().slice(0, 10),
+        source: "Le Parisien", date: new Date().toISOString().slice(0, 10),
         guide: "marketing", page: "avance.html", ancre: "le-cadre-juridique",
         section: "Le cadre juridique", sujet: "📢 Marketing Digital — Avancé",
     },
@@ -440,7 +441,7 @@ const phishing = { guide: "cybersecurite", page: "debutant.html", ancre: "le-phi
 fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
 const doublons = {
     "https://news.google.com/d1": { ...phishing, titre: "Phishing : la cybersécurité des PME en question", source: "Le Figaro", date: ilYa(1) },
-    "https://news.google.com/d2": { ...phishing, titre: "Phishing: la cybersécurité des PME en question", source: "TradingView", date: ilYa(1) },
+    "https://news.google.com/d2": { ...phishing, titre: "Phishing: la cybersécurité des PME en question", source: "Le Monde", date: ilYa(1) },
 };
 etatIssues = [{
     number: 1,
@@ -462,11 +463,11 @@ verifier("l'écart est dit", /doublon/.test(sortie13), sortie13.trim().slice(0, 
 console.log("\n=== 14. AU PLUS TROIS ARTICLES PAR SECTION ===");
 fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
 const plafond = {
-    "https://news.google.com/p1": { ...phishing, titre: "Phishing : la cybersécurité des hôpitaux mise à l'épreuve", source: "A", date: ilYa(1) },
-    "https://news.google.com/p2": { ...phishing, titre: "Phishing : la cybersécurité des écoles face aux faux courriels", source: "B", date: ilYa(2) },
-    "https://news.google.com/p3": { ...phishing, titre: "Phishing : la cybersécurité des mairies en alerte", source: "C", date: ilYa(3) },
-    "https://news.google.com/p4": { ...phishing, titre: "Phishing : la cybersécurité des artisans trop souvent négligée", source: "D", date: ilYa(4) },
-    "https://news.google.com/p5": { titre: "Finance et épargne : le livret garde la cote", source: "E", date: ilYa(5),
+    "https://news.google.com/p1": { ...phishing, titre: "Phishing : la cybersécurité des hôpitaux mise à l'épreuve", source: "Le Monde", date: ilYa(1) },
+    "https://news.google.com/p2": { ...phishing, titre: "Phishing : la cybersécurité des écoles face aux faux courriels", source: "Le Figaro", date: ilYa(2) },
+    "https://news.google.com/p3": { ...phishing, titre: "Phishing : la cybersécurité des mairies en alerte", source: "Libération", date: ilYa(3) },
+    "https://news.google.com/p4": { ...phishing, titre: "Phishing : la cybersécurité des artisans trop souvent négligée", source: "Ouest-France", date: ilYa(4) },
+    "https://news.google.com/p5": { titre: "Finance et épargne : le livret garde la cote", source: "Les Echos", date: ilYa(5),
                                     guide: "finance", page: "debutant.html", ancre: "lépargne",
                                     section: "L'épargne", sujet: "💰 Finance — Débutant" },
 };
@@ -498,9 +499,9 @@ fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
 const epargne = { guide: "finance", page: "debutant.html", ancre: "lépargne",
                   section: "L'épargne", sujet: "💰 Finance — Débutant" };
 const tiret = {
-    "https://news.google.com/t1": { ...epargne, source: "Un journal", date: ilYa(1),
+    "https://news.google.com/t1": { ...epargne, source: "Le Parisien", date: ilYa(1),
         titre: "PARIS : Finance verte - Goodvest lance Rive 3, un produit d'épargne alliant performance et impact écologique" },
-    "https://news.google.com/t2": { ...epargne, source: "Un journal", date: ilYa(1),
+    "https://news.google.com/t2": { ...epargne, source: "Le Parisien", date: ilYa(1),
         titre: "Finance et épargne - le livret garde la cote auprès des ménages" },
 };
 etatIssues = [{
@@ -529,11 +530,11 @@ fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
 const modele = { guide: "ia", page: "intermediaire.html", ancre: "choisir-un-modele",
                  section: "Choisir un modèle", sujet: "🤖 Intelligence Artificielle — Intermédiaire" };
 const palmares = {
-    "https://news.google.com/m1": { ...modele, source: "Un journal", date: ilYa(1),
+    "https://news.google.com/m1": { ...modele, source: "Numerama", date: ilYa(1),
         titre: "Le meilleur OLED de Samsung gagne une version spectaculaire qui cache son design" },
-    "https://news.google.com/m2": { ...modele, source: "Un journal", date: ilYa(1),
+    "https://news.google.com/m2": { ...modele, source: "Numerama", date: ilYa(1),
         titre: "Les 27 meilleurs outils pour choisir un modèle d'IA" },
-    "https://news.google.com/m3": { ...modele, source: "Un journal", date: ilYa(1),
+    "https://news.google.com/m3": { ...modele, source: "Numerama", date: ilYa(1),
         titre: "Choisir un modèle d'IA : pourquoi le meilleur modèle n'existe pas" },
 };
 etatIssues = [{
@@ -547,6 +548,128 @@ verifier("« Le meilleur OLED… » est refusé", !e16.includes("m1"), JSON.stri
 verifier("« Les 27 meilleurs outils… » est refusé", !e16.includes("m2"), JSON.stringify(e16));
 verifier("« pourquoi le meilleur modèle n'existe pas » passe", e16.includes("m3"), JSON.stringify(e16));
 verifier("le refus dit « palmarès »", /palmares/.test(sortie16), sortie16.trim().slice(0, 300));
+
+/* --- 17. Seuls les medias de la liste paraissent ------------------------------
+ *
+ * Demande de Ludo, le 13 septembre 2026 : des medias connus, et rien d autre.
+ * Trois refus, trois temoins. Le refus par domaine inconnu ; le refus d un
+ * sous-domaine (« carnet.sudouest.fr » publie des avis de deces) alors que le
+ * site principal est admis ; le refus d un article ancien, sans domaine, dont
+ * le NOM n est pas dans la liste — c est ainsi que les articles d avant la
+ * regle sont juges. Les titres partagent tous leurs mots avec la section : seul
+ * le media les distingue. */
+console.log("\n=== 17. SEULS LES MÉDIAS DE LA LISTE PARAISSENT ===");
+fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
+const medias = {
+    "https://news.google.com/s1": { ...phishing, date: ilYa(1), source: "Presse Inconnue", site: "presse-inconnue.fr",
+        titre: "Phishing : la cybersécurité des hôpitaux mise à l'épreuve" },
+    "https://news.google.com/s2": { ...phishing, date: ilYa(1), source: "Le Monde.fr", site: "www.lemonde.fr",
+        titre: "Phishing : la cybersécurité des écoles face aux faux courriels" },
+    "https://news.google.com/s3": { ...phishing, date: ilYa(1), source: "sudouest.fr", site: "carnet.sudouest.fr",
+        titre: "Phishing : la cybersécurité des mairies en alerte" },
+    "https://news.google.com/s4": { ...phishing, date: ilYa(2), source: "Sud Ouest", site: "sudouest.fr",
+        titre: "Phishing : la cybersécurité des artisans trop souvent négligée" },
+    "https://news.google.com/s5": { titre: "Finance et épargne : le livret garde la cote", date: ilYa(1),
+        source: "La Semaine du Roussillon", ...epargne },
+    "https://news.google.com/s6": { titre: "Finance et épargne : le livret séduit toujours", date: ilYa(1),
+        source: "Capital.fr", ...epargne },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(medias).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(medias)}\n-->\n`,
+}];
+const sortie17 = lancer();
+const e17 = lireEtat().articles.map((a) => a.lien.split("/").pop());
+verifier("un domaine inconnu est refusé", !e17.includes("s1"), JSON.stringify(e17));
+verifier("témoin : www.lemonde.fr est Le Monde", e17.includes("s2"), JSON.stringify(e17));
+verifier("un sous-domaine non listé est refusé", !e17.includes("s3"), JSON.stringify(e17));
+verifier("témoin : le site principal passe", e17.includes("s4"), JSON.stringify(e17));
+verifier("un article ancien est jugé sur son nom", !e17.includes("s5"), JSON.stringify(e17));
+verifier("témoin : « Capital.fr » est Capital", e17.includes("s6"), JSON.stringify(e17));
+verifier("le refus nomme le site", /média non retenu \(presse-inconnue\.fr\)/.test(sortie17), sortie17.trim().slice(0, 300));
+
+/* --- 18. Chaque langue sur sa page --------------------------------------------
+ *
+ * Un article anglais, un hongrois, un francais. Chacun ne parait que sur la page
+ * de sa langue, avec le lien vers la section de SON guide — l ancre anglaise
+ * « phishing » n est pas la francaise « le-phishing ».
+ *
+ * Les plafonds sont par langue : quatre articles anglais sous la meme section
+ * n empechent pas un quatrieme francais d exister ailleurs, et inversement.
+ * Le temoin francais est la pour cela. */
+console.log("\n=== 18. CHAQUE LANGUE SUR SA PAGE ===");
+fs.rmSync(path.join(BAC, "data/actualites.json"), { force: true });
+const langues = {
+    "https://news.google.com/l1": { langue: "en", site: "theregister.com", source: "The Register", date: ilYa(1),
+        titre: "Phishing kit bypasses cybersecurity protections at UK firms",
+        guide: "cybersecurite", page: "debutant.html", ancre: "phishing",
+        section: "🎣 Phishing", sujet: "🔒 Cybersecurity — Beginner" },
+    "https://news.google.com/l2": { langue: "hu", site: "telex.hu", source: "Telex", date: ilYa(1),
+        titre: "Adathalász e-mailek: így védekezz a kiberbiztonsági támadások ellen",
+        guide: "cybersecurite", page: "debutant.html", ancre: "le-phishing",
+        section: "🎣 Az adathalászat", sujet: "🔒 Kiberbiztonság — Kezdő" },
+    "https://news.google.com/l3": { ...phishing, source: "Le Monde", date: ilYa(1),
+        titre: "Phishing : la cybersécurité des PME en question" },
+    // Un article anglais d un media francais : la liste est celle de SA langue.
+    "https://news.google.com/l4": { langue: "en", site: "lemonde.fr", source: "Le Monde", date: ilYa(1),
+        titre: "Phishing attacks put cybersecurity of French firms to the test",
+        guide: "cybersecurite", page: "debutant.html", ancre: "phishing",
+        section: "🎣 Phishing", sujet: "🔒 Cybersecurity — Beginner" },
+};
+etatIssues = [{
+    number: 1,
+    body: Object.keys(langues).map((l) => `- [x] [x](${l})`).join("\n") +
+          `\n\n<!-- ACTUALITES\n${JSON.stringify(langues)}\n-->\n`,
+}];
+const sortie18 = lancer();
+const fr18 = lirePage("actualites.html"), en18 = lirePage("en/actualites.html"), hu18 = lirePage("hu/actualites.html");
+verifier("l'article anglais est sur la page anglaise", en18.includes("Phishing kit bypasses"), sortie18.trim().slice(0, 300));
+verifier("… et nulle part ailleurs", !fr18.includes("Phishing kit bypasses") && !hu18.includes("Phishing kit bypasses"));
+verifier("il vise l'ancre anglaise", en18.includes('href="guides/cybersecurite/debutant.html#phishing"'));
+verifier("l'article hongrois est sur la page hongroise", hu18.includes("Adathalász e-mailek") && !fr18.includes("Adathalász"));
+verifier("l'article français reste sur la page française", fr18.includes("Phishing : la cybersécurité des PME") && !en18.includes("la cybersécurité des PME"));
+verifier("l'accueil anglais montre sa rubrique", lirePage("en/index.html").includes("Read elsewhere"));
+verifier("un média français n'entre pas sur la page anglaise", !en18.includes("French firms"), en18.slice(0, 200));
+
+/* --- 19. Les regles dans les deux autres langues ------------------------------
+ *
+ * Directement sur le module : ce sont des cas de mots, pas de publication. */
+console.log("\n=== 19. LES RÈGLES EN ANGLAIS ET EN HONGROIS ===");
+const { createRequire } = await import("node:module");
+const regles = createRequire(import.meta.url)(path.join(BAC, "scripts", "actualites-regles.js"));
+const aujourdhui = ilYa(0);
+const juge = (o) => regles.admissible({ date: aujourdhui, ...o });
+verifier("hongrois : « megtakarítások » retrouve « megtakarítás »",
+    juge({ langue: "hu", site: "portfolio.hu", sujet: "💰 Pénzügyek — Kezdő", section: "📊 A megtakarítás",
+           titre: "Rekordot döntött a lakossági megtakarítások állománya a pénzügyi piacokon" }).ok);
+verifier("hongrois : « kor » ne retrouve pas « kormány »",
+    regles.motsCommuns("A kormány döntött", "kor", "hu").length === 0);
+verifier("hongrois : un contenu payé « (x) » est refusé",
+    /sponsorise/.test(juge({ langue: "hu", site: "telex.hu", sujet: "💰 Pénzügyek — Kezdő", section: "📈 A befektetés",
+           titre: "Befektetés és pénzügyek: így indulj el (x)" }).raison || ""));
+verifier("anglais : « tests » retrouve « testing »",
+    regles.motsCommuns("Automated tests catch the bug", "Automated testing", "en").length === 2);
+verifier("anglais : un palmarès est refusé",
+    juge({ langue: "en", site: "bbc.co.uk", sujet: "💰 Finance — Beginner", section: "📦 ETFs",
+           titre: "The 10 best ETFs for finance beginners" }).raison === "palmares");
+verifier("anglais : témoin, un article de fond passe",
+    juge({ langue: "en", site: "ft.com", sujet: "💰 Finance — Beginner", section: "📦 ETFs",
+           titre: "Why ETFs changed personal finance for good" }).ok);
+
+/* Les offres d emploi, cas reels de l essai du 13 septembre 2026, et leur
+   temoin : « le CDI » dans une phrase est un article. */
+const medecine = { sujet: "🩺 Santé au travail — Débutant", section: "🏥 La médecine du travail" };
+verifier("français : « F/H - CDI » est une offre d'emploi",
+    juge({ ...medecine, site: "lemonde.fr", titre: "Infirmier(e) de santé au travail F/H - Framatome - CDI à La Défense" }).raison === "offre d'emploi");
+verifier("français : témoin, « le CDI des infirmiers » passe",
+    juge({ ...medecine, site: "lemonde.fr", titre: "Médecine du travail : le CDI des infirmiers en question" }).ok);
+verifier("anglais : « job with … | 841710 » est une offre d'emploi",
+    juge({ langue: "en", site: "theguardian.com", sujet: "🩺 Health at Work — Beginner", section: "🏥 Occupational medicine",
+           titre: "Consultant in Occupational Medicine - London job with Barts Health NHS Trust | 841710" }).raison === "offre d'emploi");
+verifier("hongrois : « munkatársat keres » est une offre d'emploi",
+    juge({ langue: "hu", site: "hrportal.hu", sujet: "🩺 Munkahelyi egészség — Kezdő", section: "🏥 A foglalkozás-egészségügy",
+           titre: "Foglalkozás-egészségügyi orvos munkatársat keres a kórház" }).raison === "offre d'emploi");
 
 console.log("\n" + (echecs === 0 ? "Tous les tests passent." : `${echecs} test(s) en échec.`));
 process.exit(echecs === 0 ? 0 : 1);

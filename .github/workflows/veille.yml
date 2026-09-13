@@ -6,9 +6,24 @@ on:
     # l evenement schedule est retarde en periode de forte charge, et que
     # "high load times include the start of every hour" : a la minute 0, les
     # executions sont retardees, voire abandonnees. D ou ces minutes decalees.
-    - cron: "23 7 * * *"    # 07h23 UTC
-    - cron: "23 17 * * *"   # 17h23 UTC
+    #
+    # UNE LANGUE PAR PASSAGE, depuis le 13 septembre 2026. Chaque langue a sa
+    # veille, et les trois d affilee faisaient trop de requetes : Google News a
+    # cesse de repondre pendant l essai. Separees de vingt minutes, chacune
+    # refait les 171 recherches que la veille faisait sans incident. La langue
+    # se deduit de l horaire, dans l etape ci-dessous.
+    - cron: "23 7 * * *"    # 07h23 UTC  francais
+    - cron: "43 7 * * *"    # 07h43 UTC  anglais
+    - cron: "3 8 * * *"     # 08h03 UTC  hongrois
+    - cron: "23 17 * * *"   # 17h23 UTC  francais
+    - cron: "43 17 * * *"   # 17h43 UTC  anglais
+    - cron: "3 18 * * *"    # 18h03 UTC  hongrois
   workflow_dispatch:
+    inputs:
+      langue:
+        description: "fr, en ou hu (une seule : les trois d'affilée font trop de requêtes)"
+        required: true
+        default: "fr"
 
 permissions:
   issues: write
@@ -16,6 +31,9 @@ permissions:
 jobs:
   veille:
     runs-on: ubuntu-latest
+    # Un passage normal dure quelques minutes. La limite ne sert qu a couper un
+    # passage bloque.
+    timeout-minutes: 30
     steps:
       - name: Récupérer le code
         uses: actions/checkout@v5
@@ -24,4 +42,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: node scripts/veille.js
+          HORAIRE: ${{ github.event.schedule }}
+          LANGUE_DEMANDEE: ${{ inputs.langue }}
+        run: |
+          case "$HORAIRE" in
+            "23 7 * * *"|"23 17 * * *") VEILLE_LANGUE=fr ;;
+            "43 7 * * *"|"43 17 * * *") VEILLE_LANGUE=en ;;
+            "3 8 * * *"|"3 18 * * *")   VEILLE_LANGUE=hu ;;
+            *)                          VEILLE_LANGUE="$LANGUE_DEMANDEE" ;;
+          esac
+          # Sans langue, le script ferait les trois d affilee : c est
+          # exactement ce qui a fait bloquer Google. On refuse.
+          if [ -z "$VEILLE_LANGUE" ]; then
+            echo "::error::Aucune langue pour l'horaire « $HORAIRE »."
+            exit 1
+          fi
+          echo "Langue de ce passage : $VEILLE_LANGUE"
+          VEILLE_LANGUE="$VEILLE_LANGUE" node scripts/veille.js

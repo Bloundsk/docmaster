@@ -85,7 +85,59 @@ const TOURNURES_PROMOTIONNELLES = [
     { motif: /\bpubli[- ]?r[ée]dactionnel\b|\bsponsoris[ée]|\bcontenu\s+partenaire\b|\ben\s+partenariat\s+avec\b/i, quoi: "contenu sponsorise" },
     { motif: /\bparrainage\b|\bcashback\b|\bprime\s+de\s+bienvenue\b/i,   quoi: "offre commerciale" },
     { motif: /\bavis\s+\d{4}\b|\bnotre\s+avis\s+sur\b/i,                 quoi: "avis produit" },
+    /* L offre d emploi. Le premier essai de la veille par medias (13 septembre
+       2026) en a retenu deux, publiees par un site de medias qui est aussi un
+       site d annonces : « Infirmier(e) de sante au travail F/H - Framatome - CDI
+       a La Defense ». Le site a ete retire de la liste ; la regle reste pour
+       ceux qui melangent les deux sans qu on le sache. « F/H » ou « - CDI » en
+       fin de segment, et non « CDI » seul : « le CDI des infirmiers en
+       question » est un article. */
+    { motif: /\b[FH]\s?\/\s?[FH]\b|\s-\s*(CDI|CDD)\b/,                   quoi: "offre d'emploi" },
 ];
+
+/* Les memes tournures, en anglais et en hongrois, depuis que chaque langue a
+   sa propre veille (13 septembre 2026). Elles n ont pas encore d historique
+   derriere elles : ce sont les formes connues du genre, tenues prudentes pour
+   la meme raison qu en francais — un bon article manque coute moins qu une
+   veille qui ne propose rien.
+
+   Deux formes ont ete ecartees exprès. En anglais, « ranked » : « UK ranked
+   worst in Europe for… » est du journalisme. En hongrois,
+   « összehasonlítás » : « nemzetközi összehasonlításban » (en comparaison
+   internationale) est une tournure courante de la presse economique.
+
+   \b ne connait que l ASCII : devant « ö », il ne voit pas de debut de mot.
+   D ou (?<!\p{L}) dans les motifs hongrois. */
+const TOURNURES_PAR_LANGUE = {
+    fr: TOURNURES_PROMOTIONNELLES,
+    en: [
+        { motif: /\bbest\s+(\w+\s+)?(apps?|platforms?|sites?|banks?|brokers?|tools?|software|deals?|offers?|cards?|accounts?|insurers?|laptops?|phones?|vpns?|buys?)\b|^\s*(the\s+)?\d+\s+best\b|^\s*(the\s+)?best\s+\w+\s+(for|of|in)\b/i,
+          quoi: "palmares" },
+        { motif: /\btop\s*\d+\b/i,                                            quoi: "classement" },
+        { motif: /\bwe\s+tested\b|\btested\s+and\s+rated\b|\breview\s*:|\bhands-on\s*:/i, quoi: "comparatif" },
+        { motif: /\b(discount|voucher|promo)\s+codes?\b|\bdeals?\s+of\s+the\s+day\b|\b\d{1,2}\s?%\s+off\b|\bbargains?\b/i, quoi: "promotion" },
+        { motif: /\bsponsored\b|\badvertorial\b|\bpartner\s+content\b|\bin\s+partnership\s+with\b|\bpaid\s+(post|content)\b/i, quoi: "contenu sponsorise" },
+        { motif: /\breferral\s+(bonus|code)\b|\bcashback\b|\b(sign-?up|welcome)\s+bonus\b/i, quoi: "offre commerciale" },
+        // « … - London job with Barts Health NHS Trust | 841710 » (essai du
+        // 13 septembre 2026) : l annonce, et son numero de reference en fin.
+        { motif: /\bjob\s+with\b|\bvacanc(y|ies)\b|\|\s*\d{5,}\s*$/i,          quoi: "offre d'emploi" },
+    ],
+    hu: [
+        { motif: /(?<!\p{L})legjobb\s+(\p{L}+\s+)?(alkalmazás|platform|oldal|bank|bróker|eszköz|szoftver|ajánlat|kártya|biztosító|számla)\p{L}*|^\s*(a\s+)?\d+\s+legjobb(?!\p{L})|^\s*a\s+legjobb(?!\p{L})/iu,
+          quoi: "palmares" },
+        { motif: /(?<!\p{L})top\s*\d+(?!\p{L})/iu,                            quoi: "classement" },
+        { motif: /(?<!\p{L})(teszteltük|kipróbáltuk)(?!\p{L})/iu,             quoi: "comparatif" },
+        { motif: /(?<!\p{L})(kuponkód|kedvezménykód|akciós ajánlat)|\d{1,2}\s?%\s*kedvezmény/iu, quoi: "promotion" },
+        // « (x) » en fin de titre : c est ainsi que la presse hongroise
+        // signale un contenu paye.
+        { motif: /(?<!\p{L})(szponzorált|fizetett\s+(tartalom|hirdetés)|támogatott\s+tartalom|pr-cikk)|\(x\)\s*$/iu, quoi: "contenu sponsorise" },
+        { motif: /(?<!\p{L})(ajánlói\s+(bónusz|program)|pénzvisszatérítés|cashback)/iu, quoi: "offre commerciale" },
+        // « állásajánlat » (offre d emploi), « munkatársat keres » (recherche
+        // un collaborateur). Pas « munkakör » : la presse l emploie au sens
+        // de « poste », dans des articles.
+        { motif: /(?<!\p{L})(állásajánlat|munkatársat\s+keres)/iu,            quoi: "offre d'emploi" },
+    ],
+};
 
 /* Les sources ecartees d office.
 
@@ -121,15 +173,52 @@ const SOURCES_ECARTEES = [
     "Vietnam.vn",
 ];
 
+/* --------------------------------------------------------------------------
+   LES MEDIAS RECONNUS (13 septembre 2026, a la demande de Ludo)
+
+   Jusque-la, la veille prenait ce que Google News remontait, d ou qu il vienne :
+   un portail vietnamien traduit automatiquement, des diffuseurs de
+   communiques, un hebdomadaire local du Roussillon. La liste ci-dessus courait
+   apres chacun, et chaque retrait en faisait remonter un autre.
+
+   Le principe s inverse : une liste de medias ADMIS, par langue, dans
+   scripts/actualites-medias.js — les titres les plus lus du pays, puis les
+   medias specialises reconnus dans le domaine de chaque guide. Ce qui n y est
+   pas ne parait pas. Les regles de titre restent : un grand journal publie
+   aussi des palmares.
+
+   Le media est reconnu par le site qui publie — le domaine que donne Google
+   News — et non par le nom affiche, qui varie (« Le Monde.fr », « | hvg.hu »).
+   Un sous-domaine n est pas le site : « carnet.sudouest.fr » publie des avis
+   de deces, « tvmag.lefigaro.fr » des programmes tele. Il n entre que s il est
+   nomme dans la liste.
+
+   Seuls les articles publies avant cette regle n ont pas de domaine. Pour
+   eux, on compare le nom affiche a celui du media et a son domaine. */
+const MEDIAS = require("./actualites-medias.js");
+
+function mediaReconnu(article) {
+    const medias = MEDIAS.tousLesMedias(article.langue || "fr");
+    if (article.site) {
+        const hote = String(article.site).toLowerCase().replace(/^www\./, "");
+        return medias.find((m) => m.domaine === hote) || null;
+    }
+    const nom = cleDeTitre(article.source);
+    if (!nom) return null;
+    return medias.find((m) => [cleDeTitre(m.nom), cleDeTitre(m.domaine)]
+        .some((c) => nom === c || nom.startsWith(c + " "))) || null;
+}
+
 /* Un titre qui n en est pas un. « IA Local souveraine pour tous vos
    collaborateurs securise gratuite » est passe sur le site : c est un
    communique de presse mal degrossi, sans verbe, empile d adjectifs. On ne
    sait pas detecter cela en general — mais on peut ecarter les titres qui
    crient, ce qui est le marqueur le plus fiable du communique. */
 function crie(titre) {
-    const lettres = titre.replace(/[^A-Za-zÀ-ÿ]/g, "");
+    // \p{L} et non A-Za-zÀ-ÿ : le hongrois écrit ő et ű, hors de cette plage.
+    const lettres = titre.replace(/[^\p{L}]/gu, "");
     if (lettres.length < 20) return false;
-    const majuscules = (titre.match(/[A-ZÀ-Þ]/g) || []).length;
+    const majuscules = (titre.match(/\p{Lu}/gu) || []).length;
     return majuscules / lettres.length > 0.5;
 }
 
@@ -374,31 +463,84 @@ function communiqueProduit(titre) {
 
 // « Épargne » et « epargne », « ETF » et « etf », « jetons » et « jeton » :
 // c est le meme mot. On compare des formes reduites.
-function reduire(mot) {
-    return mot
+/* Depuis le 13 septembre 2026, chaque langue a sa veille, et la reduction
+   depend de la langue.
+
+   Le francais garde exactement sa regle : pluriel en -s, journaux -> journal.
+
+   L anglais retire aussi -ing et -ed : « Saving » doit retrouver « savings »,
+   « Automated testing » retrouver « tests ». Seulement au-dela de cinq
+   lettres, pour que « red » ou « king » restent entiers.
+
+   Le hongrois ne se reduit pas : c est une langue a suffixes, et « adatok »,
+   « adatvédelmi », « megtakarításait » ne se ramenent pas a leur racine en
+   coupant une lettre. Il se compare autrement, dans « memeMot ». */
+function reduire(mot, langue = "fr") {
+    let m = mot
         .toLowerCase()
-        .normalize("NFD").replace(/[̀-ͯ]/g, "")   // accents
-        .replace(/[^a-z0-9]/g, "")
-        .replace(/(aux|eaux)$/, "al")                        // journaux -> journal
-        .replace(/s$/, "");                                  // pluriel simple
+        .normalize("NFD").replace(/[̀-ͯ]/g, "")   // accents (ő et ű compris)
+        .replace(/[^a-z0-9]/g, "");
+    if (langue === "fr") {
+        return m
+            .replace(/(aux|eaux)$/, "al")                    // journaux -> journal
+            .replace(/s$/, "");                              // pluriel simple
+    }
+    if (langue === "en") {
+        m = m.replace(/(ches|shes|sses|xes)$/, (f) => f.slice(0, -2))   // breaches, taxes
+             .replace(/ies$/, "y")                                      // policies
+             .replace(/([^s])s$/, "$1");                                // tests
+        if (m.length > 5) m = m.replace(/(ing|ed)$/, "");
+        return m;
+    }
+    return m;
 }
 
-const MOTS_IGNORES = new Set([
-    "le", "la", "les", "un", "une", "des", "du", "de", "et", "ou", "a", "au",
-    "aux", "en", "dan", "sur", "pour", "par", "avec", "san", "que", "qui",
-    "quoi", "quel", "quelle", "est", "ce", "cette", "ce", "son", "se", "sa",
-    "leur", "plu", "son", "ver", "chez", "entre",
-].map(reduire));
+const MOTS_VIDES_PAR_LANGUE = {
+    fr: ["le", "la", "les", "un", "une", "des", "du", "de", "et", "ou", "a", "au",
+         "aux", "en", "dan", "sur", "pour", "par", "avec", "san", "que", "qui",
+         "quoi", "quel", "quelle", "est", "ce", "cette", "ce", "son", "se", "sa",
+         "leur", "plu", "son", "ver", "chez", "entre"],
+    en: ["the", "and", "for", "with", "your", "you", "what", "how", "why", "when", "rather",
+         "than", "into", "from", "that", "this", "its", "are", "not", "who", "which", "where",
+         "before", "after", "about", "between", "over", "can", "more", "most", "really"],
+    hu: ["egy", "és", "vagy", "avagy", "hogy", "mit", "mint", "nem", "amely", "amelyek",
+         "amelyet", "amit", "aki", "mielőtt", "helyett", "nélkül", "úgy", "hogyan", "kell",
+         "ezt", "azt", "saját", "van", "lesz", "már", "még", "csak", "ahol", "után", "előtt",
+         "alatt", "között", "miért", "mikor", "melyik", "rád", "neked", "magad", "mielott"],
+};
+const MOTS_IGNORES = Object.fromEntries(Object.entries(MOTS_VIDES_PAR_LANGUE)
+    .map(([langue, mots]) => [langue, new Set(mots.map((m) => reduire(m, langue)))]));
 
 // Les mots d une recherche ou d un intitule, reduits et debarrasses des mots
 // vides. Le Set evite qu un mot repete compte deux fois.
-function motsUtiles(texte) {
+function motsUtiles(texte, langue = "fr") {
+    const ignores = MOTS_IGNORES[langue] || MOTS_IGNORES.fr;
     return new Set(
         String(texte)
             .split(/[\s'’,:;.!?()«»"\/–—-]+/)
-            .map(reduire)
-            .filter((m) => m.length > 2 && !MOTS_IGNORES.has(m))
+            .map((m) => reduire(m, langue))
+            .filter((m) => m.length > 2 && !ignores.has(m))
     );
+}
+
+/* Deux mots sont-ils le meme ? En francais et en anglais, apres reduction,
+   il faut l egalite.
+
+   En hongrois, deux cas suffisent :
+     - le plus court est le debut du plus long, et fait au moins quatre
+       lettres : « adat » / « adatok », « megtakaritas » / « megtakaritasait » ;
+     - les deux partagent au moins six lettres de debut : « adatvedelem » /
+       « adatvedelmi », ou le suffixe a modifie la fin de la racine.
+   Quatre lettres, pas moins : « kor » (age) n a pas a retrouver « kormany »
+   (gouvernement). */
+function memeMot(a, b, langue) {
+    if (a === b) return true;
+    if (langue !== "hu") return false;
+    const [court, long] = a.length <= b.length ? [a, b] : [b, a];
+    if (court.length >= 4 && long.startsWith(court)) return true;
+    let commun = 0;
+    while (commun < court.length && court[commun] === long[commun]) commun++;
+    return commun >= 6;
 }
 
 const MINIMUM_MOTS_COMMUNS = 2;
@@ -411,10 +553,10 @@ const MINIMUM_MOTS_SECTION = 1;
 /* Combien de mots la recherche et le titre ont-ils reellement en commun.
    Exporte pour que la mesure soit possible ailleurs : une regle qu on ne peut
    pas eprouver sur des donnees reelles ne vaut pas mieux qu une intuition. */
-function motsCommuns(titre, recherche) {
-    const cherches = motsUtiles(recherche);
-    const dansLeTitre = motsUtiles(titre);
-    return [...cherches].filter((m) => dansLeTitre.has(m));
+function motsCommuns(titre, recherche, langue = "fr") {
+    const cherches = motsUtiles(recherche, langue);
+    const dansLeTitre = [...motsUtiles(titre, langue)];
+    return [...cherches].filter((m) => dansLeTitre.some((t) => memeMot(m, t, langue)));
 }
 
 function assezRecent(iso) {
@@ -439,6 +581,9 @@ function assezRecent(iso) {
    l article lui-meme. */
 function admissible(article, recherche, section) {
     const titre = article.titre || "";
+    // Les articles d avant le 13 septembre 2026 n ont pas de langue : ils
+    // venaient tous de la veille francaise.
+    const langue = article.langue || "fr";
     const intitule = section || article.section || "";
     const requete = recherche || `${article.sujet || ""} ${article.section || ""}`;
 
@@ -452,21 +597,32 @@ function admissible(article, recherche, section) {
     if (crie(titre)) {
         return { ok: false, raison: "titre en majuscules, probable communiqué" };
     }
-    for (const { motif, quoi } of TOURNURES_PROMOTIONNELLES) {
+    for (const { motif, quoi } of TOURNURES_PAR_LANGUE[langue] || TOURNURES_PROMOTIONNELLES) {
         if (motif.test(titre)) return { ok: false, raison: quoi };
     }
 
     // Le communique produit se juge sur la nature de l ecrit, comme les
     // tournures ci-dessus : il vient donc avec elles, avant la pertinence.
-    const produit = communiqueProduit(titre);
+    //
+    // En francais seulement. La forme repose sur l ordre « marque, verbe,
+    // produit » et sur des verbes francais ; le hongrois place le verbe
+    // ailleurs. C est la liste des medias qui tient ce role dans les deux
+    // autres langues : un grand journal ne republie pas un communique tel quel.
+    const produit = langue === "fr" ? communiqueProduit(titre) : null;
     if (produit) {
         return { ok: false, raison: `communiqué produit (« ${produit} »)` };
+    }
+
+    // Apres les regles de titre, pour que chaque refus dise sa vraie raison :
+    // un palmares d un site inconnu est d abord un palmares.
+    if (!mediaReconnu(article)) {
+        return { ok: false, raison: `média non retenu (${article.site || article.source || "?"})` };
     }
 
     // La pertinence en dernier : c est la regle la plus severe, autant qu elle
     // s applique a ce qui a passe tout le reste. La raison nomme les mots
     // trouves, sans quoi un refus serait indiscutable faute d etre lisible.
-    const communs = motsCommuns(titre, requete);
+    const communs = motsCommuns(titre, requete, langue);
     if (communs.length < MINIMUM_MOTS_COMMUNS) {
         const vus = communs.length ? ` (seul « ${communs[0]} » en commun)` : " (aucun mot en commun)";
         return { ok: false, raison: `hors sujet${vus}` };
@@ -478,9 +634,9 @@ function admissible(article, recherche, section) {
        impossible a satisfaire et viderait la section de tout article. Aucun
        des 129 intitules de l historique n est dans ce cas, mais le prochain
        pourrait l etre, et il tomberait alors en silence. */
-    const motsDeLaSection = motsCommuns(intitule, intitule);
+    const motsDeLaSection = motsCommuns(intitule, intitule, langue);
     if (motsDeLaSection.length) {
-        const communsSection = motsCommuns(titre, intitule);
+        const communsSection = motsCommuns(titre, intitule, langue);
         if (communsSection.length < MINIMUM_MOTS_SECTION) {
             return {
                 ok: false,
@@ -523,5 +679,5 @@ function cleDeTitre(titre) {
 
 module.exports = { AGE_MAX_JOURS, assezRecent, admissible, motsCommuns, cleDeTitre,
                    MINIMUM_MOTS_COMMUNS, MINIMUM_MOTS_SECTION,
-                   communiqueProduit, TOURNURES_PROMOTIONNELLES,
-                   SOURCES_ECARTEES, EDITEURS_SUIVIS };
+                   communiqueProduit, TOURNURES_PROMOTIONNELLES, TOURNURES_PAR_LANGUE,
+                   SOURCES_ECARTEES, EDITEURS_SUIVIS, mediaReconnu, MOTS_VIDES_PAR_LANGUE };

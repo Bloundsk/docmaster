@@ -66,18 +66,27 @@ const MARQUE_FIN = "<!-- ACTUALITES:FIN -->";
 // Cent Issues, et non trente : un passage de veille en produit desormais
 // plusieurs. A trente, une case cochee sur un rapport de quatre jours ne
 // serait plus vue, et l article ne paraitrait jamais.
+//
+// Trois pages depuis le 13 septembre 2026 : la veille produit desormais des
+// rapports pour trois langues a chaque passage.
 async function recupererIssues(repo, token) {
-    const reponse = await fetch(
-        `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=100`,
-        {
-            headers: {
-                Authorization: `Bearer ${token}`,
-                Accept: "application/vnd.github+json",
-            },
-        }
-    );
-    if (!reponse.ok) throw new Error(`Lecture des Issues : HTTP ${reponse.status}`);
-    return reponse.json();
+    const toutes = [];
+    for (let page = 1; page <= 3; page++) {
+        const reponse = await fetch(
+            `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=100&page=${page}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    Accept: "application/vnd.github+json",
+                },
+            }
+        );
+        if (!reponse.ok) throw new Error(`Lecture des Issues : HTTP ${reponse.status}`);
+        const issues = await reponse.json();
+        toutes.push(...issues);
+        if (issues.length < 100) break;
+    }
+    return toutes;
 }
 
 /* Renvoie { coches: Map<lien, meta>, decoches: Set<lien> }.
@@ -164,6 +173,11 @@ function fusionner(existants, coches, decoches) {
             ancre: info.ancre,
             section: info.section,
             sujet: info.sujet,
+            // La langue dit sur quelle page l article parait ; le site, quel
+            // media l a publie. Les rapports d avant le 13 septembre 2026 n ont
+            // ni l un ni l autre : ils venaient de la veille francaise.
+            langue: info.langue || "fr",
+            site: info.site || "",
             publie: (dejaLa && dejaLa.publie) || new Date().toISOString().slice(0, 10),
         });
     }
@@ -187,7 +201,9 @@ function fusionner(existants, coches, decoches) {
  * retrouver le titre courant. On garde le libelle stocke si la section a
  * disparu — un titre perime vaut mieux qu un libelle vide. */
 function libelleActuel(article) {
-    const fichier = path.join(RACINE, "guides", article.guide || "", article.page || "");
+    // Le guide de SA langue : un article anglais porte une ancre anglaise.
+    const dossier = (VERSIONS[article.langue || "fr"] || VERSIONS.fr).dossier;
+    const fichier = path.join(RACINE, dossier, "guides", article.guide || "", article.page || "");
     if (!article.ancre || !fs.existsSync(fichier)) return article.section;
 
     const html = fs.readFileSync(fichier, "utf8");
@@ -212,6 +228,14 @@ function libelleActuel(article) {
  * articles promotionnels publies sous l ancien fonctionnement disparaissent
  * ainsi sans intervention. */
 function filtrer(articles) {
+    /* Chaque langue a sa page, donc ses vingt-quatre places et son plafond
+       par section. Filtrer toutes les langues ensemble aurait laisse la veille
+       la plus prolifique occuper les places des deux autres. */
+    return Object.keys(VERSIONS).flatMap((langue) =>
+        filtrerUneLangue(articles.filter((a) => (a.langue || "fr") === langue), langue));
+}
+
+function filtrerUneLangue(articles, langue) {
     // La regle d age s applique, mais elle s explique.
     //
     // Elle a deja ecarte cinq articles coches sans un mot : l auteur a vu sept
@@ -247,7 +271,7 @@ function filtrer(articles) {
     });
 
     if (ecartes.length) {
-        console.warn(`${ecartes.length} article(s) écarté(s) avant publication :`);
+        console.warn(`[${langue}] ${ecartes.length} article(s) écarté(s) avant publication :`);
         for (const { article, raison } of ecartes) {
             console.warn(`  · ${raison} — ${article.source || "?"} — ${article.titre}`);
         }
@@ -280,7 +304,7 @@ function filtrer(articles) {
     }
 
     if (places.length) {
-        console.warn(`${places.length} article(s) écarté(s) pour laisser la place :`);
+        console.warn(`[${langue}] ${places.length} article(s) écarté(s) pour laisser la place :`);
         for (const { article, raison } of places) {
             console.warn(`  · ${raison} — ${article.source || "?"} — ${article.titre}`);
         }
@@ -306,67 +330,47 @@ function dateLisible(iso, locale) {
     return d.toLocaleDateString(locale, options);
 }
 
-/* Les deux versions de la page. Les titres d'articles restent en français
-   dans les deux : ce sont des titres d'articles français, et un titre traduit
-   ne se retrouve plus. Ce qui change, c'est ce que le site écrit AUTOUR.
+/* Les trois versions de la page, une par langue, et depuis le 13 septembre
+   2026 chacune a SES articles : la page française montre la presse française,
+   l'anglaise la presse britannique, la hongroise la presse hongroise. Avant,
+   les trois montraient les mêmes articles français, et les pages anglaise et
+   hongroise devaient s'en excuser.
 
-   La version anglaise renvoie vers la page anglaise du guide, sans ancre : les
-   ancres anglaises portent d'autres noms que les françaises, et un lien vers
-   une ancre absente ne défile nulle part. Arriver en haut de la bonne page
-   vaut mieux qu'arriver nulle part. */
+   Chaque article porte le libellé et l'ancre de la section dans SA langue,
+   relevés dans le guide de sa langue par la veille : le lien peut donc viser
+   la section partout, comme en français. */
+const etiquette = (a) =>
+    `<a href="guides/${a.guide}/${a.page}#${encodeURIComponent(a.ancre)}">${echapper(a.section)}</a> · ${echapper(a.sujet)}`;
+
 const VERSIONS = {
     fr: {
         dossier: "", locale: "fr-FR",
         rapport: "En rapport avec",
         vide: "Aucune actualité retenue pour le moment. Cette page se remplit au fil des lectures.",
         titreAccueil: "📰 À lire ailleurs",
-        introAccueil: "Quelques lectures en rapport avec les guides, repérées automatiquement.",
+        introAccueil: "Quelques lectures de la presse française en rapport avec les guides, repérées automatiquement.",
         toutes: "Toutes les actualités →",
-        // Le libellé de la section, tel que la veille l'a relevé.
-        etiquette: (a) => `<a href="guides/${a.guide}/${a.page}#${encodeURIComponent(a.ancre)}">${echapper(a.section)}</a> · ${echapper(a.sujet)}`,
+        etiquette,
     },
     en: {
         dossier: "en/", locale: "en-GB",
         rapport: "Related to",
         vide: "No article selected for now. This page fills up as the reading goes.",
         titreAccueil: "📰 Read elsewhere",
-        introAccueil: "A few readings related to the guides, found automatically. <strong>They are in French</strong>: they point to French sources, and a translated headline could no longer be found again.",
+        introAccueil: "A few readings from the British press related to the guides, found automatically.",
         toutes: "All the news →",
-        etiquette: (a) => `<a href="guides/${a.guide}/${a.page}">${echapper(NOMS_EN[a.guide] || a.guide)} — ${echapper(NIVEAUX_EN[a.page.replace(".html", "")] || "")}</a>`,
+        etiquette,
     },
-    /* Les pages hongroises ont gardé les ancres françaises : le lien peut donc
-       viser la section, comme en français. Le nom affiché est celui que porte
-       la page hongroise, pas le titre français de la section. */
     hu: {
         dossier: "hu/", locale: "hu-HU",
         rapport: "Kapcsolódó útmutató:",
         vide: "Egyelőre nincs kiválasztott cikk. Ez az oldal az olvasmányokkal együtt telik meg.",
         titreAccueil: "📰 Máshol olvasva",
-        introAccueil: "Néhány, az útmutatókhoz kapcsolódó olvasmány, automatikusan kiválasztva. <strong>Franciául vannak</strong>: francia forrásokra mutatnak, és egy lefordított cím alapján már nem lehetne megtalálni őket.",
+        introAccueil: "Néhány olvasmány a magyar sajtóból, az útmutatókhoz kapcsolódva, automatikusan kiválasztva.",
         toutes: "Az összes hír →",
-        etiquette: (a) => `<a href="guides/${a.guide}/${a.page}#${encodeURIComponent(a.ancre)}">${echapper(NOMS_HU[a.guide] || a.guide)} — ${echapper(NIVEAUX_HU[a.page.replace(".html", "")] || "")}</a>`,
+        etiquette,
     },
 };
-
-const NOMS_HU = {
-    finance: "💰 Pénzügyek", ia: "🤖 Mesterséges intelligencia", "dev-web": "💻 Webfejlesztés",
-    marketing: "📢 Digitális marketing", cybersecurite: "🔒 Kiberbiztonság",
-    entrepreneuriat: "🚀 Vállalkozás", productivite: "⏱️ Termelékenység és szervezés",
-    data: "📊 Adatok és elemzés", design: "🎨 UX/UI design", droit: "⚖️ Jog és ügyintézés",
-    sante: "🩺 Munkahelyi egészség", ecologie: "🌱 Digitális mértékletesség",
-    negociation: "🤝 Tárgyalás és kommunikáció", apprendre: "🎓 A tanulás tanulása",
-};
-const NIVEAUX_HU = { debutant: "Kezdő", intermediaire: "Középhaladó", avance: "Haladó", index: "" };
-
-const NOMS_EN = {
-    finance: "💰 Finance", ia: "🤖 Artificial Intelligence", "dev-web": "💻 Web Development",
-    marketing: "📢 Digital Marketing", cybersecurite: "🔒 Cybersecurity",
-    entrepreneuriat: "🚀 Entrepreneurship", productivite: "⏱️ Productivity & Organisation",
-    data: "📊 Data & Analytics", design: "🎨 UX/UI Design", droit: "⚖️ Law & Procedures",
-    sante: "🩺 Health at Work", ecologie: "🌱 Digital Sustainability",
-    negociation: "🤝 Negotiation & Communication", apprendre: "🎓 Learning How to Learn",
-};
-const NIVEAUX_EN = { debutant: "Beginner", intermediaire: "Intermediate", avance: "Advanced", index: "" };
 
 function rendreArticle(a, v) {
     const legende = [a.source, a.date ? dateLisible(a.date, v.locale) : ""].filter(Boolean).join(" · ");
@@ -483,12 +487,17 @@ function injecter(fichier, contenu) {
            version anglaise a été oubliée une fois : les deux pages françaises
            se mettaient à jour, l'anglaise gardait la liste du jour de sa
            traduction sans que rien ne le signale. */
-        const modifies = Object.values(VERSIONS).flatMap((v) => [
-            injecter(v.dossier + "actualites.html", rendreListe(articles, v)) ? v.dossier + "actualites.html" : null,
-            injecter(v.dossier + "index.html", rendreAccueil(articles, v)) ? v.dossier + "index.html" : null,
-        ]).filter(Boolean);
+        const comptes = [];
+        const modifies = Object.entries(VERSIONS).flatMap(([langue, v]) => {
+            const siens = articles.filter((a) => (a.langue || "fr") === langue);
+            comptes.push(`${langue} ${siens.length}`);
+            return [
+                injecter(v.dossier + "actualites.html", rendreListe(siens, v)) ? v.dossier + "actualites.html" : null,
+                injecter(v.dossier + "index.html", rendreAccueil(siens, v)) ? v.dossier + "index.html" : null,
+            ];
+        }).filter(Boolean);
 
-        console.log(`${articles.length} article(s) publié(s).`);
+        console.log(`${articles.length} article(s) publié(s) (${comptes.join(", ")}).`);
         console.log(modifies.length ? `Pages mises à jour : ${modifies.join(", ")}` : "Pages inchangées.");
     } catch (erreur) {
         console.error("Erreur :", erreur.message);

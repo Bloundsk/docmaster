@@ -1,6 +1,6 @@
 // ===================================
 // CLICKED - SCRIPT DE VEILLE
-// v3 : les recherches sont deduites des guides eux-memes
+// v4 : une veille par langue, dans les medias reconnus du pays
 // ===================================
 //
 // Jusqu'a la v2, les mots-cles etaient ecrits en dur dans ce fichier, une
@@ -9,20 +9,32 @@
 // Cybersecurite traitait du phishing et du chiffrement pendant que la veille
 // ne cherchait que "vulnerabilite" et "piratage".
 //
-// Desormais le script LIT les fichiers des guides et construit une recherche
-// par sous-section. Ajouter une section a un guide suffit a la faire entrer
-// dans la veille : plus aucun decalage possible entre le contenu et ce qui
-// est surveille.
+// Depuis la v3, le script LIT les fichiers des guides et construit une
+// recherche par sous-section. Ajouter une section a un guide suffit a la faire
+// entrer dans la veille : plus aucun decalage possible entre le contenu et ce
+// qui est surveille.
+//
+// La v4 (13 septembre 2026, demande de Ludo) fait la meme chose pour CHAQUE
+// langue du site. Les guides anglais sont lus en anglais et cherches dans la
+// presse britannique, les guides hongrois en hongrois dans la presse
+// hongroise. Et la recherche ne porte plus sur tout Google News, mais sur les
+// medias nommes dans scripts/actualites-medias.js.
 
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
-const DOSSIER_GUIDES = path.join(__dirname, "..", "guides");
+const RACINE = path.join(__dirname, "..");
 const SITE = "https://bloundsk.github.io/docmaster/";
 
 const NB_JOURS_AVANT_FERMETURE = 14; // ferme automatiquement les anciennes veilles
-const TAILLE_POOL = 10;              // articles lus par recherche, avant deduplication
 const NB_ARTICLES_RETENUS = 1;       // articles conserves par sous-section
+
+/* Tout le flux est lu, et non plus les dix premiers articles. La recherche
+   est deja restreinte aux medias de la liste, et la regle de pertinence en
+   refuse la plus grande part : a dix, une section n aurait presque jamais
+   rien. */
+const TAILLE_POOL = 100;
 
 // Une Issue GitHub refuse un corps de plus de 65 536 caracteres. On decoupe
 // bien en dessous : l en-tete, le pied et la charge utile s ajoutent ensuite,
@@ -30,8 +42,38 @@ const NB_ARTICLES_RETENUS = 1;       // articles conserves par sous-section
 const TAILLE_MAX_ISSUE = 55000;
 const PAUSE_ENTRE_REQUETES = 250;    // ms, pour ne pas marteler Google News
 
+/* Huit sites par recherche, et UNE recherche par section.
+
+   Pourquoi pas tous les medias d un coup : mesure du 13 septembre 2026, une
+   recherche melangeant Le Monde, Le Figaro, BFMTV et quatre sites specialises
+   (Numerama, 01net, LeMagIT, ZDNET) ne rendait QUE des grands titres. Les
+   quatre specialises, interroges seuls sur le meme mot, donnaient cent
+   articles. Les gros sites occupent toute la place : il faut les separer.
+
+   Pourquoi pas deux recherches par section, une de chaque sorte : c etait la
+   premiere version, et le meme jour Google News a cesse de repondre (HTTP
+   503) apres un peu moins de mille requetes en trois quarts d heure. La
+   veille en faisait 171 par passage depuis des semaines sans incident.
+
+   D ou l alternance : a chaque passage, une section sur deux interroge ses
+   medias specialises, l autre un groupe de generalistes, et c est l inverse
+   au passage suivant. Les groupes tournent aussi. Chaque section voit ainsi
+   tous ses medias en quelques jours, pour 171 requetes par passage — et une
+   seule langue par passage (voir .github/workflows/veille.yml). */
+const TAILLE_GROUPE = 8;
+
+/* Quand Google refuse cinq fois de suite, il ne repondra pas davantage a la
+   sixieme : le passage s arrete, garde ce qu il a trouve, et le dit. Sans cet
+   arret, le blocage du 13 septembre a change cinq minutes de veille en trois
+   quarts d heure de refus. */
+const MAX_ECHECS_DE_SUITE = 5;
+
+const DRAPEAUX = { fr: "🇫🇷", en: "🇬🇧", hu: "🇭🇺" };
+
 // Mots sans valeur de recherche. Sans ce filtre, "Le phishing" chercherait
 // aussi "le", et "Qu'est-ce qu'un LLM ?" partirait sur "qu est ce".
+// Les trois langues dans une seule liste : aucun de ces mots n est un mot
+// utile dans une autre langue du site.
 const MOTS_VIDES = new Set([
     "le", "la", "les", "l", "un", "une", "des", "du", "de", "d", "et", "ou",
     "a", "au", "aux", "en", "dans", "sur", "pour", "par", "avec", "sans",
@@ -44,7 +86,15 @@ const MOTS_VIDES = new Set([
     "ta", "ton", "tes", "toi", "tu", "votre", "vos", "vous",
     // formes composees : le filtre compare des mots entiers, "est-ce" doit
     // donc figurer tel quel pour ne pas se retrouver dans la recherche
-    "est-ce", "qu-est-ce"
+    "est-ce", "qu-est-ce",
+    // anglais
+    "the", "an", "and", "or", "of", "to", "in", "on", "for", "with", "your", "you",
+    "what", "is", "how", "why", "when", "rather", "than", "into", "from", "that",
+    "this", "its", "are", "not", "who", "which", "where", "before", "after", "really",
+    // hongrois
+    "az", "egy", "és", "vagy", "avagy", "hogy", "mi", "mit", "mint", "is", "nem",
+    "amely", "amelyek", "mielőtt", "helyett", "nélkül", "úgy", "hogyan", "kell",
+    "ezt", "azt", "saját", "rád", "te", "magad", "mikor", "milyen", "amit",
 ]);
 
 const attendre = ms => new Promise(r => setTimeout(r, ms));
@@ -53,7 +103,8 @@ const attendre = ms => new Promise(r => setTimeout(r, ms));
    avec le script de publication. Elles etaient auparavant recopiees dans les
    deux fichiers, chacun portant un commentaire demandant a l autre de rester
    synchrone : une regle qui tient par un commentaire ne tient pas. */
-const { admissible, cleDeTitre } = require("./actualites-regles.js");
+const { AGE_MAX_JOURS, admissible, cleDeTitre, mediaReconnu } = require("./actualites-regles.js");
+const { LANGUES } = require("./actualites-medias.js");
 
 // « 2026-08-12 » -> « 12 août ». L annee n est ajoutee que si elle differe de
 // l annee en cours : sur une page d actualites, « 12 août 2026 » en plein
@@ -104,8 +155,11 @@ function decoder(texte) {
    automatique, un article hors sujet ASSEZ RECENT paraitrait sur le site.
 
    On ne coupe que si le dernier segment est exactement un nom de niveau : un
-   titre qui contiendrait un tiret cadratin pour une autre raison est intact. */
-const NIVEAUX = ["Débutant", "Intermédiaire", "Avancé"];
+   titre qui contiendrait un tiret cadratin pour une autre raison est intact.
+   Les noms anglais et hongrois s y ajoutent depuis la v4. */
+const NIVEAUX = ["Débutant", "Intermédiaire", "Avancé",
+                 "Beginner", "Intermediate", "Advanced",
+                 "Kezdő", "Középhaladó", "Haladó"];
 
 function sansLeNiveau(titre) {
     const bout = titre.lastIndexOf("—");
@@ -115,7 +169,7 @@ function sansLeNiveau(titre) {
 }
 
 function construireRequete(categorie, sousSection) {
-    categorie = sansLeNiveau(categorie);
+    categorie = sansLeNiveau(decoder(categorie));
     const mots = (nettoyer(categorie) + " " + nettoyer(sousSection))
         .split(" ")
         .filter(m => m.length > 1 && !MOTS_VIDES.has(m.toLowerCase()));
@@ -127,10 +181,14 @@ function construireRequete(categorie, sousSection) {
 // avance.html. Les sections de cours vivent alors dans ces pages, et non plus
 // dans index.html qui n est qu un sommaire. Ne lire que index.html reviendrait
 // a ne plus rien surveiller pour les sujets deja decoupes en niveaux.
-function lireGuides() {
+//
+// Chaque langue lit SES guides : les intitules anglais pour chercher dans la
+// presse britannique, et les ancres anglaises, qui ne sont pas les francaises.
+function lireGuides(langue) {
+    const dossierGuides = path.join(RACINE, LANGUES[langue].dossier, "guides");
     const guides = [];
-    for (const dossier of fs.readdirSync(DOSSIER_GUIDES)) {
-        const chemin = path.join(DOSSIER_GUIDES, dossier);
+    for (const dossier of fs.readdirSync(dossierGuides)) {
+        const chemin = path.join(dossierGuides, dossier);
         if (!fs.statSync(chemin).isDirectory()) continue;
 
         for (const nom of fs.readdirSync(chemin)) {
@@ -165,9 +223,26 @@ function lireGuides() {
 
 // --- Recuperation des articles ---------------------------------------------
 
-async function recupererArticles(requete) {
-    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(requete)}&hl=fr&gl=FR&ceid=FR:fr`;
-    const reponse = await fetch(url);
+function grouper(liste) {
+    const groupes = [];
+    for (let i = 0; i < liste.length; i += TAILLE_GROUPE) groupes.push(liste.slice(i, i + TAILLE_GROUPE));
+    return groupes;
+}
+
+async function recupererArticles(requete, langue, domaines) {
+    // « when: » borne la recherche a l age que le site accepte : inutile de
+    // lire des articles que la regle d age refuserait.
+    const q = `${requete} (${domaines.map((d) => "site:" + d).join(" OR ")}) when:${AGE_MAX_JOURS}d`;
+    const url = `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&${LANGUES[langue].google}`;
+
+    // Un refus passager de Google ne doit pas vider une section. Un refus qui
+    // dure, lui, est traite plus haut (MAX_ECHECS_DE_SUITE).
+    let reponse;
+    for (let essai = 1; ; essai++) {
+        reponse = await fetch(url);
+        if (reponse.ok || essai === 3 || ![429, 500, 502, 503].includes(reponse.status)) break;
+        await attendre(essai * 5000);
+    }
     if (!reponse.ok) throw new Error(`HTTP ${reponse.status}`);
     const xml = await reponse.text();
 
@@ -179,7 +254,13 @@ async function recupererArticles(requete) {
             // Google News nomme la publication dans <source>, et repete ce nom
             // a la fin du titre : « … - itdaily.fr ». Une fois la source
             // affichee a part, le suffixe fait doublon.
-            const source = decoder(((item.match(/<source[^>]*>(.*?)<\/source>/s) || [])[1] || "").trim());
+            const balise = item.match(/<source\s+url="([^"]*)"[^>]*>(.*?)<\/source>/s) || [];
+            const source = decoder((balise[2] || "").trim());
+            // Le site qui publie : c est lui, et non le nom affiche, que la
+            // liste des medias reconnait.
+            let site = "";
+            try { site = new URL(balise[1]).hostname.toLowerCase().replace(/^www\./, ""); } catch (e) { /* sans source */ }
+
             let texte = decoder(titre[1].replace(/<!\[CDATA\[|\]\]>/g, "").trim());
             if (source && texte.endsWith(" - " + source)) {
                 texte = texte.slice(0, -(source.length + 3)).trim();
@@ -194,7 +275,9 @@ async function recupererArticles(requete) {
                 titre: texte,
                 lien: lien[1].trim(),
                 source,
+                site,
                 date,
+                langue,
             });
         }
     }
@@ -206,42 +289,52 @@ async function recupererArticles(requete) {
 // Le nombre d Issues lues compte : depuis que le rapport se decoupe, un
 // passage en produit plusieurs au lieu d une. A vingt Issues, la memoire ne
 // couvrait plus que deux jours et demi — les memes articles revenaient. Cent
-// ramene la fenetre a une douzaine de jours, soit l ordre de grandeur du delai
-// de fermeture automatique.
+// ramenaient la fenetre a une douzaine de jours. Depuis la v4, un passage
+// produit des rapports pour trois langues : on lit trois pages, soit trois
+// cents Issues.
 async function recupererLiensDejaProposes(repo, token) {
-    const reponse = await fetch(
-        `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=100`,
-        { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } }
-    );
-    if (!reponse.ok) return { liens: new Set(), titres: new Set() };
-
-    /* Les liens ET les titres. Google News donne une adresse differente au meme
-       article selon la recherche : par lien seul, « L'ONU demande des limites
-       urgentes a l'IA » a ete propose, et publie, deux fois (8 septembre 2026).
-       Le titre est compare par sa cle, qui ignore ponctuation, accents et casse. */
     const liens = new Set();
     const titres = new Set();
-    for (const issue of await reponse.json()) {
-        const corps = issue.body || "";
-        for (const m of corps.matchAll(/\((https?:\/\/[^)]+)\)/g)) liens.add(m[1]);
-        for (const m of corps.matchAll(/^\s*-\s*\[[ xX]\]\s*\[(.*?)\]\(https?:/gm)) titres.add(cleDeTitre(m[1]));
+    if (!repo || !token) return { liens, titres };
+
+    for (let page = 1; page <= 3; page++) {
+        const reponse = await fetch(
+            `https://api.github.com/repos/${repo}/issues?labels=veille&state=all&per_page=100&page=${page}`,
+            { headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" } }
+        );
+        if (!reponse.ok) break;
+        const issues = await reponse.json();
+
+        /* Les liens ET les titres. Google News donne une adresse differente au meme
+           article selon la recherche : par lien seul, « L'ONU demande des limites
+           urgentes a l'IA » a ete propose, et publie, deux fois (8 septembre 2026).
+           Le titre est compare par sa cle, qui ignore ponctuation, accents et casse. */
+        for (const issue of issues) {
+            const corps = issue.body || "";
+            for (const m of corps.matchAll(/\((https?:\/\/[^)]+)\)/g)) liens.add(m[1]);
+            for (const m of corps.matchAll(/^\s*-\s*\[[ xX]\]\s*\[(.*?)\]\(https?:/gm)) titres.add(cleDeTitre(m[1]));
+        }
+        if (issues.length < 100) break;
     }
     return { liens, titres };
 }
 
 // --- Construction du rapport ------------------------------------------------
 
-async function construireRapport(guides, dejaProposes) {
+async function construireRapport(langue, guides, dejaProposes, vus) {
+    const config = LANGUES[langue];
     const date = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
     const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+    const pageActualites = `${SITE}${config.dossier}actualites.html`;
 
     const entete =
-        `# 📰 Veille Clicked — ${date} (${heure})\n\n` +
-        `Articles récents, classés par **sous-section de guide**. Les recherches sont ` +
-        `déduites automatiquement du contenu des guides, et les articles déjà proposés ` +
-        `récemment sont écartés.\n\n` +
-        `> **Ces articles sont DÉJÀ EN LIGNE.** Ils sont publiés automatiquement, sans ` +
-        `rien à faire.\n` +
+        `# 📰 Veille Clicked ${DRAPEAUX[langue] || ""} ${config.pays} — ${date} (${heure})\n\n` +
+        `Articles récents parus dans les **médias reconnus (${config.pays})**, classés par ` +
+        `**sous-section des guides en langue « ${langue} »**. Les recherches sont déduites ` +
+        `automatiquement du contenu de ces guides ; la liste des médias est dans ` +
+        `\`scripts/actualites-medias.js\`.\n\n` +
+        `> **Ces articles sont DÉJÀ EN LIGNE**, sur [la page Actualités](${pageActualites}). Ils ` +
+        `sont publiés automatiquement, sans rien à faire.\n` +
         `> **Décoche une case pour retirer l'article du site** — il disparaît dans la ` +
         `minute qui suit.\n` +
         `> Recocher le remet en ligne.\n\n---\n\n`;
@@ -258,23 +351,23 @@ async function construireRapport(guides, dejaProposes) {
        des dizaines de fois. */
     const ecartes = new Set();
 
-    /* Les liens deja retenus DANS CE PASSAGE. « dejaProposes » ne couvre que
-       les Issues precedentes : un article correspondant a plusieurs recherches
-       occupait plusieurs cases du meme rapport. Tant que l auteur cochait a la
-       main, c etait du bruit ; maintenant que tout part en ligne, c est une
-       promesse fausse — le site n en affichera qu un, la publication etant
-       indexee par lien. */
-    const retenusCePassage = new Set();
-    const titresCePassage = new Set();   // meme regle, par titre (voir recupererLiensDejaProposes)
-
     // Un bloc par guide, avec ses metadonnees. Le rapport n est plus assemble
     // en une seule chaine : au-dela de treize sujets il depassait la limite de
     // 65 536 caracteres d une Issue GitHub, et la creation echouait en bloc.
     const blocs = [];
 
+    // Le groupe de generalistes change a chaque passage (deux par jour).
+    const tour = Math.floor(Date.now() / 43200000);
+    const generalistes = grouper(config.generalistes);
+    let rang = 0;
+    let echecsDeSuite = 0;
+    let interruption = null;
+
     for (const guide of guides) {
+        if (interruption) break;
         let texte = `## ${guide.titre}\n\n`;
         let trouveDansGuide = 0;
+        const specialistes = grouper(config.specialises[guide.dossier] || []);
 
         // Metadonnees des articles proposes, deposees en fin d Issue dans un
         // commentaire HTML : invisible a la lecture, mais lisible par le script
@@ -283,47 +376,64 @@ async function construireRapport(guides, dejaProposes) {
         const donnees = {};
 
         for (const s of guide.sousSections) {
+            if (interruption) break;
+            // Specialistes ou generalistes, en alternance (voir TAILLE_GROUPE).
+            const cran = tour + rang++;
+            const domaines = specialistes.length && cran % 2 === 0
+                ? specialistes[Math.floor(cran / 2) % specialistes.length]
+                : generalistes[Math.floor(cran / 2) % generalistes.length];
+
             recherches++;
-            let nouveaux = [];
+            let articles;
             try {
-                const articles = await recupererArticles(s.requete);
-                const retenus = [];
-                for (const a of articles) {
-                    const cle = cleDeTitre(a.titre);
-                    if (dejaProposes.liens.has(a.lien) || retenusCePassage.has(a.lien)) continue;
-                    if (dejaProposes.titres.has(cle) || titresCePassage.has(cle)) continue;
-                    // s.titre, l intitule de la section, est passe a part : la
-                    // regle de pertinence exige qu au moins un mot commun en
-                    // vienne, et la requete seule ne permet plus de distinguer
-                    // ce qui vient de la section de ce qui vient du parcours.
-                    const verdict = admissible(a, s.requete, s.titre);
-                    if (!verdict.ok) {
-                        // Ce qu un script ecarte, il doit le dire. Depuis que la
-                        // publication est automatique, ces lignes sont le seul
-                        // endroit ou l on voit ce que le filtre a refuse.
-                        ecartes.add(`${verdict.raison} · ${a.source || "?"} · ${a.titre}`);
-                        continue;
-                    }
-                    retenus.push(a);
-                    retenusCePassage.add(a.lien);
-                    titresCePassage.add(cle);
-                    if (retenus.length >= NB_ARTICLES_RETENUS) break;
-                }
-                nouveaux = retenus;
+                articles = await recupererArticles(s.requete, langue, domaines);
+                echecsDeSuite = 0;
             } catch (e) {
-                texte += `### ${s.titre}\n_Erreur de récupération._\n\n`;
+                texte += `### ${s.titre}\n_Erreur de récupération (${e.message})._\n\n`;
+                if (++echecsDeSuite >= MAX_ECHECS_DE_SUITE) interruption = e.message;
                 continue;
+            } finally {
+                await attendre(PAUSE_ENTRE_REQUETES);
             }
-            await attendre(PAUSE_ENTRE_REQUETES);
+
+            const nouveaux = [];
+            for (const a of articles) {
+                const cle = cleDeTitre(a.titre);
+                if (dejaProposes.liens.has(a.lien) || vus.liens.has(a.lien)) continue;
+                if (dejaProposes.titres.has(cle) || vus.titres.has(cle)) continue;
+                // s.titre, l intitule de la section, est passe a part : la
+                // regle de pertinence exige qu au moins un mot commun en
+                // vienne, et la requete seule ne permet plus de distinguer
+                // ce qui vient de la section de ce qui vient du parcours.
+                const verdict = admissible(a, s.requete, s.titre);
+                if (!verdict.ok) {
+                    // Ce qu un script ecarte, il doit le dire. Depuis que la
+                    // publication est automatique, ces lignes sont le seul
+                    // endroit ou l on voit ce que le filtre a refuse.
+                    ecartes.add(`${verdict.raison} · ${a.source || "?"} · ${a.titre}`);
+                    continue;
+                }
+                nouveaux.push(a);
+                /* Les liens deja retenus DANS CE PASSAGE, toutes langues
+                   confondues. Un article correspondant a plusieurs recherches
+                   occupait sinon plusieurs cases du meme rapport, alors que le
+                   site n en affiche qu un, la publication etant indexee par
+                   lien. */
+                vus.liens.add(a.lien);
+                vus.titres.add(cle);
+                if (nouveaux.length >= NB_ARTICLES_RETENUS) break;
+            }
 
             if (!nouveaux.length) continue;
 
-            // Lien direct vers la section concernee du guide
-            const lienSection = `${SITE}guides/${guide.dossier}/${guide.page}#${encodeURIComponent(s.ancre)}`;
+            // Lien direct vers la section concernee du guide, dans sa langue
+            const lienSection = `${SITE}${config.dossier}guides/${guide.dossier}/${guide.page}#${encodeURIComponent(s.ancre)}`;
             texte += `### [${s.titre}](${lienSection})\n`;
             texte += `<sub>recherche : \`${s.requete}\`</sub>\n\n`;
             for (const a of nouveaux) {
-                const legende = [a.source, a.date ? enFrancais(a.date) : ""].filter(Boolean).join(" · ");
+                const media = mediaReconnu(a);
+                const nom = (media && media.nom) || a.source;
+                const legende = [nom, a.date ? enFrancais(a.date) : ""].filter(Boolean).join(" · ");
                 /* Case COCHEE d office : l article est publie sans intervention.
                    C est le sens du changement demande le 21 aout 2026 — la
                    veille ne propose plus, elle publie, et l auteur retire ce
@@ -334,8 +444,13 @@ async function construireRapport(guides, dejaProposes) {
                 texte += `- [x] [${a.titre}](${a.lien})${legende ? ` — <sub>${legende}</sub>` : ""}\n`;
                 donnees[a.lien] = {
                     titre: a.titre,
-                    source: a.source,
+                    // Le nom tenu dans la liste des medias, plutot que celui du
+                    // flux : « | hvg.hu » ou « Metro.co.uk » n ont rien a faire
+                    // sur la page.
+                    source: nom,
+                    site: a.site,
                     date: a.date,
+                    langue,
                     guide: guide.dossier,
                     page: guide.page,
                     ancre: s.ancre,
@@ -359,6 +474,17 @@ async function construireRapport(guides, dejaProposes) {
        Elle sert le jour ou un article attendu ne parait pas — sans elle, il
        aurait disparu sans laisser de trace, et le filtre passerait pour une
        panne. */
+    // L interruption se dit dans le rapport, pas seulement dans le journal :
+    // c est le rapport que Ludo lit.
+    if (interruption) {
+        blocs.push({
+            texte: `## ⛔ Veille interrompue\n\nGoogle News a refusé ${MAX_ECHECS_DE_SUITE} recherches de suite ` +
+                   `(${interruption}). Les sections suivantes n'ont pas été cherchées ; le passage suivant ` +
+                   `reprendra.\n\n`,
+            donnees: {},
+        });
+    }
+
     if (ecartes.size) {
         // Plafonnee : une Issue GitHub refuse un corps de plus de 65 536
         // caracteres, et cette liste n a pas a manger le budget des articles
@@ -374,7 +500,7 @@ async function construireRapport(guides, dejaProposes) {
         blocs.push({ texte, donnees: {} });
     }
 
-    return { rapports: assembler(entete, blocs, recherches, total), total };
+    return { rapports: assembler(entete, blocs, recherches, total), total, recherches, ecartes: ecartes.size, interruption };
 }
 
 // Regroupe les blocs en autant d Issues que necessaire, sans jamais couper un
@@ -400,15 +526,16 @@ function assembler(entete, blocs, recherches, total) {
     }
     if (courant.textes.length) groupes.push(courant);
 
-    return groupes.map((g, i) =>
-        entete + g.textes.join("") + pied(i + 1, groupes.length) +
-        `\n<!-- ACTUALITES\n${JSON.stringify(g.donnees)}\n-->\n`
-    );
+    return groupes.map((g, i) => ({
+        texte: entete + g.textes.join("") + pied(i + 1, groupes.length) +
+               `\n<!-- ACTUALITES\n${JSON.stringify(g.donnees)}\n-->\n`,
+        donnees: g.donnees,
+    }));
 }
 
 // --- Issues ----------------------------------------------------------------
 
-async function creerIssue(repo, token, contenu, numero, sur) {
+async function creerIssue(repo, token, contenu, numero, sur, langue) {
     const date = new Date().toLocaleDateString("fr-FR");
     const heure = new Date().toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
     const suffixe = sur > 1 ? ` (${numero}/${sur})` : "";
@@ -421,14 +548,14 @@ async function creerIssue(repo, token, contenu, numero, sur) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            title: `📰 Veille — ${date} à ${heure}${suffixe}`,
+            title: `📰 Veille ${DRAPEAUX[langue] || langue} — ${date} à ${heure}${suffixe}`,
             body: contenu,
             labels: ["veille"],
         }),
     });
 
     if (!reponse.ok) throw new Error(`Erreur création Issue : ${await reponse.text()}`);
-    console.log(`Issue créée${suffixe} — ${contenu.length} caractères.`);
+    console.log(`Issue ${langue} créée${suffixe} — ${contenu.length} caractères.`);
 }
 
 async function fermerAnciennesIssues(repo, token) {
@@ -458,29 +585,60 @@ async function fermerAnciennesIssues(repo, token) {
 
 // --- Programme principal ----------------------------------------------------
 
+/* « --essai » fait tout le travail sauf ecrire sur GitHub : les rapports et
+   les articles retenus sont deposes dans un dossier local
+   (VEILLE_SORTIE, sinon le dossier temporaire). C est ce qui permet de juger
+   ce qu une regle ou une liste de medias produirait AVANT de la mettre en
+   ligne. « --langue=en » limite le passage a une langue. */
 (async () => {
     try {
         const repo = process.env.GITHUB_REPOSITORY;
         const token = process.env.GITHUB_TOKEN;
+        const essai = process.argv.includes("--essai");
+        // VEILLE_LANGUE est pose par le workflow : une langue par passage.
+        const seule = (process.argv.find((a) => a.startsWith("--langue=")) || "").split("=")[1]
+            || process.env.VEILLE_LANGUE || "";
+        const langues = seule ? [seule] : Object.keys(LANGUES);
+        if (seule && !LANGUES[seule]) throw new Error(`Langue inconnue : ${seule}`);
+        if (!essai && (!repo || !token)) throw new Error("GITHUB_REPOSITORY et GITHUB_TOKEN sont requis (ou --essai).");
 
-        const guides = lireGuides();
-        if (!guides.length) throw new Error("Aucun guide lisible dans " + DOSSIER_GUIDES);
-
-        const nbSections = guides.reduce((n, g) => n + g.sousSections.length, 0);
-        console.log(`${guides.length} guides, ${nbSections} sous-sections surveillées.`);
+        const sortie = process.env.VEILLE_SORTIE || path.join(os.tmpdir(), "veille-essai");
+        if (essai) fs.mkdirSync(sortie, { recursive: true });
 
         const dejaProposes = await recupererLiensDejaProposes(repo, token);
-        const { rapports, total } = await construireRapport(guides, dejaProposes);
+        const vus = { liens: new Set(), titres: new Set() };
 
-        if (total > 0) {
-            for (let i = 0; i < rapports.length; i++) {
-                await creerIssue(repo, token, rapports[i], i + 1, rapports.length);
+        for (const langue of langues) {
+            const guides = lireGuides(langue);
+            if (!guides.length) throw new Error(`Aucun guide lisible pour la langue ${langue}`);
+
+            const nbSections = guides.reduce((n, g) => n + g.sousSections.length, 0);
+            console.log(`[${langue}] ${guides.length} guides, ${nbSections} sous-sections surveillées.`);
+
+            const { rapports, total, recherches, ecartes, interruption } = await construireRapport(langue, guides, dejaProposes, vus);
+            console.log(`[${langue}] ${recherches} recherches, ${total} article(s) retenu(s), ${ecartes} écarté(s).`);
+            // Le passage garde ce qu il a trouve, mais finit en echec : un
+            // blocage qui dure doit se voir dans l onglet Actions.
+            if (interruption) {
+                console.error(`::error::[${langue}] veille interrompue, Google News refuse : ${interruption}`);
+                process.exitCode = 1;
             }
-        } else {
-            console.log("Aucun article nouveau — pas d'Issue créée.");
+
+            if (essai) {
+                rapports.forEach((r, i) => fs.writeFileSync(path.join(sortie, `${langue}-${i + 1}.md`), r.texte));
+                const retenus = Object.assign({}, ...rapports.map((r) => r.donnees));
+                fs.writeFileSync(path.join(sortie, `${langue}-retenus.json`), JSON.stringify(retenus, null, 2));
+                console.log(`[${langue}] essai : rapports déposés dans ${sortie}`);
+            } else if (total > 0) {
+                for (let i = 0; i < rapports.length; i++) {
+                    await creerIssue(repo, token, rapports[i].texte, i + 1, rapports.length, langue);
+                }
+            } else {
+                console.log(`[${langue}] Aucun article nouveau — pas d'Issue créée.`);
+            }
         }
 
-        await fermerAnciennesIssues(repo, token);
+        if (!essai) await fermerAnciennesIssues(repo, token);
     } catch (erreur) {
         console.error("Erreur :", erreur);
         process.exit(1);
