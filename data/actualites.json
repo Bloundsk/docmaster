@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-13T19:35:44.290Z",
+  "maj": "2026-09-13T19:52:35.429Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
@@ -352,6 +352,34 @@
       "publie": "2026-09-13"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPdXZzZXg5N19jcFB0WXNfU0h4cVhFVlJTb3JobHdidU1ZN1FoUUxuZkZjUkZvemhSWFd0YzBXaGRuWk1PRzMxMnlYb3E2MHRxNU5CcTloUFFLUS1LVVEzTlc2RjVuNEFHVVdNazFOQk02RzVKc1JsWnN3X09zVlpYMDVYRE11QWxCMGdQMW5NWWZoVmlkQzUyeENqdEd1REtnWVpVeXQwTk9HbUU0MGt0X2pDVXVMRTlCbW9mZXp6dG11ZFVUV2FKYkF4dkdCNmx1WFJEXzk0QWk?oc=5",
+      "titre": "NDIS data may have ended up in Palantir’s analytics platform as part of efforts to curb fraud",
+      "source": "The Guardian",
+      "date": "2026-09-09",
+      "guide": "data",
+      "page": "debutant.html",
+      "ancre": "data-collection",
+      "section": "🗂️ Data collection",
+      "sujet": "📊 Data & Analytics — Beginner",
+      "langue": "en",
+      "site": "theguardian.com",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWWR3T3JvdElRbzBTOFhLMnRfcHI1NmdBYnZYWVpXdWUxdHlkRl9nQ3lDV2VaQXlUMXRvNjFwV05qUmw4ZXUzeEdwb2s0VXZlNzBTWk9xU0Fxc29Cc1JaSkx4dEVZV3ZXREhOampPN05JcWRJYmFaeGtRZkxsNEgzMHZ0WGE3bE93ODctUG0wc08wdGNzYlVlUTJiMHYwakp1aEE?oc=5",
+      "titre": "Build a supportive learning community for graduate apprentices",
+      "source": "Times Higher Education",
+      "date": "2026-09-08",
+      "guide": "apprendre",
+      "page": "avance.html",
+      "ancre": "building-your-system",
+      "section": "📐 Building your system",
+      "sujet": "🎓 Learning how to learn — Advanced",
+      "langue": "en",
+      "site": "timeshighereducation.com",
+      "publie": "2026-09-13"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGRRVFRPMzF6Rm9renM0LTg4aFEwOWE2aVJGY012b1BrMWdHbTZCRVFmaE5jYjkxZjJUQU9ZWTdUR0NtbXlHeC1aaVllSloxMllYeWlfTFUxXzNTVUl3cm80TTZGUFlTYXo3cWdsb3JZU2dvamxxbnRqa2pBM01UcUFSbWc3WVFEaW1tVDJHTDFlZmU3VWxZaVhGcDBBVzRSOEg4?oc=5",
       "titre": "Mark Ritson: Digital marketing’s endgame was always automation. Strategy matters again",
       "source": "The Drum",
@@ -391,6 +419,20 @@
       "sujet": "🎓 Learning how to learn — Advanced",
       "langue": "en",
       "site": "timeshighereducation.com",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiugJBVV95cUxQaGJSVHBGX1ZqR2d4TXpEYl93a3NzcXFvUFNXYm9rYUN0OTFVcDJKS0ItUkxtN0pIams0WGh6Slpxc1hQZG9xcEdyUWhhb0tBbEIzY0VTb3lveWczcXlxR1AzMFNaTHM3eHRvTGU1ekJLWmhGTEJ5ZFpOQXZqVmtHdUdaNVhZYjZhQUNJbjRPSmZSb3UxMl9GNUJwTDJnZjdPXzMwWDFEQy11aHl6bERpc3RqOHY4UURmUG5GUF9vajE5TmhhOE5kME1xV2kyVGtOaXU4cXJnZzRYakdiUEoxMS1DRUpCTmotcGlLLU9hUlh2RldVNDEzQzB4ZnlWRXlDMEJBdlF1dWNIUGs5elhrbXdIUWY4MDE5aEdydHdzMHZqaUJHVTJxb04xaWZPa1ozSTBGOElmMXNadw?oc=5",
+      "titre": "“Enterprises are becoming much more rigorous about the economics of AI”: Snowflake wants to help you cut AI costs by choosing the right model for the right task",
+      "source": "IT Pro",
+      "date": "2026-08-18",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "choosing-a-model",
+      "section": "⚖️ Choosing a model",
+      "sujet": "🤖 Artificial Intelligence — Intermediate",
+      "langue": "en",
+      "site": "itpro.com",
       "publie": "2026-09-13"
     },
     {
