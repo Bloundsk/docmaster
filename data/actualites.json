@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-13T13:24:27.591Z",
+  "maj": "2026-09-13T13:24:48.830Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
@@ -28,6 +28,20 @@
       "langue": "fr",
       "site": "",
       "publie": "2026-09-11"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQNHAwUmRHcVJRN2RNaEh5eVQzQ3ptWVdRYU9KSWpSRGpPbVZRcldpVmllWGlSRTdlemZZNVRWcHFoc1lmMEhZSWt1UHJhLTFRRUdwN3pRUXdzYWlaazlWcEpjZDBvRTV1VVZBdXJUTnNrYm1DN2t2V2hreW9NdHpsU0NSWkFobWFlM0VTZFJjenNaN0tSa3lHaUduWXNraTRxZnpvQUpkX29HTHhEc1I1VTZ4Z2RTMmFTLXhaV1VXRUp1aGl4SWVQNDNhS2RtRFZKM3hodA?oc=5",
+      "titre": "La fiscalité, cette grande inconnue de l'épargne qui inquiète et influence les Français",
+      "source": "Les Echos",
+      "date": "2026-09-10",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-fiscalité-de-lépargne",
+      "section": "🧾 La fiscalité de l'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "lesechos.fr",
+      "publie": "2026-09-13"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOXp4aHdDUk51ejNwWW54Ukg4TjllbEVGSHNNRHdKMWRFNDAzMVA5ZnNsc0hGTkJERkJFU3djS0o5aW1PUGhKQVhSY1FpdTB0aG8zOThPMDZnOUVEVG5yN1J0Y0p2M3RXTTlUTGlXa0lHbVk0RGpTbUpvNVVoNDdiN3NlVi1EMUlrUFhPN3hCR1ZSSmRQbC1uSzVmenVkSGVyRFV5TFpDbmt6MGFnT2RyVHdrMDFtQTdEQncxMWxkYXQ3V3pFbEhwc3E1QUd2T0NlY0lmdFZ3?oc=5",
@@ -100,6 +114,34 @@
       "publie": "2026-09-13"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPb0NpWE1HWndadDNkM0FNMW5kZTNfZUhPdzdaWWVnM09ySTFUaGlDVWNzblB3N1U3NU1OQjNRWk1LWFR2QnZEOThvTVFEZEF0ajVmcTdBaDVqdUVSbjZvYmtZaEVoQTNSRzVweFAwRktYRmVsXzNoV0lqVDJfNFZaaEJzbW9RY2Z5cFJscnBRcEZnckVrZjgwRldUc19raWtCVjlmNWRzY21oVkR6cjlEY2V0Q21OaTFaX0pIczhpNUR6NkI3UXJ2b0JDU2QyMWdNRGRXMXRqTHhHUEFsS09fNWRicXZRLW9VN2RLQ0pUcWFNdGk0aDVELS13?oc=5",
+      "titre": "Plan d'épargne Revolut : voici l'astuce pour optimiser vos finances en complément du Livret A",
+      "source": "BFMTV",
+      "date": "2026-09-07",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "lépargne",
+      "section": "📊 L'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeXJzbGFSMEt2VFE3bmxibWU0VGNnWjNVYWVlbnQ4TkcwTTRPOWNPV0JUSTB6RnpiNWlTQ1dNb1RJenBWNzZ4akk0YXB6eGtyZU84U3RxaDVPdUVCQU53VFltbVpxa3pXVkFlM2VpZ2NsdmNQdk9HSXNWd1dLWlNVNDBCN2x6WHhxREc4N01UUGxmX2NfenhBQllyMlNDbTZ2T19vV0p1ZG04alp3dDZr?oc=5",
+      "titre": "Marketing Digital Days : repenser la performance digitale à l’ère du zéro clic et de l’IA",
+      "source": "Blog du Modérateur",
+      "date": "2026-09-07",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "email-marketing",
+      "section": "✉️ Email marketing",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "blogdumoderateur.com",
+      "publie": "2026-09-13"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
       "titre": "Mots de passe, identifiants, emails... une nouvelle fuite massive de données secoue la France",
       "source": "01net.com",
@@ -156,6 +198,20 @@
       "publie": "2026-09-13"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNUDJJbWwwWG15UUZWZG9ZbWRncjJGSmw1Ul95SXFqcmxMRTBMTzlOWm1YS1dZSlpJVG1lc3JLd3NxR1dDQlhkTmkta1pnZTVpM3k1TkpoeFMwdG9BOHhnTGFWOUJCbGtvVnRZb0UwdWFsSHE5TmFFMlFNdERTNzJTQk1ZZUR2QTcwWGxaTTFGbXVtaVA2UTJ2ZlZ2YXJjMEQtdW55a3BGN0FKeHVrZ2tKSlpDek16QmR0ZXE3NjFOVFpvbnZJU05wbXNGOFRaaFNzVlUwSjg1b1dhbkE?oc=5",
+      "titre": "De la France au Japon, des taux d'intérêt record pour les États et les ménages",
+      "source": "RFI",
+      "date": "2026-09-02",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "rfi.fr",
+      "publie": "2026-09-13"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN3FOTTd2cG9SVU4tcDExendKQmIyUUdINzhpWmI2Si1GRVY3U3lsSE5MQUVNYUJWaUo1YjFpUDhBaUFVY0M3MG0wTjJvajc1a2tFSE9EbWJZTFdENm4xek41NTEwMnJTeEJXeVBDY3dra1Q5S2pUX2J2NEhzNWZmbm9rZ2NfV08xd0ZPRGdWN1EySVFhc3QyYWo0aTU0UjQ1M0Q0bTBKaWJxRHFuYWdHZDRBQnVUQQ?oc=5",
       "titre": "Loi \"anti fast-fashion\" : un nouveau cadre juridique pour la mode ultra-express [Tribune]",
       "source": "lsa-conso.fr",
@@ -167,6 +223,20 @@
       "sujet": "📢 Marketing Digital — Avancé",
       "langue": "fr",
       "site": "",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNzcyLVdaX0tvYnoyVzhvbFA3dExjZHFvQ1lpbUhsRU5IbTJVYWNTWWlBSkFBbUdhUkoxTHA3N25ycTQtampURy1XaUJTT0d0N25wUE04XzUyT04wS3k3V3lYaHVXdnM0aWhBY3FDNW9pNEdoQkJkQ2xTQzhwVHhGbzN2SG50bjItTFB0ME1OTFZNUzdQTlNXTUZkZE9jTC1oWUZBQXNyUlVBWGV3VnlVQnZhTkF0d0YyQmd6a2J3UUVsdkhNaE9ZSHQ0Umo?oc=5",
+      "titre": "« La situation est très grave » : Sébastien Lecornu annonce un plan de soutien pour les agriculteurs",
+      "source": "La Voix du Nord",
+      "date": "2026-08-29",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-situations-graves",
+      "section": "🚨 Les situations graves",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "lavoixdunord.fr",
       "publie": "2026-09-13"
     },
     {
@@ -198,6 +268,20 @@
       "publie": "2026-09-13"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPcWdRR2RUbWJZT0pQeENjTWhscjZuWG1iRFkzZC1wclplVGNiNjlPUUVPeTlER0wwcjVHS3dfc3B2OTFnX2laY2VfUkdNXzBTY0pfYlZIV0VCdnFHYTdnRnYxUEJ3cEdfZGQ2UmpiRHRidWFWMTgzQVVfaW5paFpNa3g5THRwcElYbzdxYXNMS1JObkcxVzFka3N0S2dwSHAzQWtVbFVHbFg0YzJQbGQ3eVJFYUtuN09NQkM5QzMyNkZhVzh2NFNSZzdJNVFFc0FyQ2JTWk5lenJiRDA4QkpfVzg5RGx1MmNCdzMzWkNhQThOVkt3YjBhQ29tTnZlV0tjZ2ljTg?oc=5",
+      "titre": "Intelligence artificielle : comment 700 agents IA d’OpenAI se sont coordonnés tout seuls cyberattaquer Hugging Face ?",
+      "source": "Sud Ouest",
+      "date": "2026-08-27",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "outils-et-fonctions",
+      "section": "🔧 Les outils, ou comment un agent agit",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-09-13"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1kaDVodmZJX3N0QVRYaDh2WWJsN3NYeVRtLXlJVDNNTGh6eEZxX2dnVUR5NWNWREVtVm16TG5RS1lNYlB6djdRTWhDNmlhT0h2UFFob0VEYWcxVnVsREo0Skg3c3BRdnFBc1NPeF9ud3o5S3lfa1RzQ0VuUQ?oc=5",
       "titre": "Télécharger Mots de Passe Apple (gratuit) Mac, Web",
       "source": "Clubic",
@@ -209,6 +293,20 @@
       "sujet": "🔒 Cybersécurité — Intermédiaire",
       "langue": "fr",
       "site": "",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxObnBYaDh4U0tQOF9TNndZRVJfckZ6UDFRNF92ZVJaWUdWSzBPaGJfdlZhS0ZvOFhQenNCXzczZTEzeFhTZ3kxNFYxV0kzMGNBZmt2ODQ5VGJSNkVneTBpVENNZldUM3RHZThySHJ5OW5QRF92NkZGX2ltTmhLd0JaWFZrbHpsdHJTVm4tOHhnM2VlN2htanZxWkVUZHpnZWNLTXhHNEM5V3hHMElLVEpsZkJGalA2NHZ5b3J2T0R3V3gzNHlqVDdPM1hMN0hzSWFZcXRiTkNxVE5NdjYxOFV6eXh0dmpELW5jZjhvdWQ5cEt4d1Bn?oc=5",
+      "titre": "Piratage des impôts, les raisons pour lesquelles la double authentification ne suffira pas à protéger vos données",
+      "source": "ZDNET",
+      "date": "2026-08-26",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "double-authentification",
+      "section": "📱 La double authentification",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "langue": "fr",
+      "site": "zdnet.fr",
       "publie": "2026-09-13"
     },
     {
@@ -235,62 +333,6 @@
       "ancre": "mots-de-passe-authentification",
       "section": "🔑 Mots de passe & authentification",
       "sujet": "🔒 Cybersécurité — Débutant",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNdmdkLU9ZeUllWmJTSU00eGpuSlQxSDJ2a3kyeG5VeXlCM0RnLXJTbWR0N2dpa1I0RGtSQ3hhZEtNczh4TWZKLUJtTGFtSjlGVXBIVzF1czlPTkxRQUJLdzYtZ0c4Z0daUWswRnZrRDlZejNUWkx2azV1YzNCb3M0TjFvU05GQURPem1JUFlTRm5CTzBlbG5jSG8xVmNiNmIxWUdPY0tSUVFUcHg1OVJ6azdfbjRwdmhON2hnSlBmS29QSGFRVFpiMVNQdzctSEVCRjVCUy14Z2JLSlgzaXFjVGhxNzZHRmhiNVlGdkxJOWM2eXJ4VTZWc0UwU2lybnRpX1BWaGN4eG1qNkpGdUJFS2pMOFZZSWs?oc=5",
-      "titre": "« Nos systèmes d'information ont des faiblesses » : après les multiples piratages, les pistes à l'étude pour combler la « dette technique » de l'Etat",
-      "source": "Les Echos",
-      "date": "2026-08-19",
-      "guide": "dev-web",
-      "page": "avance.html",
-      "ancre": "dette-technique",
-      "section": "🏗️ La dette technique",
-      "sujet": "💻 Développement Web — Avancé",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVVZ6RDJDSjVPd2ptNzEydnhwbmc2b2p6UXVGTUpOaWl1MmFac3pNRzNKdUNpX3dVbTg2V0lORHFXaEJnTzhURDdsZHhhTXJZWU1VdWVUUjFSTWRFZUZjQncxUmJEdDJ6TXNvWUR1ZDYyNHNYcDhyYkRVaUYyV1c5Nnk4cExCQ3l6QnN2SUFURHJETjV4andfUnhEVk5yZFdobWpZakNyc1NsLWh2WHkwczRfYTljV2dnS0twdG5UQjNWcmlV?oc=5",
-      "titre": "Piratage du site des impôts : « L'Etat a créé une surface d'attaque gigantesque »",
-      "source": "Les Echos",
-      "date": "2026-08-19",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "surface-attaque",
-      "section": "🗺️ Ta surface d'attaque",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOQ0xPOWpfMjMtcTd3czMyOFNtSGhXUkppeFloMzZzYXdTSmd1LVhSaVgxWnpDdnpIcFR4dkVhNVg1b3ZGQXRzNHVKUjdKMVprenV2bnNZOWR2VGtjNS1RTkZMbDVjTzBBXzFsdmpCdHpoMXRWVEZvd25JQ2RqbjFEM0hCSzBzTy1FcE9CSnh4MWwtNUZHMExqaUR3cGlCSlo0WjUzcmxQQXR2VUhOTEZKQlFMUU12VjhYMkhpTW9KbHNCcGRFSXhJZFg4OTBUbGpBSTZiMXREMlVPVGU0RlJPbktBTlBISkFxeEFmQVI1T3R3M1BwdjBZVg?oc=5",
-      "titre": "Données fiscales de trois millions de personnes dérobées, la double authentification n'était pas généralisée au fisc",
-      "source": "Capital.fr",
-      "date": "2026-08-18",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "double-authentification",
-      "section": "📱 La double authentification",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOeXhJZFc0SENYaTdQY2wydEd6X2N6NXNGZ0hFOUcxUGJITlUyMTlhak1UamJmdkVkUTJFeWg4MXhDVWhWaVQwTWxSVDh5MnZxYURPc0g1LWlFbXNnbE8zRExuWWVlYXEwMW9iWERaQkNiUTM4TzRLWUhpSG94TmFjZjhTV3RwZFdobnVHVEt4X3hsMzB3cERvalFaVG1CVTRVV3E1QWtySEVNOVR4cUxaeFlKXzZ1MUJSNTJ0VTJVSVhhZVdHV2U5Zzh1c1I3SENQUDh3T21uMG90WkxpWVVwNTVqTGw2RDNiMC1xcmFsZ1h6SHJlSms3Zkt6Vk1Ldw?oc=5",
-      "titre": "Livret A, LDD, LEP... Une partie de votre épargne finance déjà la transition écologique",
-      "source": "TF1 Info",
-      "date": "2026-08-17",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
       "langue": "fr",
       "site": "",
       "publie": "2026-09-13"
