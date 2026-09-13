@@ -38,6 +38,15 @@ rien ne le signalerait.
    | Longueur | **Court** | ~90 s, la durée câblée dans les guides |
    | Sources | **1 source** | deux sources mélangent deux parcours |
 
+   Constaté le 13 septembre 2026 : l'outil s'appelle désormais **Gemini
+   Notebook** (notebook.google.com), et le format **Briefing ne propose plus de
+   longueur** — le choix « Court » n'apparaît qu'avec les formats à deux voix. Il
+   n'y a donc rien à régler de ce côté.
+
+   La source peut aussi être ajoutée par **« Texte copié »** : ouvrir le `.txt`,
+   tout copier, coller. C'est le chemin suivi pour les épisodes anglais et
+   hongrois.
+
    **Ne pas laisser « Analyse approfondie »**, qui est proposé par défaut : sa
    définition dit « une conversation animée entre deux hôtes ». Le format impose
    alors deux voix, et la consigne écrite en dessous lui demande l'inverse.
@@ -99,3 +108,32 @@ La masterisation vérifie l'entrée (refus si le son est saturé) et la sortie
 (niveau, crête et durée), et **supprime** le résultat s'il ne tient pas ses
 promesses : un fichier qui sature est pire qu'un fichier absent, parce qu'il
 part en ligne sans que personne le réécoute.
+
+## 5. En anglais et en hongrois
+
+Demandé par Ludo le 13 septembre 2026. Même marche, trois différences.
+
+**Les sources partent des guides traduits**, et la consigne est écrite dans la
+langue de l'épisode — une consigne française pour un épisode anglais laisserait
+passer des tournures, et ses exemples (« plan d'épargne en actions ») n'ont pas
+de sens pour qui écoute en anglais :
+
+```
+node scripts/exporter-parcours.js --langue=en     ->  podcasts/sources/en/
+node scripts/exporter-parcours.js --langue=hu     ->  podcasts/sources/hu/
+```
+
+**La langue dans NotebookLM** : `English`, ou `magyar`.
+
+**Les fichiers** vont dans le sous-dossier de la langue, nommés comme le
+parcours :
+
+```
+podcasts/brut/en/finance.m4a      podcasts/brut/hu/finance.m4a
+```
+
+```
+node scripts/preparer-audio.js --langue=en
+node scripts/preparer-audio.js --langue=hu
+node scripts/publier-podcasts.js
+```

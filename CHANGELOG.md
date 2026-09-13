@@ -1,5 +1,54 @@
 # Changelog — Clicked
 
+## 2026-09-13 — Les premiers podcasts en anglais
+
+Demandé par Ludo : les podcasts en anglais et en hongrois, « comme pour le
+français avec NotebookLM ». Il a choisi que je pilote NotebookLM dans son Chrome,
+un épisode d'abord. Finance, écouté : *« c'est top »*. Trois épisodes anglais
+sont en ligne ; les autres suivent au rythme du quota de NotebookLM.
+
+### En ligne
+
+| Parcours | Épisode | Durée |
+|---|---|---|
+| Finance | Protect Your Wealth from Fees and Panic | 1 min 44 |
+| Artificial Intelligence | Prediction, Memory and Security | 1 min 33 |
+| Web Development | Foundations That Last, and Technical Debt | 1 min 35 |
+
+Chacun transcrit et vérifié avant publication : le nom du site, les trois temps
+annoncés, aucun sigle — l'épisode IA dit « language model » et « retrieval »,
+Web Development parle d'une maison et d'un restaurant plutôt que de HTML ou
+d'API —, le rappel pédagogique, une phrase de synthèse. Le résumé écrit, en
+anglais, est rédigé d'après ce que dit l'épisode.
+
+### La chaîne, dans trois langues
+
+- **`exporter-parcours.js --langue=en|hu`** part des guides TRADUITS, et écrit la
+  consigne dans la langue de l'épisode. Traduire l'audio français aurait perdu ce
+  que la traduction des guides a déjà tranché ; une consigne française aurait
+  laissé passer ses tournures et ses exemples (« plan d'épargne en actions »).
+- **`preparer-audio.js --langue=en|hu`** : `podcasts/brut/en/` vers
+  `assets/audio/en/`, même masterisation, durée notée sous « en/finance ».
+- **`publier-podcasts.js`** : la page anglaise montre l'épisode anglais quand il
+  existe, le français sinon, marqué « still in French » ; un flux par langue
+  (`en/podcast.xml`), qui n'existe qu'à partir du premier épisode ; le lecteur en
+  tête du guide anglais. La page française et son flux n'ont pas bougé d'un
+  octet — vérifié avant le premier épisode.
+- **La sauvegarde sur clé** ne descendait pas dans les sous-dossiers :
+  `podcasts/brut/en` et `hu` n'auraient eu aucune copie.
+- FAQ et « À propos » en anglais : ils disaient « The episodes are in French ».
+
+### Ce que NotebookLM a appris en chemin
+
+- L'outil s'appelle désormais **Gemini Notebook**, et le format Briefing ne
+  propose plus de longueur. Marche à suivre mise à jour.
+- L'import de fichier ouvre la fenêtre Windows, que je ne pilote pas : la source
+  passe par **« Texte copié »**, le presse-papiers rempli depuis le fichier.
+- **Quota quotidien** : « Vous avez atteint la limite quotidienne de résumés
+  audio » après trois épisodes. La génération de Digital Marketing, lancée juste
+  avant, n'a pas eu lieu. Les notebooks Marketing et Cybersecurity ont leur
+  source ; il reste à générer.
+
 ## 2026-09-13 — La veille vérifiée : doublons, articles retirés, trois par section
 
 Demandé par Ludo : vérifier la veille automatique et ce qu'elle publie.

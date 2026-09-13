@@ -327,9 +327,13 @@ raconte l'épisode ».
 
 **Le flux ne contient que les épisodes dont l'audio existe.** Une pièce jointe
 annoncée mais absente fait afficher une erreur dans l'application de l'auditeur,
-loin du site — le pire endroit pour se tromper. **Le flux reste unique et
-français**, même si la page existe dans les deux langues : il n'y a qu'une
-bande-son, et deux flux ne feraient que dédoubler les abonnements.
+loin du site — le pire endroit pour se tromper. **Un flux par langue** depuis le
+13 septembre 2026 — `podcast.xml`, `en/podcast.xml`, `hu/podcast.xml` : chaque
+langue a sa bande-son, produite dans NotebookLM à partir de SES guides traduits
+(`exporter-parcours.js --langue=en`), masterisée dans `assets/audio/en/`. Une
+page traduite montre l'épisode de sa langue quand il existe, et l'épisode
+français sinon, marqué comme tel ; le flux d'une langue n'existe qu'à partir de
+son premier épisode.
 
 #### Le clonage de voix, essayé puis abandonné
 

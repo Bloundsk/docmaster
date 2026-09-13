@@ -6,7 +6,7 @@
     <title>Podcasts - Clicked</title>
     <meta name="description" content="One episode per learning path: the essentials of a topic in a few minutes. The episodes are in French.">
     <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
-    <link rel="alternate" type="application/rss+xml" title="Podcasts Clicked" href="../podcast.xml">
+    <link rel="alternate" type="application/rss+xml" title="Podcasts Clicked" href="podcast.xml">
     <script>
         /* Applique le theme et le confort de lecture AVANT le premier
            affichage, sans quoi la page apparaitrait dans le mauvais theme, et
@@ -86,12 +86,58 @@
     <main id="main-content">
         <section>
             <h2 id="episodes">The episodes</h2>
-            <p>One episode per learning path. Listen here, or in any podcast app through <a href="../podcast.xml">the feed</a>.</p>
-            <div class="piege"><span class="titre">These episodes are in French</span><p>The audio and the written summaries below are in French. The learning paths themselves are fully translated — <a href="guides.html">browse the guides</a> if you would rather read them in English.</p></div>
+            <p>One episode per learning path. Listen here, or in any podcast app through <a href="podcast.xml">the feed</a>.</p>
+            <div class="piege"><span class="titre">Some episodes are still in French</span><p>The English episodes are being recorded. Until each one is ready, its French version stays here, marked as such. The learning paths themselves are fully translated — <a href="guides.html">browse the guides</a> if you would rather read them in English.</p></div>
 
 <!-- PODCASTS:DEBUT -->
-            <article class="podcast" id="apprendre">
+            <article class="podcast" id="ia">
+                <h3>Artificial Intelligence — Prediction, Memory and Security</h3>
+                <p class="podcast-duree">2 minutes · 13 September 2026</p>
+                <p>A language model is not a database of facts but a prediction engine: what that changes for trusting it, building agents with it, and keeping it safe. The Artificial Intelligence path in one minute thirty-three.</p>
+                <audio controls preload="none" src="../assets/audio/en/ia.mp3"></audio>
+                <p><a href="guides/ia/index.html">Open the Artificial Intelligence path →</a></p>
+                <details class="podcast-texte">
+                    <summary>What the episode covers</summary>
+                <p><em>Written summary of the episode. The audio is produced by NotebookLM from the learning path itself; this text is therefore not a word-for-word transcript, it says the same thing in fewer words.</em></p>
+                <p><strong>First, a language model is not a database of facts.</strong> It is a prediction engine that guesses the most likely next word — a very powerful autocomplete. It produces plausible text, which is exactly why its answers have to be checked before they are trusted.</p>
+                <p><strong>Second, a model has no memory of its own.</strong> Every follow-up question resends the whole conversation, and you pay for it each time. Give it tools — searching your files, sending or deleting emails — and it becomes an agent. One rule then holds: an agent never takes an irreversible step without a human's permission.</p>
+                <p><strong>Finally, secure and measure what you build.</strong> When a model answers badly, training it on your own data is rarely the answer: training teaches a style, not new facts. Retrieval does better — it finds your documents and hands them to the model to read. And beware of instructions hidden inside a text, which can quietly take control of an agent.</p>
+                <p>This path is education, not personal advice. Mastering artificial intelligence is not about treating it like a human mind, but about understanding its rules: prediction, memory and security.</p>
+                </details>
+            </article>
+            <article class="podcast" id="dev-web">
+                <h3>Web Development — Foundations That Last, and Technical Debt</h3>
+                <p class="podcast-duree">2 minutes · 13 September 2026</p>
+                <p>The tools change every year, the foundations have not changed in twenty: how a page is built, how it becomes an application, and what makes a site last. The Web Development path in one minute thirty-five.</p>
+                <audio controls preload="none" src="../assets/audio/en/dev-web.mp3"></audio>
+                <p><a href="guides/dev-web/index.html">Open the Web Development path →</a></p>
+                <details class="podcast-texte">
+                    <summary>What the episode covers</summary>
+                <p><em>Written summary of the episode. The audio is produced by NotebookLM from the learning path itself; this text is therefore not a word-for-word transcript, it says the same thing in fewer words.</em></p>
+                <p><strong>First, a web page is built like a house.</strong> One language frames the walls, another paints them, and a scripting language brings the plumbing and the electricity. The golden rule: design for the smallest phone screen first — the lack of space forces you to keep only what matters.</p>
+                <p><strong>Second, an application runs like a restaurant.</strong> It needs a strict contract for how the kitchen and the waiters talk, a filing cabinet to store the data, and a way for several cooks to change the recipes without overwriting each other. And a slow page is rarely a slow server: it is almost always too many round trips.</p>
+                <p><strong>Finally, what makes a site last</strong> is performance, by keeping ready-made copies of files; security, by treating everything that comes from outside as hostile; and tests, which let you change code without fear. Technical debt works like a loan: cutting corners buys time today, and the interest is paid in hours lost to bugs.</p>
+                <p>This path is education, not personal advice. A good website rests on solid foundations and debts paid back, not on the latest tool.</p>
+                </details>
+            </article>
+            <article class="podcast" id="finance">
+                <h3>Finance — Protect Your Wealth from Fees and Panic</h3>
+                <p class="podcast-duree">2 minutes · 13 September 2026</p>
+                <p>No maths degree and no inheritance needed: a safety net first, a plan built on your timeline, low fees, and a cool head. The Finance path in one minute forty-four.</p>
+                <audio controls preload="none" src="../assets/audio/en/finance.mp3"></audio>
+                <p><a href="guides/finance/index.html">Open the Finance path →</a></p>
+                <details class="podcast-texte">
+                    <summary>What the episode covers</summary>
+                <p><em>Written summary of the episode. The audio is produced by NotebookLM from the learning path itself; this text is therefore not a word-for-word transcript, it says the same thing in fewer words.</em></p>
+                <p><strong>First, protection comes before profit.</strong> An emergency fund of three to six months of spending works like a shock absorber: when the car breaks down, you are not forced to sell your investments at a loss to pay the bill. Once that foundation is in place, start investing early and let compound interest do its work.</p>
+                <p><strong>Second, build your strategy on your timeline, not on your emotions.</strong> When you will need the money decides how it is invested — not what the market is doing today. And check your fees relentlessly: one percentage point a year sounds trivial, but over thirty years it eats a large share of your money. Low-cost index funds are the simplest way to spread the risk.</p>
+                <p><strong>Finally, the biggest risk to your money is you.</strong> We are wired to panic and sell the moment the market drops. Write your plan down now, while you are calm, so you do not make costly decisions in the heat of the moment.</p>
+                <p>This path is education, not personal financial advice. Time, discipline and a cool head matter far more than trying to time the market.</p>
+                </details>
+            </article>
+            <article class="podcast" id="apprendre" lang="fr">
                 <h3>Apprendre à apprendre — Si réviser est confortable, tu n'apprends pas</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">2 minutes · 30 August 2026</p>
                 <p>Le surlignage et la relecture donnent une illusion de maîtrise. Ce qui fait tenir l'information, c'est l'effort de la retrouver. Apprendre à apprendre en une minute trente.</p>
                 <audio controls preload="none" src="../assets/audio/apprendre.mp3"></audio>
@@ -107,8 +153,9 @@
                 <p>Cet épisode relève de la pédagogie et des techniques de mémorisation. Il ne remplace pas un avis professionnel en cas de trouble de l'apprentissage.</p>
                 </details>
             </article>
-            <article class="podcast" id="cybersecurite">
+            <article class="podcast" id="cybersecurite" lang="fr">
                 <h3>Cybersécurité — Des procédures, pas de l'intuition</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">2 minutes · 30 August 2026</p>
                 <p>La cybersécurité n'est pas une affaire de génies en sweat à capuche, mais d'habitudes qui évitent d'être une cible facile. Cybersécurité en une minute trente-cinq.</p>
                 <audio controls preload="none" src="../assets/audio/cybersecurite.mp3"></audio>
@@ -123,8 +170,9 @@
                 <p>Ce parcours fait de la pédagogie, ce n'est pas un conseil personnalisé. La vraie sécurité ne repose pas sur ton intuition du moment, mais sur des procédures simples appliquées systématiquement.</p>
                 </details>
             </article>
-            <article class="podcast" id="data">
+            <article class="podcast" id="data" lang="fr">
                 <h3>Data &amp; Analytics — Une donnée mal lue est pire que pas de donnée</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">1 minute · 30 August 2026</p>
                 <p>Faire parler les chiffres sans se faire manipuler : choisir le bon indicateur, se méfier de la moyenne, et accepter l'incertitude. Data &amp; Analytics en une minute quinze.</p>
                 <audio controls preload="none" src="../assets/audio/data.mp3"></audio>
@@ -140,8 +188,9 @@
                 <p>Ce parcours fait de la pédagogie, ce n'est pas un conseil sur mesure. Retiens surtout qu'une donnée mal interprétée est plus dangereuse que pas de donnée du tout : elle donne une fausse confiance.</p>
                 </details>
             </article>
-            <article class="podcast" id="design">
+            <article class="podcast" id="design" lang="fr">
                 <h3>Design UX/UI — Le bon design est invisible</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Personne ne complimente une porte qui s'ouvre toute seule ; tout le monde peste contre celle qu'on pousse alors qu'il fallait tirer. Design UX/UI en une minute quarante.</p>
                 <audio controls preload="none" src="../assets/audio/design.mp3"></audio>
@@ -156,8 +205,9 @@
                 <p>Ce parcours fait de la pédagogie : ce n'est pas un conseil personnalisé sur tes projets.</p>
                 </details>
             </article>
-            <article class="podcast" id="droit">
+            <article class="podcast" id="droit" lang="fr">
                 <h3>Droit &amp; démarches — Avoir raison ne suffit pas, il faut le prouver</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Les réflexes juridiques du quotidien, sans jargon : ce qui se garantit, ce qui se prouve, et ce qu'on peut obtenir sans procès. Droit &amp; démarches en une minute trente.</p>
                 <audio controls preload="none" src="../assets/audio/droit.mp3"></audio>
@@ -171,8 +221,9 @@
                 <p>Ce parcours fait de la pédagogie, ce n'est pas un conseil juridique personnalisé. En cas de litige, la vraie question n'est pas de savoir si tu as raison, mais si tu peux le prouver.</p>
                 </details>
             </article>
-            <article class="podcast" id="ecologie">
+            <article class="podcast" id="ecologie" lang="fr">
                 <h3>Sobriété numérique — Tout se joue au moment de l'achat</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>Supprimer ses vieux courriels ne sauve rien. L'impact du numérique est dans la fabrication, pas dans l'usage. Sobriété numérique en une minute vingt.</p>
                 <audio controls preload="none" src="../assets/audio/ecologie.mp3"></audio>
@@ -187,8 +238,9 @@
                 <p>Ce parcours fait de la pédagogie : il donne des ordres de grandeur, ce n'est pas un conseil personnalisé.</p>
                 </details>
             </article>
-            <article class="podcast" id="entrepreneuriat">
+            <article class="podcast" id="entrepreneuriat" lang="fr">
                 <h3>Entrepreneuriat — Le seul test valable est une carte bancaire</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>Valider et financer un projet avant d'y consacrer des mois. Entrepreneuriat en une minute vingt-cinq.</p>
                 <audio controls preload="none" src="../assets/audio/entrepreneuriat.mp3"></audio>
@@ -202,24 +254,9 @@
                 <p>Ce parcours fait de la pédagogie : ce n'est pas un conseil financier ou juridique personnalisé.</p>
                 </details>
             </article>
-            <article class="podcast" id="ia">
-                <h3>Intelligence Artificielle — Un moteur de déduction, pas un oracle</h3>
-                <p class="podcast-duree">2 minutes · 29 August 2026</p>
-                <p>Comprendre comment la technologie fonctionne sous le capot pour cesser d'y voir de la magie. Intelligence Artificielle en une minute quarante.</p>
-                <audio controls preload="none" src="../assets/audio/ia.mp3"></audio>
-                <p><a href="guides/ia/index.html">Open the Intelligence Artificielle path →</a></p>
-                <details class="podcast-texte">
-                    <summary>What the episode covers</summary>
-                <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
-                <p>Comprendre comment cette technologie fonctionne sous le capot, pour cesser d'y voir de la magie et l'utiliser sans se faire avoir.</p>
-                <p><strong>D'abord la base.</strong> Un grand modèle de langage n'est pas une base de données qui saurait des choses : c'est un moteur statistique qui devine le mot suivant. Le clavier prédictif de ton téléphone, sous stéroïdes. S'il paraît intelligent, c'est par les probabilités — d'où l'importance de consignes très précises sur le contexte et le format attendu.</p>
-                <p><strong>Ensuite l'illusion de la mémoire.</strong> Le modèle oublie tout entre deux messages, et lui renvoyer l'historique à chaque fois fait grimper la facture. Pour qu'il connaisse des informations internes, on ne l'entraîne pas : on va chercher le bon document et on le lui glisse — comme poser un dossier ouvert sur le bureau d'un collègue avant de l'interroger.</p>
-                <p><strong>Enfin le passage au réel.</strong> On teste avec de vrais exemples plutôt qu'à l'instinct. Et il faut se méfier d'une faille qu'on ne sait pas refermer : le modèle ne distingue pas un texte qu'il lit d'un ordre qu'il reçoit. Un document piégé, et il exécutera les instructions cachées dedans.</p>
-                <p>Ce parcours fait de la pédagogie : ce n'est pas un conseil technologique ou juridique personnalisé.</p>
-                </details>
-            </article>
-            <article class="podcast" id="marketing">
+            <article class="podcast" id="marketing" lang="fr">
                 <h3>Marketing Digital — Ton audience, louée ou possédée</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Attirer et retenir des clients sans jargon, en réparant les fuites avant d'acheter du trafic. Marketing Digital en une minute trente.</p>
                 <audio controls preload="none" src="../assets/audio/marketing.mp3"></audio>
@@ -233,8 +270,9 @@
                 <p>Ce parcours fait de la pédagogie : il explique des mécanismes, ce n'est pas un conseil juridique personnalisé.</p>
                 </details>
             </article>
-            <article class="podcast" id="negociation">
+            <article class="podcast" id="negociation" lang="fr">
                 <h3>Négociation &amp; communication — Ton pouvoir vient de la porte de sortie</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>La négociation ne repose pas sur le tchatche, mais sur ce qui se prépare avant de s'asseoir à la table. Négociation &amp; communication en une minute vingt.</p>
                 <audio controls preload="none" src="../assets/audio/negociation.mp3"></audio>
@@ -249,8 +287,9 @@
                 <p>Ce parcours fait de la pédagogie : il explique des mécanismes, ce n'est pas un conseil personnalisé à appliquer aveuglément à chaque situation.</p>
                 </details>
             </article>
-            <article class="podcast" id="productivite">
+            <article class="podcast" id="productivite" lang="fr">
                 <h3>⏱ Productivité &amp; Organisation — Gérer son énergie, pas son temps</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">1 minute · 29 August 2026</p>
                 <p>Ce parcours ne sert pas à travailler plus vite, mais à éliminer ce qui fatigue inutilement. Productivité &amp; Organisation en une minute vingt.</p>
                 <audio controls preload="none" src="../assets/audio/productivite.mp3"></audio>
@@ -265,8 +304,9 @@
                 <p>Ce parcours fait de la pédagogie : il explique des mécanismes, ce n'est pas un conseil personnalisé.</p>
                 </details>
             </article>
-            <article class="podcast" id="sante">
+            <article class="podcast" id="sante" lang="fr">
                 <h3>Santé au travail — Ajuster avant que la douleur s'installe</h3>
+                <p class="podcast-langue">🇫🇷 This episode is still in French.</p>
                 <p class="podcast-duree">2 minutes · 29 August 2026</p>
                 <p>Le but n'est pas de te rendre plus productif, mais d'apprendre à travailler sans t'abîmer. Santé au travail en une minute trente.</p>
                 <audio controls preload="none" src="../assets/audio/sante.mp3"></audio>
@@ -279,38 +319,6 @@
                 <p><strong>Ensuite la charge mentale.</strong> Le problème n'est pas le stress ponctuel, c'est l'absence de récupération. Ce qui use, c'est un poste exigeant sans aucune marge de manœuvre. Pense à un élastique : le tendre pour un gros projet est normal, mais s'il reste tendu en permanence, il perd son élasticité.</p>
                 <p><strong>Enfin les recours.</strong> Le médecin du travail est tenu au secret médical et ne travaille pas pour ton employeur ; la visite est un droit. En cas de situation grave, comme du harcèlement, le réflexe vital est d'écrire et de dater les faits au fur et à mesure, parce que la mémoire s'efface vite.</p>
                 <p>Cet épisode est purement pédagogique et ne remplace pas un avis médical.</p>
-                </details>
-            </article>
-            <article class="podcast" id="dev-web">
-                <h3>Développement Web — Trois piliers qui ne se démodent pas</h3>
-                <p class="podcast-duree">2 minutes · 26 August 2026</p>
-                <p>Créer un site paraît facile, parce qu'on voit le résultat tout de suite. Sécurité, économie des ressources, clarté : le parcours Développement Web en une minute quarante.</p>
-                <audio controls preload="none" src="../assets/audio/dev-web.mp3"></audio>
-                <p><a href="guides/dev-web/index.html">Open the Développement Web path →</a></p>
-                <details class="podcast-texte">
-                    <summary>What the episode covers</summary>
-                <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
-                <p>Créer un site a l'air facile : on voit le résultat presque tout de suite. Mais les outils à la mode passent, et ce qui reste, ce sont les fondations.</p>
-                <p><strong>D'abord séparer le public du privé.</strong> Un site, c'est un restaurant : la salle est ouverte à tous, la cuisine ne l'est pas. Le code visible par le visiteur est la salle — on n'y cache jamais un secret, puisqu'un simple clic droit permet à n'importe qui d'y fouiller. Les règles et la sécurité vivent côté serveur.</p>
-                <p><strong>Ensuite comprendre d'où vient la lenteur.</strong> Une page rame rarement à cause de la puissance de la machine. C'est comme décharger ses courses : la fatigue vient du nombre d'allers-retours, pas du poids des sacs. Cinquante petites requêtes pour chercher une information à la fois, voilà ce qui tue un site. On regroupe les demandes, et on garde en mémoire ce qu'on a déjà chargé.</p>
-                <p><strong>Enfin la dette technique.</strong> Un site rapide le premier jour s'effondre vite si son évolution est mal tenue. Coder vite et mal, c'est contracter un emprunt : il se rembourse en heures perdues chaque semaine à réparer. Chiffrer ces heures est le seul moyen de justifier le temps passé à nettoyer.</p>
-                <p>Ce parcours fait de la pédagogie : il explique des mécaniques, ce n'est pas une consultation technique sur ton projet.</p>
-                </details>
-            </article>
-            <article class="podcast" id="finance">
-                <h3>Finance — L'ordre des étapes bat la Bourse</h3>
-                <p class="podcast-duree">1 minute · 26 August 2026</p>
-                <p>Pas besoin d'un diplôme ni d'un héritage : une méthode, de la patience, et savoir dans quel ordre faire les choses. Le parcours Finance en une minute vingt.</p>
-                <audio controls preload="none" src="../assets/audio/finance.mp3"></audio>
-                <p><a href="guides/finance/index.html">Open the Finance path →</a></p>
-                <details class="podcast-texte">
-                    <summary>What the episode covers</summary>
-                <p><em>Résumé écrit de l'épisode. L'audio est produit par NotebookLM à partir du parcours lui-même ; ce texte n'en est donc pas la transcription mot à mot, il en dit la même chose en plus court.</em></p>
-                <p>Il ne faut ni diplôme en mathématiques ni héritage pour faire fructifier son argent. Il faut une méthode, du temps, et le bon ordre.</p>
-                <p><strong>D'abord l'épargne de précaution.</strong> Trois à six mois de dépenses, disponibles immédiatement, avant d'investir quoi que ce soit. C'est ce qui évite d'avoir à tout revendre à perte au premier imprévu.</p>
-                <p><strong>Ensuite l'investissement passif.</strong> Des fonds indiciels — un panier qui regroupe des centaines d'entreprises, donc qui dilue le risque — logés dans un plan d'épargne en actions pour alléger la fiscalité. Puis on laisse les décennies faire le travail, en surveillant les frais, qui grignotent sans bruit.</p>
-                <p><strong>Enfin toi.</strong> Le plus grand danger n'est pas le marché, c'est la panique quand l'économie tangue. On fixe son cap à froid, et on n'y touche jamais sous le coup de l'émotion.</p>
-                <p>Ce parcours fait de la pédagogie, pas du conseil en investissement : il explique des mécanismes, il ne connaît ni ta situation, ni tes projets.</p>
                 </details>
             </article>
 <!-- PODCASTS:FIN -->

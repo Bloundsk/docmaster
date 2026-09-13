@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    <channel>
+        <title>Clicked — English</title>
+        <link>https://bloundsk.github.io/docmaster/en/podcasts.html</link>
+        <description>Free learning paths to understand the skills that matter next.</description>
+        <language>en</language>
+        <itunes:author>Clicked</itunes:author>
+        <itunes:explicit>false</itunes:explicit>
+        <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
+        <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/en/podcast.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Web Development — Foundations That Last, and Technical Debt</title>
+            <description>The tools change every year, the foundations have not changed in twenty: how a page is built, how it becomes an application, and what makes a site last. The Web Development path in one minute thirty-five.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#dev-web</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#dev-web</guid>
+            <pubDate>Sun, 13 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/dev-web.mp3" length="1143046" type="audio/mpeg"/>
+            <itunes:duration>95</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Finance — Protect Your Wealth from Fees and Panic</title>
+            <description>No maths degree and no inheritance needed: a safety net first, a plan built on your timeline, low fees, and a cool head. The Finance path in one minute forty-four.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#finance</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#finance</guid>
+            <pubDate>Sun, 13 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/finance.mp3" length="1254641" type="audio/mpeg"/>
+            <itunes:duration>104</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Artificial Intelligence — Prediction, Memory and Security</title>
+            <description>A language model is not a database of facts but a prediction engine: what that changes for trusting it, building agents with it, and keeping it safe. The Artificial Intelligence path in one minute thirty-three.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#ia</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#ia</guid>
+            <pubDate>Sun, 13 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/ia.mp3" length="1119849" type="audio/mpeg"/>
+            <itunes:duration>93</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+    </channel>
+</rss>

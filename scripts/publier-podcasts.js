@@ -126,8 +126,27 @@ const sansEmoji = (t) =>
 // En-tete « clef: valeur » entre deux lignes de tirets, puis le texte lu. Les
 // deux vivent dans le meme fichier : un episode est une unite, et separer son
 // titre de son texte creerait deux endroits a tenir d accord.
-function lireEpisode(fichier) {
-    const brut = fs.readFileSync(path.join(DOSSIER, fichier), "utf8");
+/* TROIS LANGUES depuis le 13 septembre 2026. Les episodes anglais et hongrois
+   vivent dans podcasts/en/ et podcasts/hu/, leur audio dans assets/audio/en/ et
+   assets/audio/hu/, leur duree sous « en/finance » dans durees.json. Le
+   francais garde ses chemins : son flux est publie depuis le 29 aout, et une
+   application de podcast qui a enregistre une adresse ne la suit pas si elle
+   bouge. */
+const sousDossier = (langue) => (langue === "fr" ? "" : langue);
+const dossierDes = (langue) => path.join(DOSSIER, sousDossier(langue));
+
+/* Le nom du parcours dans une autre langue : parcours.js ne porte que le
+   francais. On le lit dans le <h1> du sommaire traduit, le nom meme que
+   l auditeur retrouve en ouvrant le guide. */
+function nomTraduit(sujet, langue) {
+    const sommaire = path.join(RACINE, langue, "guides", sujet, "index.html");
+    if (!fs.existsSync(sommaire)) return null;
+    const h1 = (fs.readFileSync(sommaire, "utf8").match(/<h1>([\s\S]*?)<\/h1>/) || [])[1];
+    return h1 ? h1.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").trim() : null;
+}
+
+function lireEpisode(fichier, langue = "fr") {
+    const brut = fs.readFileSync(path.join(dossierDes(langue), fichier), "utf8");
     const sujet = fichier.replace(/\.md$/, "");
 
     const bornes = brut.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
@@ -149,9 +168,10 @@ function lireEpisode(fichier) {
     const prononce = corps.replace(/^\s*\*[\s\S]*?\*\s*$/m, "").replace(/^#+ .*$/gm, "");
     const mots = prononce.split(/\s+/).filter(Boolean).length;
 
-    const fichierAudio = `${sujet}.mp3`;
+    const fichierAudio = langue === "fr" ? `${sujet}.mp3` : `${langue}/${sujet}.mp3`;
     const cheminAudio = path.join(AUDIO, fichierAudio);
     const audio = fs.existsSync(cheminAudio);
+    const cleDuree = fichierAudio.replace(/\.mp3$/, "");
 
     /* La duree REELLE prime des qu il y a un fichier. L estimation par le
        nombre de mots ne vaut que tant qu il n y en a pas : une application de
@@ -161,13 +181,15 @@ function lireEpisode(fichier) {
        alors de la presenter comme une certitude. */
     const relevees = dureesConnues();
     const secondes = audio
-        ? (Number.isFinite(relevees[sujet]) ? relevees[sujet] : dureeParFfprobe(cheminAudio))
+        ? (Number.isFinite(relevees[cleDuree]) ? relevees[cleDuree] : dureeParFfprobe(cheminAudio))
         : null;
 
     return {
         secondes,
         exacte: secondes !== null,
         sujet,
+        langue,
+        nomLangue: langue === "fr" ? PARCOURS[sujet].titre : (nomTraduit(sujet, langue) || PARCOURS[sujet].titre),
         titre: entete.titre,
         resume: entete.resume,
         publie: entete.publie,
@@ -191,17 +213,20 @@ function lireEpisode(fichier) {
 
    Les fichiers ignores sont ANNONCES. Un « finances.md » au pluriel serait
    sinon ecarte en silence, et l episode manquerait sans que rien ne le dise. */
-function lireEpisodes() {
-    if (!fs.existsSync(DOSSIER)) return [];
-    const tous = fs.readdirSync(DOSSIER).filter((f) => f.endsWith(".md"));
+function lireEpisodes(langue = "fr") {
+    const dossier = dossierDes(langue);
+    if (!fs.existsSync(dossier)) return [];
+    const tous = fs.readdirSync(dossier).filter((f) => f.endsWith(".md"));
     const retenus = tous.filter((f) => PARCOURS[path.basename(f, ".md")]);
     const ignores = tous.filter((f) => !PARCOURS[path.basename(f, ".md")]);
     if (ignores.length) {
-        console.log(`Ignoré${ignores.length > 1 ? "s" : ""}, nom sans parcours ` +
+        console.log(`Ignoré${ignores.length > 1 ? "s" : ""}${langue === "fr" ? "" : ` (${langue})`}, nom sans parcours ` +
                     `correspondant : ${ignores.join(", ")}`);
     }
+    // La langue est posee aussi sur un episode en erreur, pour que le message
+    // nomme le bon fichier.
     return retenus
-        .map(lireEpisode)
+        .map((f) => ({ ...lireEpisode(f, langue), langue }))
         .sort((a, b) => (b.publie || "").localeCompare(a.publie || ""));
 }
 
@@ -365,16 +390,40 @@ const PAGES = {
     },
 };
 
-function rendreEpisode(e, T) {
+/* Ce que les pages anglaise et hongroise disent tant que TOUS leurs episodes
+   ne sont pas encore dans leur langue. Quand aucun ne l est, l avis de la page
+   (« These episodes are in French ») suffit ; quand tous le sont, rien n est a
+   dire. */
+const PARTIEL = {
+    en: {
+        avis: `<div class="piege"><span class="titre">Some episodes are still in French</span><p>The English episodes are being recorded. Until each one is ready, its French version stays here, marked as such. The learning paths themselves are fully translated — <a href="guides.html">browse the guides</a> if you would rather read them in English.</p></div>`,
+        description: "One episode per learning path: the essentials of a topic in a few minutes, to listen to or to read.",
+        marque: "🇫🇷 This episode is still in French.",
+    },
+    hu: {
+        avis: `<div class="piege"><span class="titre">Néhány epizód még franciául szól</span><p>A magyar epizódok felvétele folyamatban van. Amíg egy epizód el nem készül, a francia változata marad itt, ezt jelölve. Maguk az útmutatók teljesen le vannak fordítva — <a href="guides.html">nézd meg az útmutatókat</a>, ha inkább magyarul olvasnád őket.</p></div>`,
+        description: "Útmutatónként egy epizód: egy téma lényege néhány percben, meghallgatva vagy elolvasva.",
+        marque: "🇫🇷 Ez az epizód egyelőre franciául szól.",
+    },
+};
+
+function rendreEpisode(e, T, partiel) {
     const lien = `guides/${e.sujet}/index.html`;
     const ecoute = e.audio
         ? `                <audio controls preload="none" src="${T.prefixe}assets/audio/${e.fichierAudio}"></audio>\n`
         : `                <p class="podcast-attente">${T.attente}</p>\n`;
-    const nomDuParcours = (T.noms && T.noms[e.sujet]) || e.parcours;
+    // Un episode dans la langue de la page porte le nom du parcours dans cette
+    // langue ; un episode encore francais garde celui qu il avait.
+    const natif = e.langue === T.lang;
+    const nomDuParcours = natif ? e.nomLangue : ((T.noms && T.noms[e.sujet]) || e.parcours);
+    const titreParcours = natif ? e.nomLangue : e.parcours;
+    // Sur une page dont une partie est traduite, ce qui reste en francais le
+    // dit, et le declare au navigateur (lecteurs d ecran compris).
+    const marque = !natif && partiel;
 
-    return `            <article class="podcast" id="${e.sujet}">
-                <h3>${echapper(sansEmoji(e.parcours))} — ${echapper(e.titre)}</h3>
-                <p class="podcast-duree">${e.exacte ? "" : T.environ}${T.minute(e.minutes)} · ${echapper(dateLisible(e.publie, T.lang))}</p>
+    return `            <article class="podcast" id="${e.sujet}"${marque ? ` lang="${e.langue}"` : ""}>
+                <h3>${echapper(sansEmoji(titreParcours))} — ${echapper(e.titre)}</h3>
+${marque ? `                <p class="podcast-langue">${PARTIEL[T.lang].marque}</p>\n` : ""}                <p class="podcast-duree">${e.exacte ? "" : T.environ}${T.minute(e.minutes)} · ${echapper(dateLisible(e.publie, T.lang))}</p>
                 <p>${echapper(e.resume)}</p>
 ${ecoute}                <p><a href="${lien}">${echapper(T.ouvrir(sansEmoji(nomDuParcours)))}</a></p>
                 <details class="podcast-texte">
@@ -386,10 +435,18 @@ ${enHTML(e.corps)}                </details>
 
 function rendrePage(episodes, T) {
     const avecAudio = episodes.filter((e) => e.audio).length;
-    const flux = `${T.prefixe}podcast.xml`;
+    const enFrancais = T.lang === "fr" ? 0 : episodes.filter((e) => e.langue === "fr").length;
+    const partiel = enFrancais > 0 && enFrancais < episodes.length;
+    const natifsAvecAudio = episodes.filter((e) => e.langue === T.lang && e.audio).length;
+    // Le flux de la langue des qu il a un episode ; le flux francais sinon.
+    const flux = T.lang !== "fr" && natifsAvecAudio ? "podcast.xml" : `${T.prefixe}podcast.xml`;
     const intro = avecAudio ? T.introAvec(flux) : T.introSans;
     const partage = ID.textePartage(Object.keys(PARCOURS).length)[T.lang];
-    const avis = T.avis ? `            ${T.avis}\n` : "";
+    const texteAvis = !enFrancais ? null : (partiel ? PARTIEL[T.lang].avis : T.avis);
+    const avis = texteAvis ? `            ${texteAvis}\n` : "";
+    // « The episodes are in French » ne reste dans la description que tant
+    // qu il y a du francais a annoncer.
+    const description = T.lang !== "fr" && !enFrancais ? PARTIEL[T.lang].description : T.description;
 
     return `<!DOCTYPE html>
 <html lang="${T.lang}">
@@ -397,7 +454,7 @@ function rendrePage(episodes, T) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
     <title>${T.titre}</title>
-    <meta name="description" content="${echapper(T.description)}">
+    <meta name="description" content="${echapper(description)}">
     <link rel="icon" type="image/svg+xml" href="${T.prefixe}assets/img/favicon.svg">
     <link rel="alternate" type="application/rss+xml" title="Podcasts ${ID.nom}" href="${flux}">
 ${BLOC_PREFERENCES}
@@ -405,7 +462,7 @@ ${BLOC_PREFERENCES}
     <link rel="canonical" href="${ID.base}${T.adresse}">
     <meta property="og:site_name" content="${ID.nom}">
     <meta property="og:title" content="${T.titre}">
-    <meta property="og:description" content="${echapper(T.description)}">
+    <meta property="og:description" content="${echapper(description)}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="${ID.base}${T.adresse}">
     <meta property="og:image" content="${ID.base}${ID.imagePartage}">
@@ -415,7 +472,7 @@ ${BLOC_PREFERENCES}
     <meta property="og:locale" content="${T.locale}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${T.titre}">
-    <meta name="twitter:description" content="${echapper(T.description)}">
+    <meta name="twitter:description" content="${echapper(description)}">
     <meta name="twitter:image" content="${ID.base}${ID.imagePartage}">
 </head>
 <body>
@@ -439,7 +496,7 @@ ${BLOC_PREFERENCES}
             ${intro}
 ${avis}
 <!-- PODCASTS:DEBUT -->
-${episodes.map((e) => rendreEpisode(e, T)).join("")}<!-- PODCASTS:FIN -->
+${episodes.map((e) => rendreEpisode(e, T, partiel)).join("")}<!-- PODCASTS:FIN -->
         </section>
 
         <section>
@@ -474,13 +531,22 @@ ${T.voix.map((t) => `                <p>${t}</p>`).join("\n")}
 // Seuls les episodes dont l audio existe. Un flux qui annonce une piece jointe
 // absente fait afficher une erreur a l auditeur, dans son application, loin du
 // site — c est le pire endroit pour se tromper.
-function rendreFlux(episodes) {
-    const publiables = episodes.filter((e) => e.audio);
+//
+// Un flux PAR LANGUE depuis le 13 septembre 2026 : podcast.xml, en/podcast.xml,
+// hu/podcast.xml. Il n y avait qu un flux tant qu il n y avait qu une
+// bande-son ; un auditeur anglophone abonne au flux francais recevrait des
+// episodes qu il ne comprend pas. Chaque flux ne porte que les episodes de sa
+// langue.
+const TITRES_FLUX = { fr: "", en: " — English", hu: " — magyar" };
+
+function rendreFlux(episodes, langue = "fr") {
+    const prefixe = langue === "fr" ? "" : `${langue}/`;
+    const publiables = episodes.filter((e) => e.audio && e.langue === langue);
     const items = publiables.map((e) => `        <item>
-            <title>${echapper(sansEmoji(e.parcours))} — ${echapper(e.titre)}</title>
+            <title>${echapper(sansEmoji(e.nomLangue))} — ${echapper(e.titre)}</title>
             <description>${echapper(e.resume)}</description>
-            <link>${ID.base}podcasts.html#${e.sujet}</link>
-            <guid isPermaLink="false">${ID.base}podcasts.html#${e.sujet}</guid>
+            <link>${ID.base}${prefixe}podcasts.html#${e.sujet}</link>
+            <guid isPermaLink="false">${ID.base}${prefixe}podcasts.html#${e.sujet}</guid>
             <pubDate>${new Date(e.publie + "T08:00:00Z").toUTCString()}</pubDate>
             <enclosure url="${ID.base}assets/audio/${e.fichierAudio}" length="${e.octets}" type="audio/mpeg"/>
             <itunes:duration>${e.secondes || e.minutes * 60}</itunes:duration>
@@ -491,14 +557,14 @@ function rendreFlux(episodes) {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
     <channel>
-        <title>${ID.nom}</title>
-        <link>${ID.base}podcasts.html</link>
-        <description>${echapper(ID.signature.fr)}</description>
-        <language>fr</language>
+        <title>${ID.nom}${TITRES_FLUX[langue]}</title>
+        <link>${ID.base}${prefixe}podcasts.html</link>
+        <description>${echapper(ID.signature[langue])}</description>
+        <language>${langue}</language>
         <itunes:author>${ID.nom}</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <itunes:image href="${ID.base}${ID.imagePartage}"/>
-        <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="${ID.base}podcast.xml" rel="self" type="application/rss+xml"/>
+        <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="${ID.base}${prefixe}podcast.xml" rel="self" type="application/rss+xml"/>
 ${items}    </channel>
 </rss>
 `;
@@ -524,21 +590,47 @@ const INTRO_FIN = "        <!-- INTRO-AUDIO:FIN -->";
 const ANCIEN_BLOC = /\n?[ \t]*<section class="intro-audio">[\s\S]*?<\/section>[ \t]*\n/i;
 const OUVERTURE_MAIN = /<main id="main-content">\r?\n/;
 
-function dureeParlee(secondes) {
-    const m = Math.floor(secondes / 60);
-    const s = Math.round(secondes % 60);
-    if (!m) return `${s} secondes`;
-    return s < 10 ? `${m} minute${m > 1 ? "s" : ""}` : `${m} min ${String(s).padStart(2, "0")}`;
+/* Le bloc dans chaque langue. Les guides anglais et hongrois portent le
+   lecteur de LEUR episode, et seulement quand il existe : un guide anglais
+   n annonce pas « in a nutshell » un fichier francais. */
+const INTRO = {
+    fr: {
+        titre: "🎧 En un mot, avant de commencer",
+        duree: (m, s) => (!m ? `${s} secondes`
+            : s < 10 ? `${m} minute${m > 1 ? "s" : ""}` : `${m} min ${String(s).padStart(2, "0")}`),
+        phrase: (d) => `${d} pour savoir ce que ce parcours propose, et dans quel ordre.`,
+        mention: "Voix de synthèse. Le texte des guides, lui, est écrit à la main.",
+    },
+    en: {
+        titre: "🎧 In a nutshell, before you start",
+        duree: (m, s) => (!m ? `${s} seconds`
+            : s < 10 ? `${m} minute${m > 1 ? "s" : ""}` : `${m} min ${String(s).padStart(2, "0")}`),
+        phrase: (d) => `${d} to find out what this path offers, and in what order.`,
+        mention: "Synthetic voice. The guides themselves are written by hand.",
+    },
+    hu: {
+        titre: "🎧 Röviden, mielőtt belekezdesz",
+        duree: (m, s) => (!m ? `${s} másodperc` : s < 10 ? `${m} perc` : `${m} perc ${s} másodperc`),
+        phrase: (d) => `${d} alatt megtudod, mit kínál ez az útmutató, és milyen sorrendben.`,
+        mention: "Szintetikus hang. Az útmutatók szövegét viszont kézzel írják.",
+    },
+};
+
+function dureeParlee(secondes, langue = "fr") {
+    return INTRO[langue].duree(Math.floor(secondes / 60), Math.round(secondes % 60));
 }
 
 function blocIntro(e) {
     if (!e.audio) return "";
+    const I = INTRO[e.langue];
+    // Un guide traduit est un dossier plus bas : en/guides/finance/.
+    const remonter = e.langue === "fr" ? "../../" : "../../../";
     return `
         <section class="intro-audio">
-            <h2 id="ecouter">🎧 En un mot, avant de commencer</h2>
-            <p>${dureeParlee(e.secondes)} pour savoir ce que ce parcours propose, et dans quel ordre.</p>
-            <audio controls preload="none" src="../../assets/audio/${e.fichierAudio}"></audio>
-            <p class="intro-audio-mention">Voix de synthèse. Le texte des guides, lui, est écrit à la main.</p>
+            <h2 id="ecouter">${I.titre}</h2>
+            <p>${I.phrase(dureeParlee(e.secondes, e.langue))}</p>
+            <audio controls preload="none" src="${remonter}assets/audio/${e.fichierAudio}"></audio>
+            <p class="intro-audio-mention">${I.mention}</p>
         </section>
 `;
 }
@@ -546,7 +638,7 @@ function blocIntro(e) {
 /* Renvoie [chemin relatif, contenu] pour le guide d un parcours, ou null si la
    page est introuvable. Pose les marqueurs la premiere fois. */
 function guideAvecIntro(e) {
-    const relatif = `guides/${e.sujet}/index.html`;
+    const relatif = `${e.langue === "fr" ? "" : `${e.langue}/`}guides/${e.sujet}/index.html`;
     const complet = path.join(RACINE, relatif);
     if (!fs.existsSync(complet)) return null;
 
@@ -580,9 +672,13 @@ function ecrireSiDifferent(relatif, contenu) {
     return relatif;
 }
 
-const episodes = lireEpisodes();
-const fautifs = episodes.filter((e) => e.erreur);
-for (const e of fautifs) console.error(`  podcasts/${e.sujet}.md : ${e.erreur}`);
+const episodes = lireEpisodes("fr");
+const natifs = { en: lireEpisodes("en"), hu: lireEpisodes("hu") };
+const tous = [...episodes, ...natifs.en, ...natifs.hu];
+const fautifs = tous.filter((e) => e.erreur);
+for (const e of fautifs) {
+    console.error(`  podcasts/${e.langue === "fr" ? "" : `${e.langue}/`}${e.sujet}.md : ${e.erreur}`);
+}
 if (fautifs.length) process.exit(1);
 
 if (!episodes.length) {
@@ -590,27 +686,43 @@ if (!episodes.length) {
     process.exit(0);
 }
 
-/* Le FLUX reste unique et francais : il n y a qu une bande-son. Deux flux
-   pointant sur les memes fichiers ne feraient que dedoubler les abonnements. */
+/* La page d une langue montre, pour chaque parcours, l episode de SA langue
+   s il existe, et le francais sinon. Les episodes se traduisent un par un :
+   retirer le francais avant que l anglais existe laisserait un trou. */
+function episodesDeLaPage(langue) {
+    const propres = new Map(natifs[langue].map((e) => [e.sujet, e]));
+    const liste = episodes.map((e) => propres.get(e.sujet) || e);
+    for (const e of natifs[langue]) if (!episodes.some((f) => f.sujet === e.sujet)) liste.push(e);
+    return liste.sort((a, b) => (b.publie || "").localeCompare(a.publie || ""));
+}
+
+/* Un flux par langue, mais seulement quand la langue a au moins un episode
+   avec son audio : un flux vide annonce un podcast qui n existe pas. */
 const ecrits = [
     ecrireSiDifferent("podcasts.html", rendrePage(episodes, PAGES.fr)),
-    ecrireSiDifferent("en/podcasts.html", rendrePage(episodes, PAGES.en)),
-    ecrireSiDifferent("hu/podcasts.html", rendrePage(episodes, PAGES.hu)),
-    ecrireSiDifferent("podcast.xml", rendreFlux(episodes)),
+    ecrireSiDifferent("en/podcasts.html", rendrePage(episodesDeLaPage("en"), PAGES.en)),
+    ecrireSiDifferent("hu/podcasts.html", rendrePage(episodesDeLaPage("hu"), PAGES.hu)),
+    ecrireSiDifferent("podcast.xml", rendreFlux(episodes, "fr")),
+    ...["en", "hu"].map((l) => (natifs[l].some((e) => e.audio)
+        ? ecrireSiDifferent(`${l}/podcast.xml`, rendreFlux(natifs[l], l)) : null)),
 ].filter(Boolean);
 
-// Puis les guides : chaque parcours qui a un episode porte son lecteur.
-for (const e of episodes) {
+// Puis les guides : chaque parcours qui a un episode porte son lecteur, dans
+// chaque langue ou l episode existe.
+for (const e of tous) {
     const resultat = guideAvecIntro(e);
     if (!resultat) continue;
     const ecrit = ecrireSiDifferent(resultat[0], resultat[1]);
     if (ecrit) ecrits.push(ecrit);
 }
 
-const avecAudio = episodes.filter((e) => e.audio).length;
-console.log(`${episodes.length} épisode(s) sur ${Object.keys(PARCOURS).length} parcours, ${avecAudio} avec audio.`);
-for (const e of episodes) {
-    console.log(`  ${e.audio ? "🔊" : "  "} ${e.sujet.padEnd(16)} ${String(e.mots).padStart(5)} mots · ~${e.minutes} min`);
+for (const [langue, liste] of [["fr", episodes], ["en", natifs.en], ["hu", natifs.hu]]) {
+    if (!liste.length) continue;
+    const avecAudio = liste.filter((e) => e.audio).length;
+    console.log(`[${langue}] ${liste.length} épisode(s) sur ${Object.keys(PARCOURS).length} parcours, ${avecAudio} avec audio.`);
+    for (const e of liste) {
+        console.log(`  ${e.audio ? "🔊" : "  "} ${e.sujet.padEnd(16)} ${String(e.mots).padStart(5)} mots · ~${e.minutes} min`);
+    }
 }
 
 if (!ecrits.length) {

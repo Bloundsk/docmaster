@@ -168,7 +168,11 @@ Titre "5. Fichiers hors depot"
 # Une sauvegarde qui efface d'elle-meme n'est plus une sauvegarde.
 # ---------------------------------------------------------------------------
 
-$DossiersHorsDepot = @("podcasts/brut", "podcasts/voix")
+# Les sous-dossiers de langue sont nommes un par un : la copie ci-dessous ne
+# descend pas dans les dossiers (Get-ChildItem -File). Depuis le 13 septembre
+# 2026, les episodes anglais et hongrois arrivent dans podcasts/brut/en et
+# podcasts/brut/hu ; sans ces deux lignes, ils n'auraient eu aucune sauvegarde.
+$DossiersHorsDepot = @("podcasts/brut", "podcasts/brut/en", "podcasts/brut/hu", "podcasts/voix")
 $RacineProjet = $Parent
 $CibleHorsDepot = Join-Path $dossier "fichiers-hors-depot"
 
@@ -180,7 +184,9 @@ foreach ($relatif in $DossiersHorsDepot) {
         Write-Host ("   {0} : absent ici, rien a copier" -f $relatif) -ForegroundColor Yellow
         continue
     }
-    $cible = Join-Path $CibleHorsDepot (Split-Path $relatif -Leaf)
+    # « brut », « brut\en », « voix » : le chemin sous podcasts/, et non son
+    # seul dernier element, sans quoi « en » atterrirait a cote de « brut ».
+    $cible = Join-Path $CibleHorsDepot (($relatif -replace '^podcasts/', '') -replace '/', '\')
     if (-not (Test-Path $cible)) { New-Item -ItemType Directory -Path $cible -Force | Out-Null }
 
     foreach ($f in Get-ChildItem $source -File) {

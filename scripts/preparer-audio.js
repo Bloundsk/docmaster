@@ -36,8 +36,14 @@
 // corrige. En une seule passe, ffmpeg normalise a l aveugle au fil du fichier
 // et le debut d un episode sort plus fort que sa fin.
 //
-//   node scripts/preparer-audio.js            traite ce qui a change
-//   node scripts/preparer-audio.js --tout     retraite tout
+//   node scripts/preparer-audio.js               traite ce qui a change
+//   node scripts/preparer-audio.js --tout        retraite tout
+//   node scripts/preparer-audio.js --langue=en   podcasts/brut/en/ -> assets/audio/en/
+//
+// TROIS LANGUES depuis le 13 septembre 2026. Chaque langue a son dossier
+// brut et son dossier de sortie, et la meme masterisation : un auditeur qui
+// passe de l episode francais a l anglais ne doit pas toucher au volume. Le
+// francais garde ses chemins d origine, que le flux publie deja.
 
 const fs = require("fs");
 const path = require("path");
@@ -45,9 +51,20 @@ const vm = require("vm");
 const { execFileSync, spawnSync } = require("child_process");
 
 const RACINE = path.join(__dirname, "..");
-const BRUT = path.join(RACINE, "podcasts", "brut");
-const SORTIE = path.join(RACINE, "assets", "audio");
+const LANGUE = (process.argv.find((a) => a.startsWith("--langue=")) || "--langue=fr").split("=")[1];
+if (!["fr", "en", "hu"].includes(LANGUE)) {
+    console.error(`Langue inconnue : « ${LANGUE} ». Langues possibles : fr, en, hu.`);
+    process.exit(1);
+}
+const SOUS_DOSSIER = LANGUE === "fr" ? "" : LANGUE;
+const BRUT = path.join(RACINE, "podcasts", "brut", SOUS_DOSSIER);
+const SORTIE = path.join(RACINE, "assets", "audio", SOUS_DOSSIER);
 const tout = process.argv.includes("--tout");
+
+/* La cle d un episode dans durees.json : « finance » en francais, comme
+   avant, et « en/finance » pour les autres langues — le chemin meme du MP3
+   sous assets/audio/. */
+const cleDuree = (sujet) => (SOUS_DOSSIER ? `${SOUS_DOSSIER}/${sujet}` : sujet);
 
 /* Le releve des durees, relu puis reecrit. On repart de l existant pour qu un
    traitement partiel — un seul parcours — ne fasse pas disparaitre les autres. */
@@ -355,10 +372,10 @@ for (const fichier of fs.readdirSync(BRUT)) {
        elle-meme : ffprobe n existe pas sur le runner d integration continue, et
        la page s y fabriquait donc autrement qu ici. Ce script, lui, a ffmpeg
        sous la main par construction — il vient de s en servir. */
-    dureesRelevees[sujet] = Math.round(secondes(cible));
+    dureesRelevees[cleDuree(sujet)] = Math.round(secondes(cible));
 
     const ko = Math.round(fs.statSync(cible).size / 1024);
-    console.log(`  ✓ ${sujet.padEnd(16)} ${duree(cible).padStart(12)}   ${String(ko).padStart(6)} Ko${m ? "" : "   (mesure illisible, passe simple)"}`);
+    console.log(`  ✓ ${cleDuree(sujet).padEnd(19)} ${duree(cible).padStart(12)}   ${String(ko).padStart(6)} Ko${m ? "" : "   (mesure illisible, passe simple)"}`);
     traites++;
 }
 
