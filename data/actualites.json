@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-13T13:25:19.546Z",
+  "maj": "2026-09-13T13:29:02.310Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
@@ -114,20 +114,6 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPb0NpWE1HWndadDNkM0FNMW5kZTNfZUhPdzdaWWVnM09ySTFUaGlDVWNzblB3N1U3NU1OQjNRWk1LWFR2QnZEOThvTVFEZEF0ajVmcTdBaDVqdUVSbjZvYmtZaEVoQTNSRzVweFAwRktYRmVsXzNoV0lqVDJfNFZaaEJzbW9RY2Z5cFJscnBRcEZnckVrZjgwRldUc19raWtCVjlmNWRzY21oVkR6cjlEY2V0Q21OaTFaX0pIczhpNUR6NkI3UXJ2b0JDU2QyMWdNRGRXMXRqTHhHUEFsS09fNWRicXZRLW9VN2RLQ0pUcWFNdGk0aDVELS13?oc=5",
-      "titre": "Plan d'épargne Revolut : voici l'astuce pour optimiser vos finances en complément du Livret A",
-      "source": "BFMTV",
-      "date": "2026-09-07",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-09-13"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeXJzbGFSMEt2VFE3bmxibWU0VGNnWjNVYWVlbnQ4TkcwTTRPOWNPV0JUSTB6RnpiNWlTQ1dNb1RJenBWNzZ4akk0YXB6eGtyZU84U3RxaDVPdUVCQU53VFltbVpxa3pXVkFlM2VpZ2NsdmNQdk9HSXNWd1dLWlNVNDBCN2x6WHhxREc4N01UUGxmX2NfenhBQllyMlNDbTZ2T19vV0p1ZG04alp3dDZr?oc=5",
       "titre": "Marketing Digital Days : repenser la performance digitale à l’ère du zéro clic et de l’IA",
       "source": "Blog du Modérateur",
@@ -226,20 +212,6 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNzcyLVdaX0tvYnoyVzhvbFA3dExjZHFvQ1lpbUhsRU5IbTJVYWNTWWlBSkFBbUdhUkoxTHA3N25ycTQtampURy1XaUJTT0d0N25wUE04XzUyT04wS3k3V3lYaHVXdnM0aWhBY3FDNW9pNEdoQkJkQ2xTQzhwVHhGbzN2SG50bjItTFB0ME1OTFZNUzdQTlNXTUZkZE9jTC1oWUZBQXNyUlVBWGV3VnlVQnZhTkF0d0YyQmd6a2J3UUVsdkhNaE9ZSHQ0Umo?oc=5",
-      "titre": "« La situation est très grave » : Sébastien Lecornu annonce un plan de soutien pour les agriculteurs",
-      "source": "La Voix du Nord",
-      "date": "2026-08-29",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-situations-graves",
-      "section": "🚨 Les situations graves",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "lavoixdunord.fr",
-      "publie": "2026-09-13"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNdDJKNGJ3OXFid1dmRU9Gd1NteW5CdWNqZ2tyM0VhaEFYWmhKSThKOEFyNmlWRXZFYndzQzNobmp4RGoySjBOODl4VTNWNTI5MXFKRlNVV1JCYVhGa2w4c0dScEU2U19MVURfdmFKRWpCLUFZUkRIbmMxOFFZTmZrckliVm9JOW9fbUdfWTdGNTl4cTNQdzhoSGtVSTJPekxWUHBXNDgtb2JDYzNlZFFJQjFLdkhEZ0R0N1lMQmU5bjN5b3oxQWdVeVhwUWNOOTRaS1FWbEFodHR4ZG5sWlFUeTlqblR3YmxuVGlhRExSemNFTEo4?oc=5",
       "titre": "« 95 % des Français veulent mieux comprendre la finance, mais un sur trois seulement sait quoi faire de son épargne »",
       "source": "Les Echos",
@@ -282,20 +254,6 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1kaDVodmZJX3N0QVRYaDh2WWJsN3NYeVRtLXlJVDNNTGh6eEZxX2dnVUR5NWNWREVtVm16TG5RS1lNYlB6djdRTWhDNmlhT0h2UFFob0VEYWcxVnVsREo0Skg3c3BRdnFBc1NPeF9ud3o5S3lfa1RzQ0VuUQ?oc=5",
-      "titre": "Télécharger Mots de Passe Apple (gratuit) Mac, Web",
-      "source": "Clubic",
-      "date": "2026-08-26",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "gestionnaire-de-mots-de-passe",
-      "section": "🔐 Le gestionnaire de mots de passe",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxObnBYaDh4U0tQOF9TNndZRVJfckZ6UDFRNF92ZVJaWUdWSzBPaGJfdlZhS0ZvOFhQenNCXzczZTEzeFhTZ3kxNFYxV0kzMGNBZmt2ODQ5VGJSNkVneTBpVENNZldUM3RHZThySHJ5OW5QRF92NkZGX2ltTmhLd0JaWFZrbHpsdHJTVm4tOHhnM2VlN2htanZxWkVUZHpnZWNLTXhHNEM5V3hHMElLVEpsZkJGalA2NHZ5b3J2T0R3V3gzNHlqVDdPM1hMN0hzSWFZcXRiTkNxVE5NdjYxOFV6eXh0dmpELW5jZjhvdWQ5cEt4d1Bn?oc=5",
       "titre": "Piratage des impôts, les raisons pour lesquelles la double authentification ne suffira pas à protéger vos données",
       "source": "ZDNET",
@@ -310,20 +268,6 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQTmpPZGtnbGUtbDlYODdzcWpTbzd3aFFGVXI3cEwxVDFtZmFJdW5zdzRZVVRBQUFobWFNeGVVdjlLajJJOVoxME56bmFVMlpqOHB3dHlWcnZaMjZibjRpSVBCYUNoa1VkdkNZaGRMS05uWklaQmZ2SVJIX2tFMVY3bk5XZ0E3RTR5dm4wSnNSb3dsMzR3SDRHQlJlUkliNUdaSU1vS19nbGtreGJJNy15YVJNQUp1STVIVkZ2dWxjZFNxMmY1clAwUmhITG5pd3J2RUhRTDhZRDlVSmY4?oc=5",
-      "titre": "« Vous perdez la notion du temps à un certain moment » : les réseaux sociaux sont-ils conçus pour nous rendre accros ?",
-      "source": "RTL Info",
-      "date": "2026-08-20",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQeG83NFhELVRFOGdWZXVoYkI3dlAtYXRxbVMteUFTa0NIR3AwbThIQ3dVTzRvMHhvTFl2NEFSTlMyYl9xdGc2X2tobGZlMEd6cnU5WU85LXpTS2VEYmJ2c2UxSHY3QUtSdHcteldIdVQxM2NaQngzLWI2UlBLbUQxYkFGVnlpVzFETll6YkQzVDF3SkoyNHFqOU8xOEhpcngxdTBUM0Rld0FmM2JWYlQwOFNhT3FnUkRuTnN2UjNmZlBYUXktakZuV21ZUTcwUQ?oc=5",
       "titre": "Vos mots de passe circulent déjà sur le Dark Web, voici comment le savoir en deux minutes",
       "source": "Clubic",
@@ -335,6 +279,62 @@
       "sujet": "🔒 Cybersécurité — Débutant",
       "langue": "fr",
       "site": "",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNdmdkLU9ZeUllWmJTSU00eGpuSlQxSDJ2a3kyeG5VeXlCM0RnLXJTbWR0N2dpa1I0RGtSQ3hhZEtNczh4TWZKLUJtTGFtSjlGVXBIVzF1czlPTkxRQUJLdzYtZ0c4Z0daUWswRnZrRDlZejNUWkx2azV1YzNCb3M0TjFvU05GQURPem1JUFlTRm5CTzBlbG5jSG8xVmNiNmIxWUdPY0tSUVFUcHg1OVJ6azdfbjRwdmhON2hnSlBmS29QSGFRVFpiMVNQdzctSEVCRjVCUy14Z2JLSlgzaXFjVGhxNzZHRmhiNVlGdkxJOWM2eXJ4VTZWc0UwU2lybnRpX1BWaGN4eG1qNkpGdUJFS2pMOFZZSWs?oc=5",
+      "titre": "« Nos systèmes d'information ont des faiblesses » : après les multiples piratages, les pistes à l'étude pour combler la « dette technique » de l'Etat",
+      "source": "Les Echos",
+      "date": "2026-08-19",
+      "guide": "dev-web",
+      "page": "avance.html",
+      "ancre": "dette-technique",
+      "section": "🏗️ La dette technique",
+      "sujet": "💻 Développement Web — Avancé",
+      "langue": "fr",
+      "site": "",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVVZ6RDJDSjVPd2ptNzEydnhwbmc2b2p6UXVGTUpOaWl1MmFac3pNRzNKdUNpX3dVbTg2V0lORHFXaEJnTzhURDdsZHhhTXJZWU1VdWVUUjFSTWRFZUZjQncxUmJEdDJ6TXNvWUR1ZDYyNHNYcDhyYkRVaUYyV1c5Nnk4cExCQ3l6QnN2SUFURHJETjV4andfUnhEVk5yZFdobWpZakNyc1NsLWh2WHkwczRfYTljV2dnS0twdG5UQjNWcmlV?oc=5",
+      "titre": "Piratage du site des impôts : « L'Etat a créé une surface d'attaque gigantesque »",
+      "source": "Les Echos",
+      "date": "2026-08-19",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "surface-attaque",
+      "section": "🗺️ Ta surface d'attaque",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQSmdfT0V0ckEtRlZSVHV4YkppQXZsU2hKNlhKWGxBSmxOOXBRV2VFLW4zaGxhZ1hEa0JHcWJZbFl5YWlzdGpYY0dkcjVPZUp4QnBqSXEyZl9XQnFFUEl6RmxwVVJuelpab0tTLXltMmZqaE02RlpJWW4wTW9ZNjVSQUNpeERBRzlhWnZoSHhfaS01YUk0bF9SS3Ezd3dGaHMxb25xMFJPN25icGFreGkyVFcxN3NVN0pEeFkwSjc0b3h1ejA5dm85Z1NEUy1TYjM4Mm12dVdtb2huV21UM05wYg?oc=5",
+      "titre": "Piratage du fisc : 285 000 professionnels exposés à des vagues d'ingénierie sociale et de fraude au président",
+      "source": "ZDNET",
+      "date": "2026-08-17",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "ingenierie-sociale",
+      "section": "🎭 L'ingénierie sociale ciblée",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "zdnet.fr",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxPU2JCeTBiR0JyXzVDdWltc3VROHlNdFJTeTAwblhRVnBwc2pvQUo1X0M4akZZNEloVEtSMGJHdUZFM3hJdDdMUmdqNHdJNXZfRDVFRU9zOUEzUzkwUXVUeWs4TG9hZzE4YlEwLWpibExONFN0VjJia285ckRVbTFyN2dRM3NoLTlCLUFldXJhcTBLLWhNc2x6dEx2c3dSTDR2RXNQSWZ2Wk9WRzZUX3R4UU9vZTlaZmRSZTNJNXZScXI1RHhDR1B5bnR2SmI1blg4SmJhM0d2Yzl0YXVEamFNQ3NROU1TYW9NUnhoOERtMXI1cE9TWlRoVTlsVjc0RXp5WFJjRmgzdFZaNjVsTk9WM3ZubTM?oc=5",
+      "titre": "\"J'ai pu échanger avec lui\" : le cybercriminel qui a piraté le fisc \"a déjà vendu la base de données\", affirme sur TF1 un hackeur éthique",
+      "source": "TF1 Info",
+      "date": "2026-08-17",
+      "guide": "dev-web",
+      "page": "intermediaire.html",
+      "ancre": "bases-de-donnees",
+      "section": "🗄️ Les bases de données",
+      "sujet": "💻 Développement Web — Intermédiaire",
+      "langue": "fr",
+      "site": "tf1info.fr",
       "publie": "2026-09-13"
     },
     {
@@ -363,20 +363,6 @@
       "sujet": "📢 Digital Marketing — Beginner",
       "langue": "en",
       "site": "thedrum.com",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVDBsRE5fbDNEYlVhOHJhU3JUUkR6WW93LUc2TUstZFBJLWhObFE0SXMzUV9HLXNQcU84MjYwdzlZcnZ5bS0zTFpQUWNIdVkwRHluNGFsdDJpcUdFZ3V6N0FtcTd2c0ZKNV9Oa05yeW41TXpRdEFEMTJwQVA4VldsOURxYUo4dUE2Vm5INEloZkpZMmx2SExkWHFjblhKUFVZdjNzYg?oc=5",
-      "titre": "I’m 78 with a £750,000 pension but still work as a tour guide four days a week",
-      "source": "The i Paper",
-      "date": "2026-09-05",
-      "guide": "sante",
-      "page": "debutant.html",
-      "ancre": "sitting-still",
-      "section": "🚶 Sitting still",
-      "sujet": "🩺 Health at Work — Beginner",
-      "langue": "en",
-      "site": "inews.co.uk",
       "publie": "2026-09-13"
     },
     {
