@@ -112,6 +112,13 @@ const SOURCES_ECARTEES = [
     // « HTEC Momentum renforce son palmares » du second.
     "Presse Agence",
     "Lelezard",
+    // Ecarte le 13 septembre 2026, a la demande de Ludo, pour une autre raison :
+    // ce n est pas un diffuseur de communiques mais un portail qui traduit
+    // automatiquement l actualite vietnamienne. Ses onze titres proposes
+    // (reunion communale a Tan Hao, obligations immobilieres a 13 %, echecs au
+    // Japon rangé sous « Choisir un modele ») ne collaient jamais au cours, et
+    // chaque retrait en faisait remonter un autre.
+    "Vietnam.vn",
 ];
 
 /* Un titre qui n en est pas un. « IA Local souveraine pour tous vos

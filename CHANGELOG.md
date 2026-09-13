@@ -118,6 +118,26 @@ dans un autre rapport ne revienne pas. Aucune règle n'a changé : ce sont des a
 pas des familles. Sept articles plus anciens ont pris les places libérées (le plus vieux
 date du 30 août), sans doublon ni section à plus de trois.
 
+Relus à leur tour, deux de ces remplaçants ne tenaient pas. Ludo les a fait retirer
+(rapports n° 61 et 65) : « Les obligations immobilières offrent des taux… pouvant
+atteindre 13 % » (Vietnam.vn, sous *Obligations et taux*) et « Luc Baijot reconduit à la
+présidence de Présoa dans l'Aisne » (L'Union, une nomination locale, sous *La médecine du
+travail*). À leur place sont remontés un deuxième Vietnam.vn (« Le Japon teste… pour
+jouer aux échecs », sous *Choisir un modèle*) et un article d'Aladom, site d'annonces de
+services et d'emploi, sur le temps de travail des médecins généralistes.
+
+- **Vietnam.vn écarté comme source.** Retirer ses articles un à un ne servait à rien :
+  chaque retrait en faisait remonter un autre, et un troisième attendait. Mesuré sur
+  l'historique, ses onze titres proposés parlent d'actualité vietnamienne traduite
+  automatiquement (réunion communale à Tan Hao, jeunes entrepreneurs de leur ville
+  natale) et ne collaient jamais au cours. La raison diffère des autres sources écartées
+  — ce n'est ni un diffuseur de communiqués ni un site d'affiliation — et le commentaire
+  de la liste le dit.
+- **L'article Aladom retiré** (rapport n° 60), seul, sans règle.
+
+Chaque retrait fait remonter des articles plus anciens, dans la limite des trente jours :
+la page pourra montrer moins de vingt-quatre articles, ce qui vaut mieux qu'un mauvais.
+
 ## 2026-09-12 — Douze situations : plus aucune carte seule
 
 ### Pourquoi douze
