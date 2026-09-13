@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-13T16:06:47.086Z",
+  "maj": "2026-09-13T19:35:44.290Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
@@ -41,6 +41,20 @@
       "sujet": "💰 Finance — Débutant",
       "langue": "fr",
       "site": "lesechos.fr",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQLXE0RWRRYUY2Zk9fUGtYcXdwRElqNGJEUnBXWWdRV1NKWlc5Ty05U0ZISTE5TWQ4S1FOdTY5d296d2VmWEZzMDBGbEtsNTBmUWNZSm53OUtzZ0loNkh5V2xJYmRDWGNCX0pwN00wakhEZFB6OFAzdUdRVkRBNE1nQXVfdGhHRW4yU0d5aWRRUzVzVXJleTFBODdqbENYZ0lmdTM5S2Jia0w1OGlKTXJ1c3JBTDR4SlNFOXA2QzRsc0RLZnM4SmtOVHpZNkNTU3hpLWp3VGZfRDAxZDduSHcyc3BxT3g?oc=5",
+      "titre": "Livret A : taux, plafond, fiscalité… le mode d'emploi de l'épargne préférée des Français",
+      "source": "BFMTV",
+      "date": "2026-09-10",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-fiscalité-de-lépargne",
+      "section": "🧾 La fiscalité de l'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "bfmtv.com",
       "publie": "2026-09-13"
     },
     {
@@ -321,20 +335,6 @@
       "sujet": "🔒 Cybersécurité — Avancé",
       "langue": "fr",
       "site": "zdnet.fr",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOeXhJZFc0SENYaTdQY2wydEd6X2N6NXNGZ0hFOUcxUGJITlUyMTlhak1UamJmdkVkUTJFeWg4MXhDVWhWaVQwTWxSVDh5MnZxYURPc0g1LWlFbXNnbE8zRExuWWVlYXEwMW9iWERaQkNiUTM4TzRLWUhpSG94TmFjZjhTV3RwZFdobnVHVEt4X3hsMzB3cERvalFaVG1CVTRVV3E1QWtySEVNOVR4cUxaeFlKXzZ1MUJSNTJ0VTJVSVhhZVdHV2U5Zzh1c1I3SENQUDh3T21uMG90WkxpWVVwNTVqTGw2RDNiMC1xcmFsZ1h6SHJlSms3Zkt6Vk1Ldw?oc=5",
-      "titre": "Livret A, LDD, LEP... Une partie de votre épargne finance déjà la transition écologique",
-      "source": "TF1 Info",
-      "date": "2026-08-17",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "",
       "publie": "2026-09-13"
     },
     {
