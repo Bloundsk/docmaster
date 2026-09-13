@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-13T09:47:00.059Z",
+  "maj": "2026-09-13T10:39:18.641Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMinAJBVV95cUxQZkRyZXF3TmJ0WUtLTldvcUZXNXpXbzFuWTJWSEJ0am9yTkRMa3RyWlhLTUhXZzJOb2FwcUk4REpkdTA2eENWMzBqaFk2bEE1TTZQS1UyeDVVQ09UQm9rcmdKWTJ3T2VpYTdUVjFYQndIUTJBdmxvODlJZzBKVGs2bnRVMURoRTdKdmxSMXRPOHZYZUhaVmlDeDlpNFgxSkRrSkFsQXNaRWZoMGZaUkxDR3Z1amxsYi1vNjdWcTVnX0pCVEZ1VGNNUGVycG1TZk9EX3NKakJCVkxOa0hqT0xOd3ZFVTJIV0t0VnlJbkstTUkxQWdkcUNHUTJVQmhYWjNYUEEzZjg5LUUxMkpjVlg1SlVZSUhQNFljaUJDaQ?oc=5",
@@ -254,18 +254,6 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNc0I3R0cwUkEtbVZ0RmNaU1V3SVBQTldraGdzUEUzaXYwV0Z4ZjMxbmhtaTdDbHhfaFhqZ3FSZ0xBcGRlNURnY2x3SnVPT3FjaFVmWUhoUXBTcnNSSXdfZVoyWnpZTDFlVGZUZXpFSUl4YzJmMXlxVFdGOWNBOU1lYXp3dDRiZ3dUeVpuWjRTQ0l6eHh1OXgwYVY1T2htRzd6V1hEcFp6VVg2aF95c2JzdXZjQ1FSTFlSN3lXLUgyREdnSnI0?oc=5",
-      "titre": "Médecine du travail : Luc Baijot reconduit à la présidence de Présoa dans l’Aisne",
-      "source": "L'Union",
-      "date": "2026-09-01",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "publie": "2026-09-13"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN3FOTTd2cG9SVU4tcDExendKQmIyUUdINzhpWmI2Si1GRVY3U3lsSE5MQUVNYUJWaUo1YjFpUDhBaUFVY0M3MG0wTjJvajc1a2tFSE9EbWJZTFdENm4xek41NTEwMnJTeEJXeVBDY3dra1Q5S2pUX2J2NEhzNWZmbm9rZ2NfV08xd0ZPRGdWN1EySVFhc3QyYWo0aTU0UjQ1M0Q0bTBKaWJxRHFuYWdHZDRBQnVUQQ?oc=5",
       "titre": "Loi \"anti fast-fashion\" : un nouveau cadre juridique pour la mode ultra-express [Tribune]",
       "source": "lsa-conso.fr",
@@ -278,15 +266,27 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQNmFsazJzNzFYZ0NJel9DTlR0d2JPRXFIeEJtSDVpVDA0UlNwYVYwZ1VycVU1LVdhMUJ2NUV0WlBOT3BXQjVfb3ptbU5tWFBORnM5Zi1QSEtsNjl1d1JWd21sdHlEbncyRDZJelZNZE13NFFyUUcycEZSYlZpZGsxRi1VZXdiMFVfaUJ0WFFTT3dxbHdiUGl6ZEZXX0sxYllN?oc=5",
-      "titre": "Les obligations immobilières offrent des taux d'intérêt pouvant atteindre 13 % par an, la pression pour arriver à échéance s'accentuant vers la fin de l'année.",
+      "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNa2tmTHZHU3Ayam1BdnozMEFYNkhUUnNBQ1ZvNFpKN1VoMFEzTWUtbnFvU1BQZHFtaUJ6cjJFT1NZWVBxSmFXTVRfb2NVMFh2QnlnYWU1dWQxSkIzOERBZUwtZlJqbnc5ZFRrcWxPbEY2ejJjWlBTNWJpOVBkeFZKQy1URG13MUkzOUp4SUVZOA?oc=5",
+      "titre": "Le Japon teste un modèle combinant humains et intelligence artificielle pour jouer aux échecs.",
       "source": "Vietnam.vn",
-      "date": "2026-08-30",
-      "guide": "finance",
+      "date": "2026-08-29",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "choisir-un-modele",
+      "section": "⚖️ Choisir un modèle",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNeDU3STc3N1QwdUdVZkhQSlBYR2dGbzVrdVR2WjhIeUtWZ0ctM0lyT0hFeE5tMTFWcnpuZ2g1VUFuZmNSOHJoNGRQWnJ1R2FlRnFvb2hlZFY0YXl0bnVsRGozRjE0N1RQNmxSQTJ4a3R3SGlDcTN3SkYtc3d0WUZLWmkyOXBfUXJvQ2M5WjNQZ052aVRZcG1yc0RWdkVyX20xSE1YeWpVU0NTSkFqWWYweTNvbElwUlFZYmplNFZ2VGtWbWdwWmtMUExHTVNjXzNuT21FQllVd0N2TDMxYzlUaE5jV0dITzRNMEZLZXoxczJoWV9NZWpiY25JWUtrUEIz?oc=5",
+      "titre": "46 heures par semaine : ce que le temps de travail des médecins généralistes révèle des besoins d'emploi dans la santé",
+      "source": "Aladom",
+      "date": "2026-08-28",
+      "guide": "sante",
       "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 La médecine du travail",
+      "sujet": "🩺 Santé au travail — Avancé",
       "publie": "2026-09-13"
     }
   ]
