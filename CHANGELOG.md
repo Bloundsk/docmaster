@@ -1,5 +1,36 @@
 # Changelog — Clicked
 
+## 2026-09-13 — « Mon espace » en haut à droite
+
+Signalé par Ludo : *« mon espace n'est pas très visible sur la version PC »*.
+À 1440 px, les neuf liens de la barre demandaient 823 px pour 776, et le
+dernier s'affichait « ⭐ Mon e », en français comme en hongrois — l'anglais,
+lui, était coupé à 1000 px. La barre de défilement étant masquée, la suite
+n'était pas atteignable à la souris.
+
+- **Une pastille** « ⭐ Mon espace » rejoint les outils, avant le drapeau : les
+  outils ne cèdent jamais de place. Bordure et texte à la couleur du site,
+  remplie au survol.
+- **« Accueil » quitte la barre sur ordinateur** : le logo y mène déjà. C'est la
+  place ainsi rendue qui fait tenir la rangée, avec l'écart entre liens ramené
+  de 22 à 18 px. Marge mesurée à 1440 px : 34 px en français, 46 en hongrois,
+  116 en anglais.
+- **Sous 1200 px**, les liens passent sur une deuxième ligne plutôt que d'être
+  cachés. Sur téléphone, rien ne change.
+- Les réglages d'ordinateur sont écrits par défaut et défaits sous 700 px : une
+  première version en « min-width: 701px » laissait une fenêtre de 700,5 px — un
+  zoom suffit — sans aucune des deux mises en page.
+
+### Le garde-fou
+
+L'audit de géométrie gagne un contrôle 14 : sur ordinateur, la barre montre tous
+ses liens avec au moins 12 px de marge, et « Mon espace » est dans la fenêtre. La
+marge se calcule sur la place offerte — une rangée qui tient se réduit à son
+contenu, et « largeur moins contenu » y vaut toujours zéro. L'accueil est aussi
+mesuré avec les libellés français, que l'audit, réglé sur l'anglais, n'avait
+jamais vus. Remis sur l'ancienne barre, le contrôle rougit : « 47 px de liens
+cachés » en français à 1400 px.
+
 ## 2026-09-13 — Les premiers podcasts en anglais
 
 Demandé par Ludo : les podcasts en anglais et en hongrois, « comme pour le

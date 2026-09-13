@@ -100,7 +100,7 @@ ${options.map((o, i) => `                                <button type="button" d
             <div class="nav-container">
                 <a href="${lien("index.html")}" class="logo">${logoHTML}</a>
                 <ul class="nav-links">
-                    <li><a href="${lien("index.html")}">${t("accueil")}</a></li>
+                    <li class="nav-accueil"><a href="${lien("index.html")}">${t("accueil")}</a></li>
                     <li><a href="${lien("guides.html")}">${t("guides")}</a></li>
                     <li><a href="${lien("actualites.html")}">${t("actualites")}</a></li>
                     <li><a href="${lien("podcasts.html")}">${t("podcasts")}</a></li>
@@ -108,9 +108,10 @@ ${options.map((o, i) => `                                <button type="button" d
                     <li><a href="${lien("idees.html")}">${t("idees")}</a></li>
                     <li><a href="${lien("faq.html")}">${t("faq")}</a></li>
                     <li><a href="${lien("a-propos.html")}">${t("aPropos")}</a></li>
-                    <li><a href="${lien("mon-espace.html")}">⭐ ${t("monEspace")}</a></li>
+                    <li class="nav-espace-liste"><a href="${lien("mon-espace.html")}">⭐ ${t("monEspace")}</a></li>
                 </ul>
-                <div class="nav-outils">${selecteurHTML}${confortHTML}
+                <div class="nav-outils">
+                    <a href="${lien("mon-espace.html")}" class="nav-espace"><span aria-hidden="true">⭐</span>${t("monEspace")}</a>${selecteurHTML}${confortHTML}
                     <button id="theme-toggle" class="theme-toggle" aria-label="${t("theme")}">🌙</button>
                 </div>
             </div>

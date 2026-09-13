@@ -585,9 +585,11 @@ h1, h2, h3, .logo { font-family: var(--police-titre); }
    defilement. « min-width: 0 » est indispensable — sans lui, un element flex
    refuse de devenir plus etroit que son contenu, et la barre deborderait au
    lieu de defiler. Le defilement ne se declenche donc que pour les langues aux
-   libelles plus longs, ou si un onglet s ajoute. */
+   libelles plus longs, ou si un onglet s ajoute.
+   Puis 22 a 18 px le 13 septembre 2026, quand « Mon espace » a rejoint les
+   outils : a 22 px, le francais ne tenait plus qu'a 9 px pres. */
 .nav-links {
-    list-style: none; display: flex; flex-wrap: nowrap; gap: 22px;
+    list-style: none; display: flex; flex-wrap: nowrap; gap: 18px;
     min-width: 0; overflow-x: auto;
     scrollbar-width: none; -ms-overflow-style: none;
 }
@@ -597,6 +599,42 @@ h1, h2, h3, .logo { font-family: var(--police-titre); }
 .nav-links a:hover { color: var(--primary); }
 .theme-toggle { background: none; border: 2px solid var(--muted); border-radius: 50%; width: 40px; height: 40px; font-size: 1.1rem; cursor: pointer; transition: transform .3s, border-color .3s; flex-shrink: 0; }
 .theme-toggle:hover { transform: rotate(20deg); border-color: var(--primary); }
+
+/* « Mon espace », en haut à droite sur ordinateur.
+   Dernier des neuf liens, c'était le premier à sortir de la barre : à 1440 px
+   la rangée demandait 823 px pour 776, et on lisait « ⭐ Mon e » en français
+   comme en hongrois. La barre de défilement étant masquée, la suite n'était
+   même pas atteignable à la souris.
+   Il rejoint donc les outils, qui ne cèdent jamais de place, en pastille à la
+   couleur du site. La place qu'il y prend est rendue par « Accueil », dont le
+   logo fait déjà office : ce lien quitte la rangée sur ordinateur. Sur
+   téléphone, rien ne change. */
+.nav-espace {
+    display: flex; align-items: center; gap: 6px;
+    height: 40px; padding: 0 14px;
+    border: 2px solid var(--primary); border-radius: 999px;
+    color: var(--primary); font-weight: 600; text-decoration: none;
+    white-space: nowrap; flex-shrink: 0;
+    transition: background-color .2s, border-color .2s, color .2s;
+}
+.nav-espace:hover { background: var(--primary-fond); border-color: var(--primary-fond); color: white; }
+/* Réglage d'ordinateur par défaut, défait sur téléphone — et non l'inverse
+   avec « min-width: 701px » : une fenêtre de 700,5 px, qu'un zoom du
+   navigateur suffit à produire, ne satisfaisait alors ni l'une ni l'autre
+   requête, et gardait les deux liens ET la pastille sur une seule ligne. */
+.nav-links .nav-accueil, .nav-links .nav-espace-liste { display: none; }
+@media (max-width: 700px) {
+    .nav-links .nav-accueil, .nav-links .nav-espace-liste { display: list-item; }
+    .nav-espace { display: none; }
+}
+/* Sous 1200 px, la rangée ne tient plus entre le logo et les outils : elle
+   passe sur une deuxième ligne, pleine largeur, plutôt que de cacher ses
+   derniers liens. Au-delà, le conteneur est à sa largeur maximale et la
+   marge ne varie plus. */
+@media (max-width: 1199px) {
+    .nav-container { flex-wrap: wrap; row-gap: 10px; }
+    .nav-links { order: 3; width: 100%; }
+}
 
 /* ---------------------------------------------------------------
    Sélecteur de langue.

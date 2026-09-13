@@ -54,6 +54,10 @@
  * ------------------------------------------------------------------------- */
 const PAGES = [
     { url: "../index.html",                    nom: "accueil" },
+    // Les autres pages de la racine sont mesurées avec la préférence anglaise
+    // (voir lancer). Sans celle-ci, les libellés français de la barre ne
+    // l'étaient JAMAIS — or c'est en français que « Mon espace » était coupé.
+    { url: "../index.html",                    nom: "accueil (libellés fr)", langue: "fr" },
     // La grille des quatorze cartes ne vit plus que sur le catalogue depuis le
     // 10 septembre 2026. Sans cette page, la grille « #categories » cessait
     // d'etre mesuree sans que rien ne rougisse : le controle saute une grille
@@ -445,6 +449,43 @@ async function controler(d, w, largeur, nomPage) {
         }
     }
 
+    /* 14. La barre de navigation montre tous ses liens, et « Mon espace ».
+       Défaut vécu le 13 septembre 2026 : à 1440 px, la rangée demandait 823 px
+       pour 776, et « Mon espace », dernier lien, s'affichait « ⭐ Mon e » en
+       français comme en hongrois. Le contrôle 2 ne pouvait rien en voir : la
+       rangée défile exprès, il l'exclut.
+       La marge se calcule sur la place OFFERTE, pas sur la rangée : une rangée
+       qui tient se réduit à son contenu, et « largeur moins contenu » y vaut
+       toujours zéro. Sur téléphone la rangée défile par conception : on ne
+       juge qu'à partir de 1000 px. */
+    if (largeur >= 1000) {
+        const rangee = d.querySelector(".nav-links");
+        if (rangee) {
+            const conteneur = rangee.parentElement;
+            const cs = getComputedStyle(conteneur);
+            const r = rangee.getBoundingClientRect();
+            const voisins = [...conteneur.children].filter((e) => {
+                const b = e.getBoundingClientRect();
+                return e !== rangee && b.width > 0 && b.bottom > r.top && b.top < r.bottom;
+            });
+            const offert = conteneur.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)
+                - voisins.reduce((s, e) => s + e.getBoundingClientRect().width, 0)
+                - (parseFloat(cs.columnGap) || 0) * voisins.length;
+            const liens = [...rangee.children].filter((li) => li.getBoundingClientRect().width > 0);
+            const besoin = liens.reduce((s, li) => s + li.getBoundingClientRect().width, 0)
+                + (parseFloat(getComputedStyle(rangee).columnGap) || 0) * Math.max(liens.length - 1, 0);
+            const reste = Math.round(offert - besoin);
+            if (reste < 0) ko("la barre montre tous ses liens", `${-reste} px de liens cachés`);
+            else if (reste < 12) ko("la barre montre tous ses liens", `tient à ${reste} px près`);
+            else ok("la barre montre tous ses liens", `${reste} px de marge`);
+        }
+        const espace = d.querySelector(".nav-espace");
+        const b = espace ? espace.getBoundingClientRect() : null;
+        if (!b || b.width === 0) ko("« Mon espace » dans la barre", "absent ou masqué");
+        else if (b.left < 0 || b.right > largeur + 1) ko("« Mon espace » dans la barre", `sort de la fenêtre (${Math.round(b.right)} px)`);
+        else ok("« Mon espace » dans la barre", `${Math.round(b.width)} px`);
+    }
+
     const enVol = d.querySelector(".mascotte-vol");
     if (enVol) {
         /* On balaie plus longtemps que le vol ne dure. Un balayage cale sur sa
@@ -486,6 +527,7 @@ async function lancer() {
     } catch (e) {}
 
     for (const page of PAGES) {
+        try { localStorage.setItem("langue", page.langue || "en"); } catch (e) {}
         for (const largeur of LARGEURS) {
             cadre.style.width = largeur + "px";
             await new Promise((r) => { cadre.onload = r; cadre.src = page.url + "?g=" + Date.now(); });
