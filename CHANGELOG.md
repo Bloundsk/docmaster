@@ -127,6 +127,27 @@ The Sun, Le Progrès, Le Figaro, BFM Business, le Défenseur des droits.
   d'articles que les essais (seize par langue). Les pages se remplissent en deux ou
   trois jours.
 
+### Le premier passage en ligne, relu avec Ludo
+
+Français 10 articles retenus, anglais 5, hongrois 1 ; en ligne après publication :
+24, 5 et 1. Cinq articles retirés à sa demande :
+
+- « Télécharger Mots de Passe Apple (gratuit) Mac, Web » (Clubic) — une page de
+  téléchargement, pas un article ;
+- « Plan d'épargne Revolut : voici l'astuce… » (BFMTV) — un produit mis en avant ;
+- « Sébastien Lecornu annonce un plan de soutien pour les agriculteurs » (La Voix du
+  Nord), sous *Les situations graves* — « situation » et « grave » dans un autre sens ;
+- « I'm 78 with a £750,000 pension but still work as a tour guide » (The i Paper),
+  sous *Sitting still* — le même piège, en anglais ;
+- « Les réseaux sociaux sont-ils conçus pour… » (**RTL Info**, média belge).
+
+Le dernier révélait un défaut de la règle des médias : les articles d'avant, sans
+domaine, étaient jugés sur un nom qui « commence par » celui d'un média, et « RTL
+Info » passait pour RTL. Le nom doit désormais être exact, ou suivi d'un seul
+suffixe de domaine (« Le Monde.fr », « Capital.fr »). Vérifié sur les vrais noms
+de l'historique : tous ceux qui passaient passent encore, sauf RTL Info. Un cas de
+plus au test 17, avec son témoin.
+
 ## 2026-09-13 — La veille vérifiée : doublons, articles retirés, trois par section
 
 Demandé par Ludo : vérifier la veille automatique et ce qu'elle publie.

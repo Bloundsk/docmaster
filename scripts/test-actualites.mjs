@@ -573,6 +573,11 @@ const medias = {
         source: "La Semaine du Roussillon", ...epargne },
     "https://news.google.com/s6": { titre: "Finance et épargne : le livret séduit toujours", date: ilYa(1),
         source: "Capital.fr", ...epargne },
+    // Cas reel, en ligne le 13 septembre 2026 : RTL Info est belge, et un
+    // simple « commence par RTL » le faisait passer. « Capital.fr », juste
+    // au-dessus, est le temoin : un suffixe de domaine reste admis.
+    "https://news.google.com/s7": { titre: "Finance et épargne : le livret reste en tête", date: ilYa(1),
+        source: "RTL Info", ...epargne },
 };
 etatIssues = [{
     number: 1,
@@ -587,6 +592,7 @@ verifier("un sous-domaine non listé est refusé", !e17.includes("s3"), JSON.str
 verifier("témoin : le site principal passe", e17.includes("s4"), JSON.stringify(e17));
 verifier("un article ancien est jugé sur son nom", !e17.includes("s5"), JSON.stringify(e17));
 verifier("témoin : « Capital.fr » est Capital", e17.includes("s6"), JSON.stringify(e17));
+verifier("« RTL Info » n'est pas RTL", !e17.includes("s7"), JSON.stringify(e17));
 verifier("le refus nomme le site", /média non retenu \(presse-inconnue\.fr\)/.test(sortie17), sortie17.trim().slice(0, 300));
 
 /* --- 18. Chaque langue sur sa page --------------------------------------------

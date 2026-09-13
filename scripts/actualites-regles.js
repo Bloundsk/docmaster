@@ -205,8 +205,14 @@ function mediaReconnu(article) {
     }
     const nom = cleDeTitre(article.source);
     if (!nom) return null;
+    /* Le nom exact, ou le nom suivi d un suffixe de domaine et de rien
+       d autre : « Le Monde.fr », « Capital.fr ». La premiere version acceptait
+       n importe quelle suite, et « RTL Info », media BELGE, est passe pour RTL
+       sur la page francaise (13 septembre 2026). */
+    const SUFFIXE_DE_DOMAINE = /^(fr|com|net|org|eu|hu|co uk)$/;
     return medias.find((m) => [cleDeTitre(m.nom), cleDeTitre(m.domaine)]
-        .some((c) => nom === c || nom.startsWith(c + " "))) || null;
+        .some((c) => nom === c ||
+            (nom.startsWith(c + " ") && SUFFIXE_DE_DOMAINE.test(nom.slice(c.length + 1))))) || null;
 }
 
 /* Un titre qui n en est pas un. « IA Local souveraine pour tous vos
