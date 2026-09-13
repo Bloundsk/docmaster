@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-13T10:39:18.641Z",
+  "maj": "2026-09-13T10:43:20.039Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMinAJBVV95cUxQZkRyZXF3TmJ0WUtLTldvcUZXNXpXbzFuWTJWSEJ0am9yTkRMa3RyWlhLTUhXZzJOb2FwcUk4REpkdTA2eENWMzBqaFk2bEE1TTZQS1UyeDVVQ09UQm9rcmdKWTJ3T2VpYTdUVjFYQndIUTJBdmxvODlJZzBKVGs2bnRVMURoRTdKdmxSMXRPOHZYZUhaVmlDeDlpNFgxSkRrSkFsQXNaRWZoMGZaUkxDR3Z1amxsYi1vNjdWcTVnX0pCVEZ1VGNNUGVycG1TZk9EX3NKakJCVkxOa0hqT0xOd3ZFVTJIV0t0VnlJbkstTUkxQWdkcUNHUTJVQmhYWjNYUEEzZjg5LUUxMkpjVlg1SlVZSUhQNFljaUJDaQ?oc=5",
@@ -266,27 +266,27 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNa2tmTHZHU3Ayam1BdnozMEFYNkhUUnNBQ1ZvNFpKN1VoMFEzTWUtbnFvU1BQZHFtaUJ6cjJFT1NZWVBxSmFXTVRfb2NVMFh2QnlnYWU1dWQxSkIzOERBZUwtZlJqbnc5ZFRrcWxPbEY2ejJjWlBTNWJpOVBkeFZKQy1URG13MUkzOUp4SUVZOA?oc=5",
-      "titre": "Le Japon teste un modèle combinant humains et intelligence artificielle pour jouer aux échecs.",
-      "source": "Vietnam.vn",
-      "date": "2026-08-29",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "choisir-un-modele",
-      "section": "⚖️ Choisir un modèle",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTDV4ckZNNDVlc2FkMV9FbTVrYlZId01xX0RPc2xZYkU1YXFYM2ZGMktqRXRiVjdZTHNoeUdSeXRnanVzdEgwUnM2elprU0cwdWoxamFjN1NOSnctWWVNR3pVa1NOcV95UUdDMzE3ZVdkaWR0TGxKR0FHMWVnalJiM3N4V2dRcUJKbmg3UUdwX0E?oc=5",
+      "titre": "L’illusion de maîtrise : redonner du sens à la littératie numérique en classe",
+      "source": "L'École branchée",
+      "date": "2026-08-28",
+      "guide": "apprendre",
+      "page": "debutant.html",
+      "ancre": "les-illusions-de-maitrise",
+      "section": "🪞 Les illusions de maîtrise",
+      "sujet": "🎓 Apprendre à apprendre — Débutant",
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNeDU3STc3N1QwdUdVZkhQSlBYR2dGbzVrdVR2WjhIeUtWZ0ctM0lyT0hFeE5tMTFWcnpuZ2g1VUFuZmNSOHJoNGRQWnJ1R2FlRnFvb2hlZFY0YXl0bnVsRGozRjE0N1RQNmxSQTJ4a3R3SGlDcTN3SkYtc3d0WUZLWmkyOXBfUXJvQ2M5WjNQZ052aVRZcG1yc0RWdkVyX20xSE1YeWpVU0NTSkFqWWYweTNvbElwUlFZYmplNFZ2VGtWbWdwWmtMUExHTVNjXzNuT21FQllVd0N2TDMxYzlUaE5jV0dITzRNMEZLZXoxczJoWV9NZWpiY25JWUtrUEIz?oc=5",
-      "titre": "46 heures par semaine : ce que le temps de travail des médecins généralistes révèle des besoins d'emploi dans la santé",
-      "source": "Aladom",
+      "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNdDJKNGJ3OXFid1dmRU9Gd1NteW5CdWNqZ2tyM0VhaEFYWmhKSThKOEFyNmlWRXZFYndzQzNobmp4RGoySjBOODl4VTNWNTI5MXFKRlNVV1JCYVhGa2w4c0dScEU2U19MVURfdmFKRWpCLUFZUkRIbmMxOFFZTmZrckliVm9JOW9fbUdfWTdGNTl4cTNQdzhoSGtVSTJPekxWUHBXNDgtb2JDYzNlZFFJQjFLdkhEZ0R0N1lMQmU5bjN5b3oxQWdVeVhwUWNOOTRaS1FWbEFodHR4ZG5sWlFUeTlqblR3YmxuVGlhRExSemNFTEo4?oc=5",
+      "titre": "« 95 % des Français veulent mieux comprendre la finance, mais un sur trois seulement sait quoi faire de son épargne »",
+      "source": "Les Echos",
       "date": "2026-08-28",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "lépargne",
+      "section": "📊 L'épargne",
+      "sujet": "💰 Finance — Débutant",
       "publie": "2026-09-13"
     }
   ]
