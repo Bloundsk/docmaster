@@ -10,6 +10,36 @@
         <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/en/podcast.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title>Cybersecurity — Replace Digital Vigilance with Permanent Habits</title>
+            <description>No need to be a technical genius: stop reusing passwords, spot the pressure behind a scam, unplug your backups and check the blind spots. The Cybersecurity path in one minute thirty-nine.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#cybersecurite</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#cybersecurite</guid>
+            <pubDate>Mon, 14 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/cybersecurite.mp3" length="1190066" type="audio/mpeg"/>
+            <itunes:duration>99</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Entrepreneurship — Get Your First Ten Paying Customers</title>
+            <description>Forget the startup fantasy: check that people want it, find your first customers by hand, watch your cash, and only speed up once the engine works. The Entrepreneurship path in one minute thirty-five.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#entrepreneuriat</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#entrepreneuriat</guid>
+            <pubDate>Mon, 14 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/entrepreneuriat.mp3" length="1142419" type="audio/mpeg"/>
+            <itunes:duration>95</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Digital Marketing — Own Your Audience and Fix Your Funnel</title>
+            <description>Digital marketing is not a money pit but a system you can measure: own your contacts, fix the biggest leak before buying traffic, and keep the customers you have. The Digital Marketing path in one minute twenty-seven.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#marketing</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#marketing</guid>
+            <pubDate>Mon, 14 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/marketing.mp3" length="1045557" type="audio/mpeg"/>
+            <itunes:duration>87</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Web Development — Foundations That Last, and Technical Debt</title>
             <description>The tools change every year, the foundations have not changed in twenty: how a page is built, how it becomes an application, and what makes a site last. The Web Development path in one minute thirty-five.</description>
             <link>https://bloundsk.github.io/docmaster/en/podcasts.html#dev-web</link>

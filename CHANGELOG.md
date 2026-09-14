@@ -1,5 +1,25 @@
 # Changelog — Clicked
 
+## 2026-09-14 — Trois podcasts anglais de plus
+
+Six épisodes anglais sur quatorze sont en ligne. Les huit autres restent marqués
+« still in French » sur la page et suivent au rythme de NotebookLM.
+
+| Parcours | Épisode | Durée |
+|---|---|---|
+| Digital Marketing | Own Your Audience and Fix Your Funnel | 1 min 27 |
+| Cybersecurity | Replace Digital Vigilance with Permanent Habits | 1 min 39 |
+| Entrepreneurship | Get Your First Ten Paying Customers | 1 min 35 |
+
+Même vérification que pour les trois premiers : transcription, nom du site, trois
+temps, aucun sigle, rappel pédagogique, phrase de synthèse. La transcription
+longue entendait « on-click » en ouverture de Cybersecurity et d'Entrepreneurship ;
+un extrait court de quelques secondes, retranscrit seul, dit bien « on Clicked ».
+
+Le quota de NotebookLM est de **trois résumés audio par jour** — atteint deux
+jours de suite au quatrième. Le notebook Productivity est prêt, avec sa source,
+pour le prochain passage.
+
 ## 2026-09-13 — « Mon espace » en haut à droite
 
 Signalé par Ludo : *« mon espace n'est pas très visible sur la version PC »*.
