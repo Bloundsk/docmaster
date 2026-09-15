@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-15T20:20:36.209Z",
+  "maj": "2026-09-15T20:30:05.684Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQTVVRenUwUmlkbWtVNXdRczJoa3FrWU5QN2htZFNfSnhGR2RvVmZNYmpmblFXWTVLNDhaS0E2MVdVTTgxTUR3a3pjc1pkN1JmN1ZlWTRnSndOMzAtNE55WDZpVWlnWUdZbUFGVWVOUjdVUFJoZGRQQWtZRTdpSWxqSUN2VGg5VENqcDgwM3pDQ2xGUm9ZSnNEX3VvOENZYWduTndXQjdxTUF2UWFTZGVTaVplN0tWN1U4Um8yeHNQTGlaRFkteWFXeTYyaW9sU252S0ZmVmRNVjBVbnFxTk55dTFVQnh5UVU4TkdmWTdZd3Y0ZjlLUXc?oc=5",
@@ -336,6 +336,34 @@
       "langue": "fr",
       "site": "",
       "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5UZEFMODhLTkNSZXRGQmViNjFPVF8wWkpaNjFlSXZwZGlMRzVpTEROQzIyN1hVMDY2MGptNE1LZDhfcE5QNkVGSURYcC1qSERJWlFsMjFhbGdMcU1sYy1Od0V6TGh2WXAyWmcyOHlkbzBVMHZGMlZqNE1pOA?oc=5",
+      "titre": "Inside the Scattered Spider Playbook: How UK Retailers Got Social Engineered",
+      "source": "Infosecurity Magazine",
+      "date": "2026-09-15",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "social-engineering",
+      "section": "🎭 Targeted social engineering",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "infosecurity-magazine.com",
+      "publie": "2026-09-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbE1yN2FJTnR2akQxZFlyNnJOcWVxZGNHNFNrcFhxVHZmczdZMTZxMlI4Z1pfdWViTXI5NU5JdXVjVmtOYVF3ZjVtb0tDMG5NQTBaZ2pnYmJZZUJqcmpsZnViTzlrdk1RTDhEdklHbmNiOFVEa2lDeHBqSWdBUnZMU0dkTDMzeG5zdmdLUDFKWWY4LUQzWkRRMENscXAtd2NtbHdURQ?oc=5",
+      "titre": "The Bank of England must resist pressure to raise interest rates",
+      "source": "The Telegraph",
+      "date": "2026-09-15",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "telegraph.co.uk",
+      "publie": "2026-09-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZmRzR2xtUVdTUGJWWHYwcVBpNmpGTEJQRVN6ZENOZEJGLXdUM0tzSWt6YUoxQTlyQmZDVUNJRVg0b1RDWEZwZlhWTXdOdUxVcW1EclVVNlFvM1l0cUd1UTNNdHdLVmhBdWhJVUhNX0plREhLWkVvNS1fNE9Ial8wOXozY2VxdU9wMDh1QTFPUDVlaW1j?oc=5",
