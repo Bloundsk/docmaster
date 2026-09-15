@@ -1,6 +1,20 @@
 {
-  "maj": "2026-09-14T14:55:41.538Z",
+  "maj": "2026-09-15T12:46:19.846Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQTVVRenUwUmlkbWtVNXdRczJoa3FrWU5QN2htZFNfSnhGR2RvVmZNYmpmblFXWTVLNDhaS0E2MVdVTTgxTUR3a3pjc1pkN1JmN1ZlWTRnSndOMzAtNE55WDZpVWlnWUdZbUFGVWVOUjdVUFJoZGRQQWtZRTdpSWxqSUN2VGg5VENqcDgwM3pDQ2xGUm9ZSnNEX3VvOENZYWduTndXQjdxTUF2UWFTZGVTaVplN0tWN1U4Um8yeHNQTGlaRFkteWFXeTYyaW9sU252S0ZmVmRNVjBVbnFxTk55dTFVQnh5UVU4TkdmWTdZd3Y0ZjlLUXc?oc=5",
+      "titre": "Flambée du pétrole et hausse des taux : nouvelle alerte sur les finances publiques françaises",
+      "source": "Le Monde",
+      "date": "2026-09-15",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lemonde.fr",
+      "publie": "2026-09-15"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
       "titre": "IA : le patron d’Anthropic, Dario Amodei, appelle à ralentir la vitesse de développement de l’intelligence artificielle avant que des agents soient « capables de prendre le contrôle d’Internet »",
@@ -72,6 +86,34 @@
       "publie": "2026-09-13"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZVlWaDJWWUlpSjdtNjVucnJDYkM5NkE0bVhSbnRKMGNaNDJnUWhkTWFHQlAxLXZ0UkVycFhwZkI4LUpLSVJNY1Rwc3lDeTIzMXQzVGg2am1fUFdMdUo2QmZEWloxeHA1VmZuS2k1bXhlTWNrTTNDYUJuVW50aUFwbjFkU3J0QlN1VG5NNnF5Z2JVdjg?oc=5",
+      "titre": "Fuite de données : la Cnil va contrôler le fisc",
+      "source": "Sud Ouest",
+      "date": "2026-09-10",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-09-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBBZGowQTN1ZmxjQkhGZjV0WkVpUVZGQ25TSXVEYUhwTjVnYnJTa2VCMkRPU3FDaG40RDNMUG85Ykw3bEs4Z1VSc3lCZWRkV1prWW15NUdVbWdFbkQ5a2JEbklFd01nbkJhVTVqdy1SVmNQT09EaWRRTFN3?oc=5",
+      "titre": "Digital, marketing, tech : combien vont gagner les professionnels en 2027 ?",
+      "source": "Blog du Modérateur",
+      "date": "2026-09-10",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "email-marketing",
+      "section": "✉️ Email marketing",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "blogdumoderateur.com",
+      "publie": "2026-09-15"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOXp4aHdDUk51ejNwWW54Ukg4TjllbEVGSHNNRHdKMWRFNDAzMVA5ZnNsc0hGTkJERkJFU3djS0o5aW1PUGhKQVhSY1FpdTB0aG8zOThPMDZnOUVEVG5yN1J0Y0p2M3RXTTlUTGlXa0lHbVk0RGpTbUpvNVVoNDdiN3NlVi1EMUlrUFhPN3hCR1ZSSmRQbC1uSzVmenVkSGVyRFV5TFpDbmt6MGFnT2RyVHdrMDFtQTdEQncxMWxkYXQ3V3pFbEhwc3E1QUd2T0NlY0lmdFZ3?oc=5",
       "titre": "Impots.gouv.fr toujours sans double authentification, un ex-ministre explique enfin pourquoi",
       "source": "Capital.fr",
@@ -84,6 +126,20 @@
       "langue": "fr",
       "site": "",
       "publie": "2026-09-10"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxPdUhvU205cjNlVC1XaTRLdkdGelRXZEx4ZnVyT2VILTB2MGR3SDN4aHE1a1BYSVI2cDNUTjI3cU9sLUpDdlVYZFhGdFZFYThaNzFPYUxwRlRVek5mYUpCZXlLV1dQNHU1MDFjbzdHRWsxYlJxWU9BSzZnTW5COE02Y2hhaDF1a2ZHRktqYjlFV1RuSEdQeWFjd1EtVjlNWm9mOHJFVXlzT2lDaHMtUkN3UjJJcFVDMG5MajNzdkdIWE01S2FsUzFITzNWSDBlOEFkMGRTeENkZXNvRjFtT2NJSDVlWGlQeGhZNDVUX2dZM2pqcVNNU3preVJMWEZUNUxXamJmNjV1eFl5MXNPb0RlRkRJZnhPVS10cUFMb0kxSnF4ZjRyTDdXVEppa1laY2ZfUXZJUk43QktxdGhuSDVWc3dCc2RjdTNQbVoyc2gtZXRVaDFXZmRGazZ2MlVUUnBqSmJOa0dvNC1iR3hOQnNvVjBMMlY?oc=5",
+      "titre": "\"La situation des finances publiques ne nous semble pas permettre ce type de mesure\": le gouvernement reste \"défavorable\" à un plafonnement des prix à la pompe ou à une baisse de la fiscalité",
+      "source": "BFMTV",
+      "date": "2026-09-09",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-fiscalité-de-lépargne",
+      "section": "🧾 La fiscalité de l'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-09-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNZ28xVmlETi1INkZ1YlozbGg1NUE5a3JzUnBxU0FrdW1KTjZqaGUwTFpOWVZiRW54Q0tNU0poTWI4cGZtdU5sUnRXWllrZmg3dU9DTVBUeDlRZC1lUmxmVnVsQ3ZBOGJxMTB6V1NCMl80cG9RUDZ1LWhJWGozUTg2SWlKUFZnekc2dGJrUFA5UUJaWTNCeG5SRWk4b2JRNXc3aktsLXJheXhxUmFGNmhSZmlWX01tVF9Mb0hoOTVZTjNBU2ktTEU2MXh1LUlfaGhER2dDNDdhRVI0Ry16Z0J3X19LZEhJc2xsTkE?oc=5",
@@ -153,20 +209,6 @@
       "sujet": "📢 Marketing Digital — Débutant",
       "langue": "fr",
       "site": "blogdumoderateur.com",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOTnFaYkxxdUFkMnIxT2tld1dEVEVlaWhfT1JZRVZUODgzcW9DMk5JV2ZXZTZVTUlGdHJlWFpTZ0VFckxuTUdHbXJacGFLWXBjbW9pSWlTaWUzblM2WXlmOHNpM0dzYmp1Ri1xY05tWU81VTBtQzZTRHFoRzljR1FSRGRpRHFib0hOR3VzNF94endvWjNBLTF2Y2Y2RzRjbzhDUUVyZzN5bi1vS2dWdEtXVFlBaGlmTW5WeWkxX0lvMXpjQVcz?oc=5",
-      "titre": "Mots de passe, identifiants, emails... une nouvelle fuite massive de données secoue la France",
-      "source": "01net.com",
-      "date": "2026-09-06",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "",
       "publie": "2026-09-13"
     },
     {
@@ -293,48 +335,6 @@
       "sujet": "🔒 Cybersécurité — Intermédiaire",
       "langue": "fr",
       "site": "zdnet.fr",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQeG83NFhELVRFOGdWZXVoYkI3dlAtYXRxbVMteUFTa0NIR3AwbThIQ3dVTzRvMHhvTFl2NEFSTlMyYl9xdGc2X2tobGZlMEd6cnU5WU85LXpTS2VEYmJ2c2UxSHY3QUtSdHcteldIdVQxM2NaQngzLWI2UlBLbUQxYkFGVnlpVzFETll6YkQzVDF3SkoyNHFqOU8xOEhpcngxdTBUM0Rld0FmM2JWYlQwOFNhT3FnUkRuTnN2UjNmZlBYUXktakZuV21ZUTcwUQ?oc=5",
-      "titre": "Vos mots de passe circulent déjà sur le Dark Web, voici comment le savoir en deux minutes",
-      "source": "Clubic",
-      "date": "2026-08-20",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "mots-de-passe-authentification",
-      "section": "🔑 Mots de passe & authentification",
-      "sujet": "🔒 Cybersécurité — Débutant",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNdmdkLU9ZeUllWmJTSU00eGpuSlQxSDJ2a3kyeG5VeXlCM0RnLXJTbWR0N2dpa1I0RGtSQ3hhZEtNczh4TWZKLUJtTGFtSjlGVXBIVzF1czlPTkxRQUJLdzYtZ0c4Z0daUWswRnZrRDlZejNUWkx2azV1YzNCb3M0TjFvU05GQURPem1JUFlTRm5CTzBlbG5jSG8xVmNiNmIxWUdPY0tSUVFUcHg1OVJ6azdfbjRwdmhON2hnSlBmS29QSGFRVFpiMVNQdzctSEVCRjVCUy14Z2JLSlgzaXFjVGhxNzZHRmhiNVlGdkxJOWM2eXJ4VTZWc0UwU2lybnRpX1BWaGN4eG1qNkpGdUJFS2pMOFZZSWs?oc=5",
-      "titre": "« Nos systèmes d'information ont des faiblesses » : après les multiples piratages, les pistes à l'étude pour combler la « dette technique » de l'Etat",
-      "source": "Les Echos",
-      "date": "2026-08-19",
-      "guide": "dev-web",
-      "page": "avance.html",
-      "ancre": "dette-technique",
-      "section": "🏗️ La dette technique",
-      "sujet": "💻 Développement Web — Avancé",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVVZ6RDJDSjVPd2ptNzEydnhwbmc2b2p6UXVGTUpOaWl1MmFac3pNRzNKdUNpX3dVbTg2V0lORHFXaEJnTzhURDdsZHhhTXJZWU1VdWVUUjFSTWRFZUZjQncxUmJEdDJ6TXNvWUR1ZDYyNHNYcDhyYkRVaUYyV1c5Nnk4cExCQ3l6QnN2SUFURHJETjV4andfUnhEVk5yZFdobWpZakNyc1NsLWh2WHkwczRfYTljV2dnS0twdG5UQjNWcmlV?oc=5",
-      "titre": "Piratage du site des impôts : « L'Etat a créé une surface d'attaque gigantesque »",
-      "source": "Les Echos",
-      "date": "2026-08-19",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "surface-attaque",
-      "section": "🗺️ Ta surface d'attaque",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "",
       "publie": "2026-09-13"
     },
     {
