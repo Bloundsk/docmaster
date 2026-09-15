@@ -1,5 +1,26 @@
 # Changelog — Clicked
 
+## 2026-09-15 — Neuf podcasts anglais sur quatorze
+
+| Parcours | Épisode | Durée |
+|---|---|---|
+| Productivity & Organisation | Stop Paying the Mental Transition Fee | 1 min 40 |
+| Data & Analytics | Stop Being Fooled by Bad Numbers | 1 min 40 |
+| Learning how to learn | Make Your Study Time Actually Stick | 1 min 37 |
+
+Chacun transcrit et vérifié avant publication. Les chiffres de Productivity ont
+été rapprochés du guide : neuf interruptions de trois minutes coûtent 2 h 15
+(27 minutes plus 108 pour s'y remettre), une réunion d'une heure à huit consomme
+une journée de travail.
+
+La transcription entendait « unclicked » en ouverture de Productivity, même sur
+un extrait court et même ralenti — là où l'extrait court avait suffi pour
+Cybersecurity et Entrepreneurship. La machine ne pouvant pas trancher, Ludo a
+écouté les neuf premières secondes : *« j'entends on clicked »*.
+
+Reste en anglais : Law, Health, Ecology, Negotiation, Design ; puis les quatorze
+épisodes hongrois.
+
 ## 2026-09-14 — Trois podcasts anglais de plus
 
 Six épisodes anglais sur quatorze sont en ligne. Les huit autres restent marqués

@@ -10,6 +10,36 @@
         <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/en/podcast.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title>Learning how to learn — Make Your Study Time Actually Stick</title>
+            <description>Studying longer is not the answer: review early, test yourself instead of rereading, mix your exercises, protect your sleep and build a routine that survives bad days. The Learning how to learn path in one minute thirty-seven.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#apprendre</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#apprendre</guid>
+            <pubDate>Tue, 15 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/apprendre.mp3" length="1166870" type="audio/mpeg"/>
+            <itunes:duration>97</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Data &amp; Analytics — Stop Being Fooled by Bad Numbers</title>
+            <description>No advanced maths needed: tell a useful figure from a decorative one, break averages down, beware of false causes and of results you check too early. The Data &amp; Analytics path in one minute forty.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#data</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#data</guid>
+            <pubDate>Tue, 15 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/data.mp3" length="1201978" type="audio/mpeg"/>
+            <itunes:duration>100</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>⏱ Productivity &amp; Organisation — Stop Paying the Mental Transition Fee</title>
+            <description>Productivity is not about working faster: get tasks out of your head, protect your attention from interruptions, and rely on energy and systems rather than willpower. The Productivity &amp; Organisation path in one minute forty.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#productivite</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#productivite</guid>
+            <pubDate>Tue, 15 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/productivite.mp3" length="1206053" type="audio/mpeg"/>
+            <itunes:duration>100</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Cybersecurity — Replace Digital Vigilance with Permanent Habits</title>
             <description>No need to be a technical genius: stop reusing passwords, spot the pressure behind a scam, unplug your backups and check the blind spots. The Cybersecurity path in one minute thirty-nine.</description>
             <link>https://bloundsk.github.io/docmaster/en/podcasts.html#cybersecurite</link>
