@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-16T12:52:23.038Z",
+  "maj": "2026-09-16T20:17:48.946Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOMk1HNWNkSlZ6bllFdEdtRzI2VWVEOXcxRFE2djdsc3lKUjVYR01oTVJpaHRFVDVMSTdOQy16anNoVmhQWlE2S0twSHpvWHg5Y2RyXzkwX2NLQy02NGpPeU1lZmRnWTVBMFBZLVl3dWMxcDdVd3hHc2xnakI5UFBXenBJSThzdm94RlR2dmVyQ0dpNXNiSURNUHVEMmpENXdHcWhPOEpaa2R0U0pfYVp1d0xiNlhIczZya0hKZm90UmFxWUdZUEhGVU9Xd3dicV9lMUw2V0llOE83Tk5Eei1yRTFR?oc=5",
@@ -27,6 +27,20 @@
       "sujet": "📢 Marketing Digital — Débutant",
       "langue": "fr",
       "site": "lefigaro.fr",
+      "publie": "2026-09-16"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQdXBnMGhIVmZHZDRQNTN0Ym42cWFhTzl1emg1MHpkQTU5VUZCcUtTZDlnMVgzODgtaE00b0dFd1RYaDFoTEo5anNvTTVlOVFlczlSc01vMzdYaXdqc2xaWEdFRDVoVWd1Xzl3cjI3MEszdUVNell1S0ZYNlM4VS1kMjdQRWdTTElMekN4MUIySHF2cVktOU42Z1dQREFuMDdMRHBnZEVfdXZNMGlBQzhRUU9KNHdOWEtWZmxaS24yVzlFVE55ZGdwWlJWdzBYS0tDVTFjcW9lanFNbThvUnZUQXBxN283UQ?oc=5",
+      "titre": "La banque en ligne Revolut victime d’une fuite de données, 680 clients concernés",
+      "source": "Libération",
+      "date": "2026-09-16",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "liberation.fr",
       "publie": "2026-09-16"
     },
     {
@@ -69,6 +83,20 @@
       "sujet": "💰 Finance — Avancé",
       "langue": "fr",
       "site": "sudouest.fr",
+      "publie": "2026-09-16"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNQ3FzdDlsc0NtWlpzb2FvNjZhUkNwaHFXYkJDM2FlNjQ5WXhFNkhEcm9CdEp5alNtRGVJS2NUU3hmR0dWOGxDUXI1NGxpMENlaUJyaHBvZGNYaVRvQ1AzTU5JSWc0c3lLbzM5anJkTVl3bVF0T1p6a0llaHJYYjhab1UyR1B6NmJmNDY0bE5Ecnpad0UtbXdtQzBpaVBoeGlHRGJ4WDFqaEVTUlUzaTV3OEdJdkhBTzh3YWJWaTRNVU1kcDRmbDczQkthWFhINTVJVWNKMHVVWlJKaWFULWxkXzdNeGROa2d6cXlsVmppWHRUWm1hcm83TzdVNEFBY003Xy1ueQ?oc=5",
+      "titre": "Réseaux sociaux : chez Blancheporte, on veut « être au contact de la vraie vie des clientes »",
+      "source": "Le Parisien",
+      "date": "2026-09-15",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "leparisien.fr",
       "publie": "2026-09-16"
     },
     {
@@ -226,20 +254,6 @@
       "publie": "2026-09-08"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV202ZFYxaDgxclp4RlhvMkt2c3hmeEVjaDBlRmdkOXZueU5iMzlMVWxQVmZueDhBWV9qb2UzM3F0STNqU0I3S2lxekN3Yk00dTlLSDhETnVtbTMwQ3c1bWwyamVEc2FXRjB6LWNjcUR2bGpfRnB4RzF3bWpqbm9NM0tUOFhMUF8xWTRfcWJlUEpCOUxy?oc=5",
-      "titre": "Fuite de données : comment communiquer dans les premières heures de la crise",
-      "source": "blogdumoderateur.com",
-      "date": "2026-09-08",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOem9rd3RXVTNzTTIwb1pXaE1wa0VyaVBCV3UtRG0zbVZWa3dCMmFDd1AzcHh5c1ExN0dQMGI4NE1zQTJHMmZhWTItWWxEX3NSNmJ0QVpQMXB3Uk50dUlic053VWJacmZQUmw0dE1VNGpueTc2V1hXNS1FR2xjbzN2M3NRZy1KanpwWk13MU51dGVtWDE0NUNBclZuc09KZENDVjRtVW44MmpwNHZmLTFaZnFCNWZlOW96QmpVYUpYQXR5SkFYNGNQNmd4TlFoWUNDSXkwZ2F3WEowR1Vwcl94b3g3X18?oc=5",
       "titre": "Intelligence artificielle : l’UE enquête sur une nouvelle perte de contrôle d’agents OpenAI",
       "source": "Sud Ouest",
@@ -319,20 +333,6 @@
       "ancre": "quest-ce-quun-llm",
       "section": "🧠 Qu'est-ce qu'un LLM ?",
       "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN3FOTTd2cG9SVU4tcDExendKQmIyUUdINzhpWmI2Si1GRVY3U3lsSE5MQUVNYUJWaUo1YjFpUDhBaUFVY0M3MG0wTjJvajc1a2tFSE9EbWJZTFdENm4xek41NTEwMnJTeEJXeVBDY3dra1Q5S2pUX2J2NEhzNWZmbm9rZ2NfV08xd0ZPRGdWN1EySVFhc3QyYWo0aTU0UjQ1M0Q0bTBKaWJxRHFuYWdHZDRBQnVUQQ?oc=5",
-      "titre": "Loi \"anti fast-fashion\" : un nouveau cadre juridique pour la mode ultra-express [Tribune]",
-      "source": "lsa-conso.fr",
-      "date": "2026-08-31",
-      "guide": "marketing",
-      "page": "avance.html",
-      "ancre": "cadre-juridique",
-      "section": "⚖️ Le cadre juridique",
-      "sujet": "📢 Marketing Digital — Avancé",
       "langue": "fr",
       "site": "",
       "publie": "2026-09-13"
