@@ -1,5 +1,22 @@
 # Changelog — Clicked
 
+## 2026-09-16 — Douze podcasts anglais sur quatorze
+
+| Parcours | Épisode | Durée |
+|---|---|---|
+| Law & Procedures | Paperwork Wins Your Everyday Legal Disputes | 1 min 32 |
+| Health & Wellbeing at Work | How to Stop Work from Harming You | 1 min 46 |
+| Digital Sustainability | Stop Deleting Emails and Keep Your Hardware | 1 min 29 |
+
+Chacun transcrit et vérifié avant publication. Pour Law, la transcription longue
+répétait « I'm sorry » en boucle au milieu de l'épisode ; retranscrit en trois
+extraits de seize secondes, le passage est intact. Pour Digital Sustainability,
+l'épisode dit que l'impact d'un appareil est « entirely » dans sa fabrication,
+là où le guide dit « la plupart » (83 % dans son exemple) : écart d'oral jugé
+mineur, le résumé écrit reprend la formulation du guide.
+
+Reste en anglais : Negotiation et Design ; puis les quatorze épisodes hongrois.
+
 ## 2026-09-15 — Neuf podcasts anglais sur quatorze
 
 | Parcours | Épisode | Durée |

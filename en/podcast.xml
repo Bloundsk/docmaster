@@ -10,6 +10,36 @@
         <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/en/podcast.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title>Law &amp; Procedures — Paperwork Wins Your Everyday Legal Disputes</title>
+            <description>A broken washing machine, a stubborn landlord: put things in writing, know the rights a contract cannot remove, and act before the deadline. The Law &amp; Procedures path in one minute thirty-one.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#droit</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#droit</guid>
+            <pubDate>Wed, 16 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/droit.mp3" length="1100414" type="audio/mpeg"/>
+            <itunes:duration>92</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Digital Sustainability — Stop Deleting Emails and Keep Your Hardware</title>
+            <description>Forget the symbolic gestures: most of a device's footprint comes from making it, the screen matters more than the video quality, and heavy software sends good hardware to the bin. The Digital Sustainability path in one minute twenty-nine.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#ecologie</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#ecologie</guid>
+            <pubDate>Wed, 16 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/ecologie.mp3" length="1071261" type="audio/mpeg"/>
+            <itunes:duration>89</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Health &amp; Wellbeing at Work — How to Stop Work from Harming You</title>
+            <description>Not a productivity plan: fix the postures you hold all day, see burnout as a problem of organisation rather than weakness, and know who to turn to when things go wrong. The Health &amp; Wellbeing at Work path in one minute forty-five.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#sante</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#sante</guid>
+            <pubDate>Wed, 16 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/sante.mp3" length="1271882" type="audio/mpeg"/>
+            <itunes:duration>106</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Learning how to learn — Make Your Study Time Actually Stick</title>
             <description>Studying longer is not the answer: review early, test yourself instead of rereading, mix your exercises, protect your sleep and build a routine that survives bad days. The Learning how to learn path in one minute thirty-seven.</description>
             <link>https://bloundsk.github.io/docmaster/en/podcasts.html#apprendre</link>
