@@ -1,6 +1,34 @@
 {
-  "maj": "2026-09-16T10:16:40.802Z",
+  "maj": "2026-09-16T12:41:08.496Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOMk1HNWNkSlZ6bllFdEdtRzI2VWVEOXcxRFE2djdsc3lKUjVYR01oTVJpaHRFVDVMSTdOQy16anNoVmhQWlE2S0twSHpvWHg5Y2RyXzkwX2NLQy02NGpPeU1lZmRnWTVBMFBZLVl3dWMxcDdVd3hHc2xnakI5UFBXenBJSThzdm94RlR2dmVyQ0dpNXNiSURNUHVEMmpENXdHcWhPOEpaa2R0U0pfYVp1d0xiNlhIczZya0hKZm90UmFxWUdZUEhGVU9Xd3dicV9lMUw2V0llOE83Tk5Eei1yRTFR?oc=5",
+      "titre": "Canal+ franchit enfin le pas et propose la double authentification à ses abonnés",
+      "source": "Clubic",
+      "date": "2026-09-16",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "double-authentification",
+      "section": "📱 La double authentification",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "langue": "fr",
+      "site": "clubic.com",
+      "publie": "2026-09-16"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQQlhMNk1vVklROGUzb05SZDBTOXFENmQtNDFxNlV6OXZfTXVGMDhwRkw4VGstT0puMGVkOGdheHlBNnVxT0hUN0lhTzhpR3ZtWnJIOGxOZ0lNU0VubnRhZGdiZXN4ZjkwQ3Z1TEVTXzJ6dllabm11ejdCYXoxY2lrcEVITWxPaUI2eWtzc3k2MXd0b3E3bEw2Nk1MQ1R4Z25rb2M5cU05anQ3ZXZNTXdidXBfaWtrNkNRVGR5VzBhNjNQTm93SXJYQWtKZHZnMVZaVE9DdEltWThFYnEwOEZOMTN4Nl9saVFQUXozUA?oc=5",
+      "titre": "Réseaux sociaux : Ursula von der Leyen propose une interdiction aux moins de 13 ans dans l’Union européenne",
+      "source": "Le Figaro",
+      "date": "2026-09-16",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-09-16"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQTVVRenUwUmlkbWtVNXdRczJoa3FrWU5QN2htZFNfSnhGR2RvVmZNYmpmblFXWTVLNDhaS0E2MVdVTTgxTUR3a3pjc1pkN1JmN1ZlWTRnSndOMzAtNE55WDZpVWlnWUdZbUFGVWVOUjdVUFJoZGRQQWtZRTdpSWxqSUN2VGg5VENqcDgwM3pDQ2xGUm9ZSnNEX3VvOENZYWduTndXQjdxTUF2UWFTZGVTaVplN0tWN1U4Um8yeHNQTGlaRFkteWFXeTYyaW9sU252S0ZmVmRNVjBVbnFxTk55dTFVQnh5UVU4TkdmWTdZd3Y0ZjlLUXc?oc=5",
       "titre": "Flambée du pétrole et hausse des taux : nouvelle alerte sur les finances publiques françaises",
@@ -28,6 +56,20 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-09-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirgJBVV95cUxPMkZicG9KVy1ER2J6Tm5vUS03bG1hc3ZjcXV3UDdIcXpnQVo1Q04wa3ZSaXRvcERBNldJdzNtVnBHY1pVSW0xU21Bd0F0dTE5STZ1UWdDNzg0YlhHay0wLVJ5NmRmY0g5OXRVV18zRC1ndlE4MjBpcGNCcDlMVmt1bDFOS1FVcS11WXl1aVJieFBvTE9Fejg2UEhtYnNMMnRwTTUxX3BlM3AyektQWW1VOTNoWnZydlFHZ3paX29ydmU5TlFhcFZpRGVhb2tabzhQNDZ0U2RhYUhPNFlQaFdaUnR4RzhUSENVeHN6R3JOMVNjQUZzR2Y1SEhvaC0zbER6bU95RTVzLU5iOHd6cXdpclJHTVZacUVvRDBqTHg0bDRVMzdyeHJPTnNjQURZdw?oc=5",
+      "titre": "Plus de 5 % aux États-Unis, plus de 4,5 % en France… Les taux d’intérêt sur 10 ans des dettes souveraines sont au plus haut depuis 2007, les Bourses reculent",
+      "source": "Sud Ouest",
+      "date": "2026-09-15",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-09-16"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
@@ -128,6 +170,20 @@
       "publie": "2026-09-15"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQNlRBcUI5NmJmZ3RhOHBISmd2NGhaRFU2cndSQ0hCbHJkU0xWZ1ZQcE1fVjVtdTJrNG1TcE1GMWJUQV8zNnUyVmZycFdWNHZ6cVlHa2NOYXcwZFh4dHBZa2JpUnlsSnVtVmNKbFFlLUcxeWV3REs5SjlXQ2FlQ0dHQTlPUGI0YzVuNjRhQVNkR2ZmMUZCVndGazdiTXFkWVBEMXlpTVFnVWtab1JVR3luVVhHSW9YNWV2TFIySm8tTjFXZFh1TkxDRllYcWlKRFNsTkdVTUFKTkJqTURFUTd6dFpqaEN6eVc2NjNfSVlhUUlHbW9wZkh6Ujg3aGZ4WHJ2dUR6QWFydjlJZw?oc=5",
+      "titre": "Fuites de données: pourquoi le phénomène doit inquiéter les entreprises françaises et européennes",
+      "source": "RFI",
+      "date": "2026-09-10",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "rfi.fr",
+      "publie": "2026-09-16"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOOXp4aHdDUk51ejNwWW54Ukg4TjllbEVGSHNNRHdKMWRFNDAzMVA5ZnNsc0hGTkJERkJFU3djS0o5aW1PUGhKQVhSY1FpdTB0aG8zOThPMDZnOUVEVG5yN1J0Y0p2M3RXTTlUTGlXa0lHbVk0RGpTbUpvNVVoNDdiN3NlVi1EMUlrUFhPN3hCR1ZSSmRQbC1uSzVmenVkSGVyRFV5TFpDbmt6MGFnT2RyVHdrMDFtQTdEQncxMWxkYXQ3V3pFbEhwc3E1QUd2T0NlY0lmdFZ3?oc=5",
       "titre": "Impots.gouv.fr toujours sans double authentification, un ex-ministre explique enfin pourquoi",
       "source": "Capital.fr",
@@ -196,20 +252,6 @@
       "langue": "fr",
       "site": "",
       "publie": "2026-09-07"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdl82ZjhjbTNXcG92S1FJV3hyV2ZhRy1HZi1rVkRUNFBmT2h3NVY4MFNMWUFKWGJLZjhpTk1wUjVQSHlnQ01MVHJUVWxkLWhCREpZMU9Sa3pNMEdXTHBWU251WERfUmhtc2w2TVFtWDJVRkdnSE04UGlka3lCNDFMNzJWWXBWWUJrUTJqYTQ1TnllRUFaSndkVGM5M2xhaXBWcDBCX0hMY3lSTjVqcEg4VEVOaEFOUkEzSE5MMEdkTWZXSE1QWFE?oc=5",
-      "titre": "Cybersécurité : face aux fuites de données, l'Anssi renforce sa capacité d'intervention",
-      "source": "Le Figaro",
-      "date": "2026-09-07",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeXJzbGFSMEt2VFE3bmxibWU0VGNnWjNVYWVlbnQ4TkcwTTRPOWNPV0JUSTB6RnpiNWlTQ1dNb1RJenBWNzZ4akk0YXB6eGtyZU84U3RxaDVPdUVCQU53VFltbVpxa3pXVkFlM2VpZ2NsdmNQdk9HSXNWd1dLWlNVNDBCN2x6WHhxREc4N01UUGxmX2NfenhBQllyMlNDbTZ2T19vV0p1ZG04alp3dDZr?oc=5",
@@ -282,20 +324,6 @@
       "publie": "2026-09-13"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNUDJJbWwwWG15UUZWZG9ZbWRncjJGSmw1Ul95SXFqcmxMRTBMTzlOWm1YS1dZSlpJVG1lc3JLd3NxR1dDQlhkTmkta1pnZTVpM3k1TkpoeFMwdG9BOHhnTGFWOUJCbGtvVnRZb0UwdWFsSHE5TmFFMlFNdERTNzJTQk1ZZUR2QTcwWGxaTTFGbXVtaVA2UTJ2ZlZ2YXJjMEQtdW55a3BGN0FKeHVrZ2tKSlpDek16QmR0ZXE3NjFOVFpvbnZJU05wbXNGOFRaaFNzVlUwSjg1b1dhbkE?oc=5",
-      "titre": "De la France au Japon, des taux d'intérêt record pour les États et les ménages",
-      "source": "RFI",
-      "date": "2026-09-02",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "rfi.fr",
-      "publie": "2026-09-13"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPN3FOTTd2cG9SVU4tcDExendKQmIyUUdINzhpWmI2Si1GRVY3U3lsSE5MQUVNYUJWaUo1YjFpUDhBaUFVY0M3MG0wTjJvajc1a2tFSE9EbWJZTFdENm4xek41NTEwMnJTeEJXeVBDY3dra1Q5S2pUX2J2NEhzNWZmbm9rZ2NfV08xd0ZPRGdWN1EySVFhc3QyYWo0aTU0UjQ1M0Q0bTBKaWJxRHFuYWdHZDRBQnVUQQ?oc=5",
       "titre": "Loi \"anti fast-fashion\" : un nouveau cadre juridique pour la mode ultra-express [Tribune]",
       "source": "lsa-conso.fr",
@@ -305,34 +333,6 @@
       "ancre": "cadre-juridique",
       "section": "⚖️ Le cadre juridique",
       "sujet": "📢 Marketing Digital — Avancé",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNdDJKNGJ3OXFid1dmRU9Gd1NteW5CdWNqZ2tyM0VhaEFYWmhKSThKOEFyNmlWRXZFYndzQzNobmp4RGoySjBOODl4VTNWNTI5MXFKRlNVV1JCYVhGa2w4c0dScEU2U19MVURfdmFKRWpCLUFZUkRIbmMxOFFZTmZrckliVm9JOW9fbUdfWTdGNTl4cTNQdzhoSGtVSTJPekxWUHBXNDgtb2JDYzNlZFFJQjFLdkhEZ0R0N1lMQmU5bjN5b3oxQWdVeVhwUWNOOTRaS1FWbEFodHR4ZG5sWlFUeTlqblR3YmxuVGlhRExSemNFTEo4?oc=5",
-      "titre": "« 95 % des Français veulent mieux comprendre la finance, mais un sur trois seulement sait quoi faire de son épargne »",
-      "source": "Les Echos",
-      "date": "2026-08-28",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPZXZ0UEhVaWJEcHR6N0wybUZEU3R2ZjRwMjNBc3F3QUJodEdJRkYzSTEyLXVKb1lOMVJZVzZZQ3ZqaUFjejFrUi1SQ2lpcE1YMmtoNEE3bEpYTkgxdmliRjc2Q2tkU3E0TGVMVVdlRGNuSVhDQ2ZXb3hKSDVVLVlDWGYxcXQ1Z05DbFFVRDFkX0JkTi1fUUJMWUs5NThzMU5ESkE2RnhDaTQyV2tYSU4tNEJUbE92T0s5NzE1dkNaTWFPNlg4cy1nalQyWFVPX05PUTdNSjEyUVlYdnBEeFF2RjZyYnc3Q1NGVE1GOEc4OHhnV0NLUWVIYzRyaktpZmI1?oc=5",
-      "titre": "« Le private equity peut se démocratiser s'il répond aux attentes des épargnants : gestion du risque, lisibilité, transparence »",
-      "source": "Les Echos",
-      "date": "2026-08-28",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
       "langue": "fr",
       "site": "",
       "publie": "2026-09-13"
