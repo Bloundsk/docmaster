@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-18T12:19:43.773Z",
+  "maj": "2026-09-18T12:24:47.556Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSlBPT3pROHpueTdsYzdwMW9yemJqcUlIOE9GaHdMelNDSmZqZU9JcThUdUVXU3FUeExvLXdLZkRkU3B4RExQWVhfcVI5QVU4R21pb2tDM0VfWE1wSEViQW9sQmV6TThlM3BETDdfcWMtWnBFa1B0dVJ3VTZMYUlDY3ptUTBsTWJHR3Y4VmlSTjNhX05keDlVTkwySzlXSzY2WXZUel9lc2dqNTZkZVNqallyRXRiWEZvNFhLMEJ4RzBoR1ZMdl9lOVY0VUZsdW1JWUc4?oc=5",
@@ -352,6 +352,20 @@
       "publie": "2026-09-17"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOX1RxUk03eFM1ekk1WFo4NHJzMDlZS284Rm53Q2x2ZGFKbXA4ZW9iYjRieEJGQUpvN1FoVlFzOUF1YTBKT1ZBUTl3dTZSTG9hOW9ianBBT0xhTm11aEZMSVhxY1JVcUdlZlhFU1JfQmM4RkVaNHp0aUdhaEFiTWVYV0w1ekR4NnJYUEhWcVFkbnlQdjl1QWtmR1RRQQ?oc=5",
+      "titre": "Bank of England holds interest rates at 3.75% but warns war could force future rises",
+      "source": "The Guardian",
+      "date": "2026-09-17",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "theguardian.com",
+      "publie": "2026-09-18"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPcE1HVHFoUnV3SDBLcERNME5mT1gtakJWMlVzMkpCVEcyeWJvYkZDeEcxeURJcHItRFBuRWlWazZKN3J2WXdtYUpaMnFZUHc2ejRWWlRTcEpac2lHSGlsQlR6cDc4NjhWN3FFcTNGa2dJYWotQmJDazc5aTAxLWtMd1VObHBmc0ZSaWtMSVFQTU5DdDR4cWdJM3hub1M3ZjM0WlJKSHE1RzVvbUFCbjFjREptV2tKdHUzei1UWWxn?oc=5",
       "titre": "Fed defies Trump and hikes key interest rate for first time in 3 years",
       "source": "The Independent",
@@ -366,6 +380,20 @@
       "publie": "2026-09-16"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNRWpTWXAxNnkzNkFVUkpaVDlCQXIybVJJdnVOdXlvTVI0WjdVV3dLWXUwNzJMdlAyaXpXQXJlTTJTRXhublF2YXA5NXloUjA2cTZRR3BoYmktMmtlcUs2a0txTmV3YXowa2hqci1tUm5SSXV0eUJRekF4emUyWW8wVHBpWm9vUFlkLU1XYlB5WV9KYjJ0YjRHOEFB?oc=5",
+      "titre": "Data centre quartet make switch to Astor with €5bn pipeline",
+      "source": "Sky News",
+      "date": "2026-09-16",
+      "guide": "data",
+      "page": "avance.html",
+      "ancre": "data-pipeline",
+      "section": "🏗️ The data pipeline",
+      "sujet": "📊 Data & Analytics — Advanced",
+      "langue": "en",
+      "site": "news.sky.com",
+      "publie": "2026-09-18"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5UZEFMODhLTkNSZXRGQmViNjFPVF8wWkpaNjFlSXZwZGlMRzVpTEROQzIyN1hVMDY2MGptNE1LZDhfcE5QNkVGSURYcC1qSERJWlFsMjFhbGdMcU1sYy1Od0V6TGh2WXAyWmcyOHlkbzBVMHZGMlZqNE1pOA?oc=5",
       "titre": "Inside the Scattered Spider Playbook: How UK Retailers Got Social Engineered",
       "source": "Infosecurity Magazine",
@@ -377,20 +405,6 @@
       "sujet": "🔒 Cybersecurity — Advanced",
       "langue": "en",
       "site": "infosecurity-magazine.com",
-      "publie": "2026-09-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbE1yN2FJTnR2akQxZFlyNnJOcWVxZGNHNFNrcFhxVHZmczdZMTZxMlI4Z1pfdWViTXI5NU5JdXVjVmtOYVF3ZjVtb0tDMG5NQTBaZ2pnYmJZZUJqcmpsZnViTzlrdk1RTDhEdklHbmNiOFVEa2lDeHBqSWdBUnZMU0dkTDMzeG5zdmdLUDFKWWY4LUQzWkRRMENscXAtd2NtbHdURQ?oc=5",
-      "titre": "The Bank of England must resist pressure to raise interest rates",
-      "source": "The Telegraph",
-      "date": "2026-09-15",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "telegraph.co.uk",
       "publie": "2026-09-15"
     },
     {
