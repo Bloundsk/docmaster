@@ -1,5 +1,20 @@
 # Changelog — Clicked
 
+## 2026-09-18 — Les quatorze podcasts anglais sont complets
+
+| Parcours | Épisode | Durée |
+|---|---|---|
+| Negotiation & communication | Win Negotiations With Facts and Alternatives | 1 min 40 |
+| UX/UI Design | Building Digital Spaces That Work Flawlessly | 1 min 42 |
+
+La page anglaise n'affiche plus aucun épisode marqué « still in French » : les
+quatorze parcours ont leur épisode en anglais, et le flux en compte quatorze.
+Six jours de travail, trois résumés audio par jour, chacun transcrit et vérifié
+avant publication.
+
+Le premier épisode hongrois est enregistré et écouté — *« le hongrois est
+bon »* — mais pas encore publié : il attend ses treize suivants.
+
 ## 2026-09-16 — Douze podcasts anglais sur quatorze
 
 | Parcours | Épisode | Durée |

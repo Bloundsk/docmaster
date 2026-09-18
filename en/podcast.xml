@@ -10,6 +10,26 @@
         <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
         <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/en/podcast.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title>UX/UI Design — Building Digital Spaces That Work Flawlessly</title>
+            <description>Good design is not decoration: sort out the structure before the style, design for hard cases so everyone gains, and guide people instead of trapping them. The UX/UI Design path in one minute forty-two.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#design</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#design</guid>
+            <pubDate>Fri, 18 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/design.mp3" length="1230504" type="audio/mpeg"/>
+            <itunes:duration>102</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Negotiation &amp; communication — Win Negotiations With Facts and Alternatives</title>
+            <description>Not about arguing louder: put the conclusion first, know what you will do if you walk away, watch the first number on the table, and stick to observable facts. The Negotiation &amp; communication path in one minute thirty-nine.</description>
+            <link>https://bloundsk.github.io/docmaster/en/podcasts.html#negociation</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/en/podcasts.html#negociation</guid>
+            <pubDate>Fri, 18 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/en/negociation.mp3" length="1198217" type="audio/mpeg"/>
+            <itunes:duration>100</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
             <title>Law &amp; Procedures — Paperwork Wins Your Everyday Legal Disputes</title>
             <description>A broken washing machine, a stubborn landlord: put things in writing, know the rights a contract cannot remove, and act before the deadline. The Law &amp; Procedures path in one minute thirty-one.</description>
             <link>https://bloundsk.github.io/docmaster/en/podcasts.html#droit</link>
