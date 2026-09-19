@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-19T11:59:32.579Z",
+  "maj": "2026-09-19T12:25:13.401Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSlBPT3pROHpueTdsYzdwMW9yemJqcUlIOE9GaHdMelNDSmZqZU9JcThUdUVXU3FUeExvLXdLZkRkU3B4RExQWVhfcVI5QVU4R21pb2tDM0VfWE1wSEViQW9sQmV6TThlM3BETDdfcWMtWnBFa1B0dVJ3VTZMYUlDY3ptUTBsTWJHR3Y4VmlSTjNhX05keDlVTkwySzlXSzY2WXZUel9lc2dqNTZkZVNqallyRXRiWEZvNFhLMEJ4RzBoR1ZMdl9lOVY0VUZsdW1JWUc4?oc=5",
@@ -588,6 +588,34 @@
       "langue": "en",
       "site": "theregister.com",
       "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRmdSZVlObzBiSEEyeHlwakpHNE1fazZrVzRxcWdEYW40UmI2LWk0aExtQ29TbDJqbHNUWjBHUlkyOWV4UFpTLXVFRjNMWHdub2VYR3ZmbmFnRFR3Rlh6aFZ1dFpodGl5XzQ2ZGRNYjlJa3lUVXR2cW5nZUI2elgzakEtS1pUdw?oc=5",
+      "titre": "6 tipp az egészségesebb munkahelyekért",
+      "source": "HR Portál",
+      "date": "2026-09-19",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 A foglalkozás-egészségügy",
+      "sujet": "🩺 Munkahelyi egészség — Haladó",
+      "langue": "hu",
+      "site": "hrportal.hu",
+      "publie": "2026-09-19"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRDdFd1QxQU1aNlVlekIyMnVsNkM5bVhzejdEanFHamZacDFlZU9KOGtXRDVjcmZfekh5RkxzZTNPOGwtaEdGb1l4ZGViaGtWc3U2dU8zUHhsMTlXbUR6UTA5bGtWc1JXODFpbnBEb1V6SXVQLWEyaXA4SHdHa284dV9rX3ZyUG5jdWIwVVlvZ1htN2VMZUZtdGQ2akY1UWdmYWpEVnJBQ21fTHFJQmlpenVR0gG3AUFVX3lxTE0wT0hvbUdYOWNka2MwWGtJNlo2OG5nN1VRUVNIdjZpbDJHbHViZHc0azM3c0tGN21xQWc4NHFmSnN3UFhFRURGME91RlpRUjhzeDJxNDU0cjVpMmxTR2lSQmNkZUM2RnJ5SUJRWGR3N0gzVHIwSlowdVVnMG8wUkRtZzFBc0hTTUNyTy16Ul9CcVRPYlZvalJhVlBWTGpyN1hic09ITTJHTlZqWUdYLVQ2STJwV2Vidw?oc=5",
+      "titre": "Hosszú távon mind halottak vagyunk, de talán már rövid távon is?",
+      "source": "Portfolio",
+      "date": "2026-09-18",
+      "guide": "finance",
+      "page": "intermediaire.html",
+      "ancre": "investir-dans-la-duree",
+      "section": "🔁 Hosszú távon befektetni",
+      "sujet": "💰 Pénzügyek — Középhaladó",
+      "langue": "hu",
+      "site": "portfolio.hu",
+      "publie": "2026-09-19"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxQVTUxY0xtMm55ZHBmbDJIVzNhMTIwWTZPYXQ4cEt2RGU1TkV6bEF4RUItd0Nad2JnOXE5U0lBa1dkM21URFVNZi14NXh1MWZGYm9pejJsNDVqWUhhWmZ6STlGZ2UxXzdVMS10VTNobkh5ODNiQ1NVRUlYMzZpbzVybm01U0EyMlkxSGxUbm9CVEJnTDNicnpnUlEwcmVidw?oc=5",
