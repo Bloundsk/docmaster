@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-19T12:25:13.401Z",
+  "maj": "2026-09-19T19:25:39.304Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSlBPT3pROHpueTdsYzdwMW9yemJqcUlIOE9GaHdMelNDSmZqZU9JcThUdUVXU3FUeExvLXdLZkRkU3B4RExQWVhfcVI5QVU4R21pb2tDM0VfWE1wSEViQW9sQmV6TThlM3BETDdfcWMtWnBFa1B0dVJ3VTZMYUlDY3ptUTBsTWJHR3Y4VmlSTjNhX05keDlVTkwySzlXSzY2WXZUel9lc2dqNTZkZVNqallyRXRiWEZvNFhLMEJ4RzBoR1ZMdl9lOVY0VUZsdW1JWUc4?oc=5",
@@ -128,6 +128,20 @@
       "publie": "2026-09-19"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPeU9sb1lSV1Z2MzBMUV9KRGo1dlNnaVg0UmVTaGN3NjNGQjBMMExlWXRPZVFzb3VvaVMwYjNGSVVOTjVLQzExT2lBbFRjRS1VYWJZSXBBZVVhWWhRbldwZFVyaXR4ZG92d0Y0V0pqTkwwaUZfMVFHbldxVGIzdlRmWFF5ZHMtZDJ3ZU9mRjZFWExTSnhzejhoSkZrd2xiNDFLU3BRX0cwUEtNTnNUWFhZc0h3NlJMM2xoWVlYZk1iVGNONUQ0a3l6bEotY090NVUzajZBQ1RKY1BUSXVONkhfcGVILW40WENleENFZk9qMlRYSzlCVVhsWlRCaGlhdw?oc=5",
+      "titre": "Comprendre la crise des finances publiques françaises en graphiques : dette, déficits et taux d’intérêt",
+      "source": "Le Monde",
+      "date": "2026-09-16",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lemonde.fr",
+      "publie": "2026-09-19"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQTVVRenUwUmlkbWtVNXdRczJoa3FrWU5QN2htZFNfSnhGR2RvVmZNYmpmblFXWTVLNDhaS0E2MVdVTTgxTUR3a3pjc1pkN1JmN1ZlWTRnSndOMzAtNE55WDZpVWlnWUdZbUFGVWVOUjdVUFJoZGRQQWtZRTdpSWxqSUN2VGg5VENqcDgwM3pDQ2xGUm9ZSnNEX3VvOENZYWduTndXQjdxTUF2UWFTZGVTaVplN0tWN1U4Um8yeHNQTGlaRFkteWFXeTYyaW9sU252S0ZmVmRNVjBVbnFxTk55dTFVQnh5UVU4TkdmWTdZd3Y0ZjlLUXc?oc=5",
       "titre": "Flambée du pétrole et hausse des taux : nouvelle alerte sur les finances publiques françaises",
       "source": "Le Monde",
@@ -139,20 +153,6 @@
       "sujet": "💰 Finance — Avancé",
       "langue": "fr",
       "site": "lemonde.fr",
-      "publie": "2026-09-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQTkk5U2ptc2Uzcmx1ZF9MYWlpTTFhMUtCeXZIZ2hFUzd2djR4OHhPdWdqYVktQWI2Y1I3R3FieDJmUWxURHRJdFF0M3FqRk5yeVBDMHBtMmpKaFJONGUyNGdwOVM0dVVlNVBqcGJCZmwtYjFkbVRXVVlVUkVRRVhjWU5XaUlQN1I1MHhoZDlzRjFOaDJQbExqNE1CbU9Rb3dYU01UaGozcWxVM1h6a2RxWGdKRU9hYnowY0hIcUtyNWduRkVINk1JSW81WnNqUkREZGk0Y3h3?oc=5",
-      "titre": "La Bourse de Paris en recul face à la hausse du pétrole, les taux d'intérêt continuent de grimper",
-      "source": "Le Figaro",
-      "date": "2026-09-15",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "lefigaro.fr",
       "publie": "2026-09-15"
     },
     {
