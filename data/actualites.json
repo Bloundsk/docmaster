@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-20T12:59:36.917Z",
+  "maj": "2026-09-20T19:35:22.205Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSlBPT3pROHpueTdsYzdwMW9yemJqcUlIOE9GaHdMelNDSmZqZU9JcThUdUVXU3FUeExvLXdLZkRkU3B4RExQWVhfcVI5QVU4R21pb2tDM0VfWE1wSEViQW9sQmV6TThlM3BETDdfcWMtWnBFa1B0dVJ3VTZMYUlDY3ptUTBsTWJHR3Y4VmlSTjNhX05keDlVTkwySzlXSzY2WXZUel9lc2dqNTZkZVNqallyRXRiWEZvNFhLMEJ4RzBoR1ZMdl9lOVY0VUZsdW1JWUc4?oc=5",
@@ -74,6 +74,20 @@
     {
       "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOX0RVN0tFUWJPUTJXMDZHOVFKZ0p1ZTd2cElHcmFIekVaQkxZZjFaRFVQXzZyYVBnLVNoX3BFbFVjWXVMUENDX3Z2akZZeDVMaFNEb1NPQjhVVlpPVU1weEE1QV8xQWc2ZjgxU3BqamhIRXZ6YzYyZzlaaWFqTElET2VIal9BNVpkaW9Zb0pKUXpVYUVQRER4NExLcVpaNHUxNFV2ejEyUFlhR09lbUU5TmRzTXozWkxjbHpNVDFmZkJjSXhxNnZNUXVB?oc=5",
       "titre": "Approuvez-vous le projet européen d'interdiction des réseaux sociaux aux moins de 13 ans ?",
+      "source": "Le Figaro",
+      "date": "2026-09-17",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-09-20"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQc3o1WjJEREI5VzRYUzlRV1dyNU5MRUtYb0JWUVBiQ3RqREtGd0N4eVhSWWQ4cHdRX09uU29oS1daUUZNZkRDYXZUdUx5dUl5SkctM3BmQmFIYm45THNnNnBaNDk1ZDBmcjYzOUtzLU5oM1Rnek5zdkIwSlNFekxwMXgyYVNmNU9MMnFyVzVuazNYN0p0cnN3VlVwS0RFZjV5NlBkRkFZZVFuS204VVFDSEo4UlBZSFUxZU4tNEJXWW93dHJVMFJlNk5qUkswMElVYnlnbXdjT1hsSmlPM3ZKNC1mSnE0dTJ2OHR0S3p1dFc4WHpoVzZNZS1nVlQ3eHhaM0FiS1hGUQ?oc=5",
+      "titre": "EU Kids Act : quelles sont ces « fonctionnalités addictives » des réseaux sociaux que l’Union européenne veut interdire aux mineurs ?",
       "source": "Le Figaro",
       "date": "2026-09-17",
       "guide": "marketing",
@@ -182,20 +196,6 @@
       "langue": "fr",
       "site": "lemonde.fr",
       "publie": "2026-09-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNQ3FzdDlsc0NtWlpzb2FvNjZhUkNwaHFXYkJDM2FlNjQ5WXhFNkhEcm9CdEp5alNtRGVJS2NUU3hmR0dWOGxDUXI1NGxpMENlaUJyaHBvZGNYaVRvQ1AzTU5JSWc0c3lLbzM5anJkTVl3bVF0T1p6a0llaHJYYjhab1UyR1B6NmJmNDY0bE5Ecnpad0UtbXdtQzBpaVBoeGlHRGJ4WDFqaEVTUlUzaTV3OEdJdkhBTzh3YWJWaTRNVU1kcDRmbDczQkthWFhINTVJVWNKMHVVWlJKaWFULWxkXzdNeGROa2d6cXlsVmppWHRUWm1hcm83TzdVNEFBY003Xy1ueQ?oc=5",
-      "titre": "Réseaux sociaux : chez Blancheporte, on veut « être au contact de la vraie vie des clientes »",
-      "source": "Le Parisien",
-      "date": "2026-09-15",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "leparisien.fr",
-      "publie": "2026-09-16"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQWFFobXdvbG1HUnpoZ285eWpQYnB3c3RXQ3d4WjBBSm1nMXhkLWZWUHdVbGVuSG9zMGZtUnlsMUJqb05HNVRNRzQtQ0pvYVp3WWRIdFhWY2FWX2xQb1IyOVFVU0taSk5UeEFyWnlDVnZSOHJUNmxJMjhSZmxTY0VQcVRvdWxtSUFlakV1T24wZ2lxOGt1cEdTYVYtckpQZ2RXY3NXbDNRS01BbFZPRzBCb3dPdEVGR2NSZjZVaDJ3NTVZUWoyM3g1Z0J0Wm1RUDJmZVdiX1h3ekNQOUVO?oc=5",
