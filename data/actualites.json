@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-21T14:21:14.285Z",
+  "maj": "2026-09-21T14:34:43.214Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPLWs0UDFoTE5icmZxQjRBWmZUbUl3MnYxeWprYnV4Z0g0RmhaZHp5MGVwZlNiS3ZxaHk4Qk1iWkpDVUdjbmE3aGt4R1k2VTJCZVNDSHgxWFFiRnpUTl9VeUYwX1VYVlJoTW5XX3BZbkM1UUJZX29QWVZDX0FSUG5pOV9DaU9LdTItY2RUZTIwQm5GMG1LUGJtLW1kMHNYN1M5YzJqMFlGVGpVR19EZUdremY0RFVuV0RPc1cwb3VZWC02UTh5SHZ6SW9wMkN3WmVrLVdmaHJDWHJ6NHVMQ0RIVQ?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-09-14"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdUdxQW4ydE9OVDFVb19OcWtkZkhzY2g4ZDdjNTdRTVNZTU1MLW1pNExSYnFoN1NfckRUOU42dVNFTEpmczJ6bXNJYXd6SC1tdjJDVDZZRzlRUldVVnA1RWdNNzdDWHEyZXk4YzlZVDlqMEc0dnVFN19yRjUyVDBqSEtub0psdjNtMzE3T3VVTUhwWmJsRTBrX2dnbURCRkVXMXhiaVhzTUpaQWMx?oc=5",
+      "titre": "Bond sell-off reignites as central banks raise interest rates",
+      "source": "The Telegraph",
+      "date": "2026-09-18",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "telegraph.co.uk",
+      "publie": "2026-09-21"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONE1za3AxUXpHX0kyVXhseFhrNjdUSndfZS1jMUhZZjM2eUdYbHQtbVUxY3RIWkU4bXFya1pHSzlNclYwQjE5SmlRODVfckxKX0lkd0t3V2lUNmVxcU4zSzh0b0RXU3pZU3pBY1V0RHpHNFVWLVJ0VHlzdTZycXA2dDJtU2lySVVXem4zVTgyU2d0ZF9JLWsyZjd4Q0R1cFliLVNpZ0hLQ2VqbjZIU1ZBa0ZQTVhabEU?oc=5",
       "titre": "Interest rates held at 3.75% but Bank warns Iran war could mean future hike",
       "source": "The Herald",
@@ -363,20 +377,6 @@
       "sujet": "💰 Finance — Advanced",
       "langue": "en",
       "site": "theguardian.com",
-      "publie": "2026-09-18"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5QZ21jNFFtTTMtejBhVWNScm1wLU0tdWlnNzNRblJkc2l4R2tKUTNYTk5hdGtLN2E2aTBPNlgzQktGSmExUm1pSWJmczlhQm1MZjNiMmx5Q0tGRVlXVGc?oc=5",
-      "titre": "Interest rates held but Bank signals rise if energy prices stay high",
-      "source": "BBC",
-      "date": "2026-09-17",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "bbc.co.uk",
       "publie": "2026-09-18"
     },
     {
