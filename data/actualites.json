@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-22T12:42:52.196Z",
+  "maj": "2026-09-22T12:52:12.306Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOT0VscS1fNkh6Qlp0SHJxUkpfd1hPbHhtZzl5RkpfOFQ2U0FDVDJWLU42SkthVjlZal85dV9LV2xNNnZ5ZzVlYS00V3RweExaMldReDIyMXRoMFJOUkpkT19oYTRLbUNyd1N6VXN5clgwYjN6QXdaNkdhNHZ4NGlNdU5iaUJnVV9lSmZNU2xPTXFtckd5QnF4eVZzY2hQcU9vOEJIbXRJYk5yZ2V6andDSldaUS1nYm8zUUJQT0FtYVBySVRJZ3hDY0RHc3REQWg2bXA2a08tMA?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-09-19"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQVNsUlhMel9wMHFBQ1daMWdhdkNRblNRNC1mT0pOTFJsbDM2VXJNbGhvdUcxUDNpSnpDNTFzNkdwWUszVkhXV2x3UDJ3MGpEWlJKclVZNnZmN3FGWXE1T3Z4cUFaZEFKQjNiRTdVaXVCdzNoS3A5VjN3aEJuN3ZJcg?oc=5",
+      "titre": "Network Segmentation Failures Are Expanding the Corporate Attack Surface",
+      "source": "Infosecurity Magazine",
+      "date": "2026-09-22",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "attack-surface",
+      "section": "🗺️ Your attack surface",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "infosecurity-magazine.com",
+      "publie": "2026-09-22"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdUdxQW4ydE9OVDFVb19OcWtkZkhzY2g4ZDdjNTdRTVNZTU1MLW1pNExSYnFoN1NfckRUOU42dVNFTEpmczJ6bXNJYXd6SC1tdjJDVDZZRzlRUldVVnA1RWdNNzdDWHEyZXk4YzlZVDlqMEc0dnVFN19yRjUyVDBqSEtub0psdjNtMzE3T3VVTUhwWmJsRTBrX2dnbURCRkVXMXhiaVhzTUpaQWMx?oc=5",
       "titre": "Bond sell-off reignites as central banks raise interest rates",
       "source": "The Telegraph",
@@ -534,6 +548,20 @@
       "publie": "2026-09-14"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNTFWeUxvT2tab0E3TzJBZ2hJYmVuTUVOYWRnSy1LTVlTVkdyc21BaEdzaElIQXNUakQxakRIVDFhYWNMVDhhVENCY1dfLVUwVGVkOXc0aXZFdUFkM0JJMHF2bGNEMHJOT05hazllaDYwYTh2c2pGQ3dEalZ5b0htTDVWWjlUelVKY1l1QkgxM193ZU4wSUFITg?oc=5",
+      "titre": "The real reason some bosses oppose working from home – and it has nothing to do with productivity",
+      "source": "The Independent",
+      "date": "2026-09-05",
+      "guide": "productivite",
+      "page": "intermediaire.html",
+      "ancre": "prioritising-for-real",
+      "section": "🎯 Prioritising for real",
+      "sujet": "⏱️ Productivity — Intermediate",
+      "langue": "en",
+      "site": "independent.co.uk",
+      "publie": "2026-09-22"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQLVFWeG9SazNwY0Ywa2Jic2xDWm1nb214ZWdVaENuRk52NWxOWXF6YUVFd1JEdl9jTzJoX0RXZmwwMmpSVW1QNjZIRDdHYXJMcU9yMWw3c3Y2YnZyVWVzaGxYMTlrUUdEMTBEeERVUEp4WEk2ZnZKZ1JUSzU2YXNtNlE0djJaUDN4WDdLODBB?oc=5",
       "titre": "P&O Ferries apologises to passengers impacted by data breach",
       "source": "The Independent",
@@ -602,6 +630,20 @@
       "langue": "en",
       "site": "theregister.com",
       "publie": "2026-09-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcHlLa2ozcXJVbTJMUXhVLTBNNFR0LWhpdjA4Z21Pd3NORzBEMTJoME00QkpDMVhuYjJIMk1uQnRDZU8waUFsc3diNkM5bVlaOHd0RVRBNEdwU0lJSWdXZ0RIQXllcjkxV3lEOVdnbTBnX3k4X1FqLXBmTk1kNFVfZ3FpWlBXcGhjVHl1b1lsSkwyZFRQZnhv0gGcAUFVX3lxTE55RVdMdGR4Z1ZqcTZTMUFHb1NJanpBazNyRXRnTlZ3YXFiYlpwdUdST2QxVnZZX1NVU0VmUmk5SnZ1Wkp2cDJUd042VktEOV9DTEZLUWhWVko2NWNlSnIxQlhaWkJ3dXdwcDF4bHlJWUJ0T3NOSlJ6VmRya21YcnF1VHdkVHAzQkxXYUR0bzI3anRjZEhwRGFKTGxGUg?oc=5",
+      "titre": "Work to restore Merthyr Tydfil synagogue gets major boost",
+      "source": "Wales Online",
+      "date": "2026-08-24",
+      "guide": "sante",
+      "page": "debutant.html",
+      "ancre": "breaks",
+      "section": "😌 Breaks that restore",
+      "sujet": "🩺 Health at Work — Beginner",
+      "langue": "en",
+      "site": "walesonline.co.uk",
+      "publie": "2026-09-22"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNRmdSZVlObzBiSEEyeHlwakpHNE1fazZrVzRxcWdEYW40UmI2LWk0aExtQ29TbDJqbHNUWjBHUlkyOWV4UFpTLXVFRjNMWHdub2VYR3ZmbmFnRFR3Rlh6aFZ1dFpodGl5XzQ2ZGRNYjlJa3lUVXR2cW5nZUI2elgzakEtS1pUdw?oc=5",
