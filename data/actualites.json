@@ -1,6 +1,20 @@
 {
-  "maj": "2026-09-21T14:34:43.214Z",
+  "maj": "2026-09-22T12:42:52.196Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOT0VscS1fNkh6Qlp0SHJxUkpfd1hPbHhtZzl5RkpfOFQ2U0FDVDJWLU42SkthVjlZal85dV9LV2xNNnZ5ZzVlYS00V3RweExaMldReDIyMXRoMFJOUkpkT19oYTRLbUNyd1N6VXN5clgwYjN6QXdaNkdhNHZ4NGlNdU5iaUJnVV9lSmZNU2xPTXFtckd5QnF4eVZzY2hQcU9vOEJIbXRJYk5yZ2V6andDSldaUS1nYm8zUUJQT0FtYVBySVRJZ3hDY0RHc3REQWg2bXA2a08tMA?oc=5",
+      "titre": "Bruxelles propose un système de notation pour évaluer l’empreinte environnementale des datacenters",
+      "source": "ZDNET",
+      "date": "2026-09-22",
+      "guide": "ia",
+      "page": "avance.html",
+      "ancre": "evaluer-un-systeme",
+      "section": "🪞 Évaluer un système",
+      "sujet": "🤖 Intelligence Artificielle — Avancé",
+      "langue": "fr",
+      "site": "zdnet.fr",
+      "publie": "2026-09-22"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPLWs0UDFoTE5icmZxQjRBWmZUbUl3MnYxeWprYnV4Z0g0RmhaZHp5MGVwZlNiS3ZxaHk4Qk1iWkpDVUdjbmE3aGt4R1k2VTJCZVNDSHgxWFFiRnpUTl9VeUYwX1VYVlJoTW5XX3BZbkM1UUJZX29QWVZDX0FSUG5pOV9DaU9LdTItY2RUZTIwQm5GMG1LUGJtLW1kMHNYN1M5YzJqMFlGVGpVR19EZUdremY0RFVuV0RPc1cwb3VZWC02UTh5SHZ6SW9wMkN3WmVrLVdmaHJDWHJ6NHVMQ0RIVQ?oc=5",
       "titre": "Copier le code sans ouvrir le mail : Google s'attaque au geste de trop de la double authentification",
@@ -14,6 +28,20 @@
       "langue": "fr",
       "site": "numerama.com",
       "publie": "2026-09-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQRnNJWXRDS05qYTZrVmhkY0szOWVVNU5BQmMyN2R2TUhkZXBJbHMtZURKUHp2TGpwWmFSR2xLVE1ldFY4bmdrS1FhelBUc2J4ZEpyc0hTU04yWnN2NDlub2xEbTIzTlg1V3ZBMW5iSFQ3SmRlNkloLV9rX2I4a3NWXzZtMVVaMTE1c2VNRXc4SmNZUW9UTmZHMDBDWndoX0hjT1cxQkwyTkFPY3Rna2t0b3YxeERzbHM0ejFfM2hGMUw0T3BiRlB5WTIwb000c19rVjljc3NqeG9WSUVQZExmdGZNaDZTTnBmc183TnRsS3N4LVdPQU52T1cwWDFtZm1VOEE?oc=5",
+      "titre": "Finance durable : les investissements dans les hydrocarbures peuvent-ils en faire partie ? Le débat sera bientôt tranché en Europe",
+      "source": "Sud Ouest",
+      "date": "2026-09-20",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "linvestissement",
+      "section": "📈 L'investissement",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-09-22"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSlBPT3pROHpueTdsYzdwMW9yemJqcUlIOE9GaHdMelNDSmZqZU9JcThUdUVXU3FUeExvLXdLZkRkU3B4RExQWVhfcVI5QVU4R21pb2tDM0VfWE1wSEViQW9sQmV6TThlM3BETDdfcWMtWnBFa1B0dVJ3VTZMYUlDY3ptUTBsTWJHR3Y4VmlSTjNhX05keDlVTkwySzlXSzY2WXZUel9lc2dqNTZkZVNqallyRXRiWEZvNFhLMEJ4RzBoR1ZMdl9lOVY0VUZsdW1JWUc4?oc=5",
@@ -42,6 +70,20 @@
       "langue": "fr",
       "site": "letelegramme.fr",
       "publie": "2026-09-20"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQUTBKbjlqeklWdWtkQjBxbkFKOVVZUlZyYkd1QnVDbEFkXzlWNjdPMnhyOGVUMlkzNXZIMVMxbzY4WU9nd09HWHduMVo2OW1XMnBlZGlraFNRblNZakItQ1N1cjM3dC15TnhTM29rTXhUUm5vUWN1YzNITWp1NW8tZkJicTZfM0lCa21XT3NLbzFLUGl0bElpczhzZjNocVY5a3hvQzFMVUxyeWFhNU1rNEhTMjRtTkoxQ2dyVFp4dlI3TnN0eHc0TU9MOXlxMExNMDdiQ08xSGpHakQtTnd0dTUzOE1xU1ZPaDJRNzFqNldCWjYxanBlY2lfNGhhSEdMdTBleGd6cS1iWHl5YzBkMTdJaE9MWEQ1OUEyZDhEY2l4RGNmazBZZXRZcw?oc=5",
+      "titre": "Vous aidez vos parents âgés à gérer leurs finances ? Voici comment la procuration bancaire peut vous aider dans la gestion des opérations de la vie courante",
+      "source": "TF1 Info",
+      "date": "2026-09-18",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "tf1info.fr",
+      "publie": "2026-09-22"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPOFlMZGhWZmFhLXJuRzAzVk1qY1NqaFUxaEF2bjdBdlBOcE1tR3NJNjFEMHk5cW5PUTJVZERlU05vS3ViYVY1bmpfUER3QzJOZ1QwRmpWMjJpR1JJRUctSmdGdXAwbGlBbUI4WUJvbHZaNFl4YXUyMzFIbWNOMi1Qblk3NGhMS1NCRDgxQTBoamJ5R09FUWpFLUF1MEJuUWZkYkNKWXZHZXo2MXNJVDVLLXM0dWhvR1B0b21CZmFObmNPMmRvdWlxQWZGS1E5eTlzNURwWTZlQ2RrbnpHQnhZcmVCUWhJdjdOd1RXMQ?oc=5",
@@ -294,48 +336,6 @@
       "langue": "fr",
       "site": "zdnet.fr",
       "publie": "2026-09-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPbTl5WEFOeEVNZnNBZG54dEVSWjhXd1JBcmJfYm01WldkZ0pScnk5UGI1dF9wajJ1OF9idHNyMmpjVS0wMlY0U0VpOE1ncm9yeFNhMEgtTEtESjFiNk83SUZTZzRHcGVpLTFjWkoyOXBPOXlLX2J0UnJoODFXSVlwRmFFbEptS0dmNWhhZXdkMHg5SEtaM0RYcG9JWHRPWlBIV2xNYVRHZ19Zb3YtanpSRTQxQ0lzRlNJemxaeEVRR0tOVkV1QlMzRU81cEU4R1JYYi1IMExwMVNuMDI0cG4yWkVGaXdNQjdtU2lZdkRYNndHTnFTelMwd1RKbjFJb29zMk9VZVFRdzhBUGxpVk1xY3pTbXJpT1hKTDFkQ0dsa3ZhbUJxcXhXVlExeGdYOVJMcFE?oc=5",
-      "titre": "Intelligence artificielle : le patron d’Anthropic redoute que des « agents IA » puissent prendre le contrôle d’Internet",
-      "source": "Ouest-France",
-      "date": "2026-09-13",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Les agents IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "langue": "fr",
-      "site": "ouest-france.fr",
-      "publie": "2026-09-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxOTEtSSHVSc1NkTC1TNEtRMVlrbUR1ZS1iVWxNVDZ0VDMwUkFlQ2JtdHhEakhRcTY5dHJGcFZhZ2JLaEo4aGNWNEtQSk96SG5yWEhFUFR1bnhyeVY0Q2JzVGxDSUxIQnBrVTUxRUYwWVBfVXhUb01TMnM0VnluZ0w4UmJxTmhtdzE1RThJeTcydGJNdnhiWkJ1TWpMWEVtNGY5Q2lRay1aT2tHRHIxWmdBVDkzcTFCVl9Gd2tqOWMyUXF6dmliN0lWQkJheFJSM1Q3WmhlUDFyWVBxYnFwUTBUdEVPODlmU1lieVF5clNaSGNIT3M3dk1BWTZFdU1IckNiVEZpTXFfLWJHbVQ2cE13akhRV1BnWWo0aU9iYmFET2dhRFVhbnBHWFN6RGJxZzZLSmMtZkYyanhpTUR3U0M3T2hR?oc=5",
-      "titre": "IA : le patron d’Anthropic, Dario Amodei, appelle à ralentir la vitesse de développement de l’intelligence artificielle avant que des agents soient « capables de prendre le contrôle d’Internet »",
-      "source": "Le Monde.fr",
-      "date": "2026-09-12",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Les agents IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "langue": "fr",
-      "site": "",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOWTQxX2trOGtuU2J6VzVKSF9NZ041Szl1UVM1T0JRdGN5YUEyN0l5ZndMQlY0LTU1UzV3NmlleUhFeEJMVUJGVFAtZEF4SXVpallxNTBGUjBDR3E4aUdCOEl6QnlSWjRlUGlLdmhCSHhoRERMa200bjNhUUNXUHlCaXVRQnA0dGtJVHFPWFExdWxJdzJoSW90RkNVaDNiSDZ5OGlfZ2hweDRqd2xLSlJZNDd5b1ZxeTRnbzhUb3U3dS1XeWpoUHA5S2ZuWXN1V0JmT3kzT2JqV1RVT2tpWHExZWsybl9uV0ZxS05uWGRTTDJnSDlPU1RMeGdoTQ?oc=5",
-      "titre": "Données personnelles : voici comment inscrire votre enfant à des activités extrascolaires tout en respectant votre vie privée",
-      "source": "TF1 Info",
-      "date": "2026-09-12",
-      "guide": "droit",
-      "page": "avance.html",
-      "ancre": "vos-donnees-personnelles",
-      "section": "🔐 Tes données personnelles",
-      "sujet": "⚖️ Droit & démarches — Avancé",
-      "langue": "fr",
-      "site": "tf1info.fr",
-      "publie": "2026-09-14"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdUdxQW4ydE9OVDFVb19OcWtkZkhzY2g4ZDdjNTdRTVNZTU1MLW1pNExSYnFoN1NfckRUOU42dVNFTEpmczJ6bXNJYXd6SC1tdjJDVDZZRzlRUldVVnA1RWdNNzdDWHEyZXk4YzlZVDlqMEc0dnVFN19yRjUyVDBqSEtub0psdjNtMzE3T3VVTUhwWmJsRTBrX2dnbURCRkVXMXhiaVhzTUpaQWMx?oc=5",
