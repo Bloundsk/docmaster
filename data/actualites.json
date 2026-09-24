@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-23T13:32:22.394Z",
+  "maj": "2026-09-24T12:48:29.849Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZzFBa21qaW1MMm1UM0I5ODJ4dk9xMncxel9XZDJIRXlDeXY3dUNqOGZhRnZXM3R0a3gtcTBUS3VkZGhud0ZsWlU2RjI4QU5lX0laZVpRYm5RaXZicDA5R2NNUHJMR1BYOWdaV0RwSzUwdVBYMnlNZWxOeUhqUHVOTGpBaHJ2elJNcHVfRFFvQUlLZUw0MTJaSFU3a0U?oc=5",
@@ -14,6 +14,20 @@
       "langue": "fr",
       "site": "20minutes.fr",
       "publie": "2026-09-23"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNT1FSY2VaQXoxWWQwa3BRNEEzakFsTW5GTkd5VTZqVUhOc0dncktuWXh3cFJtY0U1M2w3MUhoQjQ3N3RPZUhhM2RqVjFmRVp3N2pUV0tLdjJmbTdpM1VLOC1tY0ZPYmI1NFVvR0RqaVFTQ1djaVVYVF9KRVRXZno1ZUltaG50VC1UNnA4MnJsb3lseDhrNzRtQ1BITjBRbzhRSlJpTTRUMFZOeExmVDZEQ0gzc1VrQnQxU0VmTFVqZ0tOTmQ5ZkxfSFdLX0RLRTFGczZmX0FYWF82ckF4Z2JuOER6TWpoRWlhdzBCYzZPNHN6cER5YnRn?oc=5",
+      "titre": "Manifestation du 17 octobre : la mobilisation sur les réseaux sociaux est-elle comparable à celle des «Gilets Jaunes» ?",
+      "source": "Le Figaro",
+      "date": "2026-09-23",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-09-24"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOT0VscS1fNkh6Qlp0SHJxUkpfd1hPbHhtZzl5RkpfOFQ2U0FDVDJWLU42SkthVjlZal85dV9LV2xNNnZ5ZzVlYS00V3RweExaMldReDIyMXRoMFJOUkpkT19oYTRLbUNyd1N6VXN5clgwYjN6QXdaNkdhNHZ4NGlNdU5iaUJnVV9lSmZNU2xPTXFtckd5QnF4eVZzY2hQcU9vOEJIbXRJYk5yZ2V6andDSldaUS1nYm8zUUJQT0FtYVBySVRJZ3hDY0RHc3REQWg2bXA2a08tMA?oc=5",
@@ -195,20 +209,6 @@
       "sujet": "🔒 Cybersécurité — Intermédiaire",
       "langue": "fr",
       "site": "clubic.com",
-      "publie": "2026-09-16"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQQlhMNk1vVklROGUzb05SZDBTOXFENmQtNDFxNlV6OXZfTXVGMDhwRkw4VGstT0puMGVkOGdheHlBNnVxT0hUN0lhTzhpR3ZtWnJIOGxOZ0lNU0VubnRhZGdiZXN4ZjkwQ3Z1TEVTXzJ6dllabm11ejdCYXoxY2lrcEVITWxPaUI2eWtzc3k2MXd0b3E3bEw2Nk1MQ1R4Z25rb2M5cU05anQ3ZXZNTXdidXBfaWtrNkNRVGR5VzBhNjNQTm93SXJYQWtKZHZnMVZaVE9DdEltWThFYnEwOEZOMTN4Nl9saVFQUXozUA?oc=5",
-      "titre": "Réseaux sociaux : Ursula von der Leyen propose une interdiction aux moins de 13 ans dans l’Union européenne",
-      "source": "Le Figaro",
-      "date": "2026-09-16",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
       "publie": "2026-09-16"
     },
     {
