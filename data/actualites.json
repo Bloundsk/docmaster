@@ -1,6 +1,34 @@
 {
-  "maj": "2026-09-25T10:32:31.391Z",
+  "maj": "2026-09-25T12:51:33.145Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMitAJBVV95cUxNU2xab2w1cndNOW9QZEpOa0pzWEpuaUJJZ1R3dXFkcUZxUW5uUTNUTHhXSC1nbDZZaXZUTDd0Q1pDa09SRjl0OVNKbkFqN2xEUXRsWldvdDh0c2ZyR0t1R0pHQmlXZlVpbUFOYmt2RVEtSVgtcDZEOUxwZXNaYkU4WGxjSFdBWFk0QUg0cWhKWGlPd0xBSE43X200d0x0YzZZby0zRXZvUzVGMGZzdk9TRDdkOHI2dUpiV1hWNnp6bFdERGdoV05lcXJtcUNuQTdvUVgxN1RjU0FyZms2VExIcUlDUHhxWnFaSU9IVDB2TWpDNXNZb0MzaV9mRDQ4aVp6RVotWTB1bUVFb3g5QVdoVTNJX0ZPZ2pLUFU4Q2RGZWRaNjBzZTExcjllUTBwcGZqNk1YaQ?oc=5",
+      "titre": "« Il n’y a pas de risque dès lors que les apports énergétiques sont suffisants » : la délicate gestion des périodes de menstruations chez les ultra-traileuses",
+      "source": "Nice-Matin",
+      "date": "2026-09-24",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "nicematin.com",
+      "publie": "2026-09-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNNm9DaHR6MXJ0dExzNDA1cVRCUHRpOFVfdU1FaVRwa2d3OEw2UjJQWFVQNUtuMnM0ZEN4V2Z5WnZSdllVSXZxNlRWMWtZWjFLZFNONHdMdV9sWU1YZ01qOWJWVVVVczRVVXhBRy1aTEFDQmx3TTNsUXRwWGpmb09ma2hKVDQ2TGlPaHNxLXNMYmFmUExZV21MVlI5dmZWaUNTUGpMS3hQZDEtUUdreUNZQ2RpMGRkZ2VmVzdaaEduUnp0bGp0aFpRYzNpN05NdFhKNVRkTHd6eTZUVVRfc2hFeWxHdzItVW9zTHhzTlc5RmpCUjdCTkVNa0JGZ2dwamYtVDFiX1JlX1RGTjlkamZoSUlxLTdGdXNEYmppYlhKRGp2eDlDNEFXdUY3TFZvWV9seEVkWnZBLWdKZUQ3a0E?oc=5",
+      "titre": "Intelligence artificielle : l’agent d’OpenAI a infiltré un site du gouvernement australien et a eu accès à des données non publiques",
+      "source": "Sud Ouest",
+      "date": "2026-09-24",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "outils-et-fonctions",
+      "section": "🔧 Les outils, ou comment un agent agit",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-09-25"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZzFBa21qaW1MMm1UM0I5ODJ4dk9xMncxel9XZDJIRXlDeXY3dUNqOGZhRnZXM3R0a3gtcTBUS3VkZGhud0ZsWlU2RjI4QU5lX0laZVpRYm5RaXZicDA5R2NNUHJMR1BYOWdaV0RwSzUwdVBYMnlNZWxOeUhqUHVOTGpBaHJ2elJNcHVfRFFvQUlLZUw0MTJaSFU3a0U?oc=5",
       "titre": "Et pour vous, l’organisation des tâches ménagères, stress ou no stress ?",
@@ -30,6 +58,20 @@
       "publie": "2026-09-24"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPNXlWMWV2TVBobnR1VF9qRFZGN0pJN0d2cGtyOXNOcDlkdFJJQnZPMHVmRHYzZ1o1RmV0YUZmZnhjeG9KZHBuUDRUYzBWR0lKSk9VTUdlTjdpTHZRVFkxNUxhTDBxT0l4czhUUkJSUTFtaTF5UWo4UE41RGpBb0o0OXMyd2hDeWFORWlDSkI2UG4yTU5oMkFLaUVOQmxzaE0yNm1hOXFCYll4M1hwWkhTYkxCM0lTdEdRRmV2U2tIT1hWMC02cUFYVnR0d0c1cmc1Vmx2SlF1U1VWc05vVXZ1MlJNdjhZYnJ5?oc=5",
+      "titre": "Protection. Youtrust, la solution d’identité numérique face à l’explosion des données personnelles exposées",
+      "source": "Le Progrès",
+      "date": "2026-09-23",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "vos-donnees-personnelles",
+      "section": "🔐 Tes données personnelles",
+      "sujet": "⚖️ Droit & démarches — Avancé",
+      "langue": "fr",
+      "site": "leprogres.fr",
+      "publie": "2026-09-25"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOT0VscS1fNkh6Qlp0SHJxUkpfd1hPbHhtZzl5RkpfOFQ2U0FDVDJWLU42SkthVjlZal85dV9LV2xNNnZ5ZzVlYS00V3RweExaMldReDIyMXRoMFJOUkpkT19oYTRLbUNyd1N6VXN5clgwYjN6QXdaNkdhNHZ4NGlNdU5iaUJnVV9lSmZNU2xPTXFtckd5QnF4eVZzY2hQcU9vOEJIbXRJYk5yZ2V6andDSldaUS1nYm8zUUJQT0FtYVBySVRJZ3hDY0RHc3REQWg2bXA2a08tMA?oc=5",
       "titre": "Bruxelles propose un système de notation pour évaluer l’empreinte environnementale des datacenters",
       "source": "ZDNET",
@@ -56,6 +98,20 @@
       "langue": "fr",
       "site": "numerama.com",
       "publie": "2026-09-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzU3Q3J6SjJMMnB0MGI0clcwMGJNQk1RRDBIbXBkUGJFRUo1QVMtYkJtNmdwc3ZaQjhhRkRlemZBcUNlclBXNTJOR3M2cFNqTVRkeXNLSUNKbmZIMkQ3NjhQYVVtYkRDWThaamhrdTF3eFFkYWFtdnR5T3ZqRzQ4aFE0LVg2UUFMaDVwblE4dmxmQUtKLVRodFozaS1RU1E3bWJnbW4yX2NsODFwTnp6ajB3?oc=5",
+      "titre": "L’expert. Vendanges : quelles obligations de l’employeur envers les saisonniers",
+      "source": "Le Progrès",
+      "date": "2026-09-21",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-obligations-de-lemployeur",
+      "section": "🛡️ Les obligations de l'employeur",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "leprogres.fr",
+      "publie": "2026-09-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQRnNJWXRDS05qYTZrVmhkY0szOWVVNU5BQmMyN2R2TUhkZXBJbHMtZURKUHp2TGpwWmFSR2xLVE1ldFY4bmdrS1FhelBUc2J4ZEpyc0hTU04yWnN2NDlub2xEbTIzTlg1V3ZBMW5iSFQ3SmRlNkloLV9rX2I4a3NWXzZtMVVaMTE1c2VNRXc4SmNZUW9UTmZHMDBDWndoX0hjT1cxQkwyTkFPY3Rna2t0b3YxeERzbHM0ejFfM2hGMUw0T3BiRlB5WTIwb000c19rVjljc3NqeG9WSUVQZExmdGZNaDZTTnBmc183TnRsS3N4LVdPQU52T1cwWDFtZm1VOEE?oc=5",
@@ -280,62 +336,6 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-09-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirwJBVV95cUxOa2JsM082cm5KcWdhdEJXb0l4UlJQclJhal9sWVJGSGlkMkh3U2d6cG5lTHFMLTd4Rk5kWmF4UzF1cXgtcXdpRHJObVQ4ZVpORDVOTWxSUjBJUXJuSWJteC1XNjVOQnlrNU5hZVZPSkxsLW5Naml0UTROMUk0c2dLck9hbUZKREtQYVJZRHNPZXVDT3gyam5HeGZmdUhqRXFJNGhic1ZvbmtreGNQNE1ZRnZmRkFHdlJ5blRBV2VzZ0wzOHJuRV9qXzgzS2NHVDZDOGlFQ3dobk5yRWpETmNNa3FQN09MLW13RjNnb0NFMmpfc21GS2NxZklSTTlXY3FnNVc1XzBXR3NudG9DWDNpU2g4c0FKbWR4YWUydlc4OFp1bmotYjBmdHBJSVZYZ2c?oc=5",
-      "titre": "\"Une accélération majeure\": près d'un Français sur deux désormais concerné par une fuite de données, selon le dernier baromètre de Cybermalveillance",
-      "source": "BFMTV",
-      "date": "2026-09-15",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-09-18"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVGVid1pjY0VZZjlKU0sxNndzTG5pUExybElNSkJsdUx3cFU0YkU4S0JYVENnbC1xWE9vSXB2WUdaVWF4aU83SU95Znd5dFR3Q3hBdG9uSDFkRm82cHprbEhPN0lQcjFLejBBQnd1V3RxUGthUTlBMFo1Y19UWm03cGx2VDJvUXRpa0F0dVBEZnp5R0JldnE2STM4b3p4OHFlQWRwVXNRZUVsQU83OHFtcXJlV0xYaTdEdGRzLTV0S05CbDNsTnhpcmppcmRFZU8ycUlheGZRcw?oc=5",
-      "titre": "Enseignants, pompiers, professionnels de santé… Après la canicule, tous redoutent « l’amnésie écologique »",
-      "source": "La Croix",
-      "date": "2026-09-15",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "lepuisement-professionnel",
-      "section": "🔥 L'épuisement professionnel",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "la-croix.com",
-      "publie": "2026-09-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPbm1XdnlJdEc4RHRBOFhQVTRtV1R3SmJ0cFd3REl5bFVQcW1qV0lJcElhQV9JRnpfam5yY25PSjNzVkpLMkFyVkNaS3JZaHBUTnRqWDhxenozUV91RHpHTjYxQS1tN0hHY3pnR3o0dEpJZjFjczFKazFRQlhseXJYQzgxTUxnTzA0TFdRVHdiLVlTSlJvUkEwTGFOYWl6aXdtcm5RTGh1RHpFdnk3Yzg4ODJMLU43NXQzbzFST0VaUVVTdnhQRUZDYTd5LXM2TU0xaXhxRzNRazd4VlRwZUNpNmNpOXpuLVNi?oc=5",
-      "titre": "Apprendre à lire : ce que les données de 9 000 enseignants et 130 000 élèves révèlent des méthodes et de leur efficacité",
-      "source": "The Conversation",
-      "date": "2026-09-14",
-      "guide": "apprendre",
-      "page": "avance.html",
-      "ancre": "evaluer-une-methode",
-      "section": "🔬 Évaluer une méthode",
-      "sujet": "🎓 Apprendre à apprendre — Avancé",
-      "langue": "fr",
-      "site": "theconversation.com",
-      "publie": "2026-09-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNmI2UUJscHg1LXVBMmdXUkZjQy1FQ2dYNms3WkZ5T25aOEVvQzREYjZadE4wM3dnUFFYWUNXc0t1MEFuN1Q1dnlvdllFcUh1STNVNDdZV0R1a2RFbkx6VTN0YnBHWi05eEN6SFZ1NXRQaTVldk5WVGNlOUk4ZGJzNW4xbzAyM0NSX1dBeGxIR3pyc1hVZVB1R3VNVkRwc1Y4TllzLU5NaGs?oc=5",
-      "titre": "Fuite de données personnelles et bancaires chez Revolut : il suffisait de demander",
-      "source": "Next",
-      "date": "2026-09-14",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "next.ink",
-      "publie": "2026-09-19"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE00aDR5TkJsN3hlNF8yQXFOQlB0dDlURFBrWk1hdlZ4Y0ZUMnZJbUp0bTlvb1dwZERRaHZmSUpFNXNNVnZJZG1rZ2EyZUlBZFlzamJ6TmU4UjNnT3lpTlE?oc=5",
