@@ -1,6 +1,20 @@
 {
-  "maj": "2026-09-25T13:31:26.243Z",
+  "maj": "2026-09-25T20:36:45.025Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSm5KZmJ6aUtBMnFHdnJncHlUQnVySG5zYldHWmhHMUgtNDIySHdhQ2Zrc18xSzB1eU5kamFEYjNYSkJ2czV3SnBsT3NrOXFKbFJiM2wxdnlzNm53STVSVUNGTUxRODBOaDVOSEVUTm1sWS1WblRJQWtnM1VDRF9kV2h2eWFTR25iYkhqTnRsY2ZtVmNsQm0tMW1LTFBpZDA1RlRBX1dtSXJ6UFc5UTVJ?oc=5",
+      "titre": "IONOS Plus : une page métier en ligne sans mobiliser toute l'équipe web",
+      "source": "ZDNET",
+      "date": "2026-09-25",
+      "guide": "dev-web",
+      "page": "intermediaire.html",
+      "ancre": "mettre-en-ligne",
+      "section": "🚀 Mettre en ligne",
+      "sujet": "💻 Développement Web — Intermédiaire",
+      "langue": "fr",
+      "site": "zdnet.fr",
+      "publie": "2026-09-25"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMitAJBVV95cUxNU2xab2w1cndNOW9QZEpOa0pzWEpuaUJJZ1R3dXFkcUZxUW5uUTNUTHhXSC1nbDZZaXZUTDd0Q1pDa09SRjl0OVNKbkFqN2xEUXRsWldvdDh0c2ZyR0t1R0pHQmlXZlVpbUFOYmt2RVEtSVgtcDZEOUxwZXNaYkU4WGxjSFdBWFk0QUg0cWhKWGlPd0xBSE43X200d0x0YzZZby0zRXZvUzVGMGZzdk9TRDdkOHI2dUpiV1hWNnp6bFdERGdoV05lcXJtcUNuQTdvUVgxN1RjU0FyZms2VExIcUlDUHhxWnFaSU9IVDB2TWpDNXNZb0MzaV9mRDQ4aVp6RVotWTB1bUVFb3g5QVdoVTNJX0ZPZ2pLUFU4Q2RGZWRaNjBzZTExcjllUTBwcGZqNk1YaQ?oc=5",
       "titre": "« Il n’y a pas de risque dès lors que les apports énergétiques sont suffisants » : la délicate gestion des périodes de menstruations chez les ultra-traileuses",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "lemonde.fr",
       "publie": "2026-09-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQWFFobXdvbG1HUnpoZ285eWpQYnB3c3RXQ3d4WjBBSm1nMXhkLWZWUHdVbGVuSG9zMGZtUnlsMUJqb05HNVRNRzQtQ0pvYVp3WWRIdFhWY2FWX2xQb1IyOVFVU0taSk5UeEFyWnlDVnZSOHJUNmxJMjhSZmxTY0VQcVRvdWxtSUFlakV1T24wZ2lxOGt1cEdTYVYtckpQZ2RXY3NXbDNRS01BbFZPRzBCb3dPdEVGR2NSZjZVaDJ3NTVZUWoyM3g1Z0J0Wm1RUDJmZVdiX1h3ekNQOUVO?oc=5",
-      "titre": "DÉCRYPTAGE. Intelligence artificielle : quand les agents IA s’affranchissent des consignes humaines",
-      "source": "La Dépêche",
-      "date": "2026-09-15",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "outils-et-fonctions",
-      "section": "🔧 Les outils, ou comment un agent agit",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "langue": "fr",
-      "site": "ladepeche.fr",
-      "publie": "2026-09-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE00aDR5TkJsN3hlNF8yQXFOQlB0dDlURFBrWk1hdlZ4Y0ZUMnZJbUp0bTlvb1dwZERRaHZmSUpFNXNNVnZJZG1rZ2EyZUlBZFlzamJ6TmU4UjNnT3lpTlE?oc=5",
