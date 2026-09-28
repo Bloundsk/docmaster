@@ -1,6 +1,20 @@
 {
-  "maj": "2026-09-27T20:27:35.603Z",
+  "maj": "2026-09-28T15:39:28.121Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNd1RPVzVqVExnRW9QR196UzFSMk0tSGJnZUxNZTRsRnJSSmZZU2NMUDl4cDMxbkxhTDZkb3kyazU0aERoYjRoSC0zUUZvRDZ4VUpDcnJoU0MwUjQzOUJTUktHdEN0NjJjR1RMbjYtR1B6SkZ5Qy1od1R5OWpGTjMzalhQU0ZRWkNhS2NVZk91cGlScFI1OVFxZ1FITGZ2Snc2Wkp4OWJ5M21iOFBDaGY0cVNDZVNvQlBfT3d1aG03eG81NkIzMVBvTFdoZlpmaG55U05sRXlMdzlaNVU?oc=5",
+      "titre": "«Batailles d’aura»: que signifie le terme «aura», omniprésent sur les réseaux sociaux ?",
+      "source": "Le Figaro",
+      "date": "2026-09-26",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-09-28"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSm5KZmJ6aUtBMnFHdnJncHlUQnVySG5zYldHWmhHMUgtNDIySHdhQ2Zrc18xSzB1eU5kamFEYjNYSkJ2czV3SnBsT3NrOXFKbFJiM2wxdnlzNm53STVSVUNGTUxRODBOaDVOSEVUTm1sWS1WblRJQWtnM1VDRF9kV2h2eWFTR25iYkhqTnRsY2ZtVmNsQm0tMW1LTFBpZDA1RlRBX1dtSXJ6UFc5UTVJ?oc=5",
       "titre": "IONOS Plus : une page métier en ligne sans mobiliser toute l'équipe web",
@@ -14,6 +28,20 @@
       "langue": "fr",
       "site": "zdnet.fr",
       "publie": "2026-09-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMingJBVV95cUxPZTVFVXoyNzg1dkEzWG1XVEJPeEtJekh5VkZvYkxFS2ZUckdzcVZyX2hEYndCV2cwUTl0a1duMGM4R05IVy1jRkdueVdiTDJPM0s1dmtmSEdDQVZGNnpQSW13RzZLNUQ0QU5nTG1mMUJtUjVvNVdCOVpXREVZRnJiNU9kYWNJUkxpRFM1OGUtTmFuUUUzUG00cGhvMUJFai1DMVVQd19HV0d6cENCcEdPSm9ncklBcFRkd2xXZW53SG5HSjRicVVkU1VXRjRtajBYeFY2NVMzLTBEaU80eFVqdzR4WnFSVU1KTDFoMGhSQUx3VG1tTk5xX0tQS0Q0ZFd4WTF5NnRsVnFhODJhck9lWGU0a1FSNFNZUEc4aEpB?oc=5",
+      "titre": "Crise des carburants : « La situation est grave », Emmanuel Macron défend son action et envoie des « moyens militaires » en Arabie saoudite, des critiques s’élèvent",
+      "source": "Sud Ouest",
+      "date": "2026-09-25",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-situations-graves",
+      "section": "🚨 Les situations graves",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-09-28"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMitAJBVV95cUxNU2xab2w1cndNOW9QZEpOa0pzWEpuaUJJZ1R3dXFkcUZxUW5uUTNUTHhXSC1nbDZZaXZUTDd0Q1pDa09SRjl0OVNKbkFqN2xEUXRsWldvdDh0c2ZyR0t1R0pHQmlXZlVpbUFOYmt2RVEtSVgtcDZEOUxwZXNaYkU4WGxjSFdBWFk0QUg0cWhKWGlPd0xBSE43X200d0x0YzZZby0zRXZvUzVGMGZzdk9TRDdkOHI2dUpiV1hWNnp6bFdERGdoV05lcXJtcUNuQTdvUVgxN1RjU0FyZms2VExIcUlDUHhxWnFaSU9IVDB2TWpDNXNZb0MzaV9mRDQ4aVp6RVotWTB1bUVFb3g5QVdoVTNJX0ZPZ2pLUFU4Q2RGZWRaNjBzZTExcjllUTBwcGZqNk1YaQ?oc=5",
@@ -282,20 +310,6 @@
       "publie": "2026-09-20"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQc3o1WjJEREI5VzRYUzlRV1dyNU5MRUtYb0JWUVBiQ3RqREtGd0N4eVhSWWQ4cHdRX09uU29oS1daUUZNZkRDYXZUdUx5dUl5SkctM3BmQmFIYm45THNnNnBaNDk1ZDBmcjYzOUtzLU5oM1Rnek5zdkIwSlNFekxwMXgyYVNmNU9MMnFyVzVuazNYN0p0cnN3VlVwS0RFZjV5NlBkRkFZZVFuS204VVFDSEo4UlBZSFUxZU4tNEJXWW93dHJVMFJlNk5qUkswMElVYnlnbXdjT1hsSmlPM3ZKNC1mSnE0dTJ2OHR0S3p1dFc4WHpoVzZNZS1nVlQ3eHhaM0FiS1hGUQ?oc=5",
-      "titre": "EU Kids Act : quelles sont ces « fonctionnalités addictives » des réseaux sociaux que l’Union européenne veut interdire aux mineurs ?",
-      "source": "Le Figaro",
-      "date": "2026-09-17",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-09-20"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOMk1HNWNkSlZ6bllFdEdtRzI2VWVEOXcxRFE2djdsc3lKUjVYR01oTVJpaHRFVDVMSTdOQy16anNoVmhQWlE2S0twSHpvWHg5Y2RyXzkwX2NLQy02NGpPeU1lZmRnWTVBMFBZLVl3dWMxcDdVd3hHc2xnakI5UFBXenBJSThzdm94RlR2dmVyQ0dpNXNiSURNUHVEMmpENXdHcWhPOEpaa2R0U0pfYVp1d0xiNlhIczZya0hKZm90UmFxWUdZUEhGVU9Xd3dicV9lMUw2V0llOE83Tk5Eei1yRTFR?oc=5",
       "titre": "Canal+ franchit enfin le pas et propose la double authentification à ses abonnés",
       "source": "Clubic",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "liberation.fr",
       "publie": "2026-09-16"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE45Uy1hbEY5cU82cU1XMXpxVXZFX3NZR21mSUJZaFRaUEM0TEdpVUk2emhQSEw5SDVlbkNfeDFrLWd4Q0s2d1hxUXg1MjJ2czUzY1hyb184bXFRZDR6Q1NOSUxXM0I?oc=5",
-      "titre": "Taux d'intérêt : Actualités et info en direct",
-      "source": "TF1 Info",
-      "date": "2026-09-16",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "tf1info.fr",
-      "publie": "2026-09-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQXIxZzl2UU1SRjRWUkpQX3lwWVZMSWpkMGJfcTdlUFZaQ2JJMFZYZ3F5VURpV2tuTVk2M1J6THlsOGliUlBWNjB1QWpEeEVmdW02aE9PeHJrRXFCLTBDV05WbndQWVF5bzZPOTMxMkEwcDlJZkhOU0cxdHhnczA2ZnFzWVk3THZwVEF5cDNFRFhoOThnLVFuSWFrMA?oc=5",
