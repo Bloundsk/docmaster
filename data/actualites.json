@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-28T15:39:28.121Z",
+  "maj": "2026-09-28T15:59:40.476Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNd1RPVzVqVExnRW9QR196UzFSMk0tSGJnZUxNZTRsRnJSSmZZU2NMUDl4cDMxbkxhTDZkb3kyazU0aERoYjRoSC0zUUZvRDZ4VUpDcnJoU0MwUjQzOUJTUktHdEN0NjJjR1RMbjYtR1B6SkZ5Qy1od1R5OWpGTjMzalhQU0ZRWkNhS2NVZk91cGlScFI1OVFxZ1FITGZ2Snc2Wkp4OWJ5M21iOFBDaGY0cVNDZVNvQlBfT3d1aG03eG81NkIzMVBvTFdoZlpmaG55U05sRXlMdzlaNVU?oc=5",
@@ -338,6 +338,34 @@
       "publie": "2026-09-16"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1IOWhwRkwzSHBTRjVWVWRnNDdDeWt5Z2dkQ21VSFdkT1VaR0JsQXNUVV9DYUZpOHR5Tkc0cmlLcm5GdTVPamkzaE1MNDM2enFMWWwtZGQwSTFDUTRReFE?oc=5",
+      "titre": "Health board - situation is 'improving' after critical incident declaration",
+      "source": "BBC",
+      "date": "2026-09-27",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "serious-situations",
+      "section": "🚨 Serious situations",
+      "sujet": "🩺 Health at Work — Advanced",
+      "langue": "en",
+      "site": "bbc.co.uk",
+      "publie": "2026-09-28"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9lQU13U2JDV1FrUjdzMVZoU3M2OWlsUEhuZUNEOTd0WUlYNFdpWGZ1aDFsUk40bkU0STUwRUpXclVSYzhoeXlONTN3YnJ0TWZTSHJMbnpKcw?oc=5",
+      "titre": "Data breaches",
+      "source": "BBC",
+      "date": "2026-09-26",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "data-breaches",
+      "section": "🧬 Data breaches",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "bbc.com",
+      "publie": "2026-09-28"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQXIxZzl2UU1SRjRWUkpQX3lwWVZMSWpkMGJfcTdlUFZaQ2JJMFZYZ3F5VURpV2tuTVk2M1J6THlsOGliUlBWNjB1QWpEeEVmdW02aE9PeHJrRXFCLTBDV05WbndQWVF5bzZPOTMxMkEwcDlJZkhOU0cxdHhnczA2ZnFzWVk3THZwVEF5cDNFRFhoOThnLVFuSWFrMA?oc=5",
       "titre": "Trump administration guts data collection on US education as math and reading scores plummet",
       "source": "The Guardian",
@@ -643,20 +671,6 @@
       "sujet": "🔒 Cybersecurity — Advanced",
       "langue": "en",
       "site": "independent.co.uk",
-      "publie": "2026-09-14"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUEFpN2Q4Vzd3Ul81b3ZIc0FiX3ctRE5obXNoanZGUWdZN212Vlc4ekVZbTdieUgwWjI1dHBRLWFNckJrREI2R1hwb1lhQ2N3ZUcyY0xBbTlTLXdtSkdoUVQxTExEM0R0WTBQVlkxYklqVTI3eG9MTTZSbzJRMWtwazM2cVA?oc=5",
-      "titre": "‘All it will take is one screw-up’: AI groups race to limit bioweapon risks",
-      "source": "Financial Times",
-      "date": "2026-09-01",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "limits-and-risks",
-      "section": "⚠️ The limits and risks of AI",
-      "sujet": "🤖 Artificial Intelligence — Beginner",
-      "langue": "en",
-      "site": "ft.com",
       "publie": "2026-09-14"
     },
     {
