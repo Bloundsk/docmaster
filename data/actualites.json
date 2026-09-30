@@ -1,9 +1,23 @@
 {
-  "maj": "2026-09-30T14:16:41.000Z",
+  "maj": "2026-09-30T21:30:51.442Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdm9rcUFuZXdfRXZNNVI5R0dmNjhjd0tkOGRPUkFab2FRZWV0dWJkZXBIY3QwYnJHbjJTSkx5SUctTFpua0lHZ0dGQWN0bXhvY0hhc3VFU0ZfaUhWbFdKZ1Z5eEo2T1V2RzBPeExrT1lwVjJsNU5la00zT25VbEYxODEyWHgwcm1KMjc3SjQ4WVNYQzJMLXpQcUNyTFJiTXE2ZUZ0SHJna3VscXIwSUl1ZEhoc0s2d2lYQnY3NkNNT0k1YklKdGRfZlZlellyZ3JoVDVLTnRnUGo4Y1l2WERmajZvYl9kbzFpbVphZWRnb2tiRkpySHJhc1owMFQ0TUZwZmpCUDVidkpCOW5JV2pyazJrYXo5RUxBcWhmT1JPVDFiaUZ5dHNMLTIzajBTR0cteS1HVUoybll0VjA?oc=5",
       "titre": "Vol de données: FrenchBreaches, Cyberattaque.org, bonjourlafuite.eu.org… la quête effrénée des cyber-lanceurs d'alerte pour prévenir des fuites au quotidien",
+      "source": "BFMTV",
+      "date": "2026-09-30",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-09-30"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPR043Wnk3R1U0cFRvNGhFUzlUWkNNS2o4eG9RakFFcUNLWTYyQ1I0ODJSTW9UekZzWDZlVk1SUjZVVmNDd1lPbmUyeHcwb0NUTEtDMDk3Y19SYVF6LTdBMlphVzRuX2lPRzc2RW1VS19sTEc1MlZPcFpuZ1ExSlNISE03TUx2YVVJMWNTQl9pV2RxdVFMbGdYaHFXeG5wSVVKTXluaXQ3X0lOYV9GUW9oc0JBSjQ3MjNnT1R1U2Npa2hJRUdkU2FIVmtsdmgweWNSOWtnSkJhT2N1d3U5bDN6YkFGOFBiSG1NX05VRXU4SEU5dnd5djJXVHY5eGJmXzk0RlFNTEtTOWxvdnZnYjRqakRtSXhiQ1RH?oc=5",
+      "titre": "L'Anssi et la Dinum victimes à leur tour d'une fuite de données: les deux agences dédiées à la cybersécurité ont été compromises",
       "source": "BFMTV",
       "date": "2026-09-30",
       "guide": "cybersecurite",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "lavoixdunord.fr",
       "publie": "2026-09-18"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNSHFmQXU3NUlSRURlZGY4YW43czNNSGM4eHRIaXllR1Y1OU9UcXNheldaVC11ZjlzUlZEbTMycTdTQjBYdXpERS1UdFMwMmZvdlBRNl9qNk0wMEVGNm9PYmY3RHdfOFA3dVE1MjI4N1g1dnh2RkVJRFdMQUtsMVIyQW13d0F4SzVWQWE5ZGZnU3RQUVpoOTNJNi1HSG5qc1hCVG1NWUxXQktMVnRyQWJRRldwaXZ2ODRNWUYyNEV2bUlTNjcyQzN6Tkd5cTI4TWxmYkkzQnFMT0lRQVFRRlhyMlJRUFloX2VIM2EyWHFEeE1YRjVPYWtQWlo5S0tpN1pmWVhpYlE1R2twTTJyMzViQw?oc=5",
-      "titre": "« On est dans le même cas que Saint-Malo ou Venise » : les entreprises du parc du Golfe à Vannes face au recul du trait de côte",
-      "source": "Le Télégramme",
-      "date": "2026-09-18",
-      "guide": "ecologie",
-      "page": "avance.html",
-      "ancre": "le-parc-en-entreprise",
-      "section": "🏢 Le parc en entreprise",
-      "sujet": "🌱 Sobriété numérique — Avancé",
-      "langue": "fr",
-      "site": "letelegramme.fr",
-      "publie": "2026-09-20"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSjFoNFg0TVBBT05KZk8wMk1qRVNnX0c5bHJKMWlrWDVpN1E2Yy1QSFNvRWRHZjE2SHJtUWw5VVBlUl95WWp4bjV0eWQ2dnhNWDVXX1loU2VWal9zZFJpTUZFdjNPQ2E4RVpMMHY4VmVhVVEtNW8wQUsybVNhREJMbnBtYklZTC1LWW1xT25EQnFrY01LQ0M0TG52REZHYjFkMFZ3U280bXpvTklrcUxDTkRiUzhqUUZmQ3dnN1FzYw?oc=5",
