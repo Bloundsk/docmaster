@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-30T13:55:54.064Z",
+  "maj": "2026-09-30T14:16:41.000Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdm9rcUFuZXdfRXZNNVI5R0dmNjhjd0tkOGRPUkFab2FRZWV0dWJkZXBIY3QwYnJHbjJTSkx5SUctTFpua0lHZ0dGQWN0bXhvY0hhc3VFU0ZfaUhWbFdKZ1Z5eEo2T1V2RzBPeExrT1lwVjJsNU5la00zT25VbEYxODEyWHgwcm1KMjc3SjQ4WVNYQzJMLXpQcUNyTFJiTXE2ZUZ0SHJna3VscXIwSUl1ZEhoc0s2d2lYQnY3NkNNT0k1YklKdGRfZlZlellyZ3JoVDVLTnRnUGo4Y1l2WERmajZvYl9kbzFpbVphZWRnb2tiRkpySHJhc1owMFQ0TUZwZmpCUDVidkpCOW5JV2pyazJrYXo5RUxBcWhmT1JPVDFiaUZ5dHNMLTIzajBTR0cteS1HVUoybll0VjA?oc=5",
@@ -352,6 +352,20 @@
       "publie": "2026-09-29"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUWxFRWMxdWRPVkJOLWVKdVNNdk5WOTVTVXc2RmJrN1RQZVgxdGEwN3VfaFNLZDdsNWozc2k4VXhla0VXMnIxeFVjdW55RTF2U3dlQnR3SGUwS0lucGZzNUV0cW54SXRLVjRQVkJocHR5SjN0RlpxQ3AzazVKcUItYnJRQllrbGhQcDlFd2VYSkdVUlZ5X1hnVmRaV3lLWVBhUXR2blRPVmdhS3A4dC1BZ1J3?oc=5",
+      "titre": "UK bonds hit by steepest interest rates in decades",
+      "source": "The Times",
+      "date": "2026-09-29",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "thetimes.com",
+      "publie": "2026-09-30"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNb2V2QW1YTWdrZzhDWDhoeVdvZTJHdmIyeTluODdkRlpzNUlHS0tOLXF6bDNGY3Eyc1NjZ1NNOHRXQnpFYUpJVDRianJMLXl2dmJUVXhtYWtzaHBJb2phTWgxOXhyUEh2eHNJNnh4ZWtPbnhZYTgydXlfbzZTYU5kZjRnd1ZYSlBWbV92TDRZVlB1dw?oc=5",
       "titre": "How the Fed interest rate hike will hit your wallet",
       "source": "The Week",
@@ -434,20 +448,6 @@
       "langue": "en",
       "site": "independent.co.uk",
       "publie": "2026-09-26"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUmJzS1hrMFpONkNGbDdoWGhDd2JzRFpRd1V3YjRSNDdYTVpVNkY3X29uT3daTVlaY3JyVVg3VktJUkJzNllMYkoxV1ZGZzZRclVZUExoNDhWVENidGVHSnBMNXpFYTVSb3lBZUhlSnNzbm5WYXpXTUZPaDFQMW5GeHplbnI3QWkxeFI1a3RUcUtvZ2tOSmtYZnNiVksxRlgwMzIzUDlsMUpVNzB3TzBGUTlFd3A3YU8taHQ2dy1jOXpvbWc?oc=5",
-      "titre": "Interest rates likely to rise this year if oil prices don’t fall",
-      "source": "The Times",
-      "date": "2026-09-24",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "thetimes.com",
-      "publie": "2026-09-27"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE00aDR5TkJsN3hlNF8yQXFOQlB0dDlURFBrWk1hdlZ4Y0ZUMnZJbUp0bTlvb1dwZERRaHZmSUpFNXNNVnZJZG1rZ2EyZUlBZFlzamJ6TmU4UjNnT3lpTlE?oc=5",
