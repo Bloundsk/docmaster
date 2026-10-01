@@ -1,6 +1,34 @@
 {
-  "maj": "2026-09-30T21:30:51.442Z",
+  "maj": "2026-10-01T14:36:37.829Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxOV0JqVUtVU293LTFVQjE2MWZZQjFfbjBaTWNlV3c2S05zcXk2WFpyNGNJMkFfWUc3RUtvZnVsaUpFeWdGN2ZBZVdpblpaRkNUazliTko1X3ZGcW5ZN3Y4WTRfY2ZNbDRwVHBRUzBvdEFLR1IwdjNSSk9MWThfd2hMNUVHSnhsVldFSmRsNl9YWG93Y2sxb1BKUTQzbVZ2QVJWWlladmYxT0xIM05VTHhLTkV5LXpjeXc1eXk4c1l5cWJucDcyeWpsd1pjMHhfa2V3RmRlcUV0dWtldXZVT1B2emxNbml3VGM1dVo4b29vR0RxTjVUN243WUFfY2p6VXhfUWluSkpSdTdkQXkxalpoVEV3aUN1VGhMMFREWk1Sems4NEZaRkxmR0NLQVVSMmlrMDEyN0JtdWhqS0hGbElUN0hLSXhlYTNPcFhtcW1kUzlPdkhobG1YdDZRS1hsaE9yNnBGcURxcU9OYXhRaVZFOEVQOEMwdw?oc=5",
+      "titre": "Les taux d'emprunt de la France s'envolent mais Roland Lescure assure que la signature du pays \"est solide\" après l'émission de 12 milliards d'euros d'obligations jeudi matin",
+      "source": "BFMTV",
+      "date": "2026-10-01",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-10-01"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPWHRiSmRxaC1zdGJYNEkybFQxc21yMC1jQWxScklrUmVDYkhHRG5JdDFabWJQamZJREtmTDdqT1Y1R0htVVlFVE5KaEFiMHlHZkFwRlJSTGE4QTM0WjFPcUdaQmdNVDlLU25hTEp4STEwemx2RFJqV3V6MnIxcEd5bXZrci1zMks4UEJaeXg0LXRnRGZCcm1kTlUtdWJhVGtzbklmU2xpbDBxaW1Hc2lsQXY1N0ZSbEZvZFNYRnlXM2FlNUUtMng5MlFVaGk4enZvZTROV3hEeEtubnVyZ05uUW5vZlhLZUNUV01jSzRyQ1lZTlRo?oc=5",
+      "titre": "Risques personnels des candidats et casse-tête bancaire : comment se finance une campagne présidentielle ?",
+      "source": "Le Nouvel Obs",
+      "date": "2026-10-01",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "nouvelobs.com",
+      "publie": "2026-10-01"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdm9rcUFuZXdfRXZNNVI5R0dmNjhjd0tkOGRPUkFab2FRZWV0dWJkZXBIY3QwYnJHbjJTSkx5SUctTFpua0lHZ0dGQWN0bXhvY0hhc3VFU0ZfaUhWbFdKZ1Z5eEo2T1V2RzBPeExrT1lwVjJsNU5la00zT25VbEYxODEyWHgwcm1KMjc3SjQ4WVNYQzJMLXpQcUNyTFJiTXE2ZUZ0SHJna3VscXIwSUl1ZEhoc0s2d2lYQnY3NkNNT0k1YklKdGRfZlZlellyZ3JoVDVLTnRnUGo4Y1l2WERmajZvYl9kbzFpbVphZWRnb2tiRkpySHJhc1owMFQ0TUZwZmpCUDVidkpCOW5JV2pyazJrYXo5RUxBcWhmT1JPVDFiaUZ5dHNMLTIzajBTR0cteS1HVUoybll0VjA?oc=5",
       "titre": "Vol de données: FrenchBreaches, Cyberattaque.org, bonjourlafuite.eu.org… la quête effrénée des cyber-lanceurs d'alerte pour prévenir des fuites au quotidien",
@@ -28,6 +56,20 @@
       "langue": "fr",
       "site": "bfmtv.com",
       "publie": "2026-09-30"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOZEtVUTc3RVFfUVEtZ3lDOXotaVZNZkZXR3JPMS1EM3NxT2lZeEd4eEp0ZUZ0TDZXRk1hM1RaUXB6dnpxWWpjc3hJaDhqTkhJd21lekVfRUZkdkR2WmZpQVVqbVdBcU1hN3BQRlUxWkNRSUptRDlLOW91Q3J0MmItV3hTd0JSTndNTTl5YzRJTTlHSkJzZ252WWJOTDJpN3MtaldGcXlVbUJlQ2NNT3BVc05DRzVsbXMxUEhpQ3ZnSWhzaXh5LXBCZUozbGZPQQ?oc=5",
+      "titre": "En attendant l’eurobond, la Guinée finance son budget avec l’épargne nationale",
+      "source": "La Tribune",
+      "date": "2026-09-30",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "lépargne",
+      "section": "📊 L'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "latribune.fr",
+      "publie": "2026-10-01"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZzY0V2wwVVg1cXpDYW10cUhJZHQ3bTE0akdKTGxaWE5EN3kxcjh4cUxLb0xoYnZ1OTQwcmZDQ1l6MkR0M0hEUUVJZVF1b2lFWU1zUEljU19ERTFodDdoeWRobmRqQUlTeWx2d0daLUhxWDY2bGhNOENydGxZTUF2aFZWUWxaUWY5UzdnakxDZmVvSW04Z2NQdDBxZFJjX09TWHJKRV9SNA?oc=5",
@@ -294,48 +336,6 @@
       "langue": "fr",
       "site": "numerama.com",
       "publie": "2026-09-21"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMzU3Q3J6SjJMMnB0MGI0clcwMGJNQk1RRDBIbXBkUGJFRUo1QVMtYkJtNmdwc3ZaQjhhRkRlemZBcUNlclBXNTJOR3M2cFNqTVRkeXNLSUNKbmZIMkQ3NjhQYVVtYkRDWThaamhrdTF3eFFkYWFtdnR5T3ZqRzQ4aFE0LVg2UUFMaDVwblE4dmxmQUtKLVRodFozaS1RU1E3bWJnbW4yX2NsODFwTnp6ajB3?oc=5",
-      "titre": "L’expert. Vendanges : quelles obligations de l’employeur envers les saisonniers",
-      "source": "Le Progrès",
-      "date": "2026-09-21",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-obligations-de-lemployeur",
-      "section": "🛡️ Les obligations de l'employeur",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "leprogres.fr",
-      "publie": "2026-09-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQRnNJWXRDS05qYTZrVmhkY0szOWVVNU5BQmMyN2R2TUhkZXBJbHMtZURKUHp2TGpwWmFSR2xLVE1ldFY4bmdrS1FhelBUc2J4ZEpyc0hTU04yWnN2NDlub2xEbTIzTlg1V3ZBMW5iSFQ3SmRlNkloLV9rX2I4a3NWXzZtMVVaMTE1c2VNRXc4SmNZUW9UTmZHMDBDWndoX0hjT1cxQkwyTkFPY3Rna2t0b3YxeERzbHM0ejFfM2hGMUw0T3BiRlB5WTIwb000c19rVjljc3NqeG9WSUVQZExmdGZNaDZTTnBmc183TnRsS3N4LVdPQU52T1cwWDFtZm1VOEE?oc=5",
-      "titre": "Finance durable : les investissements dans les hydrocarbures peuvent-ils en faire partie ? Le débat sera bientôt tranché en Europe",
-      "source": "Sud Ouest",
-      "date": "2026-09-20",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "linvestissement",
-      "section": "📈 L'investissement",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-09-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPSlBPT3pROHpueTdsYzdwMW9yemJqcUlIOE9GaHdMelNDSmZqZU9JcThUdUVXU3FUeExvLXdLZkRkU3B4RExQWVhfcVI5QVU4R21pb2tDM0VfWE1wSEViQW9sQmV6TThlM3BETDdfcWMtWnBFa1B0dVJ3VTZMYUlDY3ptUTBsTWJHR3Y4VmlSTjNhX05keDlVTkwySzlXSzY2WXZUel9lc2dqNTZkZVNqallyRXRiWEZvNFhLMEJ4RzBoR1ZMdl9lOVY0VUZsdW1JWUc4?oc=5",
-      "titre": "Formation à l’intelligence artificielle : quelles sont les obligations de votre employeur ?",
-      "source": "La Voix du Nord",
-      "date": "2026-09-18",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-obligations-de-lemployeur",
-      "section": "🛡️ Les obligations de l'employeur",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "lavoixdunord.fr",
-      "publie": "2026-09-18"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSjFoNFg0TVBBT05KZk8wMk1qRVNnX0c5bHJKMWlrWDVpN1E2Yy1QSFNvRWRHZjE2SHJtUWw5VVBlUl95WWp4bjV0eWQ2dnhNWDVXX1loU2VWal9zZFJpTUZFdjNPQ2E4RVpMMHY4VmVhVVEtNW8wQUsybVNhREJMbnBtYklZTC1LWW1xT25EQnFrY01LQ0M0TG52REZHYjFkMFZ3U280bXpvTklrcUxDTkRiUzhqUUZmQ3dnN1FzYw?oc=5",
