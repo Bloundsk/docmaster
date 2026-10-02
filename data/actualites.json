@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-01T21:54:32.648Z",
+  "maj": "2026-10-02T13:58:59.370Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxOV0JqVUtVU293LTFVQjE2MWZZQjFfbjBaTWNlV3c2S05zcXk2WFpyNGNJMkFfWUc3RUtvZnVsaUpFeWdGN2ZBZVdpblpaRkNUazliTko1X3ZGcW5ZN3Y4WTRfY2ZNbDRwVHBRUzBvdEFLR1IwdjNSSk9MWThfd2hMNUVHSnhsVldFSmRsNl9YWG93Y2sxb1BKUTQzbVZ2QVJWWlladmYxT0xIM05VTHhLTkV5LXpjeXc1eXk4c1l5cWJucDcyeWpsd1pjMHhfa2V3RmRlcUV0dWtldXZVT1B2emxNbml3VGM1dVo4b29vR0RxTjVUN243WUFfY2p6VXhfUWluSkpSdTdkQXkxalpoVEV3aUN1VGhMMFREWk1Sems4NEZaRkxmR0NLQVVSMmlrMDEyN0JtdWhqS0hGbElUN0hLSXhlYTNPcFhtcW1kUzlPdkhobG1YdDZRS1hsaE9yNnBGcURxcU9OYXhRaVZFOEVQOEMwdw?oc=5",
@@ -42,6 +42,34 @@
       "langue": "fr",
       "site": "lemonde.fr",
       "publie": "2026-10-01"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOS1BmNUZObGhMZEE4OVo5ZTcxTXM3OW9FZ1pmcDctYjJzWXZ2eU5fTUZBcTBzU1VwbEotVUdRV2pfNnl3bk5idjlqNEIwT1lfNjJsN21pQUEyam1sa3I4aDBtRkp6M1FFR3VOMGZMWWI0SDE2TkRfUzdlQVc0MkN4eVFsVWpyeHdCMWM2YmppUHktbUtYYmVrVXBVb2x3dEVwX1lzSXZsMnR5eVVLbDYzQmR0MWdEWmZjYk52R3BWZkYtMEFtVnhXYWVyUTdEQ0JObzBrVS1yeDJ3VGhxMlNlTm1pQ2d6OXlTZW1kZ0YtLU5OTVdpMDluN2lTVQ?oc=5",
+      "titre": "Le budget 2027 soumis à un gros risque de dérapage, selon le Haut Conseil des finances publiques",
+      "source": "Le Monde",
+      "date": "2026-10-01",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "lemonde.fr",
+      "publie": "2026-10-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOcHNNbWRzV0NkZjlCYzNYMG1Lc2w2a2ZMNlFJZy0tUG1HbmZvRDV5ejdkUTdiam42bFRSVUhxeFZjRkJyNUdxWVdfNU1nVlRxVnhUT3Q2aU1xTjlpMWpmRGJuRWxlcFFkYmtBWGFfYTRxajZyUE1KMzJXSlpCUXowQ3ZnLUlGa0pEZ1U2YW5wLV9Pald4dENfSVVZMFRySl9FN0dxZ2F0ejdhUWdyaDVXT29Ga25UcWJYQjE4TElQdGJpWm83dkpKMDQ4SlhTTDhUeVAtbVA1RHJnQ0E3YzNUdXFJcXc0ZlVJODBNN2oxamN3dGhtem9WQ3ZFVUIyZVVhLVh5VGVOcw?oc=5",
+      "titre": "«Ce sont des guéguerres sur les réseaux sociaux» : Dembélé sort du silence au sujet de la polémique face à Mbappé",
+      "source": "Le Figaro",
+      "date": "2026-10-01",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-02"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdm9rcUFuZXdfRXZNNVI5R0dmNjhjd0tkOGRPUkFab2FRZWV0dWJkZXBIY3QwYnJHbjJTSkx5SUctTFpua0lHZ0dGQWN0bXhvY0hhc3VFU0ZfaUhWbFdKZ1Z5eEo2T1V2RzBPeExrT1lwVjJsNU5la00zT25VbEYxODEyWHgwcm1KMjc3SjQ4WVNYQzJMLXpQcUNyTFJiTXE2ZUZ0SHJna3VscXIwSUl1ZEhoc0s2d2lYQnY3NkNNT0k1YklKdGRfZlZlellyZ3JoVDVLTnRnUGo4Y1l2WERmajZvYl9kbzFpbVphZWRnb2tiRkpySHJhc1owMFQ0TUZwZmpCUDVidkpCOW5JV2pyazJrYXo5RUxBcWhmT1JPVDFiaUZ5dHNMLTIzajBTR0cteS1HVUoybll0VjA?oc=5",
@@ -296,20 +324,6 @@
       "publie": "2026-09-23"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNT1FSY2VaQXoxWWQwa3BRNEEzakFsTW5GTkd5VTZqVUhOc0dncktuWXh3cFJtY0U1M2w3MUhoQjQ3N3RPZUhhM2RqVjFmRVp3N2pUV0tLdjJmbTdpM1VLOC1tY0ZPYmI1NFVvR0RqaVFTQ1djaVVYVF9KRVRXZno1ZUltaG50VC1UNnA4MnJsb3lseDhrNzRtQ1BITjBRbzhRSlJpTTRUMFZOeExmVDZEQ0gzc1VrQnQxU0VmTFVqZ0tOTmQ5ZkxfSFdLX0RLRTFGczZmX0FYWF82ckF4Z2JuOER6TWpoRWlhdzBCYzZPNHN6cER5YnRn?oc=5",
-      "titre": "Manifestation du 17 octobre : la mobilisation sur les réseaux sociaux est-elle comparable à celle des «Gilets Jaunes» ?",
-      "source": "Le Figaro",
-      "date": "2026-09-23",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-09-24"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPNXlWMWV2TVBobnR1VF9qRFZGN0pJN0d2cGtyOXNOcDlkdFJJQnZPMHVmRHYzZ1o1RmV0YUZmZnhjeG9KZHBuUDRUYzBWR0lKSk9VTUdlTjdpTHZRVFkxNUxhTDBxT0l4czhUUkJSUTFtaTF5UWo4UE41RGpBb0o0OXMyd2hDeWFORWlDSkI2UG4yTU5oMkFLaUVOQmxzaE0yNm1hOXFCYll4M1hwWkhTYkxCM0lTdEdRRmV2U2tIT1hWMC02cUFYVnR0d0c1cmc1Vmx2SlF1U1VWc05vVXZ1MlJNdjhZYnJ5?oc=5",
       "titre": "Protection. Youtrust, la solution d’identité numérique face à l’explosion des données personnelles exposées",
       "source": "Le Progrès",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "leprogres.fr",
       "publie": "2026-09-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOT0VscS1fNkh6Qlp0SHJxUkpfd1hPbHhtZzl5RkpfOFQ2U0FDVDJWLU42SkthVjlZal85dV9LV2xNNnZ5ZzVlYS00V3RweExaMldReDIyMXRoMFJOUkpkT19oYTRLbUNyd1N6VXN5clgwYjN6QXdaNkdhNHZ4NGlNdU5iaUJnVV9lSmZNU2xPTXFtckd5QnF4eVZzY2hQcU9vOEJIbXRJYk5yZ2V6andDSldaUS1nYm8zUUJQT0FtYVBySVRJZ3hDY0RHc3REQWg2bXA2a08tMA?oc=5",
-      "titre": "Bruxelles propose un système de notation pour évaluer l’empreinte environnementale des datacenters",
-      "source": "ZDNET",
-      "date": "2026-09-22",
-      "guide": "ia",
-      "page": "avance.html",
-      "ancre": "evaluer-un-systeme",
-      "section": "🪞 Évaluer un système",
-      "sujet": "🤖 Intelligence Artificielle — Avancé",
-      "langue": "fr",
-      "site": "zdnet.fr",
-      "publie": "2026-09-22"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSjFoNFg0TVBBT05KZk8wMk1qRVNnX0c5bHJKMWlrWDVpN1E2Yy1QSFNvRWRHZjE2SHJtUWw5VVBlUl95WWp4bjV0eWQ2dnhNWDVXX1loU2VWal9zZFJpTUZFdjNPQ2E4RVpMMHY4VmVhVVEtNW8wQUsybVNhREJMbnBtYklZTC1LWW1xT25EQnFrY01LQ0M0TG52REZHYjFkMFZ3U280bXpvTklrcUxDTkRiUzhqUUZmQ3dnN1FzYw?oc=5",
