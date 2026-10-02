@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-02T13:58:59.370Z",
+  "maj": "2026-10-02T21:24:04.135Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxOV0JqVUtVU293LTFVQjE2MWZZQjFfbjBaTWNlV3c2S05zcXk2WFpyNGNJMkFfWUc3RUtvZnVsaUpFeWdGN2ZBZVdpblpaRkNUazliTko1X3ZGcW5ZN3Y4WTRfY2ZNbDRwVHBRUzBvdEFLR1IwdjNSSk9MWThfd2hMNUVHSnhsVldFSmRsNl9YWG93Y2sxb1BKUTQzbVZ2QVJWWlladmYxT0xIM05VTHhLTkV5LXpjeXc1eXk4c1l5cWJucDcyeWpsd1pjMHhfa2V3RmRlcUV0dWtldXZVT1B2emxNbml3VGM1dVo4b29vR0RxTjVUN243WUFfY2p6VXhfUWluSkpSdTdkQXkxalpoVEV3aUN1VGhMMFREWk1Sems4NEZaRkxmR0NLQVVSMmlrMDEyN0JtdWhqS0hGbElUN0hLSXhlYTNPcFhtcW1kUzlPdkhobG1YdDZRS1hsaE9yNnBGcURxcU9OYXhRaVZFOEVQOEMwdw?oc=5",
@@ -156,6 +156,20 @@
       "publie": "2026-09-29"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQYmZiM1hHS2FJN2o2Y0w1ZlpFM2EycUFNU3lvNFd0MG93cFhfeThLNUZweHJYVnZPUXU3OUtxMnpXV292d2xlUnhkY3lXRVhlczBzUzFXVEdMc3YtQXB3OUVrR1BKQkd1WURZZFIwTE0tOGF2WV92dUFOc2taU2F5S2FvVldNQ0cyUFUwaFcwam1YMXFPanU1RkZrcmtCZjM1dlllby14aWtUNGVYMkd0X3F5WHc1Vm4tM2JOQ1kzWG5zVFpnNm52VmFtY2xrejZMQThnT1lDWVhZX1dBMnlnQkdVZURtVlkwUkNyeFQ3aUxyZmE3VDRyVWU3X1RoaUE2Tk5Qd3ZVRFBwWm05bkVSbF93?oc=5",
+      "titre": "Guerre en Ukraine : des recruteurs russes utiliseraient des publicités sur les réseaux sociaux pour attirer de nouvelles recrues étrangères",
+      "source": "Le Figaro",
+      "date": "2026-09-29",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-02"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTl9iV25pOGlRX3Q1RjlhTW9pNTBSd3FqbzhfRlBwb25ubTk1b3hINXNCNW9OWXNnenExQkpwS0lueUdnM0R4ZHFhZVpENThPT1J2NUZtbmk4cHpuX3NQS0xkNE90OFBXVG8yUXc2d2FNQ3ZBYVJvVVlJTnRYejNYNHhSWmVrLW10?oc=5",
       "titre": "HackFest Québec 2026 : mon retour au CTF d’ingénierie sociale",
       "source": "Zataz",
@@ -182,20 +196,6 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-09-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOQ2RGVjVjRUk0YlUtNVA0aFVsQkxPUkhXVnk3dFZvNnlJYTVkLTdQUFVKb2gxNmVFaTdpaHpONVVXeGlLQVZkeEJtR2xKV0lDbHlDNFhfamVEN0hob2M5bGF2eFhobFJ4aVBqNE9qWWVQejAxQ29PQ01JbTRMZ1hkYmlyZlVDRFNMa0RnaE5ZRlVnRXBBdXhsckdRZzc1NUMtQktXcTRNMjRKRHpsZlBrdElmUjdRVjk2OU5GVkJseGJBaS10c2FLc1pxQmpKcWxwdkpCV3VBSQ?oc=5",
-      "titre": "Consommation. Crousty, panuozzo… ces enseignes de fast-food qui parient sur les tendances des réseaux sociaux",
-      "source": "Le Dauphiné libéré",
-      "date": "2026-09-26",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "ledauphine.com",
-      "publie": "2026-09-29"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPVmNTSXJ0STg4RHNOZm90UFJNeFNHeEljcFhBMTlnSWJ2bHZPSURoM0dXS2lJNU05MzlQNG1faUlHbHptMUszcFZ1TGtGVUZudUFkOHYwektpVHQxUTNXSHF0RGFRWlJjVlFUYUVSTnNkWl9ncnBCbndMVElJWEVGMWxRU2xxUzVmWUFPa3RTbzZGaUhXNDBFYU5nZEFGWGh6UVYyeG5NOWlxTW5TR0hfeC01dUZpMFNTZTgyQnVadVNfeTBwNmdHNi1ZSQ?oc=5",
