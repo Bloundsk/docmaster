@@ -1,6 +1,34 @@
 {
-  "maj": "2026-10-02T21:24:04.135Z",
+  "maj": "2026-10-03T12:39:31.891Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQazZFeDRBSEdERVp0X01xSEZqMnlMNEpCS1o5VzZkel9QMl9VX1hBSWg1QXRIWTNoWC1wclE5ZkVQM1pyTVlkMVdTZm5kRWJ4dURId0J3V3kwY1pVQUUzN3Z3RlIwaElHWFNjUVFIYmFraWxyaTJhSGNnbkFqMVktM05VMDE4NDlUWDFSRlIzcVJQTlNlZ0UtbHNCVDY0R3A0RHZyNXZPeC1OTDhzX1dNNTZoaW9NdlJuTE9UNUZQM3RRd3hwM3h2ZEZoUkJFMG1sNTh6TjFmc1B1ajR5ZDNnd25OcVFoajFJOWFYTkVhcFpzWUIxd18ta3g4bThEN3lPY2JmVG9XWjZTcnU2ZjBqRWFHaE0?oc=5",
+      "titre": "OpenAI vire trois chercheurs en sécurité qui s’inquiétaient publiquement du développement de l’IA",
+      "source": "Libération",
+      "date": "2026-10-02",
+      "guide": "dev-web",
+      "page": "avance.html",
+      "ancre": "securite-applicative",
+      "section": "🔐 La sécurité applicative",
+      "sujet": "💻 Développement Web — Avancé",
+      "langue": "fr",
+      "site": "liberation.fr",
+      "publie": "2026-10-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQQW1BRnM1Y0hSemhLU0ttdEhzYW1aZy16Xzgwb2ZkS3huRl9GQjUyMll2VDUySWQxWVFpcDdVYUFVM2lXbFZhbjg3b01jM0JwYVRxS0NRSWh4NVdMaWRuWTN4Q1hNMkpRN1VQTVZhRHZ6andqLXlia1dqbk9xZE85LWhfZEVWOGRDUE5NVm1zZUR6OGI0TzR5Y1BXWm9yVkwwU1R0eWtZdkV2MkgtSDE2RjNSdHFfbkVURFZhUlNsU1YwenRXWW1SVVdQQU5zQWdyXzFYQjlEbDdBTjh0U0Z3dUxVaFVxWjJwUEtZXw?oc=5",
+      "titre": "Pas touche à l'assurance-vie... Les candidats à la présidentielle priés de ne pas changer la fiscalité de l'épargne",
+      "source": "Capital",
+      "date": "2026-10-02",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-fiscalité-de-lépargne",
+      "section": "🧾 La fiscalité de l'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "capital.fr",
+      "publie": "2026-10-03"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxOV0JqVUtVU293LTFVQjE2MWZZQjFfbjBaTWNlV3c2S05zcXk2WFpyNGNJMkFfWUc3RUtvZnVsaUpFeWdGN2ZBZVdpblpaRkNUazliTko1X3ZGcW5ZN3Y4WTRfY2ZNbDRwVHBRUzBvdEFLR1IwdjNSSk9MWThfd2hMNUVHSnhsVldFSmRsNl9YWG93Y2sxb1BKUTQzbVZ2QVJWWlladmYxT0xIM05VTHhLTkV5LXpjeXc1eXk4c1l5cWJucDcyeWpsd1pjMHhfa2V3RmRlcUV0dWtldXZVT1B2emxNbml3VGM1dVo4b29vR0RxTjVUN243WUFfY2p6VXhfUWluSkpSdTdkQXkxalpoVEV3aUN1VGhMMFREWk1Sems4NEZaRkxmR0NLQVVSMmlrMDEyN0JtdWhqS0hGbElUN0hLSXhlYTNPcFhtcW1kUzlPdkhobG1YdDZRS1hsaE9yNnBGcURxcU9OYXhRaVZFOEVQOEMwdw?oc=5",
       "titre": "Les taux d'emprunt de la France s'envolent mais Roland Lescure assure que la signature du pays \"est solide\" après l'émission de 12 milliards d'euros d'obligations jeudi matin",
@@ -72,6 +100,20 @@
       "publie": "2026-10-02"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOTjc5VlJPUEJmUTdvRWcxOGRMUGdwbWZSdFVNMEEyei1jLW81NVFjMnpwMk1vaXJLNllGbWViZmVFOVYtMDFqM3VTclJDWlFUV0pnX0poSlAtSkw3ZFpUWVMwaHVoOUFYS1EtdjVwN3ZjTGVXVHZja2NBdzNqbHcwOXRYak54bkNDbFpkS1g2V0xZNzB4RV9PZGYzT1UwaGY1T3NfMUJ0ampldHZ0Y0ZHY2owU2l4c1IxTHdLY1BtUlVKaE10aGVmLUtGQlk3dkotZDkxbmxRWF9udmExOGU4WGVNRHNHZ2ZiSHMtY2NkR3E?oc=5",
+      "titre": "Intelligence artificielle : Google présente son nouvel agent Gemini 4 mais en limite l’accès aux experts en cybersécurité",
+      "source": "Sud Ouest",
+      "date": "2026-10-01",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "outils-et-fonctions",
+      "section": "🔧 Les outils, ou comment un agent agit",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-10-03"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdm9rcUFuZXdfRXZNNVI5R0dmNjhjd0tkOGRPUkFab2FRZWV0dWJkZXBIY3QwYnJHbjJTSkx5SUctTFpua0lHZ0dGQWN0bXhvY0hhc3VFU0ZfaUhWbFdKZ1Z5eEo2T1V2RzBPeExrT1lwVjJsNU5la00zT25VbEYxODEyWHgwcm1KMjc3SjQ4WVNYQzJMLXpQcUNyTFJiTXE2ZUZ0SHJna3VscXIwSUl1ZEhoc0s2d2lYQnY3NkNNT0k1YklKdGRfZlZlellyZ3JoVDVLTnRnUGo4Y1l2WERmajZvYl9kbzFpbVphZWRnb2tiRkpySHJhc1owMFQ0TUZwZmpCUDVidkpCOW5JV2pyazJrYXo5RUxBcWhmT1JPVDFiaUZ5dHNMLTIzajBTR0cteS1HVUoybll0VjA?oc=5",
       "titre": "Vol de données: FrenchBreaches, Cyberattaque.org, bonjourlafuite.eu.org… la quête effrénée des cyber-lanceurs d'alerte pour prévenir des fuites au quotidien",
       "source": "BFMTV",
@@ -112,6 +154,20 @@
       "langue": "fr",
       "site": "latribune.fr",
       "publie": "2026-10-01"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbGoycnNpRXhpbFZDNm1ScDFSUjNhM0dEQjFFVFNnc3AwVlZqYTFnS2ZzZFlsTmxqZGc1Q1pBaHI0ZEpNREYzclVCaE5kamZpN1dRMldsRjVRMU1ZVndQUWFDS0xIY3VJX2xQU2dBWXBaVGVLa1ZhYnFjRjF6T29JN0prN1NiQlpnbW0wUHl4eGdsQ3RqMlphUjZTbXBZVmkyQkdlR0pxYWU5aVNXY2wyZElmdDVyV0VHTFB5ZEdlOE1ZRTFyVEE?oc=5",
+      "titre": "Les lanceurs d'alerte cyber à la poursuite des fuites de données",
+      "source": "France 24",
+      "date": "2026-09-30",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "france24.com",
+      "publie": "2026-10-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZzY0V2wwVVg1cXpDYW10cUhJZHQ3bTE0akdKTGxaWE5EN3kxcjh4cUxLb0xoYnZ1OTQwcmZDQ1l6MkR0M0hEUUVJZVF1b2lFWU1zUEljU19ERTFodDdoeWRobmRqQUlTeWx2d0daLUhxWDY2bGhNOENydGxZTUF2aFZWUWxaUWY5UzdnakxDZmVvSW04Z2NQdDBxZFJjX09TWHJKRV9SNA?oc=5",
@@ -170,6 +226,20 @@
       "publie": "2026-10-02"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNcXhicXhpTFNWanN4Ync0Mjh4a2pGUnE0X055UDVjaU1qSjlRU0VUM3JjTnR1M2lPX1RMR1RGWWxHY0IxcHJ5cE1NNjBEby05RjlHWGxCRGlHZmI5SWJlMEdDc2cxS0twVDhyZGtocDFZalByMHpiNmh0VEVUMVZwekFHZk4tandaTjlZSVdaVmhtUmdmYVFZbFB5aEVtRFc0aE5iZzNlVjc2MDBxUC1Pc21VQ3FsbzBiYlRzVTVERVFHdWtZZUpEeFI0U2NYdDhaNzhNVHBR?oc=5",
+      "titre": "La mission de l’observatoire des impacts environnementaux du numérique",
+      "source": "Arcep",
+      "date": "2026-09-29",
+      "guide": "ecologie",
+      "page": "debutant.html",
+      "ancre": "limpact-est-dans-la-fabrication",
+      "section": "🏭 L'impact est dans la fabrication",
+      "sujet": "🌱 Sobriété numérique — Débutant",
+      "langue": "fr",
+      "site": "arcep.fr",
+      "publie": "2026-10-03"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTl9iV25pOGlRX3Q1RjlhTW9pNTBSd3FqbzhfRlBwb25ubTk1b3hINXNCNW9OWXNnenExQkpwS0lueUdnM0R4ZHFhZVpENThPT1J2NUZtbmk4cHpuX3NQS0xkNE90OFBXVG8yUXc2d2FNQ3ZBYVJvVVlJTnRYejNYNHhSWmVrLW10?oc=5",
       "titre": "HackFest Québec 2026 : mon retour au CTF d’ingénierie sociale",
       "source": "Zataz",
@@ -182,6 +252,20 @@
       "langue": "fr",
       "site": "zataz.com",
       "publie": "2026-09-29"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNb2xpUGcydXBKOU5pTEYyQVlKWVc0UW5qYWU4OFhhSy12WXVjR1R3Q3BQMlQyUm5uMlhRRUlJRF9nUHA3SU14RG96Y0FjNEVoV0UtVlJrTjlQOVBoaEtCazJkRFZ1VXk3UHFybWNlYkN1dFRWcXRIMk82UlBjWFVscndoejZwZGZhU0otSFo4eHRPZjFwT1ppV1c5bWk2Y2FWeXpTa1prdVE5Z2R0ak5wanJIaE5keW93Zm1uc1NVOFBidnpoMXUyNzJLOThCQ29odkxIWXYzcjZ1SVNOWmVveWkyNzI3ODRQOUhyUU1rTlNScmNxYlJ5VVdiTVZlYThkYXVkMmtaRjEzdDM4YnhUSlRIRmFBbG9EQUFLaDJSODc3SDVzWUVYNEhoSjlJMnZxVjFSX0tDOHkzOFAxdW9Va2VMZjExNXc?oc=5",
+      "titre": "Google simplifie la double authentification, le FBI piraté par vengeance et l'assistant de code de Z.ai qui envoyait vos projets en Chine : on vous raconte la semaine Cyberguerre",
+      "source": "Numerama",
+      "date": "2026-09-27",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "double-authentification",
+      "section": "📱 La double authentification",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "langue": "fr",
+      "site": "numerama.com",
+      "publie": "2026-10-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNd1RPVzVqVExnRW9QR196UzFSMk0tSGJnZUxNZTRsRnJSSmZZU2NMUDl4cDMxbkxhTDZkb3kyazU0aERoYjRoSC0zUUZvRDZ4VUpDcnJoU0MwUjQzOUJTUktHdEN0NjJjR1RMbjYtR1B6SkZ5Qy1od1R5OWpGTjMzalhQU0ZRWkNhS2NVZk91cGlScFI1OVFxZ1FITGZ2Snc2Wkp4OWJ5M21iOFBDaGY0cVNDZVNvQlBfT3d1aG03eG81NkIzMVBvTFdoZlpmaG55U05sRXlMdzlaNVU?oc=5",
@@ -251,90 +335,6 @@
       "sujet": "💰 Finance — Débutant",
       "langue": "fr",
       "site": "nicematin.com",
-      "publie": "2026-09-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNNm9DaHR6MXJ0dExzNDA1cVRCUHRpOFVfdU1FaVRwa2d3OEw2UjJQWFVQNUtuMnM0ZEN4V2Z5WnZSdllVSXZxNlRWMWtZWjFLZFNONHdMdV9sWU1YZ01qOWJWVVVVczRVVXhBRy1aTEFDQmx3TTNsUXRwWGpmb09ma2hKVDQ2TGlPaHNxLXNMYmFmUExZV21MVlI5dmZWaUNTUGpMS3hQZDEtUUdreUNZQ2RpMGRkZ2VmVzdaaEduUnp0bGp0aFpRYzNpN05NdFhKNVRkTHd6eTZUVVRfc2hFeWxHdzItVW9zTHhzTlc5RmpCUjdCTkVNa0JGZ2dwamYtVDFiX1JlX1RGTjlkamZoSUlxLTdGdXNEYmppYlhKRGp2eDlDNEFXdUY3TFZvWV9seEVkWnZBLWdKZUQ3a0E?oc=5",
-      "titre": "Intelligence artificielle : l’agent d’OpenAI a infiltré un site du gouvernement australien et a eu accès à des données non publiques",
-      "source": "Sud Ouest",
-      "date": "2026-09-24",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "outils-et-fonctions",
-      "section": "🔧 Les outils, ou comment un agent agit",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-09-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPY0ZxaXV3UVpxM29DWEhtcFRfdmN5eXpzNGNaM0Q4aW0yaXdoNDgycmJiaHg2TjRuQklyOTVlaWdYdXhsOU8xdXM5dXB6QXg5UW44VnM1d3FqTGpfM1FsZnZIWjNhYWc4TmRUcko2VHN3aWFpaVZhcDN1SG0xZE1Qc1V4eFI4akl0dUkybGVyN1JaOEY3eU5Id01rekdMYWwyVUdhd3MyMTljVV9RMTlkV0ZhbkhfWDJ4by10UV9jQkREQ0JHbTNxd3pxT00tekdZeDB5TWRkX3NwUjBXSGtHWGkxWkw3N2c4NjBxanhYemVFTDFMNVp0dDdn?oc=5",
-      "titre": "On revient sur la fuite de donnée chez Revolut qui a contourné TOUTES les mesures de sécurité !",
-      "source": "Radio France",
-      "date": "2026-09-24",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "radiofrance.fr",
-      "publie": "2026-09-27"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOODQtMmcyVG1RWngyV0dEUDQ2ZWlmdUVwVmNCSnl5YTJJV2x6cUh2dS04ZkxRcmZ1MG9mS05jYzZseU53emd6NjJlaVJ3eHVqdkNWQVVxYzRJTkl6S3VFOUpJTVZnRFQtbklrYnBkT2s4b2x5cU8tSXFrUFFpM3NUUW8zMGMxckxHVmFkU3ZsMU9zY2dfOGx5U08zV3ctaWVMa0FxSGFmZzdQV1ExNldSdEFqeU1qY3dvdHRLMlFVeDByMUd5NmVoeTBlUDFRZGRVaTRxYUFfZmdYR0E?oc=5",
-      "titre": "Les assureurs ont choisi d'investir dans les obligations pour profiter de la hausse des taux en 2025",
-      "source": "Le Figaro",
-      "date": "2026-09-24",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-09-27"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1fQ1hGdzJnTWFsRmxBcFQzdUdicTk5Z2U0QmFCT3lTMWZUYkV3YVVQV2pJNVMwRE5EQnZTUEVQamxMQkpSRW5BTTgtREo3ZTAwT0w3eDdoaVg3bE5uRW9wZmtua2hQdEhw?oc=5",
-      "titre": "Références en santé au travail. La revue - Revues",
-      "source": "INRS",
-      "date": "2026-09-24",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "inrs.fr",
-      "publie": "2026-09-30"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZzFBa21qaW1MMm1UM0I5ODJ4dk9xMncxel9XZDJIRXlDeXY3dUNqOGZhRnZXM3R0a3gtcTBUS3VkZGhud0ZsWlU2RjI4QU5lX0laZVpRYm5RaXZicDA5R2NNUHJMR1BYOWdaV0RwSzUwdVBYMnlNZWxOeUhqUHVOTGpBaHJ2elJNcHVfRFFvQUlLZUw0MTJaSFU3a0U?oc=5",
-      "titre": "Et pour vous, l’organisation des tâches ménagères, stress ou no stress ?",
-      "source": "20 Minutes",
-      "date": "2026-09-23",
-      "guide": "productivite",
-      "page": "debutant.html",
-      "ancre": "les-outils-de-gestion-de-tâches",
-      "section": "🛠️ Les outils de gestion de tâches",
-      "sujet": "⏱️ Productivité & Organisation — Débutant",
-      "langue": "fr",
-      "site": "20minutes.fr",
-      "publie": "2026-09-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPNXlWMWV2TVBobnR1VF9qRFZGN0pJN0d2cGtyOXNOcDlkdFJJQnZPMHVmRHYzZ1o1RmV0YUZmZnhjeG9KZHBuUDRUYzBWR0lKSk9VTUdlTjdpTHZRVFkxNUxhTDBxT0l4czhUUkJSUTFtaTF5UWo4UE41RGpBb0o0OXMyd2hDeWFORWlDSkI2UG4yTU5oMkFLaUVOQmxzaE0yNm1hOXFCYll4M1hwWkhTYkxCM0lTdEdRRmV2U2tIT1hWMC02cUFYVnR0d0c1cmc1Vmx2SlF1U1VWc05vVXZ1MlJNdjhZYnJ5?oc=5",
-      "titre": "Protection. Youtrust, la solution d’identité numérique face à l’explosion des données personnelles exposées",
-      "source": "Le Progrès",
-      "date": "2026-09-23",
-      "guide": "droit",
-      "page": "avance.html",
-      "ancre": "vos-donnees-personnelles",
-      "section": "🔐 Tes données personnelles",
-      "sujet": "⚖️ Droit & démarches — Avancé",
-      "langue": "fr",
-      "site": "leprogres.fr",
       "publie": "2026-09-25"
     },
     {
