@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-03T12:39:31.891Z",
+  "maj": "2026-10-04T13:19:53.010Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNZ0lpbDFRcTlzXzN1MlVCSWZuUzVGZnhqZGtlQURqUGFhRERMcXZxZVlvZ2p4YU9TYUZIVjlqbTc5T3hQbzR2QTlwOGFWaUxYUEU3aEJ2eWN4a21IbkJnT0ZkR21zWThHU3o3U05oV052dzlHLWREbmFRZ3FLNnRmY3U0MzZBbHNHRldxQ1owM0VRUXFqZTJPb1VSZVVvNnNoV3h2NGJRU3VpTnNuU05tRzg1UlBrSUI1bjVWb081NlVuem13NmJFZU5ocF9YTk9qSFhORFBVQXZJb083dGFJMVRuZWtUdmZIQ1Y0WEFLMEhUTDRHQU12VHdLT05YWnloYXF5aUlXLU1GeEdkTloxMXhtUi1yRnBmS0RLSEZEVy13eTNTc0E?oc=5",
+      "titre": "\"Moins du quart des investissements votés a été réalisé\" : des finances solides mais des installations dégradées à l'aérodrome de Pamiers-Les Pujols, alerte la Chambre régionale des comptes",
+      "source": "La Dépêche",
+      "date": "2026-10-03",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "linvestissement",
+      "section": "📈 L'investissement",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "ladepeche.fr",
+      "publie": "2026-10-04"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQazZFeDRBSEdERVp0X01xSEZqMnlMNEpCS1o5VzZkel9QMl9VX1hBSWg1QXRIWTNoWC1wclE5ZkVQM1pyTVlkMVdTZm5kRWJ4dURId0J3V3kwY1pVQUUzN3Z3RlIwaElHWFNjUVFIYmFraWxyaTJhSGNnbkFqMVktM05VMDE4NDlUWDFSRlIzcVJQTlNlZ0UtbHNCVDY0R3A0RHZyNXZPeC1OTDhzX1dNNTZoaW9NdlJuTE9UNUZQM3RRd3hwM3h2ZEZoUkJFMG1sNTh6TjFmc1B1ajR5ZDNnd25OcVFoajFJOWFYTkVhcFpzWUIxd18ta3g4bThEN3lPY2JmVG9XWjZTcnU2ZjBqRWFHaE0?oc=5",
       "titre": "OpenAI vire trois chercheurs en sécurité qui s’inquiétaient publiquement du développement de l’IA",
@@ -114,6 +128,20 @@
       "publie": "2026-10-03"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQclhSQ1VteEFTdjN1ejU4aG5ocEJmcE00N1ZCamxPWnlId255WHkwUlBhNDM2TE9KakJPQlkwMDk0azZVNllEYzRuX1Bfb3JfNUR1blZDMVhWcXBQS3UxSXkxTUctX3hrSUNnWDRkQXF6NGg0eTNsZlpDcFFXUTlVd1pZaFBKRjBnLTd3U21sVnpqazgyY2ltXzhFU0pKanBFSEJDSzNhcGJvNHJycG9jbUZUeFFINUlTdlo5dmc4dFYzNmNaakp6b2tnU1FFaDctLXZjcGhMaUozQzU3cmF5Zm50QVNoaHJTcDlrU0RlMnhUWlZtVDYwbkNhSk8wclFnbzNMOUhnTFFTbDRpNThIU2JLUU05OUJnbmR2RXFGT0l5X3NfQXc?oc=5",
+      "titre": "Fuite de données chez l’Anssi et la Dinum : les agences gouvernementales spécialisées dans la cybersécurité piratées",
+      "source": "Ouest-France",
+      "date": "2026-10-01",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "ouest-france.fr",
+      "publie": "2026-10-04"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdm9rcUFuZXdfRXZNNVI5R0dmNjhjd0tkOGRPUkFab2FRZWV0dWJkZXBIY3QwYnJHbjJTSkx5SUctTFpua0lHZ0dGQWN0bXhvY0hhc3VFU0ZfaUhWbFdKZ1Z5eEo2T1V2RzBPeExrT1lwVjJsNU5la00zT25VbEYxODEyWHgwcm1KMjc3SjQ4WVNYQzJMLXpQcUNyTFJiTXE2ZUZ0SHJna3VscXIwSUl1ZEhoc0s2d2lYQnY3NkNNT0k1YklKdGRfZlZlellyZ3JoVDVLTnRnUGo4Y1l2WERmajZvYl9kbzFpbVphZWRnb2tiRkpySHJhc1owMFQ0TUZwZmpCUDVidkpCOW5JV2pyazJrYXo5RUxBcWhmT1JPVDFiaUZ5dHNMLTIzajBTR0cteS1HVUoybll0VjA?oc=5",
       "titre": "Vol de données: FrenchBreaches, Cyberattaque.org, bonjourlafuite.eu.org… la quête effrénée des cyber-lanceurs d'alerte pour prévenir des fuites au quotidien",
       "source": "BFMTV",
@@ -154,20 +182,6 @@
       "langue": "fr",
       "site": "latribune.fr",
       "publie": "2026-10-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbGoycnNpRXhpbFZDNm1ScDFSUjNhM0dEQjFFVFNnc3AwVlZqYTFnS2ZzZFlsTmxqZGc1Q1pBaHI0ZEpNREYzclVCaE5kamZpN1dRMldsRjVRMU1ZVndQUWFDS0xIY3VJX2xQU2dBWXBaVGVLa1ZhYnFjRjF6T29JN0prN1NiQlpnbW0wUHl4eGdsQ3RqMlphUjZTbXBZVmkyQkdlR0pxYWU5aVNXY2wyZElmdDVyV0VHTFB5ZEdlOE1ZRTFyVEE?oc=5",
-      "titre": "Les lanceurs d'alerte cyber à la poursuite des fuites de données",
-      "source": "France 24",
-      "date": "2026-09-30",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "france24.com",
-      "publie": "2026-10-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZzY0V2wwVVg1cXpDYW10cUhJZHQ3bTE0akdKTGxaWE5EN3kxcjh4cUxLb0xoYnZ1OTQwcmZDQ1l6MkR0M0hEUUVJZVF1b2lFWU1zUEljU19ERTFodDdoeWRobmRqQUlTeWx2d0daLUhxWDY2bGhNOENydGxZTUF2aFZWUWxaUWY5UzdnakxDZmVvSW04Z2NQdDBxZFJjX09TWHJKRV9SNA?oc=5",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "sudouest.fr",
       "publie": "2026-09-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitAJBVV95cUxNU2xab2w1cndNOW9QZEpOa0pzWEpuaUJJZ1R3dXFkcUZxUW5uUTNUTHhXSC1nbDZZaXZUTDd0Q1pDa09SRjl0OVNKbkFqN2xEUXRsWldvdDh0c2ZyR0t1R0pHQmlXZlVpbUFOYmt2RVEtSVgtcDZEOUxwZXNaYkU4WGxjSFdBWFk0QUg0cWhKWGlPd0xBSE43X200d0x0YzZZby0zRXZvUzVGMGZzdk9TRDdkOHI2dUpiV1hWNnp6bFdERGdoV05lcXJtcUNuQTdvUVgxN1RjU0FyZms2VExIcUlDUHhxWnFaSU9IVDB2TWpDNXNZb0MzaV9mRDQ4aVp6RVotWTB1bUVFb3g5QVdoVTNJX0ZPZ2pLUFU4Q2RGZWRaNjBzZTExcjllUTBwcGZqNk1YaQ?oc=5",
-      "titre": "« Il n’y a pas de risque dès lors que les apports énergétiques sont suffisants » : la délicate gestion des périodes de menstruations chez les ultra-traileuses",
-      "source": "Nice-Matin",
-      "date": "2026-09-24",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "nicematin.com",
-      "publie": "2026-09-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSjFoNFg0TVBBT05KZk8wMk1qRVNnX0c5bHJKMWlrWDVpN1E2Yy1QSFNvRWRHZjE2SHJtUWw5VVBlUl95WWp4bjV0eWQ2dnhNWDVXX1loU2VWal9zZFJpTUZFdjNPQ2E4RVpMMHY4VmVhVVEtNW8wQUsybVNhREJMbnBtYklZTC1LWW1xT25EQnFrY01LQ0M0TG52REZHYjFkMFZ3U280bXpvTklrcUxDTkRiUzhqUUZmQ3dnN1FzYw?oc=5",
