@@ -1,6 +1,34 @@
 {
-  "maj": "2026-10-05T12:36:46.723Z",
+  "maj": "2026-10-05T16:25:03.010Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSTNMWXQ2WEZrOUcxazhpa0hCUUU2eTdJS29XTlZoSjZXMm1nNXVGSUdnZGtQX3prVGJLQkp0UkhVeVpONHpDdV9DV2RQcXVBQm1zSk5PYngxTUxKNThfLXJpLTRIUC1fYmtMbEtxX2pUSVlwUWlYbm1uNjFaWU04SVBlRVJBVkk1UmgxUUd3dmJqT3dGV2J5aWdEOENQVFQtWTJRRzdYa2ZzQVU?oc=5",
+      "titre": "Grille des salaires marketing, digital et tech en 2027 : les postes les mieux rémunérés en France",
+      "source": "Blog du Modérateur",
+      "date": "2026-10-05",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "email-marketing",
+      "section": "✉️ Email marketing",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "blogdumoderateur.com",
+      "publie": "2026-10-05"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPdWJLRThCMTF1VGJ6LVhiRHNwa1JGcUVxZ2tOci15YkhJRTFiZzFaT1g3eXVlWWtqMV9CUWRHem4wSWUzRTdEcVltRWc5WjVPUERYS1F6ekU2X1RSQl95SWlPb1MtV0FmNlVVWTk4LW1LLXh1WnZVd3hGUDV2el9XaEJzMU1rd2FWMDFPRE5Gb1o0TkR5MTBpcmI2eEhRLS1hMGV3bkRjbE5tQUNjZXg1TC1qbmtHRDRSS1lyc3hVOUNURExDZE9CNmJsVDNGc1o3Z2R1WE5oaU5JNzdWREdMc3VjRXc?oc=5",
+      "titre": "« Un danger grave et immédiat pour la santé publique » : à Bernay, le préfet ferme un nouveau restaurant",
+      "source": "Actu.fr",
+      "date": "2026-10-05",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-situations-graves",
+      "section": "🚨 Les situations graves",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "actu.fr",
+      "publie": "2026-10-05"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNZ0lpbDFRcTlzXzN1MlVCSWZuUzVGZnhqZGtlQURqUGFhRERMcXZxZVlvZ2p4YU9TYUZIVjlqbTc5T3hQbzR2QTlwOGFWaUxYUEU3aEJ2eWN4a21IbkJnT0ZkR21zWThHU3o3U05oV052dzlHLWREbmFRZ3FLNnRmY3U0MzZBbHNHRldxQ1owM0VRUXFqZTJPb1VSZVVvNnNoV3h2NGJRU3VpTnNuU05tRzg1UlBrSUI1bjVWb081NlVuem13NmJFZU5ocF9YTk9qSFhORFBVQXZJb083dGFJMVRuZWtUdmZIQ1Y0WEFLMEhUTDRHQU12VHdLT05YWnloYXF5aUlXLU1GeEdkTloxMXhtUi1yRnBmS0RLSEZEVy13eTNTc0E?oc=5",
       "titre": "\"Moins du quart des investissements votés a été réalisé\" : des finances solides mais des installations dégradées à l'aérodrome de Pamiers-Les Pujols, alerte la Chambre régionale des comptes",
@@ -14,6 +42,20 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-10-04"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQRTZSci1HNVkzTmIxYnhCWWtMZzROcG5oWmgwVGNMM0YwM29WeDdBdTE4djVyVXZQR2s4ZTBrMEk0a3ZFQjAzT3Z4R1VlbmhCUjhYNE9Fc0R5U3FTVG1laFhiX3FROHQzbHktSGd5cjhHdWcxTEdBanhxRmlwV2ZreWlnYnBmTy1mekZNZTV3UTlxMzdCY29EVjI5dk1vTlFOTENwQkw1bjVnODBZY0hxTUV0cS14TGRGOHhMTkRaNFVrTnNHb1UwLW41Zm03eU53YzBxR2d2eDdQc184WWpkRU95SjhCQXNqU2VEbkhHMkd6ZjMzaEE?oc=5",
+      "titre": "La région Hauts-de-France victime d’une importante fuite de données personnelles après une cyberattaque",
+      "source": "Sud Ouest",
+      "date": "2026-10-03",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-10-05"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQazZFeDRBSEdERVp0X01xSEZqMnlMNEpCS1o5VzZkel9QMl9VX1hBSWg1QXRIWTNoWC1wclE5ZkVQM1pyTVlkMVdTZm5kRWJ4dURId0J3V3kwY1pVQUUzN3Z3RlIwaElHWFNjUVFIYmFraWxyaTJhSGNnbkFqMVktM05VMDE4NDlUWDFSRlIzcVJQTlNlZ0UtbHNCVDY0R3A0RHZyNXZPeC1OTDhzX1dNNTZoaW9NdlJuTE9UNUZQM3RRd3hwM3h2ZEZoUkJFMG1sNTh6TjFmc1B1ajR5ZDNnd25OcVFoajFJOWFYTkVhcFpzWUIxd18ta3g4bThEN3lPY2JmVG9XWjZTcnU2ZjBqRWFHaE0?oc=5",
@@ -156,18 +198,18 @@
       "publie": "2026-10-04"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOdm9rcUFuZXdfRXZNNVI5R0dmNjhjd0tkOGRPUkFab2FRZWV0dWJkZXBIY3QwYnJHbjJTSkx5SUctTFpua0lHZ0dGQWN0bXhvY0hhc3VFU0ZfaUhWbFdKZ1Z5eEo2T1V2RzBPeExrT1lwVjJsNU5la00zT25VbEYxODEyWHgwcm1KMjc3SjQ4WVNYQzJMLXpQcUNyTFJiTXE2ZUZ0SHJna3VscXIwSUl1ZEhoc0s2d2lYQnY3NkNNT0k1YklKdGRfZlZlellyZ3JoVDVLTnRnUGo4Y1l2WERmajZvYl9kbzFpbVphZWRnb2tiRkpySHJhc1owMFQ0TUZwZmpCUDVidkpCOW5JV2pyazJrYXo5RUxBcWhmT1JPVDFiaUZ5dHNMLTIzajBTR0cteS1HVUoybll0VjA?oc=5",
-      "titre": "Vol de données: FrenchBreaches, Cyberattaque.org, bonjourlafuite.eu.org… la quête effrénée des cyber-lanceurs d'alerte pour prévenir des fuites au quotidien",
-      "source": "BFMTV",
-      "date": "2026-09-30",
-      "guide": "cybersecurite",
+      "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPblU3M1pPS29DSG5wVnRYYVpqcDhxd09OTmNlY2RGd29LWFBiblV0VE5sLVByNUlEZFdXLTNueHhOTy1VOUpZRm1WeGdiOUdhekxhenJsam10eUtwVWlfQWxmMFpNaGdTMGVHYWhUT3RuM05zZ2sxQ2c3a3hYVmVQMDZYcWNXVzI4VnB0elg5UkktZDFwdElBTmhaQjRLS0c3OFNIS1NDNkZ5eWxnQXZtVGUxMFlZdVE?oc=5",
+      "titre": "Taux d’intérêt à zéro, inflation au plancher : la Suisse, l’exception mondiale",
+      "source": "Le Figaro",
+      "date": "2026-10-01",
+      "guide": "finance",
       "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
       "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-09-30"
+      "site": "lefigaro.fr",
+      "publie": "2026-10-05"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOZEtVUTc3RVFfUVEtZ3lDOXotaVZNZkZXR3JPMS1EM3NxT2lZeEd4eEp0ZUZ0TDZXRk1hM1RaUXB6dnpxWWpjc3hJaDhqTkhJd21lekVfRUZkdkR2WmZpQVVqbVdBcU1hN3BQRlUxWkNRSUptRDlLOW91Q3J0MmItV3hTd0JSTndNTTl5YzRJTTlHSkJzZ252WWJOTDJpN3MtaldGcXlVbUJlQ2NNT3BVc05DRzVsbXMxUEhpQ3ZnSWhzaXh5LXBCZUozbGZPQQ?oc=5",
@@ -293,48 +335,6 @@
       "sujet": "📢 Marketing Digital — Débutant",
       "langue": "fr",
       "site": "lefigaro.fr",
-      "publie": "2026-09-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPVmNTSXJ0STg4RHNOZm90UFJNeFNHeEljcFhBMTlnSWJ2bHZPSURoM0dXS2lJNU05MzlQNG1faUlHbHptMUszcFZ1TGtGVUZudUFkOHYwektpVHQxUTNXSHF0RGFRWlJjVlFUYUVSTnNkWl9ncnBCbndMVElJWEVGMWxRU2xxUzVmWUFPa3RTbzZGaUhXNDBFYU5nZEFGWGh6UVYyeG5NOWlxTW5TR0hfeC01dUZpMFNTZTgyQnVadVNfeTBwNmdHNi1ZSQ?oc=5",
-      "titre": "« La situation était grave » : un pompier réanime la passagère d’un avion Brussels Airlines en vol",
-      "source": "La Voix du Nord",
-      "date": "2026-09-26",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-situations-graves",
-      "section": "🚨 Les situations graves",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "lavoixdunord.fr",
-      "publie": "2026-09-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSm5KZmJ6aUtBMnFHdnJncHlUQnVySG5zYldHWmhHMUgtNDIySHdhQ2Zrc18xSzB1eU5kamFEYjNYSkJ2czV3SnBsT3NrOXFKbFJiM2wxdnlzNm53STVSVUNGTUxRODBOaDVOSEVUTm1sWS1WblRJQWtnM1VDRF9kV2h2eWFTR25iYkhqTnRsY2ZtVmNsQm0tMW1LTFBpZDA1RlRBX1dtSXJ6UFc5UTVJ?oc=5",
-      "titre": "IONOS Plus : une page métier en ligne sans mobiliser toute l'équipe web",
-      "source": "ZDNET",
-      "date": "2026-09-25",
-      "guide": "dev-web",
-      "page": "intermediaire.html",
-      "ancre": "mettre-en-ligne",
-      "section": "🚀 Mettre en ligne",
-      "sujet": "💻 Développement Web — Intermédiaire",
-      "langue": "fr",
-      "site": "zdnet.fr",
-      "publie": "2026-09-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMingJBVV95cUxPZTVFVXoyNzg1dkEzWG1XVEJPeEtJekh5VkZvYkxFS2ZUckdzcVZyX2hEYndCV2cwUTl0a1duMGM4R05IVy1jRkdueVdiTDJPM0s1dmtmSEdDQVZGNnpQSW13RzZLNUQ0QU5nTG1mMUJtUjVvNVdCOVpXREVZRnJiNU9kYWNJUkxpRFM1OGUtTmFuUUUzUG00cGhvMUJFai1DMVVQd19HV0d6cENCcEdPSm9ncklBcFRkd2xXZW53SG5HSjRicVVkU1VXRjRtajBYeFY2NVMzLTBEaU80eFVqdzR4WnFSVU1KTDFoMGhSQUx3VG1tTk5xX0tQS0Q0ZFd4WTF5NnRsVnFhODJhck9lWGU0a1FSNFNZUEc4aEpB?oc=5",
-      "titre": "Crise des carburants : « La situation est grave », Emmanuel Macron défend son action et envoie des « moyens militaires » en Arabie saoudite, des critiques s’élèvent",
-      "source": "Sud Ouest",
-      "date": "2026-09-25",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-situations-graves",
-      "section": "🚨 Les situations graves",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "sudouest.fr",
       "publie": "2026-09-28"
     },
     {
