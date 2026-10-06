@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-05T23:15:18.440Z",
+  "maj": "2026-10-06T14:29:55.118Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSTNMWXQ2WEZrOUcxazhpa0hCUUU2eTdJS29XTlZoSjZXMm1nNXVGSUdnZGtQX3prVGJLQkp0UkhVeVpONHpDdV9DV2RQcXVBQm1zSk5PYngxTUxKNThfLXJpLTRIUC1fYmtMbEtxX2pUSVlwUWlYbm1uNjFaWU04SVBlRVJBVkk1UmgxUUd3dmJqT3dGV2J5aWdEOENQVFQtWTJRRzdYa2ZzQVU?oc=5",
@@ -56,6 +56,48 @@
       "langue": "fr",
       "site": "20minutes.fr",
       "publie": "2026-10-05"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQMjZqMnZVOUVqcC1ZeUdING0wak9jNWM2VDVZdDU0bnhiTnl6ZlpDVktUcFhvUGVPaHJLcDhHazlwYnhucWx4dnVvXzR1amtBMkxjUkhTdk1VR2tuTjVhY0ZZTS1hUzN4X01kSTJBUm9ILWNrRHpXcUdYTG1PX2l1QkkwY2ZnajYzY3R4SHlkOG1DdWp0WVlfWmRwbUg5d3pyeW5zMzk3S0ItY3hzanl1UVJsZFpFcmRVdXdGVHVCS1hZd2czanAzVlA0RzZEclBrU2tJNGZ3YzZVQllRamY4SzNR?oc=5",
+      "titre": "Quel lecteur Blu-ray 4K choisir en 2026 ? Notre sélection des meilleurs modèles",
+      "source": "Clubic",
+      "date": "2026-10-05",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "choisir-un-modele",
+      "section": "⚖️ Choisir un modèle",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "langue": "fr",
+      "site": "clubic.com",
+      "publie": "2026-10-06"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNRUg5dmllU1JfTm5XcXpBeTlGaHZmVThlRURzMTBlZ3RiM0tCSFpGWDhEUEhHNWc4WjA1STJsUm85UTAxcnhSc2xoWmRPVld0cU5vWV9rNjZPb1NwVU5YYnlyMF9zdUVLM0xIRFBucGdQOGwyUGtKM3hnTGg4UXBIU0VqRVBGVm9EYjRkYXp6UHozckdsMWxBVGhvSzdhQndadGY0Y04zNXA1MUwxWHhiWl82TGc3dWptVDVubDdySVVnakEzckVpQktfQTlKdk53eURyN0k2SFZKOGk5bzdNcWZpNWlYcjhXajNwWEQtZHpWZy1WV0ZEdF93?oc=5",
+      "titre": "«Il s’inscrit dans la lignée des jeux gacha» : WikiMasters, ce nouveau jeu en ligne qui cartonne sur les réseaux sociaux",
+      "source": "Le Figaro",
+      "date": "2026-10-05",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-06"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOZjhBeWZLRm1OdER0ZEoxVkZPRERWRmttMkZ0ZHV0UFJzNVdpcXFyZUtvN1NkVmF1TGNiWmFXaEhkZTl2NThaUjhrV1ZycG5tNFpjanAyZzZhN28tYzJ3MHZOTkJTV1V2dklPWE95WVpRN1RlLVIyQTJNWHRZSDZhMVJUam0tN3BuNkliekxRR1B0QjRLX1RERjZ3MG1sUnc0OGRIUjhOYjM4RjRBZnVUalJtOWY2MExZaGcyTVdnekxLX2pONTBLQmJvQmV0WVZ6NUhDLWhjTHg3d3ZXREs2aF9xWEFRejV4bFd3b0RHamhBd2ZCUGQ3Yk03MUxIQ1RybmFBV0tJRHFxa0g2UmVLUmc4QQ?oc=5",
+      "titre": "Comment une faille logicielle a entraîné des fuites de données de l’Etat, touchant jusqu’à l’agence de cybersécurité",
+      "source": "Libération",
+      "date": "2026-10-04",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "liberation.fr",
+      "publie": "2026-10-06"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNZ0lpbDFRcTlzXzN1MlVCSWZuUzVGZnhqZGtlQURqUGFhRERMcXZxZVlvZ2p4YU9TYUZIVjlqbTc5T3hQbzR2QTlwOGFWaUxYUEU3aEJ2eWN4a21IbkJnT0ZkR21zWThHU3o3U05oV052dzlHLWREbmFRZ3FLNnRmY3U0MzZBbHNHRldxQ1owM0VRUXFqZTJPb1VSZVVvNnNoV3h2NGJRU3VpTnNuU05tRzg1UlBrSUI1bjVWb081NlVuem13NmJFZU5ocF9YTk9qSFhORFBVQXZJb083dGFJMVRuZWtUdmZIQ1Y0WEFLMEhUTDRHQU12VHdLT05YWnloYXF5aUlXLU1GeEdkTloxMXhtUi1yRnBmS0RLSEZEVy13eTNTc0E?oc=5",
@@ -212,20 +254,6 @@
       "publie": "2026-10-03"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQclhSQ1VteEFTdjN1ejU4aG5ocEJmcE00N1ZCamxPWnlId255WHkwUlBhNDM2TE9KakJPQlkwMDk0azZVNllEYzRuX1Bfb3JfNUR1blZDMVhWcXBQS3UxSXkxTUctX3hrSUNnWDRkQXF6NGg0eTNsZlpDcFFXUTlVd1pZaFBKRjBnLTd3U21sVnpqazgyY2ltXzhFU0pKanBFSEJDSzNhcGJvNHJycG9jbUZUeFFINUlTdlo5dmc4dFYzNmNaakp6b2tnU1FFaDctLXZjcGhMaUozQzU3cmF5Zm50QVNoaHJTcDlrU0RlMnhUWlZtVDYwbkNhSk8wclFnbzNMOUhnTFFTbDRpNThIU2JLUU05OUJnbmR2RXFGT0l5X3NfQXc?oc=5",
-      "titre": "Fuite de données chez l’Anssi et la Dinum : les agences gouvernementales spécialisées dans la cybersécurité piratées",
-      "source": "Ouest-France",
-      "date": "2026-10-01",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "ouest-france.fr",
-      "publie": "2026-10-04"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOZEtVUTc3RVFfUVEtZ3lDOXotaVZNZkZXR3JPMS1EM3NxT2lZeEd4eEp0ZUZ0TDZXRk1hM1RaUXB6dnpxWWpjc3hJaDhqTkhJd21lekVfRUZkdkR2WmZpQVVqbVdBcU1hN3BQRlUxWkNRSUptRDlLOW91Q3J0MmItV3hTd0JSTndNTTl5YzRJTTlHSkJzZ252WWJOTDJpN3MtaldGcXlVbUJlQ2NNT3BVc05DRzVsbXMxUEhpQ3ZnSWhzaXh5LXBCZUozbGZPQQ?oc=5",
       "titre": "En attendant l’eurobond, la Guinée finance son budget avec l’épargne nationale",
       "source": "La Tribune",
@@ -307,34 +335,6 @@
       "sujet": "🌱 Sobriété numérique — Débutant",
       "langue": "fr",
       "site": "arcep.fr",
-      "publie": "2026-10-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTl9iV25pOGlRX3Q1RjlhTW9pNTBSd3FqbzhfRlBwb25ubTk1b3hINXNCNW9OWXNnenExQkpwS0lueUdnM0R4ZHFhZVpENThPT1J2NUZtbmk4cHpuX3NQS0xkNE90OFBXVG8yUXc2d2FNQ3ZBYVJvVVlJTnRYejNYNHhSWmVrLW10?oc=5",
-      "titre": "HackFest Québec 2026 : mon retour au CTF d’ingénierie sociale",
-      "source": "Zataz",
-      "date": "2026-09-28",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "ingenierie-sociale",
-      "section": "🎭 L'ingénierie sociale ciblée",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "zataz.com",
-      "publie": "2026-09-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixwJBVV95cUxNb2xpUGcydXBKOU5pTEYyQVlKWVc0UW5qYWU4OFhhSy12WXVjR1R3Q3BQMlQyUm5uMlhRRUlJRF9nUHA3SU14RG96Y0FjNEVoV0UtVlJrTjlQOVBoaEtCazJkRFZ1VXk3UHFybWNlYkN1dFRWcXRIMk82UlBjWFVscndoejZwZGZhU0otSFo4eHRPZjFwT1ppV1c5bWk2Y2FWeXpTa1prdVE5Z2R0ak5wanJIaE5keW93Zm1uc1NVOFBidnpoMXUyNzJLOThCQ29odkxIWXYzcjZ1SVNOWmVveWkyNzI3ODRQOUhyUU1rTlNScmNxYlJ5VVdiTVZlYThkYXVkMmtaRjEzdDM4YnhUSlRIRmFBbG9EQUFLaDJSODc3SDVzWUVYNEhoSjlJMnZxVjFSX0tDOHkzOFAxdW9Va2VMZjExNXc?oc=5",
-      "titre": "Google simplifie la double authentification, le FBI piraté par vengeance et l'assistant de code de Z.ai qui envoyait vos projets en Chine : on vous raconte la semaine Cyberguerre",
-      "source": "Numerama",
-      "date": "2026-09-27",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "double-authentification",
-      "section": "📱 La double authentification",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "numerama.com",
       "publie": "2026-10-03"
     },
     {
