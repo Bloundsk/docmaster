@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-07T11:59:01.241Z",
+  "maj": "2026-10-07T14:37:31.248Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQkxUTnpiNWtnV0kxR0c2YmdXUVhnRGd0RS1mNDdTUFlac0l5c2lKUFg1cE5wYnk3SGdqZHFtSF9mUGtKZG5nbmdrZG9GMlp1Z1JRRUJQQWxab1FBbHN5aERkeDR0ODhZeHJ0OXlEVDlVZ1lCMm1PTGVudXJNblNLbHNFX08zQVM2QXJhUlNlekR1OFhvSTg3LXljaE9hZlh1U0hQLXh1WURaa3Rxb0J1eDM5X21IR3M3ckVDcFV3NGg5VjY2dlE?oc=5",
@@ -98,6 +98,34 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-10-06"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPbkdGYlgyR2QwSmkzdEU2Y1lHdVlSZkxNb2RwemFXdXk2MnFDMGZaemNTZm1qS0czNjRjQ2h5LUpOME4zOFlXR3NoSks0WWVEcDUtSm92YW9QZXI5cnlQZUZ6LVhwb0FBLW9pOERSZERfRzJMaHBzZ09ZZXVCQXJsRGxYWlVMd2w1Rk5ZRlZqc0xhejY5elVuRW45Y3YwYk9aU3JuVE5MYmlrdE81Z2FJdXVZTF9CYlBuanBvTDRreEwzWDVuSUhxR2FFeG5rMmtwTGcta1ZLMWJYUVNrVjc0ay1OOTR3OFo1YkV0TjdJaGlmX2VrN1FWQy05TWY2QjU0N3hKc2l6RQ?oc=5",
+      "titre": "Finances publiques : la France risque d’être « étranglée par les taux d'intérêt », prévient le gouverneur de la Banque de France",
+      "source": "Sud Ouest",
+      "date": "2026-10-05",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-10-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORmhiUGh2N2dVcnNZbXQydHI4THBvcmVVS3NjdDBfOE12U3Rjc2xtbmt2ZVlzcGF4dmFUM3pRbF9rbTQ3aUJSZ1NhS2h4aGdvUGZPcldnUUVfaDJlZlNSOXZiUEpJZjh1aFlTY1h2VUlscXVQME1uRVhBVS0zdzJHNHpod1BKS1o4X213NjVOVGZOY0I2XzFqSkhvUnFjUlRiaGoxTmFMOEhzMlcwUFBmYnhqMA?oc=5",
+      "titre": "Blocage des lycées : les emplois du temps des élèves sont-ils trop denses ?",
+      "source": "La Croix",
+      "date": "2026-10-05",
+      "guide": "productivite",
+      "page": "intermediaire.html",
+      "ancre": "blocage-de-temps",
+      "section": "📅 Le blocage de temps",
+      "sujet": "⏱️ Productivité & Organisation — Intermédiaire",
+      "langue": "fr",
+      "site": "la-croix.com",
+      "publie": "2026-10-07"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOZjhBeWZLRm1OdER0ZEoxVkZPRERWRmttMkZ0ZHV0UFJzNVdpcXFyZUtvN1NkVmF1TGNiWmFXaEhkZTl2NThaUjhrV1ZycG5tNFpjanAyZzZhN28tYzJ3MHZOTkJTV1V2dklPWE95WVpRN1RlLVIyQTJNWHRZSDZhMVJUam0tN3BuNkliekxRR1B0QjRLX1RERjZ3MG1sUnc0OGRIUjhOYjM4RjRBZnVUalJtOWY2MExZaGcyTVdnekxLX2pONTBLQmJvQmV0WVZ6NUhDLWhjTHg3d3ZXREs2aF9xWEFRejV4bFd3b0RHamhBd2ZCUGQ3Yk03MUxIQ1RybmFBV0tJRHFxa0g2UmVLUmc4QQ?oc=5",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "capital.fr",
       "publie": "2026-09-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQb2RPVkZELVQ1dFZjTlVxRHQ2VklqckZta0J6a1ZabHJoVDRxX1VlcHI4RG5raXh5dzcxRDlnUmZEU2xJaE1jbDJPTG9hQVYxQXVURnRYVE0yVV9kZlVTU2JXZUZoazk4Z1Ntel96V05RWjY4VkwzLVJXZ25zREFSclRxR1ZtUnduZHRvT3h2SkluOXFPV1dnai1WR3dhZnh6ajZHZUNtazJ4cEMxcko2dUhoMl9kU2dNOEw2QmJtVnZ1anpYZjBuOHVvQlM0MzdoeHMtMkhpaTk1a2VGMVEzNFFzR1pBZw?oc=5",
-      "titre": "Bassin d’Aubenas. L’intelligence artificielle bientôt déployée dans la collectivité « pour faciliter la vie des agents »",
-      "source": "Le Dauphiné libéré",
-      "date": "2026-09-29",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "outils-et-fonctions",
-      "section": "🔧 Les outils, ou comment un agent agit",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "langue": "fr",
-      "site": "ledauphine.com",
-      "publie": "2026-09-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQYmZiM1hHS2FJN2o2Y0w1ZlpFM2EycUFNU3lvNFd0MG93cFhfeThLNUZweHJYVnZPUXU3OUtxMnpXV292d2xlUnhkY3lXRVhlczBzUzFXVEdMc3YtQXB3OUVrR1BKQkd1WURZZFIwTE0tOGF2WV92dUFOc2taU2F5S2FvVldNQ0cyUFUwaFcwam1YMXFPanU1RkZrcmtCZjM1dlllby14aWtUNGVYMkd0X3F5WHc1Vm4tM2JOQ1kzWG5zVFpnNm52VmFtY2xrejZMQThnT1lDWVhZX1dBMnlnQkdVZURtVlkwUkNyeFQ3aUxyZmE3VDRyVWU3X1RoaUE2Tk5Qd3ZVRFBwWm05bkVSbF93?oc=5",
-      "titre": "Guerre en Ukraine : des recruteurs russes utiliseraient des publicités sur les réseaux sociaux pour attirer de nouvelles recrues étrangères",
-      "source": "Le Figaro",
-      "date": "2026-09-29",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-10-02"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeUlUZHE3RkJJbVZObDd6clZ5UjZMa1hDVE4zVnpEMFYxbUNnRTNYSmFwUExiSXludWNrMVVoelctN2p3YWFNenRqWU9OQ29qS1c4anVvMTVrc3kwamNYMGljYmNWSFp2VlFSc1lkV0swelk3VHI2RkZKeVk3a1FwTzFRQnVieDc1WlNR?oc=5",
