@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-07T22:19:23.193Z",
+  "maj": "2026-10-07T22:34:03.571Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQkxUTnpiNWtnV0kxR0c2YmdXUVhnRGd0RS1mNDdTUFlac0l5c2lKUFg1cE5wYnk3SGdqZHFtSF9mUGtKZG5nbmdrZG9GMlp1Z1JRRUJQQWxab1FBbHN5aERkeDR0ODhZeHJ0OXlEVDlVZ1lCMm1PTGVudXJNblNLbHNFX08zQVM2QXJhUlNlekR1OFhvSTg3LXljaE9hZlh1U0hQLXh1WURaa3Rxb0J1eDM5X21IR3M3ckVDcFV3NGg5VjY2dlE?oc=5",
@@ -688,6 +688,20 @@
       "publie": "2026-10-07"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSFZfZ0I1TnR1LXVib1ltaGFZall3SllqN1NSejVqYmtPLVM0VVpMTFNib3AwMkk4dElVVDNuc3VlQWItTXdjS1lmbDB5NlN3c3ByZUdSbzFsRDA0QjNDdmNYdG5nN1lXUDhfeUkzcVZMU3Rzdnl1NE1GeG52NjlhVDVENDQxdGE0R1RHQV9KN2VkTjhMeU5xb0lQQXRiQWl0emxvVFpsSzhpZU9hS2c?oc=5",
+      "titre": "Stresszkezelés és lelki egészség: erre fókuszálnak most a munkáltatók",
+      "source": "HR Portál",
+      "date": "2026-10-07",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 A foglalkozás-egészségügy",
+      "sujet": "🩺 Munkahelyi egészség — Haladó",
+      "langue": "hu",
+      "site": "hrportal.hu",
+      "publie": "2026-10-07"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNajVDRllCdEVPSV83SXBTVEdpbUZfZ0prNDdhcnBVUlByWXBVaVR4OTRxbUFQQkpfYW1VT0lvZ1ZlQTVxZ2F5RnV6QzI3WmRJWW15TW0wTVFmNkZ6WXlTX3ZybFU3aTRrc2FhVzE0eGNoaXp3NndnNzNCOVFEZGFtaWpkZy1hTnpIc1ItRE1GamlpOXRTUnc?oc=5",
       "titre": "Hitel, adózás, megtakarítás: most kiderül, mit tudnak ezekről a magyar diákok",
       "source": "Napi.hu",
@@ -784,20 +798,6 @@
       "langue": "hu",
       "site": "hrportal.hu",
       "publie": "2026-09-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNNXVsb0hMcVA2dXZvajFzZTBSazFUckJpVmVvSXhvNkZSVktRTlJhcGRXS0JxTDExajF1cURVT0w0YTBKY0Z5QkNOMkJUWFBmLUp0VkNRQVlWUDVaWGI2SnFib0tXaTF0dUtvc09iLUtFeHZEVEltS3FKZGRicnFQSnJaNUZrOWdtM2F6RGk0cWxBOUhWNUxCVXF5WGtfeXRzRHI0Wjl3?oc=5",
-      "titre": "Egészségügy",
-      "source": "Házipatika",
-      "date": "2026-09-19",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 A foglalkozás-egészségügy",
-      "sujet": "🩺 Munkahelyi egészség — Haladó",
-      "langue": "hu",
-      "site": "hazipatika.com",
-      "publie": "2026-09-20"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxORWp1QTFOWGpIdlRGLUJUTFlrX2JlVjh3RjVLZUVtQkU5MjlWUWczMmJiS0FBZm04MzU2MkNRVjZ1SGxZREtxT1o1YnJIdFp5b3FpblhQSFJwMlc5Z0VsR1JENXBiWHFwNHFwUzJPNjVkVEtjRzYzd0xCZzI1YVBET0J3QjR3cHhGSmtSU2k3Q25oTFpnTl85ajA5dnc0eHczM05nVFEyQ0UyajJlZ2pIM09DbVc3ZUYtazdQUnFKYmJwUlhld3hjUGdyc1cwSGtPS0VFVkhUYUFEUdIB2gFBVV95cUxORWp1QTFOWGpIdlRGLUJUTFlrX2JlVjh3RjVLZUVtQkU5MjlWUWczMmJiS0FBZm04MzU2MkNRVjZ1SGxZREtxT1o1YnJIdFp5b3FpblhQSFJwMlc5Z0VsR1JENXBiWHFwNHFwUzJPNjVkVEtjRzYzd0xCZzI1YVBET0J3QjR3cHhGSmtSU2k3Q25oTFpnTl85ajA5dnc0eHczM05nVFEyQ0UyajJlZ2pIM09DbVc3ZUYtazdQUnFKYmJwUlhld3hjUGdyc1cwSGtPS0VFVkhUYUFEUQ?oc=5",
