@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-07T14:37:31.248Z",
+  "maj": "2026-10-07T14:47:27.844Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQkxUTnpiNWtnV0kxR0c2YmdXUVhnRGd0RS1mNDdTUFlac0l5c2lKUFg1cE5wYnk3SGdqZHFtSF9mUGtKZG5nbmdrZG9GMlp1Z1JRRUJQQWxab1FBbHN5aERkeDR0ODhZeHJ0OXlEVDlVZ1lCMm1PTGVudXJNblNLbHNFX08zQVM2QXJhUlNlekR1OFhvSTg3LXljaE9hZlh1U0hQLXh1WURaa3Rxb0J1eDM5X21IR3M3ckVDcFV3NGg5VjY2dlE?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-09-29"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
+      "titre": "HSBC plans sweeping job cuts across UK wealth business in AI push",
+      "source": "Financial Times",
+      "date": "2026-10-07",
+      "guide": "entrepreneuriat",
+      "page": "debutant.html",
+      "ancre": "the-business-plan",
+      "section": "📋 The business plan",
+      "sujet": "🚀 Entrepreneurship — Beginner",
+      "langue": "en",
+      "site": "ft.com",
+      "publie": "2026-10-07"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeUlUZHE3RkJJbVZObDd6clZ5UjZMa1hDVE4zVnpEMFYxbUNnRTNYSmFwUExiSXludWNrMVVoelctN2p3YWFNenRqWU9OQ29qS1c4anVvMTVrc3kwamNYMGljYmNWSFp2VlFSc1lkV0swelk3VHI2RkZKeVk3a1FwTzFRQnVieDc1WlNR?oc=5",
       "titre": "Getting the best out of occupational health",
       "source": "People Management",
@@ -350,6 +364,48 @@
       "langue": "en",
       "site": "peoplemanagement.co.uk",
       "publie": "2026-10-06"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQajdwZTRHQVhtSDIwTE1HcTZRTEdGYThLaXdhR0xOYkplS0xDa2ZYaHVZcWVpblp2UjVmMjROMWhkWVIyS1NBNHcyZ1lORUtsR2piclpOWDJaRUZickdBaUxXc1QzMy1lMFBXR3NkSl91YzZPVWhrbEZvMzBrZkxTdlNXOU9nQzhLeG94MTZKWmN4aXBfRXUtWnJCNERpNkRM?oc=5",
+      "titre": "Asos ‘hacked’: app customers receive alert suggesting data breach",
+      "source": "The Times",
+      "date": "2026-10-06",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "data-breaches",
+      "section": "🧬 Data breaches",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "thetimes.com",
+      "publie": "2026-10-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZl9tZ3NEQUdFMzlRMVBoVC1DU3FRV244TERfR1BkOWRSaWlkOWd2M1N3N2xHNVUyZVZ0Z1pBUlVtWi1jbGItLWJzdEYtSnhCb2VCV3dSYklXanhEUi1pZm1KcTk0YmhENjQ5NGRJdkxpNEZSMWZDRmxKYmtGVzhpcDdwaTJ6SVAxeG0xbTNPTkYwYm91a2VsOUpPZ3RyTlI3?oc=5",
+      "titre": "NS&I increases rates on British Savings Bonds in major boost to savers",
+      "source": "The Independent",
+      "date": "2026-10-06",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "independent.co.uk",
+      "publie": "2026-10-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYlM2NEl1ZTVxSE1aOGhQa21YNjR3YWZrcTEyaW5QdVNKY01sSFhsVDFTeVZhQjRyNEVZZ2tGQ3kxNjJZWlRXVHR5MWZvWUxJelEzbVo2RmZGRmRFNzFBZFZnWVR4bVltRjNqNU1qMXFpUzJsaHBHdWlXUV82VGl6NkcxbndwaGszRFZ1U2xJZ2lnTkUwdVg4ZDNPYXZZcmFVSFFqNmZnTUE2MFluMFc4?oc=5",
+      "titre": "More than a third of UK business owners fell into entrepreneurship by accident",
+      "source": "The Herald",
+      "date": "2026-10-02",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "the-business-model",
+      "section": "💰 The business model",
+      "sujet": "🚀 Entrepreneurship — Intermediate",
+      "langue": "en",
+      "site": "heraldscotland.com",
+      "publie": "2026-10-07"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSjFoNFg0TVBBT05KZk8wMk1qRVNnX0c5bHJKMWlrWDVpN1E2Yy1QSFNvRWRHZjE2SHJtUWw5VVBlUl95WWp4bjV0eWQ2dnhNWDVXX1loU2VWal9zZFJpTUZFdjNPQ2E4RVpMMHY4VmVhVVEtNW8wQUsybVNhREJMbnBtYklZTC1LWW1xT25EQnFrY01LQ0M0TG52REZHYjFkMFZ3U280bXpvTklrcUxDTkRiUzhqUUZmQ3dnN1FzYw?oc=5",
@@ -434,20 +490,6 @@
       "langue": "en",
       "site": "theguardian.com",
       "publie": "2026-09-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQ0JvaFRTekRvYlFBNV9WWFBvamlzdGl6MEpJVkNlNHpqV2YzeDFpMDZRLWJwYlYyaEZRM0lublBGRUdIVkFpZ2txY21sUV9VV19oa1JDRmQtdndaWTZRd05PcWpxazVyMkpNeGdRQ0plTUZUS1JiVDVfSXpUZzZ5aWxGQ2FObmpsWEJaTXlxZmZFbWRhdVFhVjN2RFFkQnRl?oc=5",
-      "titre": "Bank of England chief warns of interest rate rises",
-      "source": "The Telegraph",
-      "date": "2026-09-25",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "telegraph.co.uk",
-      "publie": "2026-09-27"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTVlESVBYeUhjOWhZdnNteGdWZEthbnVhNGt5X1BxbmVTc0pGaDNOZFZhTVFJeFNCQlNZdUZwOVBvM3ZsSTYzMFJNZExSdldNUmw3VHNvay1VS2ZvNW5iMkdWSG5tU1ZUYTh4MkE2MVNocjByM2ZEdElLSXFJd3IyVkVkMGVpQjlzUFNsLXFCaWp3RlFFVDhBZFMwMmk3ek1vRzFEU1U2blMyR2ZrRXc?oc=5",
@@ -629,20 +671,6 @@
       "sujet": "📊 Data & Analytics — Beginner",
       "langue": "en",
       "site": "theguardian.com",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWWR3T3JvdElRbzBTOFhLMnRfcHI1NmdBYnZYWVpXdWUxdHlkRl9nQ3lDV2VaQXlUMXRvNjFwV05qUmw4ZXUzeEdwb2s0VXZlNzBTWk9xU0Fxc29Cc1JaSkx4dEVZV3ZXREhOampPN05JcWRJYmFaeGtRZkxsNEgzMHZ0WGE3bE93ODctUG0wc08wdGNzYlVlUTJiMHYwakp1aEE?oc=5",
-      "titre": "Build a supportive learning community for graduate apprentices",
-      "source": "Times Higher Education",
-      "date": "2026-09-08",
-      "guide": "apprendre",
-      "page": "avance.html",
-      "ancre": "building-your-system",
-      "section": "📐 Building your system",
-      "sujet": "🎓 Learning how to learn — Advanced",
-      "langue": "en",
-      "site": "timeshighereducation.com",
       "publie": "2026-09-13"
     },
     {
