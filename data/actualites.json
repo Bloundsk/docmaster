@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-07T22:34:03.571Z",
+  "maj": "2026-10-08T14:42:15.551Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTm9kWU1XcE1QSnBESVhfblpUa0ZHejdiVGdrR3FxcElBYXIxd0kzazJ4Rnh5bWMya3owT1liUk9HSEpCbTNDUnY1ajRuRklFaTFITzRWNDg4NWNIU2FiZE1KYlBzTkdTWlJocDctSjM4bzN6WHhzMzV1RTFHMDhTNmdKMm05SUVzcVN2YnNzemJtUUhoWnctdlREUC1CQQ?oc=5",
+      "titre": "Surface Laptop Ultra : Microsoft attaque le MacBook Pro de front",
+      "source": "01net",
+      "date": "2026-10-08",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "surface-attaque",
+      "section": "🗺️ Ta surface d'attaque",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "01net.com",
+      "publie": "2026-10-08"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQkxUTnpiNWtnV0kxR0c2YmdXUVhnRGd0RS1mNDdTUFlac0l5c2lKUFg1cE5wYnk3SGdqZHFtSF9mUGtKZG5nbmdrZG9GMlp1Z1JRRUJQQWxab1FBbHN5aERkeDR0ODhZeHJ0OXlEVDlVZ1lCMm1PTGVudXJNblNLbHNFX08zQVM2QXJhUlNlekR1OFhvSTg3LXljaE9hZlh1U0hQLXh1WURaa3Rxb0J1eDM5X21IR3M3ckVDcFV3NGg5VjY2dlE?oc=5",
       "titre": "La prévention des difficultés des entreprises en droit français : du signal économique à la saisine du juge.",
@@ -128,6 +142,20 @@
       "publie": "2026-10-07"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPdHMtLXhEWDBacld3THQzdlVHcS1GR1lFbVhaZ1F5QjQzTHpzektDMzFlYVdlVkE1YTQxM3dWY1Z5UlZfaERsOUJJNm5oVmZibm5XREJSbmxQXzRHdHVLYU9OZUo0ajBSQjZYc3hiS2NZVTA2TTdrVHQwNjR0NXFIQzJnMlZPVnAwVGtTa3FhZmwtcTl0OWhrel9COVpMQTV0c3NITVotSUV4Y1BmbVhfSTE2R2FsNTFFOVlSWmtOMHc0QXBKY0syU0xyMG1QNlF1RDJJSU9RZlFoalFpeENSYzUyNnJQY001d3JLbTBwbEVZd3dubVdEcFRBQWZKZ2ktR3pLeFdHeXF0WWhTT0J6VTBXbWFtOEZOOF96MTljUQ?oc=5",
+      "titre": "Noms, prénoms, mails... Les données de plus de 500.000 personnes ont fuité après la cyberattaque dans les Hauts-de-France, selon la région",
+      "source": "BFMTV",
+      "date": "2026-10-05",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-10-08"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOZjhBeWZLRm1OdER0ZEoxVkZPRERWRmttMkZ0ZHV0UFJzNVdpcXFyZUtvN1NkVmF1TGNiWmFXaEhkZTl2NThaUjhrV1ZycG5tNFpjanAyZzZhN28tYzJ3MHZOTkJTV1V2dklPWE95WVpRN1RlLVIyQTJNWHRZSDZhMVJUam0tN3BuNkliekxRR1B0QjRLX1RERjZ3MG1sUnc0OGRIUjhOYjM4RjRBZnVUalJtOWY2MExZaGcyTVdnekxLX2pONTBLQmJvQmV0WVZ6NUhDLWhjTHg3d3ZXREs2aF9xWEFRejV4bFd3b0RHamhBd2ZCUGQ3Yk03MUxIQ1RybmFBV0tJRHFxa0g2UmVLUmc4QQ?oc=5",
       "titre": "Comment une faille logicielle a entraîné des fuites de données de l’Etat, touchant jusqu’à l’agence de cybersécurité",
       "source": "Libération",
@@ -196,20 +224,6 @@
       "langue": "fr",
       "site": "capital.fr",
       "publie": "2026-10-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNYkxPVXpXYzRQOFBCVFE5dEh2WFR3S1U5RHN5NFFRNWJKY2lpV0NjQVNDR2lLbmxXSVFLcDk5eWdodDZGSjFsVUtNQ3VQVTBLU2otb1RNQlZEVTMzTzA1SW93U1ZfRXJLdWFQbW9BYnlKZzRRSDBVTVhjT002RkRydEhvbG03cDJkTkZzd182SDFNS29BZ2JseXpaYXlQbXE0bVBXSVU5S1YzZEVEN3NEMHE5TEVrN0d5ZGV0WnpMWTRGVDQzekozSGV5cmkxQjRwU2lacHpuR2VkR0tSN2hxakJvbVFsMGNjcDlxWjJhbXNjcGJuN3JUcEh3SzgyQS1lTmc?oc=5",
-      "titre": "Plus de 18 millions de joueurs concernés: le jeu \"Minecraft\" aurait été victime d'une importante fuite de données",
-      "source": "BFMTV",
-      "date": "2026-10-02",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-10-04"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi9gJBVV95cUxOV0JqVUtVU293LTFVQjE2MWZZQjFfbjBaTWNlV3c2S05zcXk2WFpyNGNJMkFfWUc3RUtvZnVsaUpFeWdGN2ZBZVdpblpaRkNUazliTko1X3ZGcW5ZN3Y4WTRfY2ZNbDRwVHBRUzBvdEFLR1IwdjNSSk9MWThfd2hMNUVHSnhsVldFSmRsNl9YWG93Y2sxb1BKUTQzbVZ2QVJWWlladmYxT0xIM05VTHhLTkV5LXpjeXc1eXk4c1l5cWJucDcyeWpsd1pjMHhfa2V3RmRlcUV0dWtldXZVT1B2emxNbml3VGM1dVo4b29vR0RxTjVUN243WUFfY2p6VXhfUWluSkpSdTdkQXkxalpoVEV3aUN1VGhMMFREWk1Sems4NEZaRkxmR0NLQVVSMmlrMDEyN0JtdWhqS0hGbElUN0hLSXhlYTNPcFhtcW1kUzlPdkhobG1YdDZRS1hsaE9yNnBGcURxcU9OYXhRaVZFOEVQOEMwdw?oc=5",
@@ -321,20 +335,6 @@
       "sujet": "🎨 Design UX/UI — Intermédiaire",
       "langue": "fr",
       "site": "lefigaro.fr",
-      "publie": "2026-09-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNR3BqZ0cxRF9ULUZsd0oxN21sblVZMGdVRW50ZlZsdkxnRC1uNm1oVkpzczlMQWtpV2xFZTRNLUJrdVZPYmQ0ZkpWbjFOemQwZVZBSXhjcDlKeHNPdlV2cG1ScnlTRUZzVFZ1TnZ4Rk5vclZGSUt4Q3UyVU94a0U5QTVfeVplaVRoMmlCbEFHYkxlM01Ra0NtYWhSdFI1MlIyWVBwTjRyWWl2ZzJTZ2xUWXBBVW1HZy10VGM1YzlPMGpzNUR4QXN1cmVoY1NiM2x2RmRSLVVvV2FNakJoc2xR?oc=5",
-      "titre": "Epargne : un Français sur deux changerait de placement en cas de hausse de la fiscalité, mais à quel prix",
-      "source": "Capital",
-      "date": "2026-09-29",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-fiscalité-de-lépargne",
-      "section": "🧾 La fiscalité de l'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "capital.fr",
       "publie": "2026-09-29"
     },
     {
