@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-08T14:59:21.680Z",
+  "maj": "2026-10-08T22:15:24.009Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTm9kWU1XcE1QSnBESVhfblpUa0ZHejdiVGdrR3FxcElBYXIxd0kzazJ4Rnh5bWMya3owT1liUk9HSEpCbTNDUnY1ajRuRklFaTFITzRWNDg4NWNIU2FiZE1KYlBzTkdTWlJocDctSjM4bzN6WHhzMzV1RTFHMDhTNmdKMm05SUVzcVN2YnNzemJtUUhoWnctdlREUC1CQQ?oc=5",
@@ -13,6 +13,48 @@
       "sujet": "🔒 Cybersécurité — Avancé",
       "langue": "fr",
       "site": "01net.com",
+      "publie": "2026-10-08"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMinAJBVV95cUxQcm9lTHNab0U5QnZJellhd0pGdm5uZ2ZlVHlXQVdPVmpjdFFTUjJ1dm1KQVpzUzU0UXZmMXVkandua3RkT0QtdXRMUnFFLW5WSlBONFZCTkRrQU9kVGE3VzZzLVVoMkZDWVZSLTV4cnlxNk91TU11a203UTNwckViLXNpS3V1ek5oMzdiUnFlNEVabjdZdUN1YmVRS1RPNjNvSmw4c0JqOF8zYmhNVzhNdjR5X3pkaEVXTjYyVks3ZjlHd01xWnNuVUVSY1RrSzBaRUFTR3hQRkdoQmIwaEdMSDlOM2xJcEpndkhmZWZjXzRVa2lIYV9Yb0FCMlR2c0dielh0c3dZMTZncVJnQzd1NnNMYkc4aHFMVVBzVQ?oc=5",
+      "titre": "Un bot de Discord a été piraté, jusqu'à 28 millions d'identifiants concernés par une fuite de données massive, selon French Breaches",
+      "source": "BFMTV",
+      "date": "2026-10-08",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-10-08"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPcDJWcTVCQTd4OEFvWmNrX2E3RDFYZnRaX3ZnZ0lxLVRCYjNydE9LTE5KRXJyUDE2NmZMZEowaDJJdlROY2xlbllSWi12dGxITGpZY1Q1RkVYd3BmUE9Cd2pBNU1yMzc4Y3lwX3N6NzFJNXFWSnRYZGRMeGphWDRFUzZ3WWM0RllMTDlNeFNheXd0Q0JzdzlRVUFIV2Rubi1tUy1DQlZlWGR6RlI5ZHJZVU1XNmstdE5EU0Nmd0FpaHdIS1pG?oc=5",
+      "titre": "Les pays en développement croulent sous les intérêts de dette publique, alerte l'ONU",
+      "source": "Le Figaro",
+      "date": "2026-10-08",
+      "guide": "dev-web",
+      "page": "avance.html",
+      "ancre": "dette-technique",
+      "section": "🏗️ La dette technique",
+      "sujet": "💻 Développement Web — Avancé",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-08"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihAJBVV95cUxQd2l4dExsUmNvWXotZ04zSEFsV0RLaU9QSDdZMjNQMmtPVlZuMm1rU2gydFRPOW5PRmtrQWdqZXVEdUNmMXhYZXVwZDZ6OUZRanFfcWJnTUFwcHNYZFFMRE9JMThGcE5QSExBQ0kyMUhLY1FEa28tWEtITHQyY005UVFnS0liY0MzWVQ3LWxScmpiREtwUmJlWkdXaXI1LTVYZFBJQ21xcjRXWXJ3NzAtcFZ5NkxJS0FOTlJpeEhtNThYREVrYlQ5RFdGUFJ0bkpQRUJPcTMtSDN0aWZXcWo0bDN1TFlZUGdkbGNHSFdQMDctSmVWcExvVmZJQ0g4LXVaT2szcA?oc=5",
+      "titre": "\"Votre rémunération est inscrite dans votre contrat de travail\" : mon employeur a-t-il le droit de baisser mon salaire sans mon accord",
+      "source": "TF1 Info",
+      "date": "2026-10-08",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-obligations-de-lemployeur",
+      "section": "🛡️ Les obligations de l'employeur",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "tf1info.fr",
       "publie": "2026-10-08"
     },
     {
@@ -184,20 +226,6 @@
       "publie": "2026-10-04"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQRTZSci1HNVkzTmIxYnhCWWtMZzROcG5oWmgwVGNMM0YwM29WeDdBdTE4djVyVXZQR2s4ZTBrMEk0a3ZFQjAzT3Z4R1VlbmhCUjhYNE9Fc0R5U3FTVG1laFhiX3FROHQzbHktSGd5cjhHdWcxTEdBanhxRmlwV2ZreWlnYnBmTy1mekZNZTV3UTlxMzdCY29EVjI5dk1vTlFOTENwQkw1bjVnODBZY0hxTUV0cS14TGRGOHhMTkRaNFVrTnNHb1UwLW41Zm03eU53YzBxR2d2eDdQc184WWpkRU95SjhCQXNqU2VEbkhHMkd6ZjMzaEE?oc=5",
-      "titre": "La région Hauts-de-France victime d’une importante fuite de données personnelles après une cyberattaque",
-      "source": "Sud Ouest",
-      "date": "2026-10-03",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-10-05"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQazZFeDRBSEdERVp0X01xSEZqMnlMNEpCS1o5VzZkel9QMl9VX1hBSWg1QXRIWTNoWC1wclE5ZkVQM1pyTVlkMVdTZm5kRWJ4dURId0J3V3kwY1pVQUUzN3Z3RlIwaElHWFNjUVFIYmFraWxyaTJhSGNnbkFqMVktM05VMDE4NDlUWDFSRlIzcVJQTlNlZ0UtbHNCVDY0R3A0RHZyNXZPeC1OTDhzX1dNNTZoaW9NdlJuTE9UNUZQM3RRd3hwM3h2ZEZoUkJFMG1sNTh6TjFmc1B1ajR5ZDNnd25OcVFoajFJOWFYTkVhcFpzWUIxd18ta3g4bThEN3lPY2JmVG9XWjZTcnU2ZjBqRWFHaE0?oc=5",
       "titre": "OpenAI vire trois chercheurs en sécurité qui s’inquiétaient publiquement du développement de l’IA",
       "source": "Libération",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "sudouest.fr",
       "publie": "2026-10-03"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOZEtVUTc3RVFfUVEtZ3lDOXotaVZNZkZXR3JPMS1EM3NxT2lZeEd4eEp0ZUZ0TDZXRk1hM1RaUXB6dnpxWWpjc3hJaDhqTkhJd21lekVfRUZkdkR2WmZpQVVqbVdBcU1hN3BQRlUxWkNRSUptRDlLOW91Q3J0MmItV3hTd0JSTndNTTl5YzRJTTlHSkJzZ252WWJOTDJpN3MtaldGcXlVbUJlQ2NNT3BVc05DRzVsbXMxUEhpQ3ZnSWhzaXh5LXBCZUozbGZPQQ?oc=5",
-      "titre": "En attendant l’eurobond, la Guinée finance son budget avec l’épargne nationale",
-      "source": "La Tribune",
-      "date": "2026-09-30",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 L'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "latribune.fr",
-      "publie": "2026-10-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZzY0V2wwVVg1cXpDYW10cUhJZHQ3bTE0akdKTGxaWE5EN3kxcjh4cUxLb0xoYnZ1OTQwcmZDQ1l6MkR0M0hEUUVJZVF1b2lFWU1zUEljU19ERTFodDdoeWRobmRqQUlTeWx2d0daLUhxWDY2bGhNOENydGxZTUF2aFZWUWxaUWY5UzdnakxDZmVvSW04Z2NQdDBxZFJjX09TWHJKRV9SNA?oc=5",
-      "titre": "AGENCE ARCHIDEK : Architecture, urbanisme et design à fort impact",
-      "source": "Le Figaro",
-      "date": "2026-09-29",
-      "guide": "design",
-      "page": "intermediaire.html",
-      "ancre": "architecture-information",
-      "section": "🧭 L'architecture de l'information",
-      "sujet": "🎨 Design UX/UI — Intermédiaire",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-09-29"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
