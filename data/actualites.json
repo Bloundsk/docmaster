@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-09T12:05:12.163Z",
+  "maj": "2026-10-09T14:27:53.057Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTm9kWU1XcE1QSnBESVhfblpUa0ZHejdiVGdrR3FxcElBYXIxd0kzazJ4Rnh5bWMya3owT1liUk9HSEpCbTNDUnY1ajRuRklFaTFITzRWNDg4NWNIU2FiZE1KYlBzTkdTWlJocDctSjM4bzN6WHhzMzV1RTFHMDhTNmdKMm05SUVzcVN2YnNzemJtUUhoWnctdlREUC1CQQ?oc=5",
@@ -58,6 +58,20 @@
       "publie": "2026-10-08"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNcFpxS2lkVjVNbDZmRTJoSGZoY0pCRWMzQnFMdmlzb3R5X2QzTEZYX2dJNVJQYXJLRENzMVAzanM1TldCZVM3cllReGhHcDNaMmhoZTM5eGZNRTN6aE5hUURXUzkxQ2trY1ZUMWR5YVFISFlDeW1tZjdhTVprRk9aQzVYR0JadHpzbF92bHE5OEFhb3VVaTFkUUxxWUhQMEh0R1hJLUxsek4wMzFhbk1GZ1ZKN1ozUVFCZ0YyTUF1MDEzOG8tQ0w4UjYwN0dXM3E4YTAzMXZoNThoQkdtaUUybjNTVVhoOGxzazVxeWxvZUJwQjg?oc=5",
+      "titre": "Budget 2027 : la commission des finances valide le projet de baisse temporaire de la fiscalité des donations",
+      "source": "Investir",
+      "date": "2026-10-08",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-fiscalité-de-lépargne",
+      "section": "🧾 La fiscalité de l'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "investir.lesechos.fr",
+      "publie": "2026-10-09"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQkxUTnpiNWtnV0kxR0c2YmdXUVhnRGd0RS1mNDdTUFlac0l5c2lKUFg1cE5wYnk3SGdqZHFtSF9mUGtKZG5nbmdrZG9GMlp1Z1JRRUJQQWxab1FBbHN5aERkeDR0ODhZeHJ0OXlEVDlVZ1lCMm1PTGVudXJNblNLbHNFX08zQVM2QXJhUlNlekR1OFhvSTg3LXljaE9hZlh1U0hQLXh1WURaa3Rxb0J1eDM5X21IR3M3ckVDcFV3NGg5VjY2dlE?oc=5",
       "titre": "La prévention des difficultés des entreprises en droit français : du signal économique à la saisine du juge.",
       "source": "Village de la Justice",
@@ -70,6 +84,20 @@
       "langue": "fr",
       "site": "village-justice.com",
       "publie": "2026-10-06"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNX0JDcnV4cFJxOGpvc2RvZlUxUG96ektGRnB0ck5LX3Q2X3JXRHh6OWU5a1pyblgwdlZ6eTZaU1Z3Z0pnT3AwS2FoamRoaEJPb3lFSWo2b1BOdGFPSDNIeTdybHlieEwtdkRoeGZuZHFPM3o4Szd6bHNYZ3lDeW5GRGkySXRQa3FQZnJvNnY5UXJMN19aREp3VF8wRVFiVTh3S0RtbWZoZlFmc2o5ckQ3M0p2NFhBQmQ0SkEzVGlSdy0tQTc2UDRlQw?oc=5",
+      "titre": "IA : la ruée vers la dette des géants de la tech fait grimper les taux d’intérêt",
+      "source": "Le Figaro",
+      "date": "2026-10-06",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-09"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSTNMWXQ2WEZrOUcxazhpa0hCUUU2eTdJS29XTlZoSjZXMm1nNXVGSUdnZGtQX3prVGJLQkp0UkhVeVpONHpDdV9DV2RQcXVBQm1zSk5PYngxTUxKNThfLXJpLTRIUC1fYmtMbEtxX2pUSVlwUWlYbm1uNjFaWU04SVBlRVJBVkk1UmgxUUd3dmJqT3dGV2J5aWdEOENQVFQtWTJRRzdYa2ZzQVU?oc=5",
@@ -282,20 +310,6 @@
       "publie": "2026-10-01"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNQkhhaldwRWRnYXZuODAyT2ZQVFE5Z18wcTByQ1l2VmpIR1UteFZJSnRFVEplZzltdU5ZdVhmVFRRUzNvSHFwcEYxTDl1RkhCU2ZkNzlSSEVJcTR1STh4dU9zWG1nUS1GSFRVeXpPaXhnanFOME1OX0x6STgxZ0UzWmM0bkY2WmZuN29yMWVhUlpGY2didEZyVHlJanlHQTFJZUJoS2wyMG1wa1FlZll1Zmo4aXkyS1JtQWRVWTNhY2ZaRG83QmhLUWlDZC1NLUIxVWpqeEszQlh4eVRhREFsY2h2SDl1cUpR?oc=5",
-      "titre": "La France en pleine tempête sur la dette, les taux d’intérêt au plus haut depuis 2002",
-      "source": "Le Monde",
-      "date": "2026-10-01",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "lemonde.fr",
-      "publie": "2026-10-01"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOS1BmNUZObGhMZEE4OVo5ZTcxTXM3OW9FZ1pmcDctYjJzWXZ2eU5fTUZBcTBzU1VwbEotVUdRV2pfNnl3bk5idjlqNEIwT1lfNjJsN21pQUEyam1sa3I4aDBtRkp6M1FFR3VOMGZMWWI0SDE2TkRfUzdlQVc0MkN4eVFsVWpyeHdCMWM2YmppUHktbUtYYmVrVXBVb2x3dEVwX1lzSXZsMnR5eVVLbDYzQmR0MWdEWmZjYk52R3BWZkYtMEFtVnhXYWVyUTdEQ0JObzBrVS1yeDJ3VGhxMlNlTm1pQ2d6OXlTZW1kZ0YtLU5OTVdpMDluN2lTVQ?oc=5",
       "titre": "Le budget 2027 soumis à un gros risque de dérapage, selon le Haut Conseil des finances publiques",
       "source": "Le Monde",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-10-02"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOTjc5VlJPUEJmUTdvRWcxOGRMUGdwbWZSdFVNMEEyei1jLW81NVFjMnpwMk1vaXJLNllGbWViZmVFOVYtMDFqM3VTclJDWlFUV0pnX0poSlAtSkw3ZFpUWVMwaHVoOUFYS1EtdjVwN3ZjTGVXVHZja2NBdzNqbHcwOXRYak54bkNDbFpkS1g2V0xZNzB4RV9PZGYzT1UwaGY1T3NfMUJ0ampldHZ0Y0ZHY2owU2l4c1IxTHdLY1BtUlVKaE10aGVmLUtGQlk3dkotZDkxbmxRWF9udmExOGU4WGVNRHNHZ2ZiSHMtY2NkR3E?oc=5",
-      "titre": "Intelligence artificielle : Google présente son nouvel agent Gemini 4 mais en limite l’accès aux experts en cybersécurité",
-      "source": "Sud Ouest",
-      "date": "2026-10-01",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "outils-et-fonctions",
-      "section": "🔧 Les outils, ou comment un agent agit",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-10-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
