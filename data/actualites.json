@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-08T22:15:24.009Z",
+  "maj": "2026-10-09T12:05:12.163Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTm9kWU1XcE1QSnBESVhfblpUa0ZHejdiVGdrR3FxcElBYXIxd0kzazJ4Rnh5bWMya3owT1liUk9HSEpCbTNDUnY1ajRuRklFaTFITzRWNDg4NWNIU2FiZE1KYlBzTkdTWlJocDctSjM4bzN6WHhzMzV1RTFHMDhTNmdKMm05SUVzcVN2YnNzemJtUUhoWnctdlREUC1CQQ?oc=5",
@@ -650,20 +650,6 @@
       "titre": "Florida sues Netflix over misleading parents over minors’ data collection",
       "source": "The Guardian",
       "date": "2026-09-11",
-      "guide": "data",
-      "page": "debutant.html",
-      "ancre": "data-collection",
-      "section": "🗂️ Data collection",
-      "sujet": "📊 Data & Analytics — Beginner",
-      "langue": "en",
-      "site": "theguardian.com",
-      "publie": "2026-09-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPdXZzZXg5N19jcFB0WXNfU0h4cVhFVlJTb3JobHdidU1ZN1FoUUxuZkZjUkZvemhSWFd0YzBXaGRuWk1PRzMxMnlYb3E2MHRxNU5CcTloUFFLUS1LVVEzTlc2RjVuNEFHVVdNazFOQk02RzVKc1JsWnN3X09zVlpYMDVYRE11QWxCMGdQMW5NWWZoVmlkQzUyeENqdEd1REtnWVpVeXQwTk9HbUU0MGt0X2pDVXVMRTlCbW9mZXp6dG11ZFVUV2FKYkF4dkdCNmx1WFJEXzk0QWk?oc=5",
-      "titre": "NDIS data may have ended up in Palantir’s analytics platform as part of efforts to curb fraud",
-      "source": "The Guardian",
-      "date": "2026-09-09",
       "guide": "data",
       "page": "debutant.html",
       "ancre": "data-collection",
