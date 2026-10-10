@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-09T22:09:30.320Z",
+  "maj": "2026-10-10T13:52:30.446Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd1JOOUZxSlozZGFwQnFONllEcjRaMzBwZlkyRHVheC12NGF5Z0xDdVFwc3V4TW1XS2lyMmZuVnByZEVKT3VwQ3BFTVRuYnE2U21zN2VfSVJtUGtVTV83dk1UT0ZYTU5rVzV2UERNN2FxNVFNeGt4NGJSSUp5eTBVNndTbFBjSWtzRmdsc1pab1NvdmNwT2JxYVRoTk9kZ1VrUnRvRw?oc=5",
+      "titre": "La Turquie interdit les réseaux sociaux aux moins de 15 ans",
+      "source": "Le Figaro",
+      "date": "2026-10-10",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-10"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTm9kWU1XcE1QSnBESVhfblpUa0ZHejdiVGdrR3FxcElBYXIxd0kzazJ4Rnh5bWMya3owT1liUk9HSEpCbTNDUnY1ajRuRklFaTFITzRWNDg4NWNIU2FiZE1KYlBzTkdTWlJocDctSjM4bzN6WHhzMzV1RTFHMDhTNmdKMm05SUVzcVN2YnNzemJtUUhoWnctdlREUC1CQQ?oc=5",
       "titre": "Surface Laptop Ultra : Microsoft attaque le MacBook Pro de front",
@@ -70,6 +84,20 @@
       "langue": "fr",
       "site": "investir.lesechos.fr",
       "publie": "2026-10-09"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPM3VZUTdINnBMc1dLV2MyUjhnOUhoN0JsLWFzbUIwbjBMbDhaVzhTQlctdHE1WHUxM205dWl3bEI2WFhFTlVPZXR6SFJ2Sm10ZFF5dnhXUGdOSGwybDhFV3JWQnVYZjNFQy1fWEx2LW9aRnRPNlZ4LUxDV1UycXZLazRUclNKRll1VzhuZk1oY3RiOUpHRmkyQ2NvUGNDZEJOUjBDc0xoZ1Z4NlJrRzlRZmMtY1hZVVNUTGNJUWtHdVc?oc=5",
+      "titre": "Des agents victimes d’un vol d’outils au cimetière du Coudray-Macouard",
+      "source": "20 Minutes",
+      "date": "2026-10-07",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "outils-et-fonctions",
+      "section": "🔧 Les outils, ou comment un agent agit",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "langue": "fr",
+      "site": "20minutes.fr",
+      "publie": "2026-10-10"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQkxUTnpiNWtnV0kxR0c2YmdXUVhnRGd0RS1mNDdTUFlac0l5c2lKUFg1cE5wYnk3SGdqZHFtSF9mUGtKZG5nbmdrZG9GMlp1Z1JRRUJQQWxab1FBbHN5aERkeDR0ODhZeHJ0OXlEVDlVZ1lCMm1PTGVudXJNblNLbHNFX08zQVM2QXJhUlNlekR1OFhvSTg3LXljaE9hZlh1U0hQLXh1WURaa3Rxb0J1eDM5X21IR3M3ckVDcFV3NGg5VjY2dlE?oc=5",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "nouvelobs.com",
       "publie": "2026-10-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOS1BmNUZObGhMZEE4OVo5ZTcxTXM3OW9FZ1pmcDctYjJzWXZ2eU5fTUZBcTBzU1VwbEotVUdRV2pfNnl3bk5idjlqNEIwT1lfNjJsN21pQUEyam1sa3I4aDBtRkp6M1FFR3VOMGZMWWI0SDE2TkRfUzdlQVc0MkN4eVFsVWpyeHdCMWM2YmppUHktbUtYYmVrVXBVb2x3dEVwX1lzSXZsMnR5eVVLbDYzQmR0MWdEWmZjYk52R3BWZkYtMEFtVnhXYWVyUTdEQ0JObzBrVS1yeDJ3VGhxMlNlTm1pQ2d6OXlTZW1kZ0YtLU5OTVdpMDluN2lTVQ?oc=5",
-      "titre": "Le budget 2027 soumis à un gros risque de dérapage, selon le Haut Conseil des finances publiques",
-      "source": "Le Monde",
-      "date": "2026-10-01",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "lemonde.fr",
-      "publie": "2026-10-02"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOcHNNbWRzV0NkZjlCYzNYMG1Lc2w2a2ZMNlFJZy0tUG1HbmZvRDV5ejdkUTdiam42bFRSVUhxeFZjRkJyNUdxWVdfNU1nVlRxVnhUT3Q2aU1xTjlpMWpmRGJuRWxlcFFkYmtBWGFfYTRxajZyUE1KMzJXSlpCUXowQ3ZnLUlGa0pEZ1U2YW5wLV9Pald4dENfSVVZMFRySl9FN0dxZ2F0ejdhUWdyaDVXT29Ga25UcWJYQjE4TElQdGJpWm83dkpKMDQ4SlhTTDhUeVAtbVA1RHJnQ0E3YzNUdXFJcXc0ZlVJODBNN2oxamN3dGhtem9WQ3ZFVUIyZVVhLVh5VGVOcw?oc=5",
-      "titre": "«Ce sont des guéguerres sur les réseaux sociaux» : Dembélé sort du silence au sujet de la polémique face à Mbappé",
-      "source": "Le Figaro",
-      "date": "2026-10-01",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-10-02"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
