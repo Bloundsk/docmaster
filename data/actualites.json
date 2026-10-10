@@ -1,11 +1,25 @@
 {
-  "maj": "2026-10-10T14:23:52.871Z",
+  "maj": "2026-10-10T20:38:16.558Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd1JOOUZxSlozZGFwQnFONllEcjRaMzBwZlkyRHVheC12NGF5Z0xDdVFwc3V4TW1XS2lyMmZuVnByZEVKT3VwQ3BFTVRuYnE2U21zN2VfSVJtUGtVTV83dk1UT0ZYTU5rVzV2UERNN2FxNVFNeGt4NGJSSUp5eTBVNndTbFBjSWtzRmdsc1pab1NvdmNwT2JxYVRoTk9kZ1VrUnRvRw?oc=5",
       "titre": "La Turquie interdit les réseaux sociaux aux moins de 15 ans",
       "source": "Le Figaro",
       "date": "2026-10-10",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-10"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNUldtankxbjFpdk5zX0RBYVZWMUs3cHZXT1B0V2RyWDUwdVhWVDJXYlduVV91Qm80N3VHeW9pTElFMFpLMXhLTXhUSTF5eWdDOGZjakdFQ1BNNkhpN3EwNUhrbDJWRlA2UkJFa011MDczVl9sNTh1aEl3Y2NRZnlSZ0FxNHZTSXRLX3IyaFVCRHFuY09oUDRIS0pTdF9rZHZObmRNRHViRzFOSEJuVWNCLXhVc0pmd3BuU3hhaTJZbmZ1TVBYZmJTZ1V5Vk5razRPdTEtVlBoRUcwVkFkWWR2SUdxUFpWVjZObWhId01BZTdhdUdkOEZB?oc=5",
+      "titre": "«Dans le foot amateur, une bagarre partagée sur les réseaux sociaux peut vous rendre plus populaire que de marquer un but»",
+      "source": "Le Figaro",
+      "date": "2026-10-09",
       "guide": "marketing",
       "page": "debutant.html",
       "ancre": "réseaux-sociaux",
@@ -321,20 +335,6 @@
       "sujet": "💰 Finance — Avancé",
       "langue": "fr",
       "site": "bfmtv.com",
-      "publie": "2026-10-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPWHRiSmRxaC1zdGJYNEkybFQxc21yMC1jQWxScklrUmVDYkhHRG5JdDFabWJQamZJREtmTDdqT1Y1R0htVVlFVE5KaEFiMHlHZkFwRlJSTGE4QTM0WjFPcUdaQmdNVDlLU25hTEp4STEwemx2RFJqV3V6MnIxcEd5bXZrci1zMks4UEJaeXg0LXRnRGZCcm1kTlUtdWJhVGtzbklmU2xpbDBxaW1Hc2lsQXY1N0ZSbEZvZFNYRnlXM2FlNUUtMng5MlFVaGk4enZvZTROV3hEeEtubnVyZ05uUW5vZlhLZUNUV01jSzRyQ1lZTlRo?oc=5",
-      "titre": "Risques personnels des candidats et casse-tête bancaire : comment se finance une campagne présidentielle ?",
-      "source": "Le Nouvel Obs",
-      "date": "2026-10-01",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "nouvelobs.com",
       "publie": "2026-10-01"
     },
     {
