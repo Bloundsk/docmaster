@@ -1,5 +1,47 @@
 # Changelog — Clicked
 
+## 2026-10-11 — Les quatorze podcasts hongrois
+
+Les trois langues ont désormais leurs quatorze épisodes. La page hongroise
+n'affiche plus aucun épisode de repli en français, et le flux `hu/podcast.xml`
+en compte quatorze.
+
+| Parcours | Épisode | Durée |
+|---|---|---|
+| Pénzügyek | Vagyonépítés indexalapokkal és hideg fejjel | 2 min 02 |
+| A tanulás tanulása | Így rögzítheted a tudást véglegesen | 1 min 58 |
+| Termelékenység és szervezés | Ne az idődet, az energiádat oszd be | 1 min 58 |
+| Mesterséges intelligencia | A mesterséges intelligencia valójában csak szövegjósló | 1 min 57 |
+| Adatok és elemzés | Ne csapd be magad az adatokkal | 1 min 43 |
+| UX/UI design | A jó UX nem ízlés kérdése | 1 min 52 |
+| Webfejlesztés | Házépítéstől a technikai adósságig a webfejlesztésben | 1 min 49 |
+| Kiberbiztonság | Így ne légy könnyű online célpont | 1 min 46 |
+| Digitális marketing | Így építs lyukak nélküli digitális marketingrendszert | 1 min 48 |
+| Tárgyalás és kommunikáció | Tárgyalási taktikák és a B-terv ereje | 1 min 52 |
+| Digitális mértékletesség | A legzöldebb kütyü a zsebedben lapul | 1 min 42 |
+| Vállalkozás | Validálás, likviditás és nyereséges növekedés | 1 min 46 |
+| Jog és ügyintézés | Így nyerhetsz jogvitát bíróság nélkül | 1 min 53 |
+| Munkahelyi egészség | Testi és mentális önvédelem a munkahelyen | 1 min 48 |
+
+Chaque épisode a été transcrit et vérifié avant publication : le nom du site
+cité, les trois temps du parcours, le rappel pédagogique, une phrase de
+synthèse, et les chiffres rapprochés du guide. whisper-base rend mal le
+hongrois : il sert à lire la STRUCTURE, et chaque anomalie — les boucles
+« hogy az » de l'IA, de Négociation et d'Écologie — a été revérifiée sur un
+extrait court avant d'être écartée. Ludo avait validé le premier épisode à
+l'oreille le 18 septembre : *« le hongrois est bon »*.
+
+Les résumés écrits sont rédigés en hongrois d'après l'épisode, jamais traduits
+du français.
+
+### Pages d'honnêteté remises à jour
+
+- **FAQ et « À propos » hongroises** annonçaient des épisodes en français et
+  renvoyaient au flux français : elles annoncent maintenant les quatorze
+  épisodes hongrois et pointent vers `hu/podcast.xml`.
+- **FAQ et « À propos » anglaises** promettaient encore un repli en français
+  pour les épisodes « pas encore prêts » — faux depuis le 18 septembre.
+
 ## 2026-09-18 — Les quatorze podcasts anglais sont complets
 
 | Parcours | Épisode | Durée |

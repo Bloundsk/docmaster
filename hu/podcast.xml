@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    <channel>
+        <title>Clicked — magyar</title>
+        <link>https://bloundsk.github.io/docmaster/hu/podcasts.html</link>
+        <description>Ingyenes tanulási utak a jövő készségeinek megértéséhez.</description>
+        <language>hu</language>
+        <itunes:author>Clicked</itunes:author>
+        <itunes:explicit>false</itunes:explicit>
+        <itunes:image href="https://bloundsk.github.io/docmaster/assets/img/og-image.png"/>
+        <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://bloundsk.github.io/docmaster/hu/podcast.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title>Munkahelyi egészség — Testi és mentális önvédelem a munkahelyen</title>
+            <description>Nem a termelékenységről szól: a hétvégi futás nem írja felül a napi ülést, a krónikus stressz a mozgástér hiányából fakad, és baj esetén a dátumozott írás a legfontosabb. A Munkahelyi egészség útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#sante</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#sante</guid>
+            <pubDate>Sun, 11 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/sante.mp3" length="1303856" type="audio/mpeg"/>
+            <itunes:duration>109</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Jog és ügyintézés — Így nyerhetsz jogvitát bíróság nélkül</title>
+            <description>A papírnyom mindennél fontosabb: a telefonos panasz jogilag meg sem történt, a tisztességtelen szerződési feltétel nem érvényes, és az elévülés után a legjobb érv sem ér semmit. A Jog és ügyintézés útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#droit</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#droit</guid>
+            <pubDate>Sat, 10 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/droit.mp3" length="1359340" type="audio/mpeg"/>
+            <itunes:duration>113</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Digitális mértékletesség — A legzöldebb kütyü a zsebedben lapul</title>
+            <description>A környezeti számla nagy részét a gyártás viszi: a régi e-mailek törlése szinte semmit nem ér, a képernyő mérete többet számít a felbontásnál, és a legfontosabb döntés a vásárlás pillanatában születik. A Digitális mértékletesség útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#ecologie</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#ecologie</guid>
+            <pubDate>Sat, 10 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/ecologie.mp3" length="1219532" type="audio/mpeg"/>
+            <itunes:duration>102</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Vállalkozás — Validálás, likviditás és nyereséges növekedés</title>
+            <description>Ne a jövőbeli szándékról kérdezd a vevőket, hanem a múltbeli költésükről; a papíron nyereséges cég is elbukhat, ha elfogy a pénze; és csak akkor növekedj, ha egy ügyfél többet hoz, mint amennyibe kerül. A Vállalkozás útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#entrepreneuriat</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#entrepreneuriat</guid>
+            <pubDate>Sat, 10 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/entrepreneuriat.mp3" length="1272509" type="audio/mpeg"/>
+            <itunes:duration>106</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Tárgyalás és kommunikáció — Tárgyalási taktikák és a B-terv ereje</title>
+            <description>Nem a hangerő dönt, hanem a felkészülés: tudd, mit teszel megegyezés nélkül, kezdd a konklúzióval, figyelj az első számra, és az álláspontok helyett az érdekeket keresd. A Tárgyalás és kommunikáció útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#negociation</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#negociation</guid>
+            <pubDate>Sat, 10 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/negociation.mp3" length="1341159" type="audio/mpeg"/>
+            <itunes:duration>112</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Kiberbiztonság — Így ne légy könnyű online célpont</title>
+            <description>Nem zseniális hakkerek ellen védekezel, hanem a könnyű célpont szerepe ellen: ne használd ugyanazt a jelszót mindenhol, ismerd fel a sürgetést, és tartsd leválasztva a mentést. A Kiberbiztonság útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#cybersecurite</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#cybersecurite</guid>
+            <pubDate>Thu, 08 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/cybersecurite.mp3" length="1274703" type="audio/mpeg"/>
+            <itunes:duration>106</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Webfejlesztés — Házépítéstől a technikai adósságig a webfejlesztésben</title>
+            <description>Előbb az alapok, aztán a festés: a tartalom, a megjelenés és a működés három rétege, okos kommunikáció az adatokkal, és a technikai adósság, amelyet előbb-utóbb kamatostul fizetsz vissza. A Webfejlesztés útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#dev-web</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#dev-web</guid>
+            <pubDate>Thu, 08 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/dev-web.mp3" length="1312319" type="audio/mpeg"/>
+            <itunes:duration>109</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Digitális marketing — Így építs lyukak nélküli digitális marketingrendszert</title>
+            <description>A közösségi oldalon csak bérelsz, a saját listád a tulajdonod; előbb foltozd be a legnagyobb lyukat, és ne keverd a meggyőzést a megtévesztéssel. A Digitális marketing útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#marketing</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#marketing</guid>
+            <pubDate>Thu, 08 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/marketing.mp3" length="1293511" type="audio/mpeg"/>
+            <itunes:duration>108</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Adatok és elemzés — Ne csapd be magad az adatokkal</title>
+            <description>Nem kell hozzá matematikusnak lenni: válaszd szét a hiúsági mutatókat a valódiaktól, ne keverd az együttmozgást az okozással, és ne állítsd le a tesztet, amikor épp tetszik a szám. Az Adatok és elemzés útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#data</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#data</guid>
+            <pubDate>Mon, 05 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/data.mp3" length="1239595" type="audio/mpeg"/>
+            <itunes:duration>103</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>UX/UI design — A jó UX nem ízlés kérdése</title>
+            <description>A felületek tervezése mérhető emberi viselkedésen alapul: előbb a szerkezet, aztán a látvány, tervezés a legnehezebb helyzetekre, és figyelem arra, hogyan érzi a látogató az időt. Az UX/UI design útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#design</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#design</guid>
+            <pubDate>Mon, 05 Oct 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/design.mp3" length="1345861" type="audio/mpeg"/>
+            <itunes:duration>112</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>A tanulás tanulása — Így rögzítheted a tudást véglegesen</title>
+            <description>A kényelmes tanulás becsapja az agyat: önellenőrzés az újraolvasás helyett, növekvő időközönkénti ismétlés, és alvás, amely elmenti a napi munkát. A tanulás tanulása útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#apprendre</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#apprendre</guid>
+            <pubDate>Sun, 20 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/apprendre.mp3" length="1413257" type="audio/mpeg"/>
+            <itunes:duration>118</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Pénzügyek — Vagyonépítés indexalapokkal és hideg fejjel</title>
+            <description>Nem kell hozzá se pénzügyi zseninek lenni, se nagy induló tőke: előbb a biztonsági tartalék, aztán az alacsony költség, és végül a saját pánik féken tartása. A Pénzügyek útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#finance</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#finance</guid>
+            <pubDate>Sun, 20 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/finance.mp3" length="1465919" type="audio/mpeg"/>
+            <itunes:duration>122</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>Mesterséges intelligencia — A mesterséges intelligencia valójában csak szövegjósló</title>
+            <description>Nem tudásbázis, hanem a következő szót találgató motor: ezért hallucinál, ezért nincs memóriája, és ezért soha ne tegyen visszafordíthatatlan lépést a jóváhagyásod nélkül. A Mesterséges intelligencia útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#ia</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#ia</guid>
+            <pubDate>Sun, 20 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/ia.mp3" length="1404166" type="audio/mpeg"/>
+            <itunes:duration>117</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+        <item>
+            <title>⏱ Termelékenység és szervezés — Ne az idődet, az energiádat oszd be</title>
+            <description>A hatékonyság nem folyamatos pörgés: ürítsd ki a fejed, védd meg a figyelmedet a megszakításoktól, és építs rendszert akaraterő helyett. A Termelékenység és szervezés útmutató két percben.</description>
+            <link>https://bloundsk.github.io/docmaster/hu/podcasts.html#productivite</link>
+            <guid isPermaLink="false">https://bloundsk.github.io/docmaster/hu/podcasts.html#productivite</guid>
+            <pubDate>Sun, 20 Sep 2026 08:00:00 GMT</pubDate>
+            <enclosure url="https://bloundsk.github.io/docmaster/assets/audio/hu/productivite.mp3" length="1415137" type="audio/mpeg"/>
+            <itunes:duration>118</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+        </item>
+    </channel>
+</rss>
