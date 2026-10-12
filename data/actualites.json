@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-12T16:51:00.343Z",
+  "maj": "2026-10-12T17:02:57.243Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTVHMFZaMGFzOHFwalR6U25lbnBjMnAzNmhjcU1VRGdwNF9yeExtSU45a0VZc0VMVUlGM2dXSzNWbldhWFdaZ09JT2F6Y1ZTRy0yNjlxZ05oZWw2aGszNnZnT0czMG8xTEltYTBRNlhzeFpKUWl5bmlvMjZoSHdWVVlVMW5iMEhmX2NFTk5mbTJacXBweUhsRXNVbVNQSlNRYVE?oc=5",
@@ -338,6 +338,34 @@
       "publie": "2026-10-04"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdTc1YlcyTUxpNTBHbHZkZTFGdGhIQXhDVU83Tzh2VGRzaXlwdkxzSVZYMlFtUEp3RTJOT1gzbk11NHFNSHBQd19JQkhvWGZsUVRxZVZmYnhVNzBRaUZ4ajF3WVhMckZYei1sa1F6N0NLSl8waGdNVW1GTFVaQVBvaWxDcXFMZFpQR2oxaEpianhiNHpCMWEyMmp3RWlMRWtISnRBcjZZcnVpQQ?oc=5",
+      "titre": "Help the NCSC understand how organisations approach external attack surface risk",
+      "source": "National Cyber Security Centre",
+      "date": "2026-10-12",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "attack-surface",
+      "section": "🗺️ Your attack surface",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "ncsc.gov.uk",
+      "publie": "2026-10-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeEtQYlNmUDJMNDBxOEVzand0dTVkZ2lVWDJoYUpHdXowX3ZORVptVmRlTmxNQkttU3FfOHBLVk40NGRBMHQzbzU4YU1JS3NBaE5kamZHME5yUFhVYmZEUFZ5T0h1NEhiaVVCSlBkSGUtS1V3eXIyc2JmT045azl5b3VKUnFaYmhKMWw2WEd0VQ?oc=5",
+      "titre": "UK savings: 5% interest rate deals may not last, say experts",
+      "source": "The Guardian",
+      "date": "2026-10-10",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "theguardian.com",
+      "publie": "2026-10-12"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
       "titre": "HSBC plans sweeping job cuts across UK wealth business in AI push",
       "source": "Financial Times",
@@ -448,20 +476,6 @@
       "langue": "en",
       "site": "theregister.com",
       "publie": "2026-09-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUWxFRWMxdWRPVkJOLWVKdVNNdk5WOTVTVXc2RmJrN1RQZVgxdGEwN3VfaFNLZDdsNWozc2k4VXhla0VXMnIxeFVjdW55RTF2U3dlQnR3SGUwS0lucGZzNUV0cW54SXRLVjRQVkJocHR5SjN0RlpxQ3AzazVKcUItYnJRQllrbGhQcDlFd2VYSkdVUlZ5X1hnVmRaV3lLWVBhUXR2blRPVmdhS3A4dC1BZ1J3?oc=5",
-      "titre": "UK bonds hit by steepest interest rates in decades",
-      "source": "The Times",
-      "date": "2026-09-29",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "thetimes.com",
-      "publie": "2026-09-30"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1IOWhwRkwzSHBTRjVWVWRnNDdDeWt5Z2dkQ21VSFdkT1VaR0JsQXNUVV9DYUZpOHR5Tkc0cmlLcm5GdTVPamkzaE1MNDM2enFMWWwtZGQwSTFDUTRReFE?oc=5",
