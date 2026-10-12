@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-12T17:02:57.243Z",
+  "maj": "2026-10-12T23:41:41.419Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTVHMFZaMGFzOHFwalR6U25lbnBjMnAzNmhjcU1VRGdwNF9yeExtSU45a0VZc0VMVUlGM2dXSzNWbldhWFdaZ09JT2F6Y1ZTRy0yNjlxZ05oZWw2aGszNnZnT0czMG8xTEltYTBRNlhzeFpKUWl5bmlvMjZoSHdWVVlVMW5iMEhmX2NFTk5mbTJacXBweUhsRXNVbVNQSlNRYVE?oc=5",
@@ -13,6 +13,20 @@
       "sujet": "🔒 Cybersécurité — Avancé",
       "langue": "fr",
       "site": "20minutes.fr",
+      "publie": "2026-10-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWlp1emZScG9NZkxZWkdMX0U0b3VuaDdaOEpWYXhoUG1yejhpMTYwQ2dtNlozd0kyVnBZcEdlYmdTblFDb3JfMENxcUVRdWJuS3ZES1M2bVhYTnJCVVUta19DX0YwcFpFajVzVGoySWJzVFpnVWhMLS1ySEc4QU1VdHFQYVZsN2JtYXc3aGZvYmhCZFFHNmhGbDlUUGRGT3QzZzVqMUhKVlFlZ2l6dFh1emZTWVNyRnNBb3phUEJSNVF2dUljWDl2azQ2aU9vbTdV?oc=5",
+      "titre": "Un site relié aux Caisses d'allocations familiales victime d'une fuite de données",
+      "source": "BFMTV",
+      "date": "2026-10-11",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "bfmtv.com",
       "publie": "2026-10-12"
     },
     {
@@ -308,20 +322,6 @@
       "langue": "fr",
       "site": "la-croix.com",
       "publie": "2026-10-07"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPdHMtLXhEWDBacld3THQzdlVHcS1GR1lFbVhaZ1F5QjQzTHpzektDMzFlYVdlVkE1YTQxM3dWY1Z5UlZfaERsOUJJNm5oVmZibm5XREJSbmxQXzRHdHVLYU9OZUo0ajBSQjZYc3hiS2NZVTA2TTdrVHQwNjR0NXFIQzJnMlZPVnAwVGtTa3FhZmwtcTl0OWhrel9COVpMQTV0c3NITVotSUV4Y1BmbVhfSTE2R2FsNTFFOVlSWmtOMHc0QXBKY0syU0xyMG1QNlF1RDJJSU9RZlFoalFpeENSYzUyNnJQY001d3JLbTBwbEVZd3dubVdEcFRBQWZKZ2ktR3pLeFdHeXF0WWhTT0J6VTBXbWFtOEZOOF96MTljUQ?oc=5",
-      "titre": "Noms, prénoms, mails... Les données de plus de 500.000 personnes ont fuité après la cyberattaque dans les Hauts-de-France, selon la région",
-      "source": "BFMTV",
-      "date": "2026-10-05",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-10-08"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNZ0lpbDFRcTlzXzN1MlVCSWZuUzVGZnhqZGtlQURqUGFhRERMcXZxZVlvZ2p4YU9TYUZIVjlqbTc5T3hQbzR2QTlwOGFWaUxYUEU3aEJ2eWN4a21IbkJnT0ZkR21zWThHU3o3U05oV052dzlHLWREbmFRZ3FLNnRmY3U0MzZBbHNHRldxQ1owM0VRUXFqZTJPb1VSZVVvNnNoV3h2NGJRU3VpTnNuU05tRzg1UlBrSUI1bjVWb081NlVuem13NmJFZU5ocF9YTk9qSFhORFBVQXZJb083dGFJMVRuZWtUdmZIQ1Y0WEFLMEhUTDRHQU12VHdLT05YWnloYXF5aUlXLU1GeEdkTloxMXhtUi1yRnBmS0RLSEZEVy13eTNTc0E?oc=5",
