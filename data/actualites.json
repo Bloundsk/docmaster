@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-12T13:29:56.889Z",
+  "maj": "2026-10-12T16:51:00.343Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTVHMFZaMGFzOHFwalR6U25lbnBjMnAzNmhjcU1VRGdwNF9yeExtSU45a0VZc0VMVUlGM2dXSzNWbldhWFdaZ09JT2F6Y1ZTRy0yNjlxZ05oZWw2aGszNnZnT0czMG8xTEltYTBRNlhzeFpKUWl5bmlvMjZoSHdWVVlVMW5iMEhmX2NFTk5mbTJacXBweUhsRXNVbVNQSlNRYVE?oc=5",
+      "titre": "Le dispositif Vacaf de la CAF victime d’une fuite massive de données",
+      "source": "20 Minutes",
+      "date": "2026-10-11",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "20minutes.fr",
+      "publie": "2026-10-12"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd1JOOUZxSlozZGFwQnFONllEcjRaMzBwZlkyRHVheC12NGF5Z0xDdVFwc3V4TW1XS2lyMmZuVnByZEVKT3VwQ3BFTVRuYnE2U21zN2VfSVJtUGtVTV83dk1UT0ZYTU5rVzV2UERNN2FxNVFNeGt4NGJSSUp5eTBVNndTbFBjSWtzRmdsc1pab1NvdmNwT2JxYVRoTk9kZ1VrUnRvRw?oc=5",
       "titre": "La Turquie interdit les réseaux sociaux aux moins de 15 ans",
@@ -42,6 +56,20 @@
       "langue": "fr",
       "site": "clubic.com",
       "publie": "2026-10-11"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNNGJ4cTFEbk5HSTBmMllqSWFZcXZyQW5rb2loSFhDRDdacEQ2MVZSWDI3UG1zNllNS1dIdnJJWlFvc1hLbUllSXM4bW50aDlWTjdMLVpkRVcxOVE4eUE1UzB6anBFUzQwZmE3X3NldlZqWFktc3NqblFrOFdGN1BrQWlaNFpZakFsaHdvX0x5b1R2c2Z4M3pmaTVvNm1HcHQtcEFQNWJsSGhUN0VyNk1vWklWRTF0QjBwS0JmOUg2a3FCUzQ4ci1Oa3pSV0FGWUw3RHZUbUprWkJEM1BfX2g4UWtBcWoyZVRoa3pxTXk3NlRqbThiYXFWZC1DSnB4QTBrQm1GbldCMWZIX191dTVBX0hDampQQzhmMDlUcmJiLVBCUQ?oc=5",
+      "titre": "J'ai reçu un message d'alerte concernant un vol de données personnelles : que dois-je faire et surveiller dans les jours qui suivent",
+      "source": "TF1 Info",
+      "date": "2026-10-10",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "vos-donnees-personnelles",
+      "section": "🔐 Tes données personnelles",
+      "sujet": "⚖️ Droit & démarches — Avancé",
+      "langue": "fr",
+      "site": "tf1info.fr",
+      "publie": "2026-10-12"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNUldtankxbjFpdk5zX0RBYVZWMUs3cHZXT1B0V2RyWDUwdVhWVDJXYlduVV91Qm80N3VHeW9pTElFMFpLMXhLTXhUSTF5eWdDOGZjakdFQ1BNNkhpN3EwNUhrbDJWRlA2UkJFa011MDczVl9sNTh1aEl3Y2NRZnlSZ0FxNHZTSXRLX3IyaFVCRHFuY09oUDRIS0pTdF9rZHZObmRNRHViRzFOSEJuVWNCLXhVc0pmd3BuU3hhaTJZbmZ1TVBYZmJTZ1V5Vk5razRPdTEtVlBoRUcwVkFkWWR2SUdxUFpWVjZObWhId01BZTdhdUdkOEZB?oc=5",
@@ -296,20 +324,6 @@
       "publie": "2026-10-08"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMikwJBVV95cUxOZjhBeWZLRm1OdER0ZEoxVkZPRERWRmttMkZ0ZHV0UFJzNVdpcXFyZUtvN1NkVmF1TGNiWmFXaEhkZTl2NThaUjhrV1ZycG5tNFpjanAyZzZhN28tYzJ3MHZOTkJTV1V2dklPWE95WVpRN1RlLVIyQTJNWHRZSDZhMVJUam0tN3BuNkliekxRR1B0QjRLX1RERjZ3MG1sUnc0OGRIUjhOYjM4RjRBZnVUalJtOWY2MExZaGcyTVdnekxLX2pONTBLQmJvQmV0WVZ6NUhDLWhjTHg3d3ZXREs2aF9xWEFRejV4bFd3b0RHamhBd2ZCUGQ3Yk03MUxIQ1RybmFBV0tJRHFxa0g2UmVLUmc4QQ?oc=5",
-      "titre": "Comment une faille logicielle a entraîné des fuites de données de l’Etat, touchant jusqu’à l’agence de cybersécurité",
-      "source": "Libération",
-      "date": "2026-10-04",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "liberation.fr",
-      "publie": "2026-10-06"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNZ0lpbDFRcTlzXzN1MlVCSWZuUzVGZnhqZGtlQURqUGFhRERMcXZxZVlvZ2p4YU9TYUZIVjlqbTc5T3hQbzR2QTlwOGFWaUxYUEU3aEJ2eWN4a21IbkJnT0ZkR21zWThHU3o3U05oV052dzlHLWREbmFRZ3FLNnRmY3U0MzZBbHNHRldxQ1owM0VRUXFqZTJPb1VSZVVvNnNoV3h2NGJRU3VpTnNuU05tRzg1UlBrSUI1bjVWb081NlVuem13NmJFZU5ocF9YTk9qSFhORFBVQXZJb083dGFJMVRuZWtUdmZIQ1Y0WEFLMEhUTDRHQU12VHdLT05YWnloYXF5aUlXLU1GeEdkTloxMXhtUi1yRnBmS0RLSEZEVy13eTNTc0E?oc=5",
       "titre": "\"Moins du quart des investissements votés a été réalisé\" : des finances solides mais des installations dégradées à l'aérodrome de Pamiers-Les Pujols, alerte la Chambre régionale des comptes",
       "source": "La Dépêche",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-10-04"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQazZFeDRBSEdERVp0X01xSEZqMnlMNEpCS1o5VzZkel9QMl9VX1hBSWg1QXRIWTNoWC1wclE5ZkVQM1pyTVlkMVdTZm5kRWJ4dURId0J3V3kwY1pVQUUzN3Z3RlIwaElHWFNjUVFIYmFraWxyaTJhSGNnbkFqMVktM05VMDE4NDlUWDFSRlIzcVJQTlNlZ0UtbHNCVDY0R3A0RHZyNXZPeC1OTDhzX1dNNTZoaW9NdlJuTE9UNUZQM3RRd3hwM3h2ZEZoUkJFMG1sNTh6TjFmc1B1ajR5ZDNnd25OcVFoajFJOWFYTkVhcFpzWUIxd18ta3g4bThEN3lPY2JmVG9XWjZTcnU2ZjBqRWFHaE0?oc=5",
-      "titre": "OpenAI vire trois chercheurs en sécurité qui s’inquiétaient publiquement du développement de l’IA",
-      "source": "Libération",
-      "date": "2026-10-02",
-      "guide": "dev-web",
-      "page": "avance.html",
-      "ancre": "securite-applicative",
-      "section": "🔐 La sécurité applicative",
-      "sujet": "💻 Développement Web — Avancé",
-      "langue": "fr",
-      "site": "liberation.fr",
-      "publie": "2026-10-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
