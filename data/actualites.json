@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-12T23:41:41.419Z",
+  "maj": "2026-10-13T00:04:09.224Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTVHMFZaMGFzOHFwalR6U25lbnBjMnAzNmhjcU1VRGdwNF9yeExtSU45a0VZc0VMVUlGM2dXSzNWbldhWFdaZ09JT2F6Y1ZTRy0yNjlxZ05oZWw2aGszNnZnT0czMG8xTEltYTBRNlhzeFpKUWl5bmlvMjZoSHdWVVlVMW5iMEhmX2NFTk5mbTJacXBweUhsRXNVbVNQSlNRYVE?oc=5",
@@ -632,18 +632,18 @@
       "publie": "2026-09-17"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBIVjItOE9Hd3M2aUhiY2tfazZvVFltbDN0S3ozX2hUQXhkXzRUUmJmUXFWZFVxNVNjMVM4dHFPZnVzdU15a3h4eldKREVaeU5Lc082bnlZaUlSeUhD?oc=5",
-      "titre": "'Having a stroke at 26 was massive learning curve'",
-      "source": "BBC",
-      "date": "2026-09-13",
-      "guide": "apprendre",
-      "page": "debutant.html",
-      "ancre": "the-forgetting-curve",
-      "section": "📉 The forgetting curve",
-      "sujet": "🎓 Learning how to learn — Beginner",
-      "langue": "en",
-      "site": "bbc.co.uk",
-      "publie": "2026-09-17"
+      "lien": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5wZFdPb2RERUFHVzhTTDV1UzNxa2lVRnhCNnpWaXI1TEc5TkJURTlkb3oxZThyXzNoa1VTcllCN2s4SWZJYUszRDRGNnhEOXlGSFFHV3diVmM5MGhSNlFPbU51VkVrT1dveEdlQkU0bzJCSndL?oc=5",
+      "titre": "Elvérzik a magyar egészségügy? Tömegesen hiányoznak a háziorvosok, 1,4 millió ember is érintett lehet",
+      "source": "ATV",
+      "date": "2026-10-11",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 A foglalkozás-egészségügy",
+      "sujet": "🩺 Munkahelyi egészség — Haladó",
+      "langue": "hu",
+      "site": "atv.hu",
+      "publie": "2026-10-13"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQeDAxRm9RR0dES1laMWw0UU5pYmZIdFF4LTJVXzRMc1loUlFUSDVRQmFwVmt2OGVHV3NaWUNtTFRoTjhwWmdlMkhnWDZUelJfNjVpM3lHUGZSNHo1UGNDS2d1SlI2STlnSlRTNWlZWWZRNElNTjBZUk9JVUJGUVNZYjd0dGJmckF5UGl4dTBiY2xZdFFx?oc=5",
@@ -744,18 +744,18 @@
       "publie": "2026-10-01"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNUzYtVmY3T1c2dkdicXFpWEUtbGpPRzN2eF9Qc2RvSzZNbnp1MjJJWFlPT21NOWF1NjVYZlRMYjhzeWJISDktamp1Q3RscEJGeTZrVFBaS0ZpOU5oZ3dHLWtvX2pobHVKVTIxMjdhQ3hjMWJjNG5Jcld4WHNfX0RlcVZuc2lhMUtFaVhIc1VxSkJ3UWlIMklyRVNEak02RVFULXpQWA?oc=5",
-      "titre": "Megvan a Nyírő Gyula kórház új igazgatója: ezt várja tőle az egészségügyi miniszter",
-      "source": "Házipatika",
-      "date": "2026-09-28",
+      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZ01LSkI0V2RNZkRWbFo4bXp6SFJLMUZXU2hYSHdDOVEyWVZ6bExudXp0LWRMbjU5WFVlUDZKZ0RsSDhUN1lVWDRxMXMzQ1J2aU1GVDlvb1pPaWdzSEgwWVpST2t4TnRlY1FVZW1FRlQyTU9NSkV2cXZYQkw1ak1YT2NwNWl1NXNwODNzMHFTWVJSNWhmcjBsQnk5OGo3V0s0bTJOag?oc=5",
+      "titre": "Ne vidd haza fejben az irodát: praktikák munkahelyi stressz ellen",
+      "source": "24.hu",
+      "date": "2026-10-01",
       "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 A foglalkozás-egészségügy",
-      "sujet": "🩺 Munkahelyi egészség — Haladó",
+      "page": "debutant.html",
+      "ancre": "regler-son-poste",
+      "section": "🪑 A munkahely beállítása",
+      "sujet": "🩺 Munkahelyi egészség — Kezdő",
       "langue": "hu",
-      "site": "hazipatika.com",
-      "publie": "2026-09-29"
+      "site": "24.hu",
+      "publie": "2026-10-13"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcnNKX3V3NTlzRXpuSVM1aW5LVGlfV3RSSTJPSUZNT3J5WmJXS2lFYTk5emNQWUJKMnpscnROaGlqbm5wVTBKdkVNeGFJeHRlZjlZV2tOQXBIbWJhREZLMURoOEdRcXAtV3BXX0ZsZ1hXQW1iTnpOVXlSV1R4bUw5cmtGS3FxOUtrckJnQXk1VEV0MXBfMGlINFBEN280c1ZabnZTX19aN2dsdkNCT25Gc2oxVmhoUlHSAbwBQVVfeXFMUGJNQUdnZFZVQ0dET2FGbEFDbW9UWmFab1lla3JxUk5wWUFyT1N4QnRiXzF0Z1JOQXJZVnBTUFhaM1p6d3haSFdDSUVsZjQ2aGI0eWVwTmNVM1d6M1AwWUU0czlrZk9xNUhzY3FzYzlfT05jbEVRaFRQSS1zZ2RSNEs3NVdpVmVTS0N3eVdqdjRsemVNOGluNVphc04yZ0Ytc1BMZENjdnRjU2hMRnBUZGlXWkJjeDZRekJUUlM?oc=5",
