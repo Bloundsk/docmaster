@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-14T10:35:18.212Z",
+  "maj": "2026-10-14T12:57:47.766Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNM09lTnhKb3dHRWpyYkMxS2licFlydE9qZHFLY3F0RkszTk14TEZMaUdOaVVBSVlSald6cjV1Q0l4QU0wa2JzOHhhekZZbmsxc0lZYUd1STJjSUtUdENGRTN4am93RnVlT0ZESDBmemFzWVhsQWVuMEtkMExuQUxjaEcxZHVKNDFJU3Y2WWM4djNlYmFGVHhRNWJhMkYzbl9MWFBvRFZQQXd2c1pwZ3hMSTRqbWcybXUzNndZLW02WUMwdTdLSmplemZHMjBZY05XN0JKb0RFVkotVzc4WjhZbFZ6N1lxVHF4Y1VDd0xOMUFKbHpNVzF6NUQyNU45cGVRVW4yS0o5bnoxZzd0Q1VWTGZjQ2JTVXo5NV83Z0RqQzRNOXg4bUpVclFBS05zZw?oc=5",
+      "titre": "Sécheresse : « La situation la plus grave qu’on ait constatée depuis 2012 », près de la moitié des petits cours d’eau français sont à sec alerte l’OFB",
+      "source": "Sud Ouest",
+      "date": "2026-10-14",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-situations-graves",
+      "section": "🚨 Les situations graves",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-10-14"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQV2FlbG9KNC1USGkzUWZVcFdnTTVtRFl6emtSeUJiS1hOeXA4VHgyNmV3QjFPQVF4SG44ME81ODhLbE4xT0s3Z3F4Vk8xS2xrT3hUVmdoOW5JemJxX1QtSDh3X2lXSFZvNXVwb0F6V0hJdDFqYmRZTXl6OG5nNG1rV09fSlpHY2JuakVVb3pVRGs2bG1pZWFQdE5oT0JDRHczTVFTR2Z1bV9iRHNoUHlMX2V6MURKcW8tS0hkYWs0eVhGZ2ds?oc=5",
       "titre": "Passez un cap en cyberconfidentialité grâce à ce réseau virtuel privé (VPN) suisse",
@@ -44,6 +58,34 @@
       "publie": "2026-10-13"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPd1BfaHNiNDYwMjNRZFNsS0xBbjRDMGoySDMtTElLaXItMWM4bW9yNkFfTXNHbDNhVWNZUmZpZnY1bjRDblg5XzB5Y0V2NWJaa3BSem9hby0wdUgtWHNZQUNIb05NZFNSejdoU3lIVFFzUkJDQ3lCZ196XzU3bkgwTUhONnUxc3VkSks0SzdlRWxFX25OamI4bUtwQlFhbEVtUG4yc2hVbHZZaFkyY0VLcHJiZEJLUlZwQ2RIUERnNDJZTDhDNmFackRWRkRmbGlhSk5pdWExU0c5TGk3?oc=5",
+      "titre": "Budget : l’Inspection générale des finances s’alarme des «risques majeurs» d'une loi spéciale prolongée",
+      "source": "Le Figaro",
+      "date": "2026-10-13",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-14"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNcnd1Ny1IcTdNZ3ZmOUthb1BLMWxnX3ZkTl9wNFcyNkxrRkFja3M5NFR0R1ZIcFkwbEwtaV9tWHlrYWVUazFQTzRiZEE1eEU3TkJtN3hxVGhTbW1MWnd2YWlwdzVkRDhPNnVmY2JJZXBSemMyVkprSkFQNm1TWVRFbHB3alFUVGV5bURzR08zeGwtd2tKMVNQUTZqRnFtTWwtQklUZ2lUeE5IbXJyQktJa3dzNUZHQnMwRFc0VFVDclpaY2hIUGFuY3Rib3hLeXBlQTZqaVlnc0o4MXVUbS1ZTlR2emltX0ZuWDhv?oc=5",
+      "titre": "«C’est une injure» : le maire de Besançon dépose plainte après avoir été assimilé au nazisme sur les réseaux sociaux",
+      "source": "Le Figaro",
+      "date": "2026-10-13",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-14"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTVHMFZaMGFzOHFwalR6U25lbnBjMnAzNmhjcU1VRGdwNF9yeExtSU45a0VZc0VMVUlGM2dXSzNWbldhWFdaZ09JT2F6Y1ZTRy0yNjlxZ05oZWw2aGszNnZnT0czMG8xTEltYTBRNlhzeFpKUWl5bmlvMjZoSHdWVVlVMW5iMEhmX2NFTk5mbTJacXBweUhsRXNVbVNQSlNRYVE?oc=5",
       "titre": "Le dispositif Vacaf de la CAF victime d’une fuite massive de données",
       "source": "20 Minutes",
@@ -70,6 +112,34 @@
       "langue": "fr",
       "site": "bfmtv.com",
       "publie": "2026-10-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQNkRmaFhiUzhrT1dHOVJ3ZFBOLXhVZ0ZiMWlOTEE4UnhzY09oSFRVdl9MYk5ycmo0NmtBQnVJN216X3lUVGpJb0lnTkFoNmtiWmZNNm1vRzFWbmNCWHY1azZjd3dXdGFmMzB0c0ZlZUJabjBSRnNPQUdnXzFoV2IzRWVjTExzZ1pmTnNRWVNzeGxLUkdFYWREWUhyRUtGaUYtVk4tZW1Ka1NBcU9PRDlHVTJPdndFbzFROHBhS2M5R2pMOENyZGlN?oc=5",
+      "titre": "« Incident de cybersécurité » : le dispositif Vacaf d’aide aux vacances des Caf victime d’une fuite de données",
+      "source": "La Voix du Nord",
+      "date": "2026-10-11",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "lavoixdunord.fr",
+      "publie": "2026-10-14"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNRE04NWVtUzdvNHN1YUVkczViaUlOWjZSQVM0U3hlZmE0VTUzY05rMDNNRE5FYTUwTUdiYXZON0dkU0wybTNEMDdUZGhTUGdneDFZcE91anRzb19nREJiUUp3TnlmZ0FuX2p4THZjSEpvd21yOTJ2alZpcHNXRzd5WHQ0ZDhpWE0xbWpraUVOd1FCLXd3OEJvZGx3bVQxdlJ3WEJYOUgyV1VraGlOS2Z4bjJpTlNyQ0dVQ3lHNTNmeXJ3a2VSVTZHTWdqckNfeUdrd3hiQld2d2dFRHVuUWY3c1plTng4ODc4U0x4VTVuekY1NTZKTjdKYWxVNWFKS29xOWNENXF5eUJROWhwU21hSTRn?oc=5",
+      "titre": "BrixHub : comment les « lookups », ces moteurs de recherche pirates, pillent et diffusent nos données personnelles",
+      "source": "Le Parisien",
+      "date": "2026-10-11",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "vos-donnees-personnelles",
+      "section": "🔐 Tes données personnelles",
+      "sujet": "⚖️ Droit & démarches — Avancé",
+      "langue": "fr",
+      "site": "leparisien.fr",
+      "publie": "2026-10-14"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd1JOOUZxSlozZGFwQnFONllEcjRaMzBwZlkyRHVheC12NGF5Z0xDdVFwc3V4TW1XS2lyMmZuVnByZEVKT3VwQ3BFTVRuYnE2U21zN2VfSVJtUGtVTV83dk1UT0ZYTU5rVzV2UERNN2FxNVFNeGt4NGJSSUp5eTBVNndTbFBjSWtzRmdsc1pab1NvdmNwT2JxYVRoTk9kZ1VrUnRvRw?oc=5",
@@ -128,18 +198,18 @@
       "publie": "2026-10-12"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxPMVMxNThqX2xHaEtBc1Y4a2ZIZ3g5NUZNZWdZQXZwakxub3pwSExTZFhXR2VQaFZhc2JycmRVRGZnZDVlSHR2aVd3YnZIb01rUExFYW1BVEZqbU1vLVhSaElhR1RNdjhfRUlHZUtWTWtxTEo0QlYwQnVEbHVMOHhOUERYb3JQZnh4eWlqTWt3US14RmFtc2d5M2JtYTE0b3ZrZ1pCS3lrdEdMVUtRTnFNU25qQlpwQnJXeGxycEFFN1d0LWE4ZkNYdlIyRzc0NzVCb1FOWXE3aHhuaFFOVGlJUWZYcXVPTmRmazd2MkZRQXNHczhkXzBfY3NiZTdDVHJZZjVEOUhLRFlLWnBXdmRaVktjSG8zSUZ0Y005Zlg2WkoxMVRBX21sc1dGbw?oc=5",
-      "titre": "Fuite de données : le dispositif d’aide aux vacances des Caisses d’allocations familiales victime d’une cyberattaque, « une cellule de crise activée »",
-      "source": "Sud Ouest",
+      "lien": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQc05Lby1RRkI3OHFvRWZPNDdOYkh6SW1FeWw3Y0c1ZWwxS2VzQzZkMlliczE4N05TNFNmc3R2UWVGeXFvQi0yT2o0NVRUUF9UNTFOZE9DLW9OUGVoaDVNdEJnblRHNFFlVHpyWUVLM25NWk03STNGcndzS1E1T0FFMC0zbC1zMm51Zi1sdlJ5NDJWd3ZuUGRSelplNlRNQ1lOT3VvbXFnOXBaeXMxSF8xMTBNV1YyU1B5QlZGNEpuYW4xcWVRd29aQmwzaG51YmtfT0dPTjBxSloxTlJzdnRv?oc=5",
+      "titre": "Les pays en développement assommés par le poids des intérêts de la dette publique",
+      "source": "RFI",
       "date": "2026-10-10",
-      "guide": "cybersecurite",
+      "guide": "dev-web",
       "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
+      "ancre": "dette-technique",
+      "section": "🏗️ La dette technique",
+      "sujet": "💻 Développement Web — Avancé",
       "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-10-13"
+      "site": "rfi.fr",
+      "publie": "2026-10-14"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNUldtankxbjFpdk5zX0RBYVZWMUs3cHZXT1B0V2RyWDUwdVhWVDJXYlduVV91Qm80N3VHeW9pTElFMFpLMXhLTXhUSTF5eWdDOGZjakdFQ1BNNkhpN3EwNUhrbDJWRlA2UkJFa011MDczVl9sNTh1aEl3Y2NRZnlSZ0FxNHZTSXRLX3IyaFVCRHFuY09oUDRIS0pTdF9rZHZObmRNRHViRzFOSEJuVWNCLXhVc0pmd3BuU3hhaTJZbmZ1TVBYZmJTZ1V5Vk5razRPdTEtVlBoRUcwVkFkWWR2SUdxUFpWVjZObWhId01BZTdhdUdkOEZB?oc=5",
@@ -266,76 +336,6 @@
       "langue": "fr",
       "site": "blogdumoderateur.com",
       "publie": "2026-10-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPdWJLRThCMTF1VGJ6LVhiRHNwa1JGcUVxZ2tOci15YkhJRTFiZzFaT1g3eXVlWWtqMV9CUWRHem4wSWUzRTdEcVltRWc5WjVPUERYS1F6ekU2X1RSQl95SWlPb1MtV0FmNlVVWTk4LW1LLXh1WnZVd3hGUDV2el9XaEJzMU1rd2FWMDFPRE5Gb1o0TkR5MTBpcmI2eEhRLS1hMGV3bkRjbE5tQUNjZXg1TC1qbmtHRDRSS1lyc3hVOUNURExDZE9CNmJsVDNGc1o3Z2R1WE5oaU5JNzdWREdMc3VjRXc?oc=5",
-      "titre": "« Un danger grave et immédiat pour la santé publique » : à Bernay, le préfet ferme un nouveau restaurant",
-      "source": "Actu.fr",
-      "date": "2026-10-05",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-situations-graves",
-      "section": "🚨 Les situations graves",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "actu.fr",
-      "publie": "2026-10-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3gJBVV95cUxOVjV1MkNqeXdXcVRfYklxaU9pZnNGU0lRajJNN2VPd3hJdDhyYnl6SzFWQnNiNkMyN0M4VC1sTVp2VFhRbWVDYS1oczFIaG4tT2d3d3VmVVZtUU1yYUV3QnJwN2g1Y3k0Y2ZJdGhvcHo1Y0RxV19TSThCTE1LTE1DVmN5VkFpenQ4RGdXeXUxOEZEY3ZJNjlsODJtam1BSkRjTkNvZWFjV3hWWGV6STlZZ0dXeHFiaUJWZWV6VHpwOGhjU2kxYWc2ZmtiTU5sSmdndDlvcTMtNWNmUXRhcldXUGFyM1NTMjJjWWVzZFhJQXlXRHVoR1RYXzMyYVBzN0lncTRMUWNhOUo4TElwTUN3elNRdnRtNV8wLS1aazRITEYzQW1VTGZibFpNd3hLUFVUYjA5UGRBM0hrWm1VWFJiY1RfeFlsZ21yQ21POHFZN2hwZGlZS285WGpHNzBwQQ?oc=5",
-      "titre": "Le pays risque d'être \"étranglé par les taux d'intérêt\": l'avertissement du gouverneur de la Banque de France si les finances publiques ne sont pas assainies",
-      "source": "BFMTV",
-      "date": "2026-10-05",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-10-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQU9EcTVYT1VsNWVGX2tvQXhlNDdwemhhTEp4MWx3eWxLMk5SbVVDMWNKV0ttanlsQ1JON2NOb2sxNk53NmtqZzcwYWhzcUVZX1BVN3pXaUE4LUJNcllpa0hRTTIzTHJrM18zMUhueGsxTml0RzU4YnpnRTZVUTNKLVp2Uk1FblFpREVpc25tV3JBV0hyNURXbnlQZURpbVBOXzlSS3lYUUdzQ3JWSVFLaTJFSU9fTTJIc2hacUROS1RaZ2lkRWItRw?oc=5",
-      "titre": "Une entreprise du Haut-Rhin condamnée après un grave accident du travail",
-      "source": "20 Minutes",
-      "date": "2026-10-05",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-situations-graves",
-      "section": "🚨 Les situations graves",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "20minutes.fr",
-      "publie": "2026-10-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQMjZqMnZVOUVqcC1ZeUdING0wak9jNWM2VDVZdDU0bnhiTnl6ZlpDVktUcFhvUGVPaHJLcDhHazlwYnhucWx4dnVvXzR1amtBMkxjUkhTdk1VR2tuTjVhY0ZZTS1hUzN4X01kSTJBUm9ILWNrRHpXcUdYTG1PX2l1QkkwY2ZnajYzY3R4SHlkOG1DdWp0WVlfWmRwbUg5d3pyeW5zMzk3S0ItY3hzanl1UVJsZFpFcmRVdXdGVHVCS1hZd2czanAzVlA0RzZEclBrU2tJNGZ3YzZVQllRamY4SzNR?oc=5",
-      "titre": "Quel lecteur Blu-ray 4K choisir en 2026 ? Notre sélection des meilleurs modèles",
-      "source": "Clubic",
-      "date": "2026-10-05",
-      "guide": "ia",
-      "page": "intermediaire.html",
-      "ancre": "choisir-un-modele",
-      "section": "⚖️ Choisir un modèle",
-      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
-      "langue": "fr",
-      "site": "clubic.com",
-      "publie": "2026-10-06"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNRUg5dmllU1JfTm5XcXpBeTlGaHZmVThlRURzMTBlZ3RiM0tCSFpGWDhEUEhHNWc4WjA1STJsUm85UTAxcnhSc2xoWmRPVld0cU5vWV9rNjZPb1NwVU5YYnlyMF9zdUVLM0xIRFBucGdQOGwyUGtKM3hnTGg4UXBIU0VqRVBGVm9EYjRkYXp6UHozckdsMWxBVGhvSzdhQndadGY0Y04zNXA1MUwxWHhiWl82TGc3dWptVDVubDdySVVnakEzckVpQktfQTlKdk53eURyN0k2SFZKOGk5bzdNcWZpNWlYcjhXajNwWEQtZHpWZy1WV0ZEdF93?oc=5",
-      "titre": "«Il s’inscrit dans la lignée des jeux gacha» : WikiMasters, ce nouveau jeu en ligne qui cartonne sur les réseaux sociaux",
-      "source": "Le Figaro",
-      "date": "2026-10-05",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-10-06"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdTc1YlcyTUxpNTBHbHZkZTFGdGhIQXhDVU83Tzh2VGRzaXlwdkxzSVZYMlFtUEp3RTJOT1gzbk11NHFNSHBQd19JQkhvWGZsUVRxZVZmYnhVNzBRaUZ4ajF3WVhMckZYei1sa1F6N0NLSl8waGdNVW1GTFVaQVBvaWxDcXFMZFpQR2oxaEpianhiNHpCMWEyMmp3RWlMRWtISnRBcjZZcnVpQQ?oc=5",
