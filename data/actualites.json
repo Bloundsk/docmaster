@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-15T10:16:55.976Z",
+  "maj": "2026-10-15T12:44:58.300Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOSS1Ba3I1Y0NUd2I2bU83S0s5MXBTUnlIRlFUSlFLM3NBMkszNEhUbzZ5dWtlUkM0S2VDU0Y1bXVWam9NTlJJRkd0ckhLTmdEY19mNFpXcHJMZWRfUW1TclY3NVZSWXBTWlRBRkd6M1dVdU1Dcno4SEhUT1BLelJsNFh6c29NSEszTWJ2Y0hXb3NCN2xaS2dWdjNJMEd6eERRQWFyb1hR?oc=5",
+      "titre": "Le CEPD clarifie le cadre juridique du web scraping",
+      "source": "Journal du Net",
+      "date": "2026-10-15",
+      "guide": "marketing",
+      "page": "avance.html",
+      "ancre": "cadre-juridique",
+      "section": "⚖️ Le cadre juridique",
+      "sujet": "📢 Marketing Digital — Avancé",
+      "langue": "fr",
+      "site": "journaldunet.com",
+      "publie": "2026-10-15"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNM09lTnhKb3dHRWpyYkMxS2licFlydE9qZHFLY3F0RkszTk14TEZMaUdOaVVBSVlSald6cjV1Q0l4QU0wa2JzOHhhekZZbmsxc0lZYUd1STJjSUtUdENGRTN4am93RnVlT0ZESDBmemFzWVhsQWVuMEtkMExuQUxjaEcxZHVKNDFJU3Y2WWM4djNlYmFGVHhRNWJhMkYzbl9MWFBvRFZQQXd2c1pwZ3hMSTRqbWcybXUzNndZLW02WUMwdTdLSmplemZHMjBZY05XN0JKb0RFVkotVzc4WjhZbFZ6N1lxVHF4Y1VDd0xOMUFKbHpNVzF6NUQyNU45cGVRVW4yS0o5bnoxZzd0Q1VWTGZjQ2JTVXo5NV83Z0RqQzRNOXg4bUpVclFBS05zZw?oc=5",
       "titre": "Sécheresse : « La situation la plus grave qu’on ait constatée depuis 2012 », près de la moitié des petits cours d’eau français sont à sec alerte l’OFB",
@@ -28,6 +42,20 @@
       "langue": "fr",
       "site": "rfi.fr",
       "publie": "2026-10-14"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivAJBVV95cUxPMWY0bk8wWEpYLXlDa3hiejV4THZabmhxNFVLNy0zSlJRcGZxQVlOblBQODZLVmg5dTA4TmI3T1BOUzU2aDZTRmJRc0JhMGxJejNIRDFucWRscWNiQmt3ME9SM3l1cHRKS0N0X3BYTnpyNGxTLTVBdEgxaGV5LVdnT0NyZElBMjMzQnBGZF9iMzNaS1RXeVFnSjBIMWlJek8wZTZXSXNNNV80NzBhdjBtc185bVJON3BScmNLZDdhRUh4RHJNLXR5Q2FVODZJRXo3dEw0VFBNUUdVUUNQeUR6Q3RMLUd6VXlSRHd0dnR3UFpkUHRKWUMzT2E5MGFwZENXR1lHNE5HcmJfMzVKcUZmcUVwaVpuZkxjNm5JYVI4WE1Cc3JtczdZa3lla3NLRncxTmlWelVIVHk0eVBo?oc=5",
+      "titre": "Massage cardiaque, gestion de crise et kit de survie : des collégiens varois s’exercent à faire face aux risques d’incendie, d’inondation ou d’accident nucléaire",
+      "source": "Nice-Matin",
+      "date": "2026-10-14",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "nicematin.com",
+      "publie": "2026-10-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQV2FlbG9KNC1USGkzUWZVcFdnTTVtRFl6emtSeUJiS1hOeXA4VHgyNmV3QjFPQVF4SG44ME81ODhLbE4xT0s3Z3F4Vk8xS2xrT3hUVmdoOW5JemJxX1QtSDh3X2lXSFZvNXVwb0F6V0hJdDFqYmRZTXl6OG5nNG1rV09fSlpHY2JuakVVb3pVRGs2bG1pZWFQdE5oT0JDRHczTVFTR2Z1bV9iRHNoUHlMX2V6MURKcW8tS0hkYWs0eVhGZ2ds?oc=5",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "20minutes.fr",
       "publie": "2026-10-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQkxUTnpiNWtnV0kxR0c2YmdXUVhnRGd0RS1mNDdTUFlac0l5c2lKUFg1cE5wYnk3SGdqZHFtSF9mUGtKZG5nbmdrZG9GMlp1Z1JRRUJQQWxab1FBbHN5aERkeDR0ODhZeHJ0OXlEVDlVZ1lCMm1PTGVudXJNblNLbHNFX08zQVM2QXJhUlNlekR1OFhvSTg3LXljaE9hZlh1U0hQLXh1WURaa3Rxb0J1eDM5X21IR3M3ckVDcFV3NGg5VjY2dlE?oc=5",
-      "titre": "La prévention des difficultés des entreprises en droit français : du signal économique à la saisine du juge.",
-      "source": "Village de la Justice",
-      "date": "2026-10-06",
-      "guide": "droit",
-      "page": "avance.html",
-      "ancre": "regler-sans-juge",
-      "section": "🤝 Régler sans juge",
-      "sujet": "⚖️ Droit & démarches — Avancé",
-      "langue": "fr",
-      "site": "village-justice.com",
-      "publie": "2026-10-06"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNX0JDcnV4cFJxOGpvc2RvZlUxUG96ektGRnB0ck5LX3Q2X3JXRHh6OWU5a1pyblgwdlZ6eTZaU1Z3Z0pnT3AwS2FoamRoaEJPb3lFSWo2b1BOdGFPSDNIeTdybHlieEwtdkRoeGZuZHFPM3o4Szd6bHNYZ3lDeW5GRGkySXRQa3FQZnJvNnY5UXJMN19aREp3VF8wRVFiVTh3S0RtbWZoZlFmc2o5ckQ3M0p2NFhBQmQ0SkEzVGlSdy0tQTc2UDRlQw?oc=5",
-      "titre": "IA : la ruée vers la dette des géants de la tech fait grimper les taux d’intérêt",
-      "source": "Le Figaro",
-      "date": "2026-10-06",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-10-09"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdTc1YlcyTUxpNTBHbHZkZTFGdGhIQXhDVU83Tzh2VGRzaXlwdkxzSVZYMlFtUEp3RTJOT1gzbk11NHFNSHBQd19JQkhvWGZsUVRxZVZmYnhVNzBRaUZ4ajF3WVhMckZYei1sa1F6N0NLSl8waGdNVW1GTFVaQVBvaWxDcXFMZFpQR2oxaEpianhiNHpCMWEyMmp3RWlMRWtISnRBcjZZcnVpQQ?oc=5",
