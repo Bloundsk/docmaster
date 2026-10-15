@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-14T20:50:12.822Z",
+  "maj": "2026-10-15T10:16:55.976Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMirgJBVV95cUxNM09lTnhKb3dHRWpyYkMxS2licFlydE9qZHFLY3F0RkszTk14TEZMaUdOaVVBSVlSald6cjV1Q0l4QU0wa2JzOHhhekZZbmsxc0lZYUd1STJjSUtUdENGRTN4am93RnVlT0ZESDBmemFzWVhsQWVuMEtkMExuQUxjaEcxZHVKNDFJU3Y2WWM4djNlYmFGVHhRNWJhMkYzbl9MWFBvRFZQQXd2c1pwZ3hMSTRqbWcybXUzNndZLW02WUMwdTdLSmplemZHMjBZY05XN0JKb0RFVkotVzc4WjhZbFZ6N1lxVHF4Y1VDd0xOMUFKbHpNVzF6NUQyNU45cGVRVW4yS0o5bnoxZzd0Q1VWTGZjQ2JTVXo5NV83Z0RqQzRNOXg4bUpVclFBS05zZw?oc=5",
@@ -618,20 +618,6 @@
       "publie": "2026-09-18"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5UZEFMODhLTkNSZXRGQmViNjFPVF8wWkpaNjFlSXZwZGlMRzVpTEROQzIyN1hVMDY2MGptNE1LZDhfcE5QNkVGSURYcC1qSERJWlFsMjFhbGdMcU1sYy1Od0V6TGh2WXAyWmcyOHlkbzBVMHZGMlZqNE1pOA?oc=5",
-      "titre": "Inside the Scattered Spider Playbook: How UK Retailers Got Social Engineered",
-      "source": "Infosecurity Magazine",
-      "date": "2026-09-15",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "social-engineering",
-      "section": "🎭 Targeted social engineering",
-      "sujet": "🔒 Cybersecurity — Advanced",
-      "langue": "en",
-      "site": "infosecurity-magazine.com",
-      "publie": "2026-09-15"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOLThnSW1rTlpYX0otc2ViZkNBSGJqYXdPc3piNjRLOUtmNE14R3ZSVDM4TjZ0b1BOZkFGUU9MWEtHMk54QzZnQWZLTnhSUkotSnFua1VPZl9tN3Nhellua1FKbkV2eU8zWU9rYXFLb29INkc3ZE1OX1hQYUJpZFROVjE3c3VEbVZyU1F5aU9ZQVRfdTFNOHZ4TEQzNWZFUlAzNnBzZGZibjV6OEEwMER5ZGxKY0RWUmNGZ2ZJ?oc=5",
       "titre": "Rekordszámú fiatal esik ki a munkaerőpiacról mentális egészségi problémák miatt",
       "source": "HR Portál",
@@ -784,20 +770,6 @@
       "langue": "hu",
       "site": "portfolio.hu",
       "publie": "2026-09-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxORWp1QTFOWGpIdlRGLUJUTFlrX2JlVjh3RjVLZUVtQkU5MjlWUWczMmJiS0FBZm04MzU2MkNRVjZ1SGxZREtxT1o1YnJIdFp5b3FpblhQSFJwMlc5Z0VsR1JENXBiWHFwNHFwUzJPNjVkVEtjRzYzd0xCZzI1YVBET0J3QjR3cHhGSmtSU2k3Q25oTFpnTl85ajA5dnc0eHczM05nVFEyQ0UyajJlZ2pIM09DbVc3ZUYtazdQUnFKYmJwUlhld3hjUGdyc1cwSGtPS0VFVkhUYUFEUdIB2gFBVV95cUxORWp1QTFOWGpIdlRGLUJUTFlrX2JlVjh3RjVLZUVtQkU5MjlWUWczMmJiS0FBZm04MzU2MkNRVjZ1SGxZREtxT1o1YnJIdFp5b3FpblhQSFJwMlc5Z0VsR1JENXBiWHFwNHFwUzJPNjVkVEtjRzYzd0xCZzI1YVBET0J3QjR3cHhGSmtSU2k3Q25oTFpnTl85ajA5dnc0eHczM05nVFEyQ0UyajJlZ2pIM09DbVc3ZUYtazdQUnFKYmJwUlhld3hjUGdyc1cwSGtPS0VFVkhUYUFEUQ?oc=5",
-      "titre": "Megérkezett a pénzeső: hirtelen iszonyú sok pénz landolt a magyar megtakarítók számláin",
-      "source": "Portfolio",
-      "date": "2026-09-15",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "lépargne",
-      "section": "📊 A megtakarítás",
-      "sujet": "💰 Pénzügyek — Kezdő",
-      "langue": "hu",
-      "site": "portfolio.hu",
-      "publie": "2026-09-15"
     }
   ]
 }
