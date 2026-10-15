@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-15T12:44:58.300Z",
+  "maj": "2026-10-15T12:54:15.918Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOSS1Ba3I1Y0NUd2I2bU83S0s5MXBTUnlIRlFUSlFLM3NBMkszNEhUbzZ5dWtlUkM0S2VDU0Y1bXVWam9NTlJJRkd0ckhLTmdEY19mNFpXcHJMZWRfUW1TclY3NVZSWXBTWlRBRkd6M1dVdU1Dcno4SEhUT1BLelJsNFh6c29NSEszTWJ2Y0hXb3NCN2xaS2dWdjNJMEd6eERRQWFyb1hR?oc=5",
@@ -338,6 +338,34 @@
       "publie": "2026-10-10"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUzdaTGx3dGdLNFpEc0FlQUdPOVljRFVHZ2ZkRUpadnk2OTlVMC1hRUM5aVZxUF84V1ROMnVDcXljRzdoMEtORzl5dF9ibFNlUDAycUxMNE1ZU0h4R3JJNktuLWViYXhlR3V5QUJwdnp3ZGVPWlM1anFxQWkwclVCYWV1b28xSmRHWEYzMUpkSWTSAZYBQVVfeXFMUDNybG1MUzhwVXFWNVlnbF83QnJ2Tno2Ni1FaXJ4WjZHeDU0WXdoRzZTMXhMODI5NHV5aFlvOGJHMllUdXZhXzBhaTN1TXBnTVQ5akhXbks0dXRMeXJKOVJoODVibGwwUzhBX3AzaWZoSTNjelN5aEVSVXNsSnQxbFo5T3dIcmNVVTJaOGtGVUdhX2drelhn?oc=5",
+      "titre": "Major fashion company sends warning to customers after data breach",
+      "source": "Wales Online",
+      "date": "2026-10-13",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "data-breaches",
+      "section": "🧬 Data breaches",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "walesonline.co.uk",
+      "publie": "2026-10-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNUlUSEg5WGVWTTg0SDh6dy1OekdEVkZrOGgyWHNhSkt6V3ZSQ2NxNG1mV1E4cjRvVFFMQlpzVkhRSkNaQUozYTNUTDh4NVd4LTZTQ2k3MDdTeGtpSUpjX1cyVkl1Ty1DX1NiS3lGaG0wYWtuXzBhTWxfUUhPUmJjQWV1X0FBQWlHeDFVbkY4aXMwWElONnJER3kzS3g0cXU2dEt3ZWtuT1JkeUJBcjAtYQ?oc=5",
+      "titre": "The RBA keeps hiking interest rates – but are the rate rises actually working?",
+      "source": "The Guardian",
+      "date": "2026-10-13",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "theguardian.com",
+      "publie": "2026-10-15"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdTc1YlcyTUxpNTBHbHZkZTFGdGhIQXhDVU83Tzh2VGRzaXlwdkxzSVZYMlFtUEp3RTJOT1gzbk11NHFNSHBQd19JQkhvWGZsUVRxZVZmYnhVNzBRaUZ4ajF3WVhMckZYei1sa1F6N0NLSl8waGdNVW1GTFVaQVBvaWxDcXFMZFpQR2oxaEpianhiNHpCMWEyMmp3RWlMRWtISnRBcjZZcnVpQQ?oc=5",
       "titre": "Help the NCSC understand how organisations approach external attack surface risk",
       "source": "National Cyber Security Centre",
@@ -364,6 +392,20 @@
       "langue": "en",
       "site": "thisismoney.co.uk",
       "publie": "2026-10-13"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8tN245WGhmeWtlV1NoOEdEc0tWYTEzamJWX3RQWVdrd0tzODU4Q3BUX2RYOGoyX2ZUVjJsSVEwNy14Z0Z0UEd6blI0UlVOcE10UkZSZnV2ejdudGc?oc=5",
+      "titre": "Dudley Market's seating area ripped out over anti-social behaviour",
+      "source": "BBC",
+      "date": "2026-10-12",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "social-networks",
+      "section": "📱 Social networks",
+      "sujet": "📢 Digital Marketing — Beginner",
+      "langue": "en",
+      "site": "bbc.com",
+      "publie": "2026-10-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeEtQYlNmUDJMNDBxOEVzand0dTVkZ2lVWDJoYUpHdXowX3ZORVptVmRlTmxNQkttU3FfOHBLVk40NGRBMHQzbzU4YU1JS3NBaE5kamZHME5yUFhVYmZEUFZ5T0h1NEhiaVVCSlBkSGUtS1V3eXIyc2JmT045azl5b3VKUnFaYmhKMWw2WEd0VQ?oc=5",
@@ -450,20 +492,6 @@
       "publie": "2026-10-07"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQXo2YWczMm9uSDNhOUkxTFJvVWFvQ09HYm1DUmF0LXBGbElfUllzbXFfM19mellmUkd2TC1DN1phbW9sQjh6anBlc0dHZlU3M3lpS1NsT1gydUFBSFBwTDkyRnBpVzM4akRnTUxlLXNZNWVRYjRQSG5yTjZmVnhIY1RXSlJTTU1RazV0bFVQTW1vWUFO0gGaAUFVX3lxTFBXWWFUMm16NUJuaEQtVDN2SVFOcGVEbDVRTkNmUm1ycWlhNmdxb2lNME5fSDNkUnJHNUd0ZlhFRWItaExLV0hfZi1LRU5JaElvVXBndHJaT0wwQTZMZTJMdjRaeU5PYXJ4NWNlRHgtanlxMzZiOGEwdHdpamVLWGRsUllhd0RGcUstUkxWamRRQTJtOU92cTB4VEE?oc=5",
-      "titre": "NS&I changes interest rate for UK savers with £500 to £1m accounts",
-      "source": "Manchester Evening News",
-      "date": "2026-10-06",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "manchestereveningnews.co.uk",
-      "publie": "2026-10-08"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYlM2NEl1ZTVxSE1aOGhQa21YNjR3YWZrcTEyaW5QdVNKY01sSFhsVDFTeVZhQjRyNEVZZ2tGQ3kxNjJZWlRXVHR5MWZvWUxJelEzbVo2RmZGRmRFNzFBZFZnWVR4bVltRjNqNU1qMXFpUzJsaHBHdWlXUV82VGl6NkcxbndwaGszRFZ1U2xJZ2lnTkUwdVg4ZDNPYXZZcmFVSFFqNmZnTUE2MFluMFc4?oc=5",
       "titre": "More than a third of UK business owners fell into entrepreneurship by accident",
       "source": "The Herald",
@@ -503,20 +531,6 @@
       "sujet": "🩺 Health at Work — Advanced",
       "langue": "en",
       "site": "bbc.co.uk",
-      "publie": "2026-09-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9lQU13U2JDV1FrUjdzMVZoU3M2OWlsUEhuZUNEOTd0WUlYNFdpWGZ1aDFsUk40bkU0STUwRUpXclVSYzhoeXlONTN3YnJ0TWZTSHJMbnpKcw?oc=5",
-      "titre": "Data breaches",
-      "source": "BBC",
-      "date": "2026-09-26",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "data-breaches",
-      "section": "🧬 Data breaches",
-      "sujet": "🔒 Cybersecurity — Advanced",
-      "langue": "en",
-      "site": "bbc.com",
       "publie": "2026-09-28"
     },
     {
