@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-17T11:41:59.888Z",
+  "maj": "2026-10-17T11:47:35.443Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxOWjN6TWxqdjhieTQ0TERjMEVDcklvUHR6UWdiZEhvZE5ZZU56d25MLVBtaWRJdlp0NWJGYnNBVDAyblJXQ2J3bGU1TWZQd0Q1XzZiRFoxdG5udWtlRFU1RFZuakJkRjVKek9hWU9yUjk1QlI0cGU2U0JfMU9ZUXNKSDg3NS10T2hid2o2Q0NKRHFRMTVTeWR5M2UyY0pFV1RlbXpmZ3dxeFFTUlJUR1R2Q3A5eGVFR1RTamhlMTBGNWJHc3RIQU1wUXlJdkF2c0VTVDIydkpJVWpQTktFR01rYTZqeTAtN0hKNW5zcnRqSFlHODFVOUdBeFhoX1lVbFJEQW1xMGREYUwtNFFpWldVNFBCT2NOOHpNMHhoYjJqWE82LXdUcy1qRVFzVWpfMlVwdlFLMHE2TnUyT216c2RPSlVEamVLQno5bUo3R0Q4eU9hR2JLODhjaVVIMVAya1RteUh0MV85RTRoQQ?oc=5",
@@ -338,6 +338,34 @@
       "publie": "2026-10-11"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQmtvZnZ2ZTNsOTA3MTdSR0lfNFlHalVFOHVDMnBwRUlQZ3BNUkRFdTFxMHQ3b1M5M1pUUTlJc3ZyT0ZoZFlrdi10YzdPd0JzNVJlLTBvOGgtZjl6clhjVHV1TUo2UHNuNzhLc09LQ29uT1VSZllhc0dwcGluNTNYM3dKWGdpLWE5RC16a0plZElLMFlZcDFQbEQzQQ?oc=5",
+      "titre": "AI agents can act, but humans must own the outcome",
+      "source": "Computer Weekly",
+      "date": "2026-10-16",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "tools-and-functions",
+      "section": "🔧 Tools, or how an agent acts",
+      "sujet": "🤖 Artificial Intelligence — Intermediate",
+      "langue": "en",
+      "site": "computerweekly.com",
+      "publie": "2026-10-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYW5SbnR0WFNwZmtFTTZIOTlZS2E4cXJlWjNrcmFsSU44dmxzVG1OVnp5ZXI5SmFxTU14bzgtdWpTbFhLSjgwc0o5aEdnME54THlxZzNMdmtlMktJRGVnX3dPMnBsaXBGWHV4V2hONVAxVEhOV3I5TTAtem1GYVpSal9rdHNjU1RKR1d1NlRvS1Rsc0pIby1VWEZJa1VvcHROaTNERQ?oc=5",
+      "titre": "Pope Leo returns to work from hospital after recovery from surgery | ITV News",
+      "source": "ITV News",
+      "date": "2026-10-15",
+      "guide": "sante",
+      "page": "intermediaire.html",
+      "ancre": "recovery",
+      "section": "🔋 Recovery",
+      "sujet": "🩺 Health at Work — Intermediate",
+      "langue": "en",
+      "site": "itv.com",
+      "publie": "2026-10-17"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUzdaTGx3dGdLNFpEc0FlQUdPOVljRFVHZ2ZkRUpadnk2OTlVMC1hRUM5aVZxUF84V1ROMnVDcXljRzdoMEtORzl5dF9ibFNlUDAycUxMNE1ZU0h4R3JJNktuLWViYXhlR3V5QUJwdnp3ZGVPWlM1anFxQWkwclVCYWV1b28xSmRHWEYzMUpkSWTSAZYBQVVfeXFMUDNybG1MUzhwVXFWNVlnbF83QnJ2Tno2Ni1FaXJ4WjZHeDU0WXdoRzZTMXhMODI5NHV5aFlvOGJHMllUdXZhXzBhaTN1TXBnTVQ5akhXbks0dXRMeXJKOVJoODVibGwwUzhBX3AzaWZoSTNjelN5aEVSVXNsSnQxbFo5T3dIcmNVVTJaOGtGVUdhX2drelhn?oc=5",
       "titre": "Major fashion company sends warning to customers after data breach",
       "source": "Wales Online",
@@ -364,6 +392,20 @@
       "langue": "en",
       "site": "theguardian.com",
       "publie": "2026-10-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOHBNbzJCRmtiWkJwN05UVHVvdml2ekI1NlpGc1NuX3VyeHlSQXU5WU1WNXcyN2VPMV9oZTVXdXhIWnFZcmczcTNwdTZLWFFEb2tuN0Z2QjUydkE3eGJjeDVrNUNPdl9nWXF4RVI1amNtM09EOER5WnZ5N3doV0ZjRXdNYTlmS1BpeUVHSmNtcUs1Y2FJdXFiODhUazJaYmE3c2RCa09GblM1Skk1b0tURGhZYzNBQUZUOXlDdmtXVQ?oc=5",
+      "titre": "'123456' password linked to Denmark data breach affecting 8.8M people",
+      "source": "The Register",
+      "date": "2026-10-13",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "data-breaches",
+      "section": "🧬 Data breaches",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "theregister.com",
+      "publie": "2026-10-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdTc1YlcyTUxpNTBHbHZkZTFGdGhIQXhDVU83Tzh2VGRzaXlwdkxzSVZYMlFtUEp3RTJOT1gzbk11NHFNSHBQd19JQkhvWGZsUVRxZVZmYnhVNzBRaUZ4ajF3WVhMckZYei1sa1F6N0NLSl8waGdNVW1GTFVaQVBvaWxDcXFMZFpQR2oxaEpianhiNHpCMWEyMmp3RWlMRWtISnRBcjZZcnVpQQ?oc=5",
@@ -422,6 +464,20 @@
       "publie": "2026-10-12"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVjcwVEREbERfcW5YWE55bUFETm1QODJjYVdxMnpNMDdDWElnZ25kcXJKY01DajdVSlZNU25FRk4xQ1F2ZmFfQkZka25PMW5fWGF1dGxoNG1xclhoaDhGNjE3T2lrYmk3akxMNktjSDJYUE1GVi12VGVqNG5memx2Yml4SXQ1X3Bac1hpTkNpTHM?oc=5",
+      "titre": "Mother Design exercises restraint with new M&S pack system",
+      "source": "Design Week",
+      "date": "2026-10-08",
+      "guide": "design",
+      "page": "intermediaire.html",
+      "ancre": "design-system",
+      "section": "🧱 The design system",
+      "sujet": "🎨 UX/UI Design — Intermediate",
+      "langue": "en",
+      "site": "designweek.co.uk",
+      "publie": "2026-10-17"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
       "titre": "HSBC plans sweeping job cuts across UK wealth business in AI push",
       "source": "Financial Times",
@@ -434,6 +490,20 @@
       "langue": "en",
       "site": "ft.com",
       "publie": "2026-10-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUDBMVkJyeTdGWUcybW1keFhNWEN1VEZCUERpbGMwLWJsWGdvX3hEMUo5NXE5d3NnY2JISVg2ZG0yeVFNMGhMa042Z3NVekFKOTJRM1Qya1NfWHZTM2lwb2hRa0FjM0lMZWN0Z3hPOVhFUlRrWnpPYjg1QWpGbDM1SDdsMA?oc=5",
+      "titre": "Half of Cybersecurity Pros Still Rely on Passwords Despite Security Concerns",
+      "source": "Infosecurity Magazine",
+      "date": "2026-10-07",
+      "guide": "cybersecurite",
+      "page": "debutant.html",
+      "ancre": "passwords-and-authentication",
+      "section": "🔑 Passwords & authentication",
+      "sujet": "🔒 Cybersecurity — Beginner",
+      "langue": "en",
+      "site": "infosecurity-magazine.com",
+      "publie": "2026-10-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOeUlUZHE3RkJJbVZObDd6clZ5UjZMa1hDVE4zVnpEMFYxbUNnRTNYSmFwUExiSXludWNrMVVoelctN2p3YWFNenRqWU9OQ29qS1c4anVvMTVrc3kwamNYMGljYmNWSFp2VlFSc1lkV0swelk3VHI2RkZKeVk3a1FwTzFRQnVieDc1WlNR?oc=5",
@@ -478,18 +548,60 @@
       "publie": "2026-10-07"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbW42R0FWaWNDYTBnRVdXZXVEWWdlUTVURzdkaVlNZWNyWmVDLS0wMFl0NXMxeUZLaXRyMEtQd0NhVU9Nc3dSSmFZYWNSZUVhcUhySVBYNlMtYjFWWHBmQmtPUzJjci1tWlN2dUQwSGNIbUlmVDFKQWRZUE96YS12R240bkpWZUpVV2xSSXByTHBrTEdQMkRjMVcyR1MwcG5tbGFiWnA2MHpaNWVjTUVZb2VrWmFvdUxZaDZoZkxoaEFNb0hT?oc=5",
-      "titre": "Asos ‘hacked’: app customers get alert suggesting data breach",
-      "source": "The Times",
+      "lien": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNRUZ6WkNfS3ozX2hreWdzTHByLUVNZUxBRWZpWmtRSHktUHpndmNJalhzY3VKUGRyUmJITmxTR3FPdGkydjB1TnBqOFY1ZlVsVnpySVd1Z0dXcXZ3LURyWU9mQUxtQUhIa1JGeDFJQzJKUU4xVk1ucF9Da3Rpdk8zZjY1M0I4OGpuS0ZqX1ZR?oc=5",
+      "titre": "Application security and coding requirements",
+      "source": "Computer Weekly",
       "date": "2026-10-06",
-      "guide": "cybersecurite",
+      "guide": "dev-web",
       "page": "avance.html",
-      "ancre": "data-breaches",
-      "section": "🧬 Data breaches",
-      "sujet": "🔒 Cybersecurity — Advanced",
+      "ancre": "application-security",
+      "section": "🔐 Application security",
+      "sujet": "💻 Web Development — Advanced",
       "langue": "en",
-      "site": "thetimes.com",
-      "publie": "2026-10-07"
+      "site": "computerweekly.com",
+      "publie": "2026-10-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQW1qN3RlcGhiNXNZOGN4TDZDV09QQkxlMlZrQ0xCMzdNZHNKUm9sM24xckZOSmlfN0xRdXNFWlN3QkZ3V2laQVBxZDZPd2hISGpvUU9kNWZkQ3JYQXMwRXg1VDFXUXNZTWZwbmxYYjZrM1VRREF0WGdQOE5IeFhhbEx6NHJlUXNzYkpFcVBCZ2wwWkk0MGUyN09YNE5lUTM1Qm9XdkYwSjFsUEdjOTlrUmdPNjBqdC1DZVpPa2Y4ZXpJZw?oc=5",
+      "titre": "My personal data has been lost after a breach, what are my rights?",
+      "source": "Which?",
+      "date": "2026-10-06",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "your-personal-data",
+      "section": "🔐 Your personal data",
+      "sujet": "⚖️ Law & Procedures — Advanced",
+      "langue": "en",
+      "site": "which.co.uk",
+      "publie": "2026-10-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOLTZoQnMyS3h1QnBaSk9YaU91UGFLd2RIcUtoeDZyVGp4QlVBOElwQzNQWFE3V0NVcThSSEZ1Qk53LU5VYjhMU25sanN4LVd4RjRQcDdGLU9UV0NsMVpSaWhDNXowTFU0Wmx3Z1EtcHh0RkplNGpra0h0SGhrQV8ydllSOGtJcldpWVBnempJS3NJVWxpby00?oc=5",
+      "titre": "Nine in 10 charity leaders fear tax rises or benefit cuts will hit finances",
+      "source": "The Herald",
+      "date": "2026-10-06",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "tax-on-savings",
+      "section": "🧾 Tax on savings",
+      "sujet": "💰 Finance — Beginner",
+      "langue": "en",
+      "site": "heraldscotland.com",
+      "publie": "2026-10-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTAwM05oeHliU29WVVF4RFRBNG9MTC1nVEtIQTlicVVINzBwVzR6SGdjVWJxODZOWmoyS3VTTnN4SzZZd01hRXk2NlFIeF9hbEM4MDQtVmFaQ3cxbWFXSXBJNnptc0ZqcnVONEVsbWxsMXE2Z1Q3bll4N3B5NlZBSFdGVklFb01UUWFoT0ZNOXEzeHRGa1RpeGk2aV82dU4xTm5ZbVV6dG5YbmI5eHFZRW90NGU1Q3dh?oc=5",
+      "titre": "CRO may be the missing link on your customer journey, and the key to smarter marketing",
+      "source": "The Drum",
+      "date": "2026-10-06",
+      "guide": "marketing",
+      "page": "intermediaire.html",
+      "ancre": "buying-journey",
+      "section": "🎯 The buying journey",
+      "sujet": "📢 Digital Marketing — Intermediate",
+      "langue": "en",
+      "site": "thedrum.com",
+      "publie": "2026-10-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYlM2NEl1ZTVxSE1aOGhQa21YNjR3YWZrcTEyaW5QdVNKY01sSFhsVDFTeVZhQjRyNEVZZ2tGQ3kxNjJZWlRXVHR5MWZvWUxJelEzbVo2RmZGRmRFNzFBZFZnWVR4bVltRjNqNU1qMXFpUzJsaHBHdWlXUV82VGl6NkcxbndwaGszRFZ1U2xJZ2lnTkUwdVg4ZDNPYXZZcmFVSFFqNmZnTUE2MFluMFc4?oc=5",
@@ -504,6 +616,34 @@
       "langue": "en",
       "site": "heraldscotland.com",
       "publie": "2026-10-07"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcHFsdHpNZ3pqTjF5Z09sVDBPMFZ4R3ByNUZzY2k1Y3JiWVhBVTRFcVByZmltU1lTbk1fTFJFeG9mZ2FLWEJVdjVSOVpHZG1YMWUyN1ZtQ2NvY3ppdTZtZUYweWhWbE90c2g1SjliWUszcGxLWkRoZk1zdXl4c0s1am9rOA?oc=5",
+      "titre": "Recruiters’ body warns firms over new right to work duties",
+      "source": "Personnel Today",
+      "date": "2026-10-01",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "employer-duties",
+      "section": "🛡️ The employer's duties",
+      "sujet": "🩺 Health at Work — Advanced",
+      "langue": "en",
+      "site": "personneltoday.com",
+      "publie": "2026-10-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQRDJoM0VZaGZGU0s0SEZaWHJFbFBybUxGZGlRSjBia3hBMGQyVW1rZ2pDcng4SWZwcmIxY2xUVFpBa2lpTXBTbVpETkU3ZUZzZkNtNzVYU242VjF6ay1NUlZwU25UZWlCc0hGdF9HU2ZZbTRvTWJKMm81bFRHdzlBZjRB?oc=5",
+      "titre": "Antivirus, firewall and IDS products",
+      "source": "Computer Weekly",
+      "date": "2026-09-30",
+      "guide": "cybersecurite",
+      "page": "debutant.html",
+      "ancre": "firewalls-and-antivirus",
+      "section": "🛡️ Firewalls and antivirus",
+      "sujet": "🔒 Cybersecurity — Beginner",
+      "langue": "en",
+      "site": "computerweekly.com",
+      "publie": "2026-10-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSjFoNFg0TVBBT05KZk8wMk1qRVNnX0c5bHJKMWlrWDVpN1E2Yy1QSFNvRWRHZjE2SHJtUWw5VVBlUl95WWp4bjV0eWQ2dnhNWDVXX1loU2VWal9zZFJpTUZFdjNPQ2E4RVpMMHY4VmVhVVEtNW8wQUsybVNhREJMbnBtYklZTC1LWW1xT25EQnFrY01LQ0M0TG52REZHYjFkMFZ3U280bXpvTklrcUxDTkRiUzhqUUZmQ3dnN1FzYw?oc=5",
@@ -532,76 +672,6 @@
       "langue": "en",
       "site": "bbc.co.uk",
       "publie": "2026-09-28"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQXIxZzl2UU1SRjRWUkpQX3lwWVZMSWpkMGJfcTdlUFZaQ2JJMFZYZ3F5VURpV2tuTVk2M1J6THlsOGliUlBWNjB1QWpEeEVmdW02aE9PeHJrRXFCLTBDV05WbndQWVF5bzZPOTMxMkEwcDlJZkhOU0cxdHhnczA2ZnFzWVk3THZwVEF5cDNFRFhoOThnLVFuSWFrMA?oc=5",
-      "titre": "Trump administration guts data collection on US education as math and reading scores plummet",
-      "source": "The Guardian",
-      "date": "2026-09-25",
-      "guide": "data",
-      "page": "debutant.html",
-      "ancre": "data-collection",
-      "section": "🗂️ Data collection",
-      "sujet": "📊 Data & Analytics — Beginner",
-      "langue": "en",
-      "site": "theguardian.com",
-      "publie": "2026-09-25"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE00aDR5TkJsN3hlNF8yQXFOQlB0dDlURFBrWk1hdlZ4Y0ZUMnZJbUp0bTlvb1dwZERRaHZmSUpFNXNNVnZJZG1rZ2EyZUlBZFlzamJ6TmU4UjNnT3lpTlE?oc=5",
-      "titre": "Work to restore station lifts to take over a year",
-      "source": "BBC",
-      "date": "2026-09-23",
-      "guide": "sante",
-      "page": "debutant.html",
-      "ancre": "breaks",
-      "section": "😌 Breaks that restore",
-      "sujet": "🩺 Health at Work — Beginner",
-      "langue": "en",
-      "site": "bbc.co.uk",
-      "publie": "2026-09-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQVNsUlhMel9wMHFBQ1daMWdhdkNRblNRNC1mT0pOTFJsbDM2VXJNbGhvdUcxUDNpSnpDNTFzNkdwWUszVkhXV2x3UDJ3MGpEWlJKclVZNnZmN3FGWXE1T3Z4cUFaZEFKQjNiRTdVaXVCdzNoS3A5VjN3aEJuN3ZJcg?oc=5",
-      "titre": "Network Segmentation Failures Are Expanding the Corporate Attack Surface",
-      "source": "Infosecurity Magazine",
-      "date": "2026-09-22",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "attack-surface",
-      "section": "🗺️ Your attack surface",
-      "sujet": "🔒 Cybersecurity — Advanced",
-      "langue": "en",
-      "site": "infosecurity-magazine.com",
-      "publie": "2026-09-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZkRIWHlRbTI1eXVhcjFTcENjcEQxa2dibTJDeTRuSERiYW5qaXVMTzdZQkpfREpmaUdRSmdNdnowUXZ5dzl2WmRHR0hGeFctU0hGakZyUlZUR09zRy1rc0RRaWFsUTZxdXM0SUJmQk04SmpUMllxU1ZwUThNTWpPemM2YUxFVUJ1QkozT0RIWVQ2djhTYkhmYnZYd3lqYmVjdlpHakRFUTFsbjBFM19SN1lKaHA2Mm80M3dRWg?oc=5",
-      "titre": "Many law firms set to fail without interest income - benchmarking survey",
-      "source": "Law Society Gazette",
-      "date": "2026-09-22",
-      "guide": "droit",
-      "page": "avance.html",
-      "ancre": "settling-without-a-judge",
-      "section": "🤝 Settling without a judge",
-      "sujet": "⚖️ Law & Procedures — Advanced",
-      "langue": "en",
-      "site": "lawgazette.co.uk",
-      "publie": "2026-09-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOaGwxV1B1elVoOF9WY3dnRnhrdk5PV3AyZW1udUJkcGFUa3VYb2JmUnpEbmtaakU0czZWTWljMXBhWEJSVTc0eGZQQzhFM2hicmdlTlBRSF82Y1RneG5zTUdmTkFKQ1FPTkJINm9sNExWc3l0dG9qa0tNLUJiVDV0OTBNd0JSeXJraUNHNFVNdUFCUDBNcDI2ZUxqY09NMkNFTm5KR3ktRGw1SUM3TVlKX1dOMjFJWkpNeTJnV1BGWTJhdWFkS3c?oc=5",
-      "titre": "Could your home security camera or video doorbell be breaking the law?",
-      "source": "Which?",
-      "date": "2026-09-21",
-      "guide": "droit",
-      "page": "intermediaire.html",
-      "ancre": "renting-a-home",
-      "section": "🏠 Renting a home",
-      "sujet": "⚖️ Law & Procedures — Intermediate",
-      "langue": "en",
-      "site": "which.co.uk",
-      "publie": "2026-09-24"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPZ2NfSjJWUzlPRTVHcUlOTXMtRlFENGpYVFoxUjl0U3VEVDhlN3NFZ3R2dGFaTGVjV19KNy1QM0pYQ0syT1NvYWQwNEhzb25JQ1RfVTdCam1SaUVBN3lRNGVhZ0F1Q1FvUWN2ZExaQmRkeG5YMTEzUVBPbjVYZXVWck9TMXlRWXFURk1RQklPcVcyUQ?oc=5",
