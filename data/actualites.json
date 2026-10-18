@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-17T11:47:35.443Z",
+  "maj": "2026-10-18T12:08:09.653Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOemktc19wSHRONGxWMmtnWDRfMnp3bjZtTW1IeEJKSlV5bnRyWDdDc00wcHJEbWFsejl4eERrcGRhZTNJUmNJTFJBWWppWGdtbDEtMktCcHQ4MjNaT1oxU0pYeHk5OTF1ME5QUFc1VTBzZWgySnRsNFN1R0NqaFh6NnZoSk45SmNvSmdUVFhKR1VCS3c4?oc=5",
+      "titre": "Bourse : comment les réseaux sociaux nous piègent",
+      "source": "Le Figaro",
+      "date": "2026-10-17",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-18"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxOWjN6TWxqdjhieTQ0TERjMEVDcklvUHR6UWdiZEhvZE5ZZU56d25MLVBtaWRJdlp0NWJGYnNBVDAyblJXQ2J3bGU1TWZQd0Q1XzZiRFoxdG5udWtlRFU1RFZuakJkRjVKek9hWU9yUjk1QlI0cGU2U0JfMU9ZUXNKSDg3NS10T2hid2o2Q0NKRHFRMTVTeWR5M2UyY0pFV1RlbXpmZ3dxeFFTUlJUR1R2Q3A5eGVFR1RTamhlMTBGNWJHc3RIQU1wUXlJdkF2c0VTVDIydkpJVWpQTktFR01rYTZqeTAtN0hKNW5zcnRqSFlHODFVOUdBeFhoX1lVbFJEQW1xMGREYUwtNFFpWldVNFBCT2NOOHpNMHhoYjJqWE82LXdUcy1qRVFzVWpfMlVwdlFLMHE2TnUyT216c2RPSlVEamVLQno5bUo3R0Q4eU9hR2JLODhjaVVIMVAya1RteUh0MV85RTRoQQ?oc=5",
       "titre": "L’UE peut-elle contrôler les modèles d’intelligence artificielle avant leur commercialisation ? Les intrusions provoquées par des agents IA mettent l’AI Act à l’épreuve",
@@ -28,6 +42,20 @@
       "langue": "fr",
       "site": "clubic.com",
       "publie": "2026-10-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNUTF2UmFEUHJhdlFFRlJFR2RURDR4M1ZJUWlZaG1xQjQyOEwyc1dPdmw5cy13Yk1wdTB2b0owMHRLWkJfNEgzRkVLZk0xMmpPdU94OVExb1doeUlhSkJNU19mWkM2d0w1a0cyZnYyZlU4UHJhWkRUdW1Id212YkpoOG8yMS1sWGpCZzNobWJlVzBiNF91emNSR0I5MUtZRWdCTEJMYWJwZDRpSExUWHdPYVBJLVp0Yk9jbWotaTVnNDMtZllRaHhidzRJZWh6aGRUMkNtN19OVkxJd2NPc3ZIcG1rT1ByQWwwdGZOSi1ycm14UQ?oc=5",
+      "titre": "Taux d'intérêt français : une intervention de la BCE en France ne se justifie pas, selon le gouverneur de la Banque de France",
+      "source": "Sud Ouest",
+      "date": "2026-10-16",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-10-18"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOSS1Ba3I1Y0NUd2I2bU83S0s5MXBTUnlIRlFUSlFLM3NBMkszNEhUbzZ5dWtlUkM0S2VDU0Y1bXVWam9NTlJJRkd0ckhLTmdEY19mNFpXcHJMZWRfUW1TclY3NVZSWXBTWlRBRkd6M1dVdU1Dcno4SEhUT1BLelJsNFh6c29NSEszTWJ2Y0hXb3NCN2xaS2dWdjNJMEd6eERRQWFyb1hR?oc=5",
@@ -296,20 +324,6 @@
       "publie": "2026-10-14"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd1JOOUZxSlozZGFwQnFONllEcjRaMzBwZlkyRHVheC12NGF5Z0xDdVFwc3V4TW1XS2lyMmZuVnByZEVKT3VwQ3BFTVRuYnE2U21zN2VfSVJtUGtVTV83dk1UT0ZYTU5rVzV2UERNN2FxNVFNeGt4NGJSSUp5eTBVNndTbFBjSWtzRmdsc1pab1NvdmNwT2JxYVRoTk9kZ1VrUnRvRw?oc=5",
-      "titre": "La Turquie interdit les réseaux sociaux aux moins de 15 ans",
-      "source": "Le Figaro",
-      "date": "2026-10-10",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-10-10"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdUxMQzBoNlpiYjRNSm9NNEwzRmdmUVJETFVxbXh0cU10czBQM1M3WDBBZGtWYTVlaHp2RFpnSGRHYnUwMjltTHNJMlF4ZUJRWUM5R05IYnZoOU1Wb3pIXzBwbWNjV1cyd1RacFl0S0dzbEEwbmhkQkVCU2JfQ2o1R3daU3c5bFNMb2dMeXBkU2p0VDYtSzlsQjBmeHhvbXJLMnZrX2lYbXl4akNS?oc=5",
       "titre": "Fuite de données personnelles (mot de passe, IBAN, pièce d’identité) : comment réagir ?",
       "source": "Radio France",
@@ -321,20 +335,6 @@
       "sujet": "🔒 Cybersécurité — Débutant",
       "langue": "fr",
       "site": "radiofrance.fr",
-      "publie": "2026-10-11"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZzJSZlA1UU9xNVZUUjNKbVlIdmZXSHRqaFdMUGlFeENqcGFfT01kSzlLZ3JvYmlyYkh2RHhtNy1kR1NJdXJDbXE3WGhKUjltRDluN0x5YTcydVc5dHlGdWs2MmtHRllfX1JSYXhURTF4OEg3TXhVZGdXR3JGMjVhSlFZU0pyMG1GbGE0WExoWWNUZkgxM1ZJSS1wendfM0l0S0hRRGhiQXNYNThzdm1fS2szaw?oc=5",
-      "titre": "20 000 serveurs VPN contre 1 000, faut-il vraiment choisir le plus gros réseau ?",
-      "source": "Clubic",
-      "date": "2026-10-10",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "reseau-et-vpn",
-      "section": "🌐 Le réseau et le VPN",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "clubic.com",
       "publie": "2026-10-11"
     },
     {
