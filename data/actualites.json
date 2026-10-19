@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-18T19:31:44.303Z",
+  "maj": "2026-10-19T14:47:37.172Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPeVB2a1F6bGhBQTBXSFNqOWlINkFuQV9keUN1aldGWFhjUmtmcTZjUHZYMUgwN01oT1NjZTl3aWxEd0x1ZGhuTHZjMkFTN0lBazFpeXR3eG1jNmI2cnllN3dEVmdIeVNJNGxQallqajZGcUJOTzBKR1RQNkRwSWdKbzJZeXpNTER2a0dhQnl1SXYxUFJOZ3FNUk9QTTdBYnFIZkVsUUlGaXJyMVFldnBEalJyUEFna1JxYTZ6VFVGM0p5Ym1MbnRDUEhiRVlzcDhuV1hvdExUTy1tbUFrZnYzWDdvYTB6RW9xUHpsS3ZiTGZhcllaMF8w?oc=5",
@@ -28,6 +28,20 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-10-18"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOZVZXQzhpUmIzYTBreE1GT0FqaTVhVkVwVDVGaVhEdEJPLUJVY2RHckp0WGpjdTdabXpBU2V1akFHWExheTU5TklSU2VQbkxFb3hDR091N0owc1NrZ0dkeDlyb1owamp5dXRtVEM3cU1ocjh4RE9RczBoak1DZ3BrV2p4a29qMkNfUW9GOEJXZzFvWTBZODQzTTlzdnp6RlRRemZIT0FUMjk4RXJnRnV4NHFSWllLb2gySFpjQ2xkdk5fRUxtNnJBT3AzNHNGQkQzMGlpUjRLdDV0bWFWeWc?oc=5",
+      "titre": "Du Wi-Fi à la 5G, comment votre VPN fait-il pour continuer à vous protéger quand vous changez de réseau ?",
+      "source": "Clubic",
+      "date": "2026-10-17",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "reseau-et-vpn",
+      "section": "🌐 Le réseau et le VPN",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "langue": "fr",
+      "site": "clubic.com",
+      "publie": "2026-10-19"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxOWjN6TWxqdjhieTQ0TERjMEVDcklvUHR6UWdiZEhvZE5ZZU56d25MLVBtaWRJdlp0NWJGYnNBVDAyblJXQ2J3bGU1TWZQd0Q1XzZiRFoxdG5udWtlRFU1RFZuakJkRjVKek9hWU9yUjk1QlI0cGU2U0JfMU9ZUXNKSDg3NS10T2hid2o2Q0NKRHFRMTVTeWR5M2UyY0pFV1RlbXpmZ3dxeFFTUlJUR1R2Q3A5eGVFR1RTamhlMTBGNWJHc3RIQU1wUXlJdkF2c0VTVDIydkpJVWpQTktFR01rYTZqeTAtN0hKNW5zcnRqSFlHODFVOUdBeFhoX1lVbFJEQW1xMGREYUwtNFFpWldVNFBCT2NOOHpNMHhoYjJqWE82LXdUcy1qRVFzVWpfMlVwdlFLMHE2TnUyT216c2RPSlVEamVLQno5bUo3R0Q4eU9hR2JLODhjaVVIMVAya1RteUh0MV85RTRoQQ?oc=5",
@@ -70,6 +84,34 @@
       "langue": "fr",
       "site": "sudouest.fr",
       "publie": "2026-10-18"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPcDV0WmNMVWVCVUJEZ3pIZ25hTEpIdmxzTWNBZVF3OHVkY0tDWFRWeGQ4R29Hbng5NVFrc1NsZTh2RjBCUV9YNHlhaGhFR3kyNkliNTNjZ1dzdmFkMlNrdktjR0JldGRLNE1tUjVjaUhHby1JWDF4dktxd2JvUHpwcmlneHdkTzh0Znl6Ym5fdVRWa3N4RTJYRHJjcElZS0Y4SFpxVlF3OHNMcm9MVVlNc3pqV1k4RXQ2Q08yRmRVZ0hfWjhNMm1BYlBsc3E4dU1GZEJTZlRDckVNMmlSakUzcFNlRXlHaWVKdlY5RC10N3owU0pWal81NDk0RmZMVGxRLVFxQkQ5SWVCdWV2YkZGODBYY0JWS3RBczBz?oc=5",
+      "titre": "Les connaisseurs n'en parlent pas mais voici le livret d'épargne pour sécuriser vos finances avant la fin de l'année",
+      "source": "BFMTV",
+      "date": "2026-10-16",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "lépargne",
+      "section": "📊 L'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-10-19"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMDdqSTRkcWJyczh0UHYzb01ELWlTR0JrSGdMWlBPbE9PSkVIN2hSalo4TGZRbDVIVkMzWTJDcEctLXhWelJxcFhSajJiUTNRMWpmbVRwRGZ0SllQQWZnRXM2d2VTbXdhdVRXNGRQenVzdXdjWGI2WHFmUmwwdG9xV1NSRUZtRk9uTlVhajVnMDdzUU45c2ZCZjdRbDNEUXdnMzNXU095WFc0bW10U0VXT0trVWhLeThNLVc1M1RUREFvWDV3eU02RUN3QlJBYUZL?oc=5",
+      "titre": "« Un péril grave et imminent » : un expert alerte sur la situation du château Vandamme à Cassel",
+      "source": "La Voix du Nord",
+      "date": "2026-10-16",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-situations-graves",
+      "section": "🚨 Les situations graves",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "lavoixdunord.fr",
+      "publie": "2026-10-19"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOSS1Ba3I1Y0NUd2I2bU83S0s5MXBTUnlIRlFUSlFLM3NBMkszNEhUbzZ5dWtlUkM0S2VDU0Y1bXVWam9NTlJJRkd0ckhLTmdEY19mNFpXcHJMZWRfUW1TclY3NVZSWXBTWlRBRkd6M1dVdU1Dcno4SEhUT1BLelJsNFh6c29NSEszTWJ2Y0hXb3NCN2xaS2dWdjNJMEd6eERRQWFyb1hR?oc=5",
@@ -294,48 +336,6 @@
       "langue": "fr",
       "site": "20minutes.fr",
       "publie": "2026-10-12"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWlp1emZScG9NZkxZWkdMX0U0b3VuaDdaOEpWYXhoUG1yejhpMTYwQ2dtNlozd0kyVnBZcEdlYmdTblFDb3JfMENxcUVRdWJuS3ZES1M2bVhYTnJCVVUta19DX0YwcFpFajVzVGoySWJzVFpnVWhMLS1ySEc4QU1VdHFQYVZsN2JtYXc3aGZvYmhCZFFHNmhGbDlUUGRGT3QzZzVqMUhKVlFlZ2l6dFh1emZTWVNyRnNBb3phUEJSNVF2dUljWDl2azQ2aU9vbTdV?oc=5",
-      "titre": "Un site relié aux Caisses d'allocations familiales victime d'une fuite de données",
-      "source": "BFMTV",
-      "date": "2026-10-11",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-10-12"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNRE04NWVtUzdvNHN1YUVkczViaUlOWjZSQVM0U3hlZmE0VTUzY05rMDNNRE5FYTUwTUdiYXZON0dkU0wybTNEMDdUZGhTUGdneDFZcE91anRzb19nREJiUUp3TnlmZ0FuX2p4THZjSEpvd21yOTJ2alZpcHNXRzd5WHQ0ZDhpWE0xbWpraUVOd1FCLXd3OEJvZGx3bVQxdlJ3WEJYOUgyV1VraGlOS2Z4bjJpTlNyQ0dVQ3lHNTNmeXJ3a2VSVTZHTWdqckNfeUdrd3hiQld2d2dFRHVuUWY3c1plTng4ODc4U0x4VTVuekY1NTZKTjdKYWxVNWFKS29xOWNENXF5eUJROWhwU21hSTRn?oc=5",
-      "titre": "BrixHub : comment les « lookups », ces moteurs de recherche pirates, pillent et diffusent nos données personnelles",
-      "source": "Le Parisien",
-      "date": "2026-10-11",
-      "guide": "droit",
-      "page": "avance.html",
-      "ancre": "vos-donnees-personnelles",
-      "section": "🔐 Tes données personnelles",
-      "sujet": "⚖️ Droit & démarches — Avancé",
-      "langue": "fr",
-      "site": "leparisien.fr",
-      "publie": "2026-10-14"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdUxMQzBoNlpiYjRNSm9NNEwzRmdmUVJETFVxbXh0cU10czBQM1M3WDBBZGtWYTVlaHp2RFpnSGRHYnUwMjltTHNJMlF4ZUJRWUM5R05IYnZoOU1Wb3pIXzBwbWNjV1cyd1RacFl0S0dzbEEwbmhkQkVCU2JfQ2o1R3daU3c5bFNMb2dMeXBkU2p0VDYtSzlsQjBmeHhvbXJLMnZrX2lYbXl4akNS?oc=5",
-      "titre": "Fuite de données personnelles (mot de passe, IBAN, pièce d’identité) : comment réagir ?",
-      "source": "Radio France",
-      "date": "2026-10-10",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "mots-de-passe-authentification",
-      "section": "🔑 Mots de passe & authentification",
-      "sujet": "🔒 Cybersécurité — Débutant",
-      "langue": "fr",
-      "site": "radiofrance.fr",
-      "publie": "2026-10-11"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQmtvZnZ2ZTNsOTA3MTdSR0lfNFlHalVFOHVDMnBwRUlQZ3BNUkRFdTFxMHQ3b1M5M1pUUTlJc3ZyT0ZoZFlrdi10YzdPd0JzNVJlLTBvOGgtZjl6clhjVHV1TUo2UHNuNzhLc09LQ29uT1VSZllhc0dwcGluNTNYM3dKWGdpLWE5RC16a0plZElLMFlZcDFQbEQzQQ?oc=5",
