@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-19T15:00:28.312Z",
+  "maj": "2026-10-19T21:38:23.957Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdk1hYTZfbGxSRXQ3emZCMXRFcWJKTksyRnA0R2tuWGhkQzlpNzVzOXNsT3BEMHB6My12S2N4ckJDS3I1dEQ1a1BEbTBCQXF5TE1DSDVRcUxhMXdYU0VWTDd5NEhVbVA3d3NEdWd5WXdpUE1qbzVnNFk2VzY5a2RCcmdnS2YtMHJSV3RHVHN3NjVHUFphZDRqLWViSjMxQQ?oc=5",
+      "titre": "Lyon. Travail de nuit : quelles obligations pour l’employeur ?",
+      "source": "Le Progrès",
+      "date": "2026-10-19",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-obligations-de-lemployeur",
+      "section": "🛡️ Les obligations de l'employeur",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "leprogres.fr",
+      "publie": "2026-10-19"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPeVB2a1F6bGhBQTBXSFNqOWlINkFuQV9keUN1aldGWFhjUmtmcTZjUHZYMUgwN01oT1NjZTl3aWxEd0x1ZGhuTHZjMkFTN0lBazFpeXR3eG1jNmI2cnllN3dEVmdIeVNJNGxQallqajZGcUJOTzBKR1RQNkRwSWdKbzJZeXpNTER2a0dhQnl1SXYxUFJOZ3FNUk9QTTdBYnFIZkVsUUlGaXJyMVFldnBEalJyUEFna1JxYTZ6VFVGM0p5Ym1MbnRDUEhiRVlzcDhuV1hvdExUTy1tbUFrZnYzWDdvYTB6RW9xUHpsS3ZiTGZhcllaMF8w?oc=5",
       "titre": "De la démocratie athénienne aux réseaux sociaux : quand les défenseurs de la liberté d’expression deviennent ses pires ennemis",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "radiofrance.fr",
       "publie": "2026-10-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTVHMFZaMGFzOHFwalR6U25lbnBjMnAzNmhjcU1VRGdwNF9yeExtSU45a0VZc0VMVUlGM2dXSzNWbldhWFdaZ09JT2F6Y1ZTRy0yNjlxZ05oZWw2aGszNnZnT0czMG8xTEltYTBRNlhzeFpKUWl5bmlvMjZoSHdWVVlVMW5iMEhmX2NFTk5mbTJacXBweUhsRXNVbVNQSlNRYVE?oc=5",
-      "titre": "Le dispositif Vacaf de la CAF victime d’une fuite massive de données",
-      "source": "20 Minutes",
-      "date": "2026-10-11",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "20minutes.fr",
-      "publie": "2026-10-12"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQmtvZnZ2ZTNsOTA3MTdSR0lfNFlHalVFOHVDMnBwRUlQZ3BNUkRFdTFxMHQ3b1M5M1pUUTlJc3ZyT0ZoZFlrdi10YzdPd0JzNVJlLTBvOGgtZjl6clhjVHV1TUo2UHNuNzhLc09LQ29uT1VSZllhc0dwcGluNTNYM3dKWGdpLWE5RC16a0plZElLMFlZcDFQbEQzQQ?oc=5",
