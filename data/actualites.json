@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-19T21:38:23.957Z",
+  "maj": "2026-10-20T12:49:38.462Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdk1hYTZfbGxSRXQ3emZCMXRFcWJKTksyRnA0R2tuWGhkQzlpNzVzOXNsT3BEMHB6My12S2N4ckJDS3I1dEQ1a1BEbTBCQXF5TE1DSDVRcUxhMXdYU0VWTDd5NEhVbVA3d3NEdWd5WXdpUE1qbzVnNFk2VzY5a2RCcmdnS2YtMHJSV3RHVHN3NjVHUFphZDRqLWViSjMxQQ?oc=5",
@@ -28,6 +28,20 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-10-18"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPc2NYMEVWTmkxVTFiT1I0a3VsODdORmtoYTg0ekpUTGdWWHlXSFUzR00wNEt0aHB0RXl2WGZGMHYxbmZha01QZ3huemdDQzZUdmFvVFJSTVhZaEpmMUlidXBTLUM4WkZQaVNzTWpyOFpTNW1kbENDbl9CYWF5UWU3aDFQRGNWNXJrQ2pTak5CZXV4aXpFUlpQTkNtVGtBRnZOX1lFckNDOWtfNFlPdTY1aFBTT0FKMHo0Y1RTTUtyMzloS3NXOW0zb3JZS3U3VTJwSzFzVGJXYWVnc1J2SHo4c05MYkRxTEQzb3Vj?oc=5",
+      "titre": "Vous vendez votre voiture connectée ? Voici la démarche pour supprimer vos comptes et vos données personnelles",
+      "source": "TF1 Info",
+      "date": "2026-10-18",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "vos-donnees-personnelles",
+      "section": "🔐 Tes données personnelles",
+      "sujet": "⚖️ Droit & démarches — Avancé",
+      "langue": "fr",
+      "site": "tf1info.fr",
+      "publie": "2026-10-20"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOemktc19wSHRONGxWMmtnWDRfMnp3bjZtTW1IeEJKSlV5bnRyWDdDc00wcHJEbWFsejl4eERrcGRhZTNJUmNJTFJBWWppWGdtbDEtMktCcHQ4MjNaT1oxU0pYeHk5OTF1ME5QUFc1VTBzZWgySnRsNFN1R0NqaFh6NnZoSk45SmNvSmdUVFhKR1VCS3c4?oc=5",
@@ -321,20 +335,6 @@
       "sujet": "🔒 Cybersécurité — Intermédiaire",
       "langue": "fr",
       "site": "clubic.com",
-      "publie": "2026-10-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNY3BsZTkyRlVqNWp6bm9mSy1kSm5naVY1QmZhTGtCUS1Yc0tfTmd0SjR4S3YyTTFzQTVsN2NlbzlRc1EycnlGY0RKNGpTcGtBcW9kM3VMaGN0RERFMHNCLWN0UjRRQnExSC1hUldWd2ZKVVMxaHVyVzJHQm9WX2lKNHNrRHRiR1d1elg2VjVGUG54WUw2SjExaTJmdjhSbEltSDMzRkM3Vmw2Tm93N1ZnR0RWamxIUlQ0ZlpOSTVnMDl5MXNJNHowampaT0ZZWEtnSHhjcUN0Q2tjUTZUcnR2NzktOEt0Y0tVZTNhbHZScUIzemVJcjB4Zi1md2I?oc=5",
-      "titre": "Intelligence artificielle : progrès, risques, jusqu’où lui faire confiance ?",
-      "source": "Radio France",
-      "date": "2026-10-12",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-limites-et-risques-de-lia",
-      "section": "⚠️ Les limites et risques de l'IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "langue": "fr",
-      "site": "radiofrance.fr",
       "publie": "2026-10-17"
     },
     {
