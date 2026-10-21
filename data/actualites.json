@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-21T13:02:25.815Z",
+  "maj": "2026-10-21T13:15:30.643Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTGtJVXJIRTVJMUFkclhqX1R6cUQ0RklkM3dHMnZNVVVRMlJYc01EZzVFNkdpUU5Id1g2TXVITV9EOVUzSElpVnY0aWtmN0gwYzlXT0tqLVFWSDRiXzBEZVM4bHBvUzJZWTc5aE0zdGtwUW5qVXZwMFJYOVFaWmZGUUlqa3NaWkJ0NWIzQTg2NFFuWW9iODRTTGdJaTBLWFZBaEcxNnUxakphTjhqMW1KREpGSS03cHZmaXJQWXhDVnQ2SUlyTDdZWWJBUmhBVG15eUVnNzN2cVFfR3EtWWRPanpuNUtRdw?oc=5",
@@ -422,6 +422,20 @@
       "publie": "2026-10-17"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNYnVrZ2JkR29JRS13ZXBwdnpQZzlhMWp3clBhSnFnVXBmamZRY3RHSFJsM19ETFJWYUJiMXQxWFlOQktSWUJnZEEybldSLXRtcFllSWprTl9MOTFlNmpLUlhtaG9WVVpva1pqWHJuNDlmaENZR0sxaVNuWnFuYnY3bmVIdXFYVG5LV3l1OFY1MkF5Xy1CZG44STU1dWk3SXZHRGlMemc1Q2pNQ29QV1lRN1dodW1UVmxaa2hRQnNxdw?oc=5",
+      "titre": "Work starts on £7.5m industrial development in Cowdenbeath",
+      "source": "The Herald",
+      "date": "2026-10-13",
+      "guide": "dev-web",
+      "page": "intermediaire.html",
+      "ancre": "working-with-others",
+      "section": "🧰 Working with others",
+      "sujet": "💻 Web Development — Intermediate",
+      "langue": "en",
+      "site": "heraldscotland.com",
+      "publie": "2026-10-21"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOdTc1YlcyTUxpNTBHbHZkZTFGdGhIQXhDVU83Tzh2VGRzaXlwdkxzSVZYMlFtUEp3RTJOT1gzbk11NHFNSHBQd19JQkhvWGZsUVRxZVZmYnhVNzBRaUZ4ajF3WVhMckZYei1sa1F6N0NLSl8waGdNVW1GTFVaQVBvaWxDcXFMZFpQR2oxaEpianhiNHpCMWEyMmp3RWlMRWtISnRBcjZZcnVpQQ?oc=5",
       "titre": "Help the NCSC understand how organisations approach external attack surface risk",
       "source": "National Cyber Security Centre",
@@ -658,20 +672,6 @@
       "langue": "en",
       "site": "computerweekly.com",
       "publie": "2026-10-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSjFoNFg0TVBBT05KZk8wMk1qRVNnX0c5bHJKMWlrWDVpN1E2Yy1QSFNvRWRHZjE2SHJtUWw5VVBlUl95WWp4bjV0eWQ2dnhNWDVXX1loU2VWal9zZFJpTUZFdjNPQ2E4RVpMMHY4VmVhVVEtNW8wQUsybVNhREJMbnBtYklZTC1LWW1xT25EQnFrY01LQ0M0TG52REZHYjFkMFZ3U280bXpvTklrcUxDTkRiUzhqUUZmQ3dnN1FzYw?oc=5",
-      "titre": "Fresh CSS constructs move web design beyond ticky-tacky little boxes",
-      "source": "The Register",
-      "date": "2026-09-29",
-      "guide": "dev-web",
-      "page": "debutant.html",
-      "ancre": "html-css",
-      "section": "🏗️ HTML & CSS",
-      "sujet": "💻 Web Development — Beginner",
-      "langue": "en",
-      "site": "theregister.com",
-      "publie": "2026-09-29"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZmw4SmJOc1BocUxpSl8xQmVkSmI1VlUyWC1TVGgxRmNLbDJOY1NiMDFWRDd0TV9USDhJNWRTVzJ3X1FoYThUa3lKaVl0bGtlRjlpX21xUnQ5eVZtM0pMa19OMEVJNks3YmhBNUFIdXpRbUFzbk55cEU0ZGtFVkJNYTkyaGdqZVRibExPZk1LNXpSV0pQLUQ5Vy13TjVhdGVqMVRpbS1fSVNmUQ?oc=5",
