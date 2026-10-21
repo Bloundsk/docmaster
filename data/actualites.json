@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-21T13:38:53.000Z",
+  "maj": "2026-10-21T20:45:33.650Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTGtJVXJIRTVJMUFkclhqX1R6cUQ0RklkM3dHMnZNVVVRMlJYc01EZzVFNkdpUU5Id1g2TXVITV9EOVUzSElpVnY0aWtmN0gwYzlXT0tqLVFWSDRiXzBEZVM4bHBvUzJZWTc5aE0zdGtwUW5qVXZwMFJYOVFaWmZGUUlqa3NaWkJ0NWIzQTg2NFFuWW9iODRTTGdJaTBLWFZBaEcxNnUxakphTjhqMW1KREpGSS03cHZmaXJQWXhDVnQ2SUlyTDdZWWJBUmhBVG15eUVnNzN2cVFfR3EtWWRPanpuNUtRdw?oc=5",
@@ -13,6 +13,20 @@
       "sujet": "🔒 Cybersécurité — Avancé",
       "langue": "fr",
       "site": "sudouest.fr",
+      "publie": "2026-10-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWlh4QlZsNmpXQW10UmUzR0VLalloY0d3eEdBVVFkZUF6OTVBb2NYREwycG1aZmZWWlRRZGU2ZDRULWdVRGZPT2N3OEZPUjkxNGl6ZlJxWWd1T05GMWZJXzhTdUJlZjltZmhSODRrUVo4SWRDS1RxWFlrMHVVWWRiWDZPcHVaVEx4dTI0SklVZVZxNmFKMElwc0h0QjRLRHRFcU4yeEV2b3pOVkFCSlBOOTBZby1zaWR4Vl9wYUhxSjMzVmM0Vmp4cmNvWTdKdHNqMnhlMEQ1cWNxZVNI?oc=5",
+      "titre": "Des sites web inaccessibles : du Japon à l'Europe, les autorités appellent à mettre PHP à jour en urgence",
+      "source": "Numerama",
+      "date": "2026-10-21",
+      "guide": "dev-web",
+      "page": "intermediaire.html",
+      "ancre": "mettre-en-ligne",
+      "section": "🚀 Mettre en ligne",
+      "sujet": "💻 Développement Web — Intermédiaire",
+      "langue": "fr",
+      "site": "numerama.com",
       "publie": "2026-10-21"
     },
     {
@@ -44,6 +58,20 @@
       "publie": "2026-10-21"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPUVpiMDNpRVlEb21MeTFsbWNyQjBSZWNFTFVPM1VlM2xlQXNFeXA1ZmxXR2xfOTktNjNVbmp4OC15ai16blNRd2N2SnNZeGdZaTBFaFBVOVk4NWhlTUlqcG1iT1J4b1AyVVhEak5jZUlvby16YUtlbmotaHZ5THZUanpEZGFISTdKYUVMYldUOC04M1Q0OG5yLXFHT0lSQzVhdjRrM045U3ZnekhvNFRNQ0pfNXVoV3VCUzVMT2dRLW50eDJ0cjJpMXJuMmZxU3FjM0UyQmdlS1o3bnVVUjNQUnlIT2hTOUVRMmJySlRiTm5KakJDSkpOWWhkVTB4akExNDZremxLTzhPZTlvY2M1YXk0bmlDYjA0eG9ET0t0NlNyV00?oc=5",
+      "titre": "Allemagne : le parti d’extrême droite AfD victime d’une fuite de données massive contenant plusieurs centaines de milliers d’emails",
+      "source": "Sud Ouest",
+      "date": "2026-10-20",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-10-21"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdk1hYTZfbGxSRXQ3emZCMXRFcWJKTksyRnA0R2tuWGhkQzlpNzVzOXNsT3BEMHB6My12S2N4ckJDS3I1dEQ1a1BEbTBCQXF5TE1DSDVRcUxhMXdYU0VWTDd5NEhVbVA3d3NEdWd5WXdpUE1qbzVnNFk2VzY5a2RCcmdnS2YtMHJSV3RHVHN3NjVHUFphZDRqLWViSjMxQQ?oc=5",
       "titre": "Lyon. Travail de nuit : quelles obligations pour l’employeur ?",
       "source": "Le Progrès",
@@ -69,6 +97,20 @@
       "sujet": "💻 Développement Web — Avancé",
       "langue": "fr",
       "site": "ladepeche.fr",
+      "publie": "2026-10-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPcVFzZkVZdmZlU00tRVV6Zm9WLWczX1hqTHZSQ1FScGhFNm95eDFsdHJfYXJvSXl3dklpQnJKbDNYdFRtVXBxZzFWOS1PeF9saFNuZnlwSG5EY0ticm9pT0IxdkdITDRiQWZjMmNPVWRhb0VJekRoS3ppUE5CRFRxNGlfTEYtUFV0a2lMdkxGS0ZObnBTWGxmTHdWZ0hnTEtJU0RsNHNvY0JaUzltRWN6Zk05WU52c25ROWs2TGNHSEEwVGpTVWZaTlNNNVBnMmVvbHZLbzB6TQ?oc=5",
+      "titre": "Placements : la remontée des taux d’intérêt rebat les cartes de l’épargne",
+      "source": "Le Monde",
+      "date": "2026-10-19",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lemonde.fr",
       "publie": "2026-10-21"
     },
     {
@@ -240,20 +282,6 @@
       "publie": "2026-10-15"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOVmNKLVU4N25WREFyRmpGWWsza1FyNGtGN2NITXNDQ2liTHZELXV1NnM0SFRKeU5uMHU2TE9CQjU3OURQTndXZllyX2lOYURTM0hwMzBaZ1A2cU5lY2xEbDRoT0RlRjVlcDQ0ZGRuYmIzdGQzMG13Mm9EV09tWVlnbzZxWkdFTmFTalBINkVHdUJOazVnd1Rhb3JwRFNHMlBleTBCQkJiY0pacUpGS25vM1pUOWJMcjVHenQ4VVB2VHNQZWl3ZGh2ZGRBRWZKV0k0bTFYTEVJdjZVYlRGTHdodlVuRmFJa3lUenJ0Ylg2T0FVWlZPaDhscXBR?oc=5",
-      "titre": "60 % d'actions, 40 % d'obligations : la flambée des taux remet au goût du jour les vieilles recettes des gérants",
-      "source": "Les Echos",
-      "date": "2026-10-15",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "lesechos.fr",
-      "publie": "2026-10-17"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1scnpxVmoxd2lIUDZGNjRVOGpKd1RGRDdYYTF6NzItSnlNQXdrUWttU0dudWRtWmh6ejFUMmZHRlg0dU1WLWJORWF1QXFpdWtHRXRpbmNPUFlEZExNVEg4bmdWSQ?oc=5",
       "titre": "MVP, le podcast SEO et GEO pour suivre chaque semaine les nouveautés du référencement",
       "source": "Blog du Modérateur",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "nicematin.com",
       "publie": "2026-10-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQV2FlbG9KNC1USGkzUWZVcFdnTTVtRFl6emtSeUJiS1hOeXA4VHgyNmV3QjFPQVF4SG44ME81ODhLbE4xT0s3Z3F4Vk8xS2xrT3hUVmdoOW5JemJxX1QtSDh3X2lXSFZvNXVwb0F6V0hJdDFqYmRZTXl6OG5nNG1rV09fSlpHY2JuakVVb3pVRGs2bG1pZWFQdE5oT0JDRHczTVFTR2Z1bV9iRHNoUHlMX2V6MURKcW8tS0hkYWs0eVhGZ2ds?oc=5",
-      "titre": "Passez un cap en cyberconfidentialité grâce à ce réseau virtuel privé (VPN) suisse",
-      "source": "Clubic",
-      "date": "2026-10-13",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "reseau-et-vpn",
-      "section": "🌐 Le réseau et le VPN",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "clubic.com",
-      "publie": "2026-10-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOMGRpUmxOSjRWUmxVLTdFUXlNQ29aMGdsZ3Flbm5WRTNXY0stemhvdWJLcVpRWGRQOW1GdHpUQjBzVHk2cW15ZzRlZWxWRG12UGNGTFhCS1Jxem9pNkQtbUlXTDN5ZTFxRmxrdENuTzk1X2JzVlYyZHM3clg0NE0zNW9EU09Bb1ZSZHdTMWROaHYySHU2dm9xSUFRVDFnR1dIZUxyV3c4OVVuZFNiM1QtRXBUM0FQTXYyc2pBdmxuWmdGeGtuc0h1anJreEgxUVhEbDhLN19DblNXel94SFMyU0hsRVc4QXY5cHVUa2ViZzJxVHVfY2F0UlRDbTg5OGRyWlE?oc=5",
-      "titre": "Employeurs : quels sont vos droits et obligations lors de l’arrêt de travail d’un salarié ?",
-      "source": "economie.gouv.fr",
-      "date": "2026-10-13",
-      "guide": "droit",
-      "page": "intermediaire.html",
-      "ancre": "le-contrat-de-travail",
-      "section": "💼 Le contrat de travail",
-      "sujet": "⚖️ Droit & démarches — Intermédiaire",
-      "langue": "fr",
-      "site": "economie.gouv.fr",
-      "publie": "2026-10-13"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQmtvZnZ2ZTNsOTA3MTdSR0lfNFlHalVFOHVDMnBwRUlQZ3BNUkRFdTFxMHQ3b1M5M1pUUTlJc3ZyT0ZoZFlrdi10YzdPd0JzNVJlLTBvOGgtZjl6clhjVHV1TUo2UHNuNzhLc09LQ29uT1VSZllhc0dwcGluNTNYM3dKWGdpLWE5RC16a0plZElLMFlZcDFQbEQzQQ?oc=5",
