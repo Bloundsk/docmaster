@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-22T10:37:09.250Z",
+  "maj": "2026-10-22T13:03:57.496Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdFExcFp0YTdWMzZSeWJyY1l0Q29WRTVtM24zUHV0UUl5d21kQnJ3ODN6Tk1iUTZSdERDdXd6Z0lNaVd5WFpIM2owSW9mQTRKdTJDOFc0MS1DOE1WelJJN2RZc1QyaDdnZHA4MG9QdzhrNklZWWotZ3dSTS1LZk5RSXRFd0Y1ZWJwNWxTaGRDR2pnYnRPRHVjOUNjdFIwSXZrY2MwM3BtZVhFcnpoYVZ5NHg4R2F4Z0piYzNmX1gtWnFSMm85YnluZUprWEYtQkxwd3Z5SA?oc=5",
+      "titre": "DÉCRYPTAGE. Panne internet mondiale : pourquoi des failles de sécurité perturbnt des millions de sites web dans le monde entier depuis mercredi",
+      "source": "La Dépêche",
+      "date": "2026-10-22",
+      "guide": "dev-web",
+      "page": "avance.html",
+      "ancre": "securite-applicative",
+      "section": "🔐 La sécurité applicative",
+      "sujet": "💻 Développement Web — Avancé",
+      "langue": "fr",
+      "site": "ladepeche.fr",
+      "publie": "2026-10-22"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTGtJVXJIRTVJMUFkclhqX1R6cUQ0RklkM3dHMnZNVVVRMlJYc01EZzVFNkdpUU5Id1g2TXVITV9EOVUzSElpVnY0aWtmN0gwYzlXT0tqLVFWSDRiXzBEZVM4bHBvUzJZWTc5aE0zdGtwUW5qVXZwMFJYOVFaWmZGUUlqa3NaWkJ0NWIzQTg2NFFuWW9iODRTTGdJaTBLWFZBaEcxNnUxakphTjhqMW1KREpGSS03cHZmaXJQWXhDVnQ2SUlyTDdZWWJBUmhBVG15eUVnNzN2cVFfR3EtWWRPanpuNUtRdw?oc=5",
       "titre": "Cybersécurité : le magazine Valeurs actuelles victime d’une fuite de données de ses acheteurs",
@@ -70,6 +84,20 @@
       "langue": "fr",
       "site": "sudouest.fr",
       "publie": "2026-10-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOeHk2c0EyX1BHTXVuYTUtU3U1aWV2MEFjMkJQclUzOFdva2lyY2JPNm54TXJWb1FCWnZkTjBpYmtvMTA5LXRZRDd2Tlg0N1c1b3pQbmYwb0ZGTjlBaDdFaXJ2dzBBOWFCYVgwWnlIaW5KblRzY0FOYk1BSnNCakIwelJHR29FdG9vQ2lpS0VrZU16SE5jTm90MmhsRkRBT0IyS3diTC1feEw1aE9RQnVhXzBjeEtrSzJEaXllVkp4a1dCcHRXMk5mbXE1YVV2UjZ2dm42NFo3MzZ5X1FSRURDSlBMcDJyVlRvOEs3VzFLWFVXUnlCQUVfN2RjX0k?oc=5",
+      "titre": "Interdiction des réseaux sociaux aux mineurs : pourquoi l’Australie s’apprête à poursuivre Facebook, Instagram et TikTok",
+      "source": "Le Figaro",
+      "date": "2026-10-20",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-10-22"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdk1hYTZfbGxSRXQ3emZCMXRFcWJKTksyRnA0R2tuWGhkQzlpNzVzOXNsT3BEMHB6My12S2N4ckJDS3I1dEQ1a1BEbTBCQXF5TE1DSDVRcUxhMXdYU0VWTDd5NEhVbVA3d3NEdWd5WXdpUE1qbzVnNFk2VzY5a2RCcmdnS2YtMHJSV3RHVHN3NjVHUFphZDRqLWViSjMxQQ?oc=5",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "sudouest.fr",
       "publie": "2026-10-14"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNOTFoQ21YcDd1Z0d3SS1HelFCVzFTdmd4UTZxTm5LXzhqUnVhTHpRTW5UWXFfb19hRmpvREozbklMcjh3RDE5aVpMamlFOThXNGQ3TWdpRDBLZnpVenlCMVItMVlOQ1JaQkN1NTJNaW5BRnp3TUhhYlphbVY5WVhHN0pySE1UTVphZkpXSVk3aDNLNzByZnpXOFFobklZM1NuNDRTSVkwWlhLdmswRzVHOFdHVDJDRk5TQ3lpNXg4RQ?oc=5",
-      "titre": "La dette est un frein pour la croissance des pays en développement, selon le G-24",
-      "source": "RFI",
-      "date": "2026-10-14",
-      "guide": "dev-web",
-      "page": "avance.html",
-      "ancre": "dette-technique",
-      "section": "🏗️ La dette technique",
-      "sujet": "💻 Développement Web — Avancé",
-      "langue": "fr",
-      "site": "rfi.fr",
-      "publie": "2026-10-14"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivAJBVV95cUxPMWY0bk8wWEpYLXlDa3hiejV4THZabmhxNFVLNy0zSlJRcGZxQVlOblBQODZLVmg5dTA4TmI3T1BOUzU2aDZTRmJRc0JhMGxJejNIRDFucWRscWNiQmt3ME9SM3l1cHRKS0N0X3BYTnpyNGxTLTVBdEgxaGV5LVdnT0NyZElBMjMzQnBGZF9iMzNaS1RXeVFnSjBIMWlJek8wZTZXSXNNNV80NzBhdjBtc185bVJON3BScmNLZDdhRUh4RHJNLXR5Q2FVODZJRXo3dEw0VFBNUUdVUUNQeUR6Q3RMLUd6VXlSRHd0dnR3UFpkUHRKWUMzT2E5MGFwZENXR1lHNE5HcmJfMzVKcUZmcUVwaVpuZkxjNm5JYVI4WE1Cc3JtczdZa3lla3NLRncxTmlWelVIVHk0eVBo?oc=5",
-      "titre": "Massage cardiaque, gestion de crise et kit de survie : des collégiens varois s’exercent à faire face aux risques d’incendie, d’inondation ou d’accident nucléaire",
-      "source": "Nice-Matin",
-      "date": "2026-10-14",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "nicematin.com",
-      "publie": "2026-10-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQmtvZnZ2ZTNsOTA3MTdSR0lfNFlHalVFOHVDMnBwRUlQZ3BNUkRFdTFxMHQ3b1M5M1pUUTlJc3ZyT0ZoZFlrdi10YzdPd0JzNVJlLTBvOGgtZjl6clhjVHV1TUo2UHNuNzhLc09LQ29uT1VSZllhc0dwcGluNTNYM3dKWGdpLWE5RC16a0plZElLMFlZcDFQbEQzQQ?oc=5",
