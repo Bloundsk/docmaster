@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-22T13:03:57.496Z",
+  "maj": "2026-10-22T13:14:23.697Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdFExcFp0YTdWMzZSeWJyY1l0Q29WRTVtM24zUHV0UUl5d21kQnJ3ODN6Tk1iUTZSdERDdXd6Z0lNaVd5WFpIM2owSW9mQTRKdTJDOFc0MS1DOE1WelJJN2RZc1QyaDdnZHA4MG9QdzhrNklZWWotZ3dSTS1LZk5RSXRFd0Y1ZWJwNWxTaGRDR2pnYnRPRHVjOUNjdFIwSXZrY2MwM3BtZVhFcnpoYVZ5NHg4R2F4Z0piYzNmX1gtWnFSMm85YnluZUprWEYtQkxwd3Z5SA?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-10-14"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZzg4dWFfNXNCTU0tRFkwNHRjczVnSk1BU01IQnlpTGRibTBkMGx3WlEwaXBhNENPaDhiOU9IcGYtbVg5QzVUWDFPOXdMa3I3X1RIS3ljalVGMFB3c2tKV1BSdzVwUG91RFpJV3Q5MDV6MjVKRkg0TU5wOXo0TGxlb1J3SQ?oc=5",
+      "titre": "I’m 73, still working and broke – not all boomers are living the dream",
+      "source": "The i Paper",
+      "date": "2026-10-20",
+      "guide": "sante",
+      "page": "debutant.html",
+      "ancre": "sitting-still",
+      "section": "🚶 Sitting still",
+      "sujet": "🩺 Health at Work — Beginner",
+      "langue": "en",
+      "site": "inews.co.uk",
+      "publie": "2026-10-22"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQmtvZnZ2ZTNsOTA3MTdSR0lfNFlHalVFOHVDMnBwRUlQZ3BNUkRFdTFxMHQ3b1M5M1pUUTlJc3ZyT0ZoZFlrdi10YzdPd0JzNVJlLTBvOGgtZjl6clhjVHV1TUo2UHNuNzhLc09LQ29uT1VSZllhc0dwcGluNTNYM3dKWGdpLWE5RC16a0plZElLMFlZcDFQbEQzQQ?oc=5",
       "titre": "AI agents can act, but humans must own the outcome",
       "source": "Computer Weekly",
@@ -657,20 +671,6 @@
       "sujet": "🩺 Health at Work — Advanced",
       "langue": "en",
       "site": "personneltoday.com",
-      "publie": "2026-10-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQRDJoM0VZaGZGU0s0SEZaWHJFbFBybUxGZGlRSjBia3hBMGQyVW1rZ2pDcng4SWZwcmIxY2xUVFpBa2lpTXBTbVpETkU3ZUZzZkNtNzVYU242VjF6ay1NUlZwU25UZWlCc0hGdF9HU2ZZbTRvTWJKMm81bFRHdzlBZjRB?oc=5",
-      "titre": "Antivirus, firewall and IDS products",
-      "source": "Computer Weekly",
-      "date": "2026-09-30",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "firewalls-and-antivirus",
-      "section": "🛡️ Firewalls and antivirus",
-      "sujet": "🔒 Cybersecurity — Beginner",
-      "langue": "en",
-      "site": "computerweekly.com",
       "publie": "2026-10-17"
     },
     {
