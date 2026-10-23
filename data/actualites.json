@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-23T12:54:27.118Z",
+  "maj": "2026-10-23T20:33:23.039Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcU9DNFk1UFlibHNPeTRjbXZ2Vm8xY0hGTVFiN2U4dmhiNnNtRFhXdXdGVERHcEVzY3ZKa3hjT0h4M1QyeWNyc2t1UEpEeGdGTzZQbjJsVGtvRThZNFhxRUdIT1NJZFNyaW53OFIxOHNveGxkMEJZV1lDNnE0Ml9ZZXRUTDBDTi1ZNFRieE10ZlNLUTNWMFlKRDE2c2piazUtZ0tmN3hIdE1BczNNdzZB?oc=5",
+      "titre": "Contrat soumis au droit anglais : pas de force majeure sans clause. Par Annoushka Chaillet, Avocat.",
+      "source": "Village de la Justice",
+      "date": "2026-10-23",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "lire-un-contrat",
+      "section": "📐 Lire un contrat",
+      "sujet": "⚖️ Droit & démarches — Avancé",
+      "langue": "fr",
+      "site": "village-justice.com",
+      "publie": "2026-10-23"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdFExcFp0YTdWMzZSeWJyY1l0Q29WRTVtM24zUHV0UUl5d21kQnJ3ODN6Tk1iUTZSdERDdXd6Z0lNaVd5WFpIM2owSW9mQTRKdTJDOFc0MS1DOE1WelJJN2RZc1QyaDdnZHA4MG9QdzhrNklZWWotZ3dSTS1LZk5RSXRFd0Y1ZWJwNWxTaGRDR2pnYnRPRHVjOUNjdFIwSXZrY2MwM3BtZVhFcnpoYVZ5NHg4R2F4Z0piYzNmX1gtWnFSMm85YnluZUprWEYtQkxwd3Z5SA?oc=5",
       "titre": "DÉCRYPTAGE. Panne internet mondiale : pourquoi des failles de sécurité perturbnt des millions de sites web dans le monde entier depuis mercredi",
@@ -30,6 +44,34 @@
       "publie": "2026-10-22"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNMno0TmNkeUVBNWlab21Ic1h0eS02aW82UlVuLUFuUWdXVFdPR3VUbGtzeUlhYkJEdTV1VEp1eFRVSkxrWFIzNzhlS1NDSFN5U0FJTGVHZ0NQVU02eHFGblgyMkRFdlhpLWVHYXZkTTVwMGRTNTNsWW9PdHRZRlRIZkNYUjRtTlBMVUR1cDJyU2pzM0VQQl9sTXBaTVhVSkJxanJBWnJucGd3QWh5VG9GRVNqZHhaQlNlZi1VQlNDSHJhMkxPanpaQWhVMHdzUFAtUUhjMFBHckJfUl9hUXRyMEpOWHdwX1VCZ3ozdjdZemQyUks5QnU4NDNadw?oc=5",
+      "titre": "La Fédération française de tir de nouveau piratée, un an après une fuite de données qui avait entraîné des vols d'armes",
+      "source": "RTL",
+      "date": "2026-10-22",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "rtl.fr",
+      "publie": "2026-10-23"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZUllTXJubnowQkkzMVRLdlJ2LUNhNW5BYUFLcVI1SkQ0Vk9mcHpfTGQwdVVNTEl6UjFBSUVxa095RFd4OC02LUtwV3AwdVo2Z0tSNy0xSFNDVXFHOTN0MXNSeFhsLVRXaHJaSmFLYTFlNXJuTDFNQlJ3ZVMxSEotS041RlRFb3JFRkxPMjJfUWE1bU83ZjV5amhVbXFrcDNZM2l1bDhhT1hUZ00tZmdZ?oc=5",
+      "titre": "Financer son entreprise : les erreurs à éviter dans votre business plan",
+      "source": "Bpifrance Création",
+      "date": "2026-10-22",
+      "guide": "entrepreneuriat",
+      "page": "debutant.html",
+      "ancre": "le-business-plan",
+      "section": "📋 Le business plan",
+      "sujet": "🚀 Entrepreneuriat — Débutant",
+      "langue": "fr",
+      "site": "bpifrance-creation.fr",
+      "publie": "2026-10-23"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTGtJVXJIRTVJMUFkclhqX1R6cUQ0RklkM3dHMnZNVVVRMlJYc01EZzVFNkdpUU5Id1g2TXVITV9EOVUzSElpVnY0aWtmN0gwYzlXT0tqLVFWSDRiXzBEZVM4bHBvUzJZWTc5aE0zdGtwUW5qVXZwMFJYOVFaWmZGUUlqa3NaWkJ0NWIzQTg2NFFuWW9iODRTTGdJaTBLWFZBaEcxNnUxakphTjhqMW1KREpGSS03cHZmaXJQWXhDVnQ2SUlyTDdZWWJBUmhBVG15eUVnNzN2cVFfR3EtWWRPanpuNUtRdw?oc=5",
       "titre": "Cybersécurité : le magazine Valeurs actuelles victime d’une fuite de données de ses acheteurs",
       "source": "Sud Ouest",
@@ -56,6 +98,20 @@
       "langue": "fr",
       "site": "numerama.com",
       "publie": "2026-10-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNV1RZX2JqcUlGS1k0eTg0UzgzRkRRVzdwbkswSWV4Tzh0X25nMXh5SEJtdzR2RUhuNlM5OWNraVlSalZxdGlYRktESTBwOXllNVJzMU94TzQ5QndnM1NZRTlnblJfUDRJQ09wbUZqLWg3aXllRFVMa0tOWHcyN0RES1J0cmVVU0hKblZjSnY1LVg3ejVjZXViUVNTbEdkWnRhd3dNRDYzenpkXzRDdFNtYkRvV2twdGhoUzJ3QjlWbEQyM1pPWEhibVdR?oc=5",
+      "titre": "« Ce sera plus difficile d’avoir accès au crédit » : comment la hausse des taux d’intérêt de la dette va impacter le budget des Français",
+      "source": "La Voix du Nord",
+      "date": "2026-10-21",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lavoixdunord.fr",
+      "publie": "2026-10-23"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOZE5ldzRGTUpndTRwTm96dEVoem00dVRnTktFT3lWak1DYVRPTG5MeEdxU2k3OWFiOGZhSW1ZUm5fdXBiVXMyS2QyekxqNHg1cVlkaDAzLVR6MTBGS1kxcEJ6MmJtV292cTJQYWdUcnFsc0oya05pVUhzX3c5Z0daT2lXOWFqOGFXQjZyOW9JQ3JCOC1LZWczQkdTakhPSV9sX3pXamRBN3c1a0kwZlJDWlh6S3JKWUpWeG9ZUjdVTTkycDhsUDFycDlZTkkwcThrS3Rz?oc=5",
@@ -240,34 +296,6 @@
       "publie": "2026-10-16"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQYkxmOEFpenJndGJnTmVrMWprLW5QZkx0NXFCLXNqRjk1QVNBcUQwSDI2WEYxYTBMYkFjZXBjekpZZjRBZkZIWS1fREtlWnBBVVJDQWNTLUxQUHNoTC1McHFmS29manRQNEJWdHY4VXhQTkZWYTZobFR5ckhubGxQSzYzSFhVdnN3eGpyVnZRX2RmTE9RdkhfVXZ1WEhIT3dyWWFkYTJCeVRpOU0takQ3SFJPYjJrS291bmM4WFVvbC1UT3hIcXlkNGR3?oc=5",
-      "titre": "Le Grand Orient de France touché par une fuite de données, des noms de membres exposés",
-      "source": "Clubic",
-      "date": "2026-10-16",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "clubic.com",
-      "publie": "2026-10-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNUTF2UmFEUHJhdlFFRlJFR2RURDR4M1ZJUWlZaG1xQjQyOEwyc1dPdmw5cy13Yk1wdTB2b0owMHRLWkJfNEgzRkVLZk0xMmpPdU94OVExb1doeUlhSkJNU19mWkM2d0w1a0cyZnYyZlU4UHJhWkRUdW1Id212YkpoOG8yMS1sWGpCZzNobWJlVzBiNF91emNSR0I5MUtZRWdCTEJMYWJwZDRpSExUWHdPYVBJLVp0Yk9jbWotaTVnNDMtZllRaHhidzRJZWh6aGRUMkNtN19OVkxJd2NPc3ZIcG1rT1ByQWwwdGZOSi1ycm14UQ?oc=5",
-      "titre": "Taux d'intérêt français : une intervention de la BCE en France ne se justifie pas, selon le gouverneur de la Banque de France",
-      "source": "Sud Ouest",
-      "date": "2026-10-16",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-10-18"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMimwJBVV95cUxPcDV0WmNMVWVCVUJEZ3pIZ25hTEpIdmxzTWNBZVF3OHVkY0tDWFRWeGQ4R29Hbng5NVFrc1NsZTh2RjBCUV9YNHlhaGhFR3kyNkliNTNjZ1dzdmFkMlNrdktjR0JldGRLNE1tUjVjaUhHby1JWDF4dktxd2JvUHpwcmlneHdkTzh0Znl6Ym5fdVRWa3N4RTJYRHJjcElZS0Y4SFpxVlF3OHNMcm9MVVlNc3pqV1k4RXQ2Q08yRmRVZ0hfWjhNMm1BYlBsc3E4dU1GZEJTZlRDckVNMmlSakUzcFNlRXlHaWVKdlY5RC10N3owU0pWal81NDk0RmZMVGxRLVFxQkQ5SWVCdWV2YkZGODBYY0JWS3RBczBz?oc=5",
       "titre": "Les connaisseurs n'en parlent pas mais voici le livret d'épargne pour sécuriser vos finances avant la fin de l'année",
       "source": "BFMTV",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "journaldunet.com",
       "publie": "2026-10-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZnB5RUtsOHQzQ0tqQXZGcUN1WGMyTkppSV9JRUhnTDdwNG5vWUJqbEJrWDJyYWxUdzFsTHFTSnNmenpvVE12RHFYMGFmWHpOTFZxTDRocXNSYTVRdnhyNDN2Tmwxa2pxam11bkl3ZUdZU2swclJCcFdVdEtzNDNMZHVTWlhzOWZUTEtydTBleWh0bUdGQ3RTd1dGRFczWWlFSkZKakVFVzVTdXM5V0Z1cmtlaHFFLUdL?oc=5",
-      "titre": "IA générative en entreprise : productivité boostée, surface d'attaque élargie",
-      "source": "Clubic",
-      "date": "2026-10-15",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "surface-attaque",
-      "section": "🗺️ Ta surface d'attaque",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "clubic.com",
-      "publie": "2026-10-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1scnpxVmoxd2lIUDZGNjRVOGpKd1RGRDdYYTF6NzItSnlNQXdrUWttU0dudWRtWmh6ejFUMmZHRlg0dU1WLWJORWF1QXFpdWtHRXRpbmNPUFlEZExNVEg4bmdWSQ?oc=5",
-      "titre": "MVP, le podcast SEO et GEO pour suivre chaque semaine les nouveautés du référencement",
-      "source": "Blog du Modérateur",
-      "date": "2026-10-15",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "seo-référencement-naturel",
-      "section": "🔍 SEO (référencement naturel)",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "blogdumoderateur.com",
-      "publie": "2026-10-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMEhPNlg1azZYUkoxVUxEWnZWYS1PeVJmbjc1Q0k0LVowTGI1TzFLRGxZcUN5ajZHSkw4UHVfUVp0ZHVHM2dkOUpWallQQTVOUG5YcGtkVkQwT2UteUlFTnZ5bUR2Wld4Rnd2cTJmRzhhd3NjMUF6ak9JM1ZFUGl6bVpxZUF2d3drVElOU3p3YndkaFhLQUxuay1GWURMUU43eFlzVEM0ZjVmX3VucndZ?oc=5",
