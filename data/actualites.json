@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-23T20:42:11.233Z",
+  "maj": "2026-10-24T12:05:45.247Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNcFhVTnZkOFd0dFIxd3ViOWxOYy1TM0duOUt1dGxPSXNVZWV6ZlZObjBKeG4tOV90OFdUM1RiX0dGeW5iV3V0UHctWmowRkZHMU5VT2laVFV1dzljRUswbDVwZXE2VTUtaVg4a3ZDcy0tLXl6ZHJLRk1KVUhnMXVzdEttd3Q1M3prbXAtVU4tbXFQNWxoalU3TmM4dVZWN2tKOUVRMC13eTJ4RUhCdTFjQl85TkIxSE51cmFmRExEbnR1cy11Qm1JTzlyRy1hWDE1R1E?oc=5",
+      "titre": "Une fuite de données au Parti communiste français touche 190.000 adhérents",
+      "source": "BFMTV",
+      "date": "2026-10-24",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-10-24"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNcU9DNFk1UFlibHNPeTRjbXZ2Vm8xY0hGTVFiN2U4dmhiNnNtRFhXdXdGVERHcEVzY3ZKa3hjT0h4M1QyeWNyc2t1UEpEeGdGTzZQbjJsVGtvRThZNFhxRUdIT1NJZFNyaW53OFIxOHNveGxkMEJZV1lDNnE0Ml9ZZXRUTDBDTi1ZNFRieE10ZlNLUTNWMFlKRDE2c2piazUtZ0tmN3hIdE1BczNNdzZB?oc=5",
       "titre": "Contrat soumis au droit anglais : pas de force majeure sans clause. Par Annoushka Chaillet, Avocat.",
@@ -139,20 +153,6 @@
       "sujet": "💰 Finance — Avancé",
       "langue": "fr",
       "site": "bfmtv.com",
-      "publie": "2026-10-21"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiowJBVV95cUxPUVpiMDNpRVlEb21MeTFsbWNyQjBSZWNFTFVPM1VlM2xlQXNFeXA1ZmxXR2xfOTktNjNVbmp4OC15ai16blNRd2N2SnNZeGdZaTBFaFBVOVk4NWhlTUlqcG1iT1J4b1AyVVhEak5jZUlvby16YUtlbmotaHZ5THZUanpEZGFISTdKYUVMYldUOC04M1Q0OG5yLXFHT0lSQzVhdjRrM045U3ZnekhvNFRNQ0pfNXVoV3VCUzVMT2dRLW50eDJ0cjJpMXJuMmZxU3FjM0UyQmdlS1o3bnVVUjNQUnlIT2hTOUVRMmJySlRiTm5KakJDSkpOWWhkVTB4akExNDZremxLTzhPZTlvY2M1YXk0bmlDYjA0eG9ET0t0NlNyV00?oc=5",
-      "titre": "Allemagne : le parti d’extrême droite AfD victime d’une fuite de données massive contenant plusieurs centaines de milliers d’emails",
-      "source": "Sud Ouest",
-      "date": "2026-10-20",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "sudouest.fr",
       "publie": "2026-10-21"
     },
     {
