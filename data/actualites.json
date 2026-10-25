@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-25T10:07:31.704Z",
+  "maj": "2026-10-25T12:40:06.018Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNcFhVTnZkOFd0dFIxd3ViOWxOYy1TM0duOUt1dGxPSXNVZWV6ZlZObjBKeG4tOV90OFdUM1RiX0dGeW5iV3V0UHctWmowRkZHMU5VT2laVFV1dzljRUswbDVwZXE2VTUtaVg4a3ZDcy0tLXl6ZHJLRk1KVUhnMXVzdEttd3Q1M3prbXAtVU4tbXFQNWxoalU3TmM4dVZWN2tKOUVRMC13eTJ4RUhCdTFjQl85TkIxSE51cmFmRExEbnR1cy11Qm1JTzlyRy1hWDE1R1E?oc=5",
@@ -28,6 +28,34 @@
       "langue": "fr",
       "site": "village-justice.com",
       "publie": "2026-10-23"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOelgycWtKRy1yelZsb0VlY1YzWkNaWFdVemxyWWJfTjh0eWt0anRFR0dEbW9pdmhSTk95SkIydnhBaFJOSUU0b19OWGxmNDc5eGhqX2J4ekNlUGZTUTVYQVQ4QVFJNXU4QWFyOGRkbnRxdVlnVGJGZDV4aWd0T2NPVWRKWXNybGV4bVlIUW9jY0hDc0pvS0RCTEFDalcwR3c4Rkx1ank4eTVOZWhFVC1wX2JmRHBlWmhOT0dCQWdTaC1aaTR5YjRhM3Rrc0lJdGh1RVE?oc=5",
+      "titre": "Cyberattaque : le Parti communiste français victime d’une fuite de données de ses adhérents",
+      "source": "Sud Ouest",
+      "date": "2026-10-23",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-10-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1UUVI5SkpQSWUyNGcwRk56U3NGQ196RFlmbDBxWVlwZ1VRRXlqR2JzSndGeWZhMUJQWHRIN1NHY28yZ0g3YU53bDVJdHV4UENZaUp1SDdTdHVfSmhuZUVPbnBUSnQ5Tlp2SVJ2NG1WMjhCS1Bnck9zRVYyMA?oc=5",
+      "titre": "Technostress : une faille pour l’ingénierie sociale",
+      "source": "Zataz",
+      "date": "2026-10-23",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "ingenierie-sociale",
+      "section": "🎭 L'ingénierie sociale ciblée",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "zataz.com",
+      "publie": "2026-10-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdFExcFp0YTdWMzZSeWJyY1l0Q29WRTVtM24zUHV0UUl5d21kQnJ3ODN6Tk1iUTZSdERDdXd6Z0lNaVd5WFpIM2owSW9mQTRKdTJDOFc0MS1DOE1WelJJN2RZc1QyaDdnZHA4MG9QdzhrNklZWWotZ3dSTS1LZk5RSXRFd0Y1ZWJwNWxTaGRDR2pnYnRPRHVjOUNjdFIwSXZrY2MwM3BtZVhFcnpoYVZ5NHg4R2F4Z0piYzNmX1gtWnFSMm85YnluZUprWEYtQkxwd3Z5SA?oc=5",
@@ -86,18 +114,18 @@
       "publie": "2026-10-23"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNTGtJVXJIRTVJMUFkclhqX1R6cUQ0RklkM3dHMnZNVVVRMlJYc01EZzVFNkdpUU5Id1g2TXVITV9EOVUzSElpVnY0aWtmN0gwYzlXT0tqLVFWSDRiXzBEZVM4bHBvUzJZWTc5aE0zdGtwUW5qVXZwMFJYOVFaWmZGUUlqa3NaWkJ0NWIzQTg2NFFuWW9iODRTTGdJaTBLWFZBaEcxNnUxakphTjhqMW1KREpGSS03cHZmaXJQWXhDVnQ2SUlyTDdZWWJBUmhBVG15eUVnNzN2cVFfR3EtWWRPanpuNUtRdw?oc=5",
-      "titre": "Cybersécurité : le magazine Valeurs actuelles victime d’une fuite de données de ses acheteurs",
-      "source": "Sud Ouest",
-      "date": "2026-10-21",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
+      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOWHhwQVBsa1ljTHRYTUR1WUVmck1wNkF6akxHenJDbHd3RTlXeFZTWU0ySHg5NlFJU0diWXByOEkxM20tZ21uOFRPODlqZ1pjVVc3aWU4QVhEQ0M0ZDU5b3pfMXMxUk0wMmp2dDN6QjJ3Vm12Wk5STDQzVU9qM3pBTEhHUEx1SGM2MjlEd2FQajJWelVSazVkU3NkZlBvZGk5ekpxdlQxdUs3Z0QxQldmSVRMa3dBUjVFTTZJYjZqVHBlMVZTYWFVckZPVzlWNDVldXhYVGhhZGp0SlRvQnhzaE81MkR4SEI2czFNaTliVFljcXhSRWtEMHhsLUxqNEVYS29R?oc=5",
+      "titre": "« Plusieurs milliers d’euros pour travailler avec les écoles en quartiers prioritaires » : la Ville obtient le label « Cité éducative »",
+      "source": "Le Dauphiné libéré",
+      "date": "2026-10-22",
+      "guide": "dev-web",
+      "page": "intermediaire.html",
+      "ancre": "travail-a-plusieurs",
+      "section": "🧰 Travailler à plusieurs",
+      "sujet": "💻 Développement Web — Intermédiaire",
       "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-10-21"
+      "site": "ledauphine.com",
+      "publie": "2026-10-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWlh4QlZsNmpXQW10UmUzR0VLalloY0d3eEdBVVFkZUF6OTVBb2NYREwycG1aZmZWWlRRZGU2ZDRULWdVRGZPT2N3OEZPUjkxNGl6ZlJxWWd1T05GMWZJXzhTdUJlZjltZmhSODRrUVo4SWRDS1RxWFlrMHVVWWRiWDZPcHVaVEx4dTI0SklVZVZxNmFKMElwc0h0QjRLRHRFcU4yeEV2b3pOVkFCSlBOOTBZby1zaWR4Vl9wYUhxSjMzVmM0Vmp4cmNvWTdKdHNqMnhlMEQ1cWNxZVNI?oc=5",
@@ -126,6 +154,20 @@
       "langue": "fr",
       "site": "lavoixdunord.fr",
       "publie": "2026-10-23"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOdHNrOFFHWWVxTVE5Q0kwMExaTjNOX0cyampKWkZEYWtmNDBzb01tbllhazN3MFQ2bkVnMmlzMVJjV09Oc3pzRGlYSWx1b18wU0ZtbFYycm5RTnNVUTdkTVNqTzZlQUZRZTBZUFd1N2Rhc2NHNUJTT1A5cXE5U3A5dWdpdzVoY3B2V0lQYWJkSWZsb1p0TmR4QmI3ZVlOYkZNcTZxYzJhSjB1anNTUURReml0d09sMUNDelRHbDdvby1XR1dCMDlDVjh4VzRpbFFDSDlEUWFCYU5CWlVuTUlhTV9SdWRmRUljS25ieGNSdUtQQUlBR2p4MlFhRVlyRXRBSUZEakV1M0ROWmYydWc?oc=5",
+      "titre": "Crise budgétaire : des taux d’intérêt au-delà de 5 %, une sanction des marchés que la France s’est elle-même infligée",
+      "source": "Le Monde",
+      "date": "2026-10-21",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lemonde.fr",
+      "publie": "2026-10-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOZE5ldzRGTUpndTRwTm96dEVoem00dVRnTktFT3lWak1DYVRPTG5MeEdxU2k3OWFiOGZhSW1ZUm5fdXBiVXMyS2QyekxqNHg1cVlkaDAzLVR6MTBGS1kxcEJ6MmJtV292cTJQYWdUcnFsc0oya05pVUhzX3c5Z0daT2lXOWFqOGFXQjZyOW9JQ3JCOC1LZWczQkdTakhPSV9sX3pXamRBN3c1a0kwZlJDWlh6S3JKWUpWeG9ZUjdVTTkycDhsUDFycDlZTkkwcThrS3Rz?oc=5",
@@ -195,20 +237,6 @@
       "sujet": "💻 Développement Web — Avancé",
       "langue": "fr",
       "site": "ladepeche.fr",
-      "publie": "2026-10-21"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPcVFzZkVZdmZlU00tRVV6Zm9WLWczX1hqTHZSQ1FScGhFNm95eDFsdHJfYXJvSXl3dklpQnJKbDNYdFRtVXBxZzFWOS1PeF9saFNuZnlwSG5EY0ticm9pT0IxdkdITDRiQWZjMmNPVWRhb0VJekRoS3ppUE5CRFRxNGlfTEYtUFV0a2lMdkxGS0ZObnBTWGxmTHdWZ0hnTEtJU0RsNHNvY0JaUzltRWN6Zk05WU52c25ROWs2TGNHSEEwVGpTVWZaTlNNNVBnMmVvbHZLbzB6TQ?oc=5",
-      "titre": "Placements : la remontée des taux d’intérêt rebat les cartes de l’épargne",
-      "source": "Le Monde",
-      "date": "2026-10-19",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "lemonde.fr",
       "publie": "2026-10-21"
     },
     {
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "bfmtv.com",
       "publie": "2026-10-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMDdqSTRkcWJyczh0UHYzb01ELWlTR0JrSGdMWlBPbE9PSkVIN2hSalo4TGZRbDVIVkMzWTJDcEctLXhWelJxcFhSajJiUTNRMWpmbVRwRGZ0SllQQWZnRXM2d2VTbXdhdVRXNGRQenVzdXdjWGI2WHFmUmwwdG9xV1NSRUZtRk9uTlVhajVnMDdzUU45c2ZCZjdRbDNEUXdnMzNXU095WFc0bW10U0VXT0trVWhLeThNLVc1M1RUREFvWDV3eU02RUN3QlJBYUZL?oc=5",
-      "titre": "« Un péril grave et imminent » : un expert alerte sur la situation du château Vandamme à Cassel",
-      "source": "La Voix du Nord",
-      "date": "2026-10-16",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-situations-graves",
-      "section": "🚨 Les situations graves",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "lavoixdunord.fr",
-      "publie": "2026-10-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOSS1Ba3I1Y0NUd2I2bU83S0s5MXBTUnlIRlFUSlFLM3NBMkszNEhUbzZ5dWtlUkM0S2VDU0Y1bXVWam9NTlJJRkd0ckhLTmdEY19mNFpXcHJMZWRfUW1TclY3NVZSWXBTWlRBRkd6M1dVdU1Dcno4SEhUT1BLelJsNFh6c29NSEszTWJ2Y0hXb3NCN2xaS2dWdjNJMEd6eERRQWFyb1hR?oc=5",
-      "titre": "Le CEPD clarifie le cadre juridique du web scraping",
-      "source": "Journal du Net",
-      "date": "2026-10-15",
-      "guide": "marketing",
-      "page": "avance.html",
-      "ancre": "cadre-juridique",
-      "section": "⚖️ Le cadre juridique",
-      "sujet": "📢 Marketing Digital — Avancé",
-      "langue": "fr",
-      "site": "journaldunet.com",
-      "publie": "2026-10-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMEhPNlg1azZYUkoxVUxEWnZWYS1PeVJmbjc1Q0k0LVowTGI1TzFLRGxZcUN5ajZHSkw4UHVfUVp0ZHVHM2dkOUpWallQQTVOUG5YcGtkVkQwT2UteUlFTnZ5bUR2Wld4Rnd2cTJmRzhhd3NjMUF6ak9JM1ZFUGl6bVpxZUF2d3drVElOU3p3YndkaFhLQUxuay1GWURMUU43eFlzVEM0ZjVmX3VucndZ?oc=5",
