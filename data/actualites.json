@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-25T12:40:06.018Z",
+  "maj": "2026-10-25T19:48:45.354Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOa3M1RHdyMlFEYTlPTEtLQldSb3JycTBOTXY1emVvWWNzVFhWbVloMVdCSEpMekRCOXd1NVJabzlGaEtJTzFSeXA1NG9Hb2lNdWJpVHNudlJsZ1VLTjAzRWxIb1Bfd1lQOFVkYUdCMWhycU1CamNCTnVyUGVTa2lwN0l3UFNDTy1hbW1ROUR4ZDlTV1Z3STh5UlFEcEd1bTBBQ0JjLUxEcFpUd3FYMjhiOVFYMXI3YklLVVRXVzBOSENTbDVRekdPYlRkcFZJM0dXUUwtSGpHYlNmcldPZW9pQjJKTC13MXFpQXF6U1lOOW5GMjZCOTI4WjV3UURlTVlHa012ckc2cEs5TGlfaVE?oc=5",
+      "titre": "Un hacker affirme avoir mis la main sur 4,1 millions de données chez Renaissance, le parti de Gabriel Attal dément la fuite de données",
+      "source": "La Dépêche",
+      "date": "2026-10-25",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "ladepeche.fr",
+      "publie": "2026-10-25"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNcFhVTnZkOFd0dFIxd3ViOWxOYy1TM0duOUt1dGxPSXNVZWV6ZlZObjBKeG4tOV90OFdUM1RiX0dGeW5iV3V0UHctWmowRkZHMU5VT2laVFV1dzljRUswbDVwZXE2VTUtaVg4a3ZDcy0tLXl6ZHJLRk1KVUhnMXVzdEttd3Q1M3prbXAtVU4tbXFQNWxoalU3TmM4dVZWN2tKOUVRMC13eTJ4RUhCdTFjQl85TkIxSE51cmFmRExEbnR1cy11Qm1JTzlyRy1hWDE1R1E?oc=5",
       "titre": "Une fuite de données au Parti communiste français touche 190.000 adhérents",
@@ -86,20 +100,6 @@
       "publie": "2026-10-22"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNMno0TmNkeUVBNWlab21Ic1h0eS02aW82UlVuLUFuUWdXVFdPR3VUbGtzeUlhYkJEdTV1VEp1eFRVSkxrWFIzNzhlS1NDSFN5U0FJTGVHZ0NQVU02eHFGblgyMkRFdlhpLWVHYXZkTTVwMGRTNTNsWW9PdHRZRlRIZkNYUjRtTlBMVUR1cDJyU2pzM0VQQl9sTXBaTVhVSkJxanJBWnJucGd3QWh5VG9GRVNqZHhaQlNlZi1VQlNDSHJhMkxPanpaQWhVMHdzUFAtUUhjMFBHckJfUl9hUXRyMEpOWHdwX1VCZ3ozdjdZemQyUks5QnU4NDNadw?oc=5",
-      "titre": "La Fédération française de tir de nouveau piratée, un an après une fuite de données qui avait entraîné des vols d'armes",
-      "source": "RTL",
-      "date": "2026-10-22",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "rtl.fr",
-      "publie": "2026-10-23"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZUllTXJubnowQkkzMVRLdlJ2LUNhNW5BYUFLcVI1SkQ0Vk9mcHpfTGQwdVVNTEl6UjFBSUVxa095RFd4OC02LUtwV3AwdVo2Z0tSNy0xSFNDVXFHOTN0MXNSeFhsLVRXaHJaSmFLYTFlNXJuTDFNQlJ3ZVMxSEotS041RlRFb3JFRkxPMjJfUWE1bU83ZjV5amhVbXFrcDNZM2l1bDhhT1hUZ00tZmdZ?oc=5",
       "titre": "Financer son entreprise : les erreurs à éviter dans votre business plan",
       "source": "Bpifrance Création",
@@ -125,6 +125,20 @@
       "sujet": "💻 Développement Web — Intermédiaire",
       "langue": "fr",
       "site": "ledauphine.com",
+      "publie": "2026-10-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQQ3NDM2dOSXhBNGJiVjBnYXR3R3h4MVFJTi1Kelh1aE5ScnlVTVJ2d0lYOWtuWkFUbENHWXE4TWZVbXViUk56VDdVcWJMZWtnZGVyeUFEZmItS1Rtc18tbGR4SmVSTU1OM0thUV9kdDVzcTNIQmtDTHAwQ2N6cGFIY3hiQmUwT21TdmlEMmNaWDFKMFNSdUpUd0h1WDhoRTZJaTBOXzAwZ24xV0MtNG5obDY2VkxQZTJrcC1xaHdLa3ZhRWtXbFJObkt2LTBNdmMyN0RxblB3RVh4V3B5Nlltdg?oc=5",
+      "titre": "Taux d’intérêt au-delà des 5 % : une hausse qui sanctionne un débat budgétaire enlisé",
+      "source": "Le Monde",
+      "date": "2026-10-22",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lemonde.fr",
       "publie": "2026-10-25"
     },
     {
@@ -181,20 +195,6 @@
       "sujet": "🔒 Cybersécurité — Intermédiaire",
       "langue": "fr",
       "site": "clubic.com",
-      "publie": "2026-10-21"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi4gJBVV95cUxPWnk5X1M3YUxtNkhFNDNsdVRTUVdHMGhENy1QRlNPdVg1Wi02TTRzbFZFUWNidklmTVNTZVJlOFRrQ3JEOUYxNDhZbWltOGRUZFdNZDhBOTVpd2lZd3lGTWNwUXA0RXhrSzhFZkNpMkoybjRYbkFVWi1MbUNXQ1hyX0JkNXl5TDEzX1o2R25GOFJmLVQ0XzBlMmRtTkhMUHhqTzFocXR2UkJHOXczd0ZPY21LU2pERlVSSVJrWUFseVlTSGJKRUtTMl96MWQ5M2ZpdEh5UkN5UFJOVmQ3ZEM1RXJNc2s2Z2pkNnd5UHQ4OHI1WVRaYTFXUl9WZF94R2U2VnZ4aTg5MnVNOXh5Tk5iMHRpNHNuUXN6Q20yQUtfVUJ3ajVKMEVGUFNSNi1idmJ3UXlCRDRELWN1OUc2X1Z2X3pzWVZWUmxHU2NxMmdZcmtUelZhVTBEdGc4by1ieExscXc?oc=5",
-      "titre": "La vente d'obligations françaises devient \"massive\": après le week-end d'émeutes, le taux d'emprunt de la France flambe, la défiance des marchés atteint un niveau inédit depuis 2012",
-      "source": "BFMTV",
-      "date": "2026-10-20",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "bfmtv.com",
       "publie": "2026-10-21"
     },
     {
