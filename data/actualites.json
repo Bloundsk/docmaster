@@ -1,6 +1,20 @@
 {
-  "maj": "2026-10-28T14:32:48.215Z",
+  "maj": "2026-10-29T14:30:46.069Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOelUzaS1nZ0pwUkM0TFBpa1R2YzcwcWUyR2dpQTlhNXVEamtJTWs5bTZOdVI4Q1I4c1VzZjQ1aFJoTkZodHlnRm9BMHREdzQxaVVxNmZkOFRaazB3Z0ZtYk00d0RSbUxjVW5yd2toOEE2NS04T2ctSTN6OExkU3hqUEVFeV8wOV82cWdJX2NUemttSmlIMUFMU0hMQkNEQW1lNTV3aE5saldCbVZqdEpmY1ZSUDdOaUc1Sk0tTWdxSmRwaHJEUzhic2thU294U0loT1JXRDBHSGpONDRXamhwYXd1bnpITi1lY0xPblo0Y293ZVduXzR5S1N4aksxdUt5ZmdmZkx3Q3l5ZExKMWxBNFFXQWNzUQ?oc=5",
+      "titre": "Pourquoi personne n'en parle ? La solution d’épargne Bfor+ booste vos finances à long terme avec son taux d’intérêt",
+      "source": "BFMTV",
+      "date": "2026-10-28",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "lépargne",
+      "section": "📊 L'épargne",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-10-29"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbXIzNWVhcUxFN0JuaTdHcjk5ay15R29fTkRTMFQxNGlJM3A0eUxlUjU5cjlKLWRtalpmUVF0dnZ5Ql9CWkVMTGdyV0VTeVpGMF82TmJpS05SQTFFQ1BiOEpPajRtLTBfVXAtemtxZG5vNGhQb0NlWEJtc3duSk9SanBubVlMREl1TlpSWnBMOEoxa1V5TGk3OEJrMjh6NDNuRFZXLWNaaGMxQVUzNEczMjVoQQ?oc=5",
       "titre": "Des milliards de données en fuite : comment BrixHub & co mettent les femmes en danger",
@@ -84,6 +98,20 @@
       "langue": "fr",
       "site": "village-justice.com",
       "publie": "2026-10-28"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQWk5lb3VoVUZXcnN0aHJvc2RnYWg0MjVGNm9JV3RfMDktY2h2VjFlN3dyZEIwRk0wRUs2S0hQRHhmZWRPT3RXOVRrbnM1dndWWUtmbzJrZm9JX0tPVklESHFlajgwdzFVT0VXS2N2VVQzX3FlM3FVbFR2SVB0Z0dKSjE2X1ItaDNDcmRLOXlYT3JEVUpuNzhmS24yamxYdFpiTTgyaU4xQm5QQ0ZOZ2Z2Xzk3VkJOT1VqLUVBS2xZZ21XSVRaWGhNZmloaURIZ0hPcmhiQkN3MUtuSHlaanM2QVdkVlR2TlFHaFNqc1pwVFZjclpMWFVIY2tSQ3diN1ZyUDRXWVVRSkhaT0QtdGFkbWU0NWtHQnAweTZacXlWU242M3NHM2Vpag?oc=5",
+      "titre": "Hausse des taux d’intérêt : « Sans accalmie sur les marchés financiers, la France pourrait bien avoir besoin d’une aide de la BCE rapidement »",
+      "source": "Le Monde",
+      "date": "2026-10-26",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lemonde.fr",
+      "publie": "2026-10-29"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOa3M1RHdyMlFEYTlPTEtLQldSb3JycTBOTXY1emVvWWNzVFhWbVloMVdCSEpMekRCOXd1NVJabzlGaEtJTzFSeXA1NG9Hb2lNdWJpVHNudlJsZ1VLTjAzRWxIb1Bfd1lQOFVkYUdCMWhycU1CamNCTnVyUGVTa2lwN0l3UFNDTy1hbW1ROUR4ZDlTV1Z3STh5UlFEcEd1bTBBQ0JjLUxEcFpUd3FYMjhiOVFYMXI3YklLVVRXVzBOSENTbDVRekdPYlRkcFZJM0dXUUwtSGpHYlNmcldPZW9pQjJKTC13MXFpQXF6U1lOOW5GMjZCOTI4WjV3UURlTVlHa012ckc2cEs5TGlfaVE?oc=5",
@@ -254,20 +282,6 @@
       "publie": "2026-10-23"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOdHNrOFFHWWVxTVE5Q0kwMExaTjNOX0cyampKWkZEYWtmNDBzb01tbllhazN3MFQ2bkVnMmlzMVJjV09Oc3pzRGlYSWx1b18wU0ZtbFYycm5RTnNVUTdkTVNqTzZlQUZRZTBZUFd1N2Rhc2NHNUJTT1A5cXE5U3A5dWdpdzVoY3B2V0lQYWJkSWZsb1p0TmR4QmI3ZVlOYkZNcTZxYzJhSjB1anNTUURReml0d09sMUNDelRHbDdvby1XR1dCMDlDVjh4VzRpbFFDSDlEUWFCYU5CWlVuTUlhTV9SdWRmRUljS25ieGNSdUtQQUlBR2p4MlFhRVlyRXRBSUZEakV1M0ROWmYydWc?oc=5",
-      "titre": "Crise budgétaire : des taux d’intérêt au-delà de 5 %, une sanction des marchés que la France s’est elle-même infligée",
-      "source": "Le Monde",
-      "date": "2026-10-21",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "obligations-et-taux",
-      "section": "📉 Obligations et taux d'intérêt",
-      "sujet": "💰 Finance — Avancé",
-      "langue": "fr",
-      "site": "lemonde.fr",
-      "publie": "2026-10-25"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOZE5ldzRGTUpndTRwTm96dEVoem00dVRnTktFT3lWak1DYVRPTG5MeEdxU2k3OWFiOGZhSW1ZUm5fdXBiVXMyS2QyekxqNHg1cVlkaDAzLVR6MTBGS1kxcEJ6MmJtV292cTJQYWdUcnFsc0oya05pVUhzX3c5Z0daT2lXOWFqOGFXQjZyOW9JQ3JCOC1LZWczQkdTakhPSV9sX3pXamRBN3c1a0kwZlJDWlh6S3JKWUpWeG9ZUjdVTTkycDhsUDFycDlZTkkwcThrS3Rz?oc=5",
       "titre": "VPN gaming : voici trois points clés pour faire la différence avec votre réseau virtuel privé",
       "source": "Clubic",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-10-21"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOdWx0YjNGODVLVW80SHJjbzIyNS1OMllkNzV2a3VVV2ZvcGt4Z1JqaTNDUktTZWpHS05GSGhJYUFLQWZ2WnpQMmxfcHRKWTJKUGdyVDY2U3lKUklJRzNCTmdicFhSOVFFXzRCWWhmTzZyelU4VmZqLXJDQmJrYnA0QnMxb3E4clYxbmc0NE9OYnNQT3dPY2xGeWJXbnVlNll6eDBhYmo1a1JNYWVYb1RIOGl6cFpLX3FvRWV1d3B5Um01ZGRfWEtxY3QxS0VNRGdVZm95dDVUWUk2UzhwOU5DQ2ZFY24?oc=5",
-      "titre": "Data, IA, et compétitivité : pourquoi la donnée est devenue le vrai levier des entreprises",
-      "source": "L'Express",
-      "date": "2026-10-19",
-      "guide": "data",
-      "page": "avance.html",
-      "ancre": "chaine-de-donnees",
-      "section": "🏗️ La chaîne de données",
-      "sujet": "📊 Data & Analytics — Avancé",
-      "langue": "fr",
-      "site": "lexpress.fr",
-      "publie": "2026-10-26"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOTlhScFRTSEZGVzl5clFaRUN4VVo0MThUb1V6UFFJTVNQSk9yeGtWT1BnVTk5SEpWbFZZbWszYVNrTFB0WEtmd01GekdOYUh2OGNKS3QwaTFHaFAxX1pYZElfWXRhak1idldjbkVhRGxSYXRRSl9pcXZUNlNXUFpqZGtNcGpqRUdvaGM3UDVPMUdId3o2NWFMNnR6N1NYU2M2SjFV0gGoAUFVX3lxTE8tWGpXU0NTWm1wOTd1NUd1UlVJR21vMVAxMm5qTjhmaFVBLTI4QTdvb2VhUWFRdGFJRVp0MTRDVUwtRWlDcUhKSFpwdVU5akttRUpBcVR6aEdjc3FRSTloeXNYaFplMUdSS29ManlXY3RuQVc1VnNQNFpldThzVWlSdThJVFJFMEd5d2JmWk9JV01YTUtGZllEXzc0d0VmbnRna3E1ME4tNQ?oc=5",
