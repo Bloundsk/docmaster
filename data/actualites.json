@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-31T11:12:29.715Z",
+  "maj": "2026-10-31T13:45:18.592Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPRC1IMGd5V2k5YVlmRnBucmVOUDl6ZGFCS25TbmJMUGtWZUdrSGkxQ0lKeUdkSDFqYm1Kc0l0VG84RTMtMWVyODczUlN0aVFQOUlyVVlBcEpjaVplWVd0X1dfWXRGTV91N0lJQVdIYUZ1QjFXWnp1NTNtTlNYRk9aNzVXUmdGWTBZS0RrOHUwbnZOZWluX25fNEhQOVJ0MXBMNVBtTktRdFl1VGlCcWVPN1ZqR1hPRlZDV3lIaV9sc1BYMDYwODg3MlY4YWhKMVlyVDQtQkFTcmY0YkZCaGtFTE9B?oc=5",
@@ -14,6 +14,20 @@
       "langue": "fr",
       "site": "actu.fr",
       "publie": "2026-10-30"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZVBzR3dxc0hXVkw0ajcxZXNTeFV4X1ViVGVRV2pyS1lhVnpNVXJUT3NSbkQ5UGZ6N0R3RGlXdWRBc3pBWkE0SUtraW9ZUC1PeDhBWkZrWlpfRXFkSVNoTzFfSk1jc0IxOVEtbnJoUGkxbEg5aVloWk5oa3pYMmxsakxxVDBYbkw4ZUZISlA0QXp5a2xPLW5BZU5VUmJFNHpXbkJEZi1zNTVISGcxYWYxN19tejExZXhoeDl3?oc=5",
+      "titre": "Une entreprise automobile des Deux-Sèvres s’inquiète pour son modèle économique",
+      "source": "20 Minutes",
+      "date": "2026-10-29",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "modele-economique",
+      "section": "💰 Le modèle économique",
+      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
+      "langue": "fr",
+      "site": "20minutes.fr",
+      "publie": "2026-10-31"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilgJBVV95cUxOelUzaS1nZ0pwUkM0TFBpa1R2YzcwcWUyR2dpQTlhNXVEamtJTWs5bTZOdVI4Q1I4c1VzZjQ1aFJoTkZodHlnRm9BMHREdzQxaVVxNmZkOFRaazB3Z0ZtYk00d0RSbUxjVW5yd2toOEE2NS04T2ctSTN6OExkU3hqUEVFeV8wOV82cWdJX2NUemttSmlIMUFMU0hMQkNEQW1lNTV3aE5saldCbVZqdEpmY1ZSUDdOaUc1Sk0tTWdxSmRwaHJEUzhic2thU294U0loT1JXRDBHSGpONDRXamhwYXd1bnpITi1lY0xPblo0Y293ZVduXzR5S1N4aksxdUt5ZmdmZkx3Q3l5ZExKMWxBNFFXQWNzUQ?oc=5",
@@ -56,6 +70,20 @@
       "langue": "fr",
       "site": "france24.com",
       "publie": "2026-10-27"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPSU5PNTFteVZDRVpvSzQxeFdNc3dWX1l4Q0JxdFNCb2tPYk9uSUROekt6LWRYOFBxQXpndGpwdFVaMVMwU1hhc0F4TVJxbVVla1I4ZlY2UkN3R0xXUXRuQldWLUNtLS1hUFVTM2ctWkRvUFI0UXFJRzNFYl8xeG1fSHpVQkFCUmcwRklnN0U1SWxTTFM3NUdlM29ITUxFUDBGZzhOWjRGMWs2M29iT3JMOUt2U3ZDRExob2I5MjhDMGpmYVBRR1h5TE9KQWlXOFlaU3laLXFzc2NaZk04cU5Cc2hsUkpkZjBlVmZBS2FCSmJKSk55UWFuaFhMY2J3czAxOXF2WS13QUVKS1BaVmFLR01FUTktdw?oc=5",
+      "titre": "La commerciale reprend le travail après un cancer : son employeur embauche son mari en CDD \"le temps qu’il faudra\" pour lui servir de chauffeur",
+      "source": "La Dépêche",
+      "date": "2026-10-27",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-obligations-de-lemployeur",
+      "section": "🛡️ Les obligations de l'employeur",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "ladepeche.fr",
+      "publie": "2026-10-31"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNcGNpSGR5Z3ZLSndxVzVtbThwSzZYTjBQc0RqSFJlVWlsb1JLQmxSaW5oZW41WWR4R0xBQUcyMVlaZl9wLVFJTkVSSkthVkRUNTNYNVpsdFlxRjVRUzltbl94enA2Y1ZYMkZPRXpiRjFlalpTOWkzY2p5bmozblc2c3NFeFJqYWNsclRCQmR5NDhTM2FwS0dGeEl3TDlyeXk5QlI4RVlONVB4NWZjRDRfZ3Azb2JNS0VfekVSYWhBUXZFUzFxclBra0I1bjhlY2ZCMGtobjV2bXUyQldEYkstUA?oc=5",
@@ -307,34 +335,6 @@
       "sujet": "🔒 Cybersécurité — Intermédiaire",
       "langue": "fr",
       "site": "clubic.com",
-      "publie": "2026-10-21"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdk1hYTZfbGxSRXQ3emZCMXRFcWJKTksyRnA0R2tuWGhkQzlpNzVzOXNsT3BEMHB6My12S2N4ckJDS3I1dEQ1a1BEbTBCQXF5TE1DSDVRcUxhMXdYU0VWTDd5NEhVbVA3d3NEdWd5WXdpUE1qbzVnNFk2VzY5a2RCcmdnS2YtMHJSV3RHVHN3NjVHUFphZDRqLWViSjMxQQ?oc=5",
-      "titre": "Lyon. Travail de nuit : quelles obligations pour l’employeur ?",
-      "source": "Le Progrès",
-      "date": "2026-10-19",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-obligations-de-lemployeur",
-      "section": "🛡️ Les obligations de l'employeur",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "leprogres.fr",
-      "publie": "2026-10-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOVHFWZF9fSlRtWm5xMlFKVHh3REZDM24wa0ZnaHpWS3Jkb0ZVbm1xYkJncXhIZFVpSjZjX3ZzU1lwNFZQbkxId2FZX3M3dnpYOUlRT3BGM0htNGZjdVBURFNYRE1uNUNhRE96MG1lNktVckZoVEhrWFNrVmY5S1VySGVTM1M2ekZXcmQxcFVKZFBRNnB4LUU2U2tYSVNuZVZvcF82d2U4ZnVva2ZWYjZ5SlUzWDJVZ0dXem9Db3ZqYXUtNGs0UVhaa0NOUE94cU9DQzV4OURvREY?oc=5",
-      "titre": "Bernard Plano : « La dette ne suffit pas à juger une gestion et occulter 25 ans de développement",
-      "source": "La Dépêche",
-      "date": "2026-10-19",
-      "guide": "dev-web",
-      "page": "avance.html",
-      "ancre": "dette-technique",
-      "section": "🏗️ La dette technique",
-      "sujet": "💻 Développement Web — Avancé",
-      "langue": "fr",
-      "site": "ladepeche.fr",
       "publie": "2026-10-21"
     },
     {
