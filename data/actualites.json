@@ -1,5 +1,5 @@
 {
-  "maj": "2026-10-30T21:44:29.837Z",
+  "maj": "2026-10-31T11:12:29.715Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPRC1IMGd5V2k5YVlmRnBucmVOUDl6ZGFCS25TbmJMUGtWZUdrSGkxQ0lKeUdkSDFqYm1Kc0l0VG84RTMtMWVyODczUlN0aVFQOUlyVVlBcEpjaVplWVd0X1dfWXRGTV91N0lJQVdIYUZ1QjFXWnp1NTNtTlNYRk9aNzVXUmdGWTBZS0RrOHUwbnZOZWluX25fNEhQOVJ0MXBMNVBtTktRdFl1VGlCcWVPN1ZqR1hPRlZDV3lIaV9sc1BYMDYwODg3MlY4YWhKMVlyVDQtQkFTcmY0YkZCaGtFTE9B?oc=5",
@@ -826,34 +826,6 @@
       "langue": "hu",
       "site": "economx.hu",
       "publie": "2026-10-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMingFBVV95cUxPVWxMSFZNd1Q2akFnSlluc3dIbWZYTDdvbkl4QzVTLUpCMmdxalJVSE1ILTJzSHpLYVVqTEt5N01UejJjYnFiNlUzbXNjQXFjR2E4Qk9iMFJ6Q2k3WFVzS3dwZ3FKWlBxSEdfdzFDU3FNLWxqOXlzMTIteWpXazI1ZDYtYkVqNE9QT1hPTnE2aUZLV21pWXNnVTZxOEtNZw?oc=5",
-      "titre": "Üzlet, adatok, ügynökök, támadások. A mesterséges intelligencia kockázati mátrixa",
-      "source": "Bitport",
-      "date": "2026-10-01",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Az MI-ügynökök",
-      "sujet": "🤖 Mesterséges intelligencia — Kezdő",
-      "langue": "hu",
-      "site": "bitport.hu",
-      "publie": "2026-10-01"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZ01LSkI0V2RNZkRWbFo4bXp6SFJLMUZXU2hYSHdDOVEyWVZ6bExudXp0LWRMbjU5WFVlUDZKZ0RsSDhUN1lVWDRxMXMzQ1J2aU1GVDlvb1pPaWdzSEgwWVpST2t4TnRlY1FVZW1FRlQyTU9NSkV2cXZYQkw1ak1YT2NwNWl1NXNwODNzMHFTWVJSNWhmcjBsQnk5OGo3V0s0bTJOag?oc=5",
-      "titre": "Ne vidd haza fejben az irodát: praktikák munkahelyi stressz ellen",
-      "source": "24.hu",
-      "date": "2026-10-01",
-      "guide": "sante",
-      "page": "debutant.html",
-      "ancre": "regler-son-poste",
-      "section": "🪑 A munkahely beállítása",
-      "sujet": "🩺 Munkahelyi egészség — Kezdő",
-      "langue": "hu",
-      "site": "24.hu",
-      "publie": "2026-10-13"
     }
   ]
 }
