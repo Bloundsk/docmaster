@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-02T17:14:44.366Z",
+  "maj": "2026-11-02T17:28:35.541Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRmJxYzFSYWN6YnBpemxqLVNTaS1rSnFoN01sQ2hIWm52UjFENmRYaUthTlBxUy0wbzJ6dVNOc1FPdy1zZFVqMk1xT3h1Q2pMdlo1SkZ1TlBaUElsY2thb19TQ3B0Mnh6UlZweF84ZlF3MmcyZUhwcHMteFE0U2diZHJOanRGMmt1V19XMlUybExaRXhqV0dUc3lVVk5pUUpVTE9NRDkyWEFvR2NZSm5JdTU4RVc3bDhzSjdnbGFEN2ZlUUliRXhnNjlB?oc=5",
@@ -338,6 +338,34 @@
       "publie": "2026-10-21"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPM1VVS3hGTnJmRTBKa1Faa2FpZURyVEN0YmFYTzhkQXZBaENRNURlTFB1dzJobVdlNWFLOEw2ZVhRam1XSW1qTTA1UDZPcEJ3MjVnVm1BUU9HZUN2LUtpTFF1V2dTWS0wTHlXWHphQ1A5c1dmbDlzODdfWm1nUjQ3MnBZT1VMSU5HZ1BaVnVLOWVLWEVacVA0?oc=5",
+      "titre": "‘The content creator election’: digital streamers and TV networks face off for midterms coverage",
+      "source": "The Guardian",
+      "date": "2026-11-02",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "social-networks",
+      "section": "📱 Social networks",
+      "sujet": "📢 Digital Marketing — Beginner",
+      "langue": "en",
+      "site": "theguardian.com",
+      "publie": "2026-11-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQV2FDamJVRGR0TzlYZlpOS1JLZDdmMi1WRFNsNXlxZi04SmFfQUJJUS1ia1BRMWpkbzdkNVNnd3l1VUE0T1JYd2RhYldDMmtrRFoyU2dOOF9ydkZieGpFM3RUNzBpZjZOb2lpdVJ5XzFydnJfTnl6YmZFOHJYczJyQ0F0akdJNzkzR3BkN3h4S0liX3JrR0lndjJVNzB1LUE?oc=5",
+      "titre": "Treasury minister criticised for suggesting employers are not ‘working people’",
+      "source": "The Independent",
+      "date": "2026-11-01",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "employer-duties",
+      "section": "🛡️ The employer's duties",
+      "sujet": "🩺 Health at Work — Advanced",
+      "langue": "en",
+      "site": "independent.co.uk",
+      "publie": "2026-11-02"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWlJoNnU1UVB1U09zbUg3R3UwSXhYVlhlWVF4RTJxRmNmbWE5Y2NLMGNYMVJrS0NlYTl4eWk4T1RPNm5uTHpGUkFTaWQwYjFFTUZFdnlSSHdrai1QSE42NGR0dlhkZVNxOGNXTWxJY0lBNWxueEt0bzlPNmMxQkN4Wl82dE5Ta0o2djRnWWNISDYxbE9nbWZV?oc=5",
       "titre": "How to store seeds properly and work out if old packets are still usable",
       "source": "The i Paper",
@@ -644,34 +672,6 @@
       "langue": "en",
       "site": "express.co.uk",
       "publie": "2026-10-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVjcwVEREbERfcW5YWE55bUFETm1QODJjYVdxMnpNMDdDWElnZ25kcXJKY01DajdVSlZNU25FRk4xQ1F2ZmFfQkZka25PMW5fWGF1dGxoNG1xclhoaDhGNjE3T2lrYmk3akxMNktjSDJYUE1GVi12VGVqNG5memx2Yml4SXQ1X3Bac1hpTkNpTHM?oc=5",
-      "titre": "Mother Design exercises restraint with new M&S pack system",
-      "source": "Design Week",
-      "date": "2026-10-08",
-      "guide": "design",
-      "page": "intermediaire.html",
-      "ancre": "design-system",
-      "section": "🧱 The design system",
-      "sujet": "🎨 UX/UI Design — Intermediate",
-      "langue": "en",
-      "site": "designweek.co.uk",
-      "publie": "2026-10-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOemI1djlTdHByYmUwNnVIUjNid0dxZjgtajdWYy1kOUxQZ3V6a2plWlU1dzY4OWxuUkl0b0NKTVc3Y1cyTjctenlfNHlGRmkzMTg0R3paM3lqYWRUT3lESmc2WURJakZ1QUVLSGsxemI3c2dwZ2N1Q0hvbzh5TXE1d1hsdHo?oc=5",
-      "titre": "HSBC plans sweeping job cuts across UK wealth business in AI push",
-      "source": "Financial Times",
-      "date": "2026-10-07",
-      "guide": "entrepreneuriat",
-      "page": "debutant.html",
-      "ancre": "the-business-plan",
-      "section": "📋 The business plan",
-      "sujet": "🚀 Entrepreneurship — Beginner",
-      "langue": "en",
-      "site": "ft.com",
-      "publie": "2026-10-07"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxON29pc3c3RlVUeW5rNHlXbEZTWlNhM1haOWZkX3M2Uzg1MUVSVkNiQ3JNRUJ0b3dwVzFUaTZleEhHQzhySDNPUEdFazZnTHFCMXB3MmdickV2d2dSall3T3BoS3dOd01DbjVoeTBNd2oyWVpBeWEwVjN3MHNLaGM4aU92RnFxd0RTTnF4UzFWeVEyQzdOcU1EdGQ5dDFQVEI5ZGtkY0h4cFV4S20waDBNY25DLVkwLWFyTFRtTHMyUkJSb2ZT?oc=5",
