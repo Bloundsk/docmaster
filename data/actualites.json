@@ -1,6 +1,20 @@
 {
-  "maj": "2026-11-03T00:23:23.771Z",
+  "maj": "2026-11-03T22:25:51.467Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZDBxN2dEaXlqNnNiY1VzSG9haldMZXRScVk3S2FrTE1idzIwTk5ydU42cmc5MkJsc3JvcklQdWxrZG5XVjBaLWo3cTg0N1NKZWFZRHNLOGlwSWlQWEFXSG9Ydm5DUWhVOGgyNlF6RnZySVRSVmlwV2F3Y2NoU0lkTTBrdVJVbmxJQkpmX2kzeFhDMG9uTEROMnF3ODRJazUyXzV1OXVsOWlUQ0xlTVlXRDVBSktzejFCS2lPbWJTMEpSclZRZkM0MVpQdUNnUVV1RWJwUlh1QmlpOGE1?oc=5",
+      "titre": "Corée du Sud: enquête sur la fuite en ligne de données personnelles du président",
+      "source": "RFI",
+      "date": "2026-11-03",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "rfi.fr",
+      "publie": "2026-11-03"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRmJxYzFSYWN6YnBpemxqLVNTaS1rSnFoN01sQ2hIWm52UjFENmRYaUthTlBxUy0wbzJ6dVNOc1FPdy1zZFVqMk1xT3h1Q2pMdlo1SkZ1TlBaUElsY2thb19TQ3B0Mnh6UlZweF84ZlF3MmcyZUhwcHMteFE0U2diZHJOanRGMmt1V19XMlUybExaRXhqV0dUc3lVVk5pUUpVTE9NRDkyWEFvR2NZSm5JdTU4RVc3bDhzSjdnbGFEN2ZlUUliRXhnNjlB?oc=5",
       "titre": "Matt Riley, Sharp : Un plan de continuité d'activité ne se limite pas aux risques majeurs",
@@ -196,20 +210,6 @@
       "langue": "fr",
       "site": "lemonde.fr",
       "publie": "2026-10-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOa3M1RHdyMlFEYTlPTEtLQldSb3JycTBOTXY1emVvWWNzVFhWbVloMVdCSEpMekRCOXd1NVJabzlGaEtJTzFSeXA1NG9Hb2lNdWJpVHNudlJsZ1VLTjAzRWxIb1Bfd1lQOFVkYUdCMWhycU1CamNCTnVyUGVTa2lwN0l3UFNDTy1hbW1ROUR4ZDlTV1Z3STh5UlFEcEd1bTBBQ0JjLUxEcFpUd3FYMjhiOVFYMXI3YklLVVRXVzBOSENTbDVRekdPYlRkcFZJM0dXUUwtSGpHYlNmcldPZW9pQjJKTC13MXFpQXF6U1lOOW5GMjZCOTI4WjV3UURlTVlHa012ckc2cEs5TGlfaVE?oc=5",
-      "titre": "Un hacker affirme avoir mis la main sur 4,1 millions de données chez Renaissance, le parti de Gabriel Attal dément la fuite de données",
-      "source": "La Dépêche",
-      "date": "2026-10-25",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "ladepeche.fr",
-      "publie": "2026-10-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNTHlSUkxvc3kzdC04aTlncG9VZlZ4Q1BuYnJGdHhtQUZ6VWRmbVIwR1RoazZrTnlwYkdkY0kwbnp4dXVmNEUyV2NpVFVpYTdSSHVmRzFHOU9OeFRVMElLLTRlN2tYRmZQbXNSSlRZdWZWang4Q3JBRGJldGFiRTJfd0hLMVFfT1UxOHZvNjZmWWk4SEdiODA5Mjc2Ni1VczRLekt6Skpxcy1Ka0JTU0JYTjJ2XzhsS0dnSkNqM1AwajI3UVAxZFBZUnQ3YXB3MDhjd1VZOFp5LTlWWWpkS0tSOEthUWJ5MWhFekstb202TU9HV3hyVkFlMA?oc=5",
