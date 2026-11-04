@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-03T22:25:51.467Z",
+  "maj": "2026-11-04T15:33:54.942Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZDBxN2dEaXlqNnNiY1VzSG9haldMZXRScVk3S2FrTE1idzIwTk5ydU42cmc5MkJsc3JvcklQdWxrZG5XVjBaLWo3cTg0N1NKZWFZRHNLOGlwSWlQWEFXSG9Ydm5DUWhVOGgyNlF6RnZySVRSVmlwV2F3Y2NoU0lkTTBrdVJVbmxJQkpmX2kzeFhDMG9uTEROMnF3ODRJazUyXzV1OXVsOWlUQ0xlTVlXRDVBSktzejFCS2lPbWJTMEpSclZRZkM0MVpQdUNnUVV1RWJwUlh1QmlpOGE1?oc=5",
@@ -14,6 +14,20 @@
       "langue": "fr",
       "site": "rfi.fr",
       "publie": "2026-11-03"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZzdydWlhd0hGVDhPcVkwM1prWUVYdjFlS3FXNnRkOVJpZExraC1FS2xzcXI3ekFPWURBWGgwVWVLV2I4UWJ0alVSMnRTSmRJeS1xbDQ1R3dpd2FpSW0xbHk0Ym9nM3dBU1VlVnJ6V1RJZ0kyRVFKMnl2M3VkOTFOaFJaNWtGczZZRkM4eFNydTVfZDZ4MDVIaUNyT1lkcTItSEs3V05GTTBvaGhtUlJ5MUk3ZFlHN3ZQRTNpMkkxM1dkb2dvdm9HQVdKNUJLZ3V6ek5uZl9qWkF2WjA?oc=5",
+      "titre": "Réseaux sociaux. En pleine crise sociale, les influenceurs ont-ils perdu leur crédibilité auprès du public ?",
+      "source": "Le Progrès",
+      "date": "2026-11-03",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "leprogres.fr",
+      "publie": "2026-11-04"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRmJxYzFSYWN6YnBpemxqLVNTaS1rSnFoN01sQ2hIWm52UjFENmRYaUthTlBxUy0wbzJ6dVNOc1FPdy1zZFVqMk1xT3h1Q2pMdlo1SkZ1TlBaUElsY2thb19TQ3B0Mnh6UlZweF84ZlF3MmcyZUhwcHMteFE0U2diZHJOanRGMmt1V19XMlUybExaRXhqV0dUc3lVVk5pUUpVTE9NRDkyWEFvR2NZSm5JdTU4RVc3bDhzSjdnbGFEN2ZlUUliRXhnNjlB?oc=5",
@@ -139,20 +153,6 @@
       "sujet": "🩺 Santé au travail — Avancé",
       "langue": "fr",
       "site": "lequotidiendumedecin.fr",
-      "publie": "2026-10-26"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPdVo3S2wzYU1MdXlHY1BMQkpBY0pHSWRKcXptc216cG9oOC1rSFFLSWY0QXFVNTd1SURscWNzUjgzTUFQZEVWdlhGT1RVdThjc2VDem11cnd5b2dSei0tT2FMMU5fNzNWRVRlX3JmZ0JTZDRXT1ZEa3hQMmU0UVlYaG1XZ0FNZXkxTmwzNmVSRkY3a0lkOEpkNDNJOEF5amdpR2dHRV8wUUVJYnRvWkc5SVNwTGRSMnl3aDdwQXFjUERPdDRvR3ZCSkMxMXpGbDFVYmFEcnd2VXh2c09LYWNwSWxVQkpWc2NKU1RINGtKZk53TDBOSnZVLXdjUl9KSDQ?oc=5",
-      "titre": "Le gouvernement veut pouvoir bloquer les réseaux sociaux s’ils ne suppriment pas les contenus appelant à l’«insurrection»",
-      "source": "Le Figaro",
-      "date": "2026-10-26",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
       "publie": "2026-10-26"
     },
     {
