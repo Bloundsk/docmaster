@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-04T15:33:54.942Z",
+  "maj": "2026-11-04T15:48:05.097Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZDBxN2dEaXlqNnNiY1VzSG9haldMZXRScVk3S2FrTE1idzIwTk5ydU42cmc5MkJsc3JvcklQdWxrZG5XVjBaLWo3cTg0N1NKZWFZRHNLOGlwSWlQWEFXSG9Ydm5DUWhVOGgyNlF6RnZySVRSVmlwV2F3Y2NoU0lkTTBrdVJVbmxJQkpmX2kzeFhDMG9uTEROMnF3ODRJazUyXzV1OXVsOWlUQ0xlTVlXRDVBSktzejFCS2lPbWJTMEpSclZRZkM0MVpQdUNnUVV1RWJwUlh1QmlpOGE1?oc=5",
@@ -352,6 +352,20 @@
       "publie": "2026-11-02"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbzVWNHYzOTN5dXVldFVFdngwcEhXdlR5VDh2VnpjV1NKVUxTR1duZGNsZGRwRkt5ZXc0S2s0Qk1aZzU5WEhleXhDaDBYczFPR3d0b0NzQWktbC1vaXZyWHV4dC1VaWpsQWExV3dkVUhFV0FyWER0MV9LUXh2UWZBM0ZXb2NOZm5MNWZjNWxoSXFWLTZPWlBUemRB0gGfAUFVX3lxTE15dFFLOGhhWVN4VTRzSHprUmhONm1wT2QtLUNLcGpTaTJ6UUQzY3QyODE3bVVETVpwd3A3SjVYa2xpQUM0M2VIUDZPMlhXRGxibzQyTWhDdWoxQU5LVFJqV3M3LVJqZV8zeUpUZ3pnOFNjQTR6cGJKcVNpQmFrSXVWa3hqVE02enZ4d2RBOXRVWUdMOUVyRThXRkdMc00zcw?oc=5",
+      "titre": "Finance expert shares Premium Bonds tip after Budget changes - 'more attractive'",
+      "source": "Wales Online",
+      "date": "2026-11-02",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "walesonline.co.uk",
+      "publie": "2026-11-04"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQV2FDamJVRGR0TzlYZlpOS1JLZDdmMi1WRFNsNXlxZi04SmFfQUJJUS1ia1BRMWpkbzdkNVNnd3l1VUE0T1JYd2RhYldDMmtrRFoyU2dOOF9ydkZieGpFM3RUNzBpZjZOb2lpdVJ5XzFydnJfTnl6YmZFOHJYczJyQ0F0akdJNzkzR3BkN3h4S0liX3JrR0lndjJVNzB1LUE?oc=5",
       "titre": "Treasury minister criticised for suggesting employers are not ‘working people’",
       "source": "The Independent",
@@ -364,6 +378,20 @@
       "langue": "en",
       "site": "independent.co.uk",
       "publie": "2026-11-02"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQ3hOeXprRnFMMDhLTWZRM0RBSEI5T3hTUTdtQ3dVUEd3ekRrZ3FNNkVjTFFPNm1rbktiSERIWF8wSXQtaFEyWHk0Q1pvM1hzWS1IT1F1dlpDUHFSZ1phdFRvU19OTW0yYlNld3NjcmZzcTduNjhET1NVcldDdWNINmg4TWljdkdSWGRkd0xBWF9nMFRVeWhWbVR6RDZGMUhXTFF6Zm1n?oc=5",
+      "titre": "Minister criticised over claim employers are not working people",
+      "source": "The Telegraph",
+      "date": "2026-11-01",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "employer-duties",
+      "section": "🛡️ The employer's duties",
+      "sujet": "🩺 Health at Work — Advanced",
+      "langue": "en",
+      "site": "telegraph.co.uk",
+      "publie": "2026-11-04"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWlJoNnU1UVB1U09zbUg3R3UwSXhYVlhlWVF4RTJxRmNmbWE5Y2NLMGNYMVJrS0NlYTl4eWk4T1RPNm5uTHpGUkFTaWQwYjFFTUZFdnlSSHdrai1QSE42NGR0dlhkZVNxOGNXTWxJY0lBNWxueEt0bzlPNmMxQkN4Wl82dE5Ta0o2djRnWWNISDYxbE9nbWZV?oc=5",
@@ -534,20 +562,6 @@
       "publie": "2026-10-22"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaEdaUFVudmVBYmdfSkE5YUhwU2xONzkySTRBY3VkUTVfYVRPT0tkaVVHWGNzZVM3RW81c2VacHFBbm96d3hhQWtDOV8wdHVidGNIX2g2WUktSk9lV202WklhUDhnWmlsYmFveWNWa3FwUWNHMGtJQTBfQlJGV1JHS1lXeXltM2lfQkFVR2hQTW5Bb3FQdUlUR0VzSkF3aS1EN2JCQ0Z4anpETnMwWjdxZGVn?oc=5",
-      "titre": "NS&I puts new issue of Green Savings Bonds on sale with increased rate",
-      "source": "The Herald",
-      "date": "2026-10-20",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "heraldscotland.com",
-      "publie": "2026-10-23"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMWxoSXlHOGY4bUs5dWN5LVplNC1ZZFpVM3lmLWpLNkFXbTlLLUFBcUNQZ0I4TnU1QnRaV2tsZVJmR0t2VlNNNU90bUdUeHhaV1g4eFJWMXM5TU5wYkc4OEV1aU9fSWpzS3hDVUlEanNiRlZxaVJWM0VFS2g0a21wYnF3RWY5eW9EREVGY25SZTUxUllfaWVrZWZlU2I0cndDOU9ZWXpLclRjR0E?oc=5",
       "titre": "Weight loss in middle age can restore cardiovascular health, research suggests",
       "source": "The Guardian",
@@ -658,20 +672,6 @@
       "langue": "en",
       "site": "ncsc.gov.uk",
       "publie": "2026-10-12"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZlZOS1k4S20wZnpVS0Q3Tk5EQnlSX3FnR093SzdXY3hLMlBOSXBRWlEtQVdJMGJuTnF3bU9WWWthQVVkVzgxYW5jemdrTHdNaWszQXpiNWNRdG51OHhENDFBTlJuS0ZaLXIyR2p3ek1PQVJEbi1SQ2IyQmZZX2ZvcW1yZXp4NXpkMTJud2NWWmdCMGw5LXBYQ2p0Z0kzcXRfd0p3a0tRdmxGZkhtdTl3VXhfMzJYbk1FSVFsYlVwS2k0UQ?oc=5",
-      "titre": "Labour's favourite think-tank backs £6bn tax raid on pensioners and landlords to fill 'huge hole' in public finances",
-      "source": "This is Money",
-      "date": "2026-10-12",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "tax-on-savings",
-      "section": "🧾 Tax on savings",
-      "sujet": "💰 Finance — Beginner",
-      "langue": "en",
-      "site": "thisismoney.co.uk",
-      "publie": "2026-10-13"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxON29pc3c3RlVUeW5rNHlXbEZTWlNhM1haOWZkX3M2Uzg1MUVSVkNiQ3JNRUJ0b3dwVzFUaTZleEhHQzhySDNPUEdFazZnTHFCMXB3MmdickV2d2dSall3T3BoS3dOd01DbjVoeTBNd2oyWVpBeWEwVjN3MHNLaGM4aU92RnFxd0RTTnF4UzFWeVEyQzdOcU1EdGQ5dDFQVEI5ZGtkY0h4cFV4S20waDBNY25DLVkwLWFyTFRtTHMyUkJSb2ZT?oc=5",
