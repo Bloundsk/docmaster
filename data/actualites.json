@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-05T15:50:24.894Z",
+  "maj": "2026-11-05T16:21:50.775Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQLUVQZ3RaZnJ0QXhheTBtRGtXdXV0VXA5eHR1SHNNQnYyRVJ1czJnOXdRTG9LU0xGdVRoYlRfbnhlRXhPZ3JKVzNyTVl0WFM4VGRJQVN3QzB0eVpzNDRZUG05RUxHQTNhNFJKWFFGU3JvLTRyR1hJWFFIRkt5SGhiUVVfUmR3Q0xOSXpOZ0FkdWV2c1ItNmowWWwzME5YZ3dYT1kwY05YQkhLZnAtc1N4T0h2NXd5eXdyLXNhaml5bnJheVAtZHZsYlpwVzY0dHpWbXZVZnVXbERnSWhBR0ZXSlBhZG9HVk9XRUdINlp2R0N2N281X19FRWVRRWFndjQ?oc=5",
@@ -674,6 +674,20 @@
       "publie": "2026-10-12"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWnRGeTd1ZEdhNnpNWEtlSENPSERueTVQWkt3dHJWT3lnaC1RbnBYcWk1bnJaN0JPWXRZT05MdFJOTTNqRlI2QjlGc3Rjb3hoMHB3ZC1Ba3BpeGF4Rm9ob3JROGVvT3NhNE4tY3ZkbXVFVGM3OWVrWlZUYWVEQlBVTHpfaHd0QTNqYlhTU3FoZkdUQzB4QUoyUnhrVjFXS2xQU0RPa29VTnNabUhiRTdOZV9sOUJldUJ1djBWMjZDMEs?oc=5",
+      "titre": "Így segíthet az AI a magyar betegeknek – Fiatalok ötletei formálhatják a jövő egészségügyét",
+      "source": "Házipatika",
+      "date": "2026-11-04",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 A foglalkozás-egészségügy",
+      "sujet": "🩺 Munkahelyi egészség — Haladó",
+      "langue": "hu",
+      "site": "hazipatika.com",
+      "publie": "2026-11-05"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMixAFBVV95cUxON29pc3c3RlVUeW5rNHlXbEZTWlNhM1haOWZkX3M2Uzg1MUVSVkNiQ3JNRUJ0b3dwVzFUaTZleEhHQzhySDNPUEdFazZnTHFCMXB3MmdickV2d2dSall3T3BoS3dOd01DbjVoeTBNd2oyWVpBeWEwVjN3MHNLaGM4aU92RnFxd0RTTnF4UzFWeVEyQzdOcU1EdGQ5dDFQVEI5ZGtkY0h4cFV4S20waDBNY25DLVkwLWFyTFRtTHMyUkJSb2ZT?oc=5",
       "titre": "Mesterséges intelligencia segíthet a vállalkozásoknak megtalálni a megfelelő finanszírozást",
       "source": "Magyar Nemzet",
@@ -760,20 +774,6 @@
     {
       "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPZ2NfSjJWUzlPRTVHcUlOTXMtRlFENGpYVFoxUjl0U3VEVDhlN3NFZ3R2dGFaTGVjV19KNy1QM0pYQ0syT1NvYWQwNEhzb25JQ1RfVTdCam1SaUVBN3lRNGVhZ0F1Q1FvUWN2ZExaQmRkeG5YMTEzUVBPbjVYZXVWck9TMXlRWXFURk1RQklPcVcyUQ?oc=5",
       "titre": "Mentális egészség a munkahelyen: új uniós fókusz",
-      "source": "HR Portál",
-      "date": "2026-10-16",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 A foglalkozás-egészségügy",
-      "sujet": "🩺 Munkahelyi egészség — Haladó",
-      "langue": "hu",
-      "site": "hrportal.hu",
-      "publie": "2026-10-16"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdndYZVBXbF9waEpiWEN6enhPWUIxVmFmSVM4VlhRTTlGandDeDhiWkhJSWUzV3B6V2lhSm4zTGhRNkhDR1BIQXhLbm5oMUh6RVhMSEcxbjBjNHlDaHJCMGVzbENjTFFNZXNBam5DU2tWQjZ0UkZKMkl3U3hGS3pSdU85NHBhTVg4MFdJQllyZ0hya3poMTNicEFFNW9fblI0clp6WW4tWEwwSi1VZEV6Rk40SnM?oc=5",
-      "titre": "Egészségügyi karrier- és állásbörzét tartanak hétfőn a Semmelweis Egyetemen",
       "source": "HR Portál",
       "date": "2026-10-16",
       "guide": "sante",
