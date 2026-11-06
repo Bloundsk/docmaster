@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-06T22:13:41.538Z",
+  "maj": "2026-11-06T22:26:58.920Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPWVpXMGtlaUdzSkItVW5MdE5VNUFua0hHLWotWDZRRGd3M1Y1bFVJbk83UGZsME1fS2Jobkprb0g3RWhrQVk5a1F5OERhYkhOWEVVaEVnOGh1N3Z2NnVOOHlkeWpLYnF0R1RnMURsZUdNOUJyUUl1bWwtQUN1Y2p4c2Jqd1hfMTBOUU5aaEVVZm5udG82cWttb0xxUDV3N2JWX0YtU3AwQ2RSdko1VFEwbVBiaTV2U3FvalEyOVhCRmcyNHJTUFhZNDBvRFlpUQ?oc=5",
@@ -352,6 +352,20 @@
       "publie": "2026-11-06"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbVdXRmVIa2VaQnd4TVpvWlpqUFpsbVlOdmxjeFZ1LW5fZHhLdDktbk13NGMyMGpGUnJlbU1YTTFOWk9palU4anhRdHEzdHJRdVQ5c0NOc1FyREs5YW5SNjUtQ1lDRmZ3WmlmNEVyVnB3V011b25ZVW1mSmN4OGZ6dzhhRGRBTmhsWG9xemQ5bEs5SDJ5ZHNCVWpOWmdReGxDMFHSAacBQVVfeXFMT2lGNWh1cU1XVnM4VDdSaE9veFgwbUFxWDdOZXk1Wk03OFR5akIxTDNVTjJZOW1yU3p5RzBBZWtEV21GUVRXeHpaU1llMVdxS19nZkxocGhFeVN2RXk1ZjdxYS04VFlEVVZCYUJFNW9jbngwbFIwZGNMU052bjA4ZFc5U1Nrank0cVJobDA1ZExpMHBTT2dKRnotZkJSdVNZbHNvWU04d2s?oc=5",
+      "titre": "The hidden catch behind better annuity deals as Bank raises interest rate to 4%",
+      "source": "Daily Express",
+      "date": "2026-11-06",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "express.co.uk",
+      "publie": "2026-11-06"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUWRsU2ROT0xOSC1ta1hMZjJpbElYU3VZYzl5ZXBKS2VVR1ZyMnBmSldSOWVGWjZja1o1X0RKNnJBUjFlSkJZYUhaWHpFaG0zNEdVRk9WMjJVTld5SXNORWxhZm1VRXdrRXl4c1d5cWRaWW9Yc0VYTldscHdFb0szSlBFWXpPRjk5SXYwTTV5eXpua3IwYTFBbzJxV1VVSlFWUXFaSWk2VjUxWloyeEJEZUVJNnlEd2xnNlE?oc=5",
       "titre": "What does the UK interest rate rise mean for homeowners and savers?",
       "source": "The Guardian",
@@ -378,20 +392,6 @@
       "langue": "en",
       "site": "telegraph.co.uk",
       "publie": "2026-11-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiekFVX3lxTFAyamtuU0N3V2hlM3puYTJvZWpBSUZBSDRTSUxHX3ZwWUlva2VhQ19XaEZ4VFRjVFpmU3FCM0xtem5HUmZoQ0s3RzJUczNJYTFpMkQ1ZUpaWmtsSGwycVh3Y2dKZWl4clpOQTh6Q3c5a0xoZ3hxTWo0OEJR0gF_QVVfeXFMT1hDZ09hMkZNbjQxd09zRGs1WnRxaDRDbkZ2UkRxVzEwYWEzZnFmVU4zbEdnaUVzRHVvdGlsa09OdTRackpDZThyMHBmck1qWEEtdzlEVG1TdktwYlRES1dNYUFQdlR4UEVPOVhCZU10OEtrRTYxOWtvT0hyVEo2bw?oc=5",
-      "titre": "Interest rates raised by Bank of England for first time in 3 years - what it means for you",
-      "source": "Mirror",
-      "date": "2026-11-05",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "mirror.co.uk",
-      "publie": "2026-11-06"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZWV2M3hQTG5VTHhFZ0pQdEY4TGN4dG5YS0lrd0JRY05TaE9JLS1GRUNxVmVnaHZfeW5aZlg5a3AxbXVOczJNRFdPMTh4S3daQkhYU2RsWklid1Z4VWxIRXlMWmNKWmYwZmlVeWhWVXhfYzNkaXhOOFZuN01fN2k1NmlCVzFwOHBQUWJPeUlPRmJudHg0Ry0wVXM3bTRaQXlUZG9lN3lvNDhKTkFVVndz?oc=5",
