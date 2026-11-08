@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-07T21:01:09.278Z",
+  "maj": "2026-11-08T14:33:02.786Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPWVpXMGtlaUdzSkItVW5MdE5VNUFua0hHLWotWDZRRGd3M1Y1bFVJbk83UGZsME1fS2Jobkprb0g3RWhrQVk5a1F5OERhYkhOWEVVaEVnOGh1N3Z2NnVOOHlkeWpLYnF0R1RnMURsZUdNOUJyUUl1bWwtQUN1Y2p4c2Jqd1hfMTBOUU5aaEVVZm5udG82cWttb0xxUDV3N2JWX0YtU3AwQ2RSdko1VFEwbVBiaTV2U3FvalEyOVhCRmcyNHJTUFhZNDBvRFlpUQ?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-10-29"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1FNlRad04xVVliVlowQ1dmSkoxOUtFZFZJazlrQVBuRE1DSXBQTk1zcGpURENiMXd2ZmFDR1RnQUFTbEdhZERJY3JoQVM4eE5FNFFfSFBRaGN3cUlrcnppamxxWWRYbUlpVXRhSFp6b1I?oc=5",
+      "titre": "‘I don’t do business plans’ — serial entrepreneur Marcia Kilgore",
+      "source": "Financial Times",
+      "date": "2026-11-07",
+      "guide": "entrepreneuriat",
+      "page": "debutant.html",
+      "ancre": "the-business-plan",
+      "section": "📋 The business plan",
+      "sujet": "🚀 Entrepreneurship — Beginner",
+      "langue": "en",
+      "site": "ft.com",
+      "publie": "2026-11-08"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE45X0U1WFVTUDBxUkpFLWVVb0MtbmdjSE9sVGs2aUtaTmhnN20zX3ZKaERQUFk1Q0xsU1RER0NIMWZqbGZHZnN0NU84US1qWUpPQXl1ZmRwMDAwdE4zVHc?oc=5",
       "titre": "Parents warned to be on alert after school data breach",
       "source": "BBC",
@@ -632,6 +646,20 @@
       "publie": "2026-10-17"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVElETjFJVE9qWF9Nb25jam5Ia0JyU0FNbXZ0M0YwQlNyX0I3SmEteno2ZGpENmJBWlhaTGNjX1pjQ3RBYTF1c0JQaV9NWk1WX0dLMHY4T2VTT2w0UFRzTm5tSjkybFhfcVBrSG9wWDZLRUZOM0YxS2JoY3RQNjNveFk2d2k5X08xRzB4UkNJUEJmZEFkRXVpcG1TRFZkV1JCQV9OMVJla3BRZHRVNUs40gG0AUFVX3lxTE1SemM1TFp6VXc4MjZUbDZfZElrZUFvWkhGd2VsbDVJSzhKN0UxaFlPaXVtRm5tN0dfeEhySlBNR2p5dzZva1lXSmY0c1BLUVRyMWpzUWlfVko0ZTMtMjBQd2IyRUhpckpjbWVlMTFSWjZ3NEdHR2tYX0tlVzZYN1k1eE5Jc2owb3ZDX3d1b29UdmVXbHVYeWJnVWVsbWNvemMwVDdCVWNRS1p3cjdGY3ZvbUp6Tg?oc=5",
+      "titre": "Bury council to seek Government aid as it faces 'serious' financial situation",
+      "source": "Manchester Evening News",
+      "date": "2026-10-15",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "serious-situations",
+      "section": "🚨 Serious situations",
+      "sujet": "🩺 Health at Work — Advanced",
+      "langue": "en",
+      "site": "manchestereveningnews.co.uk",
+      "publie": "2026-11-08"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPUU1jQV9HODI1OURNeXZwZG1TSXNnSTYyWGZnUnNGdHQwYUVqb092WjUwTG1tQlZaUkZlYlVDdnJyQzFiWERuMzlMdE1pdGVPcm5jd1BnaEhEaWtTenRMTEZfZzd1M3RUQWM0M19nd0RxcVhyNk9hcG9ITE1peTBLMmxmX3VCWEVXRDB0Q00wVW14US1wRGxTb0JqRUwxTUhIcDdSeGFBN2pJS1o4b1hoZ2VoOEJzMzA4dm5nMklfNmhUQzJLdnljYzVnbndyMWY3WnBkOXpvX0NMMHJKblJsVkRJb2xVT0dSbWNJZFNMTkRtcVZ0UHc?oc=5",
       "titre": "Here's why there could be a buying opportunity in the current whisky market",
       "source": "The Scotsman",
@@ -644,34 +672,6 @@
       "langue": "en",
       "site": "scotsman.com",
       "publie": "2026-10-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUzdaTGx3dGdLNFpEc0FlQUdPOVljRFVHZ2ZkRUpadnk2OTlVMC1hRUM5aVZxUF84V1ROMnVDcXljRzdoMEtORzl5dF9ibFNlUDAycUxMNE1ZU0h4R3JJNktuLWViYXhlR3V5QUJwdnp3ZGVPWlM1anFxQWkwclVCYWV1b28xSmRHWEYzMUpkSWTSAZYBQVVfeXFMUDNybG1MUzhwVXFWNVlnbF83QnJ2Tno2Ni1FaXJ4WjZHeDU0WXdoRzZTMXhMODI5NHV5aFlvOGJHMllUdXZhXzBhaTN1TXBnTVQ5akhXbks0dXRMeXJKOVJoODVibGwwUzhBX3AzaWZoSTNjelN5aEVSVXNsSnQxbFo5T3dIcmNVVTJaOGtGVUdhX2drelhn?oc=5",
-      "titre": "Major fashion company sends warning to customers after data breach",
-      "source": "Wales Online",
-      "date": "2026-10-13",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "data-breaches",
-      "section": "🧬 Data breaches",
-      "sujet": "🔒 Cybersecurity — Advanced",
-      "langue": "en",
-      "site": "walesonline.co.uk",
-      "publie": "2026-10-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOHBNbzJCRmtiWkJwN05UVHVvdml2ekI1NlpGc1NuX3VyeHlSQXU5WU1WNXcyN2VPMV9oZTVXdXhIWnFZcmczcTNwdTZLWFFEb2tuN0Z2QjUydkE3eGJjeDVrNUNPdl9nWXF4RVI1amNtM09EOER5WnZ5N3doV0ZjRXdNYTlmS1BpeUVHSmNtcUs1Y2FJdXFiODhUazJaYmE3c2RCa09GblM1Skk1b0tURGhZYzNBQUZUOXlDdmtXVQ?oc=5",
-      "titre": "'123456' password linked to Denmark data breach affecting 8.8M people",
-      "source": "The Register",
-      "date": "2026-10-13",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "data-breaches",
-      "section": "🧬 Data breaches",
-      "sujet": "🔒 Cybersecurity — Advanced",
-      "langue": "en",
-      "site": "theregister.com",
-      "publie": "2026-10-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQWnRGeTd1ZEdhNnpNWEtlSENPSERueTVQWkt3dHJWT3lnaC1RbnBYcWk1bnJaN0JPWXRZT05MdFJOTTNqRlI2QjlGc3Rjb3hoMHB3ZC1Ba3BpeGF4Rm9ob3JROGVvT3NhNE4tY3ZkbXVFVGM3OWVrWlZUYWVEQlBVTHpfaHd0QTNqYlhTU3FoZkdUQzB4QUoyUnhrVjFXS2xQU0RPa29VTnNabUhiRTdOZV9sOUJldUJ1djBWMjZDMEs?oc=5",
