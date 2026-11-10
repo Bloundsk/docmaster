@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-10T15:49:13.585Z",
+  "maj": "2026-11-10T22:27:32.344Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOTZtRlZ6RDVqZDduR0lzOVBEejFNVUJNOXE2Vnk1LXBfZFR2R19KMjRRYmNyQjltRUk4b1g0N2RBMFRQRWNvSTk0R2xUZUpTRERVUVRrdnVNT3RQYUptdTJya1p6LXRhMDVQTXRVTE5GQkx6ZG4tU1ZkdzcydFdNeEZ0YnNSVU9ycS1JZjVfWGdDSXlwMDg3b2VMcG1vWU1WT0lTbktwNlU5R2duRjJJQVNoRUtXdV9MOWtmSDlxRGRiemJPSVRCajJteUEya2JGNzV1djlDRHU1T0tyY3UzdTQ1Qm4?oc=5",
@@ -41,6 +41,20 @@
       "sujet": "🩺 Santé au travail — Débutant",
       "langue": "fr",
       "site": "sudouest.fr",
+      "publie": "2026-11-10"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNWXlrS0dXR0ZPMnV5NEt3b3EwaXVKNE9xT0o0cmliUW8zOENnczMyM29SeEFIa1RxSlBGcmFzSmZWcmhTV1Q5UlJHb05uNWhOOVNLZ0tkTWtqS25fTmh1VW5mM2V2NW5tUm1JYTlCRXZVN3RETnNxNUh4VG1ERG53OUwwRDllQ2RKV25GNnhCM2loam9ZTmY3dlVORXU1VjNTeVI1UXF1RmZRSFdDWXI1RVBLVk9ERzNjSkMzVGtmLTJUUG5lMEI5ZlhpNWx4TVdmWk9DRTRXTGE4REFkenVmS2R1ZEhOSXlieVllWHIyTU4?oc=5",
+      "titre": "Une pharmacie de Strasbourg victime d'une fuite de données, 110.000 patients concernés",
+      "source": "Radio France",
+      "date": "2026-11-09",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "radiofrance.fr",
       "publie": "2026-11-10"
     },
     {
@@ -252,20 +266,6 @@
       "langue": "fr",
       "site": "liberation.fr",
       "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZDBxN2dEaXlqNnNiY1VzSG9haldMZXRScVk3S2FrTE1idzIwTk5ydU42cmc5MkJsc3JvcklQdWxrZG5XVjBaLWo3cTg0N1NKZWFZRHNLOGlwSWlQWEFXSG9Ydm5DUWhVOGgyNlF6RnZySVRSVmlwV2F3Y2NoU0lkTTBrdVJVbmxJQkpmX2kzeFhDMG9uTEROMnF3ODRJazUyXzV1OXVsOWlUQ0xlTVlXRDVBSktzejFCS2lPbWJTMEpSclZRZkM0MVpQdUNnUVV1RWJwUlh1QmlpOGE1?oc=5",
-      "titre": "Corée du Sud: enquête sur la fuite en ligne de données personnelles du président",
-      "source": "RFI",
-      "date": "2026-11-03",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "rfi.fr",
-      "publie": "2026-11-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiowJBVV95cUxON3ZRLTdkaGNuYXMxc0Z5UkNzZmdhMnpKSmJSQ3pMM0xBd1hvVUczQkxnRmVscFAxTFJDQVY1UkF3MU5BTzdpMjltNVJqYW03YjNUekpHblNOZURUQ0FZbWM0RE9HUzU3dVQ1NWxmUHVLRlM1ZWR3NnZrSUl1YVhyN3ZyQlRhSW1KQTFsbm8xdGNIaUFNNTBaMzA5anZCeG1kcURsN2ZaSlBhR0lBSXBtb2J1ZUs5MnhkOEYxNjVOTWVGdnpPUFRvSTc1ZDBETzg4TjFUYnA3U2hETUhMWEpScno2UnRETkQ0SDFKdTQ5ejRYYTJSTGhsbzV3X3pMbXJVQkdzUWs0V2pkNldxamhUb3JIOExDeDlVUGI5T0NvYVAyNDg?oc=5",
