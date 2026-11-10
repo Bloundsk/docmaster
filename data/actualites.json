@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-10T01:05:55.649Z",
+  "maj": "2026-11-10T15:41:41.491Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOTZtRlZ6RDVqZDduR0lzOVBEejFNVUJNOXE2Vnk1LXBfZFR2R19KMjRRYmNyQjltRUk4b1g0N2RBMFRQRWNvSTk0R2xUZUpTRERVUVRrdnVNT3RQYUptdTJya1p6LXRhMDVQTXRVTE5GQkx6ZG4tU1ZkdzcydFdNeEZ0YnNSVU9ycS1JZjVfWGdDSXlwMDg3b2VMcG1vWU1WT0lTbktwNlU5R2duRjJJQVNoRUtXdV9MOWtmSDlxRGRiemJPSVRCajJteUEya2JGNzV1djlDRHU1T0tyY3UzdTQ1Qm4?oc=5",
@@ -83,6 +83,20 @@
       "sujet": "🔒 Cybersécurité — Avancé",
       "langue": "fr",
       "site": "clubic.com",
+      "publie": "2026-11-10"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOdVhiNW45Vnl1SHZHS0c3bEtJa2N6a0RRTk16clZxQmx3WVAxaGdCMEEyNjJFOU5WNTlONFJMaW0tcFdxeWhSdGhXOTU2SlJwSFlYNHk5ZHhYS3ZjdU1LX092ZE43UEpJNUo1c1hmcnVIUzFYVlFFWlM0WHIxbjN4bTBPSGdJMDQtbjl3TjFlRWo1Vmh3WnMwSXUzVFZETlh4aEpNSklCWnhJRTZRd1FTSmEyMHd1ZFNGYjJfdWlkOHRURmxQYVNUaDc2MHhQNmJTc2I0NjRlT3MwLTU5bnI2NA?oc=5",
+      "titre": "Ain. Cybersécurité des véhicules : cette entreprise passe la seconde pour répondre aux inquiétudes du secteur",
+      "source": "Le Progrès",
+      "date": "2026-11-07",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "gestionnaire-de-mots-de-passe",
+      "section": "🔐 Le gestionnaire de mots de passe",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "langue": "fr",
+      "site": "leprogres.fr",
       "publie": "2026-11-10"
     },
     {
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "bfmtv.com",
       "publie": "2026-10-29"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMilgJBVV95cUxPSU5PNTFteVZDRVpvSzQxeFdNc3dWX1l4Q0JxdFNCb2tPYk9uSUROekt6LWRYOFBxQXpndGpwdFVaMVMwU1hhc0F4TVJxbVVla1I4ZlY2UkN3R0xXUXRuQldWLUNtLS1hUFVTM2ctWkRvUFI0UXFJRzNFYl8xeG1fSHpVQkFCUmcwRklnN0U1SWxTTFM3NUdlM29ITUxFUDBGZzhOWjRGMWs2M29iT3JMOUt2U3ZDRExob2I5MjhDMGpmYVBRR1h5TE9KQWlXOFlaU3laLXFzc2NaZk04cU5Cc2hsUkpkZjBlVmZBS2FCSmJKSk55UWFuaFhMY2J3czAxOXF2WS13QUVKS1BaVmFLR01FUTktdw?oc=5",
-      "titre": "La commerciale reprend le travail après un cancer : son employeur embauche son mari en CDD \"le temps qu’il faudra\" pour lui servir de chauffeur",
-      "source": "La Dépêche",
-      "date": "2026-10-27",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "les-obligations-de-lemployeur",
-      "section": "🛡️ Les obligations de l'employeur",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "ladepeche.fr",
-      "publie": "2026-10-31"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONmYtaS1QcGFJaUFoOVVYcHN2S1RSMzlCWUEtNDZlNXFkVFNoYy1TY2h3ZFVzQlRGdlZpM2ZZLVpQSWFnMi1jN29MWjJDZ3ViLWxMdDNWUllaajlZSkk5dUI3Y0lSSU9NVzZ3cFNkT3N5TFVheTlMMTVoQXlLX1hBY3dvRDkzZDdGTURQZDlzb3VYYVFLbHpINnR0OWowUkQxclc2bnAzV2FKQWlZWXfSAbMBQVVfeXFMTU5TV01TSkczZHpjbFNqYmN4Y09MMGxyRVdfcDlJdU5uYmpUNnppWmYxZDJhX2NwM2JGTWZSaWx4MGlETjZaOEJybHU4U1dZWm9hbnVaa3hFM2M1WEpQR1I4RFowYXgyLU5ZMTlzQTZGdXF4LVhzNkpBVDNsYUowX3E3WXF3ZFZMZC1WNWd3NG1Gd3M1QVhXZ1ZIVGFaN3ZWTFdHU0luWUZ0a3F2QzhRd01HNlU?oc=5",
