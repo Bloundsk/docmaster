@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-11T23:33:09.385Z",
+  "maj": "2026-11-12T16:04:07.546Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOclJKZ1hPM0xNRGVMVWRiUlRST01NRVc2X0RhZjkwUEIzV0R3bUd1UlB2cjJHMnNEQkFhdnRBajYzdjFSZDBWRkd0R0UzNzVoZnFIYW9WNDhmODlscDVDeDkzQVoySnVubVlCUG1oX2dsa1BGT1JlOWZPOFExUU9HS0p3Z3UwazFfOExJX092azdBbXBEUUdLdG8wN0MwSHVkbVhiNGNEa2MwMUxsVnVFYW5ldnJPZlV0VHQ0QlRKRDhDRnBkUENSN05YM2ZnY3hvT1M4OW9Lb3VUNU81X09kaU1lMkk2RFBKQmRXbFlIVjVzUQ?oc=5",
@@ -112,6 +112,20 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-11"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiswJBVV95cUxQb0RZQ1pSaUU5SVFyTm9FaXBKSlhnaGdDQUpDakxGYjBiaWx0Sk9VMzlCLVRwR0FROHppMXg4eUVNTmhIdk5VbTc2ZEFpdHNtTUt0UjhMSTBsZnNrLU9yVmhPNURNcV93bDdCZVNYUGEtNEdGN2Nod0l5QTBtUVk4T1IyWkl0MXhjRU1NUVlTdXJtMzY0cE9RQnY0UXItc3dKdUdxSFUwbjNNZjFIZzVOa1RIT0V0RVJGelYtZkFhV2MxOVJYbmZsVGZKYzVJRHI4N0hUdVAxUXNpT2VZTUpCV2FDdVVjV05ER1RpSkZ3WWdDUlcwN2hkbU50Q3NTQXBoZElSYXpKYUtmRldvR1JlTlVEVEFNdFR0SW84azZmMUtScWxkYlIzc25aeF92OXZ5NDBZ?oc=5",
+      "titre": "« Dans mon plan, tout est financé » : Raphaël Glucksmann promet 200 milliards d’investissement pour sa « révolution écologique »",
+      "source": "Le Parisien",
+      "date": "2026-11-09",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "linvestissement",
+      "section": "📈 L'investissement",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "leparisien.fr",
+      "publie": "2026-11-12"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMingJBVV95cUxQaFNYQVNDNmdWODlKN2FPVzJMY0hhRnNkN0hSdkZVMWRYSnRIYlFsN3VwNlNsRXAyZ2l6SkVhRDBpUnFoaUwyNkNkYmkzRThYeXVkZGZPOEVxSVpoMkJHQmVKS3lDYVdOZGdjSG5QYzlia2JMYW45R2dQUFQyejhxamR4UXRKTlBkS3ltaDBzd0tiQWJMSTBDUVlxMGkzY0tiZ3dwdmZoTzlkRXg3ZDFhXzQwYlJjb3FzZkZ3OUx5MWJReGstTEJyNVFNbkZaQnlwZE5kMkltWkl5dlZKUDUxaV9rTkFWcGozTU05QXM2MVJTVFFYM1ZPUk9MTjlta3ZhNXBvcm5OcW1zU3FLZjllRktmQmZXT254bWFqQVVR?oc=5",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "tf1info.fr",
       "publie": "2026-11-11"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZVBzR3dxc0hXVkw0ajcxZXNTeFV4X1ViVGVRV2pyS1lhVnpNVXJUT3NSbkQ5UGZ6N0R3RGlXdWRBc3pBWkE0SUtraW9ZUC1PeDhBWkZrWlpfRXFkSVNoTzFfSk1jc0IxOVEtbnJoUGkxbEg5aVloWk5oa3pYMmxsakxxVDBYbkw4ZUZISlA0QXp5a2xPLW5BZU5VUmJFNHpXbkJEZi1zNTVISGcxYWYxN19tejExZXhoeDl3?oc=5",
-      "titre": "Une entreprise automobile des Deux-Sèvres s’inquiète pour son modèle économique",
-      "source": "20 Minutes",
-      "date": "2026-10-29",
-      "guide": "entrepreneuriat",
-      "page": "intermediaire.html",
-      "ancre": "modele-economique",
-      "section": "💰 Le modèle économique",
-      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
-      "langue": "fr",
-      "site": "20minutes.fr",
-      "publie": "2026-10-31"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbUdkN2JrQWFrUjYwS2RSTmEzTG1KQ3FfbUZQZUlIRkpRMU9YdHI3UmlLR3VmajNNemtCMGdIa2w2UGJCTmc0TFA5dEVUQWNqOXIxWC1BU1B6eUdYTUhPSTgzaDhlZmo1VEpnNlZyelJrR3I4R3VBRWRKVlJQaUNsMTVrSGhRa0JYU2hRby00dVpkZHhnYXdUVVZBT1ZEaXhYMTBJb0h0RFJydlhXNHVtRHZsbDNvSkR3R3ZaLXA4MA?oc=5",
