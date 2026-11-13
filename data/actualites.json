@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-12T23:07:17.993Z",
+  "maj": "2026-11-13T15:32:09.596Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOclJKZ1hPM0xNRGVMVWRiUlRST01NRVc2X0RhZjkwUEIzV0R3bUd1UlB2cjJHMnNEQkFhdnRBajYzdjFSZDBWRkd0R0UzNzVoZnFIYW9WNDhmODlscDVDeDkzQVoySnVubVlCUG1oX2dsa1BGT1JlOWZPOFExUU9HS0p3Z3UwazFfOExJX092azdBbXBEUUdLdG8wN0MwSHVkbVhiNGNEa2MwMUxsVnVFYW5ldnJPZlV0VHQ0QlRKRDhDRnBkUENSN05YM2ZnY3hvT1M4OW9Lb3VUNU81X09kaU1lMkk2RFBKQmRXbFlIVjVzUQ?oc=5",
@@ -184,6 +184,20 @@
       "publie": "2026-11-11"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNaVA0N1h5MXdIbExsT1RXRmRHUzA1NW1XT285R1hvN1VRRkZBX3V5OUV3bDNkTkp0NDBRTllJZ19SQkpjOWk0dUtPVXVtME50MXhweHpESDdKU3JnMlZhck9wbkpSTjlSdDNGTWsweUpoZmxyUGoyeUltUXVxWlNZRTlvallpUmNKX1dPOExSMHJLMU1JQ0RKd2JobndLd2ZmNEFCdE5VSnZfNmdXQmFDYVZWRi1ocS1Xc05HenVUWFdxVUlRWllfcno4S0xTckhRQWd2Smw3MVM3dWY4eUxsdTJHYmJIbmhDOTBIOHdCdnd4Tksxb3hzOFVNX2kwMTFKb0ktVUk3bENYTklZQ2U2NzRfSEpGSkhDRmphZA?oc=5",
+      "titre": "Déplacements courts, camping ou logement écoresponsable, déconnexion numérique... Le tourisme se met au vert",
+      "source": "Le Parisien",
+      "date": "2026-11-08",
+      "guide": "ecologie",
+      "page": "intermediaire.html",
+      "ancre": "le-deplacement-evite",
+      "section": "🚄 Le déplacement évité",
+      "sujet": "🌱 Sobriété numérique — Intermédiaire",
+      "langue": "fr",
+      "site": "leparisien.fr",
+      "publie": "2026-11-13"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOdVhiNW45Vnl1SHZHS0c3bEtJa2N6a0RRTk16clZxQmx3WVAxaGdCMEEyNjJFOU5WNTlONFJMaW0tcFdxeWhSdGhXOTU2SlJwSFlYNHk5ZHhYS3ZjdU1LX092ZE43UEpJNUo1c1hmcnVIUzFYVlFFWlM0WHIxbjN4bTBPSGdJMDQtbjl3TjFlRWo1Vmh3WnMwSXUzVFZETlh4aEpNSklCWnhJRTZRd1FTSmEyMHd1ZFNGYjJfdWlkOHRURmxQYVNUaDc2MHhQNmJTc2I0NjRlT3MwLTU5bnI2NA?oc=5",
       "titre": "Ain. Cybersécurité des véhicules : cette entreprise passe la seconde pour répondre aux inquiétudes du secteur",
       "source": "Le Progrès",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-11-09"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPRmJxYzFSYWN6YnBpemxqLVNTaS1rSnFoN01sQ2hIWm52UjFENmRYaUthTlBxUy0wbzJ6dVNOc1FPdy1zZFVqMk1xT3h1Q2pMdlo1SkZ1TlBaUElsY2thb19TQ3B0Mnh6UlZweF84ZlF3MmcyZUhwcHMteFE0U2diZHJOanRGMmt1V19XMlUybExaRXhqV0dUc3lVVk5pUUpVTE9NRDkyWEFvR2NZSm5JdTU4RVc3bDhzSjdnbGFEN2ZlUUliRXhnNjlB?oc=5",
-      "titre": "Matt Riley, Sharp : Un plan de continuité d'activité ne se limite pas aux risques majeurs",
-      "source": "ZDNET",
-      "date": "2026-11-02",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-limites-et-risques-de-lia",
-      "section": "⚠️ Les limites et risques de l'IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "langue": "fr",
-      "site": "zdnet.fr",
-      "publie": "2026-11-02"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbUdkN2JrQWFrUjYwS2RSTmEzTG1KQ3FfbUZQZUlIRkpRMU9YdHI3UmlLR3VmajNNemtCMGdIa2w2UGJCTmc0TFA5dEVUQWNqOXIxWC1BU1B6eUdYTUhPSTgzaDhlZmo1VEpnNlZyelJrR3I4R3VBRWRKVlJQaUNsMTVrSGhRa0JYU2hRby00dVpkZHhnYXdUVVZBT1ZEaXhYMTBJb0h0RFJydlhXNHVtRHZsbDNvSkR3R3ZaLXA4MA?oc=5",
