@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-13T15:32:09.596Z",
+  "maj": "2026-11-14T14:32:29.563Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOclJKZ1hPM0xNRGVMVWRiUlRST01NRVc2X0RhZjkwUEIzV0R3bUd1UlB2cjJHMnNEQkFhdnRBajYzdjFSZDBWRkd0R0UzNzVoZnFIYW9WNDhmODlscDVDeDkzQVoySnVubVlCUG1oX2dsa1BGT1JlOWZPOFExUU9HS0p3Z3UwazFfOExJX092azdBbXBEUUdLdG8wN0MwSHVkbVhiNGNEa2MwMUxsVnVFYW5ldnJPZlV0VHQ0QlRKRDhDRnBkUENSN05YM2ZnY3hvT1M4OW9Lb3VUNU81X09kaU1lMkk2RFBKQmRXbFlIVjVzUQ?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-11-09"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNWnJ3aVBFdGRDU0ZBUVRacHRYS1FXWHFwcXlIV2ozb1haMnZNNzRBWmRrVXJqb2psS1BJQ3VPUHZVcHViaXMzdDJhMm9UTzlTWmpQUVdSZm9teGJVT0VMbFdmLTdmVGh4OVA0eGdNcTJ0eElXUm5yTTVLWlZqX2R4WjdEZ0ZOb1lYNTJkc003Y2VIUVBCLWRnNUI4T0FwOUZaYXpFZkdaX05sMTZENVd2Z2FyRE1RcnJVRDBSZUdxRWxrR3o4N0Y5NA?oc=5",
+      "titre": "I'm being asked for tax on savings interest, is it a scam?",
+      "source": "This is Money",
+      "date": "2026-11-13",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "tax-on-savings",
+      "section": "🧾 Tax on savings",
+      "sujet": "💰 Finance — Beginner",
+      "langue": "en",
+      "site": "thisismoney.co.uk",
+      "publie": "2026-11-14"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbUdkN2JrQWFrUjYwS2RSTmEzTG1KQ3FfbUZQZUlIRkpRMU9YdHI3UmlLR3VmajNNemtCMGdIa2w2UGJCTmc0TFA5dEVUQWNqOXIxWC1BU1B6eUdYTUhPSTgzaDhlZmo1VEpnNlZyelJrR3I4R3VBRWRKVlJQaUNsMTVrSGhRa0JYU2hRby00dVpkZHhnYXdUVVZBT1ZEaXhYMTBJb0h0RFJydlhXNHVtRHZsbDNvSkR3R3ZaLXA4MA?oc=5",
       "titre": "Bank of England’s inflation response ‘risks higher interest rates for longer’",
       "source": "The Guardian",
@@ -630,20 +644,6 @@
       "langue": "en",
       "site": "scotsman.com",
       "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNNmZDMGl5ODdja2ppNWFFR1pQeVFmMDZzRGM3ZFU5UW9STlpVNmJpSXBOVkRSR202M01mbWF0MWhjbTBhZzFsOWZBSU4xWENadnBlTjRMN3AyWVRvd29rY3IzemoycFhvbXdpZHhobnIwSTdmN1EwNS1BX2tHa2FKY2taZFVWWjN4TXJCTTh6Z056bFQ5QjM4Qi1jRVhNRE16TUVCOUc5a1l5enFId2Joc202bExkRnJk?oc=5",
-      "titre": "What a bank tax hike could mean for mortgages and savings | Budget preview",
-      "source": "Sky News",
-      "date": "2026-10-26",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "tax-on-savings",
-      "section": "🧾 Tax on savings",
-      "sujet": "💰 Finance — Beginner",
-      "langue": "en",
-      "site": "news.sky.com",
-      "publie": "2026-11-03"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE44NXBLS3ltdTc2WHc1dGxQd2lndWo4VGhzanVHQlVxSGI0VE0xbVZiMk5kQTRxZU15YmI2TXhFbS1mUE5vQXhDV3lfMDVvNHVwNEd4Yng4VVVJRGxYdWc?oc=5",
