@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-15T14:52:44.223Z",
+  "maj": "2026-11-15T14:59:50.599Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNR1RaY3p3VEhDeVZUZ3VoVVhTcmhvTHp5djBRRDBzYzg2TjdpaWs0X1BCaVN2czFPQTlNV1U5ZlMtcDhiMEl2YzZ3eWRUdENaR1p5bzcyc3puZjFHSjdGc3FBOF9xT0xWbktvSHBQQld2TEZNQnR6Nmp6TWFWSVBlTlc3Y1VMNi14TG9aVHpyb3p3WGhNbTBYcWRwQmRqQUlySG55QkczZEVNcGp4UzVrVEhwOVhHdnFPVXRGRWxuMWszNU9rU1VXZzE1OEh0anJNUUdld3BFZ3I0WVhHZEhDSFBJNk9mSmJqR1V6TEZPQ3QtOFdyZUxBWDBqU0hSVkU?oc=5",
@@ -352,6 +352,20 @@
       "publie": "2026-11-14"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQM0x3bkJJTmozVjlFcUVHT1BxbnZQZko2WHJfdW81a0h6d0RQZ0JXaXhFOHNkSUk5ZmhMTmZRdTZLTkRCMjl3VGV5cVE1dWRETjg2MXVSSVZmZ25fVVhsZHhyVDFqZjZPS2pJaTgyaXd0YXFfY21YZVNPd3RQemxQX1Nsd3Y4NjlfSDlLc0pmTlFfanBSME9Qc3BIRzdleHNhX1VReXExOEpiUG9tQlgwUGxYTmRSQQ?oc=5",
+      "titre": "Microsoft outages continue as tech giant works to restore services",
+      "source": "The Herald",
+      "date": "2026-11-13",
+      "guide": "sante",
+      "page": "debutant.html",
+      "ancre": "breaks",
+      "section": "😌 Breaks that restore",
+      "sujet": "🩺 Health at Work — Beginner",
+      "langue": "en",
+      "site": "heraldscotland.com",
+      "publie": "2026-11-15"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNbUdkN2JrQWFrUjYwS2RSTmEzTG1KQ3FfbUZQZUlIRkpRMU9YdHI3UmlLR3VmajNNemtCMGdIa2w2UGJCTmc0TFA5dEVUQWNqOXIxWC1BU1B6eUdYTUhPSTgzaDhlZmo1VEpnNlZyelJrR3I4R3VBRWRKVlJQaUNsMTVrSGhRa0JYU2hRby00dVpkZHhnYXdUVVZBT1ZEaXhYMTBJb0h0RFJydlhXNHVtRHZsbDNvSkR3R3ZaLXA4MA?oc=5",
       "titre": "Bank of England’s inflation response ‘risks higher interest rates for longer’",
       "source": "The Guardian",
@@ -658,20 +672,6 @@
       "langue": "en",
       "site": "bbc.co.uk",
       "publie": "2026-10-27"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMEhPNlg1azZYUkoxVUxEWnZWYS1PeVJmbjc1Q0k0LVowTGI1TzFLRGxZcUN5ajZHSkw4UHVfUVp0ZHVHM2dkOUpWallQQTVOUG5YcGtkVkQwT2UteUlFTnZ5bUR2Wld4Rnd2cTJmRzhhd3NjMUF6ak9JM1ZFUGl6bVpxZUF2d3drVElOU3p3YndkaFhLQUxuay1GWURMUU43eFlzVEM0ZjVmX3VucndZ?oc=5",
-      "titre": "Personal finance app will encourage users to invest – and you might already have it",
-      "source": "The Independent",
-      "date": "2026-10-23",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "investing",
-      "section": "📈 Investing",
-      "sujet": "💰 Finance — Beginner",
-      "langue": "en",
-      "site": "independent.co.uk",
-      "publie": "2026-10-23"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNaGRIanJCNzFlZVlnVzRTbzNfUHJrLUR3Mk1rX2FzUlY5VTBSdm9ubDh3bjFyMlUySHlybHo2YXJPdlZqVTg3R2VaYmVSN0tmaXlweFduVWtKdnFLUFlMeVNIdV9tUDRvaFpBUjh6RmVMZ3A3YVZZem0wTHdwdGt6Y3BzZzFPeTVkVGpselNWa2FRRWp1R3RpZGI1N1hOeTI3eHRqRVJhWktYY29Lb1F0RkYzT3NhcUlOX1JxR0trS295VzVEUlhVYjVSQVXSAcwBQVVfeXFMTWhkSGpyQjcxZWVZZ1c0U28zX1Byay1EdzJNa19hc1JWOVUwUnZvbmw4d24xcjJVMkh5cmx6NmFyT3ZWalU4N0dlWmJlUjdLZml5cHhXblVrSnZxS1BZTHlTSHVfbVA0b2haQVI4ekZlTGdwN2FWWXptMEx3cHRremNwc2cxT3k1ZFRqbHpTVmthUUVqdUd0aWRiNTdYTnkyN3h0akVSYVpLWGNvS29RdEZGM09zYXFJTl9ScUdLa0tveVc1RFJYVWI1UkFV?oc=5",
