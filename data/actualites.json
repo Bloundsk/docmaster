@@ -1,6 +1,20 @@
 {
-  "maj": "2026-11-16T13:58:45.092Z",
+  "maj": "2026-11-16T17:11:42.947Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZkZkV2ZKeTZWWW9Kc2dtRkxWamI5WWh5LU5SSlJlRUQ3b3JDSXZWQURQQnR1TWhyak1wbzhDT0NaU1lCeGNldWJseUdMX3VnbmpzQnlGVWhpaXNUNGoxcG52WTFRcmNvZzc0QU54X1EyaW5CdU5OX2dxOUlhS2lOTHAxSkh1cUF5Z2ZQRmp6dFRxNmtWam1PRUY0NmQ0WmtmVDJUSUNjaXZwUW5nSGx1OHhn?oc=5",
+      "titre": "Expert SEO et GEO : comment Paul Digital rend les PME visibles dans l’IA",
+      "source": "Le Figaro",
+      "date": "2026-11-16",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "seo-référencement-naturel",
+      "section": "🔍 SEO (référencement naturel)",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-11-16"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNR1RaY3p3VEhDeVZUZ3VoVVhTcmhvTHp5djBRRDBzYzg2TjdpaWs0X1BCaVN2czFPQTlNV1U5ZlMtcDhiMEl2YzZ3eWRUdENaR1p5bzcyc3puZjFHSjdGc3FBOF9xT0xWbktvSHBQQld2TEZNQnR6Nmp6TWFWSVBlTlc3Y1VMNi14TG9aVHpyb3p3WGhNbTBYcWRwQmRqQUlySG55QkczZEVNcGp4UzVrVEhwOVhHdnFPVXRGRWxuMWszNU9rU1VXZzE1OEh0anJNUUdld3BFZ3I0WVhHZEhDSFBJNk9mSmJqR1V6TEZPQ3QtOFdyZUxBWDBqU0hSVkU?oc=5",
       "titre": "Cyberattaque chez Maileva : trois questions après la fuite géante de données de la filiale de La Poste",
@@ -42,6 +56,20 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-15"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQOGx3SGE2b1lXRTgtc3pDZ3N3OWFKTlpSYTBGcEN4TW9yZ3hBdHNFbWlZNXRGOFE2ZjhQMmtkT0t0SnZsTVJHZ3A1YTd4WXJmSm5jRjBEYmt4NW9pdGtEWmVia3pVYWtTR0poQVBwNDd2c3h1Zl9CbmpiUy1UdERCMXFFWFZmWmZlU1dQRGc0VjRDUzBEWFk2dmdsb0RMZ1Ftb1lhUlpsNEdFWWFlNkt3czUwdkhtMTZtVkplZjVOTERkQTNMdjhDa2FfMmdSR0gwcDNYanpYdnFGOHlwNTgwN3FnMjlZVGNtcmFpY19GZFBPeG9KTVcxaGxoekdqQ0JFM1VzNnRNSQ?oc=5",
+      "titre": "« L’IA fait peser un risque quasi existentiel sur le modèle économique d’une partie des écoles de management »",
+      "source": "Le Monde",
+      "date": "2026-11-13",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "modele-economique",
+      "section": "💰 Le modèle économique",
+      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
+      "langue": "fr",
+      "site": "lemonde.fr",
+      "publie": "2026-11-16"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNT3BtV3gtcmw2RDBsNmhTRkYxNV9tOGpkcEluTVRTaWVsUW04NmwtM1RGTzJpWktKRWlSX0wwRDh3QWxuTFR6NGJScFFmbUdORjhNMVh0bHlhYTRtUWRWRmU2LU1lZlV2Vjl3WUphODRsVGV0c0hKTjIzV3FBZ1pPT2d1Q2pnOUZLYlpxX0Z5RExyMkU3elBHamJ3YjJUaml3RlJHd2ZLQ0dMTC1hSG1zSENqWGRfQ3M2bnZGSEpRZ09Bai1iaUhnMS1nN2FLM1VqREplYmYxR182eXd2X29wWXF3a3ZJZTR4NFZzMmdSMzlvYkJZa0N1Z3ZDX0dzTE10RFZZ?oc=5",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-06"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQUmRMNXEwSHVFd0ZpODQtSFg5M3hoT0J2Y0o5NmthekYyN1RtRnAzT19kbGRrQWVvSF9ucFU4VHpwWnRnSGgzeFJFME5WLVg3YnF2NUlsa0ZNXy1sdy1BQ3lOTVY2N0MxaFNMMGhRSWtJZEhhVTdud1VqaFlXVHE2d1JzeU5UbWNWcjg2bkdjQXBpOTlIeU84aHhWZ2NhWXRHcnNDdlI4QVluVTNOMnYzelZuZWd1b0lhdTNXSFcxQjZGdUhkOXcxeUpVWlhYUkh4MXFVV1JTMTlVNHYzR2lud1I1UzlpZkVsRWxiLWJaeGlfdEFu?oc=5",
-      "titre": "Site pro : comment le mettre en ligne en un week-end ?",
-      "source": "Le Parisien",
-      "date": "2026-11-04",
-      "guide": "dev-web",
-      "page": "intermediaire.html",
-      "ancre": "mettre-en-ligne",
-      "section": "🚀 Mettre en ligne",
-      "sujet": "💻 Développement Web — Intermédiaire",
-      "langue": "fr",
-      "site": "leparisien.fr",
-      "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirgJBVV95cUxPdEFkdmxmRW4wUzB0Z1lWdDB6LWRMbXNQam5ERV92d1VKM2RfWXA0SzgwRnNmbnM5ZGZDUXVtYkNaLVIxZE9DYnVoUlVQZll4amFXREJWT2xQUUNEM0hVdmMxSktTY05Ka3pqdXFpRFZFbGZXdW1mYXZ3WDRCNzlBOEowVUVKcTd5T2hUTkVLQXhkZmZPLXlEQnc4UnhtYVpXOTk1blZkMTZVeURQM3FLdWFFRmt5UDhJOE0zVkYyX1J5U1U4Ny1GQ3M4OTJuNnItVlN2WWRBczN0VTNTX18zUnJ2T1R6NXBzMDV3eXJNS041b3kwLVZyd3c0TXhfaUhXVFlJNlBERklzaENpRmVfUWhOcGR2ZHRGdEZrQ01sZE41MkNsd2FPQmR5UFVRdw?oc=5",
-      "titre": "Arrêts maladie : «Pousser les personnes à reprendre le travail trop tôt peut avoir des conséquences catastrophiques sur leur santé",
-      "source": "Libération",
-      "date": "2026-11-04",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "liberation.fr",
-      "publie": "2026-11-10"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNWnJ3aVBFdGRDU0ZBUVRacHRYS1FXWHFwcXlIV2ozb1haMnZNNzRBWmRrVXJqb2psS1BJQ3VPUHZVcHViaXMzdDJhMm9UTzlTWmpQUVdSZm9teGJVT0VMbFdmLTdmVGh4OVA0eGdNcTJ0eElXUm5yTTVLWlZqX2R4WjdEZ0ZOb1lYNTJkc003Y2VIUVBCLWRnNUI4T0FwOUZaYXpFZkdaX05sMTZENVd2Z2FyRE1RcnJVRDBSZUdxRWxrR3o4N0Y5NA?oc=5",
