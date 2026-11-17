@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-16T18:14:11.687Z",
+  "maj": "2026-11-17T00:59:50.061Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZkZkV2ZKeTZWWW9Kc2dtRkxWamI5WWh5LU5SSlJlRUQ3b3JDSXZWQURQQnR1TWhyak1wbzhDT0NaU1lCeGNldWJseUdMX3VnbmpzQnlGVWhpaXNUNGoxcG52WTFRcmNvZzc0QU54X1EyaW5CdU5OX2dxOUlhS2lOTHAxSkh1cUF5Z2ZQRmp6dFRxNmtWam1PRUY0NmQ0WmtmVDJUSUNjaXZwUW5nSGx1OHhn?oc=5",
@@ -14,6 +14,34 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-16"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTmJuU0JQZE81LWo0VEVEUzQxcF92SkRhVmhQMlg2SVZqN29kWm9UcWxNcEdoSXhjeF8tN2Jlcl9YTHF1WWdrQXUxWldWdDl2cmlCZXZPMDQ5cENnT3pYZGdKUXZFOHFaMUFUNkdnUVBVdHJfV3RjS3huMVUxRU5PQUNkOWlSQi1qeHBqVVJueGI3U3NEYTh5VS1COXpvem41MXJiRllOZWt5SW9CZlFCQ3kxaGlBeFVKcHpCSS1MSQ?oc=5",
+      "titre": "22 millions de personnes concernées, une nouvelle fuite de données XXL en France",
+      "source": "ZDNET",
+      "date": "2026-11-16",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "zdnet.fr",
+      "publie": "2026-11-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPMnNIVGRqdXdSbUh1Q190aHZEQ2VhcDF4Z1A4eGNMTFVoVjQ3TXExbTlVRG4wbVQ1Vl80OGJKbzRJS0FUWGpRazdmU2xFaFNWalBSOFNIT1QtWDBWLU9OS1RzbXVKOVN3ODhVVFN1RmN5NE5WbnlSOHJsNmZmcFV6ekVZTVhiN2F1TTlLZjFfU3BLOVJZRzJTWkxnS19pOTZTRjRKZDdqTWs4cmhfM2o1S25BRzNaSUpNNGdvcHBqVXVPVTZjSnd6cHNaMGZlaXRhal9MWTNYVFRfTS1PUWwxRU42clRKZlcya3REOWpn?oc=5",
+      "titre": "IA et données personnelles : le CEPD confirme que l'intérêt légitime peut servir de base légale",
+      "source": "Journal du Net",
+      "date": "2026-11-16",
+      "guide": "dev-web",
+      "page": "intermediaire.html",
+      "ancre": "bases-de-donnees",
+      "section": "🗄️ Les bases de données",
+      "sujet": "💻 Développement Web — Intermédiaire",
+      "langue": "fr",
+      "site": "journaldunet.com",
+      "publie": "2026-11-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNR1RaY3p3VEhDeVZUZ3VoVVhTcmhvTHp5djBRRDBzYzg2TjdpaWs0X1BCaVN2czFPQTlNV1U5ZlMtcDhiMEl2YzZ3eWRUdENaR1p5bzcyc3puZjFHSjdGc3FBOF9xT0xWbktvSHBQQld2TEZNQnR6Nmp6TWFWSVBlTlc3Y1VMNi14TG9aVHpyb3p3WGhNbTBYcWRwQmRqQUlySG55QkczZEVNcGp4UzVrVEhwOVhHdnFPVXRGRWxuMWszNU9rU1VXZzE1OEh0anJNUUdld3BFZ3I0WVhHZEhDSFBJNk9mSmJqR1V6TEZPQ3QtOFdyZUxBWDBqU0hSVkU?oc=5",
@@ -100,18 +128,18 @@
       "publie": "2026-11-15"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOclJKZ1hPM0xNRGVMVWRiUlRST01NRVc2X0RhZjkwUEIzV0R3bUd1UlB2cjJHMnNEQkFhdnRBajYzdjFSZDBWRkd0R0UzNzVoZnFIYW9WNDhmODlscDVDeDkzQVoySnVubVlCUG1oX2dsa1BGT1JlOWZPOFExUU9HS0p3Z3UwazFfOExJX092azdBbXBEUUdLdG8wN0MwSHVkbVhiNGNEa2MwMUxsVnVFYW5ldnJPZlV0VHQ0QlRKRDhDRnBkUENSN05YM2ZnY3hvT1M4OW9Lb3VUNU81X09kaU1lMkk2RFBKQmRXbFlIVjVzUQ?oc=5",
-      "titre": "La fuite de données révélant que 400 000 Russes sont morts en Ukraine est-elle crédible ?",
-      "source": "Libération",
-      "date": "2026-11-11",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
+      "lien": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPcnh6YUFHRHNaWUcwQ3REZnc4YmxjTUY3ZXkyYzRSOWt5OFZKTUF2YU0zOWg1aXFiYXV2cmJGS0RPWjVlVVE0NFZyQ1F1czMzaHhiYnd5bmxlM2lXaGI1MWl1a3hhZVc4empjUTJCSUxwZGtUNXkxbzYwZlJ5VHZLaFVHVG9LeWc4cUEwd2xNU3JWUQ?oc=5",
+      "titre": "Diffuser ses échanges clients sur les réseaux sociaux : c’est légal ça ?",
+      "source": "Blog du Modérateur",
+      "date": "2026-11-12",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
       "langue": "fr",
-      "site": "liberation.fr",
-      "publie": "2026-11-11"
+      "site": "blogdumoderateur.com",
+      "publie": "2026-11-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQZWRMZEhYQVpfNmpsNkdzbHFXTDZMTU0tUGpUQ1FsaFFXaWhuQ2RLX1NIOFIyelFaYVd5RlVTVmVYWFc3QTUxQlVua1JHaXFDVmwwXzNJODBTVHRSMnE3S2VmbFFOX3ZxdDFZaWdtbTJTUkstUi1Od2lIZVdrdXZiTVh2ekZmUDZhN3Izd05vTGpVM3BsaTV0eDBQUndKQ1hVVjVqSThWUWZ4ZHMzUHh6ZkhINE81RTlQQWhReDBDWlo2ejEwN3lpMG0ydXRDdGQxM0c1NEU1Y3VnU2lRT25QbU1jdmlyRzB5WGlUWXVPYmZScGhLZ1dJVnlnMUJhLS10alpvamtYTURRMGYyLVUydU9UdkU?oc=5",
@@ -126,6 +154,34 @@
       "langue": "fr",
       "site": "letelegramme.fr",
       "publie": "2026-11-11"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1LYUpoYmVfMDNWanRybmFRdk1mbVZ4OUdzQnFxaElsV2FLMHkwMHV4UDJOWTk3RjRRM19LM0RRczdyY0NmOG1aQ3VYdmtoa0d5NTktUXFvQ08?oc=5",
+      "titre": "SEO : actualité et conseils sur le référencement naturel",
+      "source": "Blog du Modérateur",
+      "date": "2026-11-10",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "seo-référencement-naturel",
+      "section": "🔍 SEO (référencement naturel)",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "blogdumoderateur.com",
+      "publie": "2026-11-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRFR0R3pNN0FWNlhSeTJ2dW05U0Q3Rk5TOHZZYXNtbERWUU9CVFJtUTFLMzJOMnZZdTQyNnk3VmdMUTNJakwzcEZYM01leGNBN0RJUjV0Y1pISXNjemIwTXhRa1FKWWxfcEx1SHh5MDFoQ3k4clNJMWlKcTg3Nk15YUQzTmxKa1BuejdQbExfclNSYXdTNzNDb1gtLXE1UFRnNFpHdHgtU01FeEhpOC1CRFJNekZZTlU?oc=5",
+      "titre": "Stress aigu ou chronique : quelle influence sur l’appétit",
+      "source": "Sud Ouest",
+      "date": "2026-11-10",
+      "guide": "sante",
+      "page": "intermediaire.html",
+      "ancre": "aigu-ou-chronique",
+      "section": "🧠 Stress aigu, stress chronique",
+      "sujet": "🩺 Santé au travail — Intermédiaire",
+      "langue": "fr",
+      "site": "sudouest.fr",
+      "publie": "2026-11-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOTZtRlZ6RDVqZDduR0lzOVBEejFNVUJNOXE2Vnk1LXBfZFR2R19KMjRRYmNyQjltRUk4b1g0N2RBMFRQRWNvSTk0R2xUZUpTRERVUVRrdnVNT3RQYUptdTJya1p6LXRhMDVQTXRVTE5GQkx6ZG4tU1ZkdzcydFdNeEZ0YnNSVU9ycS1JZjVfWGdDSXlwMDg3b2VMcG1vWU1WT0lTbktwNlU5R2duRjJJQVNoRUtXdV9MOWtmSDlxRGRiemJPSVRCajJteUEya2JGNzV1djlDRHU1T0tyY3UzdTQ1Qm4?oc=5",
@@ -170,20 +226,6 @@
       "publie": "2026-11-10"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbXYtTnZiSFNFeDBBVGRlSWFJNWx5dGZmanBpazFxYkpoWElaTWRlWnVFN21EU2l3ZnJNQ1ZNelN4ZzdlVHhMbzlYMTQ4czAxUGlXV1JXbWZWcTRGMmwyYWgtdHdIVTBfTGN1cG5Md29PaW5DVGhlQWhsS0UyNmc2dFNIaUQ0N0RYNGJpLUFYd1kxUnJPaHQxdnBxT2kxN284ZlpKZ3hYdEpCTDFzcV92YUwtTDctRWNaX3FhMzcyZnZBUQ?oc=5",
-      "titre": "L'UE veut s'attaquer aux dérives des influenceurs sur les réseaux sociaux",
-      "source": "Le Figaro",
-      "date": "2026-11-09",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-11-11"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMiswJBVV95cUxQb0RZQ1pSaUU5SVFyTm9FaXBKSlhnaGdDQUpDakxGYjBiaWx0Sk9VMzlCLVRwR0FROHppMXg4eUVNTmhIdk5VbTc2ZEFpdHNtTUt0UjhMSTBsZnNrLU9yVmhPNURNcV93bDdCZVNYUGEtNEdGN2Nod0l5QTBtUVk4T1IyWkl0MXhjRU1NUVlTdXJtMzY0cE9RQnY0UXItc3dKdUdxSFUwbjNNZjFIZzVOa1RIT0V0RVJGelYtZkFhV2MxOVJYbmZsVGZKYzVJRHI4N0hUdVAxUXNpT2VZTUpCV2FDdVVjV05ER1RpSkZ3WWdDUlcwN2hkbU50Q3NTQXBoZElSYXpKYUtmRldvR1JlTlVEVEFNdFR0SW84azZmMUtScWxkYlIzc25aeF92OXZ5NDBZ?oc=5",
       "titre": "« Dans mon plan, tout est financé » : Raphaël Glucksmann promet 200 milliards d’investissement pour sa « révolution écologique »",
       "source": "Le Parisien",
@@ -210,6 +252,20 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-12"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxOUld1NDJmV1hMUGFlNGRkTXNRVWZDNU5uZkZhTUVWS041VEE0QVdPbEtBaG1mZGVkSGZmbGFtRmdUWHhxeDRfajZibUkyN09XUDVLbkxMWUVZdl9SQmlTV0x6ZWZocjhkUXpscHcxWWJ0SlFwd1FocGVSd0ZIZXBKQWNxb29sV1lQLUJNNUI0T1FOODAwMFdmSjdKQm0yQ2hMbWY4dnNWRW1rdWNUR09QWjI0enZTMFQ5Q0lGeHVGWjRnamNTZlpBaHNHNlE1Wlc3ZHFTOG1ESlJPT25WdXIxVEMtTkJVZTlXX2tseVVPRklWaFV4V2ZyejRuNGYtalNIN2E2U00xMG5kMHdSVF9UQjdLVGNVWlNXRy1NWF8zWDFzbTJBQTdXT0hGbWRRZGVVTnRXXzgtN3ZCazJNaWhCeklCa0lfTjVhQTZoMFo4dzJwcTN4dUs1cllIQkVDSjNmM3ZUR09aUQ?oc=5",
+      "titre": "15.000 entreprises concernées, débats sur le chiffrement... Après deux ans de retard et des piratages en série, le projet de loi \"Résilience\" de retour à l'Assemblée pour renforcer la protection des données",
+      "source": "RTL",
+      "date": "2026-11-09",
+      "guide": "cybersecurite",
+      "page": "debutant.html",
+      "ancre": "le-chiffrement-des-données",
+      "section": "🔐 Le chiffrement des données",
+      "sujet": "🔒 Cybersécurité — Débutant",
+      "langue": "fr",
+      "site": "rtl.fr",
+      "publie": "2026-11-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMingJBVV95cUxQaFNYQVNDNmdWODlKN2FPVzJMY0hhRnNkN0hSdkZVMWRYSnRIYlFsN3VwNlNsRXAyZ2l6SkVhRDBpUnFoaUwyNkNkYmkzRThYeXVkZGZPOEVxSVpoMkJHQmVKS3lDYVdOZGdjSG5QYzlia2JMYW45R2dQUFQyejhxamR4UXRKTlBkS3ltaDBzd0tiQWJMSTBDUVlxMGkzY0tiZ3dwdmZoTzlkRXg3ZDFhXzQwYlJjb3FzZkZ3OUx5MWJReGstTEJyNVFNbkZaQnlwZE5kMkltWkl5dlZKUDUxaV9rTkFWcGozTU05QXM2MVJTVFFYM1ZPUk9MTjlta3ZhNXBvcm5OcW1zU3FLZjllRktmQmZXT254bWFqQVVR?oc=5",
@@ -280,62 +336,6 @@
       "langue": "fr",
       "site": "la-croix.com",
       "publie": "2026-11-07"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQNlNMaXNRMlFENURXTUtQU2RLekstVzZKWTRGa1h4dnBhUWREQVhDNldiN0FuVlNLX1FTc3JDOTN6T0lvYVBUc05zMS1Qd2ZqYm80cFk1QVlsbzd1Ym9lR2FaN1BFNWg1Zm1GSWNETmxUZjBQdHNOOW5fSzBrdXdFSU1GZUNZeUZ4clk5a05VdEQ2THdERU4wQ3BpVlQ1R1NwUG5nVTRvQ2lQd2tsUmhLb2M2LWgxVE1qUUpLY09KVjBEbi0xM29ZSEF5MzFYZTlsZXJ2WWREZw?oc=5",
-      "titre": "Une faille permettait d’accéder à certains serveurs Alpine Linux sans connaître le mot de passe",
-      "source": "Clubic",
-      "date": "2026-11-06",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "mots-de-passe-authentification",
-      "section": "🔑 Mots de passe & authentification",
-      "sujet": "🔒 Cybersécurité — Débutant",
-      "langue": "fr",
-      "site": "clubic.com",
-      "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQLUVQZ3RaZnJ0QXhheTBtRGtXdXV0VXA5eHR1SHNNQnYyRVJ1czJnOXdRTG9LU0xGdVRoYlRfbnhlRXhPZ3JKVzNyTVl0WFM4VGRJQVN3QzB0eVpzNDRZUG05RUxHQTNhNFJKWFFGU3JvLTRyR1hJWFFIRkt5SGhiUVVfUmR3Q0xOSXpOZ0FkdWV2c1ItNmowWWwzME5YZ3dYT1kwY05YQkhLZnAtc1N4T0h2NXd5eXdyLXNhaml5bnJheVAtZHZsYlpwVzY0dHpWbXZVZnVXbERnSWhBR0ZXSlBhZG9HVk9XRUdINlp2R0N2N281X19FRWVRRWFndjQ?oc=5",
-      "titre": "Suspension du fonds chaleur après les canicules : Macron risque nos finances et nos vies",
-      "source": "Libération",
-      "date": "2026-11-05",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "liberation.fr",
-      "publie": "2026-11-05"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPLTVUbktHdjE5MjlienZIdUdLUmRhc19iSU03QThxbjdGMU1vWHR5MzF3T3QzWTFhWjhUM2lFRjZSMHctZkJvRGZVOUNVTmFCX1RxUU1ycFhJejJnU1JOY0gxVkMxWHRJQkVjd2oyTUlSU2RPdG9SRHJKT0duTjBTdDczTTdKVzhhQ2NHT3hrUmhXVDhfclh0bmNjYmFrMzh1eUtYU1pJVlhQMXF6Z0VhVnVhNUU5N1VwUThpdQ?oc=5",
-      "titre": "Comment optimiser votre épargne et mieux appréhender votre fiscalité en 2026 ?",
-      "source": "Capital",
-      "date": "2026-11-05",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-fiscalité-de-lépargne",
-      "section": "🧾 La fiscalité de l'épargne",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "capital.fr",
-      "publie": "2026-11-06"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOako0WUJOM21VWV9zN1g0VnFsbGJyOU9wamtPcFl1ckYya2ZDbjg2dDNYTHBFNFVpU0s4NHk0Y2xsalJPUXQtQ2VtWlNyMWZRcVdBSC1mZXZIVkY5ZjkyWXVQc0p5eXgycW51WFNkejRRaDdlQmZhQjlibWxlaUg3NGdKdFJSV2VtRGhqc09fbnppSUI0WVVWRkFENHJFczFwVEp4N3pvX1BmUzBLaXdmVjlGcV84S3c0WmhYck9RZUQ?oc=5",
-      "titre": "Les négociations sur les salaires débutent de manière très tendue dans l'énergie",
-      "source": "Le Figaro",
-      "date": "2026-11-05",
-      "guide": "negociation",
-      "page": "intermediaire.html",
-      "ancre": "negocier-son-salaire",
-      "section": "💼 Négocier son salaire",
-      "sujet": "🤝 Négociation & communication — Intermédiaire",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-11-06"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNWnJ3aVBFdGRDU0ZBUVRacHRYS1FXWHFwcXlIV2ozb1haMnZNNzRBWmRrVXJqb2psS1BJQ3VPUHZVcHViaXMzdDJhMm9UTzlTWmpQUVdSZm9teGJVT0VMbFdmLTdmVGh4OVA0eGdNcTJ0eElXUm5yTTVLWlZqX2R4WjdEZ0ZOb1lYNTJkc003Y2VIUVBCLWRnNUI4T0FwOUZaYXpFZkdaX05sMTZENVd2Z2FyRE1RcnJVRDBSZUdxRWxrR3o4N0Y5NA?oc=5",
