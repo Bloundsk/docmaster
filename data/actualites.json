@@ -1,6 +1,20 @@
 {
-  "maj": "2026-11-17T01:11:50.003Z",
+  "maj": "2026-11-17T16:59:07.831Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaUlmeVQzVTZwOTBaODZtTEJoeGdhSmFxV2daNkhYQ0liYW1zU1pSbmVjMXRodW9QZmtfclJZYnpVYWl0WW5FVFc5X3BReTR3QjFSSlJ1blpDZEc3RGxRVV9QcldDVl9wZEtEY0RmaVJ1Y2tDM3UtbjNjb1Zhc1JCRmZ6TXozSUVnMEZ0UGxpR3d3TWtMNVBtYXRpWFQ5anVBWWRtTXRuMzVGdk53TWptd3lGbzFnMjdqNy1sT21KcVpYd0YxRmd3TGthenNPMW4xd1hWZGgzNV9VUzVxWndsSnlxUWRib1RFMUVYZ1VMZ0Q2d05Dc1M0cTMzV19fR0pjRW1kYzhQblRCQQ?oc=5",
+      "titre": "Air France, HSBC, IKEA et Zoom font partie des victimes : le piratage de l’outil de test web Optimizely a contaminé près de 180 sites",
+      "source": "Numerama",
+      "date": "2026-11-17",
+      "guide": "dev-web",
+      "page": "avance.html",
+      "ancre": "tests-automatises",
+      "section": "🧪 Les tests automatisés",
+      "sujet": "💻 Développement Web — Avancé",
+      "langue": "fr",
+      "site": "numerama.com",
+      "publie": "2026-11-17"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZkZkV2ZKeTZWWW9Kc2dtRkxWamI5WWh5LU5SSlJlRUQ3b3JDSXZWQURQQnR1TWhyak1wbzhDT0NaU1lCeGNldWJseUdMX3VnbmpzQnlGVWhpaXNUNGoxcG52WTFRcmNvZzc0QU54X1EyaW5CdU5OX2dxOUlhS2lOTHAxSkh1cUF5Z2ZQRmp6dFRxNmtWam1PRUY0NmQ0WmtmVDJUSUNjaXZwUW5nSGx1OHhn?oc=5",
       "titre": "Expert SEO et GEO : comment Paul Digital rend les PME visibles dans l’IA",
@@ -41,6 +55,20 @@
       "sujet": "💻 Développement Web — Intermédiaire",
       "langue": "fr",
       "site": "journaldunet.com",
+      "publie": "2026-11-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOcU5aS0JvUWRiQUVyNHlQMHdKQm5TeFRGaTlmSVkxX0wwOUlCbDJXTTFzMHA0MFBFZDR2RERxbGc1VTVPOEdCcVpZbmdJMVFoRzBsMFFNbHU2dFcydHFvejNoRUpkd0t6RUE1bjE0NWt5ai1mbjlKTHdXX0FTMHJocjZNREpuajN3SXM4bHpURUU3b1lOZkFnSUdXNWVDOEs4R080WGR3OHJFQVlST0plb0tkbWJSR2d2empNUVNpMVR5N0RNcmd1TExjdUM2R1l1TThCMzYzUVlyTmljMFR3UFdR?oc=5",
+      "titre": "« Pas plus de 30% du temps de travail », l'encadrement de la médecine esthétique fixé par décret",
+      "source": "Le Quotidien du Médecin",
+      "date": "2026-11-16",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 La médecine du travail",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "lequotidiendumedecin.fr",
       "publie": "2026-11-17"
     },
     {
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "leparisien.fr",
       "publie": "2026-11-13"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOdVhiNW45Vnl1SHZHS0c3bEtJa2N6a0RRTk16clZxQmx3WVAxaGdCMEEyNjJFOU5WNTlONFJMaW0tcFdxeWhSdGhXOTU2SlJwSFlYNHk5ZHhYS3ZjdU1LX092ZE43UEpJNUo1c1hmcnVIUzFYVlFFWlM0WHIxbjN4bTBPSGdJMDQtbjl3TjFlRWo1Vmh3WnMwSXUzVFZETlh4aEpNSklCWnhJRTZRd1FTSmEyMHd1ZFNGYjJfdWlkOHRURmxQYVNUaDc2MHhQNmJTc2I0NjRlT3MwLTU5bnI2NA?oc=5",
-      "titre": "Ain. Cybersécurité des véhicules : cette entreprise passe la seconde pour répondre aux inquiétudes du secteur",
-      "source": "Le Progrès",
-      "date": "2026-11-07",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "gestionnaire-de-mots-de-passe",
-      "section": "🔐 Le gestionnaire de mots de passe",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "leprogres.fr",
-      "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOUGpQZjhoUkl0QklfZzRZWEdrZEdBaGFuOUlFQ2FxTFQxc2Vxdk9qRkFneS11aFBlVXloU21OazVWeXF3YUlGZWRZTW1TWkRjMU51bmpQWGVlbmZPZ0RBazd3NnNud1Q2XzY0djRvTElEZVE0VzY5cENUN29hVlJ0TXd1NFA0eHZ4bDVNMWE0V1BseTJYSGRTNDZtckRjRTBaZXFfc0YyNDdBOVlBcUU0VzdoMGxSbHQ4cjRfUFBUV0duOUE1QzJ0ZjJ2WlNuazUwbnQwZnYzOFhPdw?oc=5",
-      "titre": "Finance solidaire : Eva Sadoun facilite l’investissement dans des entreprises à impact grâce à Lita.co",
-      "source": "La Croix",
-      "date": "2026-11-06",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "linvestissement",
-      "section": "📈 L'investissement",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "la-croix.com",
-      "publie": "2026-11-07"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOXzhwcU5Ia2V4Tld1X1JnUW1MY1p0SDNxc2hjTlhjOEdoenRmVTFSZmdPemVGY0pNLVdxUWZjMWxfUmo2Y1doY2xEQVl6UkVsR2RGeDE2cGZGSHR4TjFIeWxkUjNmQUJVWl9LMlRKVGRudDBBdmp6ejE0SUpQSFViTlZvaV9ycVZzWGxycWUwbVE5eEVzVHN2eTFQRHkxelJWZnVPQ2lOOEZCRlFtcDRLWk0xbVB3WWVX?oc=5",
