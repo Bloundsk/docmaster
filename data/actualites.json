@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-17T16:59:07.831Z",
+  "maj": "2026-11-17T17:06:17.107Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaUlmeVQzVTZwOTBaODZtTEJoeGdhSmFxV2daNkhYQ0liYW1zU1pSbmVjMXRodW9QZmtfclJZYnpVYWl0WW5FVFc5X3BReTR3QjFSSlJ1blpDZEc3RGxRVV9QcldDVl9wZEtEY0RmaVJ1Y2tDM3UtbjNjb1Zhc1JCRmZ6TXozSUVnMEZ0UGxpR3d3TWtMNVBtYXRpWFQ5anVBWWRtTXRuMzVGdk53TWptd3lGbzFnMjdqNy1sT21KcVpYd0YxRmd3TGthenNPMW4xd1hWZGgzNV9VUzVxWndsSnlxUWRib1RFMUVYZ1VMZ0Q2d05Dc1M0cTMzV19fR0pjRW1kYzhQblRCQQ?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-11-13"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeGtQSXBicXNqaHNlY3pRakN1ckc3eDBvS2xkR2FxdEpJRGFLbG1nZFlOLVhub2xpWGFwSmVaM0drYlZDS2x5Q1lsb29Oclg2ZXdudEM1akhNUTd4QmFGWkZIb08xTjQ0ZnBZcmtaaTRzRExZdFlmTFMtN01mbWs2RUpLWVZ6cWxKMHRQVEM1WHJmdUZEc001N2xJZk5Jb2cyOHNsVXhZRVFmRnhQV3V1RDdNei1tZFk?oc=5",
+      "titre": "‘I went from AI illiterate to building an AI teaching assistant. Here’s what I learned’",
+      "source": "Times Higher Education",
+      "date": "2026-11-17",
+      "guide": "apprendre",
+      "page": "avance.html",
+      "ancre": "building-your-system",
+      "section": "📐 Building your system",
+      "sujet": "🎓 Learning how to learn — Advanced",
+      "langue": "en",
+      "site": "timeshighereducation.com",
+      "publie": "2026-11-17"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOXzhwcU5Ia2V4Tld1X1JnUW1MY1p0SDNxc2hjTlhjOEdoenRmVTFSZmdPemVGY0pNLVdxUWZjMWxfUmo2Y1doY2xEQVl6UkVsR2RGeDE2cGZGSHR4TjFIeWxkUjNmQUJVWl9LMlRKVGRudDBBdmp6ejE0SUpQSFViTlZvaV9ycVZzWGxycWUwbVE5eEVzVHN2eTFQRHkxelJWZnVPQ2lOOEZCRlFtcDRLWk0xbVB3WWVX?oc=5",
       "titre": "Infoblox customer and staff data exposed in Sharepoint breach",
       "source": "The Register",
@@ -391,6 +405,20 @@
       "sujet": "⏱️ Productivity — Intermediate",
       "langue": "en",
       "site": "mirror.co.uk",
+      "publie": "2026-11-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTGtRU2lIVW80eG85WHRLNDctaXNkQXFnZDF1V1czLWpmLTkycXpBYk1HX2lBMm5zRmlGQVJTSmtuNGV1QTEtT3JWZ1VRNHA3MjJTem9VSldDLUFKNnMycm9oLVVKLWgwdUtsN0U2V0FjU3A1dHAtVENsVW9rblBQWm44TUtDQU5NNF9KRzViVXVTb0U5REpxZ0hOREZYWlJLTEtDRTJCYkdWZ29XVDhVTmFORG1aZ1JWVlVsWjdwc2NyTTBUNHIyem5pSkxkQjNH?oc=5",
+      "titre": "HTML-in-Canvas ships and could make the web a lot more creative...and a lot stupider",
+      "source": "The Register",
+      "date": "2026-11-16",
+      "guide": "dev-web",
+      "page": "debutant.html",
+      "ancre": "html-css",
+      "section": "🏗️ HTML & CSS",
+      "sujet": "💻 Web Development — Beginner",
+      "langue": "en",
+      "site": "theregister.com",
       "publie": "2026-11-17"
     },
     {
@@ -643,34 +671,6 @@
       "sujet": "⚖️ Law & Procedures — Beginner",
       "langue": "en",
       "site": "legalfutures.co.uk",
-      "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNXzhTMS03OVVJVUVCT0dOakRHVEFCVU1wVlpDQXpnVzZodldQaDVNcDRXXzhPM2RYREI3ajRoQ18wbEpSbVJISDNkMTl6bGYyX1VpQUJ1bnh2a0ZiZVBiSlpSdmF3NGpIc1BKMVZ1Z1hTd1JSTEFPQTJ3RlZOY0lHV3psMXdabzFsbkZrWU1hUnFabC1xNmlCdGN4OHByYlpvXzdHSHAtTUR0RGNXNlRXaHB5cEtCU01nVUJELTIwY1NFQk0?oc=5",
-      "titre": "Password manager mSecure tells users to change passwords, won't say why",
-      "source": "The Register",
-      "date": "2026-11-03",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "password-manager",
-      "section": "🔐 The password manager",
-      "sujet": "🔒 Cybersecurity — Intermediate",
-      "langue": "en",
-      "site": "theregister.com",
-      "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQM3NBM3pMSHJRS3BNT0dBTFBET3N2d1pEMmFBYzZWTjREUmZnTXVhNkRnSFVWenJENHE0UG5BdmJxM19YOHkxandZdnhfeDB0WnU3UjYwYWw0VEdSdlAwQ0JrcmdsNUc3Tlc3Y1M2ZjFucThSaFN2WFZLYlQxcTJpSFl3U2I4eHPSAYwBQVVfeXFMT2pJUFdzS0gzb0Y4VlhvbF8xU0l3MGV1S0JLZnZMU09lNlpQcWVqTUhWN1l2RGhaRm1lSHJ4RHVvc2hPYjlIRXkzTXJrRDJ6eWNfb3Z3dGhOT3hwVVB2YXpoOG04Ym1rR3NSYnNhcHEtLUFOY0EyN3pZeWx1d0pZZ3N1YU1wZFhlMHR1Z2M?oc=5",
-      "titre": "Optician says eyes can expose hidden health issues and you may need to act now",
-      "source": "Wales Online",
-      "date": "2026-11-03",
-      "guide": "sante",
-      "page": "debutant.html",
-      "ancre": "eye-strain",
-      "section": "👀 Eye strain",
-      "sujet": "🩺 Health at Work — Beginner",
-      "langue": "en",
-      "site": "walesonline.co.uk",
       "publie": "2026-11-10"
     },
     {
