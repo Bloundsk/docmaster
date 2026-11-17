@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-17T17:06:17.107Z",
+  "maj": "2026-11-17T23:55:13.015Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaUlmeVQzVTZwOTBaODZtTEJoeGdhSmFxV2daNkhYQ0liYW1zU1pSbmVjMXRodW9QZmtfclJZYnpVYWl0WW5FVFc5X3BReTR3QjFSSlJ1blpDZEc3RGxRVV9QcldDVl9wZEtEY0RmaVJ1Y2tDM3UtbjNjb1Zhc1JCRmZ6TXozSUVnMEZ0UGxpR3d3TWtMNVBtYXRpWFQ5anVBWWRtTXRuMzVGdk53TWptd3lGbzFnMjdqNy1sT21KcVpYd0YxRmd3TGthenNPMW4xd1hWZGgzNV9VUzVxWndsSnlxUWRib1RFMUVYZ1VMZ0Q2d05Dc1M0cTMzV19fR0pjRW1kYzhQblRCQQ?oc=5",
@@ -13,6 +13,34 @@
       "sujet": "💻 Développement Web — Avancé",
       "langue": "fr",
       "site": "numerama.com",
+      "publie": "2026-11-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOR1JWSTFRMGRTZUZCOENrUU1rdlQ1OW5oLXdfLU5JUF9lYVAtRGR3TUNod3c0MVpTcjVvcjNaZzNhM3JZZUtvOXV3a2ZES3U1bHk5b2ctM216WVNiUlZHdE1JMzhRbmFMVGdMWjlvQkJjNm9lVW10TFFrWVBPaXA5RTdLNU1vVmpvNWl6d1hObVZEUFBKbGNjM0tSdjd2Ykpmc2RJTjd2Q3lBOVZuZUJhSEJPbXpGV2MwR0ZOQXVzbDJtNzNnemZz?oc=5",
+      "titre": "Pourquoi trois mots au hasard renforcent la sécurité des mots de passe",
+      "source": "20 Minutes",
+      "date": "2026-11-17",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "gestionnaire-de-mots-de-passe",
+      "section": "🔐 Le gestionnaire de mots de passe",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "langue": "fr",
+      "site": "20minutes.fr",
+      "publie": "2026-11-17"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTGFHU2pnOVhCOGNEUXA4a3hLZ1luSXFtR1FwTG80eS11a19HSm9wNF82NW02dW04MllVWDFtWHBLcnMwSVhqY0x4dTdHbTN0SVFGek9JMkMxX1NFY3N5S3pvMFBBaHpvdzJqZU15ZmRITnFLYldUWWI4UWdlZk80Q3Z6N2pENmNpYmMyd2w2TjZHbnhWX1NN?oc=5",
+      "titre": "Stratégie européenne et internationale des ministères de la Santé, des Solidarités et du Travail",
+      "source": "Ministère du Travail",
+      "date": "2026-11-17",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 La médecine du travail",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "travail-emploi.gouv.fr",
       "publie": "2026-11-17"
     },
     {
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "nouvelobs.com",
       "publie": "2026-11-09"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNbV93ZU5mRGdEWTI3OHVoSzN3eFZfTzV6dG56Y1ZpZHVwcWtMSFh4RklyX2ZxTGx0bVdsek5GYXlBV25iTUwyVFZsSWFHLVBHRGZuRl9TMFlrSFAzVjhDVFpMWC1iTm81a0RzaEgzWkQ0WEFfT1pqemZuTWhNY2tVTjRWQ1NPUWVFQXJPVTlQSDRRbXBWdEJscS1BY09CeWEtRnhkSVBkdWFxZXQtV1dSS3JxRzRQSXFkbDJEWEsxTGRQYTM2NHQ0M0puWGFGYlJ1Yk9fNEFwR19jRjBqSHdrbkhB?oc=5",
-      "titre": "Intelligence artificielle : c’est quoi un « agent IA » ?",
-      "source": "Ouest-France",
-      "date": "2026-11-08",
-      "guide": "ia",
-      "page": "debutant.html",
-      "ancre": "les-agents-ia",
-      "section": "⚙️ Les agents IA",
-      "sujet": "🤖 Intelligence Artificielle — Débutant",
-      "langue": "fr",
-      "site": "ouest-france.fr",
-      "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMinAJBVV95cUxNaVA0N1h5MXdIbExsT1RXRmRHUzA1NW1XT285R1hvN1VRRkZBX3V5OUV3bDNkTkp0NDBRTllJZ19SQkpjOWk0dUtPVXVtME50MXhweHpESDdKU3JnMlZhck9wbkpSTjlSdDNGTWsweUpoZmxyUGoyeUltUXVxWlNZRTlvallpUmNKX1dPOExSMHJLMU1JQ0RKd2JobndLd2ZmNEFCdE5VSnZfNmdXQmFDYVZWRi1ocS1Xc05HenVUWFdxVUlRWllfcno4S0xTckhRQWd2Smw3MVM3dWY4eUxsdTJHYmJIbmhDOTBIOHdCdnd4Tksxb3hzOFVNX2kwMTFKb0ktVUk3bENYTklZQ2U2NzRfSEpGSkhDRmphZA?oc=5",
-      "titre": "Déplacements courts, camping ou logement écoresponsable, déconnexion numérique... Le tourisme se met au vert",
-      "source": "Le Parisien",
-      "date": "2026-11-08",
-      "guide": "ecologie",
-      "page": "intermediaire.html",
-      "ancre": "le-deplacement-evite",
-      "section": "🚄 Le déplacement évité",
-      "sujet": "🌱 Sobriété numérique — Intermédiaire",
-      "langue": "fr",
-      "site": "leparisien.fr",
-      "publie": "2026-11-13"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeGtQSXBicXNqaHNlY3pRakN1ckc3eDBvS2xkR2FxdEpJRGFLbG1nZFlOLVhub2xpWGFwSmVaM0drYlZDS2x5Q1lsb29Oclg2ZXdudEM1akhNUTd4QmFGWkZIb08xTjQ0ZnBZcmtaaTRzRExZdFlmTFMtN01mbWs2RUpLWVZ6cWxKMHRQVEM1WHJmdUZEc001N2xJZk5Jb2cyOHNsVXhZRVFmRnhQV3V1RDdNei1tZFk?oc=5",
