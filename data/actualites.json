@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-18T16:45:18.195Z",
+  "maj": "2026-11-18T17:07:27.686Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMivgJBVV95cUxPN3dxUVUzSldFT0pldVFveXNSTGFzc3JmeW56WmZEWDdWbUtoSnEwTWpLd194OXZxdnEwWWVhSGdtVjdWYVFFdkNnOFhOX3ZPemxYWFFLZEpfeE1nUmtlbVJwY1l1Y0hhbkNLcmVKNzB2eU56Nm1vT3UzYnRHek5YTjhmQW5hWWg2ak1sR3hWSGVtd0R2dGd6RGFxaVBhTF9QVDU0bnhJelRzRms0R1NvX0tPX0VFbDVoVHJNalZ5VlpzWU9ReE9xUm11bHF1bWhEdTBuVmJsUkdiLXpwRldtdmJSd3h2MmkyZWY2WXN3eENPWXpOSTlYTmlNQ1U1OFVSS3ZYS1ZrVEl5ZGMwZzBMMUNQdGFFN2xvVktTV2psbUYxZ3IxM2FINkdzc3c0WmktX3hUcGJXejNDVjNEbWc?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-11-12"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOUURFd19qZHo1U21VckYyaG1zbGh4RF8ta2ZsVENtRy1ZeWhIb0pFMlF1V2hteEhHT0VQYmRmNF8wN3gwbzF6dGFPanNVR080dnktcEQ3Y2VOcVBYcnFWM0IyckpDaTJueWFyTUl1QzJ4LTlKU1lZVVFKSUVCcGY0TXF0VHo1dHJCMF82WExsWGlTUHdNZ3lwOW9XRlhZQzlqZk9EMDluTGRER0xYM2R1YmNzcXhrdXRLbF9ZRXBGeG1uRDZWcFlZTVZGWWZTTjRCZmZBeW05QQ?oc=5",
+      "titre": "An Australian business summit on productivity? It’s about time. Here are three fantasy agenda items",
+      "source": "The Guardian",
+      "date": "2026-11-18",
+      "guide": "productivite",
+      "page": "intermediaire.html",
+      "ancre": "time-blocking",
+      "section": "📅 Time blocking",
+      "sujet": "⏱️ Productivity — Intermediate",
+      "langue": "en",
+      "site": "theguardian.com",
+      "publie": "2026-11-18"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeGtQSXBicXNqaHNlY3pRakN1ckc3eDBvS2xkR2FxdEpJRGFLbG1nZFlOLVhub2xpWGFwSmVaM0drYlZDS2x5Q1lsb29Oclg2ZXdudEM1akhNUTd4QmFGWkZIb08xTjQ0ZnBZcmtaaTRzRExZdFlmTFMtN01mbWs2RUpLWVZ6cWxKMHRQVEM1WHJmdUZEc001N2xJZk5Jb2cyOHNsVXhZRVFmRnhQV3V1RDdNei1tZFk?oc=5",
       "titre": "‘I went from AI illiterate to building an AI teaching assistant. Here’s what I learned’",
       "source": "Times Higher Education",
@@ -658,20 +672,6 @@
       "langue": "en",
       "site": "designweek.co.uk",
       "publie": "2026-11-10"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNZWV2M3hQTG5VTHhFZ0pQdEY4TGN4dG5YS0lrd0JRY05TaE9JLS1GRUNxVmVnaHZfeW5aZlg5a3AxbXVOczJNRFdPMTh4S3daQkhYU2RsWklid1Z4VWxIRXlMWmNKWmYwZmlVeWhWVXhfYzNkaXhOOFZuN01fN2k1NmlCVzFwOHBQUWJPeUlPRmJudHg0Ry0wVXM3bTRaQXlUZG9lN3lvNDhKTkFVVndz?oc=5",
-      "titre": "Parliament risks managed decline without ‘best case scenario’ renovation: MPs",
-      "source": "ITV News",
-      "date": "2026-11-04",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "risk-management",
-      "section": "⚖️ Managing risk",
-      "sujet": "💰 Finance — Beginner",
-      "langue": "en",
-      "site": "itv.com",
-      "publie": "2026-11-06"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPMHRvNm9tWlBxeERLQTFoaEQ1a1hOQjNmMHFLWWJTVGRyZXBuckNHd3F6VzVsNGwzWnBjU25Pc2RONy1xSHZhSW5sdTRMd3lxdk1DeDR1MDBkenkySVZmWG9CMVhzYTJYM0ZuYkNfVGNGWUIwZDAyZk5jUDR3SHdzQm9fNHhlQm16dDA2T3M5M1pMZlhYbnI2OVBBa3RhOUhHVWVBb3Z4UkRabTQ3aUZ3YmtqLXdYOXo3WHZ3V2xRSm53RWVySWxFSE5OcERCRWJCVUJfU3dHUWZPVWVQU3dLY1FNRG10elBTSC1vOEoxONIB9AFBVV95cUxOU3N2UzY4aWhvY2Y2aXlGZDRnX0hyWmVfdmNLeDZZdTNZcUF3QjVBQjFmYUFhTkhXR2xfZjVucHhuamJOZXpiVGZuQjBqNUtvSVowMGVacm01U256Q0lGTFhNVkM4c3kzY3NfcGdCMG1EdjlqenZIX1o5QkhWR1R5MEpiWkZCaFlDWWJyWVlHUHJTWmNDQnp5M1liMm8wa0hDUU9pZGRfOFNqRlR6MHJ0N29OM0lLdExQRjBTRENmRC1fMFlIZ082R083aTBROFM3dkJWWXJ3SWctR1pVR1J1WEdDLTMxWWFHbV9qc18tQmx0bWd5?oc=5",
