@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-19T16:40:51.335Z",
+  "maj": "2026-11-19T23:41:16.717Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOdlNzR3JPUVA2QXFJNXVfT3U4VGhpWmxYNEUzeW84QlB6S1pMdUM3WXRsSklXdkctSFR6el9DOERFVF9ubEpiZkdKR1hIZlBYNjV0MHYyNktjNHFaVWo4cFFKU1JCbjd3QTNKeFUtWmQ1SmJKd2Y4akVmamFLc0xERjVQaFdtN3p0MEpzVFJPMW5yZ1lNdnRKaUVCV1VHck1xb1RCVkVPR1Qza3pLRXlPbW1uUDVmRGhWRm5FXzZ5enMwdFhZbnJEOS1hOFVlSnV5TE05OVRXUnduWmdxTHM1bDhYNFByVHpONlJYWWJHbVZpZ04wLWlsRy1RSDZDUEMzUkQxZEV6QzE4Zw?oc=5",
@@ -56,6 +56,20 @@
       "langue": "fr",
       "site": "lsa-conso.fr",
       "publie": "2026-11-18"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMzNNdUtERVEzNE1wb1BlTDZVVGJwejRfY0lDODVFbTZDOXpPV2dzS2piRzJ4Y0NkTFdHTDlhd2U2QXJnZ21uaS1pTGZSQjVSMXpQc2pyM0VUS216bFFtRDlYXzE1SVQ1REJEczc2cVFGZE5rOHBNNElIT2xxNUJodUVBUFA1dzY3M2RaVGoySkt4OFBfQ2ozT0pzeUhyUTRWMm1YZHJidHdNN1NiUHcweDhVYldSdG04ZWJJOFhYc2c?oc=5",
+      "titre": "MyPad : reprendre le contrôle de ses données personnelles à l’ère du tout numérique",
+      "source": "Le Figaro",
+      "date": "2026-11-18",
+      "guide": "droit",
+      "page": "avance.html",
+      "ancre": "vos-donnees-personnelles",
+      "section": "🔐 Tes données personnelles",
+      "sujet": "⚖️ Droit & démarches — Avancé",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-11-19"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaUlmeVQzVTZwOTBaODZtTEJoeGdhSmFxV2daNkhYQ0liYW1zU1pSbmVjMXRodW9QZmtfclJZYnpVYWl0WW5FVFc5X3BReTR3QjFSSlJ1blpDZEc3RGxRVV9QcldDVl9wZEtEY0RmaVJ1Y2tDM3UtbjNjb1Zhc1JCRmZ6TXozSUVnMEZ0UGxpR3d3TWtMNVBtYXRpWFQ5anVBWWRtTXRuMzVGdk53TWptd3lGbzFnMjdqNy1sT21KcVpYd0YxRmd3TGthenNPMW4xd1hWZGgzNV9VUzVxWndsSnlxUWRib1RFMUVYZ1VMZ0Q2d05Dc1M0cTMzV19fR0pjRW1kYzhQblRCQQ?oc=5",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "blogdumoderateur.com",
       "publie": "2026-11-09"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQcmhJNFNIdHFqZ3ZDOXdHdFJEWXU3TVVicldTTjViaGdrMVBKMWZVdkZNUlJvX0NxclV3Ymo3cUJOSFVLYS1kcjVobFpXMlpaNnVUbmp3OGFzZ19BTzNEWWVWaVlvcGZaQ0JKQ0RQaWdzZE85M2p0Z0YxcnJuRjY5T2YybEF1SU9oTUNFOXplSlhvNnlpT1BJVFZfSDZOaGU0R1o4MEJaM01nYmUtVnREOV8xUWxPZ3FtemZqanNNQ2J3Wk9WSXpqblBRS2RlSTAtd1dDTWdIbldlZ3pVMlZWYlk5M2dmQnNy?oc=5",
-      "titre": "Fatigue visuelle et écran : 5 à 15 minutes par jour de yoga des yeux pour soulager l’œil au quotidien",
-      "source": "Sud Ouest",
-      "date": "2026-11-09",
-      "guide": "sante",
-      "page": "debutant.html",
-      "ancre": "la-fatigue-visuelle",
-      "section": "👀 La fatigue visuelle",
-      "sujet": "🩺 Santé au travail — Débutant",
-      "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-11-10"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOUURFd19qZHo1U21VckYyaG1zbGh4RF8ta2ZsVENtRy1ZeWhIb0pFMlF1V2hteEhHT0VQYmRmNF8wN3gwbzF6dGFPanNVR080dnktcEQ3Y2VOcVBYcnFWM0IyckpDaTJueWFyTUl1QzJ4LTlKU1lZVVFKSUVCcGY0TXF0VHo1dHJCMF82WExsWGlTUHdNZ3lwOW9XRlhZQzlqZk9EMDluTGRER0xYM2R1YmNzcXhrdXRLbF9ZRXBGeG1uRDZWcFlZTVZGWWZTTjRCZmZBeW05QQ?oc=5",
