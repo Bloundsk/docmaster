@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-20T00:12:40.475Z",
+  "maj": "2026-11-20T16:16:01.714Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOdlNzR3JPUVA2QXFJNXVfT3U4VGhpWmxYNEUzeW84QlB6S1pMdUM3WXRsSklXdkctSFR6el9DOERFVF9ubEpiZkdKR1hIZlBYNjV0MHYyNktjNHFaVWo4cFFKU1JCbjd3QTNKeFUtWmQ1SmJKd2Y4akVmamFLc0xERjVQaFdtN3p0MEpzVFJPMW5yZ1lNdnRKaUVCV1VHck1xb1RCVkVPR1Qza3pLRXlPbW1uUDVmRGhWRm5FXzZ5enMwdFhZbnJEOS1hOFVlSnV5TE05OVRXUnduWmdxTHM1bDhYNFByVHpONlJYWWJHbVZpZ04wLWlsRy1RSDZDUEMzUkQxZEV6QzE4Zw?oc=5",
@@ -72,6 +72,20 @@
       "publie": "2026-11-19"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMinwJBVV95cUxOZXc3UlhyZUh0SVRLemNhSkd5d3g5WDhUdzBpcm4zNmpyZG82U2cyRmtBSHlVUUJKWXNucWprUEFvQWFmcHJEcEJBYkRwUktzUDZJRWlUaXFXR0FnU29ESWdNeVE4Si1IbjFoLV9McWNQMUlnQTk1SGRSZVptRHhEOTZVcVdwM3lIWHZxQXpFOHphanQycFlSSE1zZEtIRHV6Sm1kcjA3R09OMHZ0T1pZMWZYbmlsWW4xR2VuT2ZPaHFqR05ocXhtN3JnUFRxMFIwMXdPYWduclhMYlFJMk5uMk5ZaUxVc0pVLWw0U01RWWF5V3Rzc2VxZGN0bndyRVFmTUN1WVBDRTdDQ0pGc3R6enlBYVhNVl9PalVaYUFZYw?oc=5",
+      "titre": "« J’ai été surpris par les propos de la majorité » : l’ancien adjoint aux finances explique les investissements",
+      "source": "Ouest-France",
+      "date": "2026-11-18",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "linvestissement",
+      "section": "📈 L'investissement",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "ouest-france.fr",
+      "publie": "2026-11-20"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaUlmeVQzVTZwOTBaODZtTEJoeGdhSmFxV2daNkhYQ0liYW1zU1pSbmVjMXRodW9QZmtfclJZYnpVYWl0WW5FVFc5X3BReTR3QjFSSlJ1blpDZEc3RGxRVV9QcldDVl9wZEtEY0RmaVJ1Y2tDM3UtbjNjb1Zhc1JCRmZ6TXozSUVnMEZ0UGxpR3d3TWtMNVBtYXRpWFQ5anVBWWRtTXRuMzVGdk53TWptd3lGbzFnMjdqNy1sT21KcVpYd0YxRmd3TGthenNPMW4xd1hWZGgzNV9VUzVxWndsSnlxUWRib1RFMUVYZ1VMZ0Q2d05Dc1M0cTMzV19fR0pjRW1kYzhQblRCQQ?oc=5",
       "titre": "Air France, HSBC, IKEA et Zoom font partie des victimes : le piratage de l’outil de test web Optimizely a contaminé près de 180 sites",
       "source": "Numerama",
@@ -126,6 +140,34 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-11-18"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNSmZDZmgtMWdWeXR6azgxVmVYa3VveGtwRjREemlEdDBPUFBKSHloX25pMzlLXzF1X21KdEp1bnBVX1htcGptaDRWcDZPSldqUzhiS0lXQzREY3ZJRmpJbk42TjdBTUI2c1BBYTJBTVdXVWRxUzdJbkhnalliWmcyZ2VNZ2dLUUJPNVo5TEpVMGpNYkwwZjVEZmtLelhjRzBSWVhYSGFoeUpaYk1zM2drZk92RkRvNnF4WGY0TURsVnE5eVZQQlRjRGlXVXJUWW11ZUJCWlRKb0JHcjBrT1J3dlkzRkE5ZFZvd2FKUlYzNW4zb0xueEJ3WnFBeU4xSzB1eVRWa09IVVBjZUJiN1JNZjY1QzdOV3c?oc=5",
+      "titre": "Des ateliers pour « apprendre à réparer plutôt que de jeter » à l’Archipel de Fouesnant, près de Quimper",
+      "source": "Ouest-France",
+      "date": "2026-11-17",
+      "guide": "apprendre",
+      "page": "debutant.html",
+      "ancre": "se-tester-plutot-que-relire",
+      "section": "✍️ Se tester plutôt que relire",
+      "sujet": "🎓 Apprendre à apprendre — Débutant",
+      "langue": "fr",
+      "site": "ouest-france.fr",
+      "publie": "2026-11-20"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNbUtITHZGeVhlNTAxU2I1WXh2empNdzBmUXFNd0VTczdyYy0yQmExSHZXMktxb0lfa0dUdVdFVUJyRzJFUzdNT2ZWTkNZbzV6S2NXVjNHQmN4bjd5c1d1RmVFd1EyUmZCUDQzZmZSN2NNTnBlMVVuYXhnSHlFbllzRndhb1JNRDJRSkNmb1lwQTBDR1NEUlpoYVlqYlVlTnIwYWp1Qm5yN0s0UDAtVVJpY0dLQXAxZFFvcWxjbVNhQ0RaLV9MU25CMkpNR2tPTnpmRGFTaW1aV0s0N1NxbmtKZXlQMGpaOHFzM3VKVFVlcHVLR0pEVWxYNWVnaTZvUFB4NzRLNUVUclNpSnM0TV90TzdrNWhxOVBMc3hIVlBkN29scjl1X202aVNHZXBsZ0YwYkE?oc=5",
+      "titre": "« On ne peut plus mettre un mot de passe qui soit 0000 ou Toto » : la cyberdéfense française pointe les failles derrière la cyberattaque des frigos",
+      "source": "Le Télégramme",
+      "date": "2026-11-17",
+      "guide": "cybersecurite",
+      "page": "debutant.html",
+      "ancre": "mots-de-passe-authentification",
+      "section": "🔑 Mots de passe & authentification",
+      "sujet": "🔒 Cybersécurité — Débutant",
+      "langue": "fr",
+      "site": "letelegramme.fr",
+      "publie": "2026-11-20"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZkZkV2ZKeTZWWW9Kc2dtRkxWamI5WWh5LU5SSlJlRUQ3b3JDSXZWQURQQnR1TWhyak1wbzhDT0NaU1lCeGNldWJseUdMX3VnbmpzQnlGVWhpaXNUNGoxcG52WTFRcmNvZzc0QU54X1EyaW5CdU5OX2dxOUlhS2lOTHAxSkh1cUF5Z2ZQRmp6dFRxNmtWam1PRUY0NmQ0WmtmVDJUSUNjaXZwUW5nSGx1OHhn?oc=5",
@@ -294,48 +336,6 @@
       "langue": "fr",
       "site": "blogdumoderateur.com",
       "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNRFR0R3pNN0FWNlhSeTJ2dW05U0Q3Rk5TOHZZYXNtbERWUU9CVFJtUTFLMzJOMnZZdTQyNnk3VmdMUTNJakwzcEZYM01leGNBN0RJUjV0Y1pISXNjemIwTXhRa1FKWWxfcEx1SHh5MDFoQ3k4clNJMWlKcTg3Nk15YUQzTmxKa1BuejdQbExfclNSYXdTNzNDb1gtLXE1UFRnNFpHdHgtU01FeEhpOC1CRFJNekZZTlU?oc=5",
-      "titre": "Stress aigu ou chronique : quelle influence sur l’appétit",
-      "source": "Sud Ouest",
-      "date": "2026-11-10",
-      "guide": "sante",
-      "page": "intermediaire.html",
-      "ancre": "aigu-ou-chronique",
-      "section": "🧠 Stress aigu, stress chronique",
-      "sujet": "🩺 Santé au travail — Intermédiaire",
-      "langue": "fr",
-      "site": "sudouest.fr",
-      "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOTZtRlZ6RDVqZDduR0lzOVBEejFNVUJNOXE2Vnk1LXBfZFR2R19KMjRRYmNyQjltRUk4b1g0N2RBMFRQRWNvSTk0R2xUZUpTRERVUVRrdnVNT3RQYUptdTJya1p6LXRhMDVQTXRVTE5GQkx6ZG4tU1ZkdzcydFdNeEZ0YnNSVU9ycS1JZjVfWGdDSXlwMDg3b2VMcG1vWU1WT0lTbktwNlU5R2duRjJJQVNoRUtXdV9MOWtmSDlxRGRiemJPSVRCajJteUEya2JGNzV1djlDRHU1T0tyY3UzdTQ1Qm4?oc=5",
-      "titre": "SonicWall : une faille permet de contourner la double authentification des VPN, des attaques déjà confirmées",
-      "source": "Clubic",
-      "date": "2026-11-09",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "double-authentification",
-      "section": "📱 La double authentification",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "clubic.com",
-      "publie": "2026-11-09"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9JcnZYLTVYV3dCd1AwM1NjSW1lOXdHR2tzSmlOQm1vZ2h2T0FVVmlNZVNOMnRrMEROdFRfbU5JVVMtN0JKRHRickp2WTVOTVFoXzFkb3RpRXY4Y0FJMUFuclhmR0Q0ZXEzdzMyY0V3?oc=5",
-      "titre": "5 formations pour maîtriser les outils de CRM et d’email marketing",
-      "source": "Blog du Modérateur",
-      "date": "2026-11-09",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "email-marketing",
-      "section": "✉️ Email marketing",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "blogdumoderateur.com",
-      "publie": "2026-11-09"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOUURFd19qZHo1U21VckYyaG1zbGh4RF8ta2ZsVENtRy1ZeWhIb0pFMlF1V2hteEhHT0VQYmRmNF8wN3gwbzF6dGFPanNVR080dnktcEQ3Y2VOcVBYcnFWM0IyckpDaTJueWFyTUl1QzJ4LTlKU1lZVVFKSUVCcGY0TXF0VHo1dHJCMF82WExsWGlTUHdNZ3lwOW9XRlhZQzlqZk9EMDluTGRER0xYM2R1YmNzcXhrdXRLbF9ZRXBGeG1uRDZWcFlZTVZGWWZTTjRCZmZBeW05QQ?oc=5",
