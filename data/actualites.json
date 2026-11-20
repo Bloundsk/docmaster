@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-20T16:16:01.714Z",
+  "maj": "2026-11-20T16:24:15.684Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOdlNzR3JPUVA2QXFJNXVfT3U4VGhpWmxYNEUzeW84QlB6S1pMdUM3WXRsSklXdkctSFR6el9DOERFVF9ubEpiZkdKR1hIZlBYNjV0MHYyNktjNHFaVWo4cFFKU1JCbjd3QTNKeFUtWmQ1SmJKd2Y4akVmamFLc0xERjVQaFdtN3p0MEpzVFJPMW5yZ1lNdnRKaUVCV1VHck1xb1RCVkVPR1Qza3pLRXlPbW1uUDVmRGhWRm5FXzZ5enMwdFhZbnJEOS1hOFVlSnV5TE05OVRXUnduWmdxTHM1bDhYNFByVHpONlJYWWJHbVZpZ04wLWlsRy1RSDZDUEMzUkQxZEV6QzE4Zw?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-11-17"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMW9Cb0tQbkUtYUR4ckpuTXZuZHV5bWZjUEpib2lDb1ZSQXZGZXlsMGNkSHFnOUV6XzNEOEJSdjJycFNqY1lvOHEwR2FyUzFNVjRVOFl6dDV2Qkdxd1hzT3p4VEt6d25XU2pwRUZpVUprY091UXBLRVMwcF85bWhKMTROYXV2a3NxeXN2TDJGRWNQdXFyTzRFTGJiWW1lSy1MVDZUeThOS3hsRU02TE9PRkphTG0yRG5YWGxrRGtSNlJTckc4cGEw0gHMAUFVX3lxTE05V0l1QV9fY3lUNXJFQjVPbVBveFhtdjBZekMzVHlRNTE1Y1ppZk9MTjBIQ0drVV92cUxOWjB6SzYybHg0UmxvWTZkTXYtVURSRGRZVTlSRHdibERvbjNvSXhSc19kTDZOMnc1by1vbGxhMG5PNllKcm9SbEVldUE4aE1pczVidzYtTEdDVmFWZFRXM1RCNXRKYlYyUy1acTVGWnJKaU4wbnoxUzd5dGgtOC1pVWoxc19hTnkyekhicEZST3BuQi02Wjlfeg?oc=5",
+      "titre": "Can gilts help me limit how much I pay in savings tax when it's hiked from April 2027?",
+      "source": "This is Money",
+      "date": "2026-11-20",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "tax-on-savings",
+      "section": "🧾 Tax on savings",
+      "sujet": "💰 Finance — Beginner",
+      "langue": "en",
+      "site": "thisismoney.co.uk",
+      "publie": "2026-11-20"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOUURFd19qZHo1U21VckYyaG1zbGh4RF8ta2ZsVENtRy1ZeWhIb0pFMlF1V2hteEhHT0VQYmRmNF8wN3gwbzF6dGFPanNVR080dnktcEQ3Y2VOcVBYcnFWM0IyckpDaTJueWFyTUl1QzJ4LTlKU1lZVVFKSUVCcGY0TXF0VHo1dHJCMF82WExsWGlTUHdNZ3lwOW9XRlhZQzlqZk9EMDluTGRER0xYM2R1YmNzcXhrdXRLbF9ZRXBGeG1uRDZWcFlZTVZGWWZTTjRCZmZBeW05QQ?oc=5",
       "titre": "An Australian business summit on productivity? It’s about time. Here are three fantasy agenda items",
       "source": "The Guardian",
@@ -364,6 +378,20 @@
       "langue": "en",
       "site": "bbc.com",
       "publie": "2026-11-18"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQX2tEZ2FWRW94OEI5R0p5RHlIQTJJaUViOTVQcnZSLWpVTVF6R1lJZTI5c1NNdG1FRTU2RFVTMmRqOTF2czBMLUpTQno2UTJxVDZPY2ZfY0M1YVlNUlI1OXp2UlF3VkpUUVUxQl9KRjRPd3RUTER1anpySzFWZG9XaTNHZlllaFQ4c3Nzbi12NEgwWnk0elR5S19rNmQ5WU8xeElMd0ZuRHR5SGM?oc=5",
+      "titre": "Bank of England warns of further interest rate rises",
+      "source": "The Telegraph",
+      "date": "2026-11-18",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "telegraph.co.uk",
+      "publie": "2026-11-20"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeGtQSXBicXNqaHNlY3pRakN1ckc3eDBvS2xkR2FxdEpJRGFLbG1nZFlOLVhub2xpWGFwSmVaM0drYlZDS2x5Q1lsb29Oclg2ZXdudEM1akhNUTd4QmFGWkZIb08xTjQ0ZnBZcmtaaTRzRExZdFlmTFMtN01mbWs2RUpLWVZ6cWxKMHRQVEM1WHJmdUZEc001N2xJZk5Jb2cyOHNsVXhZRVFmRnhQV3V1RDdNei1tZFk?oc=5",
@@ -576,20 +604,6 @@
       "publie": "2026-11-12"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbDk1eTBZM1NtbTFMd3lRRldtdWVvM1lIUGpuUnk1dGdsczBhSnZuUXIzYXU0endmbWFlV3NzR2tIOElSdzV1R2g4bTE3ek5yRkJWb2N6anNEaXcyNTFVb05wVHI5Y3NZYWZraDJHcFM4SHpleFVPQzJzRkdBOGsxQlJyUWlaaWMzMVdRTjFEVWd4YldwUTFYc2QyWndlbVhr?oc=5",
-      "titre": "'I've used my annual ISA allowance. How can I shield my savings from tax?'",
-      "source": "MoneyWeek",
-      "date": "2026-11-10",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "tax-on-savings",
-      "section": "🧾 Tax on savings",
-      "sujet": "💰 Finance — Beginner",
-      "langue": "en",
-      "site": "moneyweek.com",
-      "publie": "2026-11-16"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPLWdtVWgzYk9DNkdDWXdNWTRlcHRtejZSbG9sbTZic1ZHVGF3Z2ZnX3RCOEJlRGFmU0w0WlFsMTRJS3d6cDdicEZreFd2dHRRTDVhSjUxdVJTd2VJMEtJbHhNakRmVTU4SzhySEh1WkdQZUlVeGRmN2R2V2lWLXNrWkxLTHlRV3BLa1dCbGdJV0VOVHB1Zk0yYw?oc=5",
       "titre": "Salary history is hindering professionals’ pay negotiations",
       "source": "Personnel Today",
@@ -643,20 +657,6 @@
       "sujet": "🔒 Cybersecurity — Advanced",
       "langue": "en",
       "site": "bbc.co.uk",
-      "publie": "2026-11-06"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbVdXRmVIa2VaQnd4TVpvWlpqUFpsbVlOdmxjeFZ1LW5fZHhLdDktbk13NGMyMGpGUnJlbU1YTTFOWk9palU4anhRdHEzdHJRdVQ5c0NOc1FyREs5YW5SNjUtQ1lDRmZ3WmlmNEVyVnB3V011b25ZVW1mSmN4OGZ6dzhhRGRBTmhsWG9xemQ5bEs5SDJ5ZHNCVWpOWmdReGxDMFHSAacBQVVfeXFMT2lGNWh1cU1XVnM4VDdSaE9veFgwbUFxWDdOZXk1Wk03OFR5akIxTDNVTjJZOW1yU3p5RzBBZWtEV21GUVRXeHpaU1llMVdxS19nZkxocGhFeVN2RXk1ZjdxYS04VFlEVVZCYUJFNW9jbngwbFIwZGNMU052bjA4ZFc5U1Nrank0cVJobDA1ZExpMHBTT2dKRnotZkJSdVNZbHNvWU04d2s?oc=5",
-      "titre": "The hidden catch behind better annuity deals as Bank raises interest rate to 4%",
-      "source": "Daily Express",
-      "date": "2026-11-06",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "express.co.uk",
       "publie": "2026-11-06"
     },
     {
