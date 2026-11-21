@@ -1,6 +1,20 @@
 {
-  "maj": "2026-11-21T15:28:27.281Z",
+  "maj": "2026-11-21T22:16:34.109Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNdWx4U1ppZ2NaaWcycmx2WTFlSEtSVU1GMDhHbzl3cXJIR05Xd2NlUWJrbHFBTUtVOHBJQlQxeWJZS2xYYjVYSTBYMGJ2NFZoNjJ6Sm9OX3FCQnlZMUFvYllxUWs0VmplQjRBWlZiVnVmQ0g0UDFWTVZGN1R5elFMOGxyM3ZmdlZGa3ZLMWlfODZDdGNlcmlEWHgtRWxCNFR2WUpJX2MyMi03MmxLUkR3SlNVQXlFZmp5ZGVwcGxIMG9kQ0FMSDJiWHdNbjM2ZjgwQ3UxYnR2U2dUNy1aMWc5WjVTOVBpU2QtWTZQYm9GVE1SWTEyYWNxZUl2RVV6bzdQRnBZbWVhLVQySGxQbzhyV2V5aHhYbTl1VmlXRFZmakoyLXhIcnc?oc=5",
+      "titre": "\"Une inflexion souhaitable pour l'avenir de Montauban\" : au débat d'orientations budgétaires, Arnaud Hilion demande des investissements \"priorisés, financés et soutenables\"",
+      "source": "La Dépêche",
+      "date": "2026-11-21",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "linvestissement",
+      "section": "📈 L'investissement",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "ladepeche.fr",
+      "publie": "2026-11-21"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMi7AJBVV95cUxNUzIwbnZaY1ZNUFBuWGJwZm5oaWNzRXMtT1NNX2JhTUJtTlpoTUNiTEFPZ0JWMU8xTUUxUnJ6NEdIS01QamVzVlJVcVNsNEVpY29PN3RNX0kyRVFiWFRUc2ZSWkdUS04xNERldE4wYTkySTQzSGNOOWF0WHEtSk5BUV9JT2haSDJQcFhOY0VQU3VMQl8wYUdMU0hreDZITWhIcmxMZzh1cGpmYVJQeXVFZFdGM2g0MDJXTjUyUi1kM1NmX05ZQ0dYSm85NkRROGRuVWhTV2NBQS1sLW94YjYwX0dwblZCLVB2Ym1RcGg4WXdrbWp1S2ZhQnFHd1A3TG0xeExhekRIdG5VSUVMVjY1a2pob2dScFkxeFhDbzJVMEJTc044bGNMUGM1Zm0tYVFiRFFDNjhORlVuZ2ZCZG95N3ktXzNOOTRUaUZZeVdIVFd4RE00N2w1SmVzbUhGVkJkZHloNm9zdWtpRGZN?oc=5",
       "titre": "\"Aucune donnée de paiement, comme des numéros de cartes bancaires, n'a été affectée\": la banque JPMorgan, Visa et Mastercard victimes d'une fuite de données après le piratage d'un sous-traitant",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "lemonde.fr",
       "publie": "2026-11-16"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNT3BtV3gtcmw2RDBsNmhTRkYxNV9tOGpkcEluTVRTaWVsUW04NmwtM1RGTzJpWktKRWlSX0wwRDh3QWxuTFR6NGJScFFmbUdORjhNMVh0bHlhYTRtUWRWRmU2LU1lZlV2Vjl3WUphODRsVGV0c0hKTjIzV3FBZ1pPT2d1Q2pnOUZLYlpxX0Z5RExyMkU3elBHamJ3YjJUaml3RlJHd2ZLQ0dMTC1hSG1zSENqWGRfQ3M2bnZGSEpRZ09Bai1iaUhnMS1nN2FLM1VqREplYmYxR182eXd2X29wWXF3a3ZJZTR4NFZzMmdSMzlvYkJZa0N1Z3ZDX0dzTE10RFZZ?oc=5",
-      "titre": "Paul Cébille : « Avec David Lisnard, voici la première candidature crédible à l’élection présidentielle née sur les réseaux sociaux »",
-      "source": "Le Figaro",
-      "date": "2026-11-12",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-11-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMW9Cb0tQbkUtYUR4ckpuTXZuZHV5bWZjUEpib2lDb1ZSQXZGZXlsMGNkSHFnOUV6XzNEOEJSdjJycFNqY1lvOHEwR2FyUzFNVjRVOFl6dDV2Qkdxd1hzT3p4VEt6d25XU2pwRUZpVUprY091UXBLRVMwcF85bWhKMTROYXV2a3NxeXN2TDJGRWNQdXFyTzRFTGJiWW1lSy1MVDZUeThOS3hsRU02TE9PRkphTG0yRG5YWGxrRGtSNlJTckc4cGEw0gHMAUFVX3lxTE05V0l1QV9fY3lUNXJFQjVPbVBveFhtdjBZekMzVHlRNTE1Y1ppZk9MTjBIQ0drVV92cUxOWjB6SzYybHg0UmxvWTZkTXYtVURSRGRZVTlSRHdibERvbjNvSXhSc19kTDZOMnc1by1vbGxhMG5PNllKcm9SbEVldUE4aE1pczVidzYtTEdDVmFWZFRXM1RCNXRKYlYyUy1acTVGWnJKaU4wbnoxUzd5dGgtOC1pVWoxc19hTnkyekhicEZST3BuQi02Wjlfeg?oc=5",
