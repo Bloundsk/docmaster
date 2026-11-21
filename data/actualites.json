@@ -1,6 +1,48 @@
 {
-  "maj": "2026-11-20T16:53:02.459Z",
+  "maj": "2026-11-21T15:28:27.281Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi7AJBVV95cUxNUzIwbnZaY1ZNUFBuWGJwZm5oaWNzRXMtT1NNX2JhTUJtTlpoTUNiTEFPZ0JWMU8xTUUxUnJ6NEdIS01QamVzVlJVcVNsNEVpY29PN3RNX0kyRVFiWFRUc2ZSWkdUS04xNERldE4wYTkySTQzSGNOOWF0WHEtSk5BUV9JT2haSDJQcFhOY0VQU3VMQl8wYUdMU0hreDZITWhIcmxMZzh1cGpmYVJQeXVFZFdGM2g0MDJXTjUyUi1kM1NmX05ZQ0dYSm85NkRROGRuVWhTV2NBQS1sLW94YjYwX0dwblZCLVB2Ym1RcGg4WXdrbWp1S2ZhQnFHd1A3TG0xeExhekRIdG5VSUVMVjY1a2pob2dScFkxeFhDbzJVMEJTc044bGNMUGM1Zm0tYVFiRFFDNjhORlVuZ2ZCZG95N3ktXzNOOTRUaUZZeVdIVFd4RE00N2w1SmVzbUhGVkJkZHloNm9zdWtpRGZN?oc=5",
+      "titre": "\"Aucune donnée de paiement, comme des numéros de cartes bancaires, n'a été affectée\": la banque JPMorgan, Visa et Mastercard victimes d'une fuite de données après le piratage d'un sous-traitant",
+      "source": "BFMTV",
+      "date": "2026-11-20",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "bfmtv.com",
+      "publie": "2026-11-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOYmhJNEIxaWZ3bnhsTDFCVk9xOGJyam0yNHV1V2lRNHZJaFZ0dHF3V0Q2S2V5d0RBY2ZuSTZaeko5MVdtVkRUaksxcWM2NkY3VDEwV0xmQWdIVkxqel9lZ1NhbVdNVFc2T3RQNGZFN1o1b3lBeHBZOG95V2JDbW5kaGwtVW96QmhtU050dmRVTnBhbHl2eXhKMEwxUUdZYk4xQS1QeE92R3BLVzlKWkprUUNrRVF4YkZJYWszYUJsT0JjREtEdjM0TW9xQkFkakQyVUx0d2E2OWVpTTVWYmVJR0hWWGFKM21hTHJvVEpUM1V3TndXY0J6cFBtUnQ4VTZVdndkZFdYYmRzdw?oc=5",
+      "titre": "Administrateur, Imposteur123… Après analyse des fuites de données, voici les mots de passe les plus utilisés",
+      "source": "Ouest-France",
+      "date": "2026-11-20",
+      "guide": "cybersecurite",
+      "page": "intermediaire.html",
+      "ancre": "gestionnaire-de-mots-de-passe",
+      "section": "🔐 Le gestionnaire de mots de passe",
+      "sujet": "🔒 Cybersécurité — Intermédiaire",
+      "langue": "fr",
+      "site": "ouest-france.fr",
+      "publie": "2026-11-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOU2tXR1VrOW51ZEdTZ1dZR3pxeEttMWVHMmF4dXU4Tk9TQW0zVDBUQ2FTU2RDUmxOa1EzZkhnSlY0ZkE0aDVXcXlzS1daSjZ3Ynpfam5UR0lpWFpuLTdoTG00ZGZkSFpsc0VNN0dWUVJDMzMwd0EydFM3NlVvY2FSNjdxejUyZlhUTzUxVnY3NGZSSjhKalQ3YWxKVHdXN3ZZOTBUVjhEYXpfb1BtaGw4?oc=5",
+      "titre": "Des finances saines pour préparer les investissements de 2027",
+      "source": "Midi Libre",
+      "date": "2026-11-20",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "linvestissement",
+      "section": "📈 L'investissement",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "midilibre.fr",
+      "publie": "2026-11-21"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOdlNzR3JPUVA2QXFJNXVfT3U4VGhpWmxYNEUzeW84QlB6S1pMdUM3WXRsSklXdkctSFR6el9DOERFVF9ubEpiZkdKR1hIZlBYNjV0MHYyNktjNHFaVWo4cFFKU1JCbjd3QTNKeFUtWmQ1SmJKd2Y4akVmamFLc0xERjVQaFdtN3p0MEpzVFJPMW5yZ1lNdnRKaUVCV1VHck1xb1RCVkVPR1Qza3pLRXlPbW1uUDVmRGhWRm5FXzZ5enMwdFhZbnJEOS1hOFVlSnV5TE05OVRXUnduWmdxTHM1bDhYNFByVHpONlJYWWJHbVZpZ04wLWlsRy1RSDZDUEMzUkQxZEV6QzE4Zw?oc=5",
       "titre": "Piratage : ces astuces simples pour renforcer la sécurité de vos mots de passe et éviter une cyberattaque",
@@ -254,20 +296,6 @@
       "publie": "2026-11-15"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQOVRidGFtbzk0OWRFSURvcTBzSkRFeGRacFNPNHRmQkdzVk1nSkY5dGRjOVRrX2k4Vk9KOXBNWWpjUjZfaHc5ejVreVotNmNZT2pyY3hMbXNOYWJYRzdhNUlLUWdENDg5aU1tTTRfTTBWSV9vaEc3UEZuakQweTNLcHdoS0tONzhCOE5hMFF1YXA2V0NCcnJCN2NaSTh1UTQwT1pZRV95Z2E5a0pLcmpZODZtMXpib05SRE43aWViUEpia0p5Mnh6QzNSYXVyeFBQZGc?oc=5",
-      "titre": "Fuite de données à La Poste : 22 millions de Français concernés",
-      "source": "TF1 Info",
-      "date": "2026-11-15",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "fuites-de-donnees",
-      "section": "🧬 Les fuites de données",
-      "sujet": "🔒 Cybersécurité — Avancé",
-      "langue": "fr",
-      "site": "tf1info.fr",
-      "publie": "2026-11-19"
-    },
-    {
       "lien": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPRkdmNjFLNVhwaUQwLW1FNEUxMHM2MFJnSUx2eTZpVFl1amRCOFVHTXJqcnk3QW5yQzlTaHJUZnM3LWNLaWFkV3FRYnVQcmY4NVZieDVpNjJZXy1XNldjWGNVa09wNHFOeTFKZ2pzRlUzb2tMRFY4T3J0aFlmZS1lX21kVDg5VjFnY0RHR1BHT0RPSUtxdUZJVlNJY2szTjdIajVPU2p3MFRuUUZiWF9peVFxaXdQdFJmS2lRN3JRdGZobGhidXJLdm13ZTFZNE9pMVVpRDNkeVp1VFlyUGREd1NrbjJSbzdxNGcxZlNzUVUzbjlmSk5XTg?oc=5",
       "titre": "«Woke», «on dirait un hibou», «nul»… Le sapin de Noël des Galeries Lafayette à Paris ne fait pas l’unanimité sur les réseaux sociaux",
       "source": "Le Figaro",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQZWRMZEhYQVpfNmpsNkdzbHFXTDZMTU0tUGpUQ1FsaFFXaWhuQ2RLX1NIOFIyelFaYVd5RlVTVmVYWFc3QTUxQlVua1JHaXFDVmwwXzNJODBTVHRSMnE3S2VmbFFOX3ZxdDFZaWdtbTJTUkstUi1Od2lIZVdrdXZiTVh2ekZmUDZhN3Izd05vTGpVM3BsaTV0eDBQUndKQ1hVVjVqSThWUWZ4ZHMzUHh6ZkhINE81RTlQQWhReDBDWlo2ejEwN3lpMG0ydXRDdGQxM0c1NEU1Y3VnU2lRT25QbU1jdmlyRzB5WGlUWXVPYmZScGhLZ1dJVnlnMUJhLS10alpvamtYTURRMGYyLVUydU9UdkU?oc=5",
-      "titre": "« Ce n’est pas de la magie » : face à la baisse de niveau, cet habitant de Theix lance une nouvelle méthode pour apprendre les maths",
-      "source": "Le Télégramme",
-      "date": "2026-11-10",
-      "guide": "apprendre",
-      "page": "avance.html",
-      "ancre": "evaluer-une-methode",
-      "section": "🔬 Évaluer une méthode",
-      "sujet": "🎓 Apprendre à apprendre — Avancé",
-      "langue": "fr",
-      "site": "letelegramme.fr",
-      "publie": "2026-11-11"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1LYUpoYmVfMDNWanRybmFRdk1mbVZ4OUdzQnFxaElsV2FLMHkwMHV4UDJOWTk3RjRRM19LM0RRczdyY0NmOG1aQ3VYdmtoa0d5NTktUXFvQ08?oc=5",
-      "titre": "SEO : actualité et conseils sur le référencement naturel",
-      "source": "Blog du Modérateur",
-      "date": "2026-11-10",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "seo-référencement-naturel",
-      "section": "🔍 SEO (référencement naturel)",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "blogdumoderateur.com",
-      "publie": "2026-11-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMW9Cb0tQbkUtYUR4ckpuTXZuZHV5bWZjUEpib2lDb1ZSQXZGZXlsMGNkSHFnOUV6XzNEOEJSdjJycFNqY1lvOHEwR2FyUzFNVjRVOFl6dDV2Qkdxd1hzT3p4VEt6d25XU2pwRUZpVUprY091UXBLRVMwcF85bWhKMTROYXV2a3NxeXN2TDJGRWNQdXFyTzRFTGJiWW1lSy1MVDZUeThOS3hsRU02TE9PRkphTG0yRG5YWGxrRGtSNlJTckc4cGEw0gHMAUFVX3lxTE05V0l1QV9fY3lUNXJFQjVPbVBveFhtdjBZekMzVHlRNTE1Y1ppZk9MTjBIQ0drVV92cUxOWjB6SzYybHg0UmxvWTZkTXYtVURSRGRZVTlSRHdibERvbjNvSXhSc19kTDZOMnc1by1vbGxhMG5PNllKcm9SbEVldUE4aE1pczVidzYtTEdDVmFWZFRXM1RCNXRKYlYyUy1acTVGWnJKaU4wbnoxUzd5dGgtOC1pVWoxc19hTnkyekhicEZST3BuQi02Wjlfeg?oc=5",
