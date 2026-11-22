@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-22T15:29:38.946Z",
+  "maj": "2026-11-22T15:42:16.393Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNdWx4U1ppZ2NaaWcycmx2WTFlSEtSVU1GMDhHbzl3cXJIR05Xd2NlUWJrbHFBTUtVOHBJQlQxeWJZS2xYYjVYSTBYMGJ2NFZoNjJ6Sm9OX3FCQnlZMUFvYllxUWs0VmplQjRBWlZiVnVmQ0g0UDFWTVZGN1R5elFMOGxyM3ZmdlZGa3ZLMWlfODZDdGNlcmlEWHgtRWxCNFR2WUpJX2MyMi03MmxLUkR3SlNVQXlFZmp5ZGVwcGxIMG9kQ0FMSDJiWHdNbjM2ZjgwQ3UxYnR2U2dUNy1aMWc5WjVTOVBpU2QtWTZQYm9GVE1SWTEyYWNxZUl2RVV6bzdQRnBZbWVhLVQySGxQbzhyV2V5aHhYbTl1VmlXRFZmakoyLXhIcnc?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-11-15"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1aU1ozcmVsVUx1VlhYVUZ6dG5UYVNBVmlrMDFzX1owMnRFQnBBVTJURW5FVEFFbWt3bUlPMXk3V21zb3VCb1hPcGl1WTRDZXRHOUYtenZmMzBPMGZMTUE?oc=5",
+      "titre": "Californian Call of Duty cake call that started new line of work",
+      "source": "BBC",
+      "date": "2026-11-22",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "employer-duties",
+      "section": "🛡️ The employer's duties",
+      "sujet": "🩺 Health at Work — Advanced",
+      "langue": "en",
+      "site": "bbc.co.uk",
+      "publie": "2026-11-22"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMW9Cb0tQbkUtYUR4ckpuTXZuZHV5bWZjUEpib2lDb1ZSQXZGZXlsMGNkSHFnOUV6XzNEOEJSdjJycFNqY1lvOHEwR2FyUzFNVjRVOFl6dDV2Qkdxd1hzT3p4VEt6d25XU2pwRUZpVUprY091UXBLRVMwcF85bWhKMTROYXV2a3NxeXN2TDJGRWNQdXFyTzRFTGJiWW1lSy1MVDZUeThOS3hsRU02TE9PRkphTG0yRG5YWGxrRGtSNlJTckc4cGEw0gHMAUFVX3lxTE05V0l1QV9fY3lUNXJFQjVPbVBveFhtdjBZekMzVHlRNTE1Y1ppZk9MTjBIQ0drVV92cUxOWjB6SzYybHg0UmxvWTZkTXYtVURSRGRZVTlSRHdibERvbjNvSXhSc19kTDZOMnc1by1vbGxhMG5PNllKcm9SbEVldUE4aE1pczVidzYtTEdDVmFWZFRXM1RCNXRKYlYyUy1acTVGWnJKaU4wbnoxUzd5dGgtOC1pVWoxc19hTnkyekhicEZST3BuQi02Wjlfeg?oc=5",
       "titre": "Can gilts help me limit how much I pay in savings tax when it's hiked from April 2027?",
       "source": "This is Money",
@@ -618,6 +632,20 @@
       "publie": "2026-11-17"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZ3d1OFJreVJ6SkdtM3k2VmEtaEhRQkJaWkh6R0Y0S1ZZVk5hX29wUnJjTHZ4dm0tcjhvZVBlVGhVYXpJbGpPMkY1b09Ta2Ezd3luVTJTOEw0X2xXQ2REclpFOGRSWm5lQXZfWTNvc09hZ3FaeDBKbEZzakctZll1RkJkbTBtWXVkckotRXVPRXkyTXBILXMyazBVd0tJMDFjNXBSSEdnVW83aVVTQXY5Uk91TW8wdw?oc=5",
+      "titre": "How Anthropic’s IPO raises AI legal risks",
+      "source": "The Times",
+      "date": "2026-11-09",
+      "guide": "entrepreneuriat",
+      "page": "avance.html",
+      "ancre": "legal-risks",
+      "section": "⚖️ Legal risks",
+      "sujet": "🚀 Entrepreneurship — Advanced",
+      "langue": "en",
+      "site": "thetimes.com",
+      "publie": "2026-11-22"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONmYtaS1QcGFJaUFoOVVYcHN2S1RSMzlCWUEtNDZlNXFkVFNoYy1TY2h3ZFVzQlRGdlZpM2ZZLVpQSWFnMi1jN29MWjJDZ3ViLWxMdDNWUllaajlZSkk5dUI3Y0lSSU9NVzZ3cFNkT3N5TFVheTlMMTVoQXlLX1hBY3dvRDkzZDdGTURQZDlzb3VYYVFLbHpINnR0OWowUkQxclc2bnAzV2FKQWlZWXfSAbMBQVVfeXFMTU5TV01TSkczZHpjbFNqYmN4Y09MMGxyRVdfcDlJdU5uYmpUNnppWmYxZDJhX2NwM2JGTWZSaWx4MGlETjZaOEJybHU4U1dZWm9hbnVaa3hFM2M1WEpQR1I4RFowYXgyLU5ZMTlzQTZGdXF4LVhzNkpBVDNsYUowX3E3WXF3ZFZMZC1WNWd3NG1Gd3M1QVhXZ1ZIVGFaN3ZWTFdHU0luWUZ0a3F2QzhRd01HNlU?oc=5",
       "titre": "Nationwide offers 'inflation-busting' 5.3% fixed rate bond",
       "source": "Daily Express",
@@ -644,34 +672,6 @@
       "langue": "en",
       "site": "ft.com",
       "publie": "2026-11-08"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE45X0U1WFVTUDBxUkpFLWVVb0MtbmdjSE9sVGs2aUtaTmhnN20zX3ZKaERQUFk1Q0xsU1RER0NIMWZqbGZHZnN0NU84US1qWUpPQXl1ZmRwMDAwdE4zVHc?oc=5",
-      "titre": "Parents warned to be on alert after school data breach",
-      "source": "BBC",
-      "date": "2026-11-06",
-      "guide": "cybersecurite",
-      "page": "avance.html",
-      "ancre": "data-breaches",
-      "section": "🧬 Data breaches",
-      "sujet": "🔒 Cybersecurity — Advanced",
-      "langue": "en",
-      "site": "bbc.co.uk",
-      "publie": "2026-11-06"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNOHN1VFg3UW9ScHNNeG8zdkpRLXNwUENzbEtOaW9EaU95WXhQQ1dFT1dZNGxHNTJnZ2VvZ09TTnZXbE9Ia01KZ1E5Q21tT0Z2WkpPQzcyM1I4cEo1Q0p4ejVDS2dQQ3V1NGt0Q1NDQ3plTzdCa3NxM0k4aS1zSExpbGFnU1J5S3NKX0hIdDEtS3Z3QTRoakZZdTgwLVp2dzh4NjNjM2h2UmxWcGh3TzZVYkswZU5PaWdhYjU0Q2NrX0ppd05PbFJ6a05R?oc=5",
-      "titre": "Hello data, how’s my pipeline? Airbyte MCP Server lets engineers chat to data",
-      "source": "Computer Weekly",
-      "date": "2026-11-06",
-      "guide": "data",
-      "page": "avance.html",
-      "ancre": "data-pipeline",
-      "section": "🏗️ The data pipeline",
-      "sujet": "📊 Data & Analytics — Advanced",
-      "langue": "en",
-      "site": "computerweekly.com",
-      "publie": "2026-11-10"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAwVF93dUE4d2dEVDZrYzVKRFpQbmlWSTRHXzVjRG03UWowQ1RZdElhWUVzc3JfaTJGVk5DVXlCRmx3VFM4anhmU2VNVkIxSEJ2VVh6Y2JvUFhJNFRBOHhyWVYyakgzcG5uNjBheXdKZkxTMHZaMmc?oc=5",
