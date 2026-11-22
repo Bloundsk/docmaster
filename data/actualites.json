@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-21T22:16:34.109Z",
+  "maj": "2026-11-22T15:29:38.946Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNdWx4U1ppZ2NaaWcycmx2WTFlSEtSVU1GMDhHbzl3cXJIR05Xd2NlUWJrbHFBTUtVOHBJQlQxeWJZS2xYYjVYSTBYMGJ2NFZoNjJ6Sm9OX3FCQnlZMUFvYllxUWs0VmplQjRBWlZiVnVmQ0g0UDFWTVZGN1R5elFMOGxyM3ZmdlZGa3ZLMWlfODZDdGNlcmlEWHgtRWxCNFR2WUpJX2MyMi03MmxLUkR3SlNVQXlFZmp5ZGVwcGxIMG9kQ0FMSDJiWHdNbjM2ZjgwQ3UxYnR2U2dUNy1aMWc5WjVTOVBpU2QtWTZQYm9GVE1SWTEyYWNxZUl2RVV6bzdQRnBZbWVhLVQySGxQbzhyV2V5aHhYbTl1VmlXRFZmakoyLXhIcnc?oc=5",
@@ -56,6 +56,20 @@
       "langue": "fr",
       "site": "midilibre.fr",
       "publie": "2026-11-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbFVCVzRMRFRtcFZwYVJVY3ZwSEdxTXNiTXRoTFcwRDJTZThHZFBoZ1Qtb0Nrend6VEhUY0g1WVB0VHY3dDdDZkM5MFVLb3ZiV1dIX3VtYXZUQkVNamtVazVMd2JNajZvTE02cTBOaEZNby1tYnpJeER0cWNZOWRqOGxQcFhuOENGa01hdGE3RXBQdmhxMC1JU1NxUHpFcXZId1J6cmFmQnEzUDVTTUE?oc=5",
+      "titre": "Le Sri Lanka augmente ses taux d'intérêt pour ralentir l'inflation",
+      "source": "Le Figaro",
+      "date": "2026-11-20",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "obligations-et-taux",
+      "section": "📉 Obligations et taux d'intérêt",
+      "sujet": "💰 Finance — Avancé",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-11-22"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOdlNzR3JPUVA2QXFJNXVfT3U4VGhpWmxYNEUzeW84QlB6S1pMdUM3WXRsSklXdkctSFR6el9DOERFVF9ubEpiZkdKR1hIZlBYNjV0MHYyNktjNHFaVWo4cFFKU1JCbjd3QTNKeFUtWmQ1SmJKd2Y4akVmamFLc0xERjVQaFdtN3p0MEpzVFJPMW5yZ1lNdnRKaUVCV1VHck1xb1RCVkVPR1Qza3pLRXlPbW1uUDVmRGhWRm5FXzZ5enMwdFhZbnJEOS1hOFVlSnV5TE05OVRXUnduWmdxTHM1bDhYNFByVHpONlJYWWJHbVZpZ04wLWlsRy1RSDZDUEMzUkQxZEV6QzE4Zw?oc=5",
@@ -322,20 +336,6 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQOGx3SGE2b1lXRTgtc3pDZ3N3OWFKTlpSYTBGcEN4TW9yZ3hBdHNFbWlZNXRGOFE2ZjhQMmtkT0t0SnZsTVJHZ3A1YTd4WXJmSm5jRjBEYmt4NW9pdGtEWmVia3pVYWtTR0poQVBwNDd2c3h1Zl9CbmpiUy1UdERCMXFFWFZmWmZlU1dQRGc0VjRDUzBEWFk2dmdsb0RMZ1Ftb1lhUlpsNEdFWWFlNkt3czUwdkhtMTZtVkplZjVOTERkQTNMdjhDa2FfMmdSR0gwcDNYanpYdnFGOHlwNTgwN3FnMjlZVGNtcmFpY19GZFBPeG9KTVcxaGxoekdqQ0JFM1VzNnRNSQ?oc=5",
-      "titre": "« L’IA fait peser un risque quasi existentiel sur le modèle économique d’une partie des écoles de management »",
-      "source": "Le Monde",
-      "date": "2026-11-13",
-      "guide": "entrepreneuriat",
-      "page": "intermediaire.html",
-      "ancre": "modele-economique",
-      "section": "💰 Le modèle économique",
-      "sujet": "🚀 Entrepreneuriat — Intermédiaire",
-      "langue": "fr",
-      "site": "lemonde.fr",
-      "publie": "2026-11-16"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMW9Cb0tQbkUtYUR4ckpuTXZuZHV5bWZjUEpib2lDb1ZSQXZGZXlsMGNkSHFnOUV6XzNEOEJSdjJycFNqY1lvOHEwR2FyUzFNVjRVOFl6dDV2Qkdxd1hzT3p4VEt6d25XU2pwRUZpVUprY091UXBLRVMwcF85bWhKMTROYXV2a3NxeXN2TDJGRWNQdXFyTzRFTGJiWW1lSy1MVDZUeThOS3hsRU02TE9PRkphTG0yRG5YWGxrRGtSNlJTckc4cGEw0gHMAUFVX3lxTE05V0l1QV9fY3lUNXJFQjVPbVBveFhtdjBZekMzVHlRNTE1Y1ppZk9MTjBIQ0drVV92cUxOWjB6SzYybHg0UmxvWTZkTXYtVURSRGRZVTlSRHdibERvbjNvSXhSc19kTDZOMnc1by1vbGxhMG5PNllKcm9SbEVldUE4aE1pczVidzYtTEdDVmFWZFRXM1RCNXRKYlYyUy1acTVGWnJKaU4wbnoxUzd5dGgtOC1pVWoxc19hTnkyekhicEZST3BuQi02Wjlfeg?oc=5",
