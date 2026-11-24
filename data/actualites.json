@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-24T03:31:00.288Z",
+  "maj": "2026-11-24T03:44:22.251Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZndUdnJJekhSTVpqRTlYN2JxbjZtM0RfWEhXRXRvQktEYl9kLTBnQlA2YXhSTEJ4RWZ6ek5QSFBvNERtRXVzdkw1T0dYd2tqeEhzWEYwaGFibGZ0aG5DU2s4SE82SzlTczhwU043YzIzV2VNb0NpYlUteEV2aFRDc0NUXzJSNVF2VHB4UXRYOERKYXVYREcxNUNSQ2xaNG83WkdSN1FkRkxpc3V3RDFJLWpHOTFEWDRk?oc=5",
@@ -868,6 +868,20 @@
       "langue": "hu",
       "site": "magyarnemzet.hu",
       "publie": "2026-10-30"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNZ254NnJnd28wd04tMUFER1NOSlp5d3V4bk12SEtod04tN0ZNYjRRVVhkc29YeWJBSlFLeGhLY2NRUlVFWG1fSHRaVEsyT1ZsMVRBNDR3UnBzenJGU2lfUEpJbkRGNUdjWEpQd05mTGhFVlhQYUo4NlJ3NmltUUhHY2ctVG95dU9XakdlWUFRejA4d1lqMWZzLWJpd2NZSDZUX0ZlcDR3eVIydC1XSzg5ZV8zSzhvLU9ubDBRbDVhUEFMWnN0T0V3TElIbVlwODJRVVFJOU9OTlp6WW11U3RvU3FWd2tDNzR1NXBwbQ?oc=5",
+      "titre": "Többezer magyar vállalkozás kerülhet be a nagyvállalatok beszállítói körébe: már több mint 7200 üzleti tárgyalást tartottak",
+      "source": "Növekedés.hu",
+      "date": "2026-10-30",
+      "guide": "entrepreneuriat",
+      "page": "intermediaire.html",
+      "ancre": "modele-economique",
+      "section": "💰 Az üzleti modell",
+      "sujet": "🚀 Vállalkozás — Középhaladó",
+      "langue": "hu",
+      "site": "novekedes.hu",
+      "publie": "2026-11-24"
     }
   ]
 }
