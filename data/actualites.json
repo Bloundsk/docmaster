@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-24T03:24:47.537Z",
+  "maj": "2026-11-24T03:31:00.288Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZndUdnJJekhSTVpqRTlYN2JxbjZtM0RfWEhXRXRvQktEYl9kLTBnQlA2YXhSTEJ4RWZ6ek5QSFBvNERtRXVzdkw1T0dYd2tqeEhzWEYwaGFibGZ0aG5DU2s4SE82SzlTczhwU043YzIzV2VNb0NpYlUteEV2aFRDc0NUXzJSNVF2VHB4UXRYOERKYXVYREcxNUNSQ2xaNG83WkdSN1FkRkxpc3V3RDFJLWpHOTFEWDRk?oc=5",
@@ -338,6 +338,20 @@
       "publie": "2026-11-18"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTTNOZlBYdjBWNXBTRTdJc1FiSndtSktSZ2s4Zk5Wb2ZIazctY2lZQTV5QTc2U2ttdHQ5ejZMcDdIR1M1MWhZUW0tcWtYaV9Qd0ZDMmZxOHJJMjJsUXE2SU5iWUNtenlYLWJaTmtpNDljY2lhSjhkTFFyNWNndHdnYzliSE53WE9DanV0OVNqVXJqNE5Mb2NDLWt4c0Z0elZVTVE?oc=5",
+      "titre": "Vibe-coded software has caused a technical debt explosion",
+      "source": "IT Pro",
+      "date": "2026-11-23",
+      "guide": "dev-web",
+      "page": "avance.html",
+      "ancre": "technical-debt",
+      "section": "🏗️ Technical debt",
+      "sujet": "💻 Web Development — Advanced",
+      "langue": "en",
+      "site": "itpro.com",
+      "publie": "2026-11-24"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1aU1ozcmVsVUx1VlhYVUZ6dG5UYVNBVmlrMDFzX1owMnRFQnBBVTJURW5FVEFFbWt3bUlPMXk3V21zb3VCb1hPcGl1WTRDZXRHOUYtenZmMzBPMGZMTUE?oc=5",
       "titre": "Californian Call of Duty cake call that started new line of work",
       "source": "BBC",
@@ -364,6 +378,34 @@
       "langue": "en",
       "site": "thisismoney.co.uk",
       "publie": "2026-11-20"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVjlTRjRxYlhOaVhULTB4NndBRkNlcFlCZ2duU1N6RUF6MGhNNklvaDlqSm1zUVJkUjZhSXVZU3Fhd2d4d2ZZaVZ2eUt2Wm1KMGJ0bDc5dXIwMWFQSkRWeG9SaDNOb2RUZXByM1JyUEtGS2lXOU4zYXlBRFRjcFluOFZ3?oc=5",
+      "titre": "JPMorgan Confirms Customer Data Breach Following Third-Party Compromise",
+      "source": "Infosecurity Magazine",
+      "date": "2026-11-20",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "data-breaches",
+      "section": "🧬 Data breaches",
+      "sujet": "🔒 Cybersecurity — Advanced",
+      "langue": "en",
+      "site": "infosecurity-magazine.com",
+      "publie": "2026-11-24"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNN1phd21KU1ZPMnhwUEUxeDFwMEdINUZ6SURTNWVRdWVWQ2RhcExMMHpoMEZHVk9Od0d6bWZyRTVCZll6MU9LbjFZR2dLRk1rRVpaaUo4ZkVwZXQ3NlRBd2RIdEtFM2NyUnpMOTFZM2l2UEFub0hUSE1CdUxtN0JtOXRQdml4cTVEX1FpaUY4NGV5RWtoQzZnZ3RRYnpFUHNkSlducWdYVVlxeHhXZkVUTA?oc=5",
+      "titre": "I get interest from my savings and rental home – can I make it more tax efficient?",
+      "source": "The i Paper",
+      "date": "2026-11-20",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "tax-on-savings",
+      "section": "🧾 Tax on savings",
+      "sujet": "💰 Finance — Beginner",
+      "langue": "en",
+      "site": "inews.co.uk",
+      "publie": "2026-11-24"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOUURFd19qZHo1U21VckYyaG1zbGh4RF8ta2ZsVENtRy1ZeWhIb0pFMlF1V2hteEhHT0VQYmRmNF8wN3gwbzF6dGFPanNVR080dnktcEQ3Y2VOcVBYcnFWM0IyckpDaTJueWFyTUl1QzJ4LTlKU1lZVVFKSUVCcGY0TXF0VHo1dHJCMF82WExsWGlTUHdNZ3lwOW9XRlhZQzlqZk9EMDluTGRER0xYM2R1YmNzcXhrdXRLbF9ZRXBGeG1uRDZWcFlZTVZGWWZTTjRCZmZBeW05QQ?oc=5",
@@ -562,6 +604,20 @@
       "publie": "2026-11-17"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPLXQ4ZXF1ekczcXBHUXlFRi1OcFhCZ2c3Ump1TVZkeklJdUF0R3Bidk5sNmtpWnJCRV9uVnNnWXBkWmFmbThqWElyNTE2YnVVSzg4cWdQSmxlcC1DNGdyV05yZ2k5M1JJUngyUzlhQjdrdS1ldDZ0UlFtdXQwaEhZSGFRTFk?oc=5",
+      "titre": "How bonds got interesting again",
+      "source": "Financial Times",
+      "date": "2026-11-13",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "ft.com",
+      "publie": "2026-11-24"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5WUEtKRXNvRHNaY0JqUTJEdGsyazJYdEhGVWdsLUJCMjZud05oN1hyRHViS3phQXhjX2tZNkU4MjhJLXBOTHQzNWNrcTdjWnBrSEVyTzlhU1U3Mk1IM3c4UjRia0JfU29ELWhFMlY4NEZ3ZUE?oc=5",
       "titre": "Web application security",
       "source": "Computer Weekly",
@@ -590,18 +646,18 @@
       "publie": "2026-11-11"
     },
     {
-      "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNY05vMy1mMEdvZUVrVXpPSVZJWmlBMWJWX0laNHN0djBjRGN3YklxM3lCRXZvbTNNY3pRYi0zZ0IxOGRWSDU3SV9CZ2otWEJjbzl2WktIUzBLSUZqNG9Gc0duNEpkU2R1RWxiTGZ6S3dlajhXOUhRcWhKeDk4cU9qOGtscktZOV9GWXk4NzNkMUREellCVnRsYl9tdkZwQnAyaF9fM251cWFDM2luNjVBLWw4cmo0dHE0SVJ1YlMybHY4ZFQ0a0daTUZJR3ZlQmlT?oc=5",
-      "titre": "2.1m higher earners will pay income tax on savings interest this year",
-      "source": "This is Money",
-      "date": "2026-11-10",
-      "guide": "finance",
+      "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPc0dfSXcxMHcybzcyc0w3ekEtNEdtY256SkVPSFNDbzJ4R1JUYlRxTlR4VDFRNjZUSWRmNTZUalVwdlVON2YyR3ZmQXNhOU1BeUE5Y2U3NWtyc3ZJQ0Rsdk0zZDVpelhOMTlkOGRsLUIxaEVPbHQzWWZuTnJsNF9wdnNFeHVHc0dEM2dGN2g5NndqZlFnbmZJcVV3Sk5fQk5hLXJtVjVobHR6TlBydWpmZjg0d3NRYjFQ?oc=5",
+      "titre": "Semrush built a benchmark when AI search made traditional rankings obsolete",
+      "source": "The Drum",
+      "date": "2026-11-11",
+      "guide": "marketing",
       "page": "debutant.html",
-      "ancre": "tax-on-savings",
-      "section": "🧾 Tax on savings",
-      "sujet": "💰 Finance — Beginner",
+      "ancre": "seo",
+      "section": "🔍 SEO (search ranking)",
+      "sujet": "📢 Digital Marketing — Beginner",
       "langue": "en",
-      "site": "thisismoney.co.uk",
-      "publie": "2026-11-10"
+      "site": "thedrum.com",
+      "publie": "2026-11-24"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM292TUpPQ3dhc1VZcGVXZEhBOW92UDlnLUVqMmdydmU4S3RYQmpOQndEb2hfaGptTEd5ME5adDBUMHc4YjJUUG5yMVJNQ2NmVk9LMnBVUDlxVWpIbEpfTDVnR0Zfc043YWpnbGg5QkxfUTlYZGNsSFBPYS00VHFKQVJVcWFLME1jYk5sb21CUm5nUnA2VEJ3M01YNV96SFExZEk2SmhndjI2eDJ2aU1LU2szWHhSeDBkMXV6eHZuTEQ?oc=5",
@@ -616,62 +672,6 @@
       "langue": "en",
       "site": "thedrum.com",
       "publie": "2026-11-12"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPLWdtVWgzYk9DNkdDWXdNWTRlcHRtejZSbG9sbTZic1ZHVGF3Z2ZnX3RCOEJlRGFmU0w0WlFsMTRJS3d6cDdicEZreFd2dHRRTDVhSjUxdVJTd2VJMEtJbHhNakRmVTU4SzhySEh1WkdQZUlVeGRmN2R2V2lWLXNrWkxLTHlRV3BLa1dCbGdJV0VOVHB1Zk0yYw?oc=5",
-      "titre": "Salary history is hindering professionals’ pay negotiations",
-      "source": "Personnel Today",
-      "date": "2026-11-10",
-      "guide": "negociation",
-      "page": "intermediaire.html",
-      "ancre": "negotiating-your-salary",
-      "section": "💼 Negotiating your salary",
-      "sujet": "🤝 Negotiation — Intermediate",
-      "langue": "en",
-      "site": "personneltoday.com",
-      "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZ3d1OFJreVJ6SkdtM3k2VmEtaEhRQkJaWkh6R0Y0S1ZZVk5hX29wUnJjTHZ4dm0tcjhvZVBlVGhVYXpJbGpPMkY1b09Ta2Ezd3luVTJTOEw0X2xXQ2REclpFOGRSWm5lQXZfWTNvc09hZ3FaeDBKbEZzakctZll1RkJkbTBtWXVkckotRXVPRXkyTXBILXMyazBVd0tJMDFjNXBSSEdnVW83aVVTQXY5Uk91TW8wdw?oc=5",
-      "titre": "How Anthropic’s IPO raises AI legal risks",
-      "source": "The Times",
-      "date": "2026-11-09",
-      "guide": "entrepreneuriat",
-      "page": "avance.html",
-      "ancre": "legal-risks",
-      "section": "⚖️ Legal risks",
-      "sujet": "🚀 Entrepreneurship — Advanced",
-      "langue": "en",
-      "site": "thetimes.com",
-      "publie": "2026-11-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONmYtaS1QcGFJaUFoOVVYcHN2S1RSMzlCWUEtNDZlNXFkVFNoYy1TY2h3ZFVzQlRGdlZpM2ZZLVpQSWFnMi1jN29MWjJDZ3ViLWxMdDNWUllaajlZSkk5dUI3Y0lSSU9NVzZ3cFNkT3N5TFVheTlMMTVoQXlLX1hBY3dvRDkzZDdGTURQZDlzb3VYYVFLbHpINnR0OWowUkQxclc2bnAzV2FKQWlZWXfSAbMBQVVfeXFMTU5TV01TSkczZHpjbFNqYmN4Y09MMGxyRVdfcDlJdU5uYmpUNnppWmYxZDJhX2NwM2JGTWZSaWx4MGlETjZaOEJybHU4U1dZWm9hbnVaa3hFM2M1WEpQR1I4RFowYXgyLU5ZMTlzQTZGdXF4LVhzNkpBVDNsYUowX3E3WXF3ZFZMZC1WNWd3NG1Gd3M1QVhXZ1ZIVGFaN3ZWTFdHU0luWUZ0a3F2QzhRd01HNlU?oc=5",
-      "titre": "Nationwide offers 'inflation-busting' 5.3% fixed rate bond",
-      "source": "Daily Express",
-      "date": "2026-11-08",
-      "guide": "finance",
-      "page": "avance.html",
-      "ancre": "bonds-and-rates",
-      "section": "📉 Bonds and interest rates",
-      "sujet": "💰 Finance — Advanced",
-      "langue": "en",
-      "site": "express.co.uk",
-      "publie": "2026-11-09"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1FNlRad04xVVliVlowQ1dmSkoxOUtFZFZJazlrQVBuRE1DSXBQTk1zcGpURENiMXd2ZmFDR1RnQUFTbEdhZERJY3JoQVM4eE5FNFFfSFBRaGN3cUlrcnppamxxWWRYbUlpVXRhSFp6b1I?oc=5",
-      "titre": "‘I don’t do business plans’ — serial entrepreneur Marcia Kilgore",
-      "source": "Financial Times",
-      "date": "2026-11-07",
-      "guide": "entrepreneuriat",
-      "page": "debutant.html",
-      "ancre": "the-business-plan",
-      "section": "📋 The business plan",
-      "sujet": "🚀 Entrepreneurship — Beginner",
-      "langue": "en",
-      "site": "ft.com",
-      "publie": "2026-11-08"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAwVF93dUE4d2dEVDZrYzVKRFpQbmlWSTRHXzVjRG03UWowQ1RZdElhWUVzc3JfaTJGVk5DVXlCRmx3VFM4anhmU2VNVkIxSEJ2VVh6Y2JvUFhJNFRBOHhyWVYyakgzcG5uNjBheXdKZkxTMHZaMmc?oc=5",
