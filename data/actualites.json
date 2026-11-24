@@ -1,6 +1,20 @@
 {
-  "maj": "2026-11-24T03:44:22.251Z",
+  "maj": "2026-11-24T18:59:37.490Z",
   "articles": [
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYl9wTm1qTnNDN3daZGJrOExBelRRZWhoT3hDWDhZQ28yNGpkSUdsbFdEZlZnNm5PSkF2Yk8ySjBfUm5oYkhjdzhHLTE2TVVCdV9yWklOR1IweXYxeEhlUXRoSERBOWJGeHVtWUFTdjZBM2hNT3NSRHpJX2ZxZGp3dWFHX3NDZVU5bl9GeE43NnNHVGNrNEphWDZiTWliQ0hJWjZ1ZmpsRVJESDBpRkZGTjVMaWs5QndEZlVfWWRUblRqdzh3aXk1Q2Z6UXlmcEoxeVdxOFl0WlhQOWM2TFE?oc=5",
+      "titre": "Architecture, objets, tapisseries : notre sélection de livres pour découvrir les signatures du design",
+      "source": "Le Figaro",
+      "date": "2026-11-24",
+      "guide": "design",
+      "page": "intermediaire.html",
+      "ancre": "architecture-information",
+      "section": "🧭 L'architecture de l'information",
+      "sujet": "🎨 Design UX/UI — Intermédiaire",
+      "langue": "fr",
+      "site": "lefigaro.fr",
+      "publie": "2026-11-24"
+    },
     {
       "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZndUdnJJekhSTVpqRTlYN2JxbjZtM0RfWEhXRXRvQktEYl9kLTBnQlA2YXhSTEJ4RWZ6ek5QSFBvNERtRXVzdkw1T0dYd2tqeEhzWEYwaGFibGZ0aG5DU2s4SE82SzlTczhwU043YzIzV2VNb0NpYlUteEV2aFRDc0NUXzJSNVF2VHB4UXRYOERKYXVYREcxNUNSQ2xaNG83WkdSN1FkRkxpc3V3RDFJLWpHOTFEWDRk?oc=5",
       "titre": "Stage en droit de la famille, droit pénal, droit du travail à Paris",
@@ -70,6 +84,20 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-11-21"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOQkwxWUVkRzFWZnRDOUtGdXRrRGZ0NDJlY2h4TnM3THhMd004MllUbDB1TjY3dE1MZjFiWWU0eGJZYkNYUUNxbGxFSUlpNW9MMHZRakFqa1pDTWliYi04ZzZtcm5oNnhHNF9QLU5qc0pwdjVxOVhWNWpYXzZudmc4SzVVR29pLVMxazh3VXlmbWdCckRQMXBCQWtBbHJVWjRUTmNOZnQ1UmRqbzlkUWMtSDRXR3F4RVpnd3g2ZzlrQW1jUHc4U05UMmQzbk5JRWxhSFNYV3gyTUdzUFN0SUFUSXJMbGVzal95UFNucVJQZUtXRG5BRnM0?oc=5",
+      "titre": "Dix viols ou tentatives de viol par jour sur le lieu de travail en France : l'inaction des employeurs pointée du doigt",
+      "source": "La Dépêche",
+      "date": "2026-11-21",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-obligations-de-lemployeur",
+      "section": "🛡️ Les obligations de l'employeur",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "ladepeche.fr",
+      "publie": "2026-11-24"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi7AJBVV95cUxNUzIwbnZaY1ZNUFBuWGJwZm5oaWNzRXMtT1NNX2JhTUJtTlpoTUNiTEFPZ0JWMU8xTUUxUnJ6NEdIS01QamVzVlJVcVNsNEVpY29PN3RNX0kyRVFiWFRUc2ZSWkdUS04xNERldE4wYTkySTQzSGNOOWF0WHEtSk5BUV9JT2haSDJQcFhOY0VQU3VMQl8wYUdMU0hreDZITWhIcmxMZzh1cGpmYVJQeXVFZFdGM2g0MDJXTjUyUi1kM1NmX05ZQ0dYSm85NkRROGRuVWhTV2NBQS1sLW94YjYwX0dwblZCLVB2Ym1RcGg4WXdrbWp1S2ZhQnFHd1A3TG0xeExhekRIdG5VSUVMVjY1a2pob2dScFkxeFhDbzJVMEJTc044bGNMUGM1Zm0tYVFiRFFDNjhORlVuZ2ZCZG95N3ktXzNOOTRUaUZZeVdIVFd4RE00N2w1SmVzbUhGVkJkZHloNm9zdWtpRGZN?oc=5",
@@ -308,34 +336,6 @@
       "langue": "fr",
       "site": "20minutes.fr",
       "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTGFHU2pnOVhCOGNEUXA4a3hLZ1luSXFtR1FwTG80eS11a19HSm9wNF82NW02dW04MllVWDFtWHBLcnMwSVhqY0x4dTdHbTN0SVFGek9JMkMxX1NFY3N5S3pvMFBBaHpvdzJqZU15ZmRITnFLYldUWWI4UWdlZk80Q3Z6N2pENmNpYmMyd2w2TjZHbnhWX1NN?oc=5",
-      "titre": "Stratégie européenne et internationale des ministères de la Santé, des Solidarités et du Travail",
-      "source": "Ministère du Travail",
-      "date": "2026-11-17",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "travail-emploi.gouv.fr",
-      "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQODV2TGUxV2hra0V0c1ByZUxMd0NOTUx6SEU1czV5QnhKMUdVeFZSRXVld2NrY0ViVzctR1dFeVJIYUgwWFdUT1Vsdmw4NXV3bzdrM0JhRlVqU3NONEFtZ3FaNmVfRWtjckMxSzdQN3NNZXQybmFhN3lfZjNJbmtqdjRQYk5FWmI2c1FaUFFJMGlJWEt1QkU4VDRfeXNPVlhFWHRqUGhsRWgyZTU0UmNwRnViSmpWZ0J6Qjl0U3dXbU1oQ3JZTTFvM0pkY2twazZKVWtGMWMzREstTDBQaDFjSlRjaVp3MFFZZTFzMG5Ia3N5RVQxRmdobWNXMm1LRC1wcGdvUXJxS1ZPYmVhSHVpTDVmRkc4Z1g1?oc=5",
-      "titre": "\"On peut encore en accueillir entre six et dix\" : plusieurs entreprises pourraient arriver prochainement dans cette commune du Lot-et-Garonne, sa technopole est en plein développement",
-      "source": "La Dépêche",
-      "date": "2026-11-17",
-      "guide": "dev-web",
-      "page": "intermediaire.html",
-      "ancre": "travail-a-plusieurs",
-      "section": "🧰 Travailler à plusieurs",
-      "sujet": "💻 Développement Web — Intermédiaire",
-      "langue": "fr",
-      "site": "ladepeche.fr",
-      "publie": "2026-11-18"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTTNOZlBYdjBWNXBTRTdJc1FiSndtSktSZ2s4Zk5Wb2ZIazctY2lZQTV5QTc2U2ttdHQ5ejZMcDdIR1M1MWhZUW0tcWtYaV9Qd0ZDMmZxOHJJMjJsUXE2SU5iWUNtenlYLWJaTmtpNDljY2lhSjhkTFFyNWNndHdnYzliSE53WE9DanV0OVNqVXJqNE5Mb2NDLWt4c0Z0elZVTVE?oc=5",
