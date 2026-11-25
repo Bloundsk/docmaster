@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-24T18:59:37.490Z",
+  "maj": "2026-11-25T01:30:33.292Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYl9wTm1qTnNDN3daZGJrOExBelRRZWhoT3hDWDhZQ28yNGpkSUdsbFdEZlZnNm5PSkF2Yk8ySjBfUm5oYkhjdzhHLTE2TVVCdV9yWklOR1IweXYxeEhlUXRoSERBOWJGeHVtWUFTdjZBM2hNT3NSRHpJX2ZxZGp3dWFHX3NDZVU5bl9GeE43NnNHVGNrNEphWDZiTWliQ0hJWjZ1ZmpsRVJESDBpRkZGTjVMaWs5QndEZlVfWWRUblRqdzh3aXk1Q2Z6UXlmcEoxeVdxOFl0WlhQOWM2TFE?oc=5",
@@ -14,6 +14,34 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-24"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOLWxkT24wcU00S1NiM21ZNFdLQWZ0TEFmc3o1dE92TFRWdEpCTVFIcGhBQjc1ckNTSkdEZzlXVEE1VjNzTTk3QWtQVENHYVIwT0NjVkRELUN5QWdzMjN4N3dEYUplazhlT2ZQY3RCWGpxRHhJeVJiaUN5TUNIWVBGQVhodDY1eGpQalg2WDhIOGlZNlJzeVhqZDVn?oc=5",
+      "titre": "Fuite de données chez Decathlon : les informations de 163 000 clients ont été piratées",
+      "source": "01net",
+      "date": "2026-11-24",
+      "guide": "cybersecurite",
+      "page": "avance.html",
+      "ancre": "fuites-de-donnees",
+      "section": "🧬 Les fuites de données",
+      "sujet": "🔒 Cybersécurité — Avancé",
+      "langue": "fr",
+      "site": "01net.com",
+      "publie": "2026-11-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYm5ScVAtcXVSWlZXVDVhRzNZcUJHWEpwQUh4UHJZSFp3T215UVZnR05TMUZVTG55a05vSVFWT2E5QUJQbDdjckFnaUlMY3dmX2ctWVljRklKbnhnVC1CQktqUjNZRnRHc2NtejNQLUhBVXJhdDJHaFNNalVUQkJVdWVLWkQ2NHZGNUxqM0EydWpYZG1LOXNacUEzdjhlUjZRdUNMT2E4NHZyOGFD?oc=5",
+      "titre": "Data Brokers : le commerce des données personnelles.",
+      "source": "Journal du Net",
+      "date": "2026-11-24",
+      "guide": "data",
+      "page": "debutant.html",
+      "ancre": "la-collecte-de-données",
+      "section": "🗂️ La collecte de données",
+      "sujet": "📊 Data & Analytics — Débutant",
+      "langue": "fr",
+      "site": "journaldunet.com",
+      "publie": "2026-11-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZndUdnJJekhSTVpqRTlYN2JxbjZtM0RfWEhXRXRvQktEYl9kLTBnQlA2YXhSTEJ4RWZ6ek5QSFBvNERtRXVzdkw1T0dYd2tqeEhzWEYwaGFibGZ0aG5DU2s4SE82SzlTczhwU043YzIzV2VNb0NpYlUteEV2aFRDc0NUXzJSNVF2VHB4UXRYOERKYXVYREcxNUNSQ2xaNG83WkdSN1FkRkxpc3V3RDFJLWpHOTFEWDRk?oc=5",
@@ -72,6 +100,20 @@
       "publie": "2026-11-24"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOLXBZRFdmZ3FwZTFkVm8zYmdlUFhwNnhQbDBaRjdNSnVEYkZDVnVuNmNGMi1icERXbnl2X1BrR0RuelRkMUF4dnpHS0k4bUJxSU9wSVdfMS05OWQyVGtkRERSU3N4YTU2NWZ1SllISmZEa09aMk91d0VkTElSNjk2a215YzB4X3pqOTJRdWg0NXAxYXlXQjlkY2F6djFNZXMwOUc5cVFlQWE1akVCU2syU25tRUhHY0lvR3VGZmZKV2hTOEtmZFNMLUxWWXhWVVEwUTViZ2l6M2lNSXdJODBiZC1Za1dqWDl5QlE?oc=5",
+      "titre": "« On fait ce qu'on peut avec les outils qu'on a » : Signal part en guerre contre deux agents IA d'Apple et Google",
+      "source": "Numerama",
+      "date": "2026-11-23",
+      "guide": "ia",
+      "page": "intermediaire.html",
+      "ancre": "outils-et-fonctions",
+      "section": "🔧 Les outils, ou comment un agent agit",
+      "sujet": "🤖 Intelligence Artificielle — Intermédiaire",
+      "langue": "fr",
+      "site": "numerama.com",
+      "publie": "2026-11-25"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxNdWx4U1ppZ2NaaWcycmx2WTFlSEtSVU1GMDhHbzl3cXJIR05Xd2NlUWJrbHFBTUtVOHBJQlQxeWJZS2xYYjVYSTBYMGJ2NFZoNjJ6Sm9OX3FCQnlZMUFvYllxUWs0VmplQjRBWlZiVnVmQ0g0UDFWTVZGN1R5elFMOGxyM3ZmdlZGa3ZLMWlfODZDdGNlcmlEWHgtRWxCNFR2WUpJX2MyMi03MmxLUkR3SlNVQXlFZmp5ZGVwcGxIMG9kQ0FMSDJiWHdNbjM2ZjgwQ3UxYnR2U2dUNy1aMWc5WjVTOVBpU2QtWTZQYm9GVE1SWTEyYWNxZUl2RVV6bzdQRnBZbWVhLVQySGxQbzhyV2V5aHhYbTl1VmlXRFZmakoyLXhIcnc?oc=5",
       "titre": "\"Une inflexion souhaitable pour l'avenir de Montauban\" : au débat d'orientations budgétaires, Arnaud Hilion demande des investissements \"priorisés, financés et soutenables\"",
       "source": "La Dépêche",
@@ -98,6 +140,20 @@
       "langue": "fr",
       "site": "ladepeche.fr",
       "publie": "2026-11-24"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMisAJBVV95cUxOenpwNXRWeGRmOVFRbWR5UUNJTTlWNnI3MkpQWV9ZNzNybXExS09hN3JGVl9Obll6NkQ0bVpJQ1lhX3liOGxUQVpxcUI5Ty1hSTlCbzFwZnVHUnI2enRzbVBNeDFlNjFIZVhjMEdZQ3JZQV92YjFMZ2xuUHJGNmhtMlJXbEJYSnBVM2x3cVlXRC12LUZxU3pmaDNEV05CVk9nQTVNX2R3RTBqaWtwTlA2VEVHZjlhVEZQaUt1X3JycFZndGM4MFBTcTczOTZtVHpBSThid0laY0hFY05hNDF2OU4xTzhHdGVDMTBpeEd1RFI5VXNYYUV6RGhRMjFfRDZoOW1uY2ZIM1BmVHUxc0tldy0zRVhzYk91bjdMWUFjcnAzbWN1YnhzQWduQVVGN01J?oc=5",
+      "titre": "« Limitée à 30 % de l’activité », temps de travail dédié, qualifications... Un décret vient encadrer la pratique de la médecine esthétique dans les cabinets médicaux",
+      "source": "Nice-Matin",
+      "date": "2026-11-21",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 La médecine du travail",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "nicematin.com",
+      "publie": "2026-11-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi7AJBVV95cUxNUzIwbnZaY1ZNUFBuWGJwZm5oaWNzRXMtT1NNX2JhTUJtTlpoTUNiTEFPZ0JWMU8xTUUxUnJ6NEdIS01QamVzVlJVcVNsNEVpY29PN3RNX0kyRVFiWFRUc2ZSWkdUS04xNERldE4wYTkySTQzSGNOOWF0WHEtSk5BUV9JT2haSDJQcFhOY0VQU3VMQl8wYUdMU0hreDZITWhIcmxMZzh1cGpmYVJQeXVFZFdGM2g0MDJXTjUyUi1kM1NmX05ZQ0dYSm85NkRROGRuVWhTV2NBQS1sLW94YjYwX0dwblZCLVB2Ym1RcGg4WXdrbWp1S2ZhQnFHd1A3TG0xeExhekRIdG5VSUVMVjY1a2pob2dScFkxeFhDbzJVMEJTc044bGNMUGM1Zm0tYVFiRFFDNjhORlVuZ2ZCZG95N3ktXzNOOTRUaUZZeVdIVFd4RE00N2w1SmVzbUhGVkJkZHloNm9zdWtpRGZN?oc=5",
@@ -184,6 +240,34 @@
       "publie": "2026-11-24"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPUDNWNEYwdldjU3hnbDJQRlZ6aEdQQmRvNTNQX0RwUzMtQkhHYlpLZ3hBMzNsbC13dUMtUkVfQU5yUHEwOHNDSklOcVVRa0JkY1ZIRE03VllSSGFnam9qR1NTZktlNHVSal8yTDlmQUI0SjMtMUt0Tzl4VGJxeVZadURDdkhneHhCQ2p5YzZrNi1CdG9XcUlMY2t1TURDS19telFzMWFZSXNLWlJMLThKNXBLVmdHSTdhQ09SeklxaGgxR0ZBWHB5TXRlUk41U2JhS2JuNnpRUldldw?oc=5",
+      "titre": "Pendant le Black Friday, Intego ONE Complete réunit antivirus Mac, pare-feu, VPN et nettoyage à -50%",
+      "source": "Clubic",
+      "date": "2026-11-20",
+      "guide": "cybersecurite",
+      "page": "debutant.html",
+      "ancre": "les-pare-feux-et-antivirus",
+      "section": "🛡️ Les pare-feux et antivirus",
+      "sujet": "🔒 Cybersécurité — Débutant",
+      "langue": "fr",
+      "site": "clubic.com",
+      "publie": "2026-11-25"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQTWlUVEN5T3pTenBVZ2dUQURFUWlUX3RhSHI2a2xkVG5naFJicmNJc0U5UzEzbXJnMUstYlpGa0JCUXFXOW56VzNUREowdUVwdFp0V1dHWnV3b1lOMnpPU21PZUswZGtpUnI1ajVOeGFKVnlNUXp4RXFMYnZaOUpzWUlkMHFfakN0VmxDaWRmd3p3R2NxdHQwN1FIcmNVZTE2OUZ1Sm8wbVpwOFN2Z1dUbWRycDZQeDVqbWh4SUpoZHFBRmM4WmZuLThjWWw5UUxnYTdLenBSOVE5S0ZkcHF1c25MQTFVNFVNWldRaA?oc=5",
+      "titre": "Gestion de crise : « A vouloir supprimer le risque, nous prenons celui de ne plus assumer nos responsabilités",
+      "source": "Les Echos",
+      "date": "2026-11-20",
+      "guide": "finance",
+      "page": "debutant.html",
+      "ancre": "la-gestion-du-risque",
+      "section": "⚖️ La gestion du risque",
+      "sujet": "💰 Finance — Débutant",
+      "langue": "fr",
+      "site": "lesechos.fr",
+      "publie": "2026-11-25"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOdlNzR3JPUVA2QXFJNXVfT3U4VGhpWmxYNEUzeW84QlB6S1pMdUM3WXRsSklXdkctSFR6el9DOERFVF9ubEpiZkdKR1hIZlBYNjV0MHYyNktjNHFaVWo4cFFKU1JCbjd3QTNKeFUtWmQ1SmJKd2Y4akVmamFLc0xERjVQaFdtN3p0MEpzVFJPMW5yZ1lNdnRKaUVCV1VHck1xb1RCVkVPR1Qza3pLRXlPbW1uUDVmRGhWRm5FXzZ5enMwdFhZbnJEOS1hOFVlSnV5TE05OVRXUnduWmdxTHM1bDhYNFByVHpONlJYWWJHbVZpZ04wLWlsRy1RSDZDUEMzUkQxZEV6QzE4Zw?oc=5",
       "titre": "Piratage : ces astuces simples pour renforcer la sécurité de vos mots de passe et éviter une cyberattaque",
       "source": "Ouest-France",
@@ -252,90 +336,6 @@
       "langue": "fr",
       "site": "lesechos.fr",
       "publie": "2026-11-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMinAJBVV95cUxPdFJ1eEtHV3VFS29tNFdNbTZSQXF4OXVkcDVkTFBKT0VNS0RuaW03YnNHSXRibUdYRml2bnNMYUJoNl9VV2FleWRIalN6UU5fckN6UF9ZRDBZRkhIUFRoTHJldDdianotOWRwa0N6R3NOcnJ6ZWNKVFdRdHh5c0Y5STM2M05RYzVfMlNoWHIyMllaanR2bktBT0tSa2ZDdmF2XzdmUFVIU3pEcEVEdUlJWTVvSG1yZU5NMjFhMGxreVoyLWpNYmk1NmE2X3NETEVjam1yNm5Hc0RuQ2R3dEV5cEhKZ3NxekhGMTJvTUppblROXzJfRE5WeVBqNkxTeTduUWYxVERtT2k4QVpmVUJEWm5WRlZfZWVKVGc3WA?oc=5",
-      "titre": "Médecine préventive : le CIEM mise sur le dépistage précoce pour préserver la santé et maîtriser les coûts",
-      "source": "BFMTV",
-      "date": "2026-11-19",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 La médecine du travail",
-      "sujet": "🩺 Santé au travail — Avancé",
-      "langue": "fr",
-      "site": "bfmtv.com",
-      "publie": "2026-11-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMivgJBVV95cUxPN3dxUVUzSldFT0pldVFveXNSTGFzc3JmeW56WmZEWDdWbUtoSnEwTWpLd194OXZxdnEwWWVhSGdtVjdWYVFFdkNnOFhOX3ZPemxYWFFLZEpfeE1nUmtlbVJwY1l1Y0hhbkNLcmVKNzB2eU56Nm1vT3UzYnRHek5YTjhmQW5hWWg2ak1sR3hWSGVtd0R2dGd6RGFxaVBhTF9QVDU0bnhJelRzRms0R1NvX0tPX0VFbDVoVHJNalZ5VlpzWU9ReE9xUm11bHF1bWhEdTBuVmJsUkdiLXpwRldtdmJSd3h2MmkyZWY2WXN3eENPWXpOSTlYTmlNQ1U1OFVSS3ZYS1ZrVEl5ZGMwZzBMMUNQdGFFN2xvVktTV2psbUYxZ3IxM2FINkdzc3c0WmktX3hUcGJXejNDVjNEbWc?oc=5",
-      "titre": "Marketing digital : Mr.Bricolage se lance dans l’e-retail-media avec Unlimitail, et les débuts semblent très prometteurs [Exclusif]",
-      "source": "LSA",
-      "date": "2026-11-18",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "email-marketing",
-      "section": "✉️ Email marketing",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "lsa-conso.fr",
-      "publie": "2026-11-18"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMzNNdUtERVEzNE1wb1BlTDZVVGJwejRfY0lDODVFbTZDOXpPV2dzS2piRzJ4Y0NkTFdHTDlhd2U2QXJnZ21uaS1pTGZSQjVSMXpQc2pyM0VUS216bFFtRDlYXzE1SVQ1REJEczc2cVFGZE5rOHBNNElIT2xxNUJodUVBUFA1dzY3M2RaVGoySkt4OFBfQ2ozT0pzeUhyUTRWMm1YZHJidHdNN1NiUHcweDhVYldSdG04ZWJJOFhYc2c?oc=5",
-      "titre": "MyPad : reprendre le contrôle de ses données personnelles à l’ère du tout numérique",
-      "source": "Le Figaro",
-      "date": "2026-11-18",
-      "guide": "droit",
-      "page": "avance.html",
-      "ancre": "vos-donnees-personnelles",
-      "section": "🔐 Tes données personnelles",
-      "sujet": "⚖️ Droit & démarches — Avancé",
-      "langue": "fr",
-      "site": "lefigaro.fr",
-      "publie": "2026-11-19"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMinwJBVV95cUxOZXc3UlhyZUh0SVRLemNhSkd5d3g5WDhUdzBpcm4zNmpyZG82U2cyRmtBSHlVUUJKWXNucWprUEFvQWFmcHJEcEJBYkRwUktzUDZJRWlUaXFXR0FnU29ESWdNeVE4Si1IbjFoLV9McWNQMUlnQTk1SGRSZVptRHhEOTZVcVdwM3lIWHZxQXpFOHphanQycFlSSE1zZEtIRHV6Sm1kcjA3R09OMHZ0T1pZMWZYbmlsWW4xR2VuT2ZPaHFqR05ocXhtN3JnUFRxMFIwMXdPYWduclhMYlFJMk5uMk5ZaUxVc0pVLWw0U01RWWF5V3Rzc2VxZGN0bndyRVFmTUN1WVBDRTdDQ0pGc3R6enlBYVhNVl9PalVaYUFZYw?oc=5",
-      "titre": "« J’ai été surpris par les propos de la majorité » : l’ancien adjoint aux finances explique les investissements",
-      "source": "Ouest-France",
-      "date": "2026-11-18",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "linvestissement",
-      "section": "📈 L'investissement",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "ouest-france.fr",
-      "publie": "2026-11-20"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNaUlmeVQzVTZwOTBaODZtTEJoeGdhSmFxV2daNkhYQ0liYW1zU1pSbmVjMXRodW9QZmtfclJZYnpVYWl0WW5FVFc5X3BReTR3QjFSSlJ1blpDZEc3RGxRVV9QcldDVl9wZEtEY0RmaVJ1Y2tDM3UtbjNjb1Zhc1JCRmZ6TXozSUVnMEZ0UGxpR3d3TWtMNVBtYXRpWFQ5anVBWWRtTXRuMzVGdk53TWptd3lGbzFnMjdqNy1sT21KcVpYd0YxRmd3TGthenNPMW4xd1hWZGgzNV9VUzVxWndsSnlxUWRib1RFMUVYZ1VMZ0Q2d05Dc1M0cTMzV19fR0pjRW1kYzhQblRCQQ?oc=5",
-      "titre": "Air France, HSBC, IKEA et Zoom font partie des victimes : le piratage de l’outil de test web Optimizely a contaminé près de 180 sites",
-      "source": "Numerama",
-      "date": "2026-11-17",
-      "guide": "dev-web",
-      "page": "avance.html",
-      "ancre": "tests-automatises",
-      "section": "🧪 Les tests automatisés",
-      "sujet": "💻 Développement Web — Avancé",
-      "langue": "fr",
-      "site": "numerama.com",
-      "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOR1JWSTFRMGRTZUZCOENrUU1rdlQ1OW5oLXdfLU5JUF9lYVAtRGR3TUNod3c0MVpTcjVvcjNaZzNhM3JZZUtvOXV3a2ZES3U1bHk5b2ctM216WVNiUlZHdE1JMzhRbmFMVGdMWjlvQkJjNm9lVW10TFFrWVBPaXA5RTdLNU1vVmpvNWl6d1hObVZEUFBKbGNjM0tSdjd2Ykpmc2RJTjd2Q3lBOVZuZUJhSEJPbXpGV2MwR0ZOQXVzbDJtNzNnemZz?oc=5",
-      "titre": "Pourquoi trois mots au hasard renforcent la sécurité des mots de passe",
-      "source": "20 Minutes",
-      "date": "2026-11-17",
-      "guide": "cybersecurite",
-      "page": "intermediaire.html",
-      "ancre": "gestionnaire-de-mots-de-passe",
-      "section": "🔐 Le gestionnaire de mots de passe",
-      "sujet": "🔒 Cybersécurité — Intermédiaire",
-      "langue": "fr",
-      "site": "20minutes.fr",
-      "publie": "2026-11-17"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTTNOZlBYdjBWNXBTRTdJc1FiSndtSktSZ2s4Zk5Wb2ZIazctY2lZQTV5QTc2U2ttdHQ5ejZMcDdIR1M1MWhZUW0tcWtYaV9Qd0ZDMmZxOHJJMjJsUXE2SU5iWUNtenlYLWJaTmtpNDljY2lhSjhkTFFyNWNndHdnYzliSE53WE9DanV0OVNqVXJqNE5Mb2NDLWt4c0Z0elZVTVE?oc=5",
