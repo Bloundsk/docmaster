@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-27T01:26:19.684Z",
+  "maj": "2026-11-27T17:33:56.738Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPN1pGc2pZdzMxTmNyQ3o4NVIxZlpwb0lQSGhEdEhveUlhQzRCQ1ZVbnVmZjNvZG52bnBRa085NWp2TG9XRzlQbHlYWE1VYk1kVkpQdkpmUU1rNXV2ZXQ4ODdFM1RPVlVqaVJjWjQ1MmlZbWMxOFgxTldvckFZUnh5enNtX2RQelhJajd1RkVyVDhYcTJVSEViMlRZdDQtZE9TS1A3Z2ltdklQZFZ3d1FmRFJ1UG9SMV9QYWRPNA?oc=5",
@@ -13,6 +13,34 @@
       "sujet": "🔒 Cybersécurité — Avancé",
       "langue": "fr",
       "site": "01net.com",
+      "publie": "2026-11-27"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPOTJ2aklKRlJCd1g1Q0RIYkdjblI2VjNQZExiZkkxb25zY0V3ZEUwMkxmalB5bTdXQWI5bjFabFdYcmZDRDU5NmpLSlpIa1JHRDg4SUVQMkY2QjdzaU1YVFl5TmZhWXFFN0JwVFNKNG13MXF3N2wyQWFvSk1SSnRhSno3VGQxd0E0cFJ0LURuUW42T09PQnVOUm53TU5saGZaZWplUDIzckZsSzV3RTdvTktzSnk0NGhyNWVhcXpqOA?oc=5",
+      "titre": "SASU, EURL, micro-entreprise : et si le statut juridique n'était pas la bonne question ?",
+      "source": "Bpifrance Création",
+      "date": "2026-11-26",
+      "guide": "entrepreneuriat",
+      "page": "debutant.html",
+      "ancre": "le-choix-du-statut-juridique",
+      "section": "🏢 Le choix du statut juridique",
+      "sujet": "🚀 Entrepreneuriat — Débutant",
+      "langue": "fr",
+      "site": "bpifrance-creation.fr",
+      "publie": "2026-11-27"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPNF9Odnkwb21oeW9ORWg0alJkNUNyakczRGFBVEU3MXg5Z3NyQVMydlRpRDNmVVdZNmxjaEhaOHRFZ1JQLWNUYmVuS3NkTF9HVUpWUlZwQzBvY29jNUJLSXdramlrZkF4VUlrRlRqQXd5NlJmQ1JsTUpLX2tiOVJEa1oxNk5obkJSNnYzNVE5V3BGWGZOek1ld29MUmtLdUF4U0tKVENzV3diV3QzMnMxZDdDd2d0dmRwVVY1dVBtb01zS3k0Ung1TEs0dUhXa3VhOHBrNm1meC12VFNZdm1DbnF5alJzekVoaldoSTk3dWs2S0g2NHpTblEzNnNQVk50?oc=5",
+      "titre": "Des dispositifs intégrés aux réseaux sociaux sont-ils efficaces contre les impacts néfastes ? 2500 jeunes ont fait le test",
+      "source": "Le Figaro",
+      "date": "2026-11-26",
+      "guide": "marketing",
+      "page": "debutant.html",
+      "ancre": "réseaux-sociaux",
+      "section": "📱 Réseaux sociaux",
+      "sujet": "📢 Marketing Digital — Débutant",
+      "langue": "fr",
+      "site": "lefigaro.fr",
       "publie": "2026-11-27"
     },
     {
@@ -98,6 +126,20 @@
       "langue": "fr",
       "site": "ouest-france.fr",
       "publie": "2026-11-26"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMipgJBVV95cUxPdFl0by1teFhtOHFoVWI3cHBXRlVRVzgxd0tMY0cxMnV0M09TaFdQdmJOYWNaenUydWpvcmFpc1NoRmJ4NEdzTHV6OHpmX1M1MkRJRTdWUm80SjYtTXRmTVNqSGRVUUNmTV84S1BwWTkzSFBmWFBtQ05QWmFmaHB6MTdCZVV6Y0lfbVp0VVItYTJuMW9yLXNVTjhSSU9DZ29YSi1oaElsUENNUzRHU0lDSkhZUlc3U2xmVl9rQ2M4WmVCSlVuWE1tUHA1NWdaOHU4QS1jTnU0LURvNVZ3U002eE9iSmRDaEZ4UGJBV3luZ09jS2tGdnhxZFJZNlpiUVVPSF9SWHUwRjhYT3RFQUZUbUkyV0RkNV83V0tvMFl6bGI1aEhlZ3c?oc=5",
+      "titre": "DÉCRYPTAGE. Maisons fissurées : \"Des situations graves qui passent à travers les mailles du filet...\" Dans le Gers, près de 9 communes sur 10 sont reconnues en état de catastrophe naturelle pour sécheresse",
+      "source": "La Dépêche",
+      "date": "2026-11-25",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "les-situations-graves",
+      "section": "🚨 Les situations graves",
+      "sujet": "🩺 Santé au travail — Avancé",
+      "langue": "fr",
+      "site": "ladepeche.fr",
+      "publie": "2026-11-27"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOYl9wTm1qTnNDN3daZGJrOExBelRRZWhoT3hDWDhZQ28yNGpkSUdsbFdEZlZnNm5PSkF2Yk8ySjBfUm5oYkhjdzhHLTE2TVVCdV9yWklOR1IweXYxeEhlUXRoSERBOWJGeHVtWUFTdjZBM2hNT3NSRHpJX2ZxZGp3dWFHX3NDZVU5bl9GeE43NnNHVGNrNEphWDZiTWliQ0hJWjZ1ZmpsRVJESDBpRkZGTjVMaWs5QndEZlVfWWRUblRqdzh3aXk1Q2Z6UXlmcEoxeVdxOFl0WlhQOWM2TFE?oc=5",
@@ -294,48 +336,6 @@
       "langue": "fr",
       "site": "lefigaro.fr",
       "publie": "2026-11-22"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNUl9zN0RIc1FuendtcmN6XzVGN2RxcEdGRXhONkEwdlNaRHpFbzlxaXdRUm5WOGRGVmRYYlZUbW5QRDF1dnM1NGlVX2M4LTVNWjZ1d2tZeUlRSUQxZnBGY3NMUncxcXl2YnRJV3hBSHpqR3E0Zm5NQmU0N3dmdGNDQThoMDBaV1lOR0hBOVpJRzZ4UmhDRGNIYjlfaV9mOUtyd2RMUmF6UHB5QThhSnQwVUVIdUw0Qm1nU3NLYlFOSjlGTFlxUEVpN1I4X0ctQm1EU0dmT0NtNW9GN0gzSWc2UWF1X2JlQTJIcmQtRnZUcFFlQW5VeUZWR0xsVzdXaHgxN18taU9yRkk?oc=5",
-      "titre": "Finances, gestion des déchets… « Les failles » relevées par la Cour régionale des comptes à La Flèche et alentours",
-      "source": "Actu.fr",
-      "date": "2026-11-20",
-      "guide": "finance",
-      "page": "debutant.html",
-      "ancre": "la-gestion-du-risque",
-      "section": "⚖️ La gestion du risque",
-      "sujet": "💰 Finance — Débutant",
-      "langue": "fr",
-      "site": "actu.fr",
-      "publie": "2026-11-23"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPeVFtOVR3UHdjTjNMczA5WElub1Z6czU3b0UwWThpZVY4anB5TUlBeEhZQWdJSWlSdmR6ZlA1N0IyRzk2TlNRdjlHMWxhc2hHTWtjSXFaWlhFSnJwUE1oT2piTmtHVVFVRXAwWmRvUGpnaERPWEtkT0dyLTUwYklTMGg5aXZsdTY3TUhsdkwwUGJYX0pZdnM0RXAwbGV1aEVJaFlpZUI4dFU?oc=5",
-      "titre": "Archie, l’outil français qui transforme vos contenus oubliés en posts sur les réseaux sociaux",
-      "source": "Blog du Modérateur",
-      "date": "2026-11-20",
-      "guide": "marketing",
-      "page": "debutant.html",
-      "ancre": "réseaux-sociaux",
-      "section": "📱 Réseaux sociaux",
-      "sujet": "📢 Marketing Digital — Débutant",
-      "langue": "fr",
-      "site": "blogdumoderateur.com",
-      "publie": "2026-11-24"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPUDNWNEYwdldjU3hnbDJQRlZ6aEdQQmRvNTNQX0RwUzMtQkhHYlpLZ3hBMzNsbC13dUMtUkVfQU5yUHEwOHNDSklOcVVRa0JkY1ZIRE03VllSSGFnam9qR1NTZktlNHVSal8yTDlmQUI0SjMtMUt0Tzl4VGJxeVZadURDdkhneHhCQ2p5YzZrNi1CdG9XcUlMY2t1TURDS19telFzMWFZSXNLWlJMLThKNXBLVmdHSTdhQ09SeklxaGgxR0ZBWHB5TXRlUk41U2JhS2JuNnpRUldldw?oc=5",
-      "titre": "Pendant le Black Friday, Intego ONE Complete réunit antivirus Mac, pare-feu, VPN et nettoyage à -50%",
-      "source": "Clubic",
-      "date": "2026-11-20",
-      "guide": "cybersecurite",
-      "page": "debutant.html",
-      "ancre": "les-pare-feux-et-antivirus",
-      "section": "🛡️ Les pare-feux et antivirus",
-      "sujet": "🔒 Cybersécurité — Débutant",
-      "langue": "fr",
-      "site": "clubic.com",
-      "publie": "2026-11-25"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV0RIX3RBNkRldzk3QjJLX0RsMVZrS09zcHI0OS1MOGZIZzdOQXhpQTlKZVVrTm9NMUYyeUhJYktKVGtERzdBRkQ0M0VIbDN2d0cyTDFha2Z3OXFBRGllWEdRNjJjRkFWOVhRMTNhckZ0cmgzX1ktTnhrb2xzdDVJZFhRZ296WkNRbmhOODZEYkwwYUd6cmRJdHNn?oc=5",
