@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-27T17:33:56.738Z",
+  "maj": "2026-11-27T17:41:26.218Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPN1pGc2pZdzMxTmNyQ3o4NVIxZlpwb0lQSGhEdEhveUlhQzRCQ1ZVbnVmZjNvZG52bnBRa085NWp2TG9XRzlQbHlYWE1VYk1kVkpQdkpmUU1rNXV2ZXQ4ODdFM1RPVlVqaVJjWjQ1MmlZbWMxOFgxTldvckFZUnh5enNtX2RQelhJajd1RkVyVDhYcTJVSEViMlRZdDQtZE9TS1A3Z2ltdklQZFZ3d1FmRFJ1UG9SMV9QYWRPNA?oc=5",
@@ -338,6 +338,34 @@
       "publie": "2026-11-22"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUnAxTmY4TUdQTUR0a0F0c3BKZ0oxRVdKdXBfV3dLa2d0VDg4ZGZuaXZsU3lOZjhQdkJwZlZqZ2VhdXZBbnFrWGdhTmp3ajl3WGRNcFBTMUtocnFhWkxlSUtlMnk2b0VlXzFtR2hyUkN1d0FaaGdlWXZBc052TEh4UUk4T2JWbGpvR293aTI3M01lQUpoZ1V2QjNTZjVyTlFQTTdJaDBQMmpDX2p5MUs0UE53?oc=5",
+      "titre": "Don’t wait. You can build a meaningful quality enhancement system from within",
+      "source": "Times Higher Education",
+      "date": "2026-11-27",
+      "guide": "apprendre",
+      "page": "avance.html",
+      "ancre": "building-your-system",
+      "section": "📐 Building your system",
+      "sujet": "🎓 Learning how to learn — Advanced",
+      "langue": "en",
+      "site": "timeshighereducation.com",
+      "publie": "2026-11-27"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMmQwN0NsRjEyOGpyLV9vMVFFd3JJT3JpeENRNUlMZUVXU0xHOWlRWHpxYnBMOU1UQ1pQTVp5bENRellfNEwwcHljcXlnQ0NKV1l0N1B6TmFpMjFUYlFVRm1qYk1vWWt2cDUxZHlNaEVYaVhTcTU2NG1pVjdoYzI5QThNaW5abDhoc05R?oc=5",
+      "titre": "Base Design refreshes global visual identity for Visa",
+      "source": "Design Week",
+      "date": "2026-11-27",
+      "guide": "design",
+      "page": "debutant.html",
+      "ancre": "visual-design-principles",
+      "section": "🎨 Visual design principles",
+      "sujet": "🎨 UX/UI Design — Beginner",
+      "langue": "en",
+      "site": "designweek.co.uk",
+      "publie": "2026-11-27"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOV0RIX3RBNkRldzk3QjJLX0RsMVZrS09zcHI0OS1MOGZIZzdOQXhpQTlKZVVrTm9NMUYyeUhJYktKVGtERzdBRkQ0M0VIbDN2d0cyTDFha2Z3OXFBRGllWEdRNjJjRkFWOVhRMTNhckZ0cmgzX1ktTnhrb2xzdDVJZFhRZ296WkNRbmhOODZEYkwwYUd6cmRJdHNn?oc=5",
       "titre": "The Dutch try to perfect taxes on savings, and fail",
       "source": "The Economist",
@@ -363,6 +391,20 @@
       "sujet": "🩺 Health at Work — Advanced",
       "langue": "en",
       "site": "personneltoday.com",
+      "publie": "2026-11-27"
+    },
+    {
+      "lien": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQR0d4Ym1iZnI3a1Z1dlBjRHZZUjMtXzI2cndhcE9fcXNKUmEwS3FsTWdaLW5vQU1FdFNadVEtZFQ3UUp3U09FSUFwSUxmV3lNcDdwVzhWZm0wUExpZmpvSF80RzJqMUpmTzNzd2ZVOTE4Q0t6Yk1WdDVBMGQzNTktdnZR?oc=5",
+      "titre": "NS&I boosts British Savings Bond rates amid competition",
+      "source": "The Independent",
+      "date": "2026-11-26",
+      "guide": "finance",
+      "page": "avance.html",
+      "ancre": "bonds-and-rates",
+      "section": "📉 Bonds and interest rates",
+      "sujet": "💰 Finance — Advanced",
+      "langue": "en",
+      "site": "independent.co.uk",
       "publie": "2026-11-27"
     },
     {
@@ -629,48 +671,6 @@
       "sujet": "⏱️ Productivity — Intermediate",
       "langue": "en",
       "site": "mirror.co.uk",
-      "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTGtRU2lIVW80eG85WHRLNDctaXNkQXFnZDF1V1czLWpmLTkycXpBYk1HX2lBMm5zRmlGQVJTSmtuNGV1QTEtT3JWZ1VRNHA3MjJTem9VSldDLUFKNnMycm9oLVVKLWgwdUtsN0U2V0FjU3A1dHAtVENsVW9rblBQWm44TUtDQU5NNF9KRzViVXVTb0U5REpxZ0hOREZYWlJLTEtDRTJCYkdWZ29XVDhVTmFORG1aZ1JWVlVsWjdwc2NyTTBUNHIyem5pSkxkQjNH?oc=5",
-      "titre": "HTML-in-Canvas ships and could make the web a lot more creative...and a lot stupider",
-      "source": "The Register",
-      "date": "2026-11-16",
-      "guide": "dev-web",
-      "page": "debutant.html",
-      "ancre": "html-css",
-      "section": "🏗️ HTML & CSS",
-      "sujet": "💻 Web Development — Beginner",
-      "langue": "en",
-      "site": "theregister.com",
-      "publie": "2026-11-17"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQM0x3bkJJTmozVjlFcUVHT1BxbnZQZko2WHJfdW81a0h6d0RQZ0JXaXhFOHNkSUk5ZmhMTmZRdTZLTkRCMjl3VGV5cVE1dWRETjg2MXVSSVZmZ25fVVhsZHhyVDFqZjZPS2pJaTgyaXd0YXFfY21YZVNPd3RQemxQX1Nsd3Y4NjlfSDlLc0pmTlFfanBSME9Qc3BIRzdleHNhX1VReXExOEpiUG9tQlgwUGxYTmRSQQ?oc=5",
-      "titre": "Microsoft outages continue as tech giant works to restore services",
-      "source": "The Herald",
-      "date": "2026-11-13",
-      "guide": "sante",
-      "page": "debutant.html",
-      "ancre": "breaks",
-      "section": "😌 Breaks that restore",
-      "sujet": "🩺 Health at Work — Beginner",
-      "langue": "en",
-      "site": "heraldscotland.com",
-      "publie": "2026-11-15"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdTRZZWtOLUlfbEFNLVlXUkNwRkh4UEFYZTdUMC1DamNqVXBvUExDMlRVaExfSnV2dDV5SmxnN1NwSXZNcUZqTGFNTXNORWhfdmRodWJPMURSQmlha3pSbWlyWVpNTWY3VjhqSDNUS0JPYkQ4dXhZc0lPTGFnQTF1a2NrTXVnTk1RY2Iw?oc=5",
-      "titre": "What the Microsoft outage can teach us about the impacts of digital dependence",
-      "source": "The Independent",
-      "date": "2026-11-13",
-      "guide": "ecologie",
-      "page": "debutant.html",
-      "ancre": "impact-is-in-manufacturing",
-      "section": "🏭 The impact is in the manufacturing",
-      "sujet": "🌱 Digital Sustainability — Beginner",
-      "langue": "en",
-      "site": "independent.co.uk",
       "publie": "2026-11-17"
     },
     {
