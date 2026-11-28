@@ -1,5 +1,5 @@
 {
-  "maj": "2026-11-28T16:17:51.494Z",
+  "maj": "2026-11-28T16:45:57.582Z",
   "articles": [
     {
       "lien": "https://news.google.com/rss/articles/CBMingJBVV95cUxNV181Q0lRZHFJRkNZUkMxN2YtYjN1aFRrQzVxNVJPbHF0OGZMYTliR2Z2ZFF5RXlQYVB5Z0NaYk0zcDljX1JyU0w4b2NnenVwSzJuRDhsZXlsZkdjTWtHdFlzWXlfTkE5bktlQURmV0hZRkFmRlVmVzhlUzdidElPbkhqb1RoMDg4UlNubWM3c2RYNXJWeFFtV1FjRE5qYlc4R296ZnEtcjBhclZkMk1sb1FheTVRTl9EaUNIb3J5TjZVTklyYTAtNVcxbmRONy02UUVBSkFBdUdmb0daSF9JRm15SnNtckVLWTRza3lCOS1icDFKdHJoZlhIUVNuWlB6RG5sWXhnczNod05Na0JmU1VwNlZLR0tKMHp1aGdB?oc=5",
@@ -674,6 +674,20 @@
       "publie": "2026-11-17"
     },
     {
+      "lien": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOeWpnR21jakkzc19xNGRRWFNXV1NIMWY1V3JpcjJydUs3QlZJWXNLbTMwLTU3WnJDaDRucm9tSENGMWdQaDdZVE0zV3Y3SENub0wxbTFuaHgzazFkMWpZWUd0dW1oRm9rc3RjZDVOcm9acjBOVE9NekNOZ1pCcTIxRnhuSlkyX0dHSWZ1cHZtaEp4MjMzYjBzMmNwdGdxbWtGVUtha1JPQmNyMzFSN09IMTJuR3ZLTWdqUzc4ckRVNW54dUVUbGxkdDRQa2pfQUZTbzVQZUtDdndBNU0yMEhTam1wTnhDZw?oc=5",
+      "titre": "Öt mentális egészségi fordulópont, amelyre a HR-nek fel kell készülnie, mielőtt krízisbe kerülnének a munkatársak",
+      "source": "HR Portál",
+      "date": "2026-11-28",
+      "guide": "sante",
+      "page": "avance.html",
+      "ancre": "la-medecine-du-travail",
+      "section": "🏥 A foglalkozás-egészségügy",
+      "sujet": "🩺 Munkahelyi egészség — Haladó",
+      "langue": "hu",
+      "site": "hrportal.hu",
+      "publie": "2026-11-28"
+    },
+    {
       "lien": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPekNqMEVlVTRqa2JJLUd6U2d3TlpoMm9XX1NBNG1ZdzB3RG4wUFJBaEpKOTNKUmlKU0xQQkJ1QXlqX0ZHUnFsWDN6YnhrdFJZMWFZdmhaRDdTaTRzQl91MENFLXBSNUZkd25JM1h3Y2RJQUU0dm5wY2IzN1VnTHBnR3JzYlJMR2VjTEZHMHVXdUp4ZXVIUmtQalcxVTZFcUlqbkU5a0N4QkpNc29HS0taN2dhN3FTNkExRGJ6bUZGaVBMaXhRZjlQd1NaUk1UUFhDTDBsRVlkWXRKZTA?oc=5",
       "titre": "Franchise és növekedés: egy jól ismert üzleti modell előnyei az új fogyasztási szokások mellett",
       "source": "Piac & Profit",
@@ -812,20 +826,6 @@
       "langue": "hu",
       "site": "economx.hu",
       "publie": "2026-11-20"
-    },
-    {
-      "lien": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNDBwUFZvQTBjUkpOVXB5VEJ4WGZaMkdzampmaWY0LWMzNTZncm15WElDMjFNdkhZRkRDRkxyaWt6QUpueVhWTVBtUW4zV0Y4RDhIRTdfd1dISHI4ZFNWMTB4MUFLYk0tX2owZk41U0Vka0hVV0RTSk1ZVWhmR0JqNTFXSDdMb0FqdHU0dGlEeWtJTnF3NnNPYnVxNVVkLW1NUlF4d1hFSlJxX3h5LXl4N1U0Wl9iWWpNb1hwY2dMczU?oc=5",
-      "titre": "Új bértábla készül az egészségügyben – most bárki véleményezheti a kormány javaslatát",
-      "source": "HR Portál",
-      "date": "2026-11-15",
-      "guide": "sante",
-      "page": "avance.html",
-      "ancre": "la-medecine-du-travail",
-      "section": "🏥 A foglalkozás-egészségügy",
-      "sujet": "🩺 Munkahelyi egészség — Haladó",
-      "langue": "hu",
-      "site": "hrportal.hu",
-      "publie": "2026-11-15"
     },
     {
       "lien": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNaGRIanJCNzFlZVlnVzRTbzNfUHJrLUR3Mk1rX2FzUlY5VTBSdm9ubDh3bjFyMlUySHlybHo2YXJPdlZqVTg3R2VaYmVSN0tmaXlweFduVWtKdnFLUFlMeVNIdV9tUDRvaFpBUjh6RmVMZ3A3YVZZem0wTHdwdGt6Y3BzZzFPeTVkVGpselNWa2FRRWp1R3RpZGI1N1hOeTI3eHRqRVJhWktYY29Lb1F0RkYzT3NhcUlOX1JxR0trS295VzVEUlhVYjVSQVXSAcwBQVVfeXFMTWhkSGpyQjcxZWVZZ1c0U28zX1Byay1EdzJNa19hc1JWOVUwUnZvbmw4d24xcjJVMkh5cmx6NmFyT3ZWalU4N0dlWmJlUjdLZml5cHhXblVrSnZxS1BZTHlTSHVfbVA0b2haQVI4ekZlTGdwN2FWWXptMEx3cHRremNwc2cxT3k1ZFRqbHpTVmthUUVqdUd0aWRiNTdYTnkyN3h0akVSYVpLWGNvS29RdEZGM09zYXFJTl9ScUdLa0tveVc1RFJYVWI1UkFV?oc=5",
